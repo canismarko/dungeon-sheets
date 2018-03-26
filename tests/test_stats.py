@@ -4,6 +4,11 @@ from dungeonsheets import stats
 
 class TestStats(TestCase):
 
+    def test_mod_str(self):
+        self.assertEqual(stats.mod_str(-3), '-3')
+        self.assertEqual(stats.mod_str(0), '0')
+        self.assertEqual(stats.mod_str(2), '+2')
+    
     def test_modifier(self):
         ranges = [
             ((1,), -5),
@@ -30,16 +35,7 @@ class TestStats(TestCase):
                 stat.value = value
                 msg = f"Stat {value} doesn't produce modifier {target} ({stat.modifier})"
                 self.assertEqual(stat.modifier, target, msg)
-
-    def test_modfifier_string(self):
-        stat = stats.Stat()
-        stat.value = 5
-        self.assertEqual(stat.modifier_string, '-3')
-        stat.value = 10
-        self.assertEqual(stat.modifier_string, '0')
-        stat.value = 15
-        self.assertEqual(stat.modifier_string, '+2')
-        
+    
     def test_setter(self):
         """Verify that this class works as a data descriptor."""
         # Set up a dummy class

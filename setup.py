@@ -9,4 +9,9 @@ setup(name='dungeonsheets',
       author_email='canismarko@gmail.com',
       url='',
       packages=['dungeonsheets'],
+      entry_points={
+          'console_scripts': [
+              'makesheets = dungeonsheets.make_sheets:main'
+          ]
+      },
      )

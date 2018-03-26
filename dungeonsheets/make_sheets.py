@@ -1,12 +1,14 @@
 #!/usr/bin/env python
 
+import argparse
 import importlib.util
 import os
 import subprocess
 
 from fdfgen import forge_fdf
 
-from dungeonsheets.character import Character
+from dungeonsheets import character
+from dungeonsheets.stats import mod_str
 
 """Program to take character definitions and build a PDF of the
 character sheet."""
@@ -53,22 +55,31 @@ def create_fdf(character, fdfname):
         ('Alignment', character.alignment),
         ('XP', character.xp),
         # Attributes
+        ('ProfBonus', mod_str(character.proficiency_bonus)),
         ('STRmod', str(character.strength.value)),
-        ('STR', character.strength.modifier_string),
+        ('STR', mod_str(character.strength.modifier)),
         ('DEXmod ', character.dexterity.value),
-        ('DEX', character.dexterity.modifier_string),
+        ('DEX', mod_str(character.dexterity.modifier)),
         ('CONmod', character.constitution.value),
-        ('CON', character.constitution.modifier_string),
+        ('CON', mod_str(character.constitution.modifier)),
         ('INTmod', character.intelligence.value),
-        ('INT', character.intelligence.modifier_string),
+        ('INT', mod_str(character.intelligence.modifier)),
         ('WISmod', character.wisdom.value),
-        ('WIS', character.wisdom.modifier_string),
+        ('WIS', mod_str(character.wisdom.modifier)),
         ('CHamod', character.charisma.value),
-        ('CHA', character.charisma.modifier_string),
+        ('CHA', mod_str(character.charisma.modifier)),
+        ('AC', character.armor_class),
+        ('Initiative', mod_str(character.dexterity.modifier)),
+        ('Speed', character.speed),
         # Hit points
         ('HDTotal', character.hit_dice),
         ('HPMax', character.hp_max),
-        
+        # Inventory
+        ('CP', character.cp),
+        ('SP', character.sp),
+        ('EP', character.ep),
+        ('GP', character.gp),
+        ('PP', character.pp),
     ]
     fdf = forge_fdf("", fields, [], [], [])
     fdf_file = open(fdfname, "wb")
@@ -87,7 +98,9 @@ def make_sheet(character_file, flatten=False):
     """
     # Create a character from the character definition
     char_props = load_character_file(character_file)
-    char = Character(**char_props)
+    class_name = char_props.pop('character_class').lower().capitalize()
+    CharClass = getattr(character, class_name)
+    char = CharClass(**char_props)
     # Set the fields in the FDF
     fdfname = os.path.splitext(character_file)[0] + '.fdf'
     create_fdf(character=char, fdfname=fdfname)
@@ -106,7 +119,14 @@ def make_sheet(character_file, flatten=False):
 
 
 def main():
-    make_sheet('examples/rogue.py')
+    # Prepare an argument parser
+    parser = argparse.ArgumentParser(
+        description='Prepare Dungeons and Dragons character sheets as PDFs')
+    parser.add_argument('filename', type=str, help="Python file with character definition")
+    parser.add_argument('--flatten', '-F', action="store_true", help="Remove the PDF fields once processed.")
+    args = parser.parse_args()
+    # Process the requested file
+    make_sheet(character_file=args.filename, flatten=args.flatten)
 
 
 if __name__ == '__main__':
