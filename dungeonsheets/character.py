@@ -110,36 +110,43 @@ class Barbarian(Character):
 class Bard(Character):
     class_name = 'Bard'
     hit_dice_faces = 8
+    saving_throw_proficiencies = ['dexterity', 'charisma']
 
 
 class Cleric(Character):
     class_name = 'Cleric'
     hit_dice_faces = 8
+    saving_throw_proficiencies = ['wisdom', 'charisma']
 
 
 class Druid(Character):
     class_name = 'Druid'
     hit_dice_faces = 8
+    saving_throw_proficiencies = ['intelligence', 'wisdom']
 
 
 class Fighter(Character):
     class_name = 'Fighter'
     hit_dice_faces = 10
+    saving_throw_proficiencies = ['strength', 'constitution']
 
 
 class Monk(Character):
     class_name = 'Monk'
     hit_dice_faces = 8
+    saving_throw_proficiencies = ['strength', 'dexterity']
 
 
 class Paladin(Character):
     class_name = 'Paladin'
     hit_dice_faces = 10
+    saving_throw_proficiencies = ['wisdom', 'charisma']
 
 
 class Ranger(Character):
     class_name = 'Ranger'
     hit_dice_faces = 10
+    saving_throw_proficiencies = ['strength', 'dexterity']
 
 
 class Rogue(Character):
@@ -151,12 +158,16 @@ class Rogue(Character):
 class Sorceror(Character):
     class_name = 'Sorceror'
     hit_dice_faces = 6
+    saving_throw_proficiencies = ['constitution', 'charisma']
+
 
 class Warlock(Character):
     class_name = 'Warlock'
     hit_dice_faces = 8
+    saving_throw_proficiencies = ['wisdom', 'charisma']
 
 
 class Wizard(Character):
     class_name = 'Wizard'
     hit_dice_faces = 6
+    saving_throw_proficiencies = ['intelligence', 'wisdom']

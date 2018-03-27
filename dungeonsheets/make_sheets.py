@@ -21,6 +21,7 @@ def text_box(string):
     new_string = ' '.join(new_string.split())
     return new_string
 
+
 def load_character_file(filename):
     """Create a character object from the given definition file.
     
@@ -196,11 +197,18 @@ def main():
     # Prepare an argument parser
     parser = argparse.ArgumentParser(
         description='Prepare Dungeons and Dragons character sheets as PDFs')
-    parser.add_argument('filename', type=str, help="Python file with character definition")
+    parser.add_argument('filename', type=str, nargs="?", help="Python file with character definition")
     parser.add_argument('--flatten', '-F', action="store_true", help="Remove the PDF fields once processed.")
     args = parser.parse_args()
-    # Process the requested file
-    make_sheet(character_file=args.filename, flatten=args.flatten)
+    # Process the requested files
+    if args.filename is None:
+        filenames = [f for f in os.listdir('.') if os.path.splitext(f)[1] == '.py']
+    else:
+        filenames = [args.filename]
+    for filename in filenames:
+        print(f"Processing {os.path.splitext(filename)[0]}...", end='')
+        make_sheet(character_file=filename, flatten=args.flatten)
+        print("done")
 
 
 if __name__ == '__main__':
