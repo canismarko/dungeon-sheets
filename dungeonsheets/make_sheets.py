@@ -13,6 +13,14 @@ from dungeonsheets.stats import mod_str
 """Program to take character definitions and build a PDF of the
 character sheet."""
 
+def text_box(string):
+    """Format a string for displaying in a text box."""
+    # Remove line breaks
+    new_string = string.replace('\n', ' ').replace('\r', ' ')
+    # Remove multiple whitespace
+    new_string = ' '.join(new_string.split())
+    return new_string
+
 def load_character_file(filename):
     """Create a character object from the given definition file.
     
@@ -101,6 +109,11 @@ def create_fdf(character, fdfname):
         # Hit points
         ('HDTotal', character.hit_dice),
         ('HPMax', character.hp_max),
+        # Personality traits
+        ('PersonalityTraits ', text_box(character.personality_traits)),
+        ('Ideals', text_box(character.ideals)),
+        ('Bonds', text_box(character.bonds)),
+        ('Flaws', text_box(character.flaws)),
         # Inventory
         ('CP', character.cp),
         ('SP', character.sp),

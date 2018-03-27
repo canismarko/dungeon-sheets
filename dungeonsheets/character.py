@@ -52,6 +52,11 @@ class Character():
     sleight_of_hand = Skill(ability='dexterity')
     stealth = Skill(ability='dexterity')
     survival = Skill(ability='wisdom')
+    # Characteristics
+    personality_traits = ""
+    ideals = ""
+    bonds = ""
+    flaws = ""
     # Inventory
     cp = 0
     sp = 0

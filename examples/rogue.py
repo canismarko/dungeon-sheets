@@ -31,3 +31,17 @@ sp = 75
 ep = 50
 gp = 120
 pp = 0
+
+# Backstory
+personality_traits = """I never have a plan, but I’m great at making things up as I go
+along. Also, the best way to get me to do something is to tell me I
+can’t do it."""
+
+ideals = """People. I’m loyal to my friends, not to any ideals. Everyone else can
+take a trip on the River Styx for all I care."""
+
+bonds = """Qelline Alderlead, my aunt, has a farm in Phandalin. I always give
+her some of my ill-gotten gains."""
+
+flaws = """My aunt must never know the deeds I did as a member of the
+Redbrands."""
