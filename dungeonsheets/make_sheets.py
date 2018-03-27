@@ -54,7 +54,7 @@ def create_fdf(character, fdfname):
         ('Race ', character.race),
         ('Alignment', character.alignment),
         ('XP', character.xp),
-        # Attributes
+        # Abilities
         ('ProfBonus', mod_str(character.proficiency_bonus)),
         ('STRmod', str(character.strength.value)),
         ('STR', mod_str(character.strength.modifier)),
@@ -71,6 +71,33 @@ def create_fdf(character, fdfname):
         ('AC', character.armor_class),
         ('Initiative', mod_str(character.dexterity.modifier)),
         ('Speed', character.speed),
+        ('Passive', 10 + character.perception),
+        # Saving throws (proficiencies handled later)
+        ('ST Strength', mod_str(character.strength.saving_throw)),
+        ('ST Dexterity', mod_str(character.dexterity.saving_throw)),
+        ('ST Constitution', mod_str(character.constitution.saving_throw)),
+        ('ST Intelligence', mod_str(character.intelligence.saving_throw)),
+        ('ST Wisdom', mod_str(character.wisdom.saving_throw)),
+        ('ST Charisma', mod_str(character.charisma.saving_throw)),
+        # Skills (proficiencies handled below)
+        ('Acrobatics', mod_str(character.acrobatics)),
+        ('Animal', mod_str(character.animal_handling)),
+        ('Arcana', mod_str(character.arcana)),
+        ('Athletics', mod_str(character.athletics)),
+        ('Deception ', mod_str(character.deception)),
+        ('History ', mod_str(character.history)),
+        ('Insight', mod_str(character.insight)),
+        ('Intimidation', mod_str(character.intimidation)),
+        ('Investigation ', mod_str(character.investigation)),
+        ('Medicine', mod_str(character.medicine)),
+        ('Nature', mod_str(character.nature)),
+        ('Perception ', mod_str(character.perception)),
+        ('Performance', mod_str(character.performance)),
+        ('Persuasion', mod_str(character.persuasian)),
+        ('Religion', mod_str(character.religion)),
+        ('SleightofHand', mod_str(character.sleight_of_hand)),
+        ('Stealth ', mod_str(character.stealth)),
+        ('Survival', mod_str(character.survival)),
         # Hit points
         ('HDTotal', character.hit_dice),
         ('HPMax', character.hp_max),
@@ -81,6 +108,40 @@ def create_fdf(character, fdfname):
         ('GP', character.gp),
         ('PP', character.pp),
     ]
+    # Check boxes for proficiencies
+    ST_boxes = {
+        'strength': 'Check Box 11',
+        'dexterity': 'Check Box 18',
+        'constitution': 'Check Box 19',
+        'intelligence': 'Check Box 20',
+        'wisdom': 'Check Box 21',
+        'charisma': 'Check Box 22',
+    }
+    for ability in character.saving_throw_proficiencies:
+        fields.append((ST_boxes[ability], 'Yes'))
+    skill_boxes = {
+        'acrobatics': 'Check Box 23',
+        'animal_handling': 'Check Box 24',
+        'arcana': 'Check Box 25',
+        'athletics': 'Check Box 26',
+        'deception': 'Check Box 27',
+        'history': 'Check Box 28',
+        'insight': 'Check Box 29',
+        'intimidation': 'Check Box 30',
+        'investigation': 'Check Box 31',
+        'medicine': 'Check Box 32',
+        'nature': 'Check Box 33',
+        'perception': 'Check Box 34',
+        'performance': 'Check Box 35',
+        'persuasian': 'Check Box 36',
+        'religion': 'Check Box 37',
+        'sleight_of_hand': 'Check Box 38',
+        'stealth': 'Check Box 39',
+        'survival': 'Check Box 40',
+    }
+    for skill in character.skill_proficiencies:
+        fields.append((skill_boxes[skill], 'Yes'))
+    # Create the actual FDF file
     fdf = forge_fdf("", fields, [], [], [])
     fdf_file = open(fdfname, "wb")
     fdf_file.write(fdf)

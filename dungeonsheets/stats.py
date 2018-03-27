@@ -11,15 +11,55 @@ def mod_str(modifier):
 
 
 
-class Stat():
+class Ability():
     value = 10
+    ability_name = None
+    character = None
     
     def __init__(self, value=10):
         self.value = value
+    
+    def __set_name__(self, character, name):
+        self.ability_name = name
+    
+    def __get__(self, character, Character):
+        self.character = character
+        return self
+    
+    def __set__(self, obj, val):
+        self.value = val
     
     @property
     def modifier(self):
         return math.floor((self.value - 10) / 2)
     
-    def __set__(self, obj, val):
-        self.value = val
+    @property
+    def saving_throw(self):
+        modifier = self.modifier
+        # Check for proficiency
+        if self.ability_name is not None:
+            is_proficient = (self.ability_name in self.character.saving_throw_proficiencies)
+            if is_proficient:
+                modifier += self.character.proficiency_bonus
+        # Return the value
+        return modifier
+
+
+class Skill():
+    """An ability-based skill, such as athletics."""
+    
+    def __init__(self, ability):
+        self.ability_name = ability
+    
+    def __set_name__(self, character, name):
+        self.skill_name = name
+        self.character = character
+    
+    def __get__(self, character, owner):
+        ability = getattr(character, self.ability_name)
+        modifier = ability.modifier
+        # Check for proficiency
+        is_proficient = self.skill_name in character.skill_proficiencies
+        if is_proficient:
+            modifier += character.proficiency_bonus
+        return modifier

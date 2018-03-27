@@ -4,6 +4,7 @@ from unittest import TestCase
 
 from dungeonsheets.character import Character
 
+
 class TestCharacter(TestCase):
     """Tests for the generic character base class."""
     

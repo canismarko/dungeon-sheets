@@ -1,6 +1,6 @@
 from unittest import TestCase
 
-from dungeonsheets import stats
+from dungeonsheets import stats, character
 
 class TestStats(TestCase):
 
@@ -8,6 +8,17 @@ class TestStats(TestCase):
         self.assertEqual(stats.mod_str(-3), '-3')
         self.assertEqual(stats.mod_str(0), '0')
         self.assertEqual(stats.mod_str(2), '+2')
+    
+    def test_saving_throw(self):
+        stat = stats.Ability(14)
+        self.assertEqual(stat.saving_throw, 2)
+        # Now try it with an ST proficiency
+        class MyClass():
+            saving_throw_proficiencies = ['strength']
+            proficiency_bonus = 2
+            strength = stats.Ability(14)
+        my_class = MyClass()
+        self.assertEqual(my_class.strength.saving_throw, 4)
     
     def test_modifier(self):
         ranges = [
@@ -29,7 +40,7 @@ class TestStats(TestCase):
             ((30,), 10),
         ]
         # Test the values for each modifier range
-        stat = stats.Stat()
+        stat = stats.Ability()
         for range_, target in ranges:
             for value in range_:
                 stat.value = value
@@ -40,9 +51,22 @@ class TestStats(TestCase):
         """Verify that this class works as a data descriptor."""
         # Set up a dummy class
         class MyCharacter():
-            stat = stats.Stat()
+            stat = stats.Ability()
         char = MyCharacter()
         # Check that the stat works as expected once set
         char.stat = 15
         self.assertEqual(char.stat.value, 15)
         self.assertEqual(char.stat.modifier, 2)
+    
+    def test_skill(self):
+        """Test for a skill, that depends on another ability."""
+        class MyClass():
+            dexterity = stats.Ability(14)
+            acrobatics = stats.Skill(ability='dexterity')
+            skill_proficiencies = []
+            proficiency_bonus = 2
+        my_class = MyClass()
+        self.assertEqual(my_class.acrobatics, 2)
+        # Check for a proficiency
+        my_class.skill_proficiencies = ['acrobatics']
+        self.assertEqual(my_class.acrobatics, 4)

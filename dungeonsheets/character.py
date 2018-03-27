@@ -2,7 +2,7 @@
 
 import re
 
-from .stats import Stat
+from .stats import Ability, Skill
 from .dice import read_dice_str
 
 dice_re = re.compile('(\d+)d(\d+)')
@@ -25,13 +25,33 @@ class Character():
     # Hit points
     hp_max = 10
     hit_dice_faces = 2
-    # Base stats (ability scores
-    strength = Stat()
-    dexterity = Stat()
-    constitution = Stat()
-    intelligence = Stat()
-    wisdom = Stat()
-    charisma = Stat()
+    # Base stats (ability scores)
+    strength = Ability()
+    dexterity = Ability()
+    constitution = Ability()
+    intelligence = Ability()
+    wisdom = Ability()
+    charisma = Ability()
+    saving_throw_proficiencies = []
+    # Skills
+    acrobatics = Skill(ability='dexterity')
+    animal_handling = Skill(ability='wisdom')
+    arcana = Skill(ability='intelligence')
+    athletics = Skill(ability='strength')
+    deception = Skill(ability='charisma')
+    history = Skill(ability='intelligence')
+    insight = Skill(ability='wisdom')
+    intimidation = Skill(ability='charisma')
+    investigation = Skill(ability='intelligence')
+    medicine = Skill(ability='wisdom')
+    nature = Skill(ability='intelligence')
+    perception = Skill(ability='wisdom')
+    performance = Skill(ability='charisma')
+    persuasian = Skill(ability='charisma')
+    religion = Skill(ability='intelligence')
+    sleight_of_hand = Skill(ability='dexterity')
+    stealth = Skill(ability='dexterity')
+    survival = Skill(ability='wisdom')
     # Inventory
     cp = 0
     sp = 0
@@ -79,6 +99,7 @@ class Character():
 class Barbarian(Character):
     class_name = 'Barbarian'
     hit_dice_faces = 12
+    saving_throw_proficiencies = ['strength', 'constitution']
 
 
 class Bard(Character):
@@ -119,6 +140,7 @@ class Ranger(Character):
 class Rogue(Character):
     class_name = 'Rogue'
     hit_dice_faces = 8
+    saving_throw_proficiencies = ['dexterity', 'intelligence']
 
 
 class Sorceror(Character):
