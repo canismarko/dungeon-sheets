@@ -70,3 +70,20 @@ class TestStats(TestCase):
         # Check for a proficiency
         my_class.skill_proficiencies = ['acrobatics']
         self.assertEqual(my_class.acrobatics, 4)
+
+    def test_findattr(self):
+        """Check if the function can find attributes."""
+        class TestClass():
+            my_attr = 47
+            YourAttr = 53
+        test_class = TestClass()
+        # Direct access
+        self.assertEqual(stats.findattr(test_class, 'my_attr'),
+                         test_class.my_attr)
+        self.assertEqual(stats.findattr(test_class, 'YourAttr'),
+                         test_class.YourAttr)
+        # Swapping spaces for capitalization
+        self.assertEqual(stats.findattr(test_class, 'my attr'),
+                         test_class.my_attr)
+        self.assertEqual(stats.findattr(test_class, 'your attr'),
+                         test_class.YourAttr)

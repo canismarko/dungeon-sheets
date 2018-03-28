@@ -1,6 +1,24 @@
 import math
 
 
+def findattr(obj, name):
+    """Similar to builtin getattr(obj, name) but more forgiving to
+    whitespace and capitalization.
+    
+    """
+    # Come up with several options
+    py_name = name.replace('-', '_').replace(' ', '_')
+    camel_case = "".join([s.capitalize() for s in py_name.split('_')])
+    if hasattr(obj, py_name):
+        # Direct lookup
+        attr = getattr(obj, py_name)
+    elif hasattr(obj, camel_case):
+        # CamelCase lookup
+        attr = getattr(obj, camel_case)
+    else:
+        raise AttributeError(f'{obj} has no attribute {name}')
+    return attr
+
 def mod_str(modifier):
     """Converts a modifier to a string, eg 2 -> '+2'."""
     if modifier > 0:

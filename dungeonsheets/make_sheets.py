@@ -4,6 +4,7 @@ import argparse
 import importlib.util
 import os
 import subprocess
+import warnings
 
 from fdfgen import forge_fdf
 
@@ -121,6 +122,7 @@ def create_fdf(character, fdfname):
         ('EP', character.ep),
         ('GP', character.gp),
         ('PP', character.pp),
+        ('Equipment', text_box(character.equipment)),
     ]
     # Check boxes for proficiencies
     ST_boxes = {
@@ -153,8 +155,22 @@ def create_fdf(character, fdfname):
         'stealth': 'Check Box 39',
         'survival': 'Check Box 40',
     }
+    # Add skill proficienies
     for skill in character.skill_proficiencies:
         fields.append((skill_boxes[skill], 'Yes'))
+    # Add weapons
+    weapon_fields = [('Wpn Name', 'Wpn1 AtkBonus', 'Wpn1 Damage'),
+                     ('Wpn Name 2', 'Wpn2 AtkBonus ', 'Wpn2 Damage '),
+                     ('Wpn Name 3', 'Wpn3 AtkBonus  ', 'Wpn3 Damage '),]
+    for _fields, weapon in zip(weapon_fields, character.weapons):
+        name_field, atk_field, dmg_field = _fields
+        fields.append((name_field, weapon.name))
+        fields.append((atk_field, mod_str(weapon.attack_bonus)))
+        fields.append((dmg_field, f'{weapon.damage} {weapon.damage_type}'))
+    # Other proficiencies and languages
+    prof_text = "Proficiencies:\n" + text_box(character.proficiencies_text)
+    prof_text += "\n\nLanguages:\n" + text_box(character.languages)
+    fields.append(('ProficienciesLang', prof_text))
     # Create the actual FDF file
     fdf = forge_fdf("", fields, [], [], [])
     fdf_file = open(fdfname, "wb")
@@ -207,8 +223,13 @@ def main():
         filenames = [args.filename]
     for filename in filenames:
         print(f"Processing {os.path.splitext(filename)[0]}...", end='')
-        make_sheet(character_file=filename, flatten=args.flatten)
-        print("done")
+        try:
+            make_sheet(character_file=filename, flatten=args.flatten)
+        except Exception as e:
+            print('failed')
+            raise
+        else:
+            print("done")
 
 
 if __name__ == '__main__':

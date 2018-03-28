@@ -16,14 +16,16 @@ constitution = 12
 intelligence = 13
 wisdom = 10
 charisma = 16
-skill_proficiencies = [
+skill_proficiencies = (
     'acrobatics',
     'deception',
     'investigation',
     'performance',
     'sleight_of_hand',
     'stealth'
-]
+)
+proficiencies_extra = ('playing cards', "carpenter's tools")
+languages = 'Common, halfling'
 
 # Inventory
 cp = 950
@@ -31,6 +33,13 @@ sp = 75
 ep = 50
 gp = 120
 pp = 0
+weapons = ('shortsword', 'shortbow')
+equipment = (
+    """Shortsword, shortbow, 20 arrows, leather armor, thieves’ tools,
+    backpack, bell, 5 candles, crowbar, hammer, 10 pitons, 50 feet of
+    hempen rope, hooded lantern, 2 flasks of oil, 5 days rations,
+    tinderbox, waterskin, crowbar, set of dark common clothes
+    including a hood, pouch.""")
 
 # Backstory
 personality_traits = """I never have a plan, but I’m great at making things up as I go

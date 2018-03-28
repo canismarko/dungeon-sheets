@@ -10,7 +10,7 @@ class CharacterFileTestCase(unittest.TestCase):
     def test_load_character_file(self):
         charfile = CHARFILE
         result = make_sheets.load_character_file(charfile)
-        self.assertEqual(result['strength'], 10)
+        self.assertEqual(result['strength'], 8)
 
 class FDFTestCase(unittest.TestCase):
     def tearDown(self):
@@ -22,4 +22,3 @@ class FDFTestCase(unittest.TestCase):
         char = character.Character()
         make_sheets.create_fdf(char, fdfname=fdfname)
         self.assertTrue(os.path.exists(fdfname))
-        
