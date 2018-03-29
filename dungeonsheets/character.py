@@ -74,6 +74,8 @@ class Character():
     equipment = ""
     weapons = [] # Replaced in __init__ constructor
     _proficiencies_text = tuple()
+    # Magic
+    spellcasting_ability = None
     
     def __init__(self, **attrs):
         """Takes a bunch of attrs and passes them to ``set_attrs``"""
@@ -107,6 +109,25 @@ class Character():
                                   RuntimeWarning)
                 # Lookup general attributes
                 setattr(self, attr, val)
+    
+    @property
+    def is_spellcaster(self):
+        result = (self.spellcasting_ability is not None)
+        return result
+    
+    @property
+    def spell_save_dc(self):
+        ability_mod = getattr(self, self.spellcasting_ability).modifier
+        return (8 + self.proficiency_bonus + ability_mod)
+    
+    @property
+    def spell_attack_bonus(self):
+        ability_mod = getattr(self, self.spellcasting_ability).modifier
+        return (self.proficiency_bonus + ability_mod)
+    
+    def spell_slots(self, spell_level):
+        """How many spells slots are available for this spell level."""
+        return self.spell_slots_by_level[self.level][spell_level]
     
     def is_proficient(self, weapon: Weapon):
         """Is the character proficient with this item?
@@ -308,6 +329,29 @@ class Warlock(Character):
     saving_throw_proficiencies = ('wisdom', 'charisma')
     _proficiencies_text = ("light Armor", "simple weapons")
     weapon_proficiencies = weapons.simple_weapons
+    spellcasting_ability = 'charisma'
+    spell_slots_by_level = {
+        1:  (2, 1, 0, 0, 0, 0, 0, 0, 0, 0),
+        2:  (2, 2, 0, 0, 0, 0, 0, 0, 0, 0),
+        3:  (2, 0, 2, 0, 0, 0, 0, 0, 0, 0),
+        4:  (3, 0, 2, 0, 0, 0, 0, 0, 0, 0),
+        5:  (3, 0, 0, 3, 0, 0, 0, 0, 0, 0),
+        6:  (3, 0, 0, 3, 0, 0, 0, 0, 0, 0),
+        7:  (3, 0, 0, 0, 2, 0, 0, 0, 0, 0),
+        8:  (3, 0, 0, 0, 2, 0, 0, 0, 0, 0),
+        9:  (3, 0, 0, 0, 0, 2, 0, 0, 0, 0),
+        10: (4, 0, 0, 0, 0, 2, 0, 0, 0, 0),
+        11: (4, 0, 0, 0, 0, 3, 0, 0, 0, 0),
+        12: (4, 0, 0, 0, 0, 3, 0, 0, 0, 0),
+        13: (4, 0, 0, 0, 0, 3, 0, 0, 0, 0),
+        14: (4, 0, 0, 0, 0, 3, 0, 0, 0, 0),
+        15: (4, 0, 0, 0, 0, 3, 0, 0, 0, 0),
+        16: (4, 0, 0, 0, 0, 3, 0, 0, 0, 0),
+        17: (4, 0, 0, 0, 0, 4, 0, 0, 0, 0),
+        18: (4, 0, 0, 0, 0, 4, 0, 0, 0, 0),
+        19: (4, 0, 0, 0, 0, 4, 0, 0, 0, 0),
+        20: (4, 0, 0, 0, 0, 4, 0, 0, 0, 0),
+    }
 
 
 class Wizard(Character):
@@ -319,3 +363,27 @@ class Wizard(Character):
     weapon_proficiencies = (weapons.Dagger, weapons.Dart,
                            weapons.Sling, weapons.Quarterstaff,
                            weapons.LightCrossbow)
+    spellcasting_ability = 'intelligence'
+    spell_slots_by_level = {
+        # char_lvl: (cantrips, 1st, 2nd, 3rd, ...)
+        1:  (3, 2, 0, 0, 0, 0, 0, 0, 0, 0),
+        2:  (3, 3, 0, 0, 0, 0, 0, 0, 0, 0),
+        3:  (3, 4, 2, 0, 0, 0, 0, 0, 0, 0),
+        4:  (4, 4, 3, 0, 0, 0, 0, 0, 0, 0),
+        5:  (4, 4, 3, 2, 0, 0, 0, 0, 0, 0),
+        6:  (4, 4, 3, 3, 0, 0, 0, 0, 0, 0),
+        7:  (4, 4, 3, 3, 1, 0, 0, 0, 0, 0),
+        8:  (4, 4, 3, 3, 2, 0, 0, 0, 0, 0),
+        9:  (4, 4, 3, 3, 3, 1, 0, 0, 0, 0),
+        10: (5, 4, 3, 3, 3, 2, 0, 0, 0, 0),
+        11: (5, 4, 3, 3, 3, 2, 1, 0, 0, 0),
+        12: (5, 4, 3, 3, 3, 2, 1, 0, 0, 0),
+        13: (5, 4, 3, 3, 3, 2, 1, 1, 0, 0),
+        14: (5, 4, 3, 3, 3, 2, 1, 1, 0, 0),
+        15: (5, 4, 3, 3, 3, 2, 1, 1, 1, 0),
+        16: (5, 4, 3, 3, 3, 2, 1, 1, 1, 0),
+        17: (5, 4, 3, 3, 3, 2, 1, 1, 1, 1),
+        18: (5, 4, 3, 3, 3, 3, 1, 1, 1, 1),
+        19: (5, 4, 3, 3, 3, 3, 2, 1, 1, 1),
+        20: (5, 4, 3, 3, 3, 3, 2, 2, 1, 1),
+    }

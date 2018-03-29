@@ -52,7 +52,32 @@ def load_character_file(filename):
     return char_props
 
 
-def create_fdf(character, fdfname):
+def create_spells_pdf(character, basename, flatten=False):
+    class_level = (character.class_name + ' ' + str(character.level))
+    spell_level = lambda x : (x or '')
+    fields = (
+        ('Spellcasting Class 2', class_level),
+        ("SpellcastingAbility 2", character.spellcasting_ability.capitalize()),
+        ('SpellSaveDC  2', character.spell_save_dc),
+        ('SpellAtkBonus 2', mod_str(character.spell_attack_bonus)),
+        # Number of spell slots
+        ('SlotsTotal 19', spell_level(character.spell_slots(1))),
+        ('SlotsTotal 20', spell_level(character.spell_slots(2))),
+        ('SlotsTotal 21', spell_level(character.spell_slots(3))),
+        ('SlotsTotal 22', spell_level(character.spell_slots(4))),
+        ('SlotsTotal 23', spell_level(character.spell_slots(5))),
+        ('SlotsTotal 24', spell_level(character.spell_slots(6))),
+        ('SlotsTotal 25', spell_level(character.spell_slots(7))),
+        ('SlotsTotal 26', spell_level(character.spell_slots(8))),
+        ('SlotsTotal 27', spell_level(character.spell_slots(9))),
+    )
+    # Make the actual pdf
+    dirname = os.path.dirname(os.path.abspath(__file__))
+    src_pdf = os.path.join(dirname, 'blank-spell-sheet-default.pdf')
+    make_pdf(fields, src_pdf=src_pdf, basename=basename, flatten=flatten)
+
+
+def create_character_pdf(character, basename, flatten=False):
     # Prepare the list of fields
     class_level = (character.class_name + ' ' + str(character.level))
     fields = [
@@ -173,11 +198,29 @@ def create_fdf(character, fdfname):
     prof_text = "Proficiencies:\n" + text_box(character.proficiencies_text)
     prof_text += "\n\nLanguages:\n" + text_box(character.languages)
     fields.append(('ProficienciesLang', prof_text))
+    # Prepare the actual PDF
+    dirname = os.path.dirname(os.path.abspath(__file__))
+    src_pdf = os.path.join(dirname, 'blank-character-sheet-default.pdf')
+    return make_pdf(fields, src_pdf=src_pdf, basename=basename, flatten=flatten)
+
+
+def make_pdf(fields, src_pdf, basename, flatten=False):
     # Create the actual FDF file
+    fdfname = basename + '.fdf'
     fdf = forge_fdf("", fields, [], [], [])
     fdf_file = open(fdfname, "wb")
     fdf_file.write(fdf)
     fdf_file.close()
+        # Build the final flattened PDF documents
+    dest_pdf = basename + '.pdf'
+    popenargs = [
+        'pdftk', src_pdf, 'fill_form', fdfname, 'output', dest_pdf,
+    ]
+    if flatten:
+        popenargs.append('flatten')
+    subprocess.call(popenargs)
+    # Clean up temporary files
+    os.remove(fdfname)
 
 
 def make_sheet(character_file, flatten=False):
@@ -195,28 +238,30 @@ def make_sheet(character_file, flatten=False):
     CharClass = getattr(character, class_name)
     char = CharClass(**char_props)
     # Set the fields in the FDF
-    fdfname = os.path.splitext(character_file)[0] + '.fdf'
-    create_fdf(character=char, fdfname=fdfname)
-    # Build the final flattened PDF document
-    dirname = os.path.dirname(os.path.abspath(__file__))
-    src_pdf = os.path.join(dirname, 'blank-character-sheet-default.pdf')
-    dest_pdf = os.path.splitext(character_file)[0] + '.pdf'
-    popenargs = [
-        'pdftk', src_pdf, 'fill_form', fdfname, 'output', dest_pdf,
-    ]
-    if flatten:
-        popenargs.append('flatten')
+    char_base = os.path.splitext(character_file)[0] + '_char'
+    sheets = [char_base + '.pdf']
+    create_character_pdf(character=char, basename=char_base, flatten=flatten)
+    if char.is_spellcaster:
+        spell_base = os.path.splitext(character_file)[0] + '_spells'
+        create_spells_pdf(character=char, basename=spell_base, flatten=flatten)
+        sheets.append(spell_base + '.pdf')
+    # Combine sheets into final pdf
+    final_pdf = os.path.splitext(character_file)[0] + '.pdf'
+    popenargs = ('pdftk', *sheets, 'cat', 'output', final_pdf)
     subprocess.call(popenargs)
-    # Clean up temporary files
-    os.remove(fdfname)
+    # Remove temporary files
+    for sheet in sheets:
+        os.remove(sheet)
 
 
 def main():
     # Prepare an argument parser
     parser = argparse.ArgumentParser(
         description='Prepare Dungeons and Dragons character sheets as PDFs')
-    parser.add_argument('filename', type=str, nargs="?", help="Python file with character definition")
-    parser.add_argument('--flatten', '-F', action="store_true", help="Remove the PDF fields once processed.")
+    parser.add_argument('filename', type=str, nargs="?",
+                        help="Python file with character definition")
+    parser.add_argument('--flatten', '-F', action="store_true",
+                        help="Remove the PDF fields once processed.")
     args = parser.parse_args()
     # Process the requested files
     if args.filename is None:

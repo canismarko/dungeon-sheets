@@ -112,3 +112,16 @@ class TestCharacter(TestCase):
         self.assertEqual(char.proficiency_bonus, 6)
         char.level = 20
         self.assertEqual(char.proficiency_bonus, 6)
+    
+    def test_spell_slots(self):
+        char = Wizard()
+        # Wizard level 1
+        char.level = 1
+        self.assertEqual(char.spell_slots(spell_level=0), 3)
+        self.assertEqual(char.spell_slots(spell_level=1), 2)
+        self.assertEqual(char.spell_slots(spell_level=2), 0)
+        # Wizard level 2
+        char.level = 2
+        self.assertEqual(char.spell_slots(spell_level=0), 3)
+        self.assertEqual(char.spell_slots(spell_level=1), 3)
+        self.assertEqual(char.spell_slots(spell_level=2), 0)

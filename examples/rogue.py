@@ -1,6 +1,6 @@
 name = 'Mr. Stabby'
 character_class = 'rogue'
-player_name = 'Mark'
+player_name = 'Mike'
 background = "Criminal"
 race = "Lightfoot halfling"
 level = 3
