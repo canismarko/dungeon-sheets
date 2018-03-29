@@ -1,10 +1,12 @@
 """Tools for describing a player character."""
 
 import re
+import warnings
 
 from .stats import Ability, Skill, findattr
 from .dice import read_dice_str
-from . import weapons
+from . import weapons, race
+from .weapons import Weapon
 
 dice_re = re.compile('(\d+)d(\d+)')
 
@@ -20,9 +22,8 @@ class Character():
     background = ""
     level = 1
     alignment = "Neutral"
-    race = "Human"
+    race = None
     xp = 0
-    speed = 30 # In feet
     # Hit points
     hp_max = 10
     hit_dice_faces = 2
@@ -35,7 +36,7 @@ class Character():
     charisma = Ability()
     saving_throw_proficiencies = []
     skill_proficiencies = tuple()
-    weapon_proficienies = tuple()
+    weapon_proficiencies = tuple()
     proficiencies_extra = tuple()
     languages = ""
     # Skills
@@ -58,10 +59,12 @@ class Character():
     stealth = Skill(ability='dexterity')
     survival = Skill(ability='wisdom')
     # Characteristics
+    attacks_and_spellcasting = ""
     personality_traits = ""
     ideals = ""
     bonds = ""
     flaws = ""
+    features_and_traits = ""
     # Inventory
     cp = 0
     sp = 0
@@ -77,6 +80,16 @@ class Character():
         self.weapons = []
         self.set_attrs(**attrs)
     
+    def __str__(self):
+        return self.name
+    
+    def __repr__(self):
+        return f"<{self.class_name}: {self.name}>"
+    
+    @property
+    def speed(self):
+        return self.race.speed
+    
     def set_attrs(self, **attrs):
         """Bulk setting of attributes. Useful for loading a character from a
         dictionary."""
@@ -85,6 +98,9 @@ class Character():
                 # Treat weapons specially
                 for weap in val:
                     self.wield_weapon(weap)
+            elif attr == 'race':
+                MyRace = findattr(race, val)
+                self.race = MyRace()
             else:
                 if not hasattr(self, attr):
                     warnings.warn(f"Setting unknown character attribute {attr}",
@@ -92,10 +108,29 @@ class Character():
                 # Lookup general attributes
                 setattr(self, attr, val)
     
+    def is_proficient(self, weapon: Weapon):
+        """Is the character proficient with this item?
+        
+        Considers class proficiencies and race proficiencies.
+        
+        Parameters
+        ----------
+        weapon
+          The weapon to be tested for proficiency.
+        
+        """
+        all_proficiencies = tuple(self.weapon_proficiencies)
+        all_proficiencies += tuple(getattr(self.race, 'weapon_proficiencies', tuple()))
+        is_proficient = any((isinstance(weapon, W) for W in all_proficiencies))
+        return is_proficient
+    
     @property
     def proficiencies_text(self):
         final_text = ""
-        all_proficiencies = (self._proficiencies_text + self.proficiencies_extra)
+        all_proficiencies = self._proficiencies_text
+        if self.race is not None:
+            all_proficiencies += self.race.proficiencies_text
+        all_proficiencies += self.proficiencies_extra
         # Create a single string out of all the proficiencies
         for txt in all_proficiencies:
             if not final_text:
@@ -133,8 +168,7 @@ class Character():
         weapon_.attack_bonus += ability_mod
         weapon_.bonus_damage += ability_mod
         # Check for prifiency
-        is_proficient = (weapon_.__class__ in self.weapon_proficienies)
-        if is_proficient:
+        if self.is_proficient(weapon_):
             weapon_.attack_bonus += self.proficiency_bonus
         # Save it to the array
         self.weapons.append(weapon_)
@@ -172,7 +206,7 @@ class Barbarian(Character):
     saving_throw_proficiencies = ('strength', 'constitution')
     _proficiencies_text = ('light armor', 'medium armor', 'shields',
                            'simple weapons', 'martial weapons')
-    weapon_proficienies = (weapons.simple_weapons + weapons.martial_weapons)
+    weapon_proficiencies = (weapons.simple_weapons + weapons.martial_weapons)
 
 
 class Bard(Character):
@@ -182,7 +216,7 @@ class Bard(Character):
     _proficiencies_text = (
         'Light armor', 'simple weapons', 'hand crossbows', 'longswords',
         'rapiers', 'shortswords', 'three musical instruments of your choice')
-    weapon_proficienies = ((weapons.HandCrossbow, weapons.Longsword,
+    weapon_proficiencies = ((weapons.HandCrossbow, weapons.Longsword,
                             weapons.Rapier, weapons.Shortsword) +
                            weapons.simple_weapons)
 
@@ -193,7 +227,7 @@ class Cleric(Character):
     saving_throw_proficiencies = ('wisdom', 'charisma')
     _proficiencies_text = ('light armor', 'medium armor', 'shields',
                           'all simple weapons')
-    weapon_proficienies = weapons.simple_weapons
+    weapon_proficiencies = weapons.simple_weapons
 
 
 class Druid(Character):
@@ -205,7 +239,7 @@ class Druid(Character):
         'shields (druids will not wear armor or use shields made of metal)',
         'clubs', 'daggers', 'darts', 'javelins', 'maces', 'quarterstaffs',
         'scimitars', 'sickles', 'slings', 'spears')
-    weapon_proficienies = (weapons.Club, weapons.Dagger, weapons.Dart,
+    weapon_proficiencies = (weapons.Club, weapons.Dagger, weapons.Dart,
                            weapons.Javelin, weapons.Mace, weapons.Quarterstaff,
                            weapons.Scimitar, weapons.Sickle, weapons.Sling, weapons.Spear)
 
@@ -215,7 +249,7 @@ class Fighter(Character):
     hit_dice_faces = 10
     saving_throw_proficiencies = ('strength', 'constitution')
     _proficiencies_text = ('All armar', 'shields', 'simple weapons', 'martial weapons')
-    weapon_proficienies = weapons.simple_weapons + weapons.martial_weapons
+    weapon_proficiencies = weapons.simple_weapons + weapons.martial_weapons
 
 
 class Monk(Character):
@@ -225,7 +259,7 @@ class Monk(Character):
     _proficiencies_text = (
         'simple weapons', 'shortswords',
         "one type of artisan's tools or one musical instrument")
-    weapon_proficienies = (weapons.Shortsword,) + weapons.simple_weapons
+    weapon_proficiencies = (weapons.Shortsword,) + weapons.simple_weapons
 
 
 class Paladin(Character):
@@ -234,7 +268,7 @@ class Paladin(Character):
     saving_throw_proficiencies = ('wisdom', 'charisma')
     _proficiencies_text = ('All armor', 'shields', 'simple weapons',
                           'martial weapons')
-    weapon_proficienies = weapons.simple_weapons + weapons.martial_weapons
+    weapon_proficiencies = weapons.simple_weapons + weapons.martial_weapons
 
 
 class Ranger(Character):
@@ -243,7 +277,7 @@ class Ranger(Character):
     saving_throw_proficiencies = ('strength', 'dexterity')
     _proficiencies_text = ("light armor", "medium armor", "shields",
                            "simple weapons", "martial weapons")
-    weapon_proficienies = weapons.simple_weapons + weapons.martial_weapons
+    weapon_proficiencies = weapons.simple_weapons + weapons.martial_weapons
 
 
 class Rogue(Character):
@@ -253,7 +287,7 @@ class Rogue(Character):
     _proficiencies_text = (
         'light armor', 'simple weapons', 'hand crossbows', 'longswords',
         'rapiers', 'shortswords', "thieves' tools")
-    weapon_proficienies = (weapons.HandCrossbow, weapons.Longsword,
+    weapon_proficiencies = (weapons.HandCrossbow, weapons.Longsword,
                            weapons.Rapier, weapons.Shortsword) + weapons.simple_weapons
 
 
@@ -263,7 +297,7 @@ class Sorceror(Character):
     saving_throw_proficiencies = ('constitution', 'charisma')
     _proficiencies_text = ('daggers', 'darts', 'slings',
                            'quarterstaffs', 'light crossbows')
-    weapon_proficienies = (weapons.Dagger, weapons.Dart,
+    weapon_proficiencies = (weapons.Dagger, weapons.Dart,
                            weapons.Sling, weapons.Quarterstaff,
                            weapons.LightCrossbow)
 
@@ -273,7 +307,7 @@ class Warlock(Character):
     hit_dice_faces = 8
     saving_throw_proficiencies = ('wisdom', 'charisma')
     _proficiencies_text = ("light Armor", "simple weapons")
-    weapon_proficienies = weapons.simple_weapons
+    weapon_proficiencies = weapons.simple_weapons
 
 
 class Wizard(Character):
@@ -282,6 +316,6 @@ class Wizard(Character):
     saving_throw_proficiencies = ('intelligence', 'wisdom')
     _proficiencies_text = ('daggers', 'darts', 'slings',
                           'quarterstaffs', 'light crossbows')
-    weapon_proficienies = (weapons.Dagger, weapons.Dart,
+    weapon_proficiencies = (weapons.Dagger, weapons.Dart,
                            weapons.Sling, weapons.Quarterstaff,
                            weapons.LightCrossbow)

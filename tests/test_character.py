@@ -2,7 +2,8 @@
 
 from unittest import TestCase
 
-from dungeonsheets.character import Character
+from dungeonsheets import race
+from dungeonsheets.character import Character, Wizard
 from dungeonsheets.weapons import Weapon, Shortsword
 
 
@@ -27,11 +28,14 @@ class TestCharacter(TestCase):
         char.set_attrs(weapons=['shortsword'])
         self.assertEqual(len(char.weapons), 1)
         self.assertTrue(isinstance(char.weapons[0], Shortsword))
+        # Check that race gets set to an object
+        char.set_attrs(race='high elf')
+        self.assertIsInstance(char.race, race.HighElf)
     
     def test_wield_weapon(self):
         char = Character()
         char.strength = 14
-        char.weapon_proficienies = [Shortsword]
+        char.weapon_proficiencies = [Shortsword]
         # Add a weapon
         char.wield_weapon('shortsword')
         self.assertEqual(len(char.weapons), 1)
@@ -46,7 +50,33 @@ class TestCharacter(TestCase):
         char.wield_weapon('shortsword')
         sword = char.weapons[0]
         self.assertEqual(sword.attack_bonus, 5) # dex + prof
-
+        # Check if race weapon proficiencies are considered
+        char.weapons = []
+        char.weapon_proficiencies = []
+        char.race = race.HighElf()
+        char.wield_weapon('shortsword')
+        sword = char.weapons[0]
+        self.assertEqual(sword.attack_bonus, 5)
+    
+    def test_str(self):
+        char = Wizard(name="Inara")
+        self.assertEqual(str(char), 'Inara')
+        self.assertEqual(repr(char), '<Wizard: Inara>')
+    
+    def test_is_proficient(self):
+        char = Character()
+        char.weapon_proficiencies
+        sword = Shortsword()
+        # Check for not-proficient weapon
+        self.assertFalse(char.is_proficient(sword))
+        # Check if we're proficient in the weapon
+        char.weapon_proficiencies = [Shortsword]
+        self.assertTrue(char.is_proficient(sword))
+        # Now try it with a racial proficiency
+        char.weapon_proficiencies = tuple()
+        char.race = race.HighElf()
+        self.assertTrue(char.is_proficient(sword))
+    
     def test_proficiencies_text(self):
         char = Character()
         char._proficiencies_text = ('hello', 'world')
@@ -54,6 +84,11 @@ class TestCharacter(TestCase):
         # Check for extra proficiencies
         char.proficiencies_extra = ("it's", "me")
         self.assertEqual(char.proficiencies_text, "Hello, world, it's, me.")
+        # Check that race proficienceis are included
+        elf = race.HighElf()
+        char.race = elf
+        expected = "Hello, world, longswords, shortswords, shortbows, longbows, it's, me."
+        self.assertEqual(char.proficiencies_text, expected)
     
     def test_proficiency_bonus(self):
         char = Character()

@@ -305,6 +305,16 @@ class Shortsword(Weapon):
     ability = 'strength'
 
 
+class ThrowingHammer(Weapon):
+    name = "Throwing Hammer"
+    cost = "15 gp"
+    base_damage = '1d6'
+    damage_type = "bludgeoning"
+    weight = 4
+    properties = "Thrown (range 60/120)"
+    ability = "strength"
+
+
 class Trident(Weapon):
     name = "Trident"
     cost = "5 gp"
@@ -403,8 +413,10 @@ simple_ranged_weapons = (LightCrossbow, Dart, Shortbow, Sling)
 simple_weapons = simple_melee_weapons + simple_ranged_weapons
 
 martial_melee_weapons = (Battleaxe, Flail, Glaive, Greataxe,
-                         Greatsword, Halberd, Lance, Longsword, Maul, Morningstar, Pike,
-                         Rapier, Scimitar, Shortsword, Trident, WarPick, Warhammer, Whip)
+                         Greatsword, Halberd, Lance, Longsword, Maul,
+                         Morningstar, Pike, Rapier, Scimitar,
+                         Shortsword, ThrowingHammer, Trident, WarPick,
+                         Warhammer, Whip)
 martial_ranged_weapons = (Blowgun, HandCrossbow, HeavyCrossbow,
                           Longbow, Net)
 martial_weapons = martial_melee_weapons + martial_ranged_weapons

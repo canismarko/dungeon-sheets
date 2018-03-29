@@ -61,7 +61,7 @@ def create_fdf(character, fdfname):
         ('ClassLevel', class_level),
         ('Background', character.background),
         ('PlayerName', character.player_name),
-        ('Race ', character.race),
+        ('Race ', str(character.race)),
         ('Alignment', character.alignment),
         ('XP', character.xp),
         # Abilities
@@ -111,11 +111,13 @@ def create_fdf(character, fdfname):
         # Hit points
         ('HDTotal', character.hit_dice),
         ('HPMax', character.hp_max),
-        # Personality traits
+        # Personality traits and other features
         ('PersonalityTraits ', text_box(character.personality_traits)),
         ('Ideals', text_box(character.ideals)),
         ('Bonds', text_box(character.bonds)),
         ('Flaws', text_box(character.flaws)),
+        ('AttacksSpellcasting', text_box(character.attacks_and_spellcasting)),
+        ('Features and Traits', text_box(character.features_and_traits)),
         # Inventory
         ('CP', character.cp),
         ('SP', character.sp),
