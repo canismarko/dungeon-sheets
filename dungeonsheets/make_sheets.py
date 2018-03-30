@@ -55,7 +55,7 @@ def load_character_file(filename):
 def create_spells_pdf(character, basename, flatten=False):
     class_level = (character.class_name + ' ' + str(character.level))
     spell_level = lambda x : (x or '')
-    fields = (
+    fields = [
         ('Spellcasting Class 2', class_level),
         ("SpellcastingAbility 2", character.spellcasting_ability.capitalize()),
         ('SpellSaveDC  2', character.spell_save_dc),
@@ -70,7 +70,32 @@ def create_spells_pdf(character, basename, flatten=False):
         ('SlotsTotal 25', spell_level(character.spell_slots(7))),
         ('SlotsTotal 26', spell_level(character.spell_slots(8))),
         ('SlotsTotal 27', spell_level(character.spell_slots(9))),
-    )
+    ]
+    # Cantrips
+    cantrip_fields = (f'Spells 10{i}' for i in (14, 16, 17, 18, 19, 20, 21, 22))
+    cantrips = (spl for spl in character.spells if spl.level == 0)
+    for spell, field_name in zip(cantrips, cantrip_fields):
+        fields.append((field_name, spell.name))
+    # Spells for each level
+    field_numbers = {
+        1: (1015, 1023, 1024, 1025, 1026, 1027, 1028, 1029, 1030, 1031, 1032, 1033, ),
+        2: (1046, 1034, 1035, 1036, 1037, 1038, 1039, 1040, 1041, 1042, 1043, 1044, 1045, ),
+        3: (1048, 1047, 1049, 1050, 1051, 1052, 1053, 1054, 1055, 1056, 1057, 1058, 1059, ),
+        4: (1061, 1060, 1062, 1063, 1064, 1065, 1066, 1067, 1068, 1069, 1070, 1071, 1072, ),
+        5: (1074, 1073, 1075, 1076, 1077, 1078, 1079, 1080, 1081, ),
+        6: (1083, 1082, 1084, 1085, 1086, 1087, 1088, 1089, 1090, ),
+        7: (1092, 1091, 1093, 1094, 1095, 1096, 1097, 1098, 1099, ),
+        8: (10101, 10100, 10102, 10103, 10104, 10105, 10106, ),
+        9: (10108, 10107, 10109, 101010, 101011, 101012, 101013),
+    }
+    for level in field_numbers.keys():
+        spells = tuple(spl for spl in character.spells if spl.level == level)
+        field_names = tuple(f'Spells {i}' for i in field_numbers[level])
+        for spell, field in zip(spells, field_names):
+            fields.append((field, spell.name))
+        # # Uncomment to post field names instead:
+        # for field in field_names:
+        #     fields.append((field, field))
     # Make the actual pdf
     dirname = os.path.dirname(os.path.abspath(__file__))
     src_pdf = os.path.join(dirname, 'blank-spell-sheet-default.pdf')

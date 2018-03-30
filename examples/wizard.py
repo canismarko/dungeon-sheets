@@ -40,6 +40,15 @@ equipment = (
     sheets of parchment, small knife, tome of historical lore, holy
     symbol, prayer book, set of common clothes, pouch.""")
 
+# List of known spells
+spells = ('blindness deafness', 'burning hands', 'detect magic',
+          'false life', 'mage armor', 'mage hand', 'magic missile',
+          'prestidigitation', 'ray of frost', 'ray of sickness', 'shield',
+          'shocking grasp', 'sleep')
+# Which spells have been prepared (not including cantrips)
+spells_prepared = ('blindness deafness', 'false life', 'mage armor',
+                  'ray of sickness', 'shield', 'sleep')
+
 # Backstory
 personality_traits = """I use polysyllabic words that convey the impression of
 erudition. Also, I’ve spent so long in the temple that I have little

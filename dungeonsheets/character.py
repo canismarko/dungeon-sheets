@@ -5,7 +5,7 @@ import warnings
 
 from .stats import Ability, Skill, findattr
 from .dice import read_dice_str
-from . import weapons, race
+from . import weapons, race, spells
 from .weapons import Weapon
 
 dice_re = re.compile('(\d+)d(\d+)')
@@ -76,6 +76,8 @@ class Character():
     _proficiencies_text = tuple()
     # Magic
     spellcasting_ability = None
+    spells = tuple()
+    spells_prepared = tuple()
     
     def __init__(self, **attrs):
         """Takes a bunch of attrs and passes them to ``set_attrs``"""
@@ -103,6 +105,13 @@ class Character():
             elif attr == 'race':
                 MyRace = findattr(race, val)
                 self.race = MyRace()
+            elif attr == 'spells':
+                # Create a list of actual spell objects
+                self.spells = tuple(findattr(spells, spell_name)() for spell_name in val)
+            elif attr == 'spells_prepared':
+                # Create a list of actual spell objects
+                self.spells_prepared = tuple(findattr(spells, spell_name)
+                                             for spell_name in val)
             else:
                 if not hasattr(self, attr):
                     warnings.warn(f"Setting unknown character attribute {attr}",
