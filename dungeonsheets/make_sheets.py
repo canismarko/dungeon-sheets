@@ -88,14 +88,29 @@ def create_spells_pdf(character, basename, flatten=False):
         8: (10101, 10100, 10102, 10103, 10104, 10105, 10106, ),
         9: (10108, 10107, 10109, 101010, 101011, 101012, 101013),
     }
+    prep_numbers = {
+        1: (251, 309, 3010, 3011, 3012, 3013, 3014, 3015, 3016, 3017, 3018, 3019, ),
+        2: (313, 310, 3020, 3021, 3022, 3023, 3024, 3025, 3026, 3027, 3028, 3029, 3030, ),
+        3: (315, 314, 3031, 3032, 3033, 3034, 3035, 3036, 3037, 3038, 3039, 3040, 3041, ),
+        4: (317, 316, 3042, 3043, 3044, 3045, 3046, 3047, 3048, 3049, 3050, 3051, 3052, ),
+        5: (319, 318, 3053, 3054, 3055, 3056, 3057, 3058, 3059, ),
+        6: (321, 320, 3060, 3061, 3062, 3063, 3064, 3065, 3066, ),
+        7: (323, 322, 3067, 3068, 3069, 3070, 3071, 3072, 3073, ),
+        8: (325, 324, 3074, 3075, 3076, 3077, 3078, ),
+        9: (327, 326, 3079, 3080, 3081, 3082, 3083, ),
+    }
     for level in field_numbers.keys():
         spells = tuple(spl for spl in character.spells if spl.level == level)
         field_names = tuple(f'Spells {i}' for i in field_numbers[level])
-        for spell, field in zip(spells, field_names):
+        prep_names = tuple(f'Check Box {i}' for i in prep_numbers[level])
+        for spell, field, chk_field in zip(spells, field_names, prep_names):
             fields.append((field, spell.name))
+            is_prepared = any([isinstance(spell, Spl) for Spl in character.spells_prepared])
+            fields.append((chk_field, is_prepared))
         # # Uncomment to post field names instead:
         # for field in field_names:
         #     fields.append((field, field))
+    fields.append(('Check Box 3083', True))
     # Make the actual pdf
     dirname = os.path.dirname(os.path.abspath(__file__))
     src_pdf = os.path.join(dirname, 'blank-spell-sheet-default.pdf')

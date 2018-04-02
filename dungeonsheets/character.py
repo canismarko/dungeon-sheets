@@ -107,7 +107,14 @@ class Character():
                 self.race = MyRace()
             elif attr == 'spells':
                 # Create a list of actual spell objects
-                self.spells = tuple(findattr(spells, spell_name)() for spell_name in val)
+                _spells = []
+                for spell_name in val:
+                    try:
+                        _spells.append(findattr(spells, spell_name)())
+                    except AttributeError:
+                        msg = f'Spell "{spell_name}" not defined. Please add it to ``spells.py``'
+                        raise AttributeError(msg)
+                self.spells = tuple(_spells)
             elif attr == 'spells_prepared':
                 # Create a list of actual spell objects
                 self.spells_prepared = tuple(findattr(spells, spell_name)

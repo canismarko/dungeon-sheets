@@ -1,6 +1,7 @@
 class Spell():
     """A magical spell castable by a player character."""
     level = 0
+    name = "Unknown spell"
     casting_time = "1 action"
     casting_range = "60 ft"
     components = ("V", "S")
@@ -17,7 +18,7 @@ class Spell():
 
 class AcidSplash(Spell):
     """You hurl a bubble of acid. Choose one creature within range, or
-    choose two crealures within range that are within 5 feet of each
+    choose two creatures within range that are within 5 feet of each
     other. A target must succeed on a Dexterity saving throw or take
     1d6 acid damage.
     
@@ -26,8 +27,9 @@ class AcidSplash(Spell):
     
     """
     name = "Acid Splash"
-    classes = ('Sorceror', 'Wizard', )
+    level = 0
     magic_school = "Conjuration"
+    classes = ('Sorceror', 'Wizard', )
 
 
 class Aid(Spell):
@@ -125,6 +127,7 @@ class AnimalFriendship(Spell):
     slot level above 1st.
     
     """
+    name = "Animal Friendship"
     level = 1
     casting_time = "1 action"
     casting_range = "30 ft"
@@ -564,6 +567,7 @@ class ArmsOfHadar(Spell):
     level above 1st.
     
     """
+    name = "Arms of Hadar"
     level = 1
     casting_time = "1 action"
     casting_range = "Self (10-foot radius)"
@@ -789,13 +793,14 @@ class BeaconOfHope(Spell):
     healing.
     
     """
+    name = "Beacon of Hope"
     level = 3
     casting_time = "1 action"
+    casting_range = "30 feet"
     components = ('V', 'S')
-    materials = ""
     duration = "Concentration, up to 1 minute"
     magic_school = "Abjuration"
-    classes = ()
+    classes = ('Cleric', )
 
 
 class BladeBarrier(Spell):
@@ -828,6 +833,7 @@ class BladeWard(Spell):
     attacks.
     
     """
+    name = "Blade Ward"
     level = 0
     casting_time = "1 action"
     components = ('V', 'S')
@@ -836,9 +842,7 @@ class BladeWard(Spell):
     classes = ('Bard', 'Sorceror', 'Warlock', 'Wizard')
 
 
-
 class Bless(Spell):
-
     """You bless up to three creatures of your choice within
     range. Whenever a target makes an attack roll or a saving throw
     before the spell ends, the target can roll a d4 and add the number
@@ -982,6 +986,7 @@ class ChillTouch(Spell):
     (2d8), 11th level (3d8), and 17th level (4d8).
     
     """
+    name = "Chill Touch"
     level = 0
     casting_time = "1 action"
     casting_range = "120 feet"
@@ -1137,6 +1142,7 @@ class DancingLights(Spell):
     the spell’s range.
     
     """
+    name = "Dancing Lights"
     level = 0
     casting_time = "1 action"
     casting_range = "120 feet"
@@ -1524,7 +1530,32 @@ class Earthquake(Spell):
     classes = ()
 
 
+class ElementalWeapon(Spell):
+    """A nonmagical weapon you touch becomes a magic weapon. Choose one of
+    the following damage types: acid, cold, fire, lightning, or
+    thunder. For the duration, the weapon has a +1 bonus to attack
+    rolls and deals an extra 1d4 damage of the chosen type when it
+    hits.
+    
+    **At Higher Levels** When you cast this spell using a spell slot
+    of 5th or 6th level, the bonus to attack rolls increases to +2 and
+    the extra damage increases to 2d4. When you use a spell slot of
+    7th level or higher, the bonus increases to +3 and the extra
+    damage increases to 3d4.
+    
+    """
+    name = 'Elemental Weapon'
+    level = 3
+    casting_time = "1 action"
+    casting_range = "Touch"
+    components = ('V', 'S')
+    duration = "Concentration, up to 1 hour"
+    magic_school = "Transmutation"
+    classes = ('Paladin', )
+
+
 class Etherealness(Spell):
+
     """You step into the border regions of the Ethereal Plane, in the area
     where it overlaps with your current plane. You remain in the
     Border Ethereal for the duration or until you use your action to
@@ -1722,26 +1753,33 @@ class FlamingSphere(Spell):
     your choice within range and lasts for the duration. Any creature
     that ends its turn within 5 feet of the sphere must make a
     Dexterity saving throw. The creature takes 2d6 fire damage on a
-    failed save, or half as much damage on a successful one. As a
-    bonus action, you can move the sphere up to 30 feet. If you ram
-    the sphere into a creature, that creature must make the saving
+    failed save, or half as much damage on a successful one.
+    
+    As a bonus action, you can move the sphere up to 30 feet. If you
+    ram the sphere into a creature, that creature must make the saving
     throw against the sphere’s damage, and the sphere stops moving
-    this turn. When you move the sphere, you can direct it over
-    barriers up to 5 feet tall and jump it across pits up to 10 feet
-    wide. The sphere ignites flammable objects not being worn or
-    carried, and it sheds bright light in a 20-foot radius and dim
-    light for an additional 20 feet. At Higher Levels. When you cast
-    this spell using a spell slot of 3rd level or higher, the damage
-    increases by 1d6 for each slot level above 2nd.
+    this turn.
+    
+    When you move the sphere, you can direct it over barriers up to 5
+    feet tall and jump it across pits up to 10 feet wide. The sphere
+    ignites flammable objects not being worn or carried, and it sheds
+    bright light in a 20-foot radius and dim light for an additional
+    20 feet.
+    
+    **At Higher Levels** When you cast this spell using a spell slot
+    of 3rd level or higher, the damage increases by 1d6 for each slot
+    level above 2nd.
     
     """
+    name = "Flaming Sphere"
     level = 2
     casting_time = "1 action"
+    casting_range = "60 feet"
     components = ('V', 'S', 'M')
     materials = "a bit of tallow, a pinch of brimstone, and a dusting of powdered iron"
     duration = "Concentration, up to 1 minute"
     magic_school = "Conjuration"
-    classes = ()
+    classes = ('Druid', 'Wizard', )
 
 
 class Fly(Spell):
@@ -1760,6 +1798,46 @@ class Fly(Spell):
     duration = "Concentration, up to 10 minutes"
     magic_school = "Transmutation"
     classes = ()
+
+
+class FindSteed(Spell):
+    """You summon a spirit that assumes the form of an unusually
+    intelligent, strong and loyal steed, creating a long lasting bond
+    with it. Appearing in an unoccupied space within range, the steed
+    takes on a form that you choose: a warhorse, a pony, a camel, an
+    elk, or a mastiff. (Your DM might allow other animals to be
+    summoned as steeds.) The steed has the statistics of the chosen
+    form, though it is a celestial, fey or fiend (your choice) instead
+    of its normal type. Additionally if your steed has an intelligence
+    of 5 or less, its intelligence becomes 6, and it gains the ability
+    to understand one language of your choice that you speak.
+    
+    The steed serves as a mount, both in combat and out, and you have
+    an instinctive bond with it that allows you to fight as a seamless
+    unit. While mounted on your steed, you can make any spell you cast
+    that targets only you also target your steed.
+    
+    When the steed drops to 0 hit points, it disappears, leaving
+    behind no physical form. You can dismiss your steed at any time as
+    an action, causing it to disappear. In either case, casting this
+    spell again summons the same steed, restored to its hit point
+    maximum.
+    
+    While the steed is within 1 mile of you, you can communicate with
+    it telepathically.
+    
+    You cannot have more than one steed bonded by this spell at a
+    time. As an action, you can release the steed from its bond at any
+    time, causing it to disappear.
+    
+    """
+    name = "Find Steed"
+    level = 2
+    casting_time = "10 minutes"
+    components = ('V', 'S')
+    duration = "Instantaneous"
+    magic_school = "Conjuration"
+    classes = ('Paladin', )
 
 
 class Foresight(Spell):
@@ -1916,13 +1994,14 @@ class Guidance(Spell):
     the ability check. The spell then ends.
     
     """
+    name = "Guidance"
     level = 0
     casting_time = "1 action"
     components = ('V', 'S')
     materials = ""
     duration = "Concentration, up to 1 minute"
     magic_school = "Divination"
-    classes = ()
+    classes = ('Cleric', 'Druid')
 
 
 class GuidingBolt(Spell):

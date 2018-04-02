@@ -54,7 +54,7 @@ personality_traits = """I use polysyllabic words that convey the impression of
 erudition. Also, I’ve spent so long in the temple that I have little
 experience dealing with people on a casual basis."""
 
-ideals = """Knowledge. The path to power and self- improvement is through
+ideals = """Knowledge. The path to power and self-improvement is through
 knowledge."""
 
 bonds = """The tome I carry with me is the record of my life’s work so far,
