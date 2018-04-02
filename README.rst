@@ -11,6 +11,16 @@ Installation
 
     $ pip install dungeonsheets
 
+.. note::
+
+   Dungeon sheets requires **at least python 3.6**. This is mostly due
+   to the liberal use of f-strings_. If you want to use it with
+   previous versions of python 3, you'll probably have to replace all
+   the f-strings with the older ``.format()`` method or string
+   interpolation.
+
+.. _f-strings: https://www.python.org/dev/peps/pep-0498/
+
 Usage
 =====
 
@@ -18,7 +28,7 @@ Each character is described by a python file, which gives many
 attributes associated with the character. See examples_ for more
 information about the character descriptions.
 
-.. _examples: 
+.. _examples: https://github.com/canismarko/dungeon-sheets/tree/master/examples
 
 The PDF's can then be generated using the ``makesheets`` command.
 
