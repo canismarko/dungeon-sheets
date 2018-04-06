@@ -16,7 +16,31 @@ class Spell():
         return f'<{self.name}>'
 
 
+class AcidArrow(Spell):
+    """A shimmering green arrow streaks toward a target within range and
+    bursts in a spray of acid. Make a ranged spell attack against the
+    target. On a hit, the target takes 4d4 acid damage immediately and
+    2d4 acid damage at the end of its next turn. On a miss, the arrow
+    splashes the target with acid for half as much of the initial
+    damage and no damage at the end of its next turn.
+    
+    At Higher Levels. When you cast this spell using a spell slot of
+    3rd level or higher, the damage (both initial and later) increases
+    by 1d4 for each slot level above 2nd.
+    
+    """
+    level = 2
+    name = "Acid Arrow"
+    casting_time = "1 action"
+    casting_range = "90 ft"
+    components = ("V", "S", "M")
+    duration = "instantaneous"
+    magic_school = "Evocation"
+    classes = ('Wizard',)
+
+
 class AcidSplash(Spell):
+
     """You hurl a bubble of acid. Choose one creature within range, or
     choose two creatures within range that are within 5 feet of each
     other. A target must succeed on a Dexterity saving throw or take
@@ -42,6 +66,7 @@ class Aid(Spell):
     additional 5 for each slot level above 2nd.
     
     """
+    name = "Aid"
     level = 2
     casting_time = "1 action"
     casting_range = "30 ft"
@@ -65,6 +90,7 @@ class Alarm(Spell):
     10 seconds within 60 feet.
     
     """
+    name = "Alarm"
     level = 1
     casting_time = "1 minute"
     casting_range = "30 ft"
@@ -105,6 +131,7 @@ class AlterSelf(Spell):
     a +1 bonus to the attack and damage rolls you make using it.
     
     """
+    name = "Alter Self"
     level = 2
     casting_time = "1 action"
     casting_range = "self"
@@ -162,6 +189,7 @@ class AnimalMessenger(Spell):
     for each slot level above 2nd.
     
     """
+    name = "Animal Messenger"
     level = 2
     casting_time = "1 action"
     casting_range = "30 ft"
@@ -197,6 +225,7 @@ class AnimalShapes(Spell):
     activate, wield, or otherwise benefit from any of its equipment.
     
     """
+    name = "Animal Shapes"
     level = 8
     casting_time = "1 action"
     casting_range = "30 ft"
@@ -238,6 +267,7 @@ class AnimateDead(Spell):
     the creatures must come from a different corpse or pile of bones.
     
     """
+    name = "Animate Dead"
     level = 3
     casting_time = "1 minute"
     casting_range = "10 ft"
@@ -301,6 +331,7 @@ class AnimateObjects(Spell):
     each slot level above 5th.
     
     """
+    name = "Animate Objects"
     level = 5
     casting_time = "1 action"
     casting_range = "120 ft"
@@ -321,6 +352,7 @@ class AntilifeShell(Spell):
     pass through the barrier, the spell ends.
     
     """
+    name = "Antilife Shell"
     level = 5
     casting_time = "1 action"
     casting_range = "Self (10-foot radius)"
@@ -386,6 +418,7 @@ class AntimagicField(Spell):
     different antimagic field spells don’t nullify each other.
     
     """
+    name = "Antimagic Field"
     level = 8
     casting_time = "1 action"
     casting_range = "10-foot-radius sphere"
@@ -440,6 +473,7 @@ class AntipathySympathy(Spell):
     which time it can be affected again.
     
     """
+    name = "Antipathy/Sympath"
     level = 8
     casting_time = "1 hour"
     casting_range = "60 ft"
@@ -465,6 +499,7 @@ class ArcaneEye(Spell):
     opening as small as 1 inch in diameter.
     
     """
+    name = "ArcaneEye"
     level = 4
     casting_time = "1 action"
     casting_range = "30 ft"
@@ -496,6 +531,7 @@ class ArcaneGate(Spell):
     active side faces in a different direction.
     
     """
+    name = "Arcane Gate"
     level = 6
     casting_time = "1 action"
     casting_range = "500 ft"
@@ -503,6 +539,67 @@ class ArcaneGate(Spell):
     duration = "Concentration, up to 10 minutes"
     magic_school = "Conjuration"
     classes = ('Sorceror', 'Warlock', 'Wizard')
+
+
+class ArcaneHand(Spell):
+    """You create a Large hand of shimmering, translucent force in an
+    unoccupied space that you can see within range. The hand lasts for
+    the spell's duration, and it moves at your command, mimicking the
+    movements of your own hand.
+    
+    The hand is an object that has AC 20 and hit points equal to your
+    hit point maximum. If it drops to 0 hit points, the spell ends. It
+    has a Strength of 26 (+8) and a Dexterity of 10 (+0). The hand
+    doesn't fill its space.  When you cast the spell and as a bonus
+    action on your subsequent turns, you can move the hand up to 60
+    feet and then cause one of the following effects with it.
+    
+    **Clenched Fist** The hand strikes one creature or object within 5
+    feet of it. Make a melee spell attack for the hand using your game
+    statistics. On a hit, the target takes 4d8 force damage.
+    
+    **Forceful Hand** The hand attempts to push a creature within 5
+    feet of it in a direction you choose. Make a check with the hand's
+    Strength contested by the Strength (Athletics) check of the
+    target. If the target is Medium or smaller, you have advantage on
+    the check. If you succeed, the hand pushes the target up to 5 feet
+    plus a number of feet equal to five times your spellcasting
+    ability modifier. The hand moves with the target to remain within
+    5 feet of it.
+    
+    **Grasping Hand** The hand attempts to grapple a Huge or smaller
+    creature within 5 feet of it. You use the hand's Strength score to
+    resolve the grapple. If the target is Medium or smaller, you have
+    advantage on the check. While the hand is grappling the target,
+    you can use a bonus action to have the hand crush it. When you do
+    so, the target takes bludgeoning damage equal to 2d6 + your
+    spellcasting ability modifier.
+    
+    **Interposing Hand** The hand interposes itself between you and a
+    creature you choose until you give the hand a different
+    command. The hand moves to stay between you and the target,
+    providing you with half cover against the target. The target can't
+    move through the hand's space if its Strength score is less than
+    or equal to the hand's Strength score. If its Strength score is
+    higher than the hand's Strength score, the target can move toward
+    you through the hand's space, but that space is difficult terrain
+    for the target.
+    
+    **At Higher Levels** When you cast this spell using a spell slot
+    of 6th level or higher, the damage from the clenched fist option
+    increases by 2d8 and the damage from the grasping hand increases
+    by 2d6 for each slot level above 5th.
+    
+    """
+    level = 5
+    name = "Arcane Hand"
+    casting_time = "1 action"
+    casting_range = "120 ft"
+    components = ("V", "S", "M")
+    materials = "an eggshell and a snakeskin glove"
+    duration = "1 minute"
+    magic_school = "Evocation"
+    classes = ('Wizard', )
 
 
 class ArcaneLock(Spell):
@@ -520,6 +617,7 @@ class ArcaneLock(Spell):
     increases by 10.
     
     """
+    name = "Arcane Lock"
     level = 2
     casting_time = "1 action"
     casting_range = "Touch"
@@ -528,6 +626,26 @@ class ArcaneLock(Spell):
     duration = "Until dispelled"
     magic_school = "Abjuration"
     classes = ('Wizard',)
+
+
+class ArcanistsMagicAura(Spell):
+    """You place an illusion on a creature or an object you touch so that divination spells reveal false information about it. The target can be a willing creature or an object that isn't being carried or worn by another creature. 
+When you cast the spell, choose one or both of the following effects. The effect lasts for the duration. If you cast this spell on the same creature or object every day for 30 days, placing the same effect on it each time, the illusion lasts until it is dispelled.
+
+False Aura. You change the way the target appears to spells and magical effects, such as detect magic, that detect magical auras. You can make a nonmagical object appear magical, a magical object appear nonmagical, or change the object's magical aura so that it appears to belong to a specific school of magic that you choose. When you use this effect on an object, you can make the false magic apparent to any creature that handles the item.
+
+Mask. You change the way the target appears to spells and magical effects that detect creature types, such as a paladin's Divine Sense or the trigger of a symbol spell. You choose a creature type and other spells and magical effects treat the target as if it were a creature of that type or of that alignment.
+    
+    """
+    level = 2
+    name = "Arcanist's Magic Aura"
+    casting_time = "1 action"
+    casting_range = "Touch"
+    components = ("V", "S", "M")
+    materials = "a small square of silk"
+    duration = "24 hours"
+    magic_school = "Illusion"
+    classes = ('Wizard', )
 
 
 class ArmorOfAgathys(Spell):
@@ -542,6 +660,7 @@ class ArmorOfAgathys(Spell):
     damage increase by 5 for each slot level above 1st.
     
     """
+    name = "Armor of Agathys"
     level = 1
     casting_time = "1 action"
     casting_range = "Self"
@@ -620,6 +739,7 @@ class AstralProjection(Spell):
     their bodies, usually by dropping to 0 hit points.
     
     """
+    name = "Astral Projection"
     level = 9
     casting_time = "1 hour"
     casting_range = "10 ft"
@@ -650,6 +770,7 @@ class Augury(Spell):
     that you get a random reading. The DM makes this roll in secret.
     
     """
+    name = "Augury"
     level = 2
     casting_time = "1 minute"
     casting_range = "Self"
@@ -669,6 +790,7 @@ class AuraOfLife(Spell):
     point when it starts its turn in the aura with 0 hit points.
     
     """
+    name = "Aura of Life"
     level = 4
     casting_time = "1 action"
     casting_range = "Self (30 foot radius)"
@@ -687,6 +809,7 @@ class AuraOfPurity(Spell):
     paralyzed, poisoned, and stunned.
     
     """
+    name = "Aura of Purity"
     level = 4
     casting_time = "1 action"
     casting_range = "Self (30-foot radius)"
@@ -703,6 +826,7 @@ class AuraOfVitality(Spell):
     (including you) to regain 2d6 hit points.
     
     """
+    name = "Aura of Vitality"
     level = 3
     casting_time = "1 action"
     casting_range = "Self (30-foot radius)"
@@ -730,6 +854,7 @@ class Awaken(Spell):
     friendly to you, based on how you treated it while it was charmed.
     
     """
+    name = "Awaken"
     level = 5
     casting_time = "8 hours"
     casting_range = "Touch"
@@ -752,6 +877,7 @@ class Bane(Spell):
     each slot level above 1st.
     
     """
+    name = "Bane"
     level = 1
     casting_time = "1 action"
     casting_range = "30 feet"
@@ -776,6 +902,7 @@ class BanishingSmite(Spell):
     nearest unoccupied space if that space is occupied.
     
     """
+    name = "Banishing Smite"
     level = 5
     casting_time = "1 bonus action"
     casting_range = "Self"
@@ -783,6 +910,57 @@ class BanishingSmite(Spell):
     duration = "Concentration, up to 1 minute"
     magic_school = "Abjuration"
     classes = ('Paladin', )
+
+
+class Banishment(Spell):
+    """You attempt to send one creature that you can see within range to
+    another plane of existence. The target must succeed on a Charisma
+    saving throw or be banished.
+    
+    If the target is native to the plane of existence you're on, you
+    banish the target to a harmless demiplane. While there, the target
+    is incapacitated. The target remains there until the spell ends,
+    at which point the target reappears in the space it left or in the
+    nearest unoccupied space if that space is occupied.
+    
+    If the target is native to a different plane of existence than the
+    one you're on, the target is banished with a faint popping noise,
+    returning to its home plane. If the spell ends before 1 minute has
+    passed, the target reappears in the space it left or in the
+    nearest unoccupied space if that space is occupied. Otherwise, the
+    target doesn't return.
+    
+    At Higher Levels. When you cast this spell using a spell slot of
+    5th level or higher, you can target one additional creature for
+    each slot level above 4th.
+    
+    """
+    level = 4
+    name = "Banishment"
+    casting_time = "1 action"
+    casting_range = "60 ft"
+    components = ("V", "S", "M")
+    materials = "an item distasteful to the target"
+    duration = "1 minutes"
+    magic_school = "Abjuration"
+    classes = ('Cleric', 'Paladin', 'Sorceror', 'Warlock', 'Wizard')
+
+
+class Barkskin(Spell):
+    """You touch a willing creature. Until the spell ends, the target's
+    skin has a rough, bark-like appearance, and the target's AC can't
+    be less than 16, regardless of what kind of armor it is wearing.
+    
+    """
+    level = 2
+    name = "Barkskin"
+    casting_time = "1 action"
+    casting_range = "Touch"
+    components = ("V", "S", "M")
+    materials = "a handful of oak bark"
+    duration = "1 hour"
+    magic_school = "Transmutation"
+    classes = ('Druid', 'Ranger')
 
 
 class BeaconOfHope(Spell):
@@ -803,6 +981,75 @@ class BeaconOfHope(Spell):
     classes = ('Cleric', )
 
 
+class BestowCurse(Spell):
+    """You touch a creature, and that creature must succeed on a Wisdom
+    saving throw or become cursed for the duration of the spell. When
+    you cast this spell, choose the nature of the curse from the
+    following options:
+    
+    - Choose one ability score. While cursed, the target has
+      disadvantage on ability checks and saving throws made with that
+      ability score.
+    - While cursed, the target has disadvantage on attack rolls against
+      you.
+    - While cursed, the target must make a Wisdom saving throw at the
+      start of each of its turns. If it fails, it wastes its action
+      that turn doing nothing.
+    -While the target is cursed, your attacks and spells deal an extra
+     1d8 necrotic damage to the target.
+    
+    A remove curse spell ends this effect. At the GM's option, you may
+    choose an alternative curse effect, but it should be no more
+    powerful than those described above. The GM has final say on such
+    a curse's effect.
+    
+    **At Higher Levels** If you cast this spell using a spell slot of
+    4th level or higher, the duration is concentration, up to 10
+    minutes. If you use a spell slot of 5th level or higher, the
+    duration is 8 hours. If you use a spell slot of 7th level or
+    higher, the duration is 24 hours. If you use a 9th level spell
+    slot, the spell lasts until it is dispelled. Using a spell slot of
+    5th level or higher grants a duration that doesn't require
+    concentration.
+    
+    """
+    level = 3
+    name = "Bestow Curse"
+    casting_time = "1 action"
+    casting_range = "Touch"
+    components = ("V", "S")
+    duration = "1 minute"
+    magic_school = "Necromancy"
+    classes = ('Bard', 'Cleric', 'Wizard')
+
+
+class BlackTentacles(Spell):
+    """Squirming, ebony tentacles fill a 20-foot square on ground that you
+    can see within range. For the duration, these tentacles turn the
+    ground in the area into difficult terrain.
+    
+    When a creature enters the affected area for the first time on a
+    turn or starts its turn there, the creature must succeed on a
+    Dexterity saving throw or take 3d6 bludgeoning damage and be
+    restrained by the tentacles until the spell ends. A creature that
+    starts its turn in the area and is already restrained by the
+    tentacles takes 3d6 bludgeoning damage.
+    
+    A creature restrained by the tentacles can use its action to make
+    a Strength or Dexterity check (its choice) against your spell save
+    DC. On a success, it frees itself.
+    
+    """
+    level = 4
+    name = "Black Tentacles"
+    casting_time = "1 action"
+    casting_range = "90 ft"
+    components = ("V", "S", "M")
+    duration = "1 minute"
+    magic_school = "Conjuration"
+    classes = ('Wizard', )
+
+
 class BladeBarrier(Spell):
     """You create a vertical wall of whirling, razor-sharp blades made of
     magical energy. The wall appears within range and lasts for the
@@ -817,6 +1064,7 @@ class BladeBarrier(Spell):
     takes half as much damage.
     
     """
+    name = "Blade Barrier"
     level = 6
     casting_time = "1 action"
     components = ('V', 'S')
@@ -852,8 +1100,10 @@ class Bless(Spell):
     1st.
     
     """
+    name = "Bless"
     level = 1
     casting_time = "1 action"
+    casting_range = "30 feet"
     components = ('V', 'S', 'M')
     materials = "a sprinkling of holy water"
     duration = "Concentration, up to 1 minute"
@@ -861,8 +1111,37 @@ class Bless(Spell):
     classes = ()
 
 
-class BlindnessDeafness(Spell):
+class Blight(Spell):
+    """Necromantic energy washes over a creature of your choice that you
+    can see within range, draining moisture and vitality from it. The
+    target must make a Constitution saving throw. The target takes 8d8
+    necrotic damage on a failed save, or half as much damage on a
+    successful one. This spell has no effect on undead or constructs.
+    
+    If you target a plant creature or a magical plant, it makes the
+    saving throw with disadvantage, and the spell deals maximum damage
+    to it.
+    
+    If you target a nonmagical plant that isn't a creature, such as a
+    tree or shrub, it doesn't make a saving throw; it simply withers
+    and dies.
+    
+    **At Higher Levels** When you cast this spell using a spell slot
+    of 5th level or higher, the damage increases by 1d8 for each slot
+    level above 4th.
+    
+    """
+    name = "Blight"
+    level = 4
+    casting_time = "1 action"
+    casting_range = "30 feet"
+    components = ('V', 'S')
+    duration = "Instantaneous"
+    magic_school = "Necromancy"
+    classes = ('Druid', 'Sorcerer', 'Warlock', 'Wizard')
 
+
+class BlindnessDeafness(Spell):
     """You can blind or deafen a foe. Choose one creature that you can see
     within range to make a Constitution saving throw. If it fails, the
     target is either blinded or deafened (your choice) for the
@@ -883,16 +1162,49 @@ class BlindnessDeafness(Spell):
     classes = ('Wizard', )
 
 
+class Blink(Spell):
+    """Roll a d20 at the end of each of your turns for the duration of the
+    spell. On a roll of 11 or higher, you vanish from your current
+    plane of existence and appear in the Ethereal Plane (the spell
+    fails and the casting is wasted if you were already on that
+    plane). At the start of your next turn, and when the spell ends if
+    you are on the Ethereal Plane, you return to an unoccupied space
+    of your choice that you can see within 10 feet of the space you
+    vanished from. If no unoccupied space is available within that
+    range, you appear in the nearest unoccupied space (chosen at
+    random if more than one space is equally near). You can dismiss
+    this spell as an action.
+    
+    While on the Ethereal Plane, you can see and hear the plane you
+    originated from, which is cast in shades of gray, and you can't
+    see anything there more than 60 feet away. You can only affect and
+    be affected by other creatures on the Ethereal Plane. Creatures
+    that aren't there can't perceive you or interact with you, unless
+    they have the ability to do so.
+    
+    """
+    name = "Blink"
+    level = 3
+    casting_time = "1 action"
+    casting_range = "Self"
+    components = ('V', 'S')
+    duration = "1 minute"
+    magic_school = "Transmutation"
+    classes = ('Sorceror', 'Wizard')
+
+
 class Blur(Spell):
     """Your body becomes blurred, shifting and wavering to all who can see
     you. For the duration, any creature has disadvantage on attack
     rolls against you. An attacker is immune to this effect if it
     doesn’t rely on sight, as with blindsight, or can see through
     illusions, as with truesight.
-
+    
     """
+    name = "Blur"
     level = 2
     casting_time = "1 action"
+    casting_range = 'Self'
     components = ('V',)
     materials = ""
     duration = "Concentration, up to 1 minute"
@@ -939,6 +1251,7 @@ class ChainLightning(Spell):
     6th.
     
     """
+    name = "Chain Lightning"
     level = 6
     casting_time = "1 action"
     components = ('V', 'S', 'M')
@@ -962,6 +1275,7 @@ class CharmPerson(Spell):
     them.
     
     """
+    name = "Charm Person"
     level = 1
     casting_time = "1 action"
     components = ('V', 'S')
@@ -1021,6 +1335,7 @@ class Command(Spell):
     them.
     
     """
+    name = "Command"
     level = 1
     casting_time = "1 action"
     components = ('V',)
@@ -1045,6 +1360,7 @@ class Commune(Spell):
     this roll in secret.
     
     """
+    name = "Commune"
     level = 5
     casting_time = "1 minute"
     components = ('V', 'S', 'M')
@@ -1064,6 +1380,7 @@ class ComprehendLanguages(Spell):
     language.
     
     """
+    name = "Comprehend Languages"
     level = 1
     casting_time = "1 action"
     components = ('V', 'S', 'M')
@@ -1083,6 +1400,7 @@ class ConeOfCold(Spell):
     1d8 for each slot level above 5th.
     
     """
+    name = "Cone of Cold"
     level = 5
     casting_time = "1 action"
     components = ('V', 'S', 'M')
@@ -1104,6 +1422,7 @@ class Counterspell(Spell):
     to the level of the spell slot you used.
     
     """
+    name = "Counterspell"
     level = 3
     casting_time = "1 reaction, which you take when you see a creature within 60 feet of you casting a spell"
     components = ('S',)
@@ -1121,6 +1440,7 @@ class CureWounds(Spell):
     by 1d8 for each slot level above 1st.
     
     """
+    name = "Cure Wounds"
     level = 1
     casting_time = "1 action"
     components = ('V', 'S')
@@ -1167,6 +1487,7 @@ class Darkness(Spell):
     created the light is dispelled.
     
     """
+    name = "Darkness"
     level = 2
     casting_time = "1 action"
     components = ('V', 'M')
@@ -1186,6 +1507,7 @@ class DeathWard(Spell):
     negated against the target, and the spell ends.
     
     """
+    name = "Death Ward"
     level = 4
     casting_time = "1 action"
     components = ('V', 'S')
@@ -1219,6 +1541,7 @@ class DelayedBlastFireball(Spell):
     each slot level above 7th.
     
     """
+    name = "Delayed Blast Fireball"
     level = 7
     casting_time = "1 action"
     components = ('V', 'S', 'M')
@@ -1265,6 +1588,7 @@ class DimensionDoor(Spell):
     take 4d6 force damage, and the spell fails to teleport you.
     
     """
+    name = "Dimension Door"
     level = 4
     casting_time = "1 action"
     components = ('V',)
@@ -1293,6 +1617,7 @@ class DisguiseSelf(Spell):
     (Investigation) check against your spell save DC.
     
     """
+    name = "Disguise Self"
     level = 1
     casting_time = "1 action"
     components = ('V', 'S')
@@ -1322,6 +1647,7 @@ class Disintegrate(Spell):
     6th.
     
     """
+    name = "Disintegrate"
     level = 6
     casting_time = "1 action"
     components = ('V', 'S', 'M')
@@ -1343,6 +1669,7 @@ class DispelMagic(Spell):
     the spell slot you used.
     
     """
+    name = "Dispel Magic"
     level = 3
     casting_time = "1 action"
     components = ('V', 'S')
@@ -1366,6 +1693,7 @@ class Divination(Spell):
     reading. The DM makes this roll in secret.
     
     """
+    name = "Divination"
     level = 4
     casting_time = "1 action"
     components = ('V', 'S', 'M')
@@ -1400,6 +1728,7 @@ class DominateMonster(Spell):
     concentration, up to 8 hours.
     
     """
+    name = "Dominate Monster"
     level = 8
     casting_time = "1 action"
     components = ('V', 'S')
@@ -1437,6 +1766,7 @@ class DominatePerson(Spell):
     up to 8 hours.
     
     """
+    name = "Dominate Person"
     level = 5
     casting_time = "1 action"
     components = ('V', 'S')
@@ -1476,6 +1806,7 @@ class Dream(Spell):
     disadvantage.
     
     """
+    name = "Dream"
     level = 5
     casting_time = "1 minute"
     components = ('V', 'S', 'M')
@@ -1521,6 +1852,7 @@ class Earthquake(Spell):
     damage and doesn’t fall prone or become buried.
     
     """
+    name = "Earthquake"
     level = 8
     casting_time = "1 action"
     components = ('V', 'S', 'M')
@@ -1528,6 +1860,28 @@ class Earthquake(Spell):
     duration = "Concentration, up to 1 minute"
     magic_school = "Evocation"
     classes = ()
+
+
+class EldritchBlast(Spell):
+    """A beam of crackling energy streaks toward a creature within
+    range. Make a ranged spell attack against the target. On a hit,
+    the target takes 1d10 force damage.
+    
+    The spell creates more than one beam when you reach higher levels:
+    two beams at 5th level, three beams at 11th level, and four beams
+    at 17th level. You can direct the beams at the same target or at
+    different ones. Make a separate attack roll for each beam.
+    Evocation Cantrip
+    
+    """
+    name = 'Eldritch Blast'
+    level = 3
+    casting_time = "1 action"
+    casting_range = "120 feet"
+    components = ('V', 'S')
+    duration = "Instantaneous"
+    magic_school = "Evocation"
+    classes = ('Warlock', )
 
 
 class ElementalWeapon(Spell):
@@ -1555,7 +1909,6 @@ class ElementalWeapon(Spell):
 
 
 class Etherealness(Spell):
-
     """You step into the border regions of the Ethereal Plane, in the area
     where it overlaps with your current plane. You remain in the
     Border Ethereal for the duration or until you use your action to
@@ -1584,6 +1937,7 @@ class Etherealness(Spell):
     spell.
     
     """
+    name = "Etherealness"
     level = 7
     casting_time = "1 action"
     components = ('V', 'S')
@@ -1637,6 +1991,7 @@ class FindThePath(Spell):
     creature or object can’t benefit from being invisible.
     
     """
+    name = "Find the Path"
     level = 6
     casting_time = "1 minute"
     components = ('V', 'S', 'M')
@@ -1656,6 +2011,7 @@ class FingerOfDeath(Spell):
     verbal orders to the best of its ability.
     
     """
+    name = "Finger of Death"
     level = 7
     casting_time = "1 action"
     components = ('V', 'S')
@@ -1674,6 +2030,7 @@ class FireBolt(Spell):
     (3d10), and 17th level (4d10).
     
     """
+    name = "Fire Bolt"
     level = 0
     casting_time = "1 action"
     components = ('V', 'S')
@@ -1696,6 +2053,7 @@ class FireStorm(Spell):
     this spell.
     
     """
+    name = "Fire Storm"
     level = 7
     casting_time = "1 action"
     components = ('V', 'S')
@@ -1718,6 +2076,7 @@ class Fireball(Spell):
     slot level above 3rd.
     
     """
+    name = "Fireball"
     level = 3
     casting_time = "1 action"
     components = ('V', 'S', 'M')
@@ -1739,6 +2098,7 @@ class FlameStrike(Spell):
     5th.
     
     """
+    name = "Flame Strike"
     level = 5
     casting_time = "1 action"
     components = ('V', 'S', 'M')
@@ -1791,6 +2151,7 @@ class Fly(Spell):
     level above 3rd.
     
     """
+    name = "Fly"
     level = 3
     casting_time = "1 action"
     components = ('V', 'S', 'M')
@@ -1849,6 +2210,7 @@ class Foresight(Spell):
     immediately ends if you cast it again before its duration ends.
     
     """
+    name = "Foresight"
     level = 9
     casting_time = "1 minute"
     components = ('V', 'S', 'M')
@@ -1869,6 +2231,7 @@ class FreedomOfMovement(Spell):
     target’s movement or attacks.
     
     """
+    name = "Freedom of Movement"
     level = 4
     casting_time = "1 action"
     components = ('V', 'S', 'M')
@@ -1900,6 +2263,7 @@ class Gate(Spell):
     you, or help you.
     
     """
+    name = "Gate"
     level = 9
     casting_time = "1 action"
     components = ('V', 'S', 'M')
@@ -1923,6 +2287,7 @@ class GlobeOfInvulnerability(Spell):
     6th.
     
     """
+    name = "Globe of Invulnerability"
     level = 6
     casting_time = "1 action"
     components = ('V', 'S', 'M')
@@ -1938,6 +2303,7 @@ class GreaterInvisibility(Spell):
     long as it is on the target’s person.
     
     """
+    name = "Greater Invisibility"
     level = 4
     casting_time = "1 action"
     components = ('V', 'S')
@@ -1957,6 +2323,7 @@ class GreaterRestoration(Spell):
     target’s hit point maximum
     
     """
+    name = "Greater Restoration"
     level = 5
     casting_time = "1 action"
     components = ('V', 'S', 'M')
@@ -1978,6 +2345,7 @@ class GuardianOfFaith(Spell):
     guardian vanishes when it has dealt a total of 60 damage.
     
     """
+    name = "Guardian of Faith"
     level = 4
     casting_time = "1 action"
     components = ('V',)
@@ -2015,6 +2383,7 @@ class GuidingBolt(Spell):
     1d6 for each slot level above 1st.
     
     """
+    name = "Guiding Bolt"
     level = 1
     casting_time = "1 action"
     components = ('V', 'S')
@@ -2036,6 +2405,7 @@ class Harm(Spell):
     time passes.
     
     """
+    name = "Harm"
     level = 6
     casting_time = "1 action"
     components = ('V', 'S')
@@ -2056,6 +2426,7 @@ class Haste(Spell):
     lethargy sweeps over it.
     
     """
+    name = "Haste"
     level = 3
     casting_time = "1 action"
     components = ('V', 'S', 'M')
@@ -2075,6 +2446,7 @@ class Heal(Spell):
     increases by 10 for each slot level above 6th.
     
     """
+    name = "Heal"
     level = 6
     casting_time = "1 action"
     components = ('V', 'S')
@@ -2159,6 +2531,7 @@ class HolyAura(Spell):
     until the spell ends.
     
     """
+    name = "Holy Aura"
     level = 8
     casting_time = "1 action"
     components = ('V', 'S', 'M')
@@ -2181,6 +2554,7 @@ class IceStorm(Spell):
     4th.
     
     """
+    name = "Ice Storm"
     level = 4
     casting_time = "1 action"
     components = ('V', 'S', 'M')
@@ -2202,6 +2576,7 @@ class Identify(Spell):
     it.
     
     """
+    name = "Identify"
     level = 1
     casting_time = "1 minute"
     components = ('V', 'S', 'M')
@@ -2260,6 +2635,7 @@ class Imprisonment(Spell):
     casting is immediately freed from its binding.
     
     """
+    name = "Imprisonment"
     level = 9
     casting_time = "1 minute"
     components = ('V', 'S', 'M')
@@ -2276,6 +2652,7 @@ class InflictWounds(Spell):
     damage increases by 1d10 for each slot level above 1st.
     
     """
+    name = "Inflict Wounds"
     level = 1
     casting_time = "1 action"
     components = ('V', 'S')
@@ -2294,6 +2671,7 @@ class Invisibility(Spell):
     target one additional creature for each slot level above 2nd.
     
     """
+    name = "Invisibility"
     level = 2
     casting_time = "1 action"
     components = ('V', 'S', 'M')
@@ -2317,6 +2695,7 @@ class Knock(Spell):
     object.
     
     """
+    name = "Knock"
     level = 2
     casting_time = "1 action"
     components = ('V',)
@@ -2332,6 +2711,7 @@ class LesserRestoration(Spell):
     paralyzed, or poisoned.
     
     """
+    name = "Lesser Restoration"
     level = 2
     casting_time = "1 action"
     components = ('V', 'S')
@@ -2357,6 +2737,7 @@ class Levitate(Spell):
     if it is still aloft.
     
     """
+    name = "Levitate"
     level = 2
     casting_time = "1 action"
     components = ('V', 'S', 'M')
@@ -2377,6 +2758,7 @@ class Light(Spell):
     Dexterity saving throw to avoid the spell.
     
     """
+    name = "Light"
     level = 0
     casting_time = "1 action"
     components = ('V', 'M')
@@ -2397,6 +2779,7 @@ class LightningBolt(Spell):
     damage increases by 1d6 for each slot level above 3rd.
     
     """
+    name = "Lightning Bolt"
     level = 3
     casting_time = "1 action"
     components = ('V', 'S', 'M')
@@ -2421,6 +2804,7 @@ class LocateCreature(Spell):
     creature.
     
     """
+    name = "Locate Creature"
     level = 4
     casting_time = "1 action"
     components = ('V', 'S', 'M')
@@ -2507,6 +2891,7 @@ class MagicWeapon(Spell):
     +3.
     
     """
+    name = "Magic Weapon"
     level = 2
     casting_time = "1 bonus action"
     components = ('V', 'S')
@@ -2545,6 +2930,7 @@ class MajorImage(Spell):
     dispelled, without requiring your concentration.
     
     """
+    name = "Major Image"
     level = 3
     casting_time = "1 action"
     components = ('V', 'S', 'M')
@@ -2564,6 +2950,7 @@ class MassCureWounds(Spell):
     increases by 1d8 for each slot level above 5th.
     
     """
+    name = "Mass Cure Wounds"
     level = 5
     casting_time = "1 action"
     components = ('V', 'S')
@@ -2582,6 +2969,7 @@ class MassHeal(Spell):
     spell has no effect on undead or constructs.
     
     """
+    name = "Mass Heal"
     level = 9
     casting_time = "1 action"
     components = ('V', 'S')
@@ -2600,6 +2988,7 @@ class MassHealingWord(Spell):
     increases by 1d4 for each slot level above 3rd.
     
     """
+    name = "Mass Healing Word"
     level = 3
     casting_time = "1 bonus action"
     components = ('V',)
@@ -2635,6 +3024,7 @@ class MassSuggestion(Spell):
     use a 9th-level spell slot, the duration is a year and a day.
     
     """
+    name = "Mass Suggestion"
     level = 6
     casting_time = "1 action"
     components = ('V', 'M')
@@ -2655,6 +3045,7 @@ class Maze(Spell):
     occupied, in the nearest unoccupied space.
     
     """
+    name = "Maze"
     level = 8
     casting_time = "1 action"
     components = ('V', 'S')
@@ -2676,6 +3067,7 @@ class MeteorSwarm(Spell):
     being worn or carried.
     
     """
+    name = "Meteor Swarm"
     level = 9
     casting_time = "1 action"
     components = ('V', 'S')
@@ -2705,6 +3097,7 @@ class MinorIllusion(Spell):
     illusion becomes faint to the creature.
     
     """
+    name = "Minor Illusion"
     level = 0
     casting_time = "1 action"
     components = ('S', 'M')
@@ -2719,6 +3112,7 @@ class MistyStep(Spell):
     an unoccupied space that you can see.
     
     """
+    name = "Misty Step"
     level = 2
     casting_time = "1 bonus action"
     components = ('V',)
@@ -2738,6 +3132,7 @@ class MordenkainensSword(Spell):
     this attack against the same target or a different one.
     
     """
+    name = "Mordenkainen's Sword"
     level = 7
     casting_time = "1 action"
     components = ('V', 'S', 'M')
@@ -2760,13 +3155,14 @@ class OttosIrresistibleDance(Spell):
     the spell ends.
     
     """
+    name = "Otto's Irresistible Dance"
     level = 6
     casting_time = "1 action"
     components = ('V',)
     materials = ""
     duration = "Concentration, up to 1 minute"
     magic_school = "Enchantment"
-    classes = ()
+    classes = ('Bard', 'Wizard')
 
 
 class Passwall(Spell):
@@ -2781,13 +3177,14 @@ class Passwall(Spell):
     cast the spell.
     
     """
+    name = "Passwall"
     level = 5
     casting_time = "1 action"
     components = ('V', 'S', 'M')
     materials = "a pinch of sesame seeds"
     duration = "1 hour"
     magic_school = "Transmutation"
-    classes = ()
+    classes = ('Wizard',)
 
 
 class PoisonSpray(Spell):
@@ -2798,6 +3195,7 @@ class PoisonSpray(Spell):
     level (2d12), 11th level (3d12), and 17th level (4d12).
     
     """
+    name = "Poison Spray"
     level = 0
     casting_time = "1 action"
     components = ('V', 'S')
@@ -2814,13 +3212,14 @@ class PowerWordKill(Spell):
     effect.
     
     """
+    name = "Power Word Kill"    
     level = 9
     casting_time = "1 action"
     components = ('V',)
     materials = ""
     duration = "Instantaneous"
     magic_school = "Enchantment"
-    classes = ()
+    classes = ('Bard', 'Wizard', 'Sorceror', 'Warlock')
 
 
 class PowerWordStun(Spell):
@@ -2832,6 +3231,7 @@ class PowerWordStun(Spell):
     save, this stunning effect ends.
     
     """
+    name = "Power Word Stun"
     level = 8
     casting_time = "1 action"
     components = ('V',)
@@ -2850,6 +3250,7 @@ class PrayerOfHealing(Spell):
     above 2nd.
     
     """
+    name = "PrayerOfHealing"
     level = 2
     casting_time = "10 minutes"
     components = ('V',)
@@ -2898,6 +3299,7 @@ class ProtectionFromEnergy(Spell):
     thunder.
     
     """
+    name = "Protection from Energy"
     level = 3
     casting_time = "1 action"
     components = ('V', 'S')
@@ -2926,6 +3328,7 @@ class RaiseDead(Spell):
     penalty is reduced by 1 until it disappears.
     
     """
+    name = "Raise Dead"
     level = 5
     casting_time = "1 hour"
     components = ('V', 'S', 'M')

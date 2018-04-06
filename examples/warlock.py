@@ -1,5 +1,5 @@
-name = 'Warlock'
-character_class = 'wizard'
+name = 'Sid Istick'
+character_class = 'Warlock'
 player_name = 'Mark'
 background = "Criminal"
 race = "Rock Gnome"

@@ -300,8 +300,8 @@ def main():
         description='Prepare Dungeons and Dragons character sheets as PDFs')
     parser.add_argument('filename', type=str, nargs="?",
                         help="Python file with character definition")
-    parser.add_argument('--flatten', '-F', action="store_true",
-                        help="Remove the PDF fields once processed.")
+    parser.add_argument('--editable', '-e', action="store_true",
+                        help="Keep the PDF fields in place once processed.")
     args = parser.parse_args()
     # Process the requested files
     if args.filename is None:
@@ -311,7 +311,7 @@ def main():
     for filename in filenames:
         print(f"Processing {os.path.splitext(filename)[0]}...", end='')
         try:
-            make_sheet(character_file=filename, flatten=args.flatten)
+            make_sheet(character_file=filename, flatten=(not args.editable))
         except Exception as e:
             print('failed')
             raise
