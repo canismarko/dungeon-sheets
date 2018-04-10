@@ -105,20 +105,23 @@ class Character():
             elif attr == 'race':
                 MyRace = findattr(race, val)
                 self.race = MyRace()
-            elif attr == 'spells':
+            elif (attr == 'spells') or (attr == 'spells_prepared'):
                 # Create a list of actual spell objects
                 _spells = []
                 for spell_name in val:
                     try:
-                        _spells.append(findattr(spells, spell_name)())
+                        _spells.append(findattr(spells, spell_name))
                     except AttributeError:
                         msg = f'Spell "{spell_name}" not defined. Please add it to ``spells.py``'
-                        raise AttributeError(msg)
-                self.spells = tuple(_spells)
-            elif attr == 'spells_prepared':
-                # Create a list of actual spell objects
-                self.spells_prepared = tuple(findattr(spells, spell_name)
-                                             for spell_name in val)
+                        warnings.warn(msg)
+                        # Create temporary spell
+                        _spells.append(spells.create_spell(name=spell_name, level=9))
+                        # raise AttributeError(msg)
+                if attr == 'spells':
+                    # Instantiate them all for the spells list
+                    self.spells = tuple(S() for S in _spells)
+                else:
+                    self.spells_prepared = tuple(_spells)
             else:
                 if not hasattr(self, attr):
                     warnings.warn(f"Setting unknown character attribute {attr}",

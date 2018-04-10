@@ -1,3 +1,22 @@
+def create_spell(**params):
+    """Create a new subclass of ``Spell`` with given default parameters.
+    
+    Useful for spells that haven't been entered into the ``spells.py``
+    file yet.
+    
+    Parameters
+    ----------
+    params : optional
+      Saved as attributes of the new class.
+    
+    Returns
+    -------
+    NewSpell
+      New spell class, subclass of ``Spell``, with given params.
+    """
+    NewSpell = type('UnknownSpell', (Spell,), params)
+    return NewSpell
+
 class Spell():
     """A magical spell castable by a player character."""
     level = 0
@@ -40,7 +59,6 @@ class AcidArrow(Spell):
 
 
 class AcidSplash(Spell):
-
     """You hurl a bubble of acid. Choose one creature within range, or
     choose two creatures within range that are within 5 feet of each
     other. A target must succeed on a Dexterity saving throw or take
@@ -74,7 +92,7 @@ class Aid(Spell):
     materials = "A tiny strip of white cloth"
     duration = "8 hours"
     magic_school = "Abjuration"
-    classes = ('Cleric', 'Paladin')
+    classes = ('Cleric', 'Paladin', )
 
 
 class Alarm(Spell):
@@ -1311,6 +1329,57 @@ class ChillTouch(Spell):
     classes = ('Sorceror', 'Warlock', 'Wizard')
 
 
+class CircleOfDeath(Spell):
+    """A sphere of negative energy ripples out in a 60-foot- radius sphere
+    from a point within range. Each creature in that area must make a
+    Constitution saving throw. A target takes 8d6 necrotic damage on a
+    failed save, or half as much damage on a successful one.
+    
+    **At Higher Levels.** When you cast this spell using a spell slot of
+    7th level or higher, the damage increases by 2d6 for each slot
+    level above 6th.
+    
+    """
+    name = "Circle of Death"
+    level = 6
+    casting_time = "1 action"
+    casting_range = "150 feet"
+    components = ('V', 'S', 'M')
+    materials = "the powder of a crushed black pearl worth at least 500 gp"
+    duration = "Instantaneous"
+    magic_school = "Necromany"
+    classes = ('Sorceror', 'Warlock', 'Wizard')
+
+
+class Clone(Spell):
+    """This spell grows an inert duplicate of a living creature as a
+    safeguard against death. This clone forms inside a sealed vessel
+    and grows to full size and maturity after 120 days; you can also
+    choose to have the clone be a younger version of the same
+    creature. It remains inert and endures indefinitely, as long as
+    its vessel remains undisturbed.
+    
+    At any time after the clone matures, if the original creature
+    dies, its soul transfers to the clone, provided that the soul is
+    free and willing to return. The clone is physically identical to
+    the original and has the same personality, memories, and
+    abilities, but none of the original's equipment. The original
+    creature's physical remains, if they still exist, become inert and
+    can't thereafter be restored to life, since the creature's soul is
+    elsewhere.
+    
+    """
+    name = "Clone"
+    level = 8
+    casting_time = "1 hour"
+    casting_range = "Touch"
+    components = ('V', 'S', "M")
+    materials = "a diamond worth at least 1,000 gp and at least 1 cubic inch of flesh of the creature that is to be cloned, which the spell consumes, and a vessel worth at least 2,000 gp that has a sealable lid and is large enough to hold a Medium creature, such as a huge urn, coffin, mud- filled cyst in the ground, or crystal container filled with salt water"
+    duration = "Instantaneous"
+    magic_school = "Necromancy"
+    classes = ('Wizard',)
+
+
 class Command(Spell):
     """You speak a one-word command to a creature you can see within
     range. The target must succeed on a Wisdom saving throw or follow
@@ -1430,6 +1499,50 @@ class Counterspell(Spell):
     duration = "Instantaneous"
     magic_school = "Abjuration"
     classes = ()
+
+
+class CreateUndead(Spell):
+    """You can cast this spell only at night. Choose up to three corpses
+    of Medium or Small humanoids within range. Each corpse becomes a
+    ghoul under your control. (The GM has game statistics for these
+    creatures.)
+    
+    As a bonus action on each of your turns, you can mentally command
+    any creature you animated with this spell if the creature is
+    within 120 feet of you (if you control multiple creatures, you can
+    command any or all of them at the same time, issuing the same
+    command to each one). You decide what action the creature will
+    take and where it will move during its next turn, or you can issue
+    a general command, such as to guard a particular chamber or
+    corridor. If you issue no commands, the creature only defends
+    itself against hostile creatures. Once given an order, the
+    creature continues to follow it until its task is complete.
+    
+    The creature is under your control for 24 hours, after which it
+    stops obeying any command you have given it. To maintain control
+    of the creature for another 24 hours, you must cast this spell on
+    the creature before the current 24-hour period ends. This use of
+    the spell reasserts your control over up to three creatures you
+    have animated with this spell, rather than animating new ones.
+    
+    **At Higher Levels.** When you cast this spell using a 7th-level spell
+    slot, you can animate or reassert control over four ghouls. When
+    you cast this spell using an 8th-level spell slot, you can animate
+    or reassert control over five ghouls or two ghasts or wights. When
+    you cast this spell using a 9th-level spell slot, you can animate
+    or reassert control over six ghouls, three ghasts or wights, or
+    two mummy(ies).
+    
+    """
+    name = "Create Undead"
+    level = 6
+    casting_time = "1 minute"
+    casting_range = "10 feet"
+    components = ('V', 'S', 'M')
+    materials = "one clay pot filled with grave dirt, one clay pot filled with brackish water, and one 150 gp black onyx stone for each corpse"
+    duration = "Instantaneous"
+    magic_school = "Necromancy"
+    classes = ('Cleric', 'Warlock', 'Wizard', )
 
 
 class CureWounds(Spell):
@@ -1947,6 +2060,43 @@ class Etherealness(Spell):
     classes = ()
 
 
+class Eyebite(Spell):
+    """For the spell's duration, your eyes become an inky void imbued with
+    dread power. One creature of your choice within 60 feet of you
+    that you can see must succeed on a Wisdom saving throw or be
+    affected by one of the following effects of your choice for the
+    duration. On each of your turns until the spell ends, you can use
+    your action to target another creature but can't target a creature
+    again if it has succeeded on a saving throw against this casting
+    of **eyebite**.
+    
+    **Asleep.** The target falls unconscious. It wakes up if it takes
+      any damage or if another creature uses its action to shake the
+      sleeper awake.
+    
+    **Panicked.** The target is frightened of you. On each of its
+      turns, the frightened creature must take the Dash action and
+      move away from you by the safest and shortest available route,
+      unless there is nowhere to move. If the target moves to a place
+      at least 60 feet away from you where it can no longer see you,
+      this effect ends.
+    
+    **Sickened.** The target has disadvantage on attack rolls and
+      ability checks. At the end of each of its turns, it can make
+      another Wisdom saving throw. If it succeeds, the effect ends.
+
+    """
+    name = "Eyebite"
+    level = 6
+    casting_time = "1 action"
+    casting_range = "Self"
+    components = ('V', 'S',)
+    materials = ""
+    duration = "1 minutes"
+    magic_school = "Necromancy"
+    classes = ('Bard', 'Sorceror', 'Warlock', 'Wizard', )
+
+
 class FalseLife(Spell):
     """Bolstering yourself with a necromantic facsimile of life, you gain
     1d4+4 temporary hit points for the duration.
@@ -2014,11 +2164,12 @@ class FingerOfDeath(Spell):
     name = "Finger of Death"
     level = 7
     casting_time = "1 action"
+    casting_range = "60 feet"
     components = ('V', 'S')
     materials = ""
     duration = "Instantaneous"
     magic_school = "Necromancy"
-    classes = ()
+    classes = ('Sorceror', 'Warlock', 'Wizard', )
 
 
 class FireBolt(Spell):
@@ -2272,6 +2423,26 @@ class Gate(Spell):
     magic_school = "Conjuration"
     classes = ()
 
+
+class GentleRepose(Spell):
+    """You touch a corpse or other remains. For the duration, the target
+    is protected from decay and can't become undead.
+    
+    The spell also effectively extends the time limit on raising the
+    target from the dead, since days spent under the influence of this
+    spell don't count against the time limit of spells such as raise
+    dead.
+    
+    """
+    name = "Gentle Repose"
+    level = 2
+    casting_time = "1 action"
+    casting_range = "Touch"
+    components = ('V', 'S', 'M')
+    materials = "a pinch of salt and one copper piece placed on each of the corpse's eyes, which must remain there for the duration"
+    duration = "10 days"
+    magic_school = "Necromancy"
+    classes = ('Cleric', 'Wizard')
 
 class GlobeOfInvulnerability(Spell):
     """An immobile, faintly shimmering barrier springs into existence in a
@@ -2859,6 +3030,65 @@ class MageHand(Spell):
     classes = ('Bard', 'Sorceror', 'Warlock', 'Wizard', )
 
 
+class MagicJar(Spell):
+    """Your body falls into a catatonic state as your soul leaves it
+    and enters the container you used for the spell's material
+    component. While your soul inhabits the container, you are aware
+    of your surroundings as if you were in the container's space. You
+    can't move or use reactions. The only action you can take is to
+    project your soul up to 100 feet out of the container, either
+    returning to your living body (and ending the spell) or attempting to possess a humanoids body.
+    
+    You can attempt to possess any humanoid within 100 feet of you
+    that you can see (creatures warded by a protection from evil and
+    good or magic circle spell can't be possessed). The target must
+    make a Charisma saving throw. On a failure, your soul moves into
+    the target's body, and the target's soul becomes trapped in the
+    container. On a success, the target resists your efforts to
+    possess it, and you can't attempt to possess it again for 24
+    hours.
+    
+    Once you possess a creature's body, you control it. Your game
+    statistics are replaced by the statistics of the creature, though
+    you retain your alignment and your Intelligence, Wisdom, and
+    Charisma scores. You retain the benefit of your own class
+    features. If the target has any class levels, you can't use any of
+    its class features.
+    
+    Meanwhile, the possessed creature's soul can perceive from the
+    container using its own senses, but it can't move or take actions
+    at all.
+    
+    While possessing a body, you can use your action to return from
+    the host body to the container if it is within 100 feet of you,
+    returning the host creature's soul to its body. If the host body
+    dies while you're in it, the creature dies, and you must make a
+    Charisma saving throw against your own spellcasting DC. On a
+    success, you return to the container if it is within 100 feet of
+    you. Otherwise, you die.
+    
+    If the container is destroyed or the spell ends, your soul
+    immediately returns to your body. If your body is more than 100
+    feet away from you or if your body is dead when you attempt to
+    return to it, you die. If another creature's soul is in the
+    container when it is destroyed, the creature's soul returns to its
+    body if the body is alive and within 100 feet. Otherwise, that
+    creature dies.
+    
+    When the spell ends, the container is destroyed.
+    
+    """
+    name = "Magic Jar"
+    level = 6
+    casting_time = "1 minute"
+    casting_range = "Self"
+    components = ("V", "S", "M", )
+    materials = "a gem, crystal, reliquary, or some other ornamental container worth at least 500 gp)"
+    duration = "Until dispelled"
+    magic_school = "Necromancy"
+    classes = ('Wizard', )
+
+
 class MagicMissile(Spell):
     """You create three glowing darts of magical force. Each dart hits a
     creature of your choice that you can see within range. A dart
@@ -3053,6 +3283,29 @@ class Maze(Spell):
     duration = "Concentration, up to 10 minutes"
     magic_school = "Conjuration"
     classes = ()
+
+
+class MelfsAcidArrow(Spell):
+    """A shimmering green arrow streaks toward a target within range and
+    burst in a spray of acid. Make a ranged spell attack against the
+    target. On a hit, the target takes 4d4 acid damage immediately and
+    2d4 acid damage at the end of its next turn. On a miss, the arrow
+    splashes the target for half as much of the initial damage and no
+    damage at the end of its next turn.
+    
+    **At Higher Levels.** When you cast this spell using a spell slot
+    of 3rd level or higher, the damage (both initial and later)
+    increases by 1d4 for each slot level above 2nd.
+    
+    """
+    name = "Melf's Acid Arrow"
+    level = 2
+    casting_time = "1 action"
+    components = ('V', 'S', 'M', )
+    materials = "powdered rhubarb leaf and an adder's stomach"
+    duration = "Instantaneous"
+    magic_school = "Evocation"
+    classes = ('Wizard', )
 
 
 class MeteorSwarm(Spell):
@@ -3313,29 +3566,57 @@ class RaiseDead(Spell):
     """You return a dead creature you touch to life, provided that it has
     been dead no longer than 10 days. If the creature’s soul is both
     willing and at liberty to rejoin the body, the creature returns to
-    life with 1 hit point. This spell also neutralizes any poisons and
+    life with 1 hit point.
+    
+    This spell also neutralizes any poisons and
     cures nonmagical diseases that affected the creature at the time
     it died. This spell doesn’t, however, remove magical diseases,
     curses, or similar effects; if these aren’t first removed prior to
     casting the spell, they take effect when the creature returns to
-    life. The spell can’t return an undead creature to life. This
-    spell closes all mortal wounds, but it doesn’t restore missing
-    body parts. If the creature is lacking body parts or organs
-    integral for its survival—its head, for instance—the spell
-    automatically fails. Coming back from the dead is an ordeal. The
-    target takes a −4 penalty to all attack rolls, saving throws, and
-    ability checks. Every time the target finishes a long rest, the
-    penalty is reduced by 1 until it disappears.
+    life. The spell can’t return an undead creature to life.
+    
+    This spell closes all mortal wounds, but it doesn’t restore
+    missing body parts. If the creature is lacking body parts or
+    organs integral for its survival—its head, for instance—the spell
+    automatically fails.
+    
+    Coming back from the dead is an ordeal. The target takes a −4
+    penalty to all attack rolls, saving throws, and ability
+    checks. Every time the target finishes a long rest, the penalty is
+    reduced by 1 until it disappears.
     
     """
     name = "Raise Dead"
     level = 5
     casting_time = "1 hour"
+    casting_range = "Touch"
     components = ('V', 'S', 'M')
     materials = "a diamond worth at least 500 gp, which the spell consumes"
     duration = "Instantaneous"
     magic_school = "Necromancy"
-    classes = ()
+    classes = ('Bard', 'Cleric', 'Paladin', )
+
+
+class RayOfEnfeeblement(Spell):
+    """A black beam of enervating energy springs from your finger toward a
+    creature within range. Make a ranged spell attack against the
+    target. On a hit, the target deals only half damage with weapon
+    attacks that use Strength until the spell ends.
+    
+    At the end of each of the target's turns, it can make a
+    Constitution saving throw against the spell. On a success, the
+    spell ends.
+    
+    """
+    name = "Ray of Enfeeblement"
+    level = 2
+    casting_time = "1 action"
+    casting_range = "60 feet"
+    components = ('V', 'S', )
+    materials = ""
+    duration = "Concentration (1 minute)"
+    magic_school = "Necromancy"
+    classes = ('Warlock', 'Wizard', )
 
 
 class RayOfFrost(Spell):
@@ -4070,6 +4351,30 @@ class TrueSeeing(Spell):
     duration = "1 hour"
     magic_school = "Divination"
     classes = ()
+
+
+class VampiricTouch(Spell):
+    """The touch of your shadow-wreathed hand can siphon life force from
+    others to heal your wounds. Make a melee spell attack against a
+    creature within your reach. On a hit, the target takes 3d6
+    necrotic damage, and you regain hit points equal to half the
+    amount of necrotic damage dealt. Until the spell ends, you can
+    make the attack again on each of your turns as an action.
+    
+    **At Higher Levels.** When you cast this spell using a spell slot
+    of 4th level or higher, the damage increases by 1d6 for each slot
+    level above 3rd.
+    
+    """
+    name = "Vampiric Touch"
+    level = 3
+    casting_time = "1 action"
+    casting_range = "Self"
+    components = ('V', 'S', )
+    materials = ""
+    duration = "Concentration (1 minute)"
+    magic_school = "Necromancy"
+    classes = ('Warlock', 'Wizard', )
 
 
 class WallOfFire(Spell):

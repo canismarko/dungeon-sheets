@@ -7,7 +7,7 @@ def findattr(obj, name):
     
     """
     # Come up with several options
-    py_name = name.replace('-', '_').replace(' ', '_')
+    py_name = name.replace('-', '_').replace(' ', '_').replace("'", "")
     camel_case = "".join([s.capitalize() for s in py_name.split('_')])
     if hasattr(obj, py_name):
         # Direct lookup
