@@ -8,7 +8,7 @@ def read(fname):
 
 
 setup(name='dungeonsheets',
-      version='0.2.1',
+      version='0.2.2',
       description='Dungeons and Dragons 5e Character Tools',
       long_description=read('README.rst'),
       long_description_content_type='text/x-rst',

@@ -124,6 +124,9 @@ class Character():
                         # Create temporary spell
                         _spells.append(spells.create_spell(name=spell_name, level=9))
                         # raise AttributeError(msg)
+                # Sort by name
+                _spells.sort(key=lambda spell: spell.name)
+                # Save list of spells to character atribute
                 if attr == 'spells':
                     # Instantiate them all for the spells list
                     self.spells = tuple(S() for S in _spells)

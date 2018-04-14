@@ -110,7 +110,6 @@ def create_spells_pdf(character, basename, flatten=False):
         # # Uncomment to post field names instead:
         # for field in field_names:
         #     fields.append((field, field))
-    fields.append(('Check Box 3083', True))
     # Make the actual pdf
     dirname = os.path.dirname(os.path.abspath(__file__))
     src_pdf = os.path.join(dirname, 'blank-spell-sheet-default.pdf')

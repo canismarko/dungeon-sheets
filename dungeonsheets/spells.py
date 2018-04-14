@@ -1325,8 +1325,31 @@ class ChillTouch(Spell):
     components = ('V', 'S')
     materials = ""
     duration = "1 round"
-    magic_school = "Necromany"
+    magic_school = "Necromancy"
     classes = ('Sorceror', 'Warlock', 'Wizard')
+
+
+class ChromaticOrb(Spell):
+    """You hurl a 4-inch-diameter sphere of energy at a creature that you
+    can see within range. You choose acid, cold, fire, lightning,
+    poison, or thunder for the type of orb you create, and then make a
+    ranged spell attack against the target. If the attack hits, the
+    creature takes 3d8 damage of the type you chose.
+    
+    **At Higher Levels.** When you cast this spell using a spell slot of
+    2nd level or higher, the damage increases by 1d8 for each slot
+    level above 1st.
+    
+    """
+    name = "Chromatic Orb"
+    level = 1
+    casting_time = "1 action"
+    casting_range = "90 feet"
+    components = ('V', 'S', 'M')
+    materials = "A diamond worth at least 50 gp"
+    duration = "Instantaneous"
+    magic_school = "Evocation"
+    classes = ('Sorceror', 'Wizard')
 
 
 class CircleOfDeath(Spell):
@@ -1347,7 +1370,7 @@ class CircleOfDeath(Spell):
     components = ('V', 'S', 'M')
     materials = "the powder of a crushed black pearl worth at least 500 gp"
     duration = "Instantaneous"
-    magic_school = "Necromany"
+    magic_school = "Necromancy"
     classes = ('Sorceror', 'Warlock', 'Wizard')
 
 
@@ -3438,6 +3461,52 @@ class Passwall(Spell):
     duration = "1 hour"
     magic_school = "Transmutation"
     classes = ('Wizard',)
+
+
+class PhantasmalForce(Spell):
+    """You craft an illusion that takes root in the mind of a creature
+    that you can see within range. The target must make an
+    Intelligence saving throw. On a failed save, you create a
+    phantasmal object, creature or other visible phenomenon of your
+    choice that is no larger than a 10-foot cube and that is
+    perceivable only to the target for the duration. This spell has no
+    effect on undead or constructs.
+    
+    The phantasm includes sound, temperature, and other stimuli, also
+    evident only to the creature. The target can use its action to
+    examine the phantasm with an Intelligence (Investigation) check
+    against your spell save DC. If the check succeeds, the target
+    realizes that the phantasm is an illusion, and the spell
+    ends. While a target is affected by the spell, the target treats
+    the phantasm as if it were real. The target rationalizes any
+    illogical outcomes from interacting with the phantasm. For
+    example, a target attempting to walk across a phantasmal bridge
+    that spans a chasm falls once it steps onto the bridge. If the
+    target survives the fall, it still believes that the bridge exists
+    and comes up with some other explanation for its fall-it was
+    pushed, it slipped, or a strong wind might have knocked it off.
+    
+    An affected target is so convinced of the phantasm's reality that
+    it can even take damage from the illusion. A phantasm created to
+    appear as a creature can attack the target. Similarly, a phantasm
+    created to appear as fire, a pool of acid, or lava can burn the
+    target. Each round on your turn, the phantasm can deal 1d6 psychic
+    damage to the target if it is in the phantasm's area or within 5
+    feet of the phantasm, provided that the illusion is of a creature
+    or hazard that could logically deal damage, such as by
+    attacking. The target perceives the damage as a type appropriate
+    to the illusion.
+    
+    """
+    name = "Phantasmal Force"
+    level = 2
+    casting_time = "1 action"
+    casting_range = "60 feet"
+    components = ('V', 'S', 'M')
+    materials = "A bit of fleece"
+    duration = "Concentration, up to 1 minute"
+    magic_school = "Illusion"
+    classes = ('Bard', 'Sorceror', 'Wizard')
 
 
 class PoisonSpray(Spell):
