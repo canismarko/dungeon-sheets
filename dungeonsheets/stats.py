@@ -1,4 +1,5 @@
 import math
+from collections import namedtuple
 
 
 def findattr(obj, name):
@@ -28,39 +29,46 @@ def mod_str(modifier):
     return mod_str
 
 
+AbilityScore = namedtuple('AbilityScore', ('value', 'modifier', 'saving_throw'))
+
 
 class Ability():
-    value = 10
     ability_name = None
-    character = None
     
-    def __init__(self, value=10):
-        self.value = value
+    def __init__(self, default_value=10):
+        self.default_value = default_value
     
     def __set_name__(self, character, name):
         self.ability_name = name
     
+    def _check_dict(self, obj):
+        if not hasattr(obj, '_ability_scores'):
+            # No ability score dictionary exists
+            obj._ability_scores = {
+                self.ability_name: self.default_value
+            }
+        elif self.ability_name not in obj._ability_scores.keys():
+            # ability score dictionary exists but doesn't have this ability
+            obj._ability_scores[self.ability_name] = self.default_value
+    
     def __get__(self, character, Character):
-        self.character = character
-        return self
-    
-    def __set__(self, obj, val):
-        self.value = val
-    
-    @property
-    def modifier(self):
-        return math.floor((self.value - 10) / 2)
-    
-    @property
-    def saving_throw(self):
-        modifier = self.modifier
+        self._check_dict(character)
+        score = character._ability_scores[self.ability_name]
+        modifier = math.floor((score - 10) / 2)
         # Check for proficiency
+        saving_throw = modifier
         if self.ability_name is not None:
-            is_proficient = (self.ability_name in self.character.saving_throw_proficiencies)
+            is_proficient = (self.ability_name in character.saving_throw_proficiencies)
             if is_proficient:
-                modifier += self.character.proficiency_bonus
-        # Return the value
-        return modifier
+                saving_throw += character.proficiency_bonus
+        # Create the named tuple
+        value = AbilityScore(modifier=modifier, value=score, saving_throw=saving_throw)
+        return value
+    
+    def __set__(self, character, val):
+        self._check_dict(character)
+        character._ability_scores[self.ability_name] = val
+        self.value = val
 
 
 class Skill():

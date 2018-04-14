@@ -1,14 +1,14 @@
 #!/usr/bin/env python
 
 import os
-# from distutils.core import setup
 from setuptools import setup
 
 def read(fname):
     return open(os.path.join(os.path.dirname(__file__), fname)).read()
 
+
 setup(name='dungeonsheets',
-      version='0.1.0',
+      version='0.2.1',
       description='Dungeons and Dragons 5e Character Tools',
       long_description=read('README.rst'),
       long_description_content_type='text/x-rst',

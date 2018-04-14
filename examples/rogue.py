@@ -33,6 +33,8 @@ ep = 50
 gp = 120
 pp = 0
 weapons = ('shortsword', 'shortbow')
+armor = 'light leather armor'
+shield = 'shield'
 equipment = (
     """Shortsword, shortbow, 20 arrows, leather armor, thieves’ tools,
     backpack, bell, 5 candles, crowbar, hammer, 10 pitons, 50 feet of

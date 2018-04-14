@@ -10,10 +10,8 @@ class TestStats(TestCase):
         self.assertEqual(stats.mod_str(2), '+2')
     
     def test_saving_throw(self):
-        stat = stats.Ability(14)
-        self.assertEqual(stat.saving_throw, 2)
-        # Now try it with an ST proficiency
-        class MyClass():
+        # Try it with an ST proficiency
+        class MyClass(character.Character):
             saving_throw_proficiencies = ['strength']
             proficiency_bonus = 2
             strength = stats.Ability(14)
@@ -21,6 +19,11 @@ class TestStats(TestCase):
         self.assertEqual(my_class.strength.saving_throw, 4)
     
     def test_modifier(self):
+        class MyCharacter(character.Character):
+            saving_throw_proficiencies = ['strength']
+            proficiency_bonus = 2
+            strength = stats.Ability(14)
+        my_char = MyCharacter()
         ranges = [
             ((1,), -5),
             ((2, 3), -4),
@@ -40,17 +43,17 @@ class TestStats(TestCase):
             ((30,), 10),
         ]
         # Test the values for each modifier range
-        stat = stats.Ability()
         for range_, target in ranges:
             for value in range_:
-                stat.value = value
+                my_char.strength = value
+                stat = my_char.strength
                 msg = f"Stat {value} doesn't produce modifier {target} ({stat.modifier})"
                 self.assertEqual(stat.modifier, target, msg)
     
     def test_setter(self):
         """Verify that this class works as a data descriptor."""
         # Set up a dummy class
-        class MyCharacter():
+        class MyCharacter(character.Character):
             stat = stats.Ability()
         char = MyCharacter()
         # Check that the stat works as expected once set
@@ -60,7 +63,7 @@ class TestStats(TestCase):
     
     def test_skill(self):
         """Test for a skill, that depends on another ability."""
-        class MyClass():
+        class MyClass(character.Character):
             dexterity = stats.Ability(14)
             acrobatics = stats.Skill(ability='dexterity')
             skill_proficiencies = []

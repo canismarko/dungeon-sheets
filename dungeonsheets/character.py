@@ -5,8 +5,9 @@ import warnings
 
 from .stats import Ability, Skill, findattr
 from .dice import read_dice_str
-from . import weapons, race, spells
+from . import weapons, race, spells, armor
 from .weapons import Weapon
+from .armor import Armor, NoArmor, Shield, NoShield
 
 dice_re = re.compile('(\d+)d(\d+)')
 
@@ -73,6 +74,8 @@ class Character():
     pp = 0
     equipment = ""
     weapons = [] # Replaced in __init__ constructor
+    armor = None
+    shield = None
     _proficiencies_text = tuple()
     # Magic
     spellcasting_ability = None
@@ -105,6 +108,10 @@ class Character():
             elif attr == 'race':
                 MyRace = findattr(race, val)
                 self.race = MyRace()
+            elif attr == 'armor':
+                self.wear_armor(val)
+            elif attr == 'shield':
+                self.wield_shield(val)
             elif (attr == 'spells') or (attr == 'spells_prepared'):
                 # Create a list of actual spell objects
                 _spells = []
@@ -185,6 +192,40 @@ class Character():
         final_text += '.'
         return final_text
     
+    def wear_armor(self, new_armor):
+        """Accepts a string or Armor class and replaces the current armor.
+        
+        If a string is given, then a subclass of
+        :py:class:`~dungeonsheets.armor.Armor` is retrived from the
+        ``armor.py`` file. Otherwise, an subclass of
+        :py:class:`~dungeonsheets.armor.Armor` can be provided
+        directly.
+        
+        """
+        try:
+            NewArmor = findattr(armor, new_armor)
+        except AttributeError:
+            # Not a string, so just treat it as Armor
+            NewArmor = new_armor
+        self.armor = NewArmor()
+    
+    def wield_shield(self, shield):
+        """Accepts a string or Shield class and replaces the current armor.
+        
+        If a string is given, then a subclass of
+        :py:class:`~dungeonsheets.armor.Shield` is retrived from the
+        ``armor.py`` file. Otherwise, an subclass of
+        :py:class:`~dungeonsheets.armor.Shield` can be provided
+        directly.
+        
+        """
+        try:
+            NewShield = findattr(armor, shield)
+        except AttributeError:
+            # Not a string, so just treat it as Armor
+            NewShield = shield
+        self.shield = NewShield()
+    
     def wield_weapon(self, weapon):
         """Accepts a string and adds it to the list of wielded weapons.
         
@@ -236,8 +277,18 @@ class Character():
     
     @property
     def armor_class(self):
-        """Armor class, without items."""
-        return 10 + self.dexterity.modifier
+        """Armor class, including contributions from worn armor and shield."""
+        # Retrieve current armor (or a generic armor substitute)
+        armor = self.armor if self.armor is not None else NoArmor()
+        shield = self.shield if self.shield is not None else NoShield()
+        # Calculate and apply modifiers
+        if armor.dexterity_mod_max is None:
+            modifier = self.dexterity.modifier
+        else:
+            modifier = min(self.dexterity.modifier, armor.dexterity_mod_max)
+        # Calculate final armor class
+        ac = armor.base_armor_class + shield.base_armor_class + modifier
+        return ac
 
 
 class Barbarian(Character):

@@ -5,6 +5,7 @@ from unittest import TestCase
 from dungeonsheets import race
 from dungeonsheets.character import Character, Wizard
 from dungeonsheets.weapons import Weapon, Shortsword
+from dungeonsheets.armor import Armor, LightLeatherArmor, Shield
 
 
 class TestCharacter(TestCase):
@@ -28,6 +29,10 @@ class TestCharacter(TestCase):
         char.set_attrs(weapons=['shortsword'])
         self.assertEqual(len(char.weapons), 1)
         self.assertTrue(isinstance(char.weapons[0], Shortsword))
+        # Check that armor and shield gets set_attrs
+        char.set_attrs(armor='light leather armor', shield='shield')
+        self.assertFalse(isinstance(char.armor, str))
+        self.assertFalse(isinstance(char.shield, str))
         # Check that race gets set to an object
         char.set_attrs(race='high elf')
         self.assertIsInstance(char.race, race.HighElf)
@@ -125,3 +130,26 @@ class TestCharacter(TestCase):
         self.assertEqual(char.spell_slots(spell_level=0), 3)
         self.assertEqual(char.spell_slots(spell_level=1), 3)
         self.assertEqual(char.spell_slots(spell_level=2), 0)
+    
+    def test_equip_armor(self):
+        char = Character(dexterity=16)
+        char.wear_armor('light leather armor')
+        self.assertTrue(isinstance(char.armor, Armor))
+        # Now make sure the armor class is correct
+        self.assertEqual(char.armor_class, 14)
+        # Try passing an Armor object directly
+        char.wear_armor(LightLeatherArmor)
+        self.assertEqual(char.armor_class, 14)
+        # Test equipped armor with max dexterity mod_str
+        char.armor.dexterity_mod_max = 1
+        self.assertEqual(char.armor_class, 12)
+    
+    def test_wield_shield(self):
+        char = Character(dexterity=16)
+        char.wield_shield('shield')
+        self.assertTrue(isinstance(char.shield, Shield), msg=char.shield)
+        # Now make sure the armor class is correct
+        self.assertEqual(char.armor_class, 15)
+        # Try passing an Armor object directly
+        char.wield_shield(Shield)
+        self.assertEqual(char.armor_class, 15)
