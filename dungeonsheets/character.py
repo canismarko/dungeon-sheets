@@ -11,6 +11,9 @@ from .armor import Armor, NoArmor, Shield, NoShield
 
 dice_re = re.compile('(\d+)d(\d+)')
 
+__all__ = ('Barbarian', 'Bard', 'Cleric', 'Druid', 'Fighter', 'Monk',
+           'Paladin', 'Ranger', 'Rogue', 'Sorceror', 'Warlock', 'Wizard', )
+
 class Character():
     """A generic player character. Intended to be subclasses by the
     various classes.

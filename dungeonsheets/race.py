@@ -1,11 +1,25 @@
 from . import weapons
 
+
+__all__ = ('Dwarf', 'HillDwarf', 'MountainDwarf', 'Elf', 'HighElf',
+           'WoodElf', 'DarkElf', 'Halfling', 'LightfootHalfling',
+           'StoutHalfling', 'Human', 'Dragonborn', 'Gnome', 'ForestGnome',
+           'RockGnome', 'HalfElf', 'HalfOrc', 'Tiefling')
+
+
 class Race():
     name = "Unknown"
     size = "medium"
     speed = 30
     proficiencies_text = tuple()
     weapon_proficiences = tuple()
+    strength_bonus = 0
+    dexterity_bonus = 0
+    constitution_bonus = 0
+    intelligence_bonus = 0
+    wisdom_bonus = 0
+    charisma_bonus = 0
+    hit_point_bonus = 0
     
     def __str__(self):
         return self.name
@@ -19,6 +33,7 @@ class Dwarf(Race):
     name = "Dwarf"
     size = "medium"
     speed = 25
+    constitution_bonus = 2
     proficiencies_text = ('battleaxes', 'handaxes', 'throwing hammers', 'warhammers')
     weapon_proficiences = (weapons.Battleaxe, weapons.Handaxe,
                            weapons.ThrowingHammer, weapons.Warhammer)
@@ -26,10 +41,13 @@ class Dwarf(Race):
 
 class HillDwarf(Dwarf):
     name = "Hill Dwarf"
+    wisdom_bonus = 1
+    hit_point_bonus = 1
 
 
 class MountainDwarf(Dwarf):
     name = "Mountain Dwarf"
+    strength_bonus = 2
 
 
 # Elves
@@ -37,6 +55,7 @@ class Elf(Race):
     name = "Elf"
     size = "medium"
     speed = 30
+    dexterity_bonus = 2
 
 
 class HighElf(Elf):
@@ -44,6 +63,7 @@ class HighElf(Elf):
     weapon_proficiencies = (weapons.Longsword, weapons.Shortsword,
                            weapons.Shortbow, weapons.Longbow)
     proficiencies_text = ('longswords', 'shortswords', 'shortbows', 'longbows')
+    intelligence_bonus = 1
 
 
 class WoodElf(Elf):
@@ -51,12 +71,14 @@ class WoodElf(Elf):
     weapon_proficiencies = (weapons.Longsword, weapons.Shortsword,
                            weapons.Shortbow, weapons.Longbow)
     proficiencies_text = ('longswords', 'shortswords', 'shortbows', 'longbows')
+    wisdom_bonus = 1
 
 
 class DarkElf(Elf):
     name = "Dark Elf"
     weapon_proficiencies = (weapons.Rapier, weapons.Shortsword, weapons.HandCrossbow)
-    proficiencies_text = ('repiers', 'shortswords', 'hand crossbows')
+    proficiencies_text = ('rapiers', 'shortswords', 'hand crossbows')
+    charisma_bonus = 1
 
 
 # Halflings
@@ -64,14 +86,17 @@ class Halfling(Race):
     name = "Halfling"
     size = "small"
     speed = 25
+    dexterity_bonus = 2
 
 
 class LightfootHalfling(Halfling):
     name = "Lightfoot Halfling"
+    charisma_bonus = 1
 
 
 class StoutHalfling(Halfling):
     name = "Stout Halfling"
+    constitution_bonus = 1
 
 
 # Humans
@@ -79,6 +104,12 @@ class Human(Race):
     name = "Human"
     size = "medium"
     speed = 30
+    strength_bonus = 1
+    dexterity_bonus = 1
+    constitution_bonus = 1
+    intelligence_bonus = 1
+    wisdom_bonus = 1
+    charisma_bonus = 1
 
 
 # Dragonborn
@@ -86,6 +117,8 @@ class Dragonborn(Race):
     name = "Dragonborn"
     size = "medium"
     speed = 30
+    strength_bonus = 2
+    charisma_bonus = 1
 
 
 # Gnomes
@@ -93,14 +126,17 @@ class Gnome(Race):
     name = "Gnome"
     size = "small"
     speed = 25
+    intelligence_bonus = 2
 
 
 class ForestGnome(Gnome):
     name = "Forest Gnome"
+    dexterity_bonus = 1
 
 
 class RockGnome(Gnome):
     name = "Rock Gnome"
+    constitution_bonus = 1
 
 
 # Half-elves
@@ -108,6 +144,7 @@ class HalfElf(Race):
     name = "Half-Elf"
     size = "medium"
     speed = 30
+    charisma_bonus = 2
 
 
 # Half-Orcs
@@ -115,6 +152,8 @@ class HalfOrc(Race):
     name = "Half-Orc"
     size = "medium"
     speed = 30
+    strength_bonus = 2
+    constitution_bonus = 1
 
 
 # Tielflings
@@ -122,3 +161,5 @@ class Tiefling(Race):
     name = "Tiefling"
     size = "medium"
     speed = 30
+    intelligence_bonus = 1
+    charisma_bonus = 2

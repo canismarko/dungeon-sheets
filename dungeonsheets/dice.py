@@ -8,7 +8,7 @@ Dice = namedtuple('Dice', ('num', 'faces'))
 
 def read_dice_str(dice_str):
     """Interpret a D&D dice string, eg. 3d10.
-
+    
     Returns
     -------
     dice : tuple

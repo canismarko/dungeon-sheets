@@ -23,7 +23,7 @@ setup(name='dungeonsheets',
           'dungeonsheets': ['blank-character-sheet-default.pdf', 'blank-spell-sheet-default.pdf']
       },
       install_requires=[
-          'fdfgen',
+          'fdfgen', 'npyscreen',
       ],
       entry_points={
           'console_scripts': [
