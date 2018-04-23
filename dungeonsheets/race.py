@@ -11,8 +11,10 @@ class Race():
     name = "Unknown"
     size = "medium"
     speed = 30
+    languages = ('Common', )
     proficiencies_text = tuple()
     weapon_proficiences = tuple()
+    skill_proficiencies = ()
     strength_bonus = 0
     dexterity_bonus = 0
     constitution_bonus = 0
@@ -33,6 +35,7 @@ class Dwarf(Race):
     name = "Dwarf"
     size = "medium"
     speed = 25
+    languages = ("Common", "Dwarvish")
     constitution_bonus = 2
     proficiencies_text = ('battleaxes', 'handaxes', 'throwing hammers', 'warhammers')
     weapon_proficiences = (weapons.Battleaxe, weapons.Handaxe,
@@ -56,6 +59,8 @@ class Elf(Race):
     size = "medium"
     speed = 30
     dexterity_bonus = 2
+    skill_proficiencies = ('perception',)
+    languages = ('Common', 'Elvish')
 
 
 class HighElf(Elf):
@@ -64,6 +69,7 @@ class HighElf(Elf):
                            weapons.Shortbow, weapons.Longbow)
     proficiencies_text = ('longswords', 'shortswords', 'shortbows', 'longbows')
     intelligence_bonus = 1
+    languages = ('Common', 'Elvish', '[choose one]')
 
 
 class WoodElf(Elf):
@@ -87,6 +93,7 @@ class Halfling(Race):
     size = "small"
     speed = 25
     dexterity_bonus = 2
+    languages = ('Common', 'Halfling')
 
 
 class LightfootHalfling(Halfling):
@@ -110,6 +117,7 @@ class Human(Race):
     intelligence_bonus = 1
     wisdom_bonus = 1
     charisma_bonus = 1
+    languages = ("Common", '[choose one]')
 
 
 # Dragonborn
@@ -119,6 +127,7 @@ class Dragonborn(Race):
     speed = 30
     strength_bonus = 2
     charisma_bonus = 1
+    languages = ("Common", "Draconic")
 
 
 # Gnomes
@@ -127,6 +136,7 @@ class Gnome(Race):
     size = "small"
     speed = 25
     intelligence_bonus = 2
+    languages = ("Common", "Gnomish")
 
 
 class ForestGnome(Gnome):
@@ -145,6 +155,7 @@ class HalfElf(Race):
     size = "medium"
     speed = 30
     charisma_bonus = 2
+    languages = ("Common", "Elvish", "[choose one]")
 
 
 # Half-Orcs
@@ -154,6 +165,7 @@ class HalfOrc(Race):
     speed = 30
     strength_bonus = 2
     constitution_bonus = 1
+    languages = ("Common", "Orc")
 
 
 # Tielflings
@@ -163,3 +175,4 @@ class Tiefling(Race):
     speed = 30
     intelligence_bonus = 1
     charisma_bonus = 2
+    languages = ("Common", "Infernal")

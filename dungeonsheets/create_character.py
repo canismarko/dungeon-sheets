@@ -3,17 +3,18 @@
 """Launch a system to interactively create a character."""
 
 import logging
-logging.basicConfig(filename='character_creater.log', level=logging.DEBUG)
+# logging.basicConfig(filename='character_creater.log', level=logging.DEBUG)
 log = logging.getLogger(__name__)
 
 import math
 import os
 from random import randint
+import subprocess
 
 import npyscreen
 import jinja2
 
-from dungeonsheets import character, race, dice
+from dungeonsheets import character, race, dice, background
 
 char_classes = {
     'Barbarian': character.Barbarian,
@@ -49,6 +50,18 @@ races = {
 }
 
 
+backgrounds = (background.Acolyte, background.Charlatan,
+               background.Criminal, background.Spy,
+               background.Entertainer, background.Gladiator,
+               background.FolkHero, background.GuildArtisan,
+               background.GuildMerchant, background.Hermit,
+               background.Noble, background.Knight,
+               background.Outlander, background.Sage,
+               background.Sailor, background.Pirate,
+               background.Soldier, background.Urchin)
+backgrounds = {bg.name: bg for bg in backgrounds}
+
+
 class App(npyscreen.NPSAppManaged):
     # STARTING_FORM = 'SKILLS'
     character = None
@@ -68,6 +81,10 @@ class App(npyscreen.NPSAppManaged):
         filename = self.getForm("SAVE").filename.value
         with open(filename, mode='w') as f:
             f.write(text)
+        # Create the PDF character sheet
+        if self.getForm('SAVE').make_pdf.value:
+            log.debug("Creating PDF")
+            subprocess.call(['makesheets', filename])
     
     @property
     def character_class(self, *args, **kwargs):
@@ -114,18 +131,34 @@ class App(npyscreen.NPSAppManaged):
 
 
 class SkillForm(npyscreen.ActionForm):
-
     def while_editing(self):
-        self.skill_proficiencies.set_values(self.parentApp.character.class_skill_choices)
+        # Update the static skills for race and background
+        bg_skills = self.parentApp.character.background.skill_proficiencies
+        self.bg_skills.value = str(bg_skills)[1:-1].replace("'", "")
+        race_skills = self.parentApp.character.race.skill_proficiencies
+        self.race_skills.value = str(race_skills)[1:-1].replace("'", "")
+        # Now set the available discretionary choices
+        choices = self.parentApp.character.class_skill_choices
+        static_skills = bg_skills + race_skills
+        choices = (c for c in choices if c.lower() not in static_skills)
+        self.skill_proficiencies.set_values(tuple(choices))
         self.update_remaining()
     
     def update_remaining(self, widget=None):
-        remaining = self.parentApp.character.num_skill_choices - len(self.skill_proficiencies.value)
+        num_choices = self.parentApp.character.num_skill_choices
+        num_selected = len(self.skill_proficiencies.value)
+        remaining =  num_choices - num_selected
         log.debug(f'Remaining: {remaining}')
         self.remaining.value = str(remaining)
         self.display()
     
     def create(self):
+        self.bg_skills = self.add(
+            npyscreen.TitleText, name="Background:",
+            value="", editable=False)
+        self.race_skills = self.add(
+            npyscreen.TitleText, name="Racial:",
+            value="", editable=False)
         self.remaining = self.add(
             npyscreen.TitleText, name="Remaining:",
             value=0, editable=False)
@@ -135,10 +168,21 @@ class SkillForm(npyscreen.ActionForm):
             value_changed_callback=self.update_remaining)
     
     def on_ok(self):
+        new_skills = self.skill_proficiencies.get_selected_objects()
+        if new_skills is not None:
+            new_skills = tuple(s.lower() for s in new_skills)
+        else:
+            new_skills = ()
+        bg_skills = tuple(self.parentApp.character.background.skill_proficiencies)
+        race_skills = tuple(self.parentApp.character.race.skill_proficiencies)
+        all_skills = new_skills + bg_skills + race_skills
+        self.parentApp.character.skill_proficiencies = all_skills
+        log.debug(f"Skill proficiencies: {all_skills}")
         self.parentApp.setNextForm('SAVE')
     
     def on_cancel(self):
         self.parentApp.setNextForm('BACKGROUND')
+
 
 class AbilityScoreForm(npyscreen.ActionForm):
     def roll_dice(self):
@@ -226,18 +270,22 @@ class CharacterClassForm(npyscreen.ActionForm):
 
 
 class BackgroundForm(npyscreen.ActionForm):
-    backgrounds = ('Acolyte', 'Charlatan', 'Criminal', 'Entertainer',
-                   'Folk hero', 'Guild Artison', 'Hermit', 'Noble', 'Knight',
-                   'Outlander', 'Pirate', 'Sage', 'Sailor', 'Soldier', 'Urchin',)
+
     def create(self):
-        self.background = self.add(npyscreen.TitleMultiLine,
-                                   name="Background:", values=self.backgrounds)
+        self.background = self.add(
+            npyscreen.TitleMultiLine,
+            name="Background:", values=tuple(backgrounds.keys()))
     
     def on_ok(self):
         if self.background.value is not None:
-            background = self.backgrounds[self.background.value]
-            self.parentApp.character.background = background
-            log.debug("Selected character background: %s", background)
+            selected_bg = self.background.values[self.background.value]
+            Background = backgrounds[selected_bg]
+            self.parentApp.character.background = Background()
+            # Update the languages based on background and race
+            race_languages = self.parentApp.character.race.languages
+            languages = Background.languages + race_languages
+            self.parentApp.character.languages = ', '.join(languages)
+            log.debug("Selected character background: %s", Background.name)
             self.parentApp.setNextForm('SKILLS')
     
     def on_cancel(self):
@@ -276,6 +324,7 @@ class AlignmentForm(npyscreen.ActionForm):
         if self.alignment.value is not None:
             selected_alignment = self.alignment.values[self.alignment.value]
             log.debug('Selected character alignment %s', selected_alignment)
+            self.parentApp.character.alignment = selected_alignment
             self.parentApp.setNextForm('ABILITIES')
     
     def on_cancel(self):
@@ -312,6 +361,9 @@ class SaveForm(npyscreen.ActionForm):
         self.filename = self.add(
             npyscreen.TitleText, name='Filename:')
         self.make_pdf = self.add(npyscreen.Checkbox, name="Create PDF:", value=True)
+        self.instructions = self.add(
+            npyscreen.FixedText, editbale=False,
+            value="After saving, edit this file to finish your personality, etc.")
     
     def on_ok(self):
         self.parentApp.setNextForm(None)
@@ -320,11 +372,16 @@ class SaveForm(npyscreen.ActionForm):
         self.parentApp.setNextForm('SKILLS')
 
 
-my_app = App()
+def main():
+    my_app = App()
+    
+    try:
+        my_app.run()
+    except KeyboardInterrupt:
+        log.error("Aborted by user request")
+    else:
+        my_app.save_character()
 
-try:
-    my_app.run()
-except KeyboardInterrupt:
-    log.error("Aborted by user request")
-else:
-    my_app.save_character()
+
+if __name__ == '__main__':
+    main()

@@ -210,12 +210,13 @@ class Character():
         directly.
         
         """
-        try:
-            NewArmor = findattr(armor, new_armor)
-        except AttributeError:
-            # Not a string, so just treat it as Armor
-            NewArmor = new_armor
-        self.armor = NewArmor()
+        if new_armor not in ('', None):
+            try:
+                NewArmor = findattr(armor, new_armor)
+            except AttributeError:
+                # Not a string, so just treat it as Armor
+                NewArmor = new_armor
+            self.armor = NewArmor()
     
     def wield_shield(self, shield):
         """Accepts a string or Shield class and replaces the current armor.
@@ -227,12 +228,13 @@ class Character():
         directly.
         
         """
-        try:
-            NewShield = findattr(armor, shield)
-        except AttributeError:
-            # Not a string, so just treat it as Armor
-            NewShield = shield
-        self.shield = NewShield()
+        if shield not in ('', None):
+            try:
+                NewShield = findattr(armor, shield)
+            except AttributeError:
+                # Not a string, so just treat it as Armor
+                NewShield = shield
+            self.shield = NewShield()
     
     def wield_weapon(self, weapon):
         """Accepts a string and adds it to the list of wielded weapons.

@@ -222,7 +222,7 @@ def create_character_pdf(character, basename, flatten=False):
     }
     # Add skill proficienies
     for skill in character.skill_proficiencies:
-        fields.append((skill_boxes[skill], 'Yes'))
+        fields.append((skill_boxes[skill.replace(' ', '_')], 'Yes'))
     # Add weapons
     weapon_fields = [('Wpn Name', 'Wpn1 AtkBonus', 'Wpn1 Damage'),
                      ('Wpn Name 2', 'Wpn2 AtkBonus ', 'Wpn2 Damage '),

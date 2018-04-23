@@ -35,7 +35,11 @@ The PDF's can then be generated using the ``makesheets`` command.
 .. code:: bash
 
     $ cd examples
-    $ makesheets
+    $ makesheets wizard.py
 
 dungeon-sheets contains definitions for standard weapons and spells,
 so attack bonuses and damage can be calculated automatically.
+
+If you'd like a **step-by-step walkthrough** for creating a new
+character, just run ``create-character`` from a command line and a
+helpful menu system will take care of the basics for you.

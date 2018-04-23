@@ -8,7 +8,7 @@ def read(fname):
 
 
 setup(name='dungeonsheets',
-      version='0.2.2',
+      version='0.3.0',
       description='Dungeons and Dragons 5e Character Tools',
       long_description=read('README.rst'),
       long_description_content_type='text/x-rst',
@@ -23,11 +23,12 @@ setup(name='dungeonsheets',
           'dungeonsheets': ['blank-character-sheet-default.pdf', 'blank-spell-sheet-default.pdf']
       },
       install_requires=[
-          'fdfgen', 'npyscreen', 'jinja',
+          'fdfgen', 'npyscreen', 'jinja2',
       ],
       entry_points={
           'console_scripts': [
-              'makesheets = dungeonsheets.make_sheets:main'
+              'makesheets = dungeonsheets.make_sheets:main',
+              'create-character = dungeonsheets.create_character:main',
           ]
       },
       python_requires='>=3.6',
