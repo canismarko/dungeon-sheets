@@ -40,6 +40,8 @@ class Character():
     charisma = Ability()
     saving_throw_proficiencies = []
     skill_proficiencies = tuple()
+    class_skill_choices = tuple()
+    num_skill_choices = 2
     weapon_proficiencies = tuple()
     proficiencies_extra = tuple()
     languages = ""
@@ -304,6 +306,8 @@ class Barbarian(Character):
     _proficiencies_text = ('light armor', 'medium armor', 'shields',
                            'simple weapons', 'martial weapons')
     weapon_proficiencies = (weapons.simple_weapons + weapons.martial_weapons)
+    class_skill_choices = ('Animal Handling', 'Athletics',
+                           'Intimidation', 'Nature', 'Perception', 'Survival')
 
 
 class Bard(Character):
@@ -316,6 +320,12 @@ class Bard(Character):
     weapon_proficiencies = ((weapons.HandCrossbow, weapons.Longsword,
                             weapons.Rapier, weapons.Shortsword) +
                            weapons.simple_weapons)
+    class_skill_choices = ('Acrobatics', 'Animal Handling', 'Arcana',
+                           'Athletics', 'Deception', 'History', 'Insight',
+                           'Intimidation', 'Investigation', 'Medicine', 'Nature',
+                           'Perception', 'Performance', 'Persuasion', 'Religion',
+                           'Sleight of Hand', 'Stealth', 'Survival')
+    num_skill_choices = 3
 
 
 class Cleric(Character):
@@ -325,6 +335,8 @@ class Cleric(Character):
     _proficiencies_text = ('light armor', 'medium armor', 'shields',
                           'all simple weapons')
     weapon_proficiencies = weapons.simple_weapons
+    class_skill_choices = ('History', 'Insight', 'Medicine',
+                           'Persuasion', 'Religion')
 
 
 class Druid(Character):
@@ -339,6 +351,8 @@ class Druid(Character):
     weapon_proficiencies = (weapons.Club, weapons.Dagger, weapons.Dart,
                            weapons.Javelin, weapons.Mace, weapons.Quarterstaff,
                            weapons.Scimitar, weapons.Sickle, weapons.Sling, weapons.Spear)
+    class_skill_choices = ('Arcana', 'Animal Handling', 'Insight',
+                           'Medicine', 'Nature', 'Perception', 'Religion', 'Survival')
 
 
 class Fighter(Character):
@@ -347,6 +361,9 @@ class Fighter(Character):
     saving_throw_proficiencies = ('strength', 'constitution')
     _proficiencies_text = ('All armar', 'shields', 'simple weapons', 'martial weapons')
     weapon_proficiencies = weapons.simple_weapons + weapons.martial_weapons
+    class_skill_choices = ('Acrobatics', 'Animal Handling',
+                           'Athletics', 'History', 'Insight', 'Intimidation', 'Perception',
+                           'Survival')
 
 
 class Monk(Character):
@@ -357,7 +374,7 @@ class Monk(Character):
         'simple weapons', 'shortswords',
         "one type of artisan's tools or one musical instrument")
     weapon_proficiencies = (weapons.Shortsword,) + weapons.simple_weapons
-
+    class_skill_choices = ('Acrobatics', 'Athletics', 'History', 'Insight', 'Religion', 'Stealth')
 
 class Paladin(Character):
     class_name = 'Paladin'
@@ -366,6 +383,8 @@ class Paladin(Character):
     _proficiencies_text = ('All armor', 'shields', 'simple weapons',
                           'martial weapons')
     weapon_proficiencies = weapons.simple_weapons + weapons.martial_weapons
+    class_skill_choices = ("Athletics", 'Insight', 'Intimidation',
+                           'Medicine', 'Persuasion', 'Religion')
 
 
 class Ranger(Character):
@@ -375,6 +394,9 @@ class Ranger(Character):
     _proficiencies_text = ("light armor", "medium armor", "shields",
                            "simple weapons", "martial weapons")
     weapon_proficiencies = weapons.simple_weapons + weapons.martial_weapons
+    class_skill_choices = ('Animal Handling', 'Athletics', 'Insight',
+                           'Investigation', 'Nature', 'Perception', 'Stealth', 'Survival')
+    num_skill_choices = 3
 
 
 class Rogue(Character):
@@ -386,6 +408,9 @@ class Rogue(Character):
         'rapiers', 'shortswords', "thieves' tools")
     weapon_proficiencies = (weapons.HandCrossbow, weapons.Longsword,
                            weapons.Rapier, weapons.Shortsword) + weapons.simple_weapons
+    class_skill_choices = ('Acrobatics', 'Athletics', 'Deception',
+                           'Insight', 'Intimidation', 'Investigation', 'Perception',
+                           'Performance', 'Persuasion', 'Sleight of Hand', 'Stealth')
 
 
 class Sorceror(Character):
@@ -397,6 +422,8 @@ class Sorceror(Character):
     weapon_proficiencies = (weapons.Dagger, weapons.Dart,
                            weapons.Sling, weapons.Quarterstaff,
                            weapons.LightCrossbow)
+    class_skill_choices = ('Arcana', 'Deception', 'Insight',
+                           'Intimidation' ,'Persuasion', 'Religion')
 
 
 class Warlock(Character):
@@ -404,6 +431,8 @@ class Warlock(Character):
     hit_dice_faces = 8
     saving_throw_proficiencies = ('wisdom', 'charisma')
     _proficiencies_text = ("light Armor", "simple weapons")
+    class_skill_choices = ('Arcana', 'Deception', 'History',
+                           'Intimidation', 'Investigation', 'Nature', 'Religion')
     weapon_proficiencies = weapons.simple_weapons
     spellcasting_ability = 'charisma'
     spell_slots_by_level = {
@@ -439,6 +468,8 @@ class Wizard(Character):
     weapon_proficiencies = (weapons.Dagger, weapons.Dart,
                            weapons.Sling, weapons.Quarterstaff,
                            weapons.LightCrossbow)
+    class_skill_choices = ('Arcana', 'History', 'Investigation',
+                           'Medicine', 'Religion')
     spellcasting_ability = 'intelligence'
     spell_slots_by_level = {
         # char_lvl: (cantrips, 1st, 2nd, 3rd, ...)

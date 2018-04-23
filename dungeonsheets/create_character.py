@@ -7,9 +7,11 @@ logging.basicConfig(filename='character_creater.log', level=logging.DEBUG)
 log = logging.getLogger(__name__)
 
 import math
+import os
+from random import randint
 
 import npyscreen
-from random import randint
+import jinja2
 
 from dungeonsheets import character, race, dice
 
@@ -48,11 +50,24 @@ races = {
 
 
 class App(npyscreen.NPSAppManaged):
-    # STARTING_FORM = 'CLASS'
+    # STARTING_FORM = 'SKILLS'
     character = None
     
     def save_character(self):
-        pass
+        # Create the template context
+        context = dict(
+            char=self.character
+        )
+        # Render the template
+        src_path = os.path.dirname(__file__)
+        src_filename = 'character_template.txt'
+        text = jinja2.Environment(
+            loader=jinja2.FileSystemLoader(src_path or './')
+        ).get_template(src_filename).render(context)
+        # Save the file
+        filename = self.getForm("SAVE").filename.value
+        with open(filename, mode='w') as f:
+            f.write(text)
     
     @property
     def character_class(self, *args, **kwargs):
@@ -87,14 +102,43 @@ class App(npyscreen.NPSAppManaged):
             max_hp_fld.value = str(max_hp)
     
     def onStart(self):
+        self.character = character.Character()
         self.addForm("MAIN", BasicInfoForm, name="Basic Info:")
         self.addForm("CLASS", CharacterClassForm, name="Select your character's class:")
         self.addForm("RACE", RaceForm, name="Select your character's race:")
         self.addForm("ALIGNMENT", AlignmentForm, name="Select your character's alignment:")
         self.addForm("ABILITIES", AbilityScoreForm, name="Choose ability scores:")
         self.addForm("BACKGROUND", BackgroundForm, name="Choose background:")
+        self.addForm("SKILLS", SkillForm, name="Choose skill proficiencies")
         self.addForm("SAVE", SaveForm, name="Save character:")
 
+
+class SkillForm(npyscreen.ActionForm):
+
+    def while_editing(self):
+        self.skill_proficiencies.set_values(self.parentApp.character.class_skill_choices)
+        self.update_remaining()
+    
+    def update_remaining(self, widget=None):
+        remaining = self.parentApp.character.num_skill_choices - len(self.skill_proficiencies.value)
+        log.debug(f'Remaining: {remaining}')
+        self.remaining.value = str(remaining)
+        self.display()
+    
+    def create(self):
+        self.remaining = self.add(
+            npyscreen.TitleText, name="Remaining:",
+            value=0, editable=False)
+        self.skill_proficiencies = self.add(
+            npyscreen.TitleMultiSelect, name="Skill Proficiencies:",
+            values=self.parentApp.character.class_skill_choices,
+            value_changed_callback=self.update_remaining)
+    
+    def on_ok(self):
+        self.parentApp.setNextForm('SAVE')
+    
+    def on_cancel(self):
+        self.parentApp.setNextForm('BACKGROUND')
 
 class AbilityScoreForm(npyscreen.ActionForm):
     def roll_dice(self):
@@ -194,7 +238,7 @@ class BackgroundForm(npyscreen.ActionForm):
             background = self.backgrounds[self.background.value]
             self.parentApp.character.background = background
             log.debug("Selected character background: %s", background)
-            self.parentApp.setNextForm('SAVE')
+            self.parentApp.setNextForm('SKILLS')
     
     def on_cancel(self):
         self.parentApp.setNextForm('ABILITIES')
@@ -260,7 +304,7 @@ class BasicInfoForm(npyscreen.ActionForm):
         self.parentApp.setNextForm('CLASS')
     
     def on_cancel(self):
-        self.parentApp.setNextForm('SAVE')
+        self.parentApp.setNextForm(None)
 
 
 class SaveForm(npyscreen.ActionForm):
@@ -273,7 +317,7 @@ class SaveForm(npyscreen.ActionForm):
         self.parentApp.setNextForm(None)
     
     def on_cancel(self):
-        self.parentApp.setNextForm('BACKGROUND')
+        self.parentApp.setNextForm('SKILLS')
 
 
 my_app = App()
