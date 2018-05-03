@@ -25,11 +25,19 @@ class Spell():
     casting_range = "60 ft"
     components = ("V", "S")
     duration = "instantaneous"
+    concentration = False
+    ritual = False
     magic_school = ""
     classes = ()
     
     def __str__(self):
-        return self.name
+        s = self.name
+        # Indicate if this is a ritual or a concentration
+        indicators = [('R', self.ritual), ('C', self.concentration)]
+        indicators = tuple(letter for letter, is_active in indicators if is_active)
+        if len(indicators):
+            s += f' ({", ".join(indicators)})'
+        return s
     
     def __repr__(self):
         return f'<{self.name}>'
@@ -1704,6 +1712,7 @@ class DetectMagic(Spell):
     casting_range = "Self (30 feet)"
     components = ("V", "S")
     duration = "Concentration, Up to 10 minutes"
+    ritual = True
     magic_school = "Divination"
     classes = ('Bard', 'Cleric', 'Druid', 'Paladin', 'Ranger', 'Sorceror', 'Wizard', )
 

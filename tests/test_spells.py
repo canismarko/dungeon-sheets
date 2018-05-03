@@ -14,3 +14,14 @@ class TestSpells(TestCase):
         self.assertEqual(NewSpell.name, 'Hello world')
         spell = NewSpell()
         print(spell, spell.__class__, type(spell))
+
+    def test_spell_str(self):
+        spell = Spell()
+        spell.name = "My spell"
+        self.assertEqual(str(spell), 'My spell')
+        # Try with a ritual
+        spell.ritual = True
+        self.assertEqual(str(spell), 'My spell (R)')
+        # Try with a ritual and a concentration
+        spell.concentration = True
+        self.assertEqual(str(spell), 'My spell (R, C)')

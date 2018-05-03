@@ -75,7 +75,7 @@ def create_spells_pdf(character, basename, flatten=False):
     cantrip_fields = (f'Spells 10{i}' for i in (14, 16, 17, 18, 19, 20, 21, 22))
     cantrips = (spl for spl in character.spells if spl.level == 0)
     for spell, field_name in zip(cantrips, cantrip_fields):
-        fields.append((field_name, spell.name))
+        fields.append((field_name, str(spell)))
     # Spells for each level
     field_numbers = {
         1: (1015, 1023, 1024, 1025, 1026, 1027, 1028, 1029, 1030, 1031, 1032, 1033, ),
@@ -104,7 +104,7 @@ def create_spells_pdf(character, basename, flatten=False):
         field_names = tuple(f'Spells {i}' for i in field_numbers[level])
         prep_names = tuple(f'Check Box {i}' for i in prep_numbers[level])
         for spell, field, chk_field in zip(spells, field_names, prep_names):
-            fields.append((field, spell.name))
+            fields.append((field, str(spell)))
             is_prepared = any([isinstance(spell, Spl) for Spl in character.spells_prepared])
             fields.append((chk_field, is_prepared))
         # # Uncomment to post field names instead:
