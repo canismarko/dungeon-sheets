@@ -52,6 +52,31 @@ def load_character_file(filename):
     return char_props
 
 
+def create_spellbook_pdf(character, basename):
+    from jinja2 import Environment, PackageLoader
+    env = Environment(
+        loader=PackageLoader('dungeonsheets', ''),
+        block_start_string='[%',
+        block_end_string='%]',
+        variable_start_string='[[',
+        variable_end_string=']]',
+    )
+    template = env.get_template('spellbook_template.tex')
+    tex = template.render(character=character)
+    # Create tex document
+    tex_file = f'{basename}.tex'
+    with open(tex_file, mode='w') as f:
+        f.write(tex)
+    # Compile the PDF
+    pdf_file = f'{basename}.pdf'
+    result = subprocess.call(['pdflatex', tex_file], stdout=subprocess.DEVNULL)
+    # Remove temporary files
+    if result == 0:
+        os.remove(tex_file)
+        os.remove(f'{basename}.aux')
+        os.remove(f'{basename}.log')
+
+
 def create_spells_pdf(character, basename, flatten=False):
     class_level = (character.class_name + ' ' + str(character.level))
     spell_level = lambda x : (x or '')
@@ -285,9 +310,14 @@ def make_sheet(character_file, flatten=False):
     sheets = [char_base + '.pdf']
     create_character_pdf(character=char, basename=char_base, flatten=flatten)
     if char.is_spellcaster:
+        # Create spell sheet
         spell_base = os.path.splitext(character_file)[0] + '_spells'
         create_spells_pdf(character=char, basename=spell_base, flatten=flatten)
         sheets.append(spell_base + '.pdf')
+        # Create spell book
+        spellbook_base = os.path.splitext(character_file)[0] + '_spellbook'
+        create_spellbook_pdf(character=char, basename=spellbook_base)
+        sheets.append(spellbook_base + '.pdf')
     # Combine sheets into final pdf
     final_pdf = os.path.splitext(character_file)[0] + '.pdf'
     popenargs = ('pdftk', *sheets, 'cat', 'output', final_pdf)

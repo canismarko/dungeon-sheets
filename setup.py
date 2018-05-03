@@ -8,7 +8,7 @@ def read(fname):
 
 
 setup(name='dungeonsheets',
-      version='0.3.0',
+      version='0.4.0',
       description='Dungeons and Dragons 5e Character Tools',
       long_description=read('README.rst'),
       long_description_content_type='text/x-rst',
@@ -20,7 +20,8 @@ setup(name='dungeonsheets',
       download_url = 'https://github.com/canismarko/dungeon-sheets/archive/master.zip',
       packages=['dungeonsheets'],
       package_data={
-          'dungeonsheets': ['blank-character-sheet-default.pdf', 'blank-spell-sheet-default.pdf']
+          'dungeonsheets': ['blank-character-sheet-default.pdf', 'blank-spell-sheet-default.pdf',
+                            'spellbook_template.tex']
       },
       install_requires=[
           'fdfgen', 'npyscreen', 'jinja2',

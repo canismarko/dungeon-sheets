@@ -24,6 +24,7 @@ class Spell():
     casting_time = "1 action"
     casting_range = "60 ft"
     components = ("V", "S")
+    materials = ""
     duration = "instantaneous"
     concentration = False
     ritual = False
@@ -41,6 +42,13 @@ class Spell():
     
     def __repr__(self):
         return f'<{self.name}>'
+    
+    def component_string(self):
+        s = f'{", ".join(self.components)}'
+        if "M" in self.components:
+            s += f' ({self.materials})'
+        return s
+    
 
 
 class AcidArrow(Spell):
@@ -3609,6 +3617,7 @@ class Prestidigitation(Spell):
       or a surface for 1 hour.
     - You create a nonmagical trinket or an illusory image that can
       fit in your hand and that lasts until the end of your next turn.
+    
     If you cast this spell multiple times, you can have up to three of
     its non-instantaneous effects active at a time, and you can
     dismiss such an effect as an action.

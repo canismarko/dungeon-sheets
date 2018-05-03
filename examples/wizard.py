@@ -44,7 +44,7 @@ equipment = (
 spells = ('blindness deafness', 'burning hands', 'detect magic',
           'false life', 'mage armor', 'mage hand', 'magic missile',
           'prestidigitation', 'ray of frost', 'ray of sickness', 'shield',
-          'shocking grasp', 'sleep', 'some other spell')
+          'shocking grasp', 'sleep',)
 # Which spells have been prepared (not including cantrips)
 spells_prepared = ('blindness deafness', 'false life', 'mage armor',
                    'ray of sickness', 'shield', 'sleep',)
