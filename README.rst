@@ -21,6 +21,19 @@ Installation
 
 .. _f-strings: https://www.python.org/dev/peps/pep-0498/
 
+External dependencies
+=====================
+
+* You will need **pdftk** installed to generate the sheets in PDF format.
+* You will need **pdflatex** installed to generate the PDF spell pages.
+
+.. note::
+
+   Different linux distributions have different names for packages. While
+   pdftk is available in Debian and derivatives as **pdftk**, the package
+   is not available in some RPM distributions, such as Fedora and CentOS.
+   One alternative would be to build your PC sheets using docker.
+
 Usage
 =====
 
