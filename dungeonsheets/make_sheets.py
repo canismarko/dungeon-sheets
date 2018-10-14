@@ -1,5 +1,7 @@
 #!/usr/bin/env python
 
+import logging
+log = logging.getLogger(__name__)
 import argparse
 import importlib.util
 import os
@@ -8,8 +10,9 @@ import warnings
 
 from fdfgen import forge_fdf
 
-from dungeonsheets import character
+from dungeonsheets import character, exceptions
 from dungeonsheets.stats import mod_str
+
 
 """Program to take character definitions and build a PDF of the
 character sheet."""
@@ -67,17 +70,29 @@ def create_spellbook_pdf(character, basename):
     tex_file = f'{basename}.tex'
     with open(tex_file, mode='w') as f:
         f.write(tex)
+    # Convenience function for removing temporary files
+    def remove_temp_files(basename_):
+        filenames = [f'{basename_}.tex', f'{basename_}.aux',
+                     f'{basename_}.log']
+        for filename in filenames:
+            if os.path.exists(filename):
+                os.remove(filename)
     # Compile the PDF
     pdf_file = f'{basename}.pdf'
-    output_dir = os.path.dirname(pdf_file)
-    result = subprocess.call(['pdflatex', '--output-directory',
-                              output_dir, tex_file],
-                             stdout=subprocess.DEVNULL)
-    # Remove temporary files
-    if result == 0:
-        os.remove(tex_file)
-        os.remove(f'{basename}.aux')
-        os.remove(f'{basename}.log')
+    output_dir = os.path.abspath(os.path.dirname(pdf_file))
+    try:
+        result = subprocess.run(['pdflatex', '--output-directory',
+                                  output_dir, tex_file, '-halt-on-error'],
+                                 stdout=subprocess.DEVNULL, timeout=10)
+    except FileNotFoundError:
+        # Remove temporary files
+        remove_temp_files(basename)
+        raise exceptions.LatexNotFoundError()
+    else:
+        if result.returncode == 0:
+            remove_temp_files(basename)
+        else:
+            raise exceptions.LatexError(f'Processing of {basename}.tex failed.')
 
 
 def create_spells_pdf(character, basename, flatten=False):
@@ -319,8 +334,13 @@ def make_sheet(character_file, flatten=False):
         sheets.append(spell_base + '.pdf')
         # Create spell book
         spellbook_base = os.path.splitext(character_file)[0] + '_spellbook'
-        create_spellbook_pdf(character=char, basename=spellbook_base)
-        sheets.append(spellbook_base + '.pdf')
+        try:
+            create_spellbook_pdf(character=char, basename=spellbook_base)
+        except exceptions.LatexNotFoundError as e:
+            log.warning('``pdflatex`` not available. Skipping spellbook '
+                        f'for {char.name}')
+        else:
+            sheets.append(spellbook_base + '.pdf')
     # Combine sheets into final pdf
     final_pdf = os.path.splitext(character_file)[0] + '.pdf'
     popenargs = ('pdftk', *sheets, 'cat', 'output', final_pdf)

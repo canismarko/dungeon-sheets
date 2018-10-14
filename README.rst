@@ -28,7 +28,7 @@ External dependencies
 =====================
 
 * You will need **pdftk** installed to generate the sheets in PDF format.
-* You will need **pdflatex** installed to generate the PDF spell pages.
+* You will need **pdflatex** installed to generate the PDF spell pages (optional).
 
 .. note::
 
@@ -36,6 +36,12 @@ External dependencies
    pdftk is available in Debian and derivatives as **pdftk**, the package
    is not available in some RPM distributions, such as Fedora and CentOS.
    One alternative would be to build your PC sheets using docker.
+
+.. note::
+
+   If the ``pdflatex`` command is available on your system,
+   spellcasters will include a spellbook with descriptions of each
+   spell known. If not, then this feature will be skipped.
 
 Usage
 =====
