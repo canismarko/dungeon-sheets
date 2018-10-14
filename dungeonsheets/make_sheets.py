@@ -69,7 +69,10 @@ def create_spellbook_pdf(character, basename):
         f.write(tex)
     # Compile the PDF
     pdf_file = f'{basename}.pdf'
-    result = subprocess.call(['pdflatex', tex_file], stdout=subprocess.DEVNULL)
+    output_dir = os.path.dirname(pdf_file)
+    result = subprocess.call(['pdflatex', '--output-directory',
+                              output_dir, tex_file],
+                             stdout=subprocess.DEVNULL)
     # Remove temporary files
     if result == 0:
         os.remove(tex_file)
