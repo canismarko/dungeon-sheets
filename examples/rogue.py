@@ -1,3 +1,6 @@
+dungeonsheets_version = "0.4.2"
+
+# Basic information
 name = 'Mr. Stabby'
 character_class = 'rogue'
 player_name = 'Mike'

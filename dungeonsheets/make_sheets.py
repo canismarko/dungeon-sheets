@@ -7,6 +7,7 @@ import importlib.util
 import os
 import subprocess
 import warnings
+import re
 
 from fdfgen import forge_fdf
 
@@ -43,6 +44,19 @@ def load_character_file(filename):
     module_name, ext = os.path.splitext(fname)
     if ext != '.py':
         raise ValueError(f"Character definition {filename} is not a python file.")
+    # Check if this file contains the version string
+    version_re = re.compile('dungeonsheets_version\s*=\s*[\'"]([0-4.]+)[\'"]')
+    with open(filename, mode='r') as f:
+        version = None
+        for line in f:
+            match = version_re.match(line)
+            if match:
+                version = match.group(1)
+                break
+        if version is None:
+            # Not a valid DND character file
+            raise exceptions.CharacterFileFormatError(
+                "No ``dungeonsheets_version = `` entry.")
     # Import the module to extract the information
     spec = importlib.util.spec_from_file_location('module', filename)
     module = importlib.util.module_from_spec(spec)
@@ -265,7 +279,10 @@ def create_character_pdf(character, basename, flatten=False):
     }
     # Add skill proficienies
     for skill in character.skill_proficiencies:
-        fields.append((skill_boxes[skill.replace(' ', '_')], 'Yes'))
+        try:
+            fields.append((skill_boxes[skill.replace(' ', '_').lower()], 'Yes'))
+        except KeyError:
+            raise KeyError(f"Unknown skill: '{skill}'")
     # Add weapons
     weapon_fields = [('Wpn Name', 'Wpn1 AtkBonus', 'Wpn1 Damage'),
                      ('Wpn Name 2', 'Wpn2 AtkBonus ', 'Wpn2 Damage '),
@@ -368,6 +385,11 @@ def main():
         print(f"Processing {os.path.splitext(filename)[0]}...", end='')
         try:
             make_sheet(character_file=filename, flatten=(not args.editable))
+        except exceptions.CharacterFileFormatError as e:
+            # Only raise the failed exception if this file is explicitly given
+            print('invalid')
+            if args.filename:
+                raise
         except Exception as e:
             print('failed')
             raise

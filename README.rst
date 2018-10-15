@@ -5,7 +5,11 @@
 A tool to create character sheets for Dungeons and Dragons.
 
 .. image:: https://travis-ci.com/canismarko/dungeon-sheets.svg?branch=master
-    :target: https://travis-ci.com/canismarko/dungeon-sheets
+   :target: https://travis-ci.com/canismarko/dungeon-sheets
+
+.. image:: https://readthedocs.org/projects/dungeon-sheets/badge/?version=latest
+   :target: https://dungeon-sheets.readthedocs.io/en/latest/?badge=latest
+   :alt: Documentation Status	     
 
 Installation
 ============

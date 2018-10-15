@@ -1,3 +1,6 @@
+dungeonsheets_version = "0.4.2"
+
+# Basic information
 name = 'Inara Serradon'
 character_class = 'wizard'
 player_name = 'Mark'
@@ -15,6 +18,8 @@ constitution = 14
 intelligence = 16
 wisdom = 12
 charisma = 8
+
+# Proficiencies and languages
 skill_proficiencies = [
     'arcana',
     'insight',
@@ -22,8 +27,6 @@ skill_proficiencies = [
     'perception',
     'religion',
 ]
-
-# Proficiencies and languages
 languages = "Common, Elvish, Draconic, Dwarvish, Goblin."
 
 # Inventory
@@ -42,7 +45,7 @@ equipment = (
 
 # List of known spells
 spells = ('blindness deafness', 'burning hands', 'detect magic',
-          'false life', 'mage armor', 'mage hand', 'magic missile',
+          'falsee life', 'mage armor', 'mage hand', 'magic missile',
           'prestidigitation', 'ray of frost', 'ray of sickness', 'shield',
           'shocking grasp', 'sleep',)
 # Which spells have been prepared (not including cantrips)
@@ -68,7 +71,7 @@ features_and_traits = (
     your spells. The saving throw DC to resist a spell you cast is
     13. Your attack bonus when you make an attack with a spell is
     +5. See the rulebook for rules on casting your spells.
-
+    
     Arcane Recovery: You can regain some of your magical energy by
     studying your spellbook. Once per day during a short rest, you can
     choose to recover expended spell slots with a combined level equal

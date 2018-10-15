@@ -1,3 +1,6 @@
+class CharacterFileFormatError(ValueError):
+    """The given file is not a valid Dungeons and Dragons file."""
+
 class DiceError(ValueError):
     """Improper formatting for a dice string."""
 

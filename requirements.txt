@@ -3,3 +3,4 @@ fdfgen>=0.16
 npyscreen
 jinja2
 pytest
+sphinx

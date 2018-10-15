@@ -1,3 +1,6 @@
+dungeonsheets_version = "0.4.2"
+
+# Basic information
 name = 'Sid Istick'
 character_class = 'Warlock'
 player_name = 'Mark'

@@ -106,7 +106,9 @@ class Character():
         """Bulk setting of attributes. Useful for loading a character from a
         dictionary."""
         for attr, val in attrs.items():
-            if attr == 'weapons':
+            if attr == 'dungeonsheets_version':
+                pass # Maybe we'll verify this later?
+            elif attr == 'weapons':
                 # Treat weapons specially
                 for weap in val:
                     self.wield_weapon(weap)
@@ -249,7 +251,7 @@ class Character():
         try:
             NewWeapon = findattr(weapons, weapon)
         except AttributeError:
-            raise AttributeError(f'Weapon {weapon} is not defined')
+            raise AttributeError(f'Weapon "{weapon}" is not defined')
         weapon_ = NewWeapon()
         # Set weapon attributes based on character
         if weapon_.is_finesse:
