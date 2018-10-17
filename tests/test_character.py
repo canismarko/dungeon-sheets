@@ -153,3 +153,12 @@ class TestCharacter(TestCase):
         # Try passing an Armor object directly
         char.wield_shield(Shield)
         self.assertEqual(char.armor_class, 15)
+    
+    def test_speed(self):
+        # Check that the speed pulls from the character's race
+        char = Character(race='halfling')
+        self.assertEqual(char.speed, 25)
+        # Check that a character with no race defaults to 30 feet
+        char = Character()
+        char.race = None
+        self.assertEqual(char.speed, 30)

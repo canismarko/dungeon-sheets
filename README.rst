@@ -28,24 +28,28 @@ Installation
 
 .. _f-strings: https://www.python.org/dev/peps/pep-0498/
 
-External dependencies
-=====================
+Optional External dependencies
+==============================
 
-* You will need **pdftk** installed to generate the sheets in PDF format.
+* You may use **pdftk** to generate the sheets in PDF format.
 * You will need **pdflatex** installed to generate the PDF spell pages (optional).
 
-.. note::
+If **pdftk** is available, it will be used for pdf generation. If not,
+a fallback python library (pdfrw) will be used. This has some
+limitations:
 
-   Different linux distributions have different names for packages. While
-   pdftk is available in Debian and derivatives as **pdftk**, the package
-   is not available in some RPM distributions, such as Fedora and CentOS.
-   One alternative would be to build your PC sheets using docker.
+- Produces v1.3 PDF files
+- Not able to flatten PDF forms
+- Will produce separate character-sheets, spell-lists and spell-books.
+  
+Different linux distributions have different names for packages. While
+pdftk is available in Debian and derivatives as **pdftk**, the package
+is not available in some RPM distributions, such as Fedora and CentOS.
+One alternative would be to build your PC sheets using docker.
 
-.. note::
-
-   If the ``pdflatex`` command is available on your system,
-   spellcasters will include a spellbook with descriptions of each
-   spell known. If not, then this feature will be skipped.
+If the ``pdflatex`` command is available on your system, spellcasters
+will include a spellbook with descriptions of each spell known. If
+not, then this feature will be skipped.
 
 Usage
 =====

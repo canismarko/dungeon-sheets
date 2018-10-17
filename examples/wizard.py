@@ -45,7 +45,7 @@ equipment = (
 
 # List of known spells
 spells = ('blindness deafness', 'burning hands', 'detect magic',
-          'falsee life', 'mage armor', 'mage hand', 'magic missile',
+          'false life', 'mage armor', 'mage hand', 'magic missile',
           'prestidigitation', 'ray of frost', 'ray of sickness', 'shield',
           'shocking grasp', 'sleep',)
 # Which spells have been prepared (not including cantrips)

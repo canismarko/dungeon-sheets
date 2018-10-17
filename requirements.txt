@@ -4,3 +4,4 @@ npyscreen
 jinja2
 pytest
 sphinx
+pdfrw

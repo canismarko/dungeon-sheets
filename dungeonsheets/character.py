@@ -100,7 +100,7 @@ class Character():
     
     @property
     def speed(self):
-        return self.race.speed
+        return getattr(self.race, 'speed', 30)
     
     def set_attrs(self, **attrs):
         """Bulk setting of attributes. Useful for loading a character from a
