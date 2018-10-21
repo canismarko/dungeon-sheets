@@ -6,8 +6,8 @@
 \definecolor{mygrey}{gray}{0.7}
 
 \title{Spells and Incantations}
-
 \author{[[ character.name ]]}
+\date{}
 
 \begin{document}
 
@@ -29,9 +29,13 @@
   [% else %] %
     \textit{[[ spl.magic_school ]] Cantrip} %
   [% endif %] %
-  [% if spl.ritual %] %
-    \textit{(ritual)}
-  [% endif %]
+  [% if spl.ritual and spl.concentration %]%
+    (\textit{ritual}, \textit{concentration})%
+  [% elif spl.ritual %]%
+    (\textit{ritual})%
+  [% elif spl.concentration %]%
+    (\textit{concentration})%
+  [% endif %]%            
              
   \noindent
   \textbf{Casting Time:} [[ spl.casting_time ]] \\
@@ -39,7 +43,7 @@
   \textbf{Components:} [[ spl.component_string() ]] \\
   \textbf{Duration:} [[ spl.duration ]]
 
-  [[ spl.__doc__ ]]
+  [[ spl.__doc__|rst_to_latex ]]
 
   } %\color
 [% endfor %]

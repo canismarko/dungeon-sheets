@@ -5,6 +5,8 @@ sheet by running ``makesheets`` from the command line.
 
 """
 
+dungeonsheets_version = "{{ dungeonsheets_version }}"
+
 name = '{{ char.name }}'
 character_class = '{{ char.class_name }}'
 player_name = '{{ char.player_name }}'

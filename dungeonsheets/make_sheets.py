@@ -8,9 +8,11 @@ import os
 import subprocess
 import warnings
 import re
+from io import StringIO
 
 from fdfgen import forge_fdf
 import pdfrw
+from jinja2 import Environment, PackageLoader
 
 from dungeonsheets import character, exceptions
 from dungeonsheets.stats import mod_str
@@ -18,6 +20,29 @@ from dungeonsheets.stats import mod_str
 
 """Program to take character definitions and build a PDF of the
 character sheet."""
+
+bold_re = re.compile(r'\*\*([^*]+)\*\*')
+it_re = re.compile(r'\*([^*]+)\*')
+tt_re = re.compile(r'``([^`]+)``')
+
+def rst_to_latex(rst):
+    """Basic markup of RST to LaTeX code."""
+    tex = rst
+    tex = bold_re.sub(r'\\textbf{\1}', tex)
+    tex = it_re.sub(r'\\textit{\1}', tex)
+    tex = tt_re.sub(r'\\texttt{\1}', tex)
+    return tex
+
+
+jinja_env = Environment(
+    loader=PackageLoader('dungeonsheets', ''),
+    block_start_string='[%',
+    block_end_string='%]',
+    variable_start_string='[[',
+    variable_end_string=']]',
+)
+jinja_env.filters['rst_to_latex'] = rst_to_latex
+jinja_env.filters['mod_str'] = mod_str
 
 
 CHECKBOX_ON = 'Yes'
@@ -51,7 +76,7 @@ def load_character_file(filename):
     if ext != '.py':
         raise ValueError(f"Character definition {filename} is not a python file.")
     # Check if this file contains the version string
-    version_re = re.compile('dungeonsheets_version\s*=\s*[\'"]([0-4.]+)[\'"]')
+    version_re = re.compile('dungeonsheets_version\s*=\s*[\'"]([0-9.]+)[\'"]')
     with open(filename, mode='r') as f:
         version = None
         for line in f:
@@ -62,7 +87,7 @@ def load_character_file(filename):
         if version is None:
             # Not a valid DND character file
             raise exceptions.CharacterFileFormatError(
-                "No ``dungeonsheets_version = `` entry.")
+                f"No ``dungeonsheets_version = `` entry in `{filename}`.")
     # Import the module to extract the information
     spec = importlib.util.spec_from_file_location('module', filename)
     module = importlib.util.module_from_spec(spec)
@@ -75,16 +100,17 @@ def load_character_file(filename):
     return char_props
 
 
+def create_druid_shapes_pdf(character, basename):
+    template = jinja_env.get_template('druid_shapes_template.tex')
+    return create_latex_pdf(character, basename, template)
+
+
 def create_spellbook_pdf(character, basename):
-    from jinja2 import Environment, PackageLoader
-    env = Environment(
-        loader=PackageLoader('dungeonsheets', ''),
-        block_start_string='[%',
-        block_end_string='%]',
-        variable_start_string='[[',
-        variable_end_string=']]',
-    )
-    template = env.get_template('spellbook_template.tex')
+    template = jinja_env.get_template('spellbook_template.tex')
+    return create_latex_pdf(character, basename, template)
+
+
+def create_latex_pdf(character, basename, template):
     tex = template.render(character=character)
     # Create tex document
     tex_file = f'{basename}.tex'
@@ -300,7 +326,8 @@ def create_character_pdf(character, basename, flatten=False):
         fields[dmg_field] = f'{weapon.damage} {weapon.damage_type}'
     # Other attack information
     attack_str = f'Armor: {character.armor}'
-    attack_str += f'Shield: {character.shield}\n\n'
+    attack_str += '\n\r'
+    attack_str += f'Shield: {character.shield}'
     attack_str += character.attacks_and_spellcasting
     fields['AttacksSpellcasting'] = text_box(attack_str)
     # Other proficiencies and languages
@@ -444,6 +471,16 @@ def make_sheet(character_file, flatten=False):
                         f'for {char.name}')
         else:
             sheets.append(spellbook_base + '.pdf')
+    # Create a list of Druid wild_shapes
+    if len(char.wild_shapes) > 0:
+        shapes_base = os.path.splitext(character_file)[0] + '_wild_shapes'
+        try:
+            create_druid_shapes_pdf(character=char, basename=shapes_base)
+        except exceptions.LatexNotFoundError as e:
+            log.warning('``pdflatex`` not available. Skipping wild shapes list '
+                        f'for {char.name}')
+        else:
+            sheets.append(shapes_base + '.pdf')
     # Combine sheets into final pdf
     final_pdf = os.path.splitext(character_file)[0] + '.pdf'
     merge_pdfs(sheets, final_pdf, clean_up=True)

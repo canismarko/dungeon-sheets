@@ -16,6 +16,13 @@ import jinja2
 
 from dungeonsheets import character, race, dice, background
 
+
+def read_version():
+    version = open(os.path.join(os.path.dirname(__file__), '../VERSION')).read()
+    version = version.replace('\n', '')
+    return version
+
+
 char_classes = {
     'Barbarian': character.Barbarian,
     'Bard': character.Bard,
@@ -69,7 +76,8 @@ class App(npyscreen.NPSAppManaged):
     def save_character(self):
         # Create the template context
         context = dict(
-            char=self.character
+            char=self.character,
+            dungeonsheets_version=read_version(),
         )
         # Render the template
         src_path = os.path.dirname(__file__)
@@ -353,7 +361,7 @@ class BasicInfoForm(npyscreen.ActionForm):
         self.parentApp.setNextForm('CLASS')
     
     def on_cancel(self):
-        self.parentApp.setNextForm(None)
+        raise KeyboardInterrupt
 
 
 class SaveForm(npyscreen.ActionForm):

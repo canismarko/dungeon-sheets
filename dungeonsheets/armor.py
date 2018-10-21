@@ -8,6 +8,10 @@ class Shield():
         return self.name
 
 
+class WoodenShield(Shield):
+    name = 'Wooden shield'
+
+
 class NoShield(Shield):
     """If a character is carrying no shield."""
     name = "No shield"
@@ -64,22 +68,22 @@ class LightPaddedArmor(Armor):
     stealth_disadvantage = True
 
 
-class LightLeatherArmor(Armor):
-    name = "Light leather armor"
+class LeatherArmor(Armor):
+    name = "Leather armor"
     cost = "10 gp"
     base_armor_class = 11
     weight = 10
 
 
-class LightStuddedArmor(Armor):
-    name = "Light studded armor"
+class StuddedArmor(Armor):
+    name = "Studded armor"
     cost = "45 gp"
     base_armor_class = 12
     weight = 13
 
 
-class MediumHideArmor(Armor):
-    name = "Medium hide armor"
+class HideArmor(Armor):
+    name = "Hide armor"
     cost = "10 gp"
     base_armor_class = 12
     dexterity_mod_max = 2

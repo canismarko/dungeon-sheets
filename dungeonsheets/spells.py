@@ -1540,6 +1540,35 @@ class Counterspell(Spell):
     classes = ()
 
 
+class CreateOrDestroyWater(Spell):
+    """You either create or destroy water.
+    
+    **Create Water.** You create up to 10 gallons of clean water
+    within range in an open container. Alternatively, the water falls
+    as rain in a 30-foot cube within range, extinguishing exposed
+    flames in the area.
+    
+    **Destroy Water.** You destroy up to 10 gallons of water in an open
+    container within range. Alternatively, you destroy fog in a
+    30-foot cube within range.
+    
+    **At Higher Levels.** When you cast this spell using a spell slot
+    of 2nd level or higher, you create or destroy 10 additional
+    gallons of water, or the size of the cube increases by 5 feet, for
+    each slot level above 1st.
+
+    """
+    level = 1
+    name = "Create or Destroy Water"
+    casting_time = "1 action"
+    casting_range = "30 ft (30 ft cube)"
+    components = ("V", "S", "M")
+    materials = "a drop of water if creating water or a few grains of sand if destroying it"
+    duration = "instantaneous"
+    magic_school = "Transmutation"
+    classes = ('Cleric', 'Druid')
+
+
 class CreateUndead(Spell):
     """You can cast this spell only at night. Choose up to three corpses
     of Medium or Small humanoids within range. Each corpse becomes a
@@ -1585,11 +1614,11 @@ class CreateUndead(Spell):
 
 
 class CureWounds(Spell):
-    """A creature you touch regains a number of hit points equal to 1d8 +
-    your spellcasting ability modifier. This spell has no effect on
-    undead or constructs. At Higher Levels. When you cast this spell
-    using a spell slot of 2nd level or higher, the healing increases
-    by 1d8 for each slot level above 1st.
+    """A creature you touch regains a number of hit points equal to
+    ``1d8`` + your spellcasting ability modifier. This spell has no
+    effect on undead or constructs. At Higher Levels. When you cast
+    this spell using a spell slot of 2nd level or higher, the healing
+    increases by ``1d8`` for each slot level above 1st.
     
     """
     name = "Cure Wounds"
@@ -1723,7 +1752,6 @@ class DetectMagic(Spell):
     ritual = True
     magic_school = "Divination"
     classes = ('Bard', 'Cleric', 'Druid', 'Paladin', 'Ranger', 'Sorceror', 'Wizard', )
-
 
 
 class DimensionDoor(Spell):
@@ -2059,6 +2087,31 @@ class ElementalWeapon(Spell):
     duration = "Concentration, up to 1 hour"
     magic_school = "Transmutation"
     classes = ('Paladin', )
+
+
+class Entangle(Spell):
+    """Grasping weeds and vines sprout from the ground in a 20-foot square
+    starting from a point within range. For the duration, these plants
+    turn the ground in the area into difficult terrain.
+    
+    A creature in the area when you cast the spell must succeed on a
+    Strength saving throw or be restrained by the entangling plants
+    until the spell ends. A creature restrained by the plants can use
+    its action to make a Strength check against your spell save DC. On
+    a success, it frees itself.
+    
+    When the spell ends, the conjured plants wilt away.
+    
+    """
+    level = 1
+    name = "Entangle"
+    casting_time = "1 action"
+    casting_range = "90 ft (20 ft area)"
+    components = ("V", "S")
+    concentration = True
+    duration = "instantaneous"
+    magic_school = "Conjuration"
+    classes = ('Druid')
 
 
 class Etherealness(Spell):
@@ -3529,9 +3582,10 @@ class PhantasmalForce(Spell):
 class PoisonSpray(Spell):
     """You extend your hand toward a creature you can see within range and
     project a puff of noxious gas from your palm. The creature must
-    succeed on a Constitution saving throw or take 1d12 poison
-    damage. This spell’s damage increases by 1d12 when you reach 5th
-    level (2d12), 11th level (3d12), and 17th level (4d12).
+    succeed on a Constitution saving throw or take ``1d12`` poison
+    damage. This spell’s damage increases by ``1d12`` when you reach
+    5th level (``2d12``), 11th level (``3d12``), and 17th level
+    (``4d12``).
     
     """
     name = "Poison Spray"
@@ -3888,6 +3942,29 @@ class Sanctuary(Spell):
     classes = ()
 
 
+class Shillelagh(Spell):
+    """The wood of a club or quarterstaff you are holding is imbued with
+    nature's power. For the duration, you can use your spellcasting
+    ability instead of Strength for the attack and damage rolls of
+    melee attacks using that weapon, and the weapon's damage die
+    becomes a ``d8``. The weapon also becomes magical, if it isn't
+    already. The spell ends if you cast it again or if you let go of
+    the weapon.
+
+    """
+    level = 0
+    name = "Shillelagh"
+    casting_time = "1 bonus action"
+    casting_range = "Touch"
+    components = ("V", "S", "M")
+    materials = "mistletoe, a shamrock leaf, and a club or quarterstaff"
+    duration = "1 minute"
+    concentration = False
+    ritual = False
+    magic_school = "Transmutation"
+    classes = ('Druid')
+
+
 class Shatter(Spell):
     """A sudden loud ringing noise, painfully intense, erupts from a point
     of your choice within range. Each creature in a 10-foot-radius
@@ -4062,6 +4139,27 @@ class SpareTheDying(Spell):
     duration = "Instantaneous"
     magic_school = "Necromancy"
     classes = ()
+
+
+class SpeakWithAnimals(Spell):
+    """You gain the ability to comprehend and verbally communicate with
+    beasts for the duration. The knowledge and awareness of many
+    beasts is limited by their intelligence, but at minimum, beasts
+    can give you information about nearby locations and monsters,
+    including whatever they can perceive or have perceived within the
+    past day. You might be able to persuade a beast to perform a small
+    favor for you, at the GM's discretion.
+    
+    """
+    level = 1
+    name = "Speak with Animals"
+    casting_time = "1 action"
+    casting_range = "Self"
+    components = ("V", "S")
+    duration = "10 minutes"
+    ritual = True
+    magic_school = "Divination"
+    classes = ('Bard', 'Druid', 'Ranger')
 
 
 class SpeakWithDead(Spell):

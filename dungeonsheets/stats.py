@@ -57,7 +57,7 @@ class Ability():
         modifier = math.floor((score - 10) / 2)
         # Check for proficiency
         saving_throw = modifier
-        if self.ability_name is not None:
+        if self.ability_name is not None and hasattr(character, 'saving_throw_proficiencies'):
             is_proficient = (self.ability_name in character.saving_throw_proficiencies)
             if is_proficient:
                 saving_throw += character.proficiency_bonus

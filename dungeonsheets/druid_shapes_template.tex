@@ -1,0 +1,71 @@
+\documentclass[twocolumn,lettersize]{article}
+
+%% \usepackage{fullpage}
+\usepackage[margin=1.5cm]{geometry}
+\usepackage[dvipsnames]{color}
+\usepackage{indentfirst}
+\definecolor{mygrey}{gray}{0.7}
+
+\title{Wild Shapes}
+\date{}
+
+\author{[[ character.name ]]}
+
+\begin{document}
+
+
+\twocolumn[
+  \begin{@twocolumnfalse}
+    \maketitle
+    \section*{Known Beasts}
+    [% for shape in character.all_wild_shapes|sort(attribute="name") %]%
+    [[ shape.name ]][% if not loop.last %], [% endif %]%
+    [% endfor %]%
+    \vspace{3ex}
+  \end{@twocolumnfalse}
+]
+
+
+[% for shape in character.wild_shapes|sort(attribute='challenge_rating') %]
+  \section*{[[ shape.name ]]}
+  \subsection*{[[ shape.description ]]}
+  
+  \begin{tabular}{c | c | c}
+    Armor Class & Hit Points & Speed \\
+    \hline
+    [[ shape.armor_class ]] &
+    [[ shape.hit_points_max ]] ([[ shape.hit_dice ]]) &
+    [[ shape.speed ]] \\
+    [% if shape.swim_speed %]
+      & & [[ shape.swim_speed ]] swim \\
+      [% endif %]
+    [% if shape.fly_speed %]
+      & & [[ shape.fly_speed ]] fly \\
+      [% endif %]
+      
+  \end{tabular}
+
+  \vspace{0.2cm}
+
+  \begin{tabular}{c | c | c}
+    STR & DEX & CON \\
+    \hline
+    [[ shape.strength.value ]] ([[ shape.strength.modifier|mod_str ]]) &
+    [[ shape.dexterity.value ]] ([[ shape.dexterity.modifier|mod_str ]]) &
+    [[ shape.constitution.value ]] ([[ shape.constitution.modifier|mod_str ]]) \\
+  \end{tabular}
+
+  \vspace{0.2cm}
+
+  \begin{tabular}{l l}
+    \textbf{Skills:} & [[ shape.skills ]] \\
+    \textbf{Senses:} & [[ shape.senses ]] \\
+  \end{tabular}
+
+  \vspace{0.2cm}
+
+  [[ shape.__doc__ | rst_to_latex ]]
+
+[% endfor %]
+
+\end{document}

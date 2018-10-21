@@ -2,10 +2,10 @@
 
 from unittest import TestCase
 
-from dungeonsheets import race
-from dungeonsheets.character import Character, Wizard
+from dungeonsheets import race, monsters, exceptions
+from dungeonsheets.character import Character, Wizard, Druid
 from dungeonsheets.weapons import Weapon, Shortsword
-from dungeonsheets.armor import Armor, LightLeatherArmor, Shield
+from dungeonsheets.armor import Armor, LeatherArmor, Shield
 
 
 class TestCharacter(TestCase):
@@ -30,7 +30,7 @@ class TestCharacter(TestCase):
         self.assertEqual(len(char.weapons), 1)
         self.assertTrue(isinstance(char.weapons[0], Shortsword))
         # Check that armor and shield gets set_attrs
-        char.set_attrs(armor='light leather armor', shield='shield')
+        char.set_attrs(armor='leather armor', shield='shield')
         self.assertFalse(isinstance(char.armor, str))
         self.assertFalse(isinstance(char.shield, str))
         # Check that race gets set to an object
@@ -131,14 +131,72 @@ class TestCharacter(TestCase):
         self.assertEqual(char.spell_slots(spell_level=1), 3)
         self.assertEqual(char.spell_slots(spell_level=2), 0)
     
+    def test_wild_shapes(self):
+        char = Druid()
+        # Druid level 2
+        char.level = 2
+        # Set reasonable wild shapes
+        char.wild_shapes = ['Wolf']
+        self.assertIsInstance(char.wild_shapes[0], monsters.Wolf)
+        # Check what happens if a non-existent wild_shape is added
+        with self.assertRaises(exceptions.MonsterError):
+            char.wild_shapes = ['Wolf', 'Hyperion Loader']
+        # Check what happens if a valid monster class is directly added
+        char.wild_shapes = [monsters.Wolf(), ]
+        self.assertIsInstance(char.wild_shapes[0], monsters.Wolf)
+        # Check that invalid monsters aren't accepted
+        char.wild_shapes = ['Wolf', 'giant eagle']
+        self.assertEqual(len(char.wild_shapes), 1)
+        self.assertIsInstance(char.wild_shapes[0], monsters.Wolf)
+    
+    def test_can_assume_shape(self):
+        class Beast(monsters.Monster):
+            description = 'beast'
+        new_druid = Druid(level=1)
+        low_druid = Druid(level=2)
+        mid_druid = Druid(level=4)
+        high_druid = Druid(level=8)
+        beast = Beast()
+        # Check that level 1 druid automatically fails
+        self.assertFalse(new_druid.can_assume_shape(beast))
+        # Check if a basic beast can be transformed
+        self.assertTrue(low_druid.can_assume_shape(beast))
+        # Check that challenge rating is checked
+        hard_beast = Beast()
+        hard_beast.challenge_rating = 1/2
+        really_hard_beast = Beast()
+        really_hard_beast.challenge_rating = 1
+        self.assertFalse(low_druid.can_assume_shape(hard_beast))
+        self.assertFalse(low_druid.can_assume_shape(really_hard_beast))
+        self.assertTrue(mid_druid.can_assume_shape(hard_beast))
+        self.assertFalse(mid_druid.can_assume_shape(really_hard_beast))
+        self.assertTrue(high_druid.can_assume_shape(hard_beast))
+        self.assertTrue(high_druid.can_assume_shape(really_hard_beast))
+        # Check that swim speed is enforced
+        swim_beast = Beast()
+        swim_beast.swim_speed = 15
+        self.assertFalse(low_druid.can_assume_shape(swim_beast))
+        self.assertTrue(mid_druid.can_assume_shape(swim_beast))
+        self.assertTrue(high_druid.can_assume_shape(swim_beast))
+        # Check that fly speed is enforced
+        fly_beast = Beast()
+        fly_beast.fly_speed = 15
+        self.assertFalse(low_druid.can_assume_shape(fly_beast))
+        self.assertFalse(mid_druid.can_assume_shape(fly_beast))
+        self.assertTrue(high_druid.can_assume_shape(fly_beast))
+        # Check that non-beasts are not allowed
+        not_beast = monsters.Monster()
+        not_beast.description = "monster"
+        self.assertFalse(low_druid.can_assume_shape(not_beast))
+    
     def test_equip_armor(self):
         char = Character(dexterity=16)
-        char.wear_armor('light leather armor')
+        char.wear_armor('leather armor')
         self.assertTrue(isinstance(char.armor, Armor))
         # Now make sure the armor class is correct
         self.assertEqual(char.armor_class, 14)
         # Try passing an Armor object directly
-        char.wear_armor(LightLeatherArmor)
+        char.wear_armor(LeatherArmor())
         self.assertEqual(char.armor_class, 14)
         # Test equipped armor with max dexterity mod_str
         char.armor.dexterity_mod_max = 1
