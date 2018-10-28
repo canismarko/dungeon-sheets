@@ -24,7 +24,7 @@ setup(name='dungeonsheets',
                             'spellbook_template.tex']
       },
       install_requires=[
-          'fdfgen', 'npyscreen', 'jinja2',
+          'fdfgen', 'npyscreen', 'jinja2', 'pdfrw',
       ],
       entry_points={
           'console_scripts': [

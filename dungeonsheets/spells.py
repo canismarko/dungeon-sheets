@@ -1997,6 +1997,28 @@ class Dream(Spell):
     classes = ()
 
 
+class Druidcraft(Spell):
+    """You create one of the following effects within range:
+    
+    - You create a harmless sensory effect that predicts what the weather will be for the next 24 hours. This effect persists for 1 round.
+    - You make a flower blossom, a seed pod open, or a leaf bud bloom.
+    - You create a harmless nature-related sensory effect. The effect must fit in a 5-foot cube.
+    - You light or put out a small flame.
+    
+    """
+    level = 0
+    name = "Druidcraft"
+    casting_time = "1 action"
+    casting_range = "30 ft"
+    components = ("V", "S")
+    materials = ""
+    duration = "instantaneous"
+    concentration = False
+    ritual = False
+    magic_school = "Transmutation"
+    classes = ('Druid')
+
+
 class Earthquake(Spell):
     """You create a seismic disturbance at a point on the ground that you
     can see within range. For the duration, an intense tremor rips
