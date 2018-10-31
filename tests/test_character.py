@@ -1,8 +1,9 @@
 #!/usr/bin/env python
 
 from unittest import TestCase
+import warnings
 
-from dungeonsheets import race, monsters, exceptions
+from dungeonsheets import race, monsters, exceptions, spells
 from dungeonsheets.character import Character, Wizard, Druid
 from dungeonsheets.weapons import Weapon, Shortsword
 from dungeonsheets.armor import Armor, LeatherArmor, Shield
@@ -131,6 +132,51 @@ class TestCharacter(TestCase):
         self.assertEqual(char.spell_slots(spell_level=1), 3)
         self.assertEqual(char.spell_slots(spell_level=2), 0)
     
+    def test_equip_armor(self):
+        char = Character(dexterity=16)
+        char.wear_armor('leather armor')
+        self.assertTrue(isinstance(char.armor, Armor))
+        # Now make sure the armor class is correct
+        self.assertEqual(char.armor_class, 14)
+        # Try passing an Armor object directly
+        char.wear_armor(LeatherArmor())
+        self.assertEqual(char.armor_class, 14)
+        # Test equipped armor with max dexterity mod_str
+        char.armor.dexterity_mod_max = 1
+        self.assertEqual(char.armor_class, 12)
+    
+    def test_wield_shield(self):
+        char = Character(dexterity=16)
+        char.wield_shield('shield')
+        self.assertTrue(isinstance(char.shield, Shield), msg=char.shield)
+        # Now make sure the armor class is correct
+        self.assertEqual(char.armor_class, 15)
+        # Try passing an Armor object directly
+        char.wield_shield(Shield)
+        self.assertEqual(char.armor_class, 15)
+    
+    def test_speed(self):
+        # Check that the speed pulls from the character's race
+        char = Character(race='halfling')
+        self.assertEqual(char.speed, 25)
+        # Check that a character with no race defaults to 30 feet
+        char = Character()
+        char.race = None
+        self.assertEqual(char.speed, 30)
+
+
+class DruidTestCase(TestCase):
+    def test_learned_spells(self):
+        """For a druid, learning spells is not necessary and this field should
+        be ignored."""
+        char = Druid()
+        with warnings.catch_warnings():
+            warnings.filterwarnings('ignore', message="Druids cannot learn spells")
+            char.set_attrs(spells=['invisibility'],
+                           spells_prepared=['druidcraft'])
+        self.assertEqual(len(char.spells), 1)
+        self.assertIsInstance(char.spells[0], spells.Druidcraft)
+    
     def test_wild_shapes(self):
         char = Druid()
         # Druid level 2
@@ -148,6 +194,16 @@ class TestCharacter(TestCase):
         char.wild_shapes = ['Wolf', 'giant eagle']
         self.assertEqual(len(char.wild_shapes), 1)
         self.assertIsInstance(char.wild_shapes[0], monsters.Wolf)
+    
+    def test_moon_druid_wild_shapes(self):
+        # Moon druid level 2 gets beasts up to CR 1
+        char = Druid(level=2, wild_shapes=['Ape'], circle='moon')
+        self.assertEqual(len(char.wild_shapes), 1)
+        self.assertIsInstance(char.wild_shapes[0], monsters.Ape)
+        # Moon druid above level 6 gets beasts up to CR level / 3
+        char = Druid(level=9, wild_shapes=['ankylosaurus'], circle='moon')
+        self.assertEqual(len(char.wild_shapes), 1)
+        self.assertIsInstance(char.wild_shapes[0], monsters.Ankylosaurus)
     
     def test_can_assume_shape(self):
         class Beast(monsters.Monster):
@@ -188,35 +244,3 @@ class TestCharacter(TestCase):
         not_beast = monsters.Monster()
         not_beast.description = "monster"
         self.assertFalse(low_druid.can_assume_shape(not_beast))
-    
-    def test_equip_armor(self):
-        char = Character(dexterity=16)
-        char.wear_armor('leather armor')
-        self.assertTrue(isinstance(char.armor, Armor))
-        # Now make sure the armor class is correct
-        self.assertEqual(char.armor_class, 14)
-        # Try passing an Armor object directly
-        char.wear_armor(LeatherArmor())
-        self.assertEqual(char.armor_class, 14)
-        # Test equipped armor with max dexterity mod_str
-        char.armor.dexterity_mod_max = 1
-        self.assertEqual(char.armor_class, 12)
-    
-    def test_wield_shield(self):
-        char = Character(dexterity=16)
-        char.wield_shield('shield')
-        self.assertTrue(isinstance(char.shield, Shield), msg=char.shield)
-        # Now make sure the armor class is correct
-        self.assertEqual(char.armor_class, 15)
-        # Try passing an Armor object directly
-        char.wield_shield(Shield)
-        self.assertEqual(char.armor_class, 15)
-    
-    def test_speed(self):
-        # Check that the speed pulls from the character's race
-        char = Character(race='halfling')
-        self.assertEqual(char.speed, 25)
-        # Check that a character with no race defaults to 30 feet
-        char = Character()
-        char.race = None
-        self.assertEqual(char.speed, 30)

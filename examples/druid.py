@@ -9,6 +9,7 @@ dungeonsheets_version = "0.5.0"
 
 name = 'Dain Torunn'
 character_class = 'Druid'
+circle = 'moon'
 player_name = 'Emily'
 background = "Sailor"
 race = "Hill Dwarf"
@@ -45,13 +46,11 @@ shield = "" # Eg "shield"
 equipment = "TODO: Describe your equipment from your Druid class and Sailor background."
 
 attacks_and_spellcasting = "TODO: Describe specifics for how your Druid attacks."
-wild_shapes = ["wolf", "crocodile", "giant eagle"]
+wild_shapes = ["wolf", "crocodile", "giant eagle", 'ape', 'ankylosaurus']
 
 # List of known spells
-# Example: spells = ('magic missile', 'mage armor')
-spells = () # Todo: Learn some spells
-# Which spells have been prepared (not including cantrips)
-spells_prepared = ()
+# Which spells have been prepared (including cantrips)
+spells_prepared = ('shillelagh', 'poison spray', 'druidcraft','speak with animals', 'entangle', 'cure wounds', 'create or destroy water')
 
 # Backstory
 # TODO: Describe your backstory here

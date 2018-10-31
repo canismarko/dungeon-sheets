@@ -26,9 +26,17 @@
 ]
 
 
-[% for shape in character.wild_shapes|sort(attribute='challenge_rating') %]
+[% for shape in character.all_wild_shapes|sort(attribute='challenge_rating') %]
+  [% if not character.can_assume_shape(shape) %]
+    {\color{mygrey}
+  [% else %]
+    {
+  [% endif %]
+
   \section*{[[ shape.name ]]}
+  [% if shape.description %]  
   \subsection*{[[ shape.description ]]}
+  [% endif %]
   
   \begin{tabular}{c | c | c}
     Armor Class & Hit Points & Speed \\
@@ -57,15 +65,17 @@
 
   \vspace{0.2cm}
 
-  \begin{tabular}{l l}
+  \begin{tabular}{p{0.1\textwidth} p{0.32\textwidth}}
     \textbf{Skills:} & [[ shape.skills ]] \\
     \textbf{Senses:} & [[ shape.senses ]] \\
+    \textbf{Languages:} & [[ shape.languages ]] \\
   \end{tabular}
 
   \vspace{0.2cm}
 
   [[ shape.__doc__ | rst_to_latex ]]
 
+  } %\color
 [% endfor %]
 
 \end{document}

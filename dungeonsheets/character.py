@@ -2,6 +2,7 @@
 
 import re
 import warnings
+import math
 
 from .stats import Ability, Skill, findattr
 from .dice import read_dice_str
@@ -86,8 +87,6 @@ class Character():
     spellcasting_ability = None
     spells = tuple()
     spells_prepared = tuple()
-    # Druid wilf shape transofmration options
-    _wild_shapes = ()
     
     def __init__(self, **attrs):
         """Takes a bunch of attrs and passes them to ``set_attrs``"""
@@ -99,82 +98,6 @@ class Character():
     
     def __repr__(self):
         return f"<{self.class_name}: {self.name}>"
-    
-    @property
-    def all_wild_shapes(self):
-        """Return all wild shapes, regardless of validity."""
-        return self._wild_shapes
-    
-    @property
-    def wild_shapes(self):
-        """Return a list of valid wild shapes for this Druid."""
-        valid_shapes = []
-        for shape in self._wild_shapes:
-            # Check if shape can be transformed into
-            if self.can_assume_shape(shape):
-                valid_shapes.append(shape)
-        return valid_shapes
-    
-    @wild_shapes.setter
-    def wild_shapes(self, new_shapes):
-        actual_shapes = []
-        # Retrieve the actual monster classes if possible
-        for shape in new_shapes:
-            if isinstance(shape, monsters.Monster):
-                # Already a monster shape so just add it as is
-                new_shape = shape
-            else:
-                # Not already a monster so see if we can find one
-                try:
-                    NewMonster = findattr(monsters, shape)
-                    new_shape = NewMonster()
-                except AttributeError:
-                    msg = f'Wild shape "{shape}" not found. Please add it to ``monsters.py``'
-                    raise exceptions.MonsterError(msg)
-            actual_shapes.append(new_shape)
-        # Save the updated list for later
-        self._wild_shapes = actual_shapes
-        
-    def can_assume_shape(self, shape: monsters.Monster)-> bool:
-        """Determine if a given shape meets the requirements for transforming.
-        
-        See Pg 66 of player's handbook.
-        
-        Parameters
-        ==========
-        shape
-          A monster that the Druid wishes to transform into.
-        
-        Returns
-        =======
-        can_assume
-          True if the monster meets the C/R, swim and flying speed
-          restrictions.
-        
-        """
-        # Determine acceptable states based on druid level
-        if self.level < 2:
-            max_cr = -1
-            max_swim = 0
-            max_fly = 0
-        elif self.level < 4:
-            max_cr = 1/4
-            max_swim = 0
-            max_fly = 0
-        elif self.level < 8:
-            max_cr = 1/2
-            max_swim = None
-            max_fly = 0
-        else:
-            max_cr = None
-            max_swim = None
-            max_fly = None
-        # Check if the beast shape can be assumed
-        valid_cr = (max_cr is None or shape.challenge_rating <= max_cr)
-        valid_swim = (max_swim is None or shape.swim_speed <= max_swim)
-        valid_fly = (max_fly is None or shape.fly_speed <= max_fly)
-        can_assume = shape.is_beast and valid_cr and valid_swim and valid_fly
-        return can_assume
     
     @property
     def speed(self):
@@ -424,6 +347,8 @@ class Cleric(Character):
 
 class Druid(Character):
     class_name = 'Druid'
+    circle = "" # Moon, land
+    _wild_shapes = ()
     hit_dice_faces = 8
     saving_throw_proficiencies = ('intelligence', 'wisdom')
     spellcasting_ability = 'wisdom'
@@ -460,6 +385,99 @@ class Druid(Character):
         19: (4, 4, 3, 3, 3, 3, 2, 1, 1, 1),
         20: (4, 4, 3, 3, 3, 3, 2, 2, 1, 1),
     }
+    
+    @property
+    def all_wild_shapes(self):
+        """Return all wild shapes, regardless of validity."""
+        return self._wild_shapes
+    
+    @property
+    def wild_shapes(self):
+        """Return a list of valid wild shapes for this Druid."""
+        valid_shapes = []
+        for shape in self._wild_shapes:
+            # Check if shape can be transformed into
+            if self.can_assume_shape(shape):
+                valid_shapes.append(shape)
+        return valid_shapes
+    
+    @wild_shapes.setter
+    def wild_shapes(self, new_shapes):
+        actual_shapes = []
+        # Retrieve the actual monster classes if possible
+        for shape in new_shapes:
+            if isinstance(shape, monsters.Monster):
+                # Already a monster shape so just add it as is
+                new_shape = shape
+            else:
+                # Not already a monster so see if we can find one
+                try:
+                    NewMonster = findattr(monsters, shape)
+                    new_shape = NewMonster()
+                except AttributeError:
+                    msg = f'Wild shape "{shape}" not found. Please add it to ``monsters.py``'
+                    raise exceptions.MonsterError(msg)
+            actual_shapes.append(new_shape)
+        # Save the updated list for later
+        self._wild_shapes = actual_shapes
+        
+    def can_assume_shape(self, shape: monsters.Monster)-> bool:
+        """Determine if a given shape meets the requirements for transforming.
+        
+        See Pg 66 of player's handbook.
+        
+        Parameters
+        ==========
+        shape
+          A monster that the Druid wishes to transform into.
+        
+        Returns
+        =======
+        can_assume
+          True if the monster meets the C/R, swim and flying speed
+          restrictions.
+        
+        """
+        # Determine acceptable states based on druid level
+        if self.level < 2:
+            max_cr = -1
+            max_swim = 0
+            max_fly = 0
+        elif self.level < 4:
+            max_cr = 1/4
+            max_swim = 0
+            max_fly = 0
+        elif self.level < 8:
+            max_cr = 1/2
+            max_swim = None
+            max_fly = 0
+        else:
+            max_cr = 1
+            max_swim = None
+            max_fly = None
+        # Make adjustments for moon cirlce druids
+        if self.circle.lower() == "moon":
+            if 2 <= self.level < 6:
+                max_cr = 1
+            elif self.level >= 6:
+                max_cr = math.floor(self.level / 3)
+        # Check if the beast shape can be assumed
+        valid_cr = (max_cr is None or shape.challenge_rating <= max_cr)
+        valid_swim = (max_swim is None or shape.swim_speed <= max_swim)
+        valid_fly = (max_fly is None or shape.fly_speed <= max_fly)
+        can_assume = shape.is_beast and valid_cr and valid_swim and valid_fly
+        return can_assume
+    
+    @property
+    def spells(self):
+        return tuple(S() for S in self.spells_prepared)
+    
+    @spells.setter
+    def spells(self, val):
+        if len(val) > 0:
+            warnings.warn("Druids cannot learn spells, "
+                          "use ``spells_prepared`` instead.",
+                          RuntimeWarning)
 
 
 class Fighter(Character):

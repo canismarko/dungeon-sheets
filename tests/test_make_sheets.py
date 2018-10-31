@@ -30,3 +30,20 @@ class PdfOutputTeestCase(unittest.TestCase):
         char.saving_throw_proficiencies = ['strength']
         make_sheets.create_character_pdf(character=char, basename=self.basename)
         self.assertTrue(os.path.exists(pdf_name), f'{pdf_name} not created.')
+
+
+class MarkdownTestCase(unittest.TestCase):
+    """Check that conversion of markdown formats to LaTeX code works
+    correctly."""
+    
+    def test_rst_bold(self):
+        text = make_sheets.rst_to_latex('**hello**')
+        self.assertEqual(text, '\\textbf{hello}')
+    
+    def test_hit_dice(self):
+        text = make_sheets.rst_to_latex('1d6+3')
+        self.assertEqual(text, '\\texttt{1d6+3}')
+    
+    def test_no_text(self):
+        text = make_sheets.rst_to_latex(None)
+        self.assertEqual(text, '')

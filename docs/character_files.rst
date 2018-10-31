@@ -151,6 +151,14 @@ correspond to spells described in the `player's handbook`_.
    spells_prepared = ('blindness deafness', 'false life', 'mage armor',
 	              'ray of sickness', 'shield', 'sleep',)
 
+.. note::
+
+   Some character classes have modified spellcasting mechanics that
+   affects how these entries are intepreted.
+
+   - `Druid`_
+
+
 
 Personality and Backstory
 =========================
@@ -209,6 +217,47 @@ source file more readable, but are not required.
        residence. When you are in Neverwinter, you can call upon the
        priests there for assistance that won’t endanger them.""")
 
+
+Class-Specific Features
+=======================
+
+Druid
+-----
+
+At level 2, druids choose a **circle**. This choice can affect
+available wild_forms, and spellcasting abilities. The ``circle`` entry
+should be set appropriately.
+
+Druid's can transform into **wild shapes**, allowing them to adopt
+some of the abilities of their new form. To aid in keeping track on
+the possible shapes, Druids can have a listing for
+``wild_shapes``. This list should contain names of beasts listed in
+:py:mod:`dungeonsheets.monsters`, or instances of a subclass of
+:py:class:`dungeonsheets.monsters.Monster`. If given, an extra *monster
+sheet* will be produced as part of the PDF. Beasts familiar to the
+druid but not yet accessible should still be listed to aid in record
+keeping; they will be greyed-out on the sheet.
+
+Additionally, druids don't learn spells, instead **druids can prepare
+any spell available** provided it meets their level requirements. As
+such, the listing for ``spells`` is not needed and **all prepared
+spells and known cantrips** should be listed in the
+``spells_prepared`` entry.
+
+.. code:: python
+   
+   # We're a moon druid, why not
+   circle = 'Moon'
+	 
+   # Spells are empty because we don't learn any spells
+   spells = []
+   # This one has all prepared spells and cantrips
+   spells_prepared = ['druidcraft', 'cure wounds']
+
+   # List of all the known wild shapes
+   wild_shapes = ["wolf", "crocodile", 'ape', 'ankylosaurus']
+    
+       
 
 .. _player's handbook: http://dnd.wizards.com/products/tabletop-games/rpg-products/rpg_playershandbook
 

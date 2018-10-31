@@ -24,13 +24,19 @@ character sheet."""
 bold_re = re.compile(r'\*\*([^*]+)\*\*')
 it_re = re.compile(r'\*([^*]+)\*')
 tt_re = re.compile(r'``([^`]+)``')
+# A dice string, with optinal backticks: ``1d6 + 3``
+dice_re = re.compile(r'`*(\d+d\d+(?:\s*\+\s*\d+)?)`*')
 
 def rst_to_latex(rst):
     """Basic markup of RST to LaTeX code."""
-    tex = rst
-    tex = bold_re.sub(r'\\textbf{\1}', tex)
-    tex = it_re.sub(r'\\textit{\1}', tex)
-    tex = tt_re.sub(r'\\texttt{\1}', tex)
+    if rst is None:
+        tex = ""
+    else:
+        tex = rst
+        tex = bold_re.sub(r'\\textbf{\1}', tex)
+        tex = it_re.sub(r'\\textit{\1}', tex)
+        tex = dice_re.sub(r'\\texttt{\1}', tex)
+        tex = tt_re.sub(r'\\texttt{\1}', tex)
     return tex
 
 
@@ -437,7 +443,6 @@ def _make_pdf_pdftk(fields, src_pdf, basename, flatten=False):
 
 
 def make_sheet(character_file, flatten=False):
-
     """Prepare a PDF character sheet from the given character file.
     
     Parameters
@@ -472,7 +477,8 @@ def make_sheet(character_file, flatten=False):
         else:
             sheets.append(spellbook_base + '.pdf')
     # Create a list of Druid wild_shapes
-    if len(char.wild_shapes) > 0:
+    wild_shapes = getattr(char, 'wild_shapes', [])
+    if len(wild_shapes) > 0:
         shapes_base = os.path.splitext(character_file)[0] + '_wild_shapes'
         try:
             create_druid_shapes_pdf(character=char, basename=shapes_base)

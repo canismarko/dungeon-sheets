@@ -12,6 +12,8 @@ class Monster():
     challenge_rating = 0
     armor_class = 0
     skills = "Perception +3, Stealth +4"
+    senses = ""
+    languages = ""
     strength = Ability()
     dexterity = Ability()
     constitution = Ability()
@@ -30,12 +32,129 @@ class Monster():
         return is_beast
 
 
-class Crocodile(Monster):
-    name = "Crocodile"
+class Ankylosaurus(Monster):
+    """Thick armor plating covers the body of the plant-eating dinosaur
+    ankylosaurus, which defends itself against predators with a
+    knobbed tail that delivers a devastating strike.
+    
+    **Tail:** *Melee Weapon Attack:* +7 to hit, reach 10 ft., one
+    target. *Hit:* 18 (4d6+4) bludgeoning damage. If the target is a
+    creature, it must succeed on a DC 14 Strength saving throw or be
+    knocked prone.
+    
+    """
+    name = "Ankylosaurus"
+    description = "Huge beast, unaligned"
+    challenge_rating = 3
+    armor_class = 15
+    skills = ""
+    senses = "Passive perception 11"
+    strength = Ability(19)
+    dexterity = Ability(11)
+    constitution = Ability(15)
+    intelligence = Ability(2)
+    wisdom = Ability(12)
+    charisma = Ability(5)
+    speed = 30
+    swim_speed = 0
+    fly_speed = 0
+    hp_max = 68
+    hit_dice = '8d12+16'
 
+
+class Ape(Monster):
+    """**Multiattack:** The ape makes two fist attacks.
+    
+    **Fist:** *Melee Weapon Attack:* +5 to hit, reach 5 ft., one
+    target. *Hit:* 6 (1d6+3) bludgeoning damage.
+    
+    **Rock:** *Ranged Weapon Attack:* +5 to hit, range 25/50 ft., one
+    target. *Hit:* 6 (1d6+3) bludgeoning damage.
+    
+    """
+    name = "Ape"
+    description = "Medium beast, unaligned"
+    challenge_rating = 1 / 2
+    armor_class = 12
+    skills = "Athletics +5, Perception +3"
+    senses = "Passive perception 13"
+    strength = Ability(16)
+    dexterity = Ability(14)
+    constitution = Ability(14)
+    intelligence = Ability(6)
+    wisdom = Ability(12)
+    charisma = Ability(7)
+    speed = 30
+    swim_speed = 0
+    fly_speed = 0
+    hp_max = 19
+    hit_dice = '3d8+6'
+
+
+class Crocodile(Monster):
+    """**Hold Breath:** The crocodile can hold its breath for 15 minutes.
+    
+    **Bite:** *Melee Weapon Attack:* +4 to hit, reach 5 ft., one
+      creature. *Hit:* 7 (1d10+2) piercing damage, and the target is
+      Grappled (escape DC 12). Until this grapple ends, the target is
+      Restrained, and the crocodile can't bite another target.
+    
+    """
+    name = "Crocodile"
+    description = "Large beast, unaligned"
+    challenge_rating = 1/2
+    armor_class = 12
+    skills = "Stealth +2"
+    senses = "Passive perception 10"
+    strength = Ability(15)
+    dexterity = Ability(10)
+    constitution = Ability(13)
+    intelligence = Ability(2)
+    wisdom = Ability(10)
+    charisma = Ability(5)
+    speed = 30
+    swim_speed = 30
+    fly_speed = 0
+    hp_max = 19
+    hit_dice = '3d10+3'
 
 class GiantEagle(Monster):
+    """A giant eagle is a noble creature that speaks its own language and
+    understands Speech in the Common tongue. A mated pair of giant
+    eagles typically has up to four eggs or young in their nest (treat
+    the young as normal eagles).
+    
+    **Keen Sight:** The eagle has advantage on Wisdom (Perception)
+      checks that rely on sight.
+    
+    **Multiattack:** The eagle makes two attacks: one with its beak
+      and one with its talons.
+    
+    **Beak:** *Melee Weapon Attack:* +5 to hit, reach 5 ft., one
+      target. *Hit:* 6 (1d6 + 3) piercing damage.
+    
+    **Talons:** *Melee Weapon Attack:* +5 to hit, reach 5 ft., one
+      target. *Hit:* 10 (2d6 + 3) slashing damage.
+    
+    """
     name = "Giant eagle"
+    description = "Large beast, neutral good"
+    challenge_rating = 1
+    armor_class = 13
+    skills = "Perception +4"
+    senses = "Passive perception 14"
+    languages = "Giant Eagle, understands common and Auran but can't speak."
+    strength = Ability(16)
+    dexterity = Ability(17)
+    constitution = Ability(13)
+    intelligence = Ability(8)
+    wisdom = Ability(14)
+    charisma = Ability(10)
+    speed = 10
+    swim_speed = 0
+    fly_speed = 80
+    hp_max = 26
+    hit_dice = '4d10+4'
 
 
 class Spider(Monster):
@@ -105,7 +224,7 @@ class Wolf(Monster):
     the creature and the ally isn't incapacitated.  Actions
     
     **Bite.** *Melee Weapon Attack:* +4 to hit, reach 5 ft., one
-    target. *Hit:* (2d4 + 2) piercing damage. If the target is a
+    target. *Hit:* (2d4+2) piercing damage. If the target is a
     creature, it must succeed on a DC 11 Strength saving throw or be
     knocked prone
     
