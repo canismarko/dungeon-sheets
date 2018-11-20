@@ -2131,7 +2131,7 @@ class Entangle(Spell):
     casting_range = "90 ft (20 ft area)"
     components = ("V", "S")
     concentration = True
-    duration = "instantaneous"
+    duration = "Concentration, up to 1 minute"
     magic_school = "Conjuration"
     classes = ('Druid')
 
@@ -2207,7 +2207,7 @@ class Eyebite(Spell):
     casting_range = "Self"
     components = ('V', 'S',)
     materials = ""
-    duration = "1 minutes"
+    duration = "1 minute"
     magic_school = "Necromancy"
     classes = ('Bard', 'Sorceror', 'Warlock', 'Wizard', )
 
