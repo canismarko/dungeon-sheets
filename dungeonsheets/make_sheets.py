@@ -262,7 +262,7 @@ def create_character_pdf(character, basename, flatten=False):
         'Nature': mod_str(character.nature),
         'Perception ': mod_str(character.perception),
         'Performance': mod_str(character.performance),
-        'Persuasion': mod_str(character.persuasian),
+        'Persuasion': mod_str(character.persuasion),
         'Religion': mod_str(character.religion),
         'SleightofHand': mod_str(character.sleight_of_hand),
         'Stealth ': mod_str(character.stealth),
