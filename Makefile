@@ -2,10 +2,6 @@
 
 .DEFAULT: help
 
-#ifndef character
-#$(error character variable is not set. Run make help for more details)
-#endif
-
 help:
 	@echo "Make Help"
 	@echo "Create a character sheet from examples/warlock.py:"
