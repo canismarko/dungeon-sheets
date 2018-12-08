@@ -51,26 +51,6 @@ If the ``pdflatex`` command is available on your system, spellcasters
 will include a spellbook with descriptions of each spell known. If
 not, then this feature will be skipped.
 
-Using Docker
-~~~~~~~~~~~~
-
-Install the following dependencies:
-
-- Docker_
-- Docker-Compose_
-- GNU Make
-
-.. _Docker: https://docs.docker.com/install/
-.. _Docker-Compose: https://docs.docker.com/compose/install/
-
-At the root of the repository, run the following to create a character
-sheet from the `examples/warlock.py` python file:
-
-.. code:: bash
-
-    $ make sheet character=warlock
-
-
 Usage
 =====
 
@@ -93,3 +73,27 @@ so attack bonuses and damage can be calculated automatically.
 If you'd like a **step-by-step walkthrough** for creating a new
 character, just run ``create-character`` from a command line and a
 helpful menu system will take care of the basics for you.
+
+
+Using Docker
+~~~~~~~~~~~~
+
+At the root of the repository, run the following to create a character
+sheet from the `examples/warlock.py` python file:
+
+.. code:: bash
+
+    $ make sheet character=warlock
+
+**Requirements**
+
+The Dockerfile included in this repository will create an image
+with the aforementioned dependices but you need to install the 
+following:
+
+- Docker_
+- Docker-Compose_
+- GNU Make
+
+.. _Docker: https://docs.docker.com/install/
+.. _Docker-Compose: https://docs.docker.com/compose/install/
