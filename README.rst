@@ -67,6 +67,7 @@ At the root of the repository, run the following to create a character
 sheet from the `examples/warlock.py` python file:
 
 .. code:: bash
+
     $ make sheet character=warlock
 
 
