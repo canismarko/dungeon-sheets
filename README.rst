@@ -56,8 +56,8 @@ Using Docker
 
 Install the following dependencies:
 
-- _Docker
-- _Docker-Compose
+- Docker_
+- Docker-Compose_
 - GNU Make
 
 .. _Docker: https://docs.docker.com/install/
