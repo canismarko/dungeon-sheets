@@ -78,8 +78,9 @@ helpful menu system will take care of the basics for you.
 Using Docker
 ~~~~~~~~~~~~
 
-At the root of the repository, run the following to create a character
-sheet from the ``examples/warlock.py`` python file:
+To create the ``examples/warlock.pdf`` character sheet from 
+``examples/warlock.py``, run the following at the root of the 
+repository:
 
 .. code:: bash
 
