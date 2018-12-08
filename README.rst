@@ -56,9 +56,12 @@ Using Docker
 
 Install the following dependencies:
 
-- [Docker](https://docs.docker.com/install/)
-- [Docker-Compose](https://docs.docker.com/compose/install/)
+- _Docker
+- _Docker-Compose
 - GNU Make
+
+.. _Docker: https://docs.docker.com/install/
+.. _Docker-Compose: https://docs.docker.com/compose/install/
 
 At the root of the repository, run the following to create a character
 sheet from the `examples/warlock.py` python file:
