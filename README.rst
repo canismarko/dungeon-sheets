@@ -29,7 +29,7 @@ Installation
 .. _f-strings: https://www.python.org/dev/peps/pep-0498/
 
 Optional External dependencies
-==============================
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 * You may use **pdftk** to generate the sheets in PDF format.
 * You will need **pdflatex** installed to generate the PDF spell pages (optional).
@@ -50,6 +50,22 @@ One alternative would be to build your PC sheets using docker.
 If the ``pdflatex`` command is available on your system, spellcasters
 will include a spellbook with descriptions of each spell known. If
 not, then this feature will be skipped.
+
+Using Docker
+~~~~~~~~~~~~
+
+Install the following dependencies:
+
+- [Docker](https://docs.docker.com/install/)
+- [Docker-Compose](https://docs.docker.com/compose/install/)
+- GNU Make
+
+At the root of the repository, run the following to create a character
+sheet from the `examples/warlock.py` python file:
+
+```
+make sheet character=warlock
+```
 
 Usage
 =====
