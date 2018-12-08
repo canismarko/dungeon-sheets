@@ -105,3 +105,6 @@ ENV/
 
 # mypy
 .mypy_cache/
+
+# MAC Desktop Services Store
+.DS_Store

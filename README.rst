@@ -29,7 +29,7 @@ Installation
 .. _f-strings: https://www.python.org/dev/peps/pep-0498/
 
 Optional External dependencies
-==============================
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 * You may use **pdftk** to generate the sheets in PDF format.
 * You will need **pdflatex** installed to generate the PDF spell pages (optional).
@@ -73,3 +73,28 @@ so attack bonuses and damage can be calculated automatically.
 If you'd like a **step-by-step walkthrough** for creating a new
 character, just run ``create-character`` from a command line and a
 helpful menu system will take care of the basics for you.
+
+
+Using Docker
+~~~~~~~~~~~~
+
+To create the ``examples/warlock.pdf`` character sheet from 
+``examples/warlock.py``, run the following at the root of the 
+repository:
+
+.. code:: bash
+
+    $ make sheet character=warlock
+
+**Requirements**
+
+The Dockerfile included in this repository will create an image
+with the aforementioned dependices but you need to install the 
+following:
+
+- Docker_
+- Docker-Compose_
+- GNU Make
+
+.. _Docker: https://docs.docker.com/install/
+.. _Docker-Compose: https://docs.docker.com/compose/install/

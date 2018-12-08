@@ -1,0 +1,9 @@
+version: '3'
+services:
+
+  dungeonsheets:
+    build: ./
+    volumes:
+      - ./examples:/examples
+    command: ${CHARACTER}.py
+    entrypoint: makesheets 
