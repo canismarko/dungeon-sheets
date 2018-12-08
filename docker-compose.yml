@@ -6,9 +6,5 @@ services:
     build: ./
     volumes:
       - ./examples:/examples
-    command: zekeriah_blackspear.py
-    #command: warlock.py
+    command: ${CHARACTER}.py
     entrypoint: makesheets 
-    #environment:
-    #  - RACK_ENV=development
-
