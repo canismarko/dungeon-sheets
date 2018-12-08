@@ -1,0 +1,14 @@
+version: '3'
+services:
+
+  dungeonsheets:
+    image: jonbrouse/dungeon_sheets
+    build: ./
+    volumes:
+      - ./examples:/examples
+    command: zekeriah_blackspear.py
+    #command: warlock.py
+    entrypoint: makesheets 
+    #environment:
+    #  - RACK_ENV=development
+
