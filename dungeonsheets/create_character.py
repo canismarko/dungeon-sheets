@@ -54,6 +54,7 @@ races = {
     'Half-Elf': race.HalfElf,
     'Half-Orc': race.HalfOrc,
     'Tiefling': race.Tiefling,
+    'Fallen Aasimar': race.FallenAasimar,
 }
 
 

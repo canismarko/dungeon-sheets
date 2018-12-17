@@ -51,7 +51,7 @@ class GuildMerchant(GuildArtisan):
 class Hermit(Background):
     name = "Hermit"
     skill_proficiencies = ("medicine", "religion")
-    languages = ("[choose one]")
+    languages = ("[choose one]", )
 
 
 class Noble(Background):

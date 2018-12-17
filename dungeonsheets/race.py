@@ -4,7 +4,8 @@ from . import weapons
 __all__ = ('Dwarf', 'HillDwarf', 'MountainDwarf', 'Elf', 'HighElf',
            'WoodElf', 'DarkElf', 'Halfling', 'LightfootHalfling',
            'StoutHalfling', 'Human', 'Dragonborn', 'Gnome', 'ForestGnome',
-           'RockGnome', 'HalfElf', 'HalfOrc', 'Tiefling')
+           'RockGnome', 'HalfElf', 'HalfOrc', 'Tiefling', 'Aasimar',
+           'FallenAasimar')
 
 
 class Race():
@@ -176,3 +177,18 @@ class Tiefling(Race):
     intelligence_bonus = 1
     charisma_bonus = 2
     languages = ("Common", "Infernal")
+
+
+# Aassimar
+class Aasimar(Race):
+    name = 'Aasimar'
+    size = 'medium'
+    speed = 30
+    charisma_bonus = 2
+    languages = ("Common", "Celestial")
+
+    
+# Fallen Aasimar
+class FallenAasimar(Aasimar):
+    name = "Fallen Aasimar"
+    strength_bonus = 1

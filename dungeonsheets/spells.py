@@ -17,6 +17,7 @@ def create_spell(**params):
     NewSpell = type('UnknownSpell', (Spell,), params)
     return NewSpell
 
+
 class Spell():
     """A magical spell castable by a player character."""
     level = 0
@@ -2078,7 +2079,7 @@ class EldritchBlast(Spell):
     
     """
     name = 'Eldritch Blast'
-    level = 3
+    level = 0
     casting_time = "1 action"
     casting_range = "120 feet"
     components = ('V', 'S')

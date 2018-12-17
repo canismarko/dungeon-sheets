@@ -55,12 +55,15 @@ CHECKBOX_ON = 'Yes'
 CHECKBOX_OFF = 'Off'
 PDFTK_CMD = 'pdftk'
 
+
 def text_box(string):
     """Format a string for displaying in a text box."""
     # Remove line breaks
-    new_string = string.replace('\n', ' ').replace('\r', ' ')
+    # new_string = string.replace('\n', ' ').replace('\r', ' ')
+    new_string = string
     # Remove multiple whitespace
-    new_string = ' '.join(new_string.split())
+    # new_string = ' '.join(new_string.split())
+    new_string = new_string
     return new_string
 
 
@@ -328,8 +331,8 @@ def create_character_pdf(character, basename, flatten=False):
     for _fields, weapon in zip(weapon_fields, character.weapons):
         name_field, atk_field, dmg_field = _fields
         fields[name_field] = weapon.name
-        fields[atk_field] = str(weapon.attack_bonus)
-        fields[dmg_field] = f'{weapon.damage} {weapon.damage_type}'
+        fields[atk_field] = '{:+d}'.format(weapon.attack_bonus)
+        fields[dmg_field] = f'{weapon.damage}/{weapon.damage_type}'
     # Other attack information
     attack_str = f'Armor: {character.armor}'
     attack_str += '\n\r'
@@ -460,7 +463,8 @@ def make_sheet(character_file, flatten=False):
     char_base = os.path.splitext(character_file)[0] + '_char'
     sheets = [char_base + '.pdf']
     pages = []
-    char_pdf = create_character_pdf(character=char, basename=char_base, flatten=flatten)
+    char_pdf = create_character_pdf(character=char, basename=char_base,
+                                    flatten=flatten)
     pages.append(char_pdf)
     if char.is_spellcaster:
         # Create spell sheet
