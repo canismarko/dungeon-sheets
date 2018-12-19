@@ -1,0 +1,2 @@
+Add multiclassing hit dice
+Add Character.save() option to save to text file

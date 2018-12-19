@@ -3,6 +3,9 @@ class Background():
     skill_proficiencies = ()
     languages = ()
 
+    def __str__(self):
+        return self.name
+
 
 class Acolyte(Background):
     name = "Acolyte"

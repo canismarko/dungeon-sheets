@@ -1,37 +1,36 @@
 """Tools for describing a player character."""
 
 import re
+import os
 import warnings
-import math
+from . import exceptions
+import importlib.util
 
 from .stats import Ability, Skill, findattr
 from .dice import read_dice_str
-from . import weapons, race, spells, armor, monsters, exceptions
+from . import (weapons, race, background, spells, armor, monsters,
+               exceptions, classes)
 from .weapons import Weapon
 from .armor import Armor, NoArmor, Shield, NoShield
 
 dice_re = re.compile('(\d+)d(\d+)')
 
-__all__ = ('Barbarian', 'Bard', 'Cleric', 'Druid', 'Fighter', 'Monk',
-           'Paladin', 'Ranger', 'Rogue', 'Sorceror', 'Warlock', 'Wizard', )
 
 class Character():
-    """A generic player character. Intended to be subclasses by the
-    various classes.
+    """A generic player character.
     
     """
     # General attirubtes
     name = ""
     class_name = ""
     player_name = ""
-    background = ""
-    level = 1
     alignment = "Neutral"
+    class_list = []
     race = None
+    background = None
     xp = 0
     # Hit points
     hp_max = 10
-    hit_dice_faces = 2
     # Base stats (ability scores)
     strength = Ability()
     dexterity = Ability()
@@ -79,7 +78,7 @@ class Character():
     gp = 0
     pp = 0
     equipment = ""
-    weapons = [] # Replaced in __init__ constructor
+    weapons = []  # Replaced in __init__ constructor
     armor = None
     shield = None
     _proficiencies_text = tuple()
@@ -98,11 +97,36 @@ class Character():
     
     def __repr__(self):
         return f"<{self.class_name}: {self.name}>"
-    
+
     @property
     def speed(self):
         return getattr(self.race, 'speed', 30)
+
+    @property
+    def level(self):
+        return sum(c.class_level for c in self.class_list)
+
+    @property
+    def primary_class(self):
+        # for now, assume first class given must be primary class
+        return self.class_list[0]
+
+    @property
+    def saving_throw_proficiencies(self):
+        return self.primary_class.saving_throw_proficiencies
+
+    @property
+    def spellcasting_classes(self):
+        return [c for c in self.class_list if c.is_spellcaster]
     
+    @property
+    def is_spellcaster(self):
+        return (len(self.spellcasting_classes) > 0)
+
+    def spell_slots(self, spell_level):
+        # TODO: Update this for Multiclassing
+        return self.spellcasting_classes[0].spell_slots(spell_level)
+
     def set_attrs(self, **attrs):
         """Bulk setting of attributes. Useful for loading a character from a
         dictionary."""
@@ -116,6 +140,9 @@ class Character():
             elif attr == 'race':
                 MyRace = findattr(race, val)
                 self.race = MyRace()
+            elif attr == 'background':
+                MyBackground = findattr(background, val)
+                self.race = MyBackground()
             elif attr == 'armor':
                 self.wear_armor(val)
             elif attr == 'shield':
@@ -147,25 +174,14 @@ class Character():
                                   RuntimeWarning)
                 # Lookup general attributes
                 setattr(self, attr, val)
-    
-    @property
-    def is_spellcaster(self):
-        result = (self.spellcasting_ability is not None)
-        return result
-    
-    @property
-    def spell_save_dc(self):
-        ability_mod = getattr(self, self.spellcasting_ability).modifier
+
+    def spell_save_dc(self, class_type):
+        ability_mod = getattr(self, class_type.spellcasting_ability).modifier
         return (8 + self.proficiency_bonus + ability_mod)
     
-    @property
-    def spell_attack_bonus(self):
-        ability_mod = getattr(self, self.spellcasting_ability).modifier
+    def spell_attack_bonus(self, class_type):
+        ability_mod = getattr(self, class_type.spellcasting_ability).modifier
         return (self.proficiency_bonus + ability_mod)
-    
-    def spell_slots(self, spell_level):
-        """How many spells slots are available for this spell level."""
-        return self.spell_slots_by_level[self.level][spell_level]
     
     def is_proficient(self, weapon: Weapon):
         """Is the character proficient with this item?
@@ -179,7 +195,8 @@ class Character():
         
         """
         all_proficiencies = tuple(self.weapon_proficiencies)
-        all_proficiencies += tuple(getattr(self.race, 'weapon_proficiencies', tuple()))
+        all_proficiencies += tuple(getattr(self.race, 'weapon_proficiencies',
+                                           tuple()))
         is_proficient = any((isinstance(weapon, W) for W in all_proficiencies))
         return is_proficient
     
@@ -292,6 +309,8 @@ class Character():
     @property
     def armor_class(self):
         """Armor class, including contributions from worn armor and shield."""
+        # ## TODO:
+        # Implement AC functions by class
         # Retrieve current armor (or a generic armor substitute)
         armor = self.armor if self.armor is not None else NoArmor()
         shield = self.shield if self.shield is not None else NoShield()
@@ -304,318 +323,86 @@ class Character():
         ac = armor.base_armor_class + shield.base_armor_class + modifier
         return ac
 
+    @classmethod
+    def load(cls, character_file):
+        # Create a character from the character definition
+        char_props = read_character_file(character_file)
+        classes_levels = char_props.pop('classes_levels', [])
+        if isinstance(classes_levels, str):
+            classes_levels = [classes_levels]
+        subclasses = char_props.pop('subclasses', [])
+        if isinstance(subclasses, str):
+            subclasses = [subclasses]
+        assert len(classes_levels) == len(subclasses), (
+            'the length of classes_levels {:d} does not match length of '
+            'subclasses {:d}'.format(len(classes_levels), len(subclasses)))
+        class_list = []
+        for cl, sub in zip(classes_levels, subclasses):
+            try:
+                c, lvl = cl.strip().split(' ')  # " wizard 3 " => "wizard", "3"
+            except ValueError:
+                raise ValueError(
+                    'classes_levels not properly formatted. Each entry should '
+                    'be formatted \"class level\", but got {:s}'.format(cl))
+            try:
+                this_class = getattr(classes, c)
+                this_level = int(lvl)
+            except AttributeError:
+                raise AttributeError(
+                    'class was not recognized from classes.py: {:s}'.format(c))
+            except ValueError:
+                raise ValueError(
+                    'level was not recognizable as an int: {:s}'.format(lvl))
+            class_list += [this_class(this_level, subclass=sub)]
+        # accept backwards compatability for single-class characters
+        if len(class_list) == 0:
+            class_name = char_props.pop('character_class').lower().capitalize()
+            class_level = char_props.pop('level')
+            CharClass = getattr(classes, class_name)
+            class_list = [CharClass(class_level)]
+        char_props['class_list'] = class_list
+        # Create the character with loaded properties
+        char = cls(**char_props)
+        return char
 
-class Barbarian(Character):
-    class_name = 'Barbarian'
-    hit_dice_faces = 12
-    saving_throw_proficiencies = ('strength', 'constitution')
-    _proficiencies_text = ('light armor', 'medium armor', 'shields',
-                           'simple weapons', 'martial weapons')
-    weapon_proficiencies = (weapons.simple_weapons + weapons.martial_weapons)
-    class_skill_choices = ('Animal Handling', 'Athletics',
-                           'Intimidation', 'Nature', 'Perception', 'Survival')
 
-
-class Bard(Character):
-    class_name = 'Bard'
-    hit_dice_faces = 8
-    saving_throw_proficiencies = ('dexterity', 'charisma')
-    _proficiencies_text = (
-        'Light armor', 'simple weapons', 'hand crossbows', 'longswords',
-        'rapiers', 'shortswords', 'three musical instruments of your choice')
-    weapon_proficiencies = ((weapons.HandCrossbow, weapons.Longsword,
-                            weapons.Rapier, weapons.Shortsword) +
-                           weapons.simple_weapons)
-    class_skill_choices = ('Acrobatics', 'Animal Handling', 'Arcana',
-                           'Athletics', 'Deception', 'History', 'Insight',
-                           'Intimidation', 'Investigation', 'Medicine', 'Nature',
-                           'Perception', 'Performance', 'Persuasion', 'Religion',
-                           'Sleight of Hand', 'Stealth', 'Survival')
-    num_skill_choices = 3
-
-
-class Cleric(Character):
-    class_name = 'Cleric'
-    hit_dice_faces = 8
-    saving_throw_proficiencies = ('wisdom', 'charisma')
-    _proficiencies_text = ('light armor', 'medium armor', 'shields',
-                          'all simple weapons')
-    weapon_proficiencies = weapons.simple_weapons
-    class_skill_choices = ('History', 'Insight', 'Medicine',
-                           'Persuasion', 'Religion')
-
-
-class Druid(Character):
-    class_name = 'Druid'
-    circle = "" # Moon, land
-    _wild_shapes = ()
-    hit_dice_faces = 8
-    saving_throw_proficiencies = ('intelligence', 'wisdom')
-    spellcasting_ability = 'wisdom'
-    languages = 'Druidic'
-    _proficiencies_text = (
-        'Light armor', 'medium armor',
-        'shields (druids will not wear armor or use shields made of metal)',
-        'clubs', 'daggers', 'darts', 'javelins', 'maces', 'quarterstaffs',
-        'scimitars', 'sickles', 'slings', 'spears')
-    weapon_proficiencies = (weapons.Club, weapons.Dagger, weapons.Dart,
-                           weapons.Javelin, weapons.Mace, weapons.Quarterstaff,
-                           weapons.Scimitar, weapons.Sickle, weapons.Sling, weapons.Spear)
-    class_skill_choices = ('Arcana', 'Animal Handling', 'Insight',
-                           'Medicine', 'Nature', 'Perception', 'Religion', 'Survival')
-    spell_slots_by_level = {
-        1:  (2, 2, 0, 0, 0, 0, 0, 0, 0, 0),
-        2:  (2, 3, 0, 0, 0, 0, 0, 0, 0, 0),
-        3:  (2, 4, 2, 0, 0, 0, 0, 0, 0, 0),
-        4:  (3, 4, 3, 0, 0, 0, 0, 0, 0, 0),
-        5:  (3, 4, 3, 2, 0, 0, 0, 0, 0, 0),
-        6:  (3, 4, 3, 3, 0, 0, 0, 0, 0, 0),
-        7:  (3, 4, 3, 3, 1, 0, 0, 0, 0, 0),
-        8:  (3, 4, 3, 3, 2, 0, 0, 0, 0, 0),
-        9:  (3, 4, 3, 3, 3, 1, 0, 0, 0, 0),
-        10: (4, 4, 3, 3, 3, 2, 0, 0, 0, 0),
-        11: (4, 4, 3, 3, 3, 2, 1, 0, 0, 0),
-        12: (4, 4, 3, 3, 3, 2, 1, 0, 0, 0),
-        13: (4, 4, 3, 3, 3, 2, 1, 1, 0, 0),
-        14: (4, 4, 3, 3, 3, 2, 1, 1, 0, 0),
-        15: (4, 4, 3, 3, 3, 2, 1, 1, 1, 0),
-        16: (4, 4, 3, 3, 3, 2, 1, 1, 1, 0),
-        17: (4, 4, 3, 3, 3, 2, 1, 1, 1, 1),
-        18: (4, 4, 3, 3, 3, 3, 1, 1, 1, 1),
-        19: (4, 4, 3, 3, 3, 3, 2, 1, 1, 1),
-        20: (4, 4, 3, 3, 3, 3, 2, 2, 1, 1),
-    }
+def read_character_file(filename):
+    """Create a character object from the given definition file.
     
-    @property
-    def all_wild_shapes(self):
-        """Return all wild shapes, regardless of validity."""
-        return self._wild_shapes
+    The definition file should be an importable python file, filled
+    with variables describing the character.
     
-    @property
-    def wild_shapes(self):
-        """Return a list of valid wild shapes for this Druid."""
-        valid_shapes = []
-        for shape in self._wild_shapes:
-            # Check if shape can be transformed into
-            if self.can_assume_shape(shape):
-                valid_shapes.append(shape)
-        return valid_shapes
+    Parameters
+    ----------
+    filename : str
+      The path to the file that will be imported.
     
-    @wild_shapes.setter
-    def wild_shapes(self, new_shapes):
-        actual_shapes = []
-        # Retrieve the actual monster classes if possible
-        for shape in new_shapes:
-            if isinstance(shape, monsters.Monster):
-                # Already a monster shape so just add it as is
-                new_shape = shape
-            else:
-                # Not already a monster so see if we can find one
-                try:
-                    NewMonster = findattr(monsters, shape)
-                    new_shape = NewMonster()
-                except AttributeError:
-                    msg = f'Wild shape "{shape}" not found. Please add it to ``monsters.py``'
-                    raise exceptions.MonsterError(msg)
-            actual_shapes.append(new_shape)
-        # Save the updated list for later
-        self._wild_shapes = actual_shapes
-        
-    def can_assume_shape(self, shape: monsters.Monster)-> bool:
-        """Determine if a given shape meets the requirements for transforming.
-        
-        See Pg 66 of player's handbook.
-        
-        Parameters
-        ==========
-        shape
-          A monster that the Druid wishes to transform into.
-        
-        Returns
-        =======
-        can_assume
-          True if the monster meets the C/R, swim and flying speed
-          restrictions.
-        
-        """
-        # Determine acceptable states based on druid level
-        if self.level < 2:
-            max_cr = -1
-            max_swim = 0
-            max_fly = 0
-        elif self.level < 4:
-            max_cr = 1/4
-            max_swim = 0
-            max_fly = 0
-        elif self.level < 8:
-            max_cr = 1/2
-            max_swim = None
-            max_fly = 0
-        else:
-            max_cr = 1
-            max_swim = None
-            max_fly = None
-        # Make adjustments for moon cirlce druids
-        if self.circle.lower() == "moon":
-            if 2 <= self.level < 6:
-                max_cr = 1
-            elif self.level >= 6:
-                max_cr = math.floor(self.level / 3)
-        # Check if the beast shape can be assumed
-        valid_cr = (max_cr is None or shape.challenge_rating <= max_cr)
-        valid_swim = (max_swim is None or shape.swim_speed <= max_swim)
-        valid_fly = (max_fly is None or shape.fly_speed <= max_fly)
-        can_assume = shape.is_beast and valid_cr and valid_swim and valid_fly
-        return can_assume
-    
-    @property
-    def spells(self):
-        return tuple(S() for S in self.spells_prepared)
-    
-    @spells.setter
-    def spells(self, val):
-        if len(val) > 0:
-            warnings.warn("Druids cannot learn spells, "
-                          "use ``spells_prepared`` instead.",
-                          RuntimeWarning)
-
-
-class Fighter(Character):
-    class_name = 'Fighter'
-    hit_dice_faces = 10
-    saving_throw_proficiencies = ('strength', 'constitution')
-    _proficiencies_text = ('All armar', 'shields', 'simple weapons', 'martial weapons')
-    weapon_proficiencies = weapons.simple_weapons + weapons.martial_weapons
-    class_skill_choices = ('Acrobatics', 'Animal Handling',
-                           'Athletics', 'History', 'Insight', 'Intimidation', 'Perception',
-                           'Survival')
-
-
-class Monk(Character):
-    class_name = 'Monk'
-    hit_dice_faces = 8
-    saving_throw_proficiencies = ('strength', 'dexterity')
-    _proficiencies_text = (
-        'simple weapons', 'shortswords',
-        "one type of artisan's tools or one musical instrument")
-    weapon_proficiencies = (weapons.Shortsword,) + weapons.simple_weapons
-    class_skill_choices = ('Acrobatics', 'Athletics', 'History', 'Insight', 'Religion', 'Stealth')
-
-class Paladin(Character):
-    class_name = 'Paladin'
-    hit_dice_faces = 10
-    saving_throw_proficiencies = ('wisdom', 'charisma')
-    _proficiencies_text = ('All armor', 'shields', 'simple weapons',
-                          'martial weapons')
-    weapon_proficiencies = weapons.simple_weapons + weapons.martial_weapons
-    class_skill_choices = ("Athletics", 'Insight', 'Intimidation',
-                           'Medicine', 'Persuasion', 'Religion')
-
-
-class Ranger(Character):
-    class_name = 'Ranger'
-    hit_dice_faces = 10
-    saving_throw_proficiencies = ('strength', 'dexterity')
-    _proficiencies_text = ("light armor", "medium armor", "shields",
-                           "simple weapons", "martial weapons")
-    weapon_proficiencies = weapons.simple_weapons + weapons.martial_weapons
-    class_skill_choices = ('Animal Handling', 'Athletics', 'Insight',
-                           'Investigation', 'Nature', 'Perception', 'Stealth', 'Survival')
-    num_skill_choices = 3
-
-
-class Rogue(Character):
-    class_name = 'Rogue'
-    hit_dice_faces = 8
-    saving_throw_proficiencies = ('dexterity', 'intelligence')
-    _proficiencies_text = (
-        'light armor', 'simple weapons', 'hand crossbows', 'longswords',
-        'rapiers', 'shortswords', "thieves' tools")
-    weapon_proficiencies = (weapons.HandCrossbow, weapons.Longsword,
-                           weapons.Rapier, weapons.Shortsword) + weapons.simple_weapons
-    class_skill_choices = ('Acrobatics', 'Athletics', 'Deception',
-                           'Insight', 'Intimidation', 'Investigation', 'Perception',
-                           'Performance', 'Persuasion', 'Sleight of Hand', 'Stealth')
-
-
-class Sorceror(Character):
-    class_name = 'Sorceror'
-    hit_dice_faces = 6
-    saving_throw_proficiencies = ('constitution', 'charisma')
-    _proficiencies_text = ('daggers', 'darts', 'slings',
-                           'quarterstaffs', 'light crossbows')
-    weapon_proficiencies = (weapons.Dagger, weapons.Dart,
-                           weapons.Sling, weapons.Quarterstaff,
-                           weapons.LightCrossbow)
-    class_skill_choices = ('Arcana', 'Deception', 'Insight',
-                           'Intimidation' ,'Persuasion', 'Religion')
-
-
-class Warlock(Character):
-    class_name = 'Warlock'
-    hit_dice_faces = 8
-    saving_throw_proficiencies = ('wisdom', 'charisma')
-    _proficiencies_text = ("light Armor", "simple weapons")
-    class_skill_choices = ('Arcana', 'Deception', 'History',
-                           'Intimidation', 'Investigation', 'Nature', 'Religion')
-    weapon_proficiencies = weapons.simple_weapons
-    spellcasting_ability = 'charisma'
-    spell_slots_by_level = {
-        1:  (2, 1, 0, 0, 0, 0, 0, 0, 0, 0),
-        2:  (2, 2, 0, 0, 0, 0, 0, 0, 0, 0),
-        3:  (2, 0, 2, 0, 0, 0, 0, 0, 0, 0),
-        4:  (3, 0, 2, 0, 0, 0, 0, 0, 0, 0),
-        5:  (3, 0, 0, 3, 0, 0, 0, 0, 0, 0),
-        6:  (3, 0, 0, 3, 0, 0, 0, 0, 0, 0),
-        7:  (3, 0, 0, 0, 2, 0, 0, 0, 0, 0),
-        8:  (3, 0, 0, 0, 2, 0, 0, 0, 0, 0),
-        9:  (3, 0, 0, 0, 0, 2, 0, 0, 0, 0),
-        10: (4, 0, 0, 0, 0, 2, 0, 0, 0, 0),
-        11: (4, 0, 0, 0, 0, 3, 0, 0, 0, 0),
-        12: (4, 0, 0, 0, 0, 3, 0, 0, 0, 0),
-        13: (4, 0, 0, 0, 0, 3, 0, 0, 0, 0),
-        14: (4, 0, 0, 0, 0, 3, 0, 0, 0, 0),
-        15: (4, 0, 0, 0, 0, 3, 0, 0, 0, 0),
-        16: (4, 0, 0, 0, 0, 3, 0, 0, 0, 0),
-        17: (4, 0, 0, 0, 0, 4, 0, 0, 0, 0),
-        18: (4, 0, 0, 0, 0, 4, 0, 0, 0, 0),
-        19: (4, 0, 0, 0, 0, 4, 0, 0, 0, 0),
-        20: (4, 0, 0, 0, 0, 4, 0, 0, 0, 0),
-    }
-
-
-class Wizard(Character):
-    class_name = 'Wizard'
-    hit_dice_faces = 6
-    saving_throw_proficiencies = ('intelligence', 'wisdom')
-    _proficiencies_text = ('daggers', 'darts', 'slings',
-                          'quarterstaffs', 'light crossbows')
-    weapon_proficiencies = (weapons.Dagger, weapons.Dart,
-                           weapons.Sling, weapons.Quarterstaff,
-                           weapons.LightCrossbow)
-    class_skill_choices = ('Arcana', 'History', 'Investigation',
-                           'Medicine', 'Religion')
-    spellcasting_ability = 'intelligence'
-    spell_slots_by_level = {
-        # char_lvl: (cantrips, 1st, 2nd, 3rd, ...)
-        1:  (3, 2, 0, 0, 0, 0, 0, 0, 0, 0),
-        2:  (3, 3, 0, 0, 0, 0, 0, 0, 0, 0),
-        3:  (3, 4, 2, 0, 0, 0, 0, 0, 0, 0),
-        4:  (4, 4, 3, 0, 0, 0, 0, 0, 0, 0),
-        5:  (4, 4, 3, 2, 0, 0, 0, 0, 0, 0),
-        6:  (4, 4, 3, 3, 0, 0, 0, 0, 0, 0),
-        7:  (4, 4, 3, 3, 1, 0, 0, 0, 0, 0),
-        8:  (4, 4, 3, 3, 2, 0, 0, 0, 0, 0),
-        9:  (4, 4, 3, 3, 3, 1, 0, 0, 0, 0),
-        10: (5, 4, 3, 3, 3, 2, 0, 0, 0, 0),
-        11: (5, 4, 3, 3, 3, 2, 1, 0, 0, 0),
-        12: (5, 4, 3, 3, 3, 2, 1, 0, 0, 0),
-        13: (5, 4, 3, 3, 3, 2, 1, 1, 0, 0),
-        14: (5, 4, 3, 3, 3, 2, 1, 1, 0, 0),
-        15: (5, 4, 3, 3, 3, 2, 1, 1, 1, 0),
-        16: (5, 4, 3, 3, 3, 2, 1, 1, 1, 0),
-        17: (5, 4, 3, 3, 3, 2, 1, 1, 1, 1),
-        18: (5, 4, 3, 3, 3, 3, 1, 1, 1, 1),
-        19: (5, 4, 3, 3, 3, 3, 2, 1, 1, 1),
-        20: (5, 4, 3, 3, 3, 3, 2, 2, 1, 1),
-    }
+    """
+    # Parse the file name
+    dir_, fname = os.path.split(os.path.abspath(filename))
+    module_name, ext = os.path.splitext(fname)
+    if ext != '.py':
+        raise ValueError(f"Character definition {filename} is not a python file.")
+    # Check if this file contains the version string
+    version_re = re.compile('dungeonsheets_version\s*=\s*[\'"]([0-9.]+)[\'"]')
+    with open(filename, mode='r') as f:
+        version = None
+        for line in f:
+            match = version_re.match(line)
+            if match:
+                version = match.group(1)
+                break
+        if version is None:
+            # Not a valid DND character file
+            raise exceptions.CharacterFileFormatError(
+                f"No ``dungeonsheets_version = `` entry in `{filename}`.")
+    # Import the module to extract the information
+    spec = importlib.util.spec_from_file_location('module', filename)
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    # Prepare a list of properties for this character
+    char_props = {}
+    for prop_name in dir(module):
+        if prop_name[0:2] != '__':
+            char_props[prop_name] = getattr(module, prop_name)
+    return char_props
