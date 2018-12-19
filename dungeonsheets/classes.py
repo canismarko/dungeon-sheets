@@ -145,7 +145,7 @@ class Cleric(CharClass):
 
 class Druid(CharClass):
     class_name = 'Druid'
-    circle = ""  # Moon, land
+    circle = ""  # moon, land
     _wild_shapes = ()
     hit_dice_faces = 8
     saving_throw_proficiencies = ('intelligence', 'wisdom')
@@ -185,7 +185,18 @@ class Druid(CharClass):
         19: (4, 4, 3, 3, 3, 3, 2, 1, 1, 1),
         20: (4, 4, 3, 3, 3, 3, 2, 2, 1, 1),
     }
-    
+
+    def __init__(self, level, subclass=None, **params):
+        if subclass is not None:
+            sc = str(subclass).lower()
+            if 'moon' in sc:
+                self.circle = 'moon'
+                params.pop('circle', '')
+            elif 'land' in sc:
+                self.circle = 'land'
+                params.pop('circle', '')
+        super().__init__(level, **params)
+        
     @property
     def all_wild_shapes(self):
         """Return all wild shapes, regardless of validity."""

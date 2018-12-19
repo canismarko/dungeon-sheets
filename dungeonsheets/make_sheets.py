@@ -107,14 +107,21 @@ def create_latex_pdf(char, basename, template):
             raise exceptions.LatexError(f'Processing of {basename}.tex failed.')
 
 
-def create_spells_pdf(char, spell_class, basename, flatten=False):
-    class_level = (spell_class.class_name + ' ' + str(spell_class.class_level))
+def create_spells_pdf(char, basename, flatten=False):
+    class_level = ' / '.join([c.class_name + ' ' + str(c.class_level)
+                              for c in char.spellcasting_classes])
+    abilities = ' / '.join([c.spellcasting_ability.upper()[:3]
+                            for c in char.spellcasting_classes])
+    DCs = ' / '.join([str(char.spell_save_dc(c))
+                      for c in char.spellcasting_classes])
+    bonuses = ' / '.join([mod_str(char.spell_attack_bonus(c))
+                          for c in char.spellcasting_classes])
     spell_level = lambda x : (x or '')
     fields = {
         'Spellcasting Class 2': class_level,
-        'SpellcastingAbility 2': spell_class.spellcasting_ability.upper()[:3],
-        'SpellSaveDC  2': char.spell_save_dc(spell_class),
-        'SpellAtkBonus 2': mod_str(char.spell_attack_bonus(spell_class)),
+        'SpellcastingAbility 2': abilities,
+        'SpellSaveDC  2': DCs,
+        'SpellAtkBonus 2': bonuses,
         # Number of spell slots
         'SlotsTotal 19': spell_level(char.spell_slots(1)),
         'SlotsTotal 20': spell_level(char.spell_slots(2)),
@@ -428,17 +435,12 @@ def make_sheet(character_file, char=None, flatten=False):
     char_pdf = create_character_pdf(char=char, basename=char_base,
                                     flatten=flatten)
     pages.append(char_pdf)
-    for spell_class in char.spellcasting_classes:
-        # Create spell sheet (one for each class)
-        # Even though each sheet will include same spells,
-        # this will list all modifiers
-        spell_base = '{:s}_{:s}_spells'.format(
-            os.path.splitext(character_file)[0],
-            spell_class.class_name)
-        create_spells_pdf(char=char, spell_class=spell_class,
-                          basename=spell_base, flatten=flatten)
-        sheets.append(spell_base + '.pdf')
     if char.is_spellcaster:
+        # Create spell sheet
+        spell_base = '{:s}_spells'.format(
+            os.path.splitext(character_file)[0])
+        create_spells_pdf(char=char, basename=spell_base, flatten=flatten)
+        sheets.append(spell_base + '.pdf')
         # Create spell book
         spellbook_base = os.path.splitext(character_file)[0] + '_spellbook'
         try:

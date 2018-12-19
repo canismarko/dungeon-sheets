@@ -12,7 +12,7 @@ name = 'Inara Serradon'
 # multiclass example
 classes_levels = ['wizard 3', 'druid 2']  # 4th level total
 subclasses = ['Necromancer', 'moon']
-circle = 'moon'
+circle = 'land'
 
 player_name = 'Mark'
 background = "Acolyte"
@@ -56,18 +56,18 @@ equipment = (
 
 wild_shapes = ["wolf", "crocodile", "giant eagle", 'ape', 'ankylosaurus']
 
-druid_spells_prepared = ('shillelagh', 'poison spray', 'druidcraft',
-                         'speak with animals', 'entangle', 'cure wounds',
-                         'create or destroy water')
+__druid_spells_prepared = ('shillelagh', 'poison spray', 'druidcraft',
+                           'speak with animals', 'entangle', 'cure wounds',
+                           'create or destroy water')
 # List of known spells
 spells = ('blindness deafness', 'burning hands', 'detect magic',
           'false life', 'mage armor', 'mage hand', 'magic missile',
           'prestidigitation', 'ray of frost', 'ray of sickness', 'shield',
-          'shocking grasp', 'sleep',) + druid_spells_prepared
+          'shocking grasp', 'sleep',) + __druid_spells_prepared
 
 # Which spells have been prepared (not including cantrips)
 spells_prepared = ('blindness deafness', 'false life', 'mage armor',
-                   'ray of sickness', 'shield', 'sleep',) + druid_spells_prepared
+                   'ray of sickness', 'shield', 'sleep',) + __druid_spells_prepared
 
 # Backstory
 personality_traits = """I use polysyllabic words that convey the impression of

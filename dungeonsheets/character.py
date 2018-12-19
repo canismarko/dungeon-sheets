@@ -108,6 +108,7 @@ class Character():
     spellcasting_ability = None
     spells = tuple()
     spells_prepared = tuple()
+    # MISC
     
     def __init__(self, **attrs):
         """Takes a bunch of attrs and passes them to ``set_attrs``"""
@@ -120,14 +121,6 @@ class Character():
                           'race': race,
                           'background': background})
         self.set_attrs(**attrs)
-        for c in self.class_list:
-            if isinstance(c, classes.Druid):
-                ws = self.wild_shapes
-                c.wild_shapes = ws
-                c.circle = self.circle
-                self.all_wild_shapes = c.all_wild_shapes
-                self.wild_shapes = c.wild_shapes
-                self.can_assume_shape = c.can_assume_shape
         # instantiate any spells not listed properly
         for S in self.spells_prepared:
             if S not in [type(spl) for spl in self.spells]:
@@ -233,6 +226,20 @@ class Character():
                 self.wear_armor(val)
             elif attr == 'shield':
                 self.wield_shield(val)
+            elif attr == 'wild_shapes':
+                for c in self.class_list:
+                    if isinstance(c, classes.Druid):
+                        c.wild_shapes = val
+                        self.all_wild_shapes = c.all_wild_shapes
+                        self.wild_shapes = c.wild_shapes
+                        self.can_assume_shape = c.can_assume_shape
+                        break
+            elif attr == 'circle':
+                for c in self.class_list:
+                    if isinstance(c, classes.Druid) and (c.circle == ''):
+                        c.circle = val
+                        self.circle = val
+                        break
             elif (attr == 'spells') or (attr == 'spells_prepared'):
                 # Create a list of actual spell objects
                 _spells = []
