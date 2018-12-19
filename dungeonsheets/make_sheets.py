@@ -58,12 +58,10 @@ PDFTK_CMD = 'pdftk'
 
 def text_box(string):
     """Format a string for displaying in a text box."""
-    # Remove line breaks
-    # new_string = string.replace('\n', ' ').replace('\r', ' ')
-    new_string = string
-    # Remove multiple whitespace
-    # new_string = ' '.join(new_string.split())
-    new_string = new_string
+    # remove multiple whitespace without removing linebreaks
+    new_string = ' '.join(string.replace('\n', '\m').split())
+    # Remove *single* line breaks, swap *multi* line breaks to single (fdf: \r)
+    new_string = new_string.replace('\m \m', '\r').replace('\m\m', '\r').replace('\m', ' ')
     return new_string
 
 
@@ -110,11 +108,11 @@ def create_latex_pdf(char, basename, template):
 
 
 def create_spells_pdf(char, spell_class, basename, flatten=False):
-    class_level = (spell_class.class_name + ' ' + str(spell_class.level))
+    class_level = (spell_class.class_name + ' ' + str(spell_class.class_level))
     spell_level = lambda x : (x or '')
     fields = {
         'Spellcasting Class 2': class_level,
-        'SpellcastingAbility 2': spell_class.spellcasting_ability.capitalize(),
+        'SpellcastingAbility 2': spell_class.spellcasting_ability.upper()[:3],
         'SpellSaveDC  2': char.spell_save_dc(spell_class),
         'SpellAtkBonus 2': mod_str(char.spell_attack_bonus(spell_class)),
         # Number of spell slots
@@ -177,76 +175,76 @@ def create_spells_pdf(char, spell_class, basename, flatten=False):
 def create_character_pdf(char, basename, flatten=False):
     # Prepare the list of fields
     class_level = ' / '.join([f'{c.class_name} {c.class_level}'
-                            for c in char.class_list])
+                              for c in char.class_list])
     fields = {
         # Character description
-        'CharacterName': character.name,
+        'CharacterName': char.name,
         'ClassLevel': class_level,
-        'Background': str(character.background),
-        'PlayerName': character.player_name,
-        'Race ': str(character.race),
-        'Alignment': character.alignment,
-        'XP': str(character.xp),
+        'Background': str(char.background),
+        'PlayerName': char.player_name,
+        'Race ': str(char.race),
+        'Alignment': char.alignment,
+        'XP': str(char.xp),
         # Abilities
-        'ProfBonus': mod_str(character.proficiency_bonus),
-        'STRmod': str(character.strength.value),
-        'STR': mod_str(character.strength.modifier),
-        'DEXmod ': str(character.dexterity.value),
-        'DEX': mod_str(character.dexterity.modifier),
-        'CONmod': str(character.constitution.value),
-        'CON': mod_str(character.constitution.modifier),
-        'INTmod': str(character.intelligence.value),
-        'INT': mod_str(character.intelligence.modifier),
-        'WISmod': str(character.wisdom.value),
-        'WIS': mod_str(character.wisdom.modifier),
-        'CHamod': str(character.charisma.value),
-        'CHA': mod_str(character.charisma.modifier),
-        'AC': str(character.armor_class),
-        'Initiative': mod_str(character.dexterity.modifier),
-        'Speed': str(character.speed),
-        'Passive': 10 + character.perception,
+        'ProfBonus': mod_str(char.proficiency_bonus),
+        'STRmod': str(char.strength.value),
+        'STR': mod_str(char.strength.modifier),
+        'DEXmod ': str(char.dexterity.value),
+        'DEX': mod_str(char.dexterity.modifier),
+        'CONmod': str(char.constitution.value),
+        'CON': mod_str(char.constitution.modifier),
+        'INTmod': str(char.intelligence.value),
+        'INT': mod_str(char.intelligence.modifier),
+        'WISmod': str(char.wisdom.value),
+        'WIS': mod_str(char.wisdom.modifier),
+        'CHamod': str(char.charisma.value),
+        'CHA': mod_str(char.charisma.modifier),
+        'AC': str(char.armor_class),
+        'Initiative': mod_str(char.dexterity.modifier),
+        'Speed': str(char.speed),
+        'Passive': 10 + char.perception,
         # Saving throws (proficiencies handled later)
-        'ST Strength': mod_str(character.strength.saving_throw),
-        'ST Dexterity': mod_str(character.dexterity.saving_throw),
-        'ST Constitution': mod_str(character.constitution.saving_throw),
-        'ST Intelligence': mod_str(character.intelligence.saving_throw),
-        'ST Wisdom': mod_str(character.wisdom.saving_throw),
-        'ST Charisma': mod_str(character.charisma.saving_throw),
+        'ST Strength': mod_str(char.strength.saving_throw),
+        'ST Dexterity': mod_str(char.dexterity.saving_throw),
+        'ST Constitution': mod_str(char.constitution.saving_throw),
+        'ST Intelligence': mod_str(char.intelligence.saving_throw),
+        'ST Wisdom': mod_str(char.wisdom.saving_throw),
+        'ST Charisma': mod_str(char.charisma.saving_throw),
         # Skills (proficiencies handled below)
-        'Acrobatics': mod_str(character.acrobatics),
-        'Animal': mod_str(character.animal_handling),
-        'Arcana': mod_str(character.arcana),
-        'Athletics': mod_str(character.athletics),
-        'Deception ': mod_str(character.deception),
-        'History ': mod_str(character.history),
-        'Insight': mod_str(character.insight),
-        'Intimidation': mod_str(character.intimidation),
-        'Investigation ': mod_str(character.investigation),
-        'Medicine': mod_str(character.medicine),
-        'Nature': mod_str(character.nature),
-        'Perception ': mod_str(character.perception),
-        'Performance': mod_str(character.performance),
-        'Persuasion': mod_str(character.persuasian),
-        'Religion': mod_str(character.religion),
-        'SleightofHand': mod_str(character.sleight_of_hand),
-        'Stealth ': mod_str(character.stealth),
-        'Survival': mod_str(character.survival),
+        'Acrobatics': mod_str(char.acrobatics),
+        'Animal': mod_str(char.animal_handling),
+        'Arcana': mod_str(char.arcana),
+        'Athletics': mod_str(char.athletics),
+        'Deception ': mod_str(char.deception),
+        'History ': mod_str(char.history),
+        'Insight': mod_str(char.insight),
+        'Intimidation': mod_str(char.intimidation),
+        'Investigation ': mod_str(char.investigation),
+        'Medicine': mod_str(char.medicine),
+        'Nature': mod_str(char.nature),
+        'Perception ': mod_str(char.perception),
+        'Performance': mod_str(char.performance),
+        'Persuasion': mod_str(char.persuasian),
+        'Religion': mod_str(char.religion),
+        'SleightofHand': mod_str(char.sleight_of_hand),
+        'Stealth ': mod_str(char.stealth),
+        'Survival': mod_str(char.survival),
         # Hit points
-        'HDTotal': character.hit_dice,
-        'HPMax': str(character.hp_max),
+        'HDTotal': char.hit_dice,
+        'HPMax': str(char.hp_max),
         # Personality traits and other features
-        'PersonalityTraits ': text_box(character.personality_traits),
-        'Ideals': text_box(character.ideals),
-        'Bonds': text_box(character.bonds),
-        'Flaws': text_box(character.flaws),
-        'Features and Traits': text_box(character.features_and_traits),
+        'PersonalityTraits ': text_box(char.personality_traits),
+        'Ideals': text_box(char.ideals),
+        'Bonds': text_box(char.bonds),
+        'Flaws': text_box(char.flaws),
+        'Features and Traits': text_box(char.features_and_traits),
         # Inventory
-        'CP': character.cp,
-        'SP': character.sp,
-        'EP': character.ep,
-        'GP': character.gp,
-        'PP': character.pp,
-        'Equipment': text_box(character.equipment),
+        'CP': char.cp,
+        'SP': char.sp,
+        'EP': char.ep,
+        'GP': char.gp,
+        'PP': char.pp,
+        'Equipment': text_box(char.equipment),
     }
     # Check boxes for proficiencies
     ST_boxes = {
@@ -257,7 +255,7 @@ def create_character_pdf(char, basename, flatten=False):
         'wisdom': 'Check Box 21',
         'charisma': 'Check Box 22',
     }
-    for ability in character.saving_throw_proficiencies:
+    for ability in char.saving_throw_proficiencies:
         fields[ST_boxes[ability]] = CHECKBOX_ON
     # Add skill proficiencies
     skill_boxes = {
@@ -280,7 +278,7 @@ def create_character_pdf(char, basename, flatten=False):
         'stealth': 'Check Box 39',
         'survival': 'Check Box 40',
     }
-    for skill in character.skill_proficiencies:
+    for skill in char.skill_proficiencies:
         try:
             fields[skill_boxes[skill.replace(' ', '_').lower()]] = CHECKBOX_ON
         except KeyError:
@@ -289,20 +287,21 @@ def create_character_pdf(char, basename, flatten=False):
     weapon_fields = [('Wpn Name', 'Wpn1 AtkBonus', 'Wpn1 Damage'),
                      ('Wpn Name 2', 'Wpn2 AtkBonus ', 'Wpn2 Damage '),
                      ('Wpn Name 3', 'Wpn3 AtkBonus  ', 'Wpn3 Damage '),]
-    for _fields, weapon in zip(weapon_fields, character.weapons):
+    for _fields, weapon in zip(weapon_fields, char.weapons):
         name_field, atk_field, dmg_field = _fields
         fields[name_field] = weapon.name
         fields[atk_field] = '{:+d}'.format(weapon.attack_bonus)
         fields[dmg_field] = f'{weapon.damage}/{weapon.damage_type}'
     # Other attack information
-    attack_str = f'Armor: {character.armor}'
-    attack_str += '\n\r'
-    attack_str += f'Shield: {character.shield}'
-    attack_str += character.attacks_and_spellcasting
+    attack_str = f'Armor: {char.armor}'
+    attack_str += '\n \n'
+    attack_str += f'Shield: {char.shield}'
+    attack_str += '\n \n'
+    attack_str += char.attacks_and_spellcasting
     fields['AttacksSpellcasting'] = text_box(attack_str)
     # Other proficiencies and languages
-    prof_text = "Proficiencies:\n" + text_box(character.proficiencies_text)
-    prof_text += "\n\nLanguages:\n" + text_box(character.languages)
+    prof_text = "Proficiencies:\n" + text_box(char.proficiencies_text)
+    prof_text += "\n\nLanguages:\n" + text_box(char.languages)
     fields['ProficienciesLang'] = prof_text
     # Prepare the actual PDF
     dirname = os.path.dirname(os.path.abspath(__file__))
@@ -405,8 +404,8 @@ def _make_pdf_pdftk(fields, src_pdf, basename, flatten=False):
     subprocess.call(popenargs)
     # Clean up temporary files
     os.remove(fdfname)
-
-
+    
+    
 def make_sheet(character_file, char=None, flatten=False):
     """Prepare a PDF character sheet from the given character file.
     
@@ -426,7 +425,7 @@ def make_sheet(character_file, char=None, flatten=False):
     char_base = os.path.splitext(character_file)[0] + '_char'
     sheets = [char_base + '.pdf']
     pages = []
-    char_pdf = create_character_pdf(character=char, basename=char_base,
+    char_pdf = create_character_pdf(char=char, basename=char_base,
                                     flatten=flatten)
     pages.append(char_pdf)
     for spell_class in char.spellcasting_classes:
@@ -443,7 +442,7 @@ def make_sheet(character_file, char=None, flatten=False):
         # Create spell book
         spellbook_base = os.path.splitext(character_file)[0] + '_spellbook'
         try:
-            create_spellbook_pdf(character=char, basename=spellbook_base)
+            create_spellbook_pdf(char=char, basename=spellbook_base)
         except exceptions.LatexNotFoundError as e:
             log.warning('``pdflatex`` not available. Skipping spellbook '
                         f'for {char.name}')
@@ -454,7 +453,7 @@ def make_sheet(character_file, char=None, flatten=False):
     if len(wild_shapes) > 0:
         shapes_base = os.path.splitext(character_file)[0] + '_wild_shapes'
         try:
-            create_druid_shapes_pdf(character=char, basename=shapes_base)
+            create_druid_shapes_pdf(char=char, basename=shapes_base)
         except exceptions.LatexNotFoundError as e:
             log.warning('``pdflatex`` not available. Skipping wild shapes list '
                         f'for {char.name}')

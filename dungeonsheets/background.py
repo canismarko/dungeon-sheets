@@ -1,6 +1,8 @@
 class Background():
     name = "Generic background"
     skill_proficiencies = ()
+    weapon_proficiencies = ()
+    proficiencies_text = ()
     languages = ()
 
     def __str__(self):

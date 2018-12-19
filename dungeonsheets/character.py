@@ -38,11 +38,9 @@ class Character():
     intelligence = Ability()
     wisdom = Ability()
     charisma = Ability()
-    saving_throw_proficiencies = []
     skill_proficiencies = tuple()
     class_skill_choices = tuple()
     num_skill_choices = 2
-    weapon_proficiencies = tuple()
     proficiencies_extra = tuple()
     languages = ""
     # Skills
@@ -90,8 +88,23 @@ class Character():
     def __init__(self, **attrs):
         """Takes a bunch of attrs and passes them to ``set_attrs``"""
         self.weapons = []
+        # make sure class, race, background are set first
+        class_list = attrs.pop('class_list', self.class_list)
+        race = attrs.pop('race', self.race)
+        background = attrs.pop('background', self.background)
+        self.set_attrs(**{'class_list': class_list,
+                          'race': race,
+                          'background': background})
         self.set_attrs(**attrs)
-    
+        for c in self.class_list:
+            if isinstance(c, classes.Druid):
+                ws = self.wild_shapes
+                c.wild_shapes = ws
+                c.circle = self.circle
+                self.all_wild_shapes = c.all_wild_shapes
+                self.wild_shapes = c.wild_shapes
+                self.can_assume_shape = c.can_assume_shape
+                
     def __str__(self):
         return self.name
     
@@ -107,13 +120,41 @@ class Character():
         return sum(c.class_level for c in self.class_list)
 
     @property
-    def primary_class(self):
-        # for now, assume first class given must be primary class
-        return self.class_list[0]
+    def num_classes(self):
+        return len(self.class_list)
 
     @property
+    def class_initialized(self):
+        return (self.num_classes > 0)
+    
+    @property
+    def primary_class(self):
+        # for now, assume first class given must be primary class
+        if self.class_initialized:
+            return self.class_list[0]
+        else:
+            return None
+
+    @property
+    def weapon_proficiencies(self):
+        if not self.class_initialized:
+            return ()
+        wp = set(self.primary_class.weapon_proficiencies)
+        if self.num_classes > 1:
+            for c in self.class_list[1:]:
+                wp |= set(c.multiclass_weapon_proficiencies)
+        if self.race is not None:
+            wp |= set(getattr(self.race, 'weapon_proficiencies', ()))
+        if self.background is not None:
+            wp |= set(getattr(self.background, 'weapon_proficiencies', ()))
+        return wp
+            
+    @property
     def saving_throw_proficiencies(self):
-        return self.primary_class.saving_throw_proficiencies
+        if self.primary_class is not None:
+            return self.primary_class.saving_throw_proficiencies
+        else:
+            return ()
 
     @property
     def spellcasting_classes(self):
@@ -194,19 +235,24 @@ class Character():
           The weapon to be tested for proficiency.
         
         """
-        all_proficiencies = tuple(self.weapon_proficiencies)
-        all_proficiencies += tuple(getattr(self.race, 'weapon_proficiencies',
-                                           tuple()))
+        all_proficiencies = self.weapon_proficiencies
         is_proficient = any((isinstance(weapon, W) for W in all_proficiencies))
         return is_proficient
     
     @property
     def proficiencies_text(self):
         final_text = ""
-        all_proficiencies = self._proficiencies_text
+        all_proficiencies = set(self._proficiencies_text)
+        if self.class_initialized:
+            all_proficiencies |= set(self.primary_class._proficiencies_text)
+        if self.num_classes > 1:
+            for c in self.class_list[1:]:
+                all_proficiencies |= set(c._multiclass_proficiencies_text)
         if self.race is not None:
-            all_proficiencies += self.race.proficiencies_text
-        all_proficiencies += self.proficiencies_extra
+            all_proficiencies |= set(self.race.proficiencies_text)
+        if self.background is not None:
+            all_proficiencies |= set(self.background.proficiencies_text)
+        all_proficiencies |= set(self.proficiencies_extra)
         # Create a single string out of all the proficiencies
         for txt in all_proficiencies:
             if not final_text:
@@ -290,7 +336,8 @@ class Character():
         """What type and how many dice to use for re-gaining hit points.
         
         To change, set hit_dice_num and hit_dice_faces."""
-        return f"{self.level}d{self.hit_dice_faces}"
+        return ' + '.join([f'{c.class_level}d{c.hit_dice_faces}'
+                           for c in self.class_list])
     
     @property
     def proficiency_bonus(self):
@@ -333,6 +380,8 @@ class Character():
         subclasses = char_props.pop('subclasses', [])
         if isinstance(subclasses, str):
             subclasses = [subclasses]
+        if len(subclasses) == 0:
+            subclasses = [None]*len(classes_levels)
         assert len(classes_levels) == len(subclasses), (
             'the length of classes_levels {:d} does not match length of '
             'subclasses {:d}'.format(len(classes_levels), len(subclasses)))

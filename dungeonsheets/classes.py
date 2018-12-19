@@ -14,13 +14,14 @@ class CharClass():
     class_name = ""
     class_level = 1
     hit_dice_faces = None
-    _proficiencies_text = ()
     weapon_proficiencies = ()
+    _proficiencies_text = ()
     multiclass_weapon_proficiencies = ()
+    _multiclass_proficiencies_text = ()
     languages = ()
     class_skill_choices = ()
     num_skill_choices = 2
-    spellcasing_ability = None
+    spellcasting_ability = None
     spell_slots_by_level = None
     subclass = None
     class_features_by_level = {lvl: () for lvl in range(1, 21)}
@@ -254,7 +255,7 @@ class Druid(CharClass):
             max_cr = 1
             max_swim = None
             max_fly = None
-        # Make adjustments for moon cirlce druids
+        # Make adjustments for moon circle druids
         if self.circle.lower() == "moon":
             if 2 <= self.class_level < 6:
                 max_cr = 1
