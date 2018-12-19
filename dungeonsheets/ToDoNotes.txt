@@ -1,3 +1,11 @@
+Add multiclass proficiencies to classes
+Add multiclass spell slots
+
+Add subclasses
+Add features
+Auto-add features to PDF
+Add features description LaTeX page
+**hard** integrate features automatically into math
+
 Add Character.save() option to save to text file
 Add Inspiration points
-Test Multiclass
