@@ -27,15 +27,14 @@ class Spell():
     components = ("V", "S")
     materials = ""
     duration = "instantaneous"
-    concentration = False
     ritual = False
     magic_school = ""
     classes = ()
     
     def __str__(self):
-        s = self.name
+        s = self.name + ' ({:s}) '.format(','.join(self.components))
         # Indicate if this is a ritual or a concentration
-        indicators = [('R', self.ritual), ('C', self.concentration)]
+        indicators = [('R', self.ritual), ('C', self.concentration), ('$', self.special_material)]
         indicators = tuple(letter for letter, is_active in indicators if is_active)
         if len(indicators):
             s += f' ({", ".join(indicators)})'
@@ -51,6 +50,13 @@ class Spell():
             s += f' ({self.materials})'
         return s
     
+    @property
+    def concentration(self):
+        return ('concentration' in self.duration.lower())
+
+    @property
+    def special_material(self):
+        return ('worth at least' in self.materials.lower())
 
 
 class AcidArrow(Spell):
@@ -2015,7 +2021,6 @@ class Druidcraft(Spell):
     components = ("V", "S")
     materials = ""
     duration = "instantaneous"
-    concentration = False
     ritual = False
     magic_school = "Transmutation"
     classes = ('Druid')
@@ -2132,10 +2137,30 @@ class Entangle(Spell):
     casting_time = "1 action"
     casting_range = "90 ft (20 ft area)"
     components = ("V", "S")
-    concentration = True
     duration = "Concentration, up to 1 minute"
     magic_school = "Conjuration"
     classes = ('Druid')
+
+    
+class Enthrall(Spell):
+    """You weave a distracting string of words, causing creatures of your choice
+    that you can see within range and that can hear you to make a Wisdom saving
+    throw. Any creature that can’t be charmed succeeds on this saving throw
+    automatically, and if you or your companions are fighting a creature, it has
+    advantage on the save. On a failed save, the target has disadvantage on Wisdom
+    (Perception) checks made to perceive any creature other than you until the
+    spell ends or until the target can no longer hear you. The spell ends if you
+    are incapacitated or can no longer speak.
+    
+    """
+    level = 2
+    name = "Enthrall"
+    casting_time = '1 action'
+    casting_range = '60 feet'
+    components = ('V', 'S')
+    duration = "1 minute"
+    magic_shool = "Enchantment"
+    classes = ('Bard', 'Warlock')
 
 
 class Etherealness(Spell):
@@ -2762,6 +2787,26 @@ class HealingWord(Spell):
     magic_school = "Evocation"
     classes = ()
 
+    
+class HellishRebuke(Spell):
+    """Reaction: you are being damaged by a creature within 60 feet of you that you
+    can see. You point your finger, and the creature that damaged you is
+    momentarily surrounded by hellish flames. The creature must make a
+    Dexterity saving throw. It takes 2d10 fire damage on a failed save, or half
+    as much damage on a successful one. At higher levels: When you cast this
+    spell using a spell slot of 2nd level or higher, the damage increases by
+    1dlO for each slot level above 1st.
+
+    """
+    name = 'Hellish Rebuke'
+    level = 1
+    casting_time = '1 reaction'
+    components = ('V', 'S')
+    materials = ''
+    duration = 'Instantaneous'
+    magic_school = 'Evolcation'
+    classes = ('Warlock',)
+
 
 class HeroesFeast(Spell):
     """You bring forth a great feast, including magnificent food and
@@ -2786,6 +2831,29 @@ class HeroesFeast(Spell):
     classes = ()
 
 
+class Hex(Spell):
+    """You place a curse on a creature that you can see within range. Until the
+    spell ends, you deal an extra 1d6 necrotic damage to the target whenever
+    you hit it with an attack. Also, choose one ability when you cast the
+    spell. The target has disadvantage on ability checks made with the chosen
+    ability. If the target drops to 0 hit points before this spell ends, you
+    can use a bonus action on a subsequent turn of yours to curse a new
+    creature. A remove curse cast on the target ends this spell early. At
+    higher level: When you cast this spell using a spell slot of 3rd or 4th
+    level, you can maintain your concentration on the spell for up to 8 hours.
+    When you use a spell slot of 5th level or higher, you can maintain your
+    concentration on the spell for up to 24 hours."""
+    name = 'Hex'
+    level = 1
+    casting_time = '1 bonus action'
+    casting_range = '90 feet'
+    components = ('V', 'S', 'M')
+    materials = 'The petrified eye of a newt'
+    duration = 'Concentration, up to 1 hour'
+    magic_school = 'Enchantment'
+    classes = ('Warlock',)
+
+    
 class HoldPerson(Spell):
     """Choose a humanoid that you can see within range. The target must
     succeed on a Wisdom saving throw or be paralyzed for the
@@ -2872,6 +2940,32 @@ class Identify(Spell):
     duration = "Instantaneous"
     magic_school = "Divination"
     classes = ()
+
+
+class IllusoryScript(Spell):
+    """You write on parchment, paper, or some other suitable writing material and
+    imbue it with a potent illusion that lasts for the duration.  To you and
+    any creatures you designate when you cast the spell, the writing appears
+    normal, written in your hand, and conveys whatever meaning you intended
+    when you wrote the text. To all others, the writing appears as if it were
+    written in an unknown or magical script that is
+    unintelligible. Alternatively, you can cause the writing to appear to be an
+    entirely different message, written in a different hand and language,
+    though the language must be one you know.  Should the spell be dispelled,
+    the original script and the illusion both disappear.  A creature with
+    truesight can read the hidden message.
+
+    """
+    name = 'Illusory Script'
+    level = 1
+    casting_time = '1 minute'
+    casting_range = 'Touch'
+    components = ('S', 'M')
+    materials = "a lead-based ink worth at least 10 gp, which the spell consumes"
+    duration = "10 days"
+    magic_school = "Illusion"
+    ritual = True
+    classes = ('Bard', 'Warlock', 'Wizard')
 
 
 class Imprisonment(Spell):
@@ -3983,7 +4077,6 @@ class Shillelagh(Spell):
     components = ("V", "S", "M")
     materials = "mistletoe, a shamrock leaf, and a club or quarterstaff"
     duration = "1 minute"
-    concentration = False
     ritual = False
     magic_school = "Transmutation"
     classes = ('Druid')
@@ -4561,6 +4654,34 @@ class TrueSeeing(Spell):
     magic_school = "Divination"
     classes = ()
 
+
+class UnseenServant(Spell):
+    """This spell creates an invisible, mindless, shapeless force that performs
+    simple tasks at your command until the spell ends. The servant springs into
+    existence in an unoccupied space on the ground within range. It has AC 10,
+    1 hit point, and a Strength of 2, and it can’t attack. If it drops to 0 hit
+    points, the spell ends.  Once on each of your turns as a bonus action, you
+    can mentally command the servant to move up to 15 feet and inteact with an
+    object. The servant can perform simple tasks that a human servant could do,
+    such as fetching things, cleaning, mending, folding clothes, lighting
+    fires, serving food, and pouring wine. Once you give the command, the
+    servant performs the task to the best of its ability until it completes the
+    task, then waits for your next command.  If you command the servant to
+    perform a task that would move it more than 60 feet away from you, the
+    spell ends.
+
+    """
+    name = "Unseen Servant"
+    level = 1
+    casting_time = '1 action'
+    components = ('V', 'S', 'M')
+    materials = 'a piece of string and a bit of wood'
+    duration = '1 hour'
+    casting_rage = '60 feet'
+    magic_school = 'Conjuration'
+    ritual = True
+    classes = ('Bard', 'Warlock', 'Wizard')
+    
 
 class VampiricTouch(Spell):
     """The touch of your shadow-wreathed hand can siphon life force from

@@ -116,7 +116,7 @@ def create_spells_pdf(char, basename, flatten=False):
                       for c in char.spellcasting_classes])
     bonuses = ' / '.join([mod_str(char.spell_attack_bonus(c))
                           for c in char.spellcasting_classes])
-    spell_level = lambda x : (x or '')
+    spell_level = lambda x : (x or 0)
     fields = {
         'Spellcasting Class 2': class_level,
         'SpellcastingAbility 2': abilities,

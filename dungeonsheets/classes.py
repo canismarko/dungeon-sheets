@@ -312,9 +312,9 @@ class Monk(CharClass):
     hit_dice_faces = 8
     saving_throw_proficiencies = ('strength', 'dexterity')
     _proficiencies_text = (
-        'simple weapons', 'shortswords',
+        'simple weapons', 'shortswords', 'unarmed',
         "one type of artisan's tools or one musical instrument")
-    weapon_proficiencies = (weapons.Shortsword,) + weapons.simple_weapons
+    weapon_proficiencies = (weapons.Shortsword, weapons.Unarmed) + weapons.simple_weapons
     class_skill_choices = ('Acrobatics', 'Athletics', 'History', 'Insight',
                            'Religion', 'Stealth')
     

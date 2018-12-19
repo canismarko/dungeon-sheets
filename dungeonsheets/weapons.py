@@ -416,10 +416,23 @@ class Unarmed(Weapon):
     ability = "strength"
 
 
-class SotaFist(Unarmed):
-    name = "Sota Fist"
+# Custom weapons
+class MonkUnarmed(Unarmed):
+    name = "Monk Unarmed"
     base_damage = "1d4"
-    bonus_damage = 2
+    bonus_damage = 2  # from Dueling
+
+    
+class HeavyRight(MonkUnarmed):
+    name = "Heavy Right"
+    bonus_damage = 10 + 2  # Heavy weapon master + Dueling
+    attack_bonus = -5  # Heavy weapon master
+
+
+class HeavyLeft(MonkUnarmed):
+    name = "Heavy Left"
+    bonus_damage = 10 + 2 - 2  # No proficiency bonus
+    attack_bonus = -5  # Heavy weapon master
 
 
 # Some lists of weapons for easy proficiency resolution

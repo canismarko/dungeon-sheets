@@ -1,6 +1,7 @@
 Add multiclass proficiencies to classes
 
-Add spell slots even if no prepared spells of that level!
+Add Warlock Incantations
+Add Warlock multiclass spell slots
 
 Add subclasses
 Add features
