@@ -81,7 +81,7 @@ class Character():
     nature = Skill(ability='intelligence')
     perception = Skill(ability='wisdom')
     performance = Skill(ability='charisma')
-    persuasian = Skill(ability='charisma')
+    persuasion = Skill(ability='charisma')
     religion = Skill(ability='intelligence')
     sleight_of_hand = Skill(ability='dexterity')
     stealth = Skill(ability='dexterity')
@@ -411,6 +411,8 @@ class Character():
         """Armor class, including contributions from worn armor and shield."""
         # ## TODO:
         # Implement AC functions by class
+        if hasattr(self, 'force_AC'):
+            return self.force_AC
         # Retrieve current armor (or a generic armor substitute)
         armor = self.armor if self.armor is not None else NoArmor()
         shield = self.shield if self.shield is not None else NoShield()

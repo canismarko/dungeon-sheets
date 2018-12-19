@@ -5,7 +5,7 @@ __all__ = ('Dwarf', 'HillDwarf', 'MountainDwarf', 'Elf', 'HighElf',
            'WoodElf', 'DarkElf', 'Halfling', 'LightfootHalfling',
            'StoutHalfling', 'Human', 'Dragonborn', 'Gnome', 'ForestGnome',
            'RockGnome', 'HalfElf', 'HalfOrc', 'Tiefling', 'Aasimar',
-           'FallenAasimar')
+           'FallenAasimar', 'Lizardfolk', 'Kenku')
 
 
 class Race():
@@ -192,3 +192,25 @@ class Aasimar(Race):
 class FallenAasimar(Aasimar):
     name = "Fallen Aasimar"
     strength_bonus = 1
+
+    
+# Lizardfolk
+class Lizardfolk(Race):
+    name = 'Lizardfolk'
+    size = 'medium'
+    speed = """30 (+swim)"""
+    constitution_bonus = 2
+    wisdom_bonus = 1
+    languages = ('Common', 'Draconic')
+    weapon_proficiencies = (weapons.Bite,)
+    proficiencies_text = ('bite',)
+
+
+# Kenku
+class Kenku(Race):
+    name = 'Kenku'
+    size = 'medium'
+    speed = 30
+    dexterity_bonus = 2
+    wisdom_bonus = 1
+    languages = ('Common', 'Auran')

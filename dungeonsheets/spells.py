@@ -24,7 +24,7 @@ class Spell():
     name = "Unknown spell"
     casting_time = "1 action"
     casting_range = "60 ft"
-    components = ("V", "S")
+    components = ()
     materials = ""
     duration = "instantaneous"
     ritual = False

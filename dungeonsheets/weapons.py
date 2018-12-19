@@ -434,6 +434,16 @@ class HeavyLeft(MonkUnarmed):
     bonus_damage = 10 + 2 - 2  # No proficiency bonus
     attack_bonus = -5  # Heavy weapon master
 
+    
+class Bite(Weapon):
+    name = "Bite"
+    base_damage = "1d4"
+    damage_type = 'p'
+    cost = "0 gp"
+    weight = 0
+    properties = ""
+    ability = "strength"
+
 
 # Some lists of weapons for easy proficiency resolution
 simple_melee_weapons = (Club, Dagger, Greatclub, Handaxe, Javelin,
