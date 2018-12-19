@@ -1,9 +1,11 @@
-all: wizard druid rogue warlock
+all: multiclass wizard druid rogue warlock
 
 clobber:
-	rm -f wizard.pdf rogue.pdf warlock.pdf druid.pdf
+	rm -f multiclass.pdf wizard.pdf rogue.pdf warlock.pdf druid.pdf
 
 redo: clobber all
+
+multiclass: multiclass.pdf
 
 wizard: wizard.pdf
 
@@ -12,6 +14,9 @@ rogue: rogue.pdf
 warlock: warlock.pdf
 
 druid: druid.pdf
+
+multiclass.pdf: multiclass.py
+	makesheets multiclass.py
 
 wizard.pdf: wizard.py
 	makesheets wizard.py

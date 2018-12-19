@@ -104,6 +104,10 @@ class Character():
                 self.all_wild_shapes = c.all_wild_shapes
                 self.wild_shapes = c.wild_shapes
                 self.can_assume_shape = c.can_assume_shape
+        # instantiate any spells not listed properly
+        for S in self.spells_prepared:
+            if S not in [type(spl) for spl in self.spells]:
+                self.spells += (S(),)
                 
     def __str__(self):
         return self.name
@@ -183,7 +187,7 @@ class Character():
                 self.race = MyRace()
             elif attr == 'background':
                 MyBackground = findattr(background, val)
-                self.race = MyBackground()
+                self.background = MyBackground()
             elif attr == 'armor':
                 self.wear_armor(val)
             elif attr == 'shield':
@@ -208,6 +212,7 @@ class Character():
                     # Instantiate them all for the spells list
                     self.spells = tuple(S() for S in _spells)
                 else:
+                    # this is a list of spell classes
                     self.spells_prepared = tuple(_spells)
             else:
                 if not hasattr(self, attr):
@@ -394,7 +399,7 @@ class Character():
                     'classes_levels not properly formatted. Each entry should '
                     'be formatted \"class level\", but got {:s}'.format(cl))
             try:
-                this_class = getattr(classes, c)
+                this_class = getattr(classes, c.capitalize())
                 this_level = int(lvl)
             except AttributeError:
                 raise AttributeError(

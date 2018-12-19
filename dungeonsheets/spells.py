@@ -43,7 +43,8 @@ class Spell():
     
     def __repr__(self):
         return f'<{self.name}>'
-    
+
+    @property
     def component_string(self):
         s = f'{", ".join(self.components)}'
         if "M" in self.components:

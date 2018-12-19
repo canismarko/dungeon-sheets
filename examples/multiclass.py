@@ -4,14 +4,14 @@ dungeonsheets_version = "0.4.2"
 name = 'Inara Serradon'
 # classes_levels: specify class and level or, if multiclass, specify as list
 # example:
-classes_levels = ['figher 2']  # 2nd level fighter
-subclasses = [None]
+# classes_levels = ['wizard 3']  # 3rd level wizard
+# subclasses = [None]
 # also accepted, as long as only one class
 # classes_levels = 'fighter 2'
 # subclasses = None
 # multiclass example
-# classes_levels = ['wizard 3', 'fighter 1', 'rogue 1']  # 5th level total
-subclasses = ['necromancer', None, None]
+classes_levels = ['wizard 3', 'fighter 1', 'rogue 1']  # 5th level total
+subclasses = ['Necromancer', None, None]
 player_name = 'Mark'
 background = "Acolyte"
 race = "High-Elf"
@@ -44,7 +44,7 @@ sp = 283
 ep = 28
 gp = 125
 pp = 0
-weapons = ('shortsword', 'longsword')
+weapons = ('greatsword', 'longsword')
 equipment = (
     """Gallon of ale, red cloak, shortsword, longsword, jar of salt, vodka
     (500mL), potion of vitality, wand of magic missiles (7/7),

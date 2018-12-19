@@ -50,8 +50,10 @@ wild_shapes = ["wolf", "crocodile", "giant eagle", 'ape', 'ankylosaurus']
 
 # List of known spells
 # Which spells have been prepared (including cantrips)
-spells_prepared = ('shillelagh', 'poison spray', 'druidcraft','speak with animals', 'entangle', 'cure wounds', 'create or destroy water')
-
+spells_prepared = ('shillelagh', 'poison spray', 'druidcraft',
+                   'speak with animals', 'entangle', 'cure wounds',
+                   'create or destroy water')
+# spells = spells_prepared
 # Backstory
 # TODO: Describe your backstory here
 personality_traits = """I am a leaf on the wind,
