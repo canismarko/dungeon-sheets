@@ -1,5 +1,4 @@
 Add multiclass proficiencies to classes
-Add multiclass spell slots
 
 Add subclasses
 Add features

@@ -15,6 +15,30 @@ from .armor import Armor, NoArmor, Shield, NoShield
 
 dice_re = re.compile('(\d+)d(\d+)')
 
+multiclass_spellslots_by_level = {
+        # char_lvl: (cantrips, 1st, 2nd, 3rd, ...)
+        1:  (0, 2, 0, 0, 0, 0, 0, 0, 0, 0),
+        2:  (0, 3, 0, 0, 0, 0, 0, 0, 0, 0),
+        3:  (0, 4, 2, 0, 0, 0, 0, 0, 0, 0),
+        4:  (0, 4, 3, 0, 0, 0, 0, 0, 0, 0),
+        5:  (0, 4, 3, 2, 0, 0, 0, 0, 0, 0),
+        6:  (0, 4, 3, 3, 0, 0, 0, 0, 0, 0),
+        7:  (0, 4, 3, 3, 1, 0, 0, 0, 0, 0),
+        8:  (0, 4, 3, 3, 2, 0, 0, 0, 0, 0),
+        9:  (0, 4, 3, 3, 3, 1, 0, 0, 0, 0),
+        10: (0, 4, 3, 3, 3, 2, 0, 0, 0, 0),
+        11: (0, 4, 3, 3, 3, 2, 1, 0, 0, 0),
+        12: (0, 4, 3, 3, 3, 2, 1, 0, 0, 0),
+        13: (0, 4, 3, 3, 3, 2, 1, 1, 0, 0),
+        14: (0, 4, 3, 3, 3, 2, 1, 1, 0, 0),
+        15: (0, 4, 3, 3, 3, 2, 1, 1, 1, 0),
+        16: (0, 4, 3, 3, 3, 2, 1, 1, 1, 0),
+        17: (0, 4, 3, 3, 3, 2, 1, 1, 1, 1),
+        18: (0, 4, 3, 3, 3, 3, 1, 1, 1, 1),
+        19: (0, 4, 3, 3, 3, 3, 2, 1, 1, 1),
+        20: (0, 4, 3, 3, 3, 3, 2, 2, 1, 1),
+}
+
 
 class Character():
     """A generic player character.
@@ -170,7 +194,24 @@ class Character():
 
     def spell_slots(self, spell_level):
         # TODO: Update this for Multiclassing
-        return self.spellcasting_classes[0].spell_slots(spell_level)
+        if len(self.spellcasting_classes) == 1:
+            return self.spellcasting_classes[0].spell_slots(spell_level)
+        else:
+            if spell_level == 0:
+                return sum([c.spell_slots(0)
+                            for c in self.spellcasting_classes])
+            else:
+                # compute effective level from PHB pg 164
+                eff_level = 0
+                for c in self.spellcasting_classes:
+                    if type(c) in [classes.Bard, classes.Cleric, classes.Druid,
+                                   classes.Sorceror, classes.Wizard]:
+                        eff_level += c.class_level
+                    elif type(c) in [classes.Paladin, classes.Ranger]:
+                        eff_level += c.class_level // 2
+                    elif type(c) in [classes.Fighter, classes.Rogue]:
+                        eff_level += c.class_level // 3
+                return multiclass_spellslots_by_level[eff_level][spell_level]
 
     def set_attrs(self, **attrs):
         """Bulk setting of attributes. Useful for loading a character from a
