@@ -75,6 +75,11 @@ def create_spellbook_pdf(char, basename):
     return create_latex_pdf(char, basename, template)
 
 
+def create_features_pdf(char, basename):
+    template = jinja_env.get_template('features_template.tex')
+    return create_latex_pdf(char, basename, template)
+
+
 def create_latex_pdf(char, basename, template):
     tex = template.render(character=char)
     # Create tex document
@@ -95,7 +100,7 @@ def create_latex_pdf(char, basename, template):
     try:
         result = subprocess.run(['pdflatex', '--output-directory',
                                  output_dir, tex_file, '-halt-on-error'],
-                                stdout=subprocess.DEVNULL, timeout=10)
+                                stdout=subprocess.DEVNULL, timeout=30)
     except FileNotFoundError:
         # Remove temporary files
         remove_temp_files(basename)
@@ -244,7 +249,7 @@ def create_character_pdf(char, basename, flatten=False):
         'Ideals': text_box(char.ideals),
         'Bonds': text_box(char.bonds),
         'Flaws': text_box(char.flaws),
-        'Features and Traits': text_box(char.features_and_traits),
+        'Features and Traits': text_box(char.features_text + char.features_and_traits),
         # Inventory
         'CP': char.cp,
         'SP': char.sp,
@@ -441,6 +446,17 @@ def make_sheet(character_file, char=None, flatten=False):
             os.path.splitext(character_file)[0])
         create_spells_pdf(char=char, basename=spell_base, flatten=flatten)
         sheets.append(spell_base + '.pdf')
+    if len(char.features) > 0:
+        feat_base = '{:s}_feats'.format(
+            os.path.splitext(character_file)[0])
+        try:
+            create_features_pdf(char=char, basename=feat_base)
+        except exceptions.LatexNotFoundError as e:
+            log.warning('``pdflatex`` not available. Skipping features book '
+                        f'for {char.name}')
+        else:
+            sheets.append(feat_base + '.pdf')
+    if char.is_spellcaster:
         # Create spell book
         spellbook_base = os.path.splitext(character_file)[0] + '_spellbook'
         try:

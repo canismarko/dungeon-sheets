@@ -1,8 +1,12 @@
+from . import features as feats
+
+
 class Background():
     name = "Generic background"
     skill_proficiencies = ()
     weapon_proficiencies = ()
     proficiencies_text = ()
+    features = ()
     languages = ()
 
     def __str__(self):
@@ -98,3 +102,14 @@ class Soldier(Background):
 class Urchin(Background):
     name = "Urchin"
     skill_proficiencies = ('sleight of hand', 'stealth')
+
+    
+class UrbanBountyHunter(Background):
+    name = 'Urban Bounty Hunter'
+    skill_proficiencies = ('[choose one]', '[choose one]')
+
+    
+class FarTraveler(Background):
+    name = 'Far Traveler'
+    skill_proficiencies = ('insight', 'perception')
+    languages = ('[choose one]',)

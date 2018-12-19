@@ -3,6 +3,10 @@ Add multiclass proficiencies to classes
 Add Warlock Incantations
 Add Warlock multiclass spell slots
 
+Add disadvantage on STEALTH with armor
+
+Add race / class AC bonuses
+
 Add subclasses
 Add features
 Auto-add features to PDF

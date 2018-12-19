@@ -1,11 +1,12 @@
 from . import weapons
+from . import features as feats
 
 
 __all__ = ('Dwarf', 'HillDwarf', 'MountainDwarf', 'Elf', 'HighElf',
            'WoodElf', 'DarkElf', 'Halfling', 'LightfootHalfling',
            'StoutHalfling', 'Human', 'Dragonborn', 'Gnome', 'ForestGnome',
            'RockGnome', 'HalfElf', 'HalfOrc', 'Tiefling', 'Aasimar',
-           'FallenAasimar', 'Lizardfolk', 'Kenku')
+           'FallenAasimar', 'Lizardfolk', 'Kenku', 'Aarakocra')
 
 
 class Race():
@@ -16,6 +17,7 @@ class Race():
     proficiencies_text = tuple()
     weapon_proficiences = tuple()
     skill_proficiencies = ()
+    features = tuple()
     strength_bonus = 0
     dexterity_bonus = 0
     constitution_bonus = 0
@@ -214,3 +216,15 @@ class Kenku(Race):
     dexterity_bonus = 2
     wisdom_bonus = 1
     languages = ('Common', 'Auran')
+
+    
+# Aarakocra
+class Aarakocra(Race):
+    name = 'Aarakocra'
+    size = 'medium'
+    speed = "25 (50 fly)"
+    dexterity_bonus = 2
+    wisdom_bonus = 1
+    languages = ('Common', 'Aarakocra', 'Auran')
+    weapon_proficiencies = (weapons.Talons,)
+    proficiences_text = ('talons',)

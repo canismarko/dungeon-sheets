@@ -1,5 +1,6 @@
 from .stats import mod_str
 
+
 class Weapon():
     name = ""
     cost = "0 gp"
@@ -18,6 +19,10 @@ class Weapon():
         if self.bonus_damage != 0:
             dam_str += '' + mod_str(self.bonus_damage)
         return dam_str
+
+    @property
+    def is_ranged(self):
+        return ('range' in self.properties.lower()) and ('thrown' not in self.properties.lower())
 
 
 class Club(Weapon):
@@ -127,7 +132,7 @@ class LightCrossbow(Weapon):
     base_damage = "1d8"
     damage_type = "p"
     weight = 5
-    properties = "Ammunition (range 80/320, loading, two-handed"
+    properties = "Ammunition (range 80/320), loading, two-handed"
     ability = 'dexterity'
 
 
@@ -383,7 +388,7 @@ class HeavyCrossbow(Weapon):
     damage_type = "p"
     weight = 18
     properties = "Ammunition (range 100/400), heaving, loading, two-handed"
-    ability = 'strength'
+    ability = 'dexterity'
 
 
 class Longbow(Weapon):
@@ -393,7 +398,7 @@ class Longbow(Weapon):
     damage_type = "p"
     weight = 2
     properties = "Ammunition (range 150/600), heavy, two-handed"
-    ability = 'strength'
+    ability = 'dexterity'
 
 
 class Net(Weapon):
@@ -445,6 +450,46 @@ class Bite(Weapon):
     ability = "strength"
 
 
+class Talons(Weapon):
+    name = 'Talons'
+    base_damage = '1d4'
+    damage_type = 's'
+    cost = '0 gp'
+    weight = 0
+    properties = ''
+    ability = 'strength'
+
+
+class Firearm(Weapon):
+    name = 'Firearm'
+    ability = 'dexterity'
+    damage_type = 'p'
+    
+    
+class Blunderbuss(Firearm):
+    name = 'Blunderbuss'
+    base_damage = '2d8'
+    cost = '300 gp'
+    weight = 10
+    properties = "Ammunition (range 15/60), Reload 1, Misfire 2"
+
+
+class Pistol(Firearm):
+    name = 'Pistol'
+    base_damage = '1d10'
+    cost = '150 gp'
+    weight = 3
+    properties = "Ammunition (range 60/240), Reload 4, Misfire 1"
+
+    
+class Musket(Firearm):
+    name = 'Musket'
+    base_damage = '1d12'
+    cost = '300'
+    weight = 10
+    properties = "Ammunition (range 120/480), Two-Handed, Reload 1, Misfire 2"
+
+    
 # Some lists of weapons for easy proficiency resolution
 simple_melee_weapons = (Club, Dagger, Greatclub, Handaxe, Javelin,
                         LightHammer, Mace, Quarterstaff, Sickle, Spear)
@@ -459,3 +504,5 @@ martial_melee_weapons = (Battleaxe, Flail, Glaive, Greataxe,
 martial_ranged_weapons = (Blowgun, HandCrossbow, HeavyCrossbow,
                           Longbow, Net)
 martial_weapons = martial_melee_weapons + martial_ranged_weapons
+
+firearms = (Firearm)

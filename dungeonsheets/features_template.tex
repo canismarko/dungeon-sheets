@@ -1,0 +1,27 @@
+\documentclass[twocolumn,lettersize]{article}
+
+%% \usepackage{fullpage}
+\usepackage[margin=1.5cm]{geometry}
+\usepackage[dvipsnames]{color}
+\definecolor{mygrey}{gray}{0.7}
+
+\title{Features and Traits}
+\author{[[ character.name ]]}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+[% for feat in character.features %]
+
+  \section*{[[ feat.name ]]}
+             
+  \noindent
+  \textbf{Source:} [[ feat.source ]] \\
+
+  [[ feat.__doc__|rst_to_latex ]]
+
+[% endfor %]
+
+\end{document}

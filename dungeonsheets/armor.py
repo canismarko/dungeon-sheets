@@ -154,10 +154,20 @@ class HeavySplintArmor(Armor):
 
 
 class HeavyPlateArmor(Armor):
-    name = "Heavy splint armor"
+    name = "Heavy plate armor"
     cost = "1,500 gp"
     base_armor_class = 18
     dexterity_mod_max = 0
     strength_required = 15
     stealth_disadvantage = True
     weight = 65
+
+
+# Custom Armor
+class ElvenChain(Armor):
+    name = 'Elven Chain'
+    cost = '5,000 gp'
+    base_armor_class = 14
+    dexerity_mod_max = 2
+    weight = 20
+    

@@ -9,7 +9,7 @@ import importlib.util
 from .stats import Ability, Skill, findattr
 from .dice import read_dice_str
 from . import (weapons, race, background, spells, armor, monsters,
-               exceptions, classes)
+               exceptions, classes, features)
 from .weapons import Weapon
 from .armor import Armor, NoArmor, Shield, NoShield
 
@@ -62,7 +62,9 @@ class Character():
     intelligence = Ability()
     wisdom = Ability()
     charisma = Ability()
+    other_weapon_proficiencies = tuple()
     skill_proficiencies = tuple()
+    skill_expertise = tuple()
     class_skill_choices = tuple()
     num_skill_choices = 2
     proficiencies_extra = tuple()
@@ -108,7 +110,8 @@ class Character():
     spellcasting_ability = None
     spells = tuple()
     spells_prepared = tuple()
-    # MISC
+    # Features IN MAJOR DEVELOPMENT
+    other_features = ()
     
     def __init__(self, **attrs):
         """Takes a bunch of attrs and passes them to ``set_attrs``"""
@@ -158,9 +161,10 @@ class Character():
 
     @property
     def weapon_proficiencies(self):
+        wp = set(self.other_weapon_proficiencies)
         if not self.class_initialized:
-            return ()
-        wp = set(self.primary_class.weapon_proficiencies)
+            return wp
+        wp |= set(self.primary_class.weapon_proficiencies)
         if self.num_classes > 1:
             for c in self.class_list[1:]:
                 wp |= set(c.multiclass_weapon_proficiencies)
@@ -168,8 +172,21 @@ class Character():
             wp |= set(getattr(self.race, 'weapon_proficiencies', ()))
         if self.background is not None:
             wp |= set(getattr(self.background, 'weapon_proficiencies', ()))
-        return wp
-            
+        return tuple(wp)
+
+    @property
+    def features(self):
+        fts = set(self.other_features)
+        if not self.class_initialized:
+            return fts
+        for c in self.class_list:
+            fts |= set(c.features)
+        if self.race is not None:
+            fts |= set(getattr(self.race, 'features', ()))
+        if self.background is not None:
+            fts |= set(getattr(self.background, 'features', ()))
+        return tuple(fts)
+    
     @property
     def saving_throw_proficiencies(self):
         if self.primary_class is not None:
@@ -216,6 +233,9 @@ class Character():
                 # Treat weapons specially
                 for weap in val:
                     self.wield_weapon(weap)
+            elif attr == 'weapon_proficiencies':
+                self.other_weapon_proficiencies = tuple([findattr(weapons, w)
+                                                         for w in val])
             elif attr == 'race':
                 MyRace = findattr(race, val)
                 self.race = MyRace()
@@ -240,6 +260,18 @@ class Character():
                         c.circle = val
                         self.circle = val
                         break
+            elif attr == 'features':
+                if isinstance(val, str):
+                    val = [val]
+                _features = []
+                for f in val:
+                    try:
+                        _features.append(findattr(features, f)())
+                    except AttributeError:
+                        msg = (f'Feature "{f}" not defined. '
+                               f'Please add it to ``features.py``')
+                        warnings.warn(msg)
+                self.other_features = tuple(_features)
             elif (attr == 'spells') or (attr == 'spells_prepared'):
                 # Create a list of actual spell objects
                 _spells = []
@@ -286,6 +318,10 @@ class Character():
         ----------
         weapon
           The weapon to be tested for proficiency.
+
+        Returns
+        -------
+        Boolean: is this character proficient with this weapon?
         
         """
         all_proficiencies = self.weapon_proficiencies
@@ -319,6 +355,14 @@ class Character():
         # Add a period at the end
         final_text += '.'
         return final_text
+
+    @property
+    def features_text(self):
+        s = '\n\n*'.join([f.name for f in self.features])
+        if s != '':
+            s = '(See Features Details Page)\n\n*' + s
+            s += '\n\n=================\n\n'
+        return s
     
     def wear_armor(self, new_armor):
         """Accepts a string or Armor class and replaces the current armor.
@@ -381,6 +425,11 @@ class Character():
         # Check for prifiency
         if self.is_proficient(weapon_):
             weapon_.attack_bonus += self.proficiency_bonus
+        # check if features add any bonuses
+        for f in self.features:
+            a_bonus, d_bonus = f.weapon_func(weapon_)
+            weapon_.attack_bonus += a_bonus
+            weapon_.bonus_damage += d_bonus
         # Save it to the array
         self.weapons.append(weapon_)
     
@@ -422,8 +471,9 @@ class Character():
         else:
             modifier = min(self.dexterity.modifier, armor.dexterity_mod_max)
         # Calculate final armor class
-        ac = armor.base_armor_class + shield.base_armor_class + modifier
-        return ac
+        ac = [armor.base_armor_class + shield.base_armor_class + modifier]
+        ac += [f.AC_func(self) for f in self.features]
+        return max(ac)
 
     @classmethod
     def load(cls, character_file):

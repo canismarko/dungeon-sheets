@@ -88,4 +88,8 @@ class Skill():
         is_proficient = self.skill_name in character.skill_proficiencies
         if is_proficient:
             modifier += character.proficiency_bonus
+        # Check for expertise
+        is_expert = self.skill_name in character.skill_expertise
+        if is_expert:
+            modifier += character.proficiency_bonus
         return modifier
