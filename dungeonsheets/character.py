@@ -141,6 +141,11 @@ class Character():
         return f"<{self.class_name}: {self.name}>"
 
     @property
+    def class_name(self):
+        return ' / '.join([f'{c.class_name} {c.class_level}'
+                           for c in self.class_list])
+    
+    @property
     def speed(self):
         return getattr(self.race, 'speed', 30)
 
@@ -239,7 +244,10 @@ class Character():
                         eff_level += c.class_level // 2
                     elif type(c) in [classes.Fighter, classes.Rogue]:
                         eff_level += c.class_level // 3
-                return multiclass_spellslots_by_level[eff_level][spell_level]
+                if eff_level == 0:
+                    return 0
+                else:
+                    return multiclass_spellslots_by_level[eff_level][spell_level]
 
     def set_attrs(self, **attrs):
         """Bulk setting of attributes. Useful for loading a character from a

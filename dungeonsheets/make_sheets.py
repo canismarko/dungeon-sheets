@@ -190,12 +190,10 @@ def create_spells_pdf(char, basename, flatten=False):
 
 def create_character_pdf(char, basename, flatten=False):
     # Prepare the list of fields
-    class_level = ' / '.join([f'{c.class_name} {c.class_level}'
-                              for c in char.class_list])
     fields = {
         # Character description
         'CharacterName': char.name,
-        'ClassLevel': class_level,
+        'ClassLevel': char.class_name,
         'Background': str(char.background),
         'PlayerName': char.player_name,
         'Race ': str(char.race),
