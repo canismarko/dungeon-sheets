@@ -14,7 +14,9 @@ def create_spell(**params):
     NewSpell
       New spell class, subclass of ``Spell``, with given params.
     """
-    NewSpell = type('UnknownSpell', (Spell,), params)
+    NewSpell = Spell
+    NewSpell.name = params.get('name', 'Unknown Spell')
+    NewSpell.level = params.get('level', 9)
     return NewSpell
 
 
@@ -41,8 +43,11 @@ class Spell():
         return s
     
     def __repr__(self):
-        return f'<{self.name}>'
+        return "\"{:s}\"".format(self.name)
 
+    def __eq__(self, other):
+        return (self.name == other.name) and (self.level == other.level)
+    
     @property
     def component_string(self):
         s = f'{", ".join(self.components)}'

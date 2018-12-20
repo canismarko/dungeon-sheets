@@ -7,6 +7,8 @@ class Shield():
     def __str__(self):
         return self.name
 
+    def __repr__(self):
+        return "\"{:s}\"".format(self.name)
 
 class WoodenShield(Shield):
     name = 'Wooden shield'
@@ -55,6 +57,8 @@ class Armor():
     def __str__(self):
         return self.name
 
+    def __repr__(self):
+        return "\"{:s}\"".format(self.name)
 
 class NoArmor(Armor):
     name = "No armor"

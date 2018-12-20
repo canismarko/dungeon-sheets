@@ -24,6 +24,12 @@ class Weapon():
     def is_ranged(self):
         return ('range' in self.properties.lower()) and ('thrown' not in self.properties.lower())
 
+    def __str__(self):
+        return self.name
+
+    def __repr__(self):
+        return "\"{:s}\"".format(self.name)
+    
 
 class Club(Weapon):
     name = "Club"

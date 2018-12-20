@@ -14,7 +14,7 @@ import subprocess
 import npyscreen
 import jinja2
 
-from dungeonsheets import character, race, dice, background
+from dungeonsheets import character, race, dice, background, classes
 
 
 def read_version():
@@ -24,18 +24,18 @@ def read_version():
 
 
 char_classes = {
-    'Barbarian': character.Barbarian,
-    'Bard': character.Bard,
-    'Cleric': character.Cleric,
-    'Druid': character.Druid,
-    'Fighter': character.Fighter,
-    'Monk': character.Monk,
-    'Paladin': character.Paladin,
-    'Ranger': character.Ranger,
-    'Rogue': character.Rogue,
-    'Sorceror': character.Sorceror,
-    'Warlock': character.Warlock,
-    'Wizard': character.Wizard
+    'Barbarian': classes.Barbarian,
+    'Bard': classes.Bard,
+    'Cleric': classes.Cleric,
+    'Druid': classes.Druid,
+    'Fighter': classes.Fighter,
+    'Monk': classes.Monk,
+    'Paladin': classes.Paladin,
+    'Ranger': classes.Ranger,
+    'Rogue': classes.Rogue,
+    'Sorceror': classes.Sorceror,
+    'Warlock': classes.Warlock,
+    'Wizard': classes.Wizard
 }
 
 races = {

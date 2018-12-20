@@ -37,6 +37,9 @@ class Feature():
 
     def __str__(self):
         return self.name
+
+    def __repr__(self):
+        return "\"{:s}\"".format(self.name)
     
     def weapon_func(self, weapon: weapons.Weapon, **kwargs):
         """

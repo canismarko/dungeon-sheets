@@ -175,7 +175,7 @@ def create_spells_pdf(char, basename, flatten=False):
         prep_names = tuple(f'Check Box {i}' for i in prep_numbers[level])
         for spell, field, chk_field in zip(spells, field_names, prep_names):
             fields[field] = str(spell)
-            is_prepared = any([isinstance(spell, Spl)
+            is_prepared = any([spell == Spl
                                for Spl in char.spells_prepared])
             fields[chk_field] = CHECKBOX_ON if is_prepared else CHECKBOX_OFF
         # # Uncomment to post field names instead:

@@ -5,11 +5,14 @@ import os
 import warnings
 from . import exceptions
 import importlib.util
+import jinja2
+import subprocess
 
 from .stats import Ability, Skill, findattr
 from .dice import read_dice_str
 from . import (weapons, race, background, spells, armor, monsters,
                exceptions, classes, features)
+from .__init__ import __version__
 from .weapons import Weapon
 from .armor import Armor, NoArmor, Shield, NoShield
 
@@ -49,6 +52,7 @@ class Character():
     class_name = ""
     player_name = ""
     alignment = "Neutral"
+    dungeonsheets_version = __version__
     class_list = []
     race = None
     background = None
@@ -111,7 +115,8 @@ class Character():
     spells = tuple()
     spells_prepared = tuple()
     # Features IN MAJOR DEVELOPMENT
-    other_features = ()
+    custom_features = ()
+    feature_choices = ()
     
     def __init__(self, **attrs):
         """Takes a bunch of attrs and passes them to ``set_attrs``"""
@@ -150,6 +155,11 @@ class Character():
     @property
     def class_initialized(self):
         return (self.num_classes > 0)
+
+    @property
+    def classes_levels(self):
+        return [c.class_name.lower() + ' ' + str(c.class_level)
+                for c in self.class_list]
     
     @property
     def primary_class(self):
@@ -176,7 +186,7 @@ class Character():
 
     @property
     def features(self):
-        fts = set(self.other_features)
+        fts = set(self.custom_features)
         if not self.class_initialized:
             return fts
         for c in self.class_list:
@@ -190,6 +200,10 @@ class Character():
         if self.background is not None:
             fts |= set(getattr(self.background, 'features', ()))
         return tuple(fts)
+
+    @property
+    def custom_features_text(self):
+        return tuple([f.name for f in self.custom_features])
     
     @property
     def saving_throw_proficiencies(self):
@@ -279,7 +293,7 @@ class Character():
                             name=f, source='Unknown',
                             __doc__="""Unknown Feature. Add to features.py"""))
                         warnings.warn(msg)
-                self.other_features = tuple(F() for F in _features)
+                self.custom_features = tuple(F() for F in _features)
             elif (attr == 'spells') or (attr == 'spells_prepared'):
                 # Create a list of actual spell objects
                 _spells = []
@@ -300,8 +314,8 @@ class Character():
                     # Instantiate them all for the spells list
                     self.spells = tuple(S() for S in _spells)
                 else:
-                    # this is a list of spell classes
-                    self.spells_prepared = tuple(_spells)
+                    # Instantiate them all for the spells list
+                    self.spells_prepared = tuple(S() for S in _spells)
             else:
                 if not hasattr(self, attr):
                     warnings.warn(f"Setting unknown character attribute {attr}",
@@ -401,7 +415,7 @@ class Character():
         directly.
         
         """
-        if shield not in ('', None):
+        if shield not in ('', 'None', None):
             try:
                 NewShield = findattr(armor, shield)
             except AttributeError:
@@ -519,7 +533,7 @@ class Character():
                 raise ValueError(
                     'level was not recognizable as an int: {:s}'.format(lvl))
             params = {}
-            params['feature_choices'] = char_props.pop('feature_choices', [])
+            params['feature_choices'] = char_props.get('feature_choices', [])
             class_list += [this_class(this_level, subclass=sub, **params)]
         # accept backwards compatability for single-class characters
         if len(class_list) == 0:
@@ -532,7 +546,28 @@ class Character():
         char = cls(**char_props)
         return char
 
+    def save(self, filename, template_file='character_template.txt'):
+        # Create the template context
+        context = dict(
+            char=self,
+        )
+        # Render the template
+        src_path = os.path.dirname(__file__)
+        text = jinja2.Environment(
+            loader=jinja2.FileSystemLoader(src_path or './')
+        ).get_template(template_file).render(context)
+        # Save the file
+        with open(filename, mode='w') as f:
+            f.write(text)
 
+    def to_pdf(self, filename, **kwargs):
+        char_file = filename.replace('pdf', 'py')
+        self.save(char_file,
+                  template_file=kwargs.get('template_file',
+                                           'character_template.txt'))
+        subprocess.call(['makesheets', char_file])
+
+        
 def read_character_file(filename):
     """Create a character object from the given definition file.
     

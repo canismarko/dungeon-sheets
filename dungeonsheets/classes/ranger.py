@@ -51,4 +51,4 @@ class Ranger(CharClass):
     
 # Custom Classes
 class Revisedranger(Ranger):
-    class_name = 'Revised Ranger'
+    class_name = 'Revisedranger'

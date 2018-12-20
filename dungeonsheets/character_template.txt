@@ -5,14 +5,13 @@ sheet by running ``makesheets`` from the command line.
 
 """
 
-dungeonsheets_version = "{{ dungeonsheets_version }}"
+dungeonsheets_version = "{{ char.dungeonsheets_version }}"
 
-name = '{{ char.name }}'
-character_class = '{{ char.class_name }}'
-player_name = '{{ char.player_name }}'
+name = "{{ char.name }}"
+classes_levels = {{ char.classes_levels }}
+player_name = "{{ char.player_name }}"
 background = "{{ char.background.name }}"
 race = "{{ char.race.name }}"
-level = {{ char.level }}
 alignment = "{{ char.alignment }}"
 xp = {{ char.xp }}
 hp_max = {{ char.hp_max }}
@@ -24,10 +23,23 @@ constitution = {{ char.constitution.value }}
 intelligence = {{ char.intelligence.value }}
 wisdom = {{ char.wisdom.value }}
 charisma = {{ char.charisma.value }}
+
+# Select what skills you're proficient with
 skill_proficiencies = {{ char.skill_proficiencies }}
 
+# Named features / feats that aren't part of your classes,
+# race, or background.
+# Example:
+# features = ('Tavern Brawler',)  # take the optional Feat from PHB
+features = {{ char.custom_features }}
+
+# If selecting among multiple feature options: ex Fighting Style
+# Example (Fighting Style):
+# feature_choices = ('Archery',)
+feature_choices = {{ char.feature_choices }}
+
 # Proficiencies and languages
-languages = "{{ char.languages }}"
+languages = """{{ char.languages }}"""
 
 # Inventory
 # TODO: Get yourself some money
@@ -38,35 +50,30 @@ gp = 0
 pp = 0
 
 # TODO: Put your equipped weapons and armor here
-weapons = () # Example: ('shortsword', 'longsword')
-armor = "" # Eg "light leather armor"
-shield = "" # Eg "shield"
+weapons = {{ char.weapons }} # Example: ('shortsword', 'longsword')
+armor = "{{ char.armor }}" # Eg "light leather armor"
+shield = "{{ char.shield }}" # Eg "shield"
 
-equipment = "TODO: Describe your equipment from your {{ char.class_name }} class and {{ char.background.name }} background."
+equipment = """{{ char.equipment }}"""
 
-attacks_and_spellcasting = "TODO: Describe specifics for how your {{ char.class_name }} attacks."
+attacks_and_spellcasting = """{{ char.attacks_and_spellcasting }}"""
 
 # List of known spells
 # Example: spells = ('magic missile', 'mage armor')
-spells = () # Todo: Learn some spells
+spells = {{ char.spells }} # Todo: Learn some spells
+
 # Which spells have been prepared (not including cantrips)
-spells_prepared = ()
+spells_prepared = {{ char.spells_prepared }}
 
 # Backstory
-# TODO: Describe your backstory here
-personality_traits = """I am a leaf on the wind,
-watch how I...
-"""
+# Describe your backstory here
+personality_traits = """{{ char.personality_traits}}"""
 
-ideals = """
-"""
+ideals = """{{ char.ideals }}"""
 
-bonds = """
-"""
+bonds = """{{ char.bonds }}"""
 
-flaws = """
-"""
+flaws = """{{ char.flaws }}"""
 
-features_and_traits = """
-"""
+features_and_traits = """{{ char.features_and_traits }}"""
 
