@@ -37,6 +37,9 @@ def rst_to_latex(rst):
         tex = it_re.sub(r'\\textit{\1}', tex)
         tex = dice_re.sub(r'\\texttt{\1}', tex)
         tex = tt_re.sub(r'\\texttt{\1}', tex)
+        for c in ['\\', '#', '$', '%', '&', '~', '_', '^',
+                  '{', '}', '(', ')', '[', ']']:
+            tex = tex.replace(c, '\\' + c)
     return tex
 
 

@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 import os
-from setuptools import setup
+from setuptools import setup, find_packages
 
 def read(fname):
     return open(os.path.join(os.path.dirname(__file__), fname)).read()
@@ -18,12 +18,12 @@ setup(name='dungeonsheets',
       license='GPLv3',
       url='https://github.com/canismarko/dungeon-sheets',
       download_url = 'https://github.com/canismarko/dungeon-sheets/archive/master.zip',
-      packages=['dungeonsheets'],
+      packages=find_packages(),
       package_data={
           'dungeonsheets': ['blank-character-sheet-default.pdf',
                             'blank-spell-sheet-default.pdf',
                             'spellbook_template.tex', '../VERSION',
-                            'character_template.txt',
+                            'character_template.txt', 'features_template.tex',
                             'druid_shapes_template.tex']
       },
       install_requires=[

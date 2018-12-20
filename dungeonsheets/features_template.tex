@@ -16,10 +16,14 @@
 [% for feat in character.features %]
 
   \section*{[[ feat.name ]]}
-             
+
   \noindent
   \textbf{Source:} [[ feat.source ]] \\
 
+  [% if feat.needs_implementation %] %
+    \textbf{**Not included in stats on Character Sheet} %
+  [% endif %] %
+             
   [[ feat.__doc__|rst_to_latex ]]
 
 [% endfor %]

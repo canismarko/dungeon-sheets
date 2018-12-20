@@ -183,6 +183,10 @@ class Character():
             fts |= set(c.features)
         if self.race is not None:
             fts |= set(getattr(self.race, 'features', ()))
+            # some races have level-based features (Ex: Aasimar)
+            if hasattr(self.race, 'features_by_level'):
+                for lvl in range(1, self.level+1):
+                    fts |= set(self.race.features_by_level[lvl])
         if self.background is not None:
             fts |= set(getattr(self.background, 'features', ()))
         return tuple(fts)
@@ -266,12 +270,16 @@ class Character():
                 _features = []
                 for f in val:
                     try:
-                        _features.append(findattr(features, f)())
+                        _features.append(findattr(features, f))
                     except AttributeError:
                         msg = (f'Feature "{f}" not defined. '
                                f'Please add it to ``features.py``')
+                        # create temporary feature
+                        _features.append(features.create_feature(
+                            name=f, source='Unknown',
+                            __doc__="""Unknown Feature. Add to features.py"""))
                         warnings.warn(msg)
-                self.other_features = tuple(_features)
+                self.other_features = tuple(F() for F in _features)
             elif (attr == 'spells') or (attr == 'spells_prepared'):
                 # Create a list of actual spell objects
                 _spells = []
@@ -358,9 +366,10 @@ class Character():
 
     @property
     def features_text(self):
-        s = '\n\n*'.join([f.name for f in self.features])
+        s = '\n\n--'.join([f.name + ("**" if f.needs_implementation else "")
+                           for f in self.features])
         if s != '':
-            s = '(See Features Details Page)\n\n*' + s
+            s = '(See Features and Traits Page)\n\n--' + s
             s += '\n\n=================\n\n'
         return s
     
@@ -415,6 +424,9 @@ class Character():
         except AttributeError:
             raise AttributeError(f'Weapon "{weapon}" is not defined')
         weapon_ = NewWeapon()
+        # check if features add any bonuses
+        for f in self.features:
+            weapon_ = f.weapon_func(weapon_, char=self)
         # Set weapon attributes based on character
         if weapon_.is_finesse:
             ability_mod = max(self.strength.modifier, self.dexterity.modifier)
@@ -425,11 +437,6 @@ class Character():
         # Check for prifiency
         if self.is_proficient(weapon_):
             weapon_.attack_bonus += self.proficiency_bonus
-        # check if features add any bonuses
-        for f in self.features:
-            a_bonus, d_bonus = f.weapon_func(weapon_)
-            weapon_.attack_bonus += a_bonus
-            weapon_.bonus_damage += d_bonus
         # Save it to the array
         self.weapons.append(weapon_)
     
@@ -456,12 +463,8 @@ class Character():
         return prof
     
     @property
-    def armor_class(self):
+    def default_AC(self):
         """Armor class, including contributions from worn armor and shield."""
-        # ## TODO:
-        # Implement AC functions by class
-        if hasattr(self, 'force_AC'):
-            return self.force_AC
         # Retrieve current armor (or a generic armor substitute)
         armor = self.armor if self.armor is not None else NoArmor()
         shield = self.shield if self.shield is not None else NoShield()
@@ -471,7 +474,15 @@ class Character():
         else:
             modifier = min(self.dexterity.modifier, armor.dexterity_mod_max)
         # Calculate final armor class
-        ac = [armor.base_armor_class + shield.base_armor_class + modifier]
+        ac = armor.base_armor_class + shield.base_armor_class + modifier
+        return ac
+
+    @property
+    def armor_class(self):
+        """Armor class, including any applicable features"""
+        if hasattr(self, 'force_AC'):
+            return self.force_AC
+        ac = [self.default_AC]
         ac += [f.AC_func(self) for f in self.features]
         return max(ac)
 
@@ -507,7 +518,9 @@ class Character():
             except ValueError:
                 raise ValueError(
                     'level was not recognizable as an int: {:s}'.format(lvl))
-            class_list += [this_class(this_level, subclass=sub)]
+            params = {}
+            params['feature_choices'] = char_props.pop('feature_choices', [])
+            class_list += [this_class(this_level, subclass=sub, **params)]
         # accept backwards compatability for single-class characters
         if len(class_list) == 0:
             class_name = char_props.pop('character_class').lower().capitalize()

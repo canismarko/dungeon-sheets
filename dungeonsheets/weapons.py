@@ -422,20 +422,18 @@ class Unarmed(Weapon):
 
 
 # Custom weapons
-class MonkUnarmed(Unarmed):
-    name = "Monk Unarmed"
+class HeavyRight(Weapon):
     base_damage = "1d4"
-    bonus_damage = 2  # from Dueling
-
-    
-class HeavyRight(MonkUnarmed):
     name = "Heavy Right"
+    damage_type = 'b'
     bonus_damage = 10 + 2  # Heavy weapon master + Dueling
     attack_bonus = -5  # Heavy weapon master
 
 
-class HeavyLeft(MonkUnarmed):
+class HeavyLeft(Weapon):
+    base_damage = "1d4"
     name = "Heavy Left"
+    damage_type = 'b'
     bonus_damage = 10 + 2 - 2  # No proficiency bonus
     attack_bonus = -5  # Heavy weapon master
 
@@ -505,4 +503,7 @@ martial_ranged_weapons = (Blowgun, HandCrossbow, HeavyCrossbow,
                           Longbow, Net)
 martial_weapons = martial_melee_weapons + martial_ranged_weapons
 
-firearms = (Firearm)
+monk_weapons = (Shortsword, Unarmed, Club, Dagger, Handaxe, Javelin,
+                LightHammer, Mace, Quarterstaff, Sickle, Spear)
+
+firearms = (Firearm, Blunderbuss, Pistol, Musket)
