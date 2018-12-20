@@ -33,12 +33,13 @@ def rst_to_latex(rst):
         tex = ""
     else:
         tex = rst
+        for c in ['\\']:
+            tex = tex.replace(c, '\\' + c)
         tex = bold_re.sub(r'\\textbf{\1}', tex)
         tex = it_re.sub(r'\\textit{\1}', tex)
         tex = dice_re.sub(r'\\texttt{\1}', tex)
         tex = tt_re.sub(r'\\texttt{\1}', tex)
-        for c in ['\\', '#', '$', '%', '&', '~', '_', '^',
-                  '{', '}', '(', ')', '[', ']']:
+        for c in ['#', '$', '%', '&', '~', '_', '^']:
             tex = tex.replace(c, '\\' + c)
     return tex
 

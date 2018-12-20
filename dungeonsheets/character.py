@@ -74,24 +74,24 @@ class Character():
     proficiencies_extra = tuple()
     languages = ""
     # Skills
-    acrobatics = Skill(ability='dexterity')
-    animal_handling = Skill(ability='wisdom')
-    arcana = Skill(ability='intelligence')
-    athletics = Skill(ability='strength')
-    deception = Skill(ability='charisma')
-    history = Skill(ability='intelligence')
-    insight = Skill(ability='wisdom')
-    intimidation = Skill(ability='charisma')
-    investigation = Skill(ability='intelligence')
-    medicine = Skill(ability='wisdom')
-    nature = Skill(ability='intelligence')
-    perception = Skill(ability='wisdom')
-    performance = Skill(ability='charisma')
-    persuasion = Skill(ability='charisma')
-    religion = Skill(ability='intelligence')
-    sleight_of_hand = Skill(ability='dexterity')
-    stealth = Skill(ability='dexterity')
-    survival = Skill(ability='wisdom')
+    acrobatics = Skill(ability='dexterity', name='acrobatics')
+    animal_handling = Skill(ability='wisdom', name='animal handling')
+    arcana = Skill(ability='intelligence', name='arcana')
+    athletics = Skill(ability='strength', name='athletics')
+    deception = Skill(ability='charisma', name='deception')
+    history = Skill(ability='intelligence', name='history')
+    insight = Skill(ability='wisdom', name='insight')
+    intimidation = Skill(ability='charisma', name='intimidation')
+    investigation = Skill(ability='intelligence', name='investigation')
+    medicine = Skill(ability='wisdom', name='medicine')
+    nature = Skill(ability='intelligence', name='nature')
+    perception = Skill(ability='wisdom', name='perception')
+    performance = Skill(ability='charisma', name='performance')
+    persuasion = Skill(ability='charisma', name='persuasion')
+    religion = Skill(ability='intelligence', name='religion')
+    sleight_of_hand = Skill(ability='dexterity', name='sleight of hand')
+    stealth = Skill(ability='dexterity', name='stealth')
+    survival = Skill(ability='wisdom', name='survival')
     # Characteristics
     attacks_and_spellcasting = ""
     personality_traits = ""
@@ -255,11 +255,13 @@ class Character():
                 self.other_weapon_proficiencies = tuple([findattr(weapons, w)
                                                          for w in val])
             elif attr == 'race':
-                MyRace = findattr(race, val)
-                self.race = MyRace()
+                if val is not None:
+                    MyRace = findattr(race, val)
+                    self.race = MyRace()
             elif attr == 'background':
-                MyBackground = findattr(background, val)
-                self.background = MyBackground()
+                if val is not None:
+                    MyBackground = findattr(background, val)
+                    self.background = MyBackground()
             elif attr == 'armor':
                 self.wear_armor(val)
             elif attr == 'shield':
@@ -397,7 +399,7 @@ class Character():
         directly.
         
         """
-        if new_armor not in ('', None):
+        if new_armor not in ('', 'None', None):
             if isinstance(new_armor, armor.Armor):
                 new_armor = new_armor
             else:

@@ -15,7 +15,7 @@ class Monk(CharClass):
     weapon_proficiencies = (weapons.Shortsword, weapons.Unarmed) + weapons.simple_weapons
     class_skill_choices = ('Acrobatics', 'Athletics', 'History', 'Insight',
                            'Religion', 'Stealth')
-
+    subclasses_available = ('SunSoul', 'OpenHand')
     features_by_level = defaultdict(list)
     martial_arts = features.MartialArts()
     features_by_level[1] = [features.UnarmoredDefense(),

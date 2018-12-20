@@ -17,6 +17,8 @@ class Race():
     proficiencies_text = tuple()
     weapon_proficiences = tuple()
     skill_proficiencies = ()
+    skill_choices = ()
+    num_skill_choices = 0
     features = tuple()
     strength_bonus = 0
     dexterity_bonus = 0

@@ -18,11 +18,15 @@ class CharClass():
     spellcasting_ability = None
     spell_slots_by_level = None
     subclass = None
+    subclasses_available = ()
     features_by_level = defaultdict(list)
 
     def __init__(self, level, subclass=None, **params):
         self.class_level = level
-        self.subclass = subclass
+        if subclass in [None, '', 'None']:
+            self.subclass = None
+        else:
+            self.subclass = subclass
         for k, v in params.items():
             setattr(self, k, v)
             

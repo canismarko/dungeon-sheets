@@ -6,6 +6,8 @@ class Background():
     skill_proficiencies = ()
     weapon_proficiencies = ()
     proficiencies_text = ()
+    skill_choices = ()
+    num_skill_choices = 0
     features = ()
     languages = ()
 
@@ -35,7 +37,7 @@ class Spy(Criminal):
 
 class Entertainer(Background):
     name = "Entertainer"
-    skill_proficiencies = ('acrobatic', 'performance')
+    skill_proficiencies = ('acrobatics', 'performance')
 
 
 class Gladiator(Entertainer):
@@ -106,10 +108,20 @@ class Urchin(Background):
     
 class UrbanBountyHunter(Background):
     name = 'Urban Bounty Hunter'
-    skill_proficiencies = ('[choose one]', '[choose one]')
+    skill_proficiencies = ()
+    skill_choices = ('Deception', 'Insight', 'Persuasion', 'Stealth')
+    num_skill_choices = 2
 
     
 class FarTraveler(Background):
     name = 'Far Traveler'
     skill_proficiencies = ('insight', 'perception')
     languages = ('[choose one]',)
+
+
+available_backgrounds = [Acolyte, Charlatan, Criminal, Spy, Entertainer,
+                         Gladiator, FolkHero, GuildArtisan, GuildMerchant,
+                         Hermit, Noble, Knight, Outlander, Sage, Sailor,
+                         Pirate, Soldier, Urchin, UrbanBountyHunter,
+                         FarTraveler]
+
