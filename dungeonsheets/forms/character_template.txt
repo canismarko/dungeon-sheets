@@ -29,7 +29,7 @@ charisma = {{ char.charisma.value }}
 skill_proficiencies = {{ char.skill_proficiencies }}
 
 # Named features / feats that aren't part of your classes,
-# race, or background.
+# race, or background. Also include Eldritch Invocations.
 # Example:
 # features = ('Tavern Brawler',)  # take the optional Feat from PHB
 features = {{ char.custom_features }}

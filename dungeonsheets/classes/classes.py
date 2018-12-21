@@ -1,4 +1,5 @@
 from collections import defaultdict
+from ..features import Feature, FeatureSelector
 
 
 class CharClass():
@@ -23,12 +24,19 @@ class CharClass():
     subclasses_available = ()
     features_by_level = defaultdict(list)
 
-    def __init__(self, level, subclass=None, **params):
+    def __init__(self, level, subclass=None, feature_choices=[],
+                 **params):
         self.class_level = level
         # Instantiate the features
         self.features_by_level = defaultdict(list)
         cls = type(self)
         for i in range(1, 21):
+            fs = []
+            for f in cls.features_by_level[i]:
+                if issubclass(f, FeatureSelector):
+                    fs.append(f(feature_choices=feature_choices))
+                elif issubclass(f, Feature):
+                    fs.append(f())
             fs = [f() for f in cls.features_by_level[i]]
             self.features_by_level[i] = fs
         for k, v in params.items():

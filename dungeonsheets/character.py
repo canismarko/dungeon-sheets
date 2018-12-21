@@ -333,7 +333,7 @@ class Character():
                             name=f, source='Unknown',
                             __doc__="""Unknown Feature. Add to features.py"""))
                         warnings.warn(msg)
-                self.custom_features = tuple(F() for F in _features)
+                self.custom_features += tuple(F() for F in _features)
             elif (attr == 'spells') or (attr == 'spells_prepared'):
                 # Create a list of actual spell objects
                 _spells = []
