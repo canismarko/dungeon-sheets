@@ -1,7 +1,37 @@
-from .. import (weapons)
-from .. import features as feats
-from .classes import CharClass
+from .. import (weapons, features)
+from .classes import CharClass, SubClass
+from collections import defaultdict
 
+
+class OathOfDevotion(SubClass):
+    name = "Oath of Devotion"
+    features_by_level = defaultdict(list)
+    
+    
+class OathOfAncients(SubClass):
+    name = "Oath of The Ancients"
+    features_by_level = defaultdict(list)
+    
+    
+class OathOfVengance(SubClass):
+    name = "Oath of Vengance"
+    features_by_level = defaultdict(list)
+    
+    
+class OathOfCrown(SubClass):
+    name = "Oath of The Crown"
+    features_by_level = defaultdict(list)
+    
+    
+class OathOfConquest(SubClass):
+    name = "Oath of Conquest"
+    features_by_level = defaultdict(list)
+    
+    
+class OathOfRedemption(SubClass):
+    name = "Oath of Redemption"
+    features_by_level = defaultdict(list)
+    
     
 class Paladin(CharClass):
     class_name = 'Paladin'
@@ -12,6 +42,9 @@ class Paladin(CharClass):
     weapon_proficiencies = weapons.simple_weapons + weapons.martial_weapons
     class_skill_choices = ("Athletics", 'Insight', 'Intimidation',
                            'Medicine', 'Persuasion', 'Religion')
+    features_by_level = defaultdict(list)
+    subclasses_available = (OathOfDevotion, OathOfAncients, OathOfVengance,
+                            OathOfCrown, OathOfConquest, OathOfRedemption)
     spellcasting_ability = 'charisma'
     spell_slots_by_level = {
         # char_lvl: (cantrips, 1st, 2nd, 3rd, ...)

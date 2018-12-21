@@ -23,6 +23,7 @@ setup(name='dungeonsheets',
           'dungeonsheets': ['blank-character-sheet-default.pdf',
                             'blank-spell-sheet-default.pdf',
                             'spellbook_template.tex', '../VERSION',
+                            'empty_template.txt',
                             'character_template.txt', 'features_template.tex',
                             'druid_shapes_template.tex']
       },

@@ -25,23 +25,56 @@ class CharClass():
 
     def __init__(self, level, subclass=None, **params):
         self.class_level = level
-        if subclass in [None, '', 'None']:
-            self.subclass = None
-        else:
-            self.subclass = subclass
+        # Instantiate the features
+        self.features_by_level = defaultdict(list)
+        cls = type(self)
+        for i in range(1, 21):
+            fs = [f() for f in cls.features_by_level[i]]
+            self.features_by_level[i] = fs
         for k, v in params.items():
             setattr(self, k, v)
-        # Instantiate the features
+
+        # Apply subclass
+        self.subclass = self.select_subclass(subclass)
+        if isinstance(self.subclass, SubClass):
+            self.apply_subclass()
+
+    def select_subclass(self, subclass_str):
+        """
+        Return a SubClass object corresponding to given string.
+        
+        Intended to be replaced by classes so they can 
+        define their own methods of picking subclass by string.
+        """
+        if subclass_str in ['', 'None', 'none', None]:
+            return None
+        for sc in self.subclasses_available:
+            if subclass_str.lower() in sc.name.lower():
+                return sc(level=self.class_level)
+        return None
+
+    def apply_subclass(self):
+        if self.subclass is None:
+            return
         for i in range(1, 21):
-            self.features_by_level[i] = [f() for f in self.features_by_level[i]]
-            
+            self.features_by_level[i] += ([f() for f in
+                                           self.subclass.features_by_level[i]])
+        for attr in ('weapon_proficiencies', '_proficiencies_text',
+                     'spells_known', 'spells_prepared'):
+            new_list = getattr(self, attr, ()) + getattr(self.subclass, attr, ())
+            setattr(self, attr, new_list)
+        self.multiclass_weapon_proficiencies += (self.subclass.weapon_proficiencies)
+        self._multiclass_proficiencies_text += (self._proficiencies_text)
+        self.spellcasting_ability = (self.spellcasting_ability or
+                                     self.subclass.spellcasting_ability)
+        self.spell_slots_by_level = (self.spell_slots_by_level or
+                                     self.subclass.spell_slots_by_level)
+    
     @property
     def features(self):
         features = ()
         for lvl in range(1, self.class_level+1):
             features += tuple(self.features_by_level[lvl])
-            if self.subclass is not None and not isinstance(self.subclass, str):
-                features += tuple(self.subclass.features_by_level[lvl])
         return features
 
     @property
@@ -55,3 +88,26 @@ class CharClass():
             return 0
         else:
             return self.spell_slots_by_level[self.class_level][spell_level]
+
+
+class SubClass():
+    """
+    A generic subclass object
+    """
+    name = ''
+    features_by_level = defaultdict(list)
+    weapon_proficiencies = ()
+    _proficiencies_text = ()
+    spellcasting_ability = None
+    spell_slots_by_level = None
+    spells_known = ()
+    spells_prepared = ()
+
+    def __init__(self, level):
+        self.class_level = level
+
+    def __str__(self):
+        return self.name
+
+    def __repr__(self):
+        return "\"{:s}\"".format(self.name)

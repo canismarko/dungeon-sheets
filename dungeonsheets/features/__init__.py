@@ -14,3 +14,4 @@ from .warlock import *
 from .wizard import *
 from .races import *
 from .backgrounds import *
+from .feats import *

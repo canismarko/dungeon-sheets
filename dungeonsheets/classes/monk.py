@@ -1,8 +1,43 @@
 __all__ = ('Monk')
 
 from .. import (features, weapons)
-from .classes import CharClass
+from .classes import CharClass, SubClass
 from collections import defaultdict
+
+
+class OpenHandWay(SubClass):
+    name = "Way of the Open Hand"
+    features_by_level = defaultdict(list)
+
+
+class ShadowWay(SubClass):
+    name = "Way of Shadow"
+    features_by_level = defaultdict(list)
+    
+
+class FourElementsWay(SubClass):
+    name = "Way of the Four Elements"
+    features_by_level = defaultdict(list)
+
+    
+class SunSoulWay(SubClass):
+    name = "Way of the Sun Soul"
+    features_by_level = defaultdict(list)
+
+
+class LongDeathWay(SubClass):
+    name = "Way of the Long Death"
+    features_by_level = defaultdict(list)
+
+
+class DrunkenMasterWay(SubClass):
+    name = "Way of the Drunken Master"
+    features_by_level = defaultdict(list)
+
+
+class KenseiWay(SubClass):
+    name = "Way of the Kensei"
+    features_by_level = defaultdict(list)
 
 
 class Monk(CharClass):
@@ -15,7 +50,10 @@ class Monk(CharClass):
     weapon_proficiencies = (weapons.Shortsword, weapons.Unarmed) + weapons.simple_weapons
     class_skill_choices = ('Acrobatics', 'Athletics', 'History', 'Insight',
                            'Religion', 'Stealth')
-    subclasses_available = ('SunSoul', 'OpenHand')
+    subclasses_available = (OpenHandWay, ShadowWay,
+                            FourElementsWay, SunSoulWay,
+                            LongDeathWay, DrunkenMasterWay,
+                            KenseiWay)
     features_by_level = defaultdict(list)
     features_by_level[1] = [features.UnarmoredDefense,
                             features.MartialArts]
@@ -25,19 +63,3 @@ class Monk(CharClass):
         for f in self.features_by_level[1]:
             if isinstance(f, features.MartialArts):
                 f.level = self.class_level
-        if subclass == 'sunsoul':
-            self.subclass = SunSoul(level=self.class_level)
-        else:
-            self.subclass = None
-        if self.subclass is not None:
-            self._proficiencies_text += self.subclass._proficiencies_text
-            self.weapon_proficiences += self.subclass.weapon_proficiencies
-
-            
-class SunSoul:
-    class_features_by_level = defaultdict(list)
-    weapon_proficiencies = ()
-    _profiencies_text = ()
-
-    def __init__(self, level):
-        self.class_level = level

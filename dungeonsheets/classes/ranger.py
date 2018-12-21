@@ -1,8 +1,35 @@
-__all__ = ('Ranger', 'Revisedranger')
+__all__ = ('Ranger', 'RevisedRanger')
 
 from .. import (weapons, features)
-from .classes import CharClass
+from .classes import CharClass, SubClass
 from collections import defaultdict
+
+
+# PHB
+class Hunter(SubClass):
+    name = "Hunter"
+    features_by_level = defaultdict(list)
+
+
+class BeastMaster(SubClass):
+    name = "Beast Master"
+    features_by_level = defaultdict(list)
+
+
+# XGTE
+class GloomStalker(SubClass):
+    name = "Gloom Stalker"
+    features_by_level = defaultdict(list)
+
+
+class HorizonWalker(SubClass):
+    name = "Horizon Walker"
+    features_by_level = defaultdict(list)
+
+
+class MonsterSlayer(SubClass):
+    name = "Monster Slayer"
+    features_by_level = defaultdict(list)
 
 
 class Ranger(CharClass):
@@ -16,8 +43,10 @@ class Ranger(CharClass):
                            'Investigation', 'Nature', 'Perception', 'Stealth',
                            'Survival')
     num_skill_choices = 3
-    spellcasting_ability = 'wisdom'
     features_by_level = defaultdict(list)
+    subclasses_available = (Hunter, BeastMaster, GloomStalker,
+                            HorizonWalker, MonsterSlayer)
+    spellcasting_ability = 'wisdom'
     spell_slots_by_level = {
         # char_lvl: (cantrips, 1st, 2nd, 3rd, ...)
         1:  (0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
@@ -49,6 +78,24 @@ class Ranger(CharClass):
         self.features_by_level[2].append(fighting_style)
 
     
-# Custom Classes
-class Revisedranger(Ranger):
-    class_name = 'Revisedranger'
+# Revised Ranger
+class BeastConclave(SubClass):
+    name = "Beast Conclave"
+    features_by_level = defaultdict(list)
+    
+
+class HunterConclave(SubClass):
+    name = "Hunter Conclave"
+    features_by_level = defaultdict(list)
+    
+
+class DeepStalkerConclave(SubClass):
+    name = "Deep Stalker Conclave"
+    features_by_level = defaultdict(list)
+    
+
+class RevisedRanger(Ranger):
+    class_name = 'Revised Ranger'
+    features_by_level = defaultdict(list)
+    subclasses_available = (BeastConclave, HunterConclave, DeepStalkerConclave)
+    

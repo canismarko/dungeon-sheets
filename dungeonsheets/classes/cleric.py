@@ -1,6 +1,58 @@
-from .. import (weapons)
-from .. import features as feats
-from .classes import CharClass
+from .. import (weapons, features)
+from .classes import CharClass, SubClass
+from collections import defaultdict
+
+
+class KnowledgeDomain(SubClass):
+    name = "Knowledge Domain"
+    features_by_level = defaultdict(list)
+
+
+class LifeDomain(SubClass):
+    name = "Life Domain"
+    features_by_level = defaultdict(list)
+
+
+class LightDomain(SubClass):
+    name = "Light Domain"
+    features_by_level = defaultdict(list)
+
+
+class NatureDomain(SubClass):
+    name = "Nature Domain"
+    features_by_level = defaultdict(list)
+
+
+class TempestDomain(SubClass):
+    name = "Tempest Domain"
+    features_by_level = defaultdict(list)
+
+
+class TrickeryDomain(SubClass):
+    name = "Trickery Domain"
+    features_by_level = defaultdict(list)
+
+
+class WarDomain(SubClass):
+    name = "War Domain"
+    features_by_level = defaultdict(list)
+
+
+# SCAG
+class ArcanaDomain(SubClass):
+    name = "Arcana Domain"
+    features_by_level = defaultdict(list)
+
+
+# XGTE
+class ForgeDomain(SubClass):
+    name = "Forge Domain"
+    features_by_level = defaultdict(list)
+
+
+class GraveDomain(SubClass):
+    name = "Grave Domain"
+    features_by_level = defaultdict(list)
 
 
 class Cleric(CharClass):
@@ -12,6 +64,11 @@ class Cleric(CharClass):
     weapon_proficiencies = weapons.simple_weapons
     class_skill_choices = ('History', 'Insight', 'Medicine',
                            'Persuasion', 'Religion')
+    features_by_level = defaultdict(list)
+    subclasses_available = (KnowledgeDomain, LifeDomain, LightDomain,
+                            NatureDomain, TempestDomain, TrickeryDomain,
+                            WarDomain, ArcanaDomain, ForgeDomain,
+                            GraveDomain)
     spellcasting_ability = 'wisdom'
     spell_slots_by_level = {
         # char_lvl: (cantrips, 1st, 2nd, 3rd, ...)

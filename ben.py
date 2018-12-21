@@ -1,4 +1,4 @@
-"""This file describes the heroic adventurer {{ char.name }}.
+"""This file describes the heroic adventurer Ben.
 
 It's used primarily for saving characters from create-character,
 where there will be many missing sections.
@@ -8,28 +8,28 @@ sheet by running ``makesheets`` from the command line.
 
 """
 
-dungeonsheets_version = "{{ char.dungeonsheets_version }}"
+dungeonsheets_version = "0.8.0"
 
-name = "{{ char.name }}"
-classes_levels = {{ char.classes_levels }}
-subclasses = {{ char.subclasses }}
-player_name = "{{ char.player_name }}"
-background = "{{ char.background.name }}"
-race = "{{ char.race.name }}"
-alignment = "{{ char.alignment }}"
-xp = {{ char.xp }}
-hp_max = {{ char.hp_max }}
+name = "Ben"
+classes_levels = ['barbarian 1', 'bard 1', 'cleric 1', 'druid 1', 'fighter 1', 'monk 1', 'ranger 1', 'rogue 1', 'sorceror 1', 'warlock 1', 'wizard 1', 'revised ranger 1']
+subclasses = ["Path of the Berserker", "College of Lore", "Arcana Domain", "Circle of the Land", "Arcane Archer", "Way of the Open Hand", <dungeonsheets.classes.ranger.Hunter object at 0x108e7ba20>, "Thief", "Draconic Bloodline", "The Archfey Patron", "School of Abjuration", '']
+player_name = "Ben"
+background = "Mercenary Veteran"
+race = "Hill Dwarf"
+alignment = "Neutral good"
+xp = 0
+hp_max = 10
 
 # Ability Scores
-strength = {{ char.strength.value }}
-dexterity = {{ char.dexterity.value }}
-constitution = {{ char.constitution.value }}
-intelligence = {{ char.intelligence.value }}
-wisdom = {{ char.wisdom.value }}
-charisma = {{ char.charisma.value }}
+strength = 14
+dexterity = 15
+constitution = 15
+intelligence = 12
+wisdom = 11
+charisma = 8
 
 # Select what skills you're proficient with
-skill_proficiencies = {{ char.skill_proficiencies }}
+skill_proficiencies = ('nature', 'animal handling', 'athletics', 'persuasion')
 
 # Named features / feats that aren't part of your classes,
 # race, or background.
@@ -43,7 +43,7 @@ features = ()
 feature_choices = ()
 
 # Proficiencies and languages
-languages = """{{ char.languages }}"""
+languages = """Common, Dwarvish"""
 
 # Inventory
 # TODO: Get yourself some money
@@ -88,4 +88,3 @@ flaws = """TODO: Describe your characters interesting flaws.
 
 features_and_traits = """TODO: Describe other features and abilities your
 character has."""
-

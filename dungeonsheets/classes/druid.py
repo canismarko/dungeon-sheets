@@ -1,18 +1,42 @@
 from ..stats import findattr
-from .. import (weapons, monsters, exceptions)
-from .. import features as feats
-from .classes import CharClass
+from .. import (weapons, monsters, exceptions, features)
+from .classes import CharClass, SubClass
+from collections import defaultdict
 import warnings
 import math
 
 
+# PHB
+class LandCircle(SubClass):
+    name = "Circle of the Land"
+    circle = "land"
+    features_by_level = defaultdict(list)
+
+
+class MoonCircle(SubClass):
+    name = "Circle of the Moon"
+    circle = "moon"
+    features_by_level = defaultdict(list)
+
+
+# XGTE
+class DreamsCircle(SubClass):
+    name = "Circle of Dreams"
+    circle = "dreams"
+    features_by_level = defaultdict(list)
+
+
+class ShepherdCircle(SubClass):
+    name = "Circle of the Shepherd"
+    circle = "shepherd"
+    features_by_level = defaultdict(list)
+
+
 class Druid(CharClass):
     class_name = 'Druid'
-    circle = ""  # moon, land
     _wild_shapes = ()
     hit_dice_faces = 8
     saving_throw_proficiencies = ('intelligence', 'wisdom')
-    spellcasting_ability = 'wisdom'
     languages = 'Druidic'
     _proficiencies_text = (
         'Light armor', 'medium armor',
@@ -26,6 +50,10 @@ class Druid(CharClass):
     class_skill_choices = ('Arcana', 'Animal Handling', 'Insight',
                            'Medicine', 'Nature', 'Perception', 'Religion',
                            'Survival')
+    features_by_class = defaultdict(list)
+    subclasses_available = (LandCircle, MoonCircle, DreamsCircle,
+                            ShepherdCircle)
+    spellcasting_ability = 'wisdom'
     spell_slots_by_level = {
         1:  (2, 2, 0, 0, 0, 0, 0, 0, 0, 0),
         2:  (2, 3, 0, 0, 0, 0, 0, 0, 0, 0),
@@ -49,17 +77,22 @@ class Druid(CharClass):
         20: (4, 4, 3, 3, 3, 3, 2, 2, 1, 1),
     }
 
-    def __init__(self, level, subclass=None, **params):
-        if subclass is not None:
-            sc = str(subclass).lower()
-            if 'moon' in sc:
-                self.circle = 'moon'
-                params.pop('circle', '')
-            elif 'land' in sc:
-                self.circle = 'land'
-                params.pop('circle', '')
-        super().__init__(level, **params)
-        
+    def select_subclass(self, subclass_str):
+        if subclass_str in ['', 'None', 'none', None]:
+            return None
+        for sc in self.subclasses_available:
+            if ((subclass_str.lower() == sc.circle.lower())
+                or (subclass_str.lower() in sc.name.lower())):
+                return sc(level=self.class_level)
+        return None
+
+    @property
+    def circle(self):
+        if isinstance(self.subclass, SubClass):
+            return self.subclass.circle.lower()
+        else:
+            return ''
+    
     @property
     def all_wild_shapes(self):
         """Return all wild shapes, regardless of validity."""
@@ -130,7 +163,7 @@ class Druid(CharClass):
             max_swim = None
             max_fly = None
         # Make adjustments for moon circle druids
-        if self.circle.lower() == "moon":
+        if self.circle == "moon":
             if 2 <= self.class_level < 6:
                 max_cr = 1
             elif self.class_level >= 6:

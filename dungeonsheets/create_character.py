@@ -243,7 +243,10 @@ class SubclassForm(npyscreen.ActionForm):
     def __init__(self, newclass, level, num=1, **kwargs):
         self.class_num = num
         self.parent_class = newclass
-        self.subclass_options = newclass.subclasses_available or ('None',)
+        if len(newclass.subclasses_available) > 0:
+            self.subclass_options = [sc.name for sc in newclass.subclasses_available]
+        else:
+            self.subclass_options = ('None',)
         self.level = level
         super().__init__(**kwargs)
     

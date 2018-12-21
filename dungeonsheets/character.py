@@ -27,27 +27,27 @@ __version__ = read('../VERSION')
 dice_re = re.compile('(\d+)d(\d+)')
 
 multiclass_spellslots_by_level = {
-        # char_lvl: (cantrips, 1st, 2nd, 3rd, ...)
-        1:  (0, 2, 0, 0, 0, 0, 0, 0, 0, 0),
-        2:  (0, 3, 0, 0, 0, 0, 0, 0, 0, 0),
-        3:  (0, 4, 2, 0, 0, 0, 0, 0, 0, 0),
-        4:  (0, 4, 3, 0, 0, 0, 0, 0, 0, 0),
-        5:  (0, 4, 3, 2, 0, 0, 0, 0, 0, 0),
-        6:  (0, 4, 3, 3, 0, 0, 0, 0, 0, 0),
-        7:  (0, 4, 3, 3, 1, 0, 0, 0, 0, 0),
-        8:  (0, 4, 3, 3, 2, 0, 0, 0, 0, 0),
-        9:  (0, 4, 3, 3, 3, 1, 0, 0, 0, 0),
-        10: (0, 4, 3, 3, 3, 2, 0, 0, 0, 0),
-        11: (0, 4, 3, 3, 3, 2, 1, 0, 0, 0),
-        12: (0, 4, 3, 3, 3, 2, 1, 0, 0, 0),
-        13: (0, 4, 3, 3, 3, 2, 1, 1, 0, 0),
-        14: (0, 4, 3, 3, 3, 2, 1, 1, 0, 0),
-        15: (0, 4, 3, 3, 3, 2, 1, 1, 1, 0),
-        16: (0, 4, 3, 3, 3, 2, 1, 1, 1, 0),
-        17: (0, 4, 3, 3, 3, 2, 1, 1, 1, 1),
-        18: (0, 4, 3, 3, 3, 3, 1, 1, 1, 1),
-        19: (0, 4, 3, 3, 3, 3, 2, 1, 1, 1),
-        20: (0, 4, 3, 3, 3, 3, 2, 2, 1, 1),
+    # char_lvl: (cantrips, 1st, 2nd, 3rd, ...)
+    1:  (0, 2, 0, 0, 0, 0, 0, 0, 0, 0),
+    2:  (0, 3, 0, 0, 0, 0, 0, 0, 0, 0),
+    3:  (0, 4, 2, 0, 0, 0, 0, 0, 0, 0),
+    4:  (0, 4, 3, 0, 0, 0, 0, 0, 0, 0),
+    5:  (0, 4, 3, 2, 0, 0, 0, 0, 0, 0),
+    6:  (0, 4, 3, 3, 0, 0, 0, 0, 0, 0),
+    7:  (0, 4, 3, 3, 1, 0, 0, 0, 0, 0),
+    8:  (0, 4, 3, 3, 2, 0, 0, 0, 0, 0),
+    9:  (0, 4, 3, 3, 3, 1, 0, 0, 0, 0),
+    10: (0, 4, 3, 3, 3, 2, 0, 0, 0, 0),
+    11: (0, 4, 3, 3, 3, 2, 1, 0, 0, 0),
+    12: (0, 4, 3, 3, 3, 2, 1, 0, 0, 0),
+    13: (0, 4, 3, 3, 3, 2, 1, 1, 0, 0),
+    14: (0, 4, 3, 3, 3, 2, 1, 1, 0, 0),
+    15: (0, 4, 3, 3, 3, 2, 1, 1, 1, 0),
+    16: (0, 4, 3, 3, 3, 2, 1, 1, 1, 0),
+    17: (0, 4, 3, 3, 3, 2, 1, 1, 1, 1),
+    18: (0, 4, 3, 3, 3, 3, 1, 1, 1, 1),
+    19: (0, 4, 3, 3, 3, 3, 2, 1, 1, 1),
+    20: (0, 4, 3, 3, 3, 3, 2, 2, 1, 1),
 }
 
 
@@ -152,6 +152,10 @@ class Character():
     def class_name(self):
         return ' / '.join([f'{c.class_name} {c.class_level}'
                            for c in self.class_list])
+
+    @property
+    def subclasses(self):
+        return list([c.subclass or '' for c in self.class_list])
     
     @property
     def speed(self):
@@ -555,16 +559,17 @@ class Character():
         assert len(classes_levels) == len(subclasses), (
             'the length of classes_levels {:d} does not match length of '
             'subclasses {:d}'.format(len(classes_levels), len(subclasses)))
+        circle = char_props.pop('circle', None)
         class_list = []
         for cl, sub in zip(classes_levels, subclasses):
             try:
-                c, lvl = cl.strip().split(' ')  # " wizard 3 " => "wizard", "3"
+                c, _, lvl = cl.strip().rpartition(' ')  # " wizard 3 " => "wizard", "3"
             except ValueError:
                 raise ValueError(
                     'classes_levels not properly formatted. Each entry should '
                     'be formatted \"class level\", but got {:s}'.format(cl))
             try:
-                this_class = getattr(classes, c.capitalize())
+                this_class = getattr(classes, c.title.replace(' ', ''))
                 this_level = int(lvl)
             except AttributeError:
                 raise AttributeError(
@@ -572,6 +577,8 @@ class Character():
             except ValueError:
                 raise ValueError(
                     'level was not recognizable as an int: {:s}'.format(lvl))
+            if issubclass(this_class, classes.Druid):
+                sub = circle or sub
             params = {}
             params['feature_choices'] = char_props.get('feature_choices', [])
             class_list += [this_class(this_level, subclass=sub, **params)]
@@ -606,7 +613,7 @@ class Character():
         self.save(filename,
                   template_file=kwargs.get('template_file',
                                            'character_template.txt'))
-        subprocess.call(['makesheets', filename)
+        subprocess.call(['makesheets', filename])
 
         
 def read_character_file(filename):

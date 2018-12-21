@@ -1,6 +1,39 @@
-from .. import (weapons)
-from .. import features as feats
-from .classes import CharClass
+from .. import (weapons, features)
+from .classes import CharClass, SubClass
+from collections import defaultdict
+
+
+# PHB
+class Archfey(SubClass):
+    name = "The Archfey Patron"
+    features_by_level = defaultdict(list)
+
+
+class Fiend(SubClass):
+    name = "The Fiend Patron"
+    features_by_level = defaultdict(list)
+
+
+class GreatOldOne(SubClass):
+    name = "The Great Old One Patron"
+    features_by_level = defaultdict(list)
+
+
+# SCAG
+class Undying(SubClass):
+    name = "The Undying Patron"
+    features_by_level = defaultdict(list)
+
+
+# XGTE
+class Celestial(SubClass):
+    name = "The Celestial Patron"
+    features_by_level = defaultdict(list)
+
+
+class Hexblade(SubClass):
+    name = "Hexblade Patron"
+    features_by_level = defaultdict(list)
 
 
 class Warlock(CharClass):
@@ -12,6 +45,9 @@ class Warlock(CharClass):
                            'Intimidation', 'Investigation', 'Nature',
                            'Religion')
     weapon_proficiencies = weapons.simple_weapons
+    features_by_level = defaultdict(list)
+    subclasses_available = (Archfey, Fiend, GreatOldOne, Undying, Celestial,
+                            Hexblade)
     spellcasting_ability = 'charisma'
     spell_slots_by_level = {
         1:  (2, 1, 0, 0, 0, 0, 0, 0, 0, 0),

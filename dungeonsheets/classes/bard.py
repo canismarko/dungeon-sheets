@@ -1,6 +1,33 @@
-from .. import (weapons)
-from .. import features as feats
-from .classes import CharClass
+from .. import (weapons, features)
+from .classes import CharClass, SubClass
+from collections import defaultdict
+
+
+# PHB
+class CollegeOfLore(SubClass):
+    name = "College of Lore"
+    class_features_by_level = defaultdict(list)
+    
+
+class CollegeOfValor(SubClass):
+    name = "College of Valor"
+    class_features_by_level = defaultdict(list)
+
+
+# XGTE
+class CollegeOfGlamour(SubClass):
+    name = "College of Glamour"
+    class_features_by_level = defaultdict(list)
+
+
+class CollegeOfSwords(SubClass):
+    name = "College of Swords"
+    class_features_by_level = defaultdict(list)
+
+
+class CollegeOfWhispers(SubClass):
+    name = "College of Whispers"
+    class_features_by_level = defaultdict(list)
 
 
 class Bard(CharClass):
@@ -20,6 +47,9 @@ class Bard(CharClass):
                            'Religion', 'Sleight of Hand', 'Stealth',
                            'Survival')
     num_skill_choices = 3
+    features_by_level = defaultdict(list)
+    subclasses_available = (CollegeOfLore, CollegeOfValor, CollegeOfGlamour,
+                            CollegeOfSwords, CollegeOfWhispers)
     spellcasting_ability = 'charisma'
     spell_slots_by_level = {
         # char_lvl: (cantrips, 1st, 2nd, 3rd, ...)

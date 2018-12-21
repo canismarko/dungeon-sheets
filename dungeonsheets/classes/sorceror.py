@@ -1,6 +1,33 @@
-from .. import (weapons)
-from .. import features as feats
-from .classes import CharClass
+from .. import (weapons, features)
+from .classes import CharClass, SubClass
+from collections import defaultdict
+
+
+# PHB
+class DraconicBloodline(SubClass):
+    name = "Draconic Bloodline"
+    features_by_level = defaultdict(list)
+
+
+class WildMagic(SubClass):
+    name = "Wild Magic"
+    features_by_level = defaultdict(list)
+
+
+# XGTE
+class DivineSoul(SubClass):
+    name = "Divine Soul"
+    features_by_level = defaultdict(list)
+
+
+class ShadowMagic(SubClass):
+    name = "Shadow Magic"
+    features_by_level = defaultdict(list)
+
+
+class StormSorcery(SubClass):
+    name = "Storm Sorcery"
+    features_by_level = defaultdict(list)
 
 
 class Sorceror(CharClass):
@@ -14,6 +41,9 @@ class Sorceror(CharClass):
                             weapons.LightCrossbow)
     class_skill_choices = ('Arcana', 'Deception', 'Insight',
                            'Intimidation', 'Persuasion', 'Religion')
+    features_by_level = defaultdict(list)
+    subclasses_available = (DraconicBloodline, WildMagic, DivineSoul,
+                            ShadowMagic, StormSorcery)
     spellcasting_ability = 'charisma'
     spell_slots_by_level = {
         # char_lvl: (cantrips, 1st, 2nd, 3rd, ...)
