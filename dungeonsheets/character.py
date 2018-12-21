@@ -137,10 +137,6 @@ class Character():
                           'race': race,
                           'background': background})
         self.set_attrs(**attrs)
-        # instantiate any spells not listed properly
-        for S in self.spells_prepared:
-            if S not in [type(spl) for spl in self.spells]:
-                self._spells += (S(),)
                 
     def __str__(self):
         return self.name
@@ -263,7 +259,7 @@ class Character():
 
     @property
     def spells(self):
-        spells = set(self._spells)
+        spells = set(self._spells) | set(self._spells_prepared)
         for f in self.features:
             spells |= set(f.spells_known) | set(f.spells_prepared)
         for c in self.spellcasting_classes:
@@ -564,12 +560,13 @@ class Character():
         for cl, sub in zip(classes_levels, subclasses):
             try:
                 c, _, lvl = cl.strip().rpartition(' ')  # " wizard 3 " => "wizard", "3"
+                c = c.title().replace(' ', '')
             except ValueError:
                 raise ValueError(
                     'classes_levels not properly formatted. Each entry should '
                     'be formatted \"class level\", but got {:s}'.format(cl))
             try:
-                this_class = getattr(classes, c.title.replace(' ', ''))
+                this_class = getattr(classes, c)
                 this_level = int(lvl)
             except AttributeError:
                 raise AttributeError(
@@ -599,7 +596,7 @@ class Character():
             char=self,
         )
         # Render the template
-        src_path = os.path.dirname(__file__)
+        src_path = os.path.join(os.path.dirname(__file__), 'forms/')
         text = jinja2.Environment(
             loader=jinja2.FileSystemLoader(src_path or './')
         ).get_template(template_file).render(context)
@@ -608,12 +605,10 @@ class Character():
             f.write(text)
 
     def to_pdf(self, filename, **kwargs):
+        from .make_sheets import make_sheet
         if filename.endswith('.pdf'):
             filename = filename.replace('pdf', 'py')
-        self.save(filename,
-                  template_file=kwargs.get('template_file',
-                                           'character_template.txt'))
-        subprocess.call(['makesheets', filename])
+        make_sheet(filename, char=self, flatten=kwargs.get('flatten', True))
 
         
 def read_character_file(filename):

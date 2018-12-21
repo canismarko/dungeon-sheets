@@ -45,7 +45,7 @@ def rst_to_latex(rst):
 
 
 jinja_env = Environment(
-    loader=PackageLoader('dungeonsheets', ''),
+    loader=PackageLoader('dungeonsheets', 'forms'),
     block_start_string='[%',
     block_end_string='%]',
     variable_start_string='[[',
@@ -183,7 +183,7 @@ def create_spells_pdf(char, basename, flatten=False):
         # for field in field_names:
         #     fields.append((field, field))
     # Make the actual pdf
-    dirname = os.path.dirname(os.path.abspath(__file__))
+    dirname = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'forms/')
     src_pdf = os.path.join(dirname, 'blank-spell-sheet-default.pdf')
     make_pdf(fields, src_pdf=src_pdf, basename=basename, flatten=flatten)
 
@@ -318,7 +318,7 @@ def create_character_pdf(char, basename, flatten=False):
     prof_text += "\n\nLanguages:\n" + text_box(char.languages)
     fields['ProficienciesLang'] = prof_text
     # Prepare the actual PDF
-    dirname = os.path.dirname(os.path.abspath(__file__))
+    dirname = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'forms/')
     src_pdf = os.path.join(dirname, 'blank-character-sheet-default.pdf')
     return make_pdf(fields, src_pdf=src_pdf, basename=basename,
                     flatten=flatten)

@@ -1,4 +1,4 @@
-from .features import Feature
+from .features import Feature, FeatureSelector
 from .. import (weapons, armor)
 
 
@@ -14,24 +14,8 @@ def select_ranger_fighting_style(feature_choices=[]):
             return TwoWeaponFighting()
         else:
             return RangerFightingStyle()
-    
 
-class RangerFightingStyle(Feature):
-    """
-    Select a Fighting Style by choosing in feature_choices:
 
-    archery
- 
-    defense
-
-    dueling
-
-    two-weapon fighting
-    """
-    name = "Fighting Style (Select One)"
-    source = "Ranger"
-            
-        
 class Archery(Feature):
     """
     You gain a +2 bonus to attack rolls you make
@@ -84,3 +68,25 @@ class TwoWeaponFighting(Feature):
     name = "Fighting Style (Two-Weapon Fighting)"
     source = "Ranger"
     needs_implementation = True
+
+
+class RangerFightingStyle(FeatureSelector):
+    """
+    Select a Fighting Style by choosing in feature_choices:
+
+    archery
+ 
+    defense
+
+    dueling
+
+    two-weapon fighting
+    """
+    options = {'archery': Archery,
+               'defense': Defense,
+               'dueling': Dueling,
+               'two-weapon fighting': TwoWeaponFighting,
+               'two-weapon': TwoWeaponFighting,
+               'dual wield': TwoWeaponFighting}
+    name = "Fighting Style (Select One)"
+    source = "Ranger"

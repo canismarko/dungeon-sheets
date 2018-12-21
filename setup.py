@@ -20,12 +20,8 @@ setup(name='dungeonsheets',
       download_url = 'https://github.com/canismarko/dungeon-sheets/archive/master.zip',
       packages=find_packages(),
       package_data={
-          'dungeonsheets': ['blank-character-sheet-default.pdf',
-                            'blank-spell-sheet-default.pdf',
-                            'spellbook_template.tex', '../VERSION',
-                            'empty_template.txt',
-                            'character_template.txt', 'features_template.tex',
-                            'druid_shapes_template.tex']
+          'dungeonsheets': ['forms/*pdf', 'forms/*.tex', 'forms/*.txt',
+                            '../VERSION']
       },
       install_requires=[
           'fdfgen', 'npyscreen', 'jinja2', 'pdfrw',

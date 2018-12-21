@@ -16,5 +16,5 @@ from .sorceror import Sorceror
 from .warlock import Warlock
 from .wizard import Wizard
 
-available_classes = [Barbarian, Bard, Cleric, Druid, Fighter, Monk, Ranger,
-                     Rogue, Sorceror, Warlock, Wizard, RevisedRanger]
+available_classes = [Barbarian, Bard, Cleric, Druid, Fighter, Monk, Paladin,
+                     Ranger, Rogue, Sorceror, Warlock, Wizard, RevisedRanger]

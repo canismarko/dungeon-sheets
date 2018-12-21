@@ -8,28 +8,28 @@ sheet by running ``makesheets`` from the command line.
 
 """
 
-dungeonsheets_version = "0.8.0"
+dungeonsheets_version = "0.8.3"
 
 name = "Ben"
-classes_levels = ['barbarian 1', 'bard 1', 'cleric 1', 'druid 1', 'fighter 1', 'monk 1', 'ranger 1', 'rogue 1', 'sorceror 1', 'warlock 1', 'wizard 1', 'revised ranger 1']
-subclasses = ["Path of the Berserker", "College of Lore", "Arcana Domain", "Circle of the Land", "Arcane Archer", "Way of the Open Hand", <dungeonsheets.classes.ranger.Hunter object at 0x108e7ba20>, "Thief", "Draconic Bloodline", "The Archfey Patron", "School of Abjuration", '']
+classes_levels = ['paladin 1']
+subclasses = ["Oath of The Ancients"]
 player_name = "Ben"
-background = "Mercenary Veteran"
+background = "Charlatan"
 race = "Hill Dwarf"
 alignment = "Neutral good"
 xp = 0
 hp_max = 10
 
 # Ability Scores
-strength = 14
-dexterity = 15
+strength = 15
+dexterity = 14
 constitution = 15
 intelligence = 12
 wisdom = 11
 charisma = 8
 
 # Select what skills you're proficient with
-skill_proficiencies = ('nature', 'animal handling', 'athletics', 'persuasion')
+skill_proficiencies = ('intimidation', 'athletics', 'deception', 'sleight of hand')
 
 # Named features / feats that aren't part of your classes,
 # race, or background.

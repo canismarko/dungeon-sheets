@@ -38,11 +38,11 @@ class App(npyscreen.NPSAppManaged):
     def save_character(self):
         # Save the file
         filename = self.getForm("SAVE").filename.value
-        self.character.save(filename, template_file='empty_template.tex')
+        self.character.save(filename, template_file='empty_template.txt')
         # Create the PDF character sheet
         if self.getForm('SAVE').make_pdf.value:
             log.debug("Creating PDF")
-            self.character.to_pdf(filename, template_file='empty_template.tex')
+            self.character.to_pdf(filename, template_file='empty_template.txt')
             subprocess.call(['makesheets', filename])
     
     def update_max_hp(self):

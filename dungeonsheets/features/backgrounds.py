@@ -193,7 +193,7 @@ class CitySecrets(Feature):
 
 # Swords Coast Adventurer's Guide
 class AllEyesOnYou(Feature):
-    """Your accent, mannerisms, figures of speech, and per- haps even your
+    """Your accent, mannerisms, figures of speech, and perhaps even your
     appearance all mark you as foreign. Curious glances are directed your way
     wherever you go, which can be a nuisance, but you also gain the friendly
     interest of scholars and others intrigued by far-off lands, to say nothing
@@ -224,7 +224,7 @@ class EarToTheGround(Feature):
 
 class WatchersEye(Feature):
     """Your experience in enforcing the law, and dealing with lawbreakers, gives
-    you a feel for local laws and crimi- nals. You can easily find the local
+    you a feel for local laws and criminals. You can easily find the local
     outpost of the watch or a simila r organization, and just as easily pick
     out the dens of criminal activity in a community, although you're more
     likely to be welcome in the former locations rather than the latter.
@@ -237,9 +237,9 @@ class WatchersEye(Feature):
 class RespectOfTheStoutFolk(Feature):
     """As well respected as clan crafters are among outsiders, no one esteems them
     quite so highly as dwarves do. You always have free room and board in any
-    place where shield dwarves or gold dwarves dwell, and the individu- als in
+    place where shield dwarves or gold dwarves dwell, and the individuals in
     such a settlement might vie among themselves to determine who can offer you
-    (and possibly your compa- triots) the finest accommodations and assistance.
+    (and possibly your compatriots) the finest accommodations and assistance.
 
     """
     name = "Respect of the Stout Folk"
@@ -257,7 +257,7 @@ class LibraryAccess(Feature):
     and you know how to navigate those connections with some ease.
 
     Additionally, you are likely to gain preferential treatment at other
-    libraries across the Realms, as profes- sional courtesy shown to a fellow
+    libraries across the Realms, as professional courtesy shown to a fellow
     scholar.
 
     """
@@ -267,7 +267,7 @@ class LibraryAccess(Feature):
 
 class CourtFunctionary(Feature):
     """Your knowledge of how bureaucracies function lets you gain access to the
-    records and inner workings of any no- ble court or government you
+    records and inner workings of any noble court or government you
     encounter. You know who the movers and shakers are, whom to go to for the
     favors you seek, and what the current intrigues of interest in the group
     are.
@@ -279,10 +279,10 @@ class CourtFunctionary(Feature):
 
 class SafeHaven(Feature):
     """As a faction agent, you have access to a secret network of supporters and
-    operatives who can provide assis- tance on your adventures. You know a set
+    operatives who can provide assistance on your adventures. You know a set
     of secret signs and passwords you can use to identify such operatives , who
     can provide you with access to a hidden safe house, free room and board, or
-    assistance in finding informa- tion. These agents never risk their lives
+    assistance in finding information. These agents never risk their lives
     for you or risk revealing their true identities.
 
     """
@@ -321,7 +321,7 @@ class KnightlyRegard(Feature):
     """You receive shelter and succor from members of your knightly order and those
     who are sympathetic to its aims. If your order is a religious one, you can
     gain aid from temples and other religious communities of your
-    deity. Knights of civic orders can get help from the com- munity- whether a
+    deity. Knights of civic orders can get help from the community- whether a
     lone settlement or a great nation- that they serve, and knights of
     philosophical orders can find help from those they have aided in pursuit of
     their ideals , and those who share those ideals.
@@ -329,7 +329,7 @@ class KnightlyRegard(Feature):
     This help comes in the form of shelter and meals, and healing when
     appropriate, as well as occasionally risky assistance, such as a band of
     local citizens rallying to aid a sorely pressed knight in a fight , or
-    those who sup- port the order helping to smuggle a knight out of town when
+    those who support the order helping to smuggle a knight out of town when
     he or she is being hunted unjustly.
 
     """
@@ -343,7 +343,7 @@ class MercenaryLife(Feature):
     little about any such company, including the names and reputations of its
     commanders and leaders, and who has hired them recently. You can find the
     taverns and festhalls where mercenaries abide in any area, as long as you
-    speak the language. You can find mercenary work between adven- tures
+    speak the language. You can find mercenary work between adventures
     sufficient to maintain a comfortable lifestyle (see "Practicing a
     Profession" under "Downtime Activities" in chapter 8 of the Player's
     Handbook).
@@ -376,7 +376,7 @@ class KeptInStyle(Feature):
     cord your debt and send an accounting to your family's estate in Waterdeep
     to settle what you owe.
 
-    This advantage enables you to live a comfortable life- style without having
+    This advantage enables you to live a comfortable lifestyle without having
     to pay 2 gp a day for it, or reduces the cost of a wealthy or aristocratic
     lifestyle by that amount. You may not maintain a less affluent lifestyle
     and use the difference as income-the benefit is a line of credit, not an

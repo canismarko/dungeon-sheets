@@ -92,7 +92,7 @@ class CharClass():
 
 class SubClass():
     """
-    A generic subclass object
+    A generic subclass object. Add more detail in the __doc__ attribute.
     """
     name = ''
     features_by_level = defaultdict(list)
@@ -104,6 +104,7 @@ class SubClass():
     spells_prepared = ()
 
     def __init__(self, level):
+        self.__doc__ = self.__doc__ or SubClass.__doc__
         self.class_level = level
 
     def __str__(self):

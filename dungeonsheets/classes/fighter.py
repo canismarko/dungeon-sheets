@@ -5,16 +5,40 @@ from collections import defaultdict
 
 # PHB
 class Champion(SubClass):
+    """The archetypal Champion focuses on the development of raw physical power
+    honed to deadly perfection. Those who model themselves on this archetype
+    combine rigorous training with physical excellence to deal devastating
+    blows.
+
+    """
     name = "Champion"
     features_by_level = defaultdict(list)
     
 
 class BattleMaster(SubClass):
+    """Those who emulate the archetypal Battle Master employ martial techniques
+    passed down through generations. To a Battle Master, combat is an academic
+    field, sometimes including subjects beyond battle such as weaponsmithing
+    and calligraphy. Not every fighter absorbs the lessons of history, theory,
+    and artistry that are reflected in the Battle Master archetype, but those
+    who do are well-rounded fighters of great skill and knowledge
+
+    """
     name = "Battle Master"
     features_by_level = defaultdict(list)
     
 
 class EldritchKnight(SubClass):
+    """The archetypal Eldritch Knight combines the martial mastery common to all
+    fighters with a careful study of magic. Eldritch Knights use magical
+    techniques similar to those practiced by wizards. They focus their study on
+    two of the eight schools of magic: abjuration and evocation. Abjuration
+    spells grant an Eldritch Knight additional protection in battle, and
+    evocation spells deal damage to many foes at once, extending the fighter’s
+    reach in combat. These knights learn a comparatively small number of
+    spells, committing them to memory instead of keeping them in a spellbook.
+
+    """
     name = "Eldritch Knight"
     features_by_level = defaultdict(list)
     spellcasting_ability = 'intelligence'
@@ -45,22 +69,63 @@ class EldritchKnight(SubClass):
 
 # SCAG
 class PurpleDragonKnight(SubClass):
+    """Purple Dragon knights are warriors who hail from the kingdom of
+    Cormyr. Pledged to protect the crown, they take the fight against evil
+    beyond their kingdom's borders. They are tasked with wandering the land as
+    knights errant, relying on their judgment, bravery, and fidelity to the
+    code of chivalry to guide them in defeating evildoers.
+
+    A Purple Dragon knight inspires greatness in others by committing brave
+    deeds in battle. The mere presence of a knight in a hamlet is enough to
+    cause some ores and bandits to seek easier prey. A lone knight is a skilled
+    warrior, but a knight leading a band of allies can transform even the most
+    poorly equipped militia into a ferocious war band.
+
+    A knight prefers to lead through deeds, not words. As a knight spearheads
+    an attack, the knight's actions can awaken reserves of courage and
+    conviction in allies that they never suspected they had.
+
+    """
     name = "Purple Dragon Knight"
     features_by_level = defaultdict(list)
     
 
 # XGTE
 class ArcaneArcher(SubClass):
+    """An Arcane Archer studies a unique elven method of archery that weaves magic
+    into attacks to produce supernatural effects. Arcane Archers are some of
+    the most elite warriors among the elves. They stand watch over the fringes
+    of elven domains, keeping a keen eye out for trespassers and using
+    magic—infused arrows to defeat monsters and invaders before they can reach
+    elven set— tlements. Over the centuries, the methods of these elf archers
+    have been learned by members of other races who can also balance arcane
+    aptitude with archery.
+
+    """
     name = "Arcane Archer"
     features_by_level = defaultdict(list)
     
 
 class Cavalier(SubClass):
+    """The archetypal Cavalier excels at mounted combat. Usually born among the
+    nobility and raised at court, a Cavalier is equally at home leading a
+    cavalry charge or exchanging repartee at a state dinner. Cavaliers also
+    learn how to guard those in their charge from harm, often serving as the
+    protectors of their superiors and of the weak. Compelled to right wrongs or
+    earn prestige, many of these fighters leave their lives of comfort to
+    embark on glorious adventure
+
+    """
     name = "Cavalier"
     features_by_level = defaultdict(list)
     
 
 class Samurai(SubClass):
+    """The Samurai is a fighter who draws on an implacable fighting spirit to
+    overcome enemies. A Samurai’s resolve is nearly unbreakable, and the
+    enemies in a Samurai's path have two choices: yield or die fighting
+
+    """
     name = "Samurai"
     features_by_level = defaultdict(list)
     
