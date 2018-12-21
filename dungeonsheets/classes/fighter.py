@@ -128,7 +128,39 @@ class Samurai(SubClass):
     """
     name = "Samurai"
     features_by_level = defaultdict(list)
+
     
+# Custom
+class Gunslinger(SubClass):
+    """Most warriors and combat specialists spend their years perfecting the
+    classic arts of swordplay, archery, or polearm tactics. Whether duelist or
+    infantry, martial weapons were seemingly perfected long ago, and the true
+    challenge is to master them.
+
+    However, some minds couldn't stop with the innovation of the
+    crossbow. Experimentation with alchemical components and rare metals have
+    unlocked the secrets of controlled explosive force. The few who survive
+    these trials of ingenuity may become the first to create, and deftly wield,
+    the first firearms.
+
+    This archetype focuses on the ability to design, craft, and utilize
+    powerful, yet dangerous ranged weapons. Through creative innovation and
+    immaculate aim, you become a distance force of death on the
+    battlefield. However, not being a perfect science, firearms carry an
+    inherent instability that can occastionally leave you without a functional
+    means of attack. This is the danger of new, untested technologies in a
+    world where arcane energies that rule the elements are ever present.
+
+    Should this path of powder, fire, and metal call to you, keep your wits
+    about you, hold on to your convictions as a fighter, and let skill meet
+    luck to guide your bullets to strike true.
+
+    """
+    name = "Gunslinger"
+    features_by_level = defaultdict(list)
+    weapon_proficiencies = (weapons.firearms)
+    _proficiencies_text = ('firearms')
+
 
 class Fighter(CharClass):
     class_name = 'Fighter'
@@ -147,4 +179,4 @@ class Fighter(CharClass):
     features_by_level = defaultdict(list)
     subclasses_available = (Champion, BattleMaster, EldritchKnight,
                             PurpleDragonKnight, ArcaneArcher, Cavalier,
-                            Samurai)
+                            Samurai, Gunslinger)

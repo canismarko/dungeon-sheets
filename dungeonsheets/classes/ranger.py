@@ -78,6 +78,10 @@ class Ranger(CharClass):
     _proficiencies_text = ("light armor", "medium armor", "shields",
                            "simple weapons", "martial weapons")
     weapon_proficiencies = weapons.simple_weapons + weapons.martial_weapons
+    multiclass_weapon_proficiencies = weapon_proficiencies
+    _multiclass_proficiencies_text = ('light armor', 'medium armor', 'shields',
+                                      'simple weapons', 'martial weapons',
+                                      '[choose one skill from Ranger list]')
     class_skill_choices = ('Animal Handling', 'Athletics', 'Insight',
                            'Investigation', 'Nature', 'Perception', 'Stealth',
                            'Survival')

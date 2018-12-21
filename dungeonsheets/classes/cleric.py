@@ -187,6 +187,8 @@ class Cleric(CharClass):
     _proficiencies_text = ('light armor', 'medium armor', 'shields',
                            'all simple weapons')
     weapon_proficiencies = weapons.simple_weapons
+    multiclass_weapon_proficiencies = ()
+    _multiclass_proficiencies_text = ('light armor', 'medium armor', 'shields')
     class_skill_choices = ('History', 'Insight', 'Medicine',
                            'Persuasion', 'Religion')
     features_by_level = defaultdict(list)

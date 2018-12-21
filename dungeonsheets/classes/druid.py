@@ -96,6 +96,10 @@ class Druid(CharClass):
                             weapons.Javelin, weapons.Mace,
                             weapons.Quarterstaff, weapons.Scimitar,
                             weapons.Sickle, weapons.Sling, weapons.Spear)
+    multiclass_weapon_proficiencies = ()
+    _multiclass_proficiencies_text = (
+        'Light armor', 'medium armor',
+        'shields (druids will not wear armor or use shields made of metal)')
     class_skill_choices = ('Arcana', 'Animal Handling', 'Insight',
                            'Medicine', 'Nature', 'Perception', 'Religion',
                            'Survival')

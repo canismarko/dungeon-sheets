@@ -125,6 +125,9 @@ class Rogue(CharClass):
     weapon_proficiencies = weapons.simple_weapons + (
         weapons.HandCrossbow, weapons.Longsword, weapons.Rapier,
         weapons.Shortsword)
+    multiclass_weapon_proficiencies = ()
+    _multiclass_proficiencies_text = ('light armor', "thieves' tools",
+                                      '[choose one skill from Rogue list]')
     class_skill_choices = ('Acrobatics', 'Athletics', 'Deception',
                            'Insight', 'Intimidation', 'Investigation',
                            'Perception', 'Performance', 'Persuasion',

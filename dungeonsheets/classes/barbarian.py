@@ -100,9 +100,11 @@ class Barbarian(CharClass):
     class_name = 'Barbarian'
     hit_dice_faces = 12
     saving_throw_proficiencies = ('strength', 'constitution')
+    weapon_proficiencies = (weapons.simple_weapons + weapons.martial_weapons)
     _proficiencies_text = ('light armor', 'medium armor', 'shields',
                            'simple weapons', 'martial weapons')
-    weapon_proficiencies = (weapons.simple_weapons + weapons.martial_weapons)
+    multiclass_weapon_proficiencies = weapon_proficiencies
+    _multiclass_proficiencies_text = ('shields', 'simple weapons', 'martial weapons')
     class_skill_choices = ('Animal Handling', 'Athletics',
                            'Intimidation', 'Nature', 'Perception', 'Survival')
     subclasses_available = (BerserkerPath, TotemWarriorPath, BattleragerPath,

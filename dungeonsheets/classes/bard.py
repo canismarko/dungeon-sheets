@@ -129,6 +129,9 @@ class Bard(CharClass):
                            'Nature', 'Perception', 'Performance', 'Persuasion',
                            'Religion', 'Sleight of Hand', 'Stealth',
                            'Survival')
+    multiclass_weapon_proficiencies = ()
+    _multiclass_proficiencies_text = ('Light Armor', '[choose one skill]',
+                                      '[choose one musical instrument]')
     num_skill_choices = 3
     features_by_level = defaultdict(list)
     subclasses_available = (CollegeOfLore, CollegeOfValor, CollegeOfGlamour,

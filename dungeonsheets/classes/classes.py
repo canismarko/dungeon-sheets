@@ -63,6 +63,7 @@ class CharClass():
                      'spells_known', 'spells_prepared'):
             new_list = getattr(self, attr, ()) + getattr(self.subclass, attr, ())
             setattr(self, attr, new_list)
+        # All subclass proficiencies transfer, regardless of if this is primary class
         self.multiclass_weapon_proficiencies += (self.subclass.weapon_proficiencies)
         self._multiclass_proficiencies_text += (self._proficiencies_text)
         self.spellcasting_ability = (self.spellcasting_ability or

@@ -165,6 +165,8 @@ class Wizard(CharClass):
     weapon_proficiencies = (weapons.Dagger, weapons.Dart,
                             weapons.Sling, weapons.Quarterstaff,
                             weapons.LightCrossbow)
+    multiclass_weapon_proficiencies = ()
+    _multiclass_proficiencies_text = ()
     class_skill_choices = ('Arcana', 'History', 'Investigation',
                            'Medicine', 'Religion')
     features_by_level = defaultdict(list)

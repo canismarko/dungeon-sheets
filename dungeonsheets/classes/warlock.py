@@ -121,6 +121,8 @@ class Warlock(CharClass):
                            'Intimidation', 'Investigation', 'Nature',
                            'Religion')
     weapon_proficiencies = weapons.simple_weapons
+    multiclass_weapon_proficiencies = weapon_proficiencies
+    _multiclass_proficiencies_text = ('light armor', 'simple weapons')
     features_by_level = defaultdict(list)
     subclasses_available = (Archfey, Fiend, GreatOldOne, Undying, Celestial,
                             Hexblade)

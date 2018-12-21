@@ -226,6 +226,9 @@ class Paladin(CharClass):
     _proficiencies_text = ('All armor', 'shields', 'simple weapons',
                            'martial weapons')
     weapon_proficiencies = weapons.simple_weapons + weapons.martial_weapons
+    multiclass_weapon_proficiencies = weapon_proficiencies
+    _multiclass_proficiencies_text = ('light armor', 'medium armor', 'shields',
+                                      'simple weapons', 'martial weapons')
     class_skill_choices = ("Athletics", 'Insight', 'Intimidation',
                            'Medicine', 'Persuasion', 'Religion')
     features_by_level = defaultdict(list)
@@ -245,7 +248,7 @@ class Paladin(CharClass):
         9:  (0, 4, 3, 2, 0, 0, 0, 0, 0, 0),
         10: (0, 4, 3, 2, 0, 0, 0, 0, 0, 0),
         11: (0, 4, 3, 3, 0, 0, 0, 0, 0, 0),
-        12: (0, 4, 3, 3, 0, 0, 0, 0, 0, 0),
+p        12: (0, 4, 3, 3, 0, 0, 0, 0, 0, 0),
         13: (0, 4, 3, 3, 1, 0, 0, 0, 0, 0),
         14: (0, 4, 3, 3, 1, 0, 0, 0, 0, 0),
         15: (0, 4, 3, 3, 2, 0, 0, 0, 0, 0),

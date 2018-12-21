@@ -115,6 +115,9 @@ class Monk(CharClass):
         'simple weapons', 'shortswords', 'unarmed',
         "one type of artisan's tools or one musical instrument")
     weapon_proficiencies = (weapons.Shortsword, weapons.Unarmed) + weapons.simple_weapons
+    multiclass_weapon_proficiencies = weapon_proficiencies
+    _multiclass_proficiencies_text = ('simple weapons', 'shortswords',
+                                      'unarmed')
     class_skill_choices = ('Acrobatics', 'Athletics', 'History', 'Insight',
                            'Religion', 'Stealth')
     subclasses_available = (OpenHandWay, ShadowWay,
