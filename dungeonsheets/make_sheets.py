@@ -97,7 +97,8 @@ def create_latex_pdf(char, basename, template):
                      f'{basename_}.log']
         for filename in filenames:
             if os.path.exists(filename):
-                os.remove(filename)
+                pass
+                #os.remove(filename)
     # Compile the PDF
     pdf_file = f'{basename}.pdf'
     output_dir = os.path.abspath(os.path.dirname(pdf_file))

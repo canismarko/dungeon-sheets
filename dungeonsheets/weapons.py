@@ -464,6 +464,16 @@ class Talons(Weapon):
     ability = 'strength'
 
 
+class Claws(Weapon):
+    name = 'Claws'
+    base_damage = '1d4'
+    damage_type = 's'
+    cost = '0 gp'
+    weight = 0
+    properties = ''
+    ability = 'strength'
+
+
 class Firearm(Weapon):
     name = 'Firearm'
     ability = 'dexterity'

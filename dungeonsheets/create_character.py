@@ -38,24 +38,7 @@ char_classes = {
     'Wizard': classes.Wizard
 }
 
-races = {
-    'Hill Dwarf': race.HillDwarf,
-    'Mountain Dwarf': race.MountainDwarf,
-    'High Elf': race.HighElf,
-    'Wood Elf': race.WoodElf,
-    'Dark Elf': race.DarkElf,
-    'Lightfoot Halfling': race.LightfootHalfling,
-    'Stout Halfling': race.StoutHalfling,
-    'Human': race.Human,
-    'Dragonborn': race.Dragonborn,
-    'Gnome': race.Gnome,
-    'Forest Gnome': race.ForestGnome,
-    'Rock Gnome': race.RockGnome,
-    'Half-Elf': race.HalfElf,
-    'Half-Orc': race.HalfOrc,
-    'Tiefling': race.Tiefling,
-    'Fallen Aasimar': race.FallenAasimar,
-}
+races = race.race_dict
 
 
 backgrounds = background.available_backgrounds

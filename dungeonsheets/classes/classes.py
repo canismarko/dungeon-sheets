@@ -29,6 +29,9 @@ class CharClass():
             self.subclass = subclass
         for k, v in params.items():
             setattr(self, k, v)
+        # Instantiate the features
+        for i in range(1, 21):
+            self.features_by_level[i] = [f() for f in self.features_by_level[i]]
             
     @property
     def features(self):

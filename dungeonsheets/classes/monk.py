@@ -17,13 +17,14 @@ class Monk(CharClass):
                            'Religion', 'Stealth')
     subclasses_available = ('SunSoul', 'OpenHand')
     features_by_level = defaultdict(list)
-    martial_arts = features.MartialArts()
-    features_by_level[1] = [features.UnarmoredDefense(),
-                            martial_arts]
+    features_by_level[1] = [features.UnarmoredDefense,
+                            features.MartialArts]
 
     def __init__(self, level, subclass=None, **params):
         super().__init__(level, subclass=subclass, **params)
-        self.martial_arts.level = self.class_level
+        for f in self.features_by_level[1]:
+            if isinstance(f, features.MartialArts):
+                f.level = self.class_level
         if subclass == 'sunsoul':
             self.subclass = SunSoul(level=self.class_level)
         else:

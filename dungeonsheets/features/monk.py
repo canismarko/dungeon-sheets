@@ -10,7 +10,7 @@ class UnarmoredDefense(Feature):
     name = "Unarmored Defense"
     source = 'Monk'
 
-    def AC_func(self, char):
+    def AC_func(self, char, **kwargs):
         no_armor = ((char.armor is None)
                     or (isinstance(char.armor, armor.NoAmor)))
         no_shield = ((char.shield is None)
