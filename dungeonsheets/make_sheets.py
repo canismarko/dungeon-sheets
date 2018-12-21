@@ -310,7 +310,7 @@ def create_character_pdf(character, basename, flatten=False):
         'nature': 'Check Box 33',
         'perception': 'Check Box 34',
         'performance': 'Check Box 35',
-        'persuasian': 'Check Box 36',
+        'persuasion': 'Check Box 36',
         'religion': 'Check Box 37',
         'sleight_of_hand': 'Check Box 38',
         'stealth': 'Check Box 39',
