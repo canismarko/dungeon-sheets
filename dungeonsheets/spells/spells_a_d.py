@@ -1704,6 +1704,25 @@ class DetectMagic(Spell):
     classes = ('Bard', 'Cleric', 'Druid', 'Paladin', 'Ranger', 'Sorceror', 'Wizard', )
 
 
+class DetectPoisonAndDisease(Spell):
+    """For the duration, you can sense the presence and location of poisons,
+    poisonous creatures, and diseases within 30 feet of you. You also identify
+    the kind of poison, poisonous creature, or disease in each case.
+    
+    The spell can penetrate most barriers, but is blocked by 1 foot of stone, 1
+    inch of common metal, a thin sheet of lead, or 3 feet of wood or dirt.
+
+    """
+    name = "Detect Poison and Disease"
+    level = 1
+    casting_time = '1 action'
+    casting_range = "Self (30 feet)"
+    components = ("V", "S", "M")
+    materials = "a yew leaf"
+    magic_school = "Divination"
+    classes = ("Cleric", 'Druid', 'Paladin', 'Ranger')
+
+
 class DimensionDoor(Spell):
     """You teleport yourself from your current location to any other spot
     within range. You arrive at exactly the spot desired. It can be a

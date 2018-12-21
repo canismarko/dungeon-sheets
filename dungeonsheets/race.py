@@ -1,4 +1,4 @@
-from . import weapons
+from . import (weapons, spells)
 from . import features as feats
 from collections import defaultdict
 
@@ -22,6 +22,8 @@ class Race():
     wisdom_bonus = 0
     charisma_bonus = 0
     hit_point_bonus = 0
+    spells_known = ()
+    spells_prepared = ()
 
     def __init__(self):
         self.features = tuple([f() for f in self.features])
@@ -99,6 +101,8 @@ class DarkElf(Elf):
     charisma_bonus = 1
     features = (feats.SuperiorDarkvision, feats.FeyAncestry, feats.Trance,
                 feats.SunlightSensitivity, feats.DrowMagic)
+    spells_known = (spells.DancingLights(),)
+    spells_prepared = (spells.DancingLights(),)
 
 
 # Halflings
@@ -164,6 +168,8 @@ class ForestGnome(Gnome):
     dexterity_bonus = 1
     features = Gnome.features + (feats.NaturalIllusionist,
                                  feats.SpeakWithSmallBeasts)
+    spells_known = (spells.MinorIllusion(),)
+    spells_prepared = (spells.MinorIllusion(),)
     
 
 class RockGnome(Gnome):
@@ -230,6 +236,8 @@ class Aasimar(Race):
     languages = ("Common", "Celestial")
     features = (feats.Darkvision, feats.CelestialResistance,
                 feats.HealingHands, feats.LightBearer)
+    spells_known = (spells.Light(),)
+    spells_prepared = (spells.Light(),)
 
     
 # Protector Aasimar
@@ -334,8 +342,10 @@ class Triton(Race):
     features = (feats.Amphibious, feats.ControlAirAndWater,
                 feats.EmissaryOfTheSea, feats.GuardiansOfTheDepths)
     languages = ("Common", "Primordial")
+    spells_known = (spells.FogCloud(),)
+    spells_prepared = (spells.FogCloud(),)
 
-    
+
 # Aarakocra
 class Aarakocra(Race):
     name = 'Aarakocra'
@@ -350,6 +360,7 @@ class Aarakocra(Race):
 
 # Genasi
 class Genasi(Race):
+    name = "Genasi"
     constitution_bonus = 2
     size = 'medium'
     speed = 30
@@ -357,61 +368,44 @@ class Genasi(Race):
 
 
 class AirGenasi(Genasi):
+    name = "Air Genasi"
     dexterity_bonus = 1
     features = (feats.UnendingBreath,
                 feats.MingleWithTheWind)
 
     
 class EarthGenasi(Genasi):
+    name = "Earth Genasi"
     strength_bonus = 1
     features = (feats.EarthWalk, feats.MergeWithStone)
 
 
 class FireGenasi(Genasi):
+    name = "Fire Genasi"
     intelligence_bonus = 1
     features = (feats.Darkvision, feats.FireResistance,
                 feats.ReachToTheBlaze)
 
 
 class WaterGenasi(Genasi):
+    name = "Water Genasi"
     wisdom_bonus = 1
     speed = "30 (30 swim)"
     features = (feats.AcidResistance, feats.Amphibious,
                 feats.CallToTheWave)
 
 
-race_dict = {
-    "Hill Dwarf": HillDwarf,
-    'Mountain Dwarf': MountainDwarf,
-    'High Elf': HighElf,
-    'Wood Elf': WoodElf,
-    'Dark Elf': DarkElf,
-    'Lightfoot Halfling': LightfootHalfling,
-    'Stout Halfling': StoutHalfling,
-    'Human': Human,
-    'Dragonborn': Dragonborn,
-    'Forest Gnome': ForestGnome,
-    'Rock Gnome': RockGnome,
-    'Deep Gnome': DeepGnome,
-    'Half-Elf': HalfElf,
-    'Half-Orc': HalfOrc,
-    'Tiefling': Tiefling,
-    'Fallen Aasimar': FallenAasimar,
-    'Protector Aasimar': ProtectorAasimar,
-    'Scourge Aasimar': ScourgeAasimar,
-    'Firbolg': Firbolg,
-    'Goliath': Goliath,
-    'Lizardfolk': Lizardfolk,
-    'Kenku': Kenku,
-    'Tabaxi': Tabaxi,
-    'Triton': Triton,
-    'Aarakocra': Aarakocra,
-    'Fire Genasi': FireGenasi,
-    'Earth Genasi': EarthGenasi,
-    'Water Genasi': WaterGenasi,
-    'Air Genasi': AirGenasi,
-}
+PHB_races = [HillDwarf, MountainDwarf, HighElf, WoodElf, DarkElf,
+             LightfootHalfling, StoutHalfling, Human, Dragonborn,
+             ForestGnome, RockGnome, HalfElf, HalfOrc, Tiefling]
 
-__all__ = tuple(race_dict.keys())
+VOLO_races = [ProtectorAasimar, ScourgeAasimar, FallenAasimar,
+              Firbolg, Goliath, Lizardfolk, Kenku, Tabaxi, Triton]
 
+EE_races = [Aarakocra, DeepGnome, AirGenasi, FireGenasi, EarthGenasi,
+            WaterGenasi]
 
+available_races = PHB_races + VOLO_races + EE_races
+
+__all__ = tuple([r.name for r in available_races]) + (
+    'available_races', 'PHB_races', 'VOLO_races', 'EE_races')

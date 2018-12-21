@@ -1,4 +1,5 @@
 """Tools for describing a player character."""
+__all__ = ('Character',)
 
 import re
 import os
@@ -12,9 +13,16 @@ from .stats import Ability, Skill, findattr
 from .dice import read_dice_str
 from . import (weapons, race, background, spells, armor, monsters,
                exceptions, classes, features)
-from .__init__ import __version__
 from .weapons import Weapon
 from .armor import Armor, NoArmor, Shield, NoShield
+
+
+def read(fname):
+    return open(os.path.join(os.path.dirname(__file__), fname)).read()
+
+
+__version__ = read('../VERSION')
+
 
 dice_re = re.compile('(\d+)d(\d+)')
 
@@ -112,8 +120,8 @@ class Character():
     _proficiencies_text = tuple()
     # Magic
     spellcasting_ability = None
-    spells = tuple()
-    spells_prepared = tuple()
+    _spells = tuple()
+    _spells_prepared = tuple()
     # Features IN MAJOR DEVELOPMENT
     custom_features = ()
     feature_choices = ()
@@ -132,7 +140,7 @@ class Character():
         # instantiate any spells not listed properly
         for S in self.spells_prepared:
             if S not in [type(spl) for spl in self.spells]:
-                self.spells += (S(),)
+                self._spells += (S(),)
                 
     def __str__(self):
         return self.name
@@ -249,6 +257,28 @@ class Character():
                 else:
                     return multiclass_spellslots_by_level[eff_level][spell_level]
 
+    @property
+    def spells(self):
+        spells = set(self._spells)
+        for f in self.features:
+            spells |= set(f.spells_known) | set(f.spells_prepared)
+        for c in self.spellcasting_classes:
+            spells |= set(c.spells_known) | set(c.spells_prepared)
+        if self.race is not None:
+            spells |= set(self.race.spells_known) | set(self.race.spells_prepared)
+        return tuple(spells)
+            
+    @property
+    def spells_prepared(self):
+        spells = set(self._spells_prepared)
+        for f in self.features:
+            spells |= set(f.spells_prepared)
+        for c in self.spellcasting_classes:
+            spells |= set(c.spells_prepared)
+        if self.race is not None:
+            spells |= set(self.race.spells_prepared)
+        return tuple(spells)
+
     def set_attrs(self, **attrs):
         """Bulk setting of attributes. Useful for loading a character from a
         dictionary."""
@@ -322,10 +352,10 @@ class Character():
                 # Save list of spells to character atribute
                 if attr == 'spells':
                     # Instantiate them all for the spells list
-                    self.spells = tuple(S() for S in _spells)
+                    self._spells = tuple(S() for S in _spells)
                 else:
                     # Instantiate them all for the spells list
-                    self.spells_prepared = tuple(S() for S in _spells)
+                    self._spells_prepared = tuple(S() for S in _spells)
             else:
                 if not hasattr(self, attr):
                     warnings.warn(f"Setting unknown character attribute {attr}",
@@ -571,11 +601,12 @@ class Character():
             f.write(text)
 
     def to_pdf(self, filename, **kwargs):
-        char_file = filename.replace('pdf', 'py')
-        self.save(char_file,
+        if filename.endswith('.pdf'):
+            filename = filename.replace('pdf', 'py')
+        self.save(filename,
                   template_file=kwargs.get('template_file',
                                            'character_template.txt'))
-        subprocess.call(['makesheets', char_file])
+        subprocess.call(['makesheets', filename)
 
         
 def read_character_file(filename):

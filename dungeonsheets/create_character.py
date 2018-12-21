@@ -23,26 +23,11 @@ def read_version():
     return version
 
 
-char_classes = {
-    'Barbarian': classes.Barbarian,
-    'Bard': classes.Bard,
-    'Cleric': classes.Cleric,
-    'Druid': classes.Druid,
-    'Fighter': classes.Fighter,
-    'Monk': classes.Monk,
-    'Paladin': classes.Paladin,
-    'Ranger': classes.Ranger,
-    'Rogue': classes.Rogue,
-    'Sorceror': classes.Sorceror,
-    'Warlock': classes.Warlock,
-    'Wizard': classes.Wizard
-}
+char_classes = {c.class_name: c for c in classes.available_classes}
 
-races = race.race_dict
+races = {r.name: r for r in race.available_races}
 
-
-backgrounds = background.available_backgrounds
-backgrounds = {bg.name: bg for bg in backgrounds}
+backgrounds = {b.name: b for b in background.available_backgrounds}
 
 
 class App(npyscreen.NPSAppManaged):
@@ -53,10 +38,11 @@ class App(npyscreen.NPSAppManaged):
     def save_character(self):
         # Save the file
         filename = self.getForm("SAVE").filename.value
-        self.character.save(filename)
+        self.character.save(filename, template_file='empty_template.tex')
         # Create the PDF character sheet
         if self.getForm('SAVE').make_pdf.value:
             log.debug("Creating PDF")
+            self.character.to_pdf(filename, template_file='empty_template.tex')
             subprocess.call(['makesheets', filename])
     
     def update_max_hp(self):

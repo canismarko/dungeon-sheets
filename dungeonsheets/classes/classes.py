@@ -17,6 +17,8 @@ class CharClass():
     num_skill_choices = 2
     spellcasting_ability = None
     spell_slots_by_level = None
+    spells_known = ()
+    spells_prepared = ()
     subclass = None
     subclasses_available = ()
     features_by_level = defaultdict(list)

@@ -174,7 +174,23 @@ class Etherealness(Spell):
     materials = ""
     duration = "Up to 8 hours"
     magic_school = "Transmutation"
-    classes = ()
+    classes = ("Bard", 'Cleric', 'Sorceror', 'Warlock', 'Wizard')
+
+
+class ExpeditiousRetreat(Spell):
+    """This spell allows you to move at an incredible pace. When you cast this
+    spell, and then as a bonus action on each of your turns until the spell
+    ends, you can take the Dash action.
+
+    """
+    name = "Expeditious Retreat"
+    level = 1
+    casting_time = '1 bonus action'
+    components = ('V', 'S')
+    duration = "Concentration, up to 10 minutes"
+    casting_range = "self"
+    magic_school = "Transmutation"
+    classes = ("Sorceror", "Warlock", "Wizard")
 
 
 class Eyebite(Spell):
@@ -468,6 +484,28 @@ class FindSteed(Spell):
     magic_school = "Conjuration"
     classes = ('Paladin', )
 
+    
+class FogCloud(Spell):
+    """You create a 20-foot-radius sphere of fog centered on a point within
+    range. The sphere spreads around corners, and its area is heavily obscured,
+    It lasts for the duration or until a wind of moderate or greater speed (at
+    least 10 miles per hour) disperses it.
+
+    At Higher Level:
+
+    When you cast this spell using a spell slot of 2nd level or higher, the
+    radius of the fog increases by 20 feet for each slot level above 1st.
+
+    """
+    name = "Fog Cloud"
+    level = 1
+    casting_time = "1 action"
+    casting_range = "120 feet"
+    components = ("V", "S")
+    duration = "Concentration, up to 1 hour"
+    magic_school = "Conjuration"
+    classes = ('Druid', 'Ranger', 'Sorceror', 'Wizard')
+    
 
 class Foresight(Spell):
     """You touch a willing creature and bestow a limited ability to see
@@ -681,6 +719,35 @@ class GuidingBolt(Spell):
     classes = ()
 
 
+class GustOfWind(Spell):
+    """A line of strong wind 60 feet long and 10 feet wide blasts from you in a
+    direction you choose for the spell’s duration. Each creature that starts
+    its turn in the line must succeed on a Strength saving throw or be pushed
+    15 feet away from you in a direction following the line.
+
+    Any creature in the line must spend 2 feet of movement for every 1 foot it
+    moves when moving closer to you.
+    
+    The gust disperses gas or vapor, and it extinguishes candles, torches, and
+    similar unprotected flames in the area. It causes protected flames, such as
+    those of lanterns, to dance wildly and has a 50 percent chance to
+    extinguish them.
+    
+    As a bonus action on each of your turns before the spell ends, you can
+    change the direction in which the line blasts from you.
+
+    """
+    name = "Gust of Wind"
+    level = 2
+    casting_time = "1 action"
+    casting_range = "Self (60-foot line)"
+    components = ("V", 'S', 'M')
+    materials = "A legume seed"
+    duration = "Concentration, up to 1 minute"
+    magic_school = "Evocation"
+    classes = ("Druid", "Sorceror", 'Wizard')
+    
+
 class Harm(Spell):
     """You unleash a virulent disease on a creature that you can see
     within range. The target must make a Constitution saving throw. On
@@ -870,6 +937,32 @@ class HolyAura(Spell):
     duration = "Concentration, up to 1 minute"
     magic_school = "Abjuration"
     classes = ()
+
+
+class HuntersMark(Spell):
+    """You choose a creature you can see within range and mystically mark it as
+    your quarry.  Until the spell ends, you deal an extra 1d6 damage to the
+    target whenever you hit it with a weapon attack, and you have advantage on
+    any Wisdom (Perception) or Wisdom (Survival) check you make to find it. If
+    the target drops to 0 hit points before this spell ends, you can use a
+    bonus action on a subsequent turn of yours to mark a new creature.
+
+    At Higher Level:
+    
+    When you cast this spell using a spell slot of 3rd or 4th level, you can
+    maintain your concentration on the spell for up to 8 hours.  When you use a
+    spell slot of 5th level or higher, you can maintain your concentration on
+    the spell for up to 24 hours.
+
+    """
+    name = "Hunter's Mark"
+    level = 1
+    casting_time = "1 bonus action"
+    casting_range = "90 feet"
+    components = ("V")
+    duration = "Concentration, up to 1 hour"
+    magic_school = "Diviniation"
+    classes = ("Ranger",)
 
 
 class IceStorm(Spell):

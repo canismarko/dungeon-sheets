@@ -47,6 +47,9 @@ class Spell():
 
     def __eq__(self, other):
         return (self.name == other.name) and (self.level == other.level)
+
+    def __hash__(self):
+        return 0
     
     @property
     def component_string(self):

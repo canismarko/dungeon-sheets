@@ -14,7 +14,7 @@
 \maketitle
 
 [% for spl in character.spells %]
-  [% if spl.__class__ in character.spells_prepared %]
+  [% if spl in character.spells_prepared %]
     {
   [% elif spl.level == 0 %]
     {

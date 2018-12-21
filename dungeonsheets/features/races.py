@@ -125,6 +125,7 @@ class SunlightSensitivity(Feature):
     name = "Sunlight Sensitivity"
     source = "Race (Dark Elf)"
 
+
 class DrowMagic(Feature):
     """You know the dancing lights cantrip.  When you reach 3rd level, you can
     cast the faerie fire spell once per day. When you reach 5th level, you can
@@ -259,7 +260,6 @@ class NaturalIllusionist(Feature):
     """
     name = "Natural Illusionist"
     source = "Race (Forest Gnome)"
-    needs_implementation = True
 
 
 class SpeakWithSmallBeasts(Feature):
@@ -357,6 +357,7 @@ class InfernalLegacy(Feature):
     """
     name = "Infernal Legacy"
     source = "Race (Tiefling)"
+    needs_implementation = True
 
 
 # Aasimar
@@ -385,7 +386,6 @@ class LightBearer(Feature):
     """
     name = "Light Bearer"
     source = "Race (Aasimar)"
-    needs_implementation = True
 
 
 class RadiantSoul(Feature):
