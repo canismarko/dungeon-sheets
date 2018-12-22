@@ -72,7 +72,7 @@ class MonsterSlayer(SubClass):
 
 
 class Ranger(CharClass):
-    class_name = 'Ranger'
+    name = 'Ranger'
     hit_dice_faces = 10
     saving_throw_proficiencies = ('strength', 'dexterity')
     _proficiencies_text = ("light armor", "medium armor", "shields",
@@ -157,7 +157,7 @@ class DeepStalkerConclave(SubClass):
     
 
 class RevisedRanger(Ranger):
-    class_name = 'Revised Ranger'
+    name = 'Revised Ranger'
     features_by_level = defaultdict(list)
     subclasses_available = (BeastConclave, HunterConclave, DeepStalkerConclave)
     

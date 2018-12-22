@@ -57,7 +57,6 @@ class Character():
     """
     # General attirubtes
     name = ""
-    class_name = ""
     player_name = ""
     alignment = "Neutral"
     dungeonsheets_version = __version__
@@ -133,6 +132,18 @@ class Character():
         """Takes a bunch of attrs and passes them to ``set_attrs``"""
         self.weapons = []
         # make sure class, race, background are set first
+        classes_levels = char_props.pop('classes_levels', [])
+        subclasses = char_props.pop('subclasses', [])
+        class_list = parse_classes(
+            classes_levels, subclasses,
+            feature_choices=char_props.get('feature_choices', []))
+        # accept backwards compatability for single-class characters
+        if len(class_list) == 0:
+            name = char_props.pop('character_class').lower().capitalize()
+            level = char_props.pop('level')
+            CharClass = getattr(classes, name)
+            class_list = [CharClass(level)]
+        char_props['class_list'] = class_list
         class_list = attrs.pop('class_list', self.class_list)
         race = attrs.pop('race', self.race)
         background = attrs.pop('background', self.background)
@@ -149,9 +160,24 @@ class Character():
 
     @property
     def class_name(self):
-        return ' / '.join([f'{c.class_name}'
+        if self.num_classes >= 1:
+            return self.primary_class.name
+        else:
+            return ""
+
+    @property
+    def classes_and_levels(self):
+        return ' / '.join([f'{c.name} {c.level}'
                            for c in self.class_list])
 
+    @property
+    def class_names(self):
+        return [c.name for c in self.class_list]
+
+    @property
+    def levels(self):
+        return [c.level for c in self.class_list]
+    
     @property
     def subclasses(self):
         return list([c.subclass or '' for c in self.class_list])
@@ -165,35 +191,30 @@ class Character():
         if self.num_classes == 0:
             return self._level
         else:
-            return sum(c.class_level for c in self.class_list)
+            return sum(c.level for c in self.class_list)
 
     @level.setter
     def level(self, new_level):
         if self.num_classes == 0:
             self._level = new_level
         else:
-            self.primary_class.class_level = new_level
+            self.primary_class.level = new_level
             if self.num_classes > 1:
                 warnings.warn("Unable to tell which level to set. Updating "
-                              "level of primary class {:s}".format(self.primary_class.class_name))
+                              "level of primary class {:s}".format(self.primary_class.name))
     
     @property
     def num_classes(self):
         return len(self.class_list)
 
     @property
-    def class_initialized(self):
+    def has_class(self):
         return (self.num_classes > 0)
 
     @property
-    def classes_levels(self):
-        return [c.class_name.lower() + ' ' + str(c.class_level)
-                for c in self.class_list]
-    
-    @property
     def primary_class(self):
         # for now, assume first class given must be primary class
-        if self.class_initialized:
+        if self.has_class:
             return self.class_list[0]
         else:
             return None
@@ -219,7 +240,7 @@ class Character():
     @property
     def features(self):
         fts = set(self.custom_features)
-        if not self.class_initialized:
+        if not self.has_class:
             return fts
         for c in self.class_list:
             fts |= set(c.features)
@@ -271,11 +292,11 @@ class Character():
                 for c in self.spellcasting_classes:
                     if type(c) in [classes.Bard, classes.Cleric, classes.Druid,
                                    classes.Sorceror, classes.Wizard]:
-                        eff_level += c.class_level
+                        eff_level += c.level
                     elif type(c) in [classes.Paladin, classes.Ranger]:
-                        eff_level += c.class_level // 2
+                        eff_level += c.level // 2
                     elif type(c) in [classes.Fighter, classes.Rogue]:
-                        eff_level += c.class_level // 3
+                        eff_level += c.level // 3
                 if eff_level == 0:
                     return 0
                 else:
@@ -316,6 +337,11 @@ class Character():
             elif attr == 'weapon_proficiencies':
                 self.other_weapon_proficiencies = tuple([findattr(weapons, w)
                                                          for w in val])
+            elif attr == 'class_list':
+                if isinstance(val, str):
+                    val = [val]
+                for cls in val:
+                    if isinstance    
             elif attr == 'race':
                 if val is not None:
                     MyRace = findattr(race, val)
@@ -410,7 +436,7 @@ class Character():
     def proficiencies_text(self):
         final_text = ""
         all_proficiencies = tuple(self._proficiencies_text)
-        if self.class_initialized:
+        if self.has_class:
             all_proficiencies += tuple(self.primary_class._proficiencies_text)
         if self.num_classes > 1:
             for c in self.class_list[1:]:
@@ -518,7 +544,7 @@ class Character():
         if self.num_classes == 0:
             return '{:d}d{:d}'.format(self.level, self._hit_dice_faces)
         else:
-            return ' + '.join([f'{c.class_level}d{c.hit_dice_faces}'
+            return ' + '.join([f'{c.level}d{c.hit_dice_faces}'
                                for c in self.class_list])
 
     @property
@@ -602,48 +628,6 @@ class Character():
     def load(cls, character_file):
         # Create a character from the character definition
         char_props = read_character_file(character_file)
-        classes_levels = char_props.pop('classes_levels', [])
-        if isinstance(classes_levels, str):
-            classes_levels = [classes_levels]
-        subclasses = char_props.pop('subclasses', [])
-        if isinstance(subclasses, str):
-            subclasses = [subclasses]
-        if len(subclasses) == 0:
-            subclasses = [None]*len(classes_levels)
-        assert len(classes_levels) == len(subclasses), (
-            'the length of classes_levels {:d} does not match length of '
-            'subclasses {:d}'.format(len(classes_levels), len(subclasses)))
-        circle = char_props.pop('circle', None)
-        class_list = []
-        for cl, sub in zip(classes_levels, subclasses):
-            try:
-                c, _, lvl = cl.strip().rpartition(' ')  # " wizard 3 " => "wizard", "3"
-                c = c.title().replace(' ', '')
-            except ValueError:
-                raise ValueError(
-                    'classes_levels not properly formatted. Each entry should '
-                    'be formatted \"class level\", but got {:s}'.format(cl))
-            try:
-                this_class = getattr(classes, c)
-                this_level = int(lvl)
-            except AttributeError:
-                raise AttributeError(
-                    'class was not recognized from classes.py: {:s}'.format(c))
-            except ValueError:
-                raise ValueError(
-                    'level was not recognizable as an int: {:s}'.format(lvl))
-            if issubclass(this_class, classes.Druid):
-                sub = circle or sub
-            params = {}
-            params['feature_choices'] = char_props.get('feature_choices', [])
-            class_list += [this_class(this_level, subclass=sub, **params)]
-        # accept backwards compatability for single-class characters
-        if len(class_list) == 0:
-            class_name = char_props.pop('character_class').lower().capitalize()
-            class_level = char_props.pop('level')
-            CharClass = getattr(classes, class_name)
-            class_list = [CharClass(class_level)]
-        char_props['class_list'] = class_list
         # Create the character with loaded properties
         char = cls(**char_props)
         return char
@@ -668,6 +652,41 @@ class Character():
             filename = filename.replace('pdf', 'py')
         make_sheet(filename, char=self, flatten=kwargs.get('flatten', True))
 
+
+def parse_classes(classes_levels=[], subclasses=[], feature_choices=[]):
+    if isinstance(classes_levels, str):
+        classes_levels = [classes_levels]
+    if isinstance(subclasses, str):
+        subclasses = [subclasses]
+    if len(subclasses) == 0:
+        subclasses = [None]*len(classes_levels)
+    assert len(classes_levels) == len(subclasses), (
+        'the length of classes_levels {:d} does not match length of '
+        'subclasses {:d}'.format(len(classes_levels), len(subclasses)))
+    class_list = []
+    for cls, sub in zip(classes_levels, subclasses):
+        if not isinstance(classes.CharClass, cls):
+            try:
+                c, _, lvl = cls.strip().rpartition(' ')  # " wizard 3 " => "wizard", "3"
+                c = c.title().replace(' ', '')
+            except ValueError:
+                raise ValueError(
+                    'classes_levels not properly formatted. Each entry should '
+                    'be formatted \"class level\", but got {:s}'.format(cl))
+            try:
+                this_class = getattr(classes, c)
+                this_level = int(lvl)
+            except AttributeError:
+                raise AttributeError(
+                    'class was not recognized from classes.py: {:s}'.format(c))
+            except ValueError:
+                raise ValueError(
+                    'level was not recognizable as an int: {:s}'.format(lvl))
+            params = {}
+            params['feature_choices'] = char_props.get('feature_choices', [])
+            class_list += [this_class(this_level, subclass=sub, **params)]
+    return class_list
+            
         
 def read_character_file(filename):
     """Create a character object from the given definition file.

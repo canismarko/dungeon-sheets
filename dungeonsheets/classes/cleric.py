@@ -181,7 +181,7 @@ class GraveDomain(SubClass):
 
 
 class Cleric(CharClass):
-    class_name = 'Cleric'
+    name = 'Cleric'
     hit_dice_faces = 8
     saving_throw_proficiencies = ('wisdom', 'charisma')
     _proficiencies_text = ('light armor', 'medium armor', 'shields',

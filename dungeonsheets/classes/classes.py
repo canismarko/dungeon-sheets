@@ -6,8 +6,8 @@ class CharClass():
     """
     A generic Character Class (not to be confused with builtin class)
     """
-    class_name = ""
-    class_level = 1
+    name = ""
+    level = 1
     hit_dice_faces = None
     weapon_proficiencies = ()
     _proficiencies_text = ()
@@ -26,7 +26,7 @@ class CharClass():
 
     def __init__(self, level, subclass=None, feature_choices=[],
                  **params):
-        self.class_level = level
+        self.level = level
         # Instantiate the features
         self.features_by_level = defaultdict(list)
         cls = type(self)
@@ -58,7 +58,7 @@ class CharClass():
             return None
         for sc in self.subclasses_available:
             if subclass_str.lower() in sc.name.lower():
-                return sc(level=self.class_level)
+                return sc(level=self.level)
         return None
 
     def apply_subclass(self):
@@ -82,7 +82,7 @@ class CharClass():
     @property
     def features(self):
         features = ()
-        for lvl in range(1, self.class_level+1):
+        for lvl in range(1, self.level+1):
             features += tuple(self.features_by_level[lvl])
         return features
 
@@ -96,7 +96,7 @@ class CharClass():
         if self.spell_slots_by_level is None:
             return 0
         else:
-            return self.spell_slots_by_level[self.class_level][spell_level]
+            return self.spell_slots_by_level[self.level][spell_level]
 
 
 class SubClass():
@@ -114,7 +114,7 @@ class SubClass():
 
     def __init__(self, level):
         self.__doc__ = self.__doc__ or SubClass.__doc__
-        self.class_level = level
+        self.level = level
 
     def __str__(self):
         return self.name

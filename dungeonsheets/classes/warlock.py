@@ -113,7 +113,7 @@ class Hexblade(SubClass):
 
 
 class Warlock(CharClass):
-    class_name = 'Warlock'
+    name = 'Warlock'
     hit_dice_faces = 8
     saving_throw_proficiencies = ('wisdom', 'charisma')
     _proficiencies_text = ("light Armor", "simple weapons")

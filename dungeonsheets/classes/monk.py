@@ -108,7 +108,7 @@ class KenseiWay(SubClass):
 
 
 class Monk(CharClass):
-    class_name = 'Monk'
+    name = 'Monk'
     hit_dice_faces = 8
     saving_throw_proficiencies = ('strength', 'dexterity')
     _proficiencies_text = (
@@ -132,4 +132,4 @@ class Monk(CharClass):
         super().__init__(level, subclass=subclass, **params)
         for f in self.features_by_level[1]:
             if isinstance(f, features.MartialArts):
-                f.level = self.class_level
+                f.level = self.level

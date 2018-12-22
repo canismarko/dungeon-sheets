@@ -114,7 +114,7 @@ class CollegeOfWhispers(SubClass):
 
 
 class Bard(CharClass):
-    class_name = 'Bard'
+    name = 'Bard'
     hit_dice_faces = 8
     saving_throw_proficiencies = ('dexterity', 'charisma')
     _proficiencies_text = (

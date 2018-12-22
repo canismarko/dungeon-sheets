@@ -92,7 +92,7 @@ class StormSorcery(SubClass):
 
 
 class Sorceror(CharClass):
-    class_name = 'Sorceror'
+    name = 'Sorceror'
     hit_dice_faces = 6
     saving_throw_proficiencies = ('constitution', 'charisma')
     _proficiencies_text = ('daggers', 'darts', 'slings',

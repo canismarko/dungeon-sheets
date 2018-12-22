@@ -23,7 +23,7 @@ def read_version():
     return version
 
 
-char_classes = {c.class_name: c for c in classes.available_classes}
+char_classes = {c.name: c for c in classes.available_classes}
 
 races = {r.name: r for r in race.available_races}
 
@@ -152,7 +152,7 @@ class CharacterClassForm(npyscreen.ActionForm):
         else:
             self.class_options = list(char_classes.keys())
             for c in self.parentApp.character.class_list[:self.class_num-1]:
-                self.class_options.remove(c.class_name)
+                self.class_options.remove(c.name)
             self.character_class.values = tuple(self.class_options)
             self.character_class.update()
         
@@ -160,13 +160,13 @@ class CharacterClassForm(npyscreen.ActionForm):
         if self.class_num > 1:
             self.add(npyscreen.FixedText, editable=False,
                      value="Current Classes: {}".format(
-                         self.parentApp.character.class_name))
+                         self.parentApp.character.name))
         if self.class_num == 1:
             t = 'Primary Class:'
         else:
             t = 'Class #{:d}:'.format(self.class_num)
         for c in self.parentApp.character.class_list:
-            self.class_options.remove(c.class_name)
+            self.class_options.remove(c.name)
         self.level = self.add(
             npyscreen.TitleText, name='Level:', value="1", use_two_lines=False)
         self.subclass = self.add(npyscreen.Checkbox, name="Choose a Subclass?", value=False)
@@ -194,7 +194,7 @@ class CharacterClassForm(npyscreen.ActionForm):
         new_name = 'SUBCLASS{:d}'.format(self.class_num)
         new_form = self.parentApp.addForm(new_name,
                                           SubclassForm,
-                                          name="Select your {:s} Subclass".format(newclass.class_name),
+                                          name="Select your {:s} Subclass".format(newclass.name),
                                           newclass=newclass,
                                           level=level,
                                           num=self.class_num)
@@ -208,7 +208,7 @@ class CharacterClassForm(npyscreen.ActionForm):
         if self.character_class.value is not None:
             selected_class = self.character_class.get_selected_objects()[0]
             selected_class = char_classes[selected_class]
-            log.debug('Selected character class %s', selected_class.class_name)
+            log.debug('Selected character class %s', selected_class.name)
             new_class = selected_class(level=int(self.level.value),
                                        subclass=None)
             if len(self.parentApp.character.class_list) < self.class_num:
@@ -410,7 +410,7 @@ class AbilityScoreForm(npyscreen.ActionForm):
         attrs = ('strength', 'dexterity', 'constitution',
                  'intelligence', 'wisdom', 'charisma')
         self.class_text = self.add(npyscreen.FixedText, editable=False,
-                                  value="Key stats for your primary class {:s} are listed with **".format(self.parentApp.character.primary_class.class_name))
+                                  value="Key stats for your primary class {:s} are listed with **".format(self.parentApp.character.primary_class.name))
         self.race_text = self.add(npyscreen.FixedText, editable=False,
                                   value="Do not add racial bonuses, they will be added for you as listed.")
         for attr in attrs:

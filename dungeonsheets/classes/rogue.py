@@ -116,7 +116,7 @@ class Swashbuckler(SubClass):
 
 
 class Rogue(CharClass):
-    class_name = 'Rogue'
+    name = 'Rogue'
     hit_dice_faces = 8
     saving_throw_proficiencies = ('dexterity', 'intelligence')
     _proficiencies_text = (

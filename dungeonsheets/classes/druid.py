@@ -82,7 +82,7 @@ class ShepherdCircle(SubClass):
 
 
 class Druid(CharClass):
-    class_name = 'Druid'
+    name = 'Druid'
     _wild_shapes = ()
     _circle = ''
     hit_dice_faces = 8
@@ -137,7 +137,7 @@ class Druid(CharClass):
         for sc in self.subclasses_available:
             if ((subclass_str.lower() == sc.circle.lower())
                 or (subclass_str.lower() in sc.name.lower())):
-                return sc(level=self.class_level)
+                return sc(level=self.level)
         return None
 
     @property
@@ -207,15 +207,15 @@ class Druid(CharClass):
         
         """
         # Determine acceptable states based on druid level
-        if self.class_level < 2:
+        if self.level < 2:
             max_cr = -1
             max_swim = 0
             max_fly = 0
-        elif self.class_level < 4:
+        elif self.level < 4:
             max_cr = 1/4
             max_swim = 0
             max_fly = 0
-        elif self.class_level < 8:
+        elif self.level < 8:
             max_cr = 1/2
             max_swim = None
             max_fly = 0
@@ -225,10 +225,10 @@ class Druid(CharClass):
             max_fly = None
         # Make adjustments for moon circle druids
         if self.circle == "moon":
-            if 2 <= self.class_level < 6:
+            if 2 <= self.level < 6:
                 max_cr = 1
-            elif self.class_level >= 6:
-                max_cr = math.floor(self.class_level / 3)
+            elif self.level >= 6:
+                max_cr = math.floor(self.level / 3)
         # Check if the beast shape can be assumed
         valid_cr = (max_cr is None or shape.challenge_rating <= max_cr)
         valid_swim = (max_swim is None or shape.swim_speed <= max_swim)

@@ -97,7 +97,7 @@ class ZealotPath(SubClass):
     
 
 class Barbarian(CharClass):
-    class_name = 'Barbarian'
+    name = 'Barbarian'
     hit_dice_faces = 12
     saving_throw_proficiencies = ('strength', 'constitution')
     weapon_proficiencies = (weapons.simple_weapons + weapons.martial_weapons)

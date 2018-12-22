@@ -11,9 +11,11 @@ sheet by running ``makesheets`` from the command line.
 dungeonsheets_version = "{{ char.dungeonsheets_version }}"
 
 name = "{{ char.name }}"
-classes_levels = {{ char.classes_levels }}
-subclasses = {{ char.subclasses }}
 player_name = "{{ char.player_name }}"
+
+classes = {{ char.class_names }}
+levels = {{ char.levels }}
+subclasses = {{ char.subclasses }}
 background = "{{ char.background.name }}"
 race = "{{ char.race.name }}"
 alignment = "{{ char.alignment }}"

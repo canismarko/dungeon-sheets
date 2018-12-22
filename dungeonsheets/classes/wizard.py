@@ -157,7 +157,7 @@ class WarMagic(SubClass):
 
 
 class Wizard(CharClass):
-    class_name = 'Wizard'
+    name = 'Wizard'
     hit_dice_faces = 6
     saving_throw_proficiencies = ('intelligence', 'wisdom')
     _proficiencies_text = ('daggers', 'darts', 'slings',

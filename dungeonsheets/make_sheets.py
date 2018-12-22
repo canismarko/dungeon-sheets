@@ -117,8 +117,8 @@ def create_latex_pdf(character, basename, template):
 
 
 def create_spells_pdf(character, basename, flatten=False):
-    class_level = ' / '.join([c.class_name + ' ' + str(c.class_level)
-                              for c in character.spellcasting_classes])
+    classes_and_levels = ' / '.join([c.name + ' ' + str(c.level)
+                                     for c in character.spellcasting_classes])
     abilities = ' / '.join([c.spellcasting_ability.upper()[:3]
                             for c in character.spellcasting_classes])
     DCs = ' / '.join([str(character.spell_save_dc(c))
@@ -127,7 +127,7 @@ def create_spells_pdf(character, basename, flatten=False):
                           for c in character.spellcasting_classes])
     spell_level = lambda x : (x or 0)
     fields = {
-        'Spellcasting Class 2': class_level,
+        'Spellcasting Class 2': classes_and_levels,
         'SpellcastingAbility 2': abilities,
         'SpellSaveDC  2': DCs,
         'SpellAtkBonus 2': bonuses,
@@ -193,7 +193,7 @@ def create_character_pdf(character, basename, flatten=False):
     fields = {
         # Character description
         'CharacterName': character.name,
-        'ClassLevel': character.class_name,
+        'ClassLevel': character.classes_and_levels,
         'Background': str(character.background),
         'PlayerName': character.player_name,
         'Race ': str(character.race),
