@@ -6,9 +6,9 @@ class CharClass():
     """
     A generic Character Class (not to be confused with builtin class)
     """
-    name = ""
+    name = "Default"
     level = 1
-    hit_dice_faces = None
+    hit_dice_faces = 2
     weapon_proficiencies = ()
     _proficiencies_text = ()
     multiclass_weapon_proficiencies = ()

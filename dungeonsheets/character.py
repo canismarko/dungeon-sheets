@@ -63,8 +63,8 @@ class Character():
     class_list = []
     _level = 1  # Keep internal check of total level
     _hit_dice_faces = 2
-    race = None
-    background = None
+    _race = None
+    _background = None
     xp = 0
     # Hit points
     hp_max = 10
@@ -132,24 +132,22 @@ class Character():
         """Takes a bunch of attrs and passes them to ``set_attrs``"""
         self.weapons = []
         # make sure class, race, background are set first
-        classes_levels = char_props.pop('classes_levels', [])
-        subclasses = char_props.pop('subclasses', [])
-        class_list = parse_classes(
-            classes_levels, subclasses,
-            feature_choices=char_props.get('feature_choices', []))
-        # accept backwards compatability for single-class characters
-        if len(class_list) == 0:
-            name = char_props.pop('character_class').lower().capitalize()
-            level = char_props.pop('level')
-            CharClass = getattr(classes, name)
-            class_list = [CharClass(level)]
-        char_props['class_list'] = class_list
-        class_list = attrs.pop('class_list', self.class_list)
-        race = attrs.pop('race', self.race)
-        background = attrs.pop('background', self.background)
-        self.set_attrs(**{'class_list': class_list,
-                          'race': race,
-                          'background': background})
+        my_classes = attrs.pop('classes', ['Char Class'])
+        my_levels = attrs.pop('levels', [1])
+        my_subclasses = attrs.pop('subclasses', [None])
+        # backwards compatability
+        if (len(my_classes) == 0) and hasattr(attrs, 'class'):
+            my_classes = [attrs.pop('class')]
+            my_levels = [attrs.pop('level', 1)]
+            my_subclasses = [attrs.pop('subclass', None)]
+        # Generate the list of class objects
+        self.class_list = parse_classes(
+            my_classes, my_levels, my_subclasses,
+            feature_choices=attrs.get('feature_choices', []))
+        # parse race and background
+        self.race = attrs.pop('race', None)
+        self.background = attrs.pop('background', None)
+        # parse all other attributes
         self.set_attrs(**attrs)
                 
     def __str__(self):
@@ -157,6 +155,44 @@ class Character():
     
     def __repr__(self):
         return f"<{self.class_name}: {self.name}>"
+
+    @property
+    def race(self):
+        return self._race
+
+    @race.setter
+    def race(self, newrace):
+        if isinstance(newrace, race.Race):
+            self._race = newrace
+        elif isinstance(newrace, type) and issubclass(newrace, race.Race):
+            self._race = newrace()
+        elif isinstance(newrace, str):
+            try:
+                self._race = findattr(race, newrace)()
+            except AttributeError:
+                msg = (f'Race "{newrace}" not defined. '
+                       f'Please add it to ``race.py``')
+                self._race = race.Race()
+                warnings.warn(msg)
+        
+    @property
+    def background(self):
+        return self._background
+
+    @background.setter
+    def background(self, bg):
+        if isinstance(bg, background.Background):
+            self.background = bg
+        elif isinstance(bg, type) and issubclass(bg, background.Background):
+            self.background = bg()
+        elif isinstance(bg, str):
+            try:
+                self.background = findattr(background, bg)()
+            except AttributeError:
+                msg = (f'Background "{bg}" not defined. '
+                       f'Please add it to ``background.py``')
+                self.background = background.Background()
+                warnings.warn(msg)
 
     @property
     def class_name(self):
@@ -337,19 +373,6 @@ class Character():
             elif attr == 'weapon_proficiencies':
                 self.other_weapon_proficiencies = tuple([findattr(weapons, w)
                                                          for w in val])
-            elif attr == 'class_list':
-                if isinstance(val, str):
-                    val = [val]
-                for cls in val:
-                    if isinstance    
-            elif attr == 'race':
-                if val is not None:
-                    MyRace = findattr(race, val)
-                    self.race = MyRace()
-            elif attr == 'background':
-                if val is not None:
-                    MyBackground = findattr(background, val)
-                    self.background = MyBackground()
             elif attr == 'armor':
                 self.wear_armor(val)
             elif attr == 'shield':
@@ -558,7 +581,10 @@ class Character():
     
     @hit_dice_faces.setter
     def hit_dice_faces(self, faces):
-        self._hit_dice_faces = faces
+        if self.num_classes == 0:
+            self._hit_dice_faces = faces
+        else:
+            self.primary_class.hit_dice_faces = faces
     
     @property
     def proficiency_bonus(self):
@@ -628,8 +654,13 @@ class Character():
     def load(cls, character_file):
         # Create a character from the character definition
         char_props = read_character_file(character_file)
+        classes = char_props.get('classes', [])
+        # backwards compatability
+        if (len(classes) == 0) and hasattr(char_props, 'character_class'):
+            char_props['classes'] = [char_props.pop('character_class').lower().capitalize()]
+            char_props['levels'] = [str(char_props.pop('level'))]
         # Create the character with loaded properties
-        char = cls(**char_props)
+        char = Character(**char_props)
         return char
 
     def save(self, filename, template_file='character_template.txt'):
@@ -653,37 +684,38 @@ class Character():
         make_sheet(filename, char=self, flatten=kwargs.get('flatten', True))
 
 
-def parse_classes(classes_levels=[], subclasses=[], feature_choices=[]):
-    if isinstance(classes_levels, str):
-        classes_levels = [classes_levels]
+def parse_classes(classes_list=[], levels=[], subclasses=[], feature_choices=[]):
+    if isinstance(classes_list, str):
+        classes_list = [classes_list]
+    if isinstance(levels, int) or isinstance(levels, float) or isinstance(levels, str):
+        levels = [levels]
+    if len(levels) == 0:
+        levels = [1]*len(classes_list)
     if isinstance(subclasses, str):
         subclasses = [subclasses]
     if len(subclasses) == 0:
-        subclasses = [None]*len(classes_levels)
-    assert len(classes_levels) == len(subclasses), (
-        'the length of classes_levels {:d} does not match length of '
-        'subclasses {:d}'.format(len(classes_levels), len(subclasses)))
+        subclasses = [None]*len(classes_list)
+    assert len(classes_list) == len(levels), (
+        'the length of classes {:d} does not match length of '
+        'levels {:d}'.format(len(classes), len(levels)))
+    assert len(classes_list) == len(subclasses), (
+        'the length of classes {:d} does not match length of '
+        'subclasses {:d}'.format(len(classes_list), len(subclasses)))
     class_list = []
-    for cls, sub in zip(classes_levels, subclasses):
-        if not isinstance(classes.CharClass, cls):
+    for cls, lvl, sub in zip(classes_list, levels, subclasses):
+        if isinstance(cls, str):
+            cls = cls.strip().title().replace(' ', '')
             try:
-                c, _, lvl = cls.strip().rpartition(' ')  # " wizard 3 " => "wizard", "3"
-                c = c.title().replace(' ', '')
-            except ValueError:
-                raise ValueError(
-                    'classes_levels not properly formatted. Each entry should '
-                    'be formatted \"class level\", but got {:s}'.format(cl))
-            try:
-                this_class = getattr(classes, c)
+                this_class = getattr(classes, cls)
                 this_level = int(lvl)
             except AttributeError:
                 raise AttributeError(
                     'class was not recognized from classes.py: {:s}'.format(c))
             except ValueError:
                 raise ValueError(
-                    'level was not recognizable as an int: {:s}'.format(lvl))
+                    'level was not recognizable as an int: {:s}'.format(str(lvl)))
             params = {}
-            params['feature_choices'] = char_props.get('feature_choices', [])
+            params['feature_choices'] = feature_choices
             class_list += [this_class(this_level, subclass=sub, **params)]
     return class_list
             
@@ -734,15 +766,15 @@ def read_character_file(filename):
 class Druid(Character):
 
     def __init__(self, level=1, **attrs):
-        MyDruid = classes.Druid(level=level)
-        
-        self.class_list = [MyDruid]
+        attrs['classes'] = ['Druid']
+        attrs['levels'] = [level]
         super().__init__(**attrs)
 
 
 class Wizard(Character):
 
     def __init__(self, level=1, **attrs):
-        self.class_list = [classes.Wizard(level=level)]
+        attrs['classes'] = ['Wizard']
+        attrs['levels'] = [level]
         super().__init__(**attrs)
 

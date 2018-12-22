@@ -4,7 +4,7 @@ from unittest import TestCase
 import warnings
 
 from dungeonsheets import race, monsters, exceptions, spells
-from dungeonsheets.character import Character
+from dungeonsheets.character import Character, Wizard, Druid
 from dungeonsheets.weapons import Weapon, Shortsword
 from dungeonsheets.armor import Armor, LeatherArmor, Shield
 
