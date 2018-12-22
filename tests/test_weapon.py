@@ -2,6 +2,7 @@ import unittest
 
 from dungeonsheets.weapons import Weapon
 
+
 class WeaponTestCase(unittest.TestCase):
     def test_weapon_damage(self):
         weapon = Weapon()
@@ -9,4 +10,4 @@ class WeaponTestCase(unittest.TestCase):
         self.assertEqual(weapon.damage, '1d6')
         # Now add some bonus damage
         weapon.bonus_damage = 2
-        self.assertEqual(weapon.damage, '1d6 +2')
+        self.assertEqual(weapon.damage, '1d6+2')

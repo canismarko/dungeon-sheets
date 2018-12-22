@@ -21,7 +21,7 @@ def read(fname):
     return open(os.path.join(os.path.dirname(__file__), fname)).read()
 
 
-__version__ = read('../VERSION')
+__version__ = read('../VERSION').strip()
 
 
 dice_re = re.compile('(\d+)d(\d+)')
@@ -132,7 +132,7 @@ class Character():
         """Takes a bunch of attrs and passes them to ``set_attrs``"""
         self.weapons = []
         # make sure class, race, background are set first
-        my_classes = attrs.pop('classes', ['Char Class'])
+        my_classes = attrs.pop('classes', [])
         my_levels = attrs.pop('levels', [])
         my_subclasses = attrs.pop('subclasses', [])
         # backwards compatability
@@ -681,7 +681,8 @@ class Character():
         from .make_sheets import make_sheet
         if filename.endswith('.pdf'):
             filename = filename.replace('pdf', 'py')
-        make_sheet(filename, char=self, flatten=kwargs.get('flatten', True))
+        make_sheet(filename, character=self,
+                   flatten=kwargs.get('flatten', True))
 
 
 def parse_classes(classes_list=[], levels=[], subclasses=[],
@@ -764,10 +765,79 @@ def read_character_file(filename):
 
 
 # Add backwards compatability for tests
-class Druid(Character):
+class Barbarian(Character):
+    def __init__(self, level=1, **attrs):
+        attrs['classes'] = ['Barbarian']
+        attrs['levels'] = [level]
+        super().__init__(**attrs)
+    
 
+class Bard(Character):
+    def __init__(self, level=1, **attrs):
+        attrs['classes'] = ['Bard']
+        attrs['levels'] = [level]
+        super().__init__(**attrs)
+
+
+class Cleric(Character):
+    def __init__(self, level=1, **attrs):
+        attrs['classes'] = ['Cleric']
+        attrs['levels'] = [level]
+        super().__init__(**attrs)
+
+
+class Druid(Character):
     def __init__(self, level=1, **attrs):
         attrs['classes'] = ['Druid']
+        attrs['levels'] = [level]
+        super().__init__(**attrs)
+
+
+class Fighter(Character):
+    def __init__(self, level=1, **attrs):
+        attrs['classes'] = ['Fighter']
+        attrs['levels'] = [level]
+        super().__init__(**attrs)
+
+
+class Monk(Character):
+    def __init__(self, level=1, **attrs):
+        attrs['classes'] = ['Monk']
+        attrs['levels'] = [level]
+        super().__init__(**attrs)
+
+
+class Paladin(Character):
+    def __init__(self, level=1, **attrs):
+        attrs['classes'] = ['Paladin']
+        attrs['levels'] = [level]
+        super().__init__(**attrs)
+
+
+class Ranger(Character):
+    def __init__(self, level=1, **attrs):
+        attrs['classes'] = ['Ranger']
+        attrs['levels'] = [level]
+        super().__init__(**attrs)
+
+
+class Rogue(Character):
+    def __init__(self, level=1, **attrs):
+        attrs['classes'] = ['Rogue']
+        attrs['levels'] = [level]
+        super().__init__(**attrs)
+
+
+class Sorceror(Character):
+    def __init__(self, level=1, **attrs):
+        attrs['classes'] = ['Sorceror']
+        attrs['levels'] = [level]
+        super().__init__(**attrs)
+
+
+class Warlock(Character):
+    def __init__(self, level=1, **attrs):
+        attrs['classes'] = ['Warlock']
         attrs['levels'] = [level]
         super().__init__(**attrs)
 
