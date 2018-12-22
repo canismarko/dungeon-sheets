@@ -14,7 +14,8 @@ from fdfgen import forge_fdf
 import pdfrw
 from jinja2 import Environment, PackageLoader
 
-from . import character, exceptions, classes
+from . import character as _char
+from . import exceptions, classes
 from .stats import mod_str
 
 
@@ -434,7 +435,7 @@ def make_sheet(character_file, character=None, flatten=False):
         If true, the resulting PDF will look better and won't be fillable form.
     """
     if character is None:
-        character = character.Character.load(character_file)
+        character = _char.Character.load(character_file)
     # Set the fields in the FDF
     char_base = os.path.splitext(character_file)[0] + '_char'
     sheets = [char_base + '.pdf']
@@ -510,7 +511,7 @@ def merge_pdfs(src_filenames, dest_filename, clean_up=False):
                 os.remove(sheet)
 
 
-load_character_file = character.read_character_file
+load_character_file = _char.read_character_file
 
 
 def main():

@@ -8,7 +8,8 @@ sheet by running ``makesheets`` from the command line.
 dungeonsheets_version = "0.8.0"
 
 name = "Multiclass"
-classes_levels = ['fighter 4', 'wizard 2']
+classes = ['fighter', 'wizard']
+levels = [4, 2]
 player_name = "Ben"
 background = "Inheritor"
 race = "Tabaxi"

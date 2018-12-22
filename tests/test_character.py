@@ -174,8 +174,9 @@ class DruidTestCase(TestCase):
             warnings.filterwarnings('ignore', message="Druids cannot learn spells")
             char.set_attrs(spells=['invisibility'],
                            spells_prepared=['druidcraft'])
-        self.assertEqual(len(char.spells), 1)
-        self.assertIsInstance(char.spells[0], spells.Druidcraft)
+        # self.assertEqual(len(char.spells), 1)
+        self.assertEqual(len(char.spells), 2)
+        self.assertIsInstance(char.spells[1], spells.Druidcraft)
     
     def test_wild_shapes(self):
         char = Druid()

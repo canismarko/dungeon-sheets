@@ -133,10 +133,10 @@ class Character():
         self.weapons = []
         # make sure class, race, background are set first
         my_classes = attrs.pop('classes', ['Char Class'])
-        my_levels = attrs.pop('levels', [1])
-        my_subclasses = attrs.pop('subclasses', [None])
+        my_levels = attrs.pop('levels', [])
+        my_subclasses = attrs.pop('subclasses', [])
         # backwards compatability
-        if (len(my_classes) == 0) and hasattr(attrs, 'class'):
+        if (len(my_classes) == 0) and ('class' in attrs):
             my_classes = [attrs.pop('class')]
             my_levels = [attrs.pop('level', 1)]
             my_subclasses = [attrs.pop('subclass', None)]
@@ -182,16 +182,16 @@ class Character():
     @background.setter
     def background(self, bg):
         if isinstance(bg, background.Background):
-            self.background = bg
+            self._background = bg
         elif isinstance(bg, type) and issubclass(bg, background.Background):
-            self.background = bg()
+            self._background = bg()
         elif isinstance(bg, str):
             try:
-                self.background = findattr(background, bg)()
+                self._background = findattr(background, bg)()
             except AttributeError:
                 msg = (f'Background "{bg}" not defined. '
                        f'Please add it to ``background.py``')
-                self.background = background.Background()
+                self._background = background.Background()
                 warnings.warn(msg)
 
     @property
@@ -656,7 +656,7 @@ class Character():
         char_props = read_character_file(character_file)
         classes = char_props.get('classes', [])
         # backwards compatability
-        if (len(classes) == 0) and hasattr(char_props, 'character_class'):
+        if (len(classes) == 0) and ('character_class' in char_props):
             char_props['classes'] = [char_props.pop('character_class').lower().capitalize()]
             char_props['levels'] = [str(char_props.pop('level'))]
         # Create the character with loaded properties
@@ -684,7 +684,8 @@ class Character():
         make_sheet(filename, char=self, flatten=kwargs.get('flatten', True))
 
 
-def parse_classes(classes_list=[], levels=[], subclasses=[], feature_choices=[]):
+def parse_classes(classes_list=[], levels=[], subclasses=[],
+                  feature_choices=[]):
     if isinstance(classes_list, str):
         classes_list = [classes_list]
     if isinstance(levels, int) or isinstance(levels, float) or isinstance(levels, str):
