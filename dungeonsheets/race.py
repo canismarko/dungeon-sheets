@@ -26,9 +26,13 @@ class Race():
     spells_prepared = ()
 
     def __init__(self):
-        self.features = tuple([f() for f in self.features])
+        cls = type(self)
+        # Instantiate the features
+        self.features = tuple([f() for f in cls.features])
+        self.features_by_level = defaultdict(list)
         for i in range(1, 21):
-            self.features_by_level[i] = [f() for f in self.features_by_level[i]]
+            self.features_by_level[i] = [f()for f in
+                                         cls.features_by_level[i]]
     
     def __str__(self):
         return self.name

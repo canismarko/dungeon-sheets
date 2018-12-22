@@ -9,6 +9,7 @@ dungeonsheets_version = "{{ char.dungeonsheets_version }}"
 
 name = "{{ char.name }}"
 classes_levels = {{ char.classes_levels }}
+subclasses = {{ char.subclasses }}
 player_name = "{{ char.player_name }}"
 background = "{{ char.background.name }}"
 race = "{{ char.race.name }}"
@@ -28,7 +29,7 @@ charisma = {{ char.charisma.value }}
 skill_proficiencies = {{ char.skill_proficiencies }}
 
 # Named features / feats that aren't part of your classes,
-# race, or background.
+# race, or background. Also include Eldritch Invocations.
 # Example:
 # features = ('Tavern Brawler',)  # take the optional Feat from PHB
 features = {{ char.custom_features }}

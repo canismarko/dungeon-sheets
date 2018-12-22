@@ -12,7 +12,8 @@ class Background():
     languages = ()
 
     def __init__(self):
-        self.features = tuple([f() for f in self.features])
+        cls = type(self)
+        self.features = tuple([f() for f in cls.features])
 
     def __str__(self):
         return self.name

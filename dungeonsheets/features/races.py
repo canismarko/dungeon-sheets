@@ -395,7 +395,7 @@ class RadiantSoul(Feature):
 
     Your transformation lasts for 1 minute or until you end it as a bonus
     action. During it, you have a flying speed of 30 feet, and once on each of
-    your turns, you can deal ex- tra radiant damage to one target when you deal
+    your turns, you can deal extra radiant damage to one target when you deal
     damage to it with an attack or a spell. The extra radiant damage equals
     your level.
 
@@ -409,13 +409,13 @@ class RadiantSoul(Feature):
 
 class RadiantConsumption(Feature):
     """Starting at 3rd level, you can use your action to unleash the divine energy
-    within your- self, causing a searing light to radiate from you, pour out of
+    within yourself, causing a searing light to radiate from you, pour out of
     your eyes and mouth, and threaten to char you.
 
     Your transformation lasts for 1 minute or until you end ii as a bonus
     action. During it, you shed bright light in a 10-foot radius and dim light
     for an additional 10 feet,and at the end of each of your turns, you and
-    each crea- ture within 10 feet of you take radiant damage equal to half
+    each creature within 10 feet of you take radiant damage equal to half
     your level (rounded up). In addition, once on each of your turns, you can
     deal extra radiant damage to one target when you deal damage to it with an
     attack or a spell. The extra radiant damage equals your level.
@@ -489,7 +489,7 @@ class SpeechOfBeastAndLeaf(Feature):
 
 # Goliath
 class StonesEndurance(Feature):
-    """You can focus yourself to occa- sionally shrug off injury. When you take
+    """You can focus yourself to occasionally shrug off injury. When you take
     damage, you can use your reaction to roll a dl2. Add your Constitution
     modifier to the number rolled, and reduce the damage by that total. After
     you use this trait, you can't use it again until you finish a short or long
@@ -614,7 +614,7 @@ class ControlAirAndWater(Feature):
 
 
 class EmissaryOfTheSea(Feature):
-    """Aquatic beasts have an extraor- dinary affinity with your people. You can
+    """Aquatic beasts have an extraordinary affinity with your people. You can
     communicate simple ideas with beasts that can breathe water. They can
     understand the meaning of your words, though you have no special ability to
     understand them in return.

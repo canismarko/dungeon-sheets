@@ -27,27 +27,27 @@ __version__ = read('../VERSION')
 dice_re = re.compile('(\d+)d(\d+)')
 
 multiclass_spellslots_by_level = {
-        # char_lvl: (cantrips, 1st, 2nd, 3rd, ...)
-        1:  (0, 2, 0, 0, 0, 0, 0, 0, 0, 0),
-        2:  (0, 3, 0, 0, 0, 0, 0, 0, 0, 0),
-        3:  (0, 4, 2, 0, 0, 0, 0, 0, 0, 0),
-        4:  (0, 4, 3, 0, 0, 0, 0, 0, 0, 0),
-        5:  (0, 4, 3, 2, 0, 0, 0, 0, 0, 0),
-        6:  (0, 4, 3, 3, 0, 0, 0, 0, 0, 0),
-        7:  (0, 4, 3, 3, 1, 0, 0, 0, 0, 0),
-        8:  (0, 4, 3, 3, 2, 0, 0, 0, 0, 0),
-        9:  (0, 4, 3, 3, 3, 1, 0, 0, 0, 0),
-        10: (0, 4, 3, 3, 3, 2, 0, 0, 0, 0),
-        11: (0, 4, 3, 3, 3, 2, 1, 0, 0, 0),
-        12: (0, 4, 3, 3, 3, 2, 1, 0, 0, 0),
-        13: (0, 4, 3, 3, 3, 2, 1, 1, 0, 0),
-        14: (0, 4, 3, 3, 3, 2, 1, 1, 0, 0),
-        15: (0, 4, 3, 3, 3, 2, 1, 1, 1, 0),
-        16: (0, 4, 3, 3, 3, 2, 1, 1, 1, 0),
-        17: (0, 4, 3, 3, 3, 2, 1, 1, 1, 1),
-        18: (0, 4, 3, 3, 3, 3, 1, 1, 1, 1),
-        19: (0, 4, 3, 3, 3, 3, 2, 1, 1, 1),
-        20: (0, 4, 3, 3, 3, 3, 2, 2, 1, 1),
+    # char_lvl: (cantrips, 1st, 2nd, 3rd, ...)
+    1:  (0, 2, 0, 0, 0, 0, 0, 0, 0, 0),
+    2:  (0, 3, 0, 0, 0, 0, 0, 0, 0, 0),
+    3:  (0, 4, 2, 0, 0, 0, 0, 0, 0, 0),
+    4:  (0, 4, 3, 0, 0, 0, 0, 0, 0, 0),
+    5:  (0, 4, 3, 2, 0, 0, 0, 0, 0, 0),
+    6:  (0, 4, 3, 3, 0, 0, 0, 0, 0, 0),
+    7:  (0, 4, 3, 3, 1, 0, 0, 0, 0, 0),
+    8:  (0, 4, 3, 3, 2, 0, 0, 0, 0, 0),
+    9:  (0, 4, 3, 3, 3, 1, 0, 0, 0, 0),
+    10: (0, 4, 3, 3, 3, 2, 0, 0, 0, 0),
+    11: (0, 4, 3, 3, 3, 2, 1, 0, 0, 0),
+    12: (0, 4, 3, 3, 3, 2, 1, 0, 0, 0),
+    13: (0, 4, 3, 3, 3, 2, 1, 1, 0, 0),
+    14: (0, 4, 3, 3, 3, 2, 1, 1, 0, 0),
+    15: (0, 4, 3, 3, 3, 2, 1, 1, 1, 0),
+    16: (0, 4, 3, 3, 3, 2, 1, 1, 1, 0),
+    17: (0, 4, 3, 3, 3, 2, 1, 1, 1, 1),
+    18: (0, 4, 3, 3, 3, 3, 1, 1, 1, 1),
+    19: (0, 4, 3, 3, 3, 3, 2, 1, 1, 1),
+    20: (0, 4, 3, 3, 3, 3, 2, 2, 1, 1),
 }
 
 
@@ -137,10 +137,6 @@ class Character():
                           'race': race,
                           'background': background})
         self.set_attrs(**attrs)
-        # instantiate any spells not listed properly
-        for S in self.spells_prepared:
-            if S not in [type(spl) for spl in self.spells]:
-                self._spells += (S(),)
                 
     def __str__(self):
         return self.name
@@ -152,6 +148,10 @@ class Character():
     def class_name(self):
         return ' / '.join([f'{c.class_name} {c.class_level}'
                            for c in self.class_list])
+
+    @property
+    def subclasses(self):
+        return list([c.subclass or '' for c in self.class_list])
     
     @property
     def speed(self):
@@ -259,7 +259,7 @@ class Character():
 
     @property
     def spells(self):
-        spells = set(self._spells)
+        spells = set(self._spells) | set(self._spells_prepared)
         for f in self.features:
             spells |= set(f.spells_known) | set(f.spells_prepared)
         for c in self.spellcasting_classes:
@@ -333,7 +333,7 @@ class Character():
                             name=f, source='Unknown',
                             __doc__="""Unknown Feature. Add to features.py"""))
                         warnings.warn(msg)
-                self.custom_features = tuple(F() for F in _features)
+                self.custom_features += tuple(F() for F in _features)
             elif (attr == 'spells') or (attr == 'spells_prepared'):
                 # Create a list of actual spell objects
                 _spells = []
@@ -555,16 +555,18 @@ class Character():
         assert len(classes_levels) == len(subclasses), (
             'the length of classes_levels {:d} does not match length of '
             'subclasses {:d}'.format(len(classes_levels), len(subclasses)))
+        circle = char_props.pop('circle', None)
         class_list = []
         for cl, sub in zip(classes_levels, subclasses):
             try:
-                c, lvl = cl.strip().split(' ')  # " wizard 3 " => "wizard", "3"
+                c, _, lvl = cl.strip().rpartition(' ')  # " wizard 3 " => "wizard", "3"
+                c = c.title().replace(' ', '')
             except ValueError:
                 raise ValueError(
                     'classes_levels not properly formatted. Each entry should '
                     'be formatted \"class level\", but got {:s}'.format(cl))
             try:
-                this_class = getattr(classes, c.capitalize())
+                this_class = getattr(classes, c)
                 this_level = int(lvl)
             except AttributeError:
                 raise AttributeError(
@@ -572,6 +574,8 @@ class Character():
             except ValueError:
                 raise ValueError(
                     'level was not recognizable as an int: {:s}'.format(lvl))
+            if issubclass(this_class, classes.Druid):
+                sub = circle or sub
             params = {}
             params['feature_choices'] = char_props.get('feature_choices', [])
             class_list += [this_class(this_level, subclass=sub, **params)]
@@ -592,7 +596,7 @@ class Character():
             char=self,
         )
         # Render the template
-        src_path = os.path.dirname(__file__)
+        src_path = os.path.join(os.path.dirname(__file__), 'forms/')
         text = jinja2.Environment(
             loader=jinja2.FileSystemLoader(src_path or './')
         ).get_template(template_file).render(context)
@@ -601,12 +605,10 @@ class Character():
             f.write(text)
 
     def to_pdf(self, filename, **kwargs):
+        from .make_sheets import make_sheet
         if filename.endswith('.pdf'):
             filename = filename.replace('pdf', 'py')
-        self.save(filename,
-                  template_file=kwargs.get('template_file',
-                                           'character_template.txt'))
-        subprocess.call(['makesheets', filename)
+        make_sheet(filename, char=self, flatten=kwargs.get('flatten', True))
 
         
 def read_character_file(filename):

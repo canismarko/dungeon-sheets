@@ -83,3 +83,19 @@ class Feature():
         return -100
 
 
+class FeatureSelector(Feature):
+    """
+    A feature with multiple possible choices.
+    """
+    options = dict()
+
+    def __init__(self, feature_choices=[]):
+        keep_source = self.source
+        # Look for matching feature_choices
+        for selection in feature_choices:
+            if selection.lower() in self.options():
+                new_feat = self.options[selection.lower()]
+                self.__dict__.update(new_feat.__dict__)
+                new_feat.__init__(self)
+                break
+        self.source = keep_source

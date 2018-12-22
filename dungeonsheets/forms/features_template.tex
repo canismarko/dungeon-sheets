@@ -5,7 +5,7 @@
 \usepackage[dvipsnames]{color}
 \definecolor{mygrey}{gray}{0.7}
 
-\title{Features and Traits}
+\title{Features and Subclass}
 \author{[[ character.name ]]}
 \date{}
 
@@ -13,6 +13,14 @@
 
 \maketitle
 
+[% for sc in character.subclasses if sc not in ['', None, 'None', 'none']%]
+
+  \section*{[[ sc.name ]]}
+
+  [[ sc.__doc__|rst_to_latex ]]
+
+[% endfor %]
+  
 [% for feat in character.features %]
 
   \section*{[[ feat.name ]]}

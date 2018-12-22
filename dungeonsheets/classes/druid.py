@@ -1,18 +1,91 @@
 from ..stats import findattr
-from .. import (weapons, monsters, exceptions)
-from .. import features as feats
-from .classes import CharClass
+from .. import (weapons, monsters, exceptions, features)
+from .classes import CharClass, SubClass
+from collections import defaultdict
 import warnings
 import math
 
 
+# PHB
+class LandCircle(SubClass):
+    """The Circle of the Land is made up of mystics and sages who safeguard
+    ancient knowledge and rites through a vast oral tradition. These druids
+    meet within sacred circles of trees or standing stones to whisper primal
+    secrets in Druidic. The circle’s wisest members preside as the chief
+    priests of communities that hold to the Old Faith and serve as advisors to
+    the rulers of those folk. As a member of this circle, your magic is
+    influenced by the land where you were initiated into the circle’s
+    mysterious rites
+
+    """
+    name = "Circle of the Land"
+    circle = "land"
+    features_by_level = defaultdict(list)
+
+
+class MoonCircle(SubClass):
+    """Druids of the Circle of the Moon are fierce guardians of the wilds. Their
+    order gathers under the full moon to share news and trade warnings. They
+    haunt the deepest parts of the wilderness, where they might go for weeks on
+    end before crossing paths with another humanoid creature, let alone another
+    druid.
+    
+    Changeable as the moon, a druid of this circle might prowl as a great cat
+    one night, soar over the treetops as an eagle the next day, and crash
+    through the undergrowth in bear form to drive off a trespassing
+    monster. The wild is in the druid's blood.
+
+    """
+    name = "Circle of the Moon"
+    circle = "moon"
+    features_by_level = defaultdict(list)
+
+
+# XGTE
+class DreamsCircle(SubClass):
+    """Druids who are members of the Circle of Dreams hail from regions that have
+    strong ties to the Feywild and its dreamlike realms. The druids’
+    guardianship of the natural world makes for a natural alliance between them
+    and good-aligned fey. These druids seek to fill the world with dreamy
+    wonder. Their magic mends wounds and brings joy to downcast hearts, and the
+    realms they protect are gleaming, fruitful places, where dream and reality
+    blur together and where the weary can find rest.
+
+    """
+    name = "Circle of Dreams"
+    circle = "dreams"
+    features_by_level = defaultdict(list)
+
+
+class ShepherdCircle(SubClass):
+    """Druids of the Circle of the Shepherd commune with the spirits of nature,
+    especially the spirits of beasts and the fey, and call to those spirits for
+    aid. These druids recognize that all living things play a role in the
+    natural world, yet they focus on protecting animals and fey creatures that
+    have difficulty defending themselves. Shepherds, as they are known, see
+    such creatures as their charges. They ward off monsters that threaten them,
+    rebuke hunters who kill more prey than necessary, and prevent civilization
+    from encroaching on rare animal habitats and on sites sacred to the
+    fey. Many of these druids are happiest far from cities and towns, content
+    to spend their days in the company of animals and the fey creatures of the
+    wilds.
+
+    Members of this circle become adventurers to oppose forces that threaten
+    their charges or to seek knowledge and power that will help them safeguard
+    their charges better. Wherever these druids go, the spirits of the wil—
+    derness are with them
+
+    """
+    name = "Circle of the Shepherd"
+    circle = "shepherd"
+    features_by_level = defaultdict(list)
+
+
 class Druid(CharClass):
     class_name = 'Druid'
-    circle = ""  # moon, land
     _wild_shapes = ()
     hit_dice_faces = 8
     saving_throw_proficiencies = ('intelligence', 'wisdom')
-    spellcasting_ability = 'wisdom'
     languages = 'Druidic'
     _proficiencies_text = (
         'Light armor', 'medium armor',
@@ -23,9 +96,17 @@ class Druid(CharClass):
                             weapons.Javelin, weapons.Mace,
                             weapons.Quarterstaff, weapons.Scimitar,
                             weapons.Sickle, weapons.Sling, weapons.Spear)
+    multiclass_weapon_proficiencies = ()
+    _multiclass_proficiencies_text = (
+        'Light armor', 'medium armor',
+        'shields (druids will not wear armor or use shields made of metal)')
     class_skill_choices = ('Arcana', 'Animal Handling', 'Insight',
                            'Medicine', 'Nature', 'Perception', 'Religion',
                            'Survival')
+    features_by_class = defaultdict(list)
+    subclasses_available = (LandCircle, MoonCircle, DreamsCircle,
+                            ShepherdCircle)
+    spellcasting_ability = 'wisdom'
     spell_slots_by_level = {
         1:  (2, 2, 0, 0, 0, 0, 0, 0, 0, 0),
         2:  (2, 3, 0, 0, 0, 0, 0, 0, 0, 0),
@@ -49,17 +130,22 @@ class Druid(CharClass):
         20: (4, 4, 3, 3, 3, 3, 2, 2, 1, 1),
     }
 
-    def __init__(self, level, subclass=None, **params):
-        if subclass is not None:
-            sc = str(subclass).lower()
-            if 'moon' in sc:
-                self.circle = 'moon'
-                params.pop('circle', '')
-            elif 'land' in sc:
-                self.circle = 'land'
-                params.pop('circle', '')
-        super().__init__(level, **params)
-        
+    def select_subclass(self, subclass_str):
+        if subclass_str in ['', 'None', 'none', None]:
+            return None
+        for sc in self.subclasses_available:
+            if ((subclass_str.lower() == sc.circle.lower())
+                or (subclass_str.lower() in sc.name.lower())):
+                return sc(level=self.class_level)
+        return None
+
+    @property
+    def circle(self):
+        if isinstance(self.subclass, SubClass):
+            return self.subclass.circle.lower()
+        else:
+            return ''
+    
     @property
     def all_wild_shapes(self):
         """Return all wild shapes, regardless of validity."""
@@ -130,7 +216,7 @@ class Druid(CharClass):
             max_swim = None
             max_fly = None
         # Make adjustments for moon circle druids
-        if self.circle.lower() == "moon":
+        if self.circle == "moon":
             if 2 <= self.class_level < 6:
                 max_cr = 1
             elif self.class_level >= 6:
