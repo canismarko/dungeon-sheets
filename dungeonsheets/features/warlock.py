@@ -14,9 +14,9 @@ class Invocation(Feature):
     def cast_spell_at_will(self, spell):
         s = spell()
         s.level = 0
-        if 'V' in s.components:
+        if 'M' in s.components:
             c = list(s.components)
-            c.remove('V')
+            c.remove('M')
             s.components = tuple(c)
         self.spells_known += (s,)
         self.spells_prepared += (s,)
@@ -225,7 +225,7 @@ class MistyVisions(Invocation):
 
     """
     name = "Misty Visions"
-    at_will_spells = (spells.MistyVisions,)
+    at_will_spells = (spells.SilentImage,)
 
 
 class OneWithShadows(Invocation):
