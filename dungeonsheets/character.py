@@ -598,7 +598,6 @@ class Character():
             if isinstance(c, classes.Druid):
                 c.wild_shapes = new_shapes
     
-    
     @classmethod
     def load(cls, character_file):
         # Create a character from the character definition

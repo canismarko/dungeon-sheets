@@ -17,7 +17,7 @@ class Weapon():
     def damage(self):
         dam_str = str(self.base_damage)
         if self.bonus_damage != 0:
-            dam_str += '' + mod_str(self.bonus_damage)
+            dam_str += ' ' + mod_str(self.bonus_damage)
         return dam_str
 
     @property
