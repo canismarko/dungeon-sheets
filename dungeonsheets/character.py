@@ -62,6 +62,8 @@ class Character():
     alignment = "Neutral"
     dungeonsheets_version = __version__
     class_list = []
+    _level = 1  # Keep internal check of total level
+    _hit_dice_faces = 2
     race = None
     background = None
     xp = 0
@@ -74,6 +76,7 @@ class Character():
     intelligence = Ability()
     wisdom = Ability()
     charisma = Ability()
+    _saving_throw_proficiencies = []
     other_weapon_proficiencies = tuple()
     skill_proficiencies = tuple()
     skill_expertise = tuple()
@@ -82,24 +85,24 @@ class Character():
     proficiencies_extra = tuple()
     languages = ""
     # Skills
-    acrobatics = Skill(ability='dexterity', name='acrobatics')
-    animal_handling = Skill(ability='wisdom', name='animal handling')
-    arcana = Skill(ability='intelligence', name='arcana')
-    athletics = Skill(ability='strength', name='athletics')
-    deception = Skill(ability='charisma', name='deception')
-    history = Skill(ability='intelligence', name='history')
-    insight = Skill(ability='wisdom', name='insight')
-    intimidation = Skill(ability='charisma', name='intimidation')
-    investigation = Skill(ability='intelligence', name='investigation')
-    medicine = Skill(ability='wisdom', name='medicine')
-    nature = Skill(ability='intelligence', name='nature')
-    perception = Skill(ability='wisdom', name='perception')
-    performance = Skill(ability='charisma', name='performance')
-    persuasion = Skill(ability='charisma', name='persuasion')
-    religion = Skill(ability='intelligence', name='religion')
-    sleight_of_hand = Skill(ability='dexterity', name='sleight of hand')
-    stealth = Skill(ability='dexterity', name='stealth')
-    survival = Skill(ability='wisdom', name='survival')
+    acrobatics = Skill(ability='dexterity')
+    animal_handling = Skill(ability='wisdom')
+    arcana = Skill(ability='intelligence')
+    athletics = Skill(ability='strength')
+    deception = Skill(ability='charisma')
+    history = Skill(ability='intelligence')
+    insight = Skill(ability='wisdom')
+    intimidation = Skill(ability='charisma')
+    investigation = Skill(ability='intelligence')
+    medicine = Skill(ability='wisdom')
+    nature = Skill(ability='intelligence')
+    perception = Skill(ability='wisdom')
+    performance = Skill(ability='charisma')
+    persuasion = Skill(ability='charisma')
+    religion = Skill(ability='intelligence')
+    sleight_of_hand = Skill(ability='dexterity')
+    stealth = Skill(ability='dexterity')
+    survival = Skill(ability='wisdom')
     # Characteristics
     attacks_and_spellcasting = ""
     personality_traits = ""
@@ -146,7 +149,7 @@ class Character():
 
     @property
     def class_name(self):
-        return ' / '.join([f'{c.class_name} {c.class_level}'
+        return ' / '.join([f'{c.class_name}'
                            for c in self.class_list])
 
     @property
@@ -159,8 +162,21 @@ class Character():
 
     @property
     def level(self):
-        return sum(c.class_level for c in self.class_list)
+        if self.num_classes == 0:
+            return self._level
+        else:
+            return sum(c.class_level for c in self.class_list)
 
+    @level.setter
+    def level(self, new_level):
+        if self.num_classes == 0:
+            self._level = new_level
+        else:
+            self.primary_class.class_level = new_level
+            if self.num_classes > 1:
+                warnings.warn("Unable to tell which level to set. Updating "
+                              "level of primary class {:s}".format(self.primary_class.class_name))
+    
     @property
     def num_classes(self):
         return len(self.class_list)
@@ -185,9 +201,8 @@ class Character():
     @property
     def weapon_proficiencies(self):
         wp = set(self.other_weapon_proficiencies)
-        if not self.class_initialized:
-            return wp
-        wp |= set(self.primary_class.weapon_proficiencies)
+        if self.num_classes > 0:
+            wp |= set(self.primary_class.weapon_proficiencies)
         if self.num_classes > 1:
             for c in self.class_list[1:]:
                 wp |= set(c.multiclass_weapon_proficiencies)
@@ -196,6 +211,10 @@ class Character():
         if self.background is not None:
             wp |= set(getattr(self.background, 'weapon_proficiencies', ()))
         return tuple(wp)
+    
+    @weapon_proficiencies.setter
+    def weapon_proficiencies(self, new_weapons):
+        self.other_weapon_proficiencies = tuple(new_weapons)
 
     @property
     def features(self):
@@ -220,10 +239,15 @@ class Character():
     
     @property
     def saving_throw_proficiencies(self):
-        if self.primary_class is not None:
-            return self.primary_class.saving_throw_proficiencies
+        if self.primary_class is None:
+            return self._saving_throw_proficiencies
         else:
-            return ()
+            return (self._saving_throw_proficiencies or
+                    self.primary_class.saving_throw_proficiencies)
+
+    @saving_throw_proficiencies.setter
+    def saving_throw_proficiencies(self, vals):
+        self._saving_throw_proficiencies = vals
 
     @property
     def spellcasting_classes(self):
@@ -304,14 +328,6 @@ class Character():
                 self.wear_armor(val)
             elif attr == 'shield':
                 self.wield_shield(val)
-            elif attr == 'wild_shapes':
-                for c in self.class_list:
-                    if isinstance(c, classes.Druid):
-                        c.wild_shapes = val
-                        self.all_wild_shapes = c.all_wild_shapes
-                        self.wild_shapes = c.wild_shapes
-                        self.can_assume_shape = c.can_assume_shape
-                        break
             elif attr == 'circle':
                 for c in self.class_list:
                     if isinstance(c, classes.Druid) and (c.circle == ''):
@@ -393,17 +409,17 @@ class Character():
     @property
     def proficiencies_text(self):
         final_text = ""
-        all_proficiencies = set(self._proficiencies_text)
+        all_proficiencies = tuple(self._proficiencies_text)
         if self.class_initialized:
-            all_proficiencies |= set(self.primary_class._proficiencies_text)
+            all_proficiencies += tuple(self.primary_class._proficiencies_text)
         if self.num_classes > 1:
             for c in self.class_list[1:]:
-                all_proficiencies |= set(c._multiclass_proficiencies_text)
+                all_proficiencies += tuple(c._multiclass_proficiencies_text)
         if self.race is not None:
-            all_proficiencies |= set(self.race.proficiencies_text)
+            all_proficiencies += tuple(self.race.proficiencies_text)
         if self.background is not None:
-            all_proficiencies |= set(self.background.proficiencies_text)
-        all_proficiencies |= set(self.proficiencies_extra)
+            all_proficiencies += tuple(self.background.proficiencies_text)
+        all_proficiencies += tuple(self.proficiencies_extra)
         # Create a single string out of all the proficiencies
         for txt in all_proficiencies:
             if not final_text:
@@ -499,8 +515,24 @@ class Character():
         """What type and how many dice to use for re-gaining hit points.
         
         To change, set hit_dice_num and hit_dice_faces."""
-        return ' + '.join([f'{c.class_level}d{c.hit_dice_faces}'
-                           for c in self.class_list])
+        if self.num_classes == 0:
+            return '{:d}d{:d}'.format(self.level, self._hit_dice_faces)
+        else:
+            return ' + '.join([f'{c.class_level}d{c.hit_dice_faces}'
+                               for c in self.class_list])
+
+    @property
+    def hit_dice_faces(self):
+        if self.num_classes == 0:
+            return self._hit_dice_faces
+        else:  # Not a valid function if multiclass
+            if self.num_classes > 1:
+                warnings.warn("hit_dice_faces is not valid for multiclass characters")
+            return self.primary_class.hit_dice_faces
+    
+    @hit_dice_faces.setter
+    def hit_dice_faces(self, faces):
+        self._hit_dice_faces = faces
     
     @property
     def proficiency_bonus(self):
@@ -540,6 +572,33 @@ class Character():
         ac += [f.AC_func(self) for f in self.features]
         return max(ac)
 
+    def can_assume_shape(self, shape: monsters.Monster):
+        for c in self.class_list:
+            if isinstance(c, classes.Druid):
+                return c.can_assume_shape(shape)
+        return False
+
+    @property
+    def all_wild_shapes(self):
+        for c in self.class_list:
+            if isinstance(c, classes.Druid):
+                return c.all_wild_shapes
+        return ()
+
+    @property
+    def wild_shapes(self):
+        for c in self.class_list:
+            if isinstance(c, classes.Druid):
+                return c.wild_shapes
+        return ()
+
+    @wild_shapes.setter
+    def wild_shapes(self, new_shapes):
+        for c in self.class_list:
+            if isinstance(c, classes.Druid):
+                c.wild_shapes = new_shapes
+    
+    
     @classmethod
     def load(cls, character_file):
         # Create a character from the character definition
@@ -651,3 +710,21 @@ def read_character_file(filename):
         if prop_name[0:2] != '__':
             char_props[prop_name] = getattr(module, prop_name)
     return char_props
+
+
+# Add backwards compatability for tests
+class Druid(Character):
+
+    def __init__(self, level=1, **attrs):
+        MyDruid = classes.Druid(level=level)
+        
+        self.class_list = [MyDruid]
+        super().__init__(**attrs)
+
+
+class Wizard(Character):
+
+    def __init__(self, level=1, **attrs):
+        self.class_list = [classes.Wizard(level=level)]
+        super().__init__(**attrs)
+

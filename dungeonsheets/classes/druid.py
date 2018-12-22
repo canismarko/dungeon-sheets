@@ -84,6 +84,7 @@ class ShepherdCircle(SubClass):
 class Druid(CharClass):
     class_name = 'Druid'
     _wild_shapes = ()
+    _circle = ''
     hit_dice_faces = 8
     saving_throw_proficiencies = ('intelligence', 'wisdom')
     languages = 'Druidic'
@@ -144,8 +145,15 @@ class Druid(CharClass):
         if isinstance(self.subclass, SubClass):
             return self.subclass.circle.lower()
         else:
-            return ''
-    
+            return self._circle
+
+    @circle.setter
+    def circle(self, circle_str):
+        if isinstance(self.subclass, SubClass):
+            self.subclass = self.select_subclass(circle_str)
+        else:
+            self._circle = circle_str
+
     @property
     def all_wild_shapes(self):
         """Return all wild shapes, regardless of validity."""

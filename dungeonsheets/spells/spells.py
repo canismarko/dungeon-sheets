@@ -30,11 +30,15 @@ class Spell():
     materials = ""
     duration = "instantaneous"
     ritual = False
+    _concentration = False
     magic_school = ""
     classes = ()
     
     def __str__(self):
-        s = self.name + ' ({:s}) '.format(','.join(self.components))
+        if len(self.components) == 0:
+            s = self.name
+        else:
+            s = self.name + ' ({:s}) '.format(','.join(self.components))
         # Indicate if this is a ritual or a concentration
         indicators = [('R', self.ritual), ('C', self.concentration), ('$', self.special_material)]
         indicators = tuple(letter for letter, is_active in indicators if is_active)
@@ -60,7 +64,11 @@ class Spell():
     
     @property
     def concentration(self):
-        return ('concentration' in self.duration.lower())
+        return ('concentration' in self.duration.lower()) or self._concentration
+
+    @concentration.setter
+    def concentration(self, val: bool):
+        self._concentration = val
 
     @property
     def special_material(self):

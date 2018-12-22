@@ -74,13 +74,12 @@ class Ability():
 class Skill():
     """An ability-based skill, such as athletics."""
     
-    def __init__(self, ability, name):
+    def __init__(self, ability):
         self.ability_name = ability
-        self.skill_name = name
     
-    # def __set_name__(self, character, name):
-    #     self.skill_name = name
-    #     self.character = character
+    def __set_name__(self, character, name):
+        self.skill_name = name.lower().replace('_', ' ')
+        self.character = character
     
     def __get__(self, character, owner):
         ability = getattr(character, self.ability_name)
