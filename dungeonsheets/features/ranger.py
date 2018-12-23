@@ -40,15 +40,6 @@ class Defense(Feature):
     name = "Fighting Style (Defense)"
     source = "Ranger"
 
-    def AC_func(self, char, **kwargs):
-        """
-        Apply a +1 bonus if wearing armor
-        """
-        if (char.armor is None) or (isinstance(char.armor, armor.NoArmor)):
-            return char.default_AC
-        else:
-            return char.default_AC + 1
-
         
 class Dueling(Feature):
     """When you are wielding a melee weapon in one hand and no other weapons, you

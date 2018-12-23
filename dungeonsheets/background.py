@@ -3,6 +3,7 @@ from . import features as feats
 
 class Background():
     name = "Generic background"
+    owner = None
     skill_proficiencies = ()
     weapon_proficiencies = ()
     proficiencies_text = ()
@@ -11,9 +12,10 @@ class Background():
     features = ()
     languages = ()
 
-    def __init__(self):
+    def __init__(self, owner):
+        self.owner = owner
         cls = type(self)
-        self.features = tuple([f() for f in cls.features])
+        self.features = tuple([f(owner=self.owner) for f in cls.features])
 
     def __str__(self):
         return self.name

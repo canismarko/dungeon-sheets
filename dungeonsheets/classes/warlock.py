@@ -116,11 +116,12 @@ class Warlock(CharClass):
     name = 'Warlock'
     hit_dice_faces = 8
     saving_throw_proficiencies = ('wisdom', 'charisma')
+    primary_abilities = ('charisma',)
     _proficiencies_text = ("light Armor", "simple weapons")
     class_skill_choices = ('Arcana', 'Deception', 'History',
                            'Intimidation', 'Investigation', 'Nature',
                            'Religion')
-    weapon_proficiencies = weapons.simple_weapons
+    weapon_proficiencies = (weapons.SimpleWeapon,)
     multiclass_weapon_proficiencies = weapon_proficiencies
     _multiclass_proficiencies_text = ('light armor', 'simple weapons')
     features_by_level = defaultdict(list)

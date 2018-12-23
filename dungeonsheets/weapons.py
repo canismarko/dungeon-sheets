@@ -20,18 +20,30 @@ class Weapon():
             dam_str += mod_str(self.bonus_damage)
         return dam_str
 
-    @property
-    def is_ranged(self):
-        return ('range' in self.properties.lower()) and ('thrown' not in self.properties.lower())
-
     def __str__(self):
         return self.name
 
     def __repr__(self):
         return "\"{:s}\"".format(self.name)
+
+
+class MeleeWeapon(Weapon):
+    name = "Melee Weapons"
+
+
+class RangedWeapon(Weapon):
+    name = "Ranged Weapons"
+
+
+class SimpleWeapon(Weapon):
+    name = "Simple Weapons"
+
+
+class MartialWeapon(Weapon):
+    name = "Martial Weapons"
     
 
-class Club(Weapon):
+class Club(SimpleWeapon, MeleeWeapon):
     name = "Club"
     cost = "1 sp"
     base_damage = "1d4"
@@ -41,7 +53,7 @@ class Club(Weapon):
     ability = 'strength'
 
 
-class Dagger(Weapon):
+class Dagger(SimpleWeapon, MeleeWeapon):
     name = "Dagger"
     cost = "2 gp"
     base_damage = "1d4"
@@ -52,7 +64,7 @@ class Dagger(Weapon):
     ability = 'strength'
 
 
-class Greatclub(Weapon):
+class Greatclub(SimpleWeapon, MeleeWeapon):
     name = "Greatclub"
     cost = "2 sp"
     base_damage = "1d8"
@@ -62,7 +74,7 @@ class Greatclub(Weapon):
     ability = 'strength'
 
 
-class Handaxe(Weapon):
+class Handaxe(SimpleWeapon, MeleeWeapon):
     name = "Handaxe"
     cost = "5 gp"
     base_damage = "1d6"
@@ -72,7 +84,7 @@ class Handaxe(Weapon):
     ability = 'strength'
 
 
-class Javelin(Weapon):
+class Javelin(SimpleWeapon, MeleeWeapon):
     name = "Javelin"
     cost = "5 sp"
     base_damage = "1d6"
@@ -82,7 +94,7 @@ class Javelin(Weapon):
     ability = 'strength'
 
 
-class LightHammer(Weapon):
+class LightHammer(SimpleWeapon, MeleeWeapon):
     name = "Light hammer"
     cost = "2 gp"
     base_damage = "1d4"
@@ -92,7 +104,7 @@ class LightHammer(Weapon):
     ability = 'strength'
 
 
-class Mace(Weapon):
+class Mace(SimpleWeapon, MeleeWeapon):
     name = "Mace"
     cost = "5 gp"
     base_damage = "1d6"
@@ -102,7 +114,7 @@ class Mace(Weapon):
     ability = 'strength'
 
 
-class Quarterstaff(Weapon):
+class Quarterstaff(SimpleWeapon, MeleeWeapon):
     name = "Quarterstaff"
     cost = "2 sp"
     base_damage = "1d6"
@@ -112,7 +124,7 @@ class Quarterstaff(Weapon):
     ability = 'strength'
 
 
-class Sickle(Weapon):
+class Sickle(SimpleWeapon, MeleeWeapon):
     name = "Sickle"
     cost = "1 gp"
     base_damage = "1d4"
@@ -122,7 +134,7 @@ class Sickle(Weapon):
     ability = 'strength'
 
 
-class Spear(Weapon):
+class Spear(SimpleWeapon, MeleeWeapon):
     name = "Spear"
     cost = "1 gp"
     base_damage = "1d6"
@@ -132,7 +144,7 @@ class Spear(Weapon):
     ability = 'strength'
 
 
-class LightCrossbow(Weapon):
+class LightCrossbow(SimpleWeapon, RangedWeapon):
     name = "Light crossbow"
     cost = "25 gp"
     base_damage = "1d8"
@@ -142,7 +154,7 @@ class LightCrossbow(Weapon):
     ability = 'dexterity'
 
 
-class Dart(Weapon):
+class Dart(SimpleWeapon, RangedWeapon):
     name = "Dart"
     cost = "5 cp"
     base_damage = "1d4"
@@ -153,7 +165,7 @@ class Dart(Weapon):
     ability = 'dexterity'
 
 
-class Shortbow(Weapon):
+class Shortbow(SimpleWeapon, RangedWeapon):
     name = "Shortbow"
     cost = "25 gp"
     base_damage = "1d6"
@@ -163,7 +175,7 @@ class Shortbow(Weapon):
     ability = 'dexterity'
 
 
-class Sling(Weapon):
+class Sling(SimpleWeapon, RangedWeapon):
     name = "Sling"
     cost = "1 sp"
     base_damage = "1d4"
@@ -173,7 +185,7 @@ class Sling(Weapon):
     ability = 'dexterity'
 
 
-class Battleaxe(Weapon):
+class Battleaxe(MartialWeapon, MeleeWeapon):
     name = "Battleaxe"
     cost = "10 gp"
     base_damage = "1d8"
@@ -183,7 +195,7 @@ class Battleaxe(Weapon):
     ability = 'strength'
 
 
-class Flail(Weapon):
+class Flail(MartialWeapon, MeleeWeapon):
     name = "Flail"
     cost = "10gp"
     base_damage = "1d8"
@@ -193,7 +205,7 @@ class Flail(Weapon):
     ability = 'strength'
 
 
-class Glaive(Weapon):
+class Glaive(MartialWeapon, MeleeWeapon):
     name = "Glaive"
     cost = "20 gp"
     base_damage = "1d10"
@@ -203,7 +215,7 @@ class Glaive(Weapon):
     ability = 'strength'
 
 
-class Greataxe(Weapon):
+class Greataxe(MartialWeapon, MeleeWeapon):
     name = "Greataxe"
     cost = "30 gp"
     base_damage = "1d12"
@@ -213,7 +225,7 @@ class Greataxe(Weapon):
     ability = 'strength'
 
 
-class Greatsword(Weapon):
+class Greatsword(MartialWeapon, MeleeWeapon):
     name = "Greatsword"
     cost = "50 gp"
     base_damage = "2d6"
@@ -223,7 +235,7 @@ class Greatsword(Weapon):
     ability = 'strength'
 
 
-class Halberd(Weapon):
+class Halberd(MartialWeapon, MeleeWeapon):
     name = "Halberd"
     cost = "20 gp"
     base_damage = "1d10"
@@ -233,7 +245,7 @@ class Halberd(Weapon):
     ability = 'strength'
 
 
-class Lance(Weapon):
+class Lance(MartialWeapon, MeleeWeapon):
     name = "Lance"
     cost = "10gp"
     base_damage = "1d12"
@@ -243,7 +255,7 @@ class Lance(Weapon):
     ability = 'strength'
 
 
-class Longsword(Weapon):
+class Longsword(MartialWeapon, MeleeWeapon):
     name = "Longsword"
     cost = "15 gp"
     base_damage = "1d8"
@@ -253,7 +265,7 @@ class Longsword(Weapon):
     ability = 'strength'
 
 
-class Maul(Weapon):
+class Maul(MartialWeapon, MeleeWeapon):
     name = "Maul"
     cost = "10 gp"
     base_damage = "2d6"
@@ -263,7 +275,7 @@ class Maul(Weapon):
     ability = 'strength'
 
 
-class Morningstar(Weapon):
+class Morningstar(MartialWeapon, MeleeWeapon):
     name = "Morningstar"
     cost = "15 gp"
     base_damage = "1d8"
@@ -273,7 +285,7 @@ class Morningstar(Weapon):
     ability = 'strength'
 
 
-class Pike(Weapon):
+class Pike(MartialWeapon, MeleeWeapon):
     name = "Pike"
     cost = "5 gp"
     base_damage = "1d10"
@@ -283,7 +295,7 @@ class Pike(Weapon):
     ability = 'strength'
 
 
-class Rapier(Weapon):
+class Rapier(MartialWeapon, MeleeWeapon):
     name = "Rapier"
     cost = "25 gp"
     base_damage = "1d8"
@@ -294,7 +306,7 @@ class Rapier(Weapon):
     ability = 'strength'
 
 
-class Scimitar(Weapon):
+class Scimitar(MartialWeapon, MeleeWeapon):
     name = "Scimitar"
     cost = "25 gp"
     base_damage = "1d6"
@@ -305,7 +317,7 @@ class Scimitar(Weapon):
     ability = 'strength'
 
 
-class Shortsword(Weapon):
+class Shortsword(MartialWeapon, MeleeWeapon):
     name = "Shortsword"
     cost = "10 gp"
     base_damage = "1d6"
@@ -316,7 +328,7 @@ class Shortsword(Weapon):
     ability = 'strength'
 
 
-class ThrowingHammer(Weapon):
+class ThrowingHammer(MartialWeapon, MeleeWeapon):
     name = "Throwing Hammer"
     cost = "15 gp"
     base_damage = '1d6'
@@ -326,7 +338,7 @@ class ThrowingHammer(Weapon):
     ability = "strength"
 
 
-class Trident(Weapon):
+class Trident(MartialWeapon, MeleeWeapon):
     name = "Trident"
     cost = "5 gp"
     base_damage = "1d6"
@@ -336,7 +348,7 @@ class Trident(Weapon):
     ability = 'strength'
 
 
-class WarPick(Weapon):
+class WarPick(MartialWeapon, MeleeWeapon):
     name = "War pick"
     cost = "5 gp"
     base_damage = "1d8"
@@ -346,7 +358,7 @@ class WarPick(Weapon):
     ability = 'strength'
 
 
-class Warhammer(Weapon):
+class Warhammer(MartialWeapon, MeleeWeapon):
     name = "Warhammer"
     cost = "15 gp"
     base_damage = "1d8"
@@ -356,7 +368,7 @@ class Warhammer(Weapon):
     ability = 'strength'
 
 
-class Whip(Weapon):
+class Whip(MartialWeapon, MeleeWeapon):
     name = "Whip"
     cost = "2 gp"
     base_damage = "1d4"
@@ -367,7 +379,7 @@ class Whip(Weapon):
     ability = 'strength'
 
 
-class Blowgun(Weapon):
+class Blowgun(MartialWeapon, RangedWeapon):
     name = "Blowgun"
     cost = "10 gp"
     base_damage = "1"
@@ -377,7 +389,7 @@ class Blowgun(Weapon):
     ability = 'dexterity'
 
 
-class HandCrossbow(Weapon):
+class HandCrossbow(MartialWeapon, RangedWeapon):
     name = "Crossbow, hand"
     cost = "75 gp"
     base_damage = "1d6"
@@ -387,7 +399,7 @@ class HandCrossbow(Weapon):
     ability = 'dexterity'
 
 
-class HeavyCrossbow(Weapon):
+class HeavyCrossbow(MartialWeapon, RangedWeapon):
     name = "Crossbow, heavy"
     cost = "50 gp"
     base_damage = "1d10"
@@ -397,7 +409,7 @@ class HeavyCrossbow(Weapon):
     ability = 'dexterity'
 
 
-class Longbow(Weapon):
+class Longbow(MartialWeapon, RangedWeapon):
     name = "Longbow"
     cost = "50 gp"
     base_damage = "1d8"
@@ -407,7 +419,7 @@ class Longbow(Weapon):
     ability = 'dexterity'
 
 
-class Net(Weapon):
+class Net(MartialWeapon, RangedWeapon):
     name = "Net"
     cost = "1 gp"
     base_damage = "-"
@@ -417,7 +429,7 @@ class Net(Weapon):
     ability = 'strength'
 
     
-class Unarmed(Weapon):
+class Unarmed(MeleeWeapon):
     name = "Unarmed"
     cost = "0 gp"
     base_damage = "1"
@@ -428,7 +440,7 @@ class Unarmed(Weapon):
 
 
 # Custom weapons
-class HeavyRight(Weapon):
+class HeavyRight(MeleeWeapon):
     base_damage = "1d4"
     name = "Heavy Right"
     damage_type = 'b'
@@ -436,7 +448,7 @@ class HeavyRight(Weapon):
     attack_bonus = -5  # Heavy weapon master
 
 
-class HeavyLeft(Weapon):
+class HeavyLeft(MeleeWeapon):
     base_damage = "1d4"
     name = "Heavy Left"
     damage_type = 'b'
@@ -444,7 +456,7 @@ class HeavyLeft(Weapon):
     attack_bonus = -5  # Heavy weapon master
 
     
-class Bite(Weapon):
+class Bite(MeleeWeapon):
     name = "Bite"
     base_damage = "1d4"
     damage_type = 'p'
@@ -454,7 +466,7 @@ class Bite(Weapon):
     ability = "strength"
 
 
-class Talons(Weapon):
+class Talons(MeleeWeapon):
     name = 'Talons'
     base_damage = '1d4'
     damage_type = 's'
@@ -464,7 +476,7 @@ class Talons(Weapon):
     ability = 'strength'
 
 
-class Claws(Weapon):
+class Claws(MeleeWeapon):
     name = 'Claws'
     base_damage = '1d4'
     damage_type = 's'
@@ -474,7 +486,7 @@ class Claws(Weapon):
     ability = 'strength'
 
 
-class Firearm(Weapon):
+class Firearm(RangedWeapon):
     name = 'Firearm'
     ability = 'dexterity'
     damage_type = 'p'

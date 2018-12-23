@@ -87,6 +87,7 @@ class Druid(CharClass):
     _circle = ''
     hit_dice_faces = 8
     saving_throw_proficiencies = ('intelligence', 'wisdom')
+    primary_abilities = ('wisdom',)
     languages = 'Druidic'
     _proficiencies_text = (
         'Light armor', 'medium armor',

@@ -75,9 +75,10 @@ class Ranger(CharClass):
     name = 'Ranger'
     hit_dice_faces = 10
     saving_throw_proficiencies = ('strength', 'dexterity')
+    primary_abilities = ('dexterity', 'wisdom')
     _proficiencies_text = ("light armor", "medium armor", "shields",
                            "simple weapons", "martial weapons")
-    weapon_proficiencies = weapons.simple_weapons + weapons.martial_weapons
+    weapon_proficiencies = (weapons.SimpleWeapon, weapons.MartialWeapon)
     multiclass_weapon_proficiencies = weapon_proficiencies
     _multiclass_proficiencies_text = ('light armor', 'medium armor', 'shields',
                                       'simple weapons', 'martial weapons',

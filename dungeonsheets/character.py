@@ -9,7 +9,7 @@ import importlib.util
 import jinja2
 import subprocess
 
-from .stats import Ability, Skill, findattr
+from .stats import Ability, Skill, findattr, ArmorClass, Speed
 from .dice import read_dice_str
 from . import (weapons, race, background, spells, armor, monsters,
                exceptions, classes, features)
@@ -75,6 +75,8 @@ class Character():
     intelligence = Ability()
     wisdom = Ability()
     charisma = Ability()
+    armor_class = ArmorClass()
+    speed = Speed()
     _saving_throw_proficiencies = []
     other_weapon_proficiencies = tuple()
     skill_proficiencies = tuple()
@@ -117,6 +119,7 @@ class Character():
     pp = 0
     equipment = ""
     weapons = []  # Replaced in __init__ constructor
+    magic_items = []
     armor = None
     shield = None
     _proficiencies_text = tuple()
@@ -130,7 +133,6 @@ class Character():
     
     def __init__(self, **attrs):
         """Takes a bunch of attrs and passes them to ``set_attrs``"""
-        self.weapons = []
         # make sure class, race, background are set first
         my_classes = attrs.pop('classes', [])
         my_levels = attrs.pop('levels', [])
@@ -164,15 +166,16 @@ class Character():
     def race(self, newrace):
         if isinstance(newrace, race.Race):
             self._race = newrace
+            self._race.owner = self
         elif isinstance(newrace, type) and issubclass(newrace, race.Race):
-            self._race = newrace()
+            self._race = newrace(owner=self)
         elif isinstance(newrace, str):
             try:
-                self._race = findattr(race, newrace)()
+                self._race = findattr(race, newrace)(owner=self)
             except AttributeError:
                 msg = (f'Race "{newrace}" not defined. '
                        f'Please add it to ``race.py``')
-                self._race = race.Race()
+                self._race = race.Race(owner=self)
                 warnings.warn(msg)
         
     @property
@@ -183,15 +186,16 @@ class Character():
     def background(self, bg):
         if isinstance(bg, background.Background):
             self._background = bg
+            self._background.owner = self
         elif isinstance(bg, type) and issubclass(bg, background.Background):
-            self._background = bg()
+            self._background = bg(owner=self)
         elif isinstance(bg, str):
             try:
-                self._background = findattr(background, bg)()
+                self._background = findattr(background, bg)(owner=self)
             except AttributeError:
                 msg = (f'Background "{bg}" not defined. '
                        f'Please add it to ``background.py``')
-                self._background = background.Background()
+                self._background = background.Background(owner=self)
                 warnings.warn(msg)
 
     @property
@@ -218,10 +222,6 @@ class Character():
     def subclasses(self):
         return list([c.subclass or '' for c in self.class_list])
     
-    @property
-    def speed(self):
-        return getattr(self.race, 'speed', 30)
-
     @property
     def level(self):
         if self.num_classes == 0:
@@ -367,9 +367,16 @@ class Character():
             if attr == 'dungeonsheets_version':
                 pass # Maybe we'll verify this later?
             elif attr == 'weapons':
+                if isinstance(val, str):
+                    val = [val]
                 # Treat weapons specially
                 for weap in val:
                     self.wield_weapon(weap)
+            elif attr == 'magic_items':
+                if isinstance(val, str):
+                    val = [val]
+                for mitem in val:
+                    self.magic_items.append(mitem(owner=self))
             elif attr == 'weapon_proficiencies':
                 self.other_weapon_proficiencies = tuple([findattr(weapons, w)
                                                          for w in val])
@@ -398,7 +405,7 @@ class Character():
                             name=f, source='Unknown',
                             __doc__="""Unknown Feature. Add to features.py"""))
                         warnings.warn(msg)
-                self.custom_features += tuple(F() for F in _features)
+                self.custom_features += tuple(F(owner=self) for F in _features)
             elif (attr == 'spells') or (attr == 'spells_prepared'):
                 # Create a list of actual spell objects
                 _spells = []
@@ -600,30 +607,6 @@ class Character():
             prof = 6
         return prof
     
-    @property
-    def default_AC(self):
-        """Armor class, including contributions from worn armor and shield."""
-        # Retrieve current armor (or a generic armor substitute)
-        armor = self.armor if self.armor is not None else NoArmor()
-        shield = self.shield if self.shield is not None else NoShield()
-        # Calculate and apply modifiers
-        if armor.dexterity_mod_max is None:
-            modifier = self.dexterity.modifier
-        else:
-            modifier = min(self.dexterity.modifier, armor.dexterity_mod_max)
-        # Calculate final armor class
-        ac = armor.base_armor_class + shield.base_armor_class + modifier
-        return ac
-
-    @property
-    def armor_class(self):
-        """Armor class, including any applicable features"""
-        if hasattr(self, 'force_AC'):
-            return self.force_AC
-        ac = [self.default_AC]
-        ac += [f.AC_func(self) for f in self.features]
-        return max(ac)
-
     def can_assume_shape(self, shape: monsters.Monster):
         for c in self.class_list:
             if isinstance(c, classes.Druid):

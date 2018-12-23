@@ -160,6 +160,7 @@ class Wizard(CharClass):
     name = 'Wizard'
     hit_dice_faces = 6
     saving_throw_proficiencies = ('intelligence', 'wisdom')
+    primary_abilities = ('intelligence',)
     _proficiencies_text = ('daggers', 'darts', 'slings',
                            'quarterstaffs', 'light crossbows')
     weapon_proficiencies = (weapons.Dagger, weapons.Dart,

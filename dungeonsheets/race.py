@@ -7,6 +7,7 @@ class Race():
     name = "Unknown"
     size = "medium"
     speed = 30
+    owner = None
     languages = ('Common', )
     proficiencies_text = tuple()
     weapon_proficiences = tuple()
@@ -25,13 +26,14 @@ class Race():
     spells_known = ()
     spells_prepared = ()
 
-    def __init__(self):
+    def __init__(self, owner):
+        self.owner = owner
         cls = type(self)
         # Instantiate the features
-        self.features = tuple([f() for f in cls.features])
+        self.features = tuple([f(owner=self.owner) for f in cls.features])
         self.features_by_level = defaultdict(list)
         for i in range(1, 21):
-            self.features_by_level[i] = [f()for f in
+            self.features_by_level[i] = [f(owner=self.owner)for f in
                                          cls.features_by_level[i]]
     
     def __str__(self):

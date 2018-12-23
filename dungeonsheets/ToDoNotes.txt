@@ -9,3 +9,19 @@ Add race / class AC bonuses
 Add features
 **hard** integrate features automatically into math
 Add Inspiration points
+
+
+Weird features will have to:
+--Update Speed (Fast Movement / Unarmored Movement)
+--Access current level and class levels
+--Give advantage to initiative
+--Add to proficiencies (Jack of All Trades, Remarkable Athelete)
+--Double proficiencies (Expertiese)
+--Add extra skill proficiencies (College of Lore, Blessings of Knowledge...optional)
+--Add extra proficiencies
+--Add extra spells known/prepared
+--Select among multiple options
+--Select many options (maneuvers)
+--Update damage / bonus to weapons (Martial Arts)
+--Add to HP Max (Draconic Bloodline, Dwarven Toughness)
+

@@ -100,7 +100,8 @@ class Barbarian(CharClass):
     name = 'Barbarian'
     hit_dice_faces = 12
     saving_throw_proficiencies = ('strength', 'constitution')
-    weapon_proficiencies = (weapons.simple_weapons + weapons.martial_weapons)
+    primary_abilities = ('strength',)
+    weapon_proficiencies = (weapons.SimpleWeapon + weapons.MartialWearpon)
     _proficiencies_text = ('light armor', 'medium armor', 'shields',
                            'simple weapons', 'martial weapons')
     multiclass_weapon_proficiencies = weapon_proficiencies

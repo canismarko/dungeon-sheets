@@ -119,12 +119,13 @@ class Rogue(CharClass):
     name = 'Rogue'
     hit_dice_faces = 8
     saving_throw_proficiencies = ('dexterity', 'intelligence')
+    primary_abilities = ('dexterity',)
     _proficiencies_text = (
         'light armor', 'simple weapons', 'hand crossbows', 'longswords',
         'rapiers', 'shortswords', "thieves' tools")
-    weapon_proficiencies = weapons.simple_weapons + (
-        weapons.HandCrossbow, weapons.Longsword, weapons.Rapier,
-        weapons.Shortsword)
+    weapon_proficiencies = (weapons,SimpleWeapon, weapons.HandCrossbow,
+                            weapons.Longsword, weapons.Rapier,
+                            weapons.Shortsword)
     multiclass_weapon_proficiencies = ()
     _multiclass_proficiencies_text = ('light armor', "thieves' tools",
                                       '[choose one skill from Rogue list]')

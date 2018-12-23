@@ -26,10 +26,14 @@ class Feature():
     Provide full text of rules in documentation
     """
     name = "Generic Feature"
+    owner = None
     source = ''  # race, class, background, etc.
     spells_known = ()
     spells_prepared = ()
     needs_implementation = False  # Set to True if need to find way to compute stats
+
+    def __init__(self, owner):
+        self.owner = owner
 
     def __eq__(self, other):
         return (self.name == other.name) and (self.source == other.source)
@@ -62,26 +66,6 @@ class Feature():
         """
         return weapon
 
-    def AC_func(self, char, **kwargs):
-        """
-        Return the alternative AC from having this feat
-
-        The character will take max AC from all available feats / standard AC,
-        so the default is to output very low AC
-
-        Parameters
-        ----------
-        char
-           Character object, to check for necessary abilities, etc.
-        kwargs
-           Any other key-word arguments the function may require
-
-        Returns
-        -------
-        AC : integer armor class from this feature
-        """
-        return -100
-
 
 class FeatureSelector(Feature):
     """
@@ -89,11 +73,13 @@ class FeatureSelector(Feature):
     """
     options = dict()
 
-    def __init__(self, feature_choices=[]):
+    def __init__(self, owner, feature_choices=[]):
+        self.owner = owner
         keep_source = self.source
         # Look for matching feature_choices
         for selection in feature_choices:
             if selection.lower() in self.options():
+                feature_choices.remove(selection)
                 new_feat = self.options[selection.lower()]
                 self.__dict__.update(new_feat.__dict__)
                 new_feat.__init__(self)

@@ -1,5 +1,10 @@
 import math
 from collections import namedtuple
+from .armor import NoArmor, NoShield, HeavyArmor
+from . import (weapons)
+from .features import (UnarmoredDefenseMonk, UnarmoredDefenseBarbarian,
+                       DraconicResilience, Defense, FastMovement,
+                       UnarmoredMovement)
 
 
 def findattr(obj, name):
@@ -20,16 +25,18 @@ def findattr(obj, name):
         raise AttributeError(f'{obj} has no attribute {name}')
     return attr
 
+
 def mod_str(modifier):
     """Converts a modifier to a string, eg 2 -> '+2'."""
-    if modifier > 0:
-        mod_str = '+' + str(modifier)
+    return '{:+d}'.format(modifier)
+    if modifier == 0:
+        return str(modifier)
     else:
-        mod_str = str(modifier)
-    return mod_str
+        return '{:+}'.format(modifier)
 
 
-AbilityScore = namedtuple('AbilityScore', ('value', 'modifier', 'saving_throw'))
+AbilityScore = namedtuple('AbilityScore',
+                          ('value', 'modifier', 'saving_throw'))
 
 
 class Ability():
@@ -93,3 +100,59 @@ class Skill():
         if is_expert:
             modifier += character.proficiency_bonus
         return modifier
+
+
+class ArmorClass():
+    """
+    The Armor Class of a character
+    """
+
+    def __get__(self, char, Character):
+        armor = char.armor or NoArmor()
+        ac = armor.base_armor_class
+        shield = char.shield or NoShield()
+        ac += shield.base_armor_class
+        # calculate and apply modifiers
+        if armor.dexterity_mod_max is None:
+            ac += char.dexterity.modifier
+        else:
+            ac += min(char.dexterity.modifier, armor.dexterity_mod_max)
+        # Compute feature-specific additions
+        if any([isinstance(f, UnarmoredDefenseMonk) for f in char.features]):
+            if (isinstance(armor, NoArmor) and isinstance(shield, NoShield)):
+                ac += char.wisdom.modifier
+        if any([isinstance(f, UnarmoredDefenseBarbarian) for f in char.features]):
+            if isinstance(armor, NoArmor):
+                ac += char.constitution.modifier
+        if any([isinstance(f, DraconicResilience) for f in char.features]):
+            if isinstance(armor, NoArmor):
+                ac += 3
+        if any([isinstance(f, Defense) for f in char.features]):
+            if not isinstance(armor, NoArmor):
+                ac += 1
+        # Check if any magic items add to AC
+        for mitem in char.magic_items:
+            if hasattr(mitem, 'ac_bonus'):
+                ac += mitem.ac_bonus
+        return ac
+        
+
+class Speed():
+    """
+    The speed of a character
+    """
+
+    def __get__(self, char, Character):
+        base_speed = char.race.speed
+        other_speed = ''
+        if isinstance(base_speed, str):
+            base_speed = int(base_speed[:2])  # ignore other speeds, like fly
+            other_speed = base_speed[2:]
+        if any([isinstance(f, FastMovement) for f in char.features]):
+            if not isinstance(char.armor, HeavyArmor):
+                base_speed += 10
+        if isinstance(char.armor, NoArmor) or (char.armor is None):
+            for f in char.features:
+                if isinstance(f, UnarmoredMovement):
+                    base_speed += f.speed_bonus
+        return '{:d}{:s}'.format(base_speed, other_speed)

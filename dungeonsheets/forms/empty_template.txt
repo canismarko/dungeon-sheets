@@ -13,9 +13,10 @@ dungeonsheets_version = "{{ char.dungeonsheets_version }}"
 name = "{{ char.name }}"
 player_name = "{{ char.player_name }}"
 
-classes = {{ char.class_names }}
-levels = {{ char.levels }}
-subclasses = {{ char.subclasses }}
+# Be sure to list Primary class first
+classes = {{ char.class_names }}  # ex: ['Wizard'] or ['Rogue', 'Fighter']
+levels = {{ char.levels }}  # ex: [10] or [3, 2]
+subclasses = {{ char.subclasses }}  # ex: ['Necromacy'] or ['Thief', None]
 background = "{{ char.background.name }}"
 race = "{{ char.race.name }}"
 alignment = "{{ char.alignment }}"
@@ -31,10 +32,10 @@ wisdom = {{ char.wisdom.value }}
 charisma = {{ char.charisma.value }}
 
 # Select what skills you're proficient with
+# ex: skill_proficiencies = ('athletics', 'acrobatics', 'arcana')
 skill_proficiencies = {{ char.skill_proficiencies }}
 
-# Named features / feats that aren't part of your classes,
-# race, or background.
+# Named features / feats that aren't part of your classes, race, or background.
 # Example:
 # features = ('Tavern Brawler',)  # take the optional Feat from PHB
 features = ()
@@ -57,6 +58,7 @@ pp = 0
 
 # TODO: Put your equipped weapons and armor here
 weapons = () # Example: ('shortsword', 'longsword')
+magic_items = () # Example: ('ring of protection',)
 armor = "" # Eg "light leather armor"
 shield = "" # Eg "shield"
 

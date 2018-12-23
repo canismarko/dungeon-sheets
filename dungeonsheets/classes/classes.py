@@ -13,6 +13,8 @@ class CharClass():
     _proficiencies_text = ()
     multiclass_weapon_proficiencies = ()
     _multiclass_proficiencies_text = ()
+    saving_throw_proficiencies = ()
+    primary_abilities = ()
     languages = ()
     class_skill_choices = ()
     num_skill_choices = 2
@@ -34,10 +36,10 @@ class CharClass():
             fs = []
             for f in cls.features_by_level[i]:
                 if issubclass(f, FeatureSelector):
-                    fs.append(f(feature_choices=feature_choices))
+                    fs.append(f(owner=self.owner,
+                                feature_choices=feature_choices))
                 elif issubclass(f, Feature):
-                    fs.append(f())
-            fs = [f() for f in cls.features_by_level[i]]
+                    fs.append(f(owner=self.owner))
             self.features_by_level[i] = fs
         for k, v in params.items():
             setattr(self, k, v)
@@ -58,14 +60,14 @@ class CharClass():
             return None
         for sc in self.subclasses_available:
             if subclass_str.lower() in sc.name.lower():
-                return sc(level=self.level)
+                return sc(owner=self.owner)
         return None
 
     def apply_subclass(self):
         if self.subclass is None:
             return
         for i in range(1, 21):
-            self.features_by_level[i] += ([f() for f in
+            self.features_by_level[i] += ([f(owner=self.owner) for f in
                                            self.subclass.features_by_level[i]])
         for attr in ('weapon_proficiencies', '_proficiencies_text',
                      'spells_known', 'spells_prepared'):
@@ -112,9 +114,9 @@ class SubClass():
     spells_known = ()
     spells_prepared = ()
 
-    def __init__(self, level):
+    def __init__(self, owner):
+        self.owner = owner
         self.__doc__ = self.__doc__ or SubClass.__doc__
-        self.level = level
 
     def __str__(self):
         return self.name

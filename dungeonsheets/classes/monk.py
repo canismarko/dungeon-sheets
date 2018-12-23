@@ -111,10 +111,12 @@ class Monk(CharClass):
     name = 'Monk'
     hit_dice_faces = 8
     saving_throw_proficiencies = ('strength', 'dexterity')
+    primary_abilities = ('dexterity', 'wisdom')
     _proficiencies_text = (
         'simple weapons', 'shortswords', 'unarmed',
         "one type of artisan's tools or one musical instrument")
-    weapon_proficiencies = (weapons.Shortsword, weapons.Unarmed) + weapons.simple_weapons
+    weapon_proficiencies = (weapons.Shortsword, weapons.Unarmed,
+                            weapons.SimpleWeapon)
     multiclass_weapon_proficiencies = weapon_proficiencies
     _multiclass_proficiencies_text = ('simple weapons', 'shortswords',
                                       'unarmed')
@@ -125,7 +127,7 @@ class Monk(CharClass):
                             LongDeathWay, DrunkenMasterWay,
                             KenseiWay)
     features_by_level = defaultdict(list)
-    features_by_level[1] = [features.UnarmoredDefense,
+    features_by_level[1] = [features.UnarmoredDefenseMonk,
                             features.MartialArts]
 
     def __init__(self, level, subclass=None, **params):

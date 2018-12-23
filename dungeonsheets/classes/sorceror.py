@@ -95,6 +95,7 @@ class Sorceror(CharClass):
     name = 'Sorceror'
     hit_dice_faces = 6
     saving_throw_proficiencies = ('constitution', 'charisma')
+    primary_abilities = ('charisma',)
     _proficiencies_text = ('daggers', 'darts', 'slings',
                            'quarterstaffs', 'light crossbows')
     weapon_proficiencies = (weapons.Dagger, weapons.Dart,

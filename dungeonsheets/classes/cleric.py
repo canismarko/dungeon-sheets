@@ -184,9 +184,10 @@ class Cleric(CharClass):
     name = 'Cleric'
     hit_dice_faces = 8
     saving_throw_proficiencies = ('wisdom', 'charisma')
+    primary_abilities = ('wisdom',)
     _proficiencies_text = ('light armor', 'medium armor', 'shields',
                            'all simple weapons')
-    weapon_proficiencies = weapons.simple_weapons
+    weapon_proficiencies = (weapons.SimpleWeapon,)
     multiclass_weapon_proficiencies = ()
     _multiclass_proficiencies_text = ('light armor', 'medium armor', 'shields')
     class_skill_choices = ('History', 'Insight', 'Medicine',
