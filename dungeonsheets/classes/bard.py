@@ -116,13 +116,14 @@ class CollegeOfWhispers(SubClass):
 class Bard(CharClass):
     name = 'Bard'
     hit_dice_faces = 8
+    subclass_select_level = 3
     saving_throw_proficiencies = ('dexterity', 'charisma')
     primary_abilities = ('charisma',)
     _proficiencies_text = (
         'Light armor', 'simple weapons', 'hand crossbows', 'longswords',
         'rapiers', 'shortswords', 'three musical instruments of your choice')
-    weapon_proficiencies = ((weapons.HandCrossbow, weapons.Longsword,
-                            weapons.Rapier, weapons.Shortsword) +
+    weapon_proficiencies = (weapons.HandCrossbow, weapons.Longsword,
+                            weapons.Rapier, weapons.Shortsword,
                             weapons.SimpleWeapon)
     class_skill_choices = ('Acrobatics', 'Animal Handling', 'Arcana',
                            'Athletics', 'Deception', 'History', 'Insight',

@@ -26,7 +26,7 @@ class Race():
     spells_known = ()
     spells_prepared = ()
 
-    def __init__(self, owner):
+    def __init__(self, owner=None):
         self.owner = owner
         cls = type(self)
         # Instantiate the features

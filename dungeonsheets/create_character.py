@@ -30,6 +30,49 @@ races = {r.name: r for r in race.available_races}
 backgrounds = {b.name: b for b in background.available_backgrounds}
 
 
+class LinkedListForm(npyscreen.ActionForm):
+    prev_page = None
+    this_page = None
+    next_page = None
+
+    def __init__(self, formid, *args, **kwargs):
+        self.this_page = formid
+        super().__init__(*args, **kwargs)
+
+    def to_next(self):
+        self.parentApp.setNextForm(self.next_page)
+
+    def to_prev(self):
+        self.parentApp.setNextForm(self.prev_page)
+
+    def add_next(self, next_name):
+        new_next = self.parentApp.getForm(next_name)
+        if self.next_page:
+            current_next = self.parentApp.getForm(self.next_page)
+            current_next.prev_page = next_name
+        new_next.next_page = self.next_page
+        new_next.prev_page = self.this_page
+        self.next_page = next_name
+
+    def add_prev(self, prev_name):
+        new_prev = self.parentApp.getForm(prev_name)
+        if self.prev_page:
+            current_prev = self.parentApp.getForm(self.prev_page)
+            current_prev.next_page = prev_name
+        new_prev.prev_page = self.prev_page
+        new_prev.next_page = self.this_page
+        self.prev_page = prev_name
+
+    def prune(self):
+        if self.next_page:
+            next_form = self.parentApp.getForm(self.next_page)
+            next_form.prev_page = self.prev_page
+        if self.prev_page:
+            prev_form = self.parentApp.getForm(self.prev_page)
+            prev_form.next_page = self.next_page
+        self.parentApp.removeForm(self.this_page)
+
+
 class App(npyscreen.NPSAppManaged):
     # STARTING_FORM = 'SKILLS'
     character = None
@@ -63,17 +106,31 @@ class App(npyscreen.NPSAppManaged):
     
     def onStart(self):
         self.character = character.Character()
-        self.addForm("MAIN", BasicInfoForm, name="Basic Info:")
-        self.addForm("RACE", RaceForm, name="Select your character's race:")
-        self.addForm("CLASS1", CharacterClassForm, name="Select your character's primary class:")
-        self.addForm("BACKGROUND", BackgroundForm, name="Choose background:")
-        self.addForm("ALIGNMENT", AlignmentForm, name="Select your character's alignment:")
-        self.addForm("ABILITIES", AbilityScoreForm, name="Choose ability scores:")
-        self.addForm("SKILLS", SkillForm, name="Choose skill proficiencies")
-        self.addForm("SAVE", SaveForm, name="Save character:")
+        self.addForm("MAIN", BasicInfoForm, name="Basic Info:", formid='MAIN')
+        self.addForm("RACE", RaceForm, name="Select your character's race:",
+                     formid='RACE')
+        self.addForm("CLASS1", CharacterClassForm, name="Select your character's primary class:",
+                     formid='CLASS1')
+        self.addForm("BACKGROUND", BackgroundForm, name="Choose background:",
+                     formid='BACKGROUND')
+        self.addForm("ALIGNMENT", AlignmentForm,
+                     name="Select your character's alignment:",
+                     formid='ALIGNMENT')
+        self.addForm("ABILITIES", AbilityScoreForm,
+                     name="Choose ability scores:", formid='ABILITIES')
+        self.addForm("SKILLS", SkillForm, name="Choose skill proficiencies",
+                     formid='SKILLS')
+        self.addForm("SAVE", SaveForm, name="Save character:", formid='SAVE')
+
+        # Initialized the DoublyLinkedList
+        forms = ['MAIN', 'RACE', 'CLASS1', 'BACKGROUND',
+                 'ALIGNMENT', 'ABILITIES', 'SKILLS', 'SAVE']
+        for i in range(len(forms)-1):
+            form = self.getForm(forms[i])
+            form.add_next(forms[i+1])
 
 
-class BasicInfoForm(npyscreen.ActionForm):
+class BasicInfoForm(LinkedListForm):
     def create(self):
         self.name = self.add(
             npyscreen.TitleText, name="Character Name:", use_two_lines=False)
@@ -91,18 +148,13 @@ class BasicInfoForm(npyscreen.ActionForm):
         save_form.filename.value = filename
         self.parentApp.character.name = self.name.value
         self.parentApp.character.player_name = self.player_name.value
-        # Move to the next form
-        self.parentApp.setNextForm('RACE')
+        super().to_next()
     
     def on_cancel(self):
         raise KeyboardInterrupt
 
     
-class RaceForm(npyscreen.ActionForm):
-    prev_page = 'MAIN'
-    this_page = 'RACE'
-    next_page = 'CLASS1'
-
+class RaceForm(LinkedListForm):
     def create(self):
         self.race = self.add(
             npyscreen.TitleSelectOne, name="Race:", values=tuple(races.keys()))
@@ -112,17 +164,14 @@ class RaceForm(npyscreen.ActionForm):
             selected_race = self.race.get_selected_objects()[0]
             SelectedRace = races[selected_race]
             log.debug('Selected character race: %s', SelectedRace.name)
-            self.parentApp.character.race = SelectedRace()
-            self.parentApp.setNextForm(self.next_page)
-    
+            self.parentApp.character.race = SelectedRace
+            super().to_next()
+
     def on_cancel(self):
-        self.parentApp.setNextForm(self.prev_page)
+        super().to_prev()
         
 
-class CharacterClassForm(npyscreen.ActionForm):
-    prev_page = 'RACE'
-    this_page = 'CLASS1'
-    next_page = 'BACKGROUND'
+class CharacterClassForm(LinkedListForm):
     class_num = 1
 
     def __init__(self, num=1, **kwargs):
@@ -153,7 +202,7 @@ class CharacterClassForm(npyscreen.ActionForm):
             self.class_options = list(char_classes.keys())
             for c in self.parentApp.character.class_list[:self.class_num-1]:
                 self.class_options.remove(c.name)
-            self.character_class.values = tuple(self.class_options)
+            self.character_class.values = sorted(tuple(self.class_options))
             self.character_class.update()
         
     def create(self):
@@ -167,14 +216,12 @@ class CharacterClassForm(npyscreen.ActionForm):
             t = 'Class #{:d}:'.format(self.class_num)
         for c in self.parentApp.character.class_list:
             self.class_options.remove(c.name)
-        self.level = self.add(
-            npyscreen.TitleText, name='Level:', value="1", use_two_lines=False)
-        self.subclass = self.add(npyscreen.Checkbox, name="Choose a Subclass?", value=False)
         if self.class_num == 1:
             self.multiclass = self.add(npyscreen.Checkbox, name="Add Multiclass?".format(self.class_num + 1), value=False)
         else:
             self.multiclass = self.add(npyscreen.Checkbox, name="Add Class #{:d}?".format(self.class_num + 1), value=False)
-            self.this_page = 'CLASS{:d}'.format(self.class_num)
+        self.level = self.add(
+            npyscreen.TitleText, name='Level:', value="1", use_two_lines=False)
         self.character_class = self.add(
             npyscreen.TitleSelectOne, name=t, values=tuple(self.class_options))
 
@@ -183,11 +230,9 @@ class CharacterClassForm(npyscreen.ActionForm):
         new_form = self.parentApp.addForm(new_name,
                                           CharacterClassForm,
                                           name="Select your character's Class #{:d}:".format(self.class_num + 1),
-                                          num=self.class_num+1)
-        self.parentApp.getForm(self.next_page).prev_page = new_name
-        new_form.next_page = self.next_page
-        new_form.prev_page = self.this_page
-        self.next_page = new_name
+                                          num=self.class_num+1,
+                                          formid=new_name)
+        self.add_next(new_name)
         return new_form
 
     def add_subclass_page(self, newclass, level):
@@ -197,11 +242,9 @@ class CharacterClassForm(npyscreen.ActionForm):
                                           name="Select your {:s} Subclass".format(newclass.name),
                                           newclass=newclass,
                                           level=level,
-                                          num=self.class_num)
-        self.parentApp.getForm(self.next_page).prev_page = new_name
-        new_form.next_page = self.next_page
-        new_form.prev_page = self.this_page
-        self.next_page = new_name
+                                          num=self.class_num,
+                                          formid=new_name)
+        self.add_next(new_name)
         return new_form
         
     def on_ok(self):
@@ -209,13 +252,11 @@ class CharacterClassForm(npyscreen.ActionForm):
             selected_class = self.character_class.get_selected_objects()[0]
             selected_class = char_classes[selected_class]
             log.debug('Selected character class %s', selected_class.name)
-            new_class = selected_class(level=int(self.level.value),
-                                       subclass=None)
-            if len(self.parentApp.character.class_list) < self.class_num:
-                self.parentApp.character.class_list.append(new_class)
-            else:
-                # replace existing character if we've backed up
-                self.parentApp.character.class_list[self.class_num-1] = new_class
+            # replace later classes if we've backed up
+            self.parentApp.character.class_list = self.parentApp.character.class_list[:self.class_num-1]
+            self.parentApp.character.add_class(cls=selected_class,
+                                               level=int(self.level.value),
+                                               subclass=None)
             # add multiclass page if not exists yet
             if self.multiclass.value:
                 if self.next_multiclass_page is None:
@@ -224,22 +265,24 @@ class CharacterClassForm(npyscreen.ActionForm):
                     self.next_multiclass_page.update_options()
             else:
                 # in case returned a page, prune any future multiclasses
-                self.next_page = "BACKGROUND"
-                self.parentApp.getForm("BACKGROUND").prev_page = self.this_page
-                self.parentApp.character.class_list = self.parentApp.character.class_list[:self.class_num]
-            if self.subclass.value:
-                self.add_subclass_page(newclass=selected_class,
-                                       level=int(self.level.value))
-            self.parentApp.setNextForm(self.next_page)
+                while self.next_page != 'BACKGROUND':
+                    f = self.parentApp.getForm(self.next_page)
+                    f.prune()
+            if int(self.level.value) >= selected_class.subclass_select_level:
+                if not self.subclass_page:
+                    self.add_subclass_page(newclass=selected_class,
+                                           level=int(self.level.value))
+            else:
+                if self.subclass_page is not None:
+                    f = self.parentApp.getForm(self.next_page)
+                    f.prune()
+            super().to_next()
         
     def on_cancel(self):
-        self.parentApp.setNextForm(self.prev_page)
+        super().to_prev()
 
 
-class SubclassForm(npyscreen.ActionForm):
-    prev_page = 'CLASS1'
-    next_page = 'BACKGROUND'
-
+class SubclassForm(LinkedListForm):
     def __init__(self, newclass, level, num=1, **kwargs):
         self.class_num = num
         self.parent_class = newclass
@@ -256,25 +299,21 @@ class SubclassForm(npyscreen.ActionForm):
             values=tuple(self.subclass_options))
         
     def on_ok(self):
-        sc = self.subclass.get_selected_objects()[0]
-        if sc in [None, '', 'None']:
-            newclass = self.parent_class(level=self.level,
-                                         subclass=None)
-        else:
-            newclass = self.parent_class(level=self.level,
-                                         subclass=sc)
-        self.parentApp.character.class_list[self.class_num-1] = newclass
-        self.parentApp.setNextForm(self.next_page)
-    
+        if self.subclass.value is not None:
+            sc = self.subclass.get_selected_objects()[0]
+            if sc in [None, '', 'None']:
+                sc = None
+                self.parentApp.character.class_list = self.parentApp.character.class_list[:self.class_num-1]
+                self.parentApp.character.add_class(cls=self.parent_class,
+                                                   level=self.level,
+                                                   subclass=sc)
+            super().to_next()
+            
     def on_cancel(self):
-        self.parentApp.setNextForm(self.prev_page)
+        super().to_prev()
 
 
-class BackgroundForm(npyscreen.ActionForm):
-    prev_page = 'CLASS1'
-    this_page = 'BACKGROUND'
-    next_page = 'ALIGNMENT'
-
+class BackgroundForm(LinkedListForm):
     def create(self):
         self.background = self.add(
             npyscreen.TitleSelectOne,
@@ -290,21 +329,17 @@ class BackgroundForm(npyscreen.ActionForm):
             languages = Background.languages + race_languages
             self.parentApp.character.languages = ', '.join(languages)
             log.debug("Selected character background: %s", Background.name)
-            self.parentApp.setNextForm(self.next_page)
+            super().to_next()
     
     def on_cancel(self):
-        self.parentApp.setNextForm(self.prev_page)
+        super().to_prev()
 
 
-class AlignmentForm(npyscreen.ActionForm):
+class AlignmentForm(LinkedListForm):
     """Choose your character's alignment."""
     alignments = ('Lawful good', 'Neutral good', 'Chaotic good',
                   'Lawful neutral', 'True neutral', 'Chaotic neutral',
                   'Lawful evil', 'Neutral evil', 'Chaotic evil', )
-    prev_page = 'BACKGROUND'
-    this_page = 'ALIGNMENT'
-    next_page = 'ABILITIES'
-    
     def create(self):
         self.alignment = self.add(
             npyscreen.TitleSelectOne, name="Alignment:", values=self.alignments)
@@ -317,16 +352,13 @@ class AlignmentForm(npyscreen.ActionForm):
             # prep additions to abilities page
             abils = self.parentApp.getForm('ABILITIES')
             abils.prep()
-            self.parentApp.setNextForm(self.next_page)
+            super().to_next()
     
     def on_cancel(self):
-        self.parentApp.setNextForm(self.prev_page)
+        super().to_prev()
 
 
-class AbilityScoreForm(npyscreen.ActionForm):
-    prev_page = 'ALIGNMENT'
-    this_page = 'ABILITIES'
-    next_page = 'SKILLS'
+class AbilityScoreForm(LinkedListForm):
     num_rolls = 0
 
     def roll_dice(self):
@@ -348,7 +380,7 @@ class AbilityScoreForm(npyscreen.ActionForm):
         self.score_options.value = str(new_scores)[1:-1]
         self.score_options.update()
         self.reroll_button.value = False
-        self.reroll_button.name = 'Reroll ({:d}x):'.format(self.num_rolls)
+        self.reroll_button.name = 'Reroll'
         self.reroll_button.update()
         self.default_button.value = False
         self.default_button.update()
@@ -403,7 +435,7 @@ class AbilityScoreForm(npyscreen.ActionForm):
                                        name="Use Default Rolls",
                                        when_pressed_function=self.set_default)
         self.reroll_button = self.add(npyscreen.MiniButtonPress,
-                                      name="Reroll (0x)",
+                                      name="Reroll",
                                       when_pressed_function=self.reroll)
 
     def prep(self):
@@ -414,7 +446,7 @@ class AbilityScoreForm(npyscreen.ActionForm):
         self.race_text = self.add(npyscreen.FixedText, editable=False,
                                   value="Do not add racial bonuses, they will be added for you as listed.")
         for attr in attrs:
-            if attr in self.parentApp.character.saving_throw_proficiencies:
+            if attr in self.parentApp.character.primary_class.primary_abilities:
                 name = '**' + attr
             else:
                 name = '' + attr
@@ -431,17 +463,13 @@ class AbilityScoreForm(npyscreen.ActionForm):
         self.max_hp = self.add(npyscreen.TitleText, name="Max HP:")
 
     def on_ok(self):
-        self.parentApp.setNextForm(self.next_page)
+        super().to_next()
     
     def on_cancel(self):
-        self.parentApp.setNextForm(self.prev_page)
+        super().to_prev()
 
 
-class SkillForm(npyscreen.ActionForm):
-    prev_page = 'ABILITIES'
-    this_page = 'SKILLS'
-    next_page = 'SAVE'
-    
+class SkillForm(LinkedListForm):
     def while_editing(self):
         # Update the static skills for race and background
         bg_skills = self.parentApp.character.background.skill_proficiencies
@@ -454,7 +482,7 @@ class SkillForm(npyscreen.ActionForm):
                    self.parentApp.character.background.skill_choices)
         static_skills = bg_skills + race_skills
         choices = set([c for c in choices if c.lower() not in static_skills])
-        self.skill_proficiencies.set_values(tuple(choices))
+        self.skill_proficiencies.set_values(sorted(tuple(choices)))
         self.update_remaining()
     
     def update_remaining(self, widget=None):
@@ -493,17 +521,13 @@ class SkillForm(npyscreen.ActionForm):
         all_skills = new_skills + bg_skills + race_skills
         self.parentApp.character.skill_proficiencies = all_skills
         log.debug(f"Skill proficiencies: {all_skills}")
-        self.parentApp.setNextForm(self.next_page)
+        super().to_next()
     
     def on_cancel(self):
-        self.parentApp.setNextForm(self.prev_page)
+        super().to_prev()
 
 
-class SaveForm(npyscreen.ActionForm):
-    prev_page = 'SKILLS'
-    this_page = 'SAVE'
-    next_page = None
-
+class SaveForm(LinkedListForm):
     def create(self):
         self.filename = self.add(
             npyscreen.TitleText, name='Filename:')
@@ -513,10 +537,10 @@ class SaveForm(npyscreen.ActionForm):
             value="After saving, edit this file to finish your personality, etc.")
     
     def on_ok(self):
-        self.parentApp.setNextForm(self.next_page)
+        super().to_next()
     
     def on_cancel(self):
-        self.parentApp.setNextForm(self.prev_page)
+        super().to_prev()
 
 
 def main():

@@ -5,7 +5,7 @@
 \usepackage[dvipsnames]{color}
 \definecolor{mygrey}{gray}{0.7}
 
-\title{Features and Subclass}
+\title{Features and Magic Items}
 \author{[[ character.name ]]}
 \date{}
 
@@ -36,4 +36,20 @@
 
 [% endfor %]
 
+[% for mitem in character.magic_items %]
+
+  \section*{[[ mitem.name ]]}
+
+  \noindent
+  \textbf{Requires Attunement:} [[ mitem.requires_attunement ]] \\
+  \textbf{Rarity:} [[ mitem.rarity ]] \\
+
+  [% if mitem.needs_implementation %] %
+    \textbf{**Not included in stats on Character Sheet} %
+  [% endif %] %
+             
+  [[ mitem.__doc__|rst_to_latex ]]
+
+  [% endfor %]
+    
 \end{document}

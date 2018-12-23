@@ -6,6 +6,7 @@ class MagicItem():
     name = ''
     ac_bonus = 0
     requires_attunement = False
+    needs_implementation = False
     rarity = ''
 
 

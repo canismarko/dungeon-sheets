@@ -9,6 +9,7 @@ class CharClass():
     name = "Default"
     level = 1
     hit_dice_faces = 2
+    subclass_select_level = 3
     weapon_proficiencies = ()
     _proficiencies_text = ()
     multiclass_weapon_proficiencies = ()
@@ -26,9 +27,12 @@ class CharClass():
     subclasses_available = ()
     features_by_level = defaultdict(list)
 
-    def __init__(self, level, subclass=None, feature_choices=[],
+    def __init__(self, level, owner=None, subclass=None, feature_choices=[],
                  **params):
         self.level = level
+        self.owner = owner
+        # For ex: add "char.Monk" attribute
+        setattr(self.owner, self.name, self)
         # Instantiate the features
         self.features_by_level = defaultdict(list)
         cls = type(self)

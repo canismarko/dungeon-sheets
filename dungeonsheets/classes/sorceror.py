@@ -94,6 +94,7 @@ class StormSorcery(SubClass):
 class Sorceror(CharClass):
     name = 'Sorceror'
     hit_dice_faces = 6
+    subclass_select_level = 1
     saving_throw_proficiencies = ('constitution', 'charisma')
     primary_abilities = ('charisma',)
     _proficiencies_text = ('daggers', 'darts', 'slings',

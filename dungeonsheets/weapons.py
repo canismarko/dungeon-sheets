@@ -1,6 +1,3 @@
-from .stats import mod_str
-
-
 class Weapon():
     name = ""
     cost = "0 gp"
@@ -17,7 +14,7 @@ class Weapon():
     def damage(self):
         dam_str = str(self.base_damage)
         if self.bonus_damage != 0:
-            dam_str += mod_str(self.bonus_damage)
+            dam_str += '{:+d}'.format(self.bonus_damage)
         return dam_str
 
     def __str__(self):

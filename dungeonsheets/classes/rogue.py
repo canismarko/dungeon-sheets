@@ -118,12 +118,13 @@ class Swashbuckler(SubClass):
 class Rogue(CharClass):
     name = 'Rogue'
     hit_dice_faces = 8
+    subclass_select_level = 3
     saving_throw_proficiencies = ('dexterity', 'intelligence')
     primary_abilities = ('dexterity',)
     _proficiencies_text = (
         'light armor', 'simple weapons', 'hand crossbows', 'longswords',
         'rapiers', 'shortswords', "thieves' tools")
-    weapon_proficiencies = (weapons,SimpleWeapon, weapons.HandCrossbow,
+    weapon_proficiencies = (weapons.SimpleWeapon, weapons.HandCrossbow,
                             weapons.Longsword, weapons.Rapier,
                             weapons.Shortsword)
     multiclass_weapon_proficiencies = ()

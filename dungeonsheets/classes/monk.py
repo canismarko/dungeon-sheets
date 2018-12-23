@@ -110,6 +110,7 @@ class KenseiWay(SubClass):
 class Monk(CharClass):
     name = 'Monk'
     hit_dice_faces = 8
+    subclass_select_level = 3
     saving_throw_proficiencies = ('strength', 'dexterity')
     primary_abilities = ('dexterity', 'wisdom')
     _proficiencies_text = (

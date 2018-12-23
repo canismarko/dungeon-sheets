@@ -86,6 +86,7 @@ class Druid(CharClass):
     _wild_shapes = ()
     _circle = ''
     hit_dice_faces = 8
+    subclass_select_level = 2
     saving_throw_proficiencies = ('intelligence', 'wisdom')
     primary_abilities = ('wisdom',)
     languages = 'Druidic'

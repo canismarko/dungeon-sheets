@@ -99,13 +99,15 @@ class ZealotPath(SubClass):
 class Barbarian(CharClass):
     name = 'Barbarian'
     hit_dice_faces = 12
+    subclass_select_level = 3
     saving_throw_proficiencies = ('strength', 'constitution')
     primary_abilities = ('strength',)
-    weapon_proficiencies = (weapons.SimpleWeapon + weapons.MartialWearpon)
+    weapon_proficiencies = (weapons.SimpleWeapon, weapons.MartialWeapon)
     _proficiencies_text = ('light armor', 'medium armor', 'shields',
                            'simple weapons', 'martial weapons')
     multiclass_weapon_proficiencies = weapon_proficiencies
-    _multiclass_proficiencies_text = ('shields', 'simple weapons', 'martial weapons')
+    _multiclass_proficiencies_text = ('shields', 'simple weapons',
+                                      'martial weapons')
     class_skill_choices = ('Animal Handling', 'Athletics',
                            'Intimidation', 'Nature', 'Perception', 'Survival')
     subclasses_available = (BerserkerPath, TotemWarriorPath, BattleragerPath,

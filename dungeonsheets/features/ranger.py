@@ -2,18 +2,18 @@ from .features import Feature, FeatureSelector
 from .. import (weapons, armor)
 
 
-def select_ranger_fighting_style(feature_choices=[]):
+def select_ranger_fighting_style(char=None, feature_choices=[]):
         lower_choices = [fc for fc in map(str.lower, feature_choices)]
         if 'archery' in lower_choices:
-            return Archery()
+            return Archery(owner=char)
         elif 'defense' in lower_choices:
-            return Defense()
+            return Defense(owner=char)
         elif 'dueling' in lower_choices:
-            return Dueling()
+            return Dueling(owner=char)
         elif 'two-weapon fighting' in lower_choices:
-            return TwoWeaponFighting()
+            return TwoWeaponFighting(owner=char)
         else:
-            return RangerFightingStyle()
+            return RangerFightingStyle(owner=char)
 
 
 class Archery(Feature):

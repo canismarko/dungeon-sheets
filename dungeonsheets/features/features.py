@@ -32,7 +32,7 @@ class Feature():
     spells_prepared = ()
     needs_implementation = False  # Set to True if need to find way to compute stats
 
-    def __init__(self, owner):
+    def __init__(self, owner=None):
         self.owner = owner
 
     def __eq__(self, other):

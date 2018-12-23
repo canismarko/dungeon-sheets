@@ -115,6 +115,7 @@ class Hexblade(SubClass):
 class Warlock(CharClass):
     name = 'Warlock'
     hit_dice_faces = 8
+    subclass_select_level = 1
     saving_throw_proficiencies = ('wisdom', 'charisma')
     primary_abilities = ('charisma',)
     _proficiencies_text = ("light Armor", "simple weapons")

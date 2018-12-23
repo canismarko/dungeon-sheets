@@ -8,31 +8,34 @@ sheet by running ``makesheets`` from the command line.
 
 """
 
-dungeonsheets_version = "0.8.3"
+dungeonsheets_version = "0.9.0"
 
 name = "Ben"
-classes_levels = ['paladin 1']
-subclasses = ["Oath of The Ancients"]
 player_name = "Ben"
-background = "Charlatan"
-race = "Hill Dwarf"
+
+# Be sure to list Primary class first
+classes = ['Bard', 'Paladin']  # ex: ['Wizard'] or ['Rogue', 'Fighter']
+levels = [10, 2]  # ex: [10] or [3, 2]
+subclasses = ['', '']  # ex: ['Necromacy'] or ['Thief', None]
+background = "Sailor"
+race = "Half-Orc"
 alignment = "Neutral good"
 xp = 0
 hp_max = 10
 
 # Ability Scores
-strength = 15
-dexterity = 14
-constitution = 15
+strength = 20
+dexterity = 13
+constitution = 14
 intelligence = 12
-wisdom = 11
-charisma = 8
+wisdom = 10
+charisma = 9
 
 # Select what skills you're proficient with
-skill_proficiencies = ('intimidation', 'athletics', 'deception', 'sleight of hand')
+# ex: skill_proficiencies = ('athletics', 'acrobatics', 'arcana')
+skill_proficiencies = ('arcana', 'medicine', 'athletics', 'perception', 'intimidation')
 
-# Named features / feats that aren't part of your classes,
-# race, or background.
+# Named features / feats that aren't part of your classes, race, or background.
 # Example:
 # features = ('Tavern Brawler',)  # take the optional Feat from PHB
 features = ()
@@ -43,7 +46,7 @@ features = ()
 feature_choices = ()
 
 # Proficiencies and languages
-languages = """Common, Dwarvish"""
+languages = """Common, Orc"""
 
 # Inventory
 # TODO: Get yourself some money
@@ -55,6 +58,7 @@ pp = 0
 
 # TODO: Put your equipped weapons and armor here
 weapons = () # Example: ('shortsword', 'longsword')
+magic_items = () # Example: ('ring of protection',)
 armor = "" # Eg "light leather armor"
 shield = "" # Eg "shield"
 

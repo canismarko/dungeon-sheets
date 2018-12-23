@@ -143,7 +143,7 @@ class Character():
             my_levels = [attrs.pop('level', 1)]
             my_subclasses = [attrs.pop('subclass', None)]
         # Generate the list of class objects
-        self.class_list = parse_classes(
+        self.add_classes(
             my_classes, my_levels, my_subclasses,
             feature_choices=attrs.get('feature_choices', []))
         # parse race and background
@@ -158,6 +158,47 @@ class Character():
     def __repr__(self):
         return f"<{self.class_name}: {self.name}>"
 
+    def add_class(self, cls: (classes.CharClass, type, str), level: (int, str),
+                  subclass=None, feature_choices=[]):
+        if isinstance(cls, str):
+            cls = cls.strip().title().replace(' ', '')
+            try:
+                cls = getattr(classes, cls)
+            except AttributeError:
+                raise AttributeError(
+                    'class was not recognized from classes.py: {:s}'.format(c))
+        if isinstance(level, str):
+            level = int(level)
+        params = {}
+        params['feature_choices'] = feature_choices
+        self.class_list.append(cls(level, owner=self,
+                                   subclass=subclass, **params))
+            
+    def add_classes(self, classes_list=[], levels=[], subclasses=[],
+                       feature_choices=[]):
+        if isinstance(classes_list, str):
+            classes_list = [classes_list]
+        if isinstance(levels, int) or isinstance(levels, float) or isinstance(levels, str):
+            levels = [levels]
+        if len(levels) == 0:
+            levels = [1]*len(classes_list)
+        if isinstance(subclasses, str):
+            subclasses = [subclasses]
+        if len(subclasses) == 0:
+            subclasses = [None]*len(classes_list)
+        assert len(classes_list) == len(levels), (
+            'the length of classes {:d} does not match length of '
+            'levels {:d}'.format(len(classes), len(levels)))
+        assert len(classes_list) == len(subclasses), (
+            'the length of classes {:d} does not match length of '
+            'subclasses {:d}'.format(len(classes_list), len(subclasses)))
+        class_list = []
+        for cls, lvl, sub in zip(classes_list, levels, subclasses):
+            params = {}
+            params['feature_choices'] = feature_choices
+            self.add_class(cls=cls, level=lvl, subclass=sub,
+                           **params)
+    
     @property
     def race(self):
         return self._race
@@ -632,7 +673,7 @@ class Character():
         for c in self.class_list:
             if isinstance(c, classes.Druid):
                 c.wild_shapes = new_shapes
-    
+
     @classmethod
     def load(cls, character_file):
         # Create a character from the character definition
@@ -668,42 +709,6 @@ class Character():
                    flatten=kwargs.get('flatten', True))
 
 
-def parse_classes(classes_list=[], levels=[], subclasses=[],
-                  feature_choices=[]):
-    if isinstance(classes_list, str):
-        classes_list = [classes_list]
-    if isinstance(levels, int) or isinstance(levels, float) or isinstance(levels, str):
-        levels = [levels]
-    if len(levels) == 0:
-        levels = [1]*len(classes_list)
-    if isinstance(subclasses, str):
-        subclasses = [subclasses]
-    if len(subclasses) == 0:
-        subclasses = [None]*len(classes_list)
-    assert len(classes_list) == len(levels), (
-        'the length of classes {:d} does not match length of '
-        'levels {:d}'.format(len(classes), len(levels)))
-    assert len(classes_list) == len(subclasses), (
-        'the length of classes {:d} does not match length of '
-        'subclasses {:d}'.format(len(classes_list), len(subclasses)))
-    class_list = []
-    for cls, lvl, sub in zip(classes_list, levels, subclasses):
-        if isinstance(cls, str):
-            cls = cls.strip().title().replace(' ', '')
-            try:
-                this_class = getattr(classes, cls)
-                this_level = int(lvl)
-            except AttributeError:
-                raise AttributeError(
-                    'class was not recognized from classes.py: {:s}'.format(c))
-            except ValueError:
-                raise ValueError(
-                    'level was not recognizable as an int: {:s}'.format(str(lvl)))
-            params = {}
-            params['feature_choices'] = feature_choices
-            class_list += [this_class(this_level, subclass=sub, **params)]
-    return class_list
-            
         
 def read_character_file(filename):
     """Create a character object from the given definition file.

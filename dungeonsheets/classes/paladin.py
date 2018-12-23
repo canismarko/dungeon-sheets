@@ -222,6 +222,7 @@ class OathOfRedemption(SubClass):
 class Paladin(CharClass):
     name = 'Paladin'
     hit_dice_faces = 10
+    subclass_select_level = 3
     saving_throw_proficiencies = ('wisdom', 'charisma')
     primary_abilities = ('strength', 'charisma')
     _proficiencies_text = ('All armor', 'shields', 'simple weapons',

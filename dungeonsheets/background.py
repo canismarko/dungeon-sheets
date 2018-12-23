@@ -12,7 +12,7 @@ class Background():
     features = ()
     languages = ()
 
-    def __init__(self, owner):
+    def __init__(self, owner=None):
         self.owner = owner
         cls = type(self)
         self.features = tuple([f(owner=self.owner) for f in cls.features])

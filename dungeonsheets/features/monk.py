@@ -46,12 +46,7 @@ class MartialArts(Feature):
 
     def __init__(self, owner):
         self.owner = owner
-        if self.owner.level >= 5:
-            self.die = 'd6'
-        if self.owner.level >= 11:
-            self.die = 'd8'
-        if self.owner.level >= 17:
-            self.die = 'd10'
+        self.level = owner.Monk.level
 
     def weapon_func(self, weapon: weapons.Weapon, char=None, **kwargs):
         """
@@ -63,6 +58,13 @@ class MartialArts(Feature):
             return weapon
         if char is None:
             return weapon
+        self.die = 'd4'
+        if self.level >= 5:
+            self.die = 'd6'
+        if self.level >= 11:
+            self.die = 'd8'
+        if self.level >= 17:
+            self.die = 'd10'
         # check if new damage is better than default
         if self.die > int(weapon.base_damage.split('d')[-1]):
             weapon.base_damage = '1d' + str(self.die)
@@ -81,15 +83,20 @@ class UnarmoredMovement(Feature):
     """
     name = "Unarmored Movement"
     source = "Monk"
-    speed_bonus = 10
 
     def __init__(self, owner):
         self.owner = owner
-        if self.owner.level >= 6:
-            self.speed_bonus = 15
-        if self.owner.level >= 10:
-            self.speed_bonus = 20
-        if self.owner.level >= 14:
-            self.speed_bonus = 25
-        if self.owner.level >= 18:
-            self.speed_bonus = 30
+        self.level = owner.Monk.level
+
+    @property
+    def speed_bonus(self):
+        _speed_bonus = 10
+        if self.level >= 6:
+            _speed_bonus = 15
+        if self.level >= 10:
+            _speed_bonus = 20
+        if self.level >= 14:
+            _speed_bonus = 25
+        if self.level >= 18:
+            _speed_bonus = 30
+        return _speed_bonus

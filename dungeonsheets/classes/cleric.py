@@ -183,6 +183,7 @@ class GraveDomain(SubClass):
 class Cleric(CharClass):
     name = 'Cleric'
     hit_dice_faces = 8
+    subclass_select_level = 1
     saving_throw_proficiencies = ('wisdom', 'charisma')
     primary_abilities = ('wisdom',)
     _proficiencies_text = ('light armor', 'medium armor', 'shields',

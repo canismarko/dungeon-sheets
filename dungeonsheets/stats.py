@@ -1,7 +1,6 @@
 import math
 from collections import namedtuple
 from .armor import NoArmor, NoShield, HeavyArmor
-from . import (weapons)
 from .features import (UnarmoredDefenseMonk, UnarmoredDefenseBarbarian,
                        DraconicResilience, Defense, FastMovement,
                        UnarmoredMovement)

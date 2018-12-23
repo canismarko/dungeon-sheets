@@ -165,6 +165,7 @@ class Gunslinger(SubClass):
 class Fighter(CharClass):
     name = 'Fighter'
     hit_dice_faces = 10
+    subclass_select_level = 3
     saving_throw_proficiencies = ('strength', 'constitution')
     primary_abilities = ('strength', 'dexterity',)
     _proficiencies_text = ('All armor', 'shields', 'simple weapons',
