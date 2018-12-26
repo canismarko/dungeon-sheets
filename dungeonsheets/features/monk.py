@@ -44,30 +44,25 @@ class MartialArts(Feature):
     source = 'Monk'
     die = 'd4'
 
-    def __init__(self, owner):
-        self.owner = owner
-        self.level = owner.Monk.level
-
-    def weapon_func(self, weapon: weapons.Weapon, char=None, **kwargs):
+    def weapon_func(self, weapon: weapons.Weapon, **kwargs):
         """
         Update increasing damage dice and DEX mod of Monk weapons
         """
         is_monk_weapon = any([isinstance(weapon, w)
                               for w in weapons.monk_weapons])
+        level = self.owner.Monk.level
         if not is_monk_weapon:
             return weapon
-        if char is None:
-            return weapon
         self.die = 'd4'
-        if self.level >= 5:
+        if level >= 5:
             self.die = 'd6'
-        if self.level >= 11:
+        if level >= 11:
             self.die = 'd8'
-        if self.level >= 17:
+        if level >= 17:
             self.die = 'd10'
         # check if new damage is better than default
-        if self.die > int(weapon.base_damage.split('d')[-1]):
-            weapon.base_damage = '1d' + str(self.die)
+        if int(self.die[1:]) > int(weapon.base_damage.split('d')[-1]):
+            weapon.base_damage = '1' + str(self.die)
         weapon.is_finesse = True
         return weapon
 
@@ -84,19 +79,16 @@ class UnarmoredMovement(Feature):
     name = "Unarmored Movement"
     source = "Monk"
 
-    def __init__(self, owner):
-        self.owner = owner
-        self.level = owner.Monk.level
-
     @property
     def speed_bonus(self):
+        level = self.owner.Monk.level
         _speed_bonus = 10
-        if self.level >= 6:
+        if level >= 6:
             _speed_bonus = 15
-        if self.level >= 10:
+        if level >= 10:
             _speed_bonus = 20
-        if self.level >= 14:
+        if level >= 14:
             _speed_bonus = 25
-        if self.level >= 18:
+        if level >= 18:
             _speed_bonus = 30
         return _speed_bonus

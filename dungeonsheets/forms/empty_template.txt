@@ -20,8 +20,10 @@ subclasses = {{ char.subclasses }}  # ex: ['Necromacy'] or ['Thief', None]
 background = "{{ char.background.name }}"
 race = "{{ char.race.name }}"
 alignment = "{{ char.alignment }}"
+
 xp = {{ char.xp }}
 hp_max = {{ char.hp_max }}
+inspiration = 0  # integer inspiration value
 
 # Ability Scores
 strength = {{ char.strength.value }}
@@ -35,15 +37,25 @@ charisma = {{ char.charisma.value }}
 # ex: skill_proficiencies = ('athletics', 'acrobatics', 'arcana')
 skill_proficiencies = {{ char.skill_proficiencies }}
 
+# Any skills you have "expertise" (Bard/Rogue) in
+skill_expertise = ()
+
 # Named features / feats that aren't part of your classes, race, or background.
+# Also include Eldritch Invocations and features you make multiple selection of
+# (like Maneuvers for Fighter, Metamagic for Sorcerors, Trick Shots for
+# Gunslinger, etc.)
 # Example:
-# features = ('Tavern Brawler',)  # take the optional Feat from PHB
+# features = ('Tavern Brawler',) # take the optional Feat from PHB
 features = ()
 
 # If selecting among multiple feature options: ex Fighting Style
 # Example (Fighting Style):
 # feature_choices = ('Archery',)
 feature_choices = ()
+
+# Weapons/other proficiencies not given by class/race/background
+weapon_proficiencies = ()  # ex: ('shortsword', 'quarterstaff')
+_proficiencies_text = ()  # ex: ("thieves' tools",)
 
 # Proficiencies and languages
 languages = """{{ char.languages }}"""
@@ -57,10 +69,10 @@ gp = 0
 pp = 0
 
 # TODO: Put your equipped weapons and armor here
-weapons = () # Example: ('shortsword', 'longsword')
-magic_items = () # Example: ('ring of protection',)
-armor = "" # Eg "light leather armor"
-shield = "" # Eg "shield"
+weapons = ()  # Example: ('shortsword', 'longsword')
+magic_items = ()  # Example: ('ring of protection',)
+armor = ""  # Eg "light leather armor"
+shield = ""  # Eg "shield"
 
 equipment = """TODO: list the equipment and magic items your character carries"""
 
@@ -69,7 +81,7 @@ or uses spells."""
 
 # List of known spells
 # Example: spells_prepared = ('magic missile', 'mage armor')
-spells_prepared = () # Todo: Learn some spells
+spells_prepared = ()  # Todo: Learn some spells
 
 # Which spells have not been prepared
 __spells_unprepared = ()

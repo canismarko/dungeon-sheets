@@ -200,6 +200,7 @@ def create_character_pdf(character, basename, flatten=False):
         'Race ': str(character.race),
         'Alignment': character.alignment,
         'XP': str(character.xp),
+        'Inspiration': str(character.inspiration),
         # Abilities
         'ProfBonus': mod_str(character.proficiency_bonus),
         'STRmod': str(character.strength.value),
@@ -215,7 +216,7 @@ def create_character_pdf(character, basename, flatten=False):
         'CHamod': str(character.charisma.value),
         'CHA': mod_str(character.charisma.modifier),
         'AC': str(character.armor_class),
-        'Initiative': mod_str(character.dexterity.modifier),
+        'Initiative': str(character.initiative),
         'Speed': str(character.speed),
         'Passive': 10 + character.perception,
         # Saving throws (proficiencies handled later)

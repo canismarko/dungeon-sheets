@@ -486,7 +486,7 @@ class SkillForm(LinkedListForm):
         self.update_remaining()
     
     def update_remaining(self, widget=None):
-        num_choices = (self.parentApp.character.num_skill_choices +
+        num_choices = (self.parentApp.character.primary_class.num_skill_choices +
                        self.parentApp.character.race.num_skill_choices +
                        self.parentApp.character.background.num_skill_choices)
         num_selected = len(self.skill_proficiencies.value)
@@ -507,7 +507,7 @@ class SkillForm(LinkedListForm):
             value=0, editable=False)
         self.skill_proficiencies = self.add(
             npyscreen.TitleMultiSelect, name="Skill Proficiencies:",
-            values=self.parentApp.character.class_skill_choices,
+            values=(),
             value_changed_callback=self.update_remaining)
     
     def on_ok(self):

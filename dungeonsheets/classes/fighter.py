@@ -13,6 +13,11 @@ class Champion(SubClass):
     """
     name = "Champion"
     features_by_level = defaultdict(list)
+    features_by_level[3] = [features.ImprovedCritical]
+    features_by_level[7] = [features.RemarkableAthelete]
+    features_by_level[10] = [features.AdditionalFightingStyle]
+    features_by_level[15] = [features.SuperiorCritical]
+    features_by_level[18] = [features.Survivor]
     
 
 class BattleMaster(SubClass):
@@ -26,6 +31,9 @@ class BattleMaster(SubClass):
     """
     name = "Battle Master"
     features_by_level = defaultdict(list)
+    features_by_level[3] = [features.CombatSuperiority, features.StudentOfWar]
+    features_by_level[7] = [features.KnowYourEnemy]
+    features_by_level[15] = [features.Relentless]
     
 
 class EldritchKnight(SubClass):
@@ -41,6 +49,12 @@ class EldritchKnight(SubClass):
     """
     name = "Eldritch Knight"
     features_by_level = defaultdict(list)
+    features_by_level[3] = [features.EldritchKnightSpellcasting,
+                            features.WeaponBond]
+    features_by_level[7] = [features.WarMagic]
+    features_by_level[10] = [features.EldritchStrike]
+    features_by_level[15] = [features.ArcaneCharge]
+    features_by_level[18] = [features.ImprovedWarMagic]
     spellcasting_ability = 'intelligence'
     multiclass_spellslots_by_level = {
         # char_lvl: (cantrips, 1st, 2nd, 3rd, ...)
@@ -157,9 +171,15 @@ class Gunslinger(SubClass):
 
     """
     name = "Gunslinger"
-    features_by_level = defaultdict(list)
     weapon_proficiencies = (weapons.firearms)
-    _proficiencies_text = ('firearms')
+    _proficiencies_text = ('firearms', "tinker's tools")
+    features_by_level = defaultdict(list)
+    features_by_level[3] = [features.Gunsmith, features.AdeptMarksman]
+    features_by_level[7] = [features.QuickDraw]
+    features_by_level[10] = [features.RapidRepair]
+    features_by_level[15] = [features.LightningReload]
+    features_by_level[18] = [features.ViciousIntent,
+                             features.HemorrhagingCritical]
 
 
 class Fighter(CharClass):
@@ -179,6 +199,10 @@ class Fighter(CharClass):
                            'Athletics', 'History', 'Insight', 'Intimidation',
                            'Perception', 'Survival')
     features_by_level = defaultdict(list)
+    features_by_level[1] = [features.FighterFightingStyle, features.SecondWind]
+    features_by_level[2] = [features.ActionSurge]
+    features_by_level[5] = [features.ExtraAttackFighter]
+    features_by_level[9] = [features.Indomitable]
     subclasses_available = (Champion, BattleMaster, EldritchKnight,
                             PurpleDragonKnight, ArcaneArcher, Cavalier,
                             Samurai, Gunslinger)

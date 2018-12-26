@@ -1,9 +1,31 @@
-from .. import (weapons, features)
+from .. import (weapons, features, spells)
 from .classes import CharClass, SubClass
 from collections import defaultdict
 
 
-class OathOfDevotion(SubClass):
+class PaladinOath(SubClass):
+    name = "Generic Paladin Oath"
+    _oath_spells = {3: [], 5: [], 9: [], 13: [], 17: []}
+
+    @property
+    def level(self):
+        return self.owner.Paladin.level
+
+    @property
+    def spells_known(self):
+        spells = []
+        for lvl, sps in self._oath_spells.items():
+            if self.level >= lvl:
+                spells.extend(sps)
+        return spells
+    
+    # All Oath spells are both known and prepared
+    @property
+    def spells_prepared(self):
+        return self.spells_known
+
+
+class OathOfDevotion(PaladinOath):
     """The Oath of Devotion binds a paladin to the loftiest ideals of justice,
     virtue, and order. Sometim es called cavaliers, white knights, or holy
     warriors, these paladins meet the ideal of the knight in shining armor,
@@ -35,10 +57,20 @@ class OathOfDevotion(SubClass):
 
     """
     name = "Oath of Devotion"
+    _oath_spells = {3: [spells.ProtectionFromEvilAndGood,
+                        spells.Sanctuary],
+                    5: [spells.LesserRestoration, spells.ZoneOfTruth],
+                    9: [spells.BeaconOfHope, spells.DispelMagic],
+                    13: [spells.FreedomOfMovement, spells.GuardianOfFaith],
+                    17: [spells.Commune, spells.FlameStrike]}
     features_by_level = defaultdict(list)
+    features_by_level[3] = [features.SacredWeapon, features.TurnTheUnholy]
+    features_by_level[7] = [features.AuraOfDevotion]
+    features_by_level[15] = [features.PurityOfSpirit]
+    features_by_level[20] = [features.HolyNimbus]
+
     
-    
-class OathOfAncients(SubClass):
+class OathOfAncients(PaladinOath):
     """The Oath of the Ancients is as old as the race of elves and the rituals of
     the druids. Sometimes called fey knights, green knights, or horned knights,
     paladins who swear this oath cast their lot with the side of the light in
@@ -69,10 +101,15 @@ class OathOfAncients(SubClass):
 
     """
     name = "Oath of The Ancients"
+    _oath_spells = {3: [spells.EnsnaringStrike, spells.SpeakWithAnimals],
+                    5: [spells.Moonbeam, spells.MistyStep],
+                    9: [spells.PlantGrowth, spells.ProtectionFromEnergy],
+                    13: [spells.IceStorm, spells.Stoneskin],
+                    17: [spells.CommuneWithNature, spells.TreeStride]}
     features_by_level = defaultdict(list)
     
     
-class OathOfVengance(SubClass):
+class OathOfVengance(PaladinOath):
     """The Oath of Vengeance is a solemn commitment to punish those who have
     committed a grievous sin. When evil forces slaughter helpless villagers,
     when an entire people turns against the will of the gods, when a thieves’
@@ -103,10 +140,15 @@ class OathOfVengance(SubClass):
 
     """
     name = "Oath of Vengance"
+    _oath_spells = {3: [spells.Bane, spells.HuntersMark],
+                    5: [spells.HoldPerson, spells.MistyStep],
+                    9: [spells.Haste, spells.ProtectionFromEnergy],
+                    13: [spells.Banishment, spells.DimensionDoor],
+                    17: [spells.HoldMonster, spells.Scrying]}
     features_by_level = defaultdict(list)
     
     
-class OathOfCrown(SubClass):
+class OathOfCrown(PaladinOath):
     """The Oath of the Crown is sworn to the ideals of civilization, be it the
     spirit of a nation, fealty to a sovereign, or service to a deity of law and
     rulership. The paladins who swear this oath dedicate themselves to serving
@@ -137,10 +179,15 @@ class OathOfCrown(SubClass):
 
     """
     name = "Oath of The Crown"
+    _oath_spells = {3: [spells.Command, spells.CompelledDuel],
+                    5: [spells.WardingBond, spells.ZoneOfTruth],
+                    9: [spells.AuraOfVitality, spells.SpiritGuardians],
+                    13: [spells.Banishment, spells.GuardianOfFaith],
+                    17: [spells.CircleOfPower, spells.Geas]}
     features_by_level = defaultdict(list)
     
     
-class OathOfConquest(SubClass):
+class OathOfConquest(PaladinOath):
     """The Oath of Conquest calls to paladins who seek glory in battle and the
     subjugation of their enemies. It isn’t enough for these paladins to
     establish order. They must crush the forces of chaos. Sometimes called
@@ -173,10 +220,15 @@ class OathOfConquest(SubClass):
 
     """
     name = "Oath of Conquest"
+    _oath_spells = {3: [spells.ArmorOfAgathys, spells.Command],
+                    5: [spells.HoldPerson, spells.SpiritualWeapon],
+                    9: [spells.BestowCurse, spells.Fear],
+                    13: [spells.DominateBeast, spells.Stoneskin],
+                    17: [spells.Cloudkill, spells.DominatePerson]}
     features_by_level = defaultdict(list)
     
     
-class OathOfRedemption(SubClass):
+class OathOfRedemption(PaladinOath):
     """The Oath of Redemption sets a paladin on a difficult path, one that requires
     a holy warrior to use violence only as a last resort. Paladins who dedicate
     themselves to this oath believe that any person can be redeemed and that
@@ -216,7 +268,56 @@ class OathOfRedemption(SubClass):
 
     """
     name = "Oath of Redemption"
+    _oath_spells = {3: [spells.Sanctuary, spells.Sleep],
+                    5: [spells.CalmEmotions, spells.HoldPerson],
+                    9: [spells.Counterspell, spells.HypnoticPattern],
+                    13: [spells.OtilukesResilientSphere, spells.Stoneskin],
+                    17: [spells.HoldMonster, spells.WallOfForce]}
     features_by_level = defaultdict(list)
+    features_by_level[3] = [features.EmissaryOfPeace,
+                            features.RebukeTheViolent]
+    features_by_level[7] = [features.AuraOfTheGuardian]
+    features_by_level[15] = [features.ProtectiveSpirit]
+    features_by_level[20] = [features.EmissaryOfRedemption]
+
+
+# Custom
+class OathOfZor(PaladinOath):
+    """The Oath of Zor
+
+    **Tenets of Zor**: 
+
+    --Courage. Never fear to act, though caution is wise.
+
+    --Honesty. Don’t lie or cheat. Let your word be your promise.
+
+    --Innocence. All people begin life in an innocent state, and it is their
+    environment or the influence of dark forces that drives them to evil. By
+    setting the proper example, and working to heal the wounds of a deeply
+    flawed world, you can set anyone on a righteous path.
+
+    --Restitution. If my foes wreak ruin on the world, it is because I failed
+    to stop them. I must help those harmed by their misdeeds.
+
+    --Patience. Change takes time. Those who have walked the path of the wicked
+    must be given reminders to keep them honest and true. Once you have planted
+    the seed of righteousness in a creature, you must work day after day to
+    allow that seed to survive and flourish.
+
+    
+    """
+    name = "Oath of Zor"
+    _oath_spells = {3: [spells.Sanctuary, spells.Sleep],
+                    5: [spells.CalmEmotions, spells.HoldPerson],
+                    9: [spells.Counterspell, spells.HypnoticPattern],
+                    13: [spells.OtilukesResilientSphere, spells.Stoneskin],
+                    17: [spells.HoldMonster, spells.WallOfForce]}
+    features_by_level = defaultdict(list)
+    features_by_level[3] = [features.EmissaryOfPeace,
+                            features.RebukeTheViolent]
+    features_by_level[7] = [features.AuraOfTheGuardian]
+    features_by_level[15] = [features.ProtectiveSpirit]
+    features_by_level[20] = [features.EmissaryOfRedemption]
     
     
 class Paladin(CharClass):
@@ -234,8 +335,19 @@ class Paladin(CharClass):
     class_skill_choices = ("Athletics", 'Insight', 'Intimidation',
                            'Medicine', 'Persuasion', 'Religion')
     features_by_level = defaultdict(list)
+    features_by_level[1] = [features.DivineSense, features.LayOnHands]
+    features_by_level[2] = [features.PaladinFightingStyle,
+                            features.DivineSmite]
+    features_by_level[3] = [features.DivineHealth,
+                            features.ChannelDivinityPaladin]
+    features_by_level[5] = [features.ExtraAttackPaladin]
+    features_by_level[6] = [features.AuraOfProtection]
+    features_by_level[10] = [features.AuraOfCourage]
+    features_by_level[11] = [features.ImprovedDivineSmite]
+    features_by_level[14] = [features.CleansingTouch]
     subclasses_available = (OathOfDevotion, OathOfAncients, OathOfVengance,
-                            OathOfCrown, OathOfConquest, OathOfRedemption)
+                            OathOfCrown, OathOfConquest, OathOfRedemption,
+                            OathOfZor)
     spellcasting_ability = 'charisma'
     spell_slots_by_level = {
         # char_lvl: (cantrips, 1st, 2nd, 3rd, ...)

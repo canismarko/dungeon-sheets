@@ -134,6 +134,23 @@ class Rogue(CharClass):
                            'Insight', 'Intimidation', 'Investigation',
                            'Perception', 'Performance', 'Persuasion',
                            'Sleight of Hand', 'Stealth')
+    num_skill_choices = 4
     features_by_level = defaultdict(list)
+    features_by_level[1] = [features.Expertise, features.SneakAttack]
+    features_by_level[2] = [features.CunningAction]
+    features_by_level[5] = [features.UncannyDodge]
+    features_by_level[7] = [features.Evasion]
+    features_by_level[11] = [features.ReliableTalent]
+    features_by_level[14] = [features.BlindSense]
+    features_by_level[15] = [features.SlipperyMind]
+    features_by_level[18] = [features.Elusive]
+    features_by_level[20] = [features.StrokeOfLuck]
     subclasses_available = (Thief, Assassin, ArcaneTrickster,
                             Inquisitive, Mastermind, Scout, Swashbuckler)
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        # slippery mind feature
+        if self.owner.Rogue.level >= 15:
+            self.saving_throw_proficiencies = ('dexterity', 'intelligence',
+                                               'wisdom')

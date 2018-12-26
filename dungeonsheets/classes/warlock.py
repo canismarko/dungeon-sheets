@@ -31,6 +31,10 @@ class Fiend(SubClass):
     """
     name = "The Fiend Patron"
     features_by_level = defaultdict(list)
+    features_by_level[1] = [features.DarkOnesBlessing]
+    features_by_level[6] = [features.DarkOnesOwnLuck]
+    features_by_level[10] = [features.FiendishResilience]
+    features_by_level[14] = [features.HurlThroughHell]
 
 
 class GreatOldOne(SubClass):
@@ -109,7 +113,13 @@ class Hexblade(SubClass):
 
     """
     name = "Hexblade Patron"
+    weapon_proficiencies = (weapons.MartialWeapon,)
+    _proficiencies_text = ['martial weapons', 'medium armor', 'shields']
     features_by_level = defaultdict(list)
+    features_by_level[1] = [features.HexbladesCurse, features.HexWarrior]
+    features_by_level[6] = [features.AccursedSpecter]
+    features_by_level[10] = [features.ArmorOfHexes]
+    features_by_level[14] = [features.MasterOfHexes]
 
 
 class Warlock(CharClass):
@@ -126,6 +136,10 @@ class Warlock(CharClass):
     multiclass_weapon_proficiencies = weapon_proficiencies
     _multiclass_proficiencies_text = ('light armor', 'simple weapons')
     features_by_level = defaultdict(list)
+    features_by_level[2] = [features.EldritchInvocation]
+    features_by_level[3] = [features.PactBoon]
+    features_by_level[11] = [features.MysticArcanum]
+    features_by_level[20] = [features.EldritchMaster]
     subclasses_available = (Archfey, Fiend, GreatOldOne, Undying, Celestial,
                             Hexblade)
     spellcasting_ability = 'charisma'

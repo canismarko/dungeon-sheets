@@ -1,9 +1,31 @@
-from .. import (weapons, features)
+from .. import (weapons, features, spells)
 from .classes import CharClass, SubClass
 from collections import defaultdict
 
 
-class KnowledgeDomain(SubClass):
+class ClericDomain(SubClass):
+    name = "Generic Cleric Domain"
+    _domain_spells = {1: [], 3: [], 5: [], 7: [], 9: []}
+
+    @property
+    def level(self):
+        return self.owner.Cleric.level
+
+    @property
+    def spells_known(self):
+        spells = []
+        for lvl, sps in self._domain_spells.items():
+            if self.level >= lvl:
+                spells.extend(sps)
+        return spells
+    
+    # All Domain spells are both known and prepared
+    @property
+    def spells_prepared(self):
+        return self.spells_known
+
+
+class KnowledgeDomain(ClericDomain):
     """The gods of knowledge—including Oghma, Boccob, Gilean, Aureon, and
     Thoth—value learning and understanding above all. Some teach that knowledge
     is to be gathered and shared in libraries and universities, or promote the
@@ -18,10 +40,11 @@ class KnowledgeDomain(SubClass):
 
     """
     name = "Knowledge Domain"
+    _domain_spells = {1: [], 3: [], 5: [], 7: [], 9: []}
     features_by_level = defaultdict(list)
 
 
-class LifeDomain(SubClass):
+class LifeDomain(ClericDomain):
     """The Life domain focuses on the vibrant positive energy—one of the
     fundamental forces of the universe— that sustains all life. The gods of
     life promote vitality and health through healing the sick and wounded,
@@ -34,10 +57,11 @@ class LifeDomain(SubClass):
 
     """
     name = "Life Domain"
+    _domain_spells = {1: [], 3: [], 5: [], 7: [], 9: []}
     features_by_level = defaultdict(list)
 
 
-class LightDomain(SubClass):
+class LightDomain(ClericDomain):
     """Gods of light—including Helm, Lathander, Pholtus, Branchala, the Silver
     Flame, Belenus, Apollo, and Re-Horakhty—promote the ideals of rebirth and
     renewal, truth, vigilance, and beauty, often using the symbol of the
@@ -51,10 +75,11 @@ class LightDomain(SubClass):
 
     """
     name = "Light Domain"
+    _domain_spells = {1: [], 3: [], 5: [], 7: [], 9: []}
     features_by_level = defaultdict(list)
 
 
-class NatureDomain(SubClass):
+class NatureDomain(ClericDomain):
     """Gods of nature are as varied as the natural world itself, from inscrutable
     gods of the deep forests (such as Silvanus, Obad-Hai, Chislev, Balinor, and
     Pan) to friendly deities associated with particular springs and groves
@@ -68,10 +93,11 @@ class NatureDomain(SubClass):
 
     """
     name = "Nature Domain"
+    _domain_spells = {1: [], 3: [], 5: [], 7: [], 9: []}
     features_by_level = defaultdict(list)
 
 
-class TempestDomain(SubClass):
+class TempestDomain(ClericDomain):
     """Gods whose portfolios include the Tempest domain - including Talos,
     Umberlee, Kord, Zeboim, the Devourer, Zeus, and Thor — govern storms, sea,
     and sky. They include gods of lightning and thunder, gods of earthquakes,
@@ -86,10 +112,22 @@ class TempestDomain(SubClass):
 
     """
     name = "Tempest Domain"
+    _domain_spells = {1: [spells.FogCloud, spells.Thunderwave],
+                      3: [spells.GustOfWind, spells.Shatter],
+                      5: [spells.CallLightning, spells.SleetStorm],
+                      7: [spells.ControlWater, spells.IceStorm],
+                      9: [spells.DestructiveWave, spells.InsectPlague]}
+    weapon_proficiencies = (weapons.MartialWeapon,)
+    _proficiencies_text = ('martial weapons', 'heavy armor')
     features_by_level = defaultdict(list)
+    features_by_level[1] = (features.WrathOfTheStorm,)
+    features_by_level[2] = (features.DestructiveWrath,)
+    features_by_level[6] = (features.ThunderboltStrike,)
+    features_by_level[8] = (features.DivineStrikeTempest,)
+    features_by_level[17] = (features.Stormborn,)
 
 
-class TrickeryDomain(SubClass):
+class TrickeryDomain(ClericDomain):
     """Gods of trickery—such as Tymora, Beshaba, Olidammara, the Traveler, Garl
     Glittergold, and Loki—are mischief-makers and instigators who stand as a
     constant challenge to the accepted order among both gods and
@@ -101,10 +139,11 @@ class TrickeryDomain(SubClass):
 
     """
     name = "Trickery Domain"
+    _domain_spells = {1: [], 3: [], 5: [], 7: [], 9: []}
     features_by_level = defaultdict(list)
 
 
-class WarDomain(SubClass):
+class WarDomain(ClericDomain):
     """War has many manifestations. It can make heroes of ordinary people. It can
     be desperate and horrific, with acts of cruelty and cowardice eclipsing
     instances of excellence and courage. In either case, the gods of war watch
@@ -120,11 +159,12 @@ class WarDomain(SubClass):
 
     """
     name = "War Domain"
+    _domain_spells = {1: [], 3: [], 5: [], 7: [], 9: []}
     features_by_level = defaultdict(list)
 
 
 # SCAG
-class ArcanaDomain(SubClass):
+class ArcanaDomain(ClericDomain):
     """Magic is an energy that suffuses the multiverse and that fuels both
     destruction and creation. Gods of the Arcana domain know the secrets and
     potential of magic intimately. For some of these gods, magical knowledge
@@ -141,11 +181,12 @@ class ArcanaDomain(SubClass):
 
     """
     name = "Arcana Domain"
+    _domain_spells = {1: [], 3: [], 5: [], 7: [], 9: []}
     features_by_level = defaultdict(list)
 
 
 # XGTE
-class ForgeDomain(SubClass):
+class ForgeDomain(ClericDomain):
     """The gods of the forge are patrons of artisans who work with metal, from a
     humble blacksmith who keeps a village in horseshoes and plow blades to the
     mighty elf artisan whose diamond-tipped arrows of mithral have felled demon
@@ -163,7 +204,7 @@ class ForgeDomain(SubClass):
     features_by_level = defaultdict(list)
 
 
-class GraveDomain(SubClass):
+class GraveDomain(ClericDomain):
     """Gods of the grave watch over the line between life and death. To these
     deities, death and the afterlife are a foundational part of the
     multiverse. To desecrate the peace of the dead is an abomination. Deities
@@ -177,6 +218,7 @@ class GraveDomain(SubClass):
 
     """
     name = "Grave Domain"
+    _domain_spells = {1: [], 3: [], 5: [], 7: [], 9: []}
     features_by_level = defaultdict(list)
 
 
@@ -194,6 +236,9 @@ class Cleric(CharClass):
     class_skill_choices = ('History', 'Insight', 'Medicine',
                            'Persuasion', 'Religion')
     features_by_level = defaultdict(list)
+    features_by_level[2] = (features.ChannelDivinity, features.TurnUndead,)
+    features_by_level[5] = (features.DestroyUndead, )
+    features_by_level[10] = (features.DivineIntervention,)
     subclasses_available = (KnowledgeDomain, LifeDomain, LightDomain,
                             NatureDomain, TempestDomain, TrickeryDomain,
                             WarDomain, ArcanaDomain, ForgeDomain,

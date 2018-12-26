@@ -5,10 +5,15 @@ class Weapon():
     bonus_damage = 0
     damage_type = "p"
     attack_bonus = 0
-    weight = 1 # In lbs
+    magic_bonus = 0
+    weight = 1  # In lbs
     properties = "Light"
     ability = 'strength'
     is_finesse = False
+
+    def __init__(self):
+        self.attack_bonus += self.magic_bonus
+        self.bonus_damage += self.magic_bonus
     
     @property
     def damage(self):
@@ -437,22 +442,14 @@ class Unarmed(MeleeWeapon):
 
 
 # Custom weapons
-class HeavyRight(MeleeWeapon):
+class HeavyPunch(MeleeWeapon):
     base_damage = "1d4"
-    name = "Heavy Right"
+    name = "Heavy Punch"
     damage_type = 'b'
     bonus_damage = 10 + 2  # Heavy weapon master + Dueling
     attack_bonus = -5  # Heavy weapon master
 
 
-class HeavyLeft(MeleeWeapon):
-    base_damage = "1d4"
-    name = "Heavy Left"
-    damage_type = 'b'
-    bonus_damage = 10 + 2 - 2  # No proficiency bonus
-    attack_bonus = -5  # Heavy weapon master
-
-    
 class Bite(MeleeWeapon):
     name = "Bite"
     base_damage = "1d4"

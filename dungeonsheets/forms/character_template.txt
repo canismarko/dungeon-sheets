@@ -17,8 +17,10 @@ subclasses = {{ char.subclasses }}  # ex: ['Necromacy'] or ['Thief', None]
 background = "{{ char.background.name }}"
 race = "{{ char.race.name }}"
 alignment = "{{ char.alignment }}"
+
 xp = {{ char.xp }}
 hp_max = {{ char.hp_max }}
+inspiration = {{ char.inspiration }}  # integer inspiration value
 
 # Ability Scores
 strength = {{ char.strength.value }}
@@ -32,16 +34,25 @@ charisma = {{ char.charisma.value }}
 # ex: skill_proficiencies = ('athletics', 'acrobatics', 'arcana')
 skill_proficiencies = {{ char.skill_proficiencies }}
 
-# Named features / feats that aren't part of your classes,
-# race, or background. Also include Eldritch Invocations.
+# Any skills you have "expertise" (Bard/Rogue) in
+skill_expertise = {{ char.skill_expertise }}
+
+# Named features / feats that aren't part of your classes, race, or background.
+# Also include Eldritch Invocations and features you make multiple selection of
+# (like Maneuvers for Fighter, Metamagic for Sorcerors, Trick Shots for
+# Gunslinger, etc.)
 # Example:
-# features = ('Tavern Brawler',)  # take the optional Feat from PHB
+# features = ('Tavern Brawler',) # take the optional Feat from PHB
 features = {{ char.custom_features }}
 
 # If selecting among multiple feature options: ex Fighting Style
 # Example (Fighting Style):
 # feature_choices = ('Archery',)
 feature_choices = {{ char.feature_choices }}
+
+# Weapons/other proficiencies not given by class/race/background
+weapon_proficiencies = {{ char.other_weapon_proficiencies_text }}
+_proficiencies_text = {{ char._proficiencies_text }}
 
 # Proficiencies and languages
 languages = """{{ char.languages }}"""
@@ -55,10 +66,10 @@ gp = 0
 pp = 0
 
 # TODO: Put your equipped weapons and armor here
-weapons = {{ char.weapons }} # Example: ('shortsword', 'longsword')
-magic_items = {{ char.magic_items }} # Example: ('ring of protection',)
-armor = "{{ char.armor }}" # Eg "light leather armor"
-shield = "{{ char.shield }}" # Eg "shield"
+weapons = {{ char.weapons }}  # Example: ('shortsword', 'longsword')
+magic_items = {{ char.magic_items }}  # Example: ('ring of protection',)
+armor = "{{ char.armor }}"  # Eg "light leather armor"
+shield = "{{ char.shield }}"  # Eg "shield"
 
 equipment = """{{ char.equipment }}"""
 
@@ -66,7 +77,7 @@ attacks_and_spellcasting = """{{ char.attacks_and_spellcasting }}"""
 
 # List of known spells
 # Example: spells = ('magic missile', 'mage armor')
-spells = {{ char.spells }} # Todo: Learn some spells
+spells = {{ char.spells }}
 
 # Which spells have been prepared (not including cantrips)
 spells_prepared = {{ char.spells_prepared }}

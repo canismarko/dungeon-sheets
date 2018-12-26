@@ -15,7 +15,7 @@
 
 [% for sc in character.subclasses if sc not in ['', None, 'None', 'none']%]
 
-  \section*{[[ sc.name ]]}
+  \section*{Subclass: [[ sc.name ]]}
 
   [[ sc.__doc__|rst_to_latex ]]
 

@@ -47,11 +47,13 @@ class CharClass():
             self.features_by_level[i] = fs
         for k, v in params.items():
             setattr(self, k, v)
+        self.spells_known = [S() for S in cls.spells_known]
+        self.spells_prepared = [S() for S in cls.spells_prepared]
 
         # Apply subclass
         self.subclass = self.select_subclass(subclass)
         if isinstance(self.subclass, SubClass):
-            self.apply_subclass()
+            self.apply_subclass(feature_choices=feature_choices)
 
     def select_subclass(self, subclass_str):
         """
@@ -67,23 +69,31 @@ class CharClass():
                 return sc(owner=self.owner)
         return None
 
-    def apply_subclass(self):
-        if self.subclass is None:
+    def apply_subclass(self, feature_choices=[]):
+        if not isinstance(self.subclass, SubClass):
             return
+        subcls = self.subclass
         for i in range(1, 21):
-            self.features_by_level[i] += ([f(owner=self.owner) for f in
-                                           self.subclass.features_by_level[i]])
-        for attr in ('weapon_proficiencies', '_proficiencies_text',
-                     'spells_known', 'spells_prepared'):
-            new_list = getattr(self, attr, ()) + getattr(self.subclass, attr, ())
+            fs = []
+            for f in subcls.features_by_level[i]:
+                if issubclass(f, FeatureSelector):
+                    fs.append(f(owner=self.owner,
+                                feature_choices=feature_choices))
+                elif issubclass(f, Feature):
+                    fs.append(f(owner=self.owner))
+            self.features_by_level[i].extend(fs)
+        for attr in ('weapon_proficiencies', '_proficiencies_text'):
+            new_list = tuple(getattr(self, attr, ())) + tuple(getattr(self.subclass, attr, ()))
             setattr(self, attr, new_list)
         # All subclass proficiencies transfer, regardless of if this is primary class
-        self.multiclass_weapon_proficiencies += (self.subclass.weapon_proficiencies)
-        self._multiclass_proficiencies_text += (self._proficiencies_text)
+        self.multiclass_weapon_proficiencies += tuple(subcls.weapon_proficiencies)
+        self._multiclass_proficiencies_text += tuple(subcls._proficiencies_text)
         self.spellcasting_ability = (self.spellcasting_ability or
-                                     self.subclass.spellcasting_ability)
+                                     subcls.spellcasting_ability)
         self.spell_slots_by_level = (self.spell_slots_by_level or
-                                     self.subclass.spell_slots_by_level)
+                                     subcls.spell_slots_by_level)
+        self.spells_known.extend([S() for S in subcls.spells_known])
+        self.spells_prepared.extend([S() for S in subcls.spells_prepared])
     
     @property
     def features(self):
@@ -103,6 +113,15 @@ class CharClass():
             return 0
         else:
             return self.spell_slots_by_level[self.level][spell_level]
+
+    def __str__(self):
+        s = 'Level {:d} {:s}'.format(self.level, self.name)
+        if isinstance(self.subclass, SubClass):
+            s += ' ({:s})'.format(str(self.subclass))
+        return s
+        
+    def __repr__(self):
+        return '\"{:s}\"'.format(str(self))
 
 
 class SubClass():

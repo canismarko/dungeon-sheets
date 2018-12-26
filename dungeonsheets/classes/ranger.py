@@ -115,12 +115,6 @@ class Ranger(CharClass):
         20: (0, 4, 3, 3, 3, 2, 0, 0, 0, 0),
     }
 
-    def __init__(self, level, subclass=None, **params):
-        super().__init__(level, subclass=subclass, **params)
-        fighting_style = features.select_ranger_fighting_style(
-            feature_choices=params.get('feature_choices', []))
-        self.features_by_level[2].append(fighting_style)
-
 
 # Revised Ranger
 class BeastConclave(SubClass):
@@ -132,6 +126,11 @@ class BeastConclave(SubClass):
     """
     name = "Beast Conclave"
     features_by_level = defaultdict(list)
+    features_by_level[3] = [features.AnimalCompanion, features.CompanionsBond]
+    features_by_level[5] = [features.CoordinatedAttack]
+    features_by_level[7] = [features.BeastsDefense]
+    features_by_level[11] = [features.StormOfClawsAndFangs]
+    features_by_level[15] = [features.SuperiorBeastsDefense]
     
 
 class HunterConclave(SubClass):
@@ -160,5 +159,15 @@ class DeepStalkerConclave(SubClass):
 class RevisedRanger(Ranger):
     name = 'Revised Ranger'
     features_by_level = defaultdict(list)
+    features_by_level[1] = [features.FavoredEnemyRevised,
+                            features.NaturalExplorerRevised]
+    features_by_level[2] = [features.RangerFightingStyle]
+    features_by_level[3] = [features.PrimevalAwarenessRevised]
+    features_by_level[6] = [features.GreaterFavoredEnemy]
+    features_by_level[8] = [features.FleetOfFoot]
+    features_by_level[10] = [features.HideInPlainSight]
+    features_by_level[14] = [features.Vanish]
+    features_by_level[18] = [features.FeralSenses]
+    features_by_level[20] = [features.FoeSlayer]
     subclasses_available = (BeastConclave, HunterConclave, DeepStalkerConclave)
     

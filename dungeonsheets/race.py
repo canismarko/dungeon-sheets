@@ -24,7 +24,6 @@ class Race():
     charisma_bonus = 0
     hit_point_bonus = 0
     spells_known = ()
-    spells_prepared = ()
 
     def __init__(self, owner=None):
         self.owner = owner
@@ -35,12 +34,17 @@ class Race():
         for i in range(1, 21):
             self.features_by_level[i] = [f(owner=self.owner)for f in
                                          cls.features_by_level[i]]
+        self.spells_known = [S() for S in cls.spells_known]
+
+    @property
+    def spells_prepared(self):
+        return self.spells_known
     
     def __str__(self):
         return self.name
     
     def __repr__(self):
-        return f"<self.name>"
+        return "\"{:s}\"".format(self.name)
 
 
 # Dwarves
@@ -107,8 +111,7 @@ class DarkElf(Elf):
     charisma_bonus = 1
     features = (feats.SuperiorDarkvision, feats.FeyAncestry, feats.Trance,
                 feats.SunlightSensitivity, feats.DrowMagic)
-    spells_known = (spells.DancingLights(),)
-    spells_prepared = (spells.DancingLights(),)
+    spells_known = (spells.DancingLights,)
 
 
 # Halflings
@@ -174,8 +177,7 @@ class ForestGnome(Gnome):
     dexterity_bonus = 1
     features = Gnome.features + (feats.NaturalIllusionist,
                                  feats.SpeakWithSmallBeasts)
-    spells_known = (spells.MinorIllusion(),)
-    spells_prepared = (spells.MinorIllusion(),)
+    spells_known = (spells.MinorIllusion,)
     
 
 class RockGnome(Gnome):
@@ -242,8 +244,7 @@ class Aasimar(Race):
     languages = ("Common", "Celestial")
     features = (feats.Darkvision, feats.CelestialResistance,
                 feats.HealingHands, feats.LightBearer)
-    spells_known = (spells.Light(),)
-    spells_prepared = (spells.Light(),)
+    spells_known = (spells.Light,)
 
     
 # Protector Aasimar
@@ -348,8 +349,7 @@ class Triton(Race):
     features = (feats.Amphibious, feats.ControlAirAndWater,
                 feats.EmissaryOfTheSea, feats.GuardiansOfTheDepths)
     languages = ("Common", "Primordial")
-    spells_known = (spells.FogCloud(),)
-    spells_prepared = (spells.FogCloud(),)
+    spells_known = (spells.FogCloud,)
 
 
 # Aarakocra

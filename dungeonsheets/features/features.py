@@ -1,3 +1,4 @@
+
 from .. import weapons
 
 
@@ -34,6 +35,9 @@ class Feature():
 
     def __init__(self, owner=None):
         self.owner = owner
+        cls = type(self)
+        self.spells_known = [S() for S in cls.spells_known]
+        self.spells_prepared = [S() for S in cls.spells_prepared]
 
     def __eq__(self, other):
         return (self.name == other.name) and (self.source == other.source)
@@ -72,16 +76,17 @@ class FeatureSelector(Feature):
     A feature with multiple possible choices.
     """
     options = dict()
+    name = ''
+    source = ''
 
-    def __init__(self, owner, feature_choices=[]):
-        self.owner = owner
-        keep_source = self.source
+    def __new__(t, owner, feature_choices=[]):
         # Look for matching feature_choices
+        new_feat = Feature.__new__(Feature, owner=owner)
+        new_feat.__doc__ = t.__doc__
+        new_feat.name = t.name
+        new_feat.source = t.source
         for selection in feature_choices:
-            if selection.lower() in self.options():
-                feature_choices.remove(selection)
-                new_feat = self.options[selection.lower()]
-                self.__dict__.update(new_feat.__dict__)
-                new_feat.__init__(self)
-                break
-        self.source = keep_source
+            if selection.lower() in t.options:
+                new_feat = t.options[selection.lower()](owner=owner)
+                new_feat.source = t.source
+        return new_feat

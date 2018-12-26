@@ -3,7 +3,8 @@ from collections import namedtuple
 from .armor import NoArmor, NoShield, HeavyArmor
 from .features import (UnarmoredDefenseMonk, UnarmoredDefenseBarbarian,
                        DraconicResilience, Defense, FastMovement,
-                       UnarmoredMovement)
+                       UnarmoredMovement, GiftOfTheDepths, RemarkableAthelete)
+from math import ceil
 
 
 def findattr(obj, name):
@@ -94,6 +95,10 @@ class Skill():
         is_proficient = self.skill_name in character.skill_proficiencies
         if is_proficient:
             modifier += character.proficiency_bonus
+        elif any([isinstance(f, RemarkableAthelete) for f in character.features]):
+            if self.ability_name.lower() in ('strength',
+                                             'dexterity', 'constitution'):
+                modifier += ceil(character.proficiencies_bonus / 2.)
         # Check for expertise
         is_expert = self.skill_name in character.skill_expertise
         if is_expert:
@@ -142,16 +147,19 @@ class Speed():
     """
 
     def __get__(self, char, Character):
-        base_speed = char.race.speed
+        speed = char.race.speed
         other_speed = ''
-        if isinstance(base_speed, str):
-            base_speed = int(base_speed[:2])  # ignore other speeds, like fly
-            other_speed = base_speed[2:]
+        if isinstance(speed, str):
+            other_speed = speed[2:]
+            speed = int(speed[:2])  # ignore other speeds, like fly
         if any([isinstance(f, FastMovement) for f in char.features]):
             if not isinstance(char.armor, HeavyArmor):
-                base_speed += 10
+                speed += 10
         if isinstance(char.armor, NoArmor) or (char.armor is None):
             for f in char.features:
                 if isinstance(f, UnarmoredMovement):
-                    base_speed += f.speed_bonus
-        return '{:d}{:s}'.format(base_speed, other_speed)
+                    speed += f.speed_bonus
+        if any([isinstance(f, GiftOfTheDepths) for f in char.features]):
+            if 'swim' not in other_speed:
+                other_speed += ' ({:d} swim)'.format(speed)
+        return '{:d}{:s}'.format(speed, other_speed)

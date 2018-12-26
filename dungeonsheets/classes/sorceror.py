@@ -30,6 +30,10 @@ class WildMagic(SubClass):
     """
     name = "Wild Magic"
     features_by_level = defaultdict(list)
+    features_by_level[1] = [features.WildMagicSurge, features.TidesOfChaos]
+    features_by_level[6] = [features.BendLuck]
+    features_by_level[14] = [features.ControlledChaos]
+    features_by_level[18] = [features.SpellBombardment]
 
 
 # XGTE
@@ -107,6 +111,9 @@ class Sorceror(CharClass):
     class_skill_choices = ('Arcana', 'Deception', 'Insight',
                            'Intimidation', 'Persuasion', 'Religion')
     features_by_level = defaultdict(list)
+    features_by_level[2] = [features.FontOfMagic]
+    features_by_level[3] = [features.Metamagic]
+    features_by_level[20] = [features.SorcerousRestoration]
     subclasses_available = (DraconicBloodline, WildMagic, DivineSoul,
                             ShadowMagic, StormSorcery)
     spellcasting_ability = 'charisma'
