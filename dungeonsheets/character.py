@@ -234,6 +234,8 @@ class Character():
                        f'Please add it to ``race.py``')
                 self._race = race.Race(owner=self)
                 warnings.warn(msg)
+        elif newrace is None:
+            self._race = race.Race(owner=self)
         
     @property
     def background(self):

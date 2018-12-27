@@ -70,7 +70,7 @@ class TestCharacter(TestCase):
         self.assertEqual(repr(char), '<Wizard: Inara>')
     
     def test_is_proficient(self):
-        char = Character()
+        char = Character(classes=['Wizard'])
         char.weapon_proficiencies
         sword = Shortsword()
         # Check for not-proficient weapon
@@ -86,15 +86,19 @@ class TestCharacter(TestCase):
     def test_proficiencies_text(self):
         char = Character()
         char._proficiencies_text = ('hello', 'world')
-        self.assertEqual(char.proficiencies_text, 'Hello, world.')
+        self.assertIn('hello', char.proficiencies_text.lower())
+        self.assertIn('world', char.proficiencies_text.lower())
         # Check for extra proficiencies
-        char.proficiencies_extra = ("it's", "me")
-        self.assertEqual(char.proficiencies_text, "Hello, world, it's, me.")
+        char._proficiencies_text += ("it's", "me")
+        self.assertIn("it's", char.proficiencies_text.lower())
+        self.assertIn('me', char.proficiencies_text.lower())
         # Check that race proficienceis are included
         elf = race.HighElf()
         char.race = elf
-        expected = "Hello, world, longswords, shortswords, shortbows, longbows, it's, me."
-        self.assertEqual(char.proficiencies_text, expected)
+        expected = ("hello", "world", "longswords", "shortswords", "shortbows",
+                    "longbows", "it's", "me")
+        for e in expected:
+            self.assertIn(e, char.proficiencies_text.lower())
     
     def test_proficiency_bonus(self):
         char = Character()
@@ -158,11 +162,11 @@ class TestCharacter(TestCase):
     def test_speed(self):
         # Check that the speed pulls from the character's race
         char = Character(race='halfling')
-        self.assertEqual(char.speed, 25)
+        self.assertEqual(char.speed, '25')
         # Check that a character with no race defaults to 30 feet
         char = Character()
         char.race = None
-        self.assertEqual(char.speed, 30)
+        self.assertEqual(char.speed, '30')
 
 
 class DruidTestCase(TestCase):
