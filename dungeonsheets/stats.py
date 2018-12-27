@@ -4,7 +4,7 @@ from .armor import NoArmor, NoShield, HeavyArmor
 from .features import (UnarmoredDefenseMonk, UnarmoredDefenseBarbarian,
                        DraconicResilience, Defense, FastMovement,
                        UnarmoredMovement, GiftOfTheDepths, RemarkableAthelete,
-                       SeaSoul)
+                       SeaSoul, JackOfAllTrades)
 from math import ceil
 
 
@@ -96,10 +96,13 @@ class Skill():
         is_proficient = self.skill_name in character.skill_proficiencies
         if is_proficient:
             modifier += character.proficiency_bonus
-        elif any([isinstance(f, RemarkableAthelete) for f in character.features]):
+        elif character.has_feature(JackOfAllTrades):
+            modifier += character.proficiency_bonus // 2
+        elif character.has_feature(RemarkableAthelete):
             if self.ability_name.lower() in ('strength',
                                              'dexterity', 'constitution'):
-                modifier += ceil(character.proficiencies_bonus / 2.)
+                modifier += ceil(character.proficienc_bonus / 2.)
+        
         # Check for expertise
         is_expert = self.skill_name in character.skill_expertise
         if is_expert:

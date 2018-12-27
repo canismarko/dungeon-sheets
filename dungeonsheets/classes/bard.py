@@ -26,8 +26,11 @@ class CollegeOfLore(SubClass):
 
     """
     name = "College of Lore"
-    class_features_by_level = defaultdict(list)
-    
+    features_by_level = defaultdict(list)
+    features_by_level[3] = [features.LoreProficiencies, features.CuttingWords]
+    features_by_level[6] = [features.AdditionalMagicalSecrets]
+    features_by_level[14] = [features.PeerlessSkill]
+
 
 class CollegeOfValor(SubClass):
     """Bards of the College of Valor are daring skalds whose tales keep alive the
@@ -41,7 +44,12 @@ class CollegeOfValor(SubClass):
 
     """
     name = "College of Valor"
-    class_features_by_level = defaultdict(list)
+    weapon_proficiencies = (weapons.MartialWeapon,)
+    _proficencies_text = ('martial weapons', 'medium armor', 'shields')
+    features_by_level = defaultdict(list)
+    features_by_level[3] = [features.CombatInspiration]
+    features_by_level[6] = [features.BardExtraAttack]
+    features_by_level[14] = [features.BardBattleMagic]
 
 
 # XGTE
@@ -63,7 +71,11 @@ class CollegeOfGlamour(SubClass):
 
     """
     name = "College of Glamour"
-    class_features_by_level = defaultdict(list)
+    features_by_level = defaultdict(list)
+    features_by_level[3] = [features.MantleOfInspiration,
+                            features.EnthrallingPerformance]
+    features_by_level[6] = [features.MantleOfMajesty]
+    features_by_level[14] = [features.UnbreakableMajesty]
 
 
 class CollegeOfSwords(SubClass):
@@ -89,7 +101,14 @@ class CollegeOfSwords(SubClass):
 
     """
     name = "College of Swords"
-    class_features_by_level = defaultdict(list)
+    features_by_level = defaultdict(list)
+    weapon_prociciencies = (weapons.Scimitar,)
+    _proficiencies_text = ('medium armor', 'scimitar')
+    features_by_level[3] = [features.SwordsProficiency,
+                            features.BardFightingStyle,
+                            features.BladeFlourish]
+    features_by_level[6] = [features.BardExtraAttack]
+    features_by_level[14] = [features.MastersFlourish]
 
 
 class CollegeOfWhispers(SubClass):
@@ -110,7 +129,10 @@ class CollegeOfWhispers(SubClass):
 
     """
     name = "College of Whispers"
-    class_features_by_level = defaultdict(list)
+    features_by_level = defaultdict(list)
+    features_by_level[3] = [features.PsychicBlades, features.WordsOfTerror]
+    features_by_level[6] = [features.MantleOfWhispers]
+    features_by_level[14] = [features.ShadowLore]
 
 
 class Bard(CharClass):
@@ -135,9 +157,16 @@ class Bard(CharClass):
     _multiclass_proficiencies_text = ('Light Armor', '[choose one skill]',
                                       '[choose one musical instrument]')
     num_skill_choices = 3
-    features_by_level = defaultdict(list)
     subclasses_available = (CollegeOfLore, CollegeOfValor, CollegeOfGlamour,
                             CollegeOfSwords, CollegeOfWhispers)
+    features_by_level = defaultdict(list)
+    features_by_level[1] = [features.BardicInspiration]
+    features_by_level[2] = [features.SongOfRest, features.JackOfAllTrades]
+    features_by_level[3] = [features.BardExpertise]
+    features_by_level[5] = [features.FontOfInspiration]
+    features_by_level[6] = [features.Countercharm]
+    features_by_level[10] = [features.MagicalSecrets]
+    features_by_level[20] = [features.SuperiorInspiration]
     spellcasting_ability = 'charisma'
     spell_slots_by_level = {
         # char_lvl: (cantrips, 1st, 2nd, 3rd, ...)

@@ -338,7 +338,7 @@ class WolfAspect(FeatureSelector):
 class ElkAspect(FeatureSelector):
     """Whether mounted or on foot , your travel pace is doubled, as is the travel
     pace of up to ten companions while they're within 60 feet of you and you're
-    not inca- pacitated (see chapter 8 in the Player's Handbook for more
+    not incapacitated (see chapter 8 in the Player's Handbook for more
     information about travel pace). The elk spirit helps you roam far and fast
 
     """
@@ -347,7 +347,7 @@ class ElkAspect(FeatureSelector):
 
 
 class TigerAspect(FeatureSelector):
-    """You gain proficiency in two skills from the fol- lowing list: Athletics,
+    """You gain proficiency in two skills from the following list: Athletics,
     Acrobatics, Stealth, and Survival. The cat spirit hones your survival
     instincts
 
@@ -424,7 +424,7 @@ class WolfAttunement(Feature):
 class ElkAttunement(Feature):
     """While raging, you can use a bonus action during your move to pass through
     the space of a Large or smaller creature. That creature must succeed on a
-    Strength saving throw (DC 8 + your Strength bo- nus + your proficiency
+    Strength saving throw (DC 8 + your Strength bonus + your proficiency
     bonus) or be knocked prone and take bludgeoning damage equal to 1d12 + your
     Strength modifier
     
@@ -618,7 +618,7 @@ class SeaAura(Feature):
     **Sea**: When this effect is activated, you can choose one other creature
     you can see in your aura. The target must make a Dexterity saving
     throw. The target takes 1d6 lightning damage on a failed save, or half as
-    much dam- age on a successful one. The damage increases when you reach
+    much damage on a successful one. The damage increases when you reach
     certain levels in this class, increasing to 2d6 at 10th level, 3d6 at 15th
     level, and 4d6 at 20th level.
 
@@ -773,7 +773,7 @@ class RagingTundra(Feature):
     out at your foes. The effect is based on the environment you chose for your
     Storm Aura
 
-    **Tundra**: Whenever the effect of your Storm Aura is ac- tivated, you can
+    **Tundra**: Whenever the effect of your Storm Aura is activated, you can
     choose one creature you can see in the aura. That creature must succeed on
     a Strength saving throw, or its speed is reduced to 0 until the start of
     your next turn, as magical frost covers it
@@ -841,7 +841,7 @@ class FanaticalFocus(Feature):
 
 
 class ZealousPresence(Feature):
-    """At 10th level, you learn to channel divine power to in- spire zealotry in
+    """At 10th level, you learn to channel divine power to inspire zealotry in
     others. As a bonus action, you unleash a battle cry infused with divine
     energy. Up to ten other creatures of your choice within 60 feet ofyou that
     can hear you gain advantage on attack rolls and saving throws until the

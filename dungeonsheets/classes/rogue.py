@@ -136,7 +136,7 @@ class Rogue(CharClass):
                            'Sleight of Hand', 'Stealth')
     num_skill_choices = 4
     features_by_level = defaultdict(list)
-    features_by_level[1] = [features.Expertise, features.SneakAttack]
+    features_by_level[1] = [features.RogueExpertise, features.SneakAttack]
     features_by_level[2] = [features.CunningAction]
     features_by_level[5] = [features.UncannyDodge]
     features_by_level[7] = [features.Evasion]
