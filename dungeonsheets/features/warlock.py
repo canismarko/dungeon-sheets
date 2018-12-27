@@ -137,8 +137,14 @@ class DarkOnesBlessing(Feature):
     warlock level (minimum of 1)
 
     """
-    name = "Dark One's Blessing"
+    _name = "Dark One's Blessing"
     source = "Warlock (The Fiend Patron)"
+
+    @property
+    def name(self):
+        level = self.owner.Warlock.level
+        mod = self.owner.charisma.modifier
+        return self._name + ' ({:d} HP)'.format(level + mod)
 
 
 class DarkOnesOwnLuck(Feature):
