@@ -3,7 +3,8 @@ from collections import namedtuple
 from .armor import NoArmor, NoShield, HeavyArmor
 from .features import (UnarmoredDefenseMonk, UnarmoredDefenseBarbarian,
                        DraconicResilience, Defense, FastMovement,
-                       UnarmoredMovement, GiftOfTheDepths, RemarkableAthelete)
+                       UnarmoredMovement, GiftOfTheDepths, RemarkableAthelete,
+                       SeaSoul)
 from math import ceil
 
 
@@ -162,4 +163,7 @@ class Speed():
         if any([isinstance(f, GiftOfTheDepths) for f in char.features]):
             if 'swim' not in other_speed:
                 other_speed += ' ({:d} swim)'.format(speed)
+        if any([isinstance(f, SeaSoul) for f in char.features]):
+            if 'swim' not in other_speed:
+                other_speed += ' (30 swim)'
         return '{:d}{:s}'.format(speed, other_speed)

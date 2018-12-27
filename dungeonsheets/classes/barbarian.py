@@ -12,7 +12,11 @@ class BerserkerPath(SubClass):
 
     """
     name = "Path of the Berserker"
-    class_features_by_level = defaultdict(list)
+    features_by_level = defaultdict(list)
+    features_by_level[3] = [features.Frenzy]
+    features_by_level[6] = [features.MindlessRage]
+    features_by_level[10] = [features.IntimidatingPresence]
+    features_by_level[14] = [features.Retaliation]
 
 
 class TotemWarriorPath(SubClass):
@@ -27,8 +31,12 @@ class TotemWarriorPath(SubClass):
 
     """
     name = "Path of the Totem Warrior"
-    class_features_by_level = defaultdict(list)
-    
+    features_by_level = defaultdict(list)
+    features_by_level[3] = [features.SpiritSeeker, features.TotemSpirit]
+    features_by_level[6] = [features.BeastAspect]
+    features_by_level[10] = [features.SpiritWalker]
+    features_by_level[14] = [features.TotemicAttunement]
+
 
 # SCAG
 class BattleragerPath(SubClass):
@@ -40,7 +48,11 @@ class BattleragerPath(SubClass):
 
     """
     name = "Path of the Battlerager"
-    class_features_by_level = defaultdict(list)
+    features_by_level = defaultdict(list)
+    features_by_level[3] = [features.BattleragerArmor]
+    features_by_level[6] = [features.RecklessAbandon]
+    features_by_level[10] = [features.BattleragerCharge]
+    features_by_level[14] = [features.SpikedRetribution]
 
 
 # XGTE
@@ -60,7 +72,11 @@ class AncestralGuardianPath(SubClass):
 
     """
     name = "Path of the Ancestral Guardian"
-    class_features_by_level = defaultdict(list)
+    features_by_level = defaultdict(list)
+    features_by_level[3] = [features.AncestralProtectors]
+    features_by_level[6] = [features.SpiritShield]
+    features_by_level[10] = [features.ConsultTheSpirits]
+    features_by_level[14] = [features.VengefulAncestors]
 
     
 class StormHeraldPath(SubClass):
@@ -77,7 +93,11 @@ class StormHeraldPath(SubClass):
 
     """
     name = "Path of the Storm Herald"
-    class_features_by_level = defaultdict(list)
+    features_by_level = defaultdict(list)
+    features_by_level[3] = [features.StormAura]
+    features_by_level[6] = [features.StormSoul]
+    features_by_level[10] = [features.ShieldingStorm]
+    features_by_level[14] = [features.RagingStorm]
 
 
 class ZealotPath(SubClass):
@@ -93,7 +113,11 @@ class ZealotPath(SubClass):
 
     """
     name = "Path of the Zealot"
-    class_features_by_level = defaultdict(list)
+    features_by_level = defaultdict(list)
+    features_by_level[3] = [features.DivineFury, features.WarriorOfTheGods]
+    features_by_level[6] = [features.FanaticalFocus]
+    features_by_level[10] = [features.ZealousPresence]
+    features_by_level[14] = [features.RageBeyondDeath]
     
 
 class Barbarian(CharClass):
@@ -113,4 +137,13 @@ class Barbarian(CharClass):
     subclasses_available = (BerserkerPath, TotemWarriorPath, BattleragerPath,
                             AncestralGuardianPath, StormHeraldPath, ZealotPath)
     features_by_level = defaultdict(list)
-
+    features_by_level[1] = [features.Rage, features.UnarmoredDefenseBarbarian]
+    features_by_level[2] = [features.RecklessAttack, features.DangerSense]
+    features_by_level[5] = [features.ExtraAttackBarbarian,
+                            features.FastMovement]
+    features_by_level[7] = [features.FeralInstinct]
+    features_by_level[9] = [features.BrutalCritical]
+    features_by_level[11] = [features.RelentlessRage]
+    features_by_level[15] = [features.PersistentRage]
+    features_by_level[18] = [features.IndomitableMight]
+    features_by_level[20] = [features.PrimalChampion]

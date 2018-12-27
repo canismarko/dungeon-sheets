@@ -512,7 +512,9 @@ class Character():
         if self.has_feature(features.QuickDraw):
             ini += self.proficiency_bonus
         ini = '{:+d}'.format(ini)
-        if self.has_feature(features.NaturalExplorerRevised):
+        has_advantage = (self.has_feature(features.NaturalExplorerRevised) or
+                         self.has_feature(features.FeralInstinct))
+        if has_advantage:
             ini += '(A)'
         return ini
     
