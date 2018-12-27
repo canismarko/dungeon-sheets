@@ -180,7 +180,7 @@ class DruidTestCase(TestCase):
                            spells_prepared=['druidcraft'])
         # self.assertEqual(len(char.spells), 1)
         self.assertEqual(len(char.spells), 2)
-        self.assertIsInstance(char.spells[1], spells.Druidcraft)
+        self.assertIn(spells.Druidcraft(), char.spells)
     
     def test_wild_shapes(self):
         char = Druid()
