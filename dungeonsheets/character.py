@@ -12,7 +12,7 @@ import subprocess
 from .stats import Ability, Skill, findattr, ArmorClass, Speed
 from .dice import read_dice_str
 from . import (weapons, race, background, spells, armor, monsters,
-               exceptions, classes, features)
+               exceptions, classes, features, magic_items)
 from .weapons import Weapon
 from .armor import Armor, NoArmor, Shield, NoShield
 
@@ -345,7 +345,7 @@ class Character():
                     fts |= set(self.race.features_by_level[lvl])
         if self.background is not None:
             fts |= set(getattr(self.background, 'features', ()))
-        return tuple(fts)
+        return sorted(tuple(fts), key=(lambda x: x.name))
 
     @property
     def custom_features_text(self):
@@ -375,7 +375,6 @@ class Character():
         return (len(self.spellcasting_classes) > 0)
 
     def spell_slots(self, spell_level):
-        # TODO: Update this for Multiclassing
         if len(self.spellcasting_classes) == 1:
             return self.spellcasting_classes[0].spell_slots(spell_level)
         else:
@@ -407,7 +406,7 @@ class Character():
             spells |= set(c.spells_known) | set(c.spells_prepared)
         if self.race is not None:
             spells |= set(self.race.spells_known) | set(self.race.spells_prepared)
-        return tuple(spells)
+        return sorted(tuple(spells), key=(lambda x: (x.level, x.name)))
             
     @property
     def spells_prepared(self):
@@ -418,7 +417,7 @@ class Character():
             spells |= set(c.spells_prepared)
         if self.race is not None:
             spells |= set(self.race.spells_prepared)
-        return tuple(spells)
+        return sorted(tuple(spells), key=(lambda x: (x.level, x.name)))
 
     def set_attrs(self, **attrs):
         """Bulk setting of attributes. Useful for loading a character from a
@@ -436,7 +435,12 @@ class Character():
                 if isinstance(val, str):
                     val = [val]
                 for mitem in val:
-                    self.magic_items.append(mitem(owner=self))
+                    try:
+                        self.magic_items.append(findattr(magic_items, mitem)(owner=self))
+                    except (AttributeError):
+                        msg = (f'Magic Item "{mitem}" not defined. '
+                               f'Please add it to ``magic_items.py``')
+                        warnings.warn(msg)
             elif attr == 'weapon_proficiencies':
                 self.other_weapon_proficiencies = ()
                 wps = set([findattr(weapons, w) for w in val])
@@ -511,7 +515,6 @@ class Character():
         if self.has_feature(features.NaturalExplorerRevised):
             ini += '(A)'
         return ini
-
     
     def is_proficient(self, weapon: Weapon):
         """Is the character proficient with this item?
@@ -566,6 +569,14 @@ class Character():
         if s != '':
             s = '(See Features Page)\n\n--' + s
             s += '\n\n=================\n\n'
+        return s
+    
+    @property
+    def magic_items_text(self):
+        s = ', '.join([f.name + ("**" if f.needs_implementation else "")
+                        for f in sorted(self.magic_items, key=(lambda x: x.name))])
+        if s:
+            s += ', '
         return s
     
     def wear_armor(self, new_armor):

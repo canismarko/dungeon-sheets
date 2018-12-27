@@ -509,7 +509,15 @@ class Musket(Firearm):
     weight = 10
     properties = "Ammunition (range 120/480), Two-Handed, Reload 1, Misfire 2"
 
-    
+
+# Magic Items
+class FlameTongue(Greatsword):
+    name = "Flame Tongue +1"
+    magic_bonus = 1
+    base_damage = "4d6"
+    damage_type = 'f'
+
+
 # Some lists of weapons for easy proficiency resolution
 simple_melee_weapons = (Club, Dagger, Greatclub, Handaxe, Javelin,
                         LightHammer, Mace, Quarterstaff, Sickle, Spear)

@@ -13,17 +13,21 @@
 
 \maketitle
 
+\section*{Subclasses}
+           
 [% for sc in character.subclasses if sc not in ['', None, 'None', 'none']%]
 
-  \section*{Subclass: [[ sc.name ]]}
+  \subsection*{Subclass: [[ sc.name ]]}
 
   [[ sc.__doc__|rst_to_latex ]]
 
 [% endfor %]
   
+\section*{Features}
+
 [% for feat in character.features %]
 
-  \section*{[[ feat.name ]]}
+  \subsection*{[[ feat.name ]]}
 
   \noindent
   \textbf{Source:} [[ feat.source ]] \\
@@ -36,9 +40,11 @@
 
 [% endfor %]
 
+\section*{Magic Items}
+
 [% for mitem in character.magic_items %]
 
-  \section*{[[ mitem.name ]]}
+  \subsection*{[[ mitem.name ]]}
 
   \noindent
   \textbf{Requires Attunement:} [[ mitem.requires_attunement ]] \\
