@@ -308,7 +308,7 @@ def create_character_pdf(character, basename, flatten=False):
     for _fields, weapon in zip(weapon_fields, character.weapons):
         name_field, atk_field, dmg_field = _fields
         fields[name_field] = weapon.name
-        fields[atk_field] = '{:+d}'.format(weapon.attack_bonus)
+        fields[atk_field] = '{:+d}'.format(weapon.attack_modifier)
         fields[dmg_field] = f'{weapon.damage}/{weapon.damage_type}'
     # Other attack information
     attack_str = f'Armor: {character.armor}'

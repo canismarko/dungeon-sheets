@@ -9,5 +9,5 @@ class WeaponTestCase(unittest.TestCase):
         weapon.base_damage = '1d6'
         self.assertEqual(weapon.damage, '1d6')
         # Now add some bonus damage
-        weapon.bonus_damage = 2
+        weapon.damage_bonus = 2
         self.assertEqual(weapon.damage, '1d6+2')

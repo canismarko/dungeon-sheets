@@ -64,7 +64,6 @@ class MartialArts(Feature):
         if int(self.die[1:]) > int(weapon.base_damage.split('d')[-1]):
             weapon.base_damage = '1' + str(self.die)
         weapon.is_finesse = True
-        return weapon
 
 
 class Ki(Feature):

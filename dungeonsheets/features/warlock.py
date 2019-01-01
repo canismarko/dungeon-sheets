@@ -468,14 +468,13 @@ class HexWarrior(Feature):
         it is higher than STR/DEX bonus
         """
         if weapon.is_finesse:
-            existing_mod = max(self.owner.strength.modifier,
-                               self.owner.dexterity.modifier)
+            abils = {'strength': self.owner.strength.modifier,
+                     'dexterity': self.owner.dexterity.modifier,
+                     'charisma': self.owner.charisma.modifier}
         else:
-            existing_mod = self.owner.strength.modifier
-        cha_mod = self.owner.charisma.modifier
-        if cha_mod > existing_mod:
-            weapon.attack_bonus += (cha_mod - existing_mod)
-        return weapon
+            abils = {weapon.ability: getattr(self.owner, weapon.ability).modifier,
+                     'charisma': self.owner.charisma.modifier}
+        weapon.ability = max(abils, key=abils.get)
 
     
 class AccursedSpecter(Feature):
@@ -958,11 +957,9 @@ class ImprovedPactWeapon(Invocation):
         """
         Add +1 to attack and damage if magic is not already magic
         """
-        if weapon.magic_bonus <= 1:
-            weapon.magic_bonus = 1
+        if (weapon.attack_bonus == 0) or (weapon.bonus_damage == 0):
             weapon.attack_bonus += 1
             weapon.bonus_damage += 1
-        return weapon
 
 
 class LanceOfLethargy(Invocation):

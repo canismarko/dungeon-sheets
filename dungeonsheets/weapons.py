@@ -2,24 +2,54 @@ class Weapon():
     name = ""
     cost = "0 gp"
     base_damage = "1d4"
-    bonus_damage = 0
-    damage_type = "p"
+    damage_bonus = 0
     attack_bonus = 0
-    magic_bonus = 0
+    damage_type = "p"
     weight = 1  # In lbs
-    properties = "Light"
+    properties = ""
     ability = 'strength'
     is_finesse = False
+    features_applied = False
 
-    def __init__(self):
-        self.attack_bonus += self.magic_bonus
-        self.bonus_damage += self.magic_bonus
+    def __init__(self, wielder=None):
+        self.wielder = wielder
+
+    def apply_features(self):
+        if (not self.features_applied) and (self.wielder is not None):
+            self.features_applied = True
+            for f in self.wielder.features:
+                f.weapon_func(self)
+
+    @property
+    def ability_mod(self):
+        if self.wielder is None:
+            return 0
+        else:
+            if self.is_finesse:
+                return max(self.wielder.strength.modifier,
+                           self.wielder.dexterity.modifier)
+            else:
+                return getattr(self.wielder, self.ability).modifier
+        
+    @property
+    def attack_modifier(self):
+        self.apply_features()
+        mod = self.attack_bonus
+        if self.wielder is not None:
+            mod += self.ability_mod
+            if self.wielder.is_proficient(self):
+                mod += self.wielder.proficiency_bonus
+        return mod
     
     @property
     def damage(self):
+        self.apply_features()
         dam_str = str(self.base_damage)
-        if self.bonus_damage != 0:
-            dam_str += '{:+d}'.format(self.bonus_damage)
+        bonus = self.damage_bonus
+        if self.wielder is not None:
+            bonus += self.ability_mod
+        if bonus != 0:
+            dam_str += '{:+d}'.format(bonus)
         return dam_str
 
     def __str__(self):
@@ -31,10 +61,12 @@ class Weapon():
 
 class MeleeWeapon(Weapon):
     name = "Melee Weapons"
+    ability = 'strength'
 
 
 class RangedWeapon(Weapon):
     name = "Ranged Weapons"
+    ability = 'dexterity'
 
 
 class SimpleWeapon(Weapon):
@@ -523,7 +555,8 @@ class Musket(Firearm):
 # Magic Items
 class FlameTongue(Greatsword):
     name = "Flame Tongue +1"
-    magic_bonus = 1
+    damage_bonus = 1
+    attack_bonus = 1
     base_damage = "4d6"
     damage_type = 'f'
 

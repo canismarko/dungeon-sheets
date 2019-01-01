@@ -72,7 +72,6 @@ class Archery(Feature):
         """
         if isinstance(weapon, weapons.RangedWeapon):
             weapon.attack_bonus += 2
-        return weapon
 
     
 class Defense(Feature):
@@ -98,8 +97,7 @@ class Dueling(Feature):
         """
         if (isinstance(weapon, weapons.MeleeWeapon)
                 and "two-handed" not in weapon.properties.lower()):
-            weapon.bonus_damage += 2
-        return weapon
+            weapon.damage_bonus += 2
 
     
 class TwoWeaponFighting(Feature):

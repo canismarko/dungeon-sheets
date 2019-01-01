@@ -48,21 +48,21 @@ class TestCharacter(TestCase):
         sword = char.weapons[0]
         self.assertTrue(isinstance(sword, Weapon))
         self.assertTrue(isinstance(sword, Shortsword))
-        self.assertEqual(sword.attack_bonus, 4) # str + prof
-        self.assertEqual(sword.bonus_damage, 2) # str
+        self.assertEqual(sword.attack_modifier, 4) # str + prof
+        self.assertEqual(sword.damage, '1d6+2') # str
         # Check if dexterity is used if it's higher (Finesse weapon)
         char.weapons = []
         char.dexterity = 16
         char.wield_weapon('shortsword')
         sword = char.weapons[0]
-        self.assertEqual(sword.attack_bonus, 5) # dex + prof
+        self.assertEqual(sword.attack_modifier, 5) # dex + prof
         # Check if race weapon proficiencies are considered
         char.weapons = []
         char.weapon_proficiencies = []
         char.race = race.HighElf()
         char.wield_weapon('shortsword')
         sword = char.weapons[0]
-        self.assertEqual(sword.attack_bonus, 5)
+        self.assertEqual(sword.attack_modifier, 5)
     
     def test_str(self):
         char = Wizard(name="Inara")

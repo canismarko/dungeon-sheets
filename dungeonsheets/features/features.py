@@ -59,14 +59,8 @@ class Feature():
            The weapon to be tested for special bonuses
         kwargs
            Any other key-word arguments the function may require
-
-        Returns
-        -------
-        weapon
-            Updated weapon (perhaps changed damage bonus, etc.)
-
         """
-        return weapon
+        pass
 
 
 class FeatureSelector(Feature):

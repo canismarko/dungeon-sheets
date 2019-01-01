@@ -617,30 +617,17 @@ class Character():
         """
         # Retrieve the weapon class from the weapons module
         if isinstance(weapon, weapons.Weapon):
-            weapon_ = type(weapon)()
+            weapon_ = type(weapon)(wielder=self)
         elif isinstance(weapon, str):
             try:
                 NewWeapon = findattr(weapons, weapon)
             except AttributeError:
                 raise AttributeError(f'Weapon "{weapon}" is not defined')
-            weapon_ = NewWeapon()
+            weapon_ = NewWeapon(wielder=self)
         elif issubclass(weapon, weapons.Weapon):
-            weapon_ = weapon()
+            weapon_ = weapon(wielder=self)
         else:
             raise AttributeError(f'Weapon "{weapon}" is not defined')
-        # check if features add any bonuses
-        for f in self.features:
-            weapon_ = f.weapon_func(weapon_)
-        # Set weapon attributes based on character
-        if weapon_.is_finesse:
-            ability_mod = max(self.strength.modifier, self.dexterity.modifier)
-        else:
-            ability_mod = getattr(self, weapon_.ability).modifier
-        weapon_.attack_bonus += ability_mod
-        weapon_.bonus_damage += ability_mod
-        # Check for prifiency
-        if self.is_proficient(weapon_):
-            weapon_.attack_bonus += self.proficiency_bonus
         # Save it to the array
         self.weapons.append(weapon_)
     
