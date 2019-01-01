@@ -616,11 +616,18 @@ class Character():
         
         """
         # Retrieve the weapon class from the weapons module
-        try:
-            NewWeapon = findattr(weapons, weapon)
-        except AttributeError:
+        if isinstance(weapon, weapons.Weapon):
+            weapon_ = type(weapon)()
+        elif isinstance(weapon, str):
+            try:
+                NewWeapon = findattr(weapons, weapon)
+            except AttributeError:
+                raise AttributeError(f'Weapon "{weapon}" is not defined')
+            weapon_ = NewWeapon()
+        elif issubclass(weapon, weapons.Weapon):
+            weapon_ = weapon()
+        else:
             raise AttributeError(f'Weapon "{weapon}" is not defined')
-        weapon_ = NewWeapon()
         # check if features add any bonuses
         for f in self.features:
             weapon_ = f.weapon_func(weapon_)

@@ -1,4 +1,4 @@
-"""This file describes the heroic adventurer {{ char.name }}.
+"""This file describes the heroic adventurer Fighter2.
 
 It's used primarily for saving characters from create-character,
 where there will be many missing sections.
@@ -8,34 +8,34 @@ sheet by running ``makesheets`` from the command line.
 
 """
 
-dungeonsheets_version = "{{ char.dungeonsheets_version }}"
+dungeonsheets_version = "0.9.4"
 
-name = "{{ char.name }}"
-player_name = "{{ char.player_name }}"
+name = "Fighter2"
+player_name = "Ben"
 
 # Be sure to list Primary class first
-classes = {{ char.class_names }}  # ex: ['Wizard'] or ['Rogue', 'Fighter']
-levels = {{ char.levels }}  # ex: [10] or [3, 2]
-subclasses = {{ char.subclasses }}  # ex: ['Necromacy'] or ['Thief', None]
-background = "{{ char.background.name }}"
-race = "{{ char.race.name }}"
-alignment = "{{ char.alignment }}"
+classes = ['Fighter']  # ex: ['Wizard'] or ['Rogue', 'Fighter']
+levels = [8]  # ex: [10] or [3, 2]
+subclasses = ["Eldritch Knight"]  # ex: ['Necromacy'] or ['Thief', None]
+background = "Knight"
+race = "Forest Gnome"
+alignment = "Lawful evil"
 
-xp = {{ char.xp }}
-hp_max = {{ char.hp_max }}
+xp = 0
+hp_max = 54
 inspiration = 0  # integer inspiration value
 
 # Ability Scores
-strength = {{ char.strength.value }}
-dexterity = {{ char.dexterity.value }}
-constitution = {{ char.constitution.value }}
-intelligence = {{ char.intelligence.value }}
-wisdom = {{ char.wisdom.value }}
-charisma = {{ char.charisma.value }}
+strength = 15
+dexterity = 14
+constitution = 12
+intelligence = 16
+wisdom = 10
+charisma = 8
 
 # Select what skills you're proficient with
 # ex: skill_proficiencies = ('athletics', 'acrobatics', 'arcana')
-skill_proficiencies = {{ char.skill_proficiencies }}
+skill_proficiencies = ('athletics', 'insight', 'history', 'persuasion')
 
 # Any skills you have "expertise" (Bard/Rogue) in
 skill_expertise = ()
@@ -58,7 +58,7 @@ weapon_proficiencies = ()  # ex: ('shortsword', 'quarterstaff')
 _proficiencies_text = ()  # ex: ("thieves' tools",)
 
 # Proficiencies and languages
-languages = """{{ char.languages }}"""
+languages = """[choose one], Common, Gnomish"""
 
 # Inventory
 # TODO: Get yourself some money
@@ -69,10 +69,10 @@ gp = 0
 pp = 0
 
 # TODO: Put your equipped weapons and armor here
-weapons = ()  # Example: ('shortsword', 'longsword')
+weapons = ('longsword', 'spear')  # Example: ('shortsword', 'longsword')
 magic_items = ()  # Example: ('ring of protection',)
-armor = ""  # Eg "leather armor"
-shield = ""  # Eg "shield"
+armor = "half plate"  # Eg "leather armor"
+shield = "shield"  # Eg "shield"
 
 equipment = """TODO: list the equipment and magic items your character carries"""
 
@@ -81,7 +81,8 @@ or uses spells."""
 
 # List of known spells
 # Example: spells_prepared = ('magic missile', 'mage armor')
-spells_prepared = ()  # Todo: Learn some spells
+spells_prepared = ('light', 'mage armor', 'fire bolt', 'magic missile',
+                   'invisibility')  # Todo: Learn some spells
 
 # Which spells have not been prepared
 __spells_unprepared = ()
@@ -107,4 +108,3 @@ flaws = """TODO: Describe your characters interesting flaws.
 
 features_and_traits = """TODO: Describe other features and abilities your
 character has."""
-

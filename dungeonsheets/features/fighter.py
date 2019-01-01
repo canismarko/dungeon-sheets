@@ -298,7 +298,7 @@ class CommandersStrike(Maneuver):
     name = "Commander's Strike"
 
 
-class DisarmingStrike(Maneuver):
+class DisarmingAttack(Maneuver):
     """When you hit a creature with a weapon attack, you can expend one
     superiority die to attempt to disarm the target, forcing it to drop one
     item o f your choice that it’s holding. You add the superiority die to the
@@ -307,7 +307,7 @@ class DisarmingStrike(Maneuver):
     feet.
 
     """
-    name = "Disarming Strike"
+    name = "Disarming Attack"
 
 
 class DistractingStrike(Maneuver):

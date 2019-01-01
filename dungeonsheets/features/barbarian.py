@@ -574,7 +574,7 @@ class VengefulAncestors(Feature):
     that your Spirit Shield prevents.
 
     """
-    name = "VengefulAncestors"
+    name = "Vengeful Ancestors"
     source = "Barbarian (Ancestral Guardian)"
 
 

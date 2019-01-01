@@ -68,7 +68,7 @@ pp = 0
 # TODO: Put your equipped weapons and armor here
 weapons = {{ char.weapons }}  # Example: ('shortsword', 'longsword')
 magic_items = {{ char.magic_items }}  # Example: ('ring of protection',)
-armor = "{{ char.armor }}"  # Eg "light leather armor"
+armor = "{{ char.armor }}"  # Eg "leather armor"
 shield = "{{ char.shield }}"  # Eg "shield"
 
 equipment = """{{ char.equipment }}"""
@@ -81,6 +81,9 @@ spells = {{ char.spells }}
 
 # Which spells have been prepared (not including cantrips)
 spells_prepared = {{ char.spells_prepared }}
+
+# Wild shapes for Druid
+wild_shapes = {{ char.all_wild_shapes }}  # Ex: ('ape', 'wolf', 'ankylosaurus')
 
 # Backstory
 # Describe your backstory here

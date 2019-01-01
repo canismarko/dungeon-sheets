@@ -1,6 +1,6 @@
 __all__ = ('Ranger', 'RevisedRanger')
 
-from .. import (weapons, features)
+from .. import (weapons, features, spells)
 from .classes import CharClass, SubClass
 from collections import defaultdict
 
@@ -51,11 +51,32 @@ class GloomStalker(SubClass):
     """
     name = "Gloom Stalker"
     features_by_level = defaultdict(list)
-    features_by_level[3] = [features.GloomStalkerMagic, features.DreadAmbusher,
-                            features.UmbralSight, features.Darkvision]
+    _spells = {3: [spells.DisguiseSelf],
+               5: [spells.RopeTrick],
+               9: [spells.Fear],
+               13: [spells.GreaterInvisibility],
+               17: [spells.Seeming]}
+    features_by_level[3] = [features.DreadAmbusher, features.UmbralSight,
+                            features.Darkvision]
     features_by_level[7] = [features.IronMind]
     features_by_level[11] = [features.StalkersFlurry]
     features_by_level[15] = [features.ShadowyDodge]
+
+    @property
+    def level(self):
+        return self.owner.Ranger.level
+
+    @property
+    def spells_known(self):
+        spells = []
+        for lvl, sps in self._spells.items():
+            if self.level >= lvl:
+                spells.extend(sps)
+        return spells
+    
+    @property
+    def spells_prepared(self):
+        return self.spells_known
 
 
 class HorizonWalker(SubClass):
@@ -69,12 +90,32 @@ class HorizonWalker(SubClass):
 
     """
     name = "Horizon Walker"
+    _spells = {3: [spells.ProtectionFromEvilAndGood],
+               5: [spells.MistyStep],
+               9: [spells.Haste],
+               13: [spells.Banishment],
+               17: [spells.TeleportationCircle]}
     features_by_level = defaultdict(list)
-    features_by_level[3] = [features.HorizonWalkerMagic,
-                            features.DetectPortal, features.PlanarWarrior]
+    features_by_level[3] = [features.DetectPortal, features.PlanarWarrior]
     features_by_level[7] = [features.EtherealStep]
     features_by_level[11] = [features.DistantStrike]
     features_by_level[15] = [features.SpectralDefense]
+
+    @property
+    def level(self):
+        return self.owner.Ranger.level
+
+    @property
+    def spells_known(self):
+        spells = []
+        for lvl, sps in self._spells.items():
+            if self.level >= lvl:
+                spells.extend(sps)
+        return spells
+    
+    @property
+    def spells_prepared(self):
+        return self.spells_known
 
 
 class MonsterSlayer(SubClass):
@@ -87,11 +128,31 @@ class MonsterSlayer(SubClass):
     """
     name = "Monster Slayer"
     features_by_level = defaultdict(list)
-    features_by_level[3] = [features.MonsterSlayerMagic, features.HuntersSense,
-                            features.SlayersPrey]
+    features_by_level[3] = [features.HuntersSense, features.SlayersPrey]
     features_by_level[7] = [features.SupernaturalDefense]
     features_by_level[11] = [features.MagicUsersNemesis]
     features_by_level[15] = [features.SlayersCounter]
+    _spells = {3: [spells.ProtectionFromEvilAndGood],
+               5: [spells.ZoneOfTruth],
+               9: [spells.MagicCircle],
+               13: [spells.Banishment],
+               17: [spells.HoldMonster]}
+
+    @property
+    def level(self):
+        return self.owner.Ranger.level
+
+    @property
+    def spells_known(self):
+        spells = []
+        for lvl, sps in self._spells.items():
+            if self.level >= lvl:
+                spells.extend(sps)
+        return spells
+    
+    @property
+    def spells_prepared(self):
+        return self.spells_known
 
 
 class Ranger(CharClass):
@@ -192,12 +253,30 @@ class DeepStalkerConclave(SubClass):
     """
     name = "Deep Stalker Conclave"
     features_by_level = defaultdict(list)
-    features_by_level[3] = [features.UnderdarkScout, features.DeepStalkerMagic]
+    features_by_level[3] = [features.UnderdarkScout]
     features_by_level[5] = [features.ExtraAttackRanger]
     features_by_level[7] = [features.IronMind]
     features_by_level[11] = [features.StalkersFlurry]
     features_by_level[15] = [features.StalkersDodge]
-    
+    _spells = {3: [spells.DisguiseSelf],
+               5: [spells.RopeTrick],
+               9: [spells.GlyphOfWarding],
+               13: [spells.GreaterInvisibility],
+               17: [spells.Seeming]}
+
+    @property
+    def spells_prepared(self):
+        level = self.owner.Ranger.level
+        my_spells = []
+        for lvl, sps in self._spells.items():
+            if level >= lvl:
+                my_spells.extend(sps)
+        return my_spells
+
+    @property
+    def spells_known(self):
+        return self.spells_prepared
+
 
 class RevisedRanger(Ranger):
     name = 'Revised Ranger'

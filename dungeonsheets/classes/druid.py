@@ -160,7 +160,7 @@ class Druid(CharClass):
         for sc in self.subclasses_available:
             if ((subclass_str.lower() == sc.circle.lower())
                 or (subclass_str.lower() in sc.name.lower())):
-                return sc(level=self.level)
+                return sc(owner=self.owner)
         return None
 
     @property

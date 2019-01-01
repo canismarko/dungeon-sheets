@@ -1,5 +1,5 @@
 from .features import Feature, FeatureSelector
-from .. import (weapons, armor, spells)
+from .. import (weapons, armor)
 from .rogue import UncannyDodge, Evasion
 
 
@@ -97,8 +97,8 @@ class Dueling(Feature):
         +2 attack roll bonus if melee weapon is not two handed
         """
         if (isinstance(weapon, weapons.MeleeWeapon)
-                and "two-handed" in weapon.properties.lower()):
-            weapon.attack_bonus += 2
+                and "two-handed" not in weapon.properties.lower()):
+            weapon.bonus_damage += 2
         return weapon
 
     
@@ -422,35 +422,6 @@ class ShareSpells(Feature):
 
 
 # Gloom Stalker
-class GloomStalkerMagic(Feature):
-    """Starting at 3rd level, you learn an additional spell when you reach certain
-    levels in this class, as shown in the Gloom Stalker Spells table. The spell
-    counts as a ranger spell for you, but it doesn't count against the number
-    of ranger spells you know
-
-    """
-    name = "Gloom Stalker Magic"
-    source = "Ranger (Gloom Stalker)"
-    _spells = {3: [spells.DisguiseSelf],
-               5: [spells.RopeTrick],
-               9: [spells.Fear],
-               13: [spells.GreaterInvisibility],
-               17: [spells.Seeming]}
-
-    @property
-    def spells_prepared(self):
-        level = self.owner.Ranger.level
-        my_spells = []
-        for lvl, sps in self._spells.items():
-            if level >= lvl:
-                my_spells.extend(sps)
-        return my_spells
-
-    @property
-    def spells_known(self):
-        return self.spells_prepared
-
-
 class DreadAmbusher(Feature):
     """At 3rd level, you master the art of the ambush. You can give yourself a
     bonus to your initiative rolls equal to your Wisdom modifier. At the start
@@ -519,35 +490,6 @@ class ShadowyDodge(Feature):
 
 
 # Horizon Walker
-class HorizonWalkerMagic(Feature):
-    """Starting at 3rd level, you learn an additional spell when you reach certain
-    levels in this class, as shown in the Horizon Walker Spells table. The spell
-    counts as a ranger spell for you, but it doesn't count against the number
-    of ranger spells you know
-
-    """
-    name = "Horizon Walker Magic"
-    source = "Ranger (Horizon Walker)"
-    _spells = {3: [spells.ProtectionFromEvilAndGood],
-               5: [spells.MistyStep],
-               9: [spells.Haste],
-               13: [spells.Banishment],
-               17: [spells.TeleportationCircle]}
-
-    @property
-    def spells_prepared(self):
-        level = self.owner.Ranger.level
-        my_spells = []
-        for lvl, sps in self._spells.items():
-            if level >= lvl:
-                my_spells.extend(sps)
-        return my_spells
-
-    @property
-    def spells_known(self):
-        return self.spells_prepared
-
-
 class DetectPortal(Feature):
     """At 3rd level, you gain the ability to magically sense the presence of a
     planar portal. As an action, you detect the distance and direction to the
@@ -615,35 +557,6 @@ class SpectralDefense(Feature):
 
 
 # Monster Slayer
-class MonsterSlayerMagic(Feature):
-    """Starting at 3rd level, you learn an additional spell when you reach certain
-    levels in this class, as shown in the Monster Slayer Spells table. The
-    spell counts as a ranger spell for you, but it doesn't count against the
-    number of ranger spells you know
-
-    """
-    name = "Monster Slayer Magic"
-    source = "Ranger (Monster Slayer)"
-    _spells = {3: [spells.ProtectionFromEvilAndGood],
-               5: [spells.ZoneOfTruth],
-               9: [spells.MagicCircle],
-               13: [spells.Banishment],
-               17: [spells.HoldMonster]}
-
-    @property
-    def spells_prepared(self):
-        level = self.owner.Ranger.level
-        my_spells = []
-        for lvl, sps in self._spells.items():
-            if level >= lvl:
-                my_spells.extend(sps)
-        return my_spells
-
-    @property
-    def spells_known(self):
-        return self.spells_prepared
-
-
 class HuntersSense(Feature):
     """At 3rd level, you gain the ability to peer at a creature and magically
     discern how best to hurt it. As an action, choose one creature you can see
@@ -961,35 +874,6 @@ class UnderdarkScout(Feature):
     """
     name = "Underdark Scout"
     source = "Revised Ranger (Deep Stalker Conclave)"
-
-
-class DeepStalkerMagic(Feature):
-    """Starting at 3rd level, you learn an additional spell when you reach certain
-    levels in this class, as shown in the Deep Stalker Spells table. The spell
-    counts as a ranger spell for you, but it doesn't count against the number
-    of ranger spells you know
-
-    """
-    name = "Deep Stalker Magic"
-    source = "Revised Ranger (Deep Stalker Conclave)"
-    _spells = {3: [spells.DisguiseSelf],
-               5: [spells.RopeTrick],
-               9: [spells.GlyphOfWarding],
-               13: [spells.GreaterInvisibility],
-               17: [spells.Seeming]}
-
-    @property
-    def spells_prepared(self):
-        level = self.owner.Ranger.level
-        my_spells = []
-        for lvl, sps in self._spells.items():
-            if level >= lvl:
-                my_spells.extend(sps)
-        return my_spells
-
-    @property
-    def spells_known(self):
-        return self.spells_prepared
 
 
 class StalkersDodge(Feature):

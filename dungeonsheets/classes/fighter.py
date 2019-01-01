@@ -56,7 +56,7 @@ class EldritchKnight(SubClass):
     features_by_level[15] = [features.ArcaneCharge]
     features_by_level[18] = [features.ImprovedWarMagic]
     spellcasting_ability = 'intelligence'
-    multiclass_spellslots_by_level = {
+    spell_slots_by_level = {
         # char_lvl: (cantrips, 1st, 2nd, 3rd, ...)
         1:  (0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
         2:  (0, 0, 0, 0, 0, 0, 0, 0, 0, 0),

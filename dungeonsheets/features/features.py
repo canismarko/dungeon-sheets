@@ -34,9 +34,8 @@ class Feature():
 
     def __init__(self, owner=None):
         self.owner = owner
-        cls = type(self)
-        self.spells_known = [S() for S in cls.spells_known]
-        self.spells_prepared = [S() for S in cls.spells_prepared]
+        self.spells_known = [S() for S in self.spells_known]
+        self.spells_prepared = [S() for S in self.spells_prepared]
 
     def __eq__(self, other):
         return (self.name == other.name) and (self.source == other.source)
@@ -84,6 +83,7 @@ class FeatureSelector(Feature):
         new_feat.__doc__ = t.__doc__
         new_feat.name = t.name
         new_feat.source = t.source
+        new_feat.needs_implementation = True
         for selection in feature_choices:
             if selection.lower() in t.options:
                 new_feat = t.options[selection.lower()](owner=owner)

@@ -1,5 +1,5 @@
 from .features import Feature
-from .. import armor
+from .. import armor, spells
 
 
 # Many Classes
@@ -130,12 +130,12 @@ class DrowMagic(Feature):
     """You know the dancing lights cantrip.  When you reach 3rd level, you can
     cast the faerie fire spell once per day. When you reach 5th level, you can
     also cast the darkness spell once per day. Charisma is your spellcasting
-    ability for these spells. Drow
+    ability for these spells.
 
     """
     name = "Drow Magic"
     source = "Race (Dark Elf)"
-    needs_implementation = True
+    spells_known = spells_prepared = (spells.DancingLights,)
 
 
 # Halflings
@@ -357,7 +357,7 @@ class InfernalLegacy(Feature):
     """
     name = "Infernal Legacy"
     source = "Race (Tiefling)"
-    needs_implementation = True
+    spells_known = spells_prepared = (spells.Thaumaturgy,)
 
 
 # Aasimar
@@ -462,7 +462,6 @@ class FirbolgMagic(Feature):
     """
     name = "Firbolg Magic"
     source = "Race (Firbolg)"
-    needs_implementation = True
 
 
 class HiddenStep(Feature):
@@ -610,7 +609,6 @@ class ControlAirAndWater(Feature):
     """
     name = "Control Air and Water"
     source = "Race (Triton)"
-    needs_implementation = True
 
 
 class EmissaryOfTheSea(Feature):

@@ -161,7 +161,7 @@ class TestCharacter(TestCase):
     
     def test_speed(self):
         # Check that the speed pulls from the character's race
-        char = Character(race='halfling')
+        char = Character(race='lightfoot halfling')
         self.assertEqual(char.speed, '25')
         # Check that a character with no race defaults to 30 feet
         char = Character()

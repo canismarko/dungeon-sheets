@@ -136,7 +136,7 @@ class CityWatch(Background):
 class ClanCrafter(Background):
     name = "Clan Crafter"
     skill_proficiencies = ('history', 'insight')
-    languages = ('Dwarvish')
+    languages = ('Dwarvish',)
     features = (feats.RespectOfTheStoutFolk,)
 
 
@@ -189,7 +189,7 @@ class KnightOfTheOrder(Background):
     skill_proficiencies = ('persuasion',)
     skill_choices = ('arcana', 'history', 'nature', 'religion')
     num_skill_choices = 1
-    languages = ('[choose one]')
+    languages = ('[choose one]',)
     features = (feats.KnightlyRegard,)
 
 
@@ -210,14 +210,14 @@ class UrbanBountyHunter(Background):
 class UthgardtTribeMember(Background):
     name = "Uthgardt Tribe Member"
     skill_profifiencies = ('athletics', 'survival')
-    languages = ('[choose one]')
+    languages = ('[choose one]',)
     features = (feats.UthgardtHeritage,)
 
 
 class WaterdhavianNoble(Background):
     name = "Waterdhavian Noble"
     skill_proficiencies = ('history', 'persuasion')
-    languages = ('[choose one]')
+    languages = ('[choose one]',)
     features = (feats.KeptInStyle,)
     
     

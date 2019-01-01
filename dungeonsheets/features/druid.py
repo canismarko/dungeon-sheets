@@ -148,27 +148,35 @@ class _CircleSpells(Feature):
     """
     _name = "Select One"
     source = "Druid (Circle of the Land)"
-    _spells = {3: [], 5: [], 7: [], 9: []}
+    _spells = {3: [spells.MirrorImage, spells.MistyStep],
+               5: [spells.WaterBreathing, spells.WaterWalk],
+               7: [spells.ControlWater, spells.FreedomOfMovement],
+               9: [spells.ConjureElemental, spells.Scrying]}
+    spells_known = []
+    spells_prepared = []
 
     @property
     def name(self):
         return "Circle Spells ({:s})".format(self._name)
 
-    @property
-    def spells_prepared(self):
-        level = self.owner.Druid.level
-        my_spells = []
-        for lvl, sps in self._spells.items():
-            if level >= lvl:
-                my_spells.extend(sps)
-        return my_spells
+    def __init__(self, owner=None):
+        if owner is not None:
+            level = owner.Druid.level
+            for lvl, sps in self._spells.items():
+                if level >= lvl:
+                    self.spells_known.extend(sps)
+                    self.spells_prepared.extend(sps)
+        super().__init__(owner=owner)
+    
 
-    @property
-    def spells_known(self):
-        return self.spells_prepared
-
-        
 class ArcticSpells(_CircleSpells):
+    """Your mystical connection to the land infuses you with the ability to cast
+    certain spells.
+
+    These spells are included in your Spell Sheet
+
+    """
+    _name = 'Arctic'
     _spells = {3: [spells.HoldPerson, spells.SpikeGrowth],
                5: [spells.SleetStorm, spells.Slow],
                7: [spells.FreedomOfMovement, spells.IceStorm],
@@ -176,6 +184,13 @@ class ArcticSpells(_CircleSpells):
 
 
 class CoastSpells(_CircleSpells):
+    """Your mystical connection to the land infuses you with the ability to cast
+    certain spells.
+
+    These spells are included in your Spell Sheet
+
+    """
+    _name = 'Coast'
     _spells = {3: [spells.MirrorImage, spells.MistyStep],
                5: [spells.WaterBreathing, spells.WaterWalk],
                7: [spells.ControlWater, spells.FreedomOfMovement],
@@ -183,6 +198,13 @@ class CoastSpells(_CircleSpells):
 
 
 class DesertSpells(_CircleSpells):
+    """Your mystical connection to the land infuses you with the ability to cast
+    certain spells.
+
+    These spells are included in your Spell Sheet
+
+    """
+    _name = 'Desert'
     _spells = {3: [spells.Blur, spells.Silence],
                5: [spells.CreateFoodAndWater, spells.ProtectionFromEnergy],
                7: [spells.Blight, spells.HallucinatoryTerrain],
@@ -190,6 +212,13 @@ class DesertSpells(_CircleSpells):
 
 
 class ForestSpells(_CircleSpells):
+    """Your mystical connection to the land infuses you with the ability to cast
+    certain spells.
+
+    These spells are included in your Spell Sheet
+
+    """
+    _name = 'Forest'
     _spells = {3: [spells.Barkskin, spells.SpiderClimb],
                5: [spells.CallLightning, spells.PlantGrowth],
                7: [spells.Divination, spells.FreedomOfMovement],
@@ -197,6 +226,13 @@ class ForestSpells(_CircleSpells):
 
 
 class GrasslandSpells(_CircleSpells):
+    """Your mystical connection to the land infuses you with the ability to cast
+    certain spells.
+
+    These spells are included in your Spell Sheet
+
+    """
+    _name = 'Grassland'
     _spells = {3: [spells.Invisibility, spells.PassWithoutTrace],
                5: [spells.Daylight, spells.Haste],
                7: [spells.Divination, spells.FreedomOfMovement],
@@ -204,6 +240,13 @@ class GrasslandSpells(_CircleSpells):
 
 
 class MountainSpells(_CircleSpells):
+    """Your mystical connection to the land infuses you with the ability to cast
+    certain spells.
+
+    These spells are included in your Spell Sheet
+
+    """
+    _name = 'Mountain'
     _spells = {3: [spells.SpiderClimb, spells.SpikeGrowth],
                5: [spells.LightningBolt, spells.MeldIntoStone],
                7: [spells.StoneShape, spells.Stoneskin],
@@ -211,6 +254,13 @@ class MountainSpells(_CircleSpells):
 
 
 class SwampSpells(_CircleSpells):
+    """Your mystical connection to the land infuses you with the ability to cast
+    certain spells.
+
+    These spells are included in your Spell Sheet
+
+    """
+    _name = 'Swamp'
     _spells = {3: [spells.Darkness, spells.MelfsAcidArrow],
                5: [spells.WaterWalk, spells.StinkingCloud],
                7: [spells.FreedomOfMovement, spells.LocateCreature],
@@ -218,6 +268,13 @@ class SwampSpells(_CircleSpells):
 
 
 class UnderdarkSpells(_CircleSpells):
+    """Your mystical connection to the land infuses you with the ability to cast
+    certain spells.
+
+    These spells are included in your Spell Sheet
+
+    """
+    _name = 'Underdark'
     _spells = {3: [spells.SpiderClimb, spells.Web],
                5: [spells.GaseousForm, spells.StinkingCloud],
                7: [spells.GreaterInvisibility, spells.StoneShape],
@@ -253,7 +310,8 @@ class CircleSpells(FeatureSelector, _CircleSpells):
                'mountain': MountainSpells,
                'swamp': SwampSpells,
                'underdark': UnderdarkSpells}
-    _name = "(Select One)"
+    name = "Circle Spells (Select One)"
+    source = "Druid (Circle of the Land)"
 
 
 class LandsStride(Feature):

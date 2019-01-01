@@ -103,9 +103,11 @@ class App(npyscreen.NPSAppManaged):
                     max_hp += math.ceil(hd.faces/2) + const
             log.debug("Updating max hp: %d", max_hp)
             max_hp_fld.value = str(max_hp)
+            self.character.hp_max = max_hp
     
     def onStart(self):
         self.character = character.Character()
+        self.character.class_list = []
         self.addForm("MAIN", BasicInfoForm, name="Basic Info:", formid='MAIN')
         self.addForm("RACE", RaceForm, name="Select your character's race:",
                      formid='RACE')
@@ -303,10 +305,10 @@ class SubclassForm(LinkedListForm):
             sc = self.subclass.get_selected_objects()[0]
             if sc in [None, '', 'None']:
                 sc = None
-                self.parentApp.character.class_list = self.parentApp.character.class_list[:self.class_num-1]
-                self.parentApp.character.add_class(cls=self.parent_class,
-                                                   level=self.level,
-                                                   subclass=sc)
+            self.parentApp.character.class_list = self.parentApp.character.class_list[:self.class_num-1]
+            self.parentApp.character.add_class(cls=self.parent_class,
+                                               level=self.level,
+                                               subclass=sc)
             super().to_next()
             
     def on_cancel(self):
@@ -529,13 +531,15 @@ class SkillForm(LinkedListForm):
 
 class SaveForm(LinkedListForm):
     def create(self):
-        self.filename = self.add(
-            npyscreen.TitleText, name='Filename:')
-        self.make_pdf = self.add(npyscreen.Checkbox, name="Create PDF:", value=True)
         self.instructions = self.add(
             npyscreen.FixedText, editbale=False,
-            value="After saving, edit this file to finish your personality, etc.")
-    
+            value=("Your character will be saved in the file given below. "
+                   "After saving, edit this file to finish your personality, "
+                   "weapons, etc."))
+        self.filename = self.add(
+            npyscreen.TitleText, name='Filename:')
+        self.make_pdf = self.add(npyscreen.Checkbox, name="Create PDF:",
+                                 value=True)
     def on_ok(self):
         super().to_next()
     

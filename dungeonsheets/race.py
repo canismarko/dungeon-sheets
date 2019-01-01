@@ -48,7 +48,7 @@ class Race():
 
 
 # Dwarves
-class Dwarf(Race):
+class _Dwarf(Race):
     name = "Dwarf"
     size = "medium"
     speed = 25
@@ -61,20 +61,20 @@ class Dwarf(Race):
     features = (feats.Darkvision, feats.DwarvenResilience, feats.Stonecunning)
 
 
-class HillDwarf(Dwarf):
+class HillDwarf(_Dwarf):
     name = "Hill Dwarf"
     wisdom_bonus = 1
     hit_point_bonus = 1
-    features = Dwarf.features + (feats.DwarvenToughness,)
+    features = _Dwarf.features + (feats.DwarvenToughness,)
 
 
-class MountainDwarf(Dwarf):
+class MountainDwarf(_Dwarf):
     name = "Mountain Dwarf"
     strength_bonus = 2
 
 
 # Elves
-class Elf(Race):
+class _Elf(Race):
     name = "Elf"
     size = "medium"
     speed = 30
@@ -84,29 +84,30 @@ class Elf(Race):
     features = (feats.Darkvision, feats.FeyAncestry, feats.Trance)
 
 
-class HighElf(Elf):
+class HighElf(_Elf):
     name = "High Elf"
     weapon_proficiencies = (weapons.Longsword, weapons.Shortsword,
-                           weapons.Shortbow, weapons.Longbow)
+                            weapons.Shortbow, weapons.Longbow)
     proficiencies_text = ('longswords', 'shortswords', 'shortbows', 'longbows')
     intelligence_bonus = 1
     languages = ('Common', 'Elvish', '[choose one]')
-    features = Elf.features + (feats.ElfCantrip,)
+    features = _Elf.features + (feats.ElfCantrip,)
 
 
-class WoodElf(Elf):
+class WoodElf(_Elf):
     name = "Wood Elf"
     weapon_proficiencies = (weapons.Longsword, weapons.Shortsword,
-                           weapons.Shortbow, weapons.Longbow)
+                            weapons.Shortbow, weapons.Longbow)
     proficiencies_text = ('longswords', 'shortswords', 'shortbows', 'longbows')
     wisdom_bonus = 1
     speed = 35
-    features = Elf.features + (feats.MaskOfTheWild,)
+    features = _Elf.features + (feats.MaskOfTheWild,)
 
 
-class DarkElf(Elf):
+class DarkElf(_Elf):
     name = "Dark Elf"
-    weapon_proficiencies = (weapons.Rapier, weapons.Shortsword, weapons.HandCrossbow)
+    weapon_proficiencies = (weapons.Rapier, weapons.Shortsword,
+                            weapons.HandCrossbow)
     proficiencies_text = ('rapiers', 'shortswords', 'hand crossbows')
     charisma_bonus = 1
     features = (feats.SuperiorDarkvision, feats.FeyAncestry, feats.Trance,
@@ -115,7 +116,7 @@ class DarkElf(Elf):
 
 
 # Halflings
-class Halfling(Race):
+class _Halfling(Race):
     name = "Halfling"
     size = "small"
     speed = 25
@@ -124,16 +125,16 @@ class Halfling(Race):
     features = (feats.Lucky, feats.Brave, feats.HalflingNimbleness)
 
 
-class LightfootHalfling(Halfling):
+class LightfootHalfling(_Halfling):
     name = "Lightfoot Halfling"
     charisma_bonus = 1
-    features = Halfling.features + (feats.NaturallyStealthy,)
+    features = _Halfling.features + (feats.NaturallyStealthy,)
     
 
-class StoutHalfling(Halfling):
+class StoutHalfling(_Halfling):
     name = "Stout Halfling"
     constitution_bonus = 1
-    features = Halfling.features + (feats.StoutResilience,)
+    features = _Halfling.features + (feats.StoutResilience,)
 
 
 # Humans
@@ -163,7 +164,7 @@ class Dragonborn(Race):
 
 
 # Gnomes
-class Gnome(Race):
+class _Gnome(Race):
     name = "Gnome"
     size = "small"
     speed = 25
@@ -172,27 +173,28 @@ class Gnome(Race):
     features = (feats.Darkvision, feats.GnomeCunning)
 
 
-class ForestGnome(Gnome):
+class ForestGnome(_Gnome):
     name = "Forest Gnome"
     dexterity_bonus = 1
-    features = Gnome.features + (feats.NaturalIllusionist,
-                                 feats.SpeakWithSmallBeasts)
+    features = _Gnome.features + (feats.NaturalIllusionist,
+                                  feats.SpeakWithSmallBeasts)
     spells_known = (spells.MinorIllusion,)
     
 
-class RockGnome(Gnome):
+class RockGnome(_Gnome):
     name = "Rock Gnome"
     constitution_bonus = 1
-    features = Gnome.features + (feats.ArtificersLore,
-                                 feats.Tinker)
+    features = _Gnome.features + (feats.ArtificersLore,
+                                  feats.Tinker)
 
 
-class DeepGnome(Gnome):
+class DeepGnome(_Gnome):
     name = "Deep Gnome"
     dexterity_bonus = 1
     languages = ("Common", "Gnomish", "Undercommon")
     features = (feats.SuperiorDarkvision, feats.GnomeCunning,
                 feats.StoneCamouflage)
+
 
 # Half-elves
 class HalfElf(Race):
@@ -236,7 +238,7 @@ class Tiefling(Race):
 
 
 # Aassimar
-class Aasimar(Race):
+class _Aasimar(Race):
     name = 'Aasimar'
     size = 'medium'
     speed = 30
@@ -248,7 +250,7 @@ class Aasimar(Race):
 
     
 # Protector Aasimar
-class ProtectorAasimar(Aasimar):
+class ProtectorAasimar(_Aasimar):
     name = "Protector Aasimar"
     wisdom_bonus = 1
     features_by_level = defaultdict(list)
@@ -256,7 +258,7 @@ class ProtectorAasimar(Aasimar):
 
 
 # Fallen Aasimar
-class ScourgeAasimar(Aasimar):
+class ScourgeAasimar(_Aasimar):
     name = "Scourge Aasimar"
     constitution_bonus = 1
     features_by_level = defaultdict(list)
@@ -264,7 +266,7 @@ class ScourgeAasimar(Aasimar):
 
 
 # Fallen Aasimar
-class FallenAasimar(Aasimar):
+class FallenAasimar(_Aasimar):
     name = "Fallen Aasimar"
     strength_bonus = 1
     features_by_level = defaultdict(list)
@@ -309,6 +311,10 @@ class Lizardfolk(Race):
     skill_choices = ('animal handling', 'nature', 'perception',
                      'stealth', 'survival')
 
+    def __init__(self, owner=None):
+        super().__init__(owner=owner)
+        self.owner.wield_weapon("bite")
+
 
 # Kenku
 class Kenku(Race):
@@ -337,6 +343,10 @@ class Tabaxi(Race):
     skill_proficiencies = ('perception', 'stealth')
     features = (feats.Darkvision, feats.FelineAgility,)
 
+    def __init__(self, owner=None):
+        super().__init__(owner=owner)
+        self.owner.wield_weapon("claws")
+
 
 # Triton
 class Triton(Race):
@@ -363,9 +373,13 @@ class Aarakocra(Race):
     weapon_proficiencies = (weapons.Talons,)
     proficiences_text = ('Talons',)
 
+    def __init__(self, owner=None):
+        super().__init__(owner=owner)
+        self.owner.wield_weapon("talons")
+
 
 # Genasi
-class Genasi(Race):
+class _Genasi(Race):
     name = "Genasi"
     constitution_bonus = 2
     size = 'medium'
@@ -373,27 +387,27 @@ class Genasi(Race):
     languages = ("Common", 'Primoridal')
 
 
-class AirGenasi(Genasi):
+class AirGenasi(_Genasi):
     name = "Air Genasi"
     dexterity_bonus = 1
     features = (feats.UnendingBreath,
                 feats.MingleWithTheWind)
 
     
-class EarthGenasi(Genasi):
+class EarthGenasi(_Genasi):
     name = "Earth Genasi"
     strength_bonus = 1
     features = (feats.EarthWalk, feats.MergeWithStone)
 
 
-class FireGenasi(Genasi):
+class FireGenasi(_Genasi):
     name = "Fire Genasi"
     intelligence_bonus = 1
     features = (feats.Darkvision, feats.FireResistance,
                 feats.ReachToTheBlaze)
 
 
-class WaterGenasi(Genasi):
+class WaterGenasi(_Genasi):
     name = "Water Genasi"
     wisdom_bonus = 1
     speed = "30 (30 swim)"
