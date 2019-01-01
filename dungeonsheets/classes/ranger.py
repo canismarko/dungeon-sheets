@@ -16,6 +16,10 @@ class Hunter(SubClass):
     """
     name = "Hunter"
     features_by_level = defaultdict(list)
+    features_by_level[3] = [features.HuntersPrey]
+    features_by_level[7] = [features.DefensiveTactics]
+    features_by_level[11] = [features.MultiattackRanger]
+    features_by_level[15] = [features.SuperiorHuntersDefense]
 
 
 class BeastMaster(SubClass):
@@ -29,6 +33,10 @@ class BeastMaster(SubClass):
     """
     name = "Beast Master"
     features_by_level = defaultdict(list)
+    features_by_level[3] = [features.RangersCompanion]
+    features_by_level[7] = [features.ExceptionalTraining]
+    features_by_level[11] = [features.BestialFury]
+    features_by_level[15] = [features.ShareSpells]
 
 
 # XGTE
@@ -43,6 +51,11 @@ class GloomStalker(SubClass):
     """
     name = "Gloom Stalker"
     features_by_level = defaultdict(list)
+    features_by_level[3] = [features.GloomStalkerMagic, features.DreadAmbusher,
+                            features.UmbralSight, features.Darkvision]
+    features_by_level[7] = [features.IronMind]
+    features_by_level[11] = [features.StalkersFlurry]
+    features_by_level[15] = [features.ShadowyDodge]
 
 
 class HorizonWalker(SubClass):
@@ -57,6 +70,11 @@ class HorizonWalker(SubClass):
     """
     name = "Horizon Walker"
     features_by_level = defaultdict(list)
+    features_by_level[3] = [features.HorizonWalkerMagic,
+                            features.DetectPortal, features.PlanarWarrior]
+    features_by_level[7] = [features.EtherealStep]
+    features_by_level[11] = [features.DistantStrike]
+    features_by_level[15] = [features.SpectralDefense]
 
 
 class MonsterSlayer(SubClass):
@@ -69,6 +87,11 @@ class MonsterSlayer(SubClass):
     """
     name = "Monster Slayer"
     features_by_level = defaultdict(list)
+    features_by_level[3] = [features.MonsterSlayerMagic, features.HuntersSense,
+                            features.SlayersPrey]
+    features_by_level[7] = [features.SupernaturalDefense]
+    features_by_level[11] = [features.MagicUsersNemesis]
+    features_by_level[15] = [features.SlayersCounter]
 
 
 class Ranger(CharClass):
@@ -88,6 +111,15 @@ class Ranger(CharClass):
                            'Survival')
     num_skill_choices = 3
     features_by_level = defaultdict(list)
+    features_by_level[1] = [features.FavoredEnemy, features.NaturalExplorer]
+    features_by_level[2] = [features.RangerFightingStyle]
+    features_by_level[3] = [features.PrimevalAwareness]
+    features_by_level[5] = [features.ExtraAttackRanger]
+    features_by_level[8] = [features.LandsStride]
+    features_by_level[10] = [features.HideInPlainSight]
+    features_by_level[14] = [features.Vanish]
+    features_by_level[18] = [features.FeralSenses]
+    features_by_level[20] = [features.FoeSlayer]
     subclasses_available = (Hunter, BeastMaster, GloomStalker,
                             HorizonWalker, MonsterSlayer)
     spellcasting_ability = 'wisdom'
@@ -142,6 +174,12 @@ class HunterConclave(SubClass):
     """
     name = "Hunter Conclave"
     features_by_level = defaultdict(list)
+    features_by_level = defaultdict(list)
+    features_by_level[3] = [features.HuntersPrey]
+    features_by_level[5] = [features.ExtraAttackRanger]
+    features_by_level[7] = [features.DefensiveTactics]
+    features_by_level[11] = [features.MultiattackRanger]
+    features_by_level[15] = [features.SuperiorHuntersDefense]
     
 
 class DeepStalkerConclave(SubClass):
@@ -154,6 +192,11 @@ class DeepStalkerConclave(SubClass):
     """
     name = "Deep Stalker Conclave"
     features_by_level = defaultdict(list)
+    features_by_level[3] = [features.UnderdarkScout, features.DeepStalkerMagic]
+    features_by_level[5] = [features.ExtraAttackRanger]
+    features_by_level[7] = [features.IronMind]
+    features_by_level[11] = [features.StalkersFlurry]
+    features_by_level[15] = [features.StalkersDodge]
     
 
 class RevisedRanger(Ranger):
@@ -165,7 +208,7 @@ class RevisedRanger(Ranger):
     features_by_level[3] = [features.PrimevalAwarenessRevised]
     features_by_level[6] = [features.GreaterFavoredEnemy]
     features_by_level[8] = [features.FleetOfFoot]
-    features_by_level[10] = [features.HideInPlainSight]
+    features_by_level[10] = [features.HideInPlainSightRevised]
     features_by_level[14] = [features.Vanish]
     features_by_level[18] = [features.FeralSenses]
     features_by_level[20] = [features.FoeSlayer]

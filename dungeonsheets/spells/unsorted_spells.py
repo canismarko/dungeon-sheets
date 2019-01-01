@@ -1813,5 +1813,139 @@ class GaseousForm(Spell):
     ritual = False
     magic_school = "Transmutation"
     classes = ('Sorcerer', 'Warlock', 'Wizard')
+class RopeTrick(Spell):
+    """You touch a length of rope that is up to 60 feet long. One end of the rope then 
+    rises into the air until the whole rope hangs perpendicular to the ground. At 
+    the upper end of the rope, an invisible entrance opens to an extradimensional 
+    space that lasts until the spell ends.
+    
+    The extradimensional space can be 
+    reached by climbing to the top of the rope. The space can hold as many as eight 
+    Medium or smaller creatures. The rope can be pulled into the space, making the 
+    rope disappear from view outside the space.
+    
+    Attacks and spells can’t cross 
+    through the entrance into or out of the extradimensional space, but those inside
+     can see out of it as if through a 3-foot-by-5-foot window centered on the rope.
+    
+    
+    Anything inside the extradimensional space drops out when the spell ends.
+    """
+    name = "Rope Trick"
+    level = 2
+    casting_time = "1 action"
+    casting_range = "Touch"
+    components = ('V', 's', 'm')
+    materials = """Powdered corn extract and a twisted loop of parchment"""
+    duration = "1 hour"
+    ritual = False
+    magic_school = "Transmutation"
+    classes = ('Wizard',)
+
+
+class Seeming(Spell):
+    """This spell allows you to change the appearance of any number of creatures that 
+    you can see within range.
+    You give each target you choose a new, illusory 
+    appearance. An unwilling target can make a Charisma saving throw, and if it 
+    succeeds, it is unaffected by this spell.
+    
+    The spell disguises physicial 
+    appearances as well as clothing, armor, weapons, and equipment. You can make 
+    each creature seem 1 foot shorter or taller and appear thin, fat, or inbetween. 
+    You can’t change a target’s body type, so you must choose a form that has the 
+    same basic arrangement of limbs. Otherwise, the extent of the illusion is up to 
+    you. The spell lasts for the duration, unless you use your action to dismiss it 
+    sooner.
+    
+    The changes wrought by this spell fail to hold up to physical 
+    inspections. For example, if you use this spell to add a hat to a creature’s 
+    outfitm objects pass through the hat, and anyone who touches it would feel 
+    nothing or would feel the creature’s head and hair. If you use this spell to 
+    appear thinner then you are, the hand of someone who reaches out to touch you 
+    would bump into you while it was seemingly still in midair.
+    
+    A creature can use 
+    its action to inspect a target and make an Intelligence (Investigation) check 
+    against your spell save DC. If it succeeds, it becomes aware that the target is 
+    disguised.
+    """
+    name = "Seeming"
+    level = 5
+    casting_time = "1 action"
+    casting_range = "30 feet"
+    components = ('V', 's')
+    materials = """"""
+    duration = "8 hours"
+    ritual = False
+    magic_school = "Illusion"
+    classes = ('Bard', 'Sorcerer', 'Wizard')
+
+
+class GlyphOfWarding(Spell):
+    """When you cast this spell, you inscribe a glyph that harms other creatures, 
+    either upon a surface (such as a table or a section of floor or wall) or within 
+    an object that can be closed (such as a book, a scroll, or a treasure chest) to 
+    conceal the glyph.
+    If you choose a surface, the glyph can cover an area of the 
+    surface no larger than 10 feet in diameter. If you choose an object, that object
+     must remain in its place; if the object is moved more than 10 feet from where 
+    you cast this spell, the glyph is broken, and the spell ends without being 
+    triggered.
+    
+    The glyph is nearly invisible and requires a successful Intelligence
+     (Investigation) check against your spell save DC to be found.
+    
+    You decide what 
+    triggers the glyph when you cast the spell. For glyphs inscribed on a surface, 
+    the most typical triggers include touching or standing on the glyph, removing 
+    another object covering the glyph, approaching within a certain distance of the 
+    glyph, or manipulating the object on which the glyph is inscribed. For glyphs 
+    inscribed within an object, the most common triggers include opening that 
+    object, approaching within a certain distance of the object, or seeing or 
+    reading the glyph. Once a glyph is triggered, this spell ends.
+    
+    You can further 
+    refine the trigger so the spell activates only under certain circumstances or 
+    according to physical characteristics (such as height or weight), creature kind 
+    (for example, the ward could be set to affect aberrations or drow), or 
+    alignment. You can also set conditions for creatures that don’t trigger the 
+    glyph, such as those who say a certain password.
+    
+    When you inscribe the glyph, 
+    choose explosive runes or a spell glyph.
+    
+    Explosive Runes
+    When triggered, the 
+    glyph erupts with magical energy in a 20-foot-radius sphere centered on the 
+    glyph. The sphere spreads around corners. Each creature in the area must make a 
+    Dexterity saving throw. A creature takes 5d8 acid, cold, fire, lightning, or 
+    thunder damage on a failed saving throw (your choice when you create the glyph),
+     or half as much damage on a successful one.
+    
+    Spell Glyph
+    You can store a 
+    prepared spell of 3rd level or lower in the glyph by casting it as part of 
+    creating the glyph. The spell must target a single creature or an area. The 
+    spell being stored has no immediate effect when cast in this way. When the glyph
+     is triggered, the stored spell is cast. If the spell has a target, it targets 
+    the creature that triggered the glyph. If the spell affects an area, the area is
+     centered on that creature. If the spell summons hostile creatures or creates 
+    harmful objects or traps, they appear as close as possible to the intruder and 
+    attack it. If the spell requires concentration, it lasts until the end of its 
+    full duration.
+    
+    At Higher Levels: 
+    """
+    name = "Glyph Of Warding"
+    level = 3
+    casting_time = "1 hour"
+    casting_range = "Touch"
+    components = ('V', 's', 'm')
+    materials = """Incense and powdered diamond worth at least 200 gp, which the spell consumes"""
+    duration = "Until dispelled or triggered"
+    ritual = False
+    magic_school = "Abjuration"
+    classes = ('you', 'cast', 'this', 'spell', 'using', 'a', 'spell', 'slot', 'of', '4th', 'level', 'or', 'higher', 'the', 'damage', 'of', 'an', 'explosive', 'runes', 'glyph', 'increases', 'by', '1d8', 'for', 'each', 'slot', 'level', 'above', '3rd.', 'If', 'you', 'create', 'a', 'spell', 'glyph', 'you', 'can', 'store', 'any', 'spell', 'of', 'up', 'to', 'the', 'same', 'level', 'as', 'the', 'slot', 'you', 'use', 'for', 'the', 'glyph', 'of')
 
 

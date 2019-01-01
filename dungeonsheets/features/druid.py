@@ -266,7 +266,7 @@ class LandsStride(Feature):
 
     """
     name = "Land's Stride"
-    source = "Druid (Circle of the Land)"
+    source = "Class (Many)"
 
 
 class NaturesWard(Feature):

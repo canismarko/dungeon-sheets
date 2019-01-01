@@ -1,4 +1,5 @@
 from .features import Feature
+from .. import spells
 
 
 # PHB
@@ -208,3 +209,312 @@ class DraconicResilience(Feature):
     """
     name = "Draconic Resilience"
     source = "Sorceror (Draconic Bloodline)"
+
+
+class DragonAncestor(Feature):
+    """At 1st level, you choose one type of dragon as your ancestor. The damage
+    type associated with each dragon is used by features you gain later
+
+    Dragon : Damage
+    
+    Black : Acid
+    
+    Blue : Lightning
+
+    Brass : Fire
+
+    Bronze : Lightning
+
+    Copper : Acid
+
+    Gold : Fire
+
+    Green : Poison
+
+    Red : Fire
+
+    Silver : Cold
+    
+    White : Cold
+
+    You can speak, read, and write Draconic. Additionally, whenever you make a
+    Charisma check when interacting with dragons, your proficiency bonus is
+    doubled if it applies to the check.
+
+    """
+    name = "Dragon Ancestor"
+    source = "Sorceror (Draconic Bloodline)"
+
+
+class ElementalAffinity(Feature):
+    """Starting at 6th level, when you cast a spell that deals damage of the type
+    associated with your draconic ancestry, add your Charisma modifier to that
+    damage. At the same time, you can spend 1 sorcery point to gain resistance
+    to that damage type for 1 hour
+
+    """
+    name = "Elemental Affinity"
+    source = "Sorceror (Draconic Bloodline)"
+
+    
+class DragonWings(Feature):
+    """At 14th level, you gain the ability to sprout a pair of dragon wings from
+    your back, gaining a flying speed equal to your current speed. You can
+    create these wings as a bonus action on your turn. They last until you
+    dismiss them as a bonus action on your turn. You can’t manifest your wings
+    while wearing armor unless the armor is made to accommodate them, and
+    clothing not made to accommodate your wings might be destroyed when you
+    manifest them
+
+    """
+    name = "Dragon Wings"
+    source = "Sorceror (Draconic Bloodline)"
+
+
+class DraconicPresence(Feature):
+    """Beginning at 18th level, you can channel the dread presence of your dragon
+    ancestor, causing those around you to become awestruck or frightened. As an
+    action, you can spend 5 sorcery points to draw on this power and exude an
+    aura of awe or fear (your choice) to a distance of 60 feet. For 1 minute or
+    until you lose your concentration (as if you were casting a concentration
+    spell), each hostile creature that starts its turn in this aura must
+    succeed on a Wisdom saving throw or be charmed (if you chose awe) or
+    frightened (if you chose fear) until the aura ends. A creature that
+    succeeds on this saving throw is immune to your aura for 24 hours.
+
+    """
+    name = "Draconic Presence"
+    source = "Sorceror (Draconic Bloodline)"
+
+
+# Divine Soul
+class DivineMagic(Feature):
+    """Your link to the divine allows you to learn spells from the cleric
+    class. When your Spellcasting feature lets you learn or replace a sorcerer
+    cantrip or a sorcerer spell of 1st level or higher, you can choose the new
+    spell from the cleric spell list or the sorcerer spell list. You must
+    otherwise obey all the restrictions for selecting the spell, and it becomes
+    a sorcerer spell for you.
+
+    In addition, choose an affinity for the source of your divine power: good,
+    evil, law, chaos, or neutrality. You learn an additional spell based on
+    that affinity, as shown below. It is a sorcerer spell for you, but it
+    doesn’t count against your number of sorcerer spells known. If you later
+    replace this spell, you must replace it with a Spell from the cleric spell
+    list
+
+    Good : Cure Wounds
+
+    Evil : Inflict Wounds
+
+    Law : Bless
+
+    Chaos : Bane
+
+    Neutrality : Protection from Evil and Good
+
+    """
+    name = "Divine Magic"
+    source = "Sorceror (Divine Soul)"
+
+
+class FavoredByTheGods(Feature):
+    """Starting at 1st level, divine power guards your destiny. If you fail a
+    saving throw or miss with an attack roll, you can roll 2d4 and add it to
+    the total, possibly changing
+
+    """
+    name = "Favored by the Gods"
+    source = "Sorceror (Divine Soul)"
+
+
+class EmpoweredHealing(Feature):
+    """Starting at 6th level, the divine energy coursing through you can empower
+    healing spells. Whenever you or an ally within 5 feet of you rolls dice to
+    determine the number of hit points a spell restores, you can spend 1
+    sorcery point to reroll any number of those dice once, provided you aren't
+    incapacitated. You can use this feature only once per turn.
+
+    """
+    name = "Empowered Healing"
+    source = "Sorceror (Divine Soul)"
+
+
+class OtherworldlyWings(Feature):
+    """Starting at 14th level, you can use a bonus action to manifest a pair of
+    spectral wings from your back. While the wings are present, you have a
+    flying speed of 30 feet. The wings last until you're incapacitated, you
+    die, or you dismiss them as a bonus action. The affinity you chose for your
+    Divine Magic feature determines the appearance of the spectral wings: eagle
+    wings for good or law, bat wings for evil or chaos, and dragonfly wings for
+    neutrality
+
+    """
+    name = "Otherworldly Wings"
+    source = "Sorceror (Divine Soul)"
+
+
+class UnearthlyRecovery(Feature):
+    """At 18th level, you gain the ability to overcome grievous injuries. As a
+    bonus action when you have fewer than half of your hit points remaining,
+    you can regain a number of hit points equal to half your hit point
+    maximum. Once you use this feature, you can’t use it again until you finish
+    a long rest
+
+    """
+    name = "Unearthly Recovery"
+    source = "Sorceror (Divine Soul)"
+
+
+class EyesOfTheDark(Feature):
+    """Starting at lst level, you have darkvision with a range of 120 feet. When
+    you reach 3rd level in this class, you learn the darkness spell, which
+    doesn’t count against your number of sorcerer spells known. In addition,
+    you can cast it by spending 2 sorcery points or by expending a spell
+    slot. If you cast it with sorcery points, you can see through the darkness
+    created by the spell.
+
+    """
+    name = "Eyes of the Dark"
+    source = "Sorceror (Shadow Magic)"
+    spells_known = (spells.Darkness,)
+    spells_prepared = (spells.Darkness,)
+
+    
+class StrengthOfTheGrave(Feature):
+    """Starting at lst level, your existence in a twilight state between life
+    and death makes you difficult to defeat. When damage reduces you to 0 hit
+    points, you can make a Charisma saving throw (DC 5 + the damage taken). On
+    a success, you instead drop to 1 hit point. You can’t use this feature if
+    you are reduced to 0 hit points by radiant damage or by a critical
+    hit. After the saving throw succeeds, you can’t use this feature again
+    until you finish a long rest
+
+    """
+    name = "Strength of the Grave"
+    source = "Sorceror (Shadow Magic)"
+
+
+class HoundOfIllOmen(Feature):
+    """At 6th level, you gain the ability to call forth a howling creature of
+    darkness to harass your foes. As a bonus action, you can spend 3 sorcery
+    points to magically summon a hound of ill omen to target one creature you
+    can see within 120 feet of you. The hound uses the dire wolf’s statistics
+    (see the Monster Manual or appendix C in the Player’s Handbook), with the
+    following changes:
+
+    -- The hound is size Medium, not Large, and it counts as a monstrosity, not
+    a beast. 
+
+    -- It appears with a number of temporary hit points equal to half your
+    sorcerer level. 
+
+    -- It can move through other creatures and objects as if they were
+    difficult terrain. The bound takes 5 force damage if it ends its turn
+    inside an object. 
+
+    -- At the start of its turn, the hound automatically knows its target's
+    location. If the target was hidden, it is no longer hidden from the hound.
+    
+    The hound appears in an unoccupied space of your choice within 30 feet of
+    the target. Roll initiative for the hound. On its turn, it can move only
+    toward its target by the most direct route, and it can use its action only
+    to attack its target. The hound can make opportunity attacks but only
+    against its target. Additionally, while the hound is within 5 feet of the
+    target, the target has disadvantage on saving throws against any spell you
+    cast. The hound disappears if it is reduced to 0 hit points, if its target
+    is reduced to 0 hit points, or after 5 minutes.
+
+    """
+    name = "Hound of Ill Omen"
+    source = "Sorceror (Shadow Magic)"
+
+
+class ShadowWalk(Feature):
+    """At 14th level, you gain the ability to step from one shadow into
+    another. When you are in dim light or darkness, as a bonus action, you
+    can magically teleport up to 120 feet to an unoccupied space you can see
+    that is also in dim light or darkness
+
+    """
+    name = "Shadow Walk"
+    source = "Sorceror (Shadow Magic)"
+
+
+class UmbralForm(Feature):
+    """Starting at 18th level, you can spend 6 sorcery points as a bonus action to
+    magically transform yourself into a shadowy form. In this form, you have
+    resistance to all damage except force and radiant damage, and you can move
+    through other creatures and objects as if they were difficult terrain. You
+    take 5 force damage if you end your turn inside an object. You remain in
+    this form for 1 minute. It ends early if you are incapacitated, if you die,
+    or if you dismiss it as a bonus action.
+
+    """
+    name = "Umbral Form"
+    source = "Sorceror (Shadow Magic)"
+
+    
+# Storm Sorcery
+class TempestuousMagic(Feature):
+    """Starting at 1st level, you can use a bonus action on your turn to cause
+    whirling gusts of elemental air to briefly surround you, immediately before
+    or after you cast a spell of 1st level or higher. Doing so allows you to
+    fly up to 10 feet without provoking opportunity attacks
+
+    """
+    name = "Tempestuous Magic"
+    source = "Sorceror (Storm Sorcery)"
+
+
+class HeartOfTheStorm(Feature):
+    """At 6th level, you gain resistance to lightning and thunder damage. In
+    addition, whenever you start casting a spell of 1st level or higher that
+    deals lightning or thunder damage, stormy magic erupts from you. This
+    eruption causes creatures ofyour choice that you can see within 10 feet of
+    you to take lightning or thunder damage (choose each time this ability
+    activates) equal to half your sorcerer level.
+
+    """
+    name = "Heart of the Storm"
+    source = "Sorceror (Storm Sorcery)"
+
+
+class StormGuide(Feature):
+    """At 6th level, you gain the ability to subtly control the weather around
+    you. Ifit is raining, you can use an action to cause the rain to stop
+    falling in a 20-foot—radius sphere centered on you. You can end this effect
+    as a bonus action. If it is windy, you can use a bonus action each round to
+    choose the direction that the wind blows in a IOO-foot-radius sphere
+    centered on you. The wind blows in that direction until the end ofyour next
+    turn. This feature doesn't alter the speed of the wind.
+
+    """
+    name = "Storm Guide"
+    source = "Sorceror (Storm Sorcery)"
+
+
+class StormsFury(Feature):
+    """Starting at 14th level, when you are hit by a melee attack, you can use
+    your reaction to deal lightning damage to the attacker. The damage equals
+    your sorcerer level. The attacker must also make a Strength saving throw
+    against your sorcerer spell save DC. On a failed save, the attacker is
+    pushed in a straight line up to 20 feet away from you.
+
+    """
+    name = "Storm's Fury"
+    source = "Sorceror (Storm Sorcery)"
+
+
+class WindSoul(Feature):
+    """At 18th level, you gain immunity to lightning and thunder damage. You also
+    gain a magical flying speed of 60 feet. As an action. you can reduce your
+    flying speed to 30 feet for 1 hour and choose a number of creatures within
+    30 feet ofyou equal to 3 + your Charisma modifier. The chosen creatures
+    gain a magical flying speed of 30 feet for 1 hour. Once you reduce your
+    flying speed in this way, you can’t do so again until you finish a short or
+    long rest
+
+    """
+    name = "Wind Soul"
+    source = "Sorceror (Storm Sorcery)"

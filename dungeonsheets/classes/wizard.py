@@ -18,6 +18,10 @@ class Abjuration(SubClass):
     """
     name = "School of Abjuration"
     features_by_level = defaultdict(list)
+    features_by_level[2] = [features.AbjurationSavant, features.ArcaneWard]
+    features_by_level[6] = [features.ProjectedWard]
+    features_by_level[10] = [features.ImprovedAbjuration]
+    features_by_level[14] = [features.SpellResistance]
 
 
 class Conjuration(SubClass):
@@ -30,6 +34,10 @@ class Conjuration(SubClass):
     """
     name = "School of Conjuration"
     features_by_level = defaultdict(list)
+    features_by_level[2] = [features.ConjurationSavant, features.MinorIllusion]
+    features_by_level[6] = [features.BenignTransposition]
+    features_by_level[10] = [features.FocusedConjuration]
+    features_by_level[14] = [features.DurableSummons]
 
 
 class Divination(SubClass):
@@ -42,6 +50,10 @@ class Divination(SubClass):
     """
     name = "School of Divination"
     features_by_level = defaultdict(list)
+    features_by_level[2] = [features.DivinationSavant, features.Portent]
+    features_by_level[6] = [features.ExpertDivination]
+    features_by_level[10] = [features.TheThirdEye]
+    features_by_level[14] = [features.GreaterPortent]
 
 
 class Enchantment(SubClass):
@@ -54,6 +66,10 @@ class Enchantment(SubClass):
     """
     name = "School of Enchantment"
     features_by_level = defaultdict(list)
+    features_by_level[2] = [features.EnchantmentSavant, features.HypnoticGaze]
+    features_by_level[6] = [features.InstinctiveGaze]
+    features_by_level[10] = [features.SplitEnchantment]
+    features_by_level[14] = [features.AlterMemories]
 
 
 class Evocation(SubClass):
@@ -67,6 +83,10 @@ class Evocation(SubClass):
     """
     name = "School of Evocation"
     features_by_level = defaultdict(list)
+    features_by_level[2] = [features.EvocationSavant, features.SculptSpells]
+    features_by_level[6] = [features.PotentCantrip]
+    features_by_level[10] = [features.EmpoweredEvocation]
+    features_by_level[14] = [features.Overchannel]
 
 
 class Illusion(SubClass):
@@ -80,6 +100,11 @@ class Illusion(SubClass):
     """
     name = "School of Illusion"
     features_by_level = defaultdict(list)
+    features_by_level[2] = [features.IllusionSavant,
+                            features.ImprovedMinorIllusion]
+    features_by_level[6] = [features.MalleableIllusions]
+    features_by_level[10] = [features.IllusorySelf]
+    features_by_level[14] = [features.IllusoryReality]
 
 
 class Necromancy(SubClass):
@@ -96,6 +121,10 @@ class Necromancy(SubClass):
     """
     name = "School of Necromancy"
     features_by_level = defaultdict(list)
+    features_by_level[2] = [features.NecromancySavant, features.GrimHarvest]
+    features_by_level[6] = [features.UndeadThralls]
+    features_by_level[10] = [features.InuredToUndeath]
+    features_by_level[14] = [features.CommandUndead]
 
 
 class Transmutation(SubClass):
@@ -113,10 +142,15 @@ class Transmutation(SubClass):
     """
     name = "School of Transmutation"
     features_by_level = defaultdict(list)
+    features_by_level[2] = [features.TransmutationSavant,
+                            features.MinorAlchemy]
+    features_by_level[6] = [features.TransmutersStone]
+    features_by_level[10] = [features.Shapechanger]
+    features_by_level[14] = [features.MasterTransmuter]
 
 
 # SCAG
-class Bladeslinging(SubClass):
+class Bladesinging(SubClass):
     """**Restriction: Elves Only**
     
     Bladesingers are elves who bravely defend their people and lands. They are
@@ -126,8 +160,14 @@ class Bladeslinging(SubClass):
     magic into devastating attacks and a cunning defense
 
     """
-    name = "School of Bladeslinging"
+    name = "School of Bladesinging"
+    _proficiencies_text = ('light armor',)
+    skill_proficiencies = ('performance',)
     features_by_level = defaultdict(list)
+    features_by_level[2] = [features.Bladesong,]
+    features_by_level[6] = [features.ExtraAttackBladesinging]
+    features_by_level[10] = [features.SongOfDefense]
+    features_by_level[14] = [features.SongOfVictory]
 
 
 # XGTE
@@ -154,6 +194,10 @@ class WarMagic(SubClass):
     """
     name = "School of War Magic"
     features_by_level = defaultdict(list)
+    features_by_level[2] = [features.ArcaneDeflection, features.TacticalWit]
+    features_by_level[6] = [features.PowerSurge]
+    features_by_level[10] = [features.DurableMagic]
+    features_by_level[14] = [features.DeflectingShroud]
 
 
 class Wizard(CharClass):
@@ -172,9 +216,12 @@ class Wizard(CharClass):
     class_skill_choices = ('Arcana', 'History', 'Investigation',
                            'Medicine', 'Religion')
     features_by_level = defaultdict(list)
+    features_by_level[1] = [features.ArcaneRecovery]
+    features_by_level[18] = [features.SpellMastery]
+    features_by_level[18] = [features.SignatureSpells]
     subclasses_available = (Abjuration, Conjuration, Divination, Enchantment,
                             Evocation, Illusion, Necromancy, Transmutation,
-                            Bladeslinging, WarMagic)
+                            Bladesinging, WarMagic)
     spellcasting_ability = 'intelligence'
     spell_slots_by_level = {
         # char_lvl: (cantrips, 1st, 2nd, 3rd, ...)

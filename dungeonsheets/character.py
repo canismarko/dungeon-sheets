@@ -9,7 +9,7 @@ import importlib.util
 import jinja2
 import subprocess
 
-from .stats import Ability, Skill, findattr, ArmorClass, Speed
+from .stats import Ability, Skill, findattr, ArmorClass, Speed, Initiative
 from .dice import read_dice_str
 from . import (weapons, race, background, spells, armor, monsters,
                exceptions, classes, features, magic_items)
@@ -74,6 +74,7 @@ class Character():
     wisdom = Ability()
     charisma = Ability()
     armor_class = ArmorClass()
+    initiative = Initiative()
     speed = Speed()
     inspiration = 0
     _saving_throw_proficiencies = tuple()  # use to overwrite class proficiencies
@@ -506,18 +507,6 @@ class Character():
         ability_mod = getattr(self, class_type.spellcasting_ability).modifier
         return (self.proficiency_bonus + ability_mod)
 
-    @property
-    def initiative(self) -> str:
-        ini = self.dexterity.modifier
-        if self.has_feature(features.QuickDraw):
-            ini += self.proficiency_bonus
-        ini = '{:+d}'.format(ini)
-        has_advantage = (self.has_feature(features.NaturalExplorerRevised) or
-                         self.has_feature(features.FeralInstinct))
-        if has_advantage:
-            ini += '(A)'
-        return ini
-    
     def is_proficient(self, weapon: Weapon):
         """Is the character proficient with this item?
         

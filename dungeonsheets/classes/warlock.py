@@ -1,4 +1,4 @@
-from .. import (weapons, features)
+from .. import (weapons, features, spells)
 from .classes import CharClass, SubClass
 from collections import defaultdict
 
@@ -17,6 +17,10 @@ class Archfey(SubClass):
     """
     name = "The Archfey Patron"
     features_by_level = defaultdict(list)
+    features_by_level[1] = [features.FeyPresence]
+    features_by_level[6] = [features.MistyEscape]
+    features_by_level[10] = [features.BeguilingDefenses]
+    features_by_level[14] = [features.DarkDelirium]
 
 
 class Fiend(SubClass):
@@ -54,6 +58,10 @@ class GreatOldOne(SubClass):
     """
     name = "The Great Old One Patron"
     features_by_level = defaultdict(list)
+    features_by_level[1] = [features.AwakenedMind]
+    features_by_level[6] = [features.EntropicWard]
+    features_by_level[10] = [features.ThoughtShield]
+    features_by_level[14] = [features.CreateThrall]
 
 
 # SCAG
@@ -73,6 +81,10 @@ class Undying(SubClass):
     """
     name = "The Undying Patron"
     features_by_level = defaultdict(list)
+    features_by_level[1] = [features.AmongTheDead]
+    features_by_level[6] = [features.DefyDeath]
+    features_by_level[10] = [features.UndyingNature]
+    features_by_level[14] = [features.IndestructibleLife]
 
 
 # XGTE
@@ -93,7 +105,12 @@ class Celestial(SubClass):
 
     """
     name = "The Celestial Patron"
+    spells_known = spells_prepared = (spells.Light, spells.SacredFlame)
     features_by_level = defaultdict(list)
+    features_by_level[1] = [features.HealingLight]
+    features_by_level[6] = [features.RadiantSoul]
+    features_by_level[10] = [features.CelestialResilience]
+    features_by_level[14] = [features.SearingVengeance]
 
 
 class Hexblade(SubClass):

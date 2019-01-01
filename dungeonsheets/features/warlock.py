@@ -129,6 +129,67 @@ class EldritchMaster(Feature):
     name = "Eldritch Master"
     source = "Warlock"
 
+
+# The Archfey
+class FeyPresence(Feature):
+    """Starting at 1st level, your patron bestows upon you the ability to project
+    the beguiling and fearsome presence of the fey. As an action, you can cause
+    each creature in a 10-foot cube originating from you to make a Wisdom
+    saving throw against your warlock spell save DC.
+
+    The creatures that fail their saving throws are all charmed or frightened
+    by you (your choice) until the end of your next turn. Once you use this
+    feature, you can’t use it again until you finish a short or long rest.
+
+    """
+    name = "Fey Presence"
+    source = "Warlock (Archfey Patron)"
+
+
+class MistyEscape(Feature):
+    """Starting at 6th level, you can vanish in a puff of mist in response to
+    harm. When you take damage, you can use your reaction to turn invisible and
+    teleport up to 60 feet to an unoccupied space you can see. You remain
+    invisible until the start of your next turn or until you attack or cast a
+    spell. Once you use this feature, you can't use it again until you finish a
+    short or long rest
+
+    """
+    name = "Misty Escape"
+    source = "Warlock (Archfey Patron)"
+
+
+class BeguilingDefenses(Feature):
+    """Beginning at 10th level, your patron teaches you how to turn the
+    mind-affecting magic of your enemies against them. You are immune to being
+    charmed, and when another creature attempts to charm you, you can use your
+    reaction to attempt to turn the charm back on that creature. The creature
+    must succeed on a Wisdom saving throw against your warlock spell save DC or
+    be charmed by you for 1 minute or until the creature takes any damage.
+
+    """
+    name = "Beguiling Defenses"
+    source = "Warlock (Archfey Patron)"
+
+
+class DarkDelirium(Feature):
+    """Starting at 14th level, you can plunge a creature into an illusory
+    realm. As an action, choose a creature that you can see within 60 feet of
+    you. It must make a Wisdom saving throw against your warlock spell save
+    DC. On a failed save, it is charmed or frightened by you (your choice) for
+    1 minute or until your concentration is broken (as if you are concentrating
+    on a spell).
+
+    This effect ends early if the creature takes any damage. Until this
+    illusion ends, the creature thinks it is lost in a misty realm, the
+    appearance of which you choose. The creature can see and hear only itself,
+    you, and the illusion. You must finish a short or long rest before you can
+    use this feature again.
+
+    """
+    name = "Dark Delirium"
+    source = "Warlock (Archfey Patron)"
+
     
 # The Fiend Patron
 class DarkOnesBlessing(Feature):
@@ -189,6 +250,176 @@ class HurlThroughHell(Feature):
     source = "Warlock (The Fiend Patron)"
 
 
+# Great Old One
+class AwakenedMind(Feature):
+    """Starting at 1st level, your alien knowledge gives you the ability to touch
+    the minds of other creatures. You can communicate telepathically with any
+    creature you can see within 30 feet of you. You don’t need to share a
+    language with the creature for it to understand your telepathic utterances,
+    but the creature must be able to understand at least one language
+
+    """
+    name = "Awakened Mind"
+    source = "Warlock (Great Old One Patron)"
+
+    
+class EntropicWard(Feature):
+    """At 6th level, you learn to magically ward yourself against attack and to
+    turn an enemy’s failed strike into good luck for yourself. When a creature
+    makes an attack roll against you, you can use your reaction to impose
+    disadvantage on that roll. If the attack misses you, your next attack roll
+    against the creature has advantage if you make it before the end of your
+    next turn. Once you use this feature, you can’t use it again until you
+    finish a short or long rest.
+
+    """
+    name = "Entropic Ward"
+    source = "Warlock (Great Old One Patron)"
+
+
+class ThoughtShield(Feature):
+    """Starting at 10th level, your thoughts can’t be read by telepathy or other
+    means unless you allow it. You also have resistance to psychic damage, and
+    whenever a creature deals psychic damage to you, that creature takes the
+    same amount of damage that you do
+
+    """
+    name = "Thought Shield"
+    source = "Warlock (Great Old One Patron)"
+
+
+class CreateThrall(Feature):
+    """At 14th level, you gain the ability to infect a humanoid’s mind with the
+    alien magic of your patron. You can use your action to touch an
+    incapacitated humanoid. That creature is then charmed by you until a remove
+    curse spell is cast on it, the charmed condition is removed from it, or you
+    use this feature again. You can communicate telepathically with the charmed
+    creature as long as the two of you are on the same plane of existence
+
+    """
+    name = "Create Thrall"
+    source = "Warlock (Great Old One Patron)"
+
+    
+# Undying Patron
+class AmongTheDead(Feature):
+    """Starting at 1st level, you learn the spare the dying cantrip, which counts
+    as a warlock cantrip for you. You also have advantage on saving throws
+    against any disease. Additionally, undead have difficulty harming you. If
+    an undead targets you directly with an attack or a harmful spell, that
+    creature must make a Wisdom saving throw against your spell save DC (an
+    undead needn't make the save when it includes you in an area effect, such
+    as the explosion of fireball). On a failed save, the creature must choose a
+    new target or forfeit targeting someone instead of you, potentially wasting
+    the attack or spell. On a successful save, the creature is immune to this
+    effect for 24 hours. An undead is also immune to this effect for 24 hours
+    if you target it with an attack or a harmful spell.
+
+    """
+    name = "Among the Dead"
+    source = "Warlock (The Undying Patron)"
+    spells_known = spells_prepared = (spells.SpareTheDying,)
+
+
+class DefyDeath(Feature):
+    """Starting at 6th level, you can give yourself vitality when you cheat death
+    or when you help someone else cheat it. You can regain hit points equal to
+    ld8 +your Constitution modifier (minimum of 1 hit point) when you succeed
+    on a death saving throw or when you stabilize a creature with spare the
+    dying. Once you use this feature, you can't use it again until you finish a
+    long rest
+
+    """
+    name = "Defy Death"
+    source = "Warlock (The Undying Patron)"
+
+
+class UndyingNature(Feature):
+    """Beginning at 10th level , you can hold your breath indefinitely, and you
+    don't require food, water, or sleep, although you still require rest to
+    reduce exhaustion and still benefit from finishing short and long rests. In
+    addition, you age at a slower rate. For every 10 years that pass, your body
+    ages only 1 year, and you are immune to being magically aged
+
+    """
+    name = "Undying Nature"
+    source = "Warlock (The Undying Patron)"
+
+
+class IndestructibleLife(Feature):
+    """When you reach 14th level, you partake of some of the true secrets of the
+    Undying. On your turn, you can use a bonus action to regain hit points
+    equal to 1d8+your warlock level. Additionally, if you put a severed body
+    part of yours back in place when you use this feature, the part
+    reattaches. Once you use this feature, you can't use it again until you
+    finish a short or long rest.
+
+    """
+    name = "Indestructible Life"
+    source = "Warlock (The Undying Patron)"
+    
+
+# The Celestial
+class HealingLight(Feature):
+    """At lst level, you gain the ability to channel celestial energy to heal
+    wounds. You have a pool of d6s that you spend to fuel this healing. The
+    number of dice in the pool equals 1 + your warlock level. As a bonus
+    action, you can heal one creature you can see within 60 feet of you,
+    spending dice from the pool. The maximum number of dice you can spend at
+    once equals your Charisma modifier (minimum of one die). Roll the
+    dice you spend, add them together, and restore a number of hit points equal
+    to the total. Your pool regains all expended dice when you finish a long
+    rest
+
+    """
+    _name = "Healing Light"
+    source = "Warlock (The Celestial Patron)"
+
+    @property
+    def name(self):
+        num = 1 + self.owner.Warlock.level
+        return self._name + " ({:d}d6/LR)".format(num)
+
+
+class RadiantSoul(Feature):
+    """Starting at 6th level, your link to the Celestial allows you to serve as a
+    conduit for radiant energy. You have resistance to radiant damage, and when
+    you cast a spell that deals radiant or fire damage, you can add your Cha-
+    risma modifier to one radiant or fire damage roll of that spell against one
+    of its targets.
+
+    """
+    name = "Radiant Soul"
+    source = "Warlock (The Celestial Patron)"
+
+
+class CelestialResilience(Feature):
+    """Starting at 10th level, you gain temporary hit points whenever you finish a
+    short or long rest. These tempo— rary hit points equal your warlock level +
+    your Charisma modifier. Additionally, choose up to five creatures you can
+    see at the end of the rest. Those creatures each gain temporary hit points
+    equal to half your warlock level + your Charisma modifier
+
+    """
+    _name = "Celestial Resilience"
+    source = "Warlock (The Celestial Patron)"
+
+    
+class SearingVengeance(Feature):
+    """Starting at 14th level, the radiant energy you channel allows you to resist
+    death. When you have to make a death saving throw at the start of your
+    turn, you can instead spring back to your feet with a burst of radiant
+    energy. You regain hit points equal to half your hit point maximum, and
+    then you stand up if you so choose. Each creature of your choice that is
+    within 30 feet of you takes radiant damage equal to 2d8 + your Charisma
+    modifier, and it is blinded until the end of the current turn. Once you use
+    this feature, you can’t use it again until you finish a long rest.
+
+    """
+    name = "Searing Vengeance"
+    source = "Warlock (The Celestial Patron)"
+
+
 # Hexblade
 class HexbladesCurse(Feature):
     """Starting at lst level, you gain the ability to place a bale— ful curse on
@@ -204,7 +435,7 @@ class HexbladesCurse(Feature):
     a roll of 19 or 20 on the d20.
 
     --If the cursed target dies, you regain hit points equal to your warlock
-    level + your Charisma modifier (mini- mum of 1 hit point).
+    level + your Charisma modifier (minimum of 1 hit point).
 
     You can’t use this feature again until you finish a short or long rest.
 
@@ -214,7 +445,7 @@ class HexbladesCurse(Feature):
 
 
 class HexWarrior(Feature):
-    """At lst level, you acquire the training necessary to effec- tively arm
+    """At lst level, you acquire the training necessary to effectively arm
     yourself for battle. You gain proficiency with medium armor, shields, and
     martial weapons.
 
@@ -269,7 +500,7 @@ class AccursedSpecter(Feature):
 
 
 class ArmorOfHexes(Feature):
-    """At 10th level, your hex grows more powerful. If the tar- get cursed by your
+    """At 10th level, your hex grows more powerful. If the target cursed by your
     Hexblade’s Curse hits you with an attack roll, you can use your reaction to
     roll a d6. On a 4 or higher, the attack instead misses you, regardless of
     its roll.
@@ -628,7 +859,7 @@ class WitchSight(Invocation):
 class AspectOfTheMoon(Invocation):
     """You no longer need to sleep and can’t be forced to sleep by any means. To
     gain the benefits of a long rest, you can spend all 8 hours doing light
-    activity, such as read- ing your Book of Shadows and keeping watch.
+    activity, such as reading your Book of Shadows and keeping watch.
 
     **Prerequisite**: Pact of the Tome
     """
@@ -637,14 +868,14 @@ class AspectOfTheMoon(Invocation):
     
 class CloakOfFiles(Invocation):
     """As a bonus action, you can surround yourselfwith a magical aura that looks
-    like buzzing flies. The aura ex- tends 5 feet from you in every direction,
+    like buzzing flies. The aura extends 5 feet from you in every direction,
     but not through total cover. It lasts until you’re incapacitated or you
     dismiss it as a bonus action.
 
     The aura grants you advantage on Charisma
     (Intimidation) checks but disadvantage on all other Charisma checks. Any
     other creature that starts its turn in the aura takes poison damage equal
-    to your Charisma mod- ifier (minimum of O damage).
+    to your Charisma modifier (minimum of O damage).
 
     Once you use this invocation, you can’t use it again until you finish a
     short or long rest.
@@ -683,7 +914,7 @@ class GhostlyGaze(Invocation):
 
 class GiftOfTheDepths(Invocation):
     """You can breathe underwater, and you gain a swimming speed equal to your
-    walking speed. You can also cast water breathing once without ex- pending a
+    walking speed. You can also cast water breathing once without expending a
     spell slot. You regain the ability to do so when you finish a long rest.
 
     **Prerequisite**: 5th level
@@ -694,7 +925,7 @@ class GiftOfTheDepths(Invocation):
 class GiftOfTheEverLivingOnes(Invocation):
     """Whenever you regain hit points while your familiar is within 100 feet
     ofyou, treat any dice rolled to determine the hit points you regain as
-    having rolled their maxi- mum value for you.
+    having rolled their maximum value for you.
 
     **Prerequisite**: Pact of the Chain
     """
@@ -749,7 +980,7 @@ class MaddeningHex(Invocation):
     Curse or Sign of Ill Omen. When you do so, you deal psychic damage to the
     cursed target and each creature of your choice that you can see within 5
     feet of it. The psychic damage equals your Charisma modifier (minimum of 1
-    dam- age). To use this invocation, you must be able to see the cursed
+    damage). To use this invocation, you must be able to see the cursed
     target, and it must be within 30 feet ofyou.
 
     **Prerequisite**: 5th level

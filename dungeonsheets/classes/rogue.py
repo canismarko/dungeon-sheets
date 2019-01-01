@@ -15,6 +15,10 @@ class Thief(SubClass):
     """
     name = "Thief"
     features_by_level = defaultdict(list)
+    features_by_level[3] = [features.FastHands, features.SecondStoryWork]
+    features_by_level[9] = [features.SupremeSneak]
+    features_by_level[13] = [features.UseMagicDevice]
+    features_by_level[17] = [features.ThiefsReflexes]
 
 
 class Assassin(SubClass):
@@ -26,7 +30,12 @@ class Assassin(SubClass):
 
     """
     name = "Assassin"
+    _proficiencies_text = ('disguise kit', "poisoner's kit")
     features_by_level = defaultdict(list)
+    features_by_level[3] = [features.Assassinate]
+    features_by_level[9] = [features.InfiltrationExpertise]
+    features_by_level[13] = [features.Imposter]
+    features_by_level[17] = [features.DeathStrike]
 
 
 class ArcaneTrickster(SubClass):
@@ -38,6 +47,10 @@ class ArcaneTrickster(SubClass):
     """
     name = "Arcane Trickster"
     features_by_level = defaultdict(list)
+    features_by_level[3] = [features.MageHandLegerdemain]
+    features_by_level[9] = [features.MagicalAmbush]
+    features_by_level[13] = [features.VersatileTrickster]
+    features_by_level[17] = [features.SpellThief]
     spellcasting_ability = 'intelligence'
     multiclass_spellslots_by_level = {
         # char_lvl: (cantrips, 1st, 2nd, 3rd, ...)
@@ -76,6 +89,11 @@ class Inquisitive(SubClass):
     """
     name = "Inquisitive"
     features_by_level = defaultdict(list)
+    features_by_level[3] = [features.EarForDeceit, features.EyeForDetail,
+                            features.InsightfulFighting]
+    features_by_level[9] = [features.SteadyEye]
+    features_by_level[13] = [features.UnerringEye]
+    features_by_level[17] = [features.EyeForWeakness]
 
 
 class Mastermind(SubClass):
@@ -87,6 +105,11 @@ class Mastermind(SubClass):
     """
     name = "Mastermind"
     features_by_level = defaultdict(list)
+    features_by_level[3] = [features.MasterOfIntrigue,
+                            features.MasterOfTactics]
+    features_by_level[9] = [features.InsightfulManipulator]
+    features_by_level[13] = [features.Misdirection]
+    features_by_level[17] = [features.SoulOfDeceit]
 
 
 class Scout(SubClass):
@@ -99,7 +122,12 @@ class Scout(SubClass):
 
     """
     name = "Scout"
+    skill_proficiencies = ("nature", "survival")
     features_by_level = defaultdict(list)
+    features_by_level[3] = [features.Skirmisher, features.Survivalist]
+    features_by_level[9] = [features.SuperiorMobility]
+    features_by_level[13] = [features.AmbushMaster]
+    features_by_level[17] = [features.SuddenStrike]
 
 
 class Swashbuckler(SubClass):
@@ -113,6 +141,10 @@ class Swashbuckler(SubClass):
     """
     name = "Swashbuckler"
     features_by_level = defaultdict(list)
+    features_by_level[3] = [features.FancyFootwork, features.RakishAudacity]
+    features_by_level[9] = [features.Panache]
+    features_by_level[13] = [features.ElegantManeuver]
+    features_by_level[17] = [features.MasterDuelist]
 
 
 class Rogue(CharClass):

@@ -15,7 +15,13 @@ class DraconicBloodline(SubClass):
 
     """
     name = "Draconic Bloodline"
+    languages = ('draconic',)
     features_by_level = defaultdict(list)
+    features_by_level[1] = [features.DragonAncestor,
+                            features.DraconicResilience]
+    features_by_level[6] = [features.ElementalAffinity]
+    features_by_level[14] = [features.DragonWings]
+    features_by_level[18] = [features.DraconicPresence]
 
 
 class WildMagic(SubClass):
@@ -58,6 +64,10 @@ class DivineSoul(SubClass):
     """
     name = "Divine Soul"
     features_by_level = defaultdict(list)
+    features_by_level[1] = [features.DivineMagic, features.FavoredByTheGods]
+    features_by_level[6] = [features.EmpoweredHealing]
+    features_by_level[14] = [features.OtherworldlyWings]
+    features_by_level[18] = [features.UnearthlyRecovery]
 
 
 class ShadowMagic(SubClass):
@@ -75,6 +85,12 @@ class ShadowMagic(SubClass):
     """
     name = "Shadow Magic"
     features_by_level = defaultdict(list)
+    features_by_level[1] = [features.EyesOfTheDark,
+                            features.SuperiorDarkvision,
+                            features.StrengthOfTheGrave]
+    features_by_level[6] = [features.HoundOfIllOmen]
+    features_by_level[14] = [features.ShadowWalk]
+    features_by_level[18] = [features.UmbralForm]
 
 
 class StormSorcery(SubClass):
@@ -92,7 +108,12 @@ class StormSorcery(SubClass):
 
     """
     name = "Storm Sorcery"
+    languages = ("primordial",)
     features_by_level = defaultdict(list)
+    features_by_level[1] = [features.TempestuousMagic]
+    features_by_level[6] = [features.HeartOfTheStorm, features.StormGuide]
+    features_by_level[14] = [features.StormsFury]
+    features_by_level[18] = [features.WindSoul]
 
 
 class Sorceror(CharClass):

@@ -4,7 +4,9 @@ from .armor import NoArmor, NoShield, HeavyArmor
 from .features import (UnarmoredDefenseMonk, UnarmoredDefenseBarbarian,
                        DraconicResilience, Defense, FastMovement,
                        UnarmoredMovement, GiftOfTheDepths, RemarkableAthelete,
-                       SeaSoul, JackOfAllTrades, SoulOfTheForge)
+                       SeaSoul, JackOfAllTrades, SoulOfTheForge, QuickDraw,
+                       NaturalExplorerRevised, FeralInstinct, DreadAmbusher,
+                       SuperiorMobility, AmbushMaster, RakishAudacity)
 from math import ceil
 
 
@@ -162,6 +164,8 @@ class Speed():
         if char.has_feature(FastMovement):
             if not isinstance(char.armor, HeavyArmor):
                 speed += 10
+        if char.has_feature(SuperiorMobility):
+            speed += 10
         if isinstance(char.armor, NoArmor) or (char.armor is None):
             for f in char.features:
                 if isinstance(f, UnarmoredMovement):
@@ -173,3 +177,23 @@ class Speed():
             if 'swim' not in other_speed:
                 other_speed += ' (30 swim)'
         return '{:d}{:s}'.format(speed, other_speed)
+
+
+class Initiative():
+    """A character's initiative"""
+    def __get__(self, char, Character):
+        ini = char.dexterity.modifier
+        if char.has_feature(QuickDraw):
+            ini += char.proficiency_bonus
+        if char.has_feature(DreadAmbusher):
+            ini += char.wisdom.modifier
+        if char.has_feature(RakishAudacity):
+            ini += char.charisma.modifier
+        ini = '{:+d}'.format(ini)
+        has_advantage = (char.has_feature(NaturalExplorerRevised) or
+                         char.has_feature(FeralInstinct) or
+                         char.has_feature(AmbushMaster))
+        if has_advantage:
+            ini += '(A)'
+        return ini
+    
