@@ -21,6 +21,11 @@ class LandCircle(SubClass):
     name = "Circle of the Land"
     circle = "land"
     features_by_level = defaultdict(list)
+    features_by_level[2] = [features.BonusCantrip, features.NaturalRecovery]
+    features_by_level[3] = [features.CircleSpells]
+    features_by_level[6] = [features.LandsStride]
+    features_by_level[10] = [features.NaturesWard]
+    features_by_level[14] = [features.NaturesSanctuary]
 
 
 class MoonCircle(SubClass):
@@ -39,6 +44,10 @@ class MoonCircle(SubClass):
     name = "Circle of the Moon"
     circle = "moon"
     features_by_level = defaultdict(list)
+    features_by_level[2] = [features.CombatWildShape, features.CircleForms]
+    features_by_level[6] = [features.PrimalStrike]
+    features_by_level[10] = [features.ElementalWildShape]
+    features_by_level[14] = [features.ThousandForms]
 
 
 # XGTE
@@ -55,6 +64,10 @@ class DreamsCircle(SubClass):
     name = "Circle of Dreams"
     circle = "dreams"
     features_by_level = defaultdict(list)
+    features_by_level[2] = [features.BalmOfTheSummerCourt]
+    features_by_level[6] = [features.HearthOfMoonlightAndShadow]
+    features_by_level[10] = [features.HiddenPaths]
+    features_by_level[14] = [features.WalkerInDreams]
 
 
 class ShepherdCircle(SubClass):
@@ -78,7 +91,12 @@ class ShepherdCircle(SubClass):
     """
     name = "Circle of the Shepherd"
     circle = "shepherd"
+    languages = ('Sylvan',)
     features_by_level = defaultdict(list)
+    features_by_level[2] = [features.SpeechOfTheWoods, features.SpiritTotem]
+    features_by_level[6] = [features.MightySummoner]
+    features_by_level[10] = [features.GuardianSpirit]
+    features_by_level[14] = [features.FaithfulSummons]
 
 
 class Druid(CharClass):
@@ -106,7 +124,10 @@ class Druid(CharClass):
     class_skill_choices = ('Arcana', 'Animal Handling', 'Insight',
                            'Medicine', 'Nature', 'Perception', 'Religion',
                            'Survival')
-    features_by_class = defaultdict(list)
+    features_by_level = defaultdict(list)
+    features_by_level[2] = [features.WildShape]
+    features_by_level[18] = [features.TimelessBody, features.BeastSpells]
+    features_by_level[20] = [features.Archdruid]
     subclasses_available = (LandCircle, MoonCircle, DreamsCircle,
                             ShepherdCircle)
     spellcasting_ability = 'wisdom'

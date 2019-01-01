@@ -791,3 +791,1027 @@ class WallOfForce(Spell):
     classes = ('Wizard',)
 
 
+class Nondetection(Spell):
+    """For the duration, you hide a target that you touch from divination magic. The 
+    target can be a willing creature or a place or an object no larger than 10 feet 
+    in any dimension. The target can't be targeted by any divination magic or 
+    perceived through magical scrying sensors.
+    """
+    name = "Nondetection"
+    level = 3
+    casting_time = "1 action"
+    casting_range = "Touch"
+    components = ('V', 'S', 'M')
+    materials = ("A pinch of diamond dust worth 25 gp sprinkled over the "
+                 "target, which the spell consumes")
+    duration = "8 hours"
+    magic_school = "Abjuration"
+    classes = ('Bard', 'Ranger', 'Wizard')
+
+
+class Confusion(Spell):
+    """This spell assaults and twists creatures' minds, spawning delusions and 
+    provoking uncontrolled actions. Each creature in a 10-foot-radius sphere 
+    centered on a point you choose within range must succeed on a Wisdom saving 
+    throw when you cast this spell or be affected by it.
+    
+    An affected target can't 
+    take reactions and must roll a d10 at the start of each of its turns to 
+    determine its behavior for that turn.
+    
+    1: The creature uses all its movement to 
+    move in a random direction. To determine the direction, roll a d8 and assign a 
+    direction to each die face. The creature doesn't take an action this turn.
+    
+    2-6:
+     The creature doesn't move or take actions this turn.
+    
+    7-8: The creature uses 
+    its action to make a melee attack against a randomly determined creature within 
+    its reach. If there is no creature within its reach, the creature does nothing 
+    this turn.
+    
+    9-10: The creature can act and move normally.
+    
+    At the end of its 
+    turns, an affected target can make a Wisdom saving throw. If it succeeds, this 
+    effect ends for that target.
+    
+    At Higher Levels: When you cast this spell using a
+     spell slot of 5th level or higher, the radius of the sphere increases by 5 feet
+     for each slot above 4th.
+    """
+    name = "Confusion"
+    level = 4
+    casting_time = "1 action"
+    casting_range = "90 feet"
+    components = ('V', 'S', 'M')
+    materials = "Three nut shells"
+    duration = "Concentration, Up to 1 minute"
+    magic_school = "Enchantment"
+    classes = ('Bard', 'Druid', 'Sorcerer', 'Wizard')
+
+
+class LegendLore(Spell):
+    """Name or describe a person, place, or object. The spell brings to your mind a 
+    brief summary of the significant lore about the thing you named. The lore might 
+    consist of current tales, forgotten stories, or even secret lore that has never 
+    been widely known. If the thing you named isn't of legendary importance, you 
+    gain no information.
+    
+    The more information you already have about the thing, the
+     more precise and detailed the information you receive is. The information you 
+    learn is accurate but might be couched in figurative language. For example, if 
+    you have a mysterious magic axe on hand, the spell might yield this information 
+    - Woe to the evildoer whose hand touches the axe, for even the haft slices the 
+    hand of the evil ones. Only a true Child of Stone, lover and beloved of Moradin,
+     may awaken the true powers of the axe, and only with the sacred word Rudnogg on
+     the lips.
+    """
+    name = "Legend Lore"
+    level = 5
+    casting_time = "10 minutes"
+    casting_range = "Self"
+    components = ('V', 'S', 'M')
+    materials = ("Incense worth at least 250 gp, which the spell consumes, and"
+                 "four ivory strips worth at least 50 gp each")
+    duration = "Instantaneous"
+    magic_school = "Divination"
+    classes = ('Bard', 'Cleric', 'Wizard')
+
+
+class FaerieFire(Spell):
+    """Each object in a 20-foot cube within range is outlined in blue, green, or violet
+     light (your choice). Any creature in the area when the spell is cast is also 
+    outlined in light if it fails a Dexterity saving throw. For the duration, 
+    objects and affected creatures shed dim light in a 10-foot radius.
+    
+    Any attack 
+    roll against an affected creature or object has advantage if the attacker can 
+    see it, and the affected creature or object can't benefit from being invisible.
+    """
+    name = "Faerie Fire"
+    level = 1
+    casting_time = "1 action"
+    casting_range = "60 feet"
+    components = ('V',)
+    materials = ""
+    duration = "Concentration, Up to 1 minute"
+    magic_school = "Evocation"
+    classes = ('Bard', 'Druid')
+
+
+class ScorchingRay(Spell):
+    """You create three rays of fire and hurl them at targets within range. You can 
+    hurl them at one target or several.
+    
+    Make a ranged spell attack for each ray. On
+     a hit, the target takes 2d6 fire damage.
+    
+    At Higher Levels: When you cast this 
+    spell using a spell slot of 3rd level or higher, you create one additional ray 
+    for each slot level above 2nd.
+    """
+    name = "Scorching Ray"
+    level = 2
+    casting_time = "1 action"
+    casting_range = "120 feet"
+    components = ('V', 'S')
+    materials = ""
+    duration = "Instantaneous"
+    magic_school = "Evocation"
+    classes = ('Sorcerer', 'Wizard')
+
+
+class Daylight(Spell):
+    """A 60-foot-radius sphere of light spreads out from a point you choose within 
+    range. The sphere is bright light and sheds dim light for an additional 60 feet.
+    
+    
+    If you chose a point on an object you are holding or one that isn't being worn
+     or carried, the light shines from the object with and moves with it. Completely
+     covering the affected object with an opaque object, such as a bowl or a helm, 
+    blocks the light.
+    
+    If any of this spell's area overlaps with an area of darkness
+     created by a spell of or lower, the spell that created the darkness is 
+    dispelled.
+    """
+    name = "Daylight"
+    level = 3
+    casting_time = "1 action"
+    casting_range = "60 feet"
+    components = ('V', 'S')
+    materials = ""
+    duration = "1 hour"
+    magic_school = "Evocation"
+    classes = ('Cleric', 'Druid', 'Paladin', 'Ranger', 'Sorcerer')
+
+
+class SpikeGrowth(Spell):
+    """The ground in a 20-foot radius centered on a point within range twists and 
+    sprouts hard spikes and thorns. The area becomes difficult terrain for the 
+    duration. When a creature moves into or within the area, it takes 2d4 piercing 
+    damage for every 5 feet it travels.
+    
+    The transformation of the ground is 
+    camouflaged to look natural. Any creature that can't see the area at the time 
+    the spell is cast must make a Wisdom (Perception) check against your spell save 
+    DC to recognize the terrain as hazardous before entering it.
+    """
+    name = "Spike Growth"
+    level = 2
+    casting_time = "1 action"
+    casting_range = "150 feet"
+    components = ('V', 'S', 'M')
+    materials = "Seven sharp thorns or seven small twigs, each sharpened to a point"
+    duration = "Concentration, Up to 10 minutes"
+    magic_school = "Transmutation"
+    classes = ('Druid', 'Ranger')
+
+
+class WindWall(Spell):
+    """A wall of strong wind rises from the ground at a point you choose within range. 
+    You can make the wall up to 50 feet long, 15 feet high, and 1 foot thick. You 
+    can shape the wall in any way you choose so long as it makes one continuous path
+     along the ground. The wall lasts for the duration.
+    
+    When the wall appears, each
+     creature within its area must make a Strength saving throw. A creature takes 
+    3d8 bludgeoning damage on a failed save, or half as much damage on a successful 
+    one.
+    
+    The strong wind keeps fog, smoke, and other gases at bay. Small or smaller
+     flying creatures or objects can't pass through the wall. Loose, lightweight 
+    materials brought into the wall fly upward. Arrows, bolts, and other ordinary 
+    projectiles launched at targets behind the wall are deflected upward and 
+    automatically miss. (Boulders hurled by giants or siege engines, and similar 
+    projectiles, are unaffected.) Creatures in gaseous form can't pass through it.
+    """
+    name = "Wind Wall"
+    level = 3
+    casting_time = "1 action"
+    casting_range = "120 feet"
+    components = ('V', 'S', 'M')
+    materials = "A tiny fan and a feather of exotic origin"
+    duration = "Concentration, Up to 1 minute"
+    magic_school = "Evocation"
+    classes = ('Druid', 'Ranger')
+
+
+class GraspingVine(Spell):
+    """You conjure a vine that sprouts from the ground in an unoccupied space of
+    your choice that you can see within range. When you cast this spell, you
+    can direct the vine to lash out at a creature within 30 feet of it that you
+    can see. That creature must succeed on a Dexterity saving throw or be
+    pulled 20 feet directly toward the vine.
+
+    Until the spell ends, you can direct the vine to lash out at the same
+    creature or another one as a bonus action on each of your turns. 
+    
+    """
+    name = "Grasping Vine"
+    level = 4
+    casting_time = '1 bonus action'
+    casting_range = '30 feet'
+    components = ('V', 'S')
+    duration = 'Concentration, up to 1 minute'
+    magic_school = "Conjuration"
+    classes = ("Druid", 'Ranger')
+
+
+
+class MirrorImage(Spell):
+    """Three illusory duplicates of yourself appear in your space. Until the spell 
+    ends, the duplicates move with you and mimic your actions, shifting position so 
+    it's impossible to track which image is real. You can use your action to dismiss
+     the illusory duplicates.
+    
+    Each time a creature targets you with an attack 
+    during the spell's duration, roll a d20 to determine whether the attack instead 
+    targets one of your duplicates.
+    
+    If you have three duplicates, you must roll a 6
+     or higher to change the attack's target to a duplicate. With two duplicates, 
+    you must roll an 8 or higher. With one duplicate, you must roll an 11 or higher.
+    
+    
+    A duplicate's AC equals 10 + your Dexterity modifier. If an attack hits a 
+    duplicate, the duplicate is destroyed. A duplicate can be destroyed only by an 
+    attack that hits it. It ignores all other damage and effects. The spell ends 
+    when all three duplicates are destroyed.
+    
+    A creature is unaffected by this spell
+     if it can't see, if it relies on senses other than sight, such as blindsight, 
+    or if it can perceive illusions as false, as with truesight.
+    """
+    name = "Mirror Image"
+    level = 2
+    casting_time = "1 action"
+    casting_range = "Self"
+    components = ('V', 'S')
+    materials = ""
+    duration = "1 minute"
+    magic_school = "Illusion"
+    classes = ('Sorcerer', 'Warlock', 'Wizard')
+
+
+class PassWithoutTrace(Spell):
+    """A veil of shadows and silence radiates from you, masking you and your companions
+     from detection. For the duration, each creature you choose within 30 feet of 
+    you (including you) has a +10 bonus to Dexterity (Stealth) checks and can’t be 
+    tracked except by magical means. A creature that receives this bonus leaves 
+    behind no tracks or other traces of its passage.
+    """
+    name = "Pass Without Trace"
+    level = 2
+    casting_time = "1 action"
+    casting_range = "Self"
+    components = ('V', 'S', 'M')
+    materials = "Ashes from a burned leaf of mistletoe and a sprig of spruce"
+    duration = "Concentration, Up to 1 hour"
+    magic_school = "Abjuration"
+    classes = ('Druid', 'Ranger')
+
+
+class Polymorph(Spell):
+    """This spell transforms a creature with at least 1 hit point that you can see 
+    within range into a new form. An unwilling creature must make a Wisdom saving 
+    throw to avoid the effect. A shapechanger automatically succeeds on this saving 
+    throw.
+    
+    The transformation lasts for the duration, or until the target drops to 
+    0 hit points or dies. The new form can be any beast whose challenge rating is 
+    equal to or less than the target's (or the target's level, if it doesn't have a 
+    challenge rating). The target's game statistics, including mental ability 
+    scores, are replaced by the statistics of the chosen beast. It retains its 
+    alignment and personality.
+    
+    The target assumes the hit points of its new form. 
+    When it reverts to its normal form, the creature returns to the number of hit 
+    points it had before it transformed. If it reverts as a result of dropping to 0 
+    hit points, any excess damage carries over to its normal form. As long as the 
+    excess damage doesn't reduce the creature's normal form to 0 hit points, it 
+    isn't knocked unconscious.
+    
+    The creature is limited in the actions it can 
+    perform by the nature of its new form, and it can't speak, cast spells, or take 
+    any other action that requires hands or speech.
+    
+    The target's gear melds into 
+    the new form. The creature can't activate, use, wield, or otherwise benefit from
+     any of its equipment.
+    """
+    name = "Polymorph"
+    level = 4
+    casting_time = "1 action"
+    casting_range = "60 feet"
+    components = ('V', 'S', 'M')
+    materials = "A caterpillar cocoon"
+    duration = "Concentration, Concentration, Up to 1 hour"
+    magic_school = "Transmutation"
+    classes = ('Bard', 'Druid', 'Sorcerer', 'Wizard')
+
+
+class ModifyMemory(Spell):
+    """You attempt to reshape another creature's memories. One creature that you can 
+    see must make a Wisdom saving throw. If you are fighting the creature, it has 
+    advantage on the saving throw. On a failed save, the target becomes charmed by 
+    you for the duration. The charmed target is incapacitated and unaware of its 
+    surroundings, though it can still hear you. If it takes any damage or is 
+    targeted by another spell, this spell ends, and none of the target's memories 
+    are modified.
+    
+    While this charm lasts, you can affect the target's memory of an 
+    event that it experienced within the last 24 hours and that lasted no more than 
+    10 minutes. You can permanently eliminate all memory of the event, allow the 
+    target to recall the event with perfect clarity and exacting detail, change its 
+    memory of the details of the event, or create a memory of some other event.
+    
+    You
+     must speak to the target to describe how its memories are affected, and it must
+     be able to understand your language for the modified memories to take root. Its
+     mind fills in any gaps in the details of your description. If the spell ends 
+    before you have finished describing the modified memories, the creature's memory
+     isn't altered. Otherwise, the modified memories take hold when the spell ends.
+    
+    
+    A modified memory doesn't necessarily affect how a creature behaves, 
+    particularly if the memory contradicts the creature's natural inclinations, 
+    alignment, or beliefs. An illogical modified memory, such as implanting a memory
+     of how much the creature enjoyed dousing itself in acid, is dismissed, perhaps 
+    as a bad dream. The DM might deem a modified memory too nonsensical to affect a 
+    creature in a significant manner.
+    
+    A remove curse or greater restoration spell 
+    cast on the target restores the creature's true memory.
+    
+    At Higher Levels: If 
+    you cast this spell using a spell slot of 6th level or higher, you can alter the
+     target's memories of an event that took place up to 7 days ago (6th level), 30 
+    days ago (7th level), 1 year ago (8th level), or any time in the creature's past
+     (9th level).
+    """
+    name = "Modify Memory"
+    level = 5
+    casting_time = "1 action"
+    casting_range = "30 feet"
+    components = ('V', 'S')
+    materials = ""
+    duration = "Concentration, Up to 1 minute"
+    magic_school = "Enchantment"
+    classes = ('Bard', 'Wizard')
+
+
+class DivineFavor(Spell):
+    """Your prayer empowers you with divine radiance. Until the spell ends, your weapon
+     attacks deal and extra 1d4 radiant damage on a hit.
+    """
+    name = "Divine Favor"
+    level = 1
+    casting_time = "1 bonus action"
+    casting_range = "Self"
+    components = ('V', 'S')
+    materials = ""
+    duration = "Concentration, Up to 1 minute"
+    magic_school = "Evocation"
+    classes = ('Paladin',)
+
+
+class SpiritualWeapon(Spell):
+    """You create a floating, spectral weapon within range that lasts for the duration 
+    or until you cast this spell again. When you cast the spell, you can make a 
+    melee spell attack against a creature within 5 feet of the weapon. On a hit, the
+     target takes force damage equal to 1d8 + your spellcasting ability modifier.
+    
+    
+    As a bonus action on your turn, you can move the weapon up to 20 feet and repeat
+     the attack against a creature within 5 feet of it.
+    
+    The weapon can take 
+    whatever form you choose. Clerics of deities who are associated with a 
+    particular weapon (as St. Cuthbert is known for his mace and Thor for his 
+    hammer) make this spell's effect resemble that weapon.
+    
+    At Higher Levels: When 
+    you cast this spell using a spell slot 3rd level of or higher, the damage 
+    increases by 1d8 for every two slot levels above the 2nd.
+    """
+    name = "Spiritual Weapon"
+    level = 2
+    casting_time = "1 bonus action"
+    casting_range = "60 feet"
+    components = ('V', 'S')
+    materials = ""
+    duration = "1 minute"
+    magic_school = "Evocation"
+    classes = ('Cleric',)
+
+
+class CrusadersMantle(Spell):
+    """Holy power radiates from you in an aura with a 30-foot radius, awakening
+    boldness in friendly creatures. Until the spell ends, the aura moves with
+    you, centered on you. While in the aura, each nonhostile creature in the
+    aura (including you) deals an extra 1d4 radiant damage when it hits with a
+    weapon attack.
+
+    """
+    name = "Crusader's Mantle"
+    level = 3
+    casting_time = "1 action"
+    casting_range = "Self"
+    components = ("V",)
+    duration = "Concentration, up to 1 minute"
+    magic_school = "Evocation"
+    classes = ("Paladin",)
+
+
+class NystulsMagicAura(Spell):
+    """You place an illusion on a creature or an object you touch so that
+    divination spells reveal false information about it.  The target can be a
+    willing creature or an object that isn’t being carried or worn by another
+    creature.
+
+    When you cast the spell, choose one or both of the following effects. The
+    effect lasts for the duration. If you cast this spell on the same creature
+    or object every day for 30 days, placing the same effect on it each time,
+    the illusion lasts until it is dispelled.
+
+    **False Aura**: You change the way the target appears to spells and magical
+    effects, such as detect magic, that detect magical auras. You can make a
+    nonmagical object appear magical, a magical object appear nonmagical, or
+    change the object’s magical aura so that it appears to belong to a specific
+    school of magic that you choose. When you use this effect on an object, you
+    can make the false magic apparent to any creature that handles the item.
+
+    **Mask**: You change the way the target appears to spells and magical
+    effects that detect creature types, such as a paladin’s Divine Sense or the
+    trigger of a sym bol spell. You choose a creature type and other spells and
+    magical effects treat the target as if it were a creature of that type or
+    of that alignment.
+
+    """
+    name = "Nystul's Magic Aura"
+    level = 2
+    casting_time = "1 action"
+    casting_range = "touch"
+    components = ("V", "S", "M")
+    materials = "a small square of silk"
+    duration = "24 hours"
+    magic_school = "Illusion"
+    classes = ("Wizard",)
+
+
+class MagicCircle(Spell):
+    """You create a 10-foot-radius, 20-foot-tall cylinder of magical energy centered on
+     a point on the ground that you can see within range. Glowing runes appear 
+    wherever the cylinder intersects with the floor or other surface.
+    
+    Choose one or
+     more of the following types of creatures - celestials, elementals, fey, fiends,
+     or undead. The circle affects a creature of the chosen type in the following 
+    ways.
+    
+    • The creature can't willingly enter the cylinder by nonmagical means. If
+     the creature tries to use teleportation or interplanar travel to do so, it must
+     first succeed on a Charisma saving throw.
+    
+    • The creature has disadvantage on 
+    attack rolls against targets within the cylinder.
+    
+    • Targets within the cylinder
+     can't be charmed, frightened, or possessed by the creature.
+    
+    When you cast this
+     spell, you can elect to cause its magic to operate in the reverse direction, 
+    preventing a creature of the specified type from leaving the cylinder and 
+    protecting targets outside it.
+    
+    At Higher Levels: When you cast this spell using
+     a spell slot of 4th level or higher, the duration increases by 1 hour for each 
+    slot level above 3rd.
+    """
+    name = "Magic Circle"
+    level = 3
+    casting_time = "1 minute"
+    casting_range = "10 feet"
+    components = ('V', 'S', 'M')
+    materials = ("Holy water or powdered silver and iron worth at least 100 "
+                 "gp, which the spell consumes")
+    duration = "1 hour"
+    magic_school = "Abjuration"
+    classes = ('Cleric', 'Paladin', 'Warlock', 'Wizard')
+                 
+                 
+class LeomundsSecretChest(Spell):
+    """You hide a chest, and all its contents, on the Ethereal Plane.  You must
+    touch the chest and the miniature replica that serves as a material
+    component for the spell. The chest can contain up to 12 cubic feet of
+    nonliving material (3 feet by 2 feet by 2 feet).
+
+    While the chest remains on the Ethereal Plane, you can use an action and
+    touch the replica to recall the chest. It appears in an unoccupied space on
+    the ground within 5 feet of you. You can send the chest back to the
+    Ethereal Plane by using an action and touching both the chest and the
+    replica.
+
+    After 60 days, there is a cumulative 5 percent chance per day that the
+    spell’s effect ends. This effect ends if you cast this spell again, if the
+    smaller replica chest is destroyed, or if you choose to end the spell as an
+    action. If the spell ends and the larger chest is on the Ethereal Plane, it
+    is irretrievably lost.
+
+    """
+    name = "Leomund's Secret Chest"
+    level = 4
+    casting_time = '1 action'
+    casting_range = 'Touch'
+    components = ("V", "S", "M")
+    materials = ("an exquisite chest, 3 feet by 2 feet by 2 feet, constructed "
+                 "from rare materials worth at least 5,000 gp, and a Tiny "
+                 "replica made from the same materials worth at least 50 gp")
+    duration = "instantaneous"
+    magic_school = "Conjuration"
+    classes = ("Wizard",)
+
+
+
+class PlanarBinding(Spell):
+    """With this spell, you attempt to bind a celestial, an elemental, a fey, or a 
+    fiend to your service. The creature must be within range for the entire casting 
+    of the spell. (Typically, the creature is first summoned into the center of an 
+    inverted magic circle in order to keep it trapped while this spell is cast.) At 
+    the completion of the casting, the target must make a Charisma saving throw. On 
+    a failed save, it is bound to serve you for the duration. If the creature was 
+    summoned or created by another spell, that spell's duration is extended to match
+     the duration of this spell.
+    
+    A bound creature must follow your instructions to 
+    the best of its ability. You might command the creature to accompany you on an 
+    adventure, to guard a location, or to deliver a message. The creature obeys the 
+    letter of your instructions, but if the creature is hostile to you, it strives 
+    to twist your words to achieve its own objectives. If the creature carries out 
+    your instructions completely before the spell ends, it travels to you to report 
+    this fact if you are on the same plane of existence. If you are on a different 
+    plane of existence, it returns to the place where you bound it and remains there
+     until the spell ends.
+    
+    At Higher Levels: When you cast this spell using a spell
+     slot of a higher level, the duration increases to 10 days with a 6th-level 
+    slot, to 30 days with a 7th-level slot, to 180 days with an 8th-level slot, and 
+    to a year and a day with a 9th-level spell slot.
+    """
+    name = "Planar Binding"
+    level = 5
+    casting_time = "1 hour"
+    casting_range = "60 feet"
+    components = ('V', 'S', 'M')
+    materials = "A jewel worth at least 1,000 gp, which the spell consumes"
+    duration = "24 hours"
+    magic_school = "Abjuration"
+    classes = ('Bard', 'Cleric', 'Druid', 'Wizard')
+
+
+class TeleportationCircle(Spell):
+    """As you cast the spell, you draw a 10-foot-diameter circle on the ground 
+    inscribed with sigils that link your location to a permanent teleportation 
+    circle of your choice whose sigil sequence you know and that is on the same 
+    plane of existence as you. A shimmering portal opens within the circle you drew 
+    and remains open until the end of your next turn. Any creature that enters the 
+    portal instantly appears within 5 feet of the destination circle or in the 
+    nearest unoccupied space if that space is occupied.
+    
+    Many major temples, guilds,
+     and other important places have permanent teleportation circles inscribed 
+    somewhere within their confines. Each such circle includes a unique sigil 
+    sequence - a string of magical runes arranged in a particular pattern. When you 
+    first gain the ability to cast this spell, you learn the sigil sequences for two
+     destinations on the Material Plane, determined by the DM. You can learn 
+    additional sigil sequences during your adventures⁠. You can commit a new sigil 
+    sequence to memory after studying it for 1 minute.
+    
+    You can create a permanent 
+    teleportation circle by casting this spell in the same location every day for 
+    one year. You need not use the circle to teleport⁠ when you cast the spell in 
+    this way.
+    """
+    name = "Teleportation Circle"
+    level = 5
+    casting_time = "1 minute"
+    casting_range = "10 ft"
+    components = ('V', 'M')
+    materials = ("Rare chalks and inks infused with precious gems with 50 gp, "
+                 "which the spell consumes")
+    duration = "1 round"
+    magic_school = "Conjuration"
+    classes = ('Bard', ' Sorcerer', ' Wizard')
+
+
+class SearingSmite(Spell):
+    """The next time you hit a creature with a melee weapon attack during the spell’s 
+    duration, your weapon flares with white-hot intensitity, and the attack deals an
+     extra 1d6 fire damage to the target and causes the target to ignite in flames.
+    
+    
+    At the start of each of its turns until the spell ends, the target must make a
+     Constitution saving throw. On a failed save, it takes 1d6 fire damage. On a 
+    successful save, the spells ends. If the target or a creature within 5 feet of 
+    it uses an action to put out the flames, or if some other effect douses the 
+    flames (such as the target being submerged in water), the spell ends.
+    
+    At Higher
+     Levels: When you cast this spell using a spell slot of 2nd level or higher, the
+     initial extra damage dealt by the attack increases by 1d6 for each slot
+    """
+    name = "Searing Smite"
+    level = 1
+    casting_time = "1 bonus action"
+    casting_range = "Self"
+    components = ('V',)
+    materials = """"""
+    duration = "Concentration, up to 1 minute"
+    magic_school = "Evocation"
+    classes = ('Paladin',)
+
+
+class HeatMetal(Spell):
+    """Choose a manufactured metal object, such as a metal weapon or a suit of heavy or
+     medium metal armor, that you can see within range. You cause the object to glow
+     red-hot. Any creature in physical contact with the object takes 2d8 fire damage
+     when you cast the spell. Until the spell ends, you can use a bonus action on 
+    each of your subsequent turns to cause this damage again.
+    
+    If a creature is 
+    holding or wearing the object and takes the damage from it, the creature must 
+    succeed on a Constitution saving throw or drop the object if it can. If it 
+    doesn’t drop the object, it has disadvantage on attack rolls and ability checks 
+    until the start of your next turn.
+    
+    At Higher Levels: When you cast this spell 
+    using a spell slot of 3rd level or higher, the damage increases by 1d8 for each 
+    slot level above 2nd.
+    """
+    name = "Heat Metal"
+    level = 2
+    casting_time = "1 action"
+    casting_range = "60 feet"
+    components = ('V', 's', 'm')
+    materials = """A piece of iron and a flame"""
+    duration = "Concentration, up to 1 minute"
+    magic_school = "Transmutation"
+    classes = ('Bard', 'Druid')
+
+
+class Fabricate(Spell):
+    """You convert raw materials into products of the same material. 
+    For example, you 
+    can fabricate a wooden bridge from a clump of trees, a rope from a patch of 
+    hemp, and clothes from flax or wool. 
+    
+    Choose raw materials that you can see 
+    within range. You can fabricate a Large or smaller object (contained within a 
+    10-foot cube, or eight connected 5-foot cubes), given a sufficient quantity of 
+    raw material. If you are working with metal, stone, or another mineral 
+    substance, however, the fabricated object can be no larger than Medium 
+    (contained within a single 5-foot cube). The quality of objects made by the 
+    spell is commensurate with the quality of the raw materials. 
+    
+    Creatures or 
+    magic items can’t be created or transmuted by this spell. You also can’t use it 
+    to create items that ordinarily require a high degree of craftsmanship, such as 
+    jewelry, weapons, glass, or armor, unless you have proficiency with the type of 
+    artisan’s tools used to craft such objects.
+    """
+    name = "Fabricate"
+    level = 4
+    casting_time = "10 minutes"
+    casting_range = "120 feet"
+    components = ('V', 's')
+    materials = """"""
+    duration = "Instantaneous"
+    magic_school = "Transmutation"
+    classes = ('Wizard',)
+
+
+class Creation(Spell):
+    """You pull wisps of shadow material from the Shadowfell to create a nonliving 
+    object of vegetable matter within range: soft goods, rope, wood, or something 
+    similar. You can also use this spell to create mineral objects such as stone, 
+    crystal, or metal. The object created must be no larger than a 5-foot cube, and 
+    the object must be of a form and material that you have seen before. 
+    
+    The 
+    duration depends on the object’s material. If the object is composed of multiple
+     materials, use the shortest duration. 
+    
+    Material — Duration 
+    Vegetable matter —
+     1 day 
+    Stone/crystal — 12 hours 
+    Precious metals — 1 hour 
+    Gems — 10 minutes 
+    
+    Adamantine/Mithral — 1 minute 
+    
+    Using any material created by this spell as 
+    another spell’s material component causes that spell to fail.
+    
+    At Higher Levels:
+     When you cast this spell using a spell slot of 6th level or higher, the cube 
+    increases by 5 feet for each slot level above 5th.
+    """
+    name = "Creation"
+    level = 5
+    casting_time = "1 minute"
+    casting_range = "30 feet"
+    components = ('V', 's', 'm')
+    materials = """A tiny piece of matter of the same type of the item you plan to create"""
+    duration = "Special"
+    magic_school = "Illusion"
+    classes = ('Sorcerer', 'Wizard')
+
+
+class Slow(Spell):
+    """You alter time around up to six creatures of your choice in a 40-foot cube 
+    within range. Each target must succeed on a Wisdom saving throw or be affected 
+    by this spell for the duration.
+    
+    An affected target’s speed is halved, it takes 
+    a -2 penalty to AC and Dexterity saving throws, and it can’t use reactions. On 
+    its turn, it can use either an action or a bonus action, not both. Regardless of
+     the creature’s abilities or magic items, it can’t make more than one melee or 
+    ranged attack during its turn.
+    
+    If the creature attempts to cast a spell with a 
+    casting time of 1 action, roll a d20. On an 11 or higher, the spell doesn’t take
+     effect until the creature’s next turn, and the creature must use its action on 
+    that turn to complete the spell. If it can’t, the spell is wasted.
+    
+    A creature 
+    affected by this spell makes another Wisdom saving throw at the end of its turn.
+     On a successful save, the effect ends for it.
+    """
+    name = "Slow"
+    level = 3
+    casting_time = "1 action"
+    casting_range = "120 feet"
+    components = ('V', 's', 'm')
+    materials = """A drop of molasses"""
+    duration = "Concentration, up to 1 minute"
+    magic_school = "Transmutation"
+    classes = ('Sorcerer', 'Wizard')
+
+
+class WaterBreathing(Spell):
+    """This spell grants up to ten willing creatures you can see within range the 
+    ability to breathe underwater until the spell ends. Affected creatures also 
+    retain their normal mode of respiration.
+    """
+    name = "Water Breathing"
+    level = 3
+    casting_time = "1 action"
+    casting_range = "30 feet"
+    components = ('V', 's', 'm')
+    materials = """A short reed or piece of straw"""
+    duration = "24 hours"
+    ritual = True
+    magic_school = "Transmutation"
+    classes = ('Druid', 'Ranger', 'Sorcerer', 'Wizard')
+
+
+class WaterWalk(Spell):
+    """This spell grants the ability to move across any liquid surface – such as water,
+     acid, mud, snow, quicksand, or lava – as if it were harmless solid ground 
+    (creatures crossing molten lava can still take damage from the heat).
+    Up to ten 
+    willing creatures you can see within range gain this ability for the duration.
+    
+    
+    If you target a creature submerged in a liquid, the spell carries the target to 
+    the surface of the liquid at a rate of 60 feet per round.
+    """
+    name = "Water Walk"
+    level = 3
+    casting_time = "1 action"
+    casting_range = "30 feet"
+    components = ('V', 's', 'm')
+    materials = """A piece of cork"""
+    duration = "1 hour"
+    ritual = True
+    magic_school = "Transmutation"
+    classes = ('Cleric', 'Druid', 'Ranger', 'Sorcerer')
+
+
+class ConjureElemental(Spell):
+    """You call forth an elemental servant. 
+    Choose an area of air, earth, fire, or 
+    water that fills a 10-foot cube within range. An elemental of challenge rating 5
+     or lower appropriate to the area you chose appears in an unoccupied space 
+    within 10 feet of it. For example, a fire elemental emerges from a bonfire, and 
+    an earth elemental rises up from the ground. The elemental disappears when it 
+    drops to 0 hit points or when the spell ends. 
+    
+    The elemental is friendly to you
+     and your companions for the duration. Roll initiative for the elemental, which 
+    has its own turns. It obeys any verbal commands that you issue to it (no action 
+    required by you). If you don’t issue any commands to the elemental, it defends 
+    itself from hostile creatures but otherwise takes no actions. 
+    
+    If your 
+    concentration is broken, the elemental doesn’t disappear. Instead, you lose 
+    control of the elemental, it becom es hostile toward you and your companions, 
+    and it might attack. An uncontrolled elemental can’t be dismissed by you, and it
+     disappears 1 hour after you summoned it. The DM has the elemental’s statistics.
+    
+    
+    At Higher Levels: When you cast this spell using a spell slot of 6th level or 
+    higher, the challenge rating increases by 1 for each slot level above 5th.
+    """
+    name = "Conjure Elemental"
+    level = 5
+    casting_time = "1 minute"
+    casting_range = "90 feet"
+    components = ('V', 's', 'm')
+    materials = """Burning incense for air, soft clay for earth, sulfur and phosphorus for fire, or water and sand for water"""
+    duration = "Concentration, up to 1 hour"
+    ritual = False
+    magic_school = "Conjuration"
+    classes = ('Druid', 'Wizard')
+
+
+class CreateFoodAndWater(Spell):
+    """You create 45 pounds of food and 30 gallons of water on the ground or in 
+    containers within range, enough to sustain up to fifteen humanoids or five 
+    steeds for 24 hours. The food is bland but nourishing, and spoils if uneaten 
+    after 24 hours. The water is clean and doesn’t go bad.
+    """
+    name = "Create Food And Water"
+    level = 3
+    casting_time = "1 action"
+    casting_range = "30 feet"
+    components = ('V', 's')
+    materials = """"""
+    duration = "Instantaneous"
+    ritual = False
+    magic_school = "Conjuration"
+    classes = ('Cleric', 'Paladin')
+
+
+class HallucinatoryTerrain(Spell):
+    """You make natural terrain in a 150-foot cube in range look, sound, and smell like
+     some other sort of natural terrain. Thus, open fields or a road can be made to 
+    resemble a swamp, hill, crevasse, or some other difficult or impassable terrain.
+     A pond can be made to seem like a grassy meadow, a precipice like a gentle 
+    slope, or a rock-strewn gully like a wide and smooth road. Manufactured 
+    structures, equipment, and creatures within the area aren’t changed in 
+    appearance.
+    
+    The tactile characteristics of the terrain are unchanged, so 
+    creatures entering the area are likely to see through the illusion. If the 
+    difference isn’t obvious by touch, a creature carefully examining the illusion 
+    can attempt an Intelligence (Investigation) check against your spell save DC to 
+    disbelieve it. A creature who discerns the illusion for what it is, sees it as a
+     vague image superimposed on the terrain.
+    """
+    name = "Hallucinatory Terrain"
+    level = 4
+    casting_time = "10 minutes"
+    casting_range = "300 feet"
+    components = ('V', 's', 'm')
+    materials = """A stone, a twig, and a bit of green plant"""
+    duration = "24 hours"
+    ritual = False
+    magic_school = "Illusion"
+    classes = ('Bard', 'Druid', 'Warlock', 'Wizard')
+
+
+class MeldIntoStone(Spell):
+    """You step into a stone object or surface large enough to fully contain your body,
+     melding yourself and all the equipment you carry with the stone for the 
+    duration.
+    Using your movement, you step into the stone at a point you can touch.
+     Nothing of your presence remains visible or otherwise detectable by nonmagical 
+    senses.
+    
+    While merged with the stone, you can’t see what occurs outside it, and 
+    any Wisdom (Perception) checks you make to hear sounds outside it are made with 
+    disadvantage. You remain aware of the passage of time and can cast spells on 
+    yourself while merged in the stone. You can use your movement to leave the stone
+     where you entered it, which ends the spell. You otherwise can’t move.
+    
+    Minor 
+    physical damage to the stone doesn’t harm you, but its partial destruction or a 
+    change in its shape (to the extent that you no longer fit within it) expels you 
+    and deals 6d6 bludgeoning damage to you. The stone’s complete destruction (or 
+    transmutation into a different substance) expels you and deals 50 bludgeoning 
+    damage to you. If expelled, you fall prone in an unoccupied space closest to 
+    where you first entered.
+    """
+    name = "Meld Into Stone"
+    level = 3
+    casting_time = "1 action"
+    casting_range = "Touch"
+    components = ('V', 's')
+    materials = """"""
+    duration = "8 hours"
+    ritual = True
+    magic_school = "Transmutation"
+    classes = ('Cleric', 'Druid')
+
+
+class StoneShape(Spell):
+    """You touch a stone object of Medium size or smaller or a section of stone no more
+     than 5 feet in any dimension and form it into any shape that suits your 
+    purpose. So, for example, you could shape a large rock into a weapon, idol, or 
+    coffer, or make a small passage through a wall, as long as the wall is less than
+     5 feet thick. You could also shape a stone door or its frame to seal the door 
+    shut. The object you create can have up to two hinges and a latch, but finer 
+    mechanical detail isn’t possible.
+    """
+    name = "Stone Shape"
+    level = 4
+    casting_time = "1 action"
+    casting_range = "Touch"
+    components = ('V', 's', 'm')
+    materials = """Soft clay, which must be worked into roughly the desired shape of the stone object"""
+    duration = "Instantaneous"
+    ritual = False
+    magic_school = "Transmutation"
+    classes = ('Cleric', 'Druid', 'Wizard')
+
+
+class Stoneskin(Spell):
+    """This spell turns the flesh of a willing creature you touch as hard as stone. 
+    Until the spell ends, the target has resistance to nonmagical bludgeoning, 
+    piercing, and slashing damage.
+    """
+    name = "Stoneskin"
+    level = 4
+    casting_time = "1 action"
+    casting_range = "Touch"
+    components = ('V', 's', 'm')
+    materials = """Diamond dust worth 100 gp, which the spell consumes"""
+    duration = "Concentration, up to 1 hour"
+    ritual = False
+    magic_school = "Abjuration"
+    classes = ('Druid', 'Ranger', 'Sorcerer', 'Wizard')
+
+
+class StinkingCloud(Spell):
+    """You create a 20-foot-radius sphere of yellow, nauseating gas centered on a point
+     within range. The cloud spreads around corners, and its area is heavily 
+    obscured. The cloud lingers in the air for the duration.
+    
+    Each creature that is 
+    completely within the cloud at the start of its turn must make a Constitution 
+    saving throw against poison. On a failed save, the creature spends its action 
+    that turn retching and reeling. Creatures that don’t need to breathe or are 
+    immune to poison automatically succeed on this saving throw.
+    
+    A moderate wind 
+    (at least 10 miles per hour) disperses the cloud after 4 rounds. A strong wind 
+    (at least 20 miles per hour) disperses it after 1 round.
+    """
+    name = "Stinking Cloud"
+    level = 3
+    casting_time = "1 action"
+    casting_range = "90 feet"
+    components = ('V', 's', 'm')
+    materials = """A rotten egg or several skunk cabbage leaves"""
+    duration = "Concentration, up to 1 minute"
+    ritual = False
+    magic_school = "Conjuration"
+    classes = ('Bard', 'Sorcerer', 'Wizard')
+
+
+class GaseousForm(Spell):
+    """You transform a willing creature you touch, along with everything it’s wearing 
+    and carrying, into a misty cloud for the duration. The spell ends if the 
+    creature drops to 0 hit points. An incorporeal creature isn’t affected.
+    
+    While 
+    in this form, the target’s only method of movement is a flying speed of 10 feet.
+     The target can enter and occupy the space of another creature. The target has 
+    resistance to nonmagical damage, and it has advantage on Strength, Dexterity, 
+    and Constitution saving throws. The target can pass through small holes, narrow 
+    openings, and even mere cracks, though it treats liquids as though they were 
+    solid surfaces. The target can’t fall and remains hovering in the air even when 
+    stunned or otherwise incapacitated.
+    
+    While in the form of a misty cloud, the 
+    target can’t talk or manipulate objects, and any objects it was carrying or 
+    holding can’t be dropped, used, or otherwise interacted with. The target can’t 
+    attack or cast spells.
+    """
+    name = "Gaseous Form"
+    level = 3
+    casting_time = "1 action"
+    casting_range = "Touch"
+    components = ('V', 's', 'm')
+    materials = """A bit of gauze and a wisp of smoke"""
+    duration = "Concentration, up to 1 hour"
+    ritual = False
+    magic_school = "Transmutation"
+    classes = ('Sorcerer', 'Warlock', 'Wizard')
+
+

@@ -102,6 +102,10 @@ class PurpleDragonKnight(SubClass):
     """
     name = "Purple Dragon Knight"
     features_by_level = defaultdict(list)
+    features_by_level[3] = [features.RallyingCry]
+    features_by_level[7] = [features.RoyalEnvoy]
+    features_by_level[10] = [features.InspiringSurge]
+    features_by_level[15] = [features.Bulwark]
     
 
 # XGTE
@@ -118,6 +122,9 @@ class ArcaneArcher(SubClass):
     """
     name = "Arcane Archer"
     features_by_level = defaultdict(list)
+    features_by_level[3] = [features.ArcaneArcherLore, features.ArcaneShot]
+    features_by_level[7] = [features.MagicArrow, features.CurvingShot]
+    features_by_level[15] = [features.EverReadyShot]
     
 
 class Cavalier(SubClass):
@@ -132,6 +139,12 @@ class Cavalier(SubClass):
     """
     name = "Cavalier"
     features_by_level = defaultdict(list)
+    features_by_level[3] = [features.BonusProficiencyCavalier,
+                            features.BornToTheSaddle, features.UnwaveringMark]
+    features_by_level[7] = [features.WardingManeuver]
+    features_by_level[10] = [features.HoldTheLine]
+    features_by_level[15] = [features.FerociousCharger]
+    features_by_level[18] = [features.VigilantDefender]
     
 
 class Samurai(SubClass):
@@ -142,6 +155,12 @@ class Samurai(SubClass):
     """
     name = "Samurai"
     features_by_level = defaultdict(list)
+    features_by_level[3] = [features.BonusProficiencySamurai,
+                            features.FightingSpirit]
+    features_by_level[7] = [features.ElegantCourtier]
+    features_by_level[10] = [features.TirelessSpirit]
+    features_by_level[15] = [features.RapidStrike]
+    features_by_level[18] = [features.StrengthBeforeDeath]
 
     
 # Custom

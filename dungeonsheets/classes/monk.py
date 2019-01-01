@@ -15,6 +15,10 @@ class OpenHandWay(SubClass):
     """
     name = "Way of the Open Hand"
     features_by_level = defaultdict(list)
+    features_by_level[3] = [features.OpenHandTechnique]
+    features_by_level[6] = [features.WholenessOfBody]
+    features_by_level[11] = [features.Tranquility]
+    features_by_level[17] = [features.QuiveringPalm]
 
 
 class ShadowWay(SubClass):
@@ -30,6 +34,10 @@ class ShadowWay(SubClass):
     """
     name = "Way of Shadow"
     features_by_level = defaultdict(list)
+    features_by_level[3] = [features.ShadowArts]
+    features_by_level[6] = [features.ShadowStep]
+    features_by_level[11] = [features.CloakOfShadows]
+    features_by_level[17] = [features.Opportunist]
     
 
 class FourElementsWay(SubClass):
@@ -45,21 +53,13 @@ class FourElementsWay(SubClass):
 
     """
     name = "Way of the Four Elements"
+    spellcasting_ability = 'wisdom'
     features_by_level = defaultdict(list)
+    features_by_level[3] = [features.DiscipleOfTheElements,
+                            features.ElementalAttunement]
 
 
 # SCAG
-class SunSoulWay(SubClass):
-    """Monks of the Way of the Sun Soul learn to channel their own life energy
-    into searing bolts of light. They teach that meditation can unlock the
-    ability to unleash the indomitable light shed by the soul of every living
-    creature
-
-    """
-    name = "Way of the Sun Soul"
-    features_by_level = defaultdict(list)
-
-
 class LongDeathWay(SubClass):
     """Monks of the Way of the Long Death are obsessed with the meaning and
     mechanics of dying. They capture creatures and prepare elaborate
@@ -70,6 +70,25 @@ class LongDeathWay(SubClass):
     """
     name = "Way of the Long Death"
     features_by_level = defaultdict(list)
+    features_by_level[3] = [features.TouchOfDeath]
+    features_by_level[6] = [features.HourOfReaping]
+    features_by_level[11] = [features.MasteryOfDeath]
+    features_by_level[17] = [features.TouchOfTheLongDeath]
+
+
+class SunSoulWay(SubClass):
+    """Monks of the Way of the Sun Soul learn to channel their own life energy
+    into searing bolts of light. They teach that meditation can unlock the
+    ability to unleash the indomitable light shed by the soul of every living
+    creature
+
+    """
+    name = "Way of the Sun Soul"
+    features_by_level = defaultdict(list)
+    features_by_level[3] = [features.RadiantSunBolt]
+    features_by_level[6] = [features.SearingArcStrike]
+    features_by_level[11] = [features.SearingSunburst]
+    features_by_level[17] = [features.SunShield]
 
 
 # XGTE
@@ -87,7 +106,13 @@ class DrunkenMasterWay(SubClass):
 
     """
     name = "Way of the Drunken Master"
+    _proficiencies_text = ("brewer's suplies",)
+    skill_proficiencies = ("performance",)
     features_by_level = defaultdict(list)
+    features_by_level[3] = [features.DrunkenTechnique]
+    features_by_level[6] = [features.TipsySway]
+    features_by_level[11] = [features.DrunkardsLuck]
+    features_by_level[17] = [features.IntoxicatedFrenzy]
 
 
 class KenseiWay(SubClass):
@@ -105,6 +130,10 @@ class KenseiWay(SubClass):
     """
     name = "Way of the Kensei"
     features_by_level = defaultdict(list)
+    features_by_level[3] = [features.PathOfTheKensei]
+    features_by_level[6] = [features.OneWithTheBlade]
+    features_by_level[11] = [features.SharpenTheBlade]
+    features_by_level[17] = [features.UnerringAccuracy]
 
 
 class Monk(CharClass):
@@ -130,6 +159,20 @@ class Monk(CharClass):
     features_by_level = defaultdict(list)
     features_by_level[1] = [features.UnarmoredDefenseMonk,
                             features.MartialArts]
+    features_by_level[2] = [features.Ki, features.FlurryOfBlows,
+                            features.PatientDefense, features.StepOfTheWind,
+                            features.UnarmoredMovement]
+    features_by_level[3] = [features.DeflectMissiles]
+    features_by_level[4] = [features.SlowFall]
+    features_by_level[5] = [features.ExtraAttackMonk, features.StunningStrike]
+    features_by_level[6] = [features.KiEmpoweredStrikes]
+    features_by_level[7] = [features.Evasion, features.StillnessOfMind]
+    features_by_level[10] = [features.PurityOfBody]
+    features_by_level[13] = [features.TongueOfTheSunAndMoon]
+    features_by_level[14] = [features.DiamondSoul]
+    features_by_level[15] = [features.TimelessBody]
+    features_by_level[18] = [features.EmptyBody]
+    features_by_level[20] = [features.PerfectSelf]
 
     def __init__(self, level, subclass=None, **params):
         super().__init__(level, subclass=subclass, **params)

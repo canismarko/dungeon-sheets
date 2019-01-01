@@ -72,7 +72,7 @@ class Evasion(Feature):
 
     """
     name = "Evasion"
-    source = "Rogue"
+    source = "Class (many)"
 
 
 class ReliableTalent(Feature):

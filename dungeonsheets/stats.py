@@ -4,7 +4,7 @@ from .armor import NoArmor, NoShield, HeavyArmor
 from .features import (UnarmoredDefenseMonk, UnarmoredDefenseBarbarian,
                        DraconicResilience, Defense, FastMovement,
                        UnarmoredMovement, GiftOfTheDepths, RemarkableAthelete,
-                       SeaSoul, JackOfAllTrades)
+                       SeaSoul, JackOfAllTrades, SoulOfTheForge)
 from math import ceil
 
 
@@ -126,17 +126,20 @@ class ArmorClass():
         else:
             ac += min(char.dexterity.modifier, armor.dexterity_mod_max)
         # Compute feature-specific additions
-        if any([isinstance(f, UnarmoredDefenseMonk) for f in char.features]):
+        if char.has_feature(UnarmoredDefenseMonk):
             if (isinstance(armor, NoArmor) and isinstance(shield, NoShield)):
                 ac += char.wisdom.modifier
-        if any([isinstance(f, UnarmoredDefenseBarbarian) for f in char.features]):
+        if char.has_feature(UnarmoredDefenseBarbarian):
             if isinstance(armor, NoArmor):
                 ac += char.constitution.modifier
-        if any([isinstance(f, DraconicResilience) for f in char.features]):
+        if char.has_feature(DraconicResilience):
             if isinstance(armor, NoArmor):
                 ac += 3
-        if any([isinstance(f, Defense) for f in char.features]):
+        if char.has_feature(Defense):
             if not isinstance(armor, NoArmor):
+                ac += 1
+        if char.has_feature(SoulOfTheForge):
+            if isinstance(armor, HeavyArmor):
                 ac += 1
         # Check if any magic items add to AC
         for mitem in char.magic_items:
@@ -156,17 +159,17 @@ class Speed():
         if isinstance(speed, str):
             other_speed = speed[2:]
             speed = int(speed[:2])  # ignore other speeds, like fly
-        if any([isinstance(f, FastMovement) for f in char.features]):
+        if char.has_feature(FastMovement):
             if not isinstance(char.armor, HeavyArmor):
                 speed += 10
         if isinstance(char.armor, NoArmor) or (char.armor is None):
             for f in char.features:
                 if isinstance(f, UnarmoredMovement):
                     speed += f.speed_bonus
-        if any([isinstance(f, GiftOfTheDepths) for f in char.features]):
+        if char.has_feature(GiftOfTheDepths):
             if 'swim' not in other_speed:
                 other_speed += ' ({:d} swim)'.format(speed)
-        if any([isinstance(f, SeaSoul) for f in char.features]):
+        if char.has_feature(SeaSoul):
             if 'swim' not in other_speed:
                 other_speed += ' (30 swim)'
         return '{:d}{:s}'.format(speed, other_speed)

@@ -441,6 +441,16 @@ class Unarmed(MeleeWeapon):
     ability = "strength"
 
 
+class SunBolt(RangedWeapon):
+    name = "Sun Bolt"
+    cost = "0 gp"
+    base_damage = "1d4"
+    damage_type = "r"
+    weight = 0
+    properties = "(range 20/60)"
+    ability = 'dexterity'
+
+    
 # Custom weapons
 class HeavyPunch(MeleeWeapon):
     base_damage = "1d4"
@@ -534,6 +544,6 @@ martial_ranged_weapons = (Blowgun, HandCrossbow, HeavyCrossbow,
 martial_weapons = martial_melee_weapons + martial_ranged_weapons
 
 monk_weapons = (Shortsword, Unarmed, Club, Dagger, Handaxe, Javelin,
-                LightHammer, Mace, Quarterstaff, Sickle, Spear)
+                LightHammer, Mace, Quarterstaff, Sickle, Spear, SunBolt)
 
 firearms = (Firearm, Blunderbuss, Pistol, Musket)

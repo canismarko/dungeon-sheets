@@ -542,6 +542,454 @@ class ImprovedWarMagic(Feature):
     source = "Fighter (Eldritch Knight)"
 
 
+# Purple Dragon Knight
+class RallyingCry(Feature):
+    """When you choose this archetype at 3rd level, you learn how to inspire your
+    allies to fight on past their injuries. When you use your Second Wind
+    feature, you can choose up to three creatures within 60 feet of you that
+    are allied with you. Each one regains hit points equal to your fighter
+    level, provided that the creature can see or hear you
+
+    """
+    name = "Rallying Cry"
+    source = "Fighter (Purple Dragon Knight)"
+
+
+class RoyalEnvoy(Feature):
+    """A Purple Dragon knight serves as an envoy of the Cormyrean crown. Knights
+    of high standing are expected to conduct themselves with grace.
+
+    At 7th level, you gain proficiency in the Persuasion skill. If you are
+    already proficient in it, you gain proficiency in one of the following
+    skills of your choice: Animal Handling, Insight, Intimidation, or
+    Performance.
+
+    Your proficiency bonus is doubled for any ability check you make that uses
+    Persuasion. You receive this benefit regardless of the skill proficiency
+    you gain from this feature
+
+    """
+    name = "Royal Envoy"
+    source = "Fighter (Purple Dragon Knight)"
+
+    def __init__(self, owner=None):
+        super().__init__(owner=owner)
+        if 'persuasion' not in self.owner.skill_proficiencies:
+            self.owner.skill_proficiencies.append('persuasion')
+        if 'persuasion' not in self.owner.skill_expertise:
+            self.owner.skill_expertise.append('persuasion')
+
+
+class InspiringSurge(Feature):
+    """Starting at 10th level, when you use your Action Surge feature , you can
+    choose one creature within 60 feet of you that is allied with you. That
+    creature can make one melee or ranged weapon attack with its reaction, pro-
+    vided that it can see or hear you. Starting at 18th level, you can choose
+    two allies within 60 feet of you, rather than one.
+
+    """
+    name = "Inspiring Surge"
+    source = "Fighter (Purple Dragon Knight)"
+
+
+class Bulwark(Feature):
+    """Beginning at 15th level, you can extend the benefit of your Indomitable
+    feature to an ally. When you decide to use Indomitable to reroll an
+    Intelligence, a Wisdom, or a Charisma saving throw and you aren't
+    incapacitated, you can choose one ally within 60 feet of you that also
+    failed its saving throw against the same effect. If that creature can see
+    or hear you, it can reroll its saving throw and must use the new roll
+
+    """
+    name = "Bulwark"
+    source = "Fighter (Purple Dragon Knight)"
+
+
+# Arcane Archer
+class ArcaneArcherLore(Feature):
+    """At 3rd level, you learn magical theory or some of the secrets of
+    nature—typical for practitioners of this elven martial tradition. You
+    choose to gain proficiency in ei— ther the Arcana or the Nature skill, and
+    you choose to learn either the prestidigr'tation or the drufdcraft cantrip
+
+    """
+    name = "Arcane Archer Lore"
+    source = "Fighter (Arcane Archer)"
+
+
+class ArcaneShot(Feature):
+    """At 3rd level, you learn to unleash special magical effects with some of
+    your shots. When you gain this feature, you learn two Arcane Shot options
+    of your choice (see “Arcane Shot Options” below).
+
+    Add all Arcane Shot options under "features" in your .py file
+
+    Once per turn when you fire a magic arrow from a shortbow or longbow as
+    part of the Attack action, you can apply one of your Arcane Shot options to
+    that arrow. You decide to use the option when the arrow hits a creature,
+    unless the option doesn’t involve an attack roll. You have two uses of this
+    ability, and you regain all expended uses of it when you finish a short or
+    long rest.
+
+    You gain an additional Arcane Shot option of your choice when you reach
+    certain levels in this class: 7th, 10th, 15th, and 18th level. Each option
+    also improves when you become an 18th—level fighter
+
+    If an option requires a saving throw, your Arcane Shot save DC equals 8 +
+    your proficiency bonus + your Intelligence modifier
+
+    """
+    name = "Arcane Shot (2x/SR)"
+    source = "Fighter (Arcane Archer)"
+
+
+class MagicArrow(Feature):
+    """At 7th level, you gain the ability to infuse arrows with magic. Whenever
+    you fire a nonmagical arrow from a shortbow or longbow, you can make it
+    magical for the purpose of overcoming resistance and immunity to non-
+    magical attacks and damage. The magic fades from the arrow immediately
+    after it hits or misses its target.
+
+    """
+    name = "Magic Arrow"
+    source = "Fighter (Arcane Archer)"
+
+
+class CurvingShot(Feature):
+    """At 7th level, you learn how to direct an errant arrow toward a new
+    target. When you make an attack roll with a magic arrow and miss, you can
+    use a bonus action to reroll the attack roll against a different target
+    within 60 feet of the original target
+
+    """
+    name = "Curving Shot"
+    source = "Fighter (Arcane Archer)"
+
+
+class EverReadyShot(Feature):
+    """Starting at 15th level, your magical archery is available whenever battle
+    starts. If you roll initiative and have no uses of Arcane Shot remaining,
+    you regain one use of it.
+
+    """
+    name = "Ever-Ready Shot"
+    source = "Fighter (Arcane Archer)"
+
+
+class BanishingArrow(Feature):
+    """You use abjuration magic to try to temporarily banish your target to a
+    harmless location in the Feywild. The creature hit by the arrow must also
+    succeed on a Charisma saving throw or be banished. While banished in this
+    way, the target’s speed is 0, and it is incapacitated. At the end of its
+    next turn, the target reappears in the Space it vacated or in the nearest
+    unoccupied space if that space is occupied.
+
+    After you reach 18th level in this class, a target also takes 2d6 force
+    damage when the arrow hits it.
+
+    """
+    name = "Arcane Shot: Banishing Arrow"
+    source = "Fighter (Arcane Archer)"
+
+
+class BeguilingArrow(Feature):
+    """Your enchantment magic causes this arrow to temporarily beguile its
+    target. The creature hit by the arrow takes an extra 2d6 psychic damage,
+    and choose one ofyour allies within 30 feet of the target. The target must
+    succeed on a Wisdom saving throw, or it is charmed by the chosen ally until
+    the start ofyour next turn. This effect ends early if the chosen ally at—
+    tacks the charmed target, deals damage to it, or forces it to make a saving
+    throw. The psychic damage increases to 4d6 when you reach 18th level in
+    this class.
+
+    """
+    name = "Arcane Shot: Beguiling Arrow"
+    source = "Fighter (Arcane Archer)"
+
+
+class BurstingArrow(Feature):
+    """You imbue your arrow with force energy drawn from the school of
+    evocation. The energy detonates after your attack. Immediately after the
+    ar— row hits the creature, the target and all other creatures within 10
+    feet of it take 2d6 force damage each. The force damage increases to 4d6
+    when you reach 18th level in this class
+
+    """
+    name = "Arcane Shot: Bursting Arrow"
+    source = "Fighter (Arcane Archer)"
+
+
+class EnfeeblingArrow(Feature):
+    """You weave necromantic magic into your arrow. The creature hit by the arrow
+    takes an extra 2d6 necrotic damage. The target must also succeed on a
+    Constitution saving throw, or the damage dealt by its weapon attacks is
+    halved until the start of your next turn. The necrotic damage increases to
+    4d6 when you reach 18th level in this class.
+
+    """
+    name = "Arcane Shot: Enfeebling Arrow"
+    source = "Fighter (Arcane Archer)"
+
+
+class GraspingArrow(Feature):
+    """When this arrow strikes its target, conjuration magic creates grasping,
+    poisonous brams bles, which wrap around the target. The creature hit by the
+    arrow takes an extra 2(16 poison damage, its speed is reduced by 10 feet,
+    and it takes 2d6 slashing dam— age the first time on each turn it moves 1
+    foot or more without teleporting. The target or any creature that can reach
+    it can use its action to remove the brambles with a successful Strength
+    (Athletics) check against your Arcane Shot save DC. Otherwise, the
+    brambles last for 1 minute or until you use this option again. The poison
+    damage and slashing damage both increase to 4d6 when you reach 18th level
+    in this class
+
+    """
+    name = "Arcane Shot: Grasping Arrow"
+    source = "Fighter (Arcane Archer)"
+
+
+class PiercingArrow(Feature):
+    """You use transmutation magic to give your arrow an ethereal quality. When
+    you use this option, you don’t make an attack roll for the attack. Instead,
+    the arrow shoots forward in a line, which is 1 foot wide and 30 feet long,
+    before disappearing. The arrow passes harmlessly through objects, ignoring
+    cover. Each creature in that line must make a Dexterity saving throw. On a
+    failed save, a creature takes damage as if it were hit by the arrow, plus
+    an extra 1d6 piercing damage. On a successful save, a target takes half as
+    much damage. The piercing damage increases to 2d6 when you reach 18th level
+    in this class.
+
+    """
+    name = "Arcane Shot: Piercing Arrow"
+    source = "Fighter (Arcane Archer)"
+
+
+class SeekingArrow(Feature):
+    """Using divination magic, you grant your arrow the ability to seek out a
+    target. When you use this option, you don’t make an attack roll for the
+    attack. Instead, choose one creature you have seen in the past minute. The
+    arrow flies toward that creature, moving around corners if necessary and
+    ignoring three-quarters cover and half cover. If the target is within the
+    weapon’s range and there is a path large enough for the arrow to travel to
+    the target, the target must make a Dexterity saving throw. Otherwise, the
+    arrow disappears after traveling as far as it can. On a failed save, the
+    target takes damage as if it were hit by the arrow, plus an extra 1d6 force
+    damage, and you learn the target’s current location. On a successful save,
+    the target takes half as much damage, and you don’t learn its location. The
+    force damage increases to 2d6 when you reach 18th level in this class.
+
+    """
+    name = "Arcane Shot: Seeking Arrow"
+    source = "Fighter (Arcane Archer)"
+
+
+class ShadowArrow(Feature):
+    """You weave illusion magic into your arrow, causing it to occlude your fees
+    vision with shadows. The creature hit by the arrow takes an extra 2d6
+    psychic damage, and it must succeed on a Wisdom saving throw or be unable
+    to see anything farther than 5 feet away until the start ofyour next
+    turn. The psychic damage increases to 4d6 when you reach 18th level in this
+    class
+
+    """
+    name = "Shadow Arrow"
+    source = "Fighter (Arcane Archer)"
+    
+
+# Cavalier
+class BonusProficiencyCavalier(Feature):
+    """When you choose this archetype at 3rd level, you gain proficiency in one of
+    the following skills of your choice: Animal Handling, History, Insight,
+    Performance, or Persuasion. Alternatively, you learn one language of your
+    choice.
+
+    """
+    name = "Bonus Proficiency"
+    source = "Fighter (Cavalier)"
+
+
+class BornToTheSaddle(Feature):
+    """Starting at 3rd level, your mastery as a rider becomes apparent. You have
+    advantage on saving throws made to avoid falling off your mount. Ifyou fall
+    off your mount and descend no more than 10 feet, you can land on your feet
+    if you’re not incapacitated. Finally, mounting or dismounting a creature
+    costs you only 5 feet of movement, rather than half your speed.
+
+    """
+    name = "Born to the Saddle"
+    source = "Fighter (Cavalier)"
+
+
+class UnwaveringMark(Feature):
+    """Starting at 3rd level, you can menace your foe-s, foiling their attacks and
+    punishing them for harming others. When you hit a creature with a melee
+    weapon attack, you can mark the creature until the end of your next
+    turn. This effect ends early ifyou are incapacitated or you die, or if
+    someone else marks the creature.
+
+    While it is within 5 feet of you, a creature marked by you has disadvantage
+    on any attack roll that doesn’t target you. In addition, if a creature
+    marked by you deals damage to anyone other than you, you can make a special
+    melee weapon attack against the marked creature as a bonus action on your
+    next turn. You have advantage on the attack roll, and if it hits, the
+    attacks weapon deals extra damage to the target equal to half your fighter
+    level.
+
+    Regardless of the number of creatures you mark, you can make this special
+    attack a number of times equal to your Strength modifier (minimum of once),
+    and you regain all expended uses of it when you finish a long rest
+
+    """
+    _name = "Unwavering Mark"
+    source = "Fighter (Cavalier)"
+
+    @property
+    def name(self):
+        num = max(1, self.owner.strength.modifier)
+        return self._name + ' ({:d}x/LR)'.format(num)
+
+
+class WardingManeuver(Feature):
+    """At 7th level, you learn to fend off strikes directed at you, your mount, or
+    other creatures nearby. If you or a creature you can see within 5 feet
+    of you is hit by an attack, you can roll ld8 as a reaction if you’re
+    wielding a melee weapon or a shield. Roll the die, and add the number
+    rolled to the target’s AC against that attack. If the attack still hits,
+    the target has resistance against the attack’s damage.
+
+    You can use this feature a number of times equal to your Constitution
+    modifier (minimum of once), and you regain all expended uses of it when you
+    finish a long rest
+
+    """
+    _name = "Warding Maneuver"
+    source = "Fighter (Cavalier)"
+
+    @property
+    def name(self):
+        num = max(1, self.owner.constitution.modifier)
+        return self._name + ' ({:d}x/LR)'.format(num)
+        
+
+class HoldTheLine(Feature):
+    """At 10th level, you become a master of locking down your enemies. Creatures
+    provoke an opportunity attack from you when they move 5 feet or more while
+    within your reach, and if you hit a creature with an opportunity attack,
+    the target’s speed is reduced to 0 until the end of the current turn.
+
+    """
+    name = "Hold the Line"
+    source = "Fighter (Cavalier)"
+
+
+class FerociousCharger(Feature):
+    """Starting at 15th level, you can run down your foes, whether you’re mounted
+    or not. If you move at least 10 feet in a straight line right before
+    attacking a creature and you hit it with the attack, that target must
+    succeed on a Strength saving throw (DC 8 + your proficiency bonus + your
+    Strength modifier) or be knocked prone. You can use this feature only once
+    on each of your turns
+
+    """
+    name = "Ferocious Charger"
+    source = "Fighter (Cavalier)"
+
+
+class VigilantDefender(Feature):
+    """Starting at 18th level, you respond to danger with extraordinary
+    vigilance. In combat, you get a special reaction that you can take once on
+    every creature’s turn, except your turn. You can use this special reaction
+    only to make an opportunity attack, and you can’t use it on the same turn
+    that you take your normal reaction
+
+    """
+    name = "Vigiland Defender"
+    source = "Fighter (Cavalier)"
+
+
+# Samurai
+class BonusProficiencySamurai(Feature):
+    """When you choose this archetype at 3rd level, you gain proficiency in one of
+    the following skills ofyour choice: History, Insight, Performance, or
+    Persuasion. Alterna— tively, you learn one language of your choice.
+
+    """
+    name = "Bonus Proficiency"
+    source = "Fighter (Samurai)"
+
+
+class FightingSpirit(Feature):
+    """Starting at 3rd level, your intensity in battle can shield you and help you
+    strike true. As a bonus action on your turn, you can give yourself
+    advantage on weapon attack rolls until the end of the current turn. When
+    you do so, you also gain 5 temporary hit points. The number of temporary
+    hit points increases when you reach certain levels in this class,
+    increasing to 10 at 10th level and 15 at 15th level. You can use this
+    feature three times, and you regain all expended uses of it when you finish
+    a long rest.
+
+    """
+    name = "Fighting Spirit (3x/LR)"
+    source = "Fighter (Samurai)"
+
+
+class ElegantCourtier(Feature):
+    """Starting at 7th level, your discipline and attention to de— tail allow you
+    to excel in social situations. Whenever you make a Charisma (Persuasion)
+    check, you gain a bonus to the check equal to your Wisdom modifier. Your
+    self-control also causes you to gain proficiency in Wisdom saving
+    throws. If you already have this proficiency, you instead gain proficiency
+    in Intelligence or Charisma saving throws (your choice).
+
+    """
+    name = "Elegant Courtier"
+    source = "Fighter (Samurai)"
+
+    def __init__(self, owner=None):
+        super().__init__(owner=owner)
+        if 'wisdom' not in self.owner.primary_class.saving_throw_proficiencies:
+            self.owner.primary_class.saving_throw_proficiencies += ('wisdom',)
+        else:
+            self.owner.primary_class.saving_throw_proficiencies += ('intelligence',)
+
+
+class TirelessSpirit(Feature):
+    """Starting at 10th level, when you roll initiative and have no uses of
+    Fighting Spirit remaining, you regain one use.
+
+    """
+    name = "Tireless Spirit"
+    source = "Fighter (Samurai)"
+
+
+class RapidStrike(Feature):
+    """Starting at 15th level, you learn to trade accuracy for swift strikes. If
+    you take the Attack action on your turn and have advantage on an attack
+    roll against one of the targets, you can forgo the advantage for that roll
+    to make an additional weapon attack against that target, as part of the
+    same action. You can do so no more than once per turn
+
+    """
+    name = "Rapid Strike"
+    source = "Fighter (Samurai)"
+
+
+class StrengthBeforeDeath(Feature):
+    """Starting at 18th level, your fighting spirit can delay the grasp of
+    death. If you take damage that reduces you to 0 hit points and doesn’t kill
+    you outright, you can use your reaction to delay falling unconscious, and
+    you can immediately take an extra turn, interrupting the current
+    turn. While you have 0 hit points during that extra turn, taking damage
+    causes death saving throw failures as normal, and three death saving throw
+    failures can still kill you. When the extra turn ends, you fall unconscious
+    ifyou still have 0 hit points. Once you use this feature, you can’t use it
+    again until you finish a long rest.
+
+    """
+    name = "Strength Before Death"
+    source = "Fighter (Samurai)"
+            
+    
 # Gunslinger
 class Gunsmith(Feature):
     """Upon choosing this archetype at 3rd level, you gain proficiency with
@@ -559,10 +1007,13 @@ class AdeptMarksman(Feature):
     """When you choose this archetype at 3rd level, you learn to perform powerful
     trick shots to disable or damage your opponents using your firearms.
 
-    **Trick Shots**: You learn two trick shots of your choice, which are detailed under "Trick Shots" below. 
-    If you have not already, add them by name to "features" in your character's .py file.
+    **Trick Shots**: You learn two trick shots of your choice, which are
+    detailed under "Trick Shots" below.  If you have not already, add them by
+    name to "features" in your character's .py file.
 
-    Many maneuvers enhance an attack in some way. Each use of a trick shot must be declared before the attack roll is made. You can use only one trick shot per attack.
+    Many maneuvers enhance an attack in some way. Each use of a trick shot must
+    be declared before the attack roll is made. You can use only one trick shot
+    per attack.
 
     You learn an additional trick shot of your choice at 7th, 10th, 15th, and
     18th level. Each time you learn a new trick shot, you can also replace one
@@ -578,7 +1029,7 @@ class AdeptMarksman(Feature):
     saving throw to resist the trick shot’s effects. The saving throw DC is
     calculated as follows:
 
-   Trick Shot save DC = 8 + your proficiency bonus + your Dexterity modifier
+    Trick Shot save DC = 8 + your proficiency bonus + your Dexterity modifier
 
     Firearm Properties Firearms are a new and volatile technology, and as such
     bring their own unique set of weapon properties. Some properties are
