@@ -720,7 +720,6 @@ class Character():
         make_sheet(filename, character=self,
                    flatten=kwargs.get('flatten', True))
 
-
         
 def read_character_file(filename):
     """Create a character object from the given definition file.

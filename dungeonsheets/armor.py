@@ -55,7 +55,7 @@ class Armor():
     dexterity_mod_max = None
     strength_required = None
     stealth_disadvantage = False
-    weight = 0 # In lbs
+    weight = 0  # In lbs
     
     def __str__(self):
         return self.name
@@ -65,23 +65,23 @@ class Armor():
 
 
 class NoArmor(Armor):
-    name = "No armor"
+    name = "No Armor"
 
 
 class LightArmor(Armor):
-    name = "Generic Light Armor"
+    name = "Light Armor"
 
 
 class MediumArmor(Armor):
-    name = "Generic Medium Armor"
+    name = "Medium Armor"
 
 
 class HeavyArmor(Armor):
-    name = "Generic Heavy Armor"
+    name = "Heavy Armor"
 
 
 class PaddedArmor(LightArmor):
-    name = "Padded armor"
+    name = "Padded Armor"
     cost = "5 gp"
     base_armor_class = 11
     weight = 8
@@ -89,21 +89,21 @@ class PaddedArmor(LightArmor):
 
 
 class LeatherArmor(LightArmor):
-    name = "Leather armor"
+    name = "Leather Armor"
     cost = "10 gp"
     base_armor_class = 11
     weight = 10
 
 
-class StuddedArmor(LightArmor):
-    name = "Studded leather armor"
+class StuddedLeatherArmor(LightArmor):
+    name = "Studded Leather Armor"
     cost = "45 gp"
     base_armor_class = 12
     weight = 13
 
 
 class HideArmor(MediumArmor):
-    name = "Hide armor"
+    name = "Hide Armor"
     cost = "10 gp"
     base_armor_class = 12
     dexterity_mod_max = 2
@@ -111,7 +111,7 @@ class HideArmor(MediumArmor):
 
 
 class ChainShirt(MediumArmor):
-    name = "Chain shirt"
+    name = "Chain Shirt"
     cost = "50 gp"
     base_armor_class = 13
     dexterity_mod_max = 2
@@ -119,7 +119,7 @@ class ChainShirt(MediumArmor):
 
 
 class ScaleMail(MediumArmor):
-    name = "Scale mail"
+    name = "Scale Mail"
     cost = "50 gp"
     base_armor_class = 14
     dexterity_mod_max = 2
@@ -145,7 +145,7 @@ class HalfPlate(MediumArmor):
 
 
 class RingMail(HeavyArmor):
-    name = "Ring mail"
+    name = "Ring Mail"
     cost = "30 gp"
     base_armor_class = 14
     dexterity_mod_max = 0
@@ -191,3 +191,8 @@ class ElvenChain(MediumArmor):
     dexerity_mod_max = 2
     weight = 20
     
+
+light_armors = [PaddedArmor, LeatherArmor, StuddedLeatherArmor]
+medium_armors = [HideArmor, ChainShirt, ScaleMail, Breastplate, HalfPlate]
+heavy_armors = [RingMail, ChainMail, SplintArmor, PlateMail]
+all_armors = light_armors + medium_armors + heavy_armors

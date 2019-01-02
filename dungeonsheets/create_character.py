@@ -14,7 +14,8 @@ import subprocess
 import npyscreen
 import jinja2
 
-from dungeonsheets import character, race, dice, background, classes
+from dungeonsheets import (character, race, dice, background, classes, weapons,
+                           armor)
 
 
 def read_version():
@@ -28,6 +29,9 @@ char_classes = {c.name: c for c in classes.available_classes}
 races = {r.name: r for r in race.available_races}
 
 backgrounds = {b.name: b for b in background.available_backgrounds}
+
+all_weapons = (weapons.simple_melee_weapons + weapons.martial_melee_weapons +
+               weapons.simple_ranged_weapons + weapons.martial_ranged_weapons)
 
 
 class LinkedListForm(npyscreen.ActionForm):
@@ -85,7 +89,7 @@ class App(npyscreen.NPSAppManaged):
         # Create the PDF character sheet
         if self.getForm('SAVE').make_pdf.value:
             log.debug("Creating PDF")
-            self.character.to_pdf(filename, template_file='empty_template.txt')
+            self.character.to_pdf(filename)
             subprocess.call(['makesheets', filename])
     
     def update_max_hp(self):
@@ -122,11 +126,15 @@ class App(npyscreen.NPSAppManaged):
                      name="Choose ability scores:", formid='ABILITIES')
         self.addForm("SKILLS", SkillForm, name="Choose skill proficiencies",
                      formid='SKILLS')
+        self.addForm("WEAPONS", WeaponForm, name="Choose weapons",
+                     formid='WEAPONS')
+        self.addForm("ARMOR", ArmorForm, name="Choose armor",
+                     formid='ARMOR')
         self.addForm("SAVE", SaveForm, name="Save character:", formid='SAVE')
 
         # Initialized the DoublyLinkedList
-        forms = ['MAIN', 'RACE', 'CLASS1', 'BACKGROUND',
-                 'ALIGNMENT', 'ABILITIES', 'SKILLS', 'SAVE']
+        forms = ['MAIN', 'RACE', 'CLASS1', 'BACKGROUND', 'ALIGNMENT',
+                 'ABILITIES', 'SKILLS', 'WEAPONS', 'ARMOR', 'SAVE']
         for i in range(len(forms)-1):
             form = self.getForm(forms[i])
             form.add_next(forms[i+1])
@@ -522,8 +530,88 @@ class SkillForm(LinkedListForm):
         race_skills = tuple(self.parentApp.character.race.skill_proficiencies)
         all_skills = new_skills + bg_skills + race_skills
         self.parentApp.character.skill_proficiencies = all_skills
+        self.parentApp.getForm('WEAPONS').update_options()
         log.debug(f"Skill proficiencies: {all_skills}")
         super().to_next()
+    
+    def on_cancel(self):
+        super().to_prev()
+
+
+class WeaponForm(LinkedListForm):
+    def create(self):
+        self.instructions = self.add(
+            npyscreen.FixedText, editbale=False,
+            value=("Please select your weapons."))
+        self.remaining = self.add(
+            npyscreen.TitleText, name="Remaining:",
+            value=3, editable=False)
+        self.weapons = self.add(
+            npyscreen.TitleMultiSelect, name="Weapons:",
+            values=tuple([wpn.name for wpn in all_weapons]),
+            value_changed_callback=self.update_remaining)
+    
+    def on_ok(self):
+        new_weapons = self.weapons.get_selected_objects()
+        if new_weapons is not None:
+            new_weapons = tuple(s.lower() for s in new_weapons)
+        else:
+            new_weapons = ()
+        for wpn in new_weapons:
+            self.parentApp.character.wield_weapon(wpn)
+        log.debug(f"Weapons wielded: {new_weapons}")
+        super().to_next()
+    
+    def update_remaining(self, widget=None):
+        num_choices = 3
+        num_selected = len(self.weapons.value)
+        remaining = num_choices - num_selected
+        log.debug(f'Remaining: {remaining}')
+        self.remaining.value = str(remaining)
+        self.display()
+    
+    def update_options(self):
+        available_weapons = []
+        for wpn in all_weapons:
+            if self.parentApp.character.is_proficient(wpn()):
+                available_weapons.append(wpn.name)
+        self.weapons.values = available_weapons
+        self.parentApp.getForm('ARMOR').update_options()
+        self.display()
+    
+    def on_cancel(self):
+        super().to_prev()
+
+
+class ArmorForm(LinkedListForm):
+    def create(self):
+        self.instructions = self.add(
+            npyscreen.FixedText, editbale=False,
+            value=("Please select your armor."))
+        self.shield = self.add(npyscreen.Checkbox, name="Shield? ",
+                               value=False)
+        self.armor = self.add(
+            npyscreen.TitleSelectOne, name="Armor:",
+            values=tuple([a.name for a in armor.all_armors]))
+
+    def on_ok(self):
+        my_armor = self.armor.get_selected_objects()[0]
+        if my_armor.lower() is not "no armor":
+            self.parentApp.character.wear_armor(my_armor)
+        if self.shield.value:
+            self.parentApp.character.wield_shield('shield')
+        super().to_next()
+    
+    def update_options(self):
+        available_armors = [armor.NoArmor]
+        if 'light armor' in self.parentApp.character.proficiencies_text.lower():
+            available_armors.extend(armor.light_armors)
+        if 'medium armor' in self.parentApp.character.proficiencies_text.lower():
+            available_armors.extend(armor.medium_armors)
+        if 'heavy armor' in self.parentApp.character.proficiencies_text.lower():
+            available_armors.extend(armor.heavy_armors)
+        self.armor.values = [a.name for a in available_armors]
+        self.display()
     
     def on_cancel(self):
         super().to_prev()
@@ -540,6 +628,7 @@ class SaveForm(LinkedListForm):
             npyscreen.TitleText, name='Filename:')
         self.make_pdf = self.add(npyscreen.Checkbox, name="Create PDF:",
                                  value=True)
+
     def on_ok(self):
         super().to_next()
     

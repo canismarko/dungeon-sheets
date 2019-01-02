@@ -69,10 +69,10 @@ gp = 0
 pp = 0
 
 # TODO: Put your equipped weapons and armor here
-weapons = ()  # Example: ('shortsword', 'longsword')
+weapons = {{ char.weapons }}  # Example: ('shortsword', 'longsword')
 magic_items = ()  # Example: ('ring of protection',)
-armor = ""  # Eg "leather armor"
-shield = ""  # Eg "shield"
+armor = "{{ char.armor }}"  # Eg "leather armor"
+shield = "{{ char.shield }}"  # Eg "shield"
 
 equipment = """TODO: list the equipment and magic items your character carries"""
 
