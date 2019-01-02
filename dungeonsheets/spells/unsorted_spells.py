@@ -1948,3 +1948,118 @@ class GlyphOfWarding(Spell):
     magic_school = "Abjuration"
     classes = ('you', 'cast', 'this', 'spell', 'using', 'a', 'spell', 'slot', 'of', '4th', 'level', 'or', 'higher', 'the', 'damage', 'of', 'an', 'explosive', 'runes', 'glyph', 'increases', 'by', '1d8', 'for', 'each', 'slot', 'level', 'above', '3rd.', 'If', 'you', 'create', 'a', 'spell', 'glyph', 'you', 'can', 'store', 'any', 'spell', 'of', 'up', 'to', 'the', 'same', 'level', 'as', 'the', 'slot', 'you', 'use', 'for', 'the', 'glyph', 'of')
 
+class Friends(Spell):
+    """For the duration, you have advantage on all Charisma checks directed at one 
+    creature of your choice that isn’t hostile toward you. When the spell ends, the 
+    creature realizes that you used magic to influence its mood and becomes hostile 
+    toward you. A creature prone to violence might attack you. Another creature 
+    might seek retribution in other ways (at the DM’s discretion), depending on the 
+    nature of your interaction with it.
+    """
+    name = "Friends"
+    level = 0
+    casting_time = "1 action"
+    casting_range = "Self"
+    components = ('S', 'm')
+    materials = """A small amount of makeup applied to the face as this spell is cast"""
+    duration = "Concentration, up to 1 minute"
+    ritual = False
+    magic_school = "Enchantment"
+    classes = ('Bard', 'Sorcerer', 'Warlock', 'Wizard')
+
+
+class Wish(Spell):
+    """Wish is the mightiest spell a mortal creature can cast. By simply speaking 
+    aloud, you can alter the very foundations of reality in accord with your 
+    desires.
+    
+    The basic use of this spell is to duplicate any other spell of 8th 
+    level or lower. You don’t need to meet any requirements in that spell, including
+     costly components. The spell simply takes effect.
+    Alternatively, you can create
+     one of the following effects of your choice:
+    
+    • You create one object of up to 
+    25,000 gp in value that isn’t a magic item. The object can be no more than 300 
+    feet in any dimension, and it appears in an unoccupied space you can see on the 
+    ground.
+    
+    • You allow up to twenty creatures that you can see to regain all hit 
+    points, and you end all effects on them described in the greater restoration 
+    spell.
+    
+    • You grant up to ten creatures that you can see resistance to a damage 
+    type you choose.
+    
+    • You grant up to ten creatures you can see immunity to a 
+    single spell or other magical effect for 8 hours. For instance, you could make 
+    yourself and all your com panions immune to a lich’s life drain attack.
+    
+    • You 
+    undo a single recent event by forcing a reroll of any roll made within the last 
+    round (including your last turn). Reality reshapes itself to accommodate the new
+     result. For example, a wish spell could undo an opponent’s successful save, a 
+    foe’s critical hit, or a friend’s failed save. You can force the reroll to be 
+    made with advantage or disadvantage, and you can choose whether to use the 
+    reroll or the original roll.
+    
+    You might be able to achieve something beyond the 
+    scope of the above examples. State your wish to the DM as precisely as possible.
+     The DM has great latitude in ruling what occurs in such an instance; the 
+    greater the wish, the greater the likelihood that something goes wrong. This 
+    spell might simply fail, the effect you desire 
+    mightonlybepartlyachieved,oryoumightsuffersome unforeseen consequence as a 
+    result of how you worded the wish. For example, wishing that a villain were dead
+     might propel you forward in time to a period when that villain is no longer 
+    alive, effectively removing you from the game. Similarly, wishing for a 
+    legendary magic item or artifact might instantly transport you to the presence 
+    of the item’s current owner.
+    
+    The stress of casting this spell to produce any 
+    effect other than duplicating another spell weakens you. After enduring that 
+    stress, each time you cast a spell until you finish a long rest, you take 1d10 
+    necrotic damage per level of that spell. This damage can’t be reduced or 
+    prevented in any way. In addition, your Strength drops to 3, if it isn’t 3 or 
+    lower already, for 2d4 days. For each of those days that you spend resting and 
+    doing nothing more than light activity, your remaining recovery time decreases 
+    by 2 days. Finally, there is a 33 percent chance that you are unable to cast 
+    wish ever again if you suffer this stress.
+    """
+    name = "Wish"
+    level = 9
+    casting_time = "1 action"
+    casting_range = "Self"
+    components = ('V',)
+    materials = """"""
+    duration = "Instantaneous"
+    ritual = False
+    magic_school = "Conjuration"
+    classes = ('Sorcerer', 'Wizard')
+
+
+class WitchBolt(Spell):
+    """A beam of crackling, blue energy lances out toward a creature within range, 
+    forming a sustained arc of lightning between you and the target.
+    Make a ranged 
+    spell attack against that creature. On a hit, the target takes 1d12 lightning 
+    damage, and on each of your turns for the duration, you can use your action to 
+    deal 1d12 lightning damage to the target automatically. The spell ends if you 
+    use your action to do anything else. The spell also ends if the target is ever 
+    outside the spell’s range or if it has total cover from you.
+    
+    At Higher Levels: 
+    When you cast this spell using a spell slot of 2nd level or higher, the initial 
+    damage increases by 1d12 for each slot level above 1st.
+    """
+    name = "Witch Bolt"
+    level = 1
+    casting_time = "1 action"
+    casting_range = "30 feet"
+    components = ('V', 's', 'm')
+    materials = """A twig from a tree that has been struck by lightning"""
+    duration = "Concentration, up to 1 minute"
+    ritual = False
+    magic_school = "Evocation"
+    classes = ('Sorcerer', 'Warlock', 'Wizard')
+
+

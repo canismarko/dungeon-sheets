@@ -54,6 +54,8 @@ class SorcerousRestoration(Feature):
     short rest.
 
     """
+    name = "Sorcerous Restoration"
+    source = "Sorceror"
 
 
 # Metamagic
