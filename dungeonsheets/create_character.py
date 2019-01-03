@@ -92,22 +92,19 @@ class App(npyscreen.NPSAppManaged):
             self.character.to_pdf(filename)
             subprocess.call(['makesheets', filename])
     
-    def update_max_hp(self):
+    def set_default_hp_max(self):
+        abil = self.getForm("ABILITIES")
         # Update max HP based on the class
-        max_hp_fld = self.getForm('ABILITIES').max_hp
-        if max_hp_fld.value == '':
-            # Calculate the new value
-            hit_dice = [dice.read_dice_str(d)
-                        for d in self.character.hit_dice.split(' + ')]
-            const = self.character.constitution.modifier
-            # Assume first hd given is from primary class
-            max_hp = math.floor(hit_dice[0].faces/2) + const
-            for hd in hit_dice:
-                for d in range(hd.num):
-                    max_hp += math.ceil(hd.faces/2) + const
-            log.debug("Updating max hp: %d", max_hp)
-            max_hp_fld.value = str(max_hp)
-            self.character.hp_max = max_hp
+        hit_dice = [dice.read_dice_str(d)
+                    for d in self.character.hit_dice.split(' + ')]
+        const = int((int(abil.constitution.value) - 10)/2)
+        # Assume first hd given is from primary class
+        hp_max = math.floor(hit_dice[0].faces/2) + const
+        for hd in hit_dice:
+            for d in range(hd.num):
+                hp_max += math.ceil(hd.faces/2) + const
+        log.debug("Updating max hp: %d", hp_max)
+        abil.hp_max.value = str(hp_max)
     
     def onStart(self):
         self.character = character.Character()
@@ -130,11 +127,14 @@ class App(npyscreen.NPSAppManaged):
                      formid='WEAPONS')
         self.addForm("ARMOR", ArmorForm, name="Choose armor",
                      formid='ARMOR')
+        self.addForm("PERSONALITY", PersonalityForm, name="Describe your character",
+                     formid='PERSONALITY')
         self.addForm("SAVE", SaveForm, name="Save character:", formid='SAVE')
 
         # Initialized the DoublyLinkedList
         forms = ['MAIN', 'RACE', 'CLASS1', 'BACKGROUND', 'ALIGNMENT',
-                 'ABILITIES', 'SKILLS', 'WEAPONS', 'ARMOR', 'SAVE']
+                 'ABILITIES', 'SKILLS', 'WEAPONS', 'ARMOR', 'PERSONALITY',
+                 'SAVE']
         for i in range(len(forms)-1):
             form = self.getForm(forms[i])
             form.add_next(forms[i+1])
@@ -149,7 +149,7 @@ class BasicInfoForm(LinkedListForm):
     
     def on_ok(self):
         # Update the default filename
-        name = self.name.value
+        name = self.name.value or "New Character"
         if name == '':
             filename = 'new_character.py'
         else:
@@ -170,7 +170,7 @@ class RaceForm(LinkedListForm):
             npyscreen.TitleSelectOne, name="Race:", values=tuple(races.keys()))
     
     def on_ok(self):
-        if self.race.value is not None:
+        if len(self.race.get_selected_objects()) >= 1:
             selected_race = self.race.get_selected_objects()[0]
             SelectedRace = races[selected_race]
             log.debug('Selected character race: %s', SelectedRace.name)
@@ -258,7 +258,7 @@ class CharacterClassForm(LinkedListForm):
         return new_form
         
     def on_ok(self):
-        if self.character_class.value is not None:
+        if len(self.character_class.get_selected_objects()) >= 1:
             selected_class = self.character_class.get_selected_objects()[0]
             selected_class = char_classes[selected_class]
             log.debug('Selected character class %s', selected_class.name)
@@ -309,7 +309,7 @@ class SubclassForm(LinkedListForm):
             values=tuple(self.subclass_options))
         
     def on_ok(self):
-        if self.subclass.value is not None:
+        if len(self.subclass.get_selected_objects()) >= 1:
             sc = self.subclass.get_selected_objects()[0]
             if sc in [None, '', 'None']:
                 sc = None
@@ -330,7 +330,7 @@ class BackgroundForm(LinkedListForm):
             name="Background:", values=tuple(backgrounds.keys()))
     
     def on_ok(self):
-        if self.background.value is not None:
+        if len(self.background.get_selected_objects()) >= 1:
             selected_bg = self.background.get_selected_objects()[0]
             Background = backgrounds[selected_bg]
             self.parentApp.character.background = Background()
@@ -350,18 +350,18 @@ class AlignmentForm(LinkedListForm):
     alignments = ('Lawful good', 'Neutral good', 'Chaotic good',
                   'Lawful neutral', 'True neutral', 'Chaotic neutral',
                   'Lawful evil', 'Neutral evil', 'Chaotic evil', )
+
     def create(self):
         self.alignment = self.add(
             npyscreen.TitleSelectOne, name="Alignment:", values=self.alignments)
     
     def on_ok(self):
-        if self.alignment.value is not None:
+        if len(self.alignment.get_selected_objects()) >= 1:
             selected_alignment = self.alignment.get_selected_objects()[0]  # values[self.alignment.value]
             log.debug('Selected character alignment %s', selected_alignment)
             self.parentApp.character.alignment = selected_alignment
             # prep additions to abilities page
-            abils = self.parentApp.getForm('ABILITIES')
-            abils.prep()
+            self.parentApp.getForm('ABILITIES').prep()
             super().to_next()
     
     def on_cancel(self):
@@ -402,39 +402,6 @@ class AbilityScoreForm(LinkedListForm):
         self.default_button.value = True
         self.default_button.update()
     
-    def reset(self):
-        # Update the character in real time
-        attrs = ('strength', 'dexterity', 'constitution',
-                 'intelligence', 'wisdom', 'charisma')
-        for attr in attrs:
-            getattr(self, attr).value = ''
-    
-    def while_editing(self):
-        # Update the character in real time
-        attrs = ('strength', 'dexterity', 'constitution',
-                 'intelligence', 'wisdom', 'charisma')
-        for attr in attrs:
-            fld = getattr(self, attr)
-            try:
-                race_bonus = getattr(self.parentApp.character.race,
-                                     f'{attr}_bonus')
-                val = int(float(fld.value))
-            except ValueError:
-                # Not an integer, so clear the field
-                fld.value = ''
-            else:
-                # Valid number, so process it
-                val += race_bonus
-                curr_val = getattr(self.parentApp.character, attr).value
-                if val != curr_val:
-                    log.debug("Setting %s to %s", attr, str(val))
-                    # Update the "character" with new values
-                    setattr(self.parentApp.character, attr, val)
-                    if attr == 'constitution':
-                        self.parentApp.update_max_hp()
-        # Update the form display
-        self.display()
-        
     def create(self):
         self.roll_text = self.add(npyscreen.FixedText, editable=False,
                                   value="Take the six rolls below and assign each one to an ability.")
@@ -465,14 +432,29 @@ class AbilityScoreForm(LinkedListForm):
             if race_bonus != 0:
                 name += '({:+d})'.format(race_bonus)
             name += ':'
-            new_fld = self.add(npyscreen.TitleText, name=name,
-                               begin_entry_at=24)
+            new_fld = self.add(npyscreen.TitleText,
+                               name=name,
+                               begin_entry_at=24, value='10')
             setattr(self, attr, new_fld)
-        self.add(npyscreen.FixedText, editable=False,
-                 value="Maximum hit points initially determined by constitution.")
-        self.max_hp = self.add(npyscreen.TitleText, name="Max HP:")
+        self.hp_max = self.add(npyscreen.TitleText, name="Max HP:")
+        self.parentApp.set_default_hp_max()
 
     def on_ok(self):
+        attrs = ('strength', 'dexterity', 'constitution',
+                 'intelligence', 'wisdom', 'charisma', 'hp_max')
+        for attr in attrs:
+            fld = getattr(self, attr)
+            race_bonus = getattr(self.parentApp.character.race,
+                                 f'{attr}_bonus', 0)
+            try:
+                val = int(float(fld.value))
+            except ValueError:
+                # Not an integer, so clear the field
+                val = 10
+            val += race_bonus
+            log.debug("Setting %s to %s", attr, str(val))
+            # Update the "character" with new values
+            setattr(self.parentApp.character, attr, val)
         super().to_next()
     
     def on_cancel(self):
@@ -541,7 +523,7 @@ class SkillForm(LinkedListForm):
 class WeaponForm(LinkedListForm):
     def create(self):
         self.instructions = self.add(
-            npyscreen.FixedText, editbale=False,
+            npyscreen.FixedText, editable=False,
             value=("Please select your weapons."))
         self.remaining = self.add(
             npyscreen.TitleText, name="Remaining:",
@@ -586,14 +568,14 @@ class WeaponForm(LinkedListForm):
 class ArmorForm(LinkedListForm):
     def create(self):
         self.instructions = self.add(
-            npyscreen.FixedText, editbale=False,
+            npyscreen.FixedText, editable=False,
             value=("Please select your armor."))
         self.shield = self.add(npyscreen.Checkbox, name="Shield? ",
                                value=False)
         self.armor = self.add(
             npyscreen.TitleSelectOne, name="Armor:",
-            values=tuple([a.name for a in armor.all_armors]))
-
+            values=tuple([a.name for a in ([armor.NoArmor] + armor.all_armors)]))
+        
     def on_ok(self):
         my_armor = self.armor.get_selected_objects()[0]
         if my_armor.lower() is not "no armor":
@@ -604,11 +586,12 @@ class ArmorForm(LinkedListForm):
     
     def update_options(self):
         available_armors = [armor.NoArmor]
-        if 'light armor' in self.parentApp.character.proficiencies_text.lower():
+        proficiencies = self.parentApp.character.proficiencies_text.lower()
+        if ('light armor' in proficiencies) or ('all armor' in proficiencies):
             available_armors.extend(armor.light_armors)
-        if 'medium armor' in self.parentApp.character.proficiencies_text.lower():
+        if ('medium armor' in proficiencies) or ('all armor' in proficiencies):
             available_armors.extend(armor.medium_armors)
-        if 'heavy armor' in self.parentApp.character.proficiencies_text.lower():
+        if ('heavy armor' in proficiencies) or ('all armor' in proficiencies):
             available_armors.extend(armor.heavy_armors)
         self.armor.values = [a.name for a in available_armors]
         self.display()
@@ -617,10 +600,64 @@ class ArmorForm(LinkedListForm):
         super().to_prev()
 
 
+class PersonalityForm(LinkedListForm):
+    def create(self):
+        self.instructions = self.add(
+            npyscreen.FixedText, editable=False,
+            value=("Please describe your character's personality."))
+        self.add(npyscreen.FixedText, editable=False,
+                value=" ")
+        self.pers_instr = self.add(npyscreen.FixedText, editable=False,
+                value="Describe how your character behaves/interacts with others?")
+        self.personality_traits = self.add(npyscreen.TitleText,
+                                           name='Personality Traits: ',
+                                           begin_entry_at=24)
+        self.add(npyscreen.FixedText, editable=False,
+                value=" ")
+        self.ideal_instr = self.add(npyscreen.FixedText, editable=False,
+                                    value="Describe what values does your character believes in?")
+        self.ideals = self.add(
+            npyscreen.TitleText, name='Ideals: ', begin_entry_at=24)
+        self.add(npyscreen.FixedText, editable=False,
+                value=" ")
+        self.bond_instr = self.add(npyscreen.FixedText, editable=False,
+                                   value="Describe your character's commitments or ongoing quests.")
+        self.bonds = self.add(
+            npyscreen.TitleText, name='Bonds: ', begin_entry_at=24)
+        self.add(npyscreen.FixedText, editable=False,
+                value=" ")
+        self.flaw_instr = self.add(npyscreen.FixedText, editable=False,
+                                   value="Describe your character's interesting flaws.")
+        self.flaws = self.add(
+            npyscreen.TitleText, name='Flaws: ', begin_entry_at=24)
+        self.add(npyscreen.FixedText, editable=False,
+                value=" ")
+        self.feat_instr = self.add(npyscreen.FixedText, editable=False,
+                                   value="Describe any other notable features or abilities.")
+        self.features = self.add(
+            npyscreen.TitleText, name='Features: ', begin_entry_at=24)
+        
+    def on_ok(self):
+        if self.personality_traits.value:
+            self.parentApp.character.personality_traits = self.personality_traits.value
+        if self.ideals.value:
+            self.parentApp.character.ideals = self.ideals.value
+        if self.bonds.value:
+            self.parentApp.character.bonds = self.bonds.value
+        if self.flaws.value:
+            self.parentApp.character.flaws = self.flaws.value
+        if self.features.value:
+            self.parentApp.character.features_and_traits = self.featurs.value
+        super().to_next()
+    
+    def on_cancel(self):
+        super().to_prev()
+
+
 class SaveForm(LinkedListForm):
     def create(self):
         self.instructions = self.add(
-            npyscreen.FixedText, editbale=False,
+            npyscreen.FixedText, editable=False,
             value=("Your character will be saved in the file given below. "
                    "After saving, edit this file to finish your personality, "
                    "weapons, etc."))

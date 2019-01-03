@@ -59,11 +59,11 @@ languages = """{{ char.languages }}"""
 
 # Inventory
 # TODO: Get yourself some money
-cp = 0
-sp = 0
-ep = 0
-gp = 0
-pp = 0
+cp = {{ char.cp }}
+sp = {{ char.sp }}
+ep = {{ char.ep }}
+gp = {{ char.gp }}
+pp = {{ char.pp }}
 
 # TODO: Put your equipped weapons and armor here
 weapons = {{ char.weapons }}  # Example: ('shortsword', 'longsword')

@@ -455,13 +455,10 @@ class IronMind(Feature):
     """
     name = "Iron Mind"
     source = "Ranger (Gloom Stalker)"
+    needs_implementation = True
 
     def __init__(self, owner=None):
         super().__init__(owner=owner)
-        if 'wisdom' not in self.owner.primary_class.saving_throw_proficiencies:
-            self.owner.primary_class.saving_throw_proficiencies += ('wisdom',)
-        else:
-            self.owner.primary_class.saving_throw_proficiencies += ('intelligence',)
 
 
 class StalkersFlurry(Feature):

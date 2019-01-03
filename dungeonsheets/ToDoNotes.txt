@@ -1,6 +1,5 @@
 Add Warlock multiclass spell slots
 Add disadvantage on STEALTH with armor
 
---Add to proficiencies (Jack of All Trades, Remarkable Athelete)
---Add to HP Max (Draconic Bloodline, Dwarven Toughness)
-
+Add all spells
+Add spell creation to Create-Character?

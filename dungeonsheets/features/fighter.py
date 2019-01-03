@@ -944,13 +944,7 @@ class ElegantCourtier(Feature):
     """
     name = "Elegant Courtier"
     source = "Fighter (Samurai)"
-
-    def __init__(self, owner=None):
-        super().__init__(owner=owner)
-        if 'wisdom' not in self.owner.primary_class.saving_throw_proficiencies:
-            self.owner.primary_class.saving_throw_proficiencies += ('wisdom',)
-        else:
-            self.owner.primary_class.saving_throw_proficiencies += ('intelligence',)
+    needs_implementation = True
 
 
 class TirelessSpirit(Feature):

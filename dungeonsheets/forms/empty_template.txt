@@ -23,7 +23,7 @@ alignment = "{{ char.alignment }}"
 
 xp = {{ char.xp }}
 hp_max = {{ char.hp_max }}
-inspiration = 0  # integer inspiration value
+inspiration = {{ char.inspiration }}  # integer inspiration value
 
 # Ability Scores
 strength = {{ char.strength.value }}
@@ -94,16 +94,13 @@ wild_shapes = ()  # Ex: ('ape', 'wolf', 'ankylosaurus')
 
 # Backstory
 # Describe your backstory here
-personality_traits = """TODO: How does your character behave? See the PHB for
-examples of all the sections below"""
+personality_traits = """{{ char.personality_traits }}"""
 
-ideals = """TODO: What does your character believe in?"""
+ideals = """{{ char.ideals }}"""
 
-bonds = """TODO: Describe what debts your character has to pay,
-and other commitments or ongoing quests they have."""
+bonds = """{{ char.bonds }}"""
 
-flaws = """TODO: Describe your characters interesting flaws.
-"""
+flaws = """{{char.flaws }}"""
 
 features_and_traits = """TODO: Describe other features and abilities your
 character has."""

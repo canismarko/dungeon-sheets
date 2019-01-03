@@ -103,11 +103,11 @@ class Character():
     survival = Skill(ability='wisdom')
     # Characteristics
     attacks_and_spellcasting = ""
-    personality_traits = ""
-    ideals = ""
-    bonds = ""
-    flaws = ""
-    features_and_traits = ""
+    personality_traits = "TODO: Describe how your character behaves, interacts with others"
+    ideals = "TODO: Describe what values your character believes in."
+    bonds = "TODO: Describe your character's commitments or ongoing quests."
+    flaws = "TODO: Describe your character's interesting flaws."
+    features_and_traits = "Describe any other features and abilities."
     # Inventory
     cp = 0
     sp = 0
