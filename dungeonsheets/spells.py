@@ -2212,6 +2212,29 @@ class Eyebite(Spell):
     classes = ('Bard', 'Sorceror', 'Warlock', 'Wizard', )
 
 
+class FaerieFire(Spell):
+    """Each object in a 20-foot cube within range is outlined in blue,
+    green, or violet light (your choice). Any creature in the area
+    when the spell is cast is also outlined in light if it fails a
+    Dexterity saving throw. For the duration, objects and affected
+    creatures shed dim light in a 10-foot radius.
+    
+    Any attack roll against an affected creature or object has
+    advantage if the attacker can see it, and the affected creature or
+    object can't benefit from being invisible.
+    
+    """
+    level = 1
+    name = "Faerie Fire"
+    casting_time = "1 action"
+    casting_range = "60 ft (20 ft ◻)"
+    components = ("V",)
+    duration = "1 minute"
+    concentration = True
+    magic_school = "Evocation"
+    classes = ('Bard', 'Druid')
+
+
 class FalseLife(Spell):
     """Bolstering yourself with a necromantic facsimile of life, you gain
     1d4+4 temporary hit points for the duration.
@@ -3073,6 +3096,26 @@ class LightningBolt(Spell):
     duration = "Instantaneous"
     magic_school = "Evocation"
     classes = ()
+
+
+class LocateAnimalsOrPlants(Spell):
+    """Describe or name a specific kind of beast or plant. Concentrating
+    on the voice of nature in your surroundings, you learn the
+    direction and distance to the closest creature or plant of that
+    kind within 5 miles, if any are present.
+    
+    """
+    level = 2
+    name = "Locate Animals or Plants"
+    casting_time = "1 Action"
+    casting_range = "self"
+    components = ("V", "S", "M")
+    materials = "a bit of fur from a bloodhound"
+    duration = "instantaneous"
+    concentration = False
+    ritual = True
+    magic_school = "Divination"
+    classes = ("Bard", "Druid", "Ranger")
 
 
 class LocateCreature(Spell):
