@@ -190,6 +190,41 @@ class Spider(Monster):
     hit_dice = '1d4-1'
 
 
+class SwarmOfRats(Monster):
+    """**Keen Smell:** The swarm has advantage on Wisdom (Perception)
+    checks that rely on smell.
+    
+    **Swarm:** The swarm can occupy another creature's space and vice
+      versa, and the swarm can move through any opening large enough
+      for a Tiny rat. The swarm can't regain Hit Points or gain
+      Temporary Hit Points.
+    
+    **Bites:** Melee Weapon Attack: +2 to hit, reach 0 ft., one target
+      in the swarm's space. Hit: 7 (2d6) piercing damage, or 3 (1d6)
+      piercing damage if the swarm has half of its Hit Points or
+      fewer.
+    
+    """
+    name = "Swarm of Rats"
+    description = "Medium swarm of tiny beasts, unaligned"
+    challenge_rating = 1/4
+    armor_class = 10
+    skills = ""
+    senses = "Darkvision 30 Ft., passive Perception 10"
+    damage_resistance = "Bludgeoning, Piercing, Slashing"
+    condition_immunities = ("Charmed, Frightened, Grappled, Paralyzed, "
+                            "Petrified, Prone, Restrained, Stunned")
+    strength = Ability(9)
+    dexterity = Ability(11)
+    constitution = Ability(9)
+    intelligence = Ability(2)
+    wisdom = Ability(10)
+    charisma = Ability(3)
+    speed = 30
+    hp_max = 24
+    hit_dice = '7d8-7'
+
+
 class Rat(Monster):
     """**Keen Smell:** The rat has advantage on Wisdom (Perception) checks
     that rely on smell.

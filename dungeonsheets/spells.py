@@ -2227,7 +2227,7 @@ class FaerieFire(Spell):
     level = 1
     name = "Faerie Fire"
     casting_time = "1 action"
-    casting_range = "60 ft (20 ft ◻)"
+    casting_range = "60 ft (20 ft cube)"
     components = ("V",)
     duration = "1 minute"
     concentration = True
