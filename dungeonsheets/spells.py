@@ -2012,7 +2012,7 @@ class Druidcraft(Spell):
     casting_range = "30 ft"
     components = ("V", "S")
     materials = ""
-    duration = "instantaneous"
+    duration = "Instantaneous"
     concentration = False
     ritual = False
     magic_school = "Transmutation"
@@ -2229,7 +2229,7 @@ class FaerieFire(Spell):
     casting_time = "1 action"
     casting_range = "60 ft (20 ft cube)"
     components = ("V",)
-    duration = "1 minute"
+    duration = "Concentration, up to 1 minute"
     concentration = True
     magic_school = "Evocation"
     classes = ('Bard', 'Druid')
@@ -2426,6 +2426,7 @@ class FlamingSphere(Spell):
     casting_range = "60 feet"
     components = ('V', 'S', 'M')
     materials = "a bit of tallow, a pinch of brimstone, and a dusting of powdered iron"
+    concentration = True
     duration = "Concentration, up to 1 minute"
     magic_school = "Conjuration"
     classes = ('Druid', 'Wizard', )
@@ -3108,7 +3109,7 @@ class LocateAnimalsOrPlants(Spell):
     level = 2
     name = "Locate Animals or Plants"
     casting_time = "1 Action"
-    casting_range = "self"
+    casting_range = "Self"
     components = ("V", "S", "M")
     materials = "a bit of fur from a bloodhound"
     duration = "instantaneous"
