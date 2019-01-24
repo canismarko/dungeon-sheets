@@ -87,7 +87,7 @@ class AcidSplash(Spell):
     name = "Acid Splash"
     level = 0
     magic_school = "Conjuration"
-    classes = ('Sorceror', 'Wizard', )
+    classes = ('Sorcerer', 'Wizard', )
 
 
 class Aid(Spell):
@@ -172,7 +172,7 @@ class AlterSelf(Spell):
     components = ("V", "S")
     duration = "Concentration, up to 1 hour"
     magic_school = "Transmutation"
-    classes = ('Sorceror', 'Wizard', 'Warlock')
+    classes = ('Sorcerer', 'Wizard', 'Warlock')
 
 
 class AnimalFriendship(Spell):
@@ -372,7 +372,7 @@ class AnimateObjects(Spell):
     components = ("V", "S")
     duration = "Concentration, up to 1 minute."
     magic_school = "Transmutation"
-    classes = ('Bard', 'Sorceror', 'Wizard')
+    classes = ('Bard', 'Sorcerer', 'Wizard')
 
 
 class AntilifeShell(Spell):
@@ -572,7 +572,7 @@ class ArcaneGate(Spell):
     components = ("V", "S")
     duration = "Concentration, up to 10 minutes"
     magic_school = "Conjuration"
-    classes = ('Sorceror', 'Warlock', 'Wizard')
+    classes = ('Sorcerer', 'Warlock', 'Wizard')
 
 
 class ArcaneHand(Spell):
@@ -977,7 +977,7 @@ class Banishment(Spell):
     materials = "an item distasteful to the target"
     duration = "1 minutes"
     magic_school = "Abjuration"
-    classes = ('Cleric', 'Paladin', 'Sorceror', 'Warlock', 'Wizard')
+    classes = ('Cleric', 'Paladin', 'Sorcerer', 'Warlock', 'Wizard')
 
 
 class Barkskin(Spell):
@@ -1121,7 +1121,7 @@ class BladeWard(Spell):
     components = ('V', 'S')
     duration = "1 round"
     magic_school = "Evocation"
-    classes = ('Bard', 'Sorceror', 'Warlock', 'Wizard')
+    classes = ('Bard', 'Sorcerer', 'Warlock', 'Wizard')
 
 
 class Bless(Spell):
@@ -1224,7 +1224,7 @@ class Blink(Spell):
     components = ('V', 'S')
     duration = "1 minute"
     magic_school = "Transmutation"
-    classes = ('Sorceror', 'Wizard')
+    classes = ('Sorcerer', 'Wizard')
 
 
 class Blur(Spell):
@@ -1342,7 +1342,7 @@ class ChillTouch(Spell):
     materials = ""
     duration = "1 round"
     magic_school = "Necromancy"
-    classes = ('Sorceror', 'Warlock', 'Wizard')
+    classes = ('Sorcerer', 'Warlock', 'Wizard')
 
 
 class ChromaticOrb(Spell):
@@ -1365,7 +1365,7 @@ class ChromaticOrb(Spell):
     materials = "A diamond worth at least 50 gp"
     duration = "Instantaneous"
     magic_school = "Evocation"
-    classes = ('Sorceror', 'Wizard')
+    classes = ('Sorcerer', 'Wizard')
 
 
 class CircleOfDeath(Spell):
@@ -1387,7 +1387,7 @@ class CircleOfDeath(Spell):
     materials = "the powder of a crushed black pearl worth at least 500 gp"
     duration = "Instantaneous"
     magic_school = "Necromancy"
-    classes = ('Sorceror', 'Warlock', 'Wizard')
+    classes = ('Sorcerer', 'Warlock', 'Wizard')
 
 
 class Clone(Spell):
@@ -1651,7 +1651,7 @@ class DancingLights(Spell):
     materials = "a bit of phosphorus or wychwood, or a glowworm"
     duration = "Concentration, up to 1 minute"
     magic_school = "Evocation"
-    classes = ('Bard', 'Sorceror', 'Wizard')
+    classes = ('Bard', 'Sorcerer', 'Wizard')
 
 
 class Darkness(Spell):
@@ -1751,7 +1751,7 @@ class DetectMagic(Spell):
     duration = "Concentration, Up to 10 minutes"
     ritual = True
     magic_school = "Divination"
-    classes = ('Bard', 'Cleric', 'Druid', 'Paladin', 'Ranger', 'Sorceror', 'Wizard', )
+    classes = ('Bard', 'Cleric', 'Druid', 'Paladin', 'Ranger', 'Sorcerer', 'Wizard', )
 
 
 class DimensionDoor(Spell):
@@ -2209,7 +2209,7 @@ class Eyebite(Spell):
     materials = ""
     duration = "1 minute"
     magic_school = "Necromancy"
-    classes = ('Bard', 'Sorceror', 'Warlock', 'Wizard', )
+    classes = ('Bard', 'Sorcerer', 'Warlock', 'Wizard', )
 
 
 class FaerieFire(Spell):
@@ -2252,7 +2252,7 @@ class FalseLife(Spell):
     materials = "A small amount of alcohol or distilled spirits"
     duration = "1 hour"
     magic_school = "Necromancy"
-    classes = ('Sorceror', 'Wizard', )
+    classes = ('Sorcerer', 'Wizard', )
 
 
 class FindThePath(Spell):
@@ -2307,7 +2307,7 @@ class FingerOfDeath(Spell):
     materials = ""
     duration = "Instantaneous"
     magic_school = "Necromancy"
-    classes = ('Sorceror', 'Warlock', 'Wizard', )
+    classes = ('Sorcerer', 'Warlock', 'Wizard', )
 
 
 class FireBolt(Spell):
@@ -3160,7 +3160,7 @@ class MageArmor(Spell):
     materials = "A piece of cured leather"
     duration = "8 hours"
     magic_school = "Abjuration"
-    classes = ('Sorceror', 'Wizard', )
+    classes = ('Sorcerer', 'Wizard', )
 
 
 class MageHand(Spell):
@@ -3186,7 +3186,7 @@ class MageHand(Spell):
     components = ("V", "S", )
     duration = "1 minute"
     magic_school = "Conjuration"
-    classes = ('Bard', 'Sorceror', 'Warlock', 'Wizard', )
+    classes = ('Bard', 'Sorcerer', 'Warlock', 'Wizard', )
 
 
 class MagicJar(Spell):
@@ -3267,7 +3267,7 @@ class MagicMissile(Spell):
     components = ("V", "S", )
     duration = "Instantaneous"
     magic_school = "Evocation"
-    classes = ('Sorceror', 'Wizard', )
+    classes = ('Sorcerer', 'Wizard', )
 
 
 
@@ -3642,7 +3642,7 @@ class PhantasmalForce(Spell):
     materials = "A bit of fleece"
     duration = "Concentration, up to 1 minute"
     magic_school = "Illusion"
-    classes = ('Bard', 'Sorceror', 'Wizard')
+    classes = ('Bard', 'Sorcerer', 'Wizard')
 
 
 class PoisonSpray(Spell):
@@ -3678,7 +3678,7 @@ class PowerWordKill(Spell):
     materials = ""
     duration = "Instantaneous"
     magic_school = "Enchantment"
-    classes = ('Bard', 'Wizard', 'Sorceror', 'Warlock')
+    classes = ('Bard', 'Wizard', 'Sorcerer', 'Warlock')
 
 
 class PowerWordStun(Spell):
@@ -3750,7 +3750,7 @@ class Prestidigitation(Spell):
     components = ("V", "S", )
     duration = "1 hour"
     magic_school = "Transmutation"
-    classes = ('Bard', 'Sorceror', 'Warlock', 'Wizard', )
+    classes = ('Bard', 'Sorcerer', 'Warlock', 'Wizard', )
 
 
 class ProtectionFromEnergy(Spell):
@@ -3843,7 +3843,7 @@ class RayOfFrost(Spell):
     components = ("V", "S", )
     duration = "Instantaneous"
     magic_school = "Evocation"
-    classes = ('Sorceror', 'Wizard', )
+    classes = ('Sorcerer', 'Wizard', )
 
 
 class RayOfSickness(Spell):
@@ -3865,7 +3865,7 @@ class RayOfSickness(Spell):
     components = ("V", "S", )
     duration = "Instantaneous"
     magic_school = "Necromancy"
-    classes = ('Sorceror', 'Wizard', )
+    classes = ('Sorcerer', 'Wizard', )
 
 
 class Regenerate(Spell):
@@ -4069,7 +4069,7 @@ class Shield(Spell):
     components = ("V", "S", )
     duration = "1 round"
     magic_school = "Abjuration"
-    classes = ('Sorceror', 'Wizard', )
+    classes = ('Sorcerer', 'Wizard', )
 
 
 class ShieldOfFaith(Spell):
@@ -4106,7 +4106,7 @@ class ShockingGrasp(Spell):
     components = ("V", "S", )
     duration = "Instantaneous"
     magic_school = "Evocation"
-    classes = ('Sorceror', 'Wizard', )
+    classes = ('Sorcerer', 'Wizard', )
 
 
 class Silence(Spell):
@@ -4188,7 +4188,7 @@ class Sleep(Spell):
     materials = "A pinch of fine sand, rose petals, or a cricket"
     duration = "1 minutes"
     magic_school = "Enchantment"
-    classes = ('Bard', 'Sorceror', 'Wizard', )
+    classes = ('Bard', 'Sorcerer', 'Wizard', )
 
 
 class SpareTheDying(Spell):

@@ -13,7 +13,7 @@ from .armor import Armor, NoArmor, Shield, NoShield
 dice_re = re.compile('(\d+)d(\d+)')
 
 __all__ = ('Barbarian', 'Bard', 'Cleric', 'Druid', 'Fighter', 'Monk',
-           'Paladin', 'Ranger', 'Rogue', 'Sorceror', 'Warlock', 'Wizard', )
+           'Paladin', 'Ranger', 'Rogue', 'Sorcerer', 'Warlock', 'Wizard', )
 
 class Character():
     """A generic player character. Intended to be subclasses by the
@@ -538,8 +538,8 @@ class Rogue(Character):
                            'Performance', 'Persuasion', 'Sleight of Hand', 'Stealth')
 
 
-class Sorceror(Character):
-    class_name = 'Sorceror'
+class Sorcerer(Character):
+    class_name = 'Sorcerer'
     hit_dice_faces = 6
     saving_throw_proficiencies = ('constitution', 'charisma')
     _proficiencies_text = ('daggers', 'darts', 'slings',
