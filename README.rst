@@ -73,3 +73,11 @@ so attack bonuses and damage can be calculated automatically.
 If you'd like a **step-by-step walkthrough** for creating a new
 character, just run ``create-character`` from a command line and a
 helpful menu system will take care of the basics for you.
+
+Changes made in this fork
+=========================
+
+Preparing the spellbook using a nice DnD style_.
+
+.. _style: https://github.com/evanbergeron/DND-5e-LaTeX-Template.git
+

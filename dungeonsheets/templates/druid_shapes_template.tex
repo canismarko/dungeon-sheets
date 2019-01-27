@@ -42,7 +42,7 @@
     Armor Class & Hit Points & Speed \\
     \hline
     [[ shape.armor_class ]] &
-    [[ shape.hp_max ]] ([[ shape.hit_dice ]]) &
+    [[ shape.hit_points_max ]] ([[ shape.hit_dice ]]) &
     [[ shape.speed ]] \\
     [% if shape.swim_speed %]
       & & [[ shape.swim_speed ]] swim \\
@@ -69,8 +69,6 @@
     \textbf{Skills:} & [[ shape.skills ]] \\
     \textbf{Senses:} & [[ shape.senses ]] \\
     \textbf{Languages:} & [[ shape.languages ]] \\
-    \textbf{Resistance:} & [[ shape.damage_resistance ]] \\
-    \textbf{Immunities:} & [[ shape.condition_immunities ]] \\
   \end{tabular}
 
   \vspace{0.2cm}

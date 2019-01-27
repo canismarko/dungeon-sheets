@@ -12,7 +12,7 @@ from io import StringIO
 
 from fdfgen import forge_fdf
 import pdfrw
-from jinja2 import Environment, PackageLoader
+from jinja2 import Environment, PackageLoader, FileSystemLoader
 
 from dungeonsheets import character, exceptions
 from dungeonsheets.stats import mod_str
@@ -39,14 +39,18 @@ def rst_to_latex(rst):
         tex = tt_re.sub(r'\\texttt{\1}', tex)
     return tex
 
+cwd = os.path.dirname(os.path.abspath(__file__))
+madlib_dir = os.path.join(cwd, 'templates')
+pathloader = FileSystemLoader(searchpath=madlib_dir)
 
 jinja_env = Environment(
-    loader=PackageLoader('dungeonsheets', ''),
-    block_start_string='[%',
-    block_end_string='%]',
-    variable_start_string='[[',
-    variable_end_string=']]',
-)
+                        #loader=PackageLoader('dungeonsheets', 'templates'),
+                        loader = pathloader,
+                        block_start_string='[%',
+                        block_end_string='%]',
+                        variable_start_string='[[',
+                        variable_end_string=']]',
+                        )
 jinja_env.filters['rst_to_latex'] = rst_to_latex
 jinja_env.filters['mod_str'] = mod_str
 
@@ -133,6 +137,9 @@ def create_latex_pdf(character, basename, template):
     pdf_file = f'{basename}.pdf'
     output_dir = os.path.abspath(os.path.dirname(pdf_file))
     try:
+        result = subprocess.run(['pdflatex', '--output-directory',
+                                  output_dir, tex_file, '-halt-on-error'],
+                                 stdout=subprocess.DEVNULL, timeout=10)
         result = subprocess.run(['pdflatex', '--output-directory',
                                   output_dir, tex_file, '-halt-on-error'],
                                  stdout=subprocess.DEVNULL, timeout=10)
