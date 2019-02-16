@@ -33,7 +33,7 @@ char_classes = {
     'Paladin': character.Paladin,
     'Ranger': character.Ranger,
     'Rogue': character.Rogue,
-    'Sorceror': character.Sorceror,
+    'Sorcerer': character.Sorcerer,
     'Warlock': character.Warlock,
     'Wizard': character.Wizard
 }
