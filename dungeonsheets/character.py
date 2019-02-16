@@ -60,7 +60,7 @@ class Character():
     nature = Skill(ability='intelligence')
     perception = Skill(ability='wisdom')
     performance = Skill(ability='charisma')
-    persuasian = Skill(ability='charisma')
+    persuasion = Skill(ability='charisma')
     religion = Skill(ability='intelligence')
     sleight_of_hand = Skill(ability='dexterity')
     stealth = Skill(ability='dexterity')
