@@ -22,26 +22,27 @@
 \usepackage{hang}
 \usepackage{lipsum}
 \usepackage{listings}
-\usepackage{xcolor}
-\definecolor{mygrey}{rgb}{0.52, 0.52, 0.51}
-
-\lstset{%
-  basicstyle=\ttfamily,
-  language=[LaTeX]{TeX},
-}
 
 % Start document
 \begin{document}
 
-\chapter{Features of \\  [[ character.name ]]}
+\chapter{Features of \newline [[ character.name ]]}
 
-[% for feat in character.feats %]
-\subsection*{ [[ feat.name ]] }
-[[ feat.__doc__|rst_to_latex ]]	
+[% for feat in character.features %]
+[% if feat.type == "race" %]
+	\begin{paperbox}{ [[ feat.name ]] }[PhbMauve]
+		[[ feat.__doc__|rst_to_latex ]]	
+	\end{paperbox}
+[% elif feat.type == "class" %]
+	\begin{paperbox}{ [[ feat.name ]] }[PhbLightGreen]
+		[[ feat.__doc__|rst_to_latex ]]	
+	\end{paperbox}
+[% else %]
+	\begin{paperbox}{ [[ feat.name ]] }[DmgCoral]
+		[[ feat.__doc__|rst_to_latex ]]	
+	\end{paperbox}
+[% endif %]
 [% endfor %]
-
-
-
 
 
 % End document

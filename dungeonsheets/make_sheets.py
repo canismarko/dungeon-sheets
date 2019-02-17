@@ -119,6 +119,9 @@ def create_spellbook_pdf(character, basename):
     template = jinja_env.get_template('spellbook_template.tex')
     return create_latex_pdf(character, basename, template)
 
+def create_features_pdf(character, basename):
+    template = jinja_env.get_template('features_template.tex')
+    return create_latex_pdf(character, basename, template)
 
 def create_latex_pdf(character, basename, template):
     tex = template.render(character=character)
@@ -483,6 +486,15 @@ def make_sheet(character_file, flatten=False):
                         f'for {char.name}')
         else:
             sheets.append(spellbook_base + '.pdf')
+    # Create a list of features
+    features_base = os.path.splitext(character_file)[0] + '_features'
+    try:
+        create_features_pdf(character=char, basename=features_base)
+    except exceptions.LatexNotFoundError as e:
+            log.warning('``pdflatex`` not available. Skipping features '
+                        f'for {char.name}')
+    else:
+        sheets.append(features_base + '.pdf')
     # Create a list of Druid wild_shapes
     wild_shapes = getattr(char, 'wild_shapes', [])
     if len(wild_shapes) > 0:

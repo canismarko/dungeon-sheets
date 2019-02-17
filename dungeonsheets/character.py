@@ -6,7 +6,7 @@ import math
 
 from .stats import Ability, Skill, findattr
 from .dice import read_dice_str
-from . import weapons, race, spells, armor, monsters, exceptions
+from . import weapons, race, spells, features, armor, monsters, exceptions
 from .weapons import Weapon
 from .armor import Armor, NoArmor, Shield, NoShield
 
@@ -14,6 +14,9 @@ dice_re = re.compile('(\d+)d(\d+)')
 
 __all__ = ('Barbarian', 'Bard', 'Cleric', 'Druid', 'Fighter', 'Monk',
            'Paladin', 'Ranger', 'Rogue', 'Sorceror', 'Warlock', 'Wizard', )
+
+feature_order_str = ["race", "class", "special"]
+feature_order = {key: i for i, key in enumerate(feature_order_str)}
 
 class Character():
     """A generic player character. Intended to be subclasses by the
@@ -87,6 +90,8 @@ class Character():
     spellcasting_ability = None
     spells = tuple()
     spells_prepared = tuple()
+    # Features
+    features = tuple()
     
     def __init__(self, **attrs):
         """Takes a bunch of attrs and passes them to ``set_attrs``"""
@@ -141,13 +146,33 @@ class Character():
                     self.spells = tuple(S() for S in _spells)
                 else:
                     self.spells_prepared = tuple(_spells)
+            elif attr == 'features':
+                # Create a list of feature objects
+                _features = []
+                for feature_name in val:
+                    try:
+                        _features.append(findattr(features, feature_name))
+                    except AttributeError:
+                        msg = (f'Feature "{feature_name}" not defined. '
+                               f'Please add it to ``features.py``')
+                        warnings.warn(msg)
+                        # Create temporary feature
+                        _features.append(features.create_feature(name=feature_name))
+                        # raise AttributeError(msg)
+                #Sort first by type, then by name
+                _features.sort(key=lambda feature: (feature_order[feature.type], feature.name) )
+                # Save list of features to character atribute
+                self.features = tuple(F() for F in _features)
             else:
                 if not hasattr(self, attr):
-                    warnings.warn(f"Setting unknown character attribute {attr}",
-                                  RuntimeWarning)
+                    warnings.warn(f"Setting unknown character attribute {attr}", RuntimeWarning)
                 # Lookup general attributes
                 setattr(self, attr, val)
-    
+
+#    @property
+#    def features(self):
+#        return tuple(F() for F in self.features)
+
     @property
     def is_spellcaster(self):
         result = (self.spellcasting_ability is not None)

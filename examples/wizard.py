@@ -52,6 +52,9 @@ spells = ('blindness deafness', 'burning hands', 'detect magic',
 spells_prepared = ('blindness deafness', 'false life', 'mage armor',
                    'ray of sickness', 'shield', 'sleep',)
 
+#Features
+features = ('darkvision', 'arcane recovery', 'trance', 'fey ancestry',)
+
 # Backstory
 personality_traits = """I use polysyllabic words that convey the impression of
 erudition. Also, I’ve spent so long in the temple that I have little
@@ -71,23 +74,6 @@ features_and_traits = (
     your spells. The saving throw DC to resist a spell you cast is
     13. Your attack bonus when you make an attack with a spell is
     +5. See the rulebook for rules on casting your spells.
-    
-    Arcane Recovery: You can regain some of your magical energy by
-    studying your spellbook. Once per day during a short rest, you can
-    choose to recover expended spell slots with a combined level equal
-    to or less than half your wizard level (rounded up).
-    
-    Darkvision: You see in dim light within a 60-foot radius of you as
-    if it were bright light, and in darkness in that radius as if it
-    were dim light. You can’t discern color in darkness, only shades
-    of gray.
-    
-    Fey Ancestry: You have advantage on saving throws against being
-    charmed, and magic can’t put you to sleep.
-    
-    Trance: Elves don’t need to sleep. They meditate deeply, remaining
-    semiconscious, for 4 hours a day and gain the same benefit a human
-    does from 8 hours of sleep.
     
     Shelter of the Faithful: As a servant of Oghma, you command the
     respect of those who share your faith, and you can perform the
