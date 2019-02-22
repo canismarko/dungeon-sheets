@@ -21,7 +21,7 @@ setup(name='dungeonsheets',
       packages=['dungeonsheets'],
       package_data={
           'dungeonsheets': ['blank-character-sheet-default.pdf', 'blank-spell-sheet-default.pdf',
-                            'spellbook_template.tex']
+                            'spellbook_template.tex', 'druid_shapes_template.tex']
       },
       install_requires=[
           'fdfgen', 'npyscreen', 'jinja2', 'pdfrw',
