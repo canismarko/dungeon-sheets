@@ -488,7 +488,7 @@ class HeavyPunch(MeleeWeapon):
     base_damage = "1d4"
     name = "Heavy Punch"
     damage_type = 'b'
-    bonus_damage = 10 + 2  # Heavy weapon master + Dueling
+    damage_bonus = 10  # Heavy weapon master
     attack_bonus = -5  # Heavy weapon master
 
 
@@ -559,6 +559,12 @@ class FlameTongue(Greatsword):
     attack_bonus = 1
     base_damage = "4d6"
     damage_type = 'f'
+
+
+class SpearOfLightning(Spear):
+    name = "Spear +1"
+    damage_bonus = 1
+    attack_bonus = 1
 
 
 # Some lists of weapons for easy proficiency resolution

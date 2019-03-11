@@ -89,6 +89,7 @@ class CapeOfTheMountebank(MagicItem):
     """
     name = "Cape of the Mountebank"
     rarity = "Rare"
+    requires_attunement = True
 
 
 class EyesOfCharming(MagicItem):
@@ -148,3 +149,64 @@ class FlameTongue(MagicItem):
     """
     name = "Flame Tongue"
     rarity = "Rare"
+    requires_attunement = True
+
+
+class SpearOfLightning(MagicItem):
+    """When you hurl it and speak its Command Word, it transforms into a bolt of
+    lightning, forming a line 5 feet wide that extends out from you to a target
+    within 120 feet. Each creature in the line excluding you and the target
+    must make a DC 13 Dexterity saving throw, taking 4d6 lightning damage on a
+    failed save, and half as much damage on a successful one. The Lightning
+    Bolt turns back into a spear when it reaches the target.
+
+    Make a ranged weapon Attack against the target. On a hit, the target takes
+    damage from the spear plus 4d6 lightning damage.
+
+    The spear's property can't be used again until the next dawn. In the
+    meantime, the spear can still be used as a Magic Weapon.
+    """
+    requires_attunement = True
+    name = "Lightning Spear"
+
+    
+class AmuletOfTheEel(MagicItem):
+    """While holding this amulet, you can breath water and air, and have a
+    swimming speed of 20'."""
+    name = "Amulet of the Eel"
+    
+
+class BracersOfMagnetism(MagicItem):
+    """When wearing these bracers, you can use a bonus action to speak their
+    command word, causing them to become magnetically attractive to each other.
+
+    While active, the wearer's arms are secured together, requiring a succesful DC 25 
+    STR (Athletics) check to separate them by six inches. The wearer has advantage 
+    on all STR (Athletics) checks made to grapple, but disadvantage on all
+    weapon attacks and DEX (Sleight of Hand) checks. 
+
+    The wearer can use another bonus action to speak the command word and 
+    deactivate the magnetic effect.
+
+    The magnetic effect fails if the bracers are more than 10' apart.
+    """
+    requires_attunement = True
+    name = "Bracers of Magnetism"
+
+
+class ShieldOfFaces(MagicItem):
+    """This +1 metallic shield has a detailed face chisled into its front surface.
+    As a bonus action, the wielder can use a bonus action to mentally command
+    the shield to adopt a new emotional state (such as "smiling", "laughing",
+    "crying", etc.)
+
+    """
+    requires_attunement = True
+    name = "Shield of Faces"
+
+
+class GlowingSword(MagicItem):
+    """
+    This strange longsword glows at odd times.
+    """
+    name = "Glowing Sword"

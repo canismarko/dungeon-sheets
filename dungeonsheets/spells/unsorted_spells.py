@@ -2063,3 +2063,61 @@ class WitchBolt(Spell):
     classes = ('Sorcerer', 'Warlock', 'Wizard')
 
 
+class EnhanceAbility(Spell):
+    """You touch a creature and bestow upon it a magical enhancement. Choose one of the
+     following effects: the target gains the effect until the spell ends.
+
+    - Bear’s Endurance. The target has advantage on Constitution checks. It
+    also gains 2d6 temporary hit points, which are lost when the spell ends.
+
+    - Bull’s Strength. The target has advantage on Strength checks, and his or
+    her carrying capacity doubles.
+
+    - Cat’s Grace. The target has advantage on Dexterity checks. It also
+    doesn’t take damage from falling 20 feet or less if it isn’t incapacitated.
+    
+    - Eagle’s Splendor. The target has advantage on Charisma checks.
+
+    - Fox’s Cunning.  The target thas advantage on Intelligence checks.
+
+    - Owl’s Wisdom. The target has advantage on Wisdom checks.
+    
+    At Higher Levels: When you cast this spell using a spell slot of 3rd level
+     or higher, you can target one additional creature for each slot level
+     above 2nd.
+
+    """
+    name = "Enhance Ability"
+    level = 2
+    casting_time = "1 action"
+    casting_range = "Touch"
+    components = ('V', 's', 'm')
+    materials = """Fur or a feather from a beast"""
+    duration = "Concentration, up to 1 hour"
+    ritual = False
+    magic_school = "Transmutation"
+    classes = ('Bard', 'Cleric', 'Druid', 'Sorcerer')
+
+
+class Mending(Spell):
+    """This spell repairs a single break or tear in an object you touch, such as broken
+     chain link, two halves of a broken key, a torn cloack, or a leaking wineskin.
+    
+    As long as the break or tear is no larger than 1 foot in any dimension, you mend
+     it, leaving no trace of the former damage.
+    
+    This spell can physically repair a 
+    magic item or construct, but the spell can’t restore magic to such an object.
+    """
+    name = "Mending"
+    level = 0
+    casting_time = "1 minute"
+    casting_range = "Touch"
+    components = ('V', 's', 'm')
+    materials = """Two lodestones"""
+    duration = "Instantaneous"
+    ritual = False
+    magic_school = "Transmutation"
+    classes = ('Bard', 'Cleric', 'Druid', 'Sorcerer', 'Wizard')
+
+

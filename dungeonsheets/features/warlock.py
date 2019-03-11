@@ -661,7 +661,6 @@ class EldritchSpear(Invocation):
 
     """
     name = "Eldritch Spear"
-    needs_implementation = True
 
 
 class EyesOfTheRuneKeeper(Invocation):
@@ -957,9 +956,9 @@ class ImprovedPactWeapon(Invocation):
         """
         Add +1 to attack and damage if magic is not already magic
         """
-        if (weapon.attack_bonus == 0) or (weapon.bonus_damage == 0):
+        if (weapon.attack_bonus == 0) or (weapon.damage_bonus == 0):
             weapon.attack_bonus += 1
-            weapon.bonus_damage += 1
+            weapon.damage_bonus += 1
 
 
 class LanceOfLethargy(Invocation):

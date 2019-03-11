@@ -6,7 +6,8 @@ from .features import (UnarmoredDefenseMonk, UnarmoredDefenseBarbarian,
                        UnarmoredMovement, GiftOfTheDepths, RemarkableAthelete,
                        SeaSoul, JackOfAllTrades, SoulOfTheForge, QuickDraw,
                        NaturalExplorerRevised, FeralInstinct, DreadAmbusher,
-                       SuperiorMobility, AmbushMaster, RakishAudacity)
+                       SuperiorMobility, AmbushMaster, RakishAudacity,
+                       NaturalArmor)
 from math import ceil
 
 
@@ -120,13 +121,15 @@ class ArmorClass():
     def __get__(self, char, Character):
         armor = char.armor or NoArmor()
         ac = armor.base_armor_class
-        shield = char.shield or NoShield()
-        ac += shield.base_armor_class
         # calculate and apply modifiers
         if armor.dexterity_mod_max is None:
             ac += char.dexterity.modifier
         else:
             ac += min(char.dexterity.modifier, armor.dexterity_mod_max)
+        if char.has_feature(NaturalArmor):
+            ac = max(ac, 13 + char.dexterity.modifier)
+        shield = char.shield or NoShield()
+        ac += shield.base_armor_class
         # Compute feature-specific additions
         if char.has_feature(UnarmoredDefenseMonk):
             if (isinstance(armor, NoArmor) and isinstance(shield, NoShield)):

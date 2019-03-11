@@ -15,6 +15,11 @@ class WoodenShield(Shield):
     name = 'Wooden shield'
 
 
+class ShieldOfFaces(Shield):
+    name = "Shield +1"
+    base_armor_class = 3
+
+
 class NoShield(Shield):
     """If a character is carrying no shield."""
     name = "No shield"
