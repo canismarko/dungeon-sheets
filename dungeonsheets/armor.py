@@ -10,6 +10,16 @@ class Shield():
     def __repr__(self):
         return "\"{:s}\"".format(self.name)
 
+    @classmethod
+    def improved_version(cls, bonus):
+        bonus = int(bonus)
+        
+        class NewShield(cls):
+            name = f'+{bonus} ' + cls.name
+            base_armor_class = cls.base_armor_class + bonus
+            
+        return NewShield
+
 
 class WoodenShield(Shield):
     name = 'Wooden shield'
@@ -67,6 +77,16 @@ class Armor():
 
     def __repr__(self):
         return "\"{:s}\"".format(self.name)
+
+    @classmethod
+    def improved_version(cls, bonus):
+        bonus = int(bonus)
+        
+        class NewArmor(cls):
+            name = f'+{bonus} ' + cls.name
+            base_armor_class = cls.base_armor_class + bonus
+            
+        return NewArmor
 
 
 class NoArmor(Armor):

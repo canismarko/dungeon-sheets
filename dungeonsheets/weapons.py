@@ -14,6 +14,17 @@ class Weapon():
     def __init__(self, wielder=None):
         self.wielder = wielder
 
+    @classmethod
+    def improved_version(cls, bonus):
+        bonus = int(bonus)
+        
+        class NewWeapon(cls):
+            name = f'+{bonus} ' + cls.name
+            damage_bonus = bonus
+            attack_bonus = bonus
+            
+        return NewWeapon
+
     def apply_features(self):
         if (not self.features_applied) and (self.wielder is not None):
             self.features_applied = True
