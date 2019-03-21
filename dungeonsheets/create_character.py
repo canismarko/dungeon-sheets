@@ -7,6 +7,7 @@ import logging
 log = logging.getLogger(__name__)
 
 import math
+import numpy as np
 import os
 from random import randint
 import subprocess
@@ -91,7 +92,44 @@ class App(npyscreen.NPSAppManaged):
             log.debug("Creating PDF")
             self.character.to_pdf(filename)
             subprocess.call(['makesheets', filename])
-    
+
+    def update_max_hp_roll(self):
+        abil = self.getForm("ABILITIES")
+        # Update max HP based on the class
+        hit_dice = [dice.read_dice_str(d)
+                    for d in self.character.hit_dice.split(' + ')]
+        const = int((int(abil.constitution.value) - 10)/2)
+        hp_max = f"{hit_dice[0].faces + self.character.level*const}"
+        hds = {}
+        for i, hd in enumerate(hit_dice):
+            num = hd.num
+            if i == 0:
+                num -= 1
+            if hd.faces not in hds:
+                hds[hd.faces] = 0
+            hds[hd.faces] += num
+        for faces, num in hds.items():
+            hp_max += f' + {num}d{faces}'
+        abil.hp_roll_text.value = "Enter (or roll) your Max HP: " + hp_max
+        abil.display()
+
+    def reroll_max_hp(self):
+        abil = self.getForm("ABILITIES")
+        # Update max HP based on the class
+        hit_dice = [dice.read_dice_str(d)
+                    for d in self.character.hit_dice.split(' + ')]
+        const = int((int(abil.constitution.value) - 10)/2)
+        # Assume first hd given is from primary class
+        hp_max = hit_dice[0].faces + const
+        for i, hd in enumerate(hit_dice):
+            num = hd.num
+            if i == 0:
+                num -= 1
+            for d in range(num):
+                hp_max += np.random.randint(low=1, high=hd.faces+1) + const
+        abil.hp_max.value = str(hp_max)
+        abil.display()
+            
     def set_default_hp_max(self):
         abil = self.getForm("ABILITIES")
         # Update max HP based on the class
@@ -99,12 +137,16 @@ class App(npyscreen.NPSAppManaged):
                     for d in self.character.hit_dice.split(' + ')]
         const = int((int(abil.constitution.value) - 10)/2)
         # Assume first hd given is from primary class
-        hp_max = math.floor(hit_dice[0].faces/2) + const
-        for hd in hit_dice:
-            for d in range(hd.num):
+        hp_max = hit_dice[0].faces + const
+        for i, hd in enumerate(hit_dice):
+            num = hd.num
+            if i == 0:
+                num -= 1
+            for d in range(num):
                 hp_max += math.ceil(hd.faces/2) + const
         log.debug("Updating max hp: %d", hp_max)
         abil.hp_max.value = str(hp_max)
+        abil.display()
     
     def onStart(self):
         self.character = character.Character()
@@ -401,6 +443,10 @@ class AbilityScoreForm(LinkedListForm):
         self.score_options.update()
         self.default_button.value = True
         self.default_button.update()
+
+    def reroll_hp(self, widget=None):
+        self.parentApp.reroll_max_hp()
+        self.parentApp.update_max_hp_roll()
     
     def create(self):
         self.roll_text = self.add(npyscreen.FixedText, editable=False,
@@ -436,7 +482,13 @@ class AbilityScoreForm(LinkedListForm):
                                name=name,
                                begin_entry_at=24, value='10')
             setattr(self, attr, new_fld)
+        self.hp_roll_text = self.add(npyscreen.FixedText, editable=False,
+                                     value="")
+        self.hp_reroll_buttom = self.add(npyscreen.MiniButtonPress,
+                                         name="Reroll Max HP",
+                                         when_pressed_function=self.reroll_hp)
         self.hp_max = self.add(npyscreen.TitleText, name="Max HP:")
+        self.parentApp.update_max_hp_roll()
         self.parentApp.set_default_hp_max()
 
     def on_ok(self):
