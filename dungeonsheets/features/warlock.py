@@ -821,7 +821,7 @@ class VisionsOfDistantRealms(Invocation):
     at_will_spells = (spells.ArcaneEye,)
 
     
-class VoiceOfTheChain(Invocation):
+class VoiceOfTheChainMaster(Invocation):
     """You can communicate telepathically with your familiar and perceive through
     your familiar’s senses as long as you are on the same plane of
     existence. Additionally, while perceiving through your familiar’s senses,
@@ -831,7 +831,7 @@ class VoiceOfTheChain(Invocation):
     **Prerequisite**: Pact of the Chain
 
     """
-    name = "Voice of the Chain"
+    name = "Voice of the Chain Master"
 
 
 class WhispersOfTheGrave(Invocation):
@@ -864,7 +864,7 @@ class AspectOfTheMoon(Invocation):
     name = "Aspect of the Moon"
 
     
-class CloakOfFiles(Invocation):
+class CloakOfFlies(Invocation):
     """As a bonus action, you can surround yourselfwith a magical aura that looks
     like buzzing flies. The aura extends 5 feet from you in every direction,
     but not through total cover. It lasts until you’re incapacitated or you
