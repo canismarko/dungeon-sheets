@@ -1,0 +1,51 @@
+\documentclass[twocolumn,lettersize]{article}
+
+%% \usepackage{fullpage}
+\usepackage[margin=1.5cm]{geometry}
+\usepackage[dvipsnames]{color}
+\definecolor{mygrey}{gray}{0.7}
+
+\title{Spell Descriptions}
+\author{[[ character.name ]]}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+[% for spl in character.spells %]
+  [% if spl in character.spells_prepared %]
+    {
+  [% elif spl.level == 0 %]
+    {
+  [% else %]
+    {\color{mygrey}
+  [% endif %]
+
+  \section*{[[ spl.name ]]}
+
+  [% if spl.level > 0 %] %
+    \textit{[[ spl.magic_school ]] Level [[ spl.level ]]} %
+  [% else %] %
+    \textit{[[ spl.magic_school ]] Cantrip} %
+  [% endif %] %
+  [% if spl.ritual and spl.concentration %]%
+    (\textit{ritual}, \textit{concentration})%
+  [% elif spl.ritual %]%
+    (\textit{ritual})%
+  [% elif spl.concentration %]%
+    (\textit{concentration})%
+  [% endif %]%            
+             
+  \noindent
+  \textbf{Casting Time:} [[ spl.casting_time ]] \\
+  \textbf{Duration:} [[ spl.duration ]]\\
+  \textbf{Range:} [[ spl.casting_range ]] \\
+  \textbf{Components:} [[ spl.component_string ]] 
+
+  [[ spl.__doc__|rst_to_latex ]]
+
+  } %\color
+[% endfor %]
+
+\end{document}

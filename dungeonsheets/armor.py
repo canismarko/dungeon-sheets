@@ -7,9 +7,27 @@ class Shield():
     def __str__(self):
         return self.name
 
+    def __repr__(self):
+        return "\"{:s}\"".format(self.name)
+
+    @classmethod
+    def improved_version(cls, bonus):
+        bonus = int(bonus)
+        
+        class NewShield(cls):
+            name = f'+{bonus} ' + cls.name
+            base_armor_class = cls.base_armor_class + bonus
+            
+        return NewShield
+
 
 class WoodenShield(Shield):
     name = 'Wooden shield'
+
+
+class ShieldOfFaces(Shield):
+    name = "Shield +1"
+    base_armor_class = 3
 
 
 class NoShield(Shield):
@@ -40,6 +58,8 @@ class Armor():
       Minimum strength needed to use this armor properly.
     stealth_disadvantage : bool
       If true, the armor causes disadvantage on stealth rolls.
+    weight_class : str
+      light, medium, or heavy
     weight : int
       In lbs.
     
@@ -50,56 +70,81 @@ class Armor():
     dexterity_mod_max = None
     strength_required = None
     stealth_disadvantage = False
-    weight = 0 # In lbs
+    weight = 0  # In lbs
     
     def __str__(self):
         return self.name
 
+    def __repr__(self):
+        return "\"{:s}\"".format(self.name)
+
+    @classmethod
+    def improved_version(cls, bonus):
+        bonus = int(bonus)
+        
+        class NewArmor(cls):
+            name = f'+{bonus} ' + cls.name
+            base_armor_class = cls.base_armor_class + bonus
+            
+        return NewArmor
+
 
 class NoArmor(Armor):
-    name = "No armor"
+    name = "No Armor"
 
 
-class LightPaddedArmor(Armor):
-    name = "Light padded armor"
+class LightArmor(Armor):
+    name = "Light Armor"
+
+
+class MediumArmor(Armor):
+    name = "Medium Armor"
+
+
+class HeavyArmor(Armor):
+    name = "Heavy Armor"
+
+
+class PaddedArmor(LightArmor):
+    name = "Padded Armor"
     cost = "5 gp"
     base_armor_class = 11
     weight = 8
     stealth_disadvantage = True
 
 
-class LeatherArmor(Armor):
-    name = "Leather armor"
+class LeatherArmor(LightArmor):
+    name = "Leather Armor"
     cost = "10 gp"
     base_armor_class = 11
     weight = 10
 
 
-class StuddedArmor(Armor):
-    name = "Studded armor"
+class StuddedLeatherArmor(LightArmor):
+    name = "Studded Leather Armor"
     cost = "45 gp"
     base_armor_class = 12
     weight = 13
 
 
-class HideArmor(Armor):
-    name = "Hide armor"
+class HideArmor(MediumArmor):
+    name = "Hide Armor"
     cost = "10 gp"
     base_armor_class = 12
     dexterity_mod_max = 2
     weight = 12
 
 
-class MediumChainShirtArmor(Armor):
-    name = "Medium chain shirt armor"
+class ChainShirt(MediumArmor):
+    name = "Chain Shirt"
     cost = "50 gp"
     base_armor_class = 13
     dexterity_mod_max = 2
     weight = 20
 
 
-class MediumScaleMailArmor(Armor):
-    name = "Medium scale mail armor"
+class ScaleMail(MediumArmor):
+    name = "Scale Mail"
     cost = "50 gp"
     base_armor_class = 14
     dexterity_mod_max = 2
@@ -107,16 +152,16 @@ class MediumScaleMailArmor(Armor):
     weight = 45
 
 
-class MediumBrassplateArmor(Armor):
-    name = "Medium brassplate armor"
+class Breastplate(MediumArmor):
+    name = "Breastplate"
     cost = "400 gp"
     base_armor_class = 14
     dexterity_mod_max = 2
     weight = 20
 
 
-class MediumHalfPlateArmor(Armor):
-    name = "Medium half plate armor"
+class HalfPlate(MediumArmor):
+    name = "Half Plate"
     cost = "750 gp"
     base_armor_class = 15
     dexterity_mod_max = 2
@@ -124,8 +169,8 @@ class MediumHalfPlateArmor(Armor):
     weight = 40
 
 
-class HeavyRingMailArmor(Armor):
-    name = "Heavy ring mail armor"
+class RingMail(HeavyArmor):
+    name = "Ring Mail"
     cost = "30 gp"
     base_armor_class = 14
     dexterity_mod_max = 0
@@ -133,8 +178,8 @@ class HeavyRingMailArmor(Armor):
     weight = 40
 
 
-class HeavyChainMailArmor(Armor):
-    name = "Heavy chain mail armor"
+class ChainMail(HeavyArmor):
+    name = "Chain Mail"
     cost = "75 gp"
     base_armor_class = 16
     dexterity_mod_max = 0
@@ -143,8 +188,8 @@ class HeavyChainMailArmor(Armor):
     weight = 55
 
 
-class HeavySplintArmor(Armor):
-    name = "Heavy splint armor"
+class SplintArmor(HeavyArmor):
+    name = "Splint Armor"
     cost = "200 gp"
     base_armor_class = 17
     dexterity_mod_max = 0
@@ -153,11 +198,26 @@ class HeavySplintArmor(Armor):
     weight = 60
 
 
-class HeavyPlateArmor(Armor):
-    name = "Heavy splint armor"
+class PlateMail(HeavyArmor):
+    name = "Plate Mail"
     cost = "1,500 gp"
     base_armor_class = 18
     dexterity_mod_max = 0
     strength_required = 15
     stealth_disadvantage = True
     weight = 65
+
+
+# Custom Armor
+class ElvenChain(MediumArmor):
+    name = 'Elven Chain'
+    cost = '5,000 gp'
+    base_armor_class = 14
+    dexerity_mod_max = 2
+    weight = 20
+    
+
+light_armors = [PaddedArmor, LeatherArmor, StuddedLeatherArmor]
+medium_armors = [HideArmor, ChainShirt, ScaleMail, Breastplate, HalfPlate]
+heavy_armors = [RingMail, ChainMail, SplintArmor, PlateMail]
+all_armors = light_armors + medium_armors + heavy_armors

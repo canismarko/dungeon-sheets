@@ -1,0 +1,61 @@
+\documentclass[twocolumn,lettersize]{article}
+
+%% \usepackage{fullpage}
+\usepackage[margin=1.5cm]{geometry}
+\usepackage[dvipsnames]{color}
+\definecolor{mygrey}{gray}{0.7}
+
+\title{Features and Magic Items}
+\author{[[ character.name ]]}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Subclasses}
+           
+[% for sc in character.subclasses if sc not in ['', None, 'None', 'none']%]
+
+  \subsection*{Subclass: [[ sc.name ]]}
+
+  [[ sc.__doc__|rst_to_latex ]]
+
+[% endfor %]
+  
+\section*{Features}
+
+[% for feat in character.features %]
+
+  \subsection*{[[ feat.name ]]}
+
+  \noindent
+  \textbf{Source:} [[ feat.source ]] \\
+
+  [% if feat.needs_implementation %] %
+    \textbf{**Not included in stats on Character Sheet} %
+  [% endif %] %
+             
+  [[ feat.__doc__|rst_to_latex ]]
+
+[% endfor %]
+
+\section*{Magic Items}
+
+[% for mitem in character.magic_items %]
+
+  \subsection*{[[ mitem.name ]]}
+
+  \noindent
+  \textbf{Requires Attunement:} [[ mitem.requires_attunement ]] \\
+  \textbf{Rarity:} [[ mitem.rarity ]] \\
+
+  [% if mitem.needs_implementation %] %
+    \textbf{**Not included in stats on Character Sheet} %
+  [% endif %] %
+             
+  [[ mitem.__doc__|rst_to_latex ]]
+
+  [% endfor %]
+    
+\end{document}
