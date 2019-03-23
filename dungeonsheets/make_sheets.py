@@ -14,8 +14,9 @@ from fdfgen import forge_fdf
 import pdfrw
 from jinja2 import Environment, PackageLoader
 
-from dungeonsheets import character, exceptions
-from dungeonsheets.stats import mod_str
+from . import character as _char
+from . import exceptions, classes
+from .stats import mod_str
 
 
 """Program to take character definitions and build a PDF of the
@@ -33,15 +34,19 @@ def rst_to_latex(rst):
         tex = ""
     else:
         tex = rst
+        for c in ['\\']:
+            tex = tex.replace(c, '\\' + c)
         tex = bold_re.sub(r'\\textbf{\1}', tex)
         tex = it_re.sub(r'\\textit{\1}', tex)
         tex = dice_re.sub(r'\\texttt{\1}', tex)
         tex = tt_re.sub(r'\\texttt{\1}', tex)
+        for c in ['#', '$', '%', '&', '~', '_', '^']:
+            tex = tex.replace(c, '\\' + c)
     return tex
 
 
 jinja_env = Environment(
-    loader=PackageLoader('dungeonsheets', ''),
+    loader=PackageLoader('dungeonsheets', 'forms'),
     block_start_string='[%',
     block_end_string='%]',
     variable_start_string='[[',
@@ -55,55 +60,14 @@ CHECKBOX_ON = 'Yes'
 CHECKBOX_OFF = 'Off'
 PDFTK_CMD = 'pdftk'
 
+
 def text_box(string):
     """Format a string for displaying in a text box."""
-    # Remove line breaks
-    new_string = string.replace('\n', ' ').replace('\r', ' ')
-    # Remove multiple whitespace
-    new_string = ' '.join(new_string.split())
+    # remove multiple whitespace without removing linebreaks
+    new_string = ' '.join(string.replace('\n', '\m').split())
+    # Remove *single* line breaks, swap *multi* line breaks to single (fdf: \r)
+    new_string = new_string.replace('\m \m', '\r').replace('\m\m', '\r').replace('\m', ' ')
     return new_string
-
-
-def load_character_file(filename):
-    """Create a character object from the given definition file.
-    
-    The definition file should be an importable python file, filled
-    with variables describing the character.
-    
-    Parameters
-    ----------
-    filename : str
-      The path to the file that will be imported.
-    
-    """
-    # Parse the file name
-    dir_, fname = os.path.split(os.path.abspath(filename))
-    module_name, ext = os.path.splitext(fname)
-    if ext != '.py':
-        raise ValueError(f"Character definition {filename} is not a python file.")
-    # Check if this file contains the version string
-    version_re = re.compile('dungeonsheets_version\s*=\s*[\'"]([0-9.]+)[\'"]')
-    with open(filename, mode='r') as f:
-        version = None
-        for line in f:
-            match = version_re.match(line)
-            if match:
-                version = match.group(1)
-                break
-        if version is None:
-            # Not a valid DND character file
-            raise exceptions.CharacterFileFormatError(
-                f"No ``dungeonsheets_version = `` entry in `{filename}`.")
-    # Import the module to extract the information
-    spec = importlib.util.spec_from_file_location('module', filename)
-    module = importlib.util.module_from_spec(spec)
-    spec.loader.exec_module(module)
-    # Prepare a list of properties for this character
-    char_props = {}
-    for prop_name in dir(module):
-        if prop_name[0:2] != '__':
-            char_props[prop_name] = getattr(module, prop_name)
-    return char_props
 
 
 def create_druid_shapes_pdf(character, basename):
@@ -116,12 +80,18 @@ def create_spellbook_pdf(character, basename):
     return create_latex_pdf(character, basename, template)
 
 
+def create_features_pdf(character, basename):
+    template = jinja_env.get_template('features_template.tex')
+    return create_latex_pdf(character, basename, template)
+
+
 def create_latex_pdf(character, basename, template):
     tex = template.render(character=character)
     # Create tex document
     tex_file = f'{basename}.tex'
     with open(tex_file, mode='w') as f:
         f.write(tex)
+        
     # Convenience function for removing temporary files
     def remove_temp_files(basename_):
         filenames = [f'{basename_}.tex', f'{basename_}.aux',
@@ -134,8 +104,8 @@ def create_latex_pdf(character, basename, template):
     output_dir = os.path.abspath(os.path.dirname(pdf_file))
     try:
         result = subprocess.run(['pdflatex', '--output-directory',
-                                  output_dir, tex_file, '-halt-on-error'],
-                                 stdout=subprocess.DEVNULL, timeout=10)
+                                 output_dir, tex_file, '-halt-on-error'],
+                                stdout=subprocess.DEVNULL, timeout=30)
     except FileNotFoundError:
         # Remove temporary files
         remove_temp_files(basename)
@@ -148,13 +118,20 @@ def create_latex_pdf(character, basename, template):
 
 
 def create_spells_pdf(character, basename, flatten=False):
-    class_level = (character.class_name + ' ' + str(character.level))
-    spell_level = lambda x : (x or '')
+    classes_and_levels = ' / '.join([c.name + ' ' + str(c.level)
+                                     for c in character.spellcasting_classes])
+    abilities = ' / '.join([c.spellcasting_ability.upper()[:3]
+                            for c in character.spellcasting_classes])
+    DCs = ' / '.join([str(character.spell_save_dc(c))
+                      for c in character.spellcasting_classes])
+    bonuses = ' / '.join([mod_str(character.spell_attack_bonus(c))
+                          for c in character.spellcasting_classes])
+    spell_level = lambda x : (x or 0)
     fields = {
-        'Spellcasting Class 2': class_level,
-        'SpellcastingAbility 2': character.spellcasting_ability.capitalize(),
-        'SpellSaveDC  2': character.spell_save_dc,
-        'SpellAtkBonus 2': mod_str(character.spell_attack_bonus),
+        'Spellcasting Class 2': classes_and_levels,
+        'SpellcastingAbility 2': abilities,
+        'SpellSaveDC  2': DCs,
+        'SpellAtkBonus 2': bonuses,
         # Number of spell slots
         'SlotsTotal 19': spell_level(character.spell_slots(1)),
         'SlotsTotal 20': spell_level(character.spell_slots(2)),
@@ -200,29 +177,30 @@ def create_spells_pdf(character, basename, flatten=False):
         prep_names = tuple(f'Check Box {i}' for i in prep_numbers[level])
         for spell, field, chk_field in zip(spells, field_names, prep_names):
             fields[field] = str(spell)
-            is_prepared = any([isinstance(spell, Spl) for Spl in character.spells_prepared])
+            is_prepared = any([spell == Spl
+                               for Spl in character.spells_prepared])
             fields[chk_field] = CHECKBOX_ON if is_prepared else CHECKBOX_OFF
         # # Uncomment to post field names instead:
         # for field in field_names:
         #     fields.append((field, field))
     # Make the actual pdf
-    dirname = os.path.dirname(os.path.abspath(__file__))
+    dirname = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'forms/')
     src_pdf = os.path.join(dirname, 'blank-spell-sheet-default.pdf')
     make_pdf(fields, src_pdf=src_pdf, basename=basename, flatten=flatten)
 
 
 def create_character_pdf(character, basename, flatten=False):
     # Prepare the list of fields
-    class_level = f"{character.class_name} {character.level}"
     fields = {
         # Character description
         'CharacterName': character.name,
-        'ClassLevel': class_level,
-        'Background': character.background,
+        'ClassLevel': character.classes_and_levels,
+        'Background': str(character.background),
         'PlayerName': character.player_name,
         'Race ': str(character.race),
         'Alignment': character.alignment,
         'XP': str(character.xp),
+        'Inspiration': str(character.inspiration),
         # Abilities
         'ProfBonus': mod_str(character.proficiency_bonus),
         'STRmod': str(character.strength.value),
@@ -238,7 +216,7 @@ def create_character_pdf(character, basename, flatten=False):
         'CHamod': str(character.charisma.value),
         'CHA': mod_str(character.charisma.modifier),
         'AC': str(character.armor_class),
-        'Initiative': mod_str(character.dexterity.modifier),
+        'Initiative': str(character.initiative),
         'Speed': str(character.speed),
         'Passive': 10 + character.perception,
         # Saving throws (proficiencies handled later)
@@ -262,7 +240,7 @@ def create_character_pdf(character, basename, flatten=False):
         'Nature': mod_str(character.nature),
         'Perception ': mod_str(character.perception),
         'Performance': mod_str(character.performance),
-        'Persuasion': mod_str(character.persuasian),
+        'Persuasion': mod_str(character.persuasion),
         'Religion': mod_str(character.religion),
         'SleightofHand': mod_str(character.sleight_of_hand),
         'Stealth ': mod_str(character.stealth),
@@ -275,14 +253,14 @@ def create_character_pdf(character, basename, flatten=False):
         'Ideals': text_box(character.ideals),
         'Bonds': text_box(character.bonds),
         'Flaws': text_box(character.flaws),
-        'Features and Traits': text_box(character.features_and_traits),
+        'Features and Traits': text_box(character.features_text + character.features_and_traits),
         # Inventory
         'CP': character.cp,
         'SP': character.sp,
         'EP': character.ep,
         'GP': character.gp,
         'PP': character.pp,
-        'Equipment': text_box(character.equipment),
+        'Equipment': text_box(character.magic_items_text + character.equipment),
     }
     # Check boxes for proficiencies
     ST_boxes = {
@@ -310,7 +288,7 @@ def create_character_pdf(character, basename, flatten=False):
         'nature': 'Check Box 33',
         'perception': 'Check Box 34',
         'performance': 'Check Box 35',
-        'persuasian': 'Check Box 36',
+        'persuasion': 'Check Box 36',
         'religion': 'Check Box 37',
         'sleight_of_hand': 'Check Box 38',
         'stealth': 'Check Box 39',
@@ -325,15 +303,18 @@ def create_character_pdf(character, basename, flatten=False):
     weapon_fields = [('Wpn Name', 'Wpn1 AtkBonus', 'Wpn1 Damage'),
                      ('Wpn Name 2', 'Wpn2 AtkBonus ', 'Wpn2 Damage '),
                      ('Wpn Name 3', 'Wpn3 AtkBonus  ', 'Wpn3 Damage '),]
+    if len(character.weapons) == 0:
+        character.wield_weapon('unarmed')
     for _fields, weapon in zip(weapon_fields, character.weapons):
         name_field, atk_field, dmg_field = _fields
         fields[name_field] = weapon.name
-        fields[atk_field] = str(weapon.attack_bonus)
-        fields[dmg_field] = f'{weapon.damage} {weapon.damage_type}'
+        fields[atk_field] = '{:+d}'.format(weapon.attack_modifier)
+        fields[dmg_field] = f'{weapon.damage}/{weapon.damage_type}'
     # Other attack information
     attack_str = f'Armor: {character.armor}'
-    attack_str += '\n\r'
+    attack_str += '\n \n'
     attack_str += f'Shield: {character.shield}'
+    attack_str += '\n \n'
     attack_str += character.attacks_and_spellcasting
     fields['AttacksSpellcasting'] = text_box(attack_str)
     # Other proficiencies and languages
@@ -341,9 +322,10 @@ def create_character_pdf(character, basename, flatten=False):
     prof_text += "\n\nLanguages:\n" + text_box(character.languages)
     fields['ProficienciesLang'] = prof_text
     # Prepare the actual PDF
-    dirname = os.path.dirname(os.path.abspath(__file__))
+    dirname = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'forms/')
     src_pdf = os.path.join(dirname, 'blank-character-sheet-default.pdf')
-    return make_pdf(fields, src_pdf=src_pdf, basename=basename, flatten=flatten)
+    return make_pdf(fields, src_pdf=src_pdf, basename=basename,
+                    flatten=flatten)
 
 
 def make_pdf(fields: dict, src_pdf: str, basename: str, flatten: bool=False):
@@ -440,56 +422,71 @@ def _make_pdf_pdftk(fields, src_pdf, basename, flatten=False):
     subprocess.call(popenargs)
     # Clean up temporary files
     os.remove(fdfname)
-
-
-def make_sheet(character_file, flatten=False):
+    
+    
+def make_sheet(character_file, character=None, flatten=False):
     """Prepare a PDF character sheet from the given character file.
     
     Parameters
     ----------
+    character_file : str
+        File (.py) to load character from. Will save PDF using same name
+    character : Character, optional
+        If provided, will not load from the character file, just use file
+        for PDF name
     flatten : bool, optional
-      If true, the resulting PDF will not be a fillable form.
-    
+        If true, the resulting PDF will look better and won't be fillable form.
     """
-    # Create a character from the character definition
-    char_props = load_character_file(character_file)
-    class_name = char_props.pop('character_class').lower().capitalize()
-    CharClass = getattr(character, class_name)
-    char = CharClass(**char_props)
+    if character is None:
+        character = _char.Character.load(character_file)
     # Set the fields in the FDF
     char_base = os.path.splitext(character_file)[0] + '_char'
     sheets = [char_base + '.pdf']
     pages = []
-    char_pdf = create_character_pdf(character=char, basename=char_base, flatten=flatten)
+    char_pdf = create_character_pdf(character=character, basename=char_base,
+                                    flatten=flatten)
     pages.append(char_pdf)
-    if char.is_spellcaster:
+    if character.is_spellcaster:
         # Create spell sheet
-        spell_base = os.path.splitext(character_file)[0] + '_spells'
-        create_spells_pdf(character=char, basename=spell_base, flatten=flatten)
+        spell_base = '{:s}_spells'.format(
+            os.path.splitext(character_file)[0])
+        create_spells_pdf(character=character, basename=spell_base, flatten=flatten)
         sheets.append(spell_base + '.pdf')
+    if len(character.features) > 0:
+        feat_base = '{:s}_feats'.format(
+            os.path.splitext(character_file)[0])
+        try:
+            create_features_pdf(character=character, basename=feat_base)
+        except exceptions.LatexNotFoundError as e:
+            log.warning('``pdflatex`` not available. Skipping features book '
+                        f'for {character.name}')
+        else:
+            sheets.append(feat_base + '.pdf')
+    if character.is_spellcaster:
         # Create spell book
         spellbook_base = os.path.splitext(character_file)[0] + '_spellbook'
         try:
-            create_spellbook_pdf(character=char, basename=spellbook_base)
+            create_spellbook_pdf(character=character, basename=spellbook_base)
         except exceptions.LatexNotFoundError as e:
             log.warning('``pdflatex`` not available. Skipping spellbook '
-                        f'for {char.name}')
+                        f'for {character.name}')
         else:
             sheets.append(spellbook_base + '.pdf')
     # Create a list of Druid wild_shapes
-    wild_shapes = getattr(char, 'wild_shapes', [])
+    wild_shapes = getattr(character, 'wild_shapes', [])
     if len(wild_shapes) > 0:
         shapes_base = os.path.splitext(character_file)[0] + '_wild_shapes'
         try:
-            create_druid_shapes_pdf(character=char, basename=shapes_base)
+            create_druid_shapes_pdf(character=character, basename=shapes_base)
         except exceptions.LatexNotFoundError as e:
             log.warning('``pdflatex`` not available. Skipping wild shapes list '
-                        f'for {char.name}')
+                        f'for {character.name}')
         else:
             sheets.append(shapes_base + '.pdf')
     # Combine sheets into final pdf
     final_pdf = os.path.splitext(character_file)[0] + '.pdf'
     merge_pdfs(sheets, final_pdf, clean_up=True)
+
 
 def merge_pdfs(src_filenames, dest_filename, clean_up=False):
     """Merge several PDF files into a single final file.
@@ -515,6 +512,9 @@ def merge_pdfs(src_filenames, dest_filename, clean_up=False):
         if clean_up:
             for sheet in src_filenames:
                 os.remove(sheet)
+
+
+load_character_file = _char.read_character_file
 
 
 def main():

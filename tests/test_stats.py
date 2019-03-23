@@ -6,7 +6,7 @@ class TestStats(TestCase):
 
     def test_mod_str(self):
         self.assertEqual(stats.mod_str(-3), '-3')
-        self.assertEqual(stats.mod_str(0), '0')
+        self.assertEqual(stats.mod_str(0), '+0')
         self.assertEqual(stats.mod_str(2), '+2')
     
     def test_saving_throw(self):

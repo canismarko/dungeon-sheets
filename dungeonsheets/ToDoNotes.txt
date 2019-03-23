@@ -1,0 +1,5 @@
+Add Warlock multiclass spell slots
+Add disadvantage on STEALTH with armor
+
+Add all spells
+Add spell creation to Create-Character?
