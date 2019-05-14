@@ -72,7 +72,7 @@ pp = 0
 # TODO: Put your equipped weapons and armor here
 weapons = ('longbow',)  # Example: ('shortsword', 'longsword')
 magic_items = ()  # Example: ('ring of protection',)
-armor = "studded armor"  # Eg "leather armor"
+armor = "studded leather armor"  # Eg "leather armor"
 shield = ""  # Eg "shield"
 
 equipment = """TODO: list the equipment and magic items your character carries"""
