@@ -699,7 +699,7 @@ class PersonalityForm(LinkedListForm):
         if self.flaws.value:
             self.parentApp.character.flaws = self.flaws.value
         if self.features.value:
-            self.parentApp.character.features_and_traits = self.featurs.value
+            self.parentApp.character.features_and_traits = self.features.value
         super().to_next()
     
     def on_cancel(self):
