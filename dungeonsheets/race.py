@@ -442,7 +442,7 @@ class HobGoblin(Race):
     size = 'medium'
     speed = 30
     features = (feats.Darkvision, feats.SavingFace)
-    proficiencies_text = ('light armor',)
+    proficiencies_text = ('light armor', '[Chose two martial melee weapons]')
     languages = ("Common", "Goblin")
 
 class Kobold(Race):
