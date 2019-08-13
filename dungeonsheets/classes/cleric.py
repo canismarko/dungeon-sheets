@@ -332,7 +332,7 @@ class Cleric(CharClass):
     subclasses_available = (KnowledgeDomain, LifeDomain, LightDomain,
                             NatureDomain, TempestDomain, TrickeryDomain,
                             WarDomain, ArcanaDomain, ForgeDomain,
-                            GraveDomain)
+                            GraveDomain, DeathDomain)
     spellcasting_ability = 'wisdom'
     spell_slots_by_level = {
         # char_lvl: (cantrips, 1st, 2nd, 3rd, ...)

@@ -414,6 +414,70 @@ class WaterGenasi(_Genasi):
     features = (feats.AcidResistance, feats.Amphibious,
                 feats.CallToTheWave)
 
+class BugBear(Race):
+    name = "BugBear"
+    strength_bonus = 2
+    dexterity_bonus = 1
+    size = 'medium'
+    speed = 30
+    features = (feats.Darkvision, feats.LongLimbed,
+                feats.PowerfulBuild, feats.SupriseAttack)
+    skill_proficiencies = ("stealth", )
+    languages = ("Common", "Goblin")
+
+class Goblin(Race):
+    name = "Goblin"
+    dexterity_bonus = 2
+    constitution_bonus = 1
+    size = 'small'
+    speed = 30
+    features = (feats.Darkvision, feats.FuryOfTheSmall,
+                feats.NimbleEscape)
+    languages = ("Common", "Goblin")
+
+class HobGoblin(Race):
+    name = "HobGoblin"
+    constitution_bonus = 2
+    intelligence_bonus = 1
+    size = 'medium'
+    speed = 30
+    features = (feats.Darkvision, feats.SavingFace)
+    proficiencies_text = ('light armor',)
+    languages = ("Common", "Goblin")
+
+class Kobold(Race):
+    name = "Kobold"
+    dexterity_bonus = 2
+    strength_bonus = -2
+    size = 'small'
+    speed = 30
+    features = (feats.Darkvision, feats.PackTactics,
+                feats.GrovelCowerAndBeg, feats.SunlightSensitivity)
+    languages = ("Common", "Draconic")
+
+class Orc(Race):
+    name = "Orc"
+    strength_bonus = 2
+    constitution_bonus = 1
+    intelligence_bonus = -2
+    size = 'medium'
+    speed = 30
+    skill_proficiencies = ('intimidation',)
+    features = (feats.Darkvision, feats.Aggressive,
+                feats.PowerfulBuild)
+    languages = ("Common", "Orc")
+
+class PureBlood(Race):
+    name = "Yuan-Ti Pureblood"
+    charisma_bonus = 2
+    intelligence_bonus = 1
+    size = 'medium'
+    speed = 30
+    features = (feats.Darkvision, feats.InnateSpellcasting,
+                feats.MagicResistance, feats.PoisonImmunity)
+    spells_known = (spells.PoisonSpray,)
+    languages = ("Common", "Abyssal", "Draconic")
+
 
 PHB_races = [HillDwarf, MountainDwarf, HighElf, WoodElf, DarkElf,
              LightfootHalfling, StoutHalfling, Human, Dragonborn,
@@ -425,7 +489,9 @@ VOLO_races = [ProtectorAasimar, ScourgeAasimar, FallenAasimar,
 EE_races = [Aarakocra, DeepGnome, AirGenasi, FireGenasi, EarthGenasi,
             WaterGenasi]
 
-available_races = PHB_races + VOLO_races + EE_races
+MONSTER_races = [BugBear, Goblin, HobGoblin, Kobold, Orc, PureBlood]
+
+available_races = PHB_races + VOLO_races + EE_races + MONSTER_races
 
 __all__ = tuple([r.name for r in available_races]) + (
-    'available_races', 'PHB_races', 'VOLO_races', 'EE_races')
+    'available_races', 'PHB_races', 'VOLO_races', 'EE_races', 'MONSTER_races')
