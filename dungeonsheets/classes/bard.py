@@ -18,7 +18,7 @@ class CollegeOfLore(SubClass):
     such a bard as a herald or advisor knows that the bard would rather be
     honest than politic.
 
-    The college’s members gather in libraries and sometimes in actual colleges,
+    The college's members gather in libraries and sometimes in actual colleges,
     complete with classrooms and dormitories, to share their lore with one
     another. They also meet at festivals or affairs of state, where they can
     expose corruption, unravel lies, and poke fun at selfimportant figures of
@@ -38,7 +38,7 @@ class CollegeOfValor(SubClass):
     generation of heroes. These bards gather in mead halls or around great
     bonfires to sing the deeds of the mighty, both past and present. They
     travel the land to witness great events firsthand and to ensure that the
-    memory of those events doesn’t pass from the world. With their songs, they
+    memory of those events doesn't pass from the world. With their songs, they
     inspire others to reach the same heights of accomplishment as the heroes of
     old
 
@@ -54,7 +54,7 @@ class CollegeOfValor(SubClass):
 
 # XGTE
 class CollegeOfGlamour(SubClass):
-    """The College of Glamour is the home Of bards who mas— tered their craft in
+    """The College of Glamour is the home Of bards who mas- tered their craft in
     the vibrant realm of the Feywild or under the tutelage Of someone who
     dwelled there. Tutored by satyrs, eladrin, and other fey, these bards
     learn to use their magic to delight and captivate others.
@@ -89,14 +89,14 @@ class CollegeOfSwords(SubClass):
     blade might use a circus troupe as cover for nefarious deeds such as
     assassination, robbery, and blackmail. Other blades strike at the wicked,
     bringingjustice to bear against the cruel and powerful. Most troupes are
-    happy to accept a blade’s talent for the excitement it adds to a
+    happy to accept a blade's talent for the excitement it adds to a
     performance, but few entertainers fully trust a blade in their ranks.
 
     Blades who abandon their lives as entertainers have often run into trouble
     that makes maintaining their secret activities impossible. A blade caught
     stealing or engaging in vigilante justice is too great a liability for most
     troupes. With their weapon skills and magic, these blades either take up
-    work as enforcers for thieves’ guilds or strike out on their own as
+    work as enforcers for thieves' guilds or strike out on their own as
     adventurers.
 
     """
@@ -121,7 +121,7 @@ class CollegeOfWhispers(SubClass):
     and threats.
 
     Many other bards hate the College of Whispers, viewing it as a parasite
-    that uses a bard’s reputation to acquire wealth and power. For this reason,
+    that uses a bard's reputation to acquire wealth and power. For this reason,
     members of this college rarely reveal their true nature. They typically
     claim to follow some other college, or they keep their actual calling
     secret in order to infiltrate and exploit royal courts and other settings

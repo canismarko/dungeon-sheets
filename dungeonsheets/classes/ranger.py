@@ -9,7 +9,7 @@ from collections import defaultdict
 class Hunter(SubClass):
     """Emulating the Hunter archetype means accepting your place as a bulwark
     between civilization and the terrors of the wilderness. As you walk the
-    Hunter’s path, you learn specialized techniques for fighting the threats
+    Hunter's path, you learn specialized techniques for fighting the threats
     you face, from rampaging ogres and hordes of orcs to towering giants and
     terrifying dragons.
 
@@ -84,8 +84,8 @@ class HorizonWalker(SubClass):
     planes or that seek to ravage the mortal realm with otherworldly
     magic. They seek out planar portals and keep watch over them, venturing to
     the Inner Planes and the Outer Planes as needed to pursue their foes. These
-    rangers are also friends to any forces in the multiverse—especially
-    benevolent dragons, fey, and elementals—that work to preserve life and the
+    rangers are also friends to any forces in the multiverse-especially
+    benevolent dragons, fey, and elementals-that work to preserve life and the
     order of the planes
 
     """

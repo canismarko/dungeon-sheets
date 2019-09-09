@@ -79,7 +79,7 @@ class PaladinFightingStyle(FeatureSelector):
 class DivineSmite(Feature):
     """Starting at 2nd level, when you hit a creature with a melee weapon attack,
     you can expend one paladin spell slot to deal radiant damage to the target,
-    in addition to the weapon’s damage. The extra damage is 2d8 for a 1st-level
+    in addition to the weapon's damage. The extra damage is 2d8 for a 1st-level
     spell slot, plus 1d8 for each spell level higher than 1st, to a maximum of
     5d8. The damage increases by 1d8 if the target is an undead or a fiend.
 
@@ -119,7 +119,7 @@ class AuraOfProtection(Feature):
 
 class AuraOfCourage(Feature):
     """Starting at 10th level, you and friendly creatures within 10 feet of you
-    can’t be frightened while you are conscious.
+    can't be frightened while you are conscious.
 
     At 18th level, the range of this aura increases to 30 feet
 
@@ -198,9 +198,9 @@ class TurnTheUnholy(Feature):
     until it takes damage.
 
     A turned creature must spend its turns trying to move as far away from you
-    as it can, and it can’t willingly move to a space within 30 feet of you. It
-    also can’t take reactions. For its action, it can use only the Dash action
-    or try to escape from an effect that prevents it from moving. If there’s
+    as it can, and it can't willingly move to a space within 30 feet of you. It
+    also can't take reactions. For its action, it can use only the Dash action
+    or try to escape from an effect that prevents it from moving. If there's
     nowhere to move, the creature can use the Dodge action.
 
     """
@@ -210,7 +210,7 @@ class TurnTheUnholy(Feature):
 
 class AuraOfDevotion(Feature):
     """Starting at 7th level, you and friendly creatures within 10 feet of you
-    can’t be charmed while you are conscious. At 18th level, the range of this
+    can't be charmed while you are conscious. At 18th level, the range of this
     aura increases to 30 feet.
 
     """
@@ -236,7 +236,7 @@ class HolyNimbus(Feature):
     creature takes 10 radiant damage.
 
     In addition, for the duration, you have advantage on saving throws against
-    spells cast by fiends or undead. Once you use this feature, you can’t use
+    spells cast by fiends or undead. Once you use this feature, you can't use
     it again until you finish a long rest.
 
     """
@@ -272,7 +272,7 @@ class RebukeTheViolent(Feature):
 class AuraOfTheGuardian(Feature):
     """Starting at 7th level, you can shield others from harm at the cost of your
     own health. When a creature within 10 feet of you takes damage, you can use
-    your reaction to magically take that damage, instead of that creature tak—
+    your reaction to magically take that damage, instead of that creature tak-
     ing it. This feature doesn't transfer any other effects that might
     accompany the damage, and this damage can't be reduced in any way. At 18th
     level, the range of this aura increases to 30 feet.
@@ -296,7 +296,7 @@ class ProtectiveSpirit(Feature):
 class EmissaryOfRedemption(Feature):
     """At 20th level, you become an avatar of peace, which gives you two benefits:
     
-    --You have resistance to all damage dealt by other crea— tures (their
+    --You have resistance to all damage dealt by other crea- tures (their
     attacks, spells, and other effects).
 
     --Whenever a creature hits you with an attack, it takes radiant damage
