@@ -353,7 +353,6 @@ class Character():
 
         if not self.has_class:
             return fts
-        print('\n\n')
         for c in self.class_list:
             fts |= set(c.features)
             for feature in fts:
