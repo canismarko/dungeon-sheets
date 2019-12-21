@@ -337,10 +337,30 @@ class Character():
     @property
     def features(self):
         fts = set(self.custom_features)
+        fighting_style_defined = False
+        set_of_fighting_styles = {
+            "Fighting Style (Archery)",
+            "Fighting Style (Defense)",
+            "Fighting Style (Dueling)",
+            "Fighting Style (Great Weapon Fighting)",
+            "Fighting Style (Protection)",
+            "Fighting Style (Two-Weapon Fighting)"
+        }
+        for temp_feature in fts:
+            fighting_style_defined = (temp_feature.name in set_of_fighting_styles)
+            if fighting_style_defined:
+                break
+
         if not self.has_class:
             return fts
+        print('\n\n')
         for c in self.class_list:
             fts |= set(c.features)
+            for feature in fts:
+                if fighting_style_defined and feature.name == 'Fighting Style (Select One)':
+                    temp_feature = feature
+                    fts.remove(temp_feature)
+                    break
         if self.race is not None:
             fts |= set(getattr(self.race, 'features', ()))
             # some races have level-based features (Ex: Aasimar)
@@ -349,6 +369,7 @@ class Character():
                     fts |= set(self.race.features_by_level[lvl])
         if self.background is not None:
             fts |= set(getattr(self.background, 'features', ()))
+
         return sorted(tuple(fts), key=(lambda x: x.name))
 
     @property
