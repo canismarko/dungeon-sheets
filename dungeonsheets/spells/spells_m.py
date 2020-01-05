@@ -269,7 +269,7 @@ class MagicWeapon(Spell):
     
     At Higher Levels: 
     When you cast this spell using a spell slot of 4th level or higher, the bonus 
-    increases to +2.
+    increases to +2. 
     When you use a spell slot of 6th level or higher, the bonus 
     increases to +3.
     """
@@ -453,8 +453,8 @@ class MassSuggestion(Spell):
     
     At Higher Levels: 
     When you cast this spell using a 7th-level spell slot, the duration is 10 days.
-    
-    When you use an 8th-level spell slot, the duration is 30 days.
+     
+    When you use an 8th-level spell slot, the duration is 30 days. 
     When you use a
      9th-level spell slot, the duration is a year and a day.
     """
@@ -854,9 +854,9 @@ class MirageArcane(Spell):
     disappears immediately.
     
     Creatures with truesight can see through the illusion 
-    to the terrain’s true form however, all other elements of the illusion remain, 
-    so while the creature is aware of the illusion’s presence, the creature can 
-    still physically interact with the illusion.
+    to the terrain’s true form however, all other elements of the illusion remain, 
+    so while the creature is aware of the illusion’s presence, the creature can 
+    still physically interact with the illusion.
     """
     name = "Mirage Arcane"
     level = 7

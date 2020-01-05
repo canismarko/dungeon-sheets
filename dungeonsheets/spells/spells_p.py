@@ -66,7 +66,7 @@ class PhantasmalForce(Spell):
     from interacting with the phantasm. For example, a target attempting to walk 
     across a phantasmal bridge that spans a chasm falls once it steps onto the 
     bridge. If the target survives the fall, it still believes that the bridge 
-    exists and comes up with some other explanation for its fallit was pushed, it 
+    exists and comes up with some other explanation for its fall it was pushed, it 
     slipped, or a strong wind might have knocked it off.
     
     An affected target is so 
@@ -218,11 +218,11 @@ class PlanarBinding(Spell):
      until the spell ends.
     
     At Higher Levels: When you cast this spell using a spell
-     slot of a higher level, the duration increases to:
+     slot of a higher level, the duration increases to: 
     10 days with a 6th-level 
-    slot,
-    30 days with a 7th-level slot,
-    180 days with an 8th-level slot, 
+    slot, 
+    30 days with a 7th-level slot, 
+    180 days with an 8th-level slot,  
     1 year
      and 1 day with a 9th-level spell slot.
     """
@@ -468,7 +468,7 @@ class PrayerOfHealing(Spell):
 class Prestidigitation(Spell):
     """This spell is a minor magical trick that novice spellcasters use for practice. 
     You create one of the following magical effects within range:
-     -You create an 
+     -You create an 
     instantaneous, harmless sensory effect, such as a shower of sparks, a puff of 
     wind, faint musical notes, or an odd odor. 
     -You instantaneously light or snuff 
@@ -593,8 +593,8 @@ class PrismaticSpray(Spell):
 
 
 class PrismaticWall(Spell):
-    """A shimmering, multicolored plane of light forms a vertical opaque wallup to 90 
-    feet long, 30 feet high, and 1 inch thickcentered on a point you can seewithin 
+    """A shimmering, multicolored plane of light forms a vertical opaque wall up to 90 
+    feet long, 30 feet high, and 1 inch thick centered on a point you can seewithin 
     range. Alternatively, you can shape the wall into a sphere up to 30 feet in 
     diameter centered on a point you choose within range. The wall remains in place 
     for the duration. If you position the wall so that it passes through a space 

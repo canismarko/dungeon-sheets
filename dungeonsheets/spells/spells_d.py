@@ -63,7 +63,7 @@ class Darkness(Spell):
     radius sphere for the duration.
     The darkness spreads around corners. A creature 
     with darkvision can’t see through this darkness, and nonmagical light can’t 
-    illuminate it. 
+    illuminate it. 
     
     If the point you choose is on an object you are holding or one 
     that isn’t being worn or carried, the darkness emanates from the object and 
@@ -376,8 +376,8 @@ class DimensionDoor(Spell):
     """You teleport yourself from your current location to any other spot within range.
      You arrive at exactly the spot desired. It can be a place you can see, one you 
     can visualize, or one you can describe by stating distance and direction, such 
-    as "200 feet straight downward" or "upward to the northwest at a 45-degree 
-    angle, 300 feet". 
+    as "200 feet straight downward" or "upward to the northwest at a 45-degree 
+    angle, 300 feet". 
     
     You can bring along objects as long as their weight doesn’t
      exceed what you can carry. You can also bring one willing creature of your size
@@ -402,8 +402,8 @@ class DimensionDoor(Spell):
 
 
 class DisguiseSelf(Spell):
-    """You make yourself – including your clothing, armor, weapons, and other 
-    belongings on your person – look different until the spell ends or until you 
+    """You make yourself - including your clothing, armor, weapons, and other 
+    belongings on your person - look different until the spell ends or until you 
     use your action to dismiss it. 
     You can seem  1 foot shorter or taller and can 
     appear thin, fat, or in between. You can’t change your body type, so you must 
@@ -477,13 +477,13 @@ class DispelEvilAndGood(Spell):
     You can end the spell early by using either of the following special 
     functions. 
     
-    Break  Enchantment 
+    Break  Enchantment 
     As your action, you touch a creature you can 
     reach that is charmed, frightened, or possessed by a celestial, an elemental, a 
     fey, a fiend, or an undead. The creature you touch is no longer charmed, 
     frightened, or possessed by such creatures. 
     
-    Dismissal 
+    Dismissal 
     As your action, make a 
     melee spell attack against a celestial, an elemental, a fey, a fiend, or an 
     undead you can reach. On a hit, you attempt to drive the creature back to its 
@@ -602,13 +602,13 @@ class DivineWord(Spell):
     creature that can hear you must make a Charisma saving throw. On a failed save, 
     a creature suffers an effect based on its current hit points: 
     
-     •  50 hit 
+     •  50 hit 
     points or fewer: deafened for 1 minute 
-     •  40 hit points or fewer: deafened and
+     •  40 hit points or fewer: deafened and
      blinded for 10 minutes 
-     •  30 hit points or fewer: blinded, deafened, and 
+     •  30 hit points or fewer: blinded, deafened, and 
     stunned for 1 hour 
-     •  20 hit points or fewer: killed instantly 
+     •  20 hit points or fewer: killed instantly 
     
     Regardless of
      its current hit points, a celestial, an elemental, a fey, or a fiend that fails
@@ -655,9 +655,9 @@ class DominateBeast(Spell):
     spell ends.
     
     At Higher Levels: When you cast this spell with a 5th-level spell 
-    slot, the duration is concentration, up to 10 minutes. 
+    slot, the duration is concentration, up to 10 minutes.  
     When you use a 6th-
-    level spell slot, the duration is concentration, up to 1 hour. 
+    level spell slot, the duration is concentration, up to 1 hour.  
     When you use a 
     spell slot of 7th level or higher, the duration is concentration, up to 8 hours
     """
@@ -684,8 +684,8 @@ class DominateMonster(Spell):
     it as long as the two of you are on the same plane of existence. You can use 
     this telepathic link to issue commands to the creature while you are conscious 
     (no action required), which it does its best to obey. You can specify a simple 
-    and general course of action, such as "Attack that creature", "Run over 
-    there", or "Fetch that object". If the creature completes the order and 
+    and general course of action, such as "Attack that creature", "Run over 
+    there", or "Fetch that object". If the creature completes the order and 
     doesn’t receive further direction from you, it defends and preserves itself to 
     the best of its ability. 
     
@@ -725,8 +725,8 @@ class DominatePerson(Spell):
     as long as the two of you are on the same plane of existence. You can use this 
     telepathic link to issue commands to the creature while you are conscious (no 
     action required), which it does its best to obey. You can specify a simple and 
-    general course of action, such as "Attack that creature", "Run over there", 
-    or "Fetch that object". If the creature completes the order and doesn’t 
+    general course of action, such as "Attack that creature", "Run over there", 
+    or "Fetch that object". If the creature completes the order and doesn’t 
     receive further direction from you, it defends and preserves itself to the best 
     of its ability. 
     
@@ -741,9 +741,9 @@ class DominatePerson(Spell):
     spell ends.
     
     At Higher Levels: When you cast this spell using a 6th-level spell 
-    slot, the duration is concentration, up to 10 minutes. 
+    slot, the duration is concentration, up to 10 minutes.  
     When you use a 7th-
-    level spell slot, the duration is concentration, up to 1 hour. 
+    level spell slot, the duration is concentration, up to 1 hour.  
     When you use a 
     spell slot of 8th level or higher, the duration is concentration, up to 8 hours.
     """
@@ -921,13 +921,13 @@ class Druidcraft(Spell):
     
     • You create a tiny, harmless sensory effect that predicts what 
     the weather will be at your location for the next 24 hours. The effect might 
-    manifest as a golden orb  for clear skies, a cloud for rain, falling snowflakes 
+    manifest as a golden orb  for clear skies, a cloud for rain, falling snowflakes 
     for snow, and so on. This effect persists for 1 round. 
     • You instantly make a 
     flower blossom, a seed pod open, or a leaf bud bloom. 
     • You create an 
     instantaneous, harmless sensory effect, such as falling leaves, a puff of wind, 
-    the sound of a small animal, or the faint odor of skunk. The effect  must fit in
+    the sound of a small animal, or the faint odor of skunk. The effect  must fit in
      a 5-foot cube. 
     • You instantly light or snuff out a candle, a torch, or a 
     small campfire.

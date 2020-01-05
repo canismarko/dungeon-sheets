@@ -158,7 +158,7 @@ class Reincarnate(Spell):
     DM rolls a d 100 and consults the following table to determine what form the 
     creature takes when restored to life, or the DM chooses a form.
     
-    d100  Race
+    d100  Race
     
     01-04 Dragonborn
     05-13 Dwarf, hill

@@ -477,7 +477,7 @@ class Whirlwind(Spell):
     unless the creature has some means to stay aloft. A restrained creature can use 
     an action to make a Strength or Dexterity check against your spell save DC. If 
     successful, the creature is no longer restrained by the whirlwind and is hurled 
-    3d6 × 10 feet away from it in a random direction.
+    3d6 x 10 feet away from it in a random direction.
     """
     name = "Whirlwind"
     level = 7

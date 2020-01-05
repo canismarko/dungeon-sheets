@@ -298,7 +298,7 @@ class SpellThief(Feature):
 
 # Inquisitive
 class EarForDeceit(Feature):
-    """When you choose this archetype at 3rd level, you de— velop a talent for
+    """When you choose this archetype at 3rd level, you develop a talent for
     picking out lies. Whenever you make a Wisdom (Insight) check to determine
     whether a creature is lying, treat a roll of 7 or lower on the c120 as an
     8.
@@ -322,7 +322,7 @@ class InsightfulFighting(Feature):
     """At 3rd level, you gain the ability to decipher an opponent's tactics and
     develop a counter to them. As a bonus action, you can make a Wisdom
     (Insight) check against a creature you can see that isn’t incapacitated,
-    contested by the target’s Charisma (Deception) check. If you suc— ceed, you
+    contested by the target’s Charisma (Deception) check. If you succeed, you
     can use your Sneak Attack against that target even ifyou don’t have
     advantage on the attack roll, but not if you have disadvantage on it. This
     benefit lasts for 1 minute or until you successfully use this feature
@@ -344,7 +344,7 @@ class SteadyEye(Feature):
 
     
 class UnerringEye(Feature):
-    """Beginning at 13th level, your senses are almost im« possible to foil. As an
+    """Beginning at 13th level, your senses are almost impossible to foil. As an
     action, you sense the presence of illusions, shapechangers not in their
     original form, and other magic designed to deceive the senses within 30
     feet ofyou, provided you aren’t blinded or deafened. You sense that an
@@ -359,7 +359,7 @@ class UnerringEye(Feature):
 
 
 class EyeForWeakness(Feature):
-    """At 17th level, you learn to exploit a creature’s weak— nesses by carefully
+    """At 17th level, you learn to exploit a creature’s weaknesses by carefully
     studying its tactics and movement. While your Insightful Fighting feature
     applies to a creature, your Sneak Attack damage against that creature
     increases by 3d6
@@ -397,7 +397,7 @@ class MasterOfTactics(Feature):
 class InsightfulManipulator(Feature):
     """Starting at 9th level, if you spend at least 1 minute observing or
     interacting with another creature outside combat, you can learn certain
-    information about its ca— pabilities compared to your own. The DM tells you
+    information about its capabilities compared to your own. The DM tells you
     if the creature is your equal, superior, or inferior in regard to two of
     the following characteristics of your choice:
 
@@ -421,7 +421,7 @@ class Misdirection(Feature):
     """Beginning at 13th level, you can sometimes cause another creature to
     suffer an attack meant for you. When you are targeted by an attack while a
     creature within 5 feet of you is granting you cover against that attack,
-    you can use your reaction to have the attack target that crea— ture instead
+    you can use your reaction to have the attack target that creature instead
     of you
 
     """
@@ -432,7 +432,7 @@ class Misdirection(Feature):
 class SoulOfDeceit(Feature):
     """Starting at 17th level, your thoughts can’t be read by telepathy or other
     means, unless you allow it. You can present false thoughts by succeeding on
-    a Charisma (Deception) check contested by the mind reader’s Wis— dom
+    a Charisma (Deception) check contested by the mind reader’s Wisdom
     (Insight) check. Additionally, no matter what you say, magic that would
     determine if you are telling the truth indicates you are being truthful if
     you so choose, and you can’t be compelled to tell the truth by magic
@@ -457,7 +457,7 @@ class Survivalist(Feature):
     """When you choose this archetype at 3rd level, you gain proficiency in the
     Nature and Survival skills if you don’t already have it. Your proficiency
     bonus is doubled for any ability check you make that uses either of those
-    pro— ficiencies
+    proficiencies
 
     """
     
@@ -527,7 +527,7 @@ class RakishAudacity(Feature):
 
 
 class Panache(Feature):
-    """At 9th level, your charm becomes extraordinarily be— guiling. As an action,
+    """At 9th level, your charm becomes extraordinarily beguiling. As an action,
     you can make a Charisma (Persuasion) check contested by a creature’s
     Wisdom (Insight) check. The creature must be able to hear you, and the
     two ofyou must share a language. If you succeed on the check and the
@@ -549,7 +549,7 @@ class Panache(Feature):
 
 class ElegantManeuver(Feature):
     """Starting at 13th level, you can use a bonus action on your turn to gain
-    advantage on the next Dexterity (Ac— robatics) or Strength (Athletics)
+    advantage on the next Dexterity (Acrobatics) or Strength (Athletics)
     check you make during the same turn
 
     """

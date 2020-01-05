@@ -111,19 +111,19 @@ class Teleport(Spell):
     and consults the table.
     
     Familiarity 
-        Mishap  Similar Area  Off Target  On Target
-    Permanent circle   —       — 
-            —     01-100
-    Associated object    —       —       —       01-100
+        Mishap  Similar Area  Off Target  On Target
+    Permanent circle   —       — 
+            —     01-100
+    Associated object    —       —       —       01-100
     Very 
-    familiar     01-05      06-13     14-24    25-100
-    Seen casually     01-33      
-    34-43     44-53    54-100
-    Viewed once    01-43      44-53     54-73    74-100
+    familiar     01-05      06-13     14-24    25-100
+    Seen casually     01-33      
+    34-43     44-53    54-100
+    Viewed once    01-43      44-53     54-73    74-100
     
-    Description       01-43      44-53     54-73    74-100
-    False destination  01-50 
-          51-100      —      —
+    Description       01-43      44-53     54-73    74-100
+    False destination  01-50 
+          51-100      —      —
     
     Familiarity.
     "Permanent circle" means a permanent 
