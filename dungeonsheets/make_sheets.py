@@ -556,7 +556,7 @@ def main():
         except Exception as e:
             print('failed')
             logging.exception(e)
-            exceptions += 1
+            runtime_exceptions += 1
         else:
             print("done")
 
