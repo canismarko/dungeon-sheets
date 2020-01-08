@@ -36,7 +36,7 @@ jobs:
           rebase: true
   build_sheets_latex:
     runs-on: ubuntu-latest
-    name: Build example sheets with pdftk
+    name: Build example sheets with pdflatex
     steps:
       - name: Set up Git repository
         uses: actions/checkout@v1
@@ -60,8 +60,8 @@ jobs:
         working-directory: examples
       - name: Move generated pdfs to pdftex dir
         run: |
-           rm -rdf ./pdftex/*
-           cp *.pdf ./pdftex
+           rm -rdf ./pdflatex/*
+           cp *.pdf ./pdflatex
         working-directory: examples
       - name: Push generated pdfs back to repository
         uses: github-actions-x/commit@v2.1

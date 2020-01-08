@@ -1,0 +1,24 @@
+name: Run test suite
+on: [push, pull_request]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: [3.6, 3.7, 3.8]
+    name: Run tests on Python ${{ matrix.python-version }}
+    steps:
+      - name: Set up Git repository
+        uses: actions/checkout@v1
+      - name: Setup python ${{ matrix.python-version }}
+        uses: actions/setup-python@v1
+        with:
+          python-version: ${{ matrix.python-version }}
+          architecture: x64
+      - name: Install requirements
+        run:  pip install -r requirements.txt
+      - name: Install dungeonsheets
+        run: pip install -e .
+      - name: Run tests
+        run: pytest
