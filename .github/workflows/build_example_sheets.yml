@@ -19,6 +19,6 @@ jobs:
       - name: Install dungeonsheets
         run: pip install -e .
       - name: Run makesheets
-        run: makesheets barbarian1.py
+        run: makesheets
         working-directory: examples
 
