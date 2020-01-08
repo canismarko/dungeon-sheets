@@ -46,13 +46,15 @@ jobs:
            wget -qO- "https://yihui.org/gh/tinytex/tools/install-unx.sh" | sh
            pwd
            echo $PATH
-           ls -la /home/runner/.TinyTeX/bin/x86_64-linux
+           ls -la 
       - name: Install python requirements
         run: pip install -r requirements.txt
       - name: Install dungeonsheets
         run: pip install -e .
       - name: Run makesheets
-        run: makesheets
+        run: |
+           export PATH=$PATH:/home/runner/.TinyTeX/bin/x86_64-linux
+           makesheets
         working-directory: examples
       - name: Push generated pdfs back to repository
         uses: github-actions-x/commit@v2.1
