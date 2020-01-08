@@ -1,4 +1,4 @@
-name: Run test suite
+name: Build example characters
 on: [push, pull_request]
 
 jobs:
