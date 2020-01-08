@@ -1,6 +1,5 @@
 name: Run test suite
-on:
-  push:
+on: [push, pull_request]
 
 jobs:
   test:
@@ -17,8 +16,9 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
           architecture: x64
-      - run: |
-         pip install -r requirements.txt
-         pip install -e .
-         pytest
-
+      - name: Install requirements
+        run:  pip install -r requirements.txt
+      - name: Install dungeonsheets
+        run: pip install -e .
+      - name: Run tests
+        run: pytest
