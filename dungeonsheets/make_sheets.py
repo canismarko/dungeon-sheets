@@ -519,7 +519,7 @@ load_character_file = _char.read_character_file
 
 def main():
     # Prepare an argument parser
-    exceptions = 0
+    runtime_exceptions = 0
     parser = argparse.ArgumentParser(
         description='Prepare Dungeons and Dragons character sheets as PDFs')
     parser.add_argument('filename', type=str, nargs="?",
@@ -553,8 +553,8 @@ def main():
         else:
             print("done")
 
-    if exceptions > 1:
-        return exceptions
+    if runtime_exceptions > 1:
+        return runtime_exceptions
 
 if __name__ == '__main__':
     main()
