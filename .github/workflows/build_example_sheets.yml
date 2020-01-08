@@ -28,7 +28,7 @@ jobs:
            cp *.pdf ./pdftk
         working-directory: examples
       - name: Push generated pdfs back to repository
-        uses: github-actions-x/commit@v2.4
+        uses: github-actions-x/commit@v2.2
         with:
           files: examples/pdftk/*.pdf
           github-token: ${{ secrets.GITHUB_TOKEN }}
@@ -64,7 +64,7 @@ jobs:
            cp *.pdf ./pdflatex
         working-directory: examples
       - name: Push generated pdfs back to repository
-        uses: github-actions-x/commit@v2.4
+        uses: github-actions-x/commit@v2.2
         with:
           files: examples/pdflatex/*.pdf
           github-token: ${{ secrets.GITHUB_TOKEN }}
