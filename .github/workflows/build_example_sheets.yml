@@ -26,6 +26,7 @@ jobs:
         run: |
            rm -rdf ./pdftk/*
            cp *.pdf ./pdftk
+        working-directory: examples
       - name: Push generated pdfs back to repository
         uses: github-actions-x/commit@v2.1
         with:
@@ -47,7 +48,7 @@ jobs:
       - name: Install pdftk
         run: sudo snap install pdftk
       - name: Install tinyTeX
-        run: wget -qO- "https://yihui.org/gh/tinytex/tools/install-unx.sh" | sh]
+        run: wget -qO- "https://yihui.org/gh/tinytex/tools/install-unx.sh" | sh
       - name: Install python requirements
         run: pip install -r requirements.txt
       - name: Install dungeonsheets
@@ -61,6 +62,7 @@ jobs:
         run: |
            rm -rdf ./pdftex/*
            cp *.pdf ./pdftex
+        working-directory: examples
       - name: Push generated pdfs back to repository
         uses: github-actions-x/commit@v2.1
         with:
