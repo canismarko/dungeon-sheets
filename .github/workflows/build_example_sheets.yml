@@ -1,0 +1,23 @@
+name: Run test suite
+on: [push, pull_request]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Git repository
+        uses: actions/checkout@v1
+      - name: Setup python 3.8
+        uses: actions/setup-python@v1
+        with:
+          python-version: 3.8
+          architecture: x64
+      - name: Install requirements
+        run: pip install -r requirements.txt
+        run: sudo apt install pdftk
+      - name: Install dungeonsheets
+        run: pip install -e .
+      - name: Run makesheets
+        run: makesheets barbarian1.py
+        working-directory: examples
+
