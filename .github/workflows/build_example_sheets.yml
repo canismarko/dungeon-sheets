@@ -2,8 +2,9 @@ name: Build example characters
 on: [push, pull_request]
 
 jobs:
-  test:
+  build_sheets_basic:
     runs-on: ubuntu-latest
+    name: Build example sheets with pdftk
     steps:
       - name: Set up Git repository
         uses: actions/checkout@v1
