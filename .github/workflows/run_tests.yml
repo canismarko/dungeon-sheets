@@ -10,7 +10,8 @@ jobs:
         python-version: [3.6, 3.7, 3.8]
     name: Run tests on Python ${{ matrix.python-version }}
     steps:
-      - uses: actions/checkout@1
+      - name: Set up Git repository
+        uses: actions/checkout@v1
       - name: Setup python ${{ matrix.python-version }}
         uses: actions/setup-python@v1
         with:
