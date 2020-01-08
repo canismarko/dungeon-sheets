@@ -363,7 +363,7 @@ class Hex(Spell):
     
     At Higher Levels: When you cast this spell using 
     a spell slot of 3rd or 4th level, you can maintain your concentration on the 
-    spell for up to 8 hours.
+    spell for up to 8 hours. 
     When you use a spell slot of 5th level or higher, you 
     can maintain your concentration on the spell for up to 24 hours.
     """
@@ -509,7 +509,7 @@ class HuntersMark(Spell):
     
     At Higher Levels: When you 
     cast this spell using a spell slot of 3rd or 4th level, you can maintain your 
-    concentration on the spell for up to 8 hours.
+    concentration on the spell for up to 8 hours. 
     When you use a spell slot of 5th 
     level or higher, you can maintain your concentration on the spell for up to 24 
     hours.

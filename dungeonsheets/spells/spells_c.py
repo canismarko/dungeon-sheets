@@ -418,7 +418,7 @@ class Clone(Spell):
      as its vessel remains undisturbed.
     
     
-     At any time after the clone matures, if 
+     At any time after the clone matures, if 
     the original creature dies, its soul transfers to the clone, provided that the 
     soul is free and willing to return. The clone is physically identical to the 
     original and has the same personality, memories, and abilities, but none of the 
@@ -530,17 +530,17 @@ class Command(Spell):
     language, or if your command is directly harmful to it.  Some typical commands 
     and their effects follow. You might issue a command other than one described 
     here. If you do so, the DM determines how the target behaves. If the target 
-    can't follow your command, the spell ends.
-    Approach The target moves toward you 
+    can’t follow your command, the spell ends.
+    Approach The target moves toward you 
     by the shortest and most direct route, ending its turn if it moves within 5 feet
      of you.
-    Drop The target drops whatever it is holding and then ends its turn.
+    Drop The target drops whatever it is holding and then ends its turn.
     
-    Flee The target spends its turn moving away from you by the fastest available 
+    Flee The target spends its turn moving away from you by the fastest available 
     means.
-    Grovel The target falls prone and then ends its turn.
-    Halt The target 
-    doesn't move and takes no actions. A flying creature stays aloft, provided that 
+    Grovel The target falls prone and then ends its turn.
+    Halt The target 
+    doesn’t move and takes no actions. A flying creature stays aloft, provided that 
     it is able to do so. If it must move to stay aloft, it flies the minimum 
     distance needed to remain in the air.
     
@@ -740,19 +740,19 @@ class Confusion(Spell):
     
     d10   Behavior 
     
-     1. The creature uses 
+     1. The creature uses 
     all its movement to move in a random direction. To determine the direction, roll
      a d8 and assign a direction to each die face. The creature doesn't take an 
     action this turn. 
-     
-    2-6. The creature doesn't move or take actions this turn.
+     
+    2-6. The creature doesn’t move or take actions this turn.
      
     
     7-8. The creature uses its action to make a melee attack against a randomly 
     determined creature within its reach. If there is no creature within its reach, 
     the creature does nothing this turn. 
     
-     9-10. The creature can act and move 
+     9-10. The creature can act and move 
     normally. 
     
     At the end of its turns, an affected target can make a Wisdom saving
@@ -802,10 +802,10 @@ class ConjureAnimals(Spell):
     At Higher 
     Levels: When you cast this spell using certain higher-level spell slots, you 
     choose one of the summoning options above, and more creatures appear: 
-    
+     
     twice 
-    as many with a 5th-level slot
-    three times as many with a 7th-level slot 
+    as many with a 5th-level slot 
+    three times as many with a 7th-level slot  
     four 
     times as many with a 9th-level slot.
     """
@@ -947,7 +947,7 @@ class ConjureFey(Spell):
 class ConjureMinorElementals(Spell):
     """You summon elementals that appear in unoccupied spaces that you can see within 
     range.
-     You choose one the following options for what appears: 
+     You choose one the following options for what appears: 
     -One elemental 
     of challenge rating 2 or lower 
     -Two elementals of challenge rating 1 or lower 
@@ -1011,12 +1011,12 @@ class ConjureWoodlandBeings(Spell):
     within range. 
     
     Choose one of the following options for what appears: 
-     -  One 
+     •  One 
     fey creature of challenge rating 2 or lower 
-     -  Two fey creatures of challenge 
+     •  Two fey creatures of challenge 
     rating 1 or lower 
-     -  Four fey creatures of challenge rating 1/2 or lower 
-     -  
+     •  Four fey creatures of challenge rating 1/2 or lower 
+     •  
     Eight fey creatures of challenge rating 1/4 or lower 
     
     A summoned creature 
@@ -1032,9 +1032,9 @@ class ConjureWoodlandBeings(Spell):
     
     At Higher 
     Levels: When you cast this spell using certain higher-level spell slots, you 
-    choose one of the summoning options above, and more creatures appear: 
+    choose one of the summoning options above, and more creatures appear:  
     twice as
-     many with a 6th-level slot
+     many with a 6th-level slot 
     three times as many with an 8th-level slot.
     """
     name = "Conjure Woodland Beings"
@@ -1062,7 +1062,7 @@ class ContactOtherPlane(Spell):
     On a successful save,
      you can ask the entity up to five questions. You must ask your questions before
      the spell ends. The DM answers each question with one word, such as yes, 
-    no, maybe, never, irrelevant, or unclear (if the entity doesn't know 
+    no, maybe, never, irrelevant, or unclear (if the entity doesn’t know 
     the answer to the question). If a one-word answer would be misleading, the DM 
     might instead offer a short phrase as an answer.
     """
@@ -1095,13 +1095,13 @@ class Contagion(Spell):
     disease or otherwise ameliorates a disease's effects apply to it. 
     
     Blinding 
-    Sickness 
-    Pain grips the creature's mind, and its eyes turn milky white. The 
+    Sickness 
+    Pain grips the creature’s mind, and its eyes turn milky white. The 
     creature has disadvantage on Wisdom checks and Wisdom saving throws and is 
     blinded. 
     
-    Filth Fever 
-    A raging fever sweeps through the creature's body. The 
+    Filth Fever 
+    A raging fever sweeps through the creature’s body. The 
     creature has disadvantage on Strength checks, Strength saving throws, and attack
      rolls that use Strength. 
     
@@ -1141,9 +1141,9 @@ class Contagion(Spell):
 class Contingency(Spell):
     """Choose a spell of 5th level or lower that you can cast, that has a casting time 
     of 1 action, and that can target you. 
-    You cast that spell called the 
-    contingent spell as part of casting contingency, expending spell slots for 
-    both, but the contingent spell doesn't come into effect. Instead, it takes 
+    You cast that spell called the 
+    contingent spell as part of casting contingency, expending spell slots for 
+    both, but the contingent spell doesn’t come into effect. Instead, it takes 
     effect when a certain circumstance occurs. You describe that circumstance when 
     you cast the two spells. For example, a contingency cast with water breathing 
     might stipulate that water breathing comes into effect when you are engulfed in 
@@ -1246,7 +1246,7 @@ class ControlWater(Spell):
     water then slowly fills in the trench over the course of the next round until 
     the normal water level is restored. 
     
-    Redirect Flow 
+    Redirect Flow 
     You cause flowing water in 
     the area to move in a direction you choose, even if the water has to flow over 
     obstacles, up walls, or in other unlikely directions. The water in the area 
@@ -1255,7 +1255,7 @@ class ControlWater(Spell):
     direction you chose until the spell ends or you choose a different effect. 
     
     
-    Whirlpool 
+    Whirlpool 
     This effect requires a body of water at least 50 feet square and 25 
     feet deep. You cause a whirlpool to form in the center of the area. The 
     whirlpool forms a vortex that is 5 feet wide at the base, up to 50 feet wide at 
@@ -1271,7 +1271,7 @@ class ControlWater(Spell):
     from the vortex as described above, but has disadvantage on the Strength 
     (Athletics) check to do so. 
     The first time each turn that an object enters the 
-    vortex, the object takes 2d8 bludgeoning damage, this damage occurs each round 
+    vortex, the object takes 2d8 bludgeoning damage, this damage occurs each round 
     it remains in the vortex.
     """
     name = "Control Water"
@@ -1520,7 +1520,7 @@ class CreateOrDestroyWater(Spell):
      as rain in a 30-foot cube within range, extinguishing exposed flames in the 
     area. 
     
-    Destroy Water 
+    Destroy Water 
     You destroy up to 10 gallons of water in an open 
     container within range. Alternatively, you destroy fog in a 30-foot cube within 
     range.
@@ -1565,9 +1565,9 @@ class CreateUndead(Spell):
     
     At Higher Levels: When you cast 
     this spell using a 7th-level spell slot, you can animate or reassert control 
-    over four ghouls. 
+    over four ghouls.  
     When you cast this spell using an 8th-level spell slot, you 
-    can animate or reassert control over five ghouls or two ghasts or wights. 
+    can animate or reassert control over five ghouls or two ghasts or wights.  
     When
      you cast this spell using a 9th-level spell slot, you can animate or reassert 
     control over six ghouls, three ghasts or wights, or two mummies.

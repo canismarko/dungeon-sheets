@@ -169,7 +169,18 @@ class SpearOfLightning(MagicItem):
     requires_attunement = True
     name = "Lightning Spear"
 
-    
+
+class MaulOfRetaliation(MagicItem):
+    """
+    While you hold this maul and it is attuned to you, you can use a reaction to
+    make a single melee attack with it against any creature within reach that deals
+    damage to you. You have advantage on the attack roll, and any damage dealt
+    with this attack ignores any damage immunity or resistance the target has.
+    """
+    requires_attunement = True
+    name = "Maul of Retaliation"
+
+
 class AmuletOfTheEel(MagicItem):
     """While holding this amulet, you can breath water and air, and have a
     swimming speed of 20'."""
@@ -210,3 +221,16 @@ class GlowingSword(MagicItem):
     This strange longsword glows at odd times.
     """
     name = "Glowing Sword"
+
+
+class EagleWhistle(MagicItem):
+    """
+    While you blow an eagle whistle continuously, you can fly
+    twice as fast as your walking speed. You can blow the whistle continuously
+    for a number of rounds equal to 5 plus five times your CON modifier
+    (minimum of one round) or until you talk, hold your breath, or start
+    suffocating. A use of the whistle also ends if you land. If you are aloft
+    when you stop blowing the whistle, you fall. The whistle has three uses.
+    It regains expended uses daily at dawn.
+    """
+    name = "Eagle Whistle"

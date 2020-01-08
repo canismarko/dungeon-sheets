@@ -464,7 +464,7 @@ class Fireball(Spell):
     Each creature in
      a 20-foot radius must make a Dexterity saving throw. A target takes 8d6 fire 
     damage on a failed save, or half as much damage on a successful one. The fire 
-    spreads around corners. It ignites flammable objects in the area that aren't 
+    spreads around corners. It ignites flammable objects in the area that aren’t 
     being worn or carried.
     
     At Higher Levels: When you cast this spell using a spell

@@ -162,7 +162,7 @@ class AlterSelf(Spell):
     become quadrupedal, for instance. At any time for the duration of the spell, you
      can use your action to change your appearance in this way again.
     Natural 
-    Weapons. You grow claws, fangs, spines, horns, or a different natural weapon of 
+    Weapons. You grow claws, fangs, spines, horns, or a different natural weapon of 
     your choice. Your unarmed strikes deal 1d6 bludgeoning, piercing, or slashing 
     damage, as appropriate to the natural weapon you chose, and you are proficient 
     with your unarmed strikes. Finally, the natural weapon is magic and you have a 
@@ -243,7 +243,7 @@ class AnimalShapes(Spell):
     Choose any number of willing creatures 
     that you can see within range. You transform each target into the form of a 
     large or smaller beast with a challenge rating of 4 or lower. On subsequent 
-    turns, you can use your actions to transform affected creatures into new forms. 
+    turns, you can use your actions to transform affected creatures into new forms. 
     
     
     The transformation lasts for the duration for each target, or until the target
@@ -256,10 +256,10 @@ class AnimalShapes(Spell):
     damage carries over to its normal form. As long as the excess damage doesn't 
     reduce the creature's normal form to 0 hit points, it isn't knocked unconcious. 
     The creature is limited in the actions it can perform by the nature of its new 
-    form, and it can't speak or cast spells. 
-     
-    The target's gear melds into the new
-     form. The target can't activate, wield, or otherwise benefit from any of its 
+    form, and it can’t speak or cast spells. 
+     
+    The target’s gear melds into the new
+     form. The target can’t activate, wield, or otherwise benefit from any of its 
     equipment.
     """
     name = "Animal Shapes"
@@ -428,7 +428,7 @@ class AntimagicField(Spell):
     creating a gap in the wall if the overlap is large enough. 
     
     Spells. 
-     Any 
+     Any 
     active spell or other magical effect on a creature or an object in the sphere is
      suppressed while the creature or object is in it. 
     
@@ -480,41 +480,41 @@ class Antipathysympathy(Spell):
     larger than a 200-foot cube. Then specify a kind of intelligent creature, such 
     as red dragons, goblins, or vampires. You invest the target with an aura that 
     either attracts or repels the specified creatures for the duration. Choose 
-    antipathy or sympathy as the aura's effect. 
+    antipathy or sympathy as the aura’s effect. 
     
     Antipathy. 
     The enchantment causes
-     creatures of the kind you designated to feel an intense urge to leave the area 
-    and avoid the target. When such a creature can see the target or comes within 60
-     feet of it, the creature must succeed on a Wisdom saving throw or 
-    become frightened. The creature remains frightened while it can see the target 
-    or is within 60 feet of it. While frightened by the target, the creature must 
-    use its movement to move to the nearest safe spot from which it can't see the 
-    target. If the creature moves more than 60 feet from the target and can't see 
-    it, the creature is no longer frightened, but the creature becomes frightened 
-    again if it regains sight of the target or moves within 60 feet of it. 
+     creatures of the kind you designated to feel an intense urge to leave the area 
+    and avoid the target. When such a creature can see the target or comes within 60
+     feet of it, the creature must succeed on a Wisdom saving throw or 
+    become frightened. The creature remains frightened while it can see the target 
+    or is within 60 feet of it. While frightened by the target, the creature must 
+    use its movement to move to the nearest safe spot from which it can’t see the 
+    target. If the creature moves more than 60 feet from the target and can’t see 
+    it, the creature is no longer frightened, but the creature becomes frightened 
+    again if it regains sight of the target or moves within 60 feet of it. 
     
     
     Sympathy. 
-    The enchantment causes the specified creatures to feel an intense 
-    urge to approach the target while within 60 feet of it or able to see it. When 
-    such a creature can see the target or comes within 60 feet o fit, the creature 
-    must succeed on a Wisdom saving throw or use its movement on each of its turns 
-    to enter the area or move within reach of the target. When the creature has done
-     so, it can't willingly move away from the target. If the target damages or 
-    otherwise harms an affected creature, the affected creature can make a 
-    Wisdom saving throw to end the effect, as described below. 
+    The enchantment causes the specified creatures to feel an intense 
+    urge to approach the target while within 60 feet of it or able to see it. When 
+    such a creature can see the target or comes within 60 feet o fit, the creature 
+    must succeed on a Wisdom saving throw or use its movement on each of its turns 
+    to enter the area or move within reach of the target. When the creature has done
+     so, it can’t willingly move away from the target. If the target damages or 
+    otherwise harms an affected creature, the affected creature can make a 
+    Wisdom saving throw to end the effect, as described below. 
     
     Ending the Effect.
      
-    If an affected creature ends its turn while not within 60 feet of the target 
-    or able to see it, the creature makes a Wisdom saving throw. On a successful 
-    save, the creature is no longer affected by the target and recognizes the 
-    feeling of repugnance or attraction as magical. In addition, a creature affected
-     by the spell is allowed another Wisdom saving throw every 24 hours while the 
-    spell persists. 
-    A creature that successfully saves against this effect is 
-    immune to it for 1 minute, after which time it can be affected again.
+    If an affected creature ends its turn while not within 60 feet of the target 
+    or able to see it, the creature makes a Wisdom saving throw. On a successful 
+    save, the creature is no longer affected by the target and recognizes the 
+    feeling of repugnance or attraction as magical. In addition, a creature affected
+     by the spell is allowed another Wisdom saving throw every 24 hours while the 
+    spell persists. 
+    A creature that successfully saves against this effect is 
+    immune to it for 1 minute, after which time it can be affected again.
     """
     name = "Antipathysympathy"
     level = 8
@@ -559,11 +559,11 @@ class ArcaneGate(Spell):
     diameter, opens over each point. If the portal would open in the space occupied 
     by a creature, the spell fails, and the casting is lost. 
     
-     The portals are two-
+     The portals are two-
     dimensional glowing rings filled with mist, hovering inches from the ground and 
     perpendicular to it at the points you choose. A ring is visible only from one 
     side (your choice), which is the side that functions as a portal. 
-     
+     
     Any 
     creature or object entering the portal exits from the other portal as if the two
      were adjacent to each other; passing through a portal from the nonportal side 
@@ -656,41 +656,41 @@ class ArmsOfHadar(Spell):
 
 
 class AstralProjection(Spell):
-    """You and up to eight willing creatures within range project your astral bodies 
-    into the Astral Plane (the spell fails and the casting is wasted if you are 
-    already on that plane). 
-    The material body you leave behind is unconscious and 
-    in a state of suspended animation; it doesn't need food or air and doesn't age. 
+    """You and up to eight willing creatures within range project your astral bodies 
+    into the Astral Plane (the spell fails and the casting is wasted if you are 
+    already on that plane). 
+    The material body you leave behind is unconscious and 
+    in a state of suspended animation; it doesn’t need food or air and doesn’t age. 
     
     
-    Your astral body resembles your mortal form in almost every way, replicating 
-    your game statistics and possessions. The principal difference is the addition 
-    of a silvery cord that extends from between your shoulder blades and trails 
-    behind you, fading to invisibility after 1 foot. This cord is your tether to 
-    your material body. As long as the tether remains intact, you can find your 
-    way home. If the cord is cut something that can happen only when an effect 
-    specifically states that it does your soul and body are separated, killing you 
-    instantly. 
+    Your astral body resembles your mortal form in almost every way, replicating 
+    your game statistics and possessions. The principal difference is the addition 
+    of a silvery cord that extends from between your shoulder blades and trails 
+    behind you, fading to invisibility after 1 foot. This cord is your tether to 
+    your material body. As long as the tether remains intact, you can find your 
+    way home. If the cord is cut something that can happen only when an effect 
+    specifically states that it does your soul and body are separated, killing you 
+    instantly. 
     
-    Your astral form can freely travel through the Astral Plane and can
-     pass through portals there leading to any other plane. If you enter a new plane
-     or return to the plane you were on when casting this spell, your body 
-    and possessions are transported along the silver cord, allowing you to re-enter 
-    your body as you enter the new plane. Your astral form is a separate 
-    incarnation. Any damage or other effects that apply to it have no effect on 
-    your physical body, nor do they persist when you return to it. The spell ends 
-    for you and your companions when you use your action to dismiss it. When the 
-    spell ends, the affected creature returns to its physical body, and it awakens. 
+    Your astral form can freely travel through the Astral Plane and can
+     pass through portals there leading to any other plane. If you enter a new plane
+     or return to the plane you were on when casting this spell, your body 
+    and possessions are transported along the silver cord, allowing you to re-enter 
+    your body as you enter the new plane. Your astral form is a separate 
+    incarnation. Any damage or other effects that apply to it have no effect on 
+    your physical body, nor do they persist when you return to it. The spell ends 
+    for you and your companions when you use your action to dismiss it. When the 
+    spell ends, the affected creature returns to its physical body, and it awakens. 
     
     
-    The spell might also end early for you or one of your companions. A successful
-     dispel magic spell used against an astral or physical body ends the spell for 
-    that creature. If a creature's original body or its astral form drops to 0 hit 
-    points, the spell ends for that creature. If the spell ends and the silver cord 
-    is intact, the cord pulls the creature's astral form back to its body, ending 
-    its state of suspended animation. If you are returned to your body prematurely, 
-    your companions remain in their astral forms and must find their own way back to
-     their bodies, usually by dropping to 0 hit points.
+    The spell might also end early for you or one of your companions. A successful
+     dispel magic spell used against an astral or physical body ends the spell for 
+    that creature. If a creature’s original body or its astral form drops to 0 hit 
+    points, the spell ends for that creature. If the spell ends and the silver cord 
+    is intact, the cord pulls the creature’s astral form back to its body, ending 
+    its state of suspended animation. If you are returned to your body prematurely, 
+    your companions remain in their astral forms and must find their own way back to
+     their bodies, usually by dropping to 0 hit points.
     """
     name = "Astral Projection"
     level = 9

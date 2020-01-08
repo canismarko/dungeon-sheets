@@ -84,7 +84,7 @@ class Geas(Spell):
     wish spell also ends it.
     
     At Higher Levels: When you cast this spell usinga 
-    spell slot of 7th or 8th level, the duration is 1 year.
+    spell slot of 7th or 8th level, the duration is 1 year. 
     When you cast this 
     spell using a spell slot of 9th level, the spell lasts until it is ended by one 
     of the spells mentioned above.
@@ -489,27 +489,27 @@ class GuardsAndWards(Spell):
     Other Spell Effect
     You can place your choice of 
     one of the following magical effects within the warded area of the stronghold.
-    -
-     Place dancing lights in four corridors. You can designate a simple program that
+    •
+     Place dancing lights in four corridors. You can designate a simple program that
      the lights repeat as long as
     guards and wards lasts.
     - Place magic mouth in two
      locations.
-    - Place stinking cloud in two locations. The vapors appear in the 
-    places you designate; they return within 10 minutes if dispersed by wind while 
-    guards and wards lasts.
-    - Place a constant gust of wind in one corridor or room.
+    • Place stinking cloud in two locations. The vapors appear in the 
+    places you designate; they return within 10 minutes if dispersed by wind while 
+    guards and wards lasts.
+    • Place a constant gust of wind in one corridor or room.
     
-    - Place a suggestion in one location. You select an area of up to 5 feet 
+    • Place a suggestion in one location. You select an area of up to 5 feet 
     square, and any creature that enters
     or passes through the area receives the 
-    suggestion mentally.
+    suggestion mentally.
     
-    The whole warded area radiates magic. A dispel magic cast 
-    on a specific effect, if successful, removes only that effect.
+    The whole warded area radiates magic. A dispel magic cast 
+    on a specific effect, if successful, removes only that effect.
     You can create a 
-    permanently guarded and warded structure by casting this spell there every 
-    day for one year.
+    permanently guarded and warded structure by casting this spell there every 
+    day for one year.
     """
     name = "Guards And Wards"
     level = 6

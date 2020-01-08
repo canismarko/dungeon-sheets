@@ -171,13 +171,13 @@ class BestowCurse(Spell):
     such a curse's effect.
     
     At Higher Levels: If you cast this spell using a spell 
-    slot of 4th level or higher, the duration is concentration, up to 10 minutes. 
+    slot of 4th level or higher, the duration is concentration, up to 10 minutes.  
     
-    If you use a spell slot of 5th level or higher, the duration is 8 hours. 
+    If you use a spell slot of 5th level or higher, the duration is 8 hours.  
     If 
-    you use a spell slot of 7th level or higher, the duration is 24 hours. 
+    you use a spell slot of 7th level or higher, the duration is 24 hours.  
     If you 
-    use a 9th level spell slot, the spell lasts until it is dispelled. 
+    use a 9th level spell slot, the spell lasts until it is dispelled.  
     Using a 
     spell slot of 5th level or higher grants a duration that doesn't require 
     concentration.
@@ -208,7 +208,7 @@ class BigbysHand(Spell):
      and as a bonus action on your subsequent turns, you can move the hand up to 60 
     feet and then cause one of the following effects with it.
     
-    Clenched Fist 
+    Clenched Fist 
     The 
     hand strikes one creature or object within 5 feet of it. Make a melee spell 
     attack for the hand using your game statistics. On a hit, the target takes 4d8 
@@ -266,7 +266,7 @@ class BladeBarrier(Spell):
     provides three-quarters cover to creatures behind it, and its space is difficult
      terrain. 
     
-     When a creature enters the wall's area for the first time on a turn
+     When a creature enters the wall’s area for the first time on a turn
      or starts its turn there, the creature must make a Dexterity saving throw. On a
      failed save, the creature takes 6 d10 slashing damage. On a successful save, 
     the creature takes half as much damage.

@@ -578,6 +578,12 @@ class SpearOfLightning(Spear):
     attack_bonus = 1
 
 
+class MaulOfRetaliation(Maul):
+    name = "Maul (Retaliation)"
+    damage_bonus = 2
+    attack_bonus = 2
+
+
 # Some lists of weapons for easy proficiency resolution
 simple_melee_weapons = (Club, Dagger, Greatclub, Handaxe, Javelin,
                         LightHammer, Mace, Quarterstaff, Sickle, Spear)

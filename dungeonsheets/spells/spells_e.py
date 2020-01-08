@@ -100,11 +100,11 @@ class EldritchBlast(Spell):
     
     
     At Higher Levels: The spell creates more than one beam when you reach higher 
-    levels: 
-    Two beams at 5th level
-    Three beams at 11th level
+    levels:  
+    Two beams at 5th level 
+    Three beams at 11th level 
     Four beams at 17th 
-    level. 
+    level.  
     You can direct the beams at the same target or at different ones. Make 
     a separate attack roll for each beam.
     """
@@ -155,7 +155,7 @@ class ElementalWeapon(Spell):
     
     At Higher Levels: When you cast this 
     spell using a spell slot of 5th or 6th level, the bonus to attack rolls 
-    increases to +2 and the extra damage increases to 2d4. 
+    increases to +2 and the extra damage increases to 2d4.  
     When you use a spell 
     slot of 7th level or higher, the bonus increases to +3 and the extra damage 
     increases to 3d4.
@@ -267,8 +267,8 @@ class Enlargereduce(Spell):
     everything it is wearing and carrying changes size with it. Any item dropped by 
     an affected creature returns to normal size at once. 
     
-    Enlarge 
-    The target's 
+    Enlarge 
+    The target’s 
     size doubles in all dimensions, and its weight is multiplied by eight. This 
     growth increases its size by one category – from Medium to Large, for example. 
     If there isn't enough room for the target to double its size, the creature or 
@@ -278,8 +278,8 @@ class Enlargereduce(Spell):
     weapons are enlarged, the target's attack with them deal 1d4 extra damage. 
     
     
-    Reduce 
-    The target's size is halved in all dimensions, and its weight is reduced
+    Reduce 
+    The target’s size is halved in all dimensions, and its weight is reduced
      to one-eighth of normal. This reduction decreases its size by one category – 
     from Medium to Small, for example. Until the spell ends, the target also has 
     disadvantage on Strength checks and Strength saving throws. The target's weapons
@@ -495,19 +495,19 @@ class Eyebite(Spell):
     use your action to target another creature but can't target a creature again if 
     it has succeeded on a saving throw against this casting of eyebite. 
     
-    Asleep 
+    Asleep 
     
     The target galls unconscious. It wakes up if it takes any damage or if another 
     creature uses its action to shake the sleeper awake. 
     
-    Panicked 
+    Panicked 
     The target is 
     frightened of you. On each of its turns, the frightened creature must take the 
     Dash action and move away from you by the safest and shortest available route, 
     unless there is nowhere to move. If the target moves to a place at least 60 feet
      away from you where it can no longer see you, this effect ends. 
     
-    Sickened 
+    Sickened 
     The
      target has disadvantage on attack rolls and ability checks. At the end of each 
     of its turns, it can make another Wisdom saving throw. If it succeeds, the 
