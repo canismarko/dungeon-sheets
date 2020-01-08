@@ -1,3 +1,8 @@
+# LaTeX intermediate files
+examples/*.tex
+examples/*.aux
+examples/*.log
+
 # Emacs temp files
 *~
 
