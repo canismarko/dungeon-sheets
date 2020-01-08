@@ -46,7 +46,7 @@ jobs:
            wget -qO- "https://yihui.org/gh/tinytex/tools/install-unx.sh" | sh
            pwd
            echo $PATH
-           ls -la /home/runner/.TinyTeX
+           ls -la /home/runner/.TinyTeX/bin
       - name: Install python requirements
         run: pip install -r requirements.txt
       - name: Install dungeonsheets
