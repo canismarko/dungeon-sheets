@@ -42,7 +42,10 @@ jobs:
       - name: Install pdftk
         run: sudo snap install pdftk
       - name: Install tinyTeX
-        run: wget -qO- "https://yihui.org/gh/tinytex/tools/install-unx.sh" | sh
+        run: |
+           wget -qO- "https://yihui.org/gh/tinytex/tools/install-unx.sh" | sh
+           pwd
+           echo $PATH
       - name: Install python requirements
         run: pip install -r requirements.txt
       - name: Install dungeonsheets
