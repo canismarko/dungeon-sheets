@@ -42,11 +42,11 @@ class WallOfForce(Spell):
     up to 10 feet, or you can shape a flat surface made up of ten 10-foot-by-10-foot
      panels. Each panel must be continguous with another panel. In any form, the 
     wall is 1/4 inch thick. It lasts for the duration. If the wall cuts through a 
-    creature’s space when it appears, the creature is pushed to one side of the wall
+    creature's space when it appears, the creature is pushed to one side of the wall
      (your choice which side).
     
     Nothing can physically pass through the wall. It is 
-    immune to all damage and can’t be dispelled by dispel magic. A disintegrate 
+    immune to all damage and can't be dispelled by dispel magic. A disintegrate 
     spell destroys the wall instantly, however.  The wall also extends into the 
     Ethereal Plane, blocking ethereal travel through the wall.
     """
@@ -69,7 +69,7 @@ class WallOfIce(Spell):
     contiguous with another panel. In any form, the wall is 1 foot thick and lasts 
     for the duration.
     
-    If the wall cuts through a creature’s space when it appears, 
+    If the wall cuts through a creature's space when it appears, 
     the creature within its area is pushed to one side of the wall and must make a 
     Dexterity saving throw. On a failed save, the creature takes 10d6 cold damage, 
     or half as much damage on a successful save.
@@ -110,16 +110,16 @@ class WallOfLight(Spell):
     When the wall appears,
      each creature in its area must make a Constitution saving throw. On a failed 
     save, a creature takes 4d8 radiant damage, and it is blinded for 1 minute. On a 
-    successful save, it takes half as much damage and isn’t blinded. A blinded 
+    successful save, it takes half as much damage and isn't blinded. A blinded 
     creature can make a Constitution saving throw at the end of each of its turns, 
     ending the effect on itself on a success.
     A creature that ends its turn in the 
-    wall’s area takes 4d8 radiant damage.
+    wall's area takes 4d8 radiant damage.
     Until the spell ends, you can use an 
     action to launch a beam of radiance from the wall at one creature you can see 
     within 60 feet of it. Make a ranged spell attack. On a hit, the target takes 4d8
      radiant damage. Whether you hit or miss, reduce the length of the wall by 10 
-    feet. If the wall’s length drops to 0 feet, the spell ends.
+    feet. If the wall's length drops to 0 feet, the spell ends.
     
     At Higher Levels: 
     When you cast this spell using a spell slot of 6th level or higher, the damage 
@@ -141,7 +141,7 @@ class WallOfSand(Spell):
     """You conjure up a wall of swirling sand on the ground at a point you can see 
     within range. You can make the wall up to 30 feet long, 10 feet high, and 10 
     feet thick, and it vanishes when the spell ends. It blocks line of sight but not
-     movement. A creature is blinded while in the wall’s space and must spend 3 feet
+     movement. A creature is blinded while in the wall's space and must spend 3 feet
      of movement for every 1 foot it moves there.
     """
     name = "Wall Of Sand"
@@ -164,15 +164,15 @@ class WallOfStone(Spell):
     Alternatively, you can create 10-foot-by-20-foot panels that are only 3 inches 
     thick.
     
-    If the wall cuts through a creature’s space when it appears, the 
+    If the wall cuts through a creature's space when it appears, the 
     creature is pushed to one side of the wall (your choice). If a creature would be
      surrounded on all sides by the wall (or the wall and another solid surface), 
     that creature can make a Dexterity saving throw. On a success, it can use its 
     reaction to move up to its speed so that it is no longer enclosed by the wall.
     
     
-    The wall can have any shape you desire, though it can’t occupy the same space as
-     a creature or object. the wall doesn’t need to be vertical or resting on any 
+    The wall can have any shape you desire, though it can't occupy the same space as
+     a creature or object. the wall doesn't need to be vertical or resting on any 
     firm foundation. It must, however, merge with and be solidly supported by 
     existing stone. Thus you can use this spell to bridge a chasm or create a ramp.
     
@@ -184,11 +184,11 @@ class WallOfStone(Spell):
     The wall is an object made of stone that
      can be damaged and thus breached. Each panel has AC 15 and 30 hit points per 
     inch of thickness. Reducing a panel to 0 hit points destroys it and might cause 
-    connected panels to collapse at the DM’s discretion.
+    connected panels to collapse at the DM's discretion.
     
     If you maintain your 
     concentration on this spell for its whole duration, the wall becomes permanent 
-    and can’t be dispelled. Otherwise, the wall disappears when the spell ends.
+    and can't be dispelled. Otherwise, the wall disappears when the spell ends.
     """
     name = "Wall Of Stone"
     level = 5
@@ -241,16 +241,16 @@ class WallOfWater(Spell):
     You conjure up a wall of water on the ground at a point you 
     can see within range. You can make the wall up to 30 feet long, 10 feet high, 
     and 1 foot thick, or you can make a ringed wall up to 20 feet in diameter, 20 
-    feet high, and 1 foot thick. The wall vanishes when the spell ends. The wall’s 
+    feet high, and 1 foot thick. The wall vanishes when the spell ends. The wall's 
     space is difficult terrain.
-    Any ranged weapon attack that enters the wall’s 
+    Any ranged weapon attack that enters the wall's 
     space has disadvantage on the attack roll, and fire damage
     is halved if the fire
      effect passes through the wall to reach its target. Spells that deal cold 
     damage that pass through the wall cause the area of the wall they pass through 
     to freeze solid (at least a 5-foot square section is frozen). Each 5-foot-square
      frozen section has AC 5 and 15 hit points. Reducing a frozen section to 0 hit 
-    points destroys it. When a section is destroyed, the wall’s water doesn’t fill 
+    points destroys it. When a section is destroyed, the wall's water doesn't fill 
     it.
     """
     name = "Wall Of Water"
@@ -293,18 +293,18 @@ class WardingBond(Spell):
 
 class WardingWind(Spell):
     """A strong wind (20 miles per hour) blows around you in a 10-foot radius and moves
-     with you, remaining centered on you. The wind lasts for the spell’s duration.
+     with you, remaining centered on you. The wind lasts for the spell's duration.
     
     The wind has the following effects:
-    • It deafens you and other creatures in its 
+    - It deafens you and other creatures in its 
     area.
-    • It extinguishes unprotected flames in its area that are torch-sized or 
+    - It extinguishes unprotected flames in its area that are torch-sized or 
     smaller.
-    • The area is difficult terrain for creatures other than you.
-    • The 
+    - The area is difficult terrain for creatures other than you.
+    - The 
     attack rolls of ranged weapon attacks have disadvantage if they pass in or out 
     of the wind.
-    • It hedges out vapor, gas, and fog that can be dispersed by strong
+    - It hedges out vapor, gas, and fog that can be dispersed by strong
      wind.
     """
     name = "Warding Wind"
@@ -362,9 +362,9 @@ class WaterWalk(Spell):
 class WaterySphere(Spell):
     """You conjure up a sphere of water with a 5-foot radius on a point you can see 
     within range. The sphere can hover in the air, but no more than 10 feet off the 
-    ground. The sphere remains for the spell’s duration.
+    ground. The sphere remains for the spell's duration.
     Any creature in the 
-    sphere’s space must make a Strength saving throw. On a successful save, a 
+    sphere's space must make a Strength saving throw. On a successful save, a 
     creature is ejected from that space to the nearest unoccupied space outside it. 
     A Huge or larger creature succeeds on the saving throw automatically. On a 
     failed save, a creature is restrained by the sphere and is engulfed by the 
@@ -402,7 +402,7 @@ class Web(Spell):
     The webs fill a 20-foot cube from that point for the duration. The webs 
     are difficult terrain and lightly obscure their area.
     
-    If the webs aren’t 
+    If the webs aren't 
     anchored between two solid masses (such as walls or trees) or layered across a 
     floor, wall, or ceiling, the conjured web collapses on itself, and the spell 
     ends at the start of your next turn. Webs layered over a flat surface have a 
@@ -439,9 +439,9 @@ class Weird(Spell):
     radius sphere centered on a point of your choice within range must make a Wisdom
      saving throw. On a failed save, a creature becomes frightened for the duration.
     
-    The illusion calls on the creature’s deepest fears, manifesting its worst 
+    The illusion calls on the creature's deepest fears, manifesting its worst 
     nightmares as an implacable threat. At the end of each of the frightened 
-    creature’s turns, it must succeed on a Wisdom saving throw or take 4d10 psychic 
+    creature's turns, it must succeed on a Wisdom saving throw or take 4d10 psychic 
     damage. On a successful save, the spell ends for that creature.
     """
     name = "Weird"
@@ -461,7 +461,7 @@ class Whirlwind(Spell):
     The whirlwind is a 10-foot-radius, 30-foot-high cylinder centered on that point.
      Until the spell ends, you can use your action to move the whirlwind up to 30 
     feet in any direction along the ground. The whirlwind sucks up any Medium or 
-    smaller objects that aren’t secured to anything and that aren’t worn or carried 
+    smaller objects that aren't secured to anything and that aren't worn or carried 
     by anyone.
     A creature must make a Dexterity saving throw the first time on a 
     turn that it enters the
@@ -477,7 +477,7 @@ class Whirlwind(Spell):
     unless the creature has some means to stay aloft. A restrained creature can use 
     an action to make a Strength or Dexterity check against your spell save DC. If 
     successful, the creature is no longer restrained by the whirlwind and is hurled 
-    3d6 × 10 feet away from it in a random direction.
+    3d6 x 10 feet away from it in a random direction.
     """
     name = "Whirlwind"
     level = 7
@@ -499,13 +499,13 @@ class WindWalk(Spell):
     nonmagical weapons. The only actions a creature can take in this form are the 
     Dash action or to revert to its normal form.
     Reverting takes 1 minute, during 
-    which time a creature is incapacitated and can’t move. Until the spell ends, a 
+    which time a creature is incapacitated and can't move. Until the spell ends, a 
     creature can revert to cloud form, which also requires the 1-minute 
     transformation.
     
     If a creature is in cloud form and flying when the effect ends,
      the creature descends 60 feet per round for 1 minute until it lands, which it 
-    does safely. If it can’t land after 1 minute, the creature falls the remaining 
+    does safely. If it can't land after 1 minute, the creature falls the remaining 
     distance.
     """
     name = "Wind Walk"
@@ -533,11 +533,11 @@ class WindWall(Spell):
     one.
     
     The strong wind keeps fog, smoke, and other gases at bay. Small or smaller
-     flying creatures or objects can’t pass through the wall. Loose, lightweight 
+     flying creatures or objects can't pass through the wall. Loose, lightweight 
     materials brought into the wall fly upward. Arrows, bolts, and other ordinary 
     projectiles launched at targets behind the wall are deflected upward and 
     automatically miss. (Boulders hurled by giants or siege engines, and similar 
-    projectiles, are unaffected.) Creatures in gaseous form can’t pass through it.
+    projectiles, are unaffected.) Creatures in gaseous form can't pass through it.
     """
     name = "Wind Wall"
     level = 3
@@ -557,32 +557,32 @@ class Wish(Spell):
     desires.
     
     The basic use of this spell is to duplicate any other spell of 8th 
-    level or lower. You don’t need to meet any requirements in that spell, including
+    level or lower. You don't need to meet any requirements in that spell, including
      costly components. The spell simply takes effect.
     Alternatively, you can create
      one of the following effects of your choice:
     
-    • You create one object of up to 
-    25,000 gp in value that isn’t a magic item. The object can be no more than 300 
+    - You create one object of up to 
+    25,000 gp in value that isn't a magic item. The object can be no more than 300 
     feet in any dimension, and it appears in an unoccupied space you can see on the 
     ground.
     
-    • You allow up to twenty creatures that you can see to regain all hit 
+    - You allow up to twenty creatures that you can see to regain all hit 
     points, and you end all effects on them described in the greater restoration 
     spell.
     
-    • You grant up to ten creatures that you can see resistance to a damage 
+    - You grant up to ten creatures that you can see resistance to a damage 
     type you choose.
     
-    • You grant up to ten creatures you can see immunity to a 
+    - You grant up to ten creatures you can see immunity to a 
     single spell or other magical effect for 8 hours. For instance, you could make 
-    yourself and all your com panions immune to a lich’s life drain attack.
+    yourself and all your com panions immune to a lich's life drain attack.
     
-    • You 
+    - You 
     undo a single recent event by forcing a reroll of any roll made within the last 
     round (including your last turn). Reality reshapes itself to accommodate the new
-     result. For example, a wish spell could undo an opponent’s successful save, a 
-    foe’s critical hit, or a friend’s failed save. You can force the reroll to be 
+     result. For example, a wish spell could undo an opponent's successful save, a 
+    foe's critical hit, or a friend's failed save. You can force the reroll to be 
     made with advantage or disadvantage, and you can choose whether to use the 
     reroll or the original roll.
     
@@ -596,13 +596,13 @@ class Wish(Spell):
      might propel you forward in time to a period when that villain is no longer 
     alive, effectively removing you from the game. Similarly, wishing for a 
     legendary magic item or artifact might instantly transport you to the presence 
-    of the item’s current owner.
+    of the item's current owner.
     
     The stress of casting this spell to produce any 
     effect other than duplicating another spell weakens you. After enduring that 
     stress, each time you cast a spell until you finish a long rest, you take 1d10 
-    necrotic damage per level of that spell. This damage can’t be reduced or 
-    prevented in any way. In addition, your Strength drops to 3, if it isn’t 3 or 
+    necrotic damage per level of that spell. This damage can't be reduced or 
+    prevented in any way. In addition, your Strength drops to 3, if it isn't 3 or 
     lower already, for 2d4 days. For each of those days that you spend resting and 
     doing nothing more than light activity, your remaining recovery time decreases 
     by 2 days. Finally, there is a 33 percent chance that you are unable to cast 
@@ -628,7 +628,7 @@ class WitchBolt(Spell):
     damage, and on each of your turns for the duration, you can use your action to 
     deal 1d12 lightning damage to the target automatically. The spell ends if you 
     use your action to do anything else. The spell also ends if the target is ever 
-    outside the spell’s range or if it has total cover from you.
+    outside the spell's range or if it has total cover from you.
     
     At Higher Levels: 
     When you cast this spell using a spell slot of 2nd level or higher, the initial 
@@ -650,7 +650,7 @@ class WordOfRadiance(Spell):
     """You utter a divine word, and burning radiance erupts from you. Each creature of 
     your choice that you can see within range must succeed on a Constitution saving 
     throw or take 1d6 radiant damage.
-    The spell’s damage increases by 1d6 when you 
+    The spell's damage increases by 1d6 when you 
     reach 5th level (2d6), 11th level (3d6), and 17th level (4d6).
     """
     name = "Word Of Radiance"
@@ -676,7 +676,7 @@ class WordOfRecall(Spell):
     You must designate a sanctuary 
     by casting this spell within a location, such as a temple, dedicated to or 
     strongly linked to your deity. If you attempt to cast the spell in this manner 
-    in an area that isn’t dedicated to your deity, the spell has no effect.
+    in an area that isn't dedicated to your deity, the spell has no effect.
     """
     name = "Word Of Recall"
     level = 6
@@ -725,7 +725,7 @@ class WrathOfNature(Spell):
 
 
 class WrathfulSmite(Spell):
-    """The next time you hit with a melee weapon attack during this spell’s duration, 
+    """The next time you hit with a melee weapon attack during this spell's duration, 
     your attack deals an extra 1d6 psychic damage.
     Additionally, if the target is a 
     creature, it must make a Wisdom saving throw or be frightened of you until the 

@@ -26,7 +26,7 @@ class ShadowWay(SubClass):
     subterfuge. These monks might be called ninjas or shadowdancers, and they
     serve as spies and assassins. Sometimes the members of a ninja monastery
     are family members, forming a clan sworn to secrecy about their arts and
-    missions. Other monasteries are more like thieves’ guilds, hiring out their
+    missions. Other monasteries are more like thieves' guilds, hiring out their
     services to nobles, rich merchants, or anyone else who can pay their
     fees. Regardless of their methods, the heads of these monasteries expect
     the unquestioning obedience of their students
@@ -96,7 +96,7 @@ class DrunkenMasterWay(SubClass):
     """The Way of the Drunken Master teaches its students to move with the jerky,
     unpredictable movements of a drunkard. A drunken master sways, tottering on
     unsteady feet, to present what seems like an incompetent combatant who
-    proves frustrating to engage. The drunken master’s erratic stumbles conceal
+    proves frustrating to engage. The drunken master's erratic stumbles conceal
     a carefully executed dance of blocks, parries, advances, attacks, and
     retreats.
 

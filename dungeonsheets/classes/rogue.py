@@ -10,7 +10,7 @@ class Thief(SubClass):
     prefer to think of themselves as professional treasure seekers, explorers,
     delvers, and investigators. In addition to improving your agility and
     stealth, you learn skills useful for delving into ancient ruins, reading
-    unfamiliar languages, and using magic items you normally couldn’t employ
+    unfamiliar languages, and using magic items you normally couldn't employ
 
     """
     name = "Thief"
@@ -133,7 +133,7 @@ class Scout(SubClass):
 class Swashbuckler(SubClass):
     """You focus your training on the art of the blade, relying on speed,
     elegance, and charm in equal parts. While some warriors are brutes clad in
-    heavy armor, your method of fighting looks almost like a performance. Du—
+    heavy armor, your method of fighting looks almost like a performance. Du-
     elists and pirates typically belong to this archetype. A Swashbuckler
     excels in single combat, and can fight with two weapons while safely
     darting away from an opponent

@@ -89,8 +89,15 @@ def create_latex_pdf(character, basename, template):
     tex = template.render(character=character)
     # Create tex document
     tex_file = f'{basename}.tex'
-    with open(tex_file, mode='w') as f:
+    with open(tex_file, mode='w', encoding="utf-8") as f:
         f.write(tex)
+        '''for i in tex:
+            try:
+                f.write(i)
+            except Exception as e:
+                print(f'Our exception in {e}', end='\n\n')
+                print(i)
+        '''
         
     # Convenience function for removing temporary files
     def remove_temp_files(basename_):

@@ -93,7 +93,7 @@ class Illusion(SubClass):
     """You focus your studies on magic that dazzles the senses, befuddles the
     mind, and tricks even the wisest folk. Your magic is subtle, but the
     illusions crafted by your keen mind make the impossible seem real. Some
-    illusionists—including many gnome w izards—are benign tricksters who use
+    illusionists-including many gnome wizards-are benign tricksters who use
     their spells to entertain. Others are more sinister masters of deception,
     using their illusions to frighten and fool others for their personal gain.
 
@@ -132,7 +132,7 @@ class Transmutation(SubClass):
     world is not a fixed thing, but eminently mutable, and you delight in being
     an agent of change. You wield the raw stuff of creation and learn to alter
     both physical forms and mental qualities. Your magic gives you the tools to
-    become a smith on reality’s forge.
+    become a smith on reality's forge.
 
     Some transmuters are tinkerers and pranksters, turning people into toads
     and transforming copper into silver for fun and occasional profit. Others
@@ -172,23 +172,23 @@ class Bladesinging(SubClass):
 
 # XGTE
 class WarMagic(SubClass):
-    """A variety of arcane colleges specialize in training wiz— ards for war. The
+    """A variety of arcane colleges specialize in training wiz- ards for war. The
     tradition of War Magic blends principles of evocation and abjuration,
     rather than specializing in either of those schools. It teaches
-    techniques that empower a caster’s spells, while also providing methods for
+    techniques that empower a caster's spells, while also providing methods for
     wizards to bolster their own defenses.
 
     Followers of this tradition are known as war mages.  They see their magic
     as both a weapon and armor, a resource superior to any piece of steel. War
     mages act fast in battle, using their spells to seize tactical control of a
     situation. Their spells strike hard, while their defensive skills foil
-    their opponents“ attempts to counterattack. War mages are also adept at
-    turning other spellcasters’ magical energy against them.
+    their opponents" attempts to counterattack. War mages are also adept at
+    turning other spellcasters' magical energy against them.
 
     In great battles, a war mage often works with evokers, abjurers, and other
     types of wizards. Evokers, in particular, sometimes tease war mages for
-    splitting their attention between offense and defense. A war mage’s typical
-    response: “What good is being able to throw a mighty fireball if I die
+    splitting their attention between offense and defense. A war mage's typical
+    response: "What good is being able to throw a mighty fireball if I die
     before I can cast it?
 
     """

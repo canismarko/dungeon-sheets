@@ -4,11 +4,11 @@ from .spells import Spell
 class AbiDalzimsHorridWilting(Spell):
     """You draw the moisture from every creature in a 30-foot cube centered on a point 
     you choose within range. Each creature in that area must make a Constitution 
-    saving throw. Constructs and undead aren’t affected, and plants and water 
+    saving throw. Constructs and undead aren't affected, and plants and water 
     elementals make this saving throw with disadvantage. A creature takes 12d8 
     necrotic damage on a failed save, or half as much damage on a successful one. 
     
-    Nonmagical plants in the area that aren’t creatures, such as trees and shrubs, 
+    Nonmagical plants in the area that aren't creatures, such as trees and shrubs, 
     wither and die instantly.
     """
     name = "Abi-Dalzims Horrid Wilting"
@@ -56,7 +56,7 @@ class AcidSplash(Spell):
     succeed on a Dexterity saving throw or take 1d6 acid damage.
     
     At Higher Levels: 
-    This spell’s damage increases by 1d6 when you reach 5th level (2d6), 11th level 
+    This spell's damage increases by 1d6 when you reach 5th level (2d6), 11th level 
     (3d6), and 17th level (4d6).
     """
     name = "Acid Splash"
@@ -87,7 +87,7 @@ class AganazzarsScorcher(Spell):
     casting_time = "1 action"
     casting_range = "30 feet"
     components = ('V', 'S', 'M')
-    materials = """A red dragon’s scale"""
+    materials = """A red dragon's scale"""
     duration = "Instantaneous"
     ritual = False
     magic_school = "Evocation"
@@ -97,11 +97,11 @@ class AganazzarsScorcher(Spell):
 class Aid(Spell):
     """Your spell bolsters your allies with toughness and resolve. 
     Choose up to three 
-    creatures within range. Each target’s hit point maximum and current hit points 
+    creatures within range. Each target's hit point maximum and current hit points 
     increase by 5 for the duration.
     
     At Higher Levels: When you cast this spell 
-    using a spell slot of 3rd level or higher, a target’s hit points increase by an 
+    using a spell slot of 3rd level or higher, a target's hit points increase by an 
     additional 5 for each slot level above 2nd.
     """
     name = "Aid"
@@ -121,7 +121,7 @@ class Alarm(Spell):
     Choose a door, a window, or an 
     area within range that is no larger than a 20-foot cube. Until the spell ends, 
     an alarm alerts you whenever a tiny or larger creature touches or enters the 
-    warded area. When you cast the spell, you can designate creatures that won’t set
+    warded area. When you cast the spell, you can designate creatures that won't set
      off the alarm. You also choose whether the alarm is mental or audible. 
     
     A 
@@ -157,8 +157,8 @@ class AlterSelf(Spell):
     including your height, weight, facial features, sound of your voice, hair 
     length, coloration, and distinguishing characteristics, if any. You can make 
     yourself appear as a member of another race, though none of your statistics 
-    change. You also don’t appear as a creature of a different size than you, and 
-    your basic shape stays the same; if you're bipedal, you can’t use this spell to 
+    change. You also don't appear as a creature of a different size than you, and 
+    your basic shape stays the same; if you're bipedal, you can't use this spell to 
     become quadrupedal, for instance. At any time for the duration of the spell, you
      can use your action to change your appearance in this way again.
     Natural 
@@ -183,9 +183,9 @@ class AlterSelf(Spell):
 class AnimalFriendship(Spell):
     """This spell lets you convince a beast that you mean it no harm.
     Choose a beast 
-    that you can see within range. It must see and hear you. If the beast’s 
+    that you can see within range. It must see and hear you. If the beast's 
     Intelligence is 4 or higher, the spell fails. Otherwise, the beast must succeed 
-    on a Wisdom saving throw or be charmed by you for the spell’s duration. If you 
+    on a Wisdom saving throw or be charmed by you for the spell's duration. If you 
     or one of your companions harms the target, the spell ends.
     
     At Higher Levels: 
@@ -218,7 +218,7 @@ class AnimalMessenger(Spell):
     When the messenger arrives, it 
     delivers your message to the creature that you described, replicating the sound 
     of your voice. The messenger speaks only to a creature matching the description 
-    you gave. If the messenger doesn’t reach its destination before the spell ends, 
+    you gave. If the messenger doesn't reach its destination before the spell ends, 
     the message is lost, and the beast makes it way back to where you cast this 
     spell.
     
@@ -248,18 +248,18 @@ class AnimalShapes(Spell):
     
     The transformation lasts for the duration for each target, or until the target
      drops to 0 hit points or dies. You can choose a different form for each target.
-     A target’s game statistics are replaced by the statistics of the chosen beast, 
+     A target's game statistics are replaced by the statistics of the chosen beast, 
     though the target retains its alignment and Intelligence, Wisdom, and Charisma 
     scores. The target assumes the hit points of its new form, and when it reverts 
     to its normal form, it returns to the number of hit point it had before it 
     transformed. If it reverts as a result of dropping to 0 hit points, any excess 
-    damage carries over to its normal form. As long as the excess damage doesn’t 
-    reduce the creature’s normal form to 0 hit points, it isn’t knocked unconcious. 
+    damage carries over to its normal form. As long as the excess damage doesn't 
+    reduce the creature's normal form to 0 hit points, it isn't knocked unconcious. 
     The creature is limited in the actions it can perform by the nature of its new 
-    form, and it can’t speak or cast spells. 
+    form, and it can't speak or cast spells. 
      
-    The target’s gear melds into the new
-     form. The target can’t activate, wield, or otherwise benefit from any of its 
+    The target's gear melds into the new
+     form. The target can't activate, wield, or otherwise benefit from any of its 
     equipment.
     """
     name = "Animal Shapes"
@@ -279,7 +279,7 @@ class AnimateDead(Spell):
     Choose a pile of bones or a corpse of a 
     Medium or Small humanoid within range. Your spell imbues the target with a foul 
     mimicry of life, raising it as an undead creature. The target becomes a skeleton
-     if you chose bones or a zombie if you chose a corpse (the DM has the creature’s
+     if you chose bones or a zombie if you chose a corpse (the DM has the creature's
      game statistics). 
     
     On each of your turns, you can use a bonus action to 
@@ -293,7 +293,7 @@ class AnimateDead(Spell):
     until its task is complete.
     
     The creature is under your control for 24 hours, 
-    after which it stops obeying any command you’ve given it. To maintain the 
+    after which it stops obeying any command you've given it. To maintain the 
     control of the creature for another 24 hours, you must cast this spell on the 
     creature again before the current 24-hour period ends. This use of the spell 
     reasserts your control over up to four creatures you have animated with this 
@@ -321,7 +321,7 @@ class AnimateObjects(Spell):
     Choose up to ten nonmagical objects 
     within range that are not being worn or carried. Medium targets count as two 
     objects, Large targets count as four objects, Huge targets count as eight 
-    objects. You can’t animate any object larger than Huge. Each target animates and
+    objects. You can't animate any object larger than Huge. Each target animates and
      becomes a creature under your control until the spell ends or until reduced to 
     0 hit points. 
     
@@ -406,13 +406,13 @@ class AntimagicField(Spell):
     """A 10-foot-radius invisible sphere of antimagic surrounds you. 
     This area is 
     divorced from the magical energy that suffeses the multiverse. Within the 
-    sphere, spells can’t be cast, summoned creatures disappear, and even magic items
+    sphere, spells can't be cast, summoned creatures disappear, and even magic items
      become mundane. Until the spell ends, the spere moves with you, centered on 
     you. 
     Spells and other magical effects, except those created by an artifact or a
-     deity, are suppressed in the sphere and can’t protrude into it. A slot expended
+     deity, are suppressed in the sphere and can't protrude into it. A slot expended
      to cast a suppressed spell is consumed. While an effect is suppressed, it 
-    doesn’t function, but the time it spends suppressed counts against its duration.
+    doesn't function, but the time it spends suppressed counts against its duration.
      
     
     Targeted Effects. 
@@ -422,7 +422,7 @@ class AntimagicField(Spell):
     
     Areas of Magic. 
     The area of another spell or magical effect, 
-    such as fireball, can’t extend into the sphere. If the sphere overlaps an area 
+    such as fireball, can't extend into the sphere. If the sphere overlaps an area 
     of magic, the part of the area that is covered by the sphere is suppressed. For 
     example, the flames created by a wall of fire are suppressed within the sphere, 
     creating a gap in the wall if the overlap is large enough. 
@@ -436,7 +436,7 @@ class AntimagicField(Spell):
     The 
     properties and powers of magic items are suppressed in the sphere. Forexample, a
      +1 longsword in the sphere functions as a nonmagical longsword. A magic 
-    weapon’s properties and powers are suppressed if it is used against a target in 
+    weapon's properties and powers are suppressed if it is used against a target in 
     the sphere or wielded by an attacker in the sphere. If a magic weapon or piece 
     of magic ammunition fully leaves the sphere (For example, if you fire a magic 
     arrow or throw a magic spear at a target outside the sphere), the magic of the 
@@ -459,7 +459,7 @@ class AntimagicField(Spell):
     Dispel Magic. 
     Spells and magical effects such
      as dispel magic have no effect on the sphere. Likewise, the spheres created by 
-    different antimagic field spells don’t nullify each other.
+    different antimagic field spells don't nullify each other.
     """
     name = "Antimagic Field"
     level = 8
@@ -480,7 +480,7 @@ class Antipathysympathy(Spell):
     larger than a 200-foot cube. Then specify a kind of intelligent creature, such 
     as red dragons, goblins, or vampires. You invest the target with an aura that 
     either attracts or repels the specified creatures for the duration. Choose 
-    antipathy or sympathy as the aura’s effect. 
+    antipathy or sympathy as the aura's effect. 
     
     Antipathy. 
     The enchantment causes
@@ -489,8 +489,8 @@ class Antipathysympathy(Spell):
      feet of it, the creature must succeed on a Wisdom saving throw or 
     become frightened. The creature remains frightened while it can see the target 
     or is within 60 feet of it. While frightened by the target, the creature must 
-    use its movement to move to the nearest safe spot from which it can’t see the 
-    target. If the creature moves more than 60 feet from the target and can’t see 
+    use its movement to move to the nearest safe spot from which it can't see the 
+    target. If the creature moves more than 60 feet from the target and can't see 
     it, the creature is no longer frightened, but the creature becomes frightened 
     again if it regains sight of the target or moves within 60 feet of it. 
     
@@ -501,7 +501,7 @@ class Antipathysympathy(Spell):
     such a creature can see the target or comes within 60 feet o fit, the creature 
     must succeed on a Wisdom saving throw or use its movement on each of its turns 
     to enter the area or move within reach of the target. When the creature has done
-     so, it can’t willingly move away from the target. If the target damages or 
+     so, it can't willingly move away from the target. If the target damages or 
     otherwise harms an affected creature, the affected creature can make a 
     Wisdom saving throw to end the effect, as described below. 
     
@@ -535,8 +535,8 @@ class ArcaneEye(Spell):
     normal vision and darkvision out to 30 feet. The eye can look in every 
     direction. 
     As an action, you can move the eye up to 30 feet in any direction. 
-    There is no limit to how far away from you the eye can move, but it can’t enter 
-    another plane of existence. A solid barrier blocks the eye’s movement, but the 
+    There is no limit to how far away from you the eye can move, but it can't enter 
+    another plane of existence. A solid barrier blocks the eye's movement, but the 
     eye can pass through an opening as small as 1 inch in diameter.
     """
     name = "Arcane Eye"
@@ -636,7 +636,7 @@ class ArmsOfHadar(Spell):
     Tendrils of dark energy erupt 
     from you and batter all creatures within 10 feet of you. Each creature in that 
     area must make a Strength saving throw. On a failed save, a target takes 2d6 
-    necrotic damage and can’t take reactions until its next turn. On a successful 
+    necrotic damage and can't take reactions until its next turn. On a successful 
     save, the creature takes half damage, but suffers no other effect.
     
     At Higher 
@@ -660,7 +660,7 @@ class AstralProjection(Spell):
     into the Astral Plane (the spell fails and the casting is wasted if you are 
     already on that plane). 
     The material body you leave behind is unconscious and 
-    in a state of suspended animation; it doesn’t need food or air and doesn’t age. 
+    in a state of suspended animation; it doesn't need food or air and doesn't age. 
     
     
     Your astral body resembles your mortal form in almost every way, replicating 
@@ -685,9 +685,9 @@ class AstralProjection(Spell):
     
     The spell might also end early for you or one of your companions. A successful
      dispel magic spell used against an astral or physical body ends the spell for 
-    that creature. If a creature’s original body or its astral form drops to 0 hit 
+    that creature. If a creature's original body or its astral form drops to 0 hit 
     points, the spell ends for that creature. If the spell ends and the silver cord 
-    is intact, the cord pulls the creature’s astral form back to its body, ending 
+    is intact, the cord pulls the creature's astral form back to its body, ending 
     its state of suspended animation. If you are returned to your body prematurely, 
     your companions remain in their astral forms and must find their own way back to
      their bodies, usually by dropping to 0 hit points.
@@ -711,14 +711,14 @@ class Augury(Spell):
     within the next 30 minutes. The DM chooses from the following possible omens: 
     
     
-    • Weal, for good results 
-    • Woe, for bad results 
-    • Weal and woe, for both good 
+    - Weal, for good results 
+    - Woe, for bad results 
+    - Weal and woe, for both good 
     and bad results 
-    • Nothing, for results that aren’t especially good or bad 
+    - Nothing, for results that aren't especially good or bad 
     
     The
-     spell doesn’t take into account any possible circumstances that might change 
+     spell doesn't take into account any possible circumstances that might change 
     the outcome, such as the casting of additional spells or the loss or gain of a 
     companion.    If you cast the spell two or more times before completing your 
     next long rest, there is a cumulative 25 percent chance for each casting after 
@@ -741,7 +741,7 @@ class AuraOfLife(Spell):
     
     Until the spll ends, the aura moves with you, centered on you. Each nonhostile 
     creature in the aura (including you) has resistance to necrotic damage, and its 
-    hit point maximum can’t be reduced. In addition, a nonhostile, living creature 
+    hit point maximum can't be reduced. In addition, a nonhostile, living creature 
     regains 1 hit point when it starts its turn in the arua with 0 hit points.
     """
     name = "Aura Of Life"
@@ -760,7 +760,7 @@ class AuraOfPurity(Spell):
     """Purifying energy radiates from you in an aura with a 30-foot radius. 
     Until the 
     spell ends, the aura moves with you, centered on you. Each nonhostile creature 
-    in the aura (including you) can’t become diseased, has resistance to poison 
+    in the aura (including you) can't become diseased, has resistance to poison 
     damage, and has advantage on saving throws against effects that cause any of the
      following conditions: blnded, charmed, deafended, frightened, paralyzed, 
     poisoned, and stunned.
@@ -802,7 +802,7 @@ class Awaken(Spell):
     either no Intelligence score or an Intelligence of 3 or less. The target gains 
     an Intelligence of 10. The target also gains the ability to speak one language 
     you know. If the target is a plant, it gains the ability to move its limbs, 
-    roots, vinces, creepers, and so forth, and it gains senses similar to a huamn’s.
+    roots, vinces, creepers, and so forth, and it gains senses similar to a huamn's.
      Your DM chooses statistics appropriate for the awakened plant, such as the 
     statistics for the awakened shrub or the awakened tree. 
     

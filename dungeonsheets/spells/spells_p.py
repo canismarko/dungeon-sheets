@@ -5,7 +5,7 @@ class PassWithoutTrace(Spell):
     """A veil of shadows and silence radiates from you, masking you and your companions
      from detection.
     For the duration, each creature you choose within 30 feet of 
-    you (including you) has a +10 bonus to Dexterity (Stealth) checks and can’t be 
+    you (including you) has a +10 bonus to Dexterity (Stealth) checks and can't be 
     tracked except by magical means. A creature that receives this bonus leaves 
     behind no tracks or other traces of its passage.
     """
@@ -24,7 +24,7 @@ class PassWithoutTrace(Spell):
 class Passwall(Spell):
     """A passage appears at a point of your choice that you can see on a wooden, 
     plaster, or stone surface (such as a wall, a ceiling, or a floor) within range, 
-    and lasts for the duration. You choose the opening’s dimensions: up to 5 feet 
+    and lasts for the duration. You choose the opening's dimensions: up to 5 feet 
     wide, 8 feet tall, and 20 feet deep. The passage creates no instability in a 
     structure surrounding it.
     
@@ -70,11 +70,11 @@ class PhantasmalForce(Spell):
     slipped, or a strong wind might have knocked it off.
     
     An affected target is so 
-    convinced of the phantasm’s reality that it can even take damage from the 
+    convinced of the phantasm's reality that it can even take damage from the 
     illusion. A phantasm created to appear as a creature can attack the target. 
     Similarly, a phantasm created to appear as fire, a pool of acid, or lava can 
     burn the target. Each round on your turn, the phantasm can deal 1d6 psychic 
-    damage to the target if it is in the phantasm’s area or within 5 feet of the 
+    damage to the target if it is in the phantasm's area or within 5 feet of the 
     phantasm, provided that the illusion is of a creature or hazard that could 
     logically deal damage, such as by attacking. The target perceives the damage as 
     a type appropriate to the illusion.
@@ -96,7 +96,7 @@ class PhantasmalKiller(Spell):
      illusory manifestation of its deepest fears, visible only to that creature.
     The
      target must make a Wisdom saving throw. On a failed save, the target becomes 
-    frightened for the duration. At the end of each of the target’s turns before the
+    frightened for the duration. At the end of each of the target's turns before the
      spell ends, the target must succeed on a Wisdom saving throw or take 4d10 
     psychic damage. On a successful save, the spell ends.
     
@@ -118,7 +118,7 @@ class PhantasmalKiller(Spell):
 
 class PhantomSteed(Spell):
     """A Large quasi-real, horselike creature appears on the ground in an unoccupied 
-    space of your choice within range. You decide the creature’s appearance, but it 
+    space of your choice within range. You decide the creature's appearance, but it 
     is equipped with a saddle, bit, and bridle. Any of the equipment created by the 
     spell vanishes in a puff of smoke if it is carried more than 10 feet away from 
     the steed.
@@ -148,13 +148,13 @@ class PlanarAlly(Spell):
     god, a primordial, a demon prince, or some other being of cosmic power. That 
     entity sends a celestial, an elemental, or a fiend loyal to it to aid you, 
     making the creature appear in an unoccupied space within range. If you know a 
-    specific creature’s name, you can speak that name when you cast this spell to 
-    request that creature, though you might get a different creature anyway (DM’s 
+    specific creature's name, you can speak that name when you cast this spell to 
+    request that creature, though you might get a different creature anyway (DM's 
     choice).
     
     When the creature appears, it is under no compulsion to behave in any 
     particular way. You can ask the creature to perform a service in exchange for 
-    payment, but it isn’t obliged to do so. The requested task could range from 
+    payment, but it isn't obliged to do so. The requested task could range from 
     simple (fly us across the chasm, or help us fight a battle) to complex (spy on 
     our enemies, or protect us during our foray into the dungeon). You must be able 
     to communicate with the creature to bargain for its services.
@@ -169,7 +169,7 @@ class PlanarAlly(Spell):
     requires a payment worth 100 gp per minute. A task measured in hours requires 
     1,000 gp per hour. And a task m easured in days (up to 10 days) requires 10,000 
     gp per day. The DM can adjust these payments based on the circumstances under 
-    which you cast the spell. If the task is aligned with the creature’s ethos, the 
+    which you cast the spell. If the task is aligned with the creature's ethos, the 
     payment might be halved or even waived. Nonhazardous tasks typically require 
     only half the suggested payment, while especially dangerous tasks might require 
     a greater gift. Creatures rarely accept tasks that seem suicidal.
@@ -178,7 +178,7 @@ class PlanarAlly(Spell):
     creature completes the task, or when the agreed-upon duration of service 
     expires, the creature returns to its home plane after reporting back to you, if 
     appropriate to the task and if possible. If you are unable to agree on a price 
-    for the creature’s service, the creature immediately returns to its home plane.
+    for the creature's service, the creature immediately returns to its home plane.
     
     
     A creature enlisted to join your group counts as a member of it, receiving a 
@@ -204,7 +204,7 @@ class PlanarBinding(Spell):
     inverted magic circle in order to keep it trapped while this spell is cast.) At 
     the completion of the casting, the target must make a Charisma saving throw. On 
     a failed save, it is bound to serve you for the duration. If the creature w as 
-    summoned or created by another spell, that spell’s duration is extended to match
+    summoned or created by another spell, that spell's duration is extended to match
      the duration of this spell.
     
     A bound creature must follow your instructions to 
@@ -245,7 +245,7 @@ class PlaneShift(Spell):
     palace of Dispater on the second level of the Nine Hells, and you appear in or 
     near that destination. If you are trying to reac the City of Brass, for example,
      you might arrive in its Street of Steel, before its Gate of Ashes, or looking 
-    at the city from across the Sea of Fire, at the DM’s discretion.
+    at the city from across the Sea of Fire, at the DM's discretion.
     
     Alternatively,
      if you know the sigil sequence of a teleportation circle on another plane of 
@@ -282,7 +282,7 @@ class PlantGrowth(Spell):
      creature moving through the area must spend 4 feet of movement for every 1 foot
      it moves.
     
-    You can exclude one or more areas of any size within the spell’s 
+    You can exclude one or more areas of any size within the spell's 
     area from being affected.
     
     If you cast this spell over 8 hours, you enrich the 
@@ -307,7 +307,7 @@ class PoisonSpray(Spell):
     puff of noxious gas from your palm. The creature must succeed on a Constitution 
     saving throw or take 1d12 poison damage.
     
-    At Higher Levels: This spell’s damage 
+    At Higher Levels: This spell's damage 
     increases by 1d12 when you reach 5th level (2d12), 11th level (3d12), 17th level
      (4d12).
     """
@@ -331,25 +331,25 @@ class Polymorph(Spell):
     The transformation 
     lasts for the duration, or until the target drops to 0 hit points or dies. The 
     new form can be any beast whose challenge rating is equal to or less than the 
-    target’s (or the target’s level, if it doesn’t have a challenge rating). The 
-    target’s game statistics, including mental ability scores, are replaced by the 
+    target's (or the target's level, if it doesn't have a challenge rating). The 
+    target's game statistics, including mental ability scores, are replaced by the 
     statistics of the chosen beast. It retains its alignment and personality.
     
     The 
     target assumes the hit points of its new form. When it reverts to its normal 
     form, the creature returns to the number of hit points it had before it 
     transformed. If it reverts as a result of dropping to 0 hit points, any excess 
-    damage carries over to its normal form. As long as the excess damage doesn’t 
-    reduce the creature’s normal form to 0 hit points, it isn’t knocked unconscious.
+    damage carries over to its normal form. As long as the excess damage doesn't 
+    reduce the creature's normal form to 0 hit points, it isn't knocked unconscious.
     
     
     The creature is limited in the actions it can perform by the nature of its new
-     form, and it can’t speak, cast spells, or take any other action that requires 
+     form, and it can't speak, cast spells, or take any other action that requires 
     hands or speech.
     
-    The target’s gear melds into the new form. The creature can’t 
+    The target's gear melds into the new form. The creature can't 
     activate, use, wield, or otherwise benefit from any of its equipment. This spell
-     can’t affect a target that has 0 hit points.
+     can't affect a target that has 0 hit points.
     """
     name = "Polymorph"
     level = 4
@@ -502,7 +502,7 @@ class PrimalSavagery(Spell):
     """You channel primal magic to cause your teeth or fingernails to sharpen, ready to
      deliver a corrosive attack. Make a melee spell attack against one creature 
     within 5 feet of you. On a hit, the target takes 1d10 acid damage. After you 
-    make the attack, your teeth or fingernails return to normal. The spell’s damage 
+    make the attack, your teeth or fingernails return to normal. The spell's damage 
     increases by 1d10 when you reach 5th level (2d10), 11th level (3d10), and 17th 
     level (4d10).
     """
@@ -520,7 +520,7 @@ class PrimalSavagery(Spell):
 
 class PrimordialWard(Spell):
     """You have resistance to acid, cold, fire, lightning, and thunder damage for the 
-    spell’s duration.
+    spell's duration.
     When you take damage of one of those types, you can use your 
     reaction to gain immunity to that type
     of damage, including against the 
@@ -566,14 +566,14 @@ class PrismaticSpray(Spell):
     then make a Constitution saving throw at the end of each of its turns. If it 
     successfully saves three times, the spell ends. If it fails its save three 
     times, it permanently turns to stone and is subjected to the petrified 
-    condition. The successes and failures don’t need to be consecutive; keep track 
+    condition. The successes and failures don't need to be consecutive; keep track 
     of both until the target collects three of a kind.
     
     7. Violet. On a failed save,
      the target is blinded. It must then make a Wisdom saving throw at the start of 
     your next turn. A successful save ends the blindness. If it fails that save, the
-     creature is transported to another plane of existence of the DM’s choosing and 
-    is no longer blinded. (Typically, a creature that is on a plane that isn’t its 
+     creature is transported to another plane of existence of the DM's choosing and 
+    is no longer blinded. (Typically, a creature that is on a plane that isn't its 
     home plane is banished home, while other creatures are usually cast into the 
     Astral or Ethereal planes.)
     
@@ -610,9 +610,9 @@ class PrismaticWall(Spell):
     
     The wall consists of seven layers, each with a different 
     color. When a creature attempts to reach into or pass through the wall, it does 
-    so one layer at a time through all the wall’s layers. As it passes or reaches 
+    so one layer at a time through all the wall's layers. As it passes or reaches 
     through each layer, the creature must make a Dexterity saving throw or be 
-    affected by that layer’s properties as described below.
+    affected by that layer's properties as described below.
     
     The wall can be 
     destroyed, also one layer at a time, in order from red to violet, by means 
@@ -622,12 +622,12 @@ class PrismaticWall(Spell):
     
     1. Red. The creature takes 10d6 fire 
     damage on a failed save, or half as much damage on a successful one. While this 
-    layer is in place, nonmagical ranged attacks can’t pass through the wall. The 
+    layer is in place, nonmagical ranged attacks can't pass through the wall. The 
     layer can be destroyed by dealing at least 25 cold damage to it.
     
     2. Orange. The
      creature takes 10d6 acid damage on a failed save, or half as much damage on a 
-    successful one. While this layer is in place, magical ranged attacks can’t pass 
+    successful one. While this layer is in place, magical ranged attacks can't pass 
     through the wall. The layer is destroyed by a strong wind.
     
     3. Yellow. The 
@@ -648,17 +648,17 @@ class PrismaticWall(Spell):
     restrained. It must then make a Constitution saving throw at the end of each of 
     its turns. If it successfully saves three times, the spell ends. If it fails its
      save three times, it permanently turns to stone and is subjected to the 
-    petrified condition. The successes and failures don’t need to be consecutive; 
+    petrified condition. The successes and failures don't need to be consecutive; 
     keep track of both until the creature collects three of a kind. While this layer
-     is in place, spells can’t be cast through the wall. The layer is destroyed by 
+     is in place, spells can't be cast through the wall. The layer is destroyed by 
     bright light shed by a daylight spell or a similar spell of equal or higher 
     level.
     
     7. Violet. On a failed save, the creature is blinded. It must then make 
     a Wisdom saving throw at the start of your next turn. A successful save ends the
      blindness. If it fails that save, the creature is transported to another plane 
-    of the DM’s choosing and is no longer blinded. (Typically, a creature that is on
-     a plane that isn’t its home plane is banished home, while other creatures are 
+    of the DM's choosing and is no longer blinded. (Typically, a creature that is on
+     a plane that isn't its home plane is banished home, while other creatures are 
     usually cast into the Astral or Ethereal planes.) This layer is destroyed by a 
     dispel magic spell or similar spell of equal or higher level that can end spells
      and magical effects.
@@ -688,7 +688,7 @@ class ProduceFlame(Spell):
     you. Make a ranged spell attack. On a hit, the target takes 1d8 fire damage.
     
     At
-     Higher Levels: This spell’s damage increases by 1d8 when you reach 5th level 
+     Higher Levels: This spell's damage increases by 1d8 when you reach 5th level 
     (2d8), 11th level (3d8), and 17th level (4d8).
     """
     name = "Produce Flame"
@@ -801,7 +801,7 @@ class ProtectionFromEvilAndGood(Spell):
     and undead.
     
     The protection grants several benefits. Creatures of those types 
-    have disadvantage on attack rolls against the target. The target also can’t be 
+    have disadvantage on attack rolls against the target. The target also can't be 
     charmed, frightened, or possessed by them. If the target is already charmed, 
     frightened, or possessed by such a creature, the target has advantage on any new
      saving throw against the relevant effect.
@@ -846,7 +846,7 @@ class PsychicScream(Spell):
     Each target must make an 
     Intelligence saving throw. On a failed save, a target takes 14d6 psychic damage 
     and is stunned. On a successful save, a target takes half as much damage and 
-    isn’t stunned. If a target is killed by this damage, its head explodes, assuming
+    isn't stunned. If a target is killed by this damage, its head explodes, assuming
      it has one.
     A stunned target can make an Intelligence saving throw at the end 
     of each of its turns. On a successful save, the stunning effect ends.

@@ -5,9 +5,9 @@ from collections import defaultdict
 
 # PHB
 class BerserkerPath(SubClass):
-    """For some barbarians, rage is a means to an end-—that end being
+    """For some barbarians, rage is a means to an end--that end being
     violence. The Path of the Berserker is a path of untrammeled fury, slick
-    with blood. As you enter the berserker’s rage, you thrill in the chaos of
+    with blood. As you enter the berserker's rage, you thrill in the chaos of
     battle, heedless of your own health or well-being.
 
     """
@@ -66,7 +66,7 @@ class AncestralGuardianPath(SubClass):
     Barbarians who draw on their ancestral guardians can better fight to
     protect their tribes and their allies. In order to cement ties to their
     ancestral guardians, barbarians who follow this path cover themselves in
-    elabo— rate tattoos that celebrate their ancestors’ deeds. These tattoos
+    elabo- rate tattoos that celebrate their ancestors' deeds. These tattoos
     tell sagas of victories against terrible monsters and other fearsome
     rivals.
 
@@ -89,7 +89,7 @@ class StormHeraldPath(SubClass):
     Storm heralds are typically elite champions who train alongside druids,
     rangers, and others sworn to protect nature. Other storm heralds hone their
     craft in lodges in regions wracked by storms, in the frozen reaches at the
-    world’s end, or deep in the hottest deserts.
+    world's end, or deep in the hottest deserts.
 
     """
     name = "Path of the Storm Herald"
@@ -102,7 +102,7 @@ class StormHeraldPath(SubClass):
 
 class ZealotPath(SubClass):
     """Some deities inspire their followers to pitch themselves into a ferocious
-    battle fury. These barbarians are zealots—warriors who channel their rage
+    battle fury. These barbarians are zealots-warriors who channel their rage
     into powerful disn plays of divine power.
 
     A variety of gods across the worlds of D&D inspire their followers to

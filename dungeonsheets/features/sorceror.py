@@ -20,7 +20,7 @@ class FontOfMagic(Feature):
     a bonus action on your turn. The Creating Spell Slots table shows the cost
     of creating a spell slot of a given level. You can create spell slots no
     higher in level than 5th. As a bonus action on your turn, you can expend
-    one spell slot and gain a number of sorcery points equal to the slot’s
+    one spell slot and gain a number of sorcery points equal to the slot's
     level.
 
     1st Level Slot <--> 2 sorcery points
@@ -61,7 +61,7 @@ class SorcerousRestoration(Feature):
 # Metamagic
 class CarefulSpell(Metamagic):
     """When you cast a spell that forces other creatures to make a saving throw,
-    you can protect some of those creatures from the spell’s full force. To do
+    you can protect some of those creatures from the spell's full force. To do
     so, you spend 1 sorcery point and choose a number o f those creatures up to
     your Charisma modifier (minimum of one creature). A chosen creature
     automatically succeeds on its saving throw against the spell.
@@ -127,9 +127,9 @@ class SubtleSpell(Metamagic):
 
 
 class TwinnedSpell(Metamagic):
-    """When you cast a spell that targets only one creature and doesn’t have a
+    """When you cast a spell that targets only one creature and doesn't have a
     range of self, you can spend a number of sorcery points equal to the
-    spell’s level to target a second creature in range with the same spell (1
+    spell's level to target a second creature in range with the same spell (1
     sorcery point if the spell is a cantrip)
 
     """
@@ -167,7 +167,7 @@ class BendLuck(Feature):
     magic. When another creature you can see makes an attack roll, an ability
     check, or a saving throw, you can use your reaction and spend 2 sorcery
     points to roll 1d4 and apply the number rolled as a bonus or penalty (your
-    choice) to the creature’s roll. You can do so after the creature rolls but
+    choice) to the creature's roll. You can do so after the creature rolls but
     before any effects of the roll occur.
 
     """
@@ -203,7 +203,7 @@ class DraconicResilience(Feature):
     and increases by 1 again whenever you gain a level in this class.
 
     Additionally, parts of your skin are covered by a thin sheen of dragon-like
-    scales. When you aren’t wearing armor, your AC equals 13 + your Dexterity
+    scales. When you aren't wearing armor, your AC equals 13 + your Dexterity
     modifier.
 
     This bonus is computed in the AC given on the Character Sheet above.
@@ -263,7 +263,7 @@ class DragonWings(Feature):
     """At 14th level, you gain the ability to sprout a pair of dragon wings from
     your back, gaining a flying speed equal to your current speed. You can
     create these wings as a bonus action on your turn. They last until you
-    dismiss them as a bonus action on your turn. You can’t manifest your wings
+    dismiss them as a bonus action on your turn. You can't manifest your wings
     while wearing armor unless the armor is made to accommodate them, and
     clothing not made to accommodate your wings might be destroyed when you
     manifest them
@@ -301,7 +301,7 @@ class DivineMagic(Feature):
     In addition, choose an affinity for the source of your divine power: good,
     evil, law, chaos, or neutrality. You learn an additional spell based on
     that affinity, as shown below. It is a sorcerer spell for you, but it
-    doesn’t count against your number of sorcerer spells known. If you later
+    doesn't count against your number of sorcerer spells known. If you later
     replace this spell, you must replace it with a Spell from the cleric spell
     list
 
@@ -360,7 +360,7 @@ class UnearthlyRecovery(Feature):
     """At 18th level, you gain the ability to overcome grievous injuries. As a
     bonus action when you have fewer than half of your hit points remaining,
     you can regain a number of hit points equal to half your hit point
-    maximum. Once you use this feature, you can’t use it again until you finish
+    maximum. Once you use this feature, you can't use it again until you finish
     a long rest
 
     """
@@ -371,7 +371,7 @@ class UnearthlyRecovery(Feature):
 class EyesOfTheDark(Feature):
     """Starting at lst level, you have darkvision with a range of 120 feet. When
     you reach 3rd level in this class, you learn the darkness spell, which
-    doesn’t count against your number of sorcerer spells known. In addition,
+    doesn't count against your number of sorcerer spells known. In addition,
     you can cast it by spending 2 sorcery points or by expending a spell
     slot. If you cast it with sorcery points, you can see through the darkness
     created by the spell.
@@ -387,9 +387,9 @@ class StrengthOfTheGrave(Feature):
     """Starting at lst level, your existence in a twilight state between life
     and death makes you difficult to defeat. When damage reduces you to 0 hit
     points, you can make a Charisma saving throw (DC 5 + the damage taken). On
-    a success, you instead drop to 1 hit point. You can’t use this feature if
+    a success, you instead drop to 1 hit point. You can't use this feature if
     you are reduced to 0 hit points by radiant damage or by a critical
-    hit. After the saving throw succeeds, you can’t use this feature again
+    hit. After the saving throw succeeds, you can't use this feature again
     until you finish a long rest
 
     """
@@ -401,21 +401,21 @@ class HoundOfIllOmen(Feature):
     """At 6th level, you gain the ability to call forth a howling creature of
     darkness to harass your foes. As a bonus action, you can spend 3 sorcery
     points to magically summon a hound of ill omen to target one creature you
-    can see within 120 feet of you. The hound uses the dire wolf’s statistics
-    (see the Monster Manual or appendix C in the Player’s Handbook), with the
+    can see within 120 feet of you. The hound uses the dire wolf's statistics
+    (see the Monster Manual or appendix C in the Player's Handbook), with the
     following changes:
 
-    -- The hound is size Medium, not Large, and it counts as a monstrosity, not
+    • The hound is size Medium, not Large, and it counts as a monstrosity, not
     a beast. 
 
-    -- It appears with a number of temporary hit points equal to half your
+    • It appears with a number of temporary hit points equal to half your
     sorcerer level. 
 
-    -- It can move through other creatures and objects as if they were
+    • It can move through other creatures and objects as if they were
     difficult terrain. The bound takes 5 force damage if it ends its turn
     inside an object. 
 
-    -- At the start of its turn, the hound automatically knows its target's
+    • At the start of its turn, the hound automatically knows its target's
     location. If the target was hidden, it is no longer hidden from the hound.
     
     The hound appears in an unoccupied space of your choice within 30 feet of
@@ -485,7 +485,7 @@ class HeartOfTheStorm(Feature):
 class StormGuide(Feature):
     """At 6th level, you gain the ability to subtly control the weather around
     you. Ifit is raining, you can use an action to cause the rain to stop
-    falling in a 20-foot—radius sphere centered on you. You can end this effect
+    falling in a 20-foot-radius sphere centered on you. You can end this effect
     as a bonus action. If it is windy, you can use a bonus action each round to
     choose the direction that the wind blows in a IOO-foot-radius sphere
     centered on you. The wind blows in that direction until the end ofyour next
@@ -514,7 +514,7 @@ class WindSoul(Feature):
     flying speed to 30 feet for 1 hour and choose a number of creatures within
     30 feet ofyou equal to 3 + your Charisma modifier. The chosen creatures
     gain a magical flying speed of 30 feet for 1 hour. Once you reduce your
-    flying speed in this way, you can’t do so again until you finish a short or
+    flying speed in this way, you can't do so again until you finish a short or
     long rest
 
     """

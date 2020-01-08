@@ -24,7 +24,7 @@ class EarthTremor(Spell):
 class Earthbind(Spell):
     """Choose one creature you can see within range. Yellow strips of magical energy 
     loop around the creature. The target must succeed on a Strength saving throw or 
-    its flying speed (if any) is reduced to 0 feet for the spell’s duration. An 
+    its flying speed (if any) is reduced to 0 feet for the spell's duration. An 
     airborne creature affected by this spell descends at 60 feet per round until it 
     reaches the ground or the spell ends.
     """
@@ -49,7 +49,7 @@ class Earthquake(Spell):
     
     The ground in the area 
     becomes difficult terrain. Each creature on the ground that is concentrating 
-    must make a Constitution saving throw. On a failed save, the creature’s 
+    must make a Constitution saving throw. On a failed save, the creature's 
     concentration is broken. 
     
     When you cast this spell and at the end of each turn 
@@ -60,13 +60,13 @@ class Earthquake(Spell):
     This spell can have additional effects depending on the terrain in the area, as 
     determined by the DM. 
     Fissures. 
-    Fissures open throughout the spell’s area at 
+    Fissures open throughout the spell's area at 
     the start of your next turn after you cast the spell. A total of 1d6 such 
     fissures open in locations chosen by the DM. Each is 1d10 x 10 feet deep, 10 
-    feet wide, and extends from one edge of the spell’s area to the opposite side. A
+    feet wide, and extends from one edge of the spell's area to the opposite side. A
      creature standing on a spot where a fissure opens must succeed on a Dexterity 
     saving throw or fall in. A creature that successfully saves moves with the 
-    fissure’s edge as it opens. 
+    fissure's edge as it opens. 
     A fissure that opens beneath a structure causes it 
     to automatically collapse (see below). 
     
@@ -75,12 +75,12 @@ class Earthquake(Spell):
     bludgeoning damage to any structure in contact with the ground in the area when 
     you cast the spell and at the start of each of your turns until the spell ends. 
     If a structure drops to 0 hit points, it collapses and potentially damages 
-    nearby creatures. A creature within half the distance of a structure’s height 
+    nearby creatures. A creature within half the distance of a structure's height 
     must make a Dexterity saving throw. On a failed save, the creature takes 5d6 
     bludgeoning damage, is knocked prone, and is buried in the rubble, requiring a 
     DC 20 Strength (Athletics) check as an action to escape. The DM can adjust the 
     DC higher or lower, depending on the nature of the rubble. On a successful save,
-     the creature takes half as much damage and doesn’t fall prone or become buried.
+     the creature takes half as much damage and doesn't fall prone or become buried.
     """
     name = "Earthquake"
     level = 8
@@ -180,7 +180,7 @@ class EnemiesAbound(Spell):
     ends. Each time the target takes damage, it can repeat the saving throw, ending 
     the effect on itself on a success. Whenever the affected creature chooses 
     another creature as a target, it must choose the target at random from among the
-     creatures it can see within range of the attack, spell, or other ability it’s 
+     creatures it can see within range of the attack, spell, or other ability it's 
     using. If an enemy provokes an opportunity attack from the affected creature, 
     the creature must make that attack if it is able to.
     """
@@ -203,7 +203,7 @@ class Enervation(Spell):
      ends. On a failed save, the target takes 4d8 necrotic damage, and until the 
     spell ends, you can use your action on each of your turns to automatically deal 
     4d8 necrotic damage to the target. The spell ends ifyou use your action to do 
-    anything else, if the target is ever outside the spell’s range, or if the target
+    anything else, if the target is ever outside the spell's range, or if the target
      has total cover from you. Whenever the spell deals damage to a target, you 
     regain hit points equal to half the amount of necrotic damage the target takes.
     
@@ -226,19 +226,19 @@ class Enervation(Spell):
 class EnhanceAbility(Spell):
     """You touch a creature and bestow upon it a magical enhancement. Choose one of the
      following effects: the target gains the effect until the spell ends.
-    - Bear’s 
+    - Bear's 
     Endurance. The target has advantage on Constitution checks. It also gains 2d6 
     temporary hit points, which are lost when the spell ends.
-    - Bull’s Strength. The
+    - Bull's Strength. The
      target has advantage on Strength checks, and his or her carrying capacity 
     doubles.
-    - Cat’s Grace. The target has advantage on Dexterity checks. It also 
-    doesn’t take damage from falling 20 feet or less if it isn’t incapacitated.
+    - Cat's Grace. The target has advantage on Dexterity checks. It also 
+    doesn't take damage from falling 20 feet or less if it isn't incapacitated.
     - 
-    Eagle’s Splendor. The target has advantage on Charisma checks.
-    - Fox’s Cunning. 
+    Eagle's Splendor. The target has advantage on Charisma checks.
+    - Fox's Cunning. 
     The target thas advantage on Intelligence checks.
-    - Owl’s Wisdom. The target has
+    - Owl's Wisdom. The target has
      advantage on Wisdom checks.
     
     At Higher Levels: When you cast this spell using a
@@ -268,23 +268,23 @@ class Enlargereduce(Spell):
     an affected creature returns to normal size at once. 
     
     Enlarge 
-    The target’s 
+    The target's 
     size doubles in all dimensions, and its weight is multiplied by eight. This 
     growth increases its size by one category – from Medium to Large, for example. 
-    If there isn’t enough room for the target to double its size, the creature or 
+    If there isn't enough room for the target to double its size, the creature or 
     object attains the maximum possible size in the space available. Until the spell
      ends, the target also has advantage on Strength checks and Strength saving 
-    throws. The target’s weapons also grow to match its new size. While these 
-    weapons are enlarged, the target’s attack with them deal 1d4 extra damage. 
+    throws. The target's weapons also grow to match its new size. While these 
+    weapons are enlarged, the target's attack with them deal 1d4 extra damage. 
     
     
     Reduce 
-    The target’s size is halved in all dimensions, and its weight is reduced
+    The target's size is halved in all dimensions, and its weight is reduced
      to one-eighth of normal. This reduction decreases its size by one category – 
     from Medium to Small, for example. Until the spell ends, the target also has 
-    disadvantage on Strength checks and Strength saving throws. The target’s weapons
+    disadvantage on Strength checks and Strength saving throws. The target's weapons
      also shrink to match its new size. While these weapons are reduced, the 
-    target’s attacks with them deal 1d4 less damage (this can’t reduce the damage 
+    target's attacks with them deal 1d4 less damage (this can't reduce the damage 
     below 1).
     """
     name = "Enlargereduce"
@@ -356,7 +356,7 @@ class Entangle(Spell):
 class Enthrall(Spell):
     """You weave a distracting string of words, causing creatures of your choice that 
     you can see within range and that can hear you to make a Wisdom saving throw. 
-    Any creature that can’t be charmed succeeds on this saving throw automatically, 
+    Any creature that can't be charmed succeeds on this saving throw automatically, 
     and if you or your companions are fighting a creature, it has advantage on the 
     save. On a failed save, the target has disadvantage on Wisdom (Perception) 
     checks made to perceive any creature other than you until the spell ends or 
@@ -405,16 +405,16 @@ class Etherealness(Spell):
     duration or until you use your action to dismiss the spell. During this time, 
     you can move in any direction. If you move up or down, every foot of movement 
     costs an extra foot. You can see and hear the plan you originated from, but 
-    everything there looks gray, and you can’t see anything more than 60 feet away.
+    everything there looks gray, and you can't see anything more than 60 feet away.
      
     
     While on the Ethereal Plane, you can only affect and be affected by other 
-    creatures on that plane. Creatures that aren’t on the Ethereal Plance can’t 
-    perceive you and can’t interact with you, unless a special ability or magic has 
+    creatures on that plane. Creatures that aren't on the Ethereal Plance can't 
+    perceive you and can't interact with you, unless a special ability or magic has 
     given them the ability to do so. 
     
     You ignore all objects and effects that 
-    aren’t on the Ethereal Plane, allowing you to move through objects you perceive 
+    aren't on the Ethereal Plane, allowing you to move through objects you perceive 
     on the plan you originated from. When the spell ends, you immediately return to 
     the plane you originiated from in teh spot you currently occupy. If you occupy 
     the same spot as a solid object or creature when this happens, you are 
@@ -423,7 +423,7 @@ class Etherealness(Spell):
     
     This spell has 
     no effect if you cast it while you are on the Ethereal Plane or a plane that 
-    doesn’t border it, such as one of the Outer Planes.
+    doesn't border it, such as one of the Outer Planes.
     
     At Higher Levels: When you 
     cast this spell using a spell slot of 8th level or higher, you can target up to 
@@ -488,11 +488,11 @@ class ExpeditiousRetreat(Spell):
 
 
 class Eyebite(Spell):
-    """For the spell’s duration, your eyes become an inky void imbued with dread power.
+    """For the spell's duration, your eyes become an inky void imbued with dread power.
      One creature of your choice within 60 feet of you that you can see must succeed
      on a Wisdom saving throw or be affected by one of the following effects of your
      choice for the duration. On each of your turns until the spell ends, you can 
-    use your action to target another creature but can’t target a creature again if 
+    use your action to target another creature but can't target a creature again if 
     it has succeeded on a saving throw against this casting of eyebite. 
     
     Asleep 
