@@ -13,7 +13,7 @@ class WildShape(Feature):
     flying or swimming speed.
 
     2nd Level: Max CR 1/4, No Flying/Swimming (ex: Wolf)
-    
+
     4th Level: Max CR 1/2, No Flying (ex: Crocodile)
 
     8th Level: Max CR 1 (ex: Giant Eagle)
@@ -92,7 +92,7 @@ class BeastSpells(Feature):
     name = "Beast Spells"
     source = "Druid"
 
-    
+
 class Archdruid(Feature):
     """At 20th level, you can use your Wild Shape an unlimited number of times.
 
@@ -167,7 +167,7 @@ class _CircleSpells(Feature):
                     self.spells_known.extend(sps)
                     self.spells_prepared.extend(sps)
         super().__init__(owner=owner)
-    
+
 
 class ArcticSpells(_CircleSpells):
     """Your mystical connection to the land infuses you with the ability to cast
@@ -281,6 +281,22 @@ class UnderdarkSpells(_CircleSpells):
                9: [spells.Cloudkill, spells.InsectPlague]}
 
 
+class SporesSpells(_CircleSpells):
+    """Your symbiotic link do fungus and your ability to tap into the cycle of
+    life and death grants you access to certain spells.
+
+    These spells are included in your Spell Sheet.
+
+    """
+
+    _name = 'Spores'
+    _spells = {2: [spells.ChillTouch],
+               3: [spells.Blindnessdeafness, spells.GentleRepose],
+               5: [spells.AnimateDead, spells.GaseousForm],
+               7: [spells.Blight, spells.Confusion],
+               9: [spells.Cloudkill, spells.Contagion]}
+
+
 class CircleSpells(FeatureSelector, _CircleSpells):
     """
     Select a land where you became a druid in feature_choices in your .py file:
@@ -300,7 +316,9 @@ class CircleSpells(FeatureSelector, _CircleSpells):
     swamp
 
     underdark
-    
+
+    spores
+
     """
     options = {'arctic': ArcticSpells,
                'coast': CoastSpells,
@@ -309,9 +327,10 @@ class CircleSpells(FeatureSelector, _CircleSpells):
                'grassland': GrasslandSpells,
                'mountain': MountainSpells,
                'swamp': SwampSpells,
-               'underdark': UnderdarkSpells}
+               'underdark': UnderdarkSpells,
+               'spores': SporesSpells}
     name = "Circle Spells (Select One)"
-    source = "Druid (Circle of the Land)"
+    source = "Druid (Circle of the Land/Spores)"
 
 
 class LandsStride(Feature):
@@ -439,7 +458,7 @@ class HearthOfMoonlightAndShadow(Feature):
     you can invoke the shadowy power of the Gleaming Court to help guard your
     respite. At the start of the rest, you touch a point in space, and an
     invisible, 30-foot—radius sphere of magic appears, centered on that
-    point. Total cover blocks the sphere. 
+    point. Total cover blocks the sphere.
 
     While within the sphere, you and your allies gain a +5 bonus to Dexterity
     (Stealth) and Wisdom (Perception) checks, and any light from open flames in
@@ -456,7 +475,7 @@ class HiddenPaths(Feature):
     fey use to traverse space in the blink of an eye. As a bonus action on your
     turn, you can teleport up to 60 feet to an unoccupied space you can
     see.
-    
+
     Alternatively, you can use your action to teleport one willing creature you
     touch up to 30 feet to an unoccupied space you can see. You can use this
     feature a number of times equal to your Wisdom modifier (minimum of once),
@@ -466,7 +485,7 @@ class HiddenPaths(Feature):
     name = "Hidden Paths"
     source = "Druid (Circle of the Moon)"
 
-    
+
 class WalkerInDreams(Feature):
     """At 14th level, the magic of the Feywild grants you the ability to travel
     mentally or physically through dreamlands. When you finish a short rest,
@@ -544,7 +563,7 @@ class MightySummoner(Feature):
     """Starting at 6th level, beasts and fey that you conjure are more resilient
     than normal. Any beast or fey summoned or created by a spell that you cast
     gains the. following benefits:
-    
+
     -- The creature appears with more hit points than normal: 2 extra hit
     points per Hit Die it has.
 
@@ -583,5 +602,93 @@ class FaithfulSummons(Feature):
     """
     name = "Faithful Summons"
     source = "Druid (Circle of the Shepherd)"
+
+
+#Circle of Spores
+class HaloOfSpores(Feature):
+    """Starting at 2nd level, you are surrounded by invisible, necrotic spores
+    that are harmless until you unleash them on a creature nearby. When a
+    creature you can see moves into a space within 10 feet of you or starts its
+    turn there, you can use your reaction to deal 1d4 necrotic damage to that
+    creature unless it succeeds on a Constitution saving throw against your
+    spell save DC. The necrotic damage increases to 1d6 at 6th level, 1d8 at
+    10th level, and 1d10 at 14th level
+
+    """
+    name = "Halo of Spores"
+    source = "Druid (Cirlce of Spores)"
+
+
+class SymbioticEntity(Feature):
+    """At 2nd level, you gain the ability to channel magic into your spores. As
+    an action, you can expend a use of your Wild Shape feature to awaken those
+    spores, rather than transforming into a beast form, and you gain 4
+    temporary hit points for each level you have in this class. While this
+    feature is active, you gain the following benefits:
+
+    -- When you deal your Halo of Spores damage, roll the damage die a second
+    time and add it to the total.
+
+    -- Your melee weapon attacks deal an extra 1d6 poison damage to any target
+    they hit.
+
+    These benefits last for 10 minutes, until you lose all these temporary hit
+    points, or until you use your Wild Shape again.
+
+    """
+    name = "Symbiotic Entity"
+    source = "Druid (Circle of Spores)"
+
+
+class FungalInfestation(Feature):
+    """At 6th level, your spores gain the ability to infest a corpse and
+    animate it. If a beast or a humanoid that ist Small or Medium dies within
+    10 feet of you, you can use your reaction to animate it, causing it to
+    stand up immediately with 1 hit point. The creature uses the zombie stat
+    block in the _Monster Manual_. It remains animate for 1 hour, after which
+    time it collapses and dies.
+
+    In combat, the zombie's turn comes immediately after yours. It obeys your
+    mental commands, and the only action it can take is the Attack action,
+    making one melee attack.
+
+    You can use this feature a number of times equal to your Wisdom modifier
+    (minimum of once), and you regain all expended uses of it when you finish a
+    long rest.
+
+    """
+    name = "Fungal Infestation"
+    source = "Druid (Circle of Spores)"
+
+
+class SpreadingSpores(Feature):
+    """At 10th level, you gain the ability to seed an area with deadly spores.
+    As a bonus action while your Symbiotic Entity feature is active, you can
+    hurl spores up to 30 feet away, where they swirl in a 10-foot cube for 1
+    minute. The spores disappear early if you use this feature again, if you
+    dismiss them as a bonus action, or if your Symbiotic Entity feature is no
+    longer active.
+
+    Whenever a creature moves into the cube or starts its turn there, that
+    creature takes your Halo of Spores damage, unless the creature succeeds on
+    a Constitution saving throw against your spell save DC. A creature can take
+    this damage nbo mre than once per turn.
+
+    While the cube of sproes persists, you can't use your Halo of Spores
+    reaction.
+
+    """
+    name = "Spreading Spores"
+    source = "Druid (Circle of Spores)"
+
+
+class FungalBody(Feature):
+    """At 14th level, the fungal spores in your body alter you: you can't be
+    blinded, deafened, frightened, or poisoned, and any critical hit against
+    you counts as a normal hit instead, unless you're incapacitated.
+
+    """
+    name = "Fungal Body"
+    source = "Druid (Circle of Spores)"
 
 

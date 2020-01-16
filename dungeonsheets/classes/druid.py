@@ -34,7 +34,7 @@ class MoonCircle(SubClass):
     haunt the deepest parts of the wilderness, where they might go for weeks on
     end before crossing paths with another humanoid creature, let alone another
     druid.
-    
+
     Changeable as the moon, a druid of this circle might prowl as a great cat
     one night, soar over the treetops as an eagle the next day, and crash
     through the undergrowth in bear form to drive off a trespassing
@@ -99,6 +99,33 @@ class ShepherdCircle(SubClass):
     features_by_level[14] = [features.FaithfulSummons]
 
 
+#GGTR
+class SporesCircle(SubClass):
+    """Druids of the Circle of Spores find beauty in decay. They see within
+    mold and other fungi the ability to transform lifeless material into
+    abundant, ableit somewhat strange, life.
+
+    These druids believe that life and death are parts of a grand cycle, with
+    one leading to the other and then back again. Death isn't the end of life,
+    but instead a change of state that sees life shift into a new form.
+
+    Druids of this circle have a complex relationship with the undead. Unlike
+    most other druids, they see nothing inherently wrong with undeath, which
+    they consider to be a companion to life and death. But these druids believe
+    that the natural cycle is heathiest when each segment of it is vibrant and
+    changing. Undead that seek to replace all life with undeath, or that try to
+    avoid passing to a final rest, violate the cycle and must be thwarted.
+    """
+
+    name = "Circle of Spores"
+    circle = "spores"
+    features_by_level = defaultdict(list)
+    features_by_level[2] = [features.CircleSpells, features.HaloOfSpores, features.SymbioticEntity]
+    features_by_level[6] = [features.FungalInfestation]
+    features_by_level[10] = [features.SpreadingSpores]
+    features_by_level[14] = [features.FungalBody]
+
+
 class Druid(CharClass):
     name = 'Druid'
     _wild_shapes = ()
@@ -129,7 +156,7 @@ class Druid(CharClass):
     features_by_level[18] = [features.TimelessBody, features.BeastSpells]
     features_by_level[20] = [features.Archdruid]
     subclasses_available = (LandCircle, MoonCircle, DreamsCircle,
-                            ShepherdCircle)
+                            ShepherdCircle, SporesCircle)
     spellcasting_ability = 'wisdom'
     spell_slots_by_level = {
         1:  (2, 2, 0, 0, 0, 0, 0, 0, 0, 0),
@@ -181,7 +208,7 @@ class Druid(CharClass):
     def all_wild_shapes(self):
         """Return all wild shapes, regardless of validity."""
         return self._wild_shapes
-    
+
     @property
     def wild_shapes(self):
         """Return a list of valid wild shapes for this Druid."""
@@ -191,7 +218,7 @@ class Druid(CharClass):
             if self.can_assume_shape(shape):
                 valid_shapes.append(shape)
         return valid_shapes
-    
+
     @wild_shapes.setter
     def wild_shapes(self, new_shapes):
         actual_shapes = []
@@ -211,23 +238,23 @@ class Druid(CharClass):
             actual_shapes.append(new_shape)
         # Save the updated list for later
         self._wild_shapes = actual_shapes
-        
+
     def can_assume_shape(self, shape: monsters.Monster)-> bool:
         """Determine if a given shape meets the requirements for transforming.
-        
+
         See Pg 66 of player's handbook.
-        
+
         Parameters
         ==========
         shape
           A monster that the Druid wishes to transform into.
-        
+
         Returns
         =======
         can_assume
           True if the monster meets the C/R, swim and flying speed
           restrictions.
-        
+
         """
         # Determine acceptable states based on druid level
         if self.level < 2:
@@ -258,11 +285,11 @@ class Druid(CharClass):
         valid_fly = (max_fly is None or shape.fly_speed <= max_fly)
         can_assume = shape.is_beast and valid_cr and valid_swim and valid_fly
         return can_assume
-    
+
     @property
     def spells(self):
         return tuple(S() for S in self.spells_prepared)
-    
+
     @spells.setter
     def spells(self, val):
         if len(val) > 0:
