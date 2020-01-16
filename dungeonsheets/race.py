@@ -39,10 +39,10 @@ class Race():
     @property
     def spells_prepared(self):
         return self.spells_known
-    
+
     def __str__(self):
         return self.name
-    
+
     def __repr__(self):
         return "\"{:s}\"".format(self.name)
 
@@ -129,7 +129,7 @@ class LightfootHalfling(_Halfling):
     name = "Lightfoot Halfling"
     charisma_bonus = 1
     features = _Halfling.features + (feats.NaturallyStealthy,)
-    
+
 
 class StoutHalfling(_Halfling):
     name = "Stout Halfling"
@@ -179,7 +179,7 @@ class ForestGnome(_Gnome):
     features = _Gnome.features + (feats.NaturalIllusionist,
                                   feats.SpeakWithSmallBeasts)
     spells_known = (spells.MinorIllusion,)
-    
+
 
 class RockGnome(_Gnome):
     name = "Rock Gnome"
@@ -248,7 +248,7 @@ class _Aasimar(Race):
                 feats.HealingHands, feats.LightBearer)
     spells_known = (spells.Light,)
 
-    
+
 # Protector Aasimar
 class ProtectorAasimar(_Aasimar):
     name = "Protector Aasimar"
@@ -393,7 +393,7 @@ class AirGenasi(_Genasi):
     features = (feats.UnendingBreath,
                 feats.MingleWithTheWind)
 
-    
+
 class EarthGenasi(_Genasi):
     name = "Earth Genasi"
     strength_bonus = 1
@@ -415,6 +415,16 @@ class WaterGenasi(_Genasi):
                 feats.CallToTheWave)
 
 
+class Goblin(Race):
+    name = "Goblin"
+    size = "small"
+    dexterity_bonus = 2
+    constitution_bonus = 1
+    speed = 30
+    languages = ("Common", "Goblin")
+    features = (feats.Darkvision, feats.FuryOfTheSmall, feats.NimbleEscape)
+
+
 PHB_races = [HillDwarf, MountainDwarf, HighElf, WoodElf, DarkElf,
              LightfootHalfling, StoutHalfling, Human, Dragonborn,
              ForestGnome, RockGnome, HalfElf, HalfOrc, Tiefling]
@@ -425,7 +435,10 @@ VOLO_races = [ProtectorAasimar, ScourgeAasimar, FallenAasimar,
 EE_races = [Aarakocra, DeepGnome, AirGenasi, FireGenasi, EarthGenasi,
             WaterGenasi]
 
-available_races = PHB_races + VOLO_races + EE_races
+#Guildmaster's Guide to Ravnica
+GGTR_races = [Goblin]
+
+available_races = PHB_races + VOLO_races + EE_races + GGTR_races
 
 __all__ = tuple([r.name for r in available_races]) + (
-    'available_races', 'PHB_races', 'VOLO_races', 'EE_races')
+    'available_races', 'PHB_races', 'VOLO_races', 'EE_races', 'GGTR_races')

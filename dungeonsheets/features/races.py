@@ -32,7 +32,7 @@ class PowerfulBuild(Feature):
     name = "Powerful Build"
     source = "Race"
 
-    
+
 class Amphibious(Feature):
     """
     You can breath air and water
@@ -41,7 +41,7 @@ class Amphibious(Feature):
     name = "Amphibious"
     source = "Race"
 
-    
+
 # Dwarves
 class DwarvenResilience(Feature):
     """You have advantage on saving throws against poison, and you have resistance
@@ -62,7 +62,7 @@ class Stonecunning(Feature):
     name = "Stonecunning"
     source = "Race (Dwarf)"
 
-    
+
 class DwarvenToughness(Feature):
     """
     Your hit point maximum
@@ -73,7 +73,7 @@ class DwarvenToughness(Feature):
     source = "Race (Hill Dwarf)"
     needs_implementation = True
 
-    
+
 # Elves
 class FeyAncestry(Feature):
     """You have advantage on saving throws against being charmed, and magic can’t
@@ -163,7 +163,7 @@ class HalflingNimbleness(Feature):
     name = "Halfling Nimbleness"
     source = "Race (Halfling)"
 
-    
+
 class NaturallyStealthy(Feature):
     """You can attempt to hide even when you are obscured only by a creature that
     is at least one size larger than you.
@@ -283,7 +283,7 @@ class ArtificersLore(Feature):
     name = "Artificer's Lore"
     source = "Race (Rock Gnome)"
 
-    
+
 class Tinker(Feature):
     """You have proficiency with artisan’s tools (tinker’s tools). Using those
     tools, you can spend 1 hour and 10 gp worth of materials to construct a
@@ -316,8 +316,28 @@ class StoneCamouflage(Feature):
     source = "Race (Deep Gnome)"
 
 
+# Goblins
+class FuryOfTheSmall(Feature):
+    """
+    When you damage a creature with an attack or a spell and the creature's
+    size is larger than yours, you can cause the attack or spell to deal extra
+    damage to the creature. The extra damage equals your level. Once you use
+    this trait, you can't use it again until you finish a short or long rest.
+    """
+    name = "Fury of the Small"
+    source = "Race (Goblin)"
+
+
+class NimbleEscape(Feature):
+    """
+    You can take the Disengage or Hide action as a bonus action on each of your
+    turns.
+    """
+    name = "Nimble Escape"
+    source "Race (Goblin)"
+
 # Half-Elves
-    
+
 # Half-Orcs
 class RelentlessEndurance(Feature):
     """When you are reduced to 0 hit points but not killed outright, you can drop
@@ -353,7 +373,7 @@ class InfernalLegacy(Feature):
     the hellish rebuke spell once per day as a 2nd-level spell. Once you reach
     5th level, you can also cast the darkness spell once per day. Charisma is
     your spellcasting ability for these spells.
-    
+
     """
     name = "Infernal Legacy"
     source = "Race (Tiefling)"
@@ -422,7 +442,7 @@ class RadiantConsumption(Feature):
 
     Once you use this trait, you can't use it again until you finish a long
     rest.
-    
+
     """
     name = "Radiant Consumption"
     source = "Race (Scourge Aasimar)"
@@ -519,7 +539,7 @@ class ExpertForgery(Feature):
     name = "Expert Forgery"
     source = "Race (Kenku)"
 
-    
+
 class Mimicry(Feature):
     """You can mimic sounds you have heard, including voices. A creature that
     hears the sounds you make can tell they are imitations with a successful
@@ -529,7 +549,7 @@ class Mimicry(Feature):
     name = "Mimicry"
     source = "Race (Kenku)"
 
-    
+
 # Lizardfolk
 class CunningArtisan(Feature):
     """As part of a short rest, you can harvest bone and hide from a slain
@@ -695,7 +715,7 @@ class ReachToTheBlaze(Feature):
 class AcidResistance(Feature):
     """
     You have resistance to acid damage.
-    
+
     """
     name = "Acid Resistance"
     source = "Race (Water Genasi)"
