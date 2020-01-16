@@ -334,7 +334,7 @@ class NimbleEscape(Feature):
     turns.
     """
     name = "Nimble Escape"
-    source "Race (Goblin)"
+    source = "Race (Goblin)"
 
 # Half-Elves
 
