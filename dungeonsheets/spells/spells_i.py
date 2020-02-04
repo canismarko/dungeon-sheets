@@ -74,6 +74,23 @@ class Identify(Spell):
     classes = ('Bard', 'Wizard')
 
 
+class IdInsinuation(Spell):
+    """You unleash a torrent of conflicting desires in the mind of one creature you can
+    see within range, impairing its ability to make decisions. The target must succeed
+    on a Wisdom saving throw or be incapacitated. At the end of each of its turns, it
+    takes 1d12 psychic damage, and it can then make another Wisdom saving throw. On a
+    success, the spell ends on the target.
+    """
+    name = "Id Insinuation"
+    level = 1
+    casting_time = "1 action"
+    casting_range = "60ft"
+    components = ('V', 'S')
+    duration = "1 minute"
+    magic_school = "Enchantment"
+    classes = ('Sorcerer')
+
+
 class IllusoryDragon(Spell):
     """By gathering threads of shadow material from the Shadowfell, you create a Huge 
     shadowy dragon in an unoccupied space that you can see within range. The 
