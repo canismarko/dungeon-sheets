@@ -714,7 +714,7 @@ class CallToTheWave(Feature):
 
 # RFTLW Races
 
-class DualMind(Feature)
+class DualMind(Feature):
     """
     You have advantage on all Wisdom saving throws.
     
@@ -722,7 +722,7 @@ class DualMind(Feature)
     name = "Dual Mind"
     source = "Race (Kalashtar)"
 
-class MentalDiscipline(Feature)
+class MentalDiscipline(Feature):
     """
     You have resistance to psychic damage.
     
@@ -730,7 +730,7 @@ class MentalDiscipline(Feature)
     name = "Mental Discipline"
     source = "Race (Kalashtar)"
 
-class MindLink(Feature)
+class MindLink(Feature):
     """
     You can speak telepathically to any creature you can see, provided
     the creature is within a number of feet of you equal to 10 times your
@@ -750,7 +750,7 @@ class MindLink(Feature)
     name = "Mind Link"
     source = "Race (Kalashtar)"
 
-class SeveredFromDreams(Feature)
+class SeveredFromDreams(Feature):
     """
     Kalashtar sleep, but they don't connect to the plane of dreams as
     other creatures do. Instead, their minds draw from the memories of
