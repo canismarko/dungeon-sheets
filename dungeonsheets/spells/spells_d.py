@@ -11,7 +11,7 @@ class DancingLights(Spell):
     
     As a bonus action on your turn, you can move the lights up to 60 feet 
     to a new spot within range. A light must be within 20 feet of another light 
-    created by this spell, and a light winks out if it exceeds the spell’s range.
+    created by this spell, and a light winks out if it exceeds the spell's range.
     """
     name = "Dancing Lights"
     level = 0
@@ -62,15 +62,15 @@ class Darkness(Spell):
     """Magical darkness spreads from a point you choose within range to fill a 15-foot 
     radius sphere for the duration.
     The darkness spreads around corners. A creature 
-    with darkvision can’t see through this darkness, and nonmagical light can’t 
+    with darkvision can't see through this darkness, and nonmagical light can't 
     illuminate it. 
     
     If the point you choose is on an object you are holding or one 
-    that isn’t being worn or carried, the darkness emanates from the object and 
+    that isn't being worn or carried, the darkness emanates from the object and 
     moves with it. Completely covering the source of the darkness with an opaque 
     object, such as a bowl or a helm, blocks the darkness.
     
-    If any of this spell’s 
+    If any of this spell's 
     area overlaps with an area of light created by a spell of 2nd level or lower, 
     the spell that created the light is dispelled.
     """
@@ -109,7 +109,7 @@ class Dawn(Spell):
     there. This light is sunlight. When the cylinder appears, each creature in it 
     must make a Constitution saving throw, taking 4d10 radiant damage on a failed 
     save, or half as much damage on a successful one. A creature must also make this
-     saving throw whenever it ends its turn in the cylinder. If you’re within 60 
+     saving throw whenever it ends its turn in the cylinder. If you're within 60 
     feet of the cylinder, you can move it up to 60 feet as a bonus action on your 
     turn.
     """
@@ -131,12 +131,12 @@ class Daylight(Spell):
     The sphere is bright light and sheds dim light for an additional 60 
     feet. 
     
-    If you chose a point on an object you are holding or one that isn’t 
+    If you chose a point on an object you are holding or one that isn't 
     being worn or carried, the light shines from the object with and moves with it. 
     Completely covering the affected object with an opaque object, such as a bowl or
      a helm, blocks the light. 
     
-    If any of this spell’s area overlaps with an area 
+    If any of this spell's area overlaps with an area 
     of darkness created by a spell of 3rd level or lower, the spell that created the
      darkness is dispelled.
     """
@@ -184,7 +184,7 @@ class DelayedBlastFireball(Spell):
     equal to the total accumulated damage on a failed save, or half as much damage 
     on a successful one. 
     
-    The spell’s base damage is 12d6. If at the end of your 
+    The spell's base damage is 12d6. If at the end of your 
     turn the bead has not yet detonated, the damage increases by 1d6. 
     
     If the 
@@ -194,7 +194,7 @@ class DelayedBlastFireball(Spell):
     creature can throw the bead up to 40 feet. When it strikes a creature or a solid
      object, the spell ends, and the bead explodes. 
     The fire damages objects in the
-     area and ignites flammable objects that aren’t being worn or carried.
+     area and ignites flammable objects that aren't being worn or carried.
     
     At 
     Higher Levels: When you cast this spell using a spell slot of 8th level or 
@@ -245,7 +245,7 @@ class DestructiveWave(Spell):
     from you. Each creature you choose within 30 feet of you must succeed on a 
     Constitution saving throw or take 5d6 thunder damage, as well as 5d6 radiant or 
     necrotic damage (your choice), and be knocked prone. A creature that succeeds on
-     its saving throw takes half as much damage and isn’t knocked prone.
+     its saving throw takes half as much damage and isn't knocked prone.
     """
     name = "Destructive Wave"
     level = 5
@@ -329,18 +329,18 @@ class DetectThoughts(Spell):
     When you cast
      the spell and as your action on each turn until the spell ends, you can focus 
     your mind on any one creature that you can see within 30 feet of you. If the 
-    creature you choose has an Intelligence of 3 or lower or doesn’t speak any 
+    creature you choose has an Intelligence of 3 or lower or doesn't speak any 
     language, the creature is unaffected. 
     
     You initially learn the surface thoughts
-     of the creature—what is most on its mind in that moment. As an action, you can 
-    either shift your attention to another creature’s thoughts or attempt to probe 
-    deeper into the same creature’s mind. If you probe deeper, the target must make 
+     of the creature-what is most on its mind in that moment. As an action, you can 
+    either shift your attention to another creature's thoughts or attempt to probe 
+    deeper into the same creature's mind. If you probe deeper, the target must make 
     a W isdom saving throw. If it fails, you gain insight into its reasoning (if 
     any), its emotional state, and something that loom s large in its mind (such as 
     something it worries over, loves, or hates). If it succeeds, the spell ends. 
     Either way, the target knows that you are probing into its mind, and unless you 
-    shift your attention to another creature’s thoughts, the creature can use its 
+    shift your attention to another creature's thoughts, the creature can use its 
     action on its turn to make an Intelligence check contested by your Intelligence 
     check; if it succeeds, the spell ends. 
     
@@ -349,16 +349,16 @@ class DetectThoughts(Spell):
     particularly effective as part of an interrogation. 
     
     You can also use this 
-    spell to detect the presence of thinking creatures you can’t see. When you cast 
+    spell to detect the presence of thinking creatures you can't see. When you cast 
     the spell or as your action during the duration, you can search for thoughts 
     within 30 feet of you. The spell can penetrate barriers, but 2 feet of rock, 2 
     inches of any metal other than lead, or a thin sheet of lead blocks you. You 
-    can’t detect a creature with an Intelligence of 3 or lower or one that doesn’t 
+    can't detect a creature with an Intelligence of 3 or lower or one that doesn't 
     speak any language. 
     
     Once you detect the presence of a creature in this way, 
     you can read its thoughts for the rest of the duration as described above, even 
-    if you can’t see it, but it must still be within range.
+    if you can't see it, but it must still be within range.
     """
     name = "Detect Thoughts"
     level = 2
@@ -376,10 +376,10 @@ class DimensionDoor(Spell):
     """You teleport yourself from your current location to any other spot within range.
      You arrive at exactly the spot desired. It can be a place you can see, one you 
     can visualize, or one you can describe by stating distance and direction, such 
-    as "200 feet straight downward" or "upward to the northwest at a 45-degree 
-    angle, 300 feet". 
+    as "200 feet straight downward" or "upward to the northwest at a 45-degree 
+    angle, 300 feet".
     
-    You can bring along objects as long as their weight doesn’t
+    You can bring along objects as long as their weight doesn't
      exceed what you can carry. You can also bring one willing creature of your size
      or smaller who is carrying gear up to its carrying capacity. The creature must 
     be within 5 feet of you when you cast this spell. 
@@ -402,11 +402,11 @@ class DimensionDoor(Spell):
 
 
 class DisguiseSelf(Spell):
-    """You make yourself – including your clothing, armor, weapons, and other 
-    belongings on your person – look different until the spell ends or until you 
+    """You make yourself, including your clothing, armor, weapons, and other 
+    belongings on your person, look different until the spell ends or until you 
     use your action to dismiss it. 
-    You can seem  1 foot shorter or taller and can 
-    appear thin, fat, or in between. You can’t change your body type, so you must 
+    You can seem 1 foot shorter or taller and can 
+    appear thin, fat, or in between. You can't change your body type, so you must 
     adopt a form that has the same basic arrangement of limbs. Otherwise, the extent
      of the illusion is up to you. 
     
@@ -488,7 +488,7 @@ class DispelEvilAndGood(Spell):
     melee spell attack against a celestial, an elemental, a fey, a fiend, or an 
     undead you can reach. On a hit, you attempt to drive the creature back to its 
     home plane. The creature must succeed on a Charisma saving throw or be sent back
-     to its home plane (if it isn’t there already). If they aren’t on their home 
+     to its home plane (if it isn't there already). If they aren't on their home 
     plane, undead are sent to the Shadowfell, and fey are sent to the Feywild.
     """
     name = "Dispel Evil And Good"
@@ -507,11 +507,11 @@ class DispelMagic(Spell):
     """Choose any creature, object, or magical effect within range. Any spell of 3rd 
     level or lower on the target ends. For each spell of 4th level or higher on the 
     target, make an ability check using your spellcasting ability. The DC equals 10 
-    + the spell’s level. On a successful check, the spell ends.
+    + the spell's level. On a successful check, the spell ends.
     
     At Higher Levels: 
     When you cast this spell using a spell slot of 4th level or higher, you 
-    automatically end the effects of a spell on the target if the spell’s level is 
+    automatically end the effects of a spell on the target if the spell's level is 
     equal to or less than the level of the spell slot you used.
     """
     name = "Dispel Magic"
@@ -532,8 +532,8 @@ class DissonantWhispers(Spell):
     The target must make a Wisdom 
     saving throw. On a failed save, it takes 3d6 psychic damage and must immediately
      use its reaction , if available, to move as far as its speed allows away from 
-    you. The creature doesn’t move into obviously dangerous ground, such as a fire 
-    or a pit. On a successful save, the target takes half as much damage and doesn’t
+    you. The creature doesn't move into obviously dangerous ground, such as a fire 
+    or a pit. On a successful save, the target takes half as much damage and doesn't
      have to move away. A deafened creature automatically succeeds on the save.
     
     At 
@@ -553,12 +553,12 @@ class DissonantWhispers(Spell):
 
 
 class Divination(Spell):
-    """Your magic and an offering put you in contact with a god or a god’s servants. 
+    """Your magic and an offering put you in contact with a god or a god's servants. 
     You ask a single question concerning a specific goal, event, or activity to 
     occur within 7 days. The DM offers a truthful reply. The reply might be a short 
     phrase, a cryptic rhyme, or an omen. 
     
-    The spell doesn’t take into account any 
+    The spell doesn't take into account any 
     possible circumstances that might change the outcome, such as the casting of 
     additional spells or the loss or gain of a companion. 
     
@@ -602,18 +602,18 @@ class DivineWord(Spell):
     creature that can hear you must make a Charisma saving throw. On a failed save, 
     a creature suffers an effect based on its current hit points: 
     
-     •  50 hit 
+     -  50 hit 
     points or fewer: deafened for 1 minute 
-     •  40 hit points or fewer: deafened and
+     -  40 hit points or fewer: deafened and
      blinded for 10 minutes 
-     •  30 hit points or fewer: blinded, deafened, and 
+     -  30 hit points or fewer: blinded, deafened, and 
     stunned for 1 hour 
-     •  20 hit points or fewer: killed instantly 
+     -  20 hit points or fewer: killed instantly 
     
     Regardless of
      its current hit points, a celestial, an elemental, a fey, or a fiend that fails
-     its save is forced back to its plane of origin (if it isn’t there already) and 
-    can’t return to your current plane for 24 hours by any means short of a wish 
+     its save is forced back to its plane of origin (if it isn't there already) and 
+    can't return to your current plane for 24 hours by any means short of a wish 
     spell.
     """
     name = "Divine Word"
@@ -639,14 +639,14 @@ class DominateBeast(Spell):
     as long as the two of you are on the same plane of existence. You can use this 
     telepathic link to issue commands to the creature while you are conscious (no 
     action required), which it does its best to obey. You can specify a simple and 
-    general course of action, such as “Attack that creature,” “Run over there,” or 
-    “Fetch that object.” If the creature completes the order and doesn’t receive 
+    general course of action, such as "Attack that creature," "Run over there," or 
+    "Fetch that object." If the creature completes the order and doesn't receive 
     further direction from you, it defends and preserves itself to the best of its 
     ability. 
     
     You can use your action to take total and precise control of the 
     target. Until the end of your next turn, the creature takes only the actions you
-     choose, and doesn’t do anything that you don’t allow it to do. During this 
+     choose, and doesn't do anything that you don't allow it to do. During this 
     time, you can also cause the creature to use a reaction, but this requires you 
     to use your own reaction as well. 
     
@@ -684,14 +684,14 @@ class DominateMonster(Spell):
     it as long as the two of you are on the same plane of existence. You can use 
     this telepathic link to issue commands to the creature while you are conscious 
     (no action required), which it does its best to obey. You can specify a simple 
-    and general course of action, such as "Attack that creature", "Run over 
-    there", or "Fetch that object". If the creature completes the order and 
-    doesn’t receive further direction from you, it defends and preserves itself to 
+    and general course of action, such as "Attack that creature", "Run over 
+    there", or "Fetch that object". If the creature completes the order and 
+    doesn't receive further direction from you, it defends and preserves itself to 
     the best of its ability. 
     
     You can use your action to take total and precise 
     control of the target. Until the end of your next turn, the creature takes only 
-    the actions you choose, and doesn’t do anything that you don’t allow it to do. 
+    the actions you choose, and doesn't do anything that you don't allow it to do. 
     During this time, you can also cause the creature to use a reaction, but this 
     requires you to use your own reaction as well. 
     
@@ -725,14 +725,14 @@ class DominatePerson(Spell):
     as long as the two of you are on the same plane of existence. You can use this 
     telepathic link to issue commands to the creature while you are conscious (no 
     action required), which it does its best to obey. You can specify a simple and 
-    general course of action, such as "Attack that creature", "Run over there", 
-    or "Fetch that object". If the creature completes the order and doesn’t 
+    general course of action, such as "Attack that creature", "Run over there", 
+    or "Fetch that object". If the creature completes the order and doesn't 
     receive further direction from you, it defends and preserves itself to the best 
     of its ability. 
     
     You can use your action to take total and precise control of 
     the target. Until the end of your next turn, the creature takes only the actions
-     you choose, and doesn’t do anything that you don’t allow it to do. During this 
+     you choose, and doesn't do anything that you don't allow it to do. During this 
     time you can also cause the creature to use a reaction, but this requires you to
      use your own reaction as well. 
     
@@ -791,15 +791,15 @@ class DrawmijsInstantSummons(Spell):
     component. Each time you cast this spell, you must use a different sapphire. 
     
     
-    At any time thereafter, you can use your action to speak the item’s name and 
+    At any time thereafter, you can use your action to speak the item's name and 
     crush the sapphire. The item instantly appears in your hand regardless of 
     physical or planar distances, and the spell ends. If another creature is holding
-     or carrying the item, crushing the sapphire doesn’t transport the item to you, 
+     or carrying the item, crushing the sapphire doesn't transport the item to you, 
     but instead you learn who the creature possessing the object is and roughly 
     where that creature is located at that moment. 
     
     Dispel magic or a similar 
-    effect successfully applied to the sapphire ends this spell’s effect.
+    effect successfully applied to the sapphire ends this spell's effect.
     """
     name = "Drawmijs Instant Summons"
     level = 6
@@ -861,7 +861,7 @@ sleeping bird"""
 
 class DruidGrove(Spell):
     """You invoke the spirits of nature to protect an area outdoors or underground. The
-     area can be as small as a 30—foot cube or as large as a 90-foot cube. Buildings
+     area can be as small as a 30-foot cube or as large as a 90-foot cube. Buildings
      and other structures are excluded from the affected area. If you cast this 
     spell in the same area every day for a year, the spell lasts until dispelled. 
     The spell creates the following effects within the area. When you cast this 
@@ -869,7 +869,7 @@ class DruidGrove(Spell):
     can also specify a password that, when spoken aloud, makes the speaker immune to
      these effects. The entire warded area radiates magic. A dispel magic cast on 
     the area, if successful, removes only one of the following effects, not the 
-    entire area. That spell’s caster chooses which effect to end. Only when all its 
+    entire area. That spell's caster chooses which effect to end. Only when all its 
     effects are gone is this spell dispelled.
     Solid Fog. You can fill any number of 
     5-foot squares on the ground with thick fog, making them heavily obscured. The 
@@ -878,13 +878,13 @@ class DruidGrove(Spell):
     nothing and looks like soft mist, with motes of green light floating in the air.
     
     Grasping Undergrowth. You can fill any number of 5-foot squares on the ground 
-    that aren’t filled with fog with grasping weeds and vines, as if they were 
+    that aren't filled with fog with grasping weeds and vines, as if they were 
     affected by an entangle spell. To a creature immune to this effect, the weeds 
     and vines feel soft and reshape themselves to serve as temporary seats or beds.
     
     Grove Guardians. You can animate up to four trees in the area, causing them to 
     uproot themselves from the ground. These trees have the same statistics as an 
-    awakened tree, which appears in the Monster Manual, except they can’t speak, and
+    awakened tree, which appears in the Monster Manual, except they can't speak, and
      their bark is covered with druidic symbols. If any creature not immune to this 
     effect enters the warded area, the grove guardians fight until they have driven 
     off or slain the intruders. The grove guardians also obey your spoken commands 
@@ -919,17 +919,17 @@ class Druidcraft(Spell):
     """Whispering to the spirits of nature, you create one of the following effects 
     within range: 
     
-    • You create a tiny, harmless sensory effect that predicts what 
+    - You create a tiny, harmless sensory effect that predicts what 
     the weather will be at your location for the next 24 hours. The effect might 
     manifest as a golden orb  for clear skies, a cloud for rain, falling snowflakes 
     for snow, and so on. This effect persists for 1 round. 
-    • You instantly make a 
+    - You instantly make a 
     flower blossom, a seed pod open, or a leaf bud bloom. 
-    • You create an 
+    - You create an 
     instantaneous, harmless sensory effect, such as falling leaves, a puff of wind, 
     the sound of a small animal, or the faint odor of skunk. The effect  must fit in
      a 5-foot cube. 
-    • You instantly light or snuff out a candle, a torch, or a 
+    - You instantly light or snuff out a candle, a torch, or a 
     small campfire.
     """
     name = "Druidcraft"
@@ -948,11 +948,11 @@ class DustDevil(Spell):
     """(a pinch of dust)
     Choose an unoccupied 5-foot cube of air that you can see 
     within range. An elemental force that resembles a dust devil appears in the cube
-     and lasts for the spell’s duration.
+     and lasts for the spell's duration.
     Any creature that ends its turn within 5 
     feet of the dust devil must make a Strength saving throw. On a failed save, the 
     creature takes 1d8 bludgeoning damage and is pushed 10 feet away. On a 
-    successful save, the creature takes half as much damage and isn’t pushed.
+    successful save, the creature takes half as much damage and isn't pushed.
     As a 
     bonus action, you can move the dust devil up to 30 feet in any direction. If the
      dust devil moves over sand, dust, loose dirt, or small gravel, it sucks up the 

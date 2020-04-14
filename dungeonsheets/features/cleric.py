@@ -42,9 +42,9 @@ class TurnUndead(Feature):
     turned for 1 minute or until it takes any damage.
 
     A turned creature must spend its turns trying to move as far away from you
-    as it can, and it can’t willingly move to a space within 30 feet of you. It
-    also can’t take reactions. For its action, it can use only the Dash action
-    or try to escape from an effect that prevents it from moving. If there’s
+    as it can, and it can't willingly move to a space within 30 feet of you. It
+    also can't take reactions. For its action, it can use only the Dash action
+    or try to escape from an effect that prevents it from moving. If there's
     nowhere to move, the creature can use the Dodge action.
 
     """
@@ -81,13 +81,13 @@ class DivineIntervention(Feature):
     """Beginning at 10th level, you can call on your deity to intervene on your
     behalf when your need is great.
 
-    Imploring your deity’s aid requires you to use your action. Describe the
+    Imploring your deity's aid requires you to use your action. Describe the
     assistance you seek, and roll percentile dice. If you roll a number equal
     to or lower than your cleric level, your deity intervenes. The DM chooses
     the nature of the intervention; the effect of any cleric spell or cleric
     domain spell would be appropriate.
 
-    If your deity intervenes, you can’t use this feature again for 7
+    If your deity intervenes, you can't use this feature again for 7
     days. Otherwise, you can use it again after you finish a long rest.
 
     At 20th level, your call for intervention succeeds automatically, no roll
@@ -137,11 +137,11 @@ class KnowledgeOfTheAncients(DivineIntervention):
 
 
 class ReadThoughts(DivineIntervention):
-    """At 6th level, you can use your Channel Divinity to read a creature’s
-    thoughts. You can then use your access to the creature’s mind to command
+    """At 6th level, you can use your Channel Divinity to read a creature's
+    thoughts. You can then use your access to the creature's mind to command
     it.  As an action, choose one creature that you can see within 60 feet of
     you. That creature must make a Wisdom saving throw. If the creature
-    succeeds on the saving throw, you can’t use this feature on it again until
+    succeeds on the saving throw, you can't use this feature on it again until
     you finish a long rest.
 
     If the creature fails its save, you can read its surface thoughts (those
@@ -172,11 +172,11 @@ class VisionsOfThePast(Feature):
     minute in meditation and prayer, then receive dreamlike, shadowy glimpses
     of recent events. You can meditate in this way for a number of minutes
     equal to your Wisdom score and must maintain concentration during that
-    time, as if you were casting a spell. Once you use this feature, you can’t
+    time, as if you were casting a spell. Once you use this feature, you can't
     use it again until you finish a short or long rest.
 
     **Object Reading**: Holding an object as you meditate, you can see visions
-    of the object’s previous owner. After meditating for 1 minute, you learn
+    of the object's previous owner. After meditating for 1 minute, you learn
     how the owner acquired and lost the object, as well as the most recent
     significant event involving the object and that owner. If the object was
     owned by another creature in the recent past (within a number of days equal
@@ -202,7 +202,7 @@ class DiscipleOfLife(Feature):
     """Also starting at 1st level, your healing spells are more
     effective. Whenever you use a spell of 1st level or higher to restore hit
     points to a creature, the creature regains additional hit points equal to 2
-    + the spell’s level
+    + the spell's level
 
     """
     name = "Disciple of Life"
@@ -215,7 +215,7 @@ class PreserveLife(ChannelDivinity):
     energy that can restore a number of hit points equal to five times your
     cleric level. Choose any creatures within 30 feet of you, and divide those
     hit points among them. This feature can restore a creature to no more than
-    half of its hit point maximum. You can’t use this feature on an undead or a
+    half of its hit point maximum. You can't use this feature on an undead or a
     construct.
 
     """
@@ -227,7 +227,7 @@ class BlessedHealer(Feature):
     """Beginning at 6th level, the healing spells you cast on others heal you as
     well. When you cast a spell of 1st level or higher that restores hit points
     to a creature other than you, you regain hit points equal to 2 + the
-    spell’s level.
+    spell's level.
 
     """
     name = "Blessed Healer"
@@ -262,7 +262,7 @@ class WardingFlare(Feature):
     attacking enemy. When you are attacked by a creature within 30 feet of you
     that you can see, you can use your reaction to impose disadvantage on the
     attack roll, causing light to flare before the attacker before it hits or
-    misses. An attacker that can’t be blinded is immune to this feature. You
+    misses. An attacker that can't be blinded is immune to this feature. You
     can use this feature a number of times equal to your Wisdom modifier (a
     minimum of once). You regain all expended uses when you finish a long rest
 
@@ -455,7 +455,7 @@ class InvokeDuplicity(ChannelDivinity):
     bonus action on your turn, you can move the illusion up to 30 feet to a
     space you can see, but it must remain within 120 feet of you.
 
-    For the duration, you can cast spells as though you were in the illusion’s
+    For the duration, you can cast spells as though you were in the illusion's
     space, but you must use your own senses. Additionally, when both you and
     your illusion are within 5 feet of a creature that can see the illusion,
     you have advantage on attack rolls against that creature, given how
@@ -478,7 +478,7 @@ class CloakOfShadows(ChannelDivinity):
 
 class DivineStrikeTrickery(DivineStrike):
     """At 8th level, you gain the ability to infuse your weapon strikes with
-    poison—a gift from your deity. Once on each of your turns when you hit a
+    poison-a gift from your deity. Once on each of your turns when you hit a
     creature with a weapon attack, you can cause the attack to deal an extra
     1d8 poison damage to the target. When you reach 14th level, the extra
     damage increases to 2d8.
@@ -627,8 +627,8 @@ class BlessingOfTheForge(Feature):
     armor. At the end of a long rest, you can touch one nonmagical object that
     is a suit of armor or a simple or martial weapon. Until the end of your
     next long rest or until you die, the object becomes a magic item, granting
-    a +1 bonus to AC if it’s armor or a +1 bo— nus to attack and damage rolls
-    if it’s a weapon. Once you use this feature, you can’t use it again until
+    a +1 bonus to AC if it's armor or a +1 bo- nus to attack and damage rolls
+    if it's a weapon. Once you use this feature, you can't use it again until
     you finish a long rest
 
     """
@@ -638,17 +638,17 @@ class BlessingOfTheForge(Feature):
 
 class ArtisansBlessing(Feature):
     """Starting at 2nd level, you can use your Channel Divinity to create simple
-    items. You conduct an hour—long ritual that crafts a nonmagi— cal item that
+    items. You conduct an hour-long ritual that crafts a nonmagi- cal item that
     must include some metal: a simple or martial weapon, a suit of armor, ten
     pieces of ammunition, a set of tools, or another metal Object (see chapter
-    5, “Equipment,” in the Player’s Handbook for examples of these items). The
+    5, "Equipment," in the Player's Handbook for examples of these items). The
     creation is completed at the end of the hour, coalescing in an unoccupied
     space of your choice on a surface within 5 feet of you. The thing you
     create can be something that is worth no more than 100 gp.
 
     As part of this ritual, you must lay out metal, which can include coins,
     with a value equal to the creation. The metal irretrievably coalesces and
-    transforms into the creation at the ritual’s end, magically forming even
+    transforms into the creation at the ritual's end, magically forming even
     nonmetal parts of the creation. The ritual can create a duplicate of a
     nonmagical item that contains metal, such as a key, if you possess the
     original during the ritual.
@@ -662,9 +662,9 @@ class SoulOfTheForge(Feature):
     """Starting at 6th level, your mastery of the forge grants you special
     abilities:
 
-    -- You gain resistance to fire damage.
+    • You gain resistance to fire damage.
 
-    -- While wearing heavy armor, you gain a +1 bonus to AC.
+    • While wearing heavy armor, you gain a +1 bonus to AC.
 
     """
     name = "Soul of the Forge"
@@ -686,9 +686,9 @@ class SaintOfForgeAndFire(Feature):
     """At 17th level, your blessed affinity with fire and metal becomes more
     powerful:
 
-    -- You gain immunity to fire damage.
+    • You gain immunity to fire damage.
     
-    -- While wearing heavy armor, you have resistance to bludgeoning, piercing,
+    • While wearing heavy armor, you have resistance to bludgeoning, piercing,
     and slashing damage from non-magical attacks
 
     """
@@ -702,7 +702,7 @@ class CircleOfMortality(Feature):
     death. When you would normally roll one or more dice to restore hit points
     with a spell to a creature at 0 hit points, you instead use the highest
     number possible for each die. In addition, you learn the spare the dying
-    cantrip, which doesn’t count against the number of cleric cantrips you
+    cantrip, which doesn't count against the number of cleric cantrips you
     know. For you, it has a range of 30 feet, and you can cast it as a bonus
     action
 
@@ -718,10 +718,10 @@ class EyesOfTheGrave(Feature):
     undead, whose existence is an insult to the natural cycle of life. As an
     action, you can open your awareness to magically detect undead. Until the
     end ofyour next turn, you know the location of any undead within 60 feet of
-    you that isn’t behind total cover and that isn’t protected from divination
+    you that isn't behind total cover and that isn't protected from divination
     magic.
 
-    This sense doesn’t tell you anything about a creature's capabilities or
+    This sense doesn't tell you anything about a creature's capabilities or
     identity. You can use this feature a number of times equal to your Wisdom
     modifier (minimum Of once). You regain all expended uses when you finish a
     long rest
@@ -738,7 +738,7 @@ class EyesOfTheGrave(Feature):
 
 class PathToTheGrave(ChannelDivinity):
     """Starting at 2nd level, you can use your Channel Divinity to mark another
-    creature’s life force for termination. As an action, you choose one
+    creature's life force for termination. As an action, you choose one
     creature you can see within 30 feet of you, cursing it until the end Of
     your next turn. The next time you or an ally Ofyours hits the cursed
     creature with an attack, the creature has vulnerability tO all of that
@@ -750,7 +750,7 @@ class PathToTheGrave(ChannelDivinity):
 
 
 class SentinelAtDeathsDoor(Feature):
-    """At 6th level, you gain the ability to impede death’s progress. As a
+    """At 6th level, you gain the ability to impede death's progress. As a
     reaction when you or a creature you can see within 30 feet of you suffers a
     critical hit, you can turn that hit into a normal hit. Any effects
     triggered by a critical hit are canceled. You can use this feature a
@@ -771,8 +771,8 @@ class KeeperOfSouls(Feature):
     """Starting at 17th level. you can seize a trace of vitality from a parting
     soul and use it to heal the living. When an enemy you can see dies within
     60 feet of you, you or one creature of your choice that is within 60 feet
-    of you regains hit points equal to the enemy’s number of Hit Dice. You can
-    use this feature only if you aren’t incapacitated. Once you use it, you
+    of you regains hit points equal to the enemy's number of Hit Dice. You can
+    use this feature only if you aren't incapacitated. Once you use it, you
     can't do so again until the start ofyour next turn.
 
     """

@@ -32,7 +32,7 @@ class Hallow(Spell):
     to the following effects.
     
     First, celestials, elementals, fey, fiends, and 
-    undead can’t enter the area, nor can such creatures charm, frighten, or possess 
+    undead can't enter the area, nor can such creatures charm, frighten, or possess 
     creatures within it. Any creature charmed, frightened, or possessed by such a 
     creature is no longer charmed, frightened, or possessed upon entering the area. 
     You can exclude one or more of those types of creatures from this effect.
@@ -43,23 +43,23 @@ class Hallow(Spell):
     apply to creatures in the area; you can designate whether the effect applies to 
     all creatures, creatures that follow a specific deity or leader, or creatures of
      a specific sort, such as ores or trolls. When a creature that would be affected
-     enters the spell’s area for the first time on a turn or starts its turn there, 
+     enters the spell's area for the first time on a turn or starts its turn there, 
     it can make a Charisma saving throw. On a success, the creature ignores the 
     extra effect until it leaves the area.
     
     Courage
-    Affected creatures can’t be 
+    Affected creatures can't be 
     frightened while in the area. 
     
     Darkness
     Darkness fills the area. Normal light, 
     as well as magical light created by spells of a lower level than the slot you 
-    used to cast this spell, can’t illuminate the area.
+    used to cast this spell, can't illuminate the area.
     
     Daylight
     Bright light fills
      the area. Magical darkness created by spells of a lower level than the slot you
-     used to cast this spell can’t extinguish the light.
+     used to cast this spell can't extinguish the light.
     
     Energy Protection
     Affected
@@ -73,11 +73,11 @@ class Hallow(Spell):
     
     Everlasting Rest
     Dead bodies 
-    interred in the area can’t be turned into undead.
+    interred in the area can't be turned into undead.
     
     Extradimensional Interference
     
-    Affected creatures can’t move or travel using teleportation or by 
+    Affected creatures can't move or travel using teleportation or by 
     extradimensional or interplanar means.
     
     Fear
@@ -90,7 +90,7 @@ class Hallow(Spell):
     
     Tongues
     Affected creatures can communicate with any 
-    other creature in the area, even if they don’t share a common language.
+    other creature in the area, even if they don't share a common language.
     """
     name = "Hallow"
     level = 5
@@ -110,12 +110,12 @@ class HallucinatoryTerrain(Spell):
     resemble a swamp, hill, crevasse, or some other difficult or impassable terrain.
      A pond can be made to seem like a grassy meadow, a precipice like a gentle 
     slope, or a rock-strewn gully like a wide and smooth road. Manufactured 
-    structures, equipment, and creatures within the area aren’t changed in 
+    structures, equipment, and creatures within the area aren't changed in 
     appearance.
     
     The tactile characteristics of the terrain are unchanged, so 
     creatures entering the area are likely to see through the illusion. If the 
-    difference isn’t obvious by touch, a creature carefully examining the illusion 
+    difference isn't obvious by touch, a creature carefully examining the illusion 
     can attempt an Intelligence (Investigation) check against your spell save DC to 
     disbelieve it. A creature who discerns the illusion for what it is, sees it as a
      vague image superimposed on the terrain.
@@ -136,10 +136,10 @@ class Harm(Spell):
     """You unleash a virulent disease on a creature that you can see within range.
     The 
     target must make a Constitution saving throw. On a failed save, it takes 14d6 
-    necrotic damage, or half as much damage on a successful save. The damage can’t 
-    reduce the target’s hit points below 1. If the target fails the saving throw, 
+    necrotic damage, or half as much damage on a successful save. The damage can't 
+    reduce the target's hit points below 1. If the target fails the saving throw, 
     its hit point maximum is reduced for 1 hour by an amount equal to the necrotic 
-    damage it took. Any effect that removes a disease allows a creature’s hit point 
+    damage it took. Any effect that removes a disease allows a creature's hit point 
     maximum to return to normal before that time passes.
     """
     name = "Harm"
@@ -156,13 +156,13 @@ class Harm(Spell):
 
 class Haste(Spell):
     """Choose a willing creature that you can see within range. Until the spell ends, 
-    the target’s speed is doubled, it gains a +2 bonus to AC, it has advantage on 
+    the target's speed is doubled, it gains a +2 bonus to AC, it has advantage on 
     Dexterity saving throws, and it gains an additional action on each of its turns.
      That action can be used only to take the Attack (one weapon attack only), Dash,
      Disengage, Hide, or Use an Object action.
     
     When the spell ends, the target 
-    can’t move or take actions until after its next turn, as a wave of lethargy 
+    can't move or take actions until after its next turn, as a wave of lethargy 
     sweeps over it.
     """
     name = "Haste"
@@ -205,7 +205,7 @@ class HealingSpirit(Spell):
     looks like a transparent beast or fey (your choice). Until the spell ends, 
     whenever you or a creature you can see moves into the spirits space for the 
     first time on a turn or starts its turn there, you can cause the spirit to 
-    restore ld6 hit points to that creature (no action required). The spirit can’t 
+    restore ld6 hit points to that creature (no action required). The spirit can't 
     heal constructs or undead. As a bonus action on your turn, you can move the 
     Spirit up to 30 feet to a space you can see.
     
@@ -257,7 +257,7 @@ class HeatMetal(Spell):
     If a creature is 
     holding or wearing the object and takes the damage from it, the creature must 
     succeed on a Constitution saving throw or drop the object if it can. If it 
-    doesn’t drop the object, it has disadvantage on attack rolls and ability checks 
+    doesn't drop the object, it has disadvantage on attack rolls and ability checks 
     until the start of your next turn.
     
     At Higher Levels: When you cast this spell 
@@ -304,7 +304,7 @@ class HellishRebuke(Spell):
 class HeroesFeast(Spell):
     """You bring forth a great feast, including magnificent food and drink. The feast 
     takes 1 hour to consume and disappears at the end of that time, and the 
-    beneficial effects don’t set in until this hour is over. Up to twelve other 
+    beneficial effects don't set in until this hour is over. Up to twelve other 
     creatures can partake of the feast.
     
     A creature that partakes of the feast gains
@@ -440,7 +440,7 @@ class HolyAura(Spell):
     casting_time = "1 action"
     casting_range = "Self"
     components = ('V', 'S', 'M')
-    materials = """A tiny reliquary worth at least 1,000 gp containing a sacred relic, such as a scrap of cloth from a saint’s robe or a piece of parchment from a religious text"""
+    materials = """A tiny reliquary worth at least 1,000 gp containing a sacred relic, such as a scrap of cloth from a saint's robe or a piece of parchment from a religious text"""
     duration = "Concentration, up to 1 minute"
     ritual = False
     magic_school = "Abjuration"
@@ -449,14 +449,14 @@ class HolyAura(Spell):
 
 class HolyWeapon(Spell):
     """You imbue a weapon you touch with holy power. Until the spell ends, the weapon 
-    emits bright light in a 30—foot radius and dim light for an additional 30 feet. 
+    emits bright light in a 30-foot radius and dim light for an additional 30 feet. 
     In addition, weapon attacks made with it deal an extra 2d8 radiant damage on a 
-    hit. If the weapon isn’t already a magic weapon, it becomes one for the 
+    hit. If the weapon isn't already a magic weapon, it becomes one for the 
     duration. As a bonus action on your turn, you can dismiss this spell and cause 
     the weapon to emit a burst of radiance. Each creature of your choice that you 
     can see within 30 feet ofyou must make a Constitution saving throw. On a failed 
     save, a creature takes 4d8 radiant damage, and it is blinded for 1 minute. On a 
-    successful save, a creature takes half as much damage and isn’t blinded. At the 
+    successful save, a creature takes half as much damage and isn't blinded. At the 
     end of each Ofits turns, a blinded creature can make a Constitution saving 
     throw, ending the effect on itselfon a success.
     """

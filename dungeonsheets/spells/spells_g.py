@@ -2,22 +2,22 @@ from .spells import Spell
 
 
 class GaseousForm(Spell):
-    """You transform a willing creature you touch, along with everything it’s wearing 
+    """You transform a willing creature you touch, along with everything it's wearing 
     and carrying, into a misty cloud for the duration. The spell ends if the 
-    creature drops to 0 hit points. An incorporeal creature isn’t affected.
+    creature drops to 0 hit points. An incorporeal creature isn't affected.
     
     While 
-    in this form, the target’s only method of movement is a flying speed of 10 feet.
+    in this form, the target's only method of movement is a flying speed of 10 feet.
      The target can enter and occupy the space of another creature. The target has 
     resistance to nonmagical damage, and it has advantage on Strength, Dexterity, 
     and Constitution saving throws. The target can pass through small holes, narrow 
     openings, and even mere cracks, though it treats liquids as though they were 
-    solid surfaces. The target can’t fall and remains hovering in the air even when 
+    solid surfaces. The target can't fall and remains hovering in the air even when 
     stunned or otherwise incapacitated.
     
     While in the form of a misty cloud, the 
-    target can’t talk or manipulate objects, and any objects it was carrying or 
-    holding can’t be dropped, used, or otherwise interacted with. The target can’t 
+    target can't talk or manipulate objects, and any objects it was carrying or 
+    holding can't be dropped, used, or otherwise interacted with. The target can't 
     attack or cast spells.
     """
     name = "Gaseous Form"
@@ -49,8 +49,8 @@ class Gate(Spell):
     
     When you
      cast this spell, you can speak the name of a specific creature (a pseudonym, 
-    title, or nickname doesn’t work). If that creature is on a plane other than the 
-    one you are on, the portal opens in the named creature’s immediate vicinity and 
+    title, or nickname doesn't work). If that creature is on a plane other than the 
+    one you are on, the portal opens in the named creature's immediate vicinity and 
     draws the creature through it to the nearest unoccupied space on your side of 
     the portal. You gain no special power over the creature, and it is free to act 
     as the Dm deems appropriate. It might leave, attack you, or help you.
@@ -75,7 +75,7 @@ class Geas(Spell):
     saving throw or become charmed by you for the duration. While the creature is 
     charmed by you, it takes 5d10 psychic damage each time it acts in a manner 
     directly counter to your instructions, but no more than once each day. A 
-    creature that can’t understand you is unaffected by the spell.
+    creature that can't understand you is unaffected by the spell.
     
     You can issue 
     any command you choose, short of an activity that would result in certain death.
@@ -103,18 +103,18 @@ class Geas(Spell):
 
 class GentleRepose(Spell):
     """You touch a corpse or other remains. For the duration, the target is protected 
-    from decay and can’t become undead.
+    from decay and can't become undead.
     
     The spell also effectively extends the time
      limit on raising the target from the dead, since days spent under the influence
-     of this spell don’t count against the time limit of spells such as raise dead.
+     of this spell don't count against the time limit of spells such as raise dead.
     """
     name = "Gentle Repose"
     level = 2
     casting_time = "1 action"
     casting_range = "Touch"
     components = ('V', 'S', 'M')
-    materials = """A pinch of salt and one copper piece placed on each of the corpse’s eyes, which must remain there for the duration"""
+    materials = """A pinch of salt and one copper piece placed on each of the corpse's eyes, which must remain there for the duration"""
     duration = "10 days"
     ritual = True
     magic_school = "Necromancy"
@@ -173,7 +173,7 @@ class GlobeOfInvulnerability(Spell):
     radius around you and remains for the duration.
     
     Any spell of 5th level or lower
-     cast from outside the barrier can’t affect creatures or objects within it, even
+     cast from outside the barrier can't affect creatures or objects within it, even
      if the spell is cast using a higher level spell slot. Such a spell can target 
     creatures and objects within the barrier, but the spell has no effect on them. 
     Similarly, the area within the barrier is excluded from the areas affected by 
@@ -222,7 +222,7 @@ class GlyphOfWarding(Spell):
     refine the trigger so the spell activates only under certain circumstances or 
     according to physical characteristics (such as height or weight), creature kind 
     (for example, the ward could be set to affect aberrations or drow), or 
-    alignment. You can also set conditions for creatures that don’t trigger the 
+    alignment. You can also set conditions for creatures that don't trigger the 
     glyph, such as those who say a certain password.
     
     When you inscribe the glyph, 
@@ -327,7 +327,7 @@ class Grease(Spell):
 
 class GreaterInvisibility(Spell):
     """You or a creature you touch becomes invisible until the spell ends. Anything the
-     target is wearing or carrying is invisible as long as it is on the target’s 
+     target is wearing or carrying is invisible as long as it is on the target's 
     person.
     """
     name = "Greater Invisibility"
@@ -344,15 +344,15 @@ class GreaterInvisibility(Spell):
 
 class GreaterRestoration(Spell):
     """You imbue a creature you touch with positive energy to undo a debilitating 
-    effect. You can reduce the target’s exhaustion level by one, or end one of the 
+    effect. You can reduce the target's exhaustion level by one, or end one of the 
     following effects on the target: 
     * One effect that charmed or petrified the 
     target 
-    * One curse, including the target’s attunement to a cursed magic item 
+    * One curse, including the target's attunement to a cursed magic item 
     *
-     Any reduction to one of the target’s ability scores 
+     Any reduction to one of the target's ability scores 
     * One effect reducing the 
-    target’s hit point maximum
+    target's hit point maximum
     """
     name = "Greater Restoration"
     level = 5
@@ -426,7 +426,7 @@ class GuardianOfNature(Spell):
     - Your walking speed increases by 10 feet.
     - You gain darkvision with 
     a range of 120 feet.
-    - You make Strength—based attack rolls with advantage.
+    - You make Strength-based attack rolls with advantage.
     - 
     Your melee weapon attacks deal an extra 1d6 force damage on a hit.
     Great Tree. 
@@ -489,18 +489,18 @@ class GuardsAndWards(Spell):
     Other Spell Effect
     You can place your choice of 
     one of the following magical effects within the warded area of the stronghold.
-    •
+    -
      Place dancing lights in four corridors. You can designate a simple program that
      the lights repeat as long as
     guards and wards lasts.
-    • Place magic mouth in two
+    - Place magic mouth in two
      locations.
-    • Place stinking cloud in two locations. The vapors appear in the 
+    - Place stinking cloud in two locations. The vapors appear in the 
     places you designate; they return within 10 minutes if dispersed by wind while 
     guards and wards lasts.
-    • Place a constant gust of wind in one corridor or room.
+    - Place a constant gust of wind in one corridor or room.
     
-    • Place a suggestion in one location. You select an area of up to 5 feet 
+    - Place a suggestion in one location. You select an area of up to 5 feet 
     square, and any creature that enters
     or passes through the area receives the 
     suggestion mentally.
@@ -567,14 +567,14 @@ class GuidingBolt(Spell):
 class Gust(Spell):
     """You seize the air and compel it to create one of the following effects at a 
     point you can see within range:
-    • One Medium or smaller creature that you choose
+    - One Medium or smaller creature that you choose
      must succeed on a Strength saving throw or be pushed up to 5 feet away from 
     you.
-    • You create a small blast of air capable of moving one object that is 
+    - You create a small blast of air capable of moving one object that is 
     neither held nor carried and that weighs no more than 5 pounds. The object is 
-    pushed up to 10 feet away from you. It isn’t pushed with enough force to cause 
+    pushed up to 10 feet away from you. It isn't pushed with enough force to cause 
     damage.
-    • You create a harmless sensory affect using air, such as causing leaves
+    - You create a harmless sensory affect using air, such as causing leaves
      to rustle, wind to slam shutters shut, or your clothing to ripple in a breeze.
     """
     name = "Gust"
@@ -591,7 +591,7 @@ class Gust(Spell):
 
 class GustOfWind(Spell):
     """A line of strong wind 60 feet long and 10 feet wide blasts from you in a 
-    direction you choose for the spell’s duration. Each creature that starts its 
+    direction you choose for the spell's duration. Each creature that starts its 
     turn in the line must succeed on a Strength saving throw or be pushed 15 feet 
     away from you in a direction following the line.
     

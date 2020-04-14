@@ -2,7 +2,7 @@ from .spells import Spell
 
 
 class ZephyrStrike(Spell):
-    """You move like the wind. Until the spell ends, your movement doesn’t provoke 
+    """You move like the wind. Until the spell ends, your movement doesn't provoke 
     opportunity attacks.
     Once before the spell ends, you can give yourself advantage
      on one weapon attack roll on your turn. That attack deals an extra 1d8 force 
@@ -25,9 +25,9 @@ class ZoneOfTruth(Spell):
     """You create a magical zone that guards against deception in a 15-foot-radius 
     sphere centered on a point of your choice within range.
     Until the spell ends, a 
-    creature that enters the spell’s area for the first time on a turn or starts its
+    creature that enters the spell's area for the first time on a turn or starts its
      turn there must make a Charisma saving throw. On a failed save, a creature 
-    can’t speak a deliberate lie while in the radius. You know whether each creature
+    can't speak a deliberate lie while in the radius. You know whether each creature
      succeeds or fails on its saving throw.
     
     An affected creature is aware of the 

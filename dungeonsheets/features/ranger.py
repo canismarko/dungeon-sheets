@@ -36,21 +36,21 @@ class NaturalExplorer(Feature):
 
     When you make an Intelligence or Wisdom check related to your favored
     terrain, your proficiency bonus is doubled if you are using a skill that
-    you’re proficient in. While traveling for an hour or more in your favored
+    you're proficient in. While traveling for an hour or more in your favored
     terrain, you gain the following benefits:
 
-    -- Difficult terrain doesn’t slow your group’s travel.
+    • Difficult terrain doesn't slow your group's travel.
 
-    -- Your group can’t become lost except by magical means.
+    • Your group can't become lost except by magical means.
     
-    -- Even when you are engaged in another activity while traveling
+    • Even when you are engaged in another activity while traveling
     (such as foraging, navigating, or tracking), you remain alert to danger. 
 
-    -- If you are traveling alone, you can move stealthily at a normal pace.
+    • If you are traveling alone, you can move stealthily at a normal pace.
 
-    -- When you forage, you find twice as much food as you normally would.
+    • When you forage, you find twice as much food as you normally would.
 
-    -- While tracking other creatures, you also learn their exact number, their
+    • While tracking other creatures, you also learn their exact number, their
     sizes, and how long ago they passed through the area.
 
     """
@@ -137,8 +137,8 @@ class PrimevalAwareness(Feature):
     level of the spell slot you expend, you can sense whether the following
     types of creatures are present within 1 mile of you (or within up to 6
     miles if you are in your favored terrain): aberrations, celestials,
-    dragons, elementals, fey, fiends, and undead. This feature doesn’t reveal
-    the creatures’ location or number.
+    dragons, elementals, fey, fiends, and undead. This feature doesn't reveal
+    the creatures' location or number.
 
     """
     name = "Primeval Awareness"
@@ -173,7 +173,7 @@ class HideInPlainSight(Feature):
 
 class Vanish(Feature):
     """Starting at 14th level, you can use the Hide action as a bonus action on
-    your turn. Also, you can’t be tracked by nonmagical means, unless you
+    your turn. Also, you can't be tracked by nonmagical means, unless you
     choose to leave a trail.
 
     """
@@ -183,10 +183,10 @@ class Vanish(Feature):
 
 class FeralSenses(Feature):
     """At 18th level, you gain preternatural senses that help you fight creatures
-    you can’t see. When you attack a creature you can’t see, your inability to
-    see it doesn’t impose disadvantage on your attack rolls against it. You are
+    you can't see. When you attack a creature you can't see, your inability to
+    see it doesn't impose disadvantage on your attack rolls against it. You are
     also aware of the location of any invisible creature within 30 feet of you,
-    provided that the creature isn’t hidden from you and you aren’t blinded or
+    provided that the creature isn't hidden from you and you aren't blinded or
     deafened
 
     """
@@ -209,7 +209,7 @@ class FoeSlayer(Feature):
 # Hunter
 class ColossusSlayer(Feature):
     """Your tenacity can wear down the most potent foes. When you hit a creature
-    with a weapon attack, the creature takes an extra 1d8 damage if it’s below
+    with a weapon attack, the creature takes an extra 1d8 damage if it's below
     its hit point maximum. You can deal this extra damage only once per turn.
 
     """
@@ -300,7 +300,7 @@ class DefensiveTactics(FeatureSelector):
 
 class Volley(Feature):
     """You can use your action to make a ranged attack against any number of
-    creatures within 10 feet o f a point you can see within your weapon’s
+    creatures within 10 feet o f a point you can see within your weapon's
     range. You must have ammunition for each target, as normal, and you make a
     separate attack roll for each target
 
@@ -367,13 +367,13 @@ class RangersCompanion(Feature):
     adventures and is trained to fight alongside you. Choose a beast that is no
     larger than Medium and that has a challenge rating of 1/4 or lower
     (appendix D presents statistics for the hawk, mastiff, and panther as
-    examples). Add your proficiency bonus to the beast’s AC, attack rolls, and
+    examples). Add your proficiency bonus to the beast's AC, attack rolls, and
     damage rolls, as well as to any saving throws and skills it is proficient
     in. Its hit point maximum equals its normal maximum or four times your
     ranger level, whichever is higher.
 
     The beast obeys your commands as best as it can. It takes its turn on your
-    initiative, though it doesn’t take an action unless you command it to. On
+    initiative, though it doesn't take an action unless you command it to. On
     your turn, you can verbally command the beast where to move (no action
     required by you). You can use your action to verbally command it to take
     the Attack, Dash, Disengage, Dodge, or Help action. Once you have the Extra
@@ -382,7 +382,7 @@ class RangersCompanion(Feature):
 
     While traveling through your favored terrain with only the beast, you can
     move stealthily at a normal pace. If the beast dies, you can obtain another
-    one by spending 8 hours magically bonding with another beast that isn’t
+    one by spending 8 hours magically bonding with another beast that isn't
     hostile to you, either the same type of beast as before or a different one.
 
     """
@@ -392,7 +392,7 @@ class RangersCompanion(Feature):
 
 class ExceptionalTraining(Feature):
     """Beginning at 7th level, on any of your turns when your beast companion
-    doesn’t attack, you can use a bonus action to command the beast to take the
+    doesn't attack, you can use a bonus action to command the beast to take the
     Dash, Disengage, Dodge, or Help action on its turn
 
     """
@@ -447,7 +447,7 @@ class UmbralSight(Feature):
 
 
 class IronMind(Feature):
-    """By 7th level, you have honed your ability to resist the mind—altering
+    """By 7th level, you have honed your ability to resist the mind-altering
     powers of your prey. You gain proficiency in Wisdom saving throws. Ifyou
     already have this proficiency, you instead gain proficiency in
     Intelligence or Charisma saving throws (your choice)
@@ -475,7 +475,7 @@ class StalkersFlurry(Feature):
 class ShadowyDodge(Feature):
     """Starting at 15th level, you can dodge in unforeseen ways, with wisps of
     supernatural shadow around you. Whenever a creature makes an attack roll
-    against you and doesn’t have advantage on the roll, you can use your
+    against you and doesn't have advantage on the roll, you can use your
     reaction to impose disadvantage on it. You must use this feature before you
     know the outcome of the attack roll.
 
@@ -489,7 +489,7 @@ class DetectPortal(Feature):
     """At 3rd level, you gain the ability to magically sense the presence of a
     planar portal. As an action, you detect the distance and direction to the
     closest planar portal within 1 mile of you. Once you use this feature, you
-    can’t use it again until you finish a short or long rest.
+    can't use it again until you finish a short or long rest.
 
     """
     name = "Detect Portal"
@@ -520,7 +520,7 @@ class EtherealStep(Feature):
     """At 7th level, you learn to step through the Ethereal Plane. As a bonus
     action, you can cast the etherealncss spell with this feature, without
     expending a spell slot, but the spell ends at the end of the current
-    turn. Once you use this feature, you can’t use it again until you finish a
+    turn. Once you use this feature, you can't use it again until you finish a
     short or long rest
 
     """
@@ -544,7 +544,7 @@ class SpectralDefense(Feature):
     """At 15th level, your ability to move between planes enables you to slip
     through the planar boundaries to lessen the harm done to you during
     battle. When you take damage from an attack, you can use your reaction to
-    give yourself resistance to all of that attack’s damage on this turn
+    give yourself resistance to all of that attack's damage on this turn
 
     """
     name = "Spectral Defense"
@@ -558,7 +558,7 @@ class HuntersSense(Feature):
     within 60 feet ofyou. You immediately learn whether the creature has any
     damage immunities, resistances, or vulnerabilities and What they are. If
     the creature is hidden from divination magic, you sense that it has no
-    damage immunities, re— sistances, or vulnerabilities. You can use this
+    damage immunities, re- sistances, or vulnerabilities. You can use this
     feature a number of times equal to your Wisdom modifier (minimum of
     once). You regain all expended uses of it when you finish a long rest.
 
@@ -586,8 +586,8 @@ class SlayersPrey(Feature):
 
     
 class SupernaturalDefense(Feature):
-    """At 7th level, you gain extra resilience against your prey’s assaults on
-    your mind and body. Whenever the target of your Slayer’s Prey forces you to
+    """At 7th level, you gain extra resilience against your prey's assaults on
+    your mind and body. Whenever the target of your Slayer's Prey forces you to
     make a saving throw and whenever you make an ability check to escape that
     targets grapple, add 1d6 to your roll
 
@@ -597,11 +597,11 @@ class SupernaturalDefense(Feature):
 
 
 class MagicUsersNemesis(Feature):
-    """At 11th level, you gain the ability to thwart someone else’s magic. When
+    """At 11th level, you gain the ability to thwart someone else's magic. When
     you see a creature casting a spell or teleporting within 60 feet of you,
     you can use your reaction to try to magically foil it. The creature must
     succeed on a Wisdom saving throw against your spell save DC, or its spell
-    or teleport fails and is wasted. Once you use this feature, you can’t use
+    or teleport fails and is wasted. Once you use this feature, you can't use
     it again until you finish a short or long rest.
 
     """
@@ -611,11 +611,11 @@ class MagicUsersNemesis(Feature):
 
 class SlayersCounter(Feature):
     """At 15th level, you gain the ability to counterattack when your prey tries
-    to sabotage you. If the target of your Slayer’s Prey forces you to make a
+    to sabotage you. If the target of your Slayer's Prey forces you to make a
     saving throw, you can use your reaction to make one weapon attack against
     the quarry. You make this attack immediately before making the saving
     throw. If your attack hits, your save automatir cally succeeds, in addition
-    to the attack’s normal effects
+    to the attack's normal effects
 
     """
     name = "Slayer's Counter"
@@ -657,9 +657,9 @@ class NaturalExplorerRevised(Feature):
     In addition, you are skilled at navigating the wilderness. You gain the
     following benefits when traveling for an hour or more:
 
-    --Difficult terrain doesn’t slow your group’s travel.
+    --Difficult terrain doesn't slow your group's travel.
 
-    --Your group can’t become lost except by magical means.
+    --Your group can't become lost except by magical means.
     
     --Even when you are engaged in another activity while traveling (such as
     foraging, navigating, or tracking), you remain alert to danger.
@@ -695,7 +695,7 @@ class PrimevalAwarenessRevised(Feature):
     concentration (as if you were concentrating on a spell), you can sense
     whether any of your favored enemies are present within 5 miles of you. This
     feature reveals which of your favored enemies are present, their numbers,
-    and the creatures’ general direction and distance (in miles) from you.
+    and the creatures' general direction and distance (in miles) from you.
 
     If there are multiple groups of your favored enemies within range, you
     learn this information for each group.
@@ -763,12 +763,12 @@ class AnimalCompanion(Feature):
     of creatures would logically be present in the area.
 
     At the end of the 8 hours, your animal companion appears and gains all the
-    benefits of your Companion’s Bond ability. You can have only one animal
+    benefits of your Companion's Bond ability. You can have only one animal
     companion at a time.
 
     If your animal companion is ever slain, the magical bond you share allows
     you to return it to life. With 8 hours of work and the expenditure of 25 gp
-    worth of rare herbs and fine food, you call forth your companion’s spirit
+    worth of rare herbs and fine food, you call forth your companion's spirit
     and use your magic to create a new body for it. You can return an animal
     companion to life in this manner even if you do not possess any part of its
     body.
@@ -802,16 +802,16 @@ class CompanionsBond(Feature):
     also becomes proficient with all saving throws. For each level you gain
     after 3rd, your animal companion gains an additional hit die and increases
     its hit points accordingly. Whenever you gain the Ability Score Improvement
-    class feature, your companion’s abilities also improve. Your companion can
+    class feature, your companion's abilities also improve. Your companion can
     increase one ability score of your choice by 2, or it can increase two
-    ability scores of your choice by 1. As normal, your companion can’t
+    ability scores of your choice by 1. As normal, your companion can't
     increase an ability score above 20 using this feature unless its
     description specifies otherwise.
 
     Your companion shares your alignment, and has a personality trait and a
     flaw that you can roll for or select from the tables below. Your companion
-    shares your ideal, and its bond is always, \“The ranger who travels with me
-    is a beloved companion for whom I would gladly give my life.\”
+    shares your ideal, and its bond is always, \"The ranger who travels with me
+    is a beloved companion for whom I would gladly give my life.\"
 
     """
     name = "Companions Bond"
@@ -848,7 +848,7 @@ class StormOfClawsAndFangs(Feature):
 
 class SuperiorBeastsDefense(Feature):
     """At 15th level, whenever an attacker that your companion can see hits it
-     with an attack, it can use its reaction to halve the attack’s damage
+     with an attack, it can use its reaction to halve the attack's damage
      against it.
 
     """
@@ -873,7 +873,7 @@ class UnderdarkScout(Feature):
 
 class StalkersDodge(Feature):
     """At 15th level, whenever a creature attacks you and does not have advantage,
-    you can use your reaction to impose disadvantage on the creature’s attack
+    you can use your reaction to impose disadvantage on the creature's attack
     roll against you. You can use this feature before or after the attack roll
     is made, but it must be used before the outcome of the roll is determined
 

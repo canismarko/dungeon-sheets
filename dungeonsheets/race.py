@@ -138,7 +138,7 @@ class StoutHalfling(_Halfling):
 
 
 # Humans
-class Human(Race):
+class _Human(Race):
     name = "Human"
     size = "medium"
     speed = 30
@@ -149,6 +149,10 @@ class Human(Race):
     wisdom_bonus = 1
     charisma_bonus = 1
     languages = ("Common", '[choose one]')
+
+
+class Rashemi(_Human):
+    name = 'Rashemi'
 
 
 # Dragonborn
@@ -416,7 +420,7 @@ class WaterGenasi(_Genasi):
 
 
 PHB_races = [HillDwarf, MountainDwarf, HighElf, WoodElf, DarkElf,
-             LightfootHalfling, StoutHalfling, Human, Dragonborn,
+             LightfootHalfling, StoutHalfling, Rashemi, Dragonborn,
              ForestGnome, RockGnome, HalfElf, HalfOrc, Tiefling]
 
 VOLO_races = [ProtectorAasimar, ScourgeAasimar, FallenAasimar,

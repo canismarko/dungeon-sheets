@@ -3,18 +3,18 @@ from .spells import Spell
 
 class RaiseDead(Spell):
     """You return a dead creature you touch to life, provided that it has been dead no 
-    longer than 10 days. If the creature’s soul is both willing and at liberty to 
+    longer than 10 days. If the creature's soul is both willing and at liberty to 
     rejoin the body, the creature returns to life with 1 hit point.
     
     This spell also
      neutralizes any poison and cures nonmagical diseases that affected the creature
-     at the time it died. This spell doesn’t, however, remove magical diseases, 
-    curses, or similar effects; if these aren’t first removed prior to casting the 
-    spell, they take effect when the creature returns to life. The spell can’t 
+     at the time it died. This spell doesn't, however, remove magical diseases, 
+    curses, or similar effects; if these aren't first removed prior to casting the 
+    spell, they take effect when the creature returns to life. The spell can't 
     return an undead creature to life.
     
     This spell closes all mortal wounds, but it 
-    doesn’t restore missing body parts. If the creature is lacking body parts or 
+    doesn't restore missing body parts. If the creature is lacking body parts or 
     organs integral for its survival – its head, for instance – the spell 
     automatically fails.
     
@@ -38,12 +38,12 @@ class RaiseDead(Spell):
 class RarysTelepathicBond(Spell):
     """You forge a telepathic link among up to eight willing creatures of your choice 
     within range, psychically linking each creature to all the others for the 
-    duration. Creatures with Intelligence scores of 2 or less aren’t affected by 
+    duration. Creatures with Intelligence scores of 2 or less aren't affected by 
     this spell.
     
     Until the spell ends, the targets can communicated telepathically 
     through the bond whether or not they have a common language. The communication 
-    is possible over any distance, though it can’t extend to other planes of 
+    is possible over any distance, though it can't extend to other planes of 
     existence.
     """
     name = "Rarys Telepathic Bond"
@@ -65,7 +65,7 @@ class RayOfEnfeeblement(Spell):
     target deals only half damage with weapon attacks that use Strength until the 
     spell ends.
     
-    At the end of each of the target’s turns, it can make a 
+    At the end of each of the target's turns, it can make a 
     Constitution saving throw against the spell. On a success, the spell ends.
     """
     name = "Ray Of Enfeeblement"
@@ -86,7 +86,7 @@ class RayOfFrost(Spell):
      its speed is reduced by 10 feet until the start of your next turn.
     
     At Higher 
-    Levels: The spell’s damage increases by 1d8 when you reach 5th level (2d8), 11th
+    Levels: The spell's damage increases by 1d8 when you reach 5th level (2d8), 11th
      level (3d8), and 17th level (4d8).
     """
     name = "Ray Of Frost"
@@ -131,7 +131,7 @@ class Regenerate(Spell):
      hit point at the start of each of its turns (10 hit points each minute).
     
     The 
-    target’s severed body members (fingers, legs, tails, and so on), if any, are 
+    target's severed body members (fingers, legs, tails, and so on), if any, are 
     restored after 2 minutes. If you have the severed part and hold it to the stump,
      the spell instantaneously causes the limb to knit to the stump.
     """
@@ -150,11 +150,11 @@ class Regenerate(Spell):
 class Reincarnate(Spell):
     """You touch a dead humanoid or a piece of a dead humanoid. Provided that the 
     creature has been dead no longer than 10 days, the spell forms a new adult body 
-    for it and then calls the soul to enter that body. If the target’s soul isn’t 
+    for it and then calls the soul to enter that body. If the target's soul isn't 
     free or willing to do so, the spell fails.
     
     The magic fashions a new body for 
-    the creature to inhabit, which likely causes the creature’s race to change. The 
+    the creature to inhabit, which likely causes the creature's race to change. The 
     DM rolls a d 100 and consults the following table to determine what form the 
     creature takes when restored to life, or the DM chooses a form.
     
@@ -196,7 +196,7 @@ class Reincarnate(Spell):
 
 class RemoveCurse(Spell):
     """At your touch, all curses affecting one creature or object end. If the object is
-     a cursed magic item, its curse remains, but the spell breaks its owner’s 
+     a cursed magic item, its curse remains, but the spell breaks its owner's 
     attunement to the object so it can be removed or discarded.
     """
     name = "Remove Curse"
@@ -230,13 +230,13 @@ class Resistance(Spell):
 
 class Resurrection(Spell):
     """You touch a dead creature that has been dead for no more than a century, that 
-    didn’t die of old age, and that isn’t undead. If its soul is free and willing, 
+    didn't die of old age, and that isn't undead. If its soul is free and willing, 
     the target returns to life with all its hit points.
     
     This spell neutralizes any 
     poisons and cures normal diseases afflicting the creature when it died. It 
-    doesn’t, however, remove magical diseases, curses, and the like; if such affects
-     aren’t removed prior to casting the spell, they afflict the target on its 
+    doesn't, however, remove magical diseases, curses, and the like; if such affects
+     aren't removed prior to casting the spell, they afflict the target on its 
     return to life.
     
     This spell closes all mortal wounds and restores any missing 
@@ -248,7 +248,7 @@ class Resurrection(Spell):
     
     
     Casting this spell to restore life to a creature that has been dead for one year
-     or longer taxes you greatly. Until you finish a long rest, you can’t cast 
+     or longer taxes you greatly. Until you finish a long rest, you can't cast 
     spells again, and you have disadvantage on all attack rolls, ability checks, and
      saving throws.
     """
@@ -267,7 +267,7 @@ class Resurrection(Spell):
 class ReverseGravity(Spell):
     """This spell reverses gravity in a 50-foot-radius, 100-foot high cylinder centered
      on a point within range.
-    All creatures and objects that aren’t somehow anchored
+    All creatures and objects that aren't somehow anchored
      to the ground in the area fall upward and reach the top of the area when you 
     cast this spell. A creature can make a Dexterity saving throw to grab onto a 
     fixed object it can reach, thus avoiding the fall.
@@ -295,7 +295,7 @@ class ReverseGravity(Spell):
 
 class Revivify(Spell):
     """You touch a creature that has died within the last minute. That creature returns
-     to life with 1 hit point. This spell can’t return to life a creature that has 
+     to life with 1 hit point. This spell can't return to life a creature that has 
     died of old age, nor can it restore any missing body parts.
     """
     name = "Revivify"
@@ -321,7 +321,7 @@ class RopeTrick(Spell):
     Medium or smaller creatures. The rope can be pulled into the space, making the 
     rope disappear from view outside the space.
     
-    Attacks and spells can’t cross 
+    Attacks and spells can't cross 
     through the entrance into or out of the extradimensional space, but those inside
      can see out of it as if through a 3-foot-by-5-foot window centered on the rope.
     
