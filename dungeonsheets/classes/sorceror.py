@@ -47,8 +47,8 @@ class DivineSoul(SubClass):
     """Sometimes the spark of magic that fuels a sorcerer comes from a divine
     source that glimmers within the soul. Having such a blessed soul is a sign
     that your innate magic might come from a distant but powerful familial
-    connection to a divine being. Perhaps your ances— tor was an angel,
-    transformed into a mortal and sent to fight in a god’s name. Or your birth
+    connection to a divine being. Perhaps your ances- tor was an angel,
+    transformed into a mortal and sent to fight in a god's name. Or your birth
     might align with an ancient prophecy, marking you as a servant of the gods
     or a chosen vessel of divine magic.
 
@@ -101,7 +101,7 @@ class StormSorcery(SubClass):
     influence of potent air creatures such as djinn. Whatever the case, the
     magic of the storm permeates your being.
 
-    Storm sorcerers are invaluable members of a ship’s crew. Their magic allows
+    Storm sorcerers are invaluable members of a ship's crew. Their magic allows
     them to exert control over wind and weather in their immediate area. Their
     abilities also prove useful in repelling attacks by sahuagin, pirates,
     and other waterborne threats.

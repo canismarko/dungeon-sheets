@@ -35,7 +35,7 @@ class FalseIdentity(Feature):
 
 class CriminalContact(Feature):
     """You have a reliable and trustworthy contact who acts as your liaison to a
-    network o f other criminals. You know how to get messages to and from your
+    network of other criminals. You know how to get messages to and from your
     contact, even over great distances; specifically, you know the local
     messengers, corrupt caravan masters, and seedy sailors who can deliver
     messages for you.
@@ -47,7 +47,7 @@ class CriminalContact(Feature):
 
 class ByPopularDemand(Feature):
     """You can always find a place to perform, usually in an inn or tavern but
-    possibly with a circus, at a theater, or even in a noble’s court. At such a
+    possibly with a circus, at a theater, or even in a noble's court. At such a
     place, you receive free lodging and food of a modest or comfortable
     standard (depending on the quality of the establishment), as long as you
     perform each night. In addition, your performance makes you something of a
@@ -84,10 +84,10 @@ class GuildMembership(Feature):
     innocence or the crime is justifiable. You can also gain access to powerful
     political figures through the guild, if you are a member in good
     standing. Such connections might require the donation of money or magic
-    items to the guild’s coffers.
+    items to the guild's coffers.
 
     You must pay dues of 5 gp per month to the guild. If you miss payments, you
-    must make up back dues to remain in the guild’s good graces.
+    must make up back dues to remain in the guild's good graces.
 
     """
     name = "Guild Membership"
@@ -155,8 +155,8 @@ class ShipsPassage(Feature):
     """When you need to, you can secure free passage on a sailing ship for
     yourself and your adventuring companions. You might sail on the ship you
     served on, or another ship you have good relations with (perhaps one
-    captained by a former crewmate). Because you’re calling in a favor, you
-    can’t be certain of a schedule or route that will meet your every
+    captained by a former crewmate). Because you're calling in a favor, you
+    can't be certain of a schedule or route that will meet your every
     need. Your Dungeon Master will determine how long it takes to get where you
     need to go. In return for your free passage, you and your companions are
     expected to assist the crew during the voyage

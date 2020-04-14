@@ -6,7 +6,7 @@ from .. import armor, spells
 class Darkvision(Feature):
     """Accustomed to life underground, you have superior vision in dark and dim
     conditions. You can see in dim light within 60 feet of you as if it were
-    bright light, and in darkness as if it were dim light. You can’t discern
+    bright light, and in darkness as if it were dim light. You can't discern
     color in darkness, only shades of gray.
 
     """
@@ -17,7 +17,7 @@ class Darkvision(Feature):
 class SuperiorDarkvision(Feature):
     """Accustomed to life underground, you have superior vision in dark and dim
     conditions. You can see in dim light within 120 feet of you as if it were
-    bright light, and in darkness as if it were dim light. You can’t discern
+    bright light, and in darkness as if it were dim light. You can't discern
     color in darkness, only shades of gray.
 
     """
@@ -76,7 +76,7 @@ class DwarvenToughness(Feature):
     
 # Elves
 class FeyAncestry(Feature):
-    """You have advantage on saving throws against being charmed, and magic can’t
+    """You have advantage on saving throws against being charmed, and magic can't
     put you to sleep.
 
     """
@@ -85,9 +85,9 @@ class FeyAncestry(Feature):
 
 
 class Trance(Feature):
-    """Elves don’t need to sleep. Instead, they meditate deeply, remaining
+    """Elves don't need to sleep. Instead, they meditate deeply, remaining
     semiconscious, for 4 hours a day. (The Common word for such meditation is
-    “trance.”) While meditating, you can dream after a fashion; such dreams are
+    "trance.") While meditating, you can dream after a fashion; such dreams are
     actually mental exercises that have become reflexive through years of
     practice. After resting in this way, you gain the same benefit that a human
     does from 8 hours of sleep.
@@ -190,27 +190,27 @@ class DraconicAncestry(Feature):
     Ancestry table. Your breath weapon and damage resistance are determined by the
     dragon type.
 
-    Dragon -- Damage Type -- Breath Weapon
+    Dragon • Damage Type • Breath Weapon
 
-    Black -- Acid -- 5 by 30 ft. line (DEX save)
+    Black • Acid • 5 by 30 ft. line (DEX save)
 
-    Blue -- Lightning -- 5 by 30 ft. line (DEX save)
+    Blue • Lightning • 5 by 30 ft. line (DEX save)
 
-    Brass -- Fire -- 5 by 30 ft. line (DEX save)
+    Brass • Fire • 5 by 30 ft. line (DEX save)
 
-    Bronze -- Lightning -- 5 by 30 ft. line (DEX save)
+    Bronze • Lightning • 5 by 30 ft. line (DEX save)
 
-    Copper -- Acid -- 5 by 30 ft. line (DEX save)
+    Copper • Acid • 5 by 30 ft. line (DEX save)
 
-    Gold -- Fire -- 15 ft. cone (DEX save)
+    Gold • Fire • 15 ft. cone (DEX save)
 
-    Green -- Poison -- 15 ft. cone (CON save)
+    Green • Poison • 15 ft. cone (CON save)
 
-    Red -- Fire -- 15 ft. cone (DEX save)
+    Red • Fire • 15 ft. cone (DEX save)
 
-    Silver -- Cold -- 15 ft. cone (CON save)
+    Silver • Cold • 15 ft. cone (CON save)
 
-    White -- White -- 15 ft. cone (CON save)
+    White • White • 15 ft. cone (CON save)
 
     """
     name = "Draconic Ancestry"
@@ -226,7 +226,7 @@ class BreathWeapon(Feature):
     modifier + your proficiency bonus. A creature takes 2d6 damage on a failed
     save, and half as much damage on a successful one. The damage increases to
     3d6 at 6th level, 4d6 at 11th level, and 5d6 at 16th level. After you use
-    your breath weapon, you can’t use it again until you complete a short or
+    your breath weapon, you can't use it again until you complete a short or
     long rest. Damage
 
     """
@@ -285,7 +285,7 @@ class ArtificersLore(Feature):
 
     
 class Tinker(Feature):
-    """You have proficiency with artisan’s tools (tinker’s tools). Using those
+    """You have proficiency with artisan's tools (tinker's tools). Using those
     tools, you can spend 1 hour and 10 gp worth of materials to construct a
     Tiny clockwork device (AC 5, 1 hp). The device ceases to function after 24
     hours (unless you spend 1 hour repairing it to keep the device
@@ -303,7 +303,7 @@ class Tinker(Feature):
     light a candle, torch, or campfire. Using the device requires your action.
 
     *Music Box*: When opened, this music box plays a single song at a moderate
-    volume. The box stops playing when it reaches the song’s end or when
+    volume. The box stops playing when it reaches the song's end or when
 
     """
 
@@ -321,7 +321,7 @@ class StoneCamouflage(Feature):
 # Half-Orcs
 class RelentlessEndurance(Feature):
     """When you are reduced to 0 hit points but not killed outright, you can drop
-    to 1 hit point instead. You can’t use this feature again until you finish a
+    to 1 hit point instead. You can't use this feature again until you finish a
     long rest.
 
     """
@@ -331,7 +331,7 @@ class RelentlessEndurance(Feature):
 
 class SavageAttacks(Feature):
     """When you score a critical hit with a melee weapon attack, you can roll one
-    of the weapon’s damage dice one additional time and add it to the extra
+    of the weapon's damage dice one additional time and add it to the extra
     damage of the critical hit.
 
     """
@@ -636,7 +636,7 @@ class GuardiansOfTheDepths(Feature):
 
 # Genasi
 class UnendingBreath(Feature):
-    """You can hold your breath indefinitely while you’re not incapacitated.
+    """You can hold your breath indefinitely while you're not incapacitated.
 
     """
     name = "Unending Breath"

@@ -4,8 +4,8 @@ from .spells import Spell
 class CallLightning(Spell):
     """A storm cloud appears in the shape of a cylinder that is 10 feet tall with a 
     60-foot radius, centered on a point you can see 100 feet directly above you. The
-     spell fails if you can’t see a point in the air where the storm cloud could 
-    appear (for example, if you are in a room that can’t accommodate the cloud). 
+     spell fails if you can't see a point in the air where the storm cloud could 
+    appear (for example, if you are in a room that can't accommodate the cloud). 
     
     
     When you cast the spell, choose a point you can see within range. A bolt of 
@@ -18,7 +18,7 @@ class CallLightning(Spell):
     If 
     you are outdoors in stormy conditions when you cast this spell, the spell gives 
     you control over the existing storm instead of creating a new one. Under such 
-    conditions, the spell’s damage increases by 1d10.
+    conditions, the spell's damage increases by 1d10.
     
     At Higher Levels: When you 
     cast this spell using a spell slot of 4th or higher level, the damage increases 
@@ -65,7 +65,7 @@ class CalmEmotions(Spell):
 
 
 class Catapult(Spell):
-    """Choose one object weighing 1 to 5 pounds within range that isn’t being worn or 
+    """Choose one object weighing 1 to 5 pounds within range that isn't being worn or 
     carried. The object flies in a straight line up to 90 feet in a direction you 
     choose before falling to the ground, stopping early if it impacts against a 
     solid surface. If the object would strike a creature, that creature must make a 
@@ -91,10 +91,10 @@ class Catapult(Spell):
 
 class Catnap(Spell):
     """You make a calming gesture, and up to three willing creatures of your choice 
-    that you can see within range fall unconscious for the spell’s duration. The 
+    that you can see within range fall unconscious for the spell's duration. The 
     spell ends on a target early if it takes damage or someone uses an action to 
     shake or slap it awake. If a target remains unconscious for the full duration, 
-    that target gains the benefit of a short rest, and it can’t be affected by this 
+    that target gains the benefit of a short rest, and it can't be affected by this 
     spell again until it finishes a long rest.
     
     At Higher Levels: When you cast this
@@ -152,11 +152,11 @@ class Ceremony(Spell):
     number rolled to the ability check. A creature can benefit from this rite only 
     once.
     Dedication. You touch one humanoid who wishes to be dedicated to your 
-    god’s service. For the next 24 hours, whenever the target makes a saving throw, 
+    god's service. For the next 24 hours, whenever the target makes a saving throw, 
     it can roll a d4 and add the number rolled to the save. A creature can benefit 
     from this rite only once.
     Funeral Rite. You touch one corpse, and for the next 7
-     days, the target can’t become undead by any means short of a wish spell.
+     days, the target can't become undead by any means short of a wish spell.
     
     Wedding. You touch adult humanoids willing to be bonded together in marriage. 
     For the next 7 days, each target gains a +2 bonus to AC while they are within 30
@@ -295,12 +295,12 @@ class ChillTouch(Spell):
     """You create a ghostly, skeletal hand in the space of a creature within range. 
     
     Make a ranged spell attack against the creature to assail it with the chill of 
-    the grave. On a hit, the target takes 1d8 necrotic damage, and it can’t regain 
+    the grave. On a hit, the target takes 1d8 necrotic damage, and it can't regain 
     hit points until the start of your next turn. Until then, the hand clings to the
      target. If you hit an undead target, it also has disadvantage on attack rolls 
     against you until the end of your next turn.
     
-    At Higher Levels: This spell’s 
+    At Higher Levels: This spell's 
     damage increases by 1d8 when you reach 5th level (2d8), 11th level (3d8), and 
     17th level (4d8).
     """
@@ -388,7 +388,7 @@ class Clairvoyance(Spell):
     """You create an invisible sensor within range in a location familiar to you (a 
     place you have visited or seen before) or in an obvious location that is 
     unfamiliar to you (such as behind a door, around a corner, or in a grove of 
-    trees). The sensor remains in place for the duration, and it can’t be attacked 
+    trees). The sensor remains in place for the duration, and it can't be attacked 
     or otherwise interacted with. 
     
     When you cast the spell, you choose seeing or 
@@ -422,9 +422,9 @@ class Clone(Spell):
     the original creature dies, its soul transfers to the clone, provided that the 
     soul is free and willing to return. The clone is physically identical to the 
     original and has the same personality, memories, and abilities, but none of the 
-    original’s equipment. The original creature’s physical remains, if they still 
-    exist, becom e inert and can’t thereafter be restored to life, since the 
-    creature’s soul is elsewhere.
+    original's equipment. The original creature's physical remains, if they still 
+    exist, becom e inert and can't thereafter be restored to life, since the 
+    creature's soul is elsewhere.
     """
     name = "Clone"
     level = 8
@@ -441,7 +441,7 @@ class Clone(Spell):
 class CloudOfDaggers(Spell):
     """You fill the air with spinning daggers in a cube 5 feet on each side, centered 
     on a point you choose within range. A creature takes 4d4 slashing damage when it
-     enters the spell’s area for the first time on a turn or starts its turn there.
+     enters the spell's area for the first time on a turn or starts its turn there.
     
     
     At Higher Levels: When you cast this spell using a spell slot of 3rd level or 
@@ -465,11 +465,11 @@ class Cloudkill(Spell):
     duration or until strong wind dispereses the fog, ending the spell. Its area is 
     heavily obscured. 
     
-    When a creature enters the spell’s area for the first time 
+    When a creature enters the spell's area for the first time 
     on a turn or starts its turn there, that creature must make a Constitution 
     saving throw. The creature takes 5d8 poison damageon a failed save, or half as 
     much damage on a successful one. Creatures are affected even if they hold their 
-    breath or don’t need to breathe. 
+    breath or don't need to breathe. 
     
     The fog moves 10 feet away from you at the 
     start of each of your turns, rolling along the surface of the ground. The 
@@ -497,13 +497,13 @@ class ColorSpray(Spell):
     Roll 6d10, 
     the total is how many hit points of creatures this spell can effect. Creatures 
     in a 15-foot cone originating from you are affected in ascending order of their 
-    current hit points (ignoring unconscious creatures and creatures that can’t 
+    current hit points (ignoring unconscious creatures and creatures that can't 
     see). 
     
     Starting with the creature that has the lowest current hit points, each 
     creature affected by this spell is blinded until the spell ends. Subtract each 
-    creature’s hit points from the total before moving on to the creature with the 
-    next lowest hit points. A creature’s hit points must be equal to or less than 
+    creature's hit points from the total before moving on to the creature with the 
+    next lowest hit points. A creature's hit points must be equal to or less than 
     the remaining total for the creature to be affected.
     
     At Higher Levels: When you
@@ -526,11 +526,11 @@ class Command(Spell):
     """You speak a one-word command to a creature you can see within range. 
     The target
      must succeed on a Wisdom saving throw or follow the command on its next turn. 
-    The spell has no effect if the target is undead, if it doesn’t understand your 
+    The spell has no effect if the target is undead, if it doesn't understand your 
     language, or if your command is directly harmful to it.  Some typical commands 
     and their effects follow. You might issue a command other than one described 
     here. If you do so, the DM determines how the target behaves. If the target 
-    can’t follow your command, the spell ends.
+    can't follow your command, the spell ends.
     Approach The target moves toward you 
     by the shortest and most direct route, ending its turn if it moves within 5 feet
      of you.
@@ -540,7 +540,7 @@ class Command(Spell):
     means.
     Grovel The target falls prone and then ends its turn.
     Halt The target 
-    doesn’t move and takes no actions. A flying creature stays aloft, provided that 
+    doesn't move and takes no actions. A flying creature stays aloft, provided that 
     it is able to do so. If it must move to stay aloft, it flies the minimum 
     distance needed to remain in the air.
     
@@ -566,10 +566,10 @@ class Commune(Spell):
     be answered with a yes or no. You must ask your questions before the spell ends.
      You receive a correct answer for each question. 
     
-    Divine beings aren’t 
-    necessarily omniscient, so you might receive “unclear” as an answer if a 
-    question pertains to information that lies beyond the deity’s knowledge. In a 
-    case where a one-word answer could be misleading or contrary to the deity’s 
+    Divine beings aren't 
+    necessarily omniscient, so you might receive "unclear" as an answer if a 
+    question pertains to information that lies beyond the deity's knowledge. In a 
+    case where a one-word answer could be misleading or contrary to the deity's 
     interests, the DM might offer a short phrase as an answer instead. 
     
     If you cast
@@ -594,20 +594,20 @@ class CommuneWithNature(Spell):
     territory. 
     In the outdoors, the spell gives you knowledge of the land within 3 
     miles of you. In caves and other natural underground settings, the radius is 
-    limited to 300 feet. The spell doesn’t function where nature has been replaced 
+    limited to 300 feet. The spell doesn't function where nature has been replaced 
     by construction, such as in dungeons and towns. 
     
     You instantly gain knowledge 
     of up to three facts of your choice about any of the following subjects as they 
     relate to the area: 
     
-    •  terrain and bodies of water 
-    •  prevalent plants, 
+    -  terrain and bodies of water 
+    -  prevalent plants, 
     minerals, animals, or peoples 
-    •  powerful celestials, fey, fiends, elementals, 
+    -  powerful celestials, fey, fiends, elementals, 
     or undead 
-    •  influence from other planes of existence 
-    •  buildings 
+    -  influence from other planes of existence 
+    -  buildings 
     
     For 
     example, you could determine the location of powerful undead in the area, the 
@@ -633,8 +633,8 @@ class CompelledDuel(Spell):
     drawn to you, compelled by your divine demand. For the duration, it has 
     disadvantage on attack rolls against creatures other than you, and must make a 
     Wisdom saving throw each time it attempts to move to a space that is more than 
-    30 feet away from you; if it succeeds on this saving throw, this spell doesn’t 
-    restrict the target’s movement for that turn. 
+    30 feet away from you; if it succeeds on this saving throw, this spell doesn't 
+    restrict the target's movement for that turn. 
     
     The spell ends if you attack any
      other creature, if you cast a spell that targets a hostile creature other than 
@@ -661,8 +661,8 @@ class ComprehendLanguages(Spell):
     surface of which the words are written. It takes about 1 minute to read one page
      of text. 
     
-    This spell doesn’t decode secret messages in a text or glyph, such 
-    as an arcane sigil, that isn’t part of a written language.
+    This spell doesn't decode secret messages in a text or glyph, such 
+    as an arcane sigil, that isn't part of a written language.
     """
     name = "Comprehend Languages"
     level = 1
@@ -680,14 +680,14 @@ class Compulsion(Spell):
     """Creatures of your choice that you can see within range and that can hear you 
     must make a Wisdom saving throw. 
     A target automatically succeeds on this saving
-     throw if it can’t be charmed. On a failed save, a target is affected by this 
+     throw if it can't be charmed. On a failed save, a target is affected by this 
     spell. Until the spell ends, you can use a bonus action on each of your turns to
      designate a direction that is horizontal to you. Each affected target must use 
     as much of its movement as possible to move in that direction on its next turn. 
     It can take its action before it moves. After moving in this way, it can make 
     another Wisdom saving throw to try to end the effect. 
     
-    A target isn’t compelled
+    A target isn't compelled
      to move into an obviously deadly hazard, such as a fire pit, but it will 
     provoke opportunity attacks to move in the designated direction.
     """
@@ -729,12 +729,12 @@ class ConeOfCold(Spell):
 
 
 class Confusion(Spell):
-    """This spell assaults and twists creatures’ minds, spawning delusions and 
+    """This spell assaults and twists creatures' minds, spawning delusions and 
     provoking uncontrolled actions. Each creature in a 10-foot-radius sphere 
     centered on a point you choose within range must succeed on a Wisdom saving 
     throw when you cast this spell or be affected by it. 
     
-    An affected target can’t 
+    An affected target can't 
     take reactions and must roll a d10 at the start of each of its turns to 
     determine its behavior for that turn. 
     
@@ -742,10 +742,10 @@ class Confusion(Spell):
     
      1. The creature uses 
     all its movement to move in a random direction. To determine the direction, roll
-     a d8 and assign a direction to each die face. The creature doesn’t take an 
+     a d8 and assign a direction to each die face. The creature doesn't take an 
     action this turn. 
      
-    2-6. The creature doesn’t move or take actions this turn.
+    2-6. The creature doesn't move or take actions this turn.
      
     
     7-8. The creature uses its action to make a melee attack against a randomly 
@@ -781,11 +781,11 @@ class ConjureAnimals(Spell):
     Choose one of the following options for 
     what appears: 
     
-    •  One beast of challenge rating 2 or lower 
-    •  Two beasts of 
+    -  One beast of challenge rating 2 or lower 
+    -  Two beasts of 
     challenge rating 1  or lower 
-    •  Four beasts of challenge rating 1/2 or lower 
-    •
+    -  Four beasts of challenge rating 1/2 or lower 
+    -
       Eight beasts of challenge rating 1/4 or lower 
     
     Each beast is also considered 
@@ -794,10 +794,10 @@ class ConjureAnimals(Spell):
     
     The summoned creatures are friendly to you and your companions. Roll initiative 
     for the summoned creatures as a group, which has its own turns. They obey any 
-    verbal commands that you issue to them (no action required by you). If you don’t
+    verbal commands that you issue to them (no action required by you). If you don't
      issue any commands to them, they defend themselves from hostile creatures, but 
     otherwise take no actions. 
-    The DM has the creatures’ statistics.
+    The DM has the creatures' statistics.
     
     At Higher 
     Levels: When you cast this spell using certain higher-level spell slots, you 
@@ -849,10 +849,10 @@ class ConjureCelestial(Spell):
     The celestial is friendly to 
     you and your companions for the duration. Roll initiative for the celestial, 
     which has its own turns. It obeys any verbal commands that you issue to it (no 
-    action required by you), as long as they don’t violate its alignment. If you 
-    don’t issue any commands to the celestial, it defends itself from hostile 
+    action required by you), as long as they don't violate its alignment. If you 
+    don't issue any commands to the celestial, it defends itself from hostile 
     creatures but otherwise takes no actions 
-    The DM has the celestial’s statistics.
+    The DM has the celestial's statistics.
     
     
     At Higher Levels: When you cast this spell using a 9th-level spell slot, you 
@@ -882,14 +882,14 @@ class ConjureElemental(Spell):
     The elemental is friendly to you
      and your companions for the duration. Roll initiative for the elemental, which 
     has its own turns. It obeys any verbal commands that you issue to it (no action 
-    required by you). If you don’t issue any commands to the elemental, it defends 
+    required by you). If you don't issue any commands to the elemental, it defends 
     itself from hostile creatures but otherwise takes no actions. 
     
     If your 
-    concentration is broken, the elemental doesn’t disappear. Instead, you lose 
+    concentration is broken, the elemental doesn't disappear. Instead, you lose 
     control of the elemental, it becom es hostile toward you and your companions, 
-    and it might attack. An uncontrolled elemental can’t be dismissed by you, and it
-     disappears 1 hour after you summoned it. The DM has the elemental’s statistics.
+    and it might attack. An uncontrolled elemental can't be dismissed by you, and it
+     disappears 1 hour after you summoned it. The DM has the elemental's statistics.
     
     
     At Higher Levels: When you cast this spell using a spell slot of 6th level or 
@@ -917,16 +917,16 @@ class ConjureFey(Spell):
     The fey creature is friendly
      to you and your companions for the duration. Roll initiative for the creature, 
     which has its own turns. It obeys any verbal commands that you issue to it (no 
-    action required by you), as long as they don’t violate its alignment. If you 
-    don’t issue any commands to the fey creature, it defends itself from hostile 
+    action required by you), as long as they don't violate its alignment. If you 
+    don't issue any commands to the fey creature, it defends itself from hostile 
     creatures but otherwise takes no actions. 
     
     If your concentration is broken, the
-     fey creature doesn’t disappear. Instead, you lose control of the fey creature, 
+     fey creature doesn't disappear. Instead, you lose control of the fey creature, 
     it becomes hostile toward you and your companions, and it might attack. An 
-    uncontrolled fey creature can’t be dismissed by you, and it disappears 1 hour 
+    uncontrolled fey creature can't be dismissed by you, and it disappears 1 hour 
     after you summoned it. 
-    The DM has the fey creature’s statistics.
+    The DM has the fey creature's statistics.
     
     At Higher 
     Levels: When you cast this spell using a spell slot of 7th level or higher, the 
@@ -962,10 +962,10 @@ class ConjureMinorElementals(Spell):
     The summoned creatures 
     are friendly to you and your companions. Roll initiative for the summoned 
     creatures as a group, which has its own turns. They obey any verbal commands 
-    that you issue to them (no action required by you). If you don’t issue any 
+    that you issue to them (no action required by you). If you don't issue any 
     commands to them, they defend themselves from hostile creatures, but otherwise 
     take no actions. 
-    The DM has the creatures’ statistics.
+    The DM has the creatures' statistics.
     
     At Higher Levels: When 
     you cast this spell using certain higher-level spell slots, you choose one of 
@@ -1011,12 +1011,12 @@ class ConjureWoodlandBeings(Spell):
     within range. 
     
     Choose one of the following options for what appears: 
-     •  One 
+     -  One 
     fey creature of challenge rating 2 or lower 
-     •  Two fey creatures of challenge 
+     -  Two fey creatures of challenge 
     rating 1 or lower 
-     •  Four fey creatures of challenge rating 1/2 or lower 
-     •  
+     -  Four fey creatures of challenge rating 1/2 or lower 
+     -  
     Eight fey creatures of challenge rating 1/4 or lower 
     
     A summoned creature 
@@ -1025,10 +1025,10 @@ class ConjureWoodlandBeings(Spell):
     The summoned 
     creatures are friendly to you and your companions. Roll initiative for the 
     summoned creatures as a group, which have their own turns. They obey any verbal 
-    commands that you issue to them (no action required by you). If you don’t issue 
+    commands that you issue to them (no action required by you). If you don't issue 
     any commands to them, they defend themselves from hostile creatures, but 
     otherwise take no actions. 
-    The DM has the creatures’ statistics.
+    The DM has the creatures' statistics.
     
     At Higher 
     Levels: When you cast this spell using certain higher-level spell slots, you 
@@ -1055,14 +1055,14 @@ class ContactOtherPlane(Spell):
     Contacting this extraplanar intelligence 
     can strain or even break your mind. When you cast this spell, make a DC 15 
     Intelligence saving throw. On a failure, you take 6d6 psychic damage and are 
-    insane until you finish a long rest. While insane, you can’t take actions, can’t
-     understand what other creatures say, can’t read, and speak only in gibberish. A
+    insane until you finish a long rest. While insane, you can't take actions, can't
+     understand what other creatures say, can't read, and speak only in gibberish. A
      greater restoration spell cast on you ends this effect. 
     
     On a successful save,
      you can ask the entity up to five questions. You must ask your questions before
-     the spell ends. The DM answers each question with one word, such as yes, 
-    no, maybe, never, irrelevant, or unclear (if the entity doesn’t know 
+     the spell ends. The DM answers each question with one word, such as yes, 
+    no, maybe, never, irrelevant, or unclear (if the entity doesn't know 
     the answer to the question). If a one-word answer would be misleading, the DM 
     might instead offer a short phrase as an answer.
     """
@@ -1085,33 +1085,33 @@ class Contagion(Spell):
     choice from any of the ones described below. 
     
     At the end of each of the 
-    target’s turns, it must make a Constitution saving throw. After failing three of
-     these saving throws, the disease’s effects last for the duration, and the 
+    target's turns, it must make a Constitution saving throw. After failing three of
+     these saving throws, the disease's effects last for the duration, and the 
     creature stops making these saves. After succeeding on three of these saving 
     throws, the creature recovers from the disease, and the spell ends. 
     
     Since this
      spell induces a natural disease in its target, any effect that removes a 
-    disease or otherwise ameliorates a disease’s effects apply to it. 
+    disease or otherwise ameliorates a disease's effects apply to it. 
     
     Blinding 
     Sickness 
-    Pain grips the creature’s mind, and its eyes turn milky white. The 
+    Pain grips the creature's mind, and its eyes turn milky white. The 
     creature has disadvantage on Wisdom checks and Wisdom saving throws and is 
     blinded. 
     
     Filth Fever 
-    A raging fever sweeps through the creature’s body. The 
+    A raging fever sweeps through the creature's body. The 
     creature has disadvantage on Strength checks, Strength saving throws, and attack
      rolls that use Strength. 
     
     Flesh Rot
-    The creature’s flesh decays. The creature 
+    The creature's flesh decays. The creature 
     has disadvantage on Charisma checks and vulnerability to all damage. 
     
     Mindfire
      
-    The creature’s mind becomes feverish. The creature has disadvantage on 
+    The creature's mind becomes feverish. The creature has disadvantage on 
     Intelligence checks and Intelligence saving throws, and the creature behaves as 
     if under the effects of the confusion spell during combat. 
     
@@ -1143,7 +1143,7 @@ class Contingency(Spell):
     of 1 action, and that can target you. 
     You cast that spell called the 
     contingent spell as part of casting contingency, expending spell slots for 
-    both, but the contingent spell doesn’t come into effect. Instead, it takes 
+    both, but the contingent spell doesn't come into effect. Instead, it takes 
     effect when a certain circumstance occurs. You describe that circumstance when 
     you cast the two spells. For example, a contingency cast with water breathing 
     might stipulate that water breathing comes into effect when you are engulfed in 
@@ -1175,7 +1175,7 @@ class ContinualFlame(Spell):
     """A flame, equivalent in brightness to a torch, springs forth from an object that 
     you touch. 
     The effect looks like a regular flame, but it creates no heat and 
-    doesn’t use oxygen. A continual flame can be covered or hidden but not smothered
+    doesn't use oxygen. A continual flame can be covered or hidden but not smothered
      or quenched.
     """
     name = "Continual Flame"
@@ -1201,8 +1201,8 @@ class ControlFlames(Spell):
     - You double or halve the area of bright light and dim 
     light cast by the flame, change its color, or both. The change lasts for 1 hour.
     
-    - You cause simple shapes — such as the vague form of a creature, an inanimate 
-    object, or a location — to appear within the flames and animate as you like. The
+    - You cause simple shapes - such as the vague form of a creature, an inanimate 
+    object, or a location - to appear within the flames and animate as you like. The
      shapes last for 1 hour.
     If you cast this spell multiple times, you can have up 
     to three non-instantaneous
@@ -1232,7 +1232,7 @@ class ControlWater(Spell):
     area includes a shore, the flooding water spills over onto dry land. If you 
     choose an area in a large body of water, you instead create a 20-foot tall wave 
     that travels from one side of the area to the other and then crashes down. Any 
-    Huge or smaller vehicles in the wave’s path are carried with it to the other 
+    Huge or smaller vehicles in the wave's path are carried with it to the other 
     side. Any Huge or smaller vehicles struck by the wave have a 25 percent chance 
     of capsizing. The water level remains elevated until the spell ends or you 
     choose a different effect. If this effect produced a wave, the wave repeats on 
@@ -1241,7 +1241,7 @@ class ControlWater(Spell):
     Part Water 
     You 
     cause water in the area to move apart and create a trench. The trench extends 
-    across the spell’s area, and the separated water forms a wall to either side. 
+    across the spell's area, and the separated water forms a wall to either side. 
     The trench remains until the spell ends or you choose a different effect. The 
     water then slowly fills in the trench over the course of the next round until 
     the normal water level is restored. 
@@ -1250,7 +1250,7 @@ class ControlWater(Spell):
     You cause flowing water in 
     the area to move in a direction you choose, even if the water has to flow over 
     obstacles, up walls, or in other unlikely directions. The water in the area 
-    moves as you direct it, but once it moves beyond the spell’s area, it resumes 
+    moves as you direct it, but once it moves beyond the spell's area, it resumes 
     its flow based on the terrain conditions. The water continues to move in the 
     direction you chose until the spell ends or you choose a different effect. 
     
@@ -1266,7 +1266,7 @@ class ControlWater(Spell):
     When a creature enters the vortex for the first time on a turn or starts its 
     turn there, it must make a Strength saving throw. On a failed save, the creature
      takes 2d8 bludgeoning damage and is caught in the vortex until the spell ends. 
-    On a successful save, the creature takes half damage, and isn’t caught in the 
+    On a successful save, the creature takes half damage, and isn't caught in the 
     vortex. A creature caught in the vortex can use its action to try to swim away 
     from the vortex as described above, but has disadvantage on the Strength 
     (Athletics) check to do so. 
@@ -1289,7 +1289,7 @@ class ControlWater(Spell):
 class ControlWeather(Spell):
     """You take control of the weather within 5 miles of you for the duration. 
     You 
-    must be outdoors to cast this spell. Moving to a place where you don’t have a 
+    must be outdoors to cast this spell. Moving to a place where you don't have a 
     clear path to the sky ends the spell early. 
     
     When you cast the spell, you 
@@ -1345,9 +1345,9 @@ class ControlWeather(Spell):
 class ControlWinds(Spell):
     """You take control of the air in a 100-foot cube that you can see within range. 
     Choose one of the following effects when you cast the spell. The effect lasts 
-    for the spell’s duration, unless you use your action on a later turn to switch 
+    for the spell's duration, unless you use your action on a later turn to switch 
     to a different effect. You can also use your action to temporarily halt the 
-    effect or to restart one you’ve halted.
+    effect or to restart one you've halted.
     Gusts. A wind picks up within the cube, 
     continually blowing in a horizontal direction that you choose. You choose the 
     intensity of the wind: calm, moderate, or strong. If the wind is moderate or 
@@ -1365,7 +1365,7 @@ class ControlWinds(Spell):
     save, the creature is knocked prone.
     
     Updraft. You cause a sustained updraft 
-    within the cube, rising upward from the cube’s bottom edge. Creatures that end a
+    within the cube, rising upward from the cube's bottom edge. Creatures that end a
      fall within the cube take only half damage from the fall. When a creature in 
     the cube makes a vertical jump, the creature can jump up to 10 feet higher than 
     normal.
@@ -1419,8 +1419,8 @@ class Counterspell(Spell):
     You attempt to interrupt a creature in the process of casting a spell.
      If the creature is casting a spell of 3rd level or lower, its spell fails and 
     has no effect. If it is casting a spell of 4th level or higher, make an ability 
-    check using your spellcasting ability.  The DC equals 10+ the spell’s level. On 
-    a success, the creature’s spell fails and has no effect.
+    check using your spellcasting ability.  The DC equals 10+ the spell's level. On 
+    a success, the creature's spell fails and has no effect.
     
     At Higher Levels: When
      you cast this spell using a spell slot of 4th level or higher, the interrupted 
@@ -1441,14 +1441,14 @@ class Counterspell(Spell):
 
 class CreateBonfire(Spell):
     """You create a bonfire on ground that you can see within range. Until the spell 
-    ends, the magic bonfire fills a 5-foot cube. Any creature in the bonfire’s space
+    ends, the magic bonfire fills a 5-foot cube. Any creature in the bonfire's space
      when you cast the spell must succeed on a Dexterity saving throw or take 1d8 
     fire damage. A creature must also make the saving throw when it moves into the 
-    bonfire’s space for the first time on a turn or ends its turn there.
+    bonfire's space for the first time on a turn or ends its turn there.
     The bonfire
-     ignites flammable objects in its area that aren’t being worn or carried.
+     ignites flammable objects in its area that aren't being worn or carried.
     The 
-    spell’s damage increases by 1d8 when you reach 5th level (2d8), 11th level 
+    spell's damage increases by 1d8 when you reach 5th level (2d8), 11th level 
     (3d8), and 17th level (4d8).
     """
     name = "Create Bonfire"
@@ -1467,7 +1467,7 @@ class CreateFoodAndWater(Spell):
     """You create 45 pounds of food and 30 gallons of water on the ground or in 
     containers within range, enough to sustain up to fifteen humanoids or five 
     steeds for 24 hours. The food is bland but nourishing, and spoils if uneaten 
-    after 24 hours. The water is clean and doesn’t go bad.
+    after 24 hours. The water is clean and doesn't go bad.
     """
     name = "Create Food And Water"
     level = 3
@@ -1483,18 +1483,18 @@ class CreateFoodAndWater(Spell):
 
 class CreateHomunculus(Spell):
     """While speaking an intricate incantation, you cut yourself with a jewel-encrusted
-     dagger, taking 2d4 piercing damage that can’t be reduced in any way. You then 
-    drip your blood on the spell’s other components and touch them, transforming 
+     dagger, taking 2d4 piercing damage that can't be reduced in any way. You then 
+    drip your blood on the spell's other components and touch them, transforming 
     them into a special construct called a homunculus. The statistics of the 
     homunculus are in the Monster Manual. It is your faithful companion, and it dies
      if you die. Whenever you finish a long rest, you can spend up to half your Hit 
     Dice if the homunculus is on the same plane of existence as you. When you do so,
      roll each die and add your Constitution modifier to it. Your hit point maximum 
-    is reduced by the total, and the homunculus’s hit point maximum and current hit 
+    is reduced by the total, and the homunculus's hit point maximum and current hit 
     points are
     both increased by it. This process can reduce you to no lower than 1 
-    hit point. and the change to your and the homunculus’s hit points ends when you 
-    finish your next long rest. The reduction to your hit point maximum can’t be 
+    hit point. and the change to your and the homunculus's hit points ends when you 
+    finish your next long rest. The reduction to your hit point maximum can't be 
     removed by any means before then, except by the homunculus‘s death. You can have
      only one homunculus at a time. If you cast this spell while your homunculus 
     lives, the spell fails.
@@ -1592,20 +1592,20 @@ class Creation(Spell):
     the object must be of a form and material that you have seen before. 
     
     The 
-    duration depends on the object’s material. If the object is composed of multiple
+    duration depends on the object's material. If the object is composed of multiple
      materials, use the shortest duration. 
     
-    Material — Duration 
-    Vegetable matter —
+    Material - Duration 
+    Vegetable matter -
      1 day 
-    Stone/crystal — 12 hours 
-    Precious metals — 1 hour 
-    Gems — 10 minutes 
+    Stone/crystal - 12 hours 
+    Precious metals - 1 hour 
+    Gems - 10 minutes 
     
-    Adamantine/Mithral — 1 minute 
+    Adamantine/Mithral - 1 minute 
     
     Using any material created by this spell as 
-    another spell’s material component causes that spell to fail.
+    another spell's material component causes that spell to fail.
     
     At Higher Levels:
      When you cast this spell using a spell slot of 6th level or higher, the cube 
@@ -1660,7 +1660,7 @@ class CrownOfStars(Spell):
      the mote is expended. The spell ends early if you expend the last mote. If you 
     have four or more motes remaining, they shed bright light in a 30-foot radius 
     and dim light for an additional 30 feet. Ifyou have one to three motes 
-    remaining, they shed dim light in a 30—foot radius.
+    remaining, they shed dim light in a 30-foot radius.
     
     At Higher Levels: When you 
     cast this spell using a spell slot of 8th level or higher, the number of motes 

@@ -106,7 +106,7 @@ class EyesOfCharming(MagicItem):
 
 
 class CharlattansDie(MagicItem):
-    """Whenever you roll this six—sided die, you can control which number it
+    """Whenever you roll this six-sided die, you can control which number it
     rolls.
 
     """
@@ -116,7 +116,7 @@ class CharlattansDie(MagicItem):
 
 class PipeOfSmokeMonsters(MagicItem):
     """While smoking this pipe, you can use an action to ex- hale a puff of smoke
-    that takes the form of a single crea— ture, such as a dragon, a flumph, or
+    that takes the form of a single crea- ture, such as a dragon, a flumph, or
     a froghemoth. The form must be small enough to fit in a 1-foot cube and
     loses its shape after a few seconds, becoming an ordi- nary puff of smoke.
 

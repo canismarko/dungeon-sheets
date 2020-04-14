@@ -20,9 +20,9 @@ class OtilukesFreezingSphere(Spell):
     the spell, if you wish. A small globe about the size of a sling stone, cool to 
     the touch, appears in your hand. At any time, you or a creature you give the 
     globe to can throw the globe (to a range of 40 feet) or hurl it with a sling (to
-     the sling’s normal range). It shatters on impact, with the same effect as the 
+     the sling's normal range). It shatters on impact, with the same effect as the 
     normal casting of the spell. You can also set the globe down without shattering 
-    it. After 1 minute, if the globe hasn’t already shattered, it explodes.
+    it. After 1 minute, if the globe hasn't already shattered, it explodes.
     
     At 
     Higher Levels: When you cast this spell using a spell slot of 7th level or 
@@ -48,14 +48,14 @@ class OtilukesResilientSphere(Spell):
     Nothing---not 
     physical objects, energy, or other spell effects---can pass through the barrier,
      in or out, though a creature in the sphere can breathe there. The sphere is 
-    immune to all damage, and a creature or object inside can’t be damaged by 
+    immune to all damage, and a creature or object inside can't be damaged by 
     attacks or effects originating from outside, nor can a creature inside the 
     sphere damage anything outside it.
     
     The sphere is weightless and just large 
     enough to contain the creature or object inside. An enclosed creature can use 
-    its action to push against the sphere’s walls and thus roll the sphere at up to 
-    half the creature’s speed. Similarly, the globe can be picked up and moved by 
+    its action to push against the sphere's walls and thus roll the sphere at up to 
+    half the creature's speed. Similarly, the globe can be picked up and moved by 
     other creatures.
     
     A disintegrate spell targeting the globe destroys it without 
@@ -76,7 +76,7 @@ class OtilukesResilientSphere(Spell):
 class OttosIrresistibleDance(Spell):
     """Choose one creature that you can see within range. The target begins a comic 
     dance in place: shuffling, tapping its feet, and capering for the duration. 
-    Creatures that can’t be charmed are immune to this spell.
+    Creatures that can't be charmed are immune to this spell.
     
     A dancing creature 
     must use all its movement to dance without leaving its space and has 

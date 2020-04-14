@@ -5,7 +5,7 @@ class LegendLore(Spell):
     """Name or describe a person, place, or object. The spell brings to your mind a 
     brief summary of the significant lore about the thing you named. The lore might 
     consist of current tales, forgotten stories, or even secret lore that has never 
-    been widely known. If the thing you named isn’t of legendary importance, you 
+    been widely known. If the thing you named isn't of legendary importance, you 
     gain no information. The more information you already have about the thing, the 
     more precise and detailed the information you receive is.
     
@@ -43,7 +43,7 @@ class LeomundsSecretChest(Spell):
     replica.
     
     After 60 days, there is a cumulative 5 percent chance per day that the
-     spell’s effect ends. This effect ends if you cast this spell again, if the 
+     spell's effect ends. This effect ends if you cast this spell again, if the 
     smaller replica chest is destroyed, or if you choose to end the spell as an 
     action. If the spell ends and the larger chest is on the Ethereal Plane, it is 
     irretrievably lost.
@@ -69,7 +69,7 @@ class LeomundsTinyHut(Spell):
     you. The spell fails if its area includes a larger creature or more than nine 
     creatures. Creatures and objects within the dome when you cast this spell can 
     move through it freely. All other creatures and objects are barred from passing 
-    through it. Spells and other magical effects can’t extend through the dome or be
+    through it. Spells and other magical effects can't extend through the dome or be
      cast through it. The atmosphere inside the space is comfortable and dry, 
     regardless of the weather outside.
     
@@ -114,10 +114,10 @@ class Levitate(Spell):
     The target can move
      only by pushing or pulling against a fixed object or surface within reach (such
      as a wall or a ceiling), which allows it to move as if it were climbing. You 
-    can change the target’s altitude by up to 20 feet in either direction on your 
+    can change the target's altitude by up to 20 feet in either direction on your 
     turn. If you are the target, you can move up or down as part of your move. 
     Otherwise, you can use your action to move the target, which must remain within 
-    the spell’s range.
+    the spell's range.
     
     When the spell ends, the target floats gently to the ground 
     if it is still aloft.
@@ -135,7 +135,7 @@ class Levitate(Spell):
 
 
 class LifeTransference(Spell):
-    """You sacrifice some of your health to mend another creature’s injuries. You take 
+    """You sacrifice some of your health to mend another creature's injuries. You take 
     4d8 necrotic damage, and one creature of your choice that you can see within 
     range regains a number of hit points equal to twice the necrotic damage you 
     take.
@@ -179,11 +179,11 @@ class Light(Spell):
 
 
 class LightningArrow(Spell):
-    """The next time you make a ranged weapon attack during the spell’s duration, the 
-    weapon’s ammunition, or the weapon itself if it’s a thrown weapon, transforms 
+    """The next time you make a ranged weapon attack during the spell's duration, the 
+    weapon's ammunition, or the weapon itself if it's a thrown weapon, transforms 
     into a bolt of lightning. Make the attack roll as normal, The target takes 4d8 
     lightning damage on a hit, or half as much damage on a miss, instead of the 
-    weapon’s normal damage.
+    weapon's normal damage.
     
     Whether you hit or miss, each creature within 10 feet 
     of the target must make a Dexterity saving throw. Each of these creatures takes 
@@ -216,7 +216,7 @@ class LightningBolt(Spell):
     or half as much damage on a successful one.
     
     The lightning ignites flammable 
-    objects in the area that aren’t being worn or carried.
+    objects in the area that aren't being worn or carried.
     
     At Higher Levels: When 
     you cast this spell using a spell slot of 4th level or higher, the damage 
@@ -276,7 +276,7 @@ class LocateAnimalsOrPlants(Spell):
 
 class LocateCreature(Spell):
     """Describe or name a creature that is familiar to you. You sense the direction to 
-    the creature’s location, as long as that creature is within 1,000 feet of you. 
+    the creature's location, as long as that creature is within 1,000 feet of you. 
     If the creature is moving, you know the direction of its movement.
     
     The spell 
@@ -284,9 +284,9 @@ class LocateCreature(Spell):
     specific kind (such as a human or a unicorn), so long as you have seen such a 
     creature up close – within 30 feet – at least once. If the creature you 
     described or named is in a different form, such as being under the effects of a 
-    polymorph spell, this spell doesn’t locate the creature.
+    polymorph spell, this spell doesn't locate the creature.
     
-    This spell can’t 
+    This spell can't 
     locate a creature if running water at least 10 feet wide blocks a direct path 
     between you and the creature.
     """
@@ -304,7 +304,7 @@ class LocateCreature(Spell):
 
 class LocateObject(Spell):
     """Describe or name an object that is familiar to you. You sense the direction to 
-    the object’s location, as long as that object is within 1,000 feet of you. If 
+    the object's location, as long as that object is within 1,000 feet of you. If 
     the object is in motion, you know the direction of its movement.
     
     The spell can 
@@ -313,7 +313,7 @@ class LocateObject(Spell):
     object of a particular kind, such as a certain kind of apparel, jewelry, 
     furniture, tool, or weapon.
     
-    This spell can’t locate an object if any thickness 
+    This spell can't locate an object if any thickness 
     of lead, even a thin sheet, blocks a direct path between you and the object.
     """
     name = "Locate Object"
@@ -329,7 +329,7 @@ class LocateObject(Spell):
 
 
 class Longstrider(Spell):
-    """You touch a creature. The target’s speed increases by 10 feet until the spell 
+    """You touch a creature. The target's speed increases by 10 feet until the spell 
     ends.
     
     At Higher Levels: When you cast this spell using a spell slot of 2nd 
