@@ -19,6 +19,17 @@ class MagicItem():
         return '\"{:s}\"'.format(str(self))
 
 
+class CloakOfProtection(MagicItem):
+    """
+    You gain a +1 bonus to AC and Saving Throws while wearing this cloak.
+
+    """
+    name = "Cloak of Protection"
+    ac_bonus = 1
+    requires_attunement = True
+    rarity = 'Uncommon'
+
+
 class RingOfProtection(MagicItem):
     """
     You gain a +1 bonus to AC and Saving Throws while wearing this ring.
@@ -59,7 +70,7 @@ class DecanterOfEndlessWater(MagicItem):
 
 class ToothOfAnimalFriendship(MagicItem):
     """While holding this wolf's tooth, you can expend it's one charge to cast
-    Animal Friendship (DC 13) or Speak With Animals. 
+    Animal Friendship (DC 13) or Speak With Animals.
 
     The charge resets at the next Dawn.
     """
@@ -74,7 +85,7 @@ class CloakOfBillowing(MagicItem):
     """
     name = "Cloak of Billowing"
     rarity = "Common"
-    
+
 
 class CapeOfTheMountebank(MagicItem):
     """This cape smells faintly of brimstone. While wearing it, you can use it to
@@ -137,7 +148,7 @@ class CoinsOfCommunication(MagicItem):
     name = "Coins of Communication"
     rarity = "Uncommon"
 
-    
+
 class FlameTongue(MagicItem):
     """You can use a Bonus Action to speak this magic sword's Command Word, causing
     flames to erupt from the blade. These flames shed bright light in a 40-foot
@@ -169,23 +180,23 @@ class SpearOfLightning(MagicItem):
     requires_attunement = True
     name = "Lightning Spear"
 
-    
+
 class AmuletOfTheEel(MagicItem):
     """While holding this amulet, you can breath water and air, and have a
     swimming speed of 20'."""
     name = "Amulet of the Eel"
-    
+
 
 class BracersOfMagnetism(MagicItem):
     """When wearing these bracers, you can use a bonus action to speak their
     command word, causing them to become magnetically attractive to each other.
 
-    While active, the wearer's arms are secured together, requiring a succesful DC 25 
-    STR (Athletics) check to separate them by six inches. The wearer has advantage 
+    While active, the wearer's arms are secured together, requiring a succesful DC 25
+    STR (Athletics) check to separate them by six inches. The wearer has advantage
     on all STR (Athletics) checks made to grapple, but disadvantage on all
-    weapon attacks and DEX (Sleight of Hand) checks. 
+    weapon attacks and DEX (Sleight of Hand) checks.
 
-    The wearer can use another bonus action to speak the command word and 
+    The wearer can use another bonus action to speak the command word and
     deactivate the magnetic effect.
 
     The magnetic effect fails if the bracers are more than 10' apart.
@@ -210,3 +221,13 @@ class GlowingSword(MagicItem):
     This strange longsword glows at odd times.
     """
     name = "Glowing Sword"
+
+
+class PearlOfPower(MagicItem):
+    """While this pearl is on your person, you can use an action to speak its
+    Command Word and regain one expended spell slot. If the expended slot is of
+    4th Level or higher, the new slot is 3rd Level. Once you have used
+    the pearl, it can't be used again until the next dawn.
+    """
+    requires_attunement = True
+    name = "Pearl of Power"
