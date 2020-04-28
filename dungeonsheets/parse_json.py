@@ -7,7 +7,7 @@ INFILE = '/home/mwolf/Documents/dungeons_and_dragons/spells.json'
 data = json.load(open(INFILE, mode='r'))
 
 components_re = re.compile('([VSM])?[, ]*([VSM])?[, ]*([VSM])?[, ]*'
-                           '(?:\(([-a-zA-Z ,.0-9;'-()]+)\))?')
+                           '(?:\(([-a-zA-Z ,.0-9;\'-()]+)\))?')
 
 def parse_components(string):
     result = components_re.match(string)
