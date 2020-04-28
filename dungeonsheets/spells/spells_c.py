@@ -203,10 +203,12 @@ class ChainLightning(Spell):
 
 
 class ChaosBolt(Spell):
-    """You hurl an undulating, warbling mass of chaotic energy at one creature in 
-    range. Make a ranged spell attack against the target. On a hit, the target takes
-     2d8 + 1d6 damage. Choose one of the dSs. The number rolled on that die 
-    determines the attacks damage type, as shown below.
+    """You hurl an undulating, warbling mass of chaotic energy at one
+    creature in range. Make a ranged spell attack against the
+    target. On a hit, the target takes 2d8 + 1d6 damage. Choose one of
+    the dSs. The number rolled on that die determines the attacks
+    damage type, as shown below.
+    
     d8 / Damage Type
     1 / Acid
     2 
@@ -217,16 +219,18 @@ class ChaosBolt(Spell):
     6 / Poison
     7 / Psychic
     8 / Thunder
-    If 
-    you roll the same number on both d8s, the chaotic energy leaps from the target 
-    to a different creature of your choice within 30 feet of it. Make a new attack 
-    roll against the new target, and make a new damage roll, which could cause the 
-    chaotic energy to leap again. A creature can be targeted only once by each 
-    casting of this spell.
     
-    At Higher Levels: When you cast this spell using a spell
-     slot of 2nd level or higher, each target takes 1d6 extra damage of the type 
-    rolled for each slot level above 1st.
+    If you roll the same number on both d8s, the chaotic energy leaps
+    from the target to a different creature of your choice within 30
+    feet of it. Make a new attack roll against the new target, and
+    make a new damage roll, which could cause the chaotic energy to
+    leap again. A creature can be targeted only once by each casting
+    of this spell.
+    
+    At Higher Levels: When you cast this spell using a spell slot of
+    2nd level or higher, each target takes 1d6 extra damage of the
+    type rolled for each slot level above 1st.
+
     """
     name = "Chaos Bolt"
     level = 1
@@ -241,17 +245,19 @@ class ChaosBolt(Spell):
 
 
 class CharmMonster(Spell):
-    """You attempt to charm a creature you can see within range. It must make a Wisdom 
-    saving throw, and it does so with advantage if you or your companions are 
-    fighting it. If it fails the saving throw, it is charmed by you until the spell 
-    ends or until you or your companions do anything harmful to it. The charmed 
-    creature is friendly to you. When the spell ends, the creature knows it was 
+    """You attempt to charm a creature you can see within range. It must
+    make a Wisdom saving throw, and it does so with advantage if you
+    or your companions are fighting it. If it fails the saving throw,
+    it is charmed by you until the spell ends or until you or your
+    companions do anything harmful to it. The charmed creature is
+    friendly to you. When the spell ends, the creature knows it was
     charmed by you.
     
-    At Higher Levels: When you cast this spell using a spell slot 
-    of 5th level or higher, you can target one additional creature for each slot 
-    level above 4th. The creatures must be within 30 feet of each other when you 
-    target them.
+    At Higher Levels: When you cast this spell using a spell slot of
+    5th level or higher, you can target one additional creature for
+    each slot level above 4th. The creatures must be within 30 feet of
+    each other when you target them.
+    
     """
     name = "Charm Monster"
     level = 4
@@ -266,18 +272,19 @@ class CharmMonster(Spell):
 
 
 class CharmPerson(Spell):
-    """You attempt to charm a humanoid you can see within range. 
-    It must make a Wisdom
-     saving throw, and does so with advantage if you or your companions are fighting
-     it. If it fails the saving throw, it is charmed by you until the spell ends or 
-    until you  or your companions do anything harmful to it.The charmed creature 
-    regards you as a friendly acquaintance. When the spell ends, the creature knows 
-    it was charmed by you.
+    """You attempt to charm a humanoid you can see within range.  It must
+    make a Wisdom saving throw, and does so with advantage if you or
+    your companions are fighting it. If it fails the saving throw, it
+    is charmed by you until the spell ends or until you or your
+    companions do anything harmful to it.The charmed creature regards
+    you as a friendly acquaintance. When the spell ends, the creature
+    knows it was charmed by you.
     
-    At Higher Levels: When you cast this spell using a spell
-     slot of 2nd level or higher, you can target one additional creature for each 
-    slot level above 1st. The creatures must be within 30 feet of each other when 
-    you target them.
+    At Higher Levels: When you cast this spell using a spell slot of
+    2nd level or higher, you can target one additional creature for
+    each slot level above 1st. The creatures must be within 30 feet of
+    each other when you target them.
+    
     """
     name = "Charm Person"
     level = 1
@@ -523,31 +530,38 @@ class ColorSpray(Spell):
 
 
 class Command(Spell):
-    """You speak a one-word command to a creature you can see within range. 
-    The target
-     must succeed on a Wisdom saving throw or follow the command on its next turn. 
-    The spell has no effect if the target is undead, if it doesn't understand your 
-    language, or if your command is directly harmful to it.  Some typical commands 
-    and their effects follow. You might issue a command other than one described 
-    here. If you do so, the DM determines how the target behaves. If the target 
-    can't follow your command, the spell ends.
-    Approach The target moves toward you 
-    by the shortest and most direct route, ending its turn if it moves within 5 feet
-     of you.
-    Drop The target drops whatever it is holding and then ends its turn.
+    """You speak a one-word command to a creature you can see within
+    range.  The target must succeed on a Wisdom saving throw or follow
+    the command on its next turn.  The spell has no effect if the
+    target is undead, if it doesn't understand your language, or if
+    your command is directly harmful to it.
     
-    Flee The target spends its turn moving away from you by the fastest available 
-    means.
-    Grovel The target falls prone and then ends its turn.
-    Halt The target 
-    doesn't move and takes no actions. A flying creature stays aloft, provided that 
-    it is able to do so. If it must move to stay aloft, it flies the minimum 
-    distance needed to remain in the air.
+    Some typical commands and their effects follow. You might issue a
+    command other than one described here. If you do so, the DM
+    determines how the target behaves. If the target can't follow your
+    command, the spell ends.
     
-    At Higher Levels: When you cast this 
-    spell using a spell slot of 2nd level or higher, you can affect one additional 
-    creature for each slot level above 1st. The creatures must be within 30 feet of 
-    each other when you target them
+    **Approach:** The target moves toward you by the shortest and most
+      direct route, ending its turn if it moves within 5 feet of you.
+    
+    **Drop:** The target drops whatever it is holding and then ends
+      its turn.
+    
+    **Flee:** The target spends its turn moving away from you by the
+      fastest available means.
+    
+    **Grovel:** The target falls prone and then ends its turn.
+    
+    **Halt:** The target doesn't move and takes no actions. A flying
+      creature stays aloft, provided that it is able to do so. If it
+      must move to stay aloft, it flies the minimum distance needed to
+      remain in the air.
+    
+    **At Higher Levels:** When you cast this spell using a spell slot
+      of 2nd level or higher, you can affect one additional creature
+      for each slot level above 1st. The creatures must be within 30
+      feet of each other when you target them
+
     """
     name = "Command"
     level = 1
@@ -590,16 +604,15 @@ class Commune(Spell):
 
 
 class CommuneWithNature(Spell):
-    """You briefly become one with nature and gain knowledge of the surrounding 
-    territory. 
-    In the outdoors, the spell gives you knowledge of the land within 3 
-    miles of you. In caves and other natural underground settings, the radius is 
-    limited to 300 feet. The spell doesn't function where nature has been replaced 
-    by construction, such as in dungeons and towns. 
+    """You briefly become one with nature and gain knowledge of the
+    surrounding territory.  In the outdoors, the spell gives you
+    knowledge of the land within 3 miles of you. In caves and other
+    natural underground settings, the radius is limited to 300
+    feet. The spell doesn't function where nature has been replaced by
+    construction, such as in dungeons and towns.
     
-    You instantly gain knowledge 
-    of up to three facts of your choice about any of the following subjects as they 
-    relate to the area: 
+    You instantly gain knowledge of up to three facts of your choice
+    about any of the following subjects as they relate to the area:
     
     -  terrain and bodies of water 
     -  prevalent plants, 
@@ -609,10 +622,10 @@ class CommuneWithNature(Spell):
     -  influence from other planes of existence 
     -  buildings 
     
-    For 
-    example, you could determine the location of powerful undead in the area, the 
-    location of major sources of safe drinking water, and the location of any nearby
-     towns.
+    For example, you could determine the location of powerful undead
+    in the area, the location of major sources of safe drinking water,
+    and the location of any nearby towns.
+
     """
     name = "Commune With Nature"
     level = 5
@@ -775,39 +788,36 @@ class Confusion(Spell):
 
 
 class ConjureAnimals(Spell):
-    """You summon fey spirits that take the form of beasts and appear in unoccupied 
-    spaces that you can see within range. 
+    """You summon fey spirits that take the form of beasts and appear in
+    unoccupied spaces that you can see within range.
     
-    Choose one of the following options for 
-    what appears: 
+    Choose one of the following options for what appears:
     
-    -  One beast of challenge rating 2 or lower 
-    -  Two beasts of 
-    challenge rating 1  or lower 
-    -  Four beasts of challenge rating 1/2 or lower 
-    -
-      Eight beasts of challenge rating 1/4 or lower 
+    - One beast of challenge rating 2 or lower 
+    - Two beasts of challenge rating 1 or lower 
+    - Four beasts of challenge rating 1/2 or lower 
+    - Eight beasts of challenge rating 1/4 or lower 
     
-    Each beast is also considered 
-    fey, and it disappears when it drops to 0 hit points or when the spell ends. 
+    Each beast is also considered fey, and it disappears when it drops
+    to 0 hit points or when the spell ends.
     
     
-    The summoned creatures are friendly to you and your companions. Roll initiative 
-    for the summoned creatures as a group, which has its own turns. They obey any 
-    verbal commands that you issue to them (no action required by you). If you don't
-     issue any commands to them, they defend themselves from hostile creatures, but 
-    otherwise take no actions. 
-    The DM has the creatures' statistics.
+    The summoned creatures are friendly to you and your
+    companions. Roll initiative for the summoned creatures as a group,
+    which has its own turns. They obey any verbal commands that you
+    issue to them (no action required by you). If you don't issue any
+    commands to them, they defend themselves from hostile creatures,
+    but otherwise take no actions.  The DM has the creatures'
+    statistics.
     
-    At Higher 
-    Levels: When you cast this spell using certain higher-level spell slots, you 
-    choose one of the summoning options above, and more creatures appear: 
+    **At Higher Levels:** When you cast this spell using certain
+    higher-level spell slots, you choose one of the summoning options
+    above, and more creatures appear:
     
-    twice 
-    as many with a 5th-level slot
-    three times as many with a 7th-level slot 
-    four 
-    times as many with a 9th-level slot.
+    - twice as many with a 5th-level slot
+    - three times as many with a 7th-level slot 
+    - four times as many with a 9th-level slot.
+    
     """
     name = "Conjure Animals"
     level = 3
@@ -1139,25 +1149,26 @@ class Contagion(Spell):
 
 
 class Contingency(Spell):
-    """Choose a spell of 5th level or lower that you can cast, that has a casting time 
-    of 1 action, and that can target you. 
-    You cast that spell called the 
-    contingent spell as part of casting contingency, expending spell slots for 
-    both, but the contingent spell doesn't come into effect. Instead, it takes 
-    effect when a certain circumstance occurs. You describe that circumstance when 
-    you cast the two spells. For example, a contingency cast with water breathing 
-    might stipulate that water breathing comes into effect when you are engulfed in 
-    water or a similar liquid. 
+    """Choose a spell of 5th level or lower that you can cast, that has a
+    casting time of 1 action, and that can target you.  You cast that
+    spell called "the contingent spell" as part of casting
+    contingency, expending spell slots for both, but the contingent
+    spell doesn't come into effect. Instead, it takes effect when a
+    certain circumstance occurs. You describe that circumstance when
+    you cast the two spells. For example, a contingency cast with
+    water breathing might stipulate that water breathing comes into
+    effect when you are engulfed in water or a similar liquid.
     
-    The contingent spell takes effect immediately after
-     the circumstance is met for the first time, whether or not you want it to. and 
-    then contingency ends. 
+    The contingent spell takes effect immediately after the
+    circumstance is met for the first time, whether or not you want
+    it to. and then contingency ends.
     
-    The contingent spell takes effect only on you, even if 
-    it can normally target others. You can use only one contingency spell at a time.
-     If you cast this spell again, the effect of another contingency spell on you 
-    ends. Also, contingency ends on you if its material component is ever not on 
-    your person.
+    The contingent spell takes effect only on you, even if it can
+    normally target others. You can use only one contingency spell at
+    a time.  If you cast this spell again, the effect of another
+    contingency spell on you ends. Also, contingency ends on you if
+    its material component is ever not on your person.
+    
     """
     name = "Contingency"
     level = 6
@@ -1172,11 +1183,11 @@ class Contingency(Spell):
 
 
 class ContinualFlame(Spell):
-    """A flame, equivalent in brightness to a torch, springs forth from an object that 
-    you touch. 
-    The effect looks like a regular flame, but it creates no heat and 
-    doesn't use oxygen. A continual flame can be covered or hidden but not smothered
-     or quenched.
+    """A flame, equivalent in brightness to a torch, springs forth from an
+    object that you touch.  The effect looks like a regular flame, but
+    it creates no heat and doesn't use oxygen. A continual flame can
+    be covered or hidden but not smothered or quenched.
+
     """
     name = "Continual Flame"
     level = 2
@@ -1193,19 +1204,19 @@ class ContinualFlame(Spell):
 class ControlFlames(Spell):
     """You choose a nonmagical flame that you can see within range and that fits within
      a 5-foot cube. You affect it in one of the following ways:
-    - You 
-    instantaneously expand the flame 5 feet in one direction, provided that wood or 
-    other fuel is present in the new location.
-    - You instantaneously extinguish the 
-    flames within the cube.
-    - You double or halve the area of bright light and dim 
-    light cast by the flame, change its color, or both. The change lasts for 1 hour.
     
-    - You cause simple shapes - such as the vague form of a creature, an inanimate 
-    object, or a location - to appear within the flames and animate as you like. The
-     shapes last for 1 hour.
-    If you cast this spell multiple times, you can have up 
-    to three non-instantaneous
+    - You instantaneously expand the flame 5 feet in one direction,
+      provided that wood or other fuel is present in the new location.
+    - You instantaneously extinguish the flames within the cube.
+    - You double or halve the area of bright light and dim light cast
+      by the flame, change its color, or both. The change lasts for 1
+      hour.
+    - You cause simple shapes - such as the vague form of a creature,
+      an inanimate object, or a location - to appear within the flames
+      and animate as you like. The shapes last for 1 hour.  If you
+      cast this spell multiple times, you can have up to three
+      non-instantaneous
+    
     """
     name = "Control Flames"
     level = 0
@@ -1246,7 +1257,7 @@ class ControlWater(Spell):
     water then slowly fills in the trench over the course of the next round until 
     the normal water level is restored. 
     
-    Redirect Flow 
+    Redirect Flow
     You cause flowing water in 
     the area to move in a direction you choose, even if the water has to flow over 
     obstacles, up walls, or in other unlikely directions. The water in the area 
@@ -1287,48 +1298,45 @@ class ControlWater(Spell):
 
 
 class ControlWeather(Spell):
-    """You take control of the weather within 5 miles of you for the duration. 
-    You 
-    must be outdoors to cast this spell. Moving to a place where you don't have a 
-    clear path to the sky ends the spell early. 
+    """You take control of the weather within 5 miles of you for the
+    duration.
     
-    When you cast the spell, you 
-    change the current weather conditions, which are determined by the DM based on 
-    the climate and season. You can change precipitation, temperature, and wind. It 
-    takes 1d4 x 10 minutes for the new conditions to take effect. Once they do so, 
-    you can change the conditions again. When the spell ends, the weather gradually 
-    returns to normal. 
+    You must be outdoors to cast this spell. Moving to a place where
+    you don't have a clear path to the sky ends the spell early.
     
-    When you change the weather conditions, find a current 
-    condition on the following tables and change its stage by one, up or down. When 
-    changing the wind, you can change its direction. 
+    When you cast the spell, you change the current weather
+    conditions, which are determined by the DM based on the climate
+    and season. You can change precipitation, temperature, and
+    wind. It takes 1d4 x 10 minutes for the new conditions to take
+    effect. Once they do so, you can change the conditions again. When
+    the spell ends, the weather gradually returns to normal.
     
-    Precipitation 
-    Stage 1 – 
-    Clear, 
+    When you change the weather conditions, find a current condition
+    on the following tables and change its stage by one, up or
+    down. When changing the wind, you can change its direction.
+    
+    **Precipitation**
+    Stage 1 – Clear, 
     Stage 2 – Light clouds, 
     Stage 3 – Overcast or ground fog, 
-    Stage 4 – 
-    Rain, hail or snow, 
+    Stage 4 – Rain, hail or snow, 
     Stage 5 – Torrential rain, driving hail or blizzard 
     
-    
-    Temperature 
+    **Temperature**
     Stage 1 – Unbearable heat, 
     Stage 2 – Hot, 
     Stage 3 – Warm, 
-    Stage 
-    4 – Cool, 
+    Stage 4 – Cool, 
     Stage 5 – Cold, 
     Stage 6 – Arctic cold 
     
-    Wind 
+    **Wind**
     Stage 1 – Calm, 
-    Stage
-     2 – Moderate wind, 
+    Stage 2 – Moderate wind, 
     Stage 3 – Strong wind, 
     Stage 4 – Gale, 
     Stage 5 – Storm
+
     """
     name = "Control Weather"
     level = 8
@@ -1343,32 +1351,35 @@ class ControlWeather(Spell):
 
 
 class ControlWinds(Spell):
-    """You take control of the air in a 100-foot cube that you can see within range. 
-    Choose one of the following effects when you cast the spell. The effect lasts 
-    for the spell's duration, unless you use your action on a later turn to switch 
-    to a different effect. You can also use your action to temporarily halt the 
-    effect or to restart one you've halted.
-    Gusts. A wind picks up within the cube, 
-    continually blowing in a horizontal direction that you choose. You choose the 
-    intensity of the wind: calm, moderate, or strong. If the wind is moderate or 
-    strong, ranged weapon attacks that pass through it or that are made against 
-    targets within the cube have disadvantage on their attack rolls. If the wind is 
-    strong, any creature moving against the wind must spend 1 extra foot of movement
-     for each foot moved.
+    """You take control of the air in a 100-foot cube that you can see
+    within range.  Choose one of the following effects when you cast
+    the spell. The effect lasts for the spell's duration, unless you
+    use your action on a later turn to switch to a different
+    effect. You can also use your action to temporarily halt the
+    effect or to restart one you've halted. 
     
-    Downdraft. You cause a sustained blast of strong wind to 
-    blow downward from the top of the cube. Ranged weapon attacks that pass through 
-    the cube
-    or that are made against targets within it have disadvantage on their 
-    attack rolls. A creature must make a Strength saving throw if it flies into the 
-    cube for the first time on a turn or starts its turn there flying. On a failed 
-    save, the creature is knocked prone.
+    Gusts. A wind picks up within the cube, continually blowing in a
+    horizontal direction that you choose. You choose the intensity of
+    the wind: calm, moderate, or strong. If the wind is moderate or
+    strong, ranged weapon attacks that pass through it or that are
+    made against targets within the cube have disadvantage on their
+    attack rolls. If the wind is strong, any creature moving against
+    the wind must spend 1 extra foot of movement for each foot moved.
     
-    Updraft. You cause a sustained updraft 
-    within the cube, rising upward from the cube's bottom edge. Creatures that end a
-     fall within the cube take only half damage from the fall. When a creature in 
-    the cube makes a vertical jump, the creature can jump up to 10 feet higher than 
-    normal.
+    Downdraft. You cause a sustained blast of strong wind to blow
+    downward from the top of the cube. Ranged weapon attacks that pass
+    through the cube or that are made against targets within it have
+    disadvantage on their attack rolls. A creature must make a
+    Strength saving throw if it flies into the cube for the first time
+    on a turn or starts its turn there flying. On a failed save, the
+    creature is knocked prone.
+    
+    Updraft. You cause a sustained updraft within the cube, rising
+    upward from the cube's bottom edge. Creatures that end a fall
+    within the cube take only half damage from the fall. When a
+    creature in the cube makes a vertical jump, the creature can jump
+    up to 10 feet higher than normal.
+
     """
     name = "Control Winds"
     level = 5
@@ -1440,16 +1451,17 @@ class Counterspell(Spell):
 
 
 class CreateBonfire(Spell):
-    """You create a bonfire on ground that you can see within range. Until the spell 
-    ends, the magic bonfire fills a 5-foot cube. Any creature in the bonfire's space
-     when you cast the spell must succeed on a Dexterity saving throw or take 1d8 
-    fire damage. A creature must also make the saving throw when it moves into the 
-    bonfire's space for the first time on a turn or ends its turn there.
-    The bonfire
-     ignites flammable objects in its area that aren't being worn or carried.
-    The 
-    spell's damage increases by 1d8 when you reach 5th level (2d8), 11th level 
-    (3d8), and 17th level (4d8).
+    """You create a bonfire on ground that you can see within range. Until
+    the spell ends, the magic bonfire fills a 5-foot cube. Any
+    creature in the bonfire's space when you cast the spell must
+    succeed on a Dexterity saving throw or take 1d8 fire damage. A
+    creature must also make the saving throw when it moves into the
+    bonfire's space for the first time on a turn or ends its turn
+    there.  The bonfire ignites flammable objects in its area that
+    aren't being worn or carried.  The spell's damage increases by 1d8
+    when you reach 5th level (2d8), 11th level (3d8), and 17th level
+    (4d8).
+    
     """
     name = "Create Bonfire"
     level = 0
@@ -1596,20 +1608,20 @@ class Creation(Spell):
      materials, use the shortest duration. 
     
     Material - Duration 
-    Vegetable matter -
-     1 day 
+    Vegetable matter - 1 day 
     Stone/crystal - 12 hours 
     Precious metals - 1 hour 
     Gems - 10 minutes 
     
     Adamantine/Mithral - 1 minute 
     
-    Using any material created by this spell as 
-    another spell's material component causes that spell to fail.
+    Using any material created by this spell as another spell's
+    material component causes that spell to fail.
     
-    At Higher Levels:
-     When you cast this spell using a spell slot of 6th level or higher, the cube 
-    increases by 5 feet for each slot level above 5th.
+    **At Higher Levels:** When you cast this spell using a spell slot of
+      6th level or higher, the cube increases by 5 feet for each slot
+      level above 5th.
+
     """
     name = "Creation"
     level = 5
@@ -1653,18 +1665,21 @@ class CrownOfMadness(Spell):
 
 
 class CrownOfStars(Spell):
-    """Seven star-like motes of light appear and orbit your head until the spell ends. 
-    You can use a bonus action to send one of the motes streaking toward one 
-    creature or object within 120 feet of you. When you do so, make a ranged spell 
-    attack. On a hit. the target takes 4d12 radiant damage. Whether you hit or miss,
-     the mote is expended. The spell ends early if you expend the last mote. If you 
-    have four or more motes remaining, they shed bright light in a 30-foot radius 
-    and dim light for an additional 30 feet. Ifyou have one to three motes 
-    remaining, they shed dim light in a 30-foot radius.
+    """Seven star-like motes of light appear and orbit your head until the
+    spell ends.  You can use a bonus action to send one of the motes
+    streaking toward one creature or object within 120 feet of
+    you. When you do so, make a ranged spell attack. On a hit. the
+    target takes 4d12 radiant damage. Whether you hit or miss, the
+    mote is expended. The spell ends early if you expend the last
+    mote. If you have four or more motes remaining, they shed bright
+    light in a 30-foot radius and dim light for an additional 30
+    feet. Ifyou have one to three motes remaining, they shed dim light
+    in a 30-foot radius.
     
-    At Higher Levels: When you 
-    cast this spell using a spell slot of 8th level or higher, the number of motes 
-    created increases by two for each slot level above 7th.
+    At Higher Levels: When you cast this spell using a spell slot of
+    8th level or higher, the number of motes created increases by two
+    for each slot level above 7th.
+
     """
     name = "Crown Of Stars"
     level = 7
@@ -1679,11 +1694,12 @@ class CrownOfStars(Spell):
 
 
 class CrusadersMantle(Spell):
-    """Holy power radiates from you in an aura with a 30-foot radius, awakening 
-    boldness in friendly creatures. Until the spell ends, the aura moves with you, 
-    centered on you. While in the aura, each nonhostile creature in the aura 
-    (including you) deals an extra 1d4 radiant damage when it hits with a weapon 
-    attack.
+    """Holy power radiates from you in an aura with a 30-foot radius,
+    awakening boldness in friendly creatures. Until the spell ends,
+    the aura moves with you, centered on you. While in the aura, each
+    nonhostile creature in the aura (including you) deals an extra 1d4
+    radiant damage when it hits with a weapon attack.
+
     """
     name = "Crusaders Mantle"
     level = 3
