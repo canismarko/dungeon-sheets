@@ -49,6 +49,29 @@ class AbsorbElements(Spell):
     classes = ('Druid', 'Ranger', 'Wizard', 'Sorcerer')
 
 
+class AcidArrow(Spell):
+    """A shimmering green arrow streaks toward a target within range and
+    bursts in a spray of acid. Make a ranged spell attack against the
+    target. On a hit, the target takes 4d4 acid damage immediately and
+    2d4 acid damage at the end of its next turn. On a miss, the arrow
+    splashes the target with acid for half as much of the initial
+    damage and no damage at the end of its next turn.
+    
+    At Higher Levels. When you cast this spell using a spell slot of
+    3rd level or higher, the damage (both initial and later) increases
+    by 1d4 for each slot level above 2nd.
+    
+    """
+    level = 2
+    name = "Acid Arrow"
+    casting_time = "1 action"
+    casting_range = "90 ft"
+    components = ("V", "S", "M")
+    duration = "instantaneous"
+    magic_school = "Evocation"
+    classes = ('Wizard',)
+
+
 class AcidSplash(Spell):
     """You hurl a bubble of acid. 
     Choose one creature within range, or choose two 
