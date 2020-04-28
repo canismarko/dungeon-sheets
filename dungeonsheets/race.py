@@ -418,6 +418,16 @@ class WaterGenasi(_Genasi):
     features = (feats.AcidResistance, feats.Amphibious,
                 feats.CallToTheWave)
 
+# Eberron Races
+class Kalashtar(Race):
+    name = "Kalashtar"
+    wisdom_bonus = 2
+    charisma_bonus = 1
+    size = 'medium'
+    speed = 30
+    languages = ("Common", "Quori",) # Not sure how to have a "+1 language of your choice" - naviabbot
+    features = (feats.DualMind, feats.MentalDiscipline, feats.MindLink, feats.SeveredFromDreams)
+
 
 PHB_races = [HillDwarf, MountainDwarf, HighElf, WoodElf, DarkElf,
              LightfootHalfling, StoutHalfling, Rashemi, Dragonborn,
@@ -429,7 +439,9 @@ VOLO_races = [ProtectorAasimar, ScourgeAasimar, FallenAasimar,
 EE_races = [Aarakocra, DeepGnome, AirGenasi, FireGenasi, EarthGenasi,
             WaterGenasi]
 
-available_races = PHB_races + VOLO_races + EE_races
+RFTLW_races = [Kalashtar]
+
+available_races = PHB_races + VOLO_races + EE_races + RFTLW_races
 
 __all__ = tuple([r.name for r in available_races]) + (
-    'available_races', 'PHB_races', 'VOLO_races', 'EE_races')
+    'available_races', 'PHB_races', 'VOLO_races', 'EE_races, RFTLW_races')

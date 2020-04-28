@@ -711,3 +711,54 @@ class CallToTheWave(Feature):
     """
     name = "Call to the Wave"
     source = "Race (Water Genasi)"
+
+# RFTLW Races
+
+class DualMind(Feature):
+    """
+    You have advantage on all Wisdom saving throws.
+    
+    """
+    name = "Dual Mind"
+    source = "Race (Kalashtar)"
+
+class MentalDiscipline(Feature):
+    """
+    You have resistance to psychic damage.
+    
+    """
+    name = "Mental Discipline"
+    source = "Race (Kalashtar)"
+
+class MindLink(Feature):
+    """
+    You can speak telepathically to any creature you can see, provided
+    the creature is within a number of feet of you equal to 10 times your
+    level. You don’t need to share a language with the creature for it to
+    understand your telepathic utterances, but the creature must be able
+    to understand at least one language.
+
+    When you’re using this trait to speak telepathically to a creature,
+    you can use your action to give that creature the ability to speak
+    telepathically with you for 1 hour or until you end this effect as
+    an action. To use this ability, the creature must be able to see
+    you and must be within this trait’s range. You can give this
+    ability to only one creature at a time; giving it to a creature
+    takes it away from another creature who has it.  
+
+    """
+    name = "Mind Link"
+    source = "Race (Kalashtar)"
+
+class SeveredFromDreams(Feature):
+    """
+    Kalashtar sleep, but they don't connect to the plane of dreams as
+    other creatures do. Instead, their minds draw from the memories of
+    the otherworldly spirit while they sleep. As such, you are immune
+    to spells and other magical effects that require you to dream,
+    like 'dream', but not to spells and other magical effects that put
+    you to sleep, like 'sleep'.
+
+    """
+    name = "Severed from Dreams"
+    source = "Race (Kalashtar)"
