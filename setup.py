@@ -43,4 +43,4 @@ setup(name='dungeonsheets',
           'Programming Language :: Python :: 3.7',
           'Topic :: Games/Entertainment :: Role-Playing',
       ],
-     )
+)
