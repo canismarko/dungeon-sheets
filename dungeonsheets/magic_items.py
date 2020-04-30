@@ -59,7 +59,7 @@ class DecanterOfEndlessWater(MagicItem):
 
 class ToothOfAnimalFriendship(MagicItem):
     """While holding this wolf's tooth, you can expend it's one charge to cast
-    Animal Friendship (DC 13) or Speak With Animals. 
+    Animal Friendship (DC 13) or Speak With Animals.
 
     The charge resets at the next Dawn.
     """
@@ -74,7 +74,19 @@ class CloakOfBillowing(MagicItem):
     """
     name = "Cloak of Billowing"
     rarity = "Common"
-    
+
+
+class CloakOfDisplacement(MagicItem):
+    """While you wear this cloak, it projects an illusion that makes you appear
+    to be standing in a place near your actual location, causing any creature
+    to have disadvantage on attack rolls against you. If you take damage, the
+    property ceases to function until the start of your next turn. This
+    property is suppressed while you are incapacitated, restrained, or
+    otherwise unable to move.
+    """
+    name = "Cloak of Displacement"
+    rarity = "Rare"
+
 
 class CapeOfTheMountebank(MagicItem):
     """This cape smells faintly of brimstone. While wearing it, you can use it to
@@ -137,7 +149,7 @@ class CoinsOfCommunication(MagicItem):
     name = "Coins of Communication"
     rarity = "Uncommon"
 
-    
+
 class FlameTongue(MagicItem):
     """You can use a Bonus Action to speak this magic sword's Command Word, causing
     flames to erupt from the blade. These flames shed bright light in a 40-foot
@@ -169,23 +181,23 @@ class SpearOfLightning(MagicItem):
     requires_attunement = True
     name = "Lightning Spear"
 
-    
+
 class AmuletOfTheEel(MagicItem):
     """While holding this amulet, you can breath water and air, and have a
     swimming speed of 20'."""
     name = "Amulet of the Eel"
-    
+
 
 class BracersOfMagnetism(MagicItem):
     """When wearing these bracers, you can use a bonus action to speak their
     command word, causing them to become magnetically attractive to each other.
 
-    While active, the wearer's arms are secured together, requiring a succesful DC 25 
-    STR (Athletics) check to separate them by six inches. The wearer has advantage 
+    While active, the wearer's arms are secured together, requiring a succesful DC 25
+    STR (Athletics) check to separate them by six inches. The wearer has advantage
     on all STR (Athletics) checks made to grapple, but disadvantage on all
-    weapon attacks and DEX (Sleight of Hand) checks. 
+    weapon attacks and DEX (Sleight of Hand) checks.
 
-    The wearer can use another bonus action to speak the command word and 
+    The wearer can use another bonus action to speak the command word and
     deactivate the magnetic effect.
 
     The magnetic effect fails if the bracers are more than 10' apart.
