@@ -674,7 +674,7 @@ class SpreadingSpores(Feature):
     a Constitution saving throw against your spell save DC. A creature can take
     this damage nbo mre than once per turn.
 
-    While the cube of sproes persists, you can't use your Halo of Spores
+    While the cube of spores persists, you can't use your Halo of Spores
     reaction.
 
     """
