@@ -6,7 +6,7 @@ python:
 # command to install dependencies
 install:
   - pip install -r requirements.txt
-  - pip install -r requirements-testing.txt
+  - pip install -r requirements-tests.txt
   - pip install -e .
 # command to run tests
 script:
