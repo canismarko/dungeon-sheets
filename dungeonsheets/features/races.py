@@ -409,9 +409,9 @@ class LightBearer(Feature):
 
 
 class RadiantSoul(Feature):
-    """Starting at 3rd level, you can use your action to unleash the divine energy
-    within yourself, causing your eyes to glimmer and two luminous, incor-
-    poreal wings to sprout from your back.
+    """Starting at 3rd level, you can use your action to unleash the divine
+    energy within yourself, causing your eyes to glimmer and two luminous,
+    incorporeal wings to sprout from your back.
 
     Your transformation lasts for 1 minute or until you end it as a bonus
     action. During it, you have a flying speed of 30 feet, and once on each of
@@ -449,18 +449,18 @@ class RadiantConsumption(Feature):
 
 
 class NecroticShroud(Feature):
-    """Starting at 3rd level, you can use your action to unleash the divine energy
-    within yourself, causing your eyes to turn into pools of darkness and two
-    skeletal, ghostly, flightless wings to sprout from your back. The instant
-    you transform, other creatures within 10 feet of you that can see you must
-    each succeed on a Charisma saving throw (DC 8 + your proficiency bonus +
-    your Charisma modifier) or become frightened of you until the end of your
-    next turn.
+    """Starting at 3rd level, you can use your action to unleash the divine
+    energy within yourself, causing your eyes to turn into pools of darkness and
+    two skeletal, ghostly, flightless wings to sprout from your back.
+    The instant you transform, other creatures within 10 feet of you that can
+    see you must each succeed on a Charisma saving throw (DC 8 + your
+    proficiency bonus + your Charisma modifier) or become frightened of you
+    until the end of your next turn.
 
     Your transformation lasts for 1 minute or until you end it as a bonus
-    action. During it, once on each of your turns, you can deal extra ne-
-    crotic damage to one target when you deal damage to it with an attack or a
-    spell. The extra necrotic damage equals your level.
+    action. During it, once on each of your turns, you can deal extra necrotic
+    damage to one target when you deal damage to it with an attack or a spell.
+    The extra necrotic damage equals your level.
 
     Once you use this trait, you can't use it again until you finish a long
     rest.
@@ -737,7 +737,7 @@ class CallToTheWave(Feature):
 class DualMind(Feature):
     """
     You have advantage on all Wisdom saving throws.
-    
+
     """
     name = "Dual Mind"
     source = "Race (Kalashtar)"
@@ -745,7 +745,7 @@ class DualMind(Feature):
 class MentalDiscipline(Feature):
     """
     You have resistance to psychic damage.
-    
+
     """
     name = "Mental Discipline"
     source = "Race (Kalashtar)"
@@ -764,7 +764,7 @@ class MindLink(Feature):
     an action. To use this ability, the creature must be able to see
     you and must be within this trait’s range. You can give this
     ability to only one creature at a time; giving it to a creature
-    takes it away from another creature who has it.  
+    takes it away from another creature who has it.
 
     """
     name = "Mind Link"
@@ -787,33 +787,33 @@ class SeveredFromDreams(Feature):
 #bugbear
 class LongLimbed(Feature):
     """ When you make a melee attack on your turn, your reach for it is 5 feet greater than normal.
-    
+
     """
     name = "Long-Limbed"
     source = "Race (BugBear)"
 
 class SupriseAttack(Feature):
-    """ If you surprise a creature and hit it with an attack on your first turn 
-    in combat, the attack deals an extra 2d6 damage to it. You can use this trait 
-    only once per combat. 
-    
+    """ If you surprise a creature and hit it with an attack on your first turn
+    in combat, the attack deals an extra 2d6 damage to it. You can use this trait
+    only once per combat.
+
     """
     name = "Suprise Attack"
     source = "Race (BugBear)"
 
 #goblin
 class FuryOfTheSmall(Feature):
-    """When you damage a creature with an attack or a spell and the creature's size 
-    is larger than yours, you can cause the attack or spell to deal extra damage to 
-    the creature. The extra damage equals your level. Once you use this trait, you 
-    can't use it again until you finish a short or long rest. 
-    
+    """When you damage a creature with an attack or a spell and the creature's size
+    is larger than yours, you can cause the attack or spell to deal extra damage to
+    the creature. The extra damage equals your level. Once you use this trait, you
+    can't use it again until you finish a short or long rest.
+
     """
     name = "Fury of the Small"
     source = "Race (Goblin)"
 
 class NimbleEscape(Feature):
-    """ You can take the Disengage or Hide action as a bonus action on each of your turns. 
+    """ You can take the Disengage or Hide action as a bonus action on each of your turns.
 
     """
     name = "Nimble Escape"
@@ -821,19 +821,19 @@ class NimbleEscape(Feature):
 
 #HobGoblin
 class SavingFace(Feature):
-    """Hobgoblins are careful not to show weakness in front of their allies, for fear 
-    of losing status. If you miss with an attack roll or fail an ability check or a 
-    saving throw, you can gain a bonus to the roll equal to the number of allies you 
-    can see within 30 feet of you (maximum bonus of +5). Once you use this trait, you 
+    """Hobgoblins are careful not to show weakness in front of their allies, for fear
+    of losing status. If you miss with an attack roll or fail an ability check or a
+    saving throw, you can gain a bonus to the roll equal to the number of allies you
+    can see within 30 feet of you (maximum bonus of +5). Once you use this trait, you
     can't use it again until you finish a short or long rest.
-    
+
     """
     name = "Saving Face"
     source = "Race (HobGoblin)"
 
 class MartialTraining(Feature):     #you have to add the weapons of choice to your sheet
-    """You are proficient with two martial weapons of your choice and with light armor. 
-    
+    """You are proficient with two martial weapons of your choice and with light armor.
+
     """
     name = "Martial Training"
     source = "Race (HobGoblin)"
@@ -843,8 +843,8 @@ class GrovelCowerAndBeg(Feature):
     """ As an action on your turn, you can cower pathetically to
     distract nearby foes. Until the end of your next turn, your
     allies gain advantage on attack rolls against enemies
-    within 10 feet of you that can see you. Once you use this 
-    trait, you can't use it again until you finish a short 
+    within 10 feet of you that can see you. Once you use this
+    trait, you can't use it again until you finish a short
     or long rest
 
     """
@@ -854,43 +854,43 @@ class GrovelCowerAndBeg(Feature):
 class PackTactics(Feature):
     """You have advantage on an attack roll against a creature
     if at least one of your allies is within 5 feet of the
-    creature and the ally isn't incapacitated. 
+    creature and the ally isn't incapacitated.
     """
     name = "Pack Tactics"
     source = "Race (Kobold)"
 
 class Aggressive(Feature):
-    """ As a bonus action, you can move up to your speed 
-    toward an enemy of your choice that you can see or hear. 
+    """ As a bonus action, you can move up to your speed
+    toward an enemy of your choice that you can see or hear.
     You must end this move closer to the enemy than you started.
-    
+
     """
     name = "Aggressive"
     source = "Race (Orc)"
 
 #yuan-ti pureblood
 class InnateSpellcasting(Feature):
-    """You know the poison spray cantrip. You can cast animal 
-    friendship an unlimited number of times with this trait, 
-    but you can target only snakes with it. Starting at 3rd level, 
-    you can also cast suggestion with this trait. Once you cast it, 
-    you can't do so again until you finish a long rest. Charisma is 
+    """You know the poison spray cantrip. You can cast animal
+    friendship an unlimited number of times with this trait,
+    but you can target only snakes with it. Starting at 3rd level,
+    you can also cast suggestion with this trait. Once you cast it,
+    you can't do so again until you finish a long rest. Charisma is
     your spellcasting ability for these spells.
-    
+
     """
     name = "Innate Spellcasting"
     source = "Race (Yuan-Ti Pureblood)"
 
 class MagicResistance(Feature):
-    """ You have advantage on saving throws against spells and other magical effects. 
-    
+    """ You have advantage on saving throws against spells and other magical effects.
+
     """
     name = "Magic Resistance"
     source = "Race (Yuan_Ti Pureblood)"
 
 class PoisonImmunity(Feature):
-    """You are immune to poison damage and the poi~oned condition. 
-    
+    """You are immune to poison damage and the poi~oned condition.
+
     """
     name = "Poison Immunity"
     source = "Race (Yuan_Ti Pureblood)"

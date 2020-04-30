@@ -150,7 +150,7 @@ class PersistentRage(Feature):
     name = "Persistent Rage"
     source = "Barbarian"
 
-    
+
 class IndomitableMight(Feature):
     """Beginning at 18th level, if your total for a Strength check is less than
     your Strength score, you can use that score in place of the total.
@@ -159,7 +159,7 @@ class IndomitableMight(Feature):
     name = "Indomitable Might"
     source = "Barbarian"
 
-    
+
 class PrimalChampion(Feature):
     """At 20th level, you embody the power of the wilds. Your Strength and
     Constitution scores increase by 4. Your maximum for those scores is now 24.
@@ -230,7 +230,7 @@ class SpiritSeeker(Feature):
     name = "Spirit Seeker"
     source = "Barbarian (Totem Warrior)"
 
-    
+
 class BearSpirit(Feature):
     """While raging, you have resistance to all damage except psychic damage. The
     spirit of the bear makes you tough enough to stand up to any punishment.
@@ -396,7 +396,7 @@ class BearAttunement(Feature):
     you has disadvantage on attack rolls against targets other than you or
     another character with this feature. An enemy is immune to this effect if
     it can't see or hear you or if it can't be frightened.
-    
+
     """
     name = "Totemic Attunement (Bear)"
     source = "Barbarian (Totem Warrior)"
@@ -427,7 +427,7 @@ class ElkAttunement(Feature):
     Strength saving throw (DC 8 + your Strength bonus + your proficiency
     bonus) or be knocked prone and take bludgeoning damage equal to 1d12 + your
     Strength modifier
-    
+
     """
     name = "Totemic Attunement (Elk)"
     source = "Barbarian (Totem Warrior)"
@@ -466,7 +466,7 @@ class TotemicAttunement(FeatureSelector):
                'tiger attunement': TigerAttunement}
     name = "Totemic Attunement (Select One)"
     source = "Barbarian (Totem Warrior)"
-    
+
 
 # Battlerager
 class BattleragerArmor(Feature):
@@ -502,7 +502,7 @@ class BattleragerCharge(Feature):
     name = "Battlerager Charge"
     source = "Barbarian (Battlerager)"
 
-    
+
 class SpikedRetribution(Feature):
     """Starting at 14th level, when a creature within 5 feet of you hits you with
     a melee attack, the attacker takes 3 piercing damage if you are raging,
@@ -589,8 +589,8 @@ class DesertAura(Feature):
     Choose desert, sea, or tundra. Your aura's effect depends on that chosen
     environment, as detailed below. You can change your environment choice
     whenever you gain a level in this class. If your aura's effects require a
-    saving throw, the DC equals 8 + your proficiency bonus + your Constitu-
-    tion modifier.
+    saving throw, the DC equals 8 + your proficiency bonus + your Constitution
+    modifier.
 
     **Desert**: When this effect is activated, all other creatures in your
     aura take 2 fire damage each. The damage increases when you reach certain
@@ -612,8 +612,8 @@ class SeaAura(Feature):
     Choose desert, sea, or tundra. Your aura's effect depends on that chosen
     environment, as detailed below. You can change your environment choice
     whenever you gain a level in this class. If your aura's effects require a
-    saving throw, the DC equals 8 + your proficiency bonus + your Constitu-
-    tion modifier.
+    saving throw, the DC equals 8 + your proficiency bonus + your Constitution
+    modifier.
 
     **Sea**: When this effect is activated, you can choose one other creature
     you can see in your aura. The target must make a Dexterity saving
@@ -637,8 +637,8 @@ class TundraAura(Feature):
     Choose desert, sea, or tundra. Your aura's effect depends on that chosen
     environment, as detailed below. You can change your environment choice
     whenever you gain a level in this class. If your aura's effects require a
-    saving throw, the DC equals 8 + your proficiency bonus + your Constitu-
-    tion modifier.
+    saving throw, the DC equals 8 + your proficiency bonus + your Constitution
+    modifier.
 
     **Tundra**: When this effect is activated, each creature of your choice in
     your aura gains 2 temporary hit points, as icy spirits inure it to
@@ -864,4 +864,4 @@ class RageBeyondDeath(Feature):
     """
     name = "Rage Beyond Death"
     source = "Barbarian (Zealot)"
-    
+

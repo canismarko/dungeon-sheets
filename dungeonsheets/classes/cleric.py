@@ -18,7 +18,7 @@ class ClericDomain(SubClass):
             if self.level >= lvl:
                 spells.extend(sps)
         return spells
-    
+
     # All Domain spells are both known and prepared
     @property
     def spells_prepared(self):
@@ -260,13 +260,14 @@ class ForgeDomain(ClericDomain):
     humble blacksmith who keeps a village in horseshoes and plow blades to the
     mighty elf artisan whose diamond-tipped arrows of mithral have felled demon
     lords. The gods of the forge teach that, with patience and hard work, even
-    the most intractable metal can be transformed from a lump of ore to a beau-
-    tifully wrought object. Clerics of these deities search for objects lost to
-    the forces of darkness, liberate mines overrun by ores, and uncover rare
-    and wondrous materials necessary to create potent magic items. Followers
-    of these gods take great pride in their work, and they are willing to craft
-    and use heavy armor and powerful weapons to protect them. Deities of this
-    domain include Gond, Reorx, Onatar, Moradin, Hephaestus, and Goibhniu.
+    the most intractable metal can be transformed from a lump of ore to
+    a beautifully wrought object. Clerics of these deities search for objects
+    lost to the forces of darkness, liberate mines overrun by ores, and uncover
+    rare and wondrous materials necessary to create potent magic items.
+    Followers of these gods take great pride in their work, and they are willing
+    to craft and use heavy armor and powerful weapons to protect them. Deities
+    of this domain include Gond, Reorx, Onatar, Moradin, Hephaestus, and
+    Goibhniu.
 
     """
     name = "Forge Domain"
@@ -312,14 +313,14 @@ class GraveDomain(ClericDomain):
     features_by_level[17] = [features.KeeperOfSouls]
 
 class DeathDomain(ClericDomain):
-    """The Death domain is concerned with the forces that cause death, as 
-    well as the negative energy that gives rise to undead creatures. 
-    Deities such as Chemosh, Myrkul, and Wee Jas are patrons of necromancers, 
-    death knights, liches, mummy lords, and vampires. Gods of the Death 
-    domain also embody murder (Anubis, Bhaal, and Pyremius), pain 
-    (Iuz or Loviatar), disease or poison (Incabulos, Talona, or Morgion), 
+    """The Death domain is concerned with the forces that cause death, as
+    well as the negative energy that gives rise to undead creatures.
+    Deities such as Chemosh, Myrkul, and Wee Jas are patrons of necromancers,
+    death knights, liches, mummy lords, and vampires. Gods of the Death
+    domain also embody murder (Anubis, Bhaal, and Pyremius), pain
+    (Iuz or Loviatar), disease or poison (Incabulos, Talona, or Morgion),
     and the underworld (Hades and Hel)..
-    
+
     """
     name = "Death Domain"
     _domain_spells = {1: [spells.FalseLife, spells.RayOfSickness],

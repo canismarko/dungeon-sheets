@@ -92,8 +92,8 @@ class Celestial(SubClass):
     """Your patron is a powerful being of the Upper Planes. You have bound yourself
     to an ancient empyrean, solar, ki-rin, unicorn, or other entity that
     resides in the planes of everlasting bliss. Your pact with that being
-    allows you to experience the barest touch of the holy light that illu-
-    minates the multiverse.
+    allows you to experience the barest touch of the holy light that illuminates
+    the multiverse.
 
     Being connected to such power can cause changes in your behavior and
     beliefs. You might find yourself driven to annihilate the undead, to defeat

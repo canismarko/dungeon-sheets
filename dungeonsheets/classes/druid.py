@@ -85,8 +85,8 @@ class ShepherdCircle(SubClass):
 
     Members of this circle become adventurers to oppose forces that threaten
     their charges or to seek knowledge and power that will help them safeguard
-    their charges better. Wherever these druids go, the spirits of the wil-
-    derness are with them
+    their charges better. Wherever these druids go, the spirits of
+    the wilderness are with them
 
     """
     name = "Circle of the Shepherd"

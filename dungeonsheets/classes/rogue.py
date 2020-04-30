@@ -133,8 +133,8 @@ class Scout(SubClass):
 class Swashbuckler(SubClass):
     """You focus your training on the art of the blade, relying on speed,
     elegance, and charm in equal parts. While some warriors are brutes clad in
-    heavy armor, your method of fighting looks almost like a performance. Du-
-    elists and pirates typically belong to this archetype. A Swashbuckler
+    heavy armor, your method of fighting looks almost like a performance.
+    Duelists and pirates typically belong to this archetype. A Swashbuckler
     excels in single combat, and can fight with two weapons while safely
     darting away from an opponent
 
