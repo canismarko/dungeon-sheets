@@ -32,7 +32,7 @@ class PowerfulBuild(Feature):
     name = "Powerful Build"
     source = "Race"
 
-    
+
 class Amphibious(Feature):
     """
     You can breath air and water
@@ -41,7 +41,7 @@ class Amphibious(Feature):
     name = "Amphibious"
     source = "Race"
 
-    
+
 # Dwarves
 class DwarvenResilience(Feature):
     """You have advantage on saving throws against poison, and you have resistance
@@ -62,7 +62,7 @@ class Stonecunning(Feature):
     name = "Stonecunning"
     source = "Race (Dwarf)"
 
-    
+
 class DwarvenToughness(Feature):
     """
     Your hit point maximum
@@ -73,7 +73,7 @@ class DwarvenToughness(Feature):
     source = "Race (Hill Dwarf)"
     needs_implementation = True
 
-    
+
 # Elves
 class FeyAncestry(Feature):
     """You have advantage on saving throws against being charmed, and magic can't
@@ -163,7 +163,7 @@ class HalflingNimbleness(Feature):
     name = "Halfling Nimbleness"
     source = "Race (Halfling)"
 
-    
+
 class NaturallyStealthy(Feature):
     """You can attempt to hide even when you are obscured only by a creature that
     is at least one size larger than you.
@@ -283,7 +283,7 @@ class ArtificersLore(Feature):
     name = "Artificer's Lore"
     source = "Race (Rock Gnome)"
 
-    
+
 class Tinker(Feature):
     """You have proficiency with artisan's tools (tinker's tools). Using those
     tools, you can spend 1 hour and 10 gp worth of materials to construct a
@@ -316,8 +316,28 @@ class StoneCamouflage(Feature):
     source = "Race (Deep Gnome)"
 
 
+# Goblins
+class FuryOfTheSmall(Feature):
+    """
+    When you damage a creature with an attack or a spell and the creature's
+    size is larger than yours, you can cause the attack or spell to deal extra
+    damage to the creature. The extra damage equals your level. Once you use
+    this trait, you can't use it again until you finish a short or long rest.
+    """
+    name = "Fury of the Small"
+    source = "Race (Goblin)"
+
+
+class NimbleEscape(Feature):
+    """
+    You can take the Disengage or Hide action as a bonus action on each of your
+    turns.
+    """
+    name = "Nimble Escape"
+    source = "Race (Goblin)"
+
 # Half-Elves
-    
+
 # Half-Orcs
 class RelentlessEndurance(Feature):
     """When you are reduced to 0 hit points but not killed outright, you can drop
@@ -353,7 +373,7 @@ class InfernalLegacy(Feature):
     the hellish rebuke spell once per day as a 2nd-level spell. Once you reach
     5th level, you can also cast the darkness spell once per day. Charisma is
     your spellcasting ability for these spells.
-    
+
     """
     name = "Infernal Legacy"
     source = "Race (Tiefling)"
@@ -422,7 +442,7 @@ class RadiantConsumption(Feature):
 
     Once you use this trait, you can't use it again until you finish a long
     rest.
-    
+
     """
     name = "Radiant Consumption"
     source = "Race (Scourge Aasimar)"
@@ -519,7 +539,7 @@ class ExpertForgery(Feature):
     name = "Expert Forgery"
     source = "Race (Kenku)"
 
-    
+
 class Mimicry(Feature):
     """You can mimic sounds you have heard, including voices. A creature that
     hears the sounds you make can tell they are imitations with a successful
@@ -529,7 +549,7 @@ class Mimicry(Feature):
     name = "Mimicry"
     source = "Race (Kenku)"
 
-    
+
 # Lizardfolk
 class CunningArtisan(Feature):
     """As part of a short rest, you can harvest bone and hide from a slain
@@ -695,7 +715,7 @@ class ReachToTheBlaze(Feature):
 class AcidResistance(Feature):
     """
     You have resistance to acid damage.
-    
+
     """
     name = "Acid Resistance"
     source = "Race (Water Genasi)"
@@ -762,3 +782,115 @@ class SeveredFromDreams(Feature):
     """
     name = "Severed from Dreams"
     source = "Race (Kalashtar)"
+
+#monsterous races
+#bugbear
+class LongLimbed(Feature):
+    """ When you make a melee attack on your turn, your reach for it is 5 feet greater than normal.
+    
+    """
+    name = "Long-Limbed"
+    source = "Race (BugBear)"
+
+class SupriseAttack(Feature):
+    """ If you surprise a creature and hit it with an attack on your first turn 
+    in combat, the attack deals an extra 2d6 damage to it. You can use this trait 
+    only once per combat. 
+    
+    """
+    name = "Suprise Attack"
+    source = "Race (BugBear)"
+
+#goblin
+class FuryOfTheSmall(Feature):
+    """When you damage a creature with an attack or a spell and the creature's size 
+    is larger than yours, you can cause the attack or spell to deal extra damage to 
+    the creature. The extra damage equals your level. Once you use this trait, you 
+    can't use it again until you finish a short or long rest. 
+    
+    """
+    name = "Fury of the Small"
+    source = "Race (Goblin)"
+
+class NimbleEscape(Feature):
+    """ You can take the Disengage or Hide action as a bonus action on each of your turns. 
+
+    """
+    name = "Nimble Escape"
+    source = "Race (Goblin)"
+
+#HobGoblin
+class SavingFace(Feature):
+    """Hobgoblins are careful not to show weakness in front of their allies, for fear 
+    of losing status. If you miss with an attack roll or fail an ability check or a 
+    saving throw, you can gain a bonus to the roll equal to the number of allies you 
+    can see within 30 feet of you (maximum bonus of +5). Once you use this trait, you 
+    can't use it again until you finish a short or long rest.
+    
+    """
+    name = "Saving Face"
+    source = "Race (HobGoblin)"
+
+class MartialTraining(Feature):     #you have to add the weapons of choice to your sheet
+    """You are proficient with two martial weapons of your choice and with light armor. 
+    
+    """
+    name = "Martial Training"
+    source = "Race (HobGoblin)"
+
+#kobold
+class GrovelCowerAndBeg(Feature):
+    """ As an action on your turn, you can cower pathetically to
+    distract nearby foes. Until the end of your next turn, your
+    allies gain advantage on attack rolls against enemies
+    within 10 feet of you that can see you. Once you use this 
+    trait, you can't use it again until you finish a short 
+    or long rest
+
+    """
+    name = "Grovel Cower and Beg"
+    source = "Race (Kobold)"
+
+class PackTactics(Feature):
+    """You have advantage on an attack roll against a creature
+    if at least one of your allies is within 5 feet of the
+    creature and the ally isn't incapacitated. 
+    """
+    name = "Pack Tactics"
+    source = "Race (Kobold)"
+
+class Aggressive(Feature):
+    """ As a bonus action, you can move up to your speed 
+    toward an enemy of your choice that you can see or hear. 
+    You must end this move closer to the enemy than you started.
+    
+    """
+    name = "Aggressive"
+    source = "Race (Orc)"
+
+#yuan-ti pureblood
+class InnateSpellcasting(Feature):
+    """You know the poison spray cantrip. You can cast animal 
+    friendship an unlimited number of times with this trait, 
+    but you can target only snakes with it. Starting at 3rd level, 
+    you can also cast suggestion with this trait. Once you cast it, 
+    you can't do so again until you finish a long rest. Charisma is 
+    your spellcasting ability for these spells.
+    
+    """
+    name = "Innate Spellcasting"
+    source = "Race (Yuan-Ti Pureblood)"
+
+class MagicResistance(Feature):
+    """ You have advantage on saving throws against spells and other magical effects. 
+    
+    """
+    name = "Magic Resistance"
+    source = "Race (Yuan_Ti Pureblood)"
+
+class PoisonImmunity(Feature):
+    """You are immune to poison damage and the poi~oned condition. 
+    
+    """
+    name = "Poison Immunity"
+    source = "Race (Yuan_Ti Pureblood)"

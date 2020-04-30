@@ -39,10 +39,10 @@ class Race():
     @property
     def spells_prepared(self):
         return self.spells_known
-    
+
     def __str__(self):
         return self.name
-    
+
     def __repr__(self):
         return "\"{:s}\"".format(self.name)
 
@@ -129,7 +129,7 @@ class LightfootHalfling(_Halfling):
     name = "Lightfoot Halfling"
     charisma_bonus = 1
     features = _Halfling.features + (feats.NaturallyStealthy,)
-    
+
 
 class StoutHalfling(_Halfling):
     name = "Stout Halfling"
@@ -183,7 +183,7 @@ class ForestGnome(_Gnome):
     features = _Gnome.features + (feats.NaturalIllusionist,
                                   feats.SpeakWithSmallBeasts)
     spells_known = (spells.MinorIllusion,)
-    
+
 
 class RockGnome(_Gnome):
     name = "Rock Gnome"
@@ -252,7 +252,7 @@ class _Aasimar(Race):
                 feats.HealingHands, feats.LightBearer)
     spells_known = (spells.Light,)
 
-    
+
 # Protector Aasimar
 class ProtectorAasimar(_Aasimar):
     name = "Protector Aasimar"
@@ -397,7 +397,7 @@ class AirGenasi(_Genasi):
     features = (feats.UnendingBreath,
                 feats.MingleWithTheWind)
 
-    
+
 class EarthGenasi(_Genasi):
     name = "Earth Genasi"
     strength_bonus = 1
@@ -428,6 +428,80 @@ class Kalashtar(Race):
     languages = ("Common", "Quori",) # Not sure how to have a "+1 language of your choice" - naviabbot
     features = (feats.DualMind, feats.MentalDiscipline, feats.MindLink, feats.SeveredFromDreams)
 
+class BugBear(Race):
+    name = "BugBear"
+    strength_bonus = 2
+    dexterity_bonus = 1
+    size = 'medium'
+    speed = 30
+    features = (feats.Darkvision, feats.LongLimbed,
+                feats.PowerfulBuild, feats.SupriseAttack)
+    skill_proficiencies = ("stealth", )
+    languages = ("Common", "Goblin")
+
+class Goblin(Race):
+    name = "Goblin"
+    dexterity_bonus = 2
+    constitution_bonus = 1
+    size = 'small'
+    speed = 30
+    features = (feats.Darkvision, feats.FuryOfTheSmall,
+                feats.NimbleEscape)
+    languages = ("Common", "Goblin")
+
+class HobGoblin(Race):
+    name = "HobGoblin"
+    constitution_bonus = 2
+    intelligence_bonus = 1
+    size = 'medium'
+    speed = 30
+    features = (feats.Darkvision, feats.SavingFace)
+    proficiencies_text = ('light armor', '[Chose two martial melee weapons]')
+    languages = ("Common", "Goblin")
+
+class Kobold(Race):
+    name = "Kobold"
+    dexterity_bonus = 2
+    strength_bonus = -2
+    size = 'small'
+    speed = 30
+    features = (feats.Darkvision, feats.PackTactics,
+                feats.GrovelCowerAndBeg, feats.SunlightSensitivity)
+    languages = ("Common", "Draconic")
+
+class Orc(Race):
+    name = "Orc"
+    strength_bonus = 2
+    constitution_bonus = 1
+    intelligence_bonus = -2
+    size = 'medium'
+    speed = 30
+    skill_proficiencies = ('intimidation',)
+    features = (feats.Darkvision, feats.Aggressive,
+                feats.PowerfulBuild)
+    languages = ("Common", "Orc")
+
+class PureBlood(Race):
+    name = "Yuan-Ti Pureblood"
+    charisma_bonus = 2
+    intelligence_bonus = 1
+    size = 'medium'
+    speed = 30
+    features = (feats.Darkvision, feats.InnateSpellcasting,
+                feats.MagicResistance, feats.PoisonImmunity)
+    spells_known = (spells.PoisonSpray,)
+    languages = ("Common", "Abyssal", "Draconic")
+
+
+class Goblin(Race):
+    name = "Goblin"
+    size = "small"
+    dexterity_bonus = 2
+    constitution_bonus = 1
+    speed = 30
+    languages = ("Common", "Goblin")
+    features = (feats.Darkvision, feats.FuryOfTheSmall, feats.NimbleEscape)
+
 
 PHB_races = [HillDwarf, MountainDwarf, HighElf, WoodElf, DarkElf,
              LightfootHalfling, StoutHalfling, Rashemi, Dragonborn,
@@ -439,9 +513,14 @@ VOLO_races = [ProtectorAasimar, ScourgeAasimar, FallenAasimar,
 EE_races = [Aarakocra, DeepGnome, AirGenasi, FireGenasi, EarthGenasi,
             WaterGenasi]
 
+MONSTER_races = [BugBear, Goblin, HobGoblin, Kobold, Orc, PureBlood]
+
 RFTLW_races = [Kalashtar]
 
-available_races = PHB_races + VOLO_races + EE_races + RFTLW_races
+# Guildmaster's Guide to Ravnica
+GGTR_races = [Goblin]
+
+available_races = PHB_races + VOLO_races + EE_races + MONSTER_races + RFTLW_races + GGTR_races
 
 __all__ = tuple([r.name for r in available_races]) + (
-    'available_races', 'PHB_races', 'VOLO_races', 'EE_races, RFTLW_races')
+    'available_races', 'PHB_races', 'VOLO_races', 'EE_races', 'MONSTER_races', 'RFTLW_races', 'GGTR_races')

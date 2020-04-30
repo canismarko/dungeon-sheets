@@ -311,6 +311,30 @@ class GraveDomain(ClericDomain):
     features_by_level[8] = [features.PotentSpellcasting]
     features_by_level[17] = [features.KeeperOfSouls]
 
+class DeathDomain(ClericDomain):
+    """The Death domain is concerned with the forces that cause death, as 
+    well as the negative energy that gives rise to undead creatures. 
+    Deities such as Chemosh, Myrkul, and Wee Jas are patrons of necromancers, 
+    death knights, liches, mummy lords, and vampires. Gods of the Death 
+    domain also embody murder (Anubis, Bhaal, and Pyremius), pain 
+    (Iuz or Loviatar), disease or poison (Incabulos, Talona, or Morgion), 
+    and the underworld (Hades and Hel)..
+    
+    """
+    name = "Death Domain"
+    _domain_spells = {1: [spells.FalseLife, spells.RayOfSickness],
+                      3: [spells.BlindnessDeafness, spells.RayOfEnfeeblement],
+                      5: [spells.AnimateDead, spells.VampiricTouch],
+                      7: [spells.Blight, spells.DeathWard],
+                      9: [spells.AntilifeShell, spells.Cloudkill]}
+    weapon_proficiencies = (weapons.MartialWeapon,)
+    _proficiencies_text = ('martial weapons',)
+    features_by_level = defaultdict(list)
+    features_by_level[1] = [features.Reaper]
+    features_by_level[2] = [features.TouchOfDeathCleric] #a different one though
+    features_by_level[6] = [features.InescapableDestruction]
+    features_by_level[8] = [features.DivineStrikeDeath]
+    features_by_level[17] = [features.ImprovedReaper]
 
 class Cleric(CharClass):
     name = 'Cleric'
@@ -332,7 +356,7 @@ class Cleric(CharClass):
     subclasses_available = (KnowledgeDomain, LifeDomain, LightDomain,
                             NatureDomain, TempestDomain, TrickeryDomain,
                             WarDomain, ArcanaDomain, ForgeDomain,
-                            GraveDomain)
+                            GraveDomain, DeathDomain)
     spellcasting_ability = 'wisdom'
     spell_slots_by_level = {
         # char_lvl: (cantrips, 1st, 2nd, 3rd, ...)
