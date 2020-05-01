@@ -6,7 +6,7 @@ from .. import (weapons, armor)
 class Rage(Feature):
     """In battle, you fight with primal ferocity. On your turn, you can enter a
     rage as a bonus action. While raging, you gain the following benefits if
-    you aren’t wearing heavy armor:
+    you aren't wearing heavy armor:
 
     --You have advantage on Strength checks and
     Strength saving throws.
@@ -19,9 +19,9 @@ class Rage(Feature):
     --You have resistance to bludgeoning, piercing, and slashing
     damage.
 
-    If you are able to cast spells, you can’t cast them or concentrate on them
+    If you are able to cast spells, you can't cast them or concentrate on them
     while raging. Your rage lasts for 1 minute. It ends early if you are
-    knocked unconscious or if your turn ends and you haven’t attacked a hostile
+    knocked unconscious or if your turn ends and you haven't attacked a hostile
     creature since your last turn or taken damage since then. You can also end
     your rage on your turn as a bonus action. Once you have raged the number of
     times shown for your barbarian level in the Rages column of the Barbarian
@@ -78,10 +78,10 @@ class RecklessAttack(Feature):
 
 
 class DangerSense(Feature):
-    """At 2nd level, you gain an uncanny sense of when things nearby aren’t as
+    """At 2nd level, you gain an uncanny sense of when things nearby aren't as
     they should be, giving you an edge when you dodge away from danger. You
     have advantage on Dexterity saving throws against effects that you can see,
-    such as traps and spells. To gain this benefit, you can’t be blinded,
+    such as traps and spells. To gain this benefit, you can't be blinded,
     deafened, or incapacitated.
 
     """
@@ -99,7 +99,7 @@ class ExtraAttackBarbarian(Feature):
 
 
 class FastMovement(Feature):
-    """Starting at 5th level, your speed increases by 10 feet while you aren’t
+    """Starting at 5th level, your speed increases by 10 feet while you aren't
     wearing heavy armor.
 
     """
@@ -110,7 +110,7 @@ class FastMovement(Feature):
 class FeralInstinct(Feature):
     """By 7th level, your instincts are so honed that you have advantage on
     initiative rolls. Additionally, if you are surprised at the beginning of
-    combat and aren’t incapacitated, you can act normally on your first turn,
+    combat and aren't incapacitated, you can act normally on your first turn,
     but only if you enter your rage before doing anything else on that turn.
 
     """
@@ -131,7 +131,7 @@ class BrutalCritical(Feature):
 
 class RelentlessRage(Feature):
     """Starting at 11th level, your rage can keep you fighting despite grievous
-    wounds. If you drop to 0 hit points while you’re raging and don’t die
+    wounds. If you drop to 0 hit points while you're raging and don't die
     outright, you can make a DC 10 Constitution saving throw. If you succeed,
     you drop to 1 hit point instead. Each time you use this feature after the
     first, the DC increases by 5. When you finish a short or long rest, the DC
@@ -150,7 +150,7 @@ class PersistentRage(Feature):
     name = "Persistent Rage"
     source = "Barbarian"
 
-    
+
 class IndomitableMight(Feature):
     """Beginning at 18th level, if your total for a Strength check is less than
     your Strength score, you can use that score in place of the total.
@@ -159,7 +159,7 @@ class IndomitableMight(Feature):
     name = "Indomitable Might"
     source = "Barbarian"
 
-    
+
 class PrimalChampion(Feature):
     """At 20th level, you embody the power of the wilds. Your Strength and
     Constitution scores increase by 4. Your maximum for those scores is now 24.
@@ -183,7 +183,7 @@ class Frenzy(Feature):
 
 
 class MindlessRage(Feature):
-    """Beginning at 6th level, you can’t be charmed or frightened while raging. If
+    """Beginning at 6th level, you can't be charmed or frightened while raging. If
     you are charmed or frightened when you enter your rage, the effect is
     suspended for the duration of the rage.
 
@@ -230,7 +230,7 @@ class SpiritSeeker(Feature):
     name = "Spirit Seeker"
     source = "Barbarian (Totem Warrior)"
 
-    
+
 class BearSpirit(Feature):
     """While raging, you have resistance to all damage except psychic damage. The
     spirit of the bear makes you tough enough to stand up to any punishment.
@@ -241,7 +241,7 @@ class BearSpirit(Feature):
 
 
 class EagleSpirit(Feature):
-    """While you're raging and aren’t wearing heavy armor, other creatures have
+    """While you're raging and aren't wearing heavy armor, other creatures have
     disadvantage on opportunity attack rolls against you, and you can use the
     Dash action as a bonus action on your turn. The spirit of the eagle makes
     you into a predator who can weave through the fray with ease.
@@ -392,11 +392,11 @@ class SpiritWalker(Feature):
 
 
 class BearAttunement(Feature):
-    """While you’re raging, any creature within 5 feet o f you that’s hostile to
+    """While you're raging, any creature within 5 feet o f you that's hostile to
     you has disadvantage on attack rolls against targets other than you or
     another character with this feature. An enemy is immune to this effect if
-    it can’t see or hear you or if it can’t be frightened.
-    
+    it can't see or hear you or if it can't be frightened.
+
     """
     name = "Totemic Attunement (Bear)"
     source = "Barbarian (Totem Warrior)"
@@ -413,7 +413,7 @@ class EagleAttunement(Feature):
 
 
 class WolfAttunement(Feature):
-    """Wolf. While you’re raging, you can use a bonus action on your turn to knock
+    """Wolf. While you're raging, you can use a bonus action on your turn to knock
     a Large or smaller creature prone when you hit it with melee weapon attack.
 
     """
@@ -427,7 +427,7 @@ class ElkAttunement(Feature):
     Strength saving throw (DC 8 + your Strength bonus + your proficiency
     bonus) or be knocked prone and take bludgeoning damage equal to 1d12 + your
     Strength modifier
-    
+
     """
     name = "Totemic Attunement (Elk)"
     source = "Barbarian (Totem Warrior)"
@@ -466,7 +466,7 @@ class TotemicAttunement(FeatureSelector):
                'tiger attunement': TigerAttunement}
     name = "Totemic Attunement (Select One)"
     source = "Barbarian (Totem Warrior)"
-    
+
 
 # Battlerager
 class BattleragerArmor(Feature):
@@ -502,7 +502,7 @@ class BattleragerCharge(Feature):
     name = "Battlerager Charge"
     source = "Barbarian (Battlerager)"
 
-    
+
 class SpikedRetribution(Feature):
     """Starting at 14th level, when a creature within 5 feet of you hits you with
     a melee attack, the attacker takes 3 piercing damage if you are raging,
@@ -516,10 +516,10 @@ class SpikedRetribution(Feature):
 # Ancestral Guardian
 class AncestralProtectors(Feature):
     """Starting when you choose this path at 3rd level, spectral warriors appear
-    when you enter your rage. While you’re raging, the first creature you hit
+    when you enter your rage. While you're raging, the first creature you hit
     with an attack on your turn becomes the target of the warriors, which
     hinder its attacks. Until the start ofyour next turn, that target has
-    disadvantage on any attack roll that isn’t against you, and when the target
+    disadvantage on any attack roll that isn't against you, and when the target
     hits a creature other than you with an attack, that creature has resistance
     to the damage dealt by the attack. The effect on the target ends early
     ifyour rage ends
@@ -559,7 +559,7 @@ class ConsultTheSpirits(Feature):
     using a spell slot or material components. Rather than creating a spherical
     sensor, this use of clairvoyance invisibly summons one Of your ancestral
     spirits to the chosen location. Wisdom is your spellcasting ability for
-    these spells. After you cast either spell in this way, you can’t use this
+    these spells. After you cast either spell in this way, you can't use this
     feature again until you finish a short or long rest
 
     """
@@ -586,11 +586,11 @@ class DesertAura(Feature):
     rage, and you can activate the effect again on each of your turns as a
     bonus action.
 
-    Choose desert, sea, or tundra. Your aura’s effect depends on that chosen
+    Choose desert, sea, or tundra. Your aura's effect depends on that chosen
     environment, as detailed below. You can change your environment choice
     whenever you gain a level in this class. If your aura's effects require a
-    saving throw, the DC equals 8 + your proficiency bonus + your Constitu-
-    tion modifier.
+    saving throw, the DC equals 8 + your proficiency bonus + your Constitution
+    modifier.
 
     **Desert**: When this effect is activated, all other creatures in your
     aura take 2 fire damage each. The damage increases when you reach certain
@@ -609,11 +609,11 @@ class SeaAura(Feature):
     rage, and you can activate the effect again on each of your turns as a
     bonus action.
 
-    Choose desert, sea, or tundra. Your aura’s effect depends on that chosen
+    Choose desert, sea, or tundra. Your aura's effect depends on that chosen
     environment, as detailed below. You can change your environment choice
     whenever you gain a level in this class. If your aura's effects require a
-    saving throw, the DC equals 8 + your proficiency bonus + your Constitu-
-    tion modifier.
+    saving throw, the DC equals 8 + your proficiency bonus + your Constitution
+    modifier.
 
     **Sea**: When this effect is activated, you can choose one other creature
     you can see in your aura. The target must make a Dexterity saving
@@ -634,11 +634,11 @@ class TundraAura(Feature):
     rage, and you can activate the effect again on each of your turns as a
     bonus action.
 
-    Choose desert, sea, or tundra. Your aura’s effect depends on that chosen
+    Choose desert, sea, or tundra. Your aura's effect depends on that chosen
     environment, as detailed below. You can change your environment choice
     whenever you gain a level in this class. If your aura's effects require a
-    saving throw, the DC equals 8 + your proficiency bonus + your Constitu-
-    tion modifier.
+    saving throw, the DC equals 8 + your proficiency bonus + your Constitution
+    modifier.
 
     **Tundra**: When this effect is activated, each creature of your choice in
     your aura gains 2 temporary hit points, as icy spirits inure it to
@@ -670,13 +670,13 @@ class StormAura(FeatureSelector):
 
 
 class DesertSoul(Feature):
-    """At 6th level, the storm grants you benefits even when your aura isn’t
+    """At 6th level, the storm grants you benefits even when your aura isn't
     active. The benefits are based on the environment you chose for your
     Storm Aura.
 
-    **Desert**: You gain resistance to fire damage, and you don’t suffer the
-    effects of extreme heat, as described in the Dungeon Master’s
-    Guide. Moreover, as an action, you can touch a flammable object that isn’t
+    **Desert**: You gain resistance to fire damage, and you don't suffer the
+    effects of extreme heat, as described in the Dungeon Master's
+    Guide. Moreover, as an action, you can touch a flammable object that isn't
     being worn or carried by anyone else and set it on fire
 
     """
@@ -685,7 +685,7 @@ class DesertSoul(Feature):
 
 
 class SeaSoul(Feature):
-    """At 6th level, the storm grants you benefits even when your aura isn’t
+    """At 6th level, the storm grants you benefits even when your aura isn't
     active. The benefits are based on the environment you chose for your
     Storm Aura.
 
@@ -697,12 +697,12 @@ class SeaSoul(Feature):
 
 
 class TundraSoul(Feature):
-    """At 6th level, the storm grants you benefits even when your aura isn’t
+    """At 6th level, the storm grants you benefits even when your aura isn't
     active. The benefits are based on the environment you chose for your
     Storm Aura.
 
-    **Tundra**: You gain resistance to cold damage, and you don’t suffer the
-    effects of extreme cold, as described in the Dungeon Master’s
+    **Tundra**: You gain resistance to cold damage, and you don't suffer the
+    effects of extreme cold, as described in the Dungeon Master's
     Guide. Moreover, as an action, you can touch water and turn a 5-foot cube
     Of it into ice, which melts after 1 minute. This action fails if a creature
     is in the cube
@@ -804,7 +804,7 @@ class RagingStorm(FeatureSelector):
 # Zealot
 class DivineFury(Feature):
     """Starting when you choose this path at 3rd level, you can channel divine
-    fury into your weapon strikes. While you’re raging, the first creature you
+    fury into your weapon strikes. While you're raging, the first creature you
     hit on each of your turns with a weapon attack takes extra damage equal to
     1d6 + half your barbarian level. The extra damage is necrotic or radiant;
     you choose the type of damage when you gain this feature.
@@ -823,7 +823,7 @@ class DivineFury(Feature):
 class WarriorOfTheGods(Feature):
     """At 3rd level, your soul is marked for endless battle. If a spell, such as
     raise dead, has the sole effect of restoring you to life (but not
-    undeath), the caster doesn’t need material components to cast the spell
+    undeath), the caster doesn't need material components to cast the spell
     on you
 
     """
@@ -833,7 +833,7 @@ class WarriorOfTheGods(Feature):
 
 class FanaticalFocus(Feature):
     """Starting at 6th level, the divine power that fuels your rage can protect
-    you. If you fail a saving throw while you’re raging, you can reroll it, and
+    you. If you fail a saving throw while you're raging, you can reroll it, and
     you must use the new roll. You can use this ability only once per rage.
     """
     name = "Fanatical Focus"
@@ -845,7 +845,7 @@ class ZealousPresence(Feature):
     others. As a bonus action, you unleash a battle cry infused with divine
     energy. Up to ten other creatures of your choice within 60 feet ofyou that
     can hear you gain advantage on attack rolls and saving throws until the
-    start of your next turn. Once you use this feature, you can’t use it again
+    start of your next turn. Once you use this feature, you can't use it again
     until you finish a long rest
 
     """
@@ -855,7 +855,7 @@ class ZealousPresence(Feature):
 
 class RageBeyondDeath(Feature):
     """Beginning at 14th level, the divine power that fuels your rage allows you
-    to shrug off fatal blows. While you’re raging, having 0 hit points doesn’t
+    to shrug off fatal blows. While you're raging, having 0 hit points doesn't
     knock you unconscious. You still must make death saving throws, and you
     suffer the normal effects of taking damage while at 0 hit points. However,
     if you would die due to failing death saving throws, you don't die until
@@ -864,4 +864,4 @@ class RageBeyondDeath(Feature):
     """
     name = "Rage Beyond Death"
     source = "Barbarian (Zealot)"
-    
+

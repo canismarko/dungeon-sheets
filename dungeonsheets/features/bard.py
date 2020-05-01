@@ -47,7 +47,7 @@ class BardicInspiration(Feature):
 
 class JackOfAllTrades(Feature):
     """Starting at 2nd level, you can add half your proficiency bonus, rounded
-    down, to any ability check you make that doesn’t already include your
+    down, to any ability check you make that doesn't already include your
     proficiency bonus. (Included in stats on Character Sheet above).
 
     """
@@ -155,10 +155,10 @@ class CuttingWords(Feature):
     you can see within 60 feet of you makes an attack roll, an ability check,
     or a damage roll, you can use your reaction to expend one of your uses of
     Bardic Inspiration, rolling a Bardic Inspiration die and subtracting the
-    number rolled from the creature’s roll. You can choose to use this feature
+    number rolled from the creature's roll. You can choose to use this feature
     after the creature makes its roll, but before the DM determines whether the
     attack roll or ability check succeeds or fails, or before the creature
-    deals its damage. The creature is immune if it can’t hear you or if it’s
+    deals its damage. The creature is immune if it can't hear you or if it's
     immune to being charmed.
 
     """
@@ -169,14 +169,14 @@ class CuttingWords(Feature):
 class AdditionalMagicalSecrets(Feature):
     """At 6th level, you learn two spells of your choice from any class. A spell
     you choose must be of a level you can cast, as shown on the Bard table, or
-    a cantrip. The chosen spells count as bard spells for you but don’t count
+    a cantrip. The chosen spells count as bard spells for you but don't count
     against the number of bard spells you know.
 
     """
     name = "Additional Magical Secrets"
     source = "Bard (College of Lore)"
 
-    
+
 class PeerlessSkill(Feature):
     """Starting at 14th level, when you make an ability check, you can expend one
     use of Bardic Inspiration. Roll a Bardic Inspiration die and add the number
@@ -245,7 +245,7 @@ class MantleOfInspiration(Feature):
         level = self.owner.Bard.level
         hp = 5 + 3*(level // 5)
         return self._name + " ({:d}HP)".format(hp)
-    
+
 
 class EnthrallingPerformance(Feature):
     """Starting at 3rd level, you can charge your performance with seductive, fey
@@ -262,7 +262,7 @@ class EnthrallingPerformance(Feature):
     it, or if it witnesses you attacking or damaging any of its allies.
 
     If a target succeeds on its saving throw, the target has no hint that you
-    tried to charm it. Once you use this feature, you can’t use it again until
+    tried to charm it. Once you use this feature, you can't use it again until
     you finish a short or long rest
 
     """
@@ -280,7 +280,7 @@ class MantleOfMajesty(Feature):
 
     Any creature charmed by you automatically failfs its saving throw against
     the command you cast with this feature. Once you use this feature, you
-    can’t use it again until you finish a long rest
+    can't use it again until you finish a long rest
 
     """
     name = "Mantle of Majesty"
@@ -292,14 +292,14 @@ class UnbreakableMajesty(Feature):
     makes you look more lovely and fierce. In addition, as a bonus action, you
     can assume a magically majestic presence for 1 minute or until you are
     incapacitated. For the duration, whenever any creature tries to attack you
-    for the first time on a turn, the at— tacker must make a Charisma saving
-    throw against your spell save DC. On a failed save, it can’t attack you on
+    for the first time on a turn, the at- tacker must make a Charisma saving
+    throw against your spell save DC. On a failed save, it can't attack you on
     this turn, and it must choose a new target for its attack or the attack is
     wasted.
 
     On a successful save, it can attack you on this turn, but it has
     disadvantage on any saving throw it makes against your spells on your next
-    turn. Once you assume this majestic presence, you can’t do so again until
+    turn. Once you assume this majestic presence, you can't do so again until
     you finish a short or long rest.
 
     """
@@ -351,10 +351,10 @@ class BladeFlourish(Feature):
     **Slashing Flourish**: You can expend one use ofyour Bardic Inspiration to
     cause the weapon to deal extra damage to the target you hit and to any
     other creature ofyour choice that you can see within 5 feet ofyou. The
-    damage equalsthe number you roll on the Bardic Inspi— ration die.
+    damage equalsthe number you roll on the Bardic Inspi- ration die.
 
-    **Mobile Flourish**: You can expend one use ofyour Bar— dic InSpiration to
-    cause the weapon to deal extra dam— age to the target you hit. The damage
+    **Mobile Flourish**: You can expend one use ofyour Bar- dic InSpiration to
+    cause the weapon to deal extra dam- age to the target you hit. The damage
     equals the number you roll on the Bardic Inspiration die. You can also push
     the target up to 5 feet away from you, plus a number of feet equal to the
     number you roll on that die. You can then immediately use your reaction to
@@ -368,7 +368,7 @@ class BladeFlourish(Feature):
 
 class MastersFlourish(Feature):
     """Starting at 14th level, whenever you use a Blade Flourish option, you can
-    roll a d6 and use it instead of expend— ing a Bardic Inspiration die.
+    roll a d6 and use it instead of expend- ing a Bardic Inspiration die.
     """
     name = "Master's Flourish"
     source = "Bard (College of Swords)"
@@ -377,13 +377,13 @@ class MastersFlourish(Feature):
 # College of Whispers
 class PsychicBlades(Feature):
     """When you join the College of Whispers at 3rd level, you gain the ability to
-    make your weapon attacks magically toxic to a creature’s mind. When you hit
+    make your weapon attacks magically toxic to a creature's mind. When you hit
     a creature with a weapon attack, you can expend one use ofyour Bardic
     Inspiration to deal an extra 2d6 psychic damage to that target. You can do
     so only once per round on your turn. The psychic damage increases when you
     reach certain levels in this class, increasing to 3d6 at 5th level, 5d6
     at 10th level, and 8d6 at 15th level.
-    
+
     """
     _name = "Psychic Blades"
     source = "Bard (College of Whispers)"
@@ -402,15 +402,15 @@ class PsychicBlades(Feature):
 
 
 class WordsOfTerror(Feature):
-    """At 3rd level, you learn to infuse innocent-seeming words with an insidious
-    magic that can inspire terror. If you speak to a humanoid alone for at
-    least 1 minute, you can attempt to seed paranoia in its mind. At the end of
-    the conversation, the target must succeed on a Wisdom saving throw against
-    your spell save DC or be frightened of you or another creature ofyour
-    choice. The target is frightened in this way for 1 hour, until it is at—
-    tacked or damaged, or until it witnesses its allies being attacked or
+    """At 3rd level, you learn to infuse innocent-seeming words with
+    an insidious magic that can inspire terror. If you speak to a humanoid alone
+    for at least 1 minute, you can attempt to seed paranoia in its mind. At
+    the end of the conversation, the target must succeed on a Wisdom saving
+    throw against your spell save DC or be frightened of you or another creature
+    of your choice. The target is frightened in this way for 1 hour, until it is
+    attacked or damaged, or until it witnesses its allies being attacked or
     damaged.
-    
+
     If the target succeeds on its saving throw, the target has no hint that you
     tried to frighten it. Once you use this feature, you can't use it again
     until you finish a short or long rest.
@@ -421,22 +421,22 @@ class WordsOfTerror(Feature):
 
 
 class MantleOfWhispers(Feature):
-    """At 6th level, you gain the ability to adopt a humanoid’s persona. When a
+    """At 6th level, you gain the ability to adopt a humanoid's persona. When a
     humanoid dies within 30 feet of you, you can magically capture its shadow
-    using your reac— tion. You retain this shadow until you use it or you
+    using your reac- tion. You retain this shadow until you use it or you
     finish a long rest. You can use the shadow as an action. When you do so, it
     vanishes, magically transforming into a disguise that appears on you. You
     now look like the dead person, but healthy and alive.This disguise lasts
     for 1 hour or until you end it as a bonus action.
 
-    While you’re in the disguise, you gain access to all information that the
+    While you're in the disguise, you gain access to all information that the
     humanoid would freely share with a casual acquaintance. Such information
-    includes general details on its background and personal life, but doesn’t
+    includes general details on its background and personal life, but doesn't
     include secrets. The information is enough that you can pass yourself off
     as the person by drawing on its memories. Another creature can see through
     this disguise by succeeding on a Wisdom (Insight) check contested by your
     Charisma (Deception) check. You gain a +5 bonus to your check. Once you
-    capture a shadow with this feature, you can’t capture another one with it
+    capture a shadow with this feature, you can't capture another one with it
     until you finish a short or long rest.
 
     """
@@ -446,11 +446,11 @@ class MantleOfWhispers(Feature):
 
 class ShadowLore(Feature):
     """At 14th level, you gain the ability to weave dark magic into your words and
-    tap into a creature’s deepest fears. As an action, you magically whisper a
+    tap into a creature's deepest fears. As an action, you magically whisper a
     phrase that only one creature ofyour choice within 30 feet of you can
     hear. The target must make a Wisdom saving throw against your spell save
-    DC. It automatically succeeds if it doesn’t share a language with you or if
-    it can’t hear you. On a successful saving throw, your whisper sounds like
+    DC. It automatically succeeds if it doesn't share a language with you or if
+    it can't hear you. On a successful saving throw, your whisper sounds like
     unintelligible mumbling and has no effect.
 
     On a failed saving throw, the target is charmed by you for the next 8 hours
@@ -458,11 +458,11 @@ class ShadowLore(Feature):
     saving throw. It interprets the whispers as a description of its most
     mortifying secret. You gain no knowledge of this secret, but the target
     is convinced you know it. The charmed creature obeys your commands for fear
-    that you will reveal its secret. It won’t risk its life for you or fight
+    that you will reveal its secret. It won't risk its life for you or fight
     for you, unless it was already inclined to do so. It grants you favors and
     gifts it would offer to a close friend. When the effect ends, the creature
     has no understanding of why it held you in such fear. Once you use this
-    feature, you can’t use it again until / you finish a long rest.
+    feature, you can't use it again until / you finish a long rest.
 
     """
     name = "Shadow Lore"

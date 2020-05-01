@@ -18,7 +18,7 @@ class PaladinOath(SubClass):
             if self.level >= lvl:
                 spells.extend(sps)
         return spells
-    
+
     # All Oath spells are both known and prepared
     @property
     def spells_prepared(self):
@@ -32,15 +32,15 @@ class OathOfDevotion(PaladinOath):
     acting with honor in pursuit o f justice and the greater good. They hold
     themselves to the highest standards of conduct, and some, for better or
     worse, hold the rest of the world to the same standards. Many who swear
-    this oath are devoted to gods of law and good and use their gods’ tenets as
-    the measure o f their devotion. They hold angels—the perfect servants o f
-    good—as their ideals, and incorporate images of angelic wings into their
+    this oath are devoted to gods of law and good and use their gods' tenets as
+    the measure o f their devotion. They hold angels-the perfect servants o f
+    good-as their ideals, and incorporate images of angelic wings into their
     helmets or coats of arms.
 
     **Tenets of Devotion**: Though the exact words and strictures of the Oath
     of Devotion vary, paladins of this oath share these tenets.
 
-    --Honesty. Don’t lie or cheat. Let your word be your promise.
+    --Honesty. Don't lie or cheat. Let your word be your promise.
 
     --Courage. Never fear to act, though caution is wise.
 
@@ -69,7 +69,7 @@ class OathOfDevotion(PaladinOath):
     features_by_level[15] = [features.PurityOfSpirit]
     features_by_level[20] = [features.HolyNimbus]
 
-    
+
 class OathOfAncients(PaladinOath):
     """The Oath of the Ancients is as old as the race of elves and the rituals of
     the druids. Sometimes called fey knights, green knights, or horned knights,
@@ -77,8 +77,8 @@ class OathOfAncients(PaladinOath):
     the cosm ic struggle against darkness because they love the beautiful and
     life-giving things of the world, not necessarily because they believe in
     principles of honor, courage, and justice. They adorn their armor and
-    clothing with images of growing things—leaves, antlers, or flowers—to
-    reflect their commitment to preserving life and light in the world. 
+    clothing with images of growing things-leaves, antlers, or flowers-to
+    reflect their commitment to preserving life and light in the world.
 
     **Tenets of the Ancients**: The tenets of the Oath of the Ancients have
       been preserved for uncounted centuries. This oath emphasizes the
@@ -93,7 +93,7 @@ class OathOfAncients(PaladinOath):
     flourishes, stand against the forces that would render it barren.
 
     --Preserve Your Own Light. Delight in song and laughter, in beauty and
-    art. If you allow the light to die in your own heart, you can’t preserve it
+    art. If you allow the light to die in your own heart, you can't preserve it
     in the world.
 
     --Be the Light. Be a glorious beacon for all who live in despair. Let the
@@ -107,16 +107,16 @@ class OathOfAncients(PaladinOath):
                     13: [spells.IceStorm, spells.Stoneskin],
                     17: [spells.CommuneWithNature, spells.TreeStride]}
     features_by_level = defaultdict(list)
-    
-    
+
+
 class OathOfVengance(PaladinOath):
     """The Oath of Vengeance is a solemn commitment to punish those who have
     committed a grievous sin. When evil forces slaughter helpless villagers,
-    when an entire people turns against the will of the gods, when a thieves’
+    when an entire people turns against the will of the gods, when a thieves'
     guild grows too violent and powerful, when a dragon rampages through the
-    countryside—at times like these, paladins arise and swear an Oath of
-    Vengeance to set right that which has gone wrong. To these paladins—
-    sometimes called avengers or dark knights—their own purity is not as
+    countryside - at times like these, paladins arise and swear an Oath of
+    Vengeance to set right that which has gone wrong. To these paladins -
+    sometimes called avengers or dark knights - their own purity is not as
     important as delivering justice.
 
     **Tenets of Vengance**: The tenets of the Oath of Vengeance vary by
@@ -132,7 +132,7 @@ class OathOfVengance(PaladinOath):
     --No Mercy for the Wicked. Ordinary foes might win my mercy, but my sworn
     enemies do not.
 
-    --By Any Means Necessary. My qualms can’t get in the way of exterminating
+    --By Any Means Necessary. My qualms can't get in the way of exterminating
     my foes.
 
     --Restitution. If my foes wreak ruin on the world, it is because I failed
@@ -146,8 +146,8 @@ class OathOfVengance(PaladinOath):
                     13: [spells.Banishment, spells.DimensionDoor],
                     17: [spells.HoldMonster, spells.Scrying]}
     features_by_level = defaultdict(list)
-    
-    
+
+
 class OathOfCrown(PaladinOath):
     """The Oath of the Crown is sworn to the ideals of civilization, be it the
     spirit of a nation, fealty to a sovereign, or service to a deity of law and
@@ -185,20 +185,20 @@ class OathOfCrown(PaladinOath):
                     13: [spells.Banishment, spells.GuardianOfFaith],
                     17: [spells.CircleOfPower, spells.Geas]}
     features_by_level = defaultdict(list)
-    
-    
+
+
 class OathOfConquest(PaladinOath):
     """The Oath of Conquest calls to paladins who seek glory in battle and the
-    subjugation of their enemies. It isn’t enough for these paladins to
+    subjugation of their enemies. It isn't enough for these paladins to
     establish order. They must crush the forces of chaos. Sometimes called
     knight ty- rants or iron mongers, those who swear this oath gather into
     grim orders that serve gods or philosophies of war and well-ordered might.
 
     Some of these paladins go so far as to consort with the powers of the Nine
     Hells, valuing the rule of law over the balm of mercy. The archdevil Bel,
-    warlord of Avernus, counts many of these paladins—called hell knights—as
+    warlord of Avernus, counts many of these paladins-called hell knights-as
     his most ardent supporters. Hell knights cover their armor with trophies
-    taken from fallen en— emies, a grim~warning to any who dare oppose them and
+    taken from fallen en- emies, a grim~warning to any who dare oppose them and
     the decrees of their lords. These knights are often most fiercely resisted
     by other paladins of this oath, who believe that the hell knights have
     wandered too far into darkness.
@@ -213,7 +213,7 @@ class OathOfConquest(PaladinOath):
 
     --Rule with an Iron Fist. Once you have conquered, tolerate no
     dissent. Your word is law. Those who obey it shall be favored. Those who
-    defy it shall be punished as an example to all who might follow. 
+    defy it shall be punished as an example to all who might follow.
 
     --Strength Above All. You shall rule until a stronger one arises. Then you
     must grow mightier and meet the challenge, or fall to your own ruin.
@@ -226,8 +226,8 @@ class OathOfConquest(PaladinOath):
                     13: [spells.DominateBeast, spells.Stoneskin],
                     17: [spells.Cloudkill, spells.DominatePerson]}
     features_by_level = defaultdict(list)
-    
-    
+
+
 class OathOfRedemption(PaladinOath):
     """The Oath of Redemption sets a paladin on a difficult path, one that requires
     a holy warrior to use violence only as a last resort. Paladins who dedicate
@@ -237,7 +237,7 @@ class OathOfRedemption(PaladinOath):
     light, and they slay their enemies only when such a deed will clearly save
     other lives. Paladins who follow this path are known as redeemers.
 
-    While redeemers are idealists, they are no fools. Re— deemers know that
+    While redeemers are idealists, they are no fools. Re- deemers know that
     undead, demons, devils, and other supernatural threats can be inherently
     evil. Against such fees, paladins who swear this oath bring the full wrath
     of their weapons and spells to bear. Yet the re- deemers still pray that,
@@ -285,11 +285,11 @@ class OathOfRedemption(PaladinOath):
 class OathOfZor(PaladinOath):
     """The Oath of Zor
 
-    **Tenets of Zor**: 
+    **Tenets of Zor**:
 
     --Courage. Never fear to act, though caution is wise.
 
-    --Honesty. Don’t lie or cheat. Let your word be your promise.
+    --Honesty. Don't lie or cheat. Let your word be your promise.
 
     --Innocence. All people begin life in an innocent state, and it is their
     environment or the influence of dark forces that drives them to evil. By
@@ -304,7 +304,7 @@ class OathOfZor(PaladinOath):
     the seed of righteousness in a creature, you must work day after day to
     allow that seed to survive and flourish.
 
-    
+
     """
     name = "Oath of Zor"
     _oath_spells = {3: [spells.Sanctuary, spells.Sleep],
@@ -318,8 +318,8 @@ class OathOfZor(PaladinOath):
     features_by_level[7] = [features.AuraOfTheGuardian]
     features_by_level[15] = [features.ProtectiveSpirit]
     features_by_level[20] = [features.EmissaryOfRedemption]
-    
-    
+
+
 class Paladin(CharClass):
     name = 'Paladin'
     hit_dice_faces = 10

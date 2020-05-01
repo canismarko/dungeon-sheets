@@ -42,7 +42,7 @@ class EldritchKnight(SubClass):
     techniques similar to those practiced by wizards. They focus their study on
     two of the eight schools of magic: abjuration and evocation. Abjuration
     spells grant an Eldritch Knight additional protection in battle, and
-    evocation spells deal damage to many foes at once, extending the fighter’s
+    evocation spells deal damage to many foes at once, extending the fighter's
     reach in combat. These knights learn a comparatively small number of
     spells, committing them to memory instead of keeping them in a spellbook.
 
@@ -114,8 +114,8 @@ class ArcaneArcher(SubClass):
     into attacks to produce supernatural effects. Arcane Archers are some of
     the most elite warriors among the elves. They stand watch over the fringes
     of elven domains, keeping a keen eye out for trespassers and using
-    magic—infused arrows to defeat monsters and invaders before they can reach
-    elven set— tlements. Over the centuries, the methods of these elf archers
+    magic-infused arrows to defeat monsters and invaders before they can reach
+    elven set- tlements. Over the centuries, the methods of these elf archers
     have been learned by members of other races who can also balance arcane
     aptitude with archery.
 
@@ -149,7 +149,7 @@ class Cavalier(SubClass):
 
 class Samurai(SubClass):
     """The Samurai is a fighter who draws on an implacable fighting spirit to
-    overcome enemies. A Samurai’s resolve is nearly unbreakable, and the
+    overcome enemies. A Samurai's resolve is nearly unbreakable, and the
     enemies in a Samurai's path have two choices: yield or die fighting
 
     """

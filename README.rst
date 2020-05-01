@@ -6,6 +6,11 @@ A tool to create character sheets for Dungeons and Dragons.
 
 .. image:: https://travis-ci.com/canismarko/dungeon-sheets.svg?branch=master
    :target: https://travis-ci.com/canismarko/dungeon-sheets
+   :alt: Build status
+
+.. image:: https://coveralls.io/repos/github/canismarko/dungeon-sheets/badge.svg
+   :target: https://coveralls.io/github/canismarko/dungeon-sheets
+   :alt: Test coverage status
 
 .. image:: https://readthedocs.org/projects/dungeon-sheets/badge/?version=latest
    :target: https://dungeon-sheets.readthedocs.io/en/latest/?badge=latest

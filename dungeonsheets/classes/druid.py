@@ -11,10 +11,10 @@ class LandCircle(SubClass):
     """The Circle of the Land is made up of mystics and sages who safeguard
     ancient knowledge and rites through a vast oral tradition. These druids
     meet within sacred circles of trees or standing stones to whisper primal
-    secrets in Druidic. The circle’s wisest members preside as the chief
+    secrets in Druidic. The circle's wisest members preside as the chief
     priests of communities that hold to the Old Faith and serve as advisors to
     the rulers of those folk. As a member of this circle, your magic is
-    influenced by the land where you were initiated into the circle’s
+    influenced by the land where you were initiated into the circle's
     mysterious rites
 
     """
@@ -53,7 +53,7 @@ class MoonCircle(SubClass):
 # XGTE
 class DreamsCircle(SubClass):
     """Druids who are members of the Circle of Dreams hail from regions that have
-    strong ties to the Feywild and its dreamlike realms. The druids’
+    strong ties to the Feywild and its dreamlike realms. The druids'
     guardianship of the natural world makes for a natural alliance between them
     and good-aligned fey. These druids seek to fill the world with dreamy
     wonder. Their magic mends wounds and brings joy to downcast hearts, and the
@@ -85,8 +85,8 @@ class ShepherdCircle(SubClass):
 
     Members of this circle become adventurers to oppose forces that threaten
     their charges or to seek knowledge and power that will help them safeguard
-    their charges better. Wherever these druids go, the spirits of the wil—
-    derness are with them
+    their charges better. Wherever these druids go, the spirits of
+    the wilderness are with them
 
     """
     name = "Circle of the Shepherd"

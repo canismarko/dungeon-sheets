@@ -2,6 +2,5 @@ certifi>=2018.1.18
 fdfgen>=0.16
 npyscreen
 jinja2
-pytest
 sphinx
 pdfrw

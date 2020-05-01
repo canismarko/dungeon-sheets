@@ -19,6 +19,17 @@ class MagicItem():
         return '\"{:s}\"'.format(str(self))
 
 
+class CloakOfProtection(MagicItem):
+    """
+    You gain a +1 bonus to AC and Saving Throws while wearing this cloak.
+
+    """
+    name = "Cloak of Protection"
+    ac_bonus = 1
+    requires_attunement = True
+    rarity = 'Uncommon'
+
+
 class RingOfProtection(MagicItem):
     """
     You gain a +1 bonus to AC and Saving Throws while wearing this ring.
@@ -118,7 +129,7 @@ class EyesOfCharming(MagicItem):
 
 
 class CharlattansDie(MagicItem):
-    """Whenever you roll this six—sided die, you can control which number it
+    """Whenever you roll this six-sided die, you can control which number it
     rolls.
 
     """
@@ -128,7 +139,7 @@ class CharlattansDie(MagicItem):
 
 class PipeOfSmokeMonsters(MagicItem):
     """While smoking this pipe, you can use an action to ex- hale a puff of smoke
-    that takes the form of a single crea— ture, such as a dragon, a flumph, or
+    that takes the form of a single crea- ture, such as a dragon, a flumph, or
     a froghemoth. The form must be small enough to fit in a 1-foot cube and
     loses its shape after a few seconds, becoming an ordi- nary puff of smoke.
 
@@ -222,3 +233,13 @@ class GlowingSword(MagicItem):
     This strange longsword glows at odd times.
     """
     name = "Glowing Sword"
+
+
+class PearlOfPower(MagicItem):
+    """While this pearl is on your person, you can use an action to speak its
+    Command Word and regain one expended spell slot. If the expended slot is of
+    4th Level or higher, the new slot is 3rd Level. Once you have used
+    the pearl, it can't be used again until the next dawn.
+    """
+    requires_attunement = True
+    name = "Pearl of Power"

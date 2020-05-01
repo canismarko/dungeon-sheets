@@ -9,7 +9,7 @@ from collections import defaultdict
 class Hunter(SubClass):
     """Emulating the Hunter archetype means accepting your place as a bulwark
     between civilization and the terrors of the wilderness. As you walk the
-    Hunter’s path, you learn specialized techniques for fighting the threats
+    Hunter's path, you learn specialized techniques for fighting the threats
     you face, from rampaging ogres and hordes of orcs to towering giants and
     terrifying dragons.
 
@@ -73,7 +73,7 @@ class GloomStalker(SubClass):
             if self.level >= lvl:
                 spells.extend(sps)
         return spells
-    
+
     @property
     def spells_prepared(self):
         return self.spells_known
@@ -84,8 +84,8 @@ class HorizonWalker(SubClass):
     planes or that seek to ravage the mortal realm with otherworldly
     magic. They seek out planar portals and keep watch over them, venturing to
     the Inner Planes and the Outer Planes as needed to pursue their foes. These
-    rangers are also friends to any forces in the multiverse—especially
-    benevolent dragons, fey, and elementals—that work to preserve life and the
+    rangers are also friends to any forces in the multiverse-especially
+    benevolent dragons, fey, and elementals-that work to preserve life and the
     order of the planes
 
     """
@@ -112,7 +112,7 @@ class HorizonWalker(SubClass):
             if self.level >= lvl:
                 spells.extend(sps)
         return spells
-    
+
     @property
     def spells_prepared(self):
         return self.spells_known
@@ -121,9 +121,9 @@ class HorizonWalker(SubClass):
 class MonsterSlayer(SubClass):
     """You have dedicated yourself to hunting down creatures of the night and
     wielders of grim magic. A Monster Slayer seeks out vampires, dragons, evil
-    fey, fiends, and other magical threats. Trained in supernatural tech-
-    niques to overcome such monsters, Slayers are experts at unearthing and
-    defeating mighty, mystical foes.
+    fey, fiends, and other magical threats. Trained in supernatural techniques
+    to overcome such monsters, Slayers are experts at unearthing and defeating
+    mighty, mystical foes.
 
     """
     name = "Monster Slayer"
@@ -149,7 +149,7 @@ class MonsterSlayer(SubClass):
             if self.level >= lvl:
                 spells.extend(sps)
         return spells
-    
+
     @property
     def spells_prepared(self):
         return self.spells_known
@@ -224,7 +224,7 @@ class BeastConclave(SubClass):
     features_by_level[7] = [features.BeastsDefense]
     features_by_level[11] = [features.StormOfClawsAndFangs]
     features_by_level[15] = [features.SuperiorBeastsDefense]
-    
+
 
 class HunterConclave(SubClass):
     """Some rangers seek to master weapons to better protect civilization from the
@@ -241,7 +241,7 @@ class HunterConclave(SubClass):
     features_by_level[7] = [features.DefensiveTactics]
     features_by_level[11] = [features.MultiattackRanger]
     features_by_level[15] = [features.SuperiorHuntersDefense]
-    
+
 
 class DeepStalkerConclave(SubClass):
     """Most folk descend into the depths of the Underdark only under the most
@@ -292,4 +292,4 @@ class RevisedRanger(Ranger):
     features_by_level[18] = [features.FeralSenses]
     features_by_level[20] = [features.FoeSlayer]
     subclasses_available = (BeastConclave, HunterConclave, DeepStalkerConclave)
-    
+

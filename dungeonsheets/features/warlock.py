@@ -21,10 +21,10 @@ class EldritchInvocation(Feature):
     name = "Eldritch Invocations"
     source = "Warlock"
 
-    
+
 class PactOfTheChain(Feature):
     """You learn the find familiar spell and can cast it as a ritual. The spell
-    doesn’t count against your number of spells known.
+    doesn't count against your number of spells known.
 
     When you cast the spell, you can choose one of the normal forms for your
     familiar or one of the following special forms: imp, pseudodragon, quasit,
@@ -36,7 +36,7 @@ class PactOfTheChain(Feature):
     source = "Warlock"
     spells_known = spells_prepared = (spells.FindFamiliar,)
 
-    
+
 class PactOfTheBlade(Feature):
     """You can use your action to create a pact weapon in your empty hand. You can
     choose the form that this melee weapon takes each time you create it (see
@@ -52,7 +52,7 @@ class PactOfTheBlade(Feature):
     special ritual while you hold the weapon. You perform the ritual over the
     course of 1 hour, which can be done during a short rest. You can then
     dismiss the weapon, shunting it into an extradimensional space, and it
-    appears whenever you create your pact weapon thereafter. You can’t affect
+    appears whenever you create your pact weapon thereafter. You can't affect
     an artifact or a sentient weapon in this way. The weapon ceases being your
     pact weapon if you die, if you perform the 1-hour ritual on a different
     weapon, or if you use a 1-hour ritual to break your bond to it. The weapon
@@ -66,8 +66,8 @@ class PactOfTheBlade(Feature):
 
 class PactOfTheTome(Feature):
     """Your patron gives you a grimoire called a Book of Shadows. When you gain
-    this feature, choose three cantrips from any class’s spell list. While the
-    book is on your person, you can cast those cantrips at will. They don’t
+    this feature, choose three cantrips from any class's spell list. While the
+    book is on your person, you can cast those cantrips at will. They don't
     count against your number of cantrips known.
 
     If you lose your Book of Shadows, you can perform a 1-hour ceremony to
@@ -79,14 +79,14 @@ class PactOfTheTome(Feature):
     name = "Pact of the Tome"
     source = "Warlock"
 
-    
+
 class PactBoon(FeatureSelector):
     """Select a Pact Boon by choosing in feature_choices:
 
     pact of the chain
 
     pact of the blade
-    
+
     pact of the tome
 
     """
@@ -139,7 +139,7 @@ class FeyPresence(Feature):
 
     The creatures that fail their saving throws are all charmed or frightened
     by you (your choice) until the end of your next turn. Once you use this
-    feature, you can’t use it again until you finish a short or long rest.
+    feature, you can't use it again until you finish a short or long rest.
 
     """
     name = "Fey Presence"
@@ -190,7 +190,7 @@ class DarkDelirium(Feature):
     name = "Dark Delirium"
     source = "Warlock (Archfey Patron)"
 
-    
+
 # The Fiend Patron
 class DarkOnesBlessing(Feature):
     """Starting at 1st level, when you reduce a hostile creature to 0 hit points,
@@ -212,9 +212,9 @@ class DarkOnesOwnLuck(Feature):
     """Starting at 6th level, you can call on your patron to alter fate in your
     favor. When you make an ability check or a saving throw, you can use this
     feature to add a d10 to your roll. You can do so after seeing the initial
-    roll but before any o f the roll’s effects occur.
+    roll but before any o f the roll's effects occur.
 
-    Once you use this feature, you can’t use it again until you finish a short
+    Once you use this feature, you can't use it again until you finish a short
     or long rest.
 
     """
@@ -242,7 +242,7 @@ class HurlThroughHell(Feature):
     occupied, or the nearest unoccupied space. If the target is not a fiend, it
     takes 10d10 psychic damage as it reels from its horrific experience.
 
-    Once you use this feature, you can’t use it again until you finish a long
+    Once you use this feature, you can't use it again until you finish a long
     rest.
 
     """
@@ -254,7 +254,7 @@ class HurlThroughHell(Feature):
 class AwakenedMind(Feature):
     """Starting at 1st level, your alien knowledge gives you the ability to touch
     the minds of other creatures. You can communicate telepathically with any
-    creature you can see within 30 feet of you. You don’t need to share a
+    creature you can see within 30 feet of you. You don't need to share a
     language with the creature for it to understand your telepathic utterances,
     but the creature must be able to understand at least one language
 
@@ -262,14 +262,14 @@ class AwakenedMind(Feature):
     name = "Awakened Mind"
     source = "Warlock (Great Old One Patron)"
 
-    
+
 class EntropicWard(Feature):
     """At 6th level, you learn to magically ward yourself against attack and to
-    turn an enemy’s failed strike into good luck for yourself. When a creature
+    turn an enemy's failed strike into good luck for yourself. When a creature
     makes an attack roll against you, you can use your reaction to impose
     disadvantage on that roll. If the attack misses you, your next attack roll
     against the creature has advantage if you make it before the end of your
-    next turn. Once you use this feature, you can’t use it again until you
+    next turn. Once you use this feature, you can't use it again until you
     finish a short or long rest.
 
     """
@@ -278,7 +278,7 @@ class EntropicWard(Feature):
 
 
 class ThoughtShield(Feature):
-    """Starting at 10th level, your thoughts can’t be read by telepathy or other
+    """Starting at 10th level, your thoughts can't be read by telepathy or other
     means unless you allow it. You also have resistance to psychic damage, and
     whenever a creature deals psychic damage to you, that creature takes the
     same amount of damage that you do
@@ -289,7 +289,7 @@ class ThoughtShield(Feature):
 
 
 class CreateThrall(Feature):
-    """At 14th level, you gain the ability to infect a humanoid’s mind with the
+    """At 14th level, you gain the ability to infect a humanoid's mind with the
     alien magic of your patron. You can use your action to touch an
     incapacitated humanoid. That creature is then charmed by you until a remove
     curse spell is cast on it, the charmed condition is removed from it, or you
@@ -300,7 +300,7 @@ class CreateThrall(Feature):
     name = "Create Thrall"
     source = "Warlock (Great Old One Patron)"
 
-    
+
 # Undying Patron
 class AmongTheDead(Feature):
     """Starting at 1st level, you learn the spare the dying cantrip, which counts
@@ -357,7 +357,7 @@ class IndestructibleLife(Feature):
     """
     name = "Indestructible Life"
     source = "Warlock (The Undying Patron)"
-    
+
 
 # The Celestial
 class HealingLight(Feature):
@@ -384,9 +384,9 @@ class HealingLight(Feature):
 class RadiantSoul(Feature):
     """Starting at 6th level, your link to the Celestial allows you to serve as a
     conduit for radiant energy. You have resistance to radiant damage, and when
-    you cast a spell that deals radiant or fire damage, you can add your Cha-
-    risma modifier to one radiant or fire damage roll of that spell against one
-    of its targets.
+    you cast a spell that deals radiant or fire damage, you can add your
+    Charisma modifier to one radiant or fire damage roll of that spell against
+    one of its targets.
 
     """
     name = "Radiant Soul"
@@ -395,7 +395,7 @@ class RadiantSoul(Feature):
 
 class CelestialResilience(Feature):
     """Starting at 10th level, you gain temporary hit points whenever you finish a
-    short or long rest. These tempo— rary hit points equal your warlock level +
+    short or long rest. These tempo- rary hit points equal your warlock level +
     your Charisma modifier. Additionally, choose up to five creatures you can
     see at the end of the rest. Those creatures each gain temporary hit points
     equal to half your warlock level + your Charisma modifier
@@ -404,7 +404,7 @@ class CelestialResilience(Feature):
     _name = "Celestial Resilience"
     source = "Warlock (The Celestial Patron)"
 
-    
+
 class SearingVengeance(Feature):
     """Starting at 14th level, the radiant energy you channel allows you to resist
     death. When you have to make a death saving throw at the start of your
@@ -413,7 +413,7 @@ class SearingVengeance(Feature):
     then you stand up if you so choose. Each creature of your choice that is
     within 30 feet of you takes radiant damage equal to 2d8 + your Charisma
     modifier, and it is blinded until the end of the current turn. Once you use
-    this feature, you can’t use it again until you finish a long rest.
+    this feature, you can't use it again until you finish a long rest.
 
     """
     name = "Searing Vengeance"
@@ -422,22 +422,22 @@ class SearingVengeance(Feature):
 
 # Hexblade
 class HexbladesCurse(Feature):
-    """Starting at lst level, you gain the ability to place a bale— ful curse on
+    """Starting at lst level, you gain the ability to place a bale- ful curse on
     someone. As a bonus action, choose one creature you can see within 30 feet
     of you. The target is cursed for 1 minute. The curse ends early if the
     target dies, you die, or you are incapacitated. Until the curse ends, you
     gain the following benefits:
 
-    -- You gain a bonus to damage rolls against the
+    • You gain a bonus to damage rolls against the
     cursed target. The bonus equals your proficiency bonus.
 
-    -- Any attack roll you make against the cursed target is a critical hit on
+    • Any attack roll you make against the cursed target is a critical hit on
     a roll of 19 or 20 on the d20.
 
     --If the cursed target dies, you regain hit points equal to your warlock
     level + your Charisma modifier (minimum of 1 hit point).
 
-    You can’t use this feature again until you finish a short or long rest.
+    You can't use this feature again until you finish a short or long rest.
 
     """
     name = "Hexblades Curse"
@@ -456,7 +456,7 @@ class HexWarrior(Feature):
     modifier, instead of Strength or Dexterity, for the attack and damage
     rolls. This benefit lasts until you finish a long rest. If you later gain
     the Pact of the Blade feature, this benefit extends to every pact weapon
-    you conjure with that feature, no matter the weapon’s type
+    you conjure with that feature, no matter the weapon's type
 
     """
     name = 'Hex Warrior'
@@ -476,7 +476,7 @@ class HexWarrior(Feature):
                      'charisma': self.owner.charisma.modifier}
         weapon.ability = max(abils, key=abils.get)
 
-    
+
 class AccursedSpecter(Feature):
     """Starting at 6th level, you can curse the soul of a person you slay,
     temporarily binding it to your service. When you slay a humanoid, you can
@@ -490,7 +490,7 @@ class AccursedSpecter(Feature):
     The specter remains in your service until the end of your next long rest,
     at which point it vanishes to the afterlife.
 
-    Once you bind a specter with this feature, you can’t use the feature again
+    Once you bind a specter with this feature, you can't use the feature again
     until you finish a long rest.
 
     """
@@ -500,7 +500,7 @@ class AccursedSpecter(Feature):
 
 class ArmorOfHexes(Feature):
     """At 10th level, your hex grows more powerful. If the target cursed by your
-    Hexblade’s Curse hits you with an attack roll, you can use your reaction to
+    Hexblade's Curse hits you with an attack roll, you can use your reaction to
     roll a d6. On a 4 or higher, the attack instead misses you, regardless of
     its roll.
 
@@ -510,18 +510,18 @@ class ArmorOfHexes(Feature):
 
 
 class MasterOfHexes(Feature):
-    """Starting at 14th level, you can spread your Hexblade’s Curse from a slain
-    creature to another creature. When the creature cursed by your Hexblade’s
+    """Starting at 14th level, you can spread your Hexblade's Curse from a slain
+    creature to another creature. When the creature cursed by your Hexblade's
     Curse dies, you can apply the curse to a different creature you can see
-    within 30 feet of you, provided you aren’t incapacitated. When you apply
-    the curse in this way, you don’t regain hit points from the death of the
+    within 30 feet of you, provided you aren't incapacitated. When you apply
+    the curse in this way, you don't regain hit points from the death of the
     previously cursed creature.
 
     """
     name = "Master of Hexes"
     source = "Warlock (Hexblade)"
 
-    
+
 # All Invocations
 class Invocation(Feature):
     """
@@ -593,26 +593,26 @@ class BeguilingInfluence(Invocation):
 
 
 class BewitchingWhispers(Invocation):
-    """You can cast compulsion once using a warlock spell slot. You can’t do so
+    """You can cast compulsion once using a warlock spell slot. You can't do so
     again until you finish a long rest
 
     **Prerequisite**: 7th Level
     """
     name = "Bewitching Whispers"
 
-    
+
 class BookOfAncientSecrets(Invocation):
     """You can now inscribe magical rituals in your Book of Shadows. Choose two
-    1st-level spells that have the ritual tag from any class’s spell list. The
-    spells appear in the book and don’t count against the number of spells you
+    1st-level spells that have the ritual tag from any class's spell list. The
+    spells appear in the book and don't count against the number of spells you
     know. With your Book of Shadows in hand, you can cast the chosen spells as
-    rituals. You can’t cast the spells except as rituals, unless you’ve learned
+    rituals. You can't cast the spells except as rituals, unless you've learned
     them by some other means. You can also cast a warlock spell you know as a
     ritual if it has the ritual tag.
 
     On your adventures, you can add other ritual spells to your Book o f
     Shadows. When you find such a spell, you can add it to the book if the
-    spell’s level is equal to or less than half your warlock level (rounded up)
+    spell's level is equal to or less than half your warlock level (rounded up)
     and if you can spare the time to transcribe the spell. For each level of
     the spell, the transcription process takes 2 hours and costs 50 gp for the
     rare inks needed to inscribe it
@@ -622,8 +622,8 @@ class BookOfAncientSecrets(Invocation):
 
 
 class ChainsOfCarceri(Invocation):
-    """You can cast hold monster at will—targeting a celestial, fiend, or
-    elemental—without expending a spell slot or material components. You must
+    """You can cast hold monster at will-targeting a celestial, fiend, or
+    elemental-without expending a spell slot or material components. You must
     finish a long rest before you can use this invocation on the same creature
     again.
 
@@ -641,13 +641,13 @@ class DevilsSight(Invocation):
 
 
 class DreadfulWord(Invocation):
-    """You can cast confusion once using a warlock spell slot. You can’t do so
+    """You can cast confusion once using a warlock spell slot. You can't do so
     again until you finish a long rest.
 
     """
     name = "Dreadful Word"
 
-    
+
 class EldritchSight(Invocation):
     """You can cast detect magic at will, without expending a spell slot.
 
@@ -685,7 +685,7 @@ class GazeOfTwoMinds(Invocation):
     its senses until the end of your next turn. As long as the creature is on
     the same plane of existence as you, you can use your action on subsequent
     turns to maintain this connection, extending the duration until the end of
-    your next turn. While perceiving through the other creature’s senses, you
+    your next turn. While perceiving through the other creature's senses, you
     benefit from any special senses possessed by that creature, and you are
     blinded and deafened to your own surroundings.
 
@@ -696,7 +696,7 @@ class GazeOfTwoMinds(Invocation):
 class LifeDrinker(Invocation):
     """When you hit a creature with your pact weapon, the creature takes extra
     necrotic damage equal to your Charisma modifier (minimum 1).
-    
+
     **Prerequisite**: 12th Level, Pact of the Blade
     """
     name = "Life Drinker"
@@ -720,18 +720,18 @@ class MasterOfMyriadForms(Invocation):
     name = "Master of Myriad Forms"
     at_will_spells = (spells.AlterSelf,)
 
-    
+
 class MinionsOfChaos(Invocation):
-    """You can cast conjure elemental once using a warlock spell slot. You can’t
+    """You can cast conjure elemental once using a warlock spell slot. You can't
     do so again until you finish a long rest.
 
     **Prerequisite**: 9th Level
     """
     name = "Minions of Chaos"
 
-    
+
 class MireTheMind(Invocation):
-    """You can cast slow once using a warlock spell slot. You can’t do so again
+    """You can cast slow once using a warlock spell slot. You can't do so again
     until you finish a long rest.
 
     """
@@ -776,7 +776,7 @@ to 10 feet away from you in a straight line.
 
 
 class SculptorOfFlesh(Invocation):
-    """You can cast polymorph once using a warlock spell slot. You can’t do so
+    """You can cast polymorph once using a warlock spell slot. You can't do so
     again until you finish a long rest.
 
     **Prerequisite**: 7th Level
@@ -785,7 +785,7 @@ class SculptorOfFlesh(Invocation):
 
 
 class SignOfIllOmen(Invocation):
-    """You can cast bestow curse once using a warlock spell slot. You can’t do so
+    """You can cast bestow curse once using a warlock spell slot. You can't do so
     again until you finish a long rest.
 
     **Prerequisite**: 5th Level
@@ -793,9 +793,9 @@ class SignOfIllOmen(Invocation):
     """
     name = "Sign of Ill Omen"
 
-    
+
 class ThiefOfFiveFates(Invocation):
-    """You can cast bane once using a warlock spell slot. You can’t do so again
+    """You can cast bane once using a warlock spell slot. You can't do so again
     until you finish a long rest.
 
     """
@@ -805,7 +805,7 @@ class ThiefOfFiveFates(Invocation):
 class ThirstingBlade(Invocation):
     """You can attack with your pact weapon twice, instead of once, whenever you
     take the Attack action on your turn.
-    
+
     **Prerequisite**: 5th Level, Pact of the Blade
     """
     name = "Thirsting Blade"
@@ -814,17 +814,17 @@ class ThirstingBlade(Invocation):
 class VisionsOfDistantRealms(Invocation):
     """
     You can cast arcane eye at will, without expending a spell slot
-    
+
     **Prerequisite**: 15th level
     """
     name = "Visions of Distant Realms"
     at_will_spells = (spells.ArcaneEye,)
 
-    
+
 class VoiceOfTheChainMaster(Invocation):
     """You can communicate telepathically with your familiar and perceive through
-    your familiar’s senses as long as you are on the same plane of
-    existence. Additionally, while perceiving through your familiar’s senses,
+    your familiar's senses as long as you are on the same plane of
+    existence. Additionally, while perceiving through your familiar's senses,
     you can also speak through your familiar in your own voice, even if your
     familiar is normally incapable of speech.
 
@@ -855,7 +855,7 @@ class WitchSight(Invocation):
 
 # XGTE
 class AspectOfTheMoon(Invocation):
-    """You no longer need to sleep and can’t be forced to sleep by any means. To
+    """You no longer need to sleep and can't be forced to sleep by any means. To
     gain the benefits of a long rest, you can spend all 8 hours doing light
     activity, such as reading your Book of Shadows and keeping watch.
 
@@ -863,11 +863,11 @@ class AspectOfTheMoon(Invocation):
     """
     name = "Aspect of the Moon"
 
-    
+
 class CloakOfFlies(Invocation):
     """As a bonus action, you can surround yourselfwith a magical aura that looks
     like buzzing flies. The aura extends 5 feet from you in every direction,
-    but not through total cover. It lasts until you’re incapacitated or you
+    but not through total cover. It lasts until you're incapacitated or you
     dismiss it as a bonus action.
 
     The aura grants you advantage on Charisma
@@ -875,7 +875,7 @@ class CloakOfFlies(Invocation):
     other creature that starts its turn in the aura takes poison damage equal
     to your Charisma modifier (minimum of O damage).
 
-    Once you use this invocation, you can’t use it again until you finish a
+    Once you use this invocation, you can't use it again until you finish a
     short or long rest.
 
     **Prerequisite**: 5th level
@@ -897,12 +897,12 @@ class EldritchSmite(Invocation):
 
 class GhostlyGaze(Invocation):
     """As an action, you gain the ability to see through solid objects to a range
-    of 30 feet. Within that range, you have darkvision if you don’t already
+    of 30 feet. Within that range, you have darkvision if you don't already
     have it. This special sight lasts for 1 minute or until your concentration
     ends (as if you were concentrating on a spell). During that time, you
     perceive objects as ghostly, transparent images.
 
-    Once you use this invocation, you can’t use it again until you finish a
+    Once you use this invocation, you can't use it again until you finish a
     short or long rest.
 
     **Prerequisite**: 7th level
@@ -918,8 +918,8 @@ class GiftOfTheDepths(Invocation):
     **Prerequisite**: 5th level
     """
     name = "Gift of the Depths"
-    
-    
+
+
 class GiftOfTheEverLivingOnes(Invocation):
     """Whenever you regain hit points while your familiar is within 100 feet
     ofyou, treat any dice rolled to determine the hit points you regain as
@@ -963,7 +963,7 @@ class ImprovedPactWeapon(Invocation):
 
 class LanceOfLethargy(Invocation):
     """Once on each of your turns when you hit a creature with your eldritch
-    blast, you can reduce that creature’s speed by 10 feet until the end ofyour
+    blast, you can reduce that creature's speed by 10 feet until the end ofyour
     next turn.
 
     """
@@ -972,7 +972,7 @@ class LanceOfLethargy(Invocation):
 
 class MaddeningHex(Invocation):
     """As a bonus action, you cause a psychic disturbance around the target cursed
-    by your hex spell or by a warlock feature of yours, such as Hexblade’s
+    by your hex spell or by a warlock feature of yours, such as Hexblade's
     Curse or Sign of Ill Omen. When you do so, you deal psychic damage to the
     cursed target and each creature of your choice that you can see within 5
     feet of it. The psychic damage equals your Charisma modifier (minimum of 1
@@ -988,7 +988,7 @@ class RelentlessHex(Invocation):
     """Your curse creates a temporary bond between you and your target. As a bonus
     action, you can magically telerport up to 30 feet to an unoccupied space
     you can see within 5 feet of the target cursed by your hex spell or by a
-    warlock feature ofyours, such as Hexblade’s Curse or Sign of 111 Omen. To
+    warlock feature ofyours, such as Hexblade's Curse or Sign of 111 Omen. To
     teleport in this way, you must be able to see the cursed target.
 
     """
@@ -1014,7 +1014,7 @@ class TombOfLevistus(Invocation):
     effects, including any remaining temporary hit points, all end when the ice
     melts.
 
-    Once you use this invocation, you can’t use it again until you finish a
+    Once you use this invocation, you can't use it again until you finish a
     short or long rest.
 
     **Prerequisite**: 5th Level
@@ -1029,4 +1029,4 @@ class TrickstersEscape(Invocation):
 
     """
     name = "Tricksters Escape"
-    
+

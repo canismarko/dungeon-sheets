@@ -18,7 +18,7 @@ class ClericDomain(SubClass):
             if self.level >= lvl:
                 spells.extend(sps)
         return spells
-    
+
     # All Domain spells are both known and prepared
     @property
     def spells_prepared(self):
@@ -26,8 +26,8 @@ class ClericDomain(SubClass):
 
 
 class KnowledgeDomain(ClericDomain):
-    """The gods of knowledge—including Oghma, Boccob, Gilean, Aureon, and
-    Thoth—value learning and understanding above all. Some teach that knowledge
+    """The gods of knowledge-including Oghma, Boccob, Gilean, Aureon, and
+    Thoth-value learning and understanding above all. Some teach that knowledge
     is to be gathered and shared in libraries and universities, or promote the
     practical knowledge of craft and invention. Some deities hoard knowledge
     and keep its secrets to themselves. And some promise their followers that
@@ -54,8 +54,8 @@ class KnowledgeDomain(ClericDomain):
 
 
 class LifeDomain(ClericDomain):
-    """The Life domain focuses on the vibrant positive energy—one of the
-    fundamental forces of the universe— that sustains all life. The gods of
+    """The Life domain focuses on the vibrant positive energy-one of the
+    fundamental forces of the universe- that sustains all life. The gods of
     life promote vitality and health through healing the sick and wounded,
     caring for those in need, and driving away the forces of death and
     undeath. Almost any non-evil deity can claim influence over this domain,
@@ -81,15 +81,15 @@ class LifeDomain(ClericDomain):
 
 
 class LightDomain(ClericDomain):
-    """Gods of light—including Helm, Lathander, Pholtus, Branchala, the Silver
-    Flame, Belenus, Apollo, and Re-Horakhty—promote the ideals of rebirth and
+    """Gods of light-including Helm, Lathander, Pholtus, Branchala, the Silver
+    Flame, Belenus, Apollo, and Re-Horakhty-promote the ideals of rebirth and
     renewal, truth, vigilance, and beauty, often using the symbol of the
     sun. Some of these gods are portrayed as the sun itself or as a charioteer
     who guides the sun across the sky. Others are tireless sentinels whose eyes
     pierce every shadow and see through every deception. Some are deities of
     beauty and artistry, who teach that art is a vehicle for the soul's
     improvement. Clerics of a god of light are enlightened souls infused with
-    radiance and the power of their gods’ discerning vision, charged with
+    radiance and the power of their gods' discerning vision, charged with
     chasing away lies and burning away darkness.
 
     """
@@ -139,7 +139,7 @@ class NatureDomain(ClericDomain):
 
 class TempestDomain(ClericDomain):
     """Gods whose portfolios include the Tempest domain - including Talos,
-    Umberlee, Kord, Zeboim, the Devourer, Zeus, and Thor — govern storms, sea,
+    Umberlee, Kord, Zeboim, the Devourer, Zeus, and Thor - govern storms, sea,
     and sky. They include gods of lightning and thunder, gods of earthquakes,
     some fire gods, and certain gods of violence, physical strength, and
     courage. In some pantheons, a god of this domain rules over other deities
@@ -168,10 +168,10 @@ class TempestDomain(ClericDomain):
 
 
 class TrickeryDomain(ClericDomain):
-    """Gods of trickery—such as Tymora, Beshaba, Olidammara, the Traveler, Garl
-    Glittergold, and Loki—are mischief-makers and instigators who stand as a
+    """Gods of trickery-such as Tymora, Beshaba, Olidammara, the Traveler, Garl
+    Glittergold, and Loki-are mischief-makers and instigators who stand as a
     constant challenge to the accepted order among both gods and
-    mortals. They’re patrons of thieves, scoundrels, gamblers, rebels, and
+    mortals. They're patrons of thieves, scoundrels, gamblers, rebels, and
     liberators. Their clerics are a disruptive force in the world, puncturing
     pride, mocking tyrants, stealing from the rich, freeing captives, and
     flouting hollow traditions. They prefer subterfuge, pranks, deception, and
@@ -260,13 +260,14 @@ class ForgeDomain(ClericDomain):
     humble blacksmith who keeps a village in horseshoes and plow blades to the
     mighty elf artisan whose diamond-tipped arrows of mithral have felled demon
     lords. The gods of the forge teach that, with patience and hard work, even
-    the most intractable metal can be transformed from a lump of ore to a beau—
-    tifully wrought object. Clerics of these deities search for objects lost to
-    the forces of darkness, liberate mines overrun by ores, and uncover rare
-    and wondrous materials necessary to create potent magic items. Followers
-    of these gods take great pride in their work, and they are willing to craft
-    and use heavy armor and powerful weapons to protect them. Deities of this
-    domain include Gond, Reorx, Onatar, Moradin, Hephaestus, and Goibhniu.
+    the most intractable metal can be transformed from a lump of ore to
+    a beautifully wrought object. Clerics of these deities search for objects
+    lost to the forces of darkness, liberate mines overrun by ores, and uncover
+    rare and wondrous materials necessary to create potent magic items.
+    Followers of these gods take great pride in their work, and they are willing
+    to craft and use heavy armor and powerful weapons to protect them. Deities
+    of this domain include Gond, Reorx, Onatar, Moradin, Hephaestus, and
+    Goibhniu.
 
     """
     name = "Forge Domain"
@@ -311,6 +312,30 @@ class GraveDomain(ClericDomain):
     features_by_level[8] = [features.PotentSpellcasting]
     features_by_level[17] = [features.KeeperOfSouls]
 
+class DeathDomain(ClericDomain):
+    """The Death domain is concerned with the forces that cause death, as
+    well as the negative energy that gives rise to undead creatures.
+    Deities such as Chemosh, Myrkul, and Wee Jas are patrons of necromancers,
+    death knights, liches, mummy lords, and vampires. Gods of the Death
+    domain also embody murder (Anubis, Bhaal, and Pyremius), pain
+    (Iuz or Loviatar), disease or poison (Incabulos, Talona, or Morgion),
+    and the underworld (Hades and Hel)..
+
+    """
+    name = "Death Domain"
+    _domain_spells = {1: [spells.FalseLife, spells.RayOfSickness],
+                      3: [spells.BlindnessDeafness, spells.RayOfEnfeeblement],
+                      5: [spells.AnimateDead, spells.VampiricTouch],
+                      7: [spells.Blight, spells.DeathWard],
+                      9: [spells.AntilifeShell, spells.Cloudkill]}
+    weapon_proficiencies = (weapons.MartialWeapon,)
+    _proficiencies_text = ('martial weapons',)
+    features_by_level = defaultdict(list)
+    features_by_level[1] = [features.Reaper]
+    features_by_level[2] = [features.TouchOfDeathCleric] #a different one though
+    features_by_level[6] = [features.InescapableDestruction]
+    features_by_level[8] = [features.DivineStrikeDeath]
+    features_by_level[17] = [features.ImprovedReaper]
 
 class Cleric(CharClass):
     name = 'Cleric'
@@ -332,7 +357,7 @@ class Cleric(CharClass):
     subclasses_available = (KnowledgeDomain, LifeDomain, LightDomain,
                             NatureDomain, TempestDomain, TrickeryDomain,
                             WarDomain, ArcanaDomain, ForgeDomain,
-                            GraveDomain)
+                            GraveDomain, DeathDomain)
     spellcasting_ability = 'wisdom'
     spell_slots_by_level = {
         # char_lvl: (cantrips, 1st, 2nd, 3rd, ...)

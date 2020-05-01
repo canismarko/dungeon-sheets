@@ -82,7 +82,7 @@ class App(npyscreen.NPSAppManaged):
     # STARTING_FORM = 'SKILLS'
     character = None
     n_classes = 1
-    
+
     def save_character(self):
         # Save the file
         filename = self.getForm("SAVE").filename.value
@@ -129,7 +129,7 @@ class App(npyscreen.NPSAppManaged):
                 hp_max += np.random.randint(low=1, high=hd.faces+1) + const
         abil.hp_max.value = str(hp_max)
         abil.display()
-            
+
     def set_default_hp_max(self):
         abil = self.getForm("ABILITIES")
         # Update max HP based on the class
@@ -147,7 +147,7 @@ class App(npyscreen.NPSAppManaged):
         log.debug("Updating max hp: %d", hp_max)
         abil.hp_max.value = str(hp_max)
         abil.display()
-    
+
     def onStart(self):
         self.character = character.Character()
         self.character.class_list = []
@@ -188,7 +188,7 @@ class BasicInfoForm(LinkedListForm):
             npyscreen.TitleText, name="Character Name:", use_two_lines=False)
         self.player_name = self.add(
             npyscreen.TitleText, name="Player Name:", use_two_lines=False)
-    
+
     def on_ok(self):
         # Update the default filename
         name = self.name.value or "New Character"
@@ -201,16 +201,16 @@ class BasicInfoForm(LinkedListForm):
         self.parentApp.character.name = self.name.value
         self.parentApp.character.player_name = self.player_name.value
         super().to_next()
-    
+
     def on_cancel(self):
         raise KeyboardInterrupt
 
-    
+
 class RaceForm(LinkedListForm):
     def create(self):
         self.race = self.add(
             npyscreen.TitleSelectOne, name="Race:", values=tuple(races.keys()))
-    
+
     def on_ok(self):
         if len(self.race.get_selected_objects()) >= 1:
             selected_race = self.race.get_selected_objects()[0]
@@ -221,7 +221,7 @@ class RaceForm(LinkedListForm):
 
     def on_cancel(self):
         super().to_prev()
-        
+
 
 class CharacterClassForm(LinkedListForm):
     class_num = 1
@@ -256,7 +256,7 @@ class CharacterClassForm(LinkedListForm):
                 self.class_options.remove(c.name)
             self.character_class.values = sorted(tuple(self.class_options))
             self.character_class.update()
-        
+
     def create(self):
         if self.class_num > 1:
             self.add(npyscreen.FixedText, editable=False,
@@ -298,7 +298,7 @@ class CharacterClassForm(LinkedListForm):
                                           formid=new_name)
         self.add_next(new_name)
         return new_form
-        
+
     def on_ok(self):
         if len(self.character_class.get_selected_objects()) >= 1:
             selected_class = self.character_class.get_selected_objects()[0]
@@ -329,7 +329,7 @@ class CharacterClassForm(LinkedListForm):
                     f = self.parentApp.getForm(self.next_page)
                     f.prune()
             super().to_next()
-        
+
     def on_cancel(self):
         super().to_prev()
 
@@ -344,12 +344,12 @@ class SubclassForm(LinkedListForm):
             self.subclass_options = ('None',)
         self.level = level
         super().__init__(**kwargs)
-    
+
     def create(self):
         self.subclass = self.add(
             npyscreen.TitleSelectOne, name="Subclass:",
             values=tuple(self.subclass_options))
-        
+
     def on_ok(self):
         if len(self.subclass.get_selected_objects()) >= 1:
             sc = self.subclass.get_selected_objects()[0]
@@ -360,7 +360,7 @@ class SubclassForm(LinkedListForm):
                                                level=self.level,
                                                subclass=sc)
             super().to_next()
-            
+
     def on_cancel(self):
         super().to_prev()
 
@@ -370,7 +370,7 @@ class BackgroundForm(LinkedListForm):
         self.background = self.add(
             npyscreen.TitleSelectOne,
             name="Background:", values=tuple(backgrounds.keys()))
-    
+
     def on_ok(self):
         if len(self.background.get_selected_objects()) >= 1:
             selected_bg = self.background.get_selected_objects()[0]
@@ -382,7 +382,7 @@ class BackgroundForm(LinkedListForm):
             self.parentApp.character.languages = ', '.join(languages)
             log.debug("Selected character background: %s", Background.name)
             super().to_next()
-    
+
     def on_cancel(self):
         super().to_prev()
 
@@ -396,7 +396,7 @@ class AlignmentForm(LinkedListForm):
     def create(self):
         self.alignment = self.add(
             npyscreen.TitleSelectOne, name="Alignment:", values=self.alignments)
-    
+
     def on_ok(self):
         if len(self.alignment.get_selected_objects()) >= 1:
             selected_alignment = self.alignment.get_selected_objects()[0]  # values[self.alignment.value]
@@ -405,7 +405,7 @@ class AlignmentForm(LinkedListForm):
             # prep additions to abilities page
             self.parentApp.getForm('ABILITIES').prep()
             super().to_next()
-    
+
     def on_cancel(self):
         super().to_prev()
 
@@ -414,7 +414,7 @@ class AbilityScoreForm(LinkedListForm):
     num_rolls = 0
 
     def roll_dice(self):
-        """Get six ability scores that can then be assigned to abilities.""" 
+        """Get six ability scores that can then be assigned to abilities."""
         def roll_score():
             # Roll 4 dice and add the 3 highest
             rolls = (randint(1, 6) for i in range(4))
@@ -447,7 +447,7 @@ class AbilityScoreForm(LinkedListForm):
     def reroll_hp(self, widget=None):
         self.parentApp.reroll_max_hp()
         self.parentApp.update_max_hp_roll()
-    
+
     def create(self):
         self.roll_text = self.add(npyscreen.FixedText, editable=False,
                                   value="Take the six rolls below and assign each one to an ability.")
@@ -508,7 +508,7 @@ class AbilityScoreForm(LinkedListForm):
             # Update the "character" with new values
             setattr(self.parentApp.character, attr, val)
         super().to_next()
-    
+
     def on_cancel(self):
         super().to_prev()
 
@@ -528,7 +528,7 @@ class SkillForm(LinkedListForm):
         choices = set([c for c in choices if c.lower() not in static_skills])
         self.skill_proficiencies.set_values(sorted(tuple(choices)))
         self.update_remaining()
-    
+
     def update_remaining(self, widget=None):
         num_choices = (self.parentApp.character.primary_class.num_skill_choices +
                        self.parentApp.character.race.num_skill_choices +
@@ -538,7 +538,7 @@ class SkillForm(LinkedListForm):
         log.debug(f'Remaining: {remaining}')
         self.remaining.value = str(remaining)
         self.display()
-    
+
     def create(self):
         self.bg_skills = self.add(
             npyscreen.TitleText, name="Background:",
@@ -553,7 +553,7 @@ class SkillForm(LinkedListForm):
             npyscreen.TitleMultiSelect, name="Skill Proficiencies:",
             values=(),
             value_changed_callback=self.update_remaining)
-    
+
     def on_ok(self):
         new_skills = self.skill_proficiencies.get_selected_objects()
         if new_skills is not None:
@@ -567,7 +567,7 @@ class SkillForm(LinkedListForm):
         self.parentApp.getForm('WEAPONS').update_options()
         log.debug(f"Skill proficiencies: {all_skills}")
         super().to_next()
-    
+
     def on_cancel(self):
         super().to_prev()
 
@@ -584,7 +584,7 @@ class WeaponForm(LinkedListForm):
             npyscreen.TitleMultiSelect, name="Weapons:",
             values=tuple([wpn.name for wpn in all_weapons]),
             value_changed_callback=self.update_remaining)
-    
+
     def on_ok(self):
         new_weapons = self.weapons.get_selected_objects()
         if new_weapons is not None:
@@ -595,7 +595,7 @@ class WeaponForm(LinkedListForm):
             self.parentApp.character.wield_weapon(wpn)
         log.debug(f"Weapons wielded: {new_weapons}")
         super().to_next()
-    
+
     def update_remaining(self, widget=None):
         num_choices = 3
         num_selected = len(self.weapons.value)
@@ -603,7 +603,7 @@ class WeaponForm(LinkedListForm):
         log.debug(f'Remaining: {remaining}')
         self.remaining.value = str(remaining)
         self.display()
-    
+
     def update_options(self):
         available_weapons = []
         for wpn in all_weapons:
@@ -612,7 +612,7 @@ class WeaponForm(LinkedListForm):
         self.weapons.values = available_weapons
         self.parentApp.getForm('ARMOR').update_options()
         self.display()
-    
+
     def on_cancel(self):
         super().to_prev()
 
@@ -627,15 +627,15 @@ class ArmorForm(LinkedListForm):
         self.armor = self.add(
             npyscreen.TitleSelectOne, name="Armor:",
             values=tuple([a.name for a in ([armor.NoArmor] + armor.all_armors)]))
-        
+
     def on_ok(self):
         my_armor = self.armor.get_selected_objects()[0]
-        if my_armor.lower() is not "no armor":
+        if my_armor.lower() != "no armor":
             self.parentApp.character.wear_armor(my_armor)
         if self.shield.value:
             self.parentApp.character.wield_shield('shield')
         super().to_next()
-    
+
     def update_options(self):
         available_armors = [armor.NoArmor]
         proficiencies = self.parentApp.character.proficiencies_text.lower()
@@ -647,7 +647,7 @@ class ArmorForm(LinkedListForm):
             available_armors.extend(armor.heavy_armors)
         self.armor.values = [a.name for a in available_armors]
         self.display()
-    
+
     def on_cancel(self):
         super().to_prev()
 
@@ -688,7 +688,7 @@ class PersonalityForm(LinkedListForm):
                                    value="Describe any other notable features or abilities.")
         self.features = self.add(
             npyscreen.TitleText, name='Features: ', begin_entry_at=24)
-        
+
     def on_ok(self):
         if self.personality_traits.value:
             self.parentApp.character.personality_traits = self.personality_traits.value
@@ -699,9 +699,9 @@ class PersonalityForm(LinkedListForm):
         if self.flaws.value:
             self.parentApp.character.flaws = self.flaws.value
         if self.features.value:
-            self.parentApp.character.features_and_traits = self.featurs.value
+            self.parentApp.character.features_and_traits = self.features.value
         super().to_next()
-    
+
     def on_cancel(self):
         super().to_prev()
 
@@ -720,14 +720,14 @@ class SaveForm(LinkedListForm):
 
     def on_ok(self):
         super().to_next()
-    
+
     def on_cancel(self):
         super().to_prev()
 
 
 def main():
     my_app = App()
-    
+
     try:
         my_app.run()
     except KeyboardInterrupt:

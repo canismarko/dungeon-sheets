@@ -26,14 +26,14 @@ class Protection(Feature):
     """
     name = "Fighting Style (Protection)"
     source = "Fighter"
-    
+
 
 class FighterFightingStyle(FeatureSelector):
     """
     Select a Fighting Style by choosing in feature_choices:
 
     archery
- 
+
     defense
 
     dueling
@@ -55,7 +55,7 @@ class FighterFightingStyle(FeatureSelector):
                'dual wield': TwoWeaponFighting}
     name = "Fighting Style (Select One)"
     source = "Fighter"
-    
+
 
 class SecondWind(Feature):
     """You have a limited well of stamina that you can draw on to protect yourself
@@ -105,7 +105,7 @@ class ExtraAttackFighter(Feature):
 
 class Indomitable(Feature):
     """Beginning at 9th level, you can reroll a saving throw that you fail. If you
-    do so, you must use the new roll, and you can’t use this feature again
+    do so, you must use the new roll, and you can't use this feature again
     until you finish a long rest.
 
     You can use this feature twice between long rests starting at 13th level
@@ -138,7 +138,7 @@ class ImprovedCritical(Feature):
 
 class RemarkableAthelete(Feature):
     """Starting at 7th level, you can add half your proficiency bonus (round up)
-    to any Strength, Dexterity, or Constitution check you make that doesn’t
+    to any Strength, Dexterity, or Constitution check you make that doesn't
     already use your proficiency bonus.
 
     In addition, when you make a running long jump, the distance you can cover
@@ -154,7 +154,7 @@ class AdditionalFightingStyle(FeatureSelector):
     Select a Fighting Style by choosing in feature_choices:
 
     archery 2
- 
+
     defense 2
 
     dueling 2
@@ -185,12 +185,12 @@ class SuperiorCritical(Feature):
     name = "Superior Critical"
     source = "Fighter (Champion)"
 
-    
+
 class Survivor(Feature):
     """At 18th level, you attain the pinnacle of resilience in battle. At the
     start of each of your turns, you regain hit points equal to 5 + your
     Constitution modifier if you have no more than half of your hit points
-    left. You don’t gain this benefit if you have 0 hit points.
+    left. You don't gain this benefit if you have 0 hit points.
 
     """
     name = "Survivor"
@@ -203,7 +203,7 @@ class CombatSuperiority(Feature):
     fueled by special dice called superiority dice.
 
     **Maneuvers**: You learn three maneuvers of your choice, which are detailed
-    under “Maneuvers” below. Many maneuvers enhance an attack in some way. You
+    under "Maneuvers" below. Many maneuvers enhance an attack in some way. You
     can use only one maneuver per attack. You learn two additional maneuvers
     of your choice at 7th, 10th, and 15th level. Each time you learn new
     maneuvers, you can also replace one maneuver you know with a different one.
@@ -214,7 +214,7 @@ class CombatSuperiority(Feature):
     another superiority die at 7th level and one more at 15th level.
 
     **Saving Throws**: Some of your maneuvers require your target to make a
-    saving throw to resist the maneuver’s effects. The saving throw DC is
+    saving throw to resist the maneuver's effects. The saving throw DC is
     calculated as follows:
 
     Maneuver save DC = 8 + your proficiency bonus + your Strength or Dexterity
@@ -235,7 +235,7 @@ class CombatSuperiority(Feature):
 
 
 class StudentOfWar(Feature):
-    """At 3rd level, you gain proficiency with one type of artisan’s tools of your
+    """At 3rd level, you gain proficiency with one type of artisan's tools of your
     choice.
 
     """
@@ -266,8 +266,8 @@ class KnowYourEnemy(Feature):
     """
     name = "Know Your Enemy"
     source = "Fighter (Battle Master)"
-    
-        
+
+
 class Relentless(Feature):
     """Starting at 15th level, when you roll initiative and have no superiority
     dice remaining, you regain 1 superiority die.
@@ -292,7 +292,7 @@ class CommandersStrike(Maneuver):
     strike. When you do so, choose a friendly creature who can see or hear you
     and expend one superiority die. That creature can immediately use its
     reaction to make one weapon attack, adding the superiority die to the
-    attack’s damage roll.
+    attack's damage roll.
 
     """
     name = "Commander's Strike"
@@ -301,8 +301,8 @@ class CommandersStrike(Maneuver):
 class DisarmingAttack(Maneuver):
     """When you hit a creature with a weapon attack, you can expend one
     superiority die to attempt to disarm the target, forcing it to drop one
-    item o f your choice that it’s holding. You add the superiority die to the
-    attack’s damage roll, and the target must make a Strength saving throw. On
+    item o f your choice that it's holding. You add the superiority die to the
+    attack's damage roll, and the target must make a Strength saving throw. On
     a failed save, it drops the object you choose. The object lands at its
     feet.
 
@@ -313,7 +313,7 @@ class DisarmingAttack(Maneuver):
 class DistractingStrike(Maneuver):
     """When you hit a creature with a weapon attack, you can expend one
     superiority die to distract the creature, giving your allies an
-    opening. You add the superiority die to the attack’s damage roll. The next
+    opening. You add the superiority die to the attack's damage roll. The next
     attack roll against the target by an attacker other than you has advantage
     if the attack is made before the start of your next turn.
 
@@ -333,7 +333,7 @@ class FeintingAttack(Maneuver):
     """You can expend one superiority die and use a bonus action on your turn to
     feint, choosing one creature within 5 feet of you as your target. You have
     advantage on your next attack roll against that creature. If that attack
-    hits, add the superiority die to the attack’s damage roll.
+    hits, add the superiority die to the attack's damage roll.
 
     """
     name = "Feinting Attack"
@@ -342,7 +342,7 @@ class FeintingAttack(Maneuver):
 class GoadingAttack(Maneuver):
     """When you hit a creature with a weapon attack, you can expend one
     superiority die to attempt to goad the target into attacking you. You add
-    the superiority die to the attack’s damage roll, and the target must make a
+    the superiority die to the attack's damage roll, and the target must make a
     W isdom saving throw. On a failed save, the target has disadvantage on all
     attack rolls against targets other than you until the end of your next
     turn.
@@ -354,7 +354,7 @@ class GoadingAttack(Maneuver):
 class LungingAttack(Maneuver):
     """When you make a melee weapon attack on your turn, you can expend one
     superiority die to increase your reach for that attack by 5 feet. If you
-    hit, you add the superiority die to the attack’s damage roll.
+    hit, you add the superiority die to the attack's damage roll.
 
     """
     name = "Lunging Attack"
@@ -363,7 +363,7 @@ class LungingAttack(Maneuver):
 class ManeuveringAttack(Maneuver):
     """When you hit a creature with a weapon attack, you can expend one
     superiority die to maneuver one o f your comrades into a more advantageous
-    position. You add the superiority die to the attack’s damage roll, and you
+    position. You add the superiority die to the attack's damage roll, and you
     choose a friendly creature who can see or hear you. That creature can use
     its reaction to move up to half its speed without provoking opportunity
     attacks from the target of your attack.
@@ -375,7 +375,7 @@ class ManeuveringAttack(Maneuver):
 class MenacingAttack(Maneuver):
     """When you hit a creature with a weapon attack, you can expend one
     superiority die to attempt to frighten the target. You add the superiority
-    die to the attack’s damage roll, and the target must make a Wisdom saving
+    die to the attack's damage roll, and the target must make a Wisdom saving
     throw. On a failed save, it is frightened of you until the end o f your
     next turn.
 
@@ -448,7 +448,7 @@ class SweepingAttack(Maneuver):
 class TripingAttack(Maneuver):
     """When you hit a creature with a weapon attack, you can expend one
     superiority die to attempt to knock the target down. You add the
-    superiority die to the attack’s damage roll, and if the target is Large or
+    superiority die to the attack's damage roll, and if the target is Large or
     smaller, it must make a Strength saving throw. On a failed save, you knock
     the target prone
 
@@ -474,7 +474,7 @@ class EldritchKnightSpellcasting(Feature):
     Whenever you gain a level in this class, you can replace one of the wizard
     spells you know with another spell o f your choice from the wizard spell
     list. The new spell must be of a level for which you have spell slots, and
-    it must be an abjuration or evocation spell, unless you’re replacing the
+    it must be an abjuration or evocation spell, unless you're replacing the
     spell you gained at 8th, 14th, or 20th level.
 
     """
@@ -489,7 +489,7 @@ class WeaponBond(Feature):
     throughout the ritual, at the conclusion of which you touch the weapon and
     forge the bond.
 
-    Once you have bonded a weapon to yourself, you can’t be disarmed of that
+    Once you have bonded a weapon to yourself, you can't be disarmed of that
     weapon unless you are incapacitated. If it is on the same plane of
     existence, you can summon that weapon as a bonus action on your turn,
     causing it to teleport instantly to your hand.
@@ -514,7 +514,7 @@ class WarMagic(Feature):
 
 class EldritchStrike(Feature):
     """At 10th level, you learn how to make your weapon strikes undercut a
-    creature’s resistance to your spells. When you hit a creature with a weapon
+    creature's resistance to your spells. When you hit a creature with a weapon
     attack, that creature has disadvantage on the next saving throw it makes
     against a spell you cast before the end of your next turn.
 
@@ -583,8 +583,8 @@ class RoyalEnvoy(Feature):
 class InspiringSurge(Feature):
     """Starting at 10th level, when you use your Action Surge feature , you can
     choose one creature within 60 feet of you that is allied with you. That
-    creature can make one melee or ranged weapon attack with its reaction, pro-
-    vided that it can see or hear you. Starting at 18th level, you can choose
+    creature can make one melee or ranged weapon attack with its reaction,
+    provided that it can see or hear you. Starting at 18th level, you can choose
     two allies within 60 feet of you, rather than one.
 
     """
@@ -608,8 +608,8 @@ class Bulwark(Feature):
 # Arcane Archer
 class ArcaneArcherLore(Feature):
     """At 3rd level, you learn magical theory or some of the secrets of
-    nature—typical for practitioners of this elven martial tradition. You
-    choose to gain proficiency in ei— ther the Arcana or the Nature skill, and
+    nature-typical for practitioners of this elven martial tradition. You
+    choose to gain proficiency in ei- ther the Arcana or the Nature skill, and
     you choose to learn either the prestidigr'tation or the drufdcraft cantrip
 
     """
@@ -620,20 +620,20 @@ class ArcaneArcherLore(Feature):
 class ArcaneShot(Feature):
     """At 3rd level, you learn to unleash special magical effects with some of
     your shots. When you gain this feature, you learn two Arcane Shot options
-    of your choice (see “Arcane Shot Options” below).
+    of your choice (see "Arcane Shot Options" below).
 
     Add all Arcane Shot options under "features" in your .py file
 
     Once per turn when you fire a magic arrow from a shortbow or longbow as
     part of the Attack action, you can apply one of your Arcane Shot options to
     that arrow. You decide to use the option when the arrow hits a creature,
-    unless the option doesn’t involve an attack roll. You have two uses of this
+    unless the option doesn't involve an attack roll. You have two uses of this
     ability, and you regain all expended uses of it when you finish a short or
     long rest.
 
     You gain an additional Arcane Shot option of your choice when you reach
     certain levels in this class: 7th, 10th, 15th, and 18th level. Each option
-    also improves when you become an 18th—level fighter
+    also improves when you become an 18th-level fighter
 
     If an option requires a saving throw, your Arcane Shot save DC equals 8 +
     your proficiency bonus + your Intelligence modifier
@@ -680,7 +680,7 @@ class BanishingArrow(Feature):
     """You use abjuration magic to try to temporarily banish your target to a
     harmless location in the Feywild. The creature hit by the arrow must also
     succeed on a Charisma saving throw or be banished. While banished in this
-    way, the target’s speed is 0, and it is incapacitated. At the end of its
+    way, the target's speed is 0, and it is incapacitated. At the end of its
     next turn, the target reappears in the Space it vacated or in the nearest
     unoccupied space if that space is occupied.
 
@@ -697,10 +697,10 @@ class BeguilingArrow(Feature):
     target. The creature hit by the arrow takes an extra 2d6 psychic damage,
     and choose one ofyour allies within 30 feet of the target. The target must
     succeed on a Wisdom saving throw, or it is charmed by the chosen ally until
-    the start ofyour next turn. This effect ends early if the chosen ally at—
-    tacks the charmed target, deals damage to it, or forces it to make a saving
-    throw. The psychic damage increases to 4d6 when you reach 18th level in
-    this class.
+    the start ofyour next turn. This effect ends early if the chosen ally
+    attacks the charmed target, deals damage to it, or forces it to make
+    a saving throw. The psychic damage increases to 4d6 when you reach 18th
+    level in this class.
 
     """
     name = "Arcane Shot: Beguiling Arrow"
@@ -710,7 +710,7 @@ class BeguilingArrow(Feature):
 class BurstingArrow(Feature):
     """You imbue your arrow with force energy drawn from the school of
     evocation. The energy detonates after your attack. Immediately after the
-    ar— row hits the creature, the target and all other creatures within 10
+    ar- row hits the creature, the target and all other creatures within 10
     feet of it take 2d6 force damage each. The force damage increases to 4d6
     when you reach 18th level in this class
 
@@ -735,7 +735,7 @@ class GraspingArrow(Feature):
     """When this arrow strikes its target, conjuration magic creates grasping,
     poisonous brams bles, which wrap around the target. The creature hit by the
     arrow takes an extra 2(16 poison damage, its speed is reduced by 10 feet,
-    and it takes 2d6 slashing dam— age the first time on each turn it moves 1
+    and it takes 2d6 slashing dam- age the first time on each turn it moves 1
     foot or more without teleporting. The target or any creature that can reach
     it can use its action to remove the brambles with a successful Strength
     (Athletics) check against your Arcane Shot save DC. Otherwise, the
@@ -750,7 +750,7 @@ class GraspingArrow(Feature):
 
 class PiercingArrow(Feature):
     """You use transmutation magic to give your arrow an ethereal quality. When
-    you use this option, you don’t make an attack roll for the attack. Instead,
+    you use this option, you don't make an attack roll for the attack. Instead,
     the arrow shoots forward in a line, which is 1 foot wide and 30 feet long,
     before disappearing. The arrow passes harmlessly through objects, ignoring
     cover. Each creature in that line must make a Dexterity saving throw. On a
@@ -766,16 +766,16 @@ class PiercingArrow(Feature):
 
 class SeekingArrow(Feature):
     """Using divination magic, you grant your arrow the ability to seek out a
-    target. When you use this option, you don’t make an attack roll for the
+    target. When you use this option, you don't make an attack roll for the
     attack. Instead, choose one creature you have seen in the past minute. The
     arrow flies toward that creature, moving around corners if necessary and
     ignoring three-quarters cover and half cover. If the target is within the
-    weapon’s range and there is a path large enough for the arrow to travel to
+    weapon's range and there is a path large enough for the arrow to travel to
     the target, the target must make a Dexterity saving throw. Otherwise, the
     arrow disappears after traveling as far as it can. On a failed save, the
     target takes damage as if it were hit by the arrow, plus an extra 1d6 force
-    damage, and you learn the target’s current location. On a successful save,
-    the target takes half as much damage, and you don’t learn its location. The
+    damage, and you learn the target's current location. On a successful save,
+    the target takes half as much damage, and you don't learn its location. The
     force damage increases to 2d6 when you reach 18th level in this class.
 
     """
@@ -794,7 +794,7 @@ class ShadowArrow(Feature):
     """
     name = "Shadow Arrow"
     source = "Fighter (Arcane Archer)"
-    
+
 
 # Cavalier
 class BonusProficiencyCavalier(Feature):
@@ -812,7 +812,7 @@ class BornToTheSaddle(Feature):
     """Starting at 3rd level, your mastery as a rider becomes apparent. You have
     advantage on saving throws made to avoid falling off your mount. Ifyou fall
     off your mount and descend no more than 10 feet, you can land on your feet
-    if you’re not incapacitated. Finally, mounting or dismounting a creature
+    if you're not incapacitated. Finally, mounting or dismounting a creature
     costs you only 5 feet of movement, rather than half your speed.
 
     """
@@ -828,7 +828,7 @@ class UnwaveringMark(Feature):
     someone else marks the creature.
 
     While it is within 5 feet of you, a creature marked by you has disadvantage
-    on any attack roll that doesn’t target you. In addition, if a creature
+    on any attack roll that doesn't target you. In addition, if a creature
     marked by you deals damage to anyone other than you, you can make a special
     melee weapon attack against the marked creature as a bonus action on your
     next turn. You have advantage on the attack roll, and if it hits, the
@@ -852,10 +852,10 @@ class UnwaveringMark(Feature):
 class WardingManeuver(Feature):
     """At 7th level, you learn to fend off strikes directed at you, your mount, or
     other creatures nearby. If you or a creature you can see within 5 feet
-    of you is hit by an attack, you can roll ld8 as a reaction if you’re
+    of you is hit by an attack, you can roll ld8 as a reaction if you're
     wielding a melee weapon or a shield. Roll the die, and add the number
-    rolled to the target’s AC against that attack. If the attack still hits,
-    the target has resistance against the attack’s damage.
+    rolled to the target's AC against that attack. If the attack still hits,
+    the target has resistance against the attack's damage.
 
     You can use this feature a number of times equal to your Constitution
     modifier (minimum of once), and you regain all expended uses of it when you
@@ -869,13 +869,13 @@ class WardingManeuver(Feature):
     def name(self):
         num = max(1, self.owner.constitution.modifier)
         return self._name + ' ({:d}x/LR)'.format(num)
-        
+
 
 class HoldTheLine(Feature):
     """At 10th level, you become a master of locking down your enemies. Creatures
     provoke an opportunity attack from you when they move 5 feet or more while
     within your reach, and if you hit a creature with an opportunity attack,
-    the target’s speed is reduced to 0 until the end of the current turn.
+    the target's speed is reduced to 0 until the end of the current turn.
 
     """
     name = "Hold the Line"
@@ -883,7 +883,7 @@ class HoldTheLine(Feature):
 
 
 class FerociousCharger(Feature):
-    """Starting at 15th level, you can run down your foes, whether you’re mounted
+    """Starting at 15th level, you can run down your foes, whether you're mounted
     or not. If you move at least 10 feet in a straight line right before
     attacking a creature and you hit it with the attack, that target must
     succeed on a Strength saving throw (DC 8 + your proficiency bonus + your
@@ -898,8 +898,8 @@ class FerociousCharger(Feature):
 class VigilantDefender(Feature):
     """Starting at 18th level, you respond to danger with extraordinary
     vigilance. In combat, you get a special reaction that you can take once on
-    every creature’s turn, except your turn. You can use this special reaction
-    only to make an opportunity attack, and you can’t use it on the same turn
+    every creature's turn, except your turn. You can use this special reaction
+    only to make an opportunity attack, and you can't use it on the same turn
     that you take your normal reaction
 
     """
@@ -911,7 +911,7 @@ class VigilantDefender(Feature):
 class BonusProficiencySamurai(Feature):
     """When you choose this archetype at 3rd level, you gain proficiency in one of
     the following skills ofyour choice: History, Insight, Performance, or
-    Persuasion. Alterna— tively, you learn one language of your choice.
+    Persuasion. Alterna- tively, you learn one language of your choice.
 
     """
     name = "Bonus Proficiency"
@@ -934,7 +934,7 @@ class FightingSpirit(Feature):
 
 
 class ElegantCourtier(Feature):
-    """Starting at 7th level, your discipline and attention to de— tail allow you
+    """Starting at 7th level, your discipline and attention to de- tail allow you
     to excel in social situations. Whenever you make a Charisma (Persuasion)
     check, you gain a bonus to the check equal to your Wisdom modifier. Your
     self-control also causes you to gain proficiency in Wisdom saving
@@ -970,20 +970,20 @@ class RapidStrike(Feature):
 
 class StrengthBeforeDeath(Feature):
     """Starting at 18th level, your fighting spirit can delay the grasp of
-    death. If you take damage that reduces you to 0 hit points and doesn’t kill
+    death. If you take damage that reduces you to 0 hit points and doesn't kill
     you outright, you can use your reaction to delay falling unconscious, and
     you can immediately take an extra turn, interrupting the current
     turn. While you have 0 hit points during that extra turn, taking damage
     causes death saving throw failures as normal, and three death saving throw
     failures can still kill you. When the extra turn ends, you fall unconscious
-    ifyou still have 0 hit points. Once you use this feature, you can’t use it
+    ifyou still have 0 hit points. Once you use this feature, you can't use it
     again until you finish a long rest.
 
     """
     name = "Strength Before Death"
     source = "Fighter (Samurai)"
-            
-    
+
+
 # Gunslinger
 class Gunsmith(Feature):
     """Upon choosing this archetype at 3rd level, you gain proficiency with
@@ -1012,15 +1012,15 @@ class AdeptMarksman(Feature):
     You learn an additional trick shot of your choice at 7th, 10th, 15th, and
     18th level. Each time you learn a new trick shot, you can also replace one
     trick shot you know with a different one.
-    
+
     Grit. You gain a number of grit points equal to your Wisdom modifier
     (minimum of 1). You regain 1 expended grit point each time you roll a 20 on
     the d20 roll for an attack with a firearm, or deal a killing blow with a
-    firearm to a creature of significant threat (DM’s discretion). You regain
+    firearm to a creature of significant threat (DM's discretion). You regain
     all expended grit points after a short or long rest.
 
     Saving Throws. Some of your trick shots require your targets to make a
-    saving throw to resist the trick shot’s effects. The saving throw DC is
+    saving throw to resist the trick shot's effects. The saving throw DC is
     calculated as follows:
 
     Trick Shot save DC = 8 + your proficiency bonus + your Dexterity modifier
@@ -1029,20 +1029,20 @@ class AdeptMarksman(Feature):
     bring their own unique set of weapon properties. Some properties are
     followed by a number, and this number signifies an element of that property
     (outlined below). These properties replace the optional ones presented in
-    the Dungeon Master’s Guide. Firearms are ranged weapons.
+    the Dungeon Master's Guide. Firearms are ranged weapons.
 
     Reload. The weapon can be fired a number of times equal to its Reload score
     before you must spend 1 attack or 1 action to reload. You must have one
     free hand to reload a firearm.
 
     Misfire. Whenever you make an attack roll with a firearm, and the dice roll
-    is equal to or lower than the weapon’s Misfire score, the weapon
+    is equal to or lower than the weapon's Misfire score, the weapon
     misfires. The attack misses, and the weapon cannot be used again until you
     spend an action to try and repair it. To repair your firearm, you must make
-    a successful Tinker’s Tools check (DC equal to 8 + misfire score). If your
+    a successful Tinker's Tools check (DC equal to 8 + misfire score). If your
     check fails, the weapon is broken and must be mended out of combat at a
     quarter of the cost of the firearm. Creatures who use a firearm without
-    being proficient increase the weapon’s misfire score by 1.
+    being proficient increase the weapon's misfire score by 1.
 
     Explosive. Upon a hit, everything within 5 ft of the target must make a
     Dexterity saving throw (DC equal to 8 + your proficiency bonus + your
@@ -1052,7 +1052,7 @@ class AdeptMarksman(Feature):
     Ammunition All firearms require ammunition to make an attack, and due to
     their rare nature, ammunition may be near impossible to find or
     purchase. However, if materials are gathered, you can craft ammunition
-    yourself using your Tinker’s Tools at half the cost. Each firearm uses its
+    yourself using your Tinker's Tools at half the cost. Each firearm uses its
     own unique ammunition and is generally sold or crafted in batches listed
     below next to the price.
 
@@ -1164,7 +1164,7 @@ class ForcefulShot(Feature):
 class PiercingShot(Feature):
     """When you make a firearm attack against a creature, you can expend one grit
     point to attempt to fire through multiple opponents. The initial attack
-    gains a +1 to the firearm’s misfire score. On a hit, the creature suffers
+    gains a +1 to the firearm's misfire score. On a hit, the creature suffers
     normal damage and you make an attack roll with disadvantage against every
     creature in a line directly behind the target within your first range
     increment. Only the initial attack can misfire.
@@ -1183,11 +1183,11 @@ class WingingShot(Feature):
     name = "Winging Shot"
     source = "Gunslinger (Trick Shot)"
 
-    
+
 class ViolentShot(Feature):
     """When you make a firearm attack against a creature, you can expend one or
     more grit points to enhance the volatility of the attack. For each grit
-    point expended, the attack gains a +2 to the firearm’s misfire score. If
+    point expended, the attack gains a +2 to the firearm's misfire score. If
     the attack hits, you can roll one additional weapon damage die per grit
     point spent when determining the damage.
 
