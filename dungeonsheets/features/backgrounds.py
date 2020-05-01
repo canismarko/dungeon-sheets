@@ -14,7 +14,7 @@ class ShelterOfTheFaithful(Feature):
     where you used to serve, if you remain on good terms with it, or a temple
     where you have found a new home. While near your temple, you can call upon
     the priests for assistance, provided the assistance you ask for is not
-    hazardous and you remain in good standing with your temple.  
+    hazardous and you remain in good standing with your temple.
 
     """
     name = "Shelter of the Faithful"
@@ -93,7 +93,7 @@ class GuildMembership(Feature):
     name = "Guild Membership"
     source = "Background (Guild Artisan)"
 
-    
+
 class Discovery(Feature):
     """The quiet seclusion of your extended hermitage gave you access to a unique
     and powerful discovery. The exact nature of this revelation depends on the
@@ -370,10 +370,10 @@ class UthgardtHeritage(Feature):
 
 
 class KeptInStyle(Feature):
-    """While you are in Waterdeep or elsewhere in the North your house sees to your
-    everyday needs. Your name and signet are sufficient to cover most of your
-    expenses; the inns, taverns, and festhalls you frequent are glad to re-
-    cord your debt and send an accounting to your family's estate in Waterdeep
+    """While you are in Waterdeep or elsewhere in the North your house sees to
+    your everyday needs. Your name and signet are sufficient to cover most of
+    your expenses; the inns, taverns, and festhalls you frequent are glad to
+    record your debt and send an accounting to your family's estate in Waterdeep
     to settle what you owe.
 
     This advantage enables you to live a comfortable lifestyle without having

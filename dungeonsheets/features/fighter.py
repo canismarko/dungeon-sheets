@@ -26,14 +26,14 @@ class Protection(Feature):
     """
     name = "Fighting Style (Protection)"
     source = "Fighter"
-    
+
 
 class FighterFightingStyle(FeatureSelector):
     """
     Select a Fighting Style by choosing in feature_choices:
 
     archery
- 
+
     defense
 
     dueling
@@ -55,7 +55,7 @@ class FighterFightingStyle(FeatureSelector):
                'dual wield': TwoWeaponFighting}
     name = "Fighting Style (Select One)"
     source = "Fighter"
-    
+
 
 class SecondWind(Feature):
     """You have a limited well of stamina that you can draw on to protect yourself
@@ -154,7 +154,7 @@ class AdditionalFightingStyle(FeatureSelector):
     Select a Fighting Style by choosing in feature_choices:
 
     archery 2
- 
+
     defense 2
 
     dueling 2
@@ -185,7 +185,7 @@ class SuperiorCritical(Feature):
     name = "Superior Critical"
     source = "Fighter (Champion)"
 
-    
+
 class Survivor(Feature):
     """At 18th level, you attain the pinnacle of resilience in battle. At the
     start of each of your turns, you regain hit points equal to 5 + your
@@ -266,8 +266,8 @@ class KnowYourEnemy(Feature):
     """
     name = "Know Your Enemy"
     source = "Fighter (Battle Master)"
-    
-        
+
+
 class Relentless(Feature):
     """Starting at 15th level, when you roll initiative and have no superiority
     dice remaining, you regain 1 superiority die.
@@ -583,8 +583,8 @@ class RoyalEnvoy(Feature):
 class InspiringSurge(Feature):
     """Starting at 10th level, when you use your Action Surge feature , you can
     choose one creature within 60 feet of you that is allied with you. That
-    creature can make one melee or ranged weapon attack with its reaction, pro-
-    vided that it can see or hear you. Starting at 18th level, you can choose
+    creature can make one melee or ranged weapon attack with its reaction,
+    provided that it can see or hear you. Starting at 18th level, you can choose
     two allies within 60 feet of you, rather than one.
 
     """
@@ -697,10 +697,10 @@ class BeguilingArrow(Feature):
     target. The creature hit by the arrow takes an extra 2d6 psychic damage,
     and choose one ofyour allies within 30 feet of the target. The target must
     succeed on a Wisdom saving throw, or it is charmed by the chosen ally until
-    the start ofyour next turn. This effect ends early if the chosen ally at-
-    tacks the charmed target, deals damage to it, or forces it to make a saving
-    throw. The psychic damage increases to 4d6 when you reach 18th level in
-    this class.
+    the start ofyour next turn. This effect ends early if the chosen ally
+    attacks the charmed target, deals damage to it, or forces it to make
+    a saving throw. The psychic damage increases to 4d6 when you reach 18th
+    level in this class.
 
     """
     name = "Arcane Shot: Beguiling Arrow"
@@ -794,7 +794,7 @@ class ShadowArrow(Feature):
     """
     name = "Shadow Arrow"
     source = "Fighter (Arcane Archer)"
-    
+
 
 # Cavalier
 class BonusProficiencyCavalier(Feature):
@@ -869,7 +869,7 @@ class WardingManeuver(Feature):
     def name(self):
         num = max(1, self.owner.constitution.modifier)
         return self._name + ' ({:d}x/LR)'.format(num)
-        
+
 
 class HoldTheLine(Feature):
     """At 10th level, you become a master of locking down your enemies. Creatures
@@ -982,8 +982,8 @@ class StrengthBeforeDeath(Feature):
     """
     name = "Strength Before Death"
     source = "Fighter (Samurai)"
-            
-    
+
+
 # Gunslinger
 class Gunsmith(Feature):
     """Upon choosing this archetype at 3rd level, you gain proficiency with
@@ -1012,7 +1012,7 @@ class AdeptMarksman(Feature):
     You learn an additional trick shot of your choice at 7th, 10th, 15th, and
     18th level. Each time you learn a new trick shot, you can also replace one
     trick shot you know with a different one.
-    
+
     Grit. You gain a number of grit points equal to your Wisdom modifier
     (minimum of 1). You regain 1 expended grit point each time you roll a 20 on
     the d20 roll for an attack with a firearm, or deal a killing blow with a
@@ -1183,7 +1183,7 @@ class WingingShot(Feature):
     name = "Winging Shot"
     source = "Gunslinger (Trick Shot)"
 
-    
+
 class ViolentShot(Feature):
     """When you make a firearm attack against a creature, you can expend one or
     more grit points to enhance the volatility of the attack. For each grit

@@ -50,8 +50,8 @@ class WildShape(Feature):
 
     • You retain the benefit of any features from your class, race, or other
     source and can use them if the new form is physically capable of doing
-    so. However, you can't use any of your special senses, such as darkvi-
-    sion, unless your new form also has that sense.
+    so. However, you can't use any of your special senses, such as darkvision,
+    unless your new form also has that sense.
 
     • You choose whether your equipment falls to the ground in your space,
     merges into your new form, or is worn by it. Worn equipment functions as
@@ -458,7 +458,7 @@ class HearthOfMoonlightAndShadow(Feature):
     you can invoke the shadowy power of the Gleaming Court to help guard your
     respite. At the start of the rest, you touch a point in space, and an
     invisible, 30-foot-radius sphere of magic appears, centered on that
-    point. Total cover blocks the sphere. 
+    point. Total cover blocks the sphere.
 
     While within the sphere, you and your allies gain a +5 bonus to Dexterity
     (Stealth) and Wisdom (Perception) checks, and any light from open flames in
@@ -563,12 +563,12 @@ class MightySummoner(Feature):
     """Starting at 6th level, beasts and fey that you conjure are more resilient
     than normal. Any beast or fey summoned or created by a spell that you cast
     gains the. following benefits:
-    
+
     - The creature appears with more hit points than normal: 2 extra hit
-    
+
     - The creature appears with more hit points than normal: 2 extra hit
       points per Hit Die it has.
-    
+
     - The damage from its natural weapons is considered magical for the
       purpose of overcoming immunity and resistance to nonmagical attacks and
       damage.

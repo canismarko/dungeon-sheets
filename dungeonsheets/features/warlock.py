@@ -21,7 +21,7 @@ class EldritchInvocation(Feature):
     name = "Eldritch Invocations"
     source = "Warlock"
 
-    
+
 class PactOfTheChain(Feature):
     """You learn the find familiar spell and can cast it as a ritual. The spell
     doesn't count against your number of spells known.
@@ -36,7 +36,7 @@ class PactOfTheChain(Feature):
     source = "Warlock"
     spells_known = spells_prepared = (spells.FindFamiliar,)
 
-    
+
 class PactOfTheBlade(Feature):
     """You can use your action to create a pact weapon in your empty hand. You can
     choose the form that this melee weapon takes each time you create it (see
@@ -79,14 +79,14 @@ class PactOfTheTome(Feature):
     name = "Pact of the Tome"
     source = "Warlock"
 
-    
+
 class PactBoon(FeatureSelector):
     """Select a Pact Boon by choosing in feature_choices:
 
     pact of the chain
 
     pact of the blade
-    
+
     pact of the tome
 
     """
@@ -190,7 +190,7 @@ class DarkDelirium(Feature):
     name = "Dark Delirium"
     source = "Warlock (Archfey Patron)"
 
-    
+
 # The Fiend Patron
 class DarkOnesBlessing(Feature):
     """Starting at 1st level, when you reduce a hostile creature to 0 hit points,
@@ -262,7 +262,7 @@ class AwakenedMind(Feature):
     name = "Awakened Mind"
     source = "Warlock (Great Old One Patron)"
 
-    
+
 class EntropicWard(Feature):
     """At 6th level, you learn to magically ward yourself against attack and to
     turn an enemy's failed strike into good luck for yourself. When a creature
@@ -300,7 +300,7 @@ class CreateThrall(Feature):
     name = "Create Thrall"
     source = "Warlock (Great Old One Patron)"
 
-    
+
 # Undying Patron
 class AmongTheDead(Feature):
     """Starting at 1st level, you learn the spare the dying cantrip, which counts
@@ -357,7 +357,7 @@ class IndestructibleLife(Feature):
     """
     name = "Indestructible Life"
     source = "Warlock (The Undying Patron)"
-    
+
 
 # The Celestial
 class HealingLight(Feature):
@@ -384,9 +384,9 @@ class HealingLight(Feature):
 class RadiantSoul(Feature):
     """Starting at 6th level, your link to the Celestial allows you to serve as a
     conduit for radiant energy. You have resistance to radiant damage, and when
-    you cast a spell that deals radiant or fire damage, you can add your Cha-
-    risma modifier to one radiant or fire damage roll of that spell against one
-    of its targets.
+    you cast a spell that deals radiant or fire damage, you can add your
+    Charisma modifier to one radiant or fire damage roll of that spell against
+    one of its targets.
 
     """
     name = "Radiant Soul"
@@ -404,7 +404,7 @@ class CelestialResilience(Feature):
     _name = "Celestial Resilience"
     source = "Warlock (The Celestial Patron)"
 
-    
+
 class SearingVengeance(Feature):
     """Starting at 14th level, the radiant energy you channel allows you to resist
     death. When you have to make a death saving throw at the start of your
@@ -476,7 +476,7 @@ class HexWarrior(Feature):
                      'charisma': self.owner.charisma.modifier}
         weapon.ability = max(abils, key=abils.get)
 
-    
+
 class AccursedSpecter(Feature):
     """Starting at 6th level, you can curse the soul of a person you slay,
     temporarily binding it to your service. When you slay a humanoid, you can
@@ -521,7 +521,7 @@ class MasterOfHexes(Feature):
     name = "Master of Hexes"
     source = "Warlock (Hexblade)"
 
-    
+
 # All Invocations
 class Invocation(Feature):
     """
@@ -600,7 +600,7 @@ class BewitchingWhispers(Invocation):
     """
     name = "Bewitching Whispers"
 
-    
+
 class BookOfAncientSecrets(Invocation):
     """You can now inscribe magical rituals in your Book of Shadows. Choose two
     1st-level spells that have the ritual tag from any class's spell list. The
@@ -647,7 +647,7 @@ class DreadfulWord(Invocation):
     """
     name = "Dreadful Word"
 
-    
+
 class EldritchSight(Invocation):
     """You can cast detect magic at will, without expending a spell slot.
 
@@ -696,7 +696,7 @@ class GazeOfTwoMinds(Invocation):
 class LifeDrinker(Invocation):
     """When you hit a creature with your pact weapon, the creature takes extra
     necrotic damage equal to your Charisma modifier (minimum 1).
-    
+
     **Prerequisite**: 12th Level, Pact of the Blade
     """
     name = "Life Drinker"
@@ -720,7 +720,7 @@ class MasterOfMyriadForms(Invocation):
     name = "Master of Myriad Forms"
     at_will_spells = (spells.AlterSelf,)
 
-    
+
 class MinionsOfChaos(Invocation):
     """You can cast conjure elemental once using a warlock spell slot. You can't
     do so again until you finish a long rest.
@@ -729,7 +729,7 @@ class MinionsOfChaos(Invocation):
     """
     name = "Minions of Chaos"
 
-    
+
 class MireTheMind(Invocation):
     """You can cast slow once using a warlock spell slot. You can't do so again
     until you finish a long rest.
@@ -793,7 +793,7 @@ class SignOfIllOmen(Invocation):
     """
     name = "Sign of Ill Omen"
 
-    
+
 class ThiefOfFiveFates(Invocation):
     """You can cast bane once using a warlock spell slot. You can't do so again
     until you finish a long rest.
@@ -805,7 +805,7 @@ class ThiefOfFiveFates(Invocation):
 class ThirstingBlade(Invocation):
     """You can attack with your pact weapon twice, instead of once, whenever you
     take the Attack action on your turn.
-    
+
     **Prerequisite**: 5th Level, Pact of the Blade
     """
     name = "Thirsting Blade"
@@ -814,13 +814,13 @@ class ThirstingBlade(Invocation):
 class VisionsOfDistantRealms(Invocation):
     """
     You can cast arcane eye at will, without expending a spell slot
-    
+
     **Prerequisite**: 15th level
     """
     name = "Visions of Distant Realms"
     at_will_spells = (spells.ArcaneEye,)
 
-    
+
 class VoiceOfTheChainMaster(Invocation):
     """You can communicate telepathically with your familiar and perceive through
     your familiar's senses as long as you are on the same plane of
@@ -863,7 +863,7 @@ class AspectOfTheMoon(Invocation):
     """
     name = "Aspect of the Moon"
 
-    
+
 class CloakOfFlies(Invocation):
     """As a bonus action, you can surround yourselfwith a magical aura that looks
     like buzzing flies. The aura extends 5 feet from you in every direction,
@@ -918,8 +918,8 @@ class GiftOfTheDepths(Invocation):
     **Prerequisite**: 5th level
     """
     name = "Gift of the Depths"
-    
-    
+
+
 class GiftOfTheEverLivingOnes(Invocation):
     """Whenever you regain hit points while your familiar is within 100 feet
     ofyou, treat any dice rolled to determine the hit points you regain as
@@ -1029,4 +1029,4 @@ class TrickstersEscape(Invocation):
 
     """
     name = "Tricksters Escape"
-    
+

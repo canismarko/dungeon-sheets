@@ -58,7 +58,7 @@ class LayOnHands(Feature):
 class PaladinFightingStyle(FeatureSelector):
     """
     Select a Fighting Style by choosing in feature_choices:
- 
+
     defense
 
     dueling
@@ -149,7 +149,7 @@ class CleansingTouch(Feature):
     """
     _name = "Cleansing Touch"
     source = "Paladin"
-    
+
     @property
     def name(self):
         num_uses = max(1, 1+self.owner.charisma.modifier)
@@ -272,10 +272,10 @@ class RebukeTheViolent(Feature):
 class AuraOfTheGuardian(Feature):
     """Starting at 7th level, you can shield others from harm at the cost of your
     own health. When a creature within 10 feet of you takes damage, you can use
-    your reaction to magically take that damage, instead of that creature tak-
-    ing it. This feature doesn't transfer any other effects that might
-    accompany the damage, and this damage can't be reduced in any way. At 18th
-    level, the range of this aura increases to 30 feet.
+    your reaction to magically take that damage, instead of that creature taking
+    it. This feature doesn't transfer any other effects that might accompany
+    the damage, and this damage can't be reduced in any way. At 18th level,
+    the range of this aura increases to 30 feet.
 
     """
     name = "Aura of the Guardian"
@@ -295,12 +295,12 @@ class ProtectiveSpirit(Feature):
 
 class EmissaryOfRedemption(Feature):
     """At 20th level, you become an avatar of peace, which gives you two benefits:
-    
+
     --You have resistance to all damage dealt by other crea- tures (their
     attacks, spells, and other effects).
 
     --Whenever a creature hits you with an attack, it takes radiant damage
-    equal to half the damage you take from the attack. 
+    equal to half the damage you take from the attack.
 
     If you attack a creature, cast a spell on it, or deal damage to it by any
     means but this feature, neither benefit works against that creature until
