@@ -138,7 +138,7 @@ class StoutHalfling(_Halfling):
 
 
 # Humans
-class _Human(Race):
+class Human(Race):
     name = "Human"
     size = "medium"
     speed = 30
@@ -151,7 +151,7 @@ class _Human(Race):
     languages = ("Common", '[choose one]')
 
 
-class Rashemi(_Human):
+class Rashemi(Human):
     name = 'Rashemi'
 
 
@@ -505,7 +505,7 @@ class Goblin(Race):
 
 PHB_races = [HillDwarf, MountainDwarf, HighElf, WoodElf, DarkElf,
              LightfootHalfling, StoutHalfling, Rashemi, Dragonborn,
-             ForestGnome, RockGnome, HalfElf, HalfOrc, Tiefling]
+             ForestGnome, RockGnome, HalfElf, HalfOrc, Tiefling, Human]
 
 VOLO_races = [ProtectorAasimar, ScourgeAasimar, FallenAasimar,
               Firbolg, Goliath, Lizardfolk, Kenku, Tabaxi, Triton]
