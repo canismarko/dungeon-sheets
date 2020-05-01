@@ -306,6 +306,8 @@ class Tinker(Feature):
     volume. The box stops playing when it reaches the song’s end or when
 
     """
+    name = "Tinker"
+    source = "Race (Rock Gnome)"
 
 
 class StoneCamouflage(Feature):
