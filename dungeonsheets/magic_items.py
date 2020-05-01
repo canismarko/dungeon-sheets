@@ -87,6 +87,18 @@ class CloakOfBillowing(MagicItem):
     rarity = "Common"
 
 
+class CloakOfDisplacement(MagicItem):
+    """While you wear this cloak, it projects an illusion that makes you appear
+    to be standing in a place near your actual location, causing any creature
+    to have disadvantage on attack rolls against you. If you take damage, the
+    property ceases to function until the start of your next turn. This
+    property is suppressed while you are incapacitated, restrained, or
+    otherwise unable to move.
+    """
+    name = "Cloak of Displacement"
+    rarity = "Rare"
+
+
 class CapeOfTheMountebank(MagicItem):
     """This cape smells faintly of brimstone. While wearing it, you can use it to
     cast the Dimension Door spell as an action. This property of the cape can't
