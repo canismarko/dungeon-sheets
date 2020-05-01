@@ -12,28 +12,107 @@ class GreatWeaponFighting(Feature):
     weapon that you are wielding with two hands, you can reroll the die and
     must use the new roll, even if the new roll is a 1 or a 2. The weapon must
     have the two-handed or versatile property for you to gain this benefit.
-
     """
-    name = "Fighting Style (Great Weapon Fighting)"
-    source = "Fighter"
+
+    name = 'Fighting Style (Great Weapon Fighting)'
+    source = 'Fighter'
 
 
 class Protection(Feature):
     """When a creature you can see attacks a target other than you that is within
     5 feet of you, you can use your reaction to impose disadvantage on the
     attack roll. You must be wielding a shield.
-
     """
-    name = "Fighting Style (Protection)"
-    source = "Fighter"
-    
+
+    name = 'Fighting Style (Protection)'
+    source = 'Fighter'
+
+
+# UA
+class BlindingFighting(Feature):
+    """Being unable to see a creature doesn’t impose disadvantage on your attack
+    rolls against it, provided the creature isn’t hidden from you.
+    """
+
+    name = 'Fighting Style (Blinding Fighting)'
+    source = 'Fighter'
+
+
+class CloseQuartersShooter(Feature):
+    """When making a ranged attack while you are within 5 feet of a hostile
+    creature, you do not have disadvantage on the attack roll. Your ranged
+    attacks ignore half cover and three-quarters cover against targets within
+    30 feet of you. You have a +1 bonus to attack rolls on ranged attacks.
+    """
+
+    name = 'Fighting Style (Close Quarters Shooter)'
+    source = 'Fighter'
+
+
+class Interception(Feature):
+    """When a creature you can see hits a target that is within 5 feet of you
+    with an attack, you can use your reaction to reduce the damage the target
+    takes by 1d10 + your proficiency bonus (to a minimum of 0 damage). You must
+    be wielding a shield or a simple or martial weapon to use this reaction.
+    """
+
+    name = 'Fighting Style (Interception)'
+    source = 'Fighter'
+
+
+class Mariner(Feature):
+    """As long as you not wearing heavy armor or using a shield, you have
+    a swimming speed and a climbing speed equal to your normal speed, and you
+    gain a +1 bonus to armor class.
+    """
+
+    name = 'Fighting Style (Mariner)'
+    source = 'Fighter'
+
+
+class ThrownWeaponFighting(Feature):
+    """You can draw a weapon that has the thrown property as part of the attack
+    you make with the weapon.
+
+    In addition, when you hit with a ranged attack using a thrown weapon, you
+    gain a +1 bonus to the damage roll.
+    """
+
+    name = 'Fighting Style (Thrown Weapon Fighting)'
+    source = 'Fighter'
+
+
+class TunnelFighter(Feature):
+    """As a bonus action, you can enter a defensive stance that lasts until
+    the start of your next turn. While in your defensive stance, you can make
+    opportunity attacks without using your reaction, and you can use your
+    reaction to make a melee attack against a creature that moves more than
+    5 feet while within your reach.
+    """
+
+    name = 'Fighting Style (Tunnel Fighter)'
+    source = 'Fighter'
+
+
+class UnarmedFighting(Feature):
+    """Your unarmed strikes can deal bludgeoning damage equal to 1d6 + your
+    Strength modifier. If you strike with two free hands, the d6 becomes a d8.
+
+    When you successfully start a grapple, you can deal 1d4 bludgeoning damage
+    to the grappled creature. Until the grapple ends, you can also deal this
+    damage to the creature whenever you hit it with a melee attack.
+    """
+
+    name = 'Fighting Style (Unarmed Fighting)'
+    source = 'Fighter'
+
 
 class FighterFightingStyle(FeatureSelector):
     """
     Select a Fighting Style by choosing in feature_choices:
 
     archery
- 
+
     defense
 
     dueling
@@ -43,7 +122,22 @@ class FighterFightingStyle(FeatureSelector):
     protection
 
     two-weapon fighting
+
+    blinding fighting
+
+    close quarters shooter
+
+    interception
+
+    mariner
+
+    thrown weapon fighting
+
+    tunnel fighter
+
+    unarmed fighting
     """
+
     options = {'archery': Archery,
                'defense': Defense,
                'dueling': Dueling,
@@ -52,10 +146,17 @@ class FighterFightingStyle(FeatureSelector):
                'projection': Protection,
                'two-weapon fighting': TwoWeaponFighting,
                'two-weapon': TwoWeaponFighting,
-               'dual wield': TwoWeaponFighting}
+               'dual wield': TwoWeaponFighting,
+               'blinding fighting': BlindingFighting,
+               'close quarters shooter': CloseQuartersShooter,
+               'interception': Interception,
+               'mariner': Mariner,
+               'thrown weapon fighting': ThrownWeaponFighting,
+               'tunnel fighter': TunnelFighter,
+               'unarmed fighting': UnarmedFighting}
     name = "Fighting Style (Select One)"
     source = "Fighter"
-    
+
 
 class SecondWind(Feature):
     """You have a limited well of stamina that you can draw on to protect yourself
@@ -154,7 +255,7 @@ class AdditionalFightingStyle(FeatureSelector):
     Select a Fighting Style by choosing in feature_choices:
 
     archery 2
- 
+
     defense 2
 
     dueling 2
@@ -185,7 +286,7 @@ class SuperiorCritical(Feature):
     name = "Superior Critical"
     source = "Fighter (Champion)"
 
-    
+
 class Survivor(Feature):
     """At 18th level, you attain the pinnacle of resilience in battle. At the
     start of each of your turns, you regain hit points equal to 5 + your
@@ -266,8 +367,8 @@ class KnowYourEnemy(Feature):
     """
     name = "Know Your Enemy"
     source = "Fighter (Battle Master)"
-    
-        
+
+
 class Relentless(Feature):
     """Starting at 15th level, when you roll initiative and have no superiority
     dice remaining, you regain 1 superiority die.
@@ -794,7 +895,7 @@ class ShadowArrow(Feature):
     """
     name = "Shadow Arrow"
     source = "Fighter (Arcane Archer)"
-    
+
 
 # Cavalier
 class BonusProficiencyCavalier(Feature):
@@ -869,7 +970,7 @@ class WardingManeuver(Feature):
     def name(self):
         num = max(1, self.owner.constitution.modifier)
         return self._name + ' ({:d}x/LR)'.format(num)
-        
+
 
 class HoldTheLine(Feature):
     """At 10th level, you become a master of locking down your enemies. Creatures
@@ -982,8 +1083,8 @@ class StrengthBeforeDeath(Feature):
     """
     name = "Strength Before Death"
     source = "Fighter (Samurai)"
-            
-    
+
+
 # Gunslinger
 class Gunsmith(Feature):
     """Upon choosing this archetype at 3rd level, you gain proficiency with
@@ -1012,7 +1113,7 @@ class AdeptMarksman(Feature):
     You learn an additional trick shot of your choice at 7th, 10th, 15th, and
     18th level. Each time you learn a new trick shot, you can also replace one
     trick shot you know with a different one.
-    
+
     Grit. You gain a number of grit points equal to your Wisdom modifier
     (minimum of 1). You regain 1 expended grit point each time you roll a 20 on
     the d20 roll for an attack with a firearm, or deal a killing blow with a
@@ -1183,7 +1284,7 @@ class WingingShot(Feature):
     name = "Winging Shot"
     source = "Gunslinger (Trick Shot)"
 
-    
+
 class ViolentShot(Feature):
     """When you make a firearm attack against a creature, you can expend one or
     more grit points to enhance the volatility of the attack. For each grit
