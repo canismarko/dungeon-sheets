@@ -6,7 +6,7 @@ from collections import defaultdict
 # PHB
 class Archfey(SubClass):
     """Your patron is a lord or lady of the fey, a creature of legend who holds
-    secrets that were forgotten before the mortal races were born. This being’s
+    secrets that were forgotten before the mortal races were born. This being's
     motivations are often inscrutable, and sometimes whimsical, and might
     involve a striving for greater magical power or the settling of age-old
     grudges. Beings of this sort include the Prince of Frost; the Queen of Air
@@ -28,7 +28,7 @@ class Fiend(SubClass):
     being whose aims are evil, even if you strive against those aims. Such
     beings desire the corruption or destruction of all things, ultimately
     including you. Fiends powerful enough to forge a pact include demon lords
-    such as Demogorgon, Orcus, Fraz’Urb-luu, and Baphomet; archdevils such as
+    such as Demogorgon, Orcus, Fraz'Urb-luu, and Baphomet; archdevils such as
     Asmodeus, Dispater, Mephistopheles, and Belial; pit fiends and balors that
     are especially mighty; and ultroloths and other lords of the yugoloths
 
@@ -92,7 +92,7 @@ class Celestial(SubClass):
     """Your patron is a powerful being of the Upper Planes. You have bound yourself
     to an ancient empyrean, solar, ki-rin, unicorn, or other entity that
     resides in the planes of everlasting bliss. Your pact with that being
-    allows you to experience the barest touch of the holy light that illu—
+    allows you to experience the barest touch of the holy light that illu-
     minates the multiverse.
 
     Being connected to such power can cause changes in your behavior and
@@ -114,7 +114,7 @@ class Celestial(SubClass):
 
 
 class Hexblade(SubClass):
-    """You have made your pact with a mysterious entity from the Shadowfell—a force
+    """You have made your pact with a mysterious entity from the Shadowfell-a force
     that manifests in sentient magic weapons carved from the stuff of
     shadow. The mighty sword Blackrazor is the most notable of these weapons,
     which have been spread across the multiverse over the ages. The shadowy

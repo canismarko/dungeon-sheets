@@ -9,7 +9,7 @@ class WildShape(Feature):
     twice. You regain expended uses when you finish a short or long rest. Your
     druid level determines the beasts you can transform into, as shown in the
     Beast Shapes table. At 2nd level, for example, you can transform into any
-    beast that has a challenge rating of 1/4 or lower that doesn’t have a
+    beast that has a challenge rating of 1/4 or lower that doesn't have a
     flying or swimming speed.
 
     2nd Level: Max CR 1/4, No Flying/Swimming (ex: Wolf)
@@ -26,39 +26,39 @@ class WildShape(Feature):
 
     While you are transformed, the following rules apply:
 
-    -- Your game statistics are replaced by the statistics of the beast, but
+    • Your game statistics are replaced by the statistics of the beast, but
     you retain your alignment, personality, and Intelligence, Wisdom, and
     Charisma scores. You also retain all of your skill and saving throw
     proficiencies, in addition to gaining those of the creature. If the
     creature has the same proficiency as you and the bonus in its stat block is
-    higher than yours, use the creature’s bonus instead of yours. If the
+    higher than yours, use the creature's bonus instead of yours. If the
     creature has any legendary or lair actions, you can't use them.
 
-    -- When you transform, you assume the beast’s hit points and Hit Dice. When
+    • When you transform, you assume the beast's hit points and Hit Dice. When
     you revert to your normal form, you return to the number of hit points you
     had before you transformed. However, if you revert as a result of dropping
     to 0 hit points, any excess damage carries over to your normal form. For
     example, if you take 10 damage in animal form and have only 1 hit point
-    left, you revert and take 9 damage. As long as the excess damage doesn’t
-    reduce your normal form to 0 hit points, you aren’t knocked unconscious.
+    left, you revert and take 9 damage. As long as the excess damage doesn't
+    reduce your normal form to 0 hit points, you aren't knocked unconscious.
 
-    -- You can’t cast spells, and your ability to speak or take any action that
+    • You can't cast spells, and your ability to speak or take any action that
     requires hands is limited to the capabilities of your beast
-    form. Transforming doesn’t break your concentration on a spell you’ve
+    form. Transforming doesn't break your concentration on a spell you've
     already cast, however, or prevent you from taking actions that are part of
-    a spell, such as call lightning, that you’ve already cast.
+    a spell, such as call lightning, that you've already cast.
 
-    -- You retain the benefit of any features from your class, race, or other
+    • You retain the benefit of any features from your class, race, or other
     source and can use them if the new form is physically capable of doing
-    so. However, you can’t use any of your special senses, such as darkvi-
+    so. However, you can't use any of your special senses, such as darkvi-
     sion, unless your new form also has that sense.
 
-    -- You choose whether your equipment falls to the ground in your space,
+    • You choose whether your equipment falls to the ground in your space,
     merges into your new form, or is worn by it. Worn equipment functions as
     normal, but the DM decides whether it is practical for the new form to wear
-    a piece of equipment, based on the creature’s shape and size. Your
-    equipment doesn’t change size or shape to match the new form, and any
-    equipment that the new form can’t wear must either fall to the ground or
+    a piece of equipment, based on the creature's shape and size. Your
+    equipment doesn't change size or shape to match the new form, and any
+    equipment that the new form can't wear must either fall to the ground or
     merge with it. Equipment that merges with the form has no effect until you
     leave the form.
 
@@ -85,7 +85,7 @@ class TimelessBody(Feature):
 class BeastSpells(Feature):
     """Beginning at 18th level, you can cast many of your druid spells in any
     shape you assume using Wild Shape. You can perform the somatic and verbal
-    components of a druid spell while in a beast shape, but you aren’t able to
+    components of a druid spell while in a beast shape, but you aren't able to
     provide material components.
 
     """
@@ -98,7 +98,7 @@ class Archdruid(Feature):
 
     Additionally, you can ignore the verbal and somatic components of your
     druid spells, as well as any material components that lack a cost and
-    aren’t consumed by a spell. You gain this benefit in both your normal shape
+    aren't consumed by a spell. You gain this benefit in both your normal shape
     and your beast shape from Wild Shape
 
     """
@@ -121,7 +121,7 @@ class NaturalRecovery(Feature):
     sitting in meditation and communing with nature. During a short rest, you
     choose expended spell slots to recover. The spell slots can have a combined
     level that is equal to or less than half your druid level (rounded up), and
-    none of the slots can be 6th level or higher. You can’t use this feature
+    none of the slots can be 6th level or higher. You can't use this feature
     again until you finish a long rest.
 
     For example, when you are a 4th-level druid, you can recover up to two
@@ -137,12 +137,12 @@ class _CircleSpells(Feature):
     """Your mystical connection to the land infuses you with the ability to cast
     certain spells. At 3rd, 5th, 7th, and 9th level you gain access to circle
     spells connected to the land where you became a druid. Choose that
-    land—arctic, coast, desert, forest, grassland, mountain, swamp, or
-    Underdark—and consult the associated list of spells.
+    land-arctic, coast, desert, forest, grassland, mountain, swamp, or
+    Underdark-and consult the associated list of spells.
 
     Once you gain access to a circle spell, you always have it prepared, and it
-    doesn’t count against the number of spells you can prepare each day. If you
-    gain access to a spell that doesn’t appear on the druid spell list, the
+    doesn't count against the number of spells you can prepare each day. If you
+    gain access to a spell that doesn't appear on the druid spell list, the
     spell is nonetheless a druid spell for you.
 
     """
@@ -291,7 +291,7 @@ class SporesSpells(_CircleSpells):
 
     _name = 'Spores'
     _spells = {2: [spells.ChillTouch],
-               3: [spells.Blindnessdeafness, spells.GentleRepose],
+               3: [spells.BlindnessDeafness, spells.GentleRepose],
                5: [spells.AnimateDead, spells.GaseousForm],
                7: [spells.Blight, spells.Confusion],
                9: [spells.Cloudkill, spells.Contagion]}
@@ -347,7 +347,7 @@ class LandsStride(Feature):
 
 
 class NaturesWard(Feature):
-    """When you reach 10th level, you can’t be charmed or frightened by elementals
+    """When you reach 10th level, you can't be charmed or frightened by elementals
     or fey, and you are immune to poison and disease
 
     """
@@ -457,12 +457,12 @@ class HearthOfMoonlightAndShadow(Feature):
     """At 6th level, home can be wherever you are. During a short or long rest,
     you can invoke the shadowy power of the Gleaming Court to help guard your
     respite. At the start of the rest, you touch a point in space, and an
-    invisible, 30-foot—radius sphere of magic appears, centered on that
-    point. Total cover blocks the sphere.
+    invisible, 30-foot-radius sphere of magic appears, centered on that
+    point. Total cover blocks the sphere. 
 
     While within the sphere, you and your allies gain a +5 bonus to Dexterity
     (Stealth) and Wisdom (Perception) checks, and any light from open flames in
-    the sphere (a campfire, torches, or the like) isn’t visible outside it. The
+    the sphere (a campfire, torches, or the like) isn't visible outside it. The
     sphere vanishes at the end of the rest or when you leave the sphere
 
     """
@@ -496,8 +496,8 @@ class WalkerInDreams(Feature):
     This use of teleportation circle is special. Rather than opening a portal
     to a permanent teleportation circle, it opens a portal to the last location
     where you finished a long rest on your current plane of existence. If you
-    haven*t taken a long rest on your current plane, the spell fails but isn’t
-    wasted. Once you use this feature, you can’t use it again until you finish
+    haven*t taken a long rest on your current plane, the spell fails but isn't
+    wasted. Once you use this feature, you can't use it again until you finish
     a long rest.
 
     """
@@ -512,7 +512,7 @@ class SpeechOfTheWoods(Feature):
     understand your speech, and you gain the ability to decipher their noises
     and motions. Most beasts lack the intelligence to convey or understand
     sophisticated concepts, but a friendly beast could relay what it has seen
-    or heard in the recent past. This ability doesn’t grant you friendship with
+    or heard in the recent past. This ability doesn't grant you friendship with
     beasts, though you can combine this ability with gifts to curry favor with
     them as you would with any nonplayer character.
 
@@ -530,9 +530,9 @@ class SpiritTotem(Feature):
     creature it. represents.
 
     As a bonus action, you can move the spirit up to 60 feet to a point you can
-    see. The spirit persists for 1 minute or until you’re incapacitated. Once
-    you use this feature, you can’t use it again until you finish a short or
-    long rest. The effect of the spirit’s aura depends on the type of spirit
+    see. The spirit persists for 1 minute or until you're incapacitated. Once
+    you use this feature, you can't use it again until you finish a short or
+    long rest. The effect of the spirit's aura depends on the type of spirit
     you summon from the options below.
 
     **Bear Spirit**: The bear spirit grants you and your allies its might and
@@ -543,13 +543,13 @@ class SpiritTotem(Feature):
 
     **Hawk Spirit**: The hawk spirit is a consummate hunter, aiding you and
     your allies with its keen sight. When a creature makes an attack roll
-    against a target in the spirit’s aura, you can use your reaction to grant
+    against a target in the spirit's aura, you can use your reaction to grant
     advantage to that attack roll. In addition, you and your allies have
     advantage on Wisdom (Perception) checks while in the aura
 
     **Unicorn Spirit**: The unicorn spirit lends its protection to those
     nearby. You and your allies gain advantage on all ability checks made to
-    detect creatures in the spirit’s aura. In addition. if you cast a spell
+    detect creatures in the spirit's aura. In addition. if you cast a spell
     using a spell slot that restores hit points to any creature inside or
     outside the aura, each creature of your choice in the aura also regains hit
     points equal to your druid level.
@@ -563,13 +563,15 @@ class MightySummoner(Feature):
     """Starting at 6th level, beasts and fey that you conjure are more resilient
     than normal. Any beast or fey summoned or created by a spell that you cast
     gains the. following benefits:
-
-    -- The creature appears with more hit points than normal: 2 extra hit
-    points per Hit Die it has.
-
-    -- The damage from its natural weapons is considered magical for the
-    purpose of overcoming immunity and resistance to nonmagical attacks and
-    damage.
+    
+    - The creature appears with more hit points than normal: 2 extra hit
+    
+    - The creature appears with more hit points than normal: 2 extra hit
+      points per Hit Die it has.
+    
+    - The damage from its natural weapons is considered magical for the
+      purpose of overcoming immunity and resistance to nonmagical attacks and
+      damage.
 
     """
     name = "Mighty Summoner"
@@ -577,10 +579,11 @@ class MightySummoner(Feature):
 
 
 class GuardianSpirit(Feature):
-    """Beginning at 10th level, your Spirit Totem safeguards the beasts and fey
-    that you call forth with your magic. When a beast or fey that you summoned
-    or created with a spell ends its turn in your Spirit Totem aura, that crea—
-    ture regains a number of hit points equal to halfyour druid level.
+    """Beginning at 10th level, your Spirit Totem safeguards the beasts
+    and fey that you call forth with your magic. When a beast or fey
+    that you summoned or created with a spell ends its turn in your
+    Spirit Totem aura, that creature regains a number of hit points
+    equal to half your druid level.
 
     """
     name = "Guardian Spirit"
@@ -588,16 +591,17 @@ class GuardianSpirit(Feature):
 
 
 class FaithfulSummons(Feature):
-    """Starting at 14th level, the nature spirits you commune with protect you
-    when you are the most defenseless. Ifyou are reduced to 0 hit points or are
-    incapacitated against your will, you can immediately gain the benefits of
-    conjure animals as if it were cast using a 9th-level spell slot. It summons
-    four beasts of your choice that are challenge rating 2 or lower. The
-    conjured beasts appear within 20 feet of you. If they receive no commands
-    from you, they protect you from harm and attack your foes. The spell lasts
-    for 1 hour, requiring no concentration, or until you dismiss it (no action
-    required). Once you use this feature, you can’t use it again until you
-    finish a long rest
+    """Starting at 14th level, the nature spirits you commune with protect
+    you when you are the most defenseless. Ifyou are reduced to 0 hit
+    points or are incapacitated against your will, you can immediately
+    gain the benefits of conjure animals as if it were cast using a
+    9th-level spell slot. It summons four beasts of your choice that
+    are challenge rating 2 or lower. The conjured beasts appear within
+    20 feet of you. If they receive no commands from you, they protect
+    you from harm and attack your foes. The spell lasts for 1 hour,
+    requiring no concentration, or until you dismiss it (no action
+    required). Once you use this feature, you can't use it again until
+    you finish a long rest
 
     """
     name = "Faithful Summons"

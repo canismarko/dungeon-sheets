@@ -5,12 +5,12 @@ from math import ceil
 # PHB
 class RogueExpertise(Feature):
     """At 1st level, choose two of your skill proficiencies, or one of your skill
-    proficiencies and your proficiency with thieves’ tools. Your proficiency
+    proficiencies and your proficiency with thieves' tools. Your proficiency
     bonus is doubled for any ability check you make that uses either of the
     chosen proficiencies. 
 
     At 6th level, you can choose two more of your
-    proficiencies (in skills or with thieves’ tools) to gain this benefit.
+    proficiencies (in skills or with thieves' tools) to gain this benefit.
 
     Add these skills to "skill_expertise" in your character.py file
 
@@ -20,13 +20,13 @@ class RogueExpertise(Feature):
 
 
 class SneakAttack(Feature):
-    """Beginning at 1st level, you know how to strike subtly and exploit a foe’s
+    """Beginning at 1st level, you know how to strike subtly and exploit a foe's
     distraction. Once per turn, you can deal an extra 1d6 damage to one
     creature you hit with an attack if you have advantage on the attack
     roll. The attack must use a finesse or a ranged weapon.
 
-    You don’t need advantage on the attack roll if another enemy of the target
-    is within 5 feet of it, that enemy isn’t incapacitated, and you don’t have
+    You don't need advantage on the attack roll if another enemy of the target
+    is within 5 feet of it, that enemy isn't incapacitated, and you don't have
     disadvantage on the attack roll.
 
     The amount of the extra damage increases as you gain levels in this class,
@@ -56,7 +56,7 @@ class CunningAction(Feature):
 
 class UncannyDodge(Feature):
     """Starting at 5th level, when an attacker that you can see hits you with an
-    attack, you can use your reaction to halve the attack’s damage against you.
+    attack, you can use your reaction to halve the attack's damage against you.
 
     """
     name = "Uncanny Dodge"
@@ -65,7 +65,7 @@ class UncannyDodge(Feature):
 
 class Evasion(Feature):
     """Beginning at 7th level, you can nimbly dodge out o f the way of certain
-    area effects, such as a red dragon’s fiery breath or an ice storm
+    area effects, such as a red dragon's fiery breath or an ice storm
     spell. When you are subjected to an effect that allows you to make a
     Dexterity saving throw to take only half damage, you instead take no damage
     if you succeed on the saving throw, and only half damage if you fail.
@@ -105,7 +105,7 @@ class SlipperyMind(Feature):
 class Elusive(Feature):
     """Beginning at 18th level, you are so evasive that attackers rarely gain the
     upper hand against you. No attack roll has advantage against you while you
-    aren’t incapacitated.
+    aren't incapacitated.
 
     """
     name = "Elusive"
@@ -118,7 +118,7 @@ class StrokeOfLuck(Feature):
     into a hit. Alternatively, if you fail an ability check, you can treat the
     d20 roll as a 20.
 
-    Once you use this feature, you can’t use it again until you finish a short
+    Once you use this feature, you can't use it again until you finish a short
     or long rest.
 
     """
@@ -129,7 +129,7 @@ class StrokeOfLuck(Feature):
 # Thief
 class FastHands(Feature):
     """Starting at 3rd level, you can use the bonus action granted by your Cunning
-    Action to make a Dexterity (Sleight of Hand) check, use your thieves’ tools
+    Action to make a Dexterity (Sleight of Hand) check, use your thieves' tools
     to disarm a trap or open a lock, or take the Use an Object action.
 
     """
@@ -171,7 +171,7 @@ class ThiefsReflexes(Feature):
     """When you reach 17th level, you have become adept at laying ambushes and
     quickly escaping danger. You can take two turns during the first round of
     any combat. You take your first turn at your normal initiative and your
-    second turn at your initiative minus 10. You can’t use this feature when
+    second turn at your initiative minus 10. You can't use this feature when
     you are surprised.
 
     """
@@ -183,7 +183,7 @@ class ThiefsReflexes(Feature):
 class Assassinate(Feature):
     """Starting at 3rd level, you are at your deadliest when you get the drop on
     your enemies. You have advantage on attack rolls against any creature that
-    hasn’t taken a turn in the combat yet. In addition, any hit you score
+    hasn't taken a turn in the combat yet. In addition, any hit you score
     against a creature that is surprised is a critical hit.
 
     """
@@ -194,7 +194,7 @@ class Assassinate(Feature):
 class InfiltrationExpertise(Feature):
     """Starting at 9th level, you can unfailingly create false identities for
     yourself. You must spend seven days and 25 gp to establish the history,
-    profession, and affiliations for an identity. You can’t establish an
+    profession, and affiliations for an identity. You can't establish an
     identity that belongs to someone else. For example, you might acquire
     appropriate clothing, letters of introduction, and official- looking
     certification to establish yourself as a member of a trading house from a
@@ -209,9 +209,9 @@ class InfiltrationExpertise(Feature):
 
 
 class Imposter(Feature):
-    """At 13th level, you gain the ability to unerringly mimic another person’s
+    """At 13th level, you gain the ability to unerringly mimic another person's
     speech, writing, and behavior. You must spend at least three hours studying
-    these three components of the person’s behavior, listening to speech,
+    these three components of the person's behavior, listening to speech,
     examining handwriting, and observing mannerisms. Your ruse is indiscernible
     to the casual observer. If a wary creature suspects something is amiss, you
     have advantage on any Charisma (Deception) check you make to avoid
@@ -238,17 +238,17 @@ class MageHandLegerdemain(Feature):
     """Starting at 3rd level, when you cast mage hand, you can make the spectral
     hand invisible, and you can perform the following additional tasks with it:
     
-    -- You can stow one object the hand is holding in a container worn or
+    • You can stow one object the hand is holding in a container worn or
     carried by another creature.
     
-    -- You can retrieve an object in a container worn or carried by another
+    • You can retrieve an object in a container worn or carried by another
     creature.
 
-    --You can use thieves’ tools to pick locks and disarm traps at range
+    --You can use thieves' tools to pick locks and disarm traps at range
 
     You can perform one of these tasks without being noticed by a creature if
     you succeed on a Dexterity (Sleight of Hand) check contested by the
-    creature’s Wisdom (Perception) check. In addition, you can use the bonus
+    creature's Wisdom (Perception) check. In addition, you can use the bonus
     action granted by your Cunning Action to control the hand.
 
     """
@@ -284,12 +284,12 @@ class SpellThief(Feature):
     can use your reaction to force the creature to make a saving throw with its
     spellcasting ability modifier. The DC equals your spell save DC.
 
-    On a failed save, you negate the spell’s effect against you, and you steal
+    On a failed save, you negate the spell's effect against you, and you steal
     the knowledge of the spell if it is at least 1st level and of a level you
-    can cast (it doesn’t need to be a wizard spell). For the next 8 hours, you
-    know the spell and can cast it using your spell slots. The creature can’t
+    can cast (it doesn't need to be a wizard spell). For the next 8 hours, you
+    know the spell and can cast it using your spell slots. The creature can't
     cast that spell until the 8 hours have passed. Once you use this feature,
-    you can’t use it again until you finish a long rest
+    you can't use it again until you finish a long rest
 
     """
     name = "Spell Thief"
@@ -298,7 +298,7 @@ class SpellThief(Feature):
 
 # Inquisitive
 class EarForDeceit(Feature):
-    """When you choose this archetype at 3rd level, you de— velop a talent for
+    """When you choose this archetype at 3rd level, you de- velop a talent for
     picking out lies. Whenever you make a Wisdom (Insight) check to determine
     whether a creature is lying, treat a roll of 7 or lower on the c120 as an
     8.
@@ -321,9 +321,9 @@ class EyeForDetail(Feature):
 class InsightfulFighting(Feature):
     """At 3rd level, you gain the ability to decipher an opponent's tactics and
     develop a counter to them. As a bonus action, you can make a Wisdom
-    (Insight) check against a creature you can see that isn’t incapacitated,
-    contested by the target’s Charisma (Deception) check. If you suc— ceed, you
-    can use your Sneak Attack against that target even ifyou don’t have
+    (Insight) check against a creature you can see that isn't incapacitated,
+    contested by the target's Charisma (Deception) check. If you suc- ceed, you
+    can use your Sneak Attack against that target even ifyou don't have
     advantage on the attack roll, but not if you have disadvantage on it. This
     benefit lasts for 1 minute or until you successfully use this feature
     against a different target
@@ -347,7 +347,7 @@ class UnerringEye(Feature):
     """Beginning at 13th level, your senses are almost im« possible to foil. As an
     action, you sense the presence of illusions, shapechangers not in their
     original form, and other magic designed to deceive the senses within 30
-    feet ofyou, provided you aren’t blinded or deafened. You sense that an
+    feet ofyou, provided you aren't blinded or deafened. You sense that an
     effect is attempting to trick you, but you gain no insight into what is
     hidden or into its true nature. You can use this feature a number of times
     equal to your Wisdom modifier (minimum of once), and you regain all
@@ -359,7 +359,7 @@ class UnerringEye(Feature):
 
 
 class EyeForWeakness(Feature):
-    """At 17th level, you learn to exploit a creature’s weak— nesses by carefully
+    """At 17th level, you learn to exploit a creature's weak- nesses by carefully
     studying its tactics and movement. While your Insightful Fighting feature
     applies to a creature, your Sneak Attack damage against that creature
     increases by 3d6
@@ -397,20 +397,20 @@ class MasterOfTactics(Feature):
 class InsightfulManipulator(Feature):
     """Starting at 9th level, if you spend at least 1 minute observing or
     interacting with another creature outside combat, you can learn certain
-    information about its ca— pabilities compared to your own. The DM tells you
+    information about its ca- pabilities compared to your own. The DM tells you
     if the creature is your equal, superior, or inferior in regard to two of
     the following characteristics of your choice:
 
-    -- Intelligence score
+    • Intelligence score
 
-    -- Wisdom score
+    • Wisdom score
 
-    -- Charisma score
+    • Charisma score
 
     --Class levels (if any)
 
-    At the DM’s option, you might also realize you know a piece of the
-    creature’s history or one of its personality traits, if it has any
+    At the DM's option, you might also realize you know a piece of the
+    creature's history or one of its personality traits, if it has any
 
     """
     name = "Insightful Manipulator"
@@ -421,7 +421,7 @@ class Misdirection(Feature):
     """Beginning at 13th level, you can sometimes cause another creature to
     suffer an attack meant for you. When you are targeted by an attack while a
     creature within 5 feet of you is granting you cover against that attack,
-    you can use your reaction to have the attack target that crea— ture instead
+    you can use your reaction to have the attack target that crea- ture instead
     of you
 
     """
@@ -430,12 +430,12 @@ class Misdirection(Feature):
 
 
 class SoulOfDeceit(Feature):
-    """Starting at 17th level, your thoughts can’t be read by telepathy or other
+    """Starting at 17th level, your thoughts can't be read by telepathy or other
     means, unless you allow it. You can present false thoughts by succeeding on
-    a Charisma (Deception) check contested by the mind reader’s Wis— dom
+    a Charisma (Deception) check contested by the mind reader's Wis- dom
     (Insight) check. Additionally, no matter what you say, magic that would
     determine if you are telling the truth indicates you are being truthful if
-    you so choose, and you can’t be compelled to tell the truth by magic
+    you so choose, and you can't be compelled to tell the truth by magic
 
     """
     name = "Soul of Deceit"
@@ -446,7 +446,7 @@ class SoulOfDeceit(Feature):
 class Skirmisher(Feature):
     """Starting at 3rd level, you are difficult to pin down during a fight. You
     can move up to halfyour speed as a reaction when an enemy ends its turn
-    within 5 feet of you. This movement doesn’t provoke opportunity attacks
+    within 5 feet of you. This movement doesn't provoke opportunity attacks
 
     """
     name = "Skirmisher"
@@ -455,9 +455,9 @@ class Skirmisher(Feature):
 
 class Survivalist(Feature):
     """When you choose this archetype at 3rd level, you gain proficiency in the
-    Nature and Survival skills if you don’t already have it. Your proficiency
+    Nature and Survival skills if you don't already have it. Your proficiency
     bonus is doubled for any ability check you make that uses either of those
-    pro— ficiencies
+    pro- ficiencies
 
     """
     
@@ -492,7 +492,7 @@ class SuddenStrike(Feature):
     """Starting at 17th level, you can strike with deadly speed. If you take the
     Attack action on your turn, you can make one additional attack as a bonus
     action. This attack can benefit from your Sneak Attack even if you have
-    already used it this turn, but you can’t use your Sneak Attack against the
+    already used it this turn, but you can't use your Sneak Attack against the
     same target more than once in a turn
 
     """
@@ -504,7 +504,7 @@ class SuddenStrike(Feature):
 class FancyFootwork(Feature):
     """When you choose this archetype at 3rd level, you learn how to land a strike
     and then slip away without reprisal. During your turn, if you make a melee
-    attack against a creature, that creature can’t make opportunity attacks
+    attack against a creature, that creature can't make opportunity attacks
     against you for the rest ofyour turn
 
     """
@@ -516,9 +516,9 @@ class RakishAudacity(Feature):
     """Starting at 3rd level, your confidence propels you into battle. You can give
     yourself a bonus to your initiative rolls equal to your Charisma
     modifier. You also gain an additional way to use your Sneak Attack; you
-    don’t need advantage on the attack roll to use your Sneak Attack against a
+    don't need advantage on the attack roll to use your Sneak Attack against a
     creature if you are within 5 feet of it, no other creatures are within 5
-    feet of you, and you don’t have disadvantage on the attack roll. All the
+    feet of you, and you don't have disadvantage on the attack roll. All the
     other rules for Sneak Attack still apply to you.
 
     """
@@ -527,17 +527,17 @@ class RakishAudacity(Feature):
 
 
 class Panache(Feature):
-    """At 9th level, your charm becomes extraordinarily be— guiling. As an action,
-    you can make a Charisma (Persuasion) check contested by a creature’s
+    """At 9th level, your charm becomes extraordinarily be- guiling. As an action,
+    you can make a Charisma (Persuasion) check contested by a creature's
     Wisdom (Insight) check. The creature must be able to hear you, and the
     two ofyou must share a language. If you succeed on the check and the
     creature is hostile to you, it has disadvantage on attack rolls against
-    targets other than you and can’t make opportunity attacks against targets
+    targets other than you and can't make opportunity attacks against targets
     other than you.
 
     This effect lasts for 1 minute, until one of your companions attacks the
     target or affects it with a spell, or until you and the target are more
-    than 60 feet apart. If you succeed on the check and the creature isn’t
+    than 60 feet apart. If you succeed on the check and the creature isn't
     hostile to you, it is charmed by you for 1 minute. While charmed, it
     regards you as a friendly acquaintance. This effect ends immediately if you
     or your companions do anything harmful to it
@@ -549,7 +549,7 @@ class Panache(Feature):
 
 class ElegantManeuver(Feature):
     """Starting at 13th level, you can use a bonus action on your turn to gain
-    advantage on the next Dexterity (Ac— robatics) or Strength (Athletics)
+    advantage on the next Dexterity (Ac- robatics) or Strength (Athletics)
     check you make during the same turn
 
     """
@@ -560,7 +560,7 @@ class ElegantManeuver(Feature):
 class MasterDuelist(Feature):
     """Beginning at 17th level, your mastery of the blade lets you turn failure
     into success in combat. Ifyou miss with an attack roll, you can roll it
-    again with advantage. Once you do so, you can’t use this feature again
+    again with advantage. Once you do so, you can't use this feature again
     until you finish a short or long rest
 
     """

@@ -6,7 +6,7 @@ from .. import armor, spells
 class Darkvision(Feature):
     """Accustomed to life underground, you have superior vision in dark and dim
     conditions. You can see in dim light within 60 feet of you as if it were
-    bright light, and in darkness as if it were dim light. You can’t discern
+    bright light, and in darkness as if it were dim light. You can't discern
     color in darkness, only shades of gray.
 
     """
@@ -17,7 +17,7 @@ class Darkvision(Feature):
 class SuperiorDarkvision(Feature):
     """Accustomed to life underground, you have superior vision in dark and dim
     conditions. You can see in dim light within 120 feet of you as if it were
-    bright light, and in darkness as if it were dim light. You can’t discern
+    bright light, and in darkness as if it were dim light. You can't discern
     color in darkness, only shades of gray.
 
     """
@@ -76,7 +76,7 @@ class DwarvenToughness(Feature):
 
 # Elves
 class FeyAncestry(Feature):
-    """You have advantage on saving throws against being charmed, and magic can’t
+    """You have advantage on saving throws against being charmed, and magic can't
     put you to sleep.
 
     """
@@ -85,9 +85,9 @@ class FeyAncestry(Feature):
 
 
 class Trance(Feature):
-    """Elves don’t need to sleep. Instead, they meditate deeply, remaining
+    """Elves don't need to sleep. Instead, they meditate deeply, remaining
     semiconscious, for 4 hours a day. (The Common word for such meditation is
-    “trance.”) While meditating, you can dream after a fashion; such dreams are
+    "trance.") While meditating, you can dream after a fashion; such dreams are
     actually mental exercises that have become reflexive through years of
     practice. After resting in this way, you gain the same benefit that a human
     does from 8 hours of sleep.
@@ -190,27 +190,27 @@ class DraconicAncestry(Feature):
     Ancestry table. Your breath weapon and damage resistance are determined by the
     dragon type.
 
-    Dragon -- Damage Type -- Breath Weapon
+    Dragon • Damage Type • Breath Weapon
 
-    Black -- Acid -- 5 by 30 ft. line (DEX save)
+    Black • Acid • 5 by 30 ft. line (DEX save)
 
-    Blue -- Lightning -- 5 by 30 ft. line (DEX save)
+    Blue • Lightning • 5 by 30 ft. line (DEX save)
 
-    Brass -- Fire -- 5 by 30 ft. line (DEX save)
+    Brass • Fire • 5 by 30 ft. line (DEX save)
 
-    Bronze -- Lightning -- 5 by 30 ft. line (DEX save)
+    Bronze • Lightning • 5 by 30 ft. line (DEX save)
 
-    Copper -- Acid -- 5 by 30 ft. line (DEX save)
+    Copper • Acid • 5 by 30 ft. line (DEX save)
 
-    Gold -- Fire -- 15 ft. cone (DEX save)
+    Gold • Fire • 15 ft. cone (DEX save)
 
-    Green -- Poison -- 15 ft. cone (CON save)
+    Green • Poison • 15 ft. cone (CON save)
 
-    Red -- Fire -- 15 ft. cone (DEX save)
+    Red • Fire • 15 ft. cone (DEX save)
 
-    Silver -- Cold -- 15 ft. cone (CON save)
+    Silver • Cold • 15 ft. cone (CON save)
 
-    White -- White -- 15 ft. cone (CON save)
+    White • White • 15 ft. cone (CON save)
 
     """
     name = "Draconic Ancestry"
@@ -226,7 +226,7 @@ class BreathWeapon(Feature):
     modifier + your proficiency bonus. A creature takes 2d6 damage on a failed
     save, and half as much damage on a successful one. The damage increases to
     3d6 at 6th level, 4d6 at 11th level, and 5d6 at 16th level. After you use
-    your breath weapon, you can’t use it again until you complete a short or
+    your breath weapon, you can't use it again until you complete a short or
     long rest. Damage
 
     """
@@ -285,7 +285,7 @@ class ArtificersLore(Feature):
 
 
 class Tinker(Feature):
-    """You have proficiency with artisan’s tools (tinker’s tools). Using those
+    """You have proficiency with artisan's tools (tinker's tools). Using those
     tools, you can spend 1 hour and 10 gp worth of materials to construct a
     Tiny clockwork device (AC 5, 1 hp). The device ceases to function after 24
     hours (unless you spend 1 hour repairing it to keep the device
@@ -303,7 +303,7 @@ class Tinker(Feature):
     light a candle, torch, or campfire. Using the device requires your action.
 
     *Music Box*: When opened, this music box plays a single song at a moderate
-    volume. The box stops playing when it reaches the song’s end or when
+    volume. The box stops playing when it reaches the song's end or when
 
     """
     name = "Tinker"
@@ -343,7 +343,7 @@ class NimbleEscape(Feature):
 # Half-Orcs
 class RelentlessEndurance(Feature):
     """When you are reduced to 0 hit points but not killed outright, you can drop
-    to 1 hit point instead. You can’t use this feature again until you finish a
+    to 1 hit point instead. You can't use this feature again until you finish a
     long rest.
 
     """
@@ -353,7 +353,7 @@ class RelentlessEndurance(Feature):
 
 class SavageAttacks(Feature):
     """When you score a critical hit with a melee weapon attack, you can roll one
-    of the weapon’s damage dice one additional time and add it to the extra
+    of the weapon's damage dice one additional time and add it to the extra
     damage of the critical hit.
 
     """
@@ -658,7 +658,7 @@ class GuardiansOfTheDepths(Feature):
 
 # Genasi
 class UnendingBreath(Feature):
-    """You can hold your breath indefinitely while you’re not incapacitated.
+    """You can hold your breath indefinitely while you're not incapacitated.
 
     """
     name = "Unending Breath"
@@ -733,3 +733,166 @@ class CallToTheWave(Feature):
     """
     name = "Call to the Wave"
     source = "Race (Water Genasi)"
+
+# RFTLW Races
+
+class DualMind(Feature):
+    """
+    You have advantage on all Wisdom saving throws.
+    
+    """
+    name = "Dual Mind"
+    source = "Race (Kalashtar)"
+
+class MentalDiscipline(Feature):
+    """
+    You have resistance to psychic damage.
+    
+    """
+    name = "Mental Discipline"
+    source = "Race (Kalashtar)"
+
+class MindLink(Feature):
+    """
+    You can speak telepathically to any creature you can see, provided
+    the creature is within a number of feet of you equal to 10 times your
+    level. You don’t need to share a language with the creature for it to
+    understand your telepathic utterances, but the creature must be able
+    to understand at least one language.
+
+    When you’re using this trait to speak telepathically to a creature,
+    you can use your action to give that creature the ability to speak
+    telepathically with you for 1 hour or until you end this effect as
+    an action. To use this ability, the creature must be able to see
+    you and must be within this trait’s range. You can give this
+    ability to only one creature at a time; giving it to a creature
+    takes it away from another creature who has it.  
+
+    """
+    name = "Mind Link"
+    source = "Race (Kalashtar)"
+
+class SeveredFromDreams(Feature):
+    """
+    Kalashtar sleep, but they don't connect to the plane of dreams as
+    other creatures do. Instead, their minds draw from the memories of
+    the otherworldly spirit while they sleep. As such, you are immune
+    to spells and other magical effects that require you to dream,
+    like 'dream', but not to spells and other magical effects that put
+    you to sleep, like 'sleep'.
+
+    """
+    name = "Severed from Dreams"
+    source = "Race (Kalashtar)"
+
+#monsterous races
+#bugbear
+class LongLimbed(Feature):
+    """ When you make a melee attack on your turn, your reach for it is 5 feet greater than normal.
+    
+    """
+    name = "Long-Limbed"
+    source = "Race (BugBear)"
+
+class SupriseAttack(Feature):
+    """ If you surprise a creature and hit it with an attack on your first turn 
+    in combat, the attack deals an extra 2d6 damage to it. You can use this trait 
+    only once per combat. 
+    
+    """
+    name = "Suprise Attack"
+    source = "Race (BugBear)"
+
+#goblin
+class FuryOfTheSmall(Feature):
+    """When you damage a creature with an attack or a spell and the creature's size 
+    is larger than yours, you can cause the attack or spell to deal extra damage to 
+    the creature. The extra damage equals your level. Once you use this trait, you 
+    can't use it again until you finish a short or long rest. 
+    
+    """
+    name = "Fury of the Small"
+    source = "Race (Goblin)"
+
+class NimbleEscape(Feature):
+    """ You can take the Disengage or Hide action as a bonus action on each of your turns. 
+
+    """
+    name = "Nimble Escape"
+    source = "Race (Goblin)"
+
+#HobGoblin
+class SavingFace(Feature):
+    """Hobgoblins are careful not to show weakness in front of their allies, for fear 
+    of losing status. If you miss with an attack roll or fail an ability check or a 
+    saving throw, you can gain a bonus to the roll equal to the number of allies you 
+    can see within 30 feet of you (maximum bonus of +5). Once you use this trait, you 
+    can't use it again until you finish a short or long rest.
+    
+    """
+    name = "Saving Face"
+    source = "Race (HobGoblin)"
+
+class MartialTraining(Feature):     #you have to add the weapons of choice to your sheet
+    """You are proficient with two martial weapons of your choice and with light armor. 
+    
+    """
+    name = "Martial Training"
+    source = "Race (HobGoblin)"
+
+#kobold
+class GrovelCowerAndBeg(Feature):
+    """ As an action on your turn, you can cower pathetically to
+    distract nearby foes. Until the end of your next turn, your
+    allies gain advantage on attack rolls against enemies
+    within 10 feet of you that can see you. Once you use this 
+    trait, you can't use it again until you finish a short 
+    or long rest
+
+    """
+    name = "Grovel Cower and Beg"
+    source = "Race (Kobold)"
+
+class PackTactics(Feature):
+    """You have advantage on an attack roll against a creature
+    if at least one of your allies is within 5 feet of the
+    creature and the ally isn't incapacitated. 
+    """
+    name = "Pack Tactics"
+    source = "Race (Kobold)"
+
+class Aggressive(Feature):
+    """ As a bonus action, you can move up to your speed 
+    toward an enemy of your choice that you can see or hear. 
+    You must end this move closer to the enemy than you started.
+    
+    """
+    name = "Aggressive"
+    source = "Race (Orc)"
+
+#yuan-ti pureblood
+class InnateSpellcasting(Feature):
+    """You know the poison spray cantrip. You can cast animal 
+    friendship an unlimited number of times with this trait, 
+    but you can target only snakes with it. Starting at 3rd level, 
+    you can also cast suggestion with this trait. Once you cast it, 
+    you can't do so again until you finish a long rest. Charisma is 
+    your spellcasting ability for these spells.
+    
+    """
+    name = "Innate Spellcasting"
+    source = "Race (Yuan-Ti Pureblood)"
+
+class MagicResistance(Feature):
+    """ You have advantage on saving throws against spells and other magical effects. 
+    
+    """
+    name = "Magic Resistance"
+    source = "Race (Yuan_Ti Pureblood)"
+
+class PoisonImmunity(Feature):
+    """You are immune to poison damage and the poi~oned condition. 
+    
+    """
+    name = "Poison Immunity"
+    source = "Race (Yuan_Ti Pureblood)"

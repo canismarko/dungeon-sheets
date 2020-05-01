@@ -32,7 +32,7 @@ class ViciousMockery(Spell):
     damage and have disadvantage on the next attack roll it makes before the end of 
     its next turn.
     
-    At Higher Levels: This spell’s damage increases by 1d4 when you 
+    At Higher Levels: This spell's damage increases by 1d4 when you 
     reach 5th level (2d4), 11th level (3d4), and 17th level (4d4).
     """
     name = "Vicious Mockery"

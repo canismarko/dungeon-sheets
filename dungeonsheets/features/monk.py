@@ -16,18 +16,18 @@ class UnarmoredDefenseMonk(Feature):
 class MartialArts(Feature):
     """At 1st level, your practice of martial arts gives you mastery of combat
     styles that use unarmed strikes and monk weapons, which are shortswords and
-    any simple melee weapons that don’t have the two-handed or heavy
+    any simple melee weapons that don't have the two-handed or heavy
     property. You gain the following benefits while you are unarmed or wielding
-    only monk weapons and you aren’t wearing armor or wielding a shield:
+    only monk weapons and you aren't wearing armor or wielding a shield:
 
-    -- You can use Dexterity instead of Strength for the attack and damage rolls
+    • You can use Dexterity instead of Strength for the attack and damage rolls
     of your unarmed strikes and monk weapons.
 
-    -- You can roll a d4 in place of the normal damage of your unarmed strike or
+    • You can roll a d4 in place of the normal damage of your unarmed strike or
     monk weapon. This die changes as you gain monk levels, as shown in the
     Martial Arts column of the Monk table.
 
-    -- When you use the Attack action with an unarmed strike or a monk weapon on
+    • When you use the Attack action with an unarmed strike or a monk weapon on
     your turn, you can make one unarmed strike as a bonus action. For example,
     if you take the Attack action and attack with a quarter- staff, you can
     also make an unarmed strike as a bonus action, assuming you haven't already
@@ -81,7 +81,7 @@ class Ki(Feature):
     meditating to regain your ki points. 
 
     Some of your ki features require your target to make a saving throw to
-    resist the feature’s effects. The saving throw DC is calculated as follows:
+    resist the feature's effects. The saving throw DC is calculated as follows:
     Ki save DC = 8 + your proficiency bonus + your Wisdom modifier
 
     """
@@ -194,7 +194,7 @@ class ExtraAttackMonk(Feature):
 
 class StunningStrike(Feature):
     """Starting at 5th level, you can interfere with the flow of ki in an
-    opponent’s body. When you hit another creature with a melee weapon attack,
+    opponent's body. When you hit another creature with a melee weapon attack,
     you can spend 1 ki point to attempt a stunning strike. The target must
     succeed on a Constitution saving throw or be stunned until the end of your
     next turn
@@ -267,7 +267,7 @@ class EmptyBody(Feature):
     become invisible for 1 minute. During that time, you also have resistance
     to all damage but force damage. Additionally, you can spend 8 ki points to
     cast the astral projection spell, without needing material components. When
-    you do so, you can’t take any other creatures with you.
+    you do so, you can't take any other creatures with you.
 
     """
     name = "Empty Body"
@@ -286,16 +286,16 @@ class PerfectSelf(Feature):
 # Way of the Open Hand
 class OpenHandTechnique(Feature):
     """Starting when you choose this tradition at 3rd level, you can manipulate
-    your enemy’s ki when you harness your own. Whenever you hit a creature with
+    your enemy's ki when you harness your own. Whenever you hit a creature with
     one of the attacks granted by your Flurry of Blows, you can impose one of
     the following effects on that target:
 
-    -- It must succeed on a Dexterity saving throw or be knocked prone.
+    • It must succeed on a Dexterity saving throw or be knocked prone.
 
-    -- It must make a Strength saving throw. If it fails, you can push it up to
+    • It must make a Strength saving throw. If it fails, you can push it up to
     15 feet away from you.
 
-    -- It can’t take reactions until the end of your next turn
+    • It can't take reactions until the end of your next turn
 
     """
     name = "Open Hand Technique"
@@ -326,7 +326,7 @@ class Tranquility(Feature):
 
 class QuiveringPalm(Feature):
     """At 17th level, you gain the ability to set up lethal vibrations in
-    someone’s body. When you hit a creature with an unarmed strike, you can
+    someone's body. When you hit a creature with an unarmed strike, you can
     spend 3 ki points to start these imperceptible vibrations, which last for a
     number of days equal to your monk level. The vibrations are harmless unless
     you use your action to end them. To do so, you and the target must be on
@@ -347,7 +347,7 @@ class ShadowArts(Feature):
     to duplicate the effects of certain spells. As an action, you can spend 2
     ki points to cast darkness, darkvision, pass without trace, or silence,
     without providing material components. Additionally, you gain the minor
-    illusion cantrip if you don’t already know it.
+    illusion cantrip if you don't already know it.
 
     """
     name = "Shadow Arts"
@@ -394,7 +394,7 @@ class DiscipleOfTheElements(Feature):
     that harness the power of the four elements. A discipline requires you to
     spend ki points each time you use it. You know the Elemental Attunement
     discipline and one other elemental discipline of your choice, which are
-    detailed in the “Elemental Disciplines” section below.
+    detailed in the "Elemental Disciplines" section below.
 
     You learn one additional elemental discipline of your choice at 6th, 11th,
     and 17th level. Whenever you learn a new elemental discipline, you can also
@@ -405,14 +405,14 @@ class DiscipleOfTheElements(Feature):
     
     **Casting Elemental Spells**: Some elemental disciplines allow you to cast
     spells. See chapter 10 for the general rules of spellcasting. To cast one o
-    f these spells, you use its casting time and other rules, but you don’t
+    f these spells, you use its casting time and other rules, but you don't
     need to provide material components for it. Once you reach 5th level in
     this class, you can spend additional ki points to increase the level of an
     elemental discipline spell that you cast, provided that the spell has an
     enhanced effect at a higher level, as burning hands does. The spell's level
     increases by 1 for each additional ki point you spend. For example, if you
     are a 5th-level monk and use Sweeping Cinder Strike to cast burning hands,
-    you can spend 3 ki points to cast it as a 2nd-level spell (the discipline’s
+    you can spend 3 ki points to cast it as a 2nd-level spell (the discipline's
     base cost of 2 ki points plus 1).
 
     The maximum number of ki points you can spend to cast a spell in this way
@@ -437,16 +437,16 @@ class ElementalAttunement(Feature):
     """You can use your action to briefly control elemental forces nearby, causing
     one of the following effects of your choice:
 
-    -- Create a harmless, instantaneous sensory effect related to air, earth,
+    • Create a harmless, instantaneous sensory effect related to air, earth,
     fire, or water, such as a shower of sparks, a puff of wind, a spray o f
     light mist, or a gentle rumbling of stone.
 
-    -- Instantaneously light or snuff out a candle, a torch, or a small
+    • Instantaneously light or snuff out a candle, a torch, or a small
     campfire.
 
-    -- Chill or warm up to 1 pound of nonliving material for up to 1 hour.
+    • Chill or warm up to 1 pound of nonliving material for up to 1 hour.
 
-    -- Cause earth, fire, water, or mist that can fit within a 1-foot cube to
+    • Cause earth, fire, water, or mist that can fit within a 1-foot cube to
     shape itself into a crude form you desig nate for 1 minute.
 
     """
@@ -515,7 +515,7 @@ class FistOfUnbrokenAir(Feature):
     failed save, the creature takes 3d10 bludgeoning damage, plus an extra 1d10
     bludgeoning damage for each additional ki point you spend, and you can push
     the creature up to 20 feet away from you and knock it prone. On a
-    successful save, the creature takes half as much damage, and you don’t push
+    successful save, the creature takes half as much damage, and you don't push
     it or knock it prone.
 
     """
@@ -591,12 +591,12 @@ class ShapeTheFlowingRiver(Feature):
     """As an action, you can spend 1 ki point to choose an area of ice or water no
     larger than 30 feet on a side within 120 feet o f you. You can change water
     to ice within the area and vice versa, and you can reshape ice in the area
-    in any manner you choose. You can raise or lower the ice’s elevation,
+    in any manner you choose. You can raise or lower the ice's elevation,
     create or fill in a trench, erect or flatten a wall, or form a pillar. The
-    extent of any such changes can’t exceed half the area’s largest
+    extent of any such changes can't exceed half the area's largest
     dimension. For example, if you affect a 30-foot square, you can create a
-    pillar up to 15 feet high, raise or lower the square’s elevation by up to
-    15 feet, dig a trench up to 15 feet deep, and so on. You can’t shape the
+    pillar up to 15 feet high, raise or lower the square's elevation by up to
+    15 feet, dig a trench up to 15 feet deep, and so on. You can't shape the
     ice to trap or injure a creature in the area.
 
     """
@@ -620,7 +620,7 @@ class WaterWhip(Feature):
     failed save, the creature takes 3d10 bludgeoning damage, plus an extra 1d10
     bludgeoning damage for each additional ki point you spend, and you can
     either knock it prone or pull it up to 25 feet closer to you. On a
-    successful save, the creature takes half as much damage, and you don’t pull
+    successful save, the creature takes half as much damage, and you don't pull
     it or knock it prone
 
     """
@@ -769,7 +769,7 @@ class TipsySway(Feature):
     """Starting at 6th level, you can move in sudden, swaying ways. You gain the
     following benefits.
 
-    **Leap to Your Feet**: When you’re prone, you can stand up
+    **Leap to Your Feet**: When you're prone, you can stand up
     by spending 5 feet of movement, rather than half your speed.
 
     **Redirect Attack**: When a creature misses you with a melee attack roll,
@@ -816,10 +816,10 @@ class PathOfTheKensei(Feature):
     one melee weapon and one ranged weapon. Each of these weapons can be any
     sim- ple or martial weapon that lacks the heavy and special properties. The
     longbow is also a valid choice. You gain proficiency with these weapons if
-    you don’t already have it. Weapons of the chosen types are monk weapons for
-    you. Many of this tradition’s features work only with your kensei
+    you don't already have it. Weapons of the chosen types are monk weapons for
+    you. Many of this tradition's features work only with your kensei
     weapons. When you reach 6th, 11th, and 17th level in this class. you can
-    choose another type of weapon—either melee or ranged—to be a kensei weapon
+    choose another type of weapon-either melee or ranged-to be a kensei weapon
     for you. following the criteria above.
 
     **Agile Parry**: If you make an unarmed strike as part of the Attack action
@@ -828,10 +828,10 @@ class PathOfTheKensei(Feature):
     of your next turn, while the weapon is in your hand and you aren't
     incapacitated.
 
-    **Kensei’s Shot**: You can use a bonus action on your turn to make your
+    **Kensei's Shot**: You can use a bonus action on your turn to make your
     ranged attacks with a kensei weapon more deadly. When you do so, any target
     you hit with a ranged attack using a kensei weapon takes an extra 1d4
-    damage of the weapons type. You retain this benefit un— til the end of the
+    damage of the weapons type. You retain this benefit un- til the end of the
     current turn.
 
     **Way ofthe Brush**: You gain proficiency with your choice of

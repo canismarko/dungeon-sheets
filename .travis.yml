@@ -1,11 +1,15 @@
 language: python
 python:
   - "3.6"
-  - "3.7-dev"  # 3.7 development branch
+  - "3.7"
+  - "3.8"
 # command to install dependencies
 install:
   - pip install -r requirements.txt
+  - pip install -r requirements-tests.txt
   - pip install -e .
 # command to run tests
 script:
-  - pytest
+  - pytest --cov=dungeonsheets tests/
+after_success:
+  - coveralls
