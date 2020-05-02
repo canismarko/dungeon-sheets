@@ -14,13 +14,6 @@
 \maketitle
 
 [% for spl in character.spells %]
-  [% if spl in character.spells_prepared %]
-    {
-  [% elif spl.level == 0 %]
-    {
-  [% else %]
-    {\color{mygrey}
-  [% endif %]
 
   \section*{[[ spl.name ]]}
 
@@ -45,7 +38,6 @@
 
   [[ spl.__doc__|rst_to_latex ]]
 
-  } %\color
 [% endfor %]
 
 \end{document}
