@@ -1,3 +1,7 @@
+# Generated output PDFs (and intermediate files)
+examples/*.pdf
+examples/*.aux
+
 # Emacs temp files
 *~
 

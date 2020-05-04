@@ -11,5 +11,7 @@ install:
 # command to run tests
 script:
   - pytest --cov=dungeonsheets tests/
+  - cd examples/
+  - makesheets
 after_success:
   - coveralls

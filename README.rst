@@ -70,7 +70,7 @@ The PDF's can then be generated using the ``makesheets`` command.
 .. code:: bash
 
     $ cd examples
-    $ makesheets wizard.py
+    $ makesheets
 
 dungeon-sheets contains definitions for standard weapons and spells,
 so attack bonuses and damage can be calculated automatically.
