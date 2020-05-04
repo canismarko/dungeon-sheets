@@ -15,5 +15,6 @@ script:
   - pytest --cov=dungeonsheets tests/
   - cd examples/
   - makesheets
+  - cd ../
 after_success:
   - coveralls
