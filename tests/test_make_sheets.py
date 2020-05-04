@@ -47,3 +47,7 @@ class MarkdownTestCase(unittest.TestCase):
     def test_no_text(self):
         text = make_sheets.rst_to_latex(None)
         self.assertEqual(text, '')
+    
+    def test_verbatim(self):
+        text = make_sheets.rst_to_latex('``hello, world``')
+        self.assertIn(r'\begin{verbatim}', text)

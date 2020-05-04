@@ -24,9 +24,10 @@ character sheet."""
 
 bold_re = re.compile(r'\*\*([^*]+)\*\*')
 it_re = re.compile(r'\*([^*]+)\*')
-tt_re = re.compile(r'``([^`]+)``')
+verb_re = re.compile(r'``([^`]+)``')
 # A dice string, with optinal backticks: ``1d6 + 3``
 dice_re = re.compile(r'`*(\d+d\d+(?:\s*\+\s*\d+)?)`*')
+
 
 def rst_to_latex(rst):
     """Basic markup of RST to LaTeX code."""
@@ -38,10 +39,11 @@ def rst_to_latex(rst):
             tex = tex.replace(c, '\\' + c)
         tex = bold_re.sub(r'\\textbf{\1}', tex)
         tex = it_re.sub(r'\\textit{\1}', tex)
+        tex = verb_re.sub(r'\\begin{verbatim}{\1}\\end{verbatim}', tex)
         tex = dice_re.sub(r'\\texttt{\1}', tex)
-        tex = tt_re.sub(r'\\texttt{\1}', tex)
         for c in ['#', '$', '%', '&', '~', '_', '^']:
             tex = tex.replace(c, '\\' + c)
+        
     return tex
 
 
@@ -70,22 +72,22 @@ def text_box(string):
     return new_string
 
 
-def create_druid_shapes_pdf(character, basename):
+def create_druid_shapes_pdf(character, basename, keep_temp_files=False):
     template = jinja_env.get_template('druid_shapes_template.tex')
-    return create_latex_pdf(character, basename, template)
+    return create_latex_pdf(character, basename, template, keep_temp_files=keep_temp_files)
 
 
-def create_spellbook_pdf(character, basename):
+def create_spellbook_pdf(character, basename, keep_temp_files=False):
     template = jinja_env.get_template('spellbook_template.tex')
-    return create_latex_pdf(character, basename, template)
+    return create_latex_pdf(character, basename, template, keep_temp_files=keep_temp_files)
 
 
-def create_features_pdf(character, basename):
+def create_features_pdf(character, basename, keep_temp_files=False):
     template = jinja_env.get_template('features_template.tex')
-    return create_latex_pdf(character, basename, template)
+    return create_latex_pdf(character, basename, template, keep_temp_files=keep_temp_files)
 
 
-def create_latex_pdf(character, basename, template):
+def create_latex_pdf(character, basename, template, keep_temp_files=False):
     tex = template.render(character=character)
     # Create tex document
     tex_file = f'{basename}.tex'
@@ -109,19 +111,22 @@ def create_latex_pdf(character, basename, template):
     # Compile the PDF
     pdf_file = f'{basename}.pdf'
     output_dir = os.path.abspath(os.path.dirname(pdf_file))
+    tex_command_line = ['pdflatex', '--output-directory', output_dir,
+                        '-halt-on-error', '-interaction=nonstopmode',
+                        tex_file]
     try:
-        result = subprocess.run(['pdflatex', '--output-directory',
-                                 output_dir, tex_file, '-halt-on-error'],
+        result = subprocess.run(tex_command_line,
                                 stdout=subprocess.DEVNULL, timeout=30)
     except FileNotFoundError:
         # Remove temporary files
         remove_temp_files(basename)
         raise exceptions.LatexNotFoundError()
     else:
-        if result.returncode == 0:
+        if result.returncode == 0 and not keep_temp_files:
             remove_temp_files(basename)
-        else:
-            raise exceptions.LatexError(f'Processing of {basename}.tex failed.')
+        if result.returncode != 0:
+            raise exceptions.LatexError(f'Processing of {basename}.tex failed.'
+                                        f' See {basename}.log for details.')
 
 
 def create_spells_pdf(character, basename, flatten=False):
@@ -431,7 +436,7 @@ def _make_pdf_pdftk(fields, src_pdf, basename, flatten=False):
     os.remove(fdfname)
     
     
-def make_sheet(character_file, character=None, flatten=False):
+def make_sheet(character_file, character=None, flatten=False, debug=False):
     """Prepare a PDF character sheet from the given character file.
     
     Parameters
@@ -463,7 +468,7 @@ def make_sheet(character_file, character=None, flatten=False):
         feat_base = '{:s}_feats'.format(
             os.path.splitext(character_file)[0])
         try:
-            create_features_pdf(character=character, basename=feat_base)
+            create_features_pdf(character=character, basename=feat_base, keep_temp_files=debug)
         except exceptions.LatexNotFoundError as e:
             log.warning('``pdflatex`` not available. Skipping features book '
                         f'for {character.name}')
@@ -473,7 +478,7 @@ def make_sheet(character_file, character=None, flatten=False):
         # Create spell book
         spellbook_base = os.path.splitext(character_file)[0] + '_spellbook'
         try:
-            create_spellbook_pdf(character=character, basename=spellbook_base)
+            create_spellbook_pdf(character=character, basename=spellbook_base, keep_temp_files=debug)
         except exceptions.LatexNotFoundError as e:
             log.warning('``pdflatex`` not available. Skipping spellbook '
                         f'for {character.name}')
@@ -484,7 +489,7 @@ def make_sheet(character_file, character=None, flatten=False):
     if len(wild_shapes) > 0:
         shapes_base = os.path.splitext(character_file)[0] + '_wild_shapes'
         try:
-            create_druid_shapes_pdf(character=character, basename=shapes_base)
+            create_druid_shapes_pdf(character=character, basename=shapes_base, keep_temp_files=debug)
         except exceptions.LatexNotFoundError as e:
             log.warning('``pdflatex`` not available. Skipping wild shapes list '
                         f'for {character.name}')
@@ -546,7 +551,7 @@ def main():
     for filename in filenames:
         print(f"Processing {os.path.splitext(filename)[0]}...", end='')
         try:
-            make_sheet(character_file=filename, flatten=(not args.editable))
+            make_sheet(character_file=filename, flatten=(not args.editable), debug=args.debug)
         except exceptions.CharacterFileFormatError as e:
             # Only raise the failed exception if this file is explicitly given
             print('invalid')
