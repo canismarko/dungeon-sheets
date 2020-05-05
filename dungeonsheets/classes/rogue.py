@@ -1,6 +1,7 @@
-from .. import (weapons, features)
-from .classes import CharClass, SubClass
 from collections import defaultdict
+
+from dungeonsheets import features, weapons
+from dungeonsheets.classes.classes import CharClass, SubClass
 
 
 # PHB

@@ -1,5 +1,5 @@
-from .features import Feature
-from .. import spells
+from dungeonsheets import spells
+from dungeonsheets.features.features import Feature
 
 
 # Cleric Features
@@ -33,7 +33,7 @@ class ChannelDivinity(Feature):
             return "Channel Divinity (2x/SR)"
         else:
             return "Channel Divinity (3x/SR)"
-        
+
 
 class TurnUndead(Feature):
     """As an action, you present your holy symbol and speak a prayer censuring the
@@ -76,7 +76,7 @@ class DestroyUndead(Feature):
             name = self._name + ' (CR 4)'
         return name
 
-    
+
 class DivineIntervention(Feature):
     """Beginning at 10th level, you can call on your deity to intervene on your
     behalf when your need is great.
@@ -104,7 +104,7 @@ class DivineStrike(Feature):
     """
     _name = "Divine Strike"
     source = "Cleric"
-    
+
     @property
     def name(self):
         level = self.owner.Cleric.level
@@ -112,7 +112,7 @@ class DivineStrike(Feature):
         if level >= 14:
             damage = ' (2d8)'
         return self._name + damage
-    
+
 
 # Knowledge Domain
 class BlessingsOfKnowledge(Feature):
@@ -349,7 +349,7 @@ class DampenElements(Feature):
     name = "Dampen Elements"
     source = "Cleric (Nature Domain)"
 
-    
+
 class DivineStrikeNature(DivineStrike):
     """At 8th level, you gain the ability to infuse your weapon strikes with
     divine energy. Once on each of your turns when you hit a creature with a
@@ -359,7 +359,7 @@ class DivineStrikeNature(DivineStrike):
 
     """
     source = "Cleric (Nature Domain)"
-    
+
 
 class MasterOfNature(Feature):
     """At 17th level, you gain the ability to command animals and plant
@@ -403,7 +403,7 @@ class DestructiveWrath(ChannelDivinity):
     """
     name = "Channel Divinity: Destructive Wrath"
     source = "Cleric (Tempest Domain)"
-    
+
 
 class ThunderboltStrike(Feature):
     """At 6th level, when you deal lightning damage to a Large or smaller
@@ -687,7 +687,7 @@ class SaintOfForgeAndFire(Feature):
     powerful:
 
     • You gain immunity to fire damage.
-    
+
     • While wearing heavy armor, you have resistance to bludgeoning, piercing,
     and slashing damage from non-magical attacks
 
@@ -780,50 +780,50 @@ class KeeperOfSouls(Feature):
     source = "Cleric (Grave Domain)"
 
 class Reaper(Feature):
-    """At 1st level, you learn one necromancy cantrip of your choice from any 
-    spell list. When you cast a necromancy cantrip that normally targets only 
-    one creature, the spell can instead target two creatures within range and 
+    """At 1st level, you learn one necromancy cantrip of your choice from any
+    spell list. When you cast a necromancy cantrip that normally targets only
+    one creature, the spell can instead target two creatures within range and
     within 5 feet of each other.
-    
+
     """
     name = "Reaper"
     source = "Cleric (Death Domain)"
 
 class TouchOfDeathCleric(Feature):
-    """Starting at 2nd level, you can use Channel Divinity to destroy another 
-    creature's life force by touch. When you hit a creature with a melee 
-    attack, you can use Channel Divinity to deal extra necrotic damage to 
-    the target. The damage equals 5 + twice your cleric level. 
-    
+    """Starting at 2nd level, you can use Channel Divinity to destroy another
+    creature's life force by touch. When you hit a creature with a melee
+    attack, you can use Channel Divinity to deal extra necrotic damage to
+    the target. The damage equals 5 + twice your cleric level.
+
     """
     name = "Channel Divinity: Touch of Death"
     source = "Cleric (Death Domain)"
 
 class InescapableDestruction(Feature):
-    """Starting at 6th level, your ability to channel negative energy becomes 
-    more potent. Necrotic damage dealt by your cleric spells and Channel 
+    """Starting at 6th level, your ability to channel negative energy becomes
+    more potent. Necrotic damage dealt by your cleric spells and Channel
     Divinity options ignores resistance to necrotic damage
-    
+
     """
     name = "Inescapable Destruction"
     source = "Cleric (Death Domain)"
 
 class DivineStrikeDeath(DivineStrike):
-    """At 8th level, you gain the ability to infuse your weapon strikes with 
-    necrotic energy. Once on each of your turns when you hit a creature with 
-    a weapon attack, you can cause the attack to deal an a 1d8 necrotic 
-    damage to the target. When you reach 14th level, the extra damage 
+    """At 8th level, you gain the ability to infuse your weapon strikes with
+    necrotic energy. Once on each of your turns when you hit a creature with
+    a weapon attack, you can cause the attack to deal an a 1d8 necrotic
+    damage to the target. When you reach 14th level, the extra damage
     increases to 2d8.
-    
+
     """
     source = "Cleric (Death Domain)"
 
 class ImprovedReaper(Feature):
-    """Starting at 17th level, when you cast a necromancy spell of 1st through 
-    5th level that targets only one creature, the spell can instead target two 
-    creatures within range and within 5 feet of each other. If the spell 
+    """Starting at 17th level, when you cast a necromancy spell of 1st through
+    5th level that targets only one creature, the spell can instead target two
+    creatures within range and within 5 feet of each other. If the spell
     consumes its material components, you must provide them for each target.
-    
+
     """
     name = "Improved Reaper"
     source = "Cleric (Death Domain)"

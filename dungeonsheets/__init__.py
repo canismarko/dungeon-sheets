@@ -1,8 +1,8 @@
 __all__ = ('__version__', 'Character', 'weapons', 'features',
            'character', 'race', 'background', 'spells')
 
-from . import weapons, features, race, background, spells
-from .character import Character
+from dungeonsheets import background, features, race, spells, weapons
+from dungeonsheets.character import Character
 
 import os
 

@@ -1,5 +1,5 @@
-from .features import Feature, FeatureSelector
-from .. import (weapons, armor)
+from dungeonsheets import armor, weapons
+from dungeonsheets.features.features import Feature, FeatureSelector
 
 
 # PHB
@@ -864,4 +864,3 @@ class RageBeyondDeath(Feature):
     """
     name = "Rage Beyond Death"
     source = "Barbarian (Zealot)"
-

@@ -1,8 +1,8 @@
-from .spells import Spell
+from dungeonsheets.spells.spells import Spell
 
 
 class Jump(Spell):
-    """You touch a creature. The creature's jump distance is tripled until the spell 
+    """You touch a creature. The creature's jump distance is tripled until the spell
     ends.
     """
     name = "Jump"

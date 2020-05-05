@@ -1,6 +1,7 @@
-from .ranger import Archery, Defense, Dueling, TwoWeaponFighting
-from .features import Feature, FeatureSelector
-from .. import (weapons, armor)
+from dungeonsheets import armor, weapons
+from dungeonsheets.features.features import Feature, FeatureSelector
+from dungeonsheets.features.ranger import (Archery, Defense, Dueling,
+                                           TwoWeaponFighting)
 
 # Features added for all PHB classes
 # SCAG and XGTE needed

@@ -1,4 +1,4 @@
-from .features import Feature
+from dungeonsheets.features.features import Feature
 
 
 # PHB

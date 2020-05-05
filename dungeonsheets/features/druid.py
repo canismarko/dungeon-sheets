@@ -1,5 +1,5 @@
-from .features import Feature, FeatureSelector
-from .. import spells
+from dungeonsheets import spells
+from dungeonsheets.features.features import Feature, FeatureSelector
 
 
 # PHB
@@ -694,5 +694,4 @@ class FungalBody(Feature):
     """
     name = "Fungal Body"
     source = "Druid (Circle of Spores)"
-
 

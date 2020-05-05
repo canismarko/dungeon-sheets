@@ -1,6 +1,7 @@
-from .. import (weapons, features, spells)
-from .classes import CharClass, SubClass
 from collections import defaultdict
+
+from dungeonsheets import features, spells, weapons
+from dungeonsheets.classes.classes import CharClass, SubClass
 
 
 class ClericDomain(SubClass):
@@ -382,4 +383,3 @@ class Cleric(CharClass):
         19: (5, 4, 3, 3, 3, 3, 2, 1, 1, 1),
         20: (5, 4, 3, 3, 3, 3, 2, 2, 1, 1),
     }
-

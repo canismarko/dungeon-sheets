@@ -1,6 +1,7 @@
-from .. import (weapons, features, spells)
-from .classes import CharClass, SubClass
 from collections import defaultdict
+
+from dungeonsheets import features, spells, weapons
+from dungeonsheets.classes.classes import CharClass, SubClass
 
 
 class PaladinOath(SubClass):

@@ -1,5 +1,5 @@
-from .features import Feature
-from .. import armor, spells
+from dungeonsheets import armor, spells
+from dungeonsheets.features.features import Feature
 
 
 # Many Classes

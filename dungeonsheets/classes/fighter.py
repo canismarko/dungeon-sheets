@@ -1,6 +1,7 @@
-from .. import (weapons, features)
-from .classes import CharClass, SubClass
 from collections import defaultdict
+
+from dungeonsheets import features, weapons
+from dungeonsheets.classes.classes import CharClass, SubClass
 
 
 # PHB
@@ -18,7 +19,7 @@ class Champion(SubClass):
     features_by_level[10] = [features.AdditionalFightingStyle]
     features_by_level[15] = [features.SuperiorCritical]
     features_by_level[18] = [features.Survivor]
-    
+
 
 class BattleMaster(SubClass):
     """Those who emulate the archetypal Battle Master employ martial techniques
@@ -34,7 +35,7 @@ class BattleMaster(SubClass):
     features_by_level[3] = [features.CombatSuperiority, features.StudentOfWar]
     features_by_level[7] = [features.KnowYourEnemy]
     features_by_level[15] = [features.Relentless]
-    
+
 
 class EldritchKnight(SubClass):
     """The archetypal Eldritch Knight combines the martial mastery common to all
@@ -79,7 +80,7 @@ class EldritchKnight(SubClass):
         19: (3, 4, 3, 3, 1, 0, 0, 0, 0, 0),
         20: (3, 4, 3, 3, 1, 0, 0, 0, 0, 0),
     }
-    
+
 
 # SCAG
 class PurpleDragonKnight(SubClass):
@@ -106,7 +107,7 @@ class PurpleDragonKnight(SubClass):
     features_by_level[7] = [features.RoyalEnvoy]
     features_by_level[10] = [features.InspiringSurge]
     features_by_level[15] = [features.Bulwark]
-    
+
 
 # XGTE
 class ArcaneArcher(SubClass):
@@ -125,7 +126,7 @@ class ArcaneArcher(SubClass):
     features_by_level[3] = [features.ArcaneArcherLore, features.ArcaneShot]
     features_by_level[7] = [features.MagicArrow, features.CurvingShot]
     features_by_level[15] = [features.EverReadyShot]
-    
+
 
 class Cavalier(SubClass):
     """The archetypal Cavalier excels at mounted combat. Usually born among the
@@ -145,7 +146,7 @@ class Cavalier(SubClass):
     features_by_level[10] = [features.HoldTheLine]
     features_by_level[15] = [features.FerociousCharger]
     features_by_level[18] = [features.VigilantDefender]
-    
+
 
 class Samurai(SubClass):
     """The Samurai is a fighter who draws on an implacable fighting spirit to
@@ -162,7 +163,7 @@ class Samurai(SubClass):
     features_by_level[15] = [features.RapidStrike]
     features_by_level[18] = [features.StrengthBeforeDeath]
 
-    
+
 # Custom
 class Gunslinger(SubClass):
     """Most warriors and combat specialists spend their years perfecting the

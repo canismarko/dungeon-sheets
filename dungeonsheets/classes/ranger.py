@@ -1,8 +1,9 @@
 __all__ = ('Ranger', 'RevisedRanger')
 
-from .. import (weapons, features, spells)
-from .classes import CharClass, SubClass
 from collections import defaultdict
+
+from dungeonsheets import features, spells, weapons
+from dungeonsheets.classes.classes import CharClass, SubClass
 
 
 # PHB
@@ -292,4 +293,3 @@ class RevisedRanger(Ranger):
     features_by_level[18] = [features.FeralSenses]
     features_by_level[20] = [features.FoeSlayer]
     subclasses_available = (BeastConclave, HunterConclave, DeepStalkerConclave)
-

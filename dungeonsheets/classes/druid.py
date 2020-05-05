@@ -1,9 +1,10 @@
-from ..stats import findattr
-from .. import (weapons, monsters, exceptions, features)
-from .classes import CharClass, SubClass
-from collections import defaultdict
-import warnings
 import math
+import warnings
+from collections import defaultdict
+
+from dungeonsheets import exceptions, features, monsters, weapons
+from dungeonsheets.classes.classes import CharClass, SubClass
+from dungeonsheets.stats import findattr
 
 
 # PHB
@@ -296,4 +297,3 @@ class Druid(CharClass):
             warnings.warn("Druids cannot learn spells, "
                           "use ``spells_prepared`` instead.",
                           RuntimeWarning)
-

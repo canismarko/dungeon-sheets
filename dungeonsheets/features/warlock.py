@@ -1,5 +1,5 @@
-from .features import (Feature, FeatureSelector)
-from .. import spells, weapons
+from dungeonsheets import spells, weapons
+from dungeonsheets.features.features import Feature, FeatureSelector
 
 
 # Features
@@ -1029,4 +1029,3 @@ class TrickstersEscape(Invocation):
 
     """
     name = "Tricksters Escape"
-

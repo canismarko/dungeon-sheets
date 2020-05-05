@@ -1,5 +1,5 @@
-from .features import (Feature, FeatureSelector)
-from .. import spells, weapons
+from dungeonsheets import spells, weapons
+from dungeonsheets.features.features import Feature, FeatureSelector
 
 
 # PHB
@@ -114,7 +114,7 @@ class ConjurationSavant(Feature):
     """
     name = "Conjuration Savant"
     source = "Wizard (School of Conjuration)"
-    
+
 
 class MinorIllusion(Feature):
     """Starting at 2nd level when you select this school, you can use your action
@@ -320,7 +320,7 @@ class EvocationSavant(Feature):
     name = "Evocation Savant"
     source = "Wizard (School of Evocation)"
 
-    
+
 class SculptSpells(Feature):
     """Beginning at 2nd level, you can create pockets of relative safety within the
     effects of your evocation spells. When you cast an evocation spell that
@@ -456,7 +456,7 @@ class UndeadThralls(Feature):
     there already. When you cast animate dead, you can target one additional
     corpse or pile of bones, creating another zombie or skeleton, as
     appropriate. Whenever you create an undead using a necromancy spell, it has
-    additional benefits: 
+    additional benefits:
 
     • The creature's hit point maximum is increased by an amount equal to your
     wizard level.
@@ -478,7 +478,7 @@ class InuredToUndeath(Feature):
     """
     name = "Inured to Undeath"
     source = "Wizard (School of Necromancy)"
-    
+
 
 class CommandUndead(Feature):
     """Starting at 14th level, you can use magic to bring undead under your
@@ -534,7 +534,7 @@ class TransmutersStone(Feature):
     • Darkvision out to a range of 60 feet, as described in chapter 8
 
     • An increase to speed of 10 feet while the creature is unencumbered
-    
+
     • Proficiency in Constitution saving throws
 
     • Resistance to acid, cold, fire, lightning, or thunder damage (your
@@ -581,7 +581,7 @@ class MasterTransmuter(Feature):
 
     **Restore Life**: You cast the raise dead spell on a creature you touch
     with the transmuter's stone, without expending a spell slot or needing to
-    have the spell in your spellbook. 
+    have the spell in your spellbook.
 
     **Restore Youth**: You touch the transmuter's stone to a willing creature,
     and that creature's apparent age is reduced by 3d10 years, to a minimum of
@@ -613,7 +613,7 @@ class Bladesong(Feature):
 
     • You gain a bonus to any Constitution saving throw you make to maintain
     your concentration on a spell. The bonus equals your Intelligence modifier
-    (minimum of +l). 
+    (minimum of +l).
 
     You can use this feature twice. You regain all expended uses of it when
     you finish a short or long rest.
