@@ -1,5 +1,6 @@
-from .features import Feature, FeatureSelector
-from .ranger import Dueling, TwoWeaponFighting
+from dungeonsheets.features.features import Feature, FeatureSelector
+from dungeonsheets.features.ranger import Dueling, TwoWeaponFighting
+
 
 # PHB
 class BardicInspiration(Feature):

@@ -1,8 +1,9 @@
 __all__ = ('Monk')
 
-from .. import (features, weapons)
-from .classes import CharClass, SubClass
 from collections import defaultdict
+
+from dungeonsheets import features, weapons
+from dungeonsheets.classes.classes import CharClass, SubClass
 
 
 # PHB
@@ -38,7 +39,7 @@ class ShadowWay(SubClass):
     features_by_level[6] = [features.ShadowStep]
     features_by_level[11] = [features.CloakOfShadows]
     features_by_level[17] = [features.Opportunist]
-    
+
 
 class FourElementsWay(SubClass):
     """You follow a monastic tradition that teaches you to harness the

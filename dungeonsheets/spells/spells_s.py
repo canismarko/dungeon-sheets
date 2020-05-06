@@ -1,4 +1,4 @@
-from .spells import Spell
+from dungeonsheets.spells.spells import Spell
 
 
 class SacredFlame(Spell):
@@ -93,29 +93,29 @@ class Scrying(Spell):
     and the sort of physical connection you have to it. If a target
     knows you're casting this spell, it can fail the saving throw
     voluntarily if it wants to be observed.
-    
-    Knowledge - Save Modifier 
+
+    Knowledge - Save Modifier
     =========================
     Secondhand (you have heard of the target) - +5
     Firsthand (you have met the target) - +0
     Familiar (you know the target well) - -5
-    
+
     Connection - Save Modifier
     ==========================
     Likeness or picture - -2
     Possession or garment - -4
     Body part, lock of hair, bit of nail, or the like - -10
-    
+
     On a successful save, the target isn't affected, and you can't use
     this spell against it again for 24 hours.
-    
+
     On a failed save, the spell creates an invisible sensor within 10
     feet of the target. You can see and hear through the sensor as if
     you w ere there. The sensor moves with the target, remaining
     within 10 feet of it for the duration. A creature that can see
     invisible objects sees the sensor as a luminous orb about the size
     of your fist.
-    
+
     Instead of targeting a creature, you can choose a location you
     have seen before as the target of this spell. When you do, the
     sensor appears at that location and doesn't move.
@@ -1508,7 +1508,7 @@ class Symbol(Spell):
     Each target must make a Wisdom saving throw and becomes frightened
     for 1 minute on a failed save. While frightened, the target drops whatever it is
      holding and must move at least 20 feet away from the glyph on each of ist
-    turns, if able. 
+    turns, if able.
 
     Hopelessness
     Each target must make a Charisma saving throw. On

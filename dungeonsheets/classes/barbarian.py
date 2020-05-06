@@ -1,6 +1,7 @@
-from .. import (features, weapons)
-from .classes import (CharClass, SubClass)
 from collections import defaultdict
+
+from dungeonsheets import features, weapons
+from dungeonsheets.classes.classes import CharClass, SubClass
 
 
 # PHB
@@ -78,7 +79,7 @@ class AncestralGuardianPath(SubClass):
     features_by_level[10] = [features.ConsultTheSpirits]
     features_by_level[14] = [features.VengefulAncestors]
 
-    
+
 class StormHeraldPath(SubClass):
     """All barbarians harbor a fury within. Their rage grants them superior
     strength, durability, and speed. Barbarians who follow the Path of the
@@ -118,7 +119,7 @@ class ZealotPath(SubClass):
     features_by_level[6] = [features.FanaticalFocus]
     features_by_level[10] = [features.ZealousPresence]
     features_by_level[14] = [features.RageBeyondDeath]
-    
+
 
 class Barbarian(CharClass):
     name = 'Barbarian'

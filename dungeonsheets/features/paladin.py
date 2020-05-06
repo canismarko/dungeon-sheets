@@ -1,7 +1,7 @@
-from .features import Feature, FeatureSelector
-from .ranger import Defense, Dueling
-from .fighter import GreatWeaponFighting, Protection
-from .. import (weapons, armor)
+from dungeonsheets import armor, weapons
+from dungeonsheets.features.features import Feature, FeatureSelector
+from dungeonsheets.features.fighter import GreatWeaponFighting, Protection
+from dungeonsheets.features.ranger import Defense, Dueling
 
 
 # PHB

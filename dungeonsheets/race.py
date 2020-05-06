@@ -1,6 +1,7 @@
-from . import (weapons, spells)
-from . import features as feats
 from collections import defaultdict
+
+from dungeonsheets import features as feats
+from dungeonsheets import spells, weapons
 
 
 class Race():

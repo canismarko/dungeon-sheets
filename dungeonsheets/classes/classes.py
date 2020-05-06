@@ -1,5 +1,6 @@
 from collections import defaultdict
-from ..features import Feature, FeatureSelector
+
+from dungeonsheets.features import Feature, FeatureSelector
 
 
 class CharClass():
@@ -58,8 +59,8 @@ class CharClass():
     def select_subclass(self, subclass_str):
         """
         Return a SubClass object corresponding to given string.
-        
-        Intended to be replaced by classes so they can 
+
+        Intended to be replaced by classes so they can
         define their own methods of picking subclass by string.
         """
         if subclass_str in ['', 'None', 'none', None]:
@@ -94,7 +95,7 @@ class CharClass():
                                      subcls.spell_slots_by_level)
         self.spells_known.extend([S() for S in subcls.spells_known])
         self.spells_prepared.extend([S() for S in subcls.spells_prepared])
-    
+
     @property
     def features(self):
         features = ()
@@ -106,7 +107,7 @@ class CharClass():
     def is_spellcaster(self):
         result = (self.spellcasting_ability is not None)
         return result
-    
+
     def spell_slots(self, spell_level):
         """How many spells slots are available for this spell level."""
         if self.spell_slots_by_level is None:
@@ -119,7 +120,7 @@ class CharClass():
         if isinstance(self.subclass, SubClass):
             s += ' ({:s})'.format(str(self.subclass))
         return s
-        
+
     def __repr__(self):
         return '\"{:s}\"'.format(str(self))
 

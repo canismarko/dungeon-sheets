@@ -1,17 +1,17 @@
-from .. import weapons
+from dungeonsheets import weapons
 
 
 def create_feature(**params):
     """Create a new subclass of ``Feature`` with given default parameters.
-    
+
     Useful for features that haven't been entered into the ``features.py``
     file yet.
-    
+
     Parameters
     ----------
     params : optional
       Saved as attributes of the new class.
-    
+
     Returns
     -------
     NewFeature
@@ -48,7 +48,7 @@ class Feature():
 
     def __repr__(self):
         return "\"{:s}\"".format(self.name)
-    
+
     def weapon_func(self, weapon: weapons.Weapon, **kwargs):
         """
         Updates weapon based on the Feature property

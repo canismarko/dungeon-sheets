@@ -1,4 +1,4 @@
-from . import features as feats
+from dungeonsheets import features as feats
 
 
 class Background():
@@ -38,7 +38,7 @@ class Criminal(Background):
     name = "Criminal"
     skill_proficiencies = ('deception', 'stealth')
     features = (feats.CriminalContact,)
-    
+
 
 class Spy(Criminal):
     name = "Spy"
@@ -52,7 +52,7 @@ class Entertainer(Background):
 
 class Gladiator(Entertainer):
     name = "Gladiator"
-    
+
 
 class FolkHero(Background):
     name = "Folk Hero"
@@ -94,7 +94,7 @@ class Outlander(Background):
     skill_proficiencies = ('athletics', 'survival')
     languages = ("[choose one]", )
     features = (feats.Wanderer,)
-    
+
 
 class Sage(Background):
     name = "Sage"
@@ -197,8 +197,8 @@ class MercenaryVeteran(Background):
     name = "Mercenary Veteran"
     skill_proficiencies = ('athletics', 'persuasion')
     features = (feats.MercenaryLife,)
-    
-    
+
+
 class UrbanBountyHunter(Background):
     name = 'Urban Bounty Hunter'
     skill_proficiencies = ()
@@ -219,8 +219,8 @@ class WaterdhavianNoble(Background):
     skill_proficiencies = ('history', 'persuasion')
     languages = ('[choose one]',)
     features = (feats.KeptInStyle,)
-    
-    
+
+
 PHB_backgrounds = [Acolyte, Charlatan, Criminal, Spy, Entertainer,
                    Gladiator, FolkHero, GuildArtisan, GuildMerchant,
                    Hermit, Noble, Knight, Outlander, Sage, Sailor,

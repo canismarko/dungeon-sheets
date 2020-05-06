@@ -1,6 +1,6 @@
-from .features import Feature, FeatureSelector
-from .. import (weapons, armor)
-from .rogue import UncannyDodge, Evasion
+from dungeonsheets import armor, weapons
+from dungeonsheets.features.features import Feature, FeatureSelector
+from dungeonsheets.features.rogue import Evasion, UncannyDodge
 
 
 # PHB
@@ -42,9 +42,9 @@ class NaturalExplorer(Feature):
     • Difficult terrain doesn't slow your group's travel.
 
     • Your group can't become lost except by magical means.
-    
+
     • Even when you are engaged in another activity while traveling
-    (such as foraging, navigating, or tracking), you remain alert to danger. 
+    (such as foraging, navigating, or tracking), you remain alert to danger.
 
     • If you are traveling alone, you can move stealthily at a normal pace.
 
@@ -73,16 +73,16 @@ class Archery(Feature):
         if isinstance(weapon, weapons.RangedWeapon):
             weapon.attack_bonus += 2
 
-    
+
 class Defense(Feature):
     """
-    While you are wearing armor, you gain a +1 bonus to AC (included in 
+    While you are wearing armor, you gain a +1 bonus to AC (included in
     stats on Character Sheet).
     """
     name = "Fighting Style (Defense)"
     source = "Ranger"
 
-        
+
 class Dueling(Feature):
     """When you are wielding a melee weapon in one hand and no other weapons, you
     gain a +2 bonus to damage rolls with that weapon.
@@ -99,7 +99,7 @@ class Dueling(Feature):
                 and "two-handed" not in weapon.properties.lower()):
             weapon.damage_bonus += 2
 
-    
+
 class TwoWeaponFighting(Feature):
     """When you engage in two-weapon fighting, you can add your ability modifier
     to the damage of the second attack.
@@ -114,7 +114,7 @@ class RangerFightingStyle(FeatureSelector):
     Select a Fighting Style by choosing in feature_choices:
 
     archery
- 
+
     defense
 
     dueling
@@ -205,7 +205,7 @@ class FoeSlayer(Feature):
     name = "Foe Slayer"
     source = "Ranger"
 
-    
+
 # Hunter
 class ColossusSlayer(Feature):
     """Your tenacity can wear down the most potent foes. When you hit a creature
@@ -253,7 +253,7 @@ class HuntersPrey(FeatureSelector):
                'horde breaker': HordeBreaker}
     name = "Hunter's Prey (Select One)"
     source = "Ranger (Hunter)"
-    
+
 
 class EscapeTheHorde(Feature):
     """Opportunity attacks against you are made with disadvantage
@@ -348,7 +348,7 @@ class SuperiorHuntersDefense(FeatureSelector):
     file from one of:
 
     evasion
-    
+
     stand against the tide
 
     uncanny dodge
@@ -515,7 +515,7 @@ class PlanarWarrior(Feature):
         else:
             return self._name + " (2d8/f)"
 
-        
+
 class EtherealStep(Feature):
     """At 7th level, you learn to step through the Ethereal Plane. As a bonus
     action, you can cast the etherealncss spell with this feature, without
@@ -584,7 +584,7 @@ class SlayersPrey(Feature):
     name = "Slayer's Prey"
     source = "Ranger (Monster Slayer)"
 
-    
+
 class SupernaturalDefense(Feature):
     """At 7th level, you gain extra resilience against your prey's assaults on
     your mind and body. Whenever the target of your Slayer's Prey forces you to
@@ -620,7 +620,7 @@ class SlayersCounter(Feature):
     """
     name = "Slayer's Counter"
     source = "Ranger (Monster Slayer)"
-    
+
 
 # Revised Ranger
 class FavoredEnemyRevised(Feature):
@@ -660,14 +660,14 @@ class NaturalExplorerRevised(Feature):
     --Difficult terrain doesn't slow your group's travel.
 
     --Your group can't become lost except by magical means.
-    
+
     --Even when you are engaged in another activity while traveling (such as
     foraging, navigating, or tracking), you remain alert to danger.
 
     --If you are traveling alone, you can move stealthily at a normal pace.
 
     --When you forage, you find twice as much food as you normally would.
-    
+
     --While tracking other creatures, you also learn their exact number, their
     sizes, and how long ago they passed through the area.
 
@@ -675,7 +675,7 @@ class NaturalExplorerRevised(Feature):
     name = "Natural Explorer"
     source = "Revised Ranger"
 
-    
+
 class PrimevalAwarenessRevised(Feature):
     """Beginning at 3rd level, your mastery of ranger lore allows you to establish
     a powerful link to beasts and to the land around you.
@@ -720,7 +720,7 @@ class GreaterFavoredEnemy(Feature):
     name = "Greated Favored Enemy"
     source = "Revised Ranger"
 
-    
+
 class FleetOfFoot(Feature):
     """Beginning at 8th level, you can use the Dash action as a bonus action on
     your turn.
@@ -880,4 +880,3 @@ class StalkersDodge(Feature):
     """
     name = "Stalker's Dodge"
     source = "Revised Ranger (Deep Stalker Conclave)"
-

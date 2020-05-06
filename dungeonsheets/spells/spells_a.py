@@ -1,4 +1,4 @@
-from .spells import Spell
+from dungeonsheets.spells.spells import Spell
 
 
 class AbiDalzimsHorridWilting(Spell):
@@ -845,5 +845,4 @@ class Awaken(Spell):
     ritual = False
     magic_school = "Transmutation"
     classes = ('Bard', 'Druid')
-
 

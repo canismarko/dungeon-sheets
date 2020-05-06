@@ -14,9 +14,9 @@ from fdfgen import forge_fdf
 import pdfrw
 from jinja2 import Environment, PackageLoader
 
-from . import character as _char
-from . import exceptions, classes
-from .stats import mod_str
+from dungeonsheets import character as _char
+from dungeonsheets import exceptions, classes
+from dungeonsheets.stats import mod_str
 
 
 """Program to take character definitions and build a PDF of the
@@ -43,7 +43,7 @@ def rst_to_latex(rst):
         tex = dice_re.sub(r'\\texttt{\1}', tex)
         for c in ['#', '$', '%', '&', '~', '_', '^']:
             tex = tex.replace(c, '\\' + c)
-        
+
     return tex
 
 
@@ -100,7 +100,7 @@ def create_latex_pdf(character, basename, template, keep_temp_files=False):
                 print(f'Our exception in {e}', end='\n\n')
                 print(i)
         '''
-        
+
     # Convenience function for removing temporary files
     def remove_temp_files(basename_):
         filenames = [f'{basename_}.tex', f'{basename_}.aux',
@@ -342,7 +342,7 @@ def create_character_pdf(character, basename, flatten=False):
 
 def make_pdf(fields: dict, src_pdf: str, basename: str, flatten: bool=False):
     """Create a new PDF by applying fields to a src PDF document.
-    
+
     Parameters
     ==========
     fields :
@@ -356,7 +356,7 @@ def make_pdf(fields: dict, src_pdf: str, basename: str, flatten: bool=False):
     flatten :
       If truthy, the PDF will be collapsed so it is no longer
       editable.
-    
+
     """
     try:
         result = _make_pdf_pdftk(fields, src_pdf, basename, flatten)
@@ -419,7 +419,7 @@ def _make_pdf_pdftk(fields, src_pdf, basename, flatten=False):
     """More robust way to make a PDF, but has a hard dependency."""
     # Create the actual FDF file
     fdfname = basename + '.fdf'
-    
+
     fdf = forge_fdf("", fields, [], [], [])
     fdf_file = open(fdfname, "wb")
     fdf_file.write(fdf)
@@ -434,11 +434,11 @@ def _make_pdf_pdftk(fields, src_pdf, basename, flatten=False):
     subprocess.call(popenargs)
     # Clean up temporary files
     os.remove(fdfname)
-    
-    
+
+
 def make_sheet(character_file, character=None, flatten=False, debug=False):
     """Prepare a PDF character sheet from the given character file.
-    
+
     Parameters
     ----------
     character_file : str
@@ -502,7 +502,7 @@ def make_sheet(character_file, character=None, flatten=False, debug=False):
 
 def merge_pdfs(src_filenames, dest_filename, clean_up=False):
     """Merge several PDF files into a single final file.
-    
+
     src_filenames
       Iterable of source PDF file paths to use.
     dest_filename
@@ -511,7 +511,7 @@ def merge_pdfs(src_filenames, dest_filename, clean_up=False):
     clean_up : optional
       If truthy, the ``src_filenames`` will be deleted once the
       ``dest_filename`` has been created.
-    
+
     """
     popenargs = (PDFTK_CMD, *src_filenames, 'cat', 'output', dest_filename)
     try:

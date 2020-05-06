@@ -1,6 +1,7 @@
-from .. import (weapons, features)
-from .classes import CharClass, SubClass
 from collections import defaultdict
+
+from dungeonsheets import features, weapons
+from dungeonsheets.classes.classes import CharClass, SubClass
 
 
 # PHB
@@ -152,7 +153,7 @@ class Transmutation(SubClass):
 # SCAG
 class Bladesinging(SubClass):
     """**Restriction: Elves Only**
-    
+
     Bladesingers are elves who bravely defend their people and lands. They are
     elf wizards who master a school of sword fighting grounded in a tradition
     of arcane magic. In combat, a bladesinger uses a series of intricate,
@@ -247,4 +248,3 @@ class Wizard(CharClass):
         20: (5, 4, 3, 3, 3, 3, 2, 2, 1, 1),
     }
 
-    
