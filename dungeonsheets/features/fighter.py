@@ -12,37 +12,118 @@ class GreatWeaponFighting(Feature):
     weapon that you are wielding with two hands, you can reroll the die and
     must use the new roll, even if the new roll is a 1 or a 2. The weapon must
     have the two-handed or versatile property for you to gain this benefit.
-
     """
-    name = "Fighting Style (Great Weapon Fighting)"
-    source = "Fighter"
+
+    name = 'Fighting Style (Great Weapon Fighting)'
+    source = 'Fighter'
 
 
 class Protection(Feature):
     """When a creature you can see attacks a target other than you that is within
     5 feet of you, you can use your reaction to impose disadvantage on the
     attack roll. You must be wielding a shield.
+    """
+
+    name = 'Fighting Style (Protection)'
+    source = 'Fighter'
+
+
+# UA
+class BlindingFighting(Feature):
+    """Being unable to see a creature doesn’t impose disadvantage on your attack
+    rolls against it, provided the creature isn’t hidden from you.
+    """
+
+    name = 'Fighting Style (Blinding Fighting)'
+    source = 'Fighter'
+
+
+class CloseQuartersShooter(Feature):
+    """When making a ranged attack while you are within 5 feet of a hostile
+    creature, you do not have disadvantage on the attack roll. Your ranged
+    attacks ignore half cover and three-quarters cover against targets within
+    30 feet of you. You have a +1 bonus to attack rolls on ranged attacks.
+    """
+
+    name = 'Fighting Style (Close Quarters Shooter)'
+    source = 'Fighter'
+
+
+class Interception(Feature):
+    """When a creature you can see hits a target that is within 5 feet of you
+    with an attack, you can use your reaction to reduce the damage the target
+    takes by 1d10 + your proficiency bonus (to a minimum of 0 damage). You must
+    be wielding a shield or a simple or martial weapon to use this reaction.
+    """
+
+    name = 'Fighting Style (Interception)'
+    source = 'Fighter'
+
+
+class Mariner(Feature):
+    """As long as you not wearing heavy armor or using a shield, you have
+    a swimming speed and a climbing speed equal to your normal speed, and you
+    gain a +1 bonus to armor class.
+    """
+
+    name = 'Fighting Style (Mariner)'
+    source = 'Fighter'
+
+
+class ThrownWeaponFighting(Feature):
+    """You can draw a weapon that has the thrown property as part of the
+    attack you make with the weapon.
+    
+    In addition, when you hit with a ranged attack using a thrown
+    weapon, you gain a +1 bonus to the damage roll.
 
     """
-    name = "Fighting Style (Protection)"
-    source = "Fighter"
+    name = 'Fighting Style (Thrown Weapon Fighting)'
+    source = 'Fighter'
+
+
+class TunnelFighter(Feature):
+    """As a bonus action, you can enter a defensive stance that lasts until
+    the start of your next turn. While in your defensive stance, you can make
+    opportunity attacks without using your reaction, and you can use your
+    reaction to make a melee attack against a creature that moves more than
+    5 feet while within your reach.
+    """
+    name = 'Fighting Style (Tunnel Fighter)'
+    source = 'Fighter'
+
+
+class UnarmedFighting(Feature):
+    """Your unarmed strikes can deal bludgeoning damage equal to 1d6 + your
+    Strength modifier. If you strike with two free hands, the d6 becomes a d8.
+    
+    When you successfully start a grapple, you can deal 1d4
+    bludgeoning damage to the grappled creature. Until the grapple
+    ends, you can also deal this damage to the creature whenever you
+    hit it with a melee attack.
+    
+    """
+    name = 'Fighting Style (Unarmed Fighting)'
+    source = 'Fighter'
 
 
 class FighterFightingStyle(FeatureSelector):
-    """
-    Select a Fighting Style by choosing in feature_choices:
+    """Select a Fighting Style by choosing in feature_choices:
+    
+    - archery
+    - defense
+    - dueling
+    - great-weapon fighting
+    - protection
+    - two-weapon fighting
+    - blinding fighting
+    - close quarters shooter
+    - interception
+    - mariner
+    - thrown weapon fighting
+    - tunnel fighter
+    - unarmed fighting
 
-    archery
-
-    defense
-
-    dueling
-
-    great-weapon fighting
-
-    protection
-
-    two-weapon fighting
     """
     options = {'archery': Archery,
                'defense': Defense,
@@ -52,7 +133,14 @@ class FighterFightingStyle(FeatureSelector):
                'projection': Protection,
                'two-weapon fighting': TwoWeaponFighting,
                'two-weapon': TwoWeaponFighting,
-               'dual wield': TwoWeaponFighting}
+               'dual wield': TwoWeaponFighting,
+               'blinding fighting': BlindingFighting,
+               'close quarters shooter': CloseQuartersShooter,
+               'interception': Interception,
+               'mariner': Mariner,
+               'thrown weapon fighting': ThrownWeaponFighting,
+               'tunnel fighter': TunnelFighter,
+               'unarmed fighting': UnarmedFighting}
     name = "Fighting Style (Select One)"
     source = "Fighter"
 
