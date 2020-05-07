@@ -7,7 +7,6 @@ import logging
 log = logging.getLogger(__name__)
 
 import math
-import numpy as np
 import os
 from random import randint
 import subprocess
@@ -126,7 +125,7 @@ class App(npyscreen.NPSAppManaged):
             if i == 0:
                 num -= 1
             for d in range(num):
-                hp_max += np.random.randint(low=1, high=hd.faces+1) + const
+                hp_max += randint(low=1, high=hd.faces+1) + const
         abil.hp_max.value = str(hp_max)
         abil.display()
 
