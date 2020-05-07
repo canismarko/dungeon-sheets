@@ -72,35 +72,33 @@ def text_box(string):
     return new_string
 
 
-def create_druid_shapes_pdf(character, basename, keep_temp_files=False):
+def create_druid_shapes_pdf(character, basename, keep_temp_files=False, use_dnd_decorations=False):
     template = jinja_env.get_template('druid_shapes_template.tex')
-    return create_latex_pdf(character, basename, template, keep_temp_files=keep_temp_files)
+    return create_latex_pdf(character, basename, template,
+                            keep_temp_files=keep_temp_files,
+                            use_dnd_decorations=use_dnd_decorations)
 
 
-def create_spellbook_pdf(character, basename, keep_temp_files=False):
+def create_spellbook_pdf(character, basename, keep_temp_files=False, use_dnd_decorations=False):
     template = jinja_env.get_template('spellbook_template.tex')
-    return create_latex_pdf(character, basename, template, keep_temp_files=keep_temp_files)
+    return create_latex_pdf(character, basename, template,
+                            keep_temp_files=keep_temp_files,
+                            use_dnd_decorations=use_dnd_decorations)
 
 
-def create_features_pdf(character, basename, keep_temp_files=False):
+def create_features_pdf(character, basename, keep_temp_files=False, use_dnd_decorations=False):
     template = jinja_env.get_template('features_template.tex')
-    return create_latex_pdf(character, basename, template, keep_temp_files=keep_temp_files)
+    return create_latex_pdf(character, basename, template,
+                            keep_temp_files=keep_temp_files,
+                            use_dnd_decorations=use_dnd_decorations)
 
 
-def create_latex_pdf(character, basename, template, keep_temp_files=False):
-    tex = template.render(character=character)
+def create_latex_pdf(character, basename, template, keep_temp_files=False, use_dnd_decorations=False):
+    tex = template.render(character=character, use_dnd_decorations=use_dnd_decorations)
     # Create tex document
     tex_file = f'{basename}.tex'
     with open(tex_file, mode='w', encoding="utf-8") as f:
         f.write(tex)
-        '''for i in tex:
-            try:
-                f.write(i)
-            except Exception as e:
-                print(f'Our exception in {e}', end='\n\n')
-                print(i)
-        '''
-
     # Convenience function for removing temporary files
     def remove_temp_files(basename_):
         filenames = [f'{basename_}.tex', f'{basename_}.aux',
@@ -114,9 +112,11 @@ def create_latex_pdf(character, basename, template, keep_temp_files=False):
     tex_command_line = ['pdflatex', '--output-directory', output_dir,
                         '-halt-on-error', '-interaction=nonstopmode',
                         tex_file]
+    passes = 2 if use_dnd_decorations else 1
     try:
-        result = subprocess.run(tex_command_line,
-                                stdout=subprocess.DEVNULL, timeout=30)
+        for i in range(passes):
+            result = subprocess.run(tex_command_line,
+                                    stdout=subprocess.DEVNULL, timeout=30)
     except FileNotFoundError:
         # Remove temporary files
         remove_temp_files(basename)
@@ -436,18 +436,25 @@ def _make_pdf_pdftk(fields, src_pdf, basename, flatten=False):
     os.remove(fdfname)
 
 
-def make_sheet(character_file, character=None, flatten=False, debug=False):
+def make_sheet(character_file, character=None, flatten=False, fancy_decorations=False, debug=False):
     """Prepare a PDF character sheet from the given character file.
-
+    
     Parameters
     ----------
     character_file : str
-        File (.py) to load character from. Will save PDF using same name
+      File (.py) to load character from. Will save PDF using same name
     character : Character, optional
-        If provided, will not load from the character file, just use file
-        for PDF name
+      If provided, will not load from the character file, just use
+      file for PDF name
     flatten : bool, optional
-        If true, the resulting PDF will look better and won't be fillable form.
+      If true, the resulting PDF will look better and won't be
+      fillable form.
+    fancy_decorations : bool, optional
+      Use fancy page layout and decorations for extra sheets, namely
+      the dnd style file: https://github.com/rpgtex/DND-5e-LaTeX-Template.
+    debug : bool, optional
+      Provide extra info and preserve temporary files.
+
     """
     if character is None:
         character = _char.Character.load(character_file)
@@ -462,13 +469,16 @@ def make_sheet(character_file, character=None, flatten=False, debug=False):
         # Create spell sheet
         spell_base = '{:s}_spells'.format(
             os.path.splitext(character_file)[0])
-        create_spells_pdf(character=character, basename=spell_base, flatten=flatten)
+        create_spells_pdf(character=character, basename=spell_base,
+                          flatten=flatten)
         sheets.append(spell_base + '.pdf')
     if len(character.features) > 0:
         feat_base = '{:s}_feats'.format(
             os.path.splitext(character_file)[0])
         try:
-            create_features_pdf(character=character, basename=feat_base, keep_temp_files=debug)
+            create_features_pdf(character=character,
+                                basename=feat_base, keep_temp_files=debug,
+                                use_dnd_decorations=fancy_decorations)
         except exceptions.LatexNotFoundError as e:
             log.warning('``pdflatex`` not available. Skipping features book '
                         f'for {character.name}')
@@ -478,7 +488,9 @@ def make_sheet(character_file, character=None, flatten=False, debug=False):
         # Create spell book
         spellbook_base = os.path.splitext(character_file)[0] + '_spellbook'
         try:
-            create_spellbook_pdf(character=character, basename=spellbook_base, keep_temp_files=debug)
+            create_spellbook_pdf(character=character,
+                                 basename=spellbook_base, keep_temp_files=debug,
+                                 use_dnd_decorations=fancy_decorations)
         except exceptions.LatexNotFoundError as e:
             log.warning('``pdflatex`` not available. Skipping spellbook '
                         f'for {character.name}')
@@ -489,7 +501,9 @@ def make_sheet(character_file, character=None, flatten=False, debug=False):
     if len(wild_shapes) > 0:
         shapes_base = os.path.splitext(character_file)[0] + '_wild_shapes'
         try:
-            create_druid_shapes_pdf(character=character, basename=shapes_base, keep_temp_files=debug)
+            create_druid_shapes_pdf(character=character,
+                                    basename=shapes_base, keep_temp_files=debug,
+                                    use_dnd_decorations=fancy_decorations)
         except exceptions.LatexNotFoundError as e:
             log.warning('``pdflatex`` not available. Skipping wild shapes list '
                         f'for {character.name}')
@@ -537,6 +551,9 @@ def main():
                         help="Python file with character definition")
     parser.add_argument('--editable', '-e', action="store_true",
                         help="Keep the PDF fields in place once processed.")
+    parser.add_argument('--fancy-decorations', '-F', action="store_true",
+                        help=("Render extra pages using fancy decorations "
+                              "(experimental, requires https://github.com/rpgtex/DND-5e-LaTeX-Template)"))
     parser.add_argument('--debug', '-d', action="store_true",
                         help="Provide verbose logging for debugging purposes.")
     args = parser.parse_args()
@@ -549,9 +566,10 @@ def main():
     else:
         filenames = [args.filename]
     for filename in filenames:
-        print(f"Processing {os.path.splitext(filename)[0]}...", end='')
+        print(f"Processing {os.path.splitext(filename)[0]}...", end='', flush=True)
         try:
-            make_sheet(character_file=filename, flatten=(not args.editable), debug=args.debug)
+            make_sheet(character_file=filename, flatten=(not args.editable),
+                       debug=args.debug, fancy_decorations=args.fancy_decorations)
         except exceptions.CharacterFileFormatError as e:
             # Only raise the failed exception if this file is explicitly given
             print('invalid')

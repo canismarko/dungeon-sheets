@@ -1,9 +1,15 @@
-\documentclass[twocolumn,lettersize]{article}
+\documentclass[10pt,twocolumn,lettersize]{article}
 
-%% \usepackage{fullpage}
-\usepackage[margin=1.5cm]{geometry}
-\usepackage[dvipsnames]{color}
-\definecolor{mygrey}{gray}{0.7}
+\newlength{\zerosep}
+[% if use_dnd_decorations %]
+  \usepackage[layout=true]{dnd}
+  \setlength{\zerosep}{0em}
+[% else %]
+  \usepackage[margin=1.5cm]{geometry}
+  \usepackage[dvipsnames]{color}
+  \definecolor{mygrey}{gray}{0.7}
+  \setlength{\zerosep}{-1em}
+[% endif %]
 
 \title{Spell Descriptions}
 \author{[[ character.name ]]}
@@ -30,11 +36,16 @@
     (\textit{concentration})%
   [% endif %]%            
              
-  \noindent
-  \textbf{Casting Time:} [[ spl.casting_time ]] \\
-  \textbf{Duration:} [[ spl.duration ]]\\
-  \textbf{Range:} [[ spl.casting_range ]] \\
-  \textbf{Components:} [[ spl.component_string ]] 
+  %% \noindent
+  \begin{description}
+    \setlength{\itemsep}{\zerosep}%
+    \setlength{\parskip}{0pt}%
+    \item [Casting Time:] [[ spl.casting_time ]] \\
+    \item [Duration:] [[ spl.duration ]] \\
+    \item [Range:] [[ spl.casting_range ]] \\
+    \item [Components:] [[ spl.component_string ]] \\
+  \end{description}
+  \vspace{\zerosep}
 
   [[ spl.__doc__|rst_to_latex ]]
 

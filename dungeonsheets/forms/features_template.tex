@@ -1,9 +1,15 @@
-\documentclass[twocolumn,lettersize]{article}
+\documentclass[10pt,twocolumn,lettersize]{article}
 
-%% \usepackage{fullpage}
-\usepackage[margin=1.5cm]{geometry}
-\usepackage[dvipsnames]{color}
-\definecolor{mygrey}{gray}{0.7}
+\newlength{\zerosep}
+[% if use_dnd_decorations %]
+  \usepackage[layout=true]{dnd}
+  \setlength{\zerosep}{0em}
+[% else %]
+  \usepackage[margin=1.5cm]{geometry}
+  \usepackage[dvipsnames]{color}
+  \definecolor{mygrey}{gray}{0.7}
+  \setlength{\zerosep}{-1em}
+[% endif %]
 
 \title{Features and Magic Items}
 \author{[[ character.name ]]}

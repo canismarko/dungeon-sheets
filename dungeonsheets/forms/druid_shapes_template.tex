@@ -1,9 +1,14 @@
 \documentclass[twocolumn,lettersize]{article}
 
-%% \usepackage{fullpage}
-\usepackage[margin=1.5cm]{geometry}
-\usepackage[dvipsnames]{color}
-\usepackage{indentfirst}
+\newlength{\zerosep}
+[% if use_dnd_decorations %]
+  \usepackage[layout=true]{dnd}
+  \setlength{\zerosep}{0em}
+[% else %]
+  \usepackage[margin=1.5cm]{geometry}
+  \setlength{\zerosep}{-1em}
+  \usepackage[dvipsnames]{color}
+[% endif %]
 \definecolor{mygrey}{gray}{0.7}
 
 \title{Wild Shapes}
@@ -37,7 +42,7 @@
   [% if shape.description %]  
   \subsection*{[[ shape.description ]]}
   [% endif %]
-  
+
   \begin{tabular}{c | c | c}
     Armor Class & Hit Points & Speed \\
     \hline
