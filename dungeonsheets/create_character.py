@@ -125,7 +125,7 @@ class App(npyscreen.NPSAppManaged):
             if i == 0:
                 num -= 1
             for d in range(num):
-                hp_max += randint(low=1, high=hd.faces+1) + const
+                hp_max += randint(1, hd.faces) + const
         abil.hp_max.value = str(hp_max)
         abil.display()
 
