@@ -1,6 +1,102 @@
 from dungeonsheets import spells
 from dungeonsheets.features.features import Feature, FeatureSelector
 
+
+class _SpecialistSpells(Feature):
+    """Starting at 3rd level, you always have certain spells pre­pared after
+    you reach particular levels in this class, as shown in the Specializatin
+    Spells table. These spells count as artificer spells for you, but they
+    don't count against the number of artificer spells you prepare.
+    """
+    _name = "Select One"
+    source = "Artificer"
+    _spells = {
+            3: [],
+            5: [],
+            9: [],
+            13: [],
+            17: []
+            }
+    spells_known = []
+    spells_prepared = []
+
+    @property
+    def name(self):
+        return "{:s} Spells".format(self._name)
+
+    def __init__(self, owner=None):
+        if owner is not None:
+            level = owner.Artificer.level
+            for lvl, spl in self._spells.items():
+                if level >= lvl:
+                    self.spells_known.extend(spl)
+                    self.spells_prepared.extend(spl)
+        super().__init__.(owner=owner)
+
+
+class AlchemistSpells(_SpecialistSpells):
+    """Starting at 3rd level, you always have certain spells pre­pared after
+    you reach particular levels in this class, as shown in the Alchemist Spells
+    table. These spells count as artificer spells for you, but they don't count
+    against the number of artificer spells you prepare.
+    """
+
+    _name = "Alchemist"
+    _spells = {
+            3: [spells.HealingWord, spells.RayOfSickness],
+            5: [spells.FlamingSphere, spells.MelfsAcidArrow],
+            9: [spells.GaseousForm, spells.MassHealingWord],
+            13: [spells.Blight, spells.DeathWard],
+            17: [spells.Cloudkill, spells.RaiseDead]
+            }
+
+
+class ArtilleristSpells(_SpecialistSpells):
+    """Starting at 3rd level, you always have certain spells prepared after
+    you reach particular levels in this class, as shown  in the Artillerist
+    Spells table. These spells count as artificer spells for you, but they
+    don't count against the number of artificer spells you prepare.
+    """
+
+    _name = "Artillerist"
+    _spells = {
+            3: [spells.Shield, spells.Thunderwave],
+            5: [spells.ScorchingRay, spells.Shatter],
+            9: [spells.Fireball, spells.WindWall],
+            13: [spells.IceStorm, spells.WallOfFire],
+            17: [spells.ConeOfCold, spells.WallOfForce]
+            }
+
+
+class BattleSmithSpells(_SpecialistSpells):
+    """Starting at 3rd level, you always have certain spells prepared after you
+    reach particular levels in this class, as shown in the Battle Smith Spells
+    table. These spells count as artificer spells for you, but they don't count
+    against the number of artificer spells you prepare.
+    """
+
+    _name = "Battle Smith"
+    _spells = {
+            3: [spells.Heroism, spells.Shield],
+            5: [spells.BrandingSmite, spells.WardingBond],
+            9: [spells.AuraOfVitality, spells.ConjureBarrage],
+            13: [spells.AuraOfPurity, spells.FireShield],
+            17: [spells.BanishingSmite, spells.MassCureWounds]
+            }
+
+
+class FirearmProficiency(Feature):
+    """The secrets of creating and operating gunpowder weapons have been
+    discovered in various corners of the D&D multiverse. If your Dungeon Master
+    uses the rules on firearms in chapter 9 of the Dungeon Master's Guide and
+    your artificer has been exposed to the operation of such weapons, your
+    artificer is proficient with them.
+    """
+
+    name = "Optional Rule: Firearm Proficiency"
+    source = "Artificer"
+
+
 class ToolProficiency(Feature):
     """At 3rd level, you choose the type of specialist you are: Alchemist,
     Artillerist, or Battle Smith, each of which is detailed at the end of the
