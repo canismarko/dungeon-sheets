@@ -14,7 +14,7 @@ class ToolProficiency(Feature):
 
 class AlchemicalSavant(Feature):
     """At 5th level, you develop masterful command of magical chemicals,
-    enhancing the healing and damage you cre­ate through them. Whenever you
+    enhancing the healing and damage you create through them. Whenever you
     cast a spell using your alchemist's supplies as the spellcasting focus, you
     gain a bonus to one roll of the spell. That roll must restore hit points or
     be a damage roll that deals acid, fire, necrotic, or poison damage, and the
@@ -27,11 +27,11 @@ class AlchemicalSavant(Feature):
 
 class RestorativeReagents(Feature):
     """Starting at 9th level, you can incorporate
-    restorative re­agents into some of your works:
+    restorative reagents into some of your works:
     - Whenever a creature drinks an experimental elixir you created, the
-      creature gains temporary hit points equal to 2d6 +your Intelligence
-      modifier (minimum of 1  temporary hit point).
-    - You can cast lesser restoration without expending a spell  slot and
+      creature gains temporary hit points equal to 2d6 + your Intelligence
+      modifier (minimum of 1 temporary hit point).
+    - You can cast lesser restoration without expending a spell slot and
       without preparing the spell, provided you use alchemist's supplies as the
       spellcasting focus. You can do so a number of times equal to your
       Intelligence modifier (minimum of once), and you regain all expended uses
@@ -43,14 +43,14 @@ class RestorativeReagents(Feature):
 
 
 class ChemicalMastery(Feature):
-    """By 15th level, you have been  exposed to so many chem­icals that they
+    """By 15th level, you have been  exposed to so many chemicals that they
     pose little risk to you, and you can use them to quickly end certain
     ailments:
-    - You gain resistance to acid damage and poison dam­age, and you are immune
+    - You gain resistance to acid damage and poison damage, and you are immune
       to the poisoned condition.
-    - You can cast greater restoration and heal without ex­pending a spell
+    - You can cast greater restoration and heal without expending a spell
       slot, without preparing the spell, and without material components,
-      provided you use al­chemist's supplies as the spellcasting focus. Once
+      provided you use alchemist's supplies as the spellcasting focus. Once
       you cast either spell with this feature, you can't cast that spell with
       it again until you finish a long rest.
       """
@@ -123,8 +123,40 @@ class InfuseItem(Feature):
     infusion applies.
     """
 
-    name = "Infuse Item"
+    _name = "Infuse Item"
     source = "Artificer"
+    _infusions = {
+            # level: (infusions known, infused items)
+            2:  (4, 2),
+            3:  (4, 2),
+            4:  (4, 2),
+            5:  (4, 2),
+            5:  (4, 2),
+            6:  (6, 3),
+            7:  (6, 3),
+            8:  (6, 3),
+            9:  (6, 3),
+            10: (8, 4),
+            11: (8, 4),
+            12: (8, 4),
+            13: (8, 4),
+            14: (10, 5),
+            15: (10, 5),
+            16: (10, 5),
+            17: (10, 5),
+            18: (12, 6),
+            19: (12, 6),
+            20: (12, 6),
+            }
+
+
+    @property
+    def name(self):
+        known_infusions = self._infusions[self.owner.Artificer.level][0]
+        infused_items = self._infusions[self.owner.Artificer.level][1]
+        return self._name + " ({:d} Infusions Known, {:d} Infused Items".format(
+                known_infusions, infused_items)
+
 
 
 class TheRightToolForTheJob(Feature):
