@@ -86,7 +86,7 @@ spells_prepared = {{ char.spells_prepared }}
 wild_shapes = {{ char.all_wild_shapes }}  # Ex: ('ape', 'wolf', 'ankylosaurus')
 
 # Infusions for Artificer
-infusions = {{ char.infusions }} # Ex: ('repeating shot', 'replicate magic item')
+infusions = {{ char.infusions_text }} # Ex: ('repeating shot', 'replicate magic item')
 
 # Backstory
 # Describe your backstory here

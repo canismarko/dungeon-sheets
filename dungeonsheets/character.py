@@ -533,7 +533,7 @@ class Character():
                                    f'Please add it to ``infusions.py``')
                             warnings.warn(msg)
                     _infusions.sort(key=lambda infusion: infusion.name)
-                    self.infusions = tuple(I() for I in _infusions)
+                    self.infusions = tuple(i() for i in _infusions)
             else:
                 if not hasattr(self, attr):
                     warnings.warn(f"Setting unknown character attribute {attr}",
@@ -727,6 +727,13 @@ class Character():
     def wild_shapes(self, new_shapes):
         if hasattr(self, 'Druid'):
             self.Druid.wild_shapes = new_shapes
+
+    @property
+    def infusions_text(self):
+        if hasattr(self, 'Artificer'):
+            return tuple([i.name for i in self.infusions])
+        else:
+            return ()
 
     @classmethod
     def load(cls, character_file):
