@@ -11,11 +11,11 @@ class _SpecialistSpells(Feature):
     _name = "Select One"
     source = "Artificer"
     _spells = {
-            3: [spells.HealingWord, spells.RayOfSickness],
-            5: [spells.FlamingSphere, spells.MelfsAcidArrow],
-            9: [spells.GaseousForm, spells.MassHealingWord],
-            13: [spells.Blight, spells.DeathWard],
-            17: [spells.Cloudkill, spells.RaiseDead]
+            3: [],
+            5: [],
+            9: [],
+            13: [],
+            17: []
             }
     spells_known = []
     spells_prepared = []
