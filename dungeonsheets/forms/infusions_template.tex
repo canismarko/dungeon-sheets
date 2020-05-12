@@ -1,0 +1,37 @@
+\documentclass[10pt,twocolumn,lettersize]{article}
+
+\newlength{\zerosep}
+[% if use_dnd_decorations %]
+  \usepackage[layout=true]{dnd}
+  \setlength{\zerosep}{0em}
+[% else %]
+  \usepackage[margin=1.5cm]{geometry}
+  \setlength{\zerosep}{-1em}
+[% endif %]
+
+\title{Infusion Descriptions}
+\author{[[ character.name ]]}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+[% for inf in character.infusions %]
+
+  \section*{[[ inf.name ]]}
+
+  [% if inf.prerequisite %]%
+    \textit{Prerequisite: [[ inf.prerequisite ]]}%
+  [% endif %]%
+  [% if inf.item %]%
+  	\textit{Item: [[ inf.item ]]}%
+  [% endif %]%
+
+  %% \noindent
+
+  [[ inf.__doc__|rst_to_latex ]]
+
+[% endfor %]
+
+\end{document}
