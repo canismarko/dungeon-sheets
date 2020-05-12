@@ -3,12 +3,12 @@
 import logging
 log = logging.getLogger(__name__)
 import argparse
-import importlib.util
 import os
 import subprocess
 import warnings
 import re
-from io import StringIO
+from multiprocessing import Pool, cpu_count
+from itertools import product
 
 from fdfgen import forge_fdf
 import pdfrw
@@ -543,6 +543,24 @@ def merge_pdfs(src_filenames, dest_filename, clean_up=False):
 load_character_file = _char.read_character_file
 
 
+def _build(filename, args):
+    basename = os.path.splitext(filename)[0]
+    print(f"Processing {basename}...")
+    try:
+        make_sheet(character_file=filename, flatten=(not args.editable),
+                   debug=args.debug, fancy_decorations=args.fancy_decorations)
+    except exceptions.CharacterFileFormatError as e:
+        # Only raise the failed exception if this file is explicitly given
+        print(f'invalid {basename}')
+        if args.filename:
+            raise
+    except Exception as e:
+        print(f'{basename} failed')
+        raise
+    else:
+        print(f"{basename} done")
+
+
 def main():
     # Prepare an argument parser
     parser = argparse.ArgumentParser(
@@ -565,21 +583,9 @@ def main():
         filenames = [f for f in os.listdir('.') if os.path.splitext(f)[1] == '.py']
     else:
         filenames = [args.filename]
-    for filename in filenames:
-        print(f"Processing {os.path.splitext(filename)[0]}...", end='', flush=True)
-        try:
-            make_sheet(character_file=filename, flatten=(not args.editable),
-                       debug=args.debug, fancy_decorations=args.fancy_decorations)
-        except exceptions.CharacterFileFormatError as e:
-            # Only raise the failed exception if this file is explicitly given
-            print('invalid')
-            if args.filename:
-                raise
-        except Exception as e:
-            print('failed')
-            raise
-        else:
-            print("done")
+
+    with Pool(cpu_count()) as p:
+        p.starmap(_build, product(filenames, [args]))
 
 
 if __name__ == '__main__':
