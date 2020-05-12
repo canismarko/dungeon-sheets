@@ -84,19 +84,19 @@ class MagicalTinkering(Feature):
     artisan's tools  in hand. You then touch a Tiny nonmagical object as an
     action and give it one of the following magical properties of your choice:
 
-    - The object sheds bright light in a 5-foot radius and dim light for an
+    • The object sheds bright light in a 5-foot radius and dim light for an
       additional 5 fe et.
 
-    - Whenever tapped by a creature, the object emits a recorded message that
+    • Whenever tapped by a creature, the object emits a recorded message that
       can be heard up to 10 feet away. You utter the message when you bestow
       this property on the object, and the recording can be no more than 6
       seconds long.
 
-    - The object continuously emits your choice of an odor or a nonverbal sound
+    • The object continuously emits your choice of an odor or a nonverbal sound
       (wind, waves, chirping, or the like). The chosen phenomenon is
       perceivable up to  10 feet away.
 
-    - A static visual effect appears on one of the object's surfaces. This
+    • A static visual effect appears on one of the object's surfaces. This
       effect can be a picture, up to 25 words of text, lines and shapes, or a
       mixture of these elements, as you like. The chosen property lasts
       indefinitely. As an action, you can touch the object and end the property
@@ -232,9 +232,9 @@ class MagicItemAdept(Feature):
     """When you reach 10th level, you achieve a profound un­derstanding of how
     to use and make magic items:
 
-    - You can attune to up to four magic items at once.
+    • You can attune to up to four magic items at once.
 
-    - If you craft a magic item with a rarity of common or uncommon, it takes
+    • If you craft a magic item with a rarity of common or uncommon, it takes
       you a quarter of the normal time, and it costs you half as much of the
       usual gold.
     """
@@ -247,7 +247,7 @@ class SpellStoringItem(Feature):
     """At 11th level, you learn how to store a spell in an object. Whenever you
     finish a long rest, you can touch one simple or martial weapon or one item
     that you can use as a spellcasting focus, and you store a spell in it,
-    choosing a 1st- or 2nd-level spell from the artificer spell list that
+    choosing a 1st• or 2nd-level spell from the artificer spell list that
     requires 1 action to cast (you needn't have it prepared).
 
     While holding the object, a creature can take an action to produce the
@@ -265,9 +265,9 @@ class SpellStoringItem(Feature):
 class MagicItemSavant(Feature):
     """At 14th level, your skill with magic items deepens more:
 
-    - You can attune to up to five magic items at once.
+    • You can attune to up to five magic items at once.
 
-    - You ignore all class, race, spell, and level require­ments on attuning to
+    • You ignore all class, race, spell, and level require­ments on attuning to
       or using a magic item.
     """
 
@@ -288,10 +288,10 @@ class SoulOfArtifice(Feature):
     """At 20th level, you develop a mystical connection to your magic items,
     which you can draw on for protection:
 
-    - You gain a +1 bonus to all saving throws per magic item you are currently
+    • You gain a +1 bonus to all saving throws per magic item you are currently
       attuned to.
 
-    - If you're reduced to 0 hit points but not killed out­right, you can use
+    • If you're reduced to 0 hit points but not killed out­right, you can use
       your reaction to end one of your artificer infusions, causing you to drop
       to 1 hit point instead of 0.
     """
@@ -392,11 +392,11 @@ class RestorativeReagents(Feature):
     """Starting at 9th level, you can incorporate
     restorative reagents into some of your works:
 
-    - Whenever a creature drinks an experimental elixir you created, the
+    • Whenever a creature drinks an experimental elixir you created, the
       creature gains temporary hit points equal to 2d6 + your Intelligence
       modifier (minimum of 1 temporary hit point).
 
-    - You can cast lesser restoration without expending a spell slot and
+    • You can cast lesser restoration without expending a spell slot and
       without preparing the spell, provided you use alchemist's supplies as the
       spellcasting focus. You can do so a number of times equal to your
       Intelligence modifier (minimum of once), and you regain all expended uses
@@ -412,10 +412,10 @@ class ChemicalMastery(Feature):
     pose little risk to you, and you can use them to quickly end certain
     ailments:
 
-    - You gain resistance to acid damage and poison damage, and you are immune
+    • You gain resistance to acid damage and poison damage, and you are immune
       to the poisoned condition.
 
-    - You can cast greater restoration and heal without expending a spell
+    • You can cast greater restoration and heal without expending a spell
       slot, without preparing the spell, and without material components,
       provided you use alchemist's supplies as the spellcasting focus. Once
       you cast either spell with this feature, you can't cast that spell with
@@ -526,9 +526,9 @@ class ExplosiveCannon(Feature):
     """Starting at 9th level, every eldritch cannon you create is more
     destructive:
 
-    - The cannon's damage rolls all increase by 1d8.
+    • The cannon's damage rolls all increase by 1d8.
 
-    - As an action, you can command the cannon to detonate if you are within 60
+    • As an action, you can command the cannon to detonate if you are within 60
       feet of it. Doing so destroys the cannon and forces each creature within
       20 feet of it to make a Dexterity saving throw against your spell save
       DC, taking 3d8 force damage on a failed save or half as much damage on a
@@ -543,11 +543,11 @@ class FortifiedPosition(Feature):
     """Starting at 15th level, you're a master at forming well-defended
     emplacements using Eldritch Cannon:
 
-    - You and your allies have half cover while within 10 feet of a cannon you
+    • You and your allies have half cover while within 10 feet of a cannon you
       create with Eldritch Cannon, as a result of a shimmering field of magical
       protection that the cannon emits.
 
-    - You can now have two cannons at the same time. You can create two with
+    • You can now have two cannons at the same time. You can create two with
       the same action (but not the same spell slot), and you can activate both
       of them with the same bonus action. You determine whether the cannons are
       identical to each other or different. You can't create a third cannon
@@ -590,9 +590,9 @@ class BattleReady(Feature):
     """When you reach 3rd level, your combat training and your experiments with
     magic have paid off in two ways:
 
-    - You gain proficiency with martial weapons.
+    • You gain proficiency with martial weapons.
 
-    - When you attack with a magic weapon, you can use your Intelligence
+    • When you attack with a magic weapon, you can use your Intelligence
       modifier, instead of Strength or Dexterity modifier, for the attack and
       damage rolls.
     """
@@ -645,9 +645,9 @@ class ArcaneJolt(Feature):
     defender hits a target, you can channel magical energy through the strike
     to create one of the following effects:
 
-    - The target takes an extra 2d6 force damage.
+    • The target takes an extra 2d6 force damage.
 
-    - Choose one creature or object you can see within 30 feet of the target.
+    • Choose one creature or object you can see within 30 feet of the target.
       Healing energy flows into the chosen recipient, restoring 2d6 hit points
       to it. You can use this energy a number of times equal to your
       Intelligence modifier (minimum of once), but you can do so no more than
@@ -662,12 +662,12 @@ class ImprovedDefender(Feature):
     """At 15th level, your Arcane jolt and steel defender be­come more
     powerful:
 
-    - The extra damage and the healing of your Arcane jolt both increase to
+    • The extra damage and the healing of your Arcane jolt both increase to
       4d6.
 
-    - Your steel defender gains a +2 bonus to Armor Class.
+    • Your steel defender gains a +2 bonus to Armor Class.
 
-    - Whenever your steel defender uses its Deflect Attack, the attacker takes
+    • Whenever your steel defender uses its Deflect Attack, the attacker takes
       force damage equal to 1d4 +your Intelligence modifier.
     """
 
