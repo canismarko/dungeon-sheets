@@ -10,7 +10,7 @@
 [% endif %]
 
 \title{Infusion Descriptions}
-\author{[[ character.name ]]}
+\author{[[ character.name ]] (Artificer [[ character.Artificer.level ]] level)}
 \date{}
 
 \begin{document}
@@ -22,13 +22,17 @@
   \section*{[[ inf.name ]]}
 
   [% if inf.prerequisite %]%
+
+		\noindent
     \textit{Prerequisite: [[ inf.prerequisite ]]}%
+
   [% endif %]%
   [% if inf.item %]%
-  	\textit{Item: [[ inf.item ]]}%
-  [% endif %]%
 
-  %% \noindent
+    \noindent
+    \textit{Item: [[ inf.item ]]}%
+
+  [% endif %]%
 
   [[ inf.__doc__|rst_to_latex ]]
 

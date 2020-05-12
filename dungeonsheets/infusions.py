@@ -9,7 +9,7 @@ class Infusion():
     def __str__(self):
         indicator = ('$', self.special_material)
         if indicator:
-            return self.name += f' ({"".join(indicator)})'
+            return self.name + f' ({"".join(indicator)})'
         else:
             return self.name
 

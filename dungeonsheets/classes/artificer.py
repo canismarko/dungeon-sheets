@@ -84,6 +84,7 @@ class Artificer(CharClass):
             "Light armor", "Medium armor", "Shields",
             "Thieve's tools", "Tinker's tools")
     weapon_proficiencies = (weapons.SimpleWeapon,)
+    infusions = []
     class_skill_choices = (
             'Arcana', 'History', 'Investigation',
             'Medicine', 'Nature', 'Perception', 'Sleight of Hand')
