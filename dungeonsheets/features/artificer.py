@@ -176,8 +176,8 @@ class InfuseItem(Feature):
     def name(self):
         known_infusions = self._infusions[self.owner.Artificer.level][0]
         infused_items = self._infusions[self.owner.Artificer.level][1]
-        return self._name + " ({:d} Infusions Known, {:d} Infused Items)".format(
-                known_infusions, infused_items)
+        name_ext = " ({:d} Infusions Known, {:d} Infused Items)"
+        return self._name + name_ext.format(known_infusions, infused_items)
 
 
 class ArtificerSpecialist(Feature):

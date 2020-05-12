@@ -1,10 +1,8 @@
-
 class Infusion():
     name = "Unknown infusion"
     item = "Item to be infused"
     prerequisite = ""
     classes = ('Artificer',)
-
 
     def __str__(self):
         indicator = ('$', self.special_material)
@@ -91,7 +89,7 @@ class HomunculusServant(Infusion):
     take a bonus action on your turn to command it to take the action in its
     stat block or the Dash, Disengage, Help, Hide, or Search action.
 
-    The homunculus regains 2d6 hit points if the mending spell is cast on it.
+    The homunculus regains 2d6 hit points if the *mending* spell is cast on it.
     If it dies, it vanishes, leaving its heart in its space.
     """
 
@@ -130,7 +128,8 @@ class RepeatingShot(Infusion):
     """
 
     name = "Repeating Shot"
-    item = "A simple or martial weapon with the ammunition property (requires attunement)"
+    item = """A simple or martial weapon with the ammunition property (requires
+              attunement)"""
 
 
 class ReplicateMagicItem(Infusion):
