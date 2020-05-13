@@ -1,4 +1,4 @@
-class Infusion():
+class Infusion:
     name = "Unknown infusion"
     item = "Item to be infused"
     prerequisite = ""
@@ -15,14 +15,14 @@ class Infusion():
         return "\"{:s}\"".format(self.name)
 
     def __eq__(self, other):
-        return (self.name == other.name)
+        return self.name == other.name
 
     def __hash__(self):
         return 0
 
     @property
     def special_material(self):
-        return ('worth at least' in self.item.lower())
+        return 'worth at least' in self.item.lower()
 
 
 class BootsOfTheWindingPath(Infusion):
@@ -85,7 +85,7 @@ class HomunculusServant(Infusion):
 
     In combat, the homunculus shares your initiative count, but it takes its
     turn immediately after yours. It can move and use its reaction on its own,
-    but the only action it takes on its turn is the Dodgeaction, unless you
+    but the only action it takes on its turn is the Dodge action, unless you
     take a bonus action on your turn to command it to take the action in its
     stat block or the Dash, Disengage, Help, Hide, or Search action.
 
@@ -154,7 +154,7 @@ class RepulsionShield(Infusion):
     """A creature gains a + 1 bonus to Armor Class while wield­ing this shield.
 
     The shield has 4 charges. While holding it, the wielder can use a reaction
-    immediately after being hit by a me­lee attack to expend 1  of the shield's
+    immediately after being hit by a melee attack to expend 1 of the shield's
     charges and push the attacker up to 15 feet away. The shield regains ld4
     expended charges daily at dawn.
     """
