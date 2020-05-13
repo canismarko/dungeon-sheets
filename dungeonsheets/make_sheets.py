@@ -79,6 +79,13 @@ def create_druid_shapes_pdf(character, basename, keep_temp_files=False, use_dnd_
                             use_dnd_decorations=use_dnd_decorations)
 
 
+def create_infusions_pdf(character, basename, keep_temp_files=False, use_dnd_decorations=False):
+    template = jinja_env.get_template('infusions_template.tex')
+    return create_latex_pdf(character, basename, template,
+                            keep_temp_files=keep_temp_files,
+                            use_dnd_decorations=use_dnd_decorations)
+
+
 def create_spellbook_pdf(character, basename, keep_temp_files=False, use_dnd_decorations=False):
     template = jinja_env.get_template('spellbook_template.tex')
     return create_latex_pdf(character, basename, template,
@@ -496,6 +503,19 @@ def make_sheet(character_file, character=None, flatten=False, fancy_decorations=
                         f'for {character.name}')
         else:
             sheets.append(spellbook_base + '.pdf')
+    #Create a list of Artificer infusions
+    infusions = getattr(character, 'infusions', [])
+    if len(infusions) > 0:
+        infusions_base = os.path.splitext(character_file)[0] + '_infusions'
+        try:
+            create_infusions_pdf(character=character,
+                                 basename=infusions_base, keep_temp_files=debug,
+                                 use_dnd_decorations=fancy_decorations)
+        except exceptions.LatexNotFoundError as e:
+            log.warning('``pdflatex`` not available. Skipping infusions list '
+                        f'for {character.name}')
+        else:
+            sheets.append(infusions_base + '.pdf')
     # Create a list of Druid wild_shapes
     wild_shapes = getattr(character, 'wild_shapes', [])
     if len(wild_shapes) > 0:

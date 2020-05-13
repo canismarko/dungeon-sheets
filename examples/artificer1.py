@@ -1,4 +1,4 @@
-"""This file describes the heroic adventurer {{ char.name }}.
+"""This file describes the heroic adventurer Cemzack.
 
 It's used primarily for saving characters from create-character,
 where there will be many missing sections.
@@ -8,34 +8,34 @@ sheet by running ``makesheets`` from the command line.
 
 """
 
-dungeonsheets_version = "{{ char.dungeonsheets_version }}"
+dungeonsheets_version = "0.10.1"
 
-name = "{{ char.name }}"
-player_name = "{{ char.player_name }}"
+name = "Cemzack"
+player_name = ""
 
 # Be sure to list Primary class first
-classes = {{ char.class_names }}  # ex: ['Wizard'] or ['Rogue', 'Fighter']
-levels = {{ char.levels }}  # ex: [10] or [3, 2]
-subclasses = {{ char.subclasses }}  # ex: ['Necromacy'] or ['Thief', None]
-background = "{{ char.background.name }}"
-race = "{{ char.race.name }}"
-alignment = "{{ char.alignment }}"
+classes = ['Artificer']  # ex: ['Wizard'] or ['Rogue', 'Fighter']
+levels = [20]  # ex: [10] or [3, 2]
+subclasses = ["Artillerist"]  # ex: ['Necromacy'] or ['Thief', None]
+background = "Sailor"
+race = "Rock Gnome"
+alignment = "Neutral good"
 
-xp = {{ char.xp }}
-hp_max = {{ char.hp_max }}
-inspiration = {{ char.inspiration }}  # integer inspiration value
+xp = 0
+hp_max = 149
+inspiration = 0  # integer inspiration value
 
 # Ability Scores
-strength = {{ char.strength.value }}
-dexterity = {{ char.dexterity.value }}
-constitution = {{ char.constitution.value }}
-intelligence = {{ char.intelligence.value }}
-wisdom = {{ char.wisdom.value }}
-charisma = {{ char.charisma.value }}
+strength = 13
+dexterity = 16
+constitution = 18
+intelligence = 20
+wisdom = 12
+charisma = 10
 
 # Select what skills you're proficient with
 # ex: skill_proficiencies = ('athletics', 'acrobatics', 'arcana')
-skill_proficiencies = {{ char.skill_proficiencies }}
+skill_proficiencies = ('investigation', 'sleight of hand', 'athletics', 'perception')
 
 # Any skills you have "expertise" (Bard/Rogue) in
 skill_expertise = ()
@@ -46,7 +46,7 @@ skill_expertise = ()
 # Gunslinger, etc.)
 # Example:
 # features = ('Tavern Brawler',) # take the optional Feat from PHB
-features = ()
+features = ('sharpshooter')
 
 # If selecting among multiple feature options: ex Fighting Style
 # Example (Fighting Style):
@@ -58,7 +58,7 @@ weapon_proficiencies = ()  # ex: ('shortsword', 'quarterstaff')
 _proficiencies_text = ()  # ex: ("thieves' tools",)
 
 # Proficiencies and languages
-languages = """{{ char.languages }}"""
+languages = """Common, Gnomish"""
 
 # Inventory
 # TODO: Get yourself some money
@@ -69,10 +69,10 @@ gp = 0
 pp = 0
 
 # TODO: Put your equipped weapons and armor here
-weapons = {{ char.weapons }}  # Example: ('shortsword', 'longsword')
+weapons = []  # Example: ('shortsword', 'longsword')
 magic_items = ()  # Example: ('ring of protection',)
-armor = "{{ char.armor }}"  # Eg "leather armor"
-shield = "{{ char.shield }}"  # Eg "shield"
+armor = "Breastplate"  # Eg "leather armor"
+shield = "None"  # Eg "shield"
 
 equipment = """TODO: list the equipment and magic items your character carries"""
 
@@ -93,18 +93,21 @@ spells = spells_prepared + __spells_unprepared
 wild_shapes = ()  # Ex: ('ape', 'wolf', 'ankylosaurus')
 
 # Infusions for Artificer
-infusions = {{ char.infusions_text }} # Ex: ('repeating shot', 'replicate magic item')
+infusions = ('boots of the winding path', 'enhanced arcane focus',
+             'enhanced defense', 'enhanced weapon', 'repeating shot',
+             'homunculus servant', 'radiant weapon', 'replicate magic item',
+             'repulsion shield', 'resistant armor', 'returning weapon')
+# Ex: ('repeating shot', 'replicate magic item')
 
 # Backstory
 # Describe your backstory here
-personality_traits = """{{ char.personality_traits }}"""
+personality_traits = """TODO: Describe how your character behaves, interacts with others"""
 
-ideals = """{{ char.ideals }}"""
+ideals = """TODO: Describe what values your character believes in."""
 
-bonds = """{{ char.bonds }}"""
+bonds = """TODO: Describe your character's commitments or ongoing quests."""
 
-flaws = """{{char.flaws }}"""
+flaws = """TODO: Describe your character's interesting flaws."""
 
 features_and_traits = """TODO: Describe other features and abilities your
 character has."""
-

@@ -6,11 +6,13 @@ import os
 import re
 import subprocess
 import warnings
+import math
 
 import jinja2
 
 from dungeonsheets import (armor, background, classes, exceptions, features,
-                           magic_items, monsters, race, spells, weapons)
+                           infusions, magic_items, monsters, race, spells,
+                           weapons)
 from dungeonsheets.armor import Armor, NoArmor, NoShield, Shield
 from dungeonsheets.dice import read_dice_str
 from dungeonsheets.stats import (Ability, ArmorClass, Initiative, Skill, Speed,
@@ -27,7 +29,7 @@ __version__ = read('../VERSION').strip()
 
 dice_re = re.compile('(\d+)d(\d+)')
 
-__all__ = ('Barbarian', 'Bard', 'Cleric', 'Druid', 'Fighter', 'Monk',
+__all__ = ('Artificer', 'Barbarian', 'Bard', 'Cleric', 'Druid', 'Fighter', 'Monk',
            'Paladin', 'Ranger', 'Rogue', 'Sorcerer', 'Warlock', 'Wizard', )
 
 multiclass_spellslots_by_level = {
@@ -128,6 +130,7 @@ class Character():
     spellcasting_ability = None
     _spells = list()
     _spells_prepared = list()
+    infusions = list()
     # Features IN MAJOR DEVELOPMENT
     custom_features = list()
     feature_choices = list()
@@ -171,6 +174,7 @@ class Character():
         self._proficiencies_text = list()
         self._spells = list()
         self._spells_prepared = list()
+        self.infusions = list()
         self.custom_features = list()
         self.feature_choices = list()
 
@@ -417,6 +421,8 @@ class Character():
                         eff_level += c.level // 2
                     elif type(c) in [classes.Fighter, classes.Rogue]:
                         eff_level += c.level // 3
+                    elif type(c) is classes.Artificer:
+                        eff_level += math.ceil(c.level / 2)
                 if eff_level == 0:
                     return 0
                 else:
@@ -516,6 +522,18 @@ class Character():
                 else:
                     # Instantiate them all for the spells list
                     self._spells_prepared = tuple(S() for S in _spells)
+            elif attr == 'infusions':
+                if hasattr(self, 'Artificer'):
+                    _infusions = []
+                    for infusion_name in val:
+                        try:
+                            _infusions.append(findattr(infusions, infusion_name))
+                        except AttributeError:
+                            msg = (f'Infusion "{infusion_name}" not defined. '
+                                   f'Please add it to ``infusions.py``')
+                            warnings.warn(msg)
+                    _infusions.sort(key=lambda infusion: infusion.name)
+                    self.infusions = tuple(i() for i in _infusions)
             else:
                 if not hasattr(self, attr):
                     warnings.warn(f"Setting unknown character attribute {attr}",
@@ -710,6 +728,13 @@ class Character():
         if hasattr(self, 'Druid'):
             self.Druid.wild_shapes = new_shapes
 
+    @property
+    def infusions_text(self):
+        if hasattr(self, 'Artificer'):
+            return tuple([i.name for i in self.infusions])
+        else:
+            return ()
+
     @classmethod
     def load(cls, character_file):
         # Create a character from the character definition
@@ -788,6 +813,13 @@ def read_character_file(filename):
 
 
 # Add backwards compatability for tests
+class Artificer(Character):
+    def __init__(self, level=1, **attrs):
+        attrs['classes'] = ['Artificer']
+        attrs['levels'] = [level]
+        super().__init__(**attrs)
+
+
 class Barbarian(Character):
     def __init__(self, level=1, **attrs):
         attrs['classes'] = ['Barbarian']

@@ -1,3 +1,4 @@
+from dungeonsheets.features.artificer import *
 from dungeonsheets.features.backgrounds import *
 from dungeonsheets.features.barbarian import *
 from dungeonsheets.features.bard import *
