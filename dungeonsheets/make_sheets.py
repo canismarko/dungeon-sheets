@@ -438,7 +438,7 @@ def _make_pdf_pdftk(fields, src_pdf, basename, flatten=False):
 
 def make_sheet(character_file, character=None, flatten=False, fancy_decorations=False, debug=False):
     """Prepare a PDF character sheet from the given character file.
-    
+
     Parameters
     ----------
     character_file : str
@@ -583,9 +583,12 @@ def main():
         filenames = [f for f in os.listdir('.') if os.path.splitext(f)[1] == '.py']
     else:
         filenames = [args.filename]
-
-    with Pool(cpu_count()) as p:
-        p.starmap(_build, product(filenames, [args]))
+    if args.debug:
+        for filename in filenames:
+            _build(filename, args)
+    else:
+        with Pool(cpu_count()) as p:
+            p.starmap(_build, product(filenames, [args]))
 
 
 if __name__ == '__main__':
