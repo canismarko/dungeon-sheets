@@ -95,16 +95,16 @@ class Scrying(Spell):
     voluntarily if it wants to be observed.
 
     Knowledge - Save Modifier
-    =========================
-    Secondhand (you have heard of the target) - +5
-    Firsthand (you have met the target) - +0
-    Familiar (you know the target well) - -5
+    -------------------------
+    - Secondhand (you have heard of the target) - +5
+    - Firsthand (you have met the target) - +0
+    - Familiar (you know the target well) - -5
 
     Connection - Save Modifier
-    ==========================
-    Likeness or picture - -2
-    Possession or garment - -4
-    Body part, lock of hair, bit of nail, or the like - -10
+    --------------------------
+    - Likeness or picture - -2
+    - Possession or garment - -4
+    - Body part, lock of hair, bit of nail, or the like - -10
 
     On a successful save, the target isn't affected, and you can't use
     this spell against it again for 24 hours.

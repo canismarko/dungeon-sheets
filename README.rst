@@ -83,3 +83,37 @@ https://github.com/rpgtex/DND-5e-LaTeX-Template
 If you'd like a **step-by-step walkthrough** for creating a new
 character, just run ``create-character`` from a command line and a
 helpful menu system will take care of the basics for you.
+
+
+Content Descriptions
+====================
+
+The descriptions of content elements (e.g. classes, spells, etc.) are
+included in docstrings. The descriptions should ideally conform to
+reStructured text. This allows certain formatting elements to be
+properly parsed and rendered into LaTeX::
+
+  class Scrying(Spell):
+    """You can see and hear a particular creature you choose that is on
+    the same plane of existence as you. The target must make a W isdom
+    saving throw, which is modified by how well you know the target
+    and the sort of physical connection you have to it. If a target
+    knows you're casting this spell, it can fail the saving throw
+    voluntarily if it wants to be observed.
+
+    Knowledge - Save Modifier
+    -------------------------
+    - Secondhand (you have heard of the target) - +5
+    - Firsthand (you have met the target) - +0
+    - Familiar (you know the target well) - -5
+
+    Connection - Save Modifier
+    --------------------------
+    - Likeness or picture - -2
+    - Possession or garment - -4
+    - Body part, lock of hair, bit of nail, or the like - -10
+
+    """
+    name = "Scrying"
+    level = 5
+    ...

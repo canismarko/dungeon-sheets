@@ -51,3 +51,29 @@ class MarkdownTestCase(unittest.TestCase):
     def test_verbatim(self):
         text = make_sheets.rst_to_latex('``hello, world``')
         self.assertIn(r'\begin{verbatim}', text)
+
+    def test_literal_backslash(self):
+        text = make_sheets.rst_to_latex('\\')
+        self.assertEqual(r'\\', text)
+    
+    def test_headings(self):
+        # Simple heading by itself
+        text = make_sheets.rst_to_latex('Hello, world\n============\n')
+        self.assertEqual('\\section*{Hello, world}\n', text)
+        # Simple heading with leading whitespace
+        text = make_sheets.rst_to_latex('    Hello, world\n    ============\n')
+        self.assertEqual('\\section*{Hello, world}\n', text)
+        # Heading with text after it
+        text = make_sheets.rst_to_latex('Hello, world\n============\n\nThis is some text')
+        self.assertEqual('\\section*{Hello, world}\n\nThis is some text', text)
+        # Heading with text before it
+        text = make_sheets.rst_to_latex('This is a paragraph\n\nHello, world\n============\n')
+        self.assertEqual('This is a paragraph\n\n\\section*{Hello, world}\n', text)
+        # Check that levels of headings are parsed appropriately
+        text = make_sheets.rst_to_latex('Hello, world\n^^^^^^^^^^^^\n')
+        self.assertEqual('\\subsubsection*{Hello, world}\n', text)
+        text = make_sheets.rst_to_latex('Hello, world\n^^^^^^^^^^^^\n', top_heading_level=3)
+        self.assertEqual('\\subparagraph*{Hello, world}\n', text)
+        # This is a bad heading missing with all the underline on one line
+        text = make_sheets.rst_to_latex('Hello, world^^^^^^^^^^^^\n')
+        self.assertEqual('Hello, world\\^\\^\\^\\^\\^\\^\\^\\^\\^\\^\\^\\^\n', text)

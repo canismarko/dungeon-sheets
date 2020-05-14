@@ -73,14 +73,14 @@ class AcidArrow(Spell):
 
 
 class AcidSplash(Spell):
-    """You hurl a bubble of acid.
-    Choose one creature within range, or choose two
-    creatures within range that are within 5 feet of each other. A target must
-    succeed on a Dexterity saving throw or take 1d6 acid damage.
+    """You hurl a bubble of acid.  Choose one creature within range, or
+    choose two creatures within range that are within 5 feet of each
+    other. A target must succeed on a Dexterity saving throw or take
+    1d6 acid damage.
 
-    At Higher Levels:
-    This spell's damage increases by 1d6 when you reach 5th level (2d6), 11th level
-    (3d6), and 17th level (4d6).
+    **At Higher Levels:** This spell's damage increases by 1d6 when
+    you reach 5th level (2d6), 11th level (3d6), and 17th level (4d6).
+
     """
     name = "Acid Splash"
     level = 0
@@ -95,15 +95,15 @@ class AcidSplash(Spell):
 
 
 class AganazzarsScorcher(Spell):
-    """A line of roaring flame 30 feet long and 5 feet wide emanates from you in a
-    direction you choose.
-    Each creature in the line must make a Dexterity saving
-    throw. A creature takes 3d8 fire damage on a failed save, or half as much damage
-     on a successful one.
+    """A line of roaring flame 30 feet long and 5 feet wide emanates from
+    you in a direction you choose.  Each creature in the line must
+    make a Dexterity saving throw. A creature takes 3d8 fire damage on
+    a failed save, or half as much damage on a successful one.
 
-    At Higher Levels: When you cast this spell using a spell
-    slot of 3rd level or higher, the damage increases by 1d8 for each slot level
-    above 2nd.
+    **At Higher Levels:** When you cast this spell using a spell slot
+    of 3rd level or higher, the damage increases by 1d8 for each slot
+    level above 2nd.
+
     """
     name = "Aganazzars Scorcher"
     level = 2

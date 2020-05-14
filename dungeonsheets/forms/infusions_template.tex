@@ -34,7 +34,7 @@
 
   [% endif %]%
 
-  [[ inf.__doc__|rst_to_latex ]]
+  [[ inf.__doc__ | rst_to_latex(top_heading_level=2) ]]
 
 [% endfor %]
 

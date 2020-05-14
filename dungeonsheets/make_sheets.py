@@ -25,22 +25,92 @@ character sheet."""
 bold_re = re.compile(r'\*\*([^*]+)\*\*')
 it_re = re.compile(r'\*([^*]+)\*')
 verb_re = re.compile(r'``([^`]+)``')
+heading_re = re.compile(r'^[ \t\r\f\v]*(.+)\n\s*([-=\^]+)$', flags=re.MULTILINE)
 # A dice string, with optinal backticks: ``1d6 + 3``
 dice_re = re.compile(r'`*(\d+d\d+(?:\s*\+\s*\d+)?)`*')
 
 
-def rst_to_latex(rst):
-    """Basic markup of RST to LaTeX code."""
+def _parse_rst_headings(rst):
+    """Read headings in reST and iterate.
+    
+    Yields
+    ======
+    heading_rst : str
+      The matching reST heading found in the input text.
+    heading : str
+      The text of the heading with underlining removed.
+    level : int
+      How deep the heading is: 0 is top-level, 1 is next level down,
+      etc.
+    
+    """
+    heading_levels = {
+        '=': 0,
+        '-': 1,
+        '^': 2,
+    }
+    for match in heading_re.finditer(rst):
+        heading_rst = match.group(0)
+        heading, underline = match.groups()
+        # Check for valid heading
+        if len(underline) < len(heading):
+            log.debug("Skipping malformed reST heading: '%s\n%s'", heading, underline)
+            continue
+        if len(set(underline)) > 1:
+            log.debug("Skipping malformed reST heading: '%s\n%s'", heading, underline)
+            continue
+        # Valid heading, so determine how many levels deep it is
+        level = heading_levels[underline[0]]
+        yield heading_rst, heading, level
+
+
+def rst_to_latex(rst, top_heading_level=0):
+    """Basic markup of reST to LaTeX code.
+    
+    The translation between reST headings and LaTeX headings is
+    modified by the *top_heading_level* parameter. A value of 0
+    (default) translates "# Heading" -> "\section{Heading}". A value
+    of 1 translates "# Heading" -> "\subsection{Heading}", etc.
+    
+    Parameters
+    ==========
+    rst
+      reStructured text input to be parsed.
+    top_heading_level : optional
+      The highest level heading that will be added to the LaTeX as
+      described above.
+    
+    Returns
+    =======
+    tex : str
+      The reST text parsed into LaTeX markup.
+    
+    """
+    heading_latex = {
+        0: 'section*',
+        1: 'subsection*',
+        2: 'subsubsection*',
+        3: 'paragraph*',
+        4: 'subparagraph*',
+        }
     if rst is None:
+        # No reST, so return an empty string
         tex = ""
     else:
         tex = rst
+        # Allow literal backslashes
         for c in ['\\']:
             tex = tex.replace(c, '\\' + c)
+        # Inline text formatting
         tex = bold_re.sub(r'\\textbf{\1}', tex)
         tex = it_re.sub(r'\\textit{\1}', tex)
         tex = verb_re.sub(r'\\begin{verbatim}{\1}\\end{verbatim}', tex)
         tex = dice_re.sub(r'\\texttt{\1}', tex)
+        # Headings
+        for heading_rst, heading, heading_level in _parse_rst_headings(tex):
+            heading_level = min(heading_level + top_heading_level, max(heading_latex.keys()))
+            tex = tex.replace(heading_rst, f"\\{heading_latex[heading_level]}{{{heading}}}")
+        # Escape any remaining characters that have meaning in LaTeX
         for c in ['#', '$', '%', '&', '~', '_', '^']:
             tex = tex.replace(c, '\\' + c)
 
