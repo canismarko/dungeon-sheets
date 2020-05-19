@@ -96,12 +96,14 @@ class Scrying(Spell):
 
     Knowledge - Save Modifier
     -------------------------
+
     - Secondhand (you have heard of the target) - +5
     - Firsthand (you have met the target) - +0
     - Familiar (you know the target well) - -5
 
     Connection - Save Modifier
     --------------------------
+
     - Likeness or picture - -2
     - Possession or garment - -4
     - Body part, lock of hair, bit of nail, or the like - -10
@@ -134,20 +136,22 @@ class Scrying(Spell):
 
 
 class SearingSmite(Spell):
-    """The next time you hit a creature with a melee weapon attack during the spell's
-    duration, your weapon flares with white-hot intensitity, and the attack deals an
-     extra 1d6 fire damage to the target and causes the target to ignite in flames.
+    """The next time you hit a creature with a melee weapon attack during
+    the spell's duration, your weapon flares with white-hot
+    intensitity, and the attack deals an extra 1d6 fire damage to the
+    target and causes the target to ignite in flames.
 
+    At the start of each of its turns until the spell ends, the target
+    must make a Constitution saving throw. On a failed save, it takes
+    1d6 fire damage. On a successful save, the spells ends. If the
+    target or a creature within 5 feet of it uses an action to put out
+    the flames, or if some other effect douses the flames (such as the
+    target being submerged in water), the spell ends.
 
-    At the start of each of its turns until the spell ends, the target must make a
-     Constitution saving throw. On a failed save, it takes 1d6 fire damage. On a
-    successful save, the spells ends. If the target or a creature within 5 feet of
-    it uses an action to put out the flames, or if some other effect douses the
-    flames (such as the target being submerged in water), the spell ends.
+    **At Higher Levels:** When you cast this spell using a spell slot
+    of 2nd level or higher, the initial extra damage dealt by the
+    attack increases by 1d6 for each slot
 
-    At Higher
-     Levels: When you cast this spell using a spell slot of 2nd level or higher, the
-     initial extra damage dealt by the attack increases by 1d6 for each slot
     """
     name = "Searing Smite"
     level = 1
@@ -162,9 +166,11 @@ class SearingSmite(Spell):
 
 
 class SeeInvisibility(Spell):
-    """For the duration, you see invisible creatures and objects as if they were
-    visible, and you can see into the Ethereal Plane. Ethereal creatures and objects
-     appear ghostly and translucent.
+    """For the duration, you see invisible creatures and objects as if
+    they were visible, and you can see into the Ethereal
+    Plane. Ethereal creatures and objects appear ghostly and
+    translucent.
+
     """
     name = "See Invisibility"
     level = 2

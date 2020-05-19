@@ -77,3 +77,24 @@ class MarkdownTestCase(unittest.TestCase):
         # This is a bad heading missing with all the underline on one line
         text = make_sheets.rst_to_latex('Hello, world^^^^^^^^^^^^\n')
         self.assertEqual('Hello, world\\^\\^\\^\\^\\^\\^\\^\\^\\^\\^\\^\\^\n', text)
+
+    def test_bullet_list(self):
+        tex = make_sheets.rst_to_latex("\n- Hello\n- World\n\n")
+        expected_tex = "\n\\begin{itemize}\n\\item{Hello}\n\\item{World}\n\\end{itemize}\n\n"
+        self.assertEqual(expected_tex, tex)
+        # Other bullet characters
+        tex = make_sheets.rst_to_latex("\n* Hello\n* World\n\n")
+        self.assertEqual(expected_tex, tex)
+        tex = make_sheets.rst_to_latex("\n+ Hello\n+ World\n\n")
+        self.assertEqual(expected_tex, tex)
+        # A real list taken from a docstring
+        real_list = """
+        - Secondhand (you have heard of the target)  +5
+        - Firsthand (you have met the target) - +0
+        - Familiar (you know the target well) - -5
+        
+        """
+        tex = make_sheets.rst_to_latex(real_list)
+        self.assertIn("\\begin{itemize}", tex)
+
+

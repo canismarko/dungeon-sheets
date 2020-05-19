@@ -28,7 +28,39 @@ verb_re = re.compile(r'``([^`]+)``')
 heading_re = re.compile(r'^[ \t\r\f\v]*(.+)\n\s*([-=\^]+)$', flags=re.MULTILINE)
 # A dice string, with optinal backticks: ``1d6 + 3``
 dice_re = re.compile(r'`*(\d+d\d+(?:\s*\+\s*\d+)?)`*')
+# What defines a list in reST:
+# - a blank line
+# - one or more of the following
+#   - "- [a-z]"
+#   - a blank line
+# - a blank line
+# - a non-list line or end of file
+list_re = re.compile('^[ \t\r\f\v]*\n((?:\s*[-*+]\s+[^\n]*\n)+)', flags=re.MULTILINE)
+# What defines a list item in reST:
+# - a line starting with "- " then some text
+# - zero or more lines starting with anything other than "- "
+list_item_re = re.compile('^\s*[-*+]\s+', flags=re.MULTILINE)
 
+
+def _parse_rst_lists(rst):
+    """Read lists in reST and iterate.
+
+    Yields
+    ======
+    list_rst : str
+      The matching reST list found in the input text
+    list_items : list
+      A python list of the items found in the reST list.
+    
+    """
+    for match in list_re.finditer(rst):
+        list_rst = match.group(0)
+        # Separate the list items
+        list_items = list_item_re.split(match.group(1))
+        # Clean up separated list items
+        list_items = list_items[1:]  # First item is an empty string
+        list_items = [item.replace('\n', ' ').strip() for item in list_items]
+        yield list_rst, list_items
 
 def _parse_rst_headings(rst):
     """Read headings in reST and iterate.
@@ -101,6 +133,13 @@ def rst_to_latex(rst, top_heading_level=0):
         # Allow literal backslashes
         for c in ['\\']:
             tex = tex.replace(c, '\\' + c)
+        # Lists
+        for list_rst, list_items in _parse_rst_lists(tex):
+            list_tex = "\n\\begin{itemize}\n"
+            for item in list_items:
+                list_tex += f"\\item{{{item}}}\n"
+            list_tex += "\end{itemize}\n"
+            tex = tex.replace(list_rst, list_tex)
         # Inline text formatting
         tex = bold_re.sub(r'\\textbf{\1}', tex)
         tex = it_re.sub(r'\\textit{\1}', tex)
