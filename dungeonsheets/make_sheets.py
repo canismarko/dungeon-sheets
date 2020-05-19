@@ -289,7 +289,7 @@ def create_character_pdf(character, basename, flatten=False):
         'Race ': str(character.race),
         'Alignment': character.alignment,
         'XP': str(character.xp),
-        'Inspiration': str(character.inspiration),
+        'Inspiration': str('Yes' if character.inspiration else 'No'),
         # Abilities
         'ProfBonus': mod_str(character.proficiency_bonus),
         'STRmod': str(character.strength.value),
@@ -400,11 +400,13 @@ def create_character_pdf(character, basename, flatten=False):
         fields[atk_field] = '{:+d}'.format(weapon.attack_modifier)
         fields[dmg_field] = f'{weapon.damage}/{weapon.damage_type}'
     # Other attack information
-    attack_str = f'Armor: {character.armor}'
-    attack_str += '\n \n'
-    attack_str += f'Shield: {character.shield}'
-    attack_str += '\n \n'
-    attack_str += character.attacks_and_spellcasting
+    attack = []
+    if character.armor:
+        attack.append(f'Armor: {character.armor}')
+    if character.shield:
+        attack.append(f'Shield: {character.shield}')
+    attack.append(character.attacks_and_spellcasting)
+    attack_str = '\n\n'.join(attack)
     fields['AttacksSpellcasting'] = text_box(attack_str)
     # Other proficiencies and languages
     prof_text = "Proficiencies:\n" + text_box(character.proficiencies_text)

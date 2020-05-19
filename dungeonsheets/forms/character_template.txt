@@ -20,7 +20,7 @@ alignment = "{{ char.alignment }}"
 
 xp = {{ char.xp }}
 hp_max = {{ char.hp_max }}
-inspiration = {{ char.inspiration }}  # integer inspiration value
+inspiration = {{ char.inspiration }}  # boolean inspiration value
 
 # Ability Scores
 strength = {{ char.strength.value }}

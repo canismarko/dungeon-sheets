@@ -21,7 +21,11 @@ class TestCharacter(TestCase):
         char.level = 2
         char.hit_dice_faces = 10
         self.assertEqual(char.hit_dice, '2d10')
-    
+
+    def test_max_hp(self):
+        char = Wizard(level=3, constitution=12)
+        self.assertEqual(char.hp_max, 17)
+
     def test_set_attrs(self):
         char = Character()
         char.set_attrs(name='Inara')
@@ -37,6 +41,11 @@ class TestCharacter(TestCase):
         # Check that race gets set to an object
         char.set_attrs(race='high elf')
         self.assertIsInstance(char.race, race.HighElf)
+        # Check inspiration works
+        char.set_attrs(inspiration=True)
+        self.assertTrue(char.inspiration)
+        char.set_attrs(inspiration=False)
+        self.assertFalse(char.inspiration)
     
     def test_wield_weapon(self):
         char = Character()

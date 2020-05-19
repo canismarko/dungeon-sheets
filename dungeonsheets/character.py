@@ -71,7 +71,7 @@ class Character():
     _background = None
     xp = 0
     # Hit points
-    hp_max = 10
+    hp_max = None
     # Base stats (ability scores)
     strength = Ability()
     dexterity = Ability()
@@ -82,7 +82,7 @@ class Character():
     armor_class = ArmorClass()
     initiative = Initiative()
     speed = Speed()
-    inspiration = 0
+    inspiration = False
     _saving_throw_proficiencies = tuple()  # use to overwrite class proficiencies
     other_weapon_proficiencies = tuple()  # add to class/race proficiencies
     skill_proficiencies = list()
@@ -161,6 +161,7 @@ class Character():
         self.background = attrs.pop('background', None)
         # parse all other attributes
         self.set_attrs(**attrs)
+        self.__set_max_hp(attrs.get('hp_max', None))
 
     def clear(self):
         # reset class-definied items
@@ -317,6 +318,25 @@ class Character():
         else:
             return None
 
+    def __set_max_hp(self, hp_max):
+        """
+        Set maximum HP based on value in charlist py or calc from classes
+        """
+        if hp_max:
+            assert isinstance(hp_max, int)
+            self.hp_max = hp_max
+        else:
+            const_mod = self.constitution.modifier
+            level_one_hp = self.primary_class.hit_dice_faces + const_mod
+            self.hp_max = level_one_hp
+            for char_cls in self.class_list:
+                hp_per_lvl = char_cls.hit_dice_faces/2 + 1 + const_mod
+                levels = char_cls.level
+                if char_cls == self.primary_class:
+                    levels -= 1
+                assert levels >= 0
+                self.hp_max += int(hp_per_lvl * levels)
+
     @property
     def weapon_proficiencies(self):
         wp = set(self.other_weapon_proficiencies)
@@ -451,8 +471,10 @@ class Character():
         return sorted(tuple(spells), key=(lambda x: (x.name)))
 
     def set_attrs(self, **attrs):
-        """Bulk setting of attributes. Useful for loading a character from a
-        dictionary."""
+        """
+        Bulk setting of attributes
+        Useful for loading a character from a dictionary
+        """
         for attr, val in attrs.items():
             if attr == 'dungeonsheets_version':
                 pass # Maybe we'll verify this later?
