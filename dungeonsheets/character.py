@@ -420,12 +420,22 @@ class Character():
         return [c for c in self.class_list if c.is_spellcaster]
 
     @property
+    def spellcasting_classes_excluding_warlock(self):
+        return [c for c in self.spellcasting_classes if not type(c) == classes.Warlock]
+
+    @property
     def is_spellcaster(self):
         return (len(self.spellcasting_classes) > 0)
 
     def spell_slots(self, spell_level):
-        if len(self.spellcasting_classes) == 1:
-            return self.spellcasting_classes[0].spell_slots(spell_level)
+        warlock_slots = 0
+        for c in self.spellcasting_classes:
+            if type(c) is classes.Warlock:
+                warlock_slots = c.spell_slots(spell_level)
+        if len(self.spellcasting_classes_excluding_warlock) == 0:
+            return warlock_slots
+        if len(self.spellcasting_classes_excluding_warlock) == 1:
+            return self.spellcasting_classes_excluding_warlock[0].spell_slots(spell_level) + warlock_slots
         else:
             if spell_level == 0:
                 return sum([c.spell_slots(0)
@@ -433,7 +443,7 @@ class Character():
             else:
                 # compute effective level from PHB pg 164
                 eff_level = 0
-                for c in self.spellcasting_classes:
+                for c in self.spellcasting_classes_excluding_warlock:
                     if type(c) in [classes.Bard, classes.Cleric, classes.Druid,
                                    classes.Sorceror, classes.Wizard]:
                         eff_level += c.level
@@ -444,9 +454,9 @@ class Character():
                     elif type(c) is classes.Artificer:
                         eff_level += math.ceil(c.level / 2)
                 if eff_level == 0:
-                    return 0
+                    return warlock_slots
                 else:
-                    return multiclass_spellslots_by_level[eff_level][spell_level]
+                    return multiclass_spellslots_by_level[eff_level][spell_level] + warlock_slots
 
     @property
     def spells(self):
