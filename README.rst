@@ -63,7 +63,7 @@ Each character is described by a python file, which gives many
 attributes associated with the character. See examples_ for more
 information about the character descriptions.
 
-.. _examples: https://github.com/bacook17/dungeon-sheets/tree/master/examples
+.. _examples: https://github.com/canismarko/dungeon-sheets/tree/master/examples
 
 The PDF's can then be generated using the ``makesheets`` command.
 
