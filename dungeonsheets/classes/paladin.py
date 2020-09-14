@@ -110,7 +110,7 @@ class OathOfAncients(PaladinOath):
     features_by_level = defaultdict(list)
 
 
-class OathOfVengance(PaladinOath):
+class OathOfVengeance(PaladinOath):
     """The Oath of Vengeance is a solemn commitment to punish those who have
     committed a grievous sin. When evil forces slaughter helpless villagers,
     when an entire people turns against the will of the gods, when a thieves'
@@ -120,7 +120,7 @@ class OathOfVengance(PaladinOath):
     sometimes called avengers or dark knights - their own purity is not as
     important as delivering justice.
 
-    **Tenets of Vengance**: The tenets of the Oath of Vengeance vary by
+    **Tenets of Vengeance**: The tenets of the Oath of Vengeance vary by
     paladin, but all the tenets revolve around punishing wrongdoers by any
     means necessary. Paladins who uphold these tenets are willing to sacrifice
     even their own righteousness to mete out justice upon those who do evil, so
@@ -140,7 +140,7 @@ class OathOfVengance(PaladinOath):
     to stop them. I must help those harmed by their misdeeds.
 
     """
-    name = "Oath of Vengance"
+    name = "Oath of Vengeance"
     _oath_spells = {3: [spells.Bane, spells.HuntersMark],
                     5: [spells.HoldPerson, spells.MistyStep],
                     9: [spells.Haste, spells.ProtectionFromEnergy],
@@ -346,7 +346,7 @@ class Paladin(CharClass):
     features_by_level[10] = [features.AuraOfCourage]
     features_by_level[11] = [features.ImprovedDivineSmite]
     features_by_level[14] = [features.CleansingTouch]
-    subclasses_available = (OathOfDevotion, OathOfAncients, OathOfVengance,
+    subclasses_available = (OathOfDevotion, OathOfAncients, OathOfVengeance,
                             OathOfCrown, OathOfConquest, OathOfRedemption,
                             OathOfZor)
     spellcasting_ability = 'charisma'
