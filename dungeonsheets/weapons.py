@@ -435,7 +435,7 @@ class Blowgun(MartialWeapon, RangedWeapon):
 
 
 class HandCrossbow(MartialWeapon, RangedWeapon):
-    name = "Crossbow, hand"
+    name = "Hand Crossbow"
     cost = "75 gp"
     base_damage = "1d6"
     damage_type = "p"
@@ -445,7 +445,7 @@ class HandCrossbow(MartialWeapon, RangedWeapon):
 
 
 class HeavyCrossbow(MartialWeapon, RangedWeapon):
-    name = "Crossbow, heavy"
+    name = "Heavy Crossbow"
     cost = "50 gp"
     base_damage = "1d10"
     damage_type = "p"
