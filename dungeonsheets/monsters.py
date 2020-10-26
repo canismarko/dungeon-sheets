@@ -91,6 +91,40 @@ class Ape(Monster):
     hit_dice = '3d8+6'
 
 
+class BlackBear(Monster):
+    """**Multiattack:** The bear makes two attacks: one with its bite and
+    one with its claws.
+
+    **Bite:** Melee Weapon Attack: +3 to hit, reach 5 ft., one target.
+    Hit: 5 (1 d6 + 2) piercing da mage.
+
+    **Claws:** Melee Weapon Attack: +3 to hit, reach 5 ft ., one target.
+    Hit: 7 (2d4 + 2) slashing damage.
+
+    **Keen Smell:** The bear has advantage on Wisdom (Perception)
+    checks that rely on smell.
+
+    **Climbing speed:** 30 ft.
+    """
+    name = "Black bear"
+    description = "Medium beast, unaligned"
+    challenge_rating = 1 / 2
+    armor_class = 11
+    skills = "Perception +3"
+    senses = "Passive perception 13"
+    strength = Ability(15)
+    dexterity = Ability(10)
+    constitution = Ability(14)
+    intelligence = Ability(2)
+    wisdom = Ability(12)
+    charisma = Ability(7)
+    speed = 40
+    swim_speed = 0
+    fly_speed = 0
+    hp_max = 19
+    hit_dice = '3d8+6'
+
+
 class Crocodile(Monster):
     """**Hold Breath:** The crocodile can hold its breath for 15 minutes.
 
@@ -155,6 +189,209 @@ class GiantEagle(Monster):
     fly_speed = 80
     hp_max = 26
     hit_dice = '4d10+4'
+
+
+class GiantFrog(Monster):
+    """**Amphibious:** The frog can breathe air and water.
+
+    **Standing Leap.** The frog's long jump is up to 20 feet and its
+    high jump is up to 10 feet , with or without a running start.
+    """
+    name = "Giant frog"
+    description = "Medium beast, unaligned"
+    challenge_rating = 1/4
+    armor_class = 11
+    skills = "Pe rce ption +2, Stealth +3"
+    senses = "darkvi sion 30ft., passive Perception 12"
+    languages = ""
+    strength = Ability(12)
+    dexterity = Ability(13)
+    constitution = Ability(11)
+    intelligence = Ability(2)
+    wisdom = Ability(10)
+    charisma = Ability(3)
+    speed = 30
+    swim_speed = 30
+    fly_speed = 0
+    hp_max = 18
+    hit_dice = '4d8'
+
+
+class GiantRat(Monster):
+    """**Keen Smell:** The rat has advantage on Wisdom (Perception)
+    checks that rely on smell.
+
+    **Pack Tactics:** The rat has advantage on an attack roll against a
+    creature if at least one of the rat's allies is within 5 feet of the
+    creature and the ally isn't incapacitated.
+
+    **Bite:** Melee Weapon Attack: +4 to hit, reach 5 ft., one
+    creature. Hit: 4 (1d4+2) piercing damage.
+    """
+    name = "Giant rat"
+    description = "Small beast, unaligned"
+    challenge_rating = 1/8
+    armor_class = 12
+    skills = ""
+    senses = "Darkvision 60 ft., Passive perception 10"
+    languages = ""
+    strength = Ability(7)
+    dexterity = Ability(15)
+    constitution = Ability(11)
+    intelligence = Ability(2)
+    wisdom = Ability(10)
+    charisma = Ability(4)
+    speed = 30
+    swim_speed = 0
+    fly_speed = 0
+    hp_max = 7
+    hit_dice = '2d6'
+
+
+class GiantPoisonousSnake(Monster):
+    """**Bite:** Melee Weapon Attack: +6 to hit, reach 10ft., one target.
+    Hit: 6 (1d4 + 4) piercing damage, and the target must make
+    a DC 11 Constitution saving throw, taking 10 (3d6) poison
+    damage on a failed save, or half as much damage on a
+    successful one.
+    """
+    name = "Giant poisonous snake"
+    description = "Medium beast, unaligned"
+    challenge_rating = 1/4
+    armor_class = 14
+    skills = ""
+    senses = "blindsight 10 ft., passive Perception 12"
+    languages = ""
+    strength = Ability(10)
+    dexterity = Ability(18)
+    constitution = Ability(13)
+    intelligence = Ability(2)
+    wisdom = Ability(10)
+    charisma = Ability(3)
+    speed = 30
+    swim_speed = 30
+    fly_speed = 0
+    hp_max = 11
+    hit_dice = '2d8+2'
+
+
+class PoisonousSnake(Monster):
+    """**Bite:** Melee Weapon Attack: +5 to hit, reach 5 ft., one target.
+    Hit: 1 piercing damage, and the target must ma ke a DC 10
+    Constitution saving throw, taking 5 (2d4) poison dam age on a
+    failed save, or ha lf as much damage on a successful one.
+    """
+    name = "Poisonous snake"
+    description = "Tiny beast, unaligned"
+    challenge_rating = 1/8
+    armor_class = 13
+    skills = ""
+    senses = "blindsight 10 ft., passive Perception 10"
+    languages = ""
+    strength = Ability(2)
+    dexterity = Ability(16)
+    constitution = Ability(11)
+    intelligence = Ability(1)
+    wisdom = Ability(10)
+    charisma = Ability(3)
+    speed = 30
+    swim_speed = 30
+    fly_speed = 0
+    hp_max = 2
+    hit_dice = '1d4'
+
+
+class Quipper(Monster):
+    """A quipper is a carnivorous fish with sharp teeth. Quippers can adapt to
+    any aquatic Environment, including cold subterranean lakes. They frequently
+    gather in swarms.
+
+    **Blood Frenzy:** The quipper has advantage on melee Attack rolls against
+    any creature that doesn't have all its Hit Points.
+
+    **Water Breathing:** The quipper can breathe only Underwater.
+
+    **Bite:** Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit:
+    1 piercing damage.
+    """
+    name = "Quipper"
+    description = "Tiny beast, unaligned"
+    challenge_rating = 0
+    armor_class = 13
+    skills = ""
+    senses = "Darkvision 60 Ft., passive Perception 8"
+    languages = ""
+    strength = Ability(2)
+    dexterity = Ability(16)
+    constitution = Ability(9)
+    intelligence = Ability(1)
+    wisdom = Ability(7)
+    charisma = Ability(2)
+    speed = 0
+    swim_speed = 40
+    fly_speed = 0
+    hp_max = 1
+    hit_dice = '1d4-1'
+
+
+class Rat(Monster):
+    """**Keen Smell:** The rat has advantage on Wisdom (Perception) checks
+    that rely on smell.
+
+    **Bite:** Melee Weapon Attack: +0 to hit, reach 5 ft., one
+    target. Hit: 1 piercing damage.
+
+    """
+    name = "Rat"
+    description = "Tiny beast, unaligned"
+    challenge_rating = 0
+    armor_class = 10
+    skills = ""
+    senses = "Darkvision 30 Ft., passive Perception 10"
+    strength = Ability(2)
+    dexterity = Ability(11)
+    constitution = Ability(9)
+    intelligence = Ability(2)
+    wisdom = Ability(10)
+    charisma = Ability(4)
+    speed = 20
+    hp_max = 1
+    hit_dice = '1d4-2'
+
+
+class ReefShark(Monster):
+    """Smaller than giant s harks and hunter sharks, reef
+    sharks inhabit shallow waters and coral reefs, gathering
+    in small packs to hunt. A full-grown specimen measures
+    6 to 10 feet long.
+
+    **Pack Tactics:** The shark has advantage on an attack roll against
+    a creature if at least one of the shark's allies is within 5 feet of
+    the creature and the ally isn't incapacitated.
+
+    **Water Breathing:** The shark can breathe only underwater.
+
+    **Bite:** Melee Weapon Attack: +4 to hit, reach 5 ft., one target.
+    Hit: 6 (1d8 + 2) piercing damage.
+    """
+    name = "Reef shark"
+    description = "Medium beast, unaligned"
+    challenge_rating = 1/2
+    armor_class = 12
+    skills = "Perception +2"
+    senses = "blindsight 30 ft., passive Perception 12"
+    languages = ""
+    strength = Ability(14)
+    dexterity = Ability(13)
+    constitution = Ability(13)
+    intelligence = Ability(1)
+    wisdom = Ability(10)
+    charisma = Ability(4)
+    speed = 0
+    swim_speed = 40
+    fly_speed = 0
+    hp_max = 22
+    hit_dice = '4d8+4'
 
 
 class Spider(Monster):
@@ -223,31 +460,6 @@ class SwarmOfRats(Monster):
     speed = 30
     hp_max = 24
     hit_dice = '7d8-7'
-
-
-class Rat(Monster):
-    """**Keen Smell:** The rat has advantage on Wisdom (Perception) checks
-    that rely on smell.
-
-    **Bite:** Melee Weapon Attack: +0 to hit, reach 5 ft., one
-    target. Hit: 1 piercing damage.
-
-    """
-    name = "Rat"
-    description = "Tiny beast, unaligned"
-    challenge_rating = 0
-    armor_class = 10
-    skills = ""
-    senses = "Darkvision 30 Ft., passive Perception 10"
-    strength = Ability(2)
-    dexterity = Ability(11)
-    constitution = Ability(9)
-    intelligence = Ability(2)
-    wisdom = Ability(10)
-    charisma = Ability(4)
-    speed = 20
-    hp_max = 1
-    hit_dice = '1d4-2'
 
 
 class Wolf(Monster):
