@@ -25,14 +25,15 @@ class Archfey(SubClass):
 
 
 class Fiend(SubClass):
-    """You have made a pact with a fiend from the lower planes o f existence, a
-    being whose aims are evil, even if you strive against those aims. Such
-    beings desire the corruption or destruction of all things, ultimately
-    including you. Fiends powerful enough to forge a pact include demon lords
-    such as Demogorgon, Orcus, Fraz'Urb-luu, and Baphomet; archdevils such as
-    Asmodeus, Dispater, Mephistopheles, and Belial; pit fiends and balors that
-    are especially mighty; and ultroloths and other lords of the yugoloths
-
+    """You have made a pact with a fiend from the lower planes of
+    existence, a being whose aims are evil, even if you strive against
+    those aims. Such beings desire the corruption or destruction of
+    all things, ultimately including you. Fiends powerful enough to
+    forge a pact include demon lords such as Demogorgon, Orcus,
+    Fraz'Urb-luu, and Baphomet; archdevils such as Asmodeus, Dispater,
+    Mephistopheles, and Belial; pit fiends and balors that are
+    especially mighty; and ultroloths and other lords of the yugoloths
+    
     """
     name = "The Fiend Patron"
     features_by_level = defaultdict(list)
@@ -43,13 +44,14 @@ class Fiend(SubClass):
 
 
 class GreatOldOne(SubClass):
-    """Your patron is a mysterious entity whose nature is utterly foreign to the
-    fabric of reality. It might come from the Far Realm, the space beyond
-    reality, or it could be one of the elder gods known only in legends. Its
-    motives are incomprehensible to mortals, and its knowledge so immense and
-    ancient that even the greatest libraries pale in comparison to the vast
-    secrets it holds. The Great Old One might be unaware of your existence or
-    entirely indifferent to you, but the secrets you have learned allow you to
+    """Your patron is a mysterious entity whose nature is utterly foreign
+    to the fabric of reality. It might come from the Far Realm, the
+    space beyond reality, or it could be one of the elder gods known
+    only in legends. Its motives are incomprehensible to mortals, and
+    its knowledge so immense and ancient that even the greatest
+    libraries pale in comparison to the vast secrets it holds. The
+    Great Old One might be unaware of your existence or entirely
+    indifferent to you, but the secrets you have learned allow you to
     draw your magic from it.
 
     Entities of this type include Ghaunadar, called That Which Lurks;
@@ -67,17 +69,19 @@ class GreatOldOne(SubClass):
 
 # SCAG
 class Undying(SubClass):
-    """Death holds no sway over your patron, who has un- locked the secrets of
-    everlasting life, although such a prize- like all power- comes at a
-    price. Once mortal, the Undying has seen mortal lifetimes pass like the
-    sea- sons, like the flicker of endless days and nights. It has the secrets
-    of the ages to share, secrets of life and death. Beings of this sort
-    include Vecna, Lord of the Hand and the Eye; the dread Iuz; the lich-queen
-    Vol; the Undying Court of Aerenal; Vlaakith, lich-queen of the githyanki;
-    and the deathless wizard Fistandantalus.
+    """Death holds no sway over your patron, who has unlocked the secrets
+    of everlasting life, although such a prize -- like all power --
+    comes at a price. Once mortal, the Undying has seen mortal
+    lifetimes pass like the seasons, like the flicker of endless days
+    and nights. It has the secrets of the ages to share, secrets of
+    life and death. Beings of this sort include Vecna, Lord of the
+    Hand and the Eye; the dread Iuz; the lich-queen Vol; the Undying
+    Court of Aerenal; Vlaakith, lich-queen of the githyanki; and the
+    deathless wizard Fistandantalus.
 
-    In the Realms, Undying patrons include Larloch the Shadow King, legendary
-    master of Warlock's Crypt, and Gilgeam, the God-King of Unther
+    In the Realms, Undying patrons include Larloch the Shadow King,
+    legendary master of Warlock's Crypt, and Gilgeam, the God-King of
+    Unther
 
     """
     name = "The Undying Patron"
@@ -90,19 +94,20 @@ class Undying(SubClass):
 
 # XGTE
 class Celestial(SubClass):
-    """Your patron is a powerful being of the Upper Planes. You have bound yourself
-    to an ancient empyrean, solar, ki-rin, unicorn, or other entity that
-    resides in the planes of everlasting bliss. Your pact with that being
-    allows you to experience the barest touch of the holy light that illuminates
-    the multiverse.
+    """Your patron is a powerful being of the Upper Planes. You have bound
+    yourself to an ancient empyrean, solar, kirin, unicorn, or other
+    entity that resides in the planes of everlasting bliss. Your pact
+    with that being allows you to experience the barest touch of the
+    holy light that illuminates the multiverse.
 
-    Being connected to such power can cause changes in your behavior and
-    beliefs. You might find yourself driven to annihilate the undead, to defeat
-    fiends, and to protect the innocent. At times, your heart might also be
-    filled with a longing for the celestial realm of your patron, and a desire
-    to wander that paradise for the rest of your days. But you know that your
-    mission is among mortals for now, and that your pact binds you to bring
-    light to the dark places of the world.
+    Being connected to such power can cause changes in your behavior
+    and beliefs. You might find yourself driven to annihilate the
+    undead, to defeat fiends, and to protect the innocent. At times,
+    your heart might also be filled with a longing for the celestial
+    realm of your patron, and a desire to wander that paradise for the
+    rest of your days. But you know that your mission is among mortals
+    for now, and that your pact binds you to bring light to the dark
+    places of the world.
 
     """
     name = "The Celestial Patron"
@@ -115,19 +120,20 @@ class Celestial(SubClass):
 
 
 class Hexblade(SubClass):
-    """You have made your pact with a mysterious entity from the Shadowfell-a force
-    that manifests in sentient magic weapons carved from the stuff of
-    shadow. The mighty sword Blackrazor is the most notable of these weapons,
-    which have been spread across the multiverse over the ages. The shadowy
-    force behind these weapons can offer power to warlocks who form pacts with
-    it. Many hexhlade warlocks create weapons that emulate those formed in the
-    Shadowfell. Others forgo such arms, content to weave the dark magic of that
-    plane into their spellcasting.
+    """You have made your pact with a mysterious entity from the
+    Shadowfell -- a force that manifests in sentient magic weapons
+    carved from the stuff of shadow. The mighty sword Blackrazor is
+    the most notable of these weapons, which have been spread across
+    the multiverse over the ages. The shadowy force behind these
+    weapons can offer power to warlocks who form pacts with it. Many
+    hexhlade warlocks create weapons that emulate those formed in the
+    Shadowfell. Others forgo such arms, content to weave the dark
+    magic of that plane into their spellcasting.
 
-    Because the Raven Queen is known to have forged the first of these weapons,
-    many sages speculate that she and the force are one and that the weapons,
-    along with hexblade warlocks, are tools she uses to manipulate events on
-    the Material Plane to her inscrutable ends
+    Because the Raven Queen is known to have forged the first of these
+    weapons, many sages speculate that she and the force are one and
+    that the weapons, along with hexblade warlocks, are tools she uses
+    to manipulate events on the Material Plane to her inscrutable ends
 
     """
     name = "Hexblade Patron"

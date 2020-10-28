@@ -32,10 +32,15 @@ dice_re = re.compile(r'`*(\d+d\d+(?:\s*\+\s*\d+)?)`*')
 # - a blank line
 # - one or more of the following
 #   - "- [a-z]"
+#   - an additional line of text (if multi-line bullets)
 #   - a blank line
 # - a blank line
 # - a non-list line or end of file
-list_re = re.compile('^[ \t\r\f\v]*\n((?:\s*[-*+]\s+[^\n]*\n)+)', flags=re.MULTILINE)
+# list_re = re.compile('^[ \t\r\f\v]*\n((?:\s*[-*+]\s+[^\n]*\n)+)', flags=re.MULTILINE)
+list_re = re.compile('^[ \t\r\f\v]*\n'  # A blank line
+                     '((?:\s*[-*+]\s+[^\n]*\n)+)' # The first line of each list item
+                     '',
+                     flags=re.MULTILINE)
 # What defines a list item in reST:
 # - a line starting with "- " then some text
 # - zero or more lines starting with anything other than "- "

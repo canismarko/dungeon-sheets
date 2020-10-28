@@ -89,12 +89,24 @@ class MarkdownTestCase(unittest.TestCase):
         self.assertEqual(expected_tex, tex)
         # A real list taken from a docstring
         real_list = """
-        - Secondhand (you have heard of the target)  +5
+        - Secondhand (you have heard of the target) - +5
         - Firsthand (you have met the target) - +0
         - Familiar (you know the target well) - -5
         
         """
         tex = make_sheets.rst_to_latex(real_list)
         self.assertIn("\\begin{itemize}", tex)
-
-
+    
+    def test_multiline_bullet_list(self):
+        md_list = """
+        - Secondhand (you have heard
+          of the target) - +5
+        - Firsthand (you have met 
+          the target) - +0
+        - Familiar (you know the target 
+          well) - -5
+        
+        """
+        tex = make_sheets.rst_to_latex(md_list)
+        print(tex)
+        self.assertIn("\\begin{itemize}", tex)

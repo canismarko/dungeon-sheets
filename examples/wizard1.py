@@ -81,7 +81,7 @@ or uses spells."""
 
 # List of known spells
 # Example: spells_prepared = ('magic missile', 'mage armor')
-spells_prepared = ('acid splash', 'ray of frost', 'light', 'friends',
+spells_prepared = ('acid splash', 'animate_objects', 'ray of frost', 'light', 'friends',
                    'disguise self', 'identify', 'jump',
                    'blur', 'knock', 'shatter',
                    'blink', 'fly', 'slow',

@@ -340,35 +340,38 @@ class AnimateDead(Spell):
 
 
 class AnimateObjects(Spell):
-    """Objects come to life at your command.
-    Choose up to ten nonmagical objects
-    within range that are not being worn or carried. Medium targets count as two
-    objects, Large targets count as four objects, Huge targets count as eight
-    objects. You can't animate any object larger than Huge. Each target animates and
-     becomes a creature under your control until the spell ends or until reduced to
-    0 hit points.
+    """Objects come to life at your command. Choose up to ten nonmagical
+    objects within range that are not being worn or carried. Medium
+    targets count as two objects, Large targets count as four objects,
+    Huge targets count as eight objects. You can't animate any object
+    larger than Huge. Each target animates and becomes a creature
+    under your control until the spell ends or until reduced to 0 hit
+    points.
 
-    As a bonus action, you can mentally command any creature you
-    made with this spell if the creature is within 500 feet of you (if you control
-    multiple creatures, you can command any or all of them at the same time, issuing
-     the same command to each one). You decide what action the creature will take
-    and where it will move during its next turn, or you can issue a general command,
-     such as to guard a particular chamber or corridor. If you issue no commands,
-    the creature only defends itself against hostile creatures. Once given an order,
-     the creature continues to follow it until its task is complete.
+    As a bonus action, you can mentally command any creature you made
+    with this spell if the creature is within 500 feet of you (if you
+    control multiple creatures, you can command any or all of them at
+    the same time, issuing the same command to each one). You decide
+    what action the creature will take and where it will move during
+    its next turn, or you can issue a general command, such as to
+    guard a particular chamber or corridor. If you issue no commands,
+    the creature only defends itself against hostile creatures. Once
+    given an order, the creature continues to follow it until its task
+    is complete.
 
-    Animated
-    Object Statistics
-    Tiny – HP: 20, AC: 18, Attack: +8 to hit, 1d4 + 4 damage,
-    Str: 4, Dex: 18
-    Small – HP: 25, AC: 16, Attack: +6 to hit, 1d8 + 2 damage, Str:
-     6, Dex: 14
-    Medium – HP: 40, AC: 13, Attack: +5 to hit, 2d6 + 1 damage, Str:
-    10, Dex: 12
-    Large – HP: 50, AC: 10, Attack: +6 to hit, 2d10 + 2 damage, Str:
-    14, Dex: 10
-    Huge – HP: 80, AC: 10, Attack: +8 to hit, 2d12 + 4 damage, Str: 18,
-     Dex: 6
+    Animated Object Statistics
+    --------------------------
+    
+    - Tiny -- HP: 20, AC: 18, Attack: +8 to hit, 1d4 + 4 damage, Str:
+      4, Dex: 18
+    - Small -- HP: 25, AC: 16, Attack: +6 to hit, 1d8 + 2 damage, Str:
+      6, Dex: 14
+    - Medium – HP: 40, AC: 13, Attack: +5 to hit, 2d6 + 1 damage, Str:
+      10, Dex: 12
+    - Large – HP: 50, AC: 10, Attack: +6 to hit, 2d10 + 2 damage, Str:
+      14, Dex: 10
+    - Huge – HP: 80, AC: 10, Attack: +8 to hit, 2d12 + 4 damage, Str:
+      18, Dex: 6
 
     An animated object is a construct with AC, hit points, attacks,
     Strength, and Dexterity determine by its size. Its Constitution is 10 and its
@@ -389,6 +392,7 @@ class AnimateObjects(Spell):
     At Higher
     Levels: If you cast this spell using a spell slot of 6th level or higher, you
     can animate two additional objects for each slot level above 5th.
+
     """
     name = "Animate Objects"
     level = 5
