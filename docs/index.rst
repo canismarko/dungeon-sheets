@@ -13,14 +13,11 @@ Welcome to Dungeonsheets's documentation!
    character_files
    examples
 
-To-Do Tasks
-===========
-.. todolist::
-
-
 Indices and tables
 ==================
 
 * :ref:`genindex`
 * :ref:`modindex`
 * :ref:`search`
+
+.. include:: ../README.rst

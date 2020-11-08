@@ -155,13 +155,9 @@ class JSONCharacterReader(BaseCharacterReader):
             match = item_re.match(obj['name'])
             if match:
                 weapon_name = self.get_attrib(match.group()).lower()
-                if weapon_name[:3] == "i. ":
-                    # Ignore artificer infusions
-                    warnings.warn("Ignoring weapon infusion")
-                else:
-                    weapon_name = weapon_name.split('(')[0].strip()
-                    weapon_name = weapon_name.split(',')[0].strip()
-                    yield weapon_name
+                weapon_name = weapon_name.split('(')[0].strip()
+                weapon_name = weapon_name.split(',')[0].strip()
+                yield weapon_name
     
     def __call__(self, filename: str):
         """Create a character property dictionary from the JSON file."""

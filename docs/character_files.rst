@@ -257,8 +257,16 @@ spells and known cantrips** should be listed in the
    # List of all the known wild shapes
    wild_shapes = ["wolf", "crocodile", 'ape', 'ankylosaurus']
     
-       
+VTTES JSON Files
+================
+
+Dungeonsheets has partial support for reading JSON files exporting
+using the `VTTES browser extension`_. This allows character sheets to
+be exported from systems like Roll20.net, and then rendered into full
+character sheets.
 
 .. _player's handbook: http://dnd.wizards.com/products/tabletop-games/rpg-products/rpg_playershandbook
 
 .. _issue: https://github.com/canismarko/dungeon-sheets/issues
+
+.. _VTTES browser extension: https://wiki.5e.tools/index.php/R20es_Install_Guide

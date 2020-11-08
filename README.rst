@@ -14,7 +14,14 @@ A tool to create character sheets for Dungeons and Dragons.
 
 .. image:: https://readthedocs.org/projects/dungeon-sheets/badge/?version=latest
    :target: https://dungeon-sheets.readthedocs.io/en/latest/?badge=latest
-   :alt: Documentation Status	     
+   :alt: Documentation Status
+
+Documentation
+=============
+
+Documentation can be found on readthedocs_.
+
+.. _readthedocs: https://dungeon-sheets.readthedocs.io/en/latest/?badge=latest
 
 Installation
 ============
@@ -59,13 +66,16 @@ not, then this feature will be skipped.
 Usage
 =====
 
-Each character is described by a python (or JSON) file, which gives
-many attributes associated with the character. See examples_ for more
-information about the character descriptions.
+Each character is described by a python (or a VTTES JSON) file, which
+gives many attributes associated with the character. See examples_ for
+more information about the character descriptions.
 
 .. _examples: https://github.com/canismarko/dungeon-sheets/tree/master/examples
 
-The PDF's can then be generated using the ``makesheets`` command.
+The PDF's can then be generated using the ``makesheets`` command. If
+no filename is given, the current directory will be parsed and any
+character files found will be processed. If the ``--recursive`` option
+is used, sub-folders will also be parsed.
 
 .. code:: bash
 

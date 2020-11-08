@@ -697,13 +697,10 @@ class Character():
             try:
                 NewWeapon = findattr(weapons, weapon)
             except AttributeError:
-                try:
-                    findattr(spells, weapon)
-                except AttributeError:
-                    raise AttributeError(f'Weapon "{weapon}" is not defined')
-                else:
-                    warnings.warn(f"Ignoring spell {weapon} listed as weapon.")
-                    return
+                warnings.warn(f"Unknown weapon '{weapon}'. Please add it to ``weapons.py`` "
+                              "or submit an issue: https://github.com/canismarko/dungeon-sheets/issues",
+                              RuntimeWarning)
+                return
             weapon_ = NewWeapon(wielder=self)
         elif issubclass(weapon, weapons.Weapon):
             weapon_ = weapon(wielder=self)

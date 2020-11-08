@@ -15,7 +15,8 @@
 # import os
 # import sys
 # sys.path.insert(0, os.path.abspath('.'))
-
+from pathlib import Path
+proj_root = Path(__file__).parent.parent
 
 # -- Project information -----------------------------------------------------
 
@@ -23,11 +24,10 @@ project = 'dungeonsheets'
 copyright = '2018, Mark Wolfman'
 author = 'Mark Wolfman'
 
-# The short X.Y version
-version = ''
 # The full version, including alpha/beta/rc tags
-release = '0.4.2'
-
+release = open(proj_root/'VERSION').read()
+# The short X.Y version
+version = ".".join(release.split('.')[0:2])
 
 # -- General configuration ---------------------------------------------------
 

@@ -484,6 +484,7 @@ class Unarmed(MeleeWeapon):
     ability = "strength"
 
 
+MonkUnarmedStrike = Unarmed    
 UnarmedStrike = Unarmed
 
 

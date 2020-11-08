@@ -681,19 +681,8 @@ load_character_file = readers.read_character_file
 
 
 def _build(filename, args) -> int:
-    known_extensions = readers.readers_by_extension.keys()
-    # Check if it's a directory we can recurse through
-    if filename.is_dir():
-        num_imported = 0
-        for child_file in filename.iterdir():
-            num_imported += _build(child_file, args)
-        return num_imported
-    # Check if we know how to import this file
-    if filename.suffix not in known_extensions:
-        return 0
-    # Single known file, so import it
     basename = filename.stem
-    print(f"Processing {basename}...")        
+    print(f"Processing {basename}...")
     try:
         make_sheet(character_file=filename, flatten=(not args.editable),
                    debug=args.debug, fancy_decorations=args.fancy_decorations)
@@ -714,10 +703,12 @@ def main():
     parser = argparse.ArgumentParser(
         description='Prepare Dungeons and Dragons character sheets as PDFs')
     parser.add_argument('filename', type=str, nargs="*",
-                        help="Python file with character definition")
+                        help="File with character definition, or directory containing such files")
     parser.add_argument('--editable', '-e', action="store_true",
-                        help="Keep the PDF fields in place once processed.")
-    parser.add_argument('--fancy-decorations', '-F', action="store_true",
+                        help="Keep the PDF fields in place once processed")
+    parser.add_argument('--recursive', '-r', action="store_true",
+                        help="Descend into subfolders looking for character files")
+    parser.add_argument('--fancy-decorations', '--fancy', '-F', action="store_true",
                         help=("Render extra pages using fancy decorations "
                               "(experimental, requires https://github.com/rpgtex/DND-5e-LaTeX-Template)"))
     parser.add_argument('--debug', '-d', action="store_true",
@@ -733,18 +724,25 @@ def main():
         input_filenames = [Path()]
     else:
         input_filenames = [Path(f) for f in input_filenames]
-    def get_char_files(fpath):
+    def get_char_files(fpath, parse_dirs=False):
         valid_files = []
-        if fpath.is_dir():
+        if fpath.is_dir() and parse_dirs:
             for f in fpath.iterdir():
-                valid_files.extend(get_char_files(f))
+                valid_files.extend(get_char_files(f, parse_dirs=args.recursive))
         elif fpath.suffix in known_extensions:
             valid_files.append(fpath)
         return valid_files
-    filenames = []
+    temp_filenames = []
     for fpath in input_filenames:
-        filenames.extend(get_char_files(fpath))
-    # Process the requested files        
+        temp_filenames.extend(get_char_files(fpath, parse_dirs=True))
+    # IMPORTANT: Check that the files are valid dungeonsheets files without importing them
+    filenames = []
+    version_re = re.compile(r"^dungeonsheets_version = [\'\"](?P<version>[0-9.]+)[\'\"]\s*$", re.MULTILINE)
+    for fpath in temp_filenames:
+        with open(fpath, mode='r') as fp:
+            if version_re.search(fp.read()) or fpath.suffix != '.py':
+                filenames.append(fpath)
+    # Process the requested files
     if args.debug:
         for filename in filenames:
             _build(filename, args)
