@@ -1,10 +1,10 @@
 """Tools for describing a player character."""
 __all__ = ('Character',)
 
+from pathlib import Path
 import importlib.util
 import os
 import re
-import subprocess
 import warnings
 import math
 
@@ -18,6 +18,7 @@ from dungeonsheets.dice import read_dice_str
 from dungeonsheets.stats import (Ability, ArmorClass, Initiative, Skill, Speed,
                                  findattr)
 from dungeonsheets.weapons import Weapon
+from dungeonsheets.readers import read_character_file
 
 
 def read(fname):
@@ -323,7 +324,7 @@ class Character():
         Set maximum HP based on value in charlist py or calc from classes
         """
         if hp_max:
-            assert isinstance(hp_max, int)
+            assert isinstance(hp_max, int), hp_max.__class__
             self.hp_max = hp_max
         else:
             const_mod = self.constitution.modifier
@@ -696,7 +697,13 @@ class Character():
             try:
                 NewWeapon = findattr(weapons, weapon)
             except AttributeError:
-                raise AttributeError(f'Weapon "{weapon}" is not defined')
+                try:
+                    findattr(spells, weapon)
+                except AttributeError:
+                    raise AttributeError(f'Weapon "{weapon}" is not defined')
+                else:
+                    warnings.warn(f"Ignoring spell {weapon} listed as weapon.")
+                    return
             weapon_ = NewWeapon(wielder=self)
         elif issubclass(weapon, weapons.Weapon):
             weapon_ = weapon(wielder=self)
@@ -800,48 +807,6 @@ class Character():
             filename = filename.replace('pdf', 'py')
         make_sheet(filename, character=self,
                    flatten=kwargs.get('flatten', True))
-
-
-def read_character_file(filename):
-    """Create a character object from the given definition file.
-
-    The definition file should be an importable python file, filled
-    with variables describing the character.
-
-    Parameters
-    ----------
-    filename : str
-      The path to the file that will be imported.
-
-    """
-    # Parse the file name
-    dir_, fname = os.path.split(os.path.abspath(filename))
-    module_name, ext = os.path.splitext(fname)
-    if ext != '.py':
-        raise ValueError(f"Character definition {filename} is not a python file.")
-    # Check if this file contains the version string
-    version_re = re.compile('dungeonsheets_version\s*=\s*[\'"]([0-9.]+)[\'"]')
-    with open(filename, mode='r') as f:
-        version = None
-        for line in f:
-            match = version_re.match(line)
-            if match:
-                version = match.group(1)
-                break
-        if version is None:
-            # Not a valid DND character file
-            raise exceptions.CharacterFileFormatError(
-                f"No ``dungeonsheets_version = `` entry in `{filename}`.")
-    # Import the module to extract the information
-    spec = importlib.util.spec_from_file_location('module', filename)
-    module = importlib.util.module_from_spec(spec)
-    spec.loader.exec_module(module)
-    # Prepare a list of properties for this character
-    char_props = {}
-    for prop_name in dir(module):
-        if prop_name[0:2] != '__':
-            char_props[prop_name] = getattr(module, prop_name)
-    return char_props
 
 
 # Add backwards compatability for tests

@@ -59,8 +59,8 @@ not, then this feature will be skipped.
 Usage
 =====
 
-Each character is described by a python file, which gives many
-attributes associated with the character. See examples_ for more
+Each character is described by a python (or JSON) file, which gives
+many attributes associated with the character. See examples_ for more
 information about the character descriptions.
 
 .. _examples: https://github.com/canismarko/dungeon-sheets/tree/master/examples

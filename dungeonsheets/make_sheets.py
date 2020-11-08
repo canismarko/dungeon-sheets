@@ -7,6 +7,7 @@ import os
 import subprocess
 import warnings
 import re
+from pathlib import Path
 from multiprocessing import Pool, cpu_count
 from itertools import product
 
@@ -15,7 +16,7 @@ import pdfrw
 from jinja2 import Environment, PackageLoader
 
 from dungeonsheets import character as _char
-from dungeonsheets import exceptions, classes
+from dungeonsheets import exceptions, classes, readers
 from dungeonsheets.stats import mod_str
 
 
@@ -37,14 +38,14 @@ dice_re = re.compile(r'`*(\d+d\d+(?:\s*\+\s*\d+)?)`*')
 # - a blank line
 # - a non-list line or end of file
 # list_re = re.compile('^[ \t\r\f\v]*\n((?:\s*[-*+]\s+[^\n]*\n)+)', flags=re.MULTILINE)
-list_re = re.compile('^[ \t\r\f\v]*\n'  # A blank line
-                     '((?:\s*[-*+]\s+[^\n]*\n)+)' # The first line of each list item
+list_re = re.compile(r'^[ \t\r\f\v]*\n'  # A blank line
+                     r'((?:\s*[-*+]\s+[^\n]*\n)+)' # The first line of each list item
                      '',
                      flags=re.MULTILINE)
 # What defines a list item in reST:
 # - a line starting with "- " then some text
 # - zero or more lines starting with anything other than "- "
-list_item_re = re.compile('^\s*[-*+]\s+', flags=re.MULTILINE)
+list_item_re = re.compile(r'^\s*[-*+]\s+', flags=re.MULTILINE)
 
 
 def _parse_rst_lists(rst):
@@ -143,7 +144,7 @@ def rst_to_latex(rst, top_heading_level=0):
             list_tex = "\n\\begin{itemize}\n"
             for item in list_items:
                 list_tex += f"\\item{{{item}}}\n"
-            list_tex += "\end{itemize}\n"
+            list_tex += "\\end{itemize}\n"
             tex = tex.replace(list_rst, list_tex)
         # Inline text formatting
         tex = bold_re.sub(r'\\textbf{\1}', tex)
@@ -676,12 +677,23 @@ def merge_pdfs(src_filenames, dest_filename, clean_up=False):
                 os.remove(sheet)
 
 
-load_character_file = _char.read_character_file
+load_character_file = readers.read_character_file
 
 
-def _build(filename, args):
-    basename = os.path.splitext(filename)[0]
-    print(f"Processing {basename}...")
+def _build(filename, args) -> int:
+    known_extensions = readers.readers_by_extension.keys()
+    # Check if it's a directory we can recurse through
+    if filename.is_dir():
+        num_imported = 0
+        for child_file in filename.iterdir():
+            num_imported += _build(child_file, args)
+        return num_imported
+    # Check if we know how to import this file
+    if filename.suffix not in known_extensions:
+        return 0
+    # Single known file, so import it
+    basename = filename.stem
+    print(f"Processing {basename}...")        
     try:
         make_sheet(character_file=filename, flatten=(not args.editable),
                    debug=args.debug, fancy_decorations=args.fancy_decorations)
@@ -695,13 +707,13 @@ def _build(filename, args):
         raise
     else:
         print(f"{basename} done")
-
+    return 1
 
 def main():
     # Prepare an argument parser
     parser = argparse.ArgumentParser(
         description='Prepare Dungeons and Dragons character sheets as PDFs')
-    parser.add_argument('filename', type=str, nargs="?",
+    parser.add_argument('filename', type=str, nargs="*",
                         help="Python file with character definition")
     parser.add_argument('--editable', '-e', action="store_true",
                         help="Keep the PDF fields in place once processed.")
@@ -714,11 +726,25 @@ def main():
     # Prepare logging if necessary
     if args.debug:
         logging.basicConfig(level=logging.DEBUG)
-    # Process the requested files
-    if args.filename is None:
-        filenames = [f for f in os.listdir('.') if os.path.splitext(f)[1] == '.py']
+    # Build the true list of filenames
+    input_filenames = args.filename
+    known_extensions = readers.readers_by_extension.keys()
+    if input_filenames == []:
+        input_filenames = [Path()]
     else:
-        filenames = [args.filename]
+        input_filenames = [Path(f) for f in input_filenames]
+    def get_char_files(fpath):
+        valid_files = []
+        if fpath.is_dir():
+            for f in fpath.iterdir():
+                valid_files.extend(get_char_files(f))
+        elif fpath.suffix in known_extensions:
+            valid_files.append(fpath)
+        return valid_files
+    filenames = []
+    for fpath in input_filenames:
+        filenames.extend(get_char_files(fpath))
+    # Process the requested files        
     if args.debug:
         for filename in filenames:
             _build(filename, args)

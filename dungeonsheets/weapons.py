@@ -484,6 +484,9 @@ class Unarmed(MeleeWeapon):
     ability = "strength"
 
 
+UnarmedStrike = Unarmed
+
+
 class SunBolt(RangedWeapon):
     name = "Sun Bolt"
     cost = "0 gp"

@@ -1,5 +1,7 @@
 import unittest
 import os
+from pathlib import Path
+import subprocess
 
 from dungeonsheets import make_sheets, character
 
@@ -7,6 +9,10 @@ EG_DIR = os.path.abspath(os.path.join(os.path.split(__file__)[0], '../examples/'
 CHARFILE = os.path.join(EG_DIR, 'rogue1.py')
 
 class CharacterFileTestCase(unittest.TestCase):
+    example_dir = Path(__file__).parent.parent / "examples"
+    # def test_(self):
+    #     print(self.example_dir)
+    #     subprocess.run(['makesheets', self.example_dir])
     def test_load_character_file(self):
         charfile = CHARFILE
         result = make_sheets.load_character_file(charfile)
@@ -110,3 +116,5 @@ class MarkdownTestCase(unittest.TestCase):
         tex = make_sheets.rst_to_latex(md_list)
         print(tex)
         self.assertIn("\\begin{itemize}", tex)
+
+

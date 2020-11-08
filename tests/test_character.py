@@ -1,10 +1,11 @@
 #!/usr/bin/env python
 
 from unittest import TestCase
+from pathlib import Path
 import warnings
 
 from dungeonsheets import race, monsters, exceptions, spells
-from dungeonsheets.character import Character, Wizard, Druid
+from dungeonsheets.character import Character, Wizard, Druid, read_character_file
 from dungeonsheets.weapons import Weapon, Shortsword
 from dungeonsheets.armor import Armor, LeatherArmor, Shield
 
