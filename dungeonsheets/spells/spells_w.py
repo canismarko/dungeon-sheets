@@ -811,7 +811,6 @@ class WrathfulSmite(Spell):
     saving throw or be frightened of you until the spell ends. As an
     action, the creature can make a Wisdom check against your spell
     save DC to steel its resolve and end this spell.
-
     """
     name = "Wrathful Smite"
     level = 1
@@ -823,3 +822,25 @@ class WrathfulSmite(Spell):
     ritual = False
     magic_school = "Evocation"
     classes = ('Paladin',)
+
+
+class Wristpocket(Spell):
+    """You flick your wrist, causing one object in your hand to vanish.
+    The object, which only you can be holding and can weigh no more than
+    5 pounds, is transported to an extradimensional space, where it remains for
+    the duration.
+    Until the spell ends, you can use your action to summon the object to your
+    free hand, and you can use your action to return the object to
+    the extradimensional space. An object still in the pocket plane when
+    the spell ends appears in your space, at your feet.
+    """
+    name = "Wristpocket"
+    level = 2
+    casting_time = "1 action"
+    casting_range = "Self"
+    components = ('S',)
+    materials = """"""
+    duration = "Concentration, up to 1 hour"
+    ritual = True
+    magic_school = "Dunamancy"
+    classes = ('Wizard',)
