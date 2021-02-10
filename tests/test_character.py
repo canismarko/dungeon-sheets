@@ -4,8 +4,8 @@ from unittest import TestCase
 from pathlib import Path
 import warnings
 
-from dungeonsheets import race, monsters, exceptions, spells
-from dungeonsheets.character import Character, Wizard, Druid, read_character_file
+from dungeonsheets import race, monsters, exceptions, spells, infusions
+from dungeonsheets.character import Character, Wizard, Druid, read_character_file, _resolve_mechanic
 from dungeonsheets.weapons import Weapon, Shortsword
 from dungeonsheets.armor import Armor, LeatherArmor, Shield
 
@@ -47,6 +47,42 @@ class TestCharacter(TestCase):
         self.assertTrue(char.inspiration)
         char.set_attrs(inspiration=False)
         self.assertFalse(char.inspiration)
+    
+    def test_homebrew_spells(self):
+        char = Character()
+        class MySpell(spells.Spell):
+            name="my spell!"
+        char.set_attrs(spells=(MySpell,))
+        self.assertIsInstance(char.spells[0], spells.Spell)
+        self.assertEqual(char.spells[0].name, "my spell!")
+
+    def test_homebrew_infusions(self):
+        char = Character(classes="artificer")
+        class MyInfusion(infusions.Infusion):
+            name="my infusion!"
+        # Pass an already created infusion class
+        char.set_attrs(infusions=(MyInfusion,))
+        self.assertIsInstance(char.infusions[0], infusions.Infusion)
+        self.assertEqual(char.infusions[0].name, "my infusion!")
+        # Pass a previously undefined infusion
+        char = Character(classes="artificer")
+        char.set_attrs(infusions=("spam_infusion",))
+        self.assertIsInstance(char.infusions[0], infusions.Infusion)
+        self.assertEqual(char.infusions[0].name, "Spam Infusion")
+    
+    def test_resolve_mechanic(self):
+        # Test a well defined mechanic
+        NewSpell = _resolve_mechanic("mage_hand", spells, None)
+        self.assertTrue(issubclass(NewSpell, spells.Spell))
+        # Test an unknown mechanic
+        def new_spell(**params):
+            return spells.Spell
+        NewSpell = _resolve_mechanic("hocus_pocus", spells, spells.Spell)
+        self.assertTrue(issubclass(NewSpell, spells.Spell))
+        # Test direct resolution of a proper subclass
+        class MySpell(spells.Spell):
+            pass
+        NewSpell = _resolve_mechanic(MySpell, spells, spells.Spell)
     
     def test_wield_weapon(self):
         char = Character()

@@ -27,7 +27,7 @@ class Feature():
     """
     name = "Generic Feature"
     owner = None
-    source = ''  # race, class, background, etc.
+    source = 'Unknown'  # race, class, background, etc.
     spells_known = ()
     spells_prepared = ()
     needs_implementation = False  # Set to True if need to find way to compute stats

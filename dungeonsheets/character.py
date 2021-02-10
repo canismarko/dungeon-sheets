@@ -7,6 +7,7 @@ import os
 import re
 import warnings
 import math
+from types import ModuleType
 
 import jinja2
 
@@ -56,6 +57,73 @@ multiclass_spellslots_by_level = {
     19: (0, 4, 3, 3, 3, 3, 2, 1, 1, 1),
     20: (0, 4, 3, 3, 3, 3, 2, 2, 1, 1),
 }
+
+
+def _resolve_mechanic(mechanic, module, SuperClass, warning_message=None):
+    """Take a raw entry in a character sheet and turn it into a usable object.
+    
+    Eg: spells can be defined in many ways. This function accepts all
+    of those options and returns an actual *Spell* class that can be
+    used by a character::
+    
+        >>> from dungeonsheets import spells
+        >>> _resolve_mechanic("mage_hand", spells, None)
+        >>> class MySpell(spells.Spell): pass
+        >>> _resolve_mechanic(MySpell, None, spells.Spell)
+        >>> _resolve_mechanic("hocus pocus", spells, None)
+    
+    The acceptable entries for *mechanic*, in priority order, are:
+      1. A subclass of *SuperClass*
+      2. A string with the name of a defined spell in *module*
+      3. The name of an unknown spell (creates generic object using *factory*)
+    
+    Parameters
+    ==========
+    mechanic : str, type
+      The thing to be resolved, either a string with the name of the
+      mechanic, or a subclass of *ParentClass* describing the
+      mechanic.
+    module : module
+      A python module in which to look for the defined string in *name*.
+    SuperClass : type
+      Class to determine whether *mechanic* should just be allowed
+      through as is.
+    error_message : str, optional
+      A string whose ``str.format()`` method (receiving one positional
+      argument *mechanic*) will be used for displaying a warning when an
+      unknown mechanic is resolved. If omitted, no warning will be
+      displayed.
+    
+    Returns
+    =======
+    Mechanic
+      A class representing the resolved game mechanic. This will
+      likely be a subclass of *SuperClass* if the other parameters are
+      well behaved, but this is not enforced.
+    
+    """
+    is_already_resolved = isinstance(mechanic, type) and issubclass(mechanic, SuperClass)
+    if is_already_resolved:
+        Mechanic = mechanic
+    else:
+        try:
+            # Retrieve pre-defined mechanic
+            Mechanic = findattr(module, mechanic)
+        except AttributeError:
+            # No pre-defined mechanic available
+            if warning_message is not None:
+                # Emit the warning
+                msg = warning_message.format(mechanic)
+                warnings.warn(msg)
+            else:
+                # Create a generic message so we can make a docstring later.
+                msg = f'Mechanic "{mechanic}" not defined. Please add it.'
+            # Create generic mechanic from the factory
+            class_name = "".join([s.title() for s in mechanic.split("_")])
+            mechanic_name = mechanic.replace("_", " ").title()
+            attrs = {"name": mechanic_name, "__doc__": msg, "source": "Unknown"}
+            Mechanic = type(class_name, (SuperClass,), attrs)
+    return Mechanic
 
 
 class Character():
@@ -163,7 +231,7 @@ class Character():
         # parse all other attributes
         self.set_attrs(**attrs)
         self.__set_max_hp(attrs.get('hp_max', None))
-
+    
     def clear(self):
         # reset class-definied items
         self.class_list = list()
@@ -179,13 +247,13 @@ class Character():
         self.infusions = list()
         self.custom_features = list()
         self.feature_choices = list()
-
+    
     def __str__(self):
         return self.name
-
+    
     def __repr__(self):
         return f"<{self.class_name}: {self.name}>"
-
+    
     def add_class(self, cls: (classes.CharClass, type, str), level: (int, str),
                   subclass=None, feature_choices=[]):
         if isinstance(cls, str):
@@ -200,7 +268,7 @@ class Character():
         self.class_list.append(cls(level, owner=self,
                                    subclass=subclass,
                                    feature_choices=feature_choices))
-
+    
     def add_classes(self, classes_list=[], levels=[], subclasses=[],
                     feature_choices=[]):
         if isinstance(classes_list, str):
@@ -499,15 +567,17 @@ class Character():
                 if isinstance(val, str):
                     val = [val]
                 for mitem in val:
-                    try:
-                        self.magic_items.append(findattr(magic_items, mitem)(owner=self))
-                    except (AttributeError):
-                        msg = (f'Magic Item "{mitem}" not defined. '
-                               f'Please add it to ``magic_items.py``')
-                        warnings.warn(msg)
+                    msg = (f'Magic Item "{mitem}" not defined. '
+                           f'Please add it to ``magic_items.py``')
+                    ThisMagicItem = _resolve_mechanic(mechanic=mitem,
+                                                      module=magic_items,
+                                                      SuperClass=magic_items.MagicItem,
+                                                      warning_message=msg)
+                    self.magic_items.append(ThisMagicItem(owner=self))
             elif attr == 'weapon_proficiencies':
                 self.other_weapon_proficiencies = ()
-                wps = set([findattr(weapons, w) for w in val])
+                msg = 'Magic Item "{}" not defined. Please add it to ``weapons.py``'
+                wps = set([_resolve_mechanic(w, weapons, weapons.Weapon, msg) for w in val])
                 wps -= set(self.weapon_proficiencies)
                 self.other_weapon_proficiencies = list(wps)
             elif attr == 'armor':
@@ -522,30 +592,23 @@ class Character():
                     val = [val]
                 _features = []
                 for f in val:
-                    try:
-                        _features.append(findattr(features, f))
-                    except AttributeError:
-                        msg = (f'Feature "{f}" not defined. '
-                               f'Please add it to ``features.py``')
-                        # create temporary feature
-                        _features.append(features.create_feature(
-                            name=f, source='Unknown',
-                            __doc__="""Unknown Feature. Add to features.py"""))
-                        warnings.warn(msg)
+                    msg = 'Feature "{}" not defined. Please add it to ``features.py``'
+                    ThisFeature = _resolve_mechanic(mechanic=f,
+                                                    module=features,
+                                                    SuperClass=features.Feature,
+                                                    warning_message=msg)
+                    _features.append(ThisFeature)
                 self.custom_features += tuple(F(owner=self) for F in _features)
             elif (attr == 'spells') or (attr == 'spells_prepared'):
                 # Create a list of actual spell objects
                 _spells = []
                 for spell_name in val:
-                    try:
-                        _spells.append(findattr(spells, spell_name))
-                    except AttributeError:
-                        msg = (f'Spell "{spell_name}" not defined. '
-                               f'Please add it to ``spells.py``')
-                        warnings.warn(msg)
-                        # Create temporary spell
-                        _spells.append(spells.create_spell(name=spell_name, level=9))
-                        # raise AttributeError(msg)
+                    msg = 'Spell "{}" not defined. Please add it to ``spells.py``'
+                    ThisSpell = _resolve_mechanic(mechanic=spell_name,
+                                                  module=spells,
+                                                  SuperClass=spells.Spell,
+                                                  warning_message=msg)
+                    _spells.append(ThisSpell)
                 # Sort by name
                 _spells.sort(key=lambda spell: spell.name)
                 # Save list of spells to character atribute
@@ -559,25 +622,27 @@ class Character():
                 if hasattr(self, 'Artificer'):
                     _infusions = []
                     for infusion_name in val:
-                        try:
-                            _infusions.append(findattr(infusions, infusion_name))
-                        except AttributeError:
-                            msg = (f'Infusion "{infusion_name}" not defined. '
-                                   f'Please add it to ``infusions.py``')
-                            warnings.warn(msg)
+                        msg = 'Infusion "{}" not defined. Please add it to ``infusions.py``'
+                        ThisInfusion = _resolve_mechanic(mechanic=infusion_name,
+                                                         module=infusions,
+                                                         SuperClass=infusions.Infusion,
+                                                         warning_message=msg)
+                        _infusions.append(ThisInfusion)
                     _infusions.sort(key=lambda infusion: infusion.name)
                     self.infusions = tuple(i() for i in _infusions)
-            else:
-                if not hasattr(self, attr):
+            elif type(val) not in (type, ModuleType):
+                # Some other generic attribute
+                is_unknown = not hasattr(self, attr) and not attr.startswith("_")
+                if is_unknown:
                     warnings.warn(f"Setting unknown character attribute {attr}",
                                   RuntimeWarning)
                 # Lookup general attributes
                 setattr(self, attr, val)
-
+    
     def spell_save_dc(self, class_type):
         ability_mod = getattr(self, class_type.spellcasting_ability).modifier
         return (8 + self.proficiency_bonus + ability_mod)
-
+    
     def spell_attack_bonus(self, class_type):
         ability_mod = getattr(self, class_type.spellcasting_ability).modifier
         return (self.proficiency_bonus + ability_mod)
@@ -659,7 +724,11 @@ class Character():
             if isinstance(new_armor, armor.Armor):
                 new_armor = new_armor
             else:
-                NewArmor = findattr(armor, new_armor)
+                msg = 'Unnown armor "{}". Please add it to ``armor.py``.'
+                NewArmor = _resolve_mechanic(mechanic=new_armor,
+                                             module=armor,
+                                             SuperClass=armor.Armor,
+                                             warning_message=msg)
                 new_armor = NewArmor()
             self.armor = new_armor
 
@@ -683,31 +752,24 @@ class Character():
 
     def wield_weapon(self, weapon):
         """Accepts a string and adds it to the list of wielded weapons.
-
+        
         Parameters
         ----------
         weapon : str
           Case-insensitive string with a name of the weapon.
-
+        
         """
         # Retrieve the weapon class from the weapons module
         if isinstance(weapon, weapons.Weapon):
-            weapon_ = type(weapon)(wielder=self)
-        elif isinstance(weapon, str):
-            try:
-                NewWeapon = findattr(weapons, weapon)
-            except AttributeError:
-                warnings.warn(f"Unknown weapon '{weapon}'. Please add it to ``weapons.py`` "
-                              "or submit an issue: https://github.com/canismarko/dungeon-sheets/issues",
-                              RuntimeWarning)
-                return
-            weapon_ = NewWeapon(wielder=self)
-        elif issubclass(weapon, weapons.Weapon):
-            weapon_ = weapon(wielder=self)
+            ThisWeapon = type(weapon)
         else:
-            raise AttributeError(f'Weapon "{weapon}" is not defined')
+            msg = 'Unknown weapon "{}". Please add it to ``weapons.py``.'
+            ThisWeapon = _resolve_mechanic(mechanic=weapon,
+                                           module=weapons,
+                                           SuperClass=weapons.Weapon,
+                                           warning_message=msg)
         # Save it to the array
-        self.weapons.append(weapon_)
+        self.weapons.append(ThisWeapon(wielder=self))
 
     @property
     def hit_dice(self):
