@@ -50,6 +50,14 @@ Fighter
 
 .. literalinclude:: ../examples/fighter2.py
 
+
+.. _homebrew example:
+
+Homebrew
+========
+
+.. literalinclude:: ../examples/homebrew.py
+
 Monk
 ====
 

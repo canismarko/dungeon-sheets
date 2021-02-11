@@ -19,7 +19,7 @@ Each character file must contain a line like::
 
   dungeonsheets_version = "0.4.2"
 
-Without this line, the `makesheets`_ command-line utility will ignore
+Without this line, the :ref:`makesheets` command-line utility will ignore
 the file. This is necessary to avoid importing non-D&D python files.
 
 .. note::
@@ -97,9 +97,6 @@ integers. ``weapons`` (iterable of strings), ``armor`` (string) and
 `player's handbook`_. The ``equipment`` is a string that is rendered
 as-is on the character sheet.
 
-.. todo:: Allow custom weapons and armor to be specified in the
-          character file.
-
 .. warning::
 
    Not all weapons and armor have been entered into the
@@ -130,8 +127,6 @@ Spells
 Two entries are available for spell-casting, and only if the class
 supports spells. Both are lists of case-insensitive strings that must
 correspond to spells described in the `player's handbook`_.
-
-.. todo:: Allow custom spells to be specified in the character file.
 
 .. warning::
 
@@ -256,6 +251,80 @@ spells and known cantrips** should be listed in the
 
    # List of all the known wild shapes
    wild_shapes = ["wolf", "crocodile", 'ape', 'ankylosaurus']
+
+Aftificer
+---------
+
+Artificers can specify known infusions. These will be rendered in a
+similar manner to spells. They can be given in the ``infusions``
+attribute of the character file:
+
+.. code:: python
+
+    infusions = ["enhanced_arcane_focus", "repulsion_shield"]
+
+
+Homebrew
+========
+
+Dungeonsheets provides mechanisms for including items and abilities
+outside of the standard rules ("homebrew"). This can be done in one of
+two ways.
+
+1. As subclasses (recommended)
+2. As strings
+
+Subclasses (Recommended)
+------------------------
+
+The best option is to define your homebrew item directly in the
+character file as a subclass of one of the basic mechanics:
+
+- :py:class:`dungeonsheets.spells.Spell`
+- :py:class:`dungeonsheets.features.Feature`
+- :py:class:`dungeonsheets.infusions.Infusion`
+- :py:class:`dungeonsheets.weapons.Weapon`
+- :py:class:`dungeonsheets.armor.Armor`
+- :py:class:`dungeonsheets.armor.Shield`
+- :py:class:`dungeonsheets.magic_items.MagicItem`
+
+For convenience, these are all available in the
+:py:mod:`dungeonsheets.mechanics` module. With this approach, a
+homebrew weapon can be specified in the character file. See the
+relevant super class for relevant attributes.
+
+.. code:: python
+
+    from dungeonsheets import mechanics
+
+    class DullSword(mechanics.Weapon):
+	  """Bonk things with it."""
+          name = "Dullsword"
+	  base_damage = "10d6"
+
+    weapons = ['shortsword', DullSword]
+
+These homebrew definitions can also be stored in a separate file
+(e.g. *my_homebrew.py*), then imported and used in multiple character
+files:
+
+.. code:: python
+
+    import my_homebrew
+
+    weapons = ["shortsword", my_homebrew.DullSword]
+
+See the :ref:`homebrew example` example for more examples.
+
+Strings
+-------
+
+If a mechanic is listed in a character file, but not built into
+dungeonsheets, it will still be listed on the character sheet with
+generic attributes. This should be viewed as a fallback to the
+recommended subclass method above, so that attributes and descriptions
+can be given.
+
     
 VTTES JSON Files
 ================
