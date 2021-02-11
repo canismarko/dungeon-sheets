@@ -494,16 +494,6 @@ class PureBlood(Race):
     languages = ("Common", "Abyssal", "Draconic")
 
 
-class Goblin(Race):
-    name = "Goblin"
-    size = "small"
-    dexterity_bonus = 2
-    constitution_bonus = 1
-    speed = 30
-    languages = ("Common", "Goblin")
-    features = (feats.Darkvision, feats.FuryOfTheSmall, feats.NimbleEscape)
-
-
 PHB_races = [HillDwarf, MountainDwarf, HighElf, WoodElf, DarkElf,
              LightfootHalfling, StoutHalfling, Rashemi, Dragonborn,
              ForestGnome, RockGnome, HalfElf, HalfOrc, Tiefling, Human]
