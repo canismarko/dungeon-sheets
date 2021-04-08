@@ -44,7 +44,7 @@ class MarkdownTestCase(unittest.TestCase):
     
     def test_rst_bold(self):
         text = make_sheets.rst_to_latex('**hello**')
-        self.assertEqual(text, '\\textbf{hello}')
+        self.assertEqual(text, '\n\\textbf{hello}\n')
     
     def test_hit_dice(self):
         text = make_sheets.rst_to_latex('1d6+3')
@@ -56,7 +56,7 @@ class MarkdownTestCase(unittest.TestCase):
     
     def test_verbatim(self):
         text = make_sheets.rst_to_latex('``hello, world``')
-        self.assertIn(r'\begin{verbatim}', text)
+        self.assertIn(r'\texttt{hello, world}', text)
 
     def test_literal_backslash(self):
         text = make_sheets.rst_to_latex('\\')
@@ -114,7 +114,6 @@ class MarkdownTestCase(unittest.TestCase):
         
         """
         tex = make_sheets.rst_to_latex(md_list)
-        print(tex)
         self.assertIn("\\begin{itemize}", tex)
 
 

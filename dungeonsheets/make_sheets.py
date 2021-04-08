@@ -14,6 +14,8 @@ from itertools import product
 from fdfgen import forge_fdf
 import pdfrw
 from jinja2 import Environment, PackageLoader
+from docutils import core, io
+from sphinx.util.docstrings import prepare_docstring
 
 from dungeonsheets import character as _char
 from dungeonsheets import exceptions, classes, readers
@@ -102,6 +104,45 @@ def _parse_rst_headings(rst):
         yield heading_rst, heading, level
 
 
+def latex_parts(input_string, source_path=None, destination_path=None,
+                input_encoding='unicode', doctitle=True,
+                initial_header_level=1):
+    """
+    Given an input string, returns a dictionary of HTML document parts.
+
+    Dictionary keys are the names of parts, and values are Unicode strings;
+    encoding is up to the client.
+
+    Parameters:
+
+    - `input_string`: A multi-line text string; required.
+    - `source_path`: Path to the source file or object.  Optional, but useful
+      for diagnostic output (system messages).
+    - `destination_path`: Path to the file or object which will receive the
+      output; optional.  Used for determining relative paths (stylesheets,
+      source links, etc.).
+    - `input_encoding`: The encoding of `input_string`.  If it is an encoded
+      8-bit string, provide the correct encoding.  If it is a Unicode string,
+      use "unicode", the default.
+    - `doctitle`: Disable the promotion of a lone top-level section title to
+      document title (and subsequent section title to document subtitle
+      promotion); enabled by default.
+    - `initial_header_level`: The initial level for header elements (e.g. 1
+      for "<h1>").
+    """
+    # Remove indentation, etc
+    input_string = "\n".join(prepare_docstring(input_string))
+    # Parse from rst to TeX
+    overrides = {'input_encoding': input_encoding,
+                 'doctitle_xform': doctitle,
+                 'initial_header_level': initial_header_level}
+    parts = core.publish_parts(
+        source=input_string, source_path=source_path,
+        destination_path=destination_path,
+        writer_name='latex', settings_overrides=overrides)
+    return parts
+
+
 def rst_to_latex(rst, top_heading_level=0):
     """Basic markup of reST to LaTeX code.
     
@@ -124,41 +165,14 @@ def rst_to_latex(rst, top_heading_level=0):
       The reST text parsed into LaTeX markup.
     
     """
-    heading_latex = {
-        0: 'section*',
-        1: 'subsection*',
-        2: 'subsubsection*',
-        3: 'paragraph*',
-        4: 'subparagraph*',
-        }
     if rst is None:
         # No reST, so return an empty string
         tex = ""
     else:
-        tex = rst
-        # Allow literal backslashes
-        for c in ['\\']:
-            tex = tex.replace(c, '\\' + c)
-        # Lists
-        for list_rst, list_items in _parse_rst_lists(tex):
-            list_tex = "\n\\begin{itemize}\n"
-            for item in list_items:
-                list_tex += f"\\item{{{item}}}\n"
-            list_tex += "\\end{itemize}\n"
-            tex = tex.replace(list_rst, list_tex)
-        # Inline text formatting
-        tex = bold_re.sub(r'\\textbf{\1}', tex)
-        tex = it_re.sub(r'\\textit{\1}', tex)
-        tex = verb_re.sub(r'\\begin{verbatim}{\1}\\end{verbatim}', tex)
-        tex = dice_re.sub(r'\\texttt{\1}', tex)
-        # Headings
-        for heading_rst, heading, heading_level in _parse_rst_headings(tex):
-            heading_level = min(heading_level + top_heading_level, max(heading_latex.keys()))
-            tex = tex.replace(heading_rst, f"\\{heading_latex[heading_level]}{{{heading}}}")
-        # Escape any remaining characters that have meaning in LaTeX
-        for c in ['#', '$', '%', '&', '~', '_', '^']:
-            tex = tex.replace(c, '\\' + c)
-
+        tex_parts = latex_parts(rst)
+        tex = tex_parts['body']
+        # Check for currently un-supported LaTeX commands
+        assert "longtable" not in tex
     return tex
 
 
