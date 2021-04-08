@@ -75,8 +75,8 @@ class Gate(Spell):
 
 class Geas(Spell):
     """You place a magical command on a creature that you can see within
-     range, forcing it to carry out some service or refrain from some
-     action or course of actiity as you decide.
+    range, forcing it to carry out some service or refrain from some
+    action or course of actiity as you decide.
 
     If the creature can understand you, it must succeed on a Wisdom
     saving throw or become charmed by you for the duration. While the
@@ -139,11 +139,11 @@ class GiantInsect(Spell):
 
     Each creature
     obeys your verbal commands, and in combat, they act on your turn each round. The
-     DM has the statistics for these creatures and resolves their actions and
+    DM has the statistics for these creatures and resolves their actions and
     movement.
 
     A creature remains in its giant size for the duration, until it drops
-     to 0 hit points, or until you use an action to dismiss the effect on it.
+    to 0 hit points, or until you use an action to dismiss the effect on it.
 
     The
     DM might allow you to choose different targets. For example, if you transform a
@@ -163,7 +163,7 @@ class GiantInsect(Spell):
 
 class Glibness(Spell):
     """Until the spell ends, when you make a Charisma check, you can replace the number
-     you roll with a 15. Additionally, no matter what you say, magic that would
+    you roll with a 15. Additionally, no matter what you say, magic that would
     determine if you are telling the truth indicates that you are being truthful.
     """
     name = "Glibness"
@@ -331,7 +331,7 @@ class Grease(Spell):
     When the grease
     appears, each creature standing in its area must succeed on a Dexterity saving
     throw or fall prone. A creature that enters the area or ends its turn there must
-     also succeed on a Dexterity saving throw or fall prone.
+    also succeed on a Dexterity saving throw or fall prone.
     """
     name = "Grease"
     level = 1
@@ -388,14 +388,14 @@ class GreaterRestoration(Spell):
 
 class GreenFlameBlade(Spell):
     """As part of the action used to cast this spell, you must make a melee attack with
-     a weapon against one creature within the spell's range, otherwise the spell
+    a weapon against one creature within the spell's range, otherwise the spell
     fails. On a hit, the target suffers the attack's normal effects, and green fire
     leaps from the target to a different creature of your choice that you can see
     within 5 feet of it. The second creature takes fire damage equal to your
     spellcasting ability modifier. This spell's damage increases when you reach
     higher levels.
 
-    At Higher Levels: At 5th level, the melee attack deals an extra
+    **At Higher Levels:** At 5th level, the melee attack deals an extra
     1d8 fire damage to the target, and the fire damage to the second creature
     increases to 1d8 + your spellcasting ability modifier. Both damage rolls
     increase by 1d8 at 11th level and 17th level.
@@ -449,7 +449,7 @@ class GuardianOfNature(Spell):
     - You gain darkvision with a range of 120 feet.
     - You make Strength-based attack rolls with advantage.
     - Your melee weapon attacks deal an extra 1d6 force damage on a
-      hit.
+     hit.
 
     **Great Tree.** Your skin appears barky, leaves sprout from your
     hair, and you gain the following benefits:
@@ -458,7 +458,7 @@ class GuardianOfNature(Spell):
     - You make Constitution saving throws with advantage.
     - You make Dexterity- and Wisdom-based attack rolls with advantage.
     - While you are on the ground, the ground within 15 feet of you is
-      difficult terrain for your enemies.
+     difficult terrain for your enemies.
 
     """
     name = "Guardian Of Nature"
@@ -510,20 +510,20 @@ class GuardsAndWards(Spell):
     stronghold.
 
     - Place dancing lights in four corridors. You can designate a
-      simple program that the lights repeat as long as guards and
-      wards lasts.
+     simple program that the lights repeat as long as guards and
+     wards lasts.
 
     - Place magic mouth in two locations.
 
     - Place stinking cloud in two locations. The vapors appear in the
-      places you designate; they return within 10 minutes if dispersed
-      by wind while guards and wards lasts.
+     places you designate; they return within 10 minutes if dispersed
+     by wind while guards and wards lasts.
 
     - Place a constant gust of wind in one corridor or room.
 
     - Place a suggestion in one location. You select an area of up to
-      5 feet square, and any creature that enters or passes through
-      the area receives the suggestion mentally.
+     5 feet square, and any creature that enters or passes through
+     the area receives the suggestion mentally.
 
     The whole warded area radiates magic. A dispel magic cast on a
     specific effect, if successful, removes only that effect.
@@ -566,10 +566,10 @@ class GuidingBolt(Spell):
     Make a
     ranged spell attack against the target. On a hit, the target takes 4d6 radiant
     damage, and the next attack roll made against this target before the end of your
-     next turn has advantage, thanks to the mystical dim light glittering on the
+    next turn has advantage, thanks to the mystical dim light glittering on the
     target until then.
 
-    At Higher Levels: When you cast this spell using a spell
+    **At Higher Levels:** When you cast this spell using a spell
     slot of 2nd level or higher, the damage increases by 1d6 for each slot level
     above 1st.
     """
@@ -621,16 +621,16 @@ class Gust(Spell):
     effects at a point you can see within range:
 
     - One Medium or smaller creature that you choose must succeed on a
-      Strength saving throw or be pushed up to 5 feet away from you.
+     Strength saving throw or be pushed up to 5 feet away from you.
 
     - You create a small blast of air capable of moving one object
-      that is neither held nor carried and that weighs no more than 5
-      pounds. The object is pushed up to 10 feet away from you. It
-      isn't pushed with enough force to cause damage.
+     that is neither held nor carried and that weighs no more than 5
+     pounds. The object is pushed up to 10 feet away from you. It
+     isn't pushed with enough force to cause damage.
 
     - You create a harmless sensory affect using air, such as causing
-      leaves to rustle, wind to slam shutters shut, or your clothing
-      to ripple in a breeze.
+     leaves to rustle, wind to slam shutters shut, or your clothing
+     to ripple in a breeze.
 
     """
     name = "Gust"

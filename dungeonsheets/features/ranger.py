@@ -28,30 +28,30 @@ class FavoredEnemy(Feature):
 
 
 class NaturalExplorer(Feature):
-    """You are particularly familiar with one type of natural environment and are
-    adept at traveling and surviving in such regions. Choose one type of
-    favored terrain: arctic, coast, desert, forest, grassland, mountain, swamp,
-    or the Underdark.  You choose additional favored terrain types at 6th and
-    10th
-
-    When you make an Intelligence or Wisdom check related to your favored
-    terrain, your proficiency bonus is doubled if you are using a skill that
-    you're proficient in. While traveling for an hour or more in your favored
-    terrain, you gain the following benefits:
-
-    • Difficult terrain doesn't slow your group's travel.
-
-    • Your group can't become lost except by magical means.
-
-    • Even when you are engaged in another activity while traveling
-    (such as foraging, navigating, or tracking), you remain alert to danger.
-
-    • If you are traveling alone, you can move stealthily at a normal pace.
-
-    • When you forage, you find twice as much food as you normally would.
-
-    • While tracking other creatures, you also learn their exact number, their
-    sizes, and how long ago they passed through the area.
+    """You are particularly familiar with one type of natural environment
+    and are adept at traveling and surviving in such regions. Choose
+    one type of favored terrain: arctic, coast, desert, forest,
+    grassland, mountain, swamp, or the Underdark. You choose
+    additional favored terrain types at 6th and 10th
+    
+    When you make an Intelligence or Wisdom check related to your
+    favored terrain, your proficiency bonus is doubled if you are
+    using a skill that you're proficient in. While traveling for an
+    hour or more in your favored terrain, you gain the following
+    benefits:
+    
+    - Difficult terrain doesn't slow your group's travel.
+    - Your group can't become lost except by magical means.
+    - Even when you are engaged in another activity while traveling
+      (such as foraging, navigating, or tracking), you remain alert to
+      danger.
+    - If you are traveling alone, you can move stealthily at a normal
+      pace.
+    - When you forage, you find twice as much food as you normally
+      would.
+    - While tracking other creatures, you also learn their exact
+      number, their sizes, and how long ago they passed through the
+      area.
 
     """
     name = "Natural Explorer"
@@ -67,11 +67,11 @@ class Archery(Feature):
     source = "Ranger"
 
     def weapon_func(self, weapon: weapons.Weapon, **kwargs):
-        """
-        +2 attack roll bonus if weapon is ranged
-        """
-        if isinstance(weapon, weapons.RangedWeapon):
-            weapon.attack_bonus += 2
+       """
+       +2 attack roll bonus if weapon is ranged
+       """
+       if isinstance(weapon, weapons.RangedWeapon):
+          weapon.attack_bonus += 2
 
 
 class Defense(Feature):
@@ -92,12 +92,12 @@ class Dueling(Feature):
     source = "Ranger"
 
     def weapon_func(self, weapon: weapons.Weapon, **kwargs):
-        """
-        +2 attack roll bonus if melee weapon is not two handed
-        """
-        if (isinstance(weapon, weapons.MeleeWeapon)
-                and "two-handed" not in weapon.properties.lower()):
-            weapon.damage_bonus += 2
+       """
+       +2 attack roll bonus if melee weapon is not two handed
+       """
+       if (isinstance(weapon, weapons.MeleeWeapon)
+             and "two-handed" not in weapon.properties.lower()):
+          weapon.damage_bonus += 2
 
 
 class TwoWeaponFighting(Feature):
@@ -122,11 +122,11 @@ class RangerFightingStyle(FeatureSelector):
     two-weapon fighting
     """
     options = {'archery': Archery,
-               'defense': Defense,
-               'dueling': Dueling,
-               'two-weapon fighting': TwoWeaponFighting,
-               'two-weapon': TwoWeaponFighting,
-               'dual wield': TwoWeaponFighting}
+            'defense': Defense,
+            'dueling': Dueling,
+            'two-weapon fighting': TwoWeaponFighting,
+            'two-weapon': TwoWeaponFighting,
+            'dual wield': TwoWeaponFighting}
     name = "Fighting Style (Select One)"
     source = "Ranger"
 
@@ -249,8 +249,8 @@ class HuntersPrey(FeatureSelector):
 
     """
     options = {'colossus slayer': ColossusSlayer,
-               'giant killer': GiantKiller,
-               'horde breaker': HordeBreaker}
+            'giant killer': GiantKiller,
+            'horde breaker': HordeBreaker}
     name = "Hunter's Prey (Select One)"
     source = "Ranger (Hunter)"
 
@@ -292,8 +292,8 @@ class DefensiveTactics(FeatureSelector):
 
     """
     options = {'escape the horde': EscapeTheHorde,
-               'multiattack defense': MultiattackDefense,
-               'steel will': SteelWill}
+            'multiattack defense': MultiattackDefense,
+            'steel will': SteelWill}
     name = "Defensive Tactics (Select One)"
     source = "Ranger (Hunter)"
 
@@ -328,7 +328,7 @@ class MultiattackRanger(FeatureSelector):
 
     """
     options = {'volley': Volley,
-               'whirlwind attack': WhirlwindAttack}
+            'whirlwind attack': WhirlwindAttack}
     name = "Multiattack (Select One)"
     source = "Ranger (Hunter)"
 
@@ -355,8 +355,8 @@ class SuperiorHuntersDefense(FeatureSelector):
 
     """
     options = {'evasion': Evasion,
-               'stand against of the tide': StandAgainstTheTide,
-               'uncanny dodge': UncannyDodge}
+            'stand against of the tide': StandAgainstTheTide,
+            'uncanny dodge': UncannyDodge}
     name = "Superior Hunter's Defense (Select One)"
     source = "Ranger (Hunter)"
 
@@ -458,7 +458,7 @@ class IronMind(Feature):
     needs_implementation = True
 
     def __init__(self, owner=None):
-        super().__init__(owner=owner)
+       super().__init__(owner=owner)
 
 
 class StalkersFlurry(Feature):
@@ -510,10 +510,10 @@ class PlanarWarrior(Feature):
 
     @property
     def name(self):
-        if self.owner.Ranger.level < 11:
-            return self._name + " (1d8/f)"
-        else:
-            return self._name + " (2d8/f)"
+       if self.owner.Ranger.level < 11:
+          return self._name + " (1d8/f)"
+       else:
+          return self._name + " (2d8/f)"
 
 
 class EtherealStep(Feature):
@@ -568,8 +568,8 @@ class HuntersSense(Feature):
 
     @property
     def name(self):
-        num = max(1, self.owner.wisdom.modifier)
-        return self._num + " ({:d}x/LR)".format(num)
+       num = max(1, self.owner.wisdom.modifier)
+       return self._num + " ({:d}x/LR)".format(num)
 
 
 class SlayersPrey(Feature):
@@ -829,7 +829,7 @@ class CoordinatedAttack(Feature):
 
 class BeastsDefense(Feature):
     """At 7th level, while your companion can see you, it has advantage on all
-     saving throw
+    saving throw
 
     """
     name = "Beast's Defense"
@@ -848,8 +848,8 @@ class StormOfClawsAndFangs(Feature):
 
 class SuperiorBeastsDefense(Feature):
     """At 15th level, whenever an attacker that your companion can see hits it
-     with an attack, it can use its reaction to halve the attack's damage
-     against it.
+    with an attack, it can use its reaction to halve the attack's damage
+    against it.
 
     """
     name = "Superior Beast's Defense"

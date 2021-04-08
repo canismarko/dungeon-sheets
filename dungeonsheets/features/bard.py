@@ -31,19 +31,19 @@ class BardicInspiration(Feature):
 
     @property
     def name(self):
-        level = self.owner.Bard.level
-        die = 'd6'
-        if level >= 5:
-            die = 'd8'
-        if level >= 10:
-            die = 'd10'
-        if level >= 15:
-            die = 'd12'
-        num = max(1, self.owner.charisma.modifier)
-        rest = 'LR'
-        if level >= 5:  # font of inspiration
-            rest = 'SR'
-        return self._name + " ({:d}{:s}/{:s})".format(num, die, rest)
+       level = self.owner.Bard.level
+       die = 'd6'
+       if level >= 5:
+          die = 'd8'
+       if level >= 10:
+          die = 'd10'
+       if level >= 15:
+          die = 'd12'
+       num = max(1, self.owner.charisma.modifier)
+       rest = 'LR'
+       if level >= 5:  # font of inspiration
+          rest = 'SR'
+       return self._name + " ({:d}{:s}/{:s})".format(num, die, rest)
 
 
 class JackOfAllTrades(Feature):
@@ -70,15 +70,15 @@ class SongOfRest(Feature):
 
     @property
     def name(self):
-        level = self.owner.Bard.level
-        die = ' (1d6)'
-        if level >= 9:
-            die = ' (1d8)'
-        if level >= 13:
-            die = ' (1d10)'
-        if level >= 17:
-            die = ' (1d12)'
-        return self._name + die
+       level = self.owner.Bard.level
+       die = ' (1d6)'
+       if level >= 9:
+          die = ' (1d8)'
+       if level >= 13:
+          die = ' (1d10)'
+       if level >= 17:
+          die = ' (1d12)'
+       return self._name + die
 
 
 class BardExpertise(Feature):
@@ -243,9 +243,9 @@ class MantleOfInspiration(Feature):
 
     @property
     def name(self):
-        level = self.owner.Bard.level
-        hp = 5 + 3*(level // 5)
-        return self._name + " ({:d}HP)".format(hp)
+       level = self.owner.Bard.level
+       hp = 5 + 3*(level // 5)
+       return self._name + " ({:d}HP)".format(hp)
 
 
 class EnthrallingPerformance(Feature):
@@ -329,9 +329,9 @@ class BardFightingStyle(FeatureSelector):
     two-weapon fighting
     """
     options = {'dueling': Dueling,
-               'two-weapon fighting': TwoWeaponFighting,
-               'two-weapon': TwoWeaponFighting,
-               'dual wield': TwoWeaponFighting}
+            'two-weapon fighting': TwoWeaponFighting,
+            'two-weapon': TwoWeaponFighting,
+            'dual wield': TwoWeaponFighting}
     name = "Fighting Style (Select One)"
     source = "Bard (College of Swords)"
 
@@ -391,15 +391,15 @@ class PsychicBlades(Feature):
 
     @property
     def name(self):
-        level = self.owner.Bard.level
-        dice = ' (2d6)'
-        if level >= 5:
-            dice = ' (3d6)'
-        if level >= 10:
-            dice = ' (5d6)'
-        if level >= 15:
-            dice = ' (8d6)'
-        return self._name + dice
+       level = self.owner.Bard.level
+       dice = ' (2d6)'
+       if level >= 5:
+          dice = ' (3d6)'
+       if level >= 10:
+          dice = ' (5d6)'
+       if level >= 15:
+          dice = ' (8d6)'
+       return self._name + dice
 
 
 class WordsOfTerror(Feature):

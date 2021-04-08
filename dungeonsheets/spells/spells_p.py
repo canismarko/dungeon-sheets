@@ -3,7 +3,7 @@ from dungeonsheets.spells.spells import Spell
 
 class PassWithoutTrace(Spell):
     """A veil of shadows and silence radiates from you, masking you and your companions
-     from detection.
+    from detection.
     For the duration, each creature you choose within 30 feet of
     you (including you) has a +10 bonus to Dexterity (Stealth) checks and can't be
     tracked except by magical means. A creature that receives this bonus leaves
@@ -29,7 +29,7 @@ class Passwall(Spell):
     structure surrounding it.
 
     When the opening disappears, any creatures or objects
-     still in the passage created by the spell are safely ejected to an unoccupied
+    still in the passage created by the spell are safely ejected to an unoccupied
     space nearest to the surface on which you cast the spell.
     """
     name = "Passwall"
@@ -96,14 +96,14 @@ class PhantasmalForce(Spell):
 
 class PhantasmalKiller(Spell):
     """You tap into the nightmares of a creature you can see within range and create an
-     illusory manifestation of its deepest fears, visible only to that creature.
+    illusory manifestation of its deepest fears, visible only to that creature.
     The
-     target must make a Wisdom saving throw. On a failed save, the target becomes
+    target must make a Wisdom saving throw. On a failed save, the target becomes
     frightened for the duration. At the end of each of the target's turns before the
-     spell ends, the target must succeed on a Wisdom saving throw or take 4d10
+    spell ends, the target must succeed on a Wisdom saving throw or take 4d10
     psychic damage. On a successful save, the spell ends.
 
-    At Higher Levels: When
+    **At Higher Levels:** When
     you cast this spell using a spell slot of 5th level or higher, the damage
     increases by 1d1O for each slot level above 4th.
     """
@@ -208,7 +208,7 @@ class PlanarBinding(Spell):
     the completion of the casting, the target must make a Charisma saving throw. On
     a failed save, it is bound to serve you for the duration. If the creature w as
     summoned or created by another spell, that spell's duration is extended to match
-     the duration of this spell.
+    the duration of this spell.
 
     A bound creature must follow your instructions to
     the best of its ability. You might command the creature to accompany you on an
@@ -218,16 +218,16 @@ class PlanarBinding(Spell):
     your instructions completely before the spell ends, it travels to you to report
     this fact if you are on the same plane of existence. If you are on a different
     plane of existence, it returns to the place where you bound it and remains there
-     until the spell ends.
+    until the spell ends.
 
-    At Higher Levels: When you cast this spell using a spell
-     slot of a higher level, the duration increases to:
+    **At Higher Levels:** When you cast this spell using a spell
+    slot of a higher level, the duration increases to:
     10 days with a 6th-level
     slot,
     30 days with a 7th-level slot,
     180 days with an 8th-level slot,
     1 year
-     and 1 day with a 9th-level spell slot.
+    and 1 day with a 9th-level spell slot.
     """
     name = "Planar Binding"
     level = 5
@@ -243,15 +243,15 @@ class PlanarBinding(Spell):
 
 class PlaneShift(Spell):
     """You and up to eight willing creatures who link hands in a circle are transported
-     to a different plane of existence. You can specify a target destination in
+    to a different plane of existence. You can specify a target destination in
     general terms, such as the City of Brass on the Elemental Plane of Fire or the
     palace of Dispater on the second level of the Nine Hells, and you appear in or
     near that destination. If you are trying to reac the City of Brass, for example,
-     you might arrive in its Street of Steel, before its Gate of Ashes, or looking
+    you might arrive in its Street of Steel, before its Gate of Ashes, or looking
     at the city from across the Sea of Fire, at the DM's discretion.
 
     Alternatively,
-     if you know the sigil sequence of a teleportation circle on another plane of
+    if you know the sigil sequence of a teleportation circle on another plane of
     existence, this spell can take you to that circle. If the teleportation circle
     is too small to hold all the creatures you transported, they appear in the
     closest unoccupied spaces next to the circle.
@@ -261,7 +261,7 @@ class PlaneShift(Spell):
     make a melee spell attack against it. On a hit, the creature must make a
     Charisma saving throw. If the creature fails the save, it is transported to a
     random location on the plane of existence you specify. A creature so transported
-     must find its own way back to your current plane of existence.
+    must find its own way back to your current plane of existence.
     """
     name = "Plane Shift"
     level = 7
@@ -282,8 +282,8 @@ class PlantGrowth(Spell):
 
     If you cast this spell using 1 action, choose a point within range. All normal
     plants in a 100-foot radius centered on that point become thick and overgrown. A
-     creature moving through the area must spend 4 feet of movement for every 1 foot
-     it moves.
+    creature moving through the area must spend 4 feet of movement for every 1 foot
+    it moves.
 
     You can exclude one or more areas of any size within the spell's
     area from being affected.
@@ -310,9 +310,9 @@ class PoisonSpray(Spell):
     puff of noxious gas from your palm. The creature must succeed on a Constitution
     saving throw or take 1d12 poison damage.
 
-    At Higher Levels: This spell's damage
+    **At Higher Levels:** This spell's damage
     increases by 1d12 when you reach 5th level (2d12), 11th level (3d12), 17th level
-     (4d12).
+    (4d12).
     """
     name = "Poison Spray"
     level = 0
@@ -347,12 +347,12 @@ class Polymorph(Spell):
 
 
     The creature is limited in the actions it can perform by the nature of its new
-     form, and it can't speak, cast spells, or take any other action that requires
+    form, and it can't speak, cast spells, or take any other action that requires
     hands or speech.
 
     The target's gear melds into the new form. The creature can't
     activate, use, wield, or otherwise benefit from any of its equipment. This spell
-     can't affect a target that has 0 hit points.
+    can't affect a target that has 0 hit points.
     """
     name = "Polymorph"
     level = 4
@@ -404,17 +404,17 @@ class PowerWordKill(Spell):
 class PowerWordPain(Spell):
     """You speak a word of power that causes waves of intense pain to assail one
     creature you can see within range. If the target has 100 hit points or fewer, it
-     is subject to crippling pain. Otherwise, the spell has no effect on it. A
+    is subject to crippling pain. Otherwise, the spell has no effect on it. A
     target is also unaffected if it is immune to being charmed.
     While the target is
     affected by crippling pain, any speed it has can be no higher than 10 feet. The
     target also has disadvantage on attack rolls, ability checks, and saving throws,
-     other than Constitution saving throws. Finally, if the target tries to cast a
+    other than Constitution saving throws. Finally, if the target tries to cast a
     spell, it must first succeed on a Constitution saving throw, or the casting
     fails and the spell is wasted.
     A target suffering this pain can make a
     Constitution saving throw at the end of each of its turns. On a successful save,
-     the pain ends.
+    the pain ends.
     """
     name = "Power Word Pain"
     level = 7
@@ -449,12 +449,12 @@ class PowerWordStun(Spell):
 
 class PrayerOfHealing(Spell):
     """Up to six creatures of your choice that you can see within range each regain hit
-     points equal to 2d8 + your spellcasting ability modifier. This spell has no
+    points equal to 2d8 + your spellcasting ability modifier. This spell has no
     effect on undead or constructs.
 
-    At Higher Levels: When you cast this spell
+    **At Higher Levels:** When you cast this spell
     using a spell slot of 3rd level or higher, the healing increases by 1d8 for each
-     slot level above 2nd.
+    slot level above 2nd.
     """
     name = "Prayer Of Healing"
     level = 2
@@ -484,7 +484,7 @@ class Prestidigitation(Spell):
     or a symbol appear on an object or a surface for 1 hour.
     -You create a
     nonmagical trinket or an illusory image that can fit in your hand and that lasts
-     until the end of your next turn.
+    until the end of your next turn.
     If you cast this spell multiple times, you
     can have up to three of its non-instantaneous effects active at a time, and you
     can dismiss such an effect as an action.
@@ -503,7 +503,7 @@ class Prestidigitation(Spell):
 
 class PrimalSavagery(Spell):
     """You channel primal magic to cause your teeth or fingernails to sharpen, ready to
-     deliver a corrosive attack. Make a melee spell attack against one creature
+    deliver a corrosive attack. Make a melee spell attack against one creature
     within 5 feet of you. On a hit, the target takes 1d10 acid damage. After you
     make the attack, your teeth or fingernails return to normal. The spell's damage
     increases by 1d10 when you reach 5th level (2d10), 11th level (3d10), and 17th
@@ -559,7 +559,7 @@ class PrismaticSpray(Spell):
     half as much damage on a successful one.
 
     4. Green. The target takes 10d6 poison
-     damage on a failed save, or half as much damage on a successful one.
+    damage on a failed save, or half as much damage on a successful one.
 
     5. Blue.
     The target takes 10d6 cold damage on a failed save, or half as much damage on a
@@ -573,9 +573,9 @@ class PrismaticSpray(Spell):
     of both until the target collects three of a kind.
 
     7. Violet. On a failed save,
-     the target is blinded. It must then make a Wisdom saving throw at the start of
+    the target is blinded. It must then make a Wisdom saving throw at the start of
     your next turn. A successful save ends the blindness. If it fails that save, the
-     creature is transported to another plane of existence of the DM's choosing and
+    creature is transported to another plane of existence of the DM's choosing and
     is no longer blinded. (Typically, a creature that is on a plane that isn't its
     home plane is banished home, while other creatures are usually cast into the
     Astral or Ethereal planes.)
@@ -696,7 +696,7 @@ class ProduceFlame(Spell):
     you. Make a ranged spell attack. On a hit, the target takes 1d8 fire damage.
 
     At
-     Higher Levels: This spell's damage increases by 1d8 when you reach 5th level
+    Higher Levels: This spell's damage increases by 1d8 when you reach 5th level
     (2d8), 11th level (3d8), and 17th level (4d8).
     """
     name = "Produce Flame"
@@ -722,14 +722,14 @@ class ProgrammedIllusion(Spell):
     condition you specify occurs, the illusion springs into existence and performs
     in the manner you described. Once the illusion finishes performing, it
     disappears and remains dormant for 10 minutes. After this time, the illusion can
-     be activated again.
+    be activated again.
 
     The triggering condition can be as general or as detailed
     as you like, though it must be based on visual or audible conditions that occur
     within 30 feet of the area. For example, you could create an illusion of
     yourself to appear and warn off others who attempt to open a trapped door, or
     you could set the illusion to trigger only when a creature says the correct word
-     or phrase.
+    or phrase.
 
     Physical interaction with the image reveals it to be an illusion,
     because things can pass through it. A creature that uses its action to examine
@@ -754,22 +754,22 @@ class ProjectImage(Spell):
     """You create an illusory copy of yourself that lasts for the duration.
     The copy
     can appear at any location within range that you have seen before, regardless of
-     intervening obstacles. The illusion looks and sounds like you but is
+    intervening obstacles. The illusion looks and sounds like you but is
     intangible. If the illusion takes any damage, it disappears, and the spell ends.
 
 
     You can use your action to move this illusion up to twice your speed, and make
-     it gesture, speak, and behave in whatever way you choose. It mimics your
+    it gesture, speak, and behave in whatever way you choose. It mimics your
     mannerisms perfectly.
 
     You can see through its eyes and hear through its ears as
-     if you were in its space. On your turn as a bonus action, you can switch from
+    if you were in its space. On your turn as a bonus action, you can switch from
     using its senses to using your own, or back again. While you are using its
     senses, you are blinded and deafened in regard to your own surroundings.
 
 
     Physical interaction with the image reveals it to be an illusion, because things
-     can pass through it. A creature that uses its action to examine the image can
+    can pass through it. A creature that uses its action to examine the image can
     determine that it is an illusion with a successful Intelligence (Investigation)
     check against your spell save DC. If a creature discerns the illusion for what
     it is, the creature can see through the image, and any noise it makes sounds
@@ -812,7 +812,7 @@ class ProtectionFromEvilAndGood(Spell):
     have disadvantage on attack rolls against the target. The target also can't be
     charmed, frightened, or possessed by them. If the target is already charmed,
     frightened, or possessed by such a creature, the target has advantage on any new
-     saving throw against the relevant effect.
+    saving throw against the relevant effect.
     """
     name = "Protection From Evil And Good"
     level = 1
@@ -828,7 +828,7 @@ class ProtectionFromEvilAndGood(Spell):
 
 class ProtectionFromPoison(Spell):
     """You touch a creature. If it is poisoned, you neutralize the poison. If more than
-     one poison afflicts the target, you neutralize one poison that you know is
+    one poison afflicts the target, you neutralize one poison that you know is
     present, or you neutralize one at random.
 
     For the duration, the target has
@@ -849,13 +849,13 @@ class ProtectionFromPoison(Spell):
 
 class PsychicScream(Spell):
     """You unleash the power of your mind to blast the intellect of up to ten creatures
-     of your choice that you can see within range. Creatures that have an
+    of your choice that you can see within range. Creatures that have an
     Intelligence score of 2 or lower are unaffected.
     Each target must make an
     Intelligence saving throw. On a failed save, a target takes 14d6 psychic damage
     and is stunned. On a successful save, a target takes half as much damage and
     isn't stunned. If a target is killed by this damage, its head explodes, assuming
-     it has one.
+    it has one.
     A stunned target can make an Intelligence saving throw at the end
     of each of its turns. On a successful save, the stunning effect ends.
     """

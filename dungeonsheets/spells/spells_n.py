@@ -8,7 +8,7 @@ class NegativeEnergyFlood(Spell):
     one. A target killed by this damage rises up as a zombie at the start of your
     next turn. The zombie pursues whatever creature it can see that is closest to
     it. Statistics for the zombie are in the Monster Manual. If you target an undead
-     with this spell, the target doesn't make a saving throw. Instead, roll 5d12.
+    with this spell, the target doesn't make a saving throw. Instead, roll 5d12.
     The target gains half the total as temporary hit points.
     """
     name = "Negative Energy Flood"
@@ -57,7 +57,7 @@ class NystulsMagicAura(Spell):
     False Aura
     You change the way the target appears to
     spells and magical effects, such as detect magic, that detect magical auras. You
-     can make a nonmagical object appear magical, a magical object appear
+    can make a nonmagical object appear magical, a magical object appear
     nonmagical, or change the object's magical aura so that it appears to belong to
     a specific school of magic that you choose. When you use this effect on an
     object, you can make the false magic apparent to any creature that handles the
@@ -66,7 +66,7 @@ class NystulsMagicAura(Spell):
     Mask
     You change the way the target appears to spells and magical effects
     that detect creature types, such as a paladin's Divine Sense or the trigger of a
-     sym bol spell. You choose a creature type and other spells and magical effects
+    sym bol spell. You choose a creature type and other spells and magical effects
     treat the target as if it were a creature of that type or of that alignment.
     """
     name = "Nystuls Magic Aura"

@@ -26,13 +26,13 @@ class ChannelDivinity(Feature):
 
     @property
     def name(self):
-        level = self.owner.Cleric.level
-        if level < 6:
-            return "Channel Divinity (1x/SR)"
-        elif level < 18:
-            return "Channel Divinity (2x/SR)"
-        else:
-            return "Channel Divinity (3x/SR)"
+       level = self.owner.Cleric.level
+       if level < 6:
+          return "Channel Divinity (1x/SR)"
+       elif level < 18:
+          return "Channel Divinity (2x/SR)"
+       else:
+          return "Channel Divinity (3x/SR)"
 
 
 class TurnUndead(Feature):
@@ -64,17 +64,17 @@ class DestroyUndead(Feature):
 
     @property
     def name(self):
-        level = self.owner.Cleric.level
-        name = self._name + ' (CR 1/2)'
-        if level >= 8:
-            name = self._name + ' (CR 1)'
-        if level >= 11:
-            name = self._name + ' (CR 2)'
-        if level >= 14:
-            name = self._name + ' (CR 3)'
-        if level >= 17:
-            name = self._name + ' (CR 4)'
-        return name
+       level = self.owner.Cleric.level
+       name = self._name + ' (CR 1/2)'
+       if level >= 8:
+          name = self._name + ' (CR 1)'
+       if level >= 11:
+          name = self._name + ' (CR 2)'
+       if level >= 14:
+          name = self._name + ' (CR 3)'
+       if level >= 17:
+          name = self._name + ' (CR 4)'
+       return name
 
 
 class DivineIntervention(Feature):
@@ -107,11 +107,11 @@ class DivineStrike(Feature):
 
     @property
     def name(self):
-        level = self.owner.Cleric.level
-        damage = ' (1d8)'
-        if level >= 14:
-            damage = ' (2d8)'
-        return self._name + damage
+       level = self.owner.Cleric.level
+       damage = ' (1d8)'
+       if level >= 14:
+          damage = ' (2d8)'
+       return self._name + damage
 
 
 # Knowledge Domain
@@ -272,8 +272,8 @@ class WardingFlare(Feature):
 
     @property
     def name(self):
-        times = max(1, self.owner.wisdom.modifier)
-        return self._name + " ({:d}x/LR)".format(times)
+       times = max(1, self.owner.wisdom.modifier)
+       return self._name + " ({:d}x/LR)".format(times)
 
 
 class RadianceOfTheDawn(ChannelDivinity):
@@ -389,8 +389,8 @@ class WrathOfTheStorm(Feature):
 
     @property
     def name(self):
-        num_uses = max(1, self.owner.wisdom.modifier)
-        return self._name + ' ({:d}x/LR)'.format(num_uses)
+       num_uses = max(1, self.owner.wisdom.modifier)
+       return self._name + ' ({:d}x/LR)'.format(num_uses)
 
 
 class DestructiveWrath(ChannelDivinity):
@@ -511,8 +511,8 @@ class WarPriest(Feature):
 
     @property
     def name(self):
-        num = max(1, self.owner.wisdom.modifier)
-        return self._name + " ({:d}x/LR)".format(num)
+       num = max(1, self.owner.wisdom.modifier)
+       return self._name + " ({:d}x/LR)".format(num)
 
 
 class GuidedStrike(ChannelDivinity):
@@ -732,8 +732,8 @@ class EyesOfTheGrave(Feature):
 
     @property
     def name(self):
-        num = max(1, self.owner.wisdom.modifier)
-        return self._name + " ({:d}x/LR)".format(num)
+       num = max(1, self.owner.wisdom.modifier)
+       return self._name + " ({:d}x/LR)".format(num)
 
 
 class PathToTheGrave(ChannelDivinity):
@@ -763,8 +763,8 @@ class SentinelAtDeathsDoor(Feature):
 
     @property
     def name(self):
-        num = max(1, self.owner.wisdom.modifier)
-        return self._name + " ({:d}x/LR)".format(num)
+       num = max(1, self.owner.wisdom.modifier)
+       return self._name + " ({:d}x/LR)".format(num)
 
 
 class KeeperOfSouls(Feature):

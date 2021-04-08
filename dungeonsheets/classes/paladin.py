@@ -189,36 +189,39 @@ class OathOfCrown(PaladinOath):
 
 
 class OathOfConquest(PaladinOath):
-    """The Oath of Conquest calls to paladins who seek glory in battle and the
-    subjugation of their enemies. It isn't enough for these paladins to
-    establish order. They must crush the forces of chaos. Sometimes called
-    knight ty- rants or iron mongers, those who swear this oath gather into
-    grim orders that serve gods or philosophies of war and well-ordered might.
-
-    Some of these paladins go so far as to consort with the powers of the Nine
-    Hells, valuing the rule of law over the balm of mercy. The archdevil Bel,
-    warlord of Avernus, counts many of these paladins-called hell knights-as
-    his most ardent supporters. Hell knights cover their armor with trophies
-    taken from fallen en- emies, a grim~warning to any who dare oppose them and
-    the decrees of their lords. These knights are often most fiercely resisted
-    by other paladins of this oath, who believe that the hell knights have
-    wandered too far into darkness.
-
-    **Tenets of Conquest**: A paladin who takes this oath has the tenets of
-    conquest seared on the upper arm.
-
-    --Douse the Flame of Hope. It is not enough
-    to merely defeat an enemy in battle. Your victory must be so over- whelming
-    that your enemies' will to fight is shattered forever. A blade can end a
-    life. Fear can end an empire.
-
-    --Rule with an Iron Fist. Once you have conquered, tolerate no
-    dissent. Your word is law. Those who obey it shall be favored. Those who
-    defy it shall be punished as an example to all who might follow.
-
-    --Strength Above All. You shall rule until a stronger one arises. Then you
-    must grow mightier and meet the challenge, or fall to your own ruin.
-
+    """The Oath of Conquest calls to paladins who seek glory in battle and
+    the subjugation of their enemies. It isn't enough for these
+    paladins to establish order. They must crush the forces of
+    chaos. Sometimes called knight tyrants or iron mongers, those
+    who swear this oath gather into grim orders that serve gods or
+    philosophies of war and well-ordered might.
+    
+    Some of these paladins go so far as to consort with the powers of
+    the Nine Hells, valuing the rule of law over the balm of
+    mercy. The archdevil Bel, warlord of Avernus, counts many of these
+    paladins--called hell knights--as his most ardent supporters. Hell
+    knights cover their armor with trophies taken from fallen en-
+    emies, a grim warning to any who dare oppose them and the decrees
+    of their lords. These knights are often most fiercely resisted by
+    other paladins of this oath, who believe that the hell knights
+    have wandered too far into darkness.
+    
+    **Tenets of Conquest:** A paladin who takes this oath has the
+    tenets of conquest seared on the upper arm.
+    
+    Douse the Flame of Hope.
+      It is not enough to merely defeat an enemy in battle. Your
+      victory must be so overwhelming that your enemies' will to
+      fight is shattered forever. A blade can end a life. Fear can end
+      an empire.
+    Rule with an Iron Fist.
+      Once you have conquered, tolerate no dissent. Your word is
+      law. Those who obey it shall be favored. Those who defy it shall
+      be punished as an example to all who might follow.
+    Strength Above All.
+      You shall rule until a stronger one arises. Then you must grow
+      mightier and meet the challenge, or fall to your own ruin.
+    
     """
     name = "Oath of Conquest"
     _oath_spells = {3: [spells.ArmorOfAgathys, spells.Command],

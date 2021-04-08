@@ -6,8 +6,8 @@ class IceKnife(Spell):
     You create a shard of ice and fling it at one
     creature within range. Make a ranged spell attack against the target. On a hit,
     the target takes 1d10 piercing damage. Hit or miss, the shard then explodes. The
-     target and each creature within 5 feet of the point where the ice exploded must
-     succeed on a Dexterity saving throw or take 2d6 cold damage.
+    target and each creature within 5 feet of the point where the ice exploded must
+    succeed on a Dexterity saving throw or take 2d6 cold damage.
     At Higher Levels.
     When you cast this spell using a spell slot of 2nd level or higher, the cold
     damage increases by 1d6 for each slot level above 1st.
@@ -35,7 +35,7 @@ class IceStorm(Spell):
     Hailstones turn the storm's area of effect into difficult terrain until the end
     of your next turn.
 
-    At Higher Levels: When you cast this spell using a spell
+    **At Higher Levels:** When you cast this spell using a spell
     slot of 5th level or higher, the bludgeoning damage increases by 1d8 for each
     slot level above 4th.
     """
@@ -56,7 +56,7 @@ class Identify(Spell):
     If it is a magic item or some other magic-imbued object, you learn its
     properties and how to use them, whether it requires attunement to use, and how
     many charges it has, if any. You learn whether any spells are affecting the item
-     and what they are. If the item was created by a spell, you learn which spell
+    and what they are. If the item was created by a spell, you learn which spell
     created it.
 
     If you instead touch a creature throughout the casting, you learn
@@ -106,7 +106,7 @@ class IllusoryDragon(Spell):
     blast of energy in a 60-foot cone originating from its space. When you create
     the dragon, choose a damage type: acid, cold, fire, lightning, necrotic, or
     poison. Each creature in the cone must make an Intelligence saving throw, taking
-     '7d6 damage of the
+    '7d6 damage of the
     chosen damage type on a failed save, or half as much damage
     on a successful one.
     The illusion is tangible because of the shadow stuff used
@@ -131,13 +131,13 @@ class IllusoryDragon(Spell):
 
 class IllusoryScript(Spell):
     """You write on parchment, paper, or some other suitable writing material and imbue
-     it with a potent illusion that lasts for the duration.
+    it with a potent illusion that lasts for the duration.
 
     To you and any
     creatures you designate when you cast the spell, the writing appears normal,
     written in your hand, and conveys whatever meaning you intended when you wrote
     the text. To all others, the writing appears as if it were written in an unknown
-     or magical script that is unintelligible. Alternatively, you can cause the
+    or magical script that is unintelligible. Alternatively, you can cause the
     writing to appear to be an entirely different message, written in a different
     hand and language, though the language must be one you know.
 
@@ -162,8 +162,8 @@ class Immolation(Spell):
     """Flames wreathe one creature you can see within range. The target must make a
     Dexterity saving throw. It takes 8d6 fire damage on a failed save, or half as
     much damage on a successful one. On a failed save, the target also burns for the
-     spell's duration. The burning target sheds bright light in a 30-foot radius and
-     dim light for an additional 30 feet. At the end of each of its turns, the
+    spell's duration. The burning target sheds bright light in a 30-foot radius and
+    dim light for an additional 30 feet. At the end of each of its turns, the
     target repeats the saving throw. It takes 4d6 fire damage on a failed save, and
     the spell ends on a successful one. These magical flames can't be extinguished
     by nonmagical means.
@@ -198,7 +198,7 @@ class Imprisonment(Spell):
     target is entombed far beneath the earth in a sphere of magical force that is
     just large enough to contain the target. Nothing can pass through the
     sphere, nor can any creature teleport or use planar travel to get into or out of
-     it.
+    it.
     The special component for this version of the spell is a small mithral orb.
 
 
@@ -230,13 +230,13 @@ class Imprisonment(Spell):
 
     Slumber
     The target falls asleep
-     and can't be awoken.
+    and can't be awoken.
     The special component for this version of the
     spell consists of rare soporific herbs. 
 
     Ending the Spell
     During the casting of
-     the spell, in any of its versions, you can specify a condition that will cause
+    the spell, in any of its versions, you can specify a condition that will cause
     the spell to end and release the target. The condition can be as specific or as
     elaborate as you choose, but the DM must agree that the condition is reasonable
     and has a likelihood of coming to pass. The conditions can be based on a
@@ -268,7 +268,7 @@ class IncendiaryCloud(Spell):
     """A swirling cloud of smoke shot through with white-hot embers appears in a
     20-foot-radius sphere centered on a point within range.
     The cloud spreads around
-     corners and is heavily obscured. It lasts for the duration or until a wind of
+    corners and is heavily obscured. It lasts for the duration or until a wind of
     moderate or greater speed (at least 10 miles per hour) disperses it.
 
     When the
@@ -279,7 +279,7 @@ class IncendiaryCloud(Spell):
 
     The cloud
     moves 10 feet directly away from you in a direction that you choose at the start
-     of each of your turns.
+    of each of your turns.
     """
     name = "Incendiary Cloud"
     level = 8
@@ -308,14 +308,14 @@ class InfernalCalling(Spell):
     On each of your turns, you can try to issue a verbal
     command to the devil (no action required by you). It obeys the command if the
     likely outcome is in accordance with its desires, especially if the result would
-     draw you toward evil. Otherwise, you must make a Charisma (Deception,
+    draw you toward evil. Otherwise, you must make a Charisma (Deception,
     Intimidation, or Persuasion) check contested by its Wisdom (Insight) check. You
     make the check with advantage if you say the devil's true name. Ifyour check
     fails, the devil becomes immune to your verbal commands for the duration of the
     spell, though it can still carry out your commands if it chooses. If your check
     succeeds, the devil carries out your command- such as "attack my enemies,"
     "explore the room ahead," or "bear this message to the queen"-until it completes
-     the activity, at which point it returns to you to report having done so.
+    the activity, at which point it returns to you to report having done so.
     If
     your concentration ends before the spell reaches its full duration, the devil
     doesn‘t disappear if it has become immune to your verbal commands. Instead, it
@@ -324,9 +324,9 @@ class InfernalCalling(Spell):
     you possess an individual devil's talisman, you can summon that devil if it is
     of the appropriate challenge
     rating plus 1, and it obeys all your commands, with
-     no Charisma checks required.
+    no Charisma checks required.
 
-    At Higher Levels: When you cast this spell using
+    **At Higher Levels:** When you cast this spell using
     a spell slot of 6th level or higher, the challenge rating increases by 1 for
     each slot level above 5th.
     """
@@ -345,7 +345,7 @@ class InfernalCalling(Spell):
 class Infestation(Spell):
     """You cause a cloud of mites, fleas, and other parasites to appear momentarily on
     one creature you can see within range. The target must succeed on a Constitution
-     saving throw, or it takes 1d6 poison damage and moves 5 feet in a random
+    saving throw, or it takes 1d6 poison damage and moves 5 feet in a random
     direction if it can move and its speed is at least 5 feet. Roll a d4 for the
     direction: 1., north; 2, south; 3, east; or 4, west. This movement doesn't
     provoke opportunity attacks, and if the direction rolled is blocked, the target
@@ -367,10 +367,10 @@ class Infestation(Spell):
 
 class InflictWounds(Spell):
     """Make a melee spell attack against a creature you can reach. On a hit, the target
-     takes 3d10 necrotic damage.
+    takes 3d10 necrotic damage.
 
-    At Higher Levels: When you cast this spell using a
-     spell slot of 2nd level or higher, the damage increases by 1d10 for each slot
+    **At Higher Levels:** When you cast this spell using a
+    spell slot of 2nd level or higher, the damage increases by 1d10 for each slot
     level above 1st.
     """
     name = "Inflict Wounds"
@@ -393,11 +393,11 @@ class InsectPlague(Spell):
 
     When the area appears, each creature in it must make a Constitution
     saving throw. A creature takes 4d10 piercing damage on a failed save, or half as
-     much damage on a successful one. A creature must also make this saving throw
+    much damage on a successful one. A creature must also make this saving throw
     when it enters the spell's area for the first time on a turn or ends its turn
     there.
 
-    At Higher Levels: When you cast this spell using a spell slot of 6th
+    **At Higher Levels:** When you cast this spell using a spell slot of 6th
     level or higher, the damage increases by 1d10 for each slot level above 5th.
     """
     name = "Insect Plague"
@@ -419,12 +419,12 @@ class InvestitureOfFlame(Spell):
     - You are immune to
     fire damage and have resistance to cold damage.
     - Any creature that moves within
-     5 feet of you for the first time on a turn or ends its turn there takes 1d10
+    5 feet of you for the first time on a turn or ends its turn there takes 1d10
     fire damage.
     - You can use your action to create a line of fire 15 feet long and
-     5 feet wide extending from you in a direc- tion you choose. Each creature in
+    5 feet wide extending from you in a direc- tion you choose. Each creature in
     the line must make a Dexterity saving throw. A creature takes 4d8 fire damage on
-     a failed save, or half as much damage on a successful one.
+    a failed save, or half as much damage on a successful one.
     """
     name = "Investiture Of Flame"
     level = 6
@@ -450,8 +450,8 @@ class InvestitureOfIce(Spell):
     - You can use
     your action to create a 15-foot cone of freezing wind extending from your
     outstretched hand in a direction you choose. Each creature in the cone must make
-     a Constitution saving throw. A creature takes 4d6 cold damage on a failed save,
-     or half as much damage on a successful one. A creature that fails its save
+    a Constitution saving throw. A creature takes 4d6 cold damage on a failed save,
+    or half as much damage on a successful one. A creature that fails its save
     against this effect has its speed halved until the start of your next turn.
     """
     name = "Investiture Of Ice"
@@ -470,13 +470,13 @@ class InvestitureOfStone(Spell):
     """Until the spell ends, bits of rock spread across your body, and you gain the
     following benefits:
     - You have resistance to bludgeoning, piercing, and slashing
-     damage from nonmagical weapons.
+    damage from nonmagical weapons.
     - You can use your action to create a small
     earthquake on the ground in a 15-foot radius centered on you. Other creatures on
-     that ground must succeed on a Dexterity saving throw or be knocked prone.
+    that ground must succeed on a Dexterity saving throw or be knocked prone.
     - You
-     can move across difficult terrain made of earth or stone without spending extra
-     movement. You can move through solid earth or stone as if it was air and
+    can move across difficult terrain made of earth or stone without spending extra
+    movement. You can move through solid earth or stone as if it was air and
     without destabilizing it, but you can't end your movement there. If you do so,
     you are ejected to the nearest unoccupied space, this spell ends, and you are
     stunned until the end of your next turn.
@@ -505,8 +505,8 @@ class InvestitureOfWind(Spell):
     can see within 60 feet of you. Each creature in that area must make a
     Constitution saving throw. A creature takes 2d10 bludgeoning damage on a failed
     save, or half as much damage on a successful one. If a Large or smaller creature
-     fails the save, that creature is also pushed up to 10 feet away from the center
-     of the cube.
+    fails the save, that creature is also pushed up to 10 feet away from the center
+    of the cube.
     """
     name = "Investiture Of Wind"
     level = 6
@@ -522,7 +522,7 @@ class InvestitureOfWind(Spell):
 
 class Invisibility(Spell):
     """A creature you touch becomes invisible until the spell ends. Anything the target
-     is wearing or carrying is invisible as long as it is on the target's person.
+    is wearing or carrying is invisible as long as it is on the target's person.
     The spell ends for a target that attacks or casts a spell.
 
     At Higher Levels:

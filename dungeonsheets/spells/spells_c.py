@@ -4,23 +4,23 @@ from dungeonsheets.spells.spells import Spell
 class CallLightning(Spell):
     """A storm cloud appears in the shape of a cylinder that is 10 feet tall with a
     60-foot radius, centered on a point you can see 100 feet directly above you. The
-     spell fails if you can't see a point in the air where the storm cloud could
+    spell fails if you can't see a point in the air where the storm cloud could
     appear (for example, if you are in a room that can't accommodate the cloud).
 
 
     When you cast the spell, choose a point you can see within range. A bolt of
     lightning flashes down from the cloud to that point. Each creature within 5 feet
-     of that point must make a Dexterity saving throw. A creature takes 3d10
+    of that point must make a Dexterity saving throw. A creature takes 3d10
     lightning damage on a failed save, or half as much damage on a successful one.
     On each of your turns until the spell ends, you can use your action to call down
-     lightning in this way again, targeting the same point or a different one.
+    lightning in this way again, targeting the same point or a different one.
 
     If
     you are outdoors in stormy conditions when you cast this spell, the spell gives
     you control over the existing storm instead of creating a new one. Under such
     conditions, the spell's damage increases by 1d10.
 
-    At Higher Levels: When you
+    **At Higher Levels:** When you
     cast this spell using a spell slot of 4th or higher level, the damage increases
     by 1d10 for each slot level above 3rd.
     """
@@ -97,8 +97,8 @@ class Catnap(Spell):
     that target gains the benefit of a short rest, and it can't be affected by this
     spell again until it finishes a long rest.
 
-    At Higher Levels: When you cast this
-     spell using a spell slot of 4th level or higher, you can target one additional
+    **At Higher Levels:** When you cast this
+    spell using a spell slot of 4th level or higher, you can target one additional
     willing creature for each slot level above 3rd.
     """
     name = "Catnap"
@@ -120,7 +120,7 @@ class CauseFear(Spell):
     frightened target can repeat the saving throw at the end of each of its turns,
     ending the effect on itself on a success.
 
-    At Higher Levels: When you cast this
+    **At Higher Levels:** When you cast this
     spell using a spell slot of 2nd level or higher, you can target one additional
     creature for each slot level above lst. The creatures must be within 30 feet of
     each other when you target them.
@@ -156,11 +156,11 @@ class Ceremony(Spell):
     it can roll a d4 and add the number rolled to the save. A creature can benefit
     from this rite only once.
     Funeral Rite. You touch one corpse, and for the next 7
-     days, the target can't become undead by any means short of a wish spell.
+    days, the target can't become undead by any means short of a wish spell.
 
     Wedding. You touch adult humanoids willing to be bonded together in marriage.
     For the next 7 days, each target gains a +2 bonus to AC while they are within 30
-     feet of each other. A creature can benefit from this rite again only if
+    feet of each other. A creature can benefit from this rite again only if
     widowed.
     """
     name = "Ceremony"
@@ -177,9 +177,9 @@ class Ceremony(Spell):
 
 class ChainLightning(Spell):
     """You create a bolt of lightning that arcs toward a target of your choice that you
-     can see within range. Three bolts then leap from that target to as many as
+    can see within range. Three bolts then leap from that target to as many as
     three other targets, each of which must be within 30 feet of the first target. A
-     target can be a creature or an object and can be targeted by only one of the
+    target can be a creature or an object and can be targeted by only one of the
     bolts.
 
     A target must make a Dexterity saving throw. The target takes 10d8
@@ -227,7 +227,7 @@ class ChaosBolt(Spell):
     leap again. A creature can be targeted only once by each casting
     of this spell.
 
-    At Higher Levels: When you cast this spell using a spell slot of
+    **At Higher Levels:** When you cast this spell using a spell slot of
     2nd level or higher, each target takes 1d6 extra damage of the
     type rolled for each slot level above 1st.
 
@@ -253,7 +253,7 @@ class CharmMonster(Spell):
     friendly to you. When the spell ends, the creature knows it was
     charmed by you.
 
-    At Higher Levels: When you cast this spell using a spell slot of
+    **At Higher Levels:** When you cast this spell using a spell slot of
     5th level or higher, you can target one additional creature for
     each slot level above 4th. The creatures must be within 30 feet of
     each other when you target them.
@@ -280,7 +280,7 @@ class CharmPerson(Spell):
     you as a friendly acquaintance. When the spell ends, the creature
     knows it was charmed by you.
 
-    At Higher Levels: When you cast this spell using a spell slot of
+    **At Higher Levels:** When you cast this spell using a spell slot of
     2nd level or higher, you can target one additional creature for
     each slot level above 1st. The creatures must be within 30 feet of
     each other when you target them.
@@ -304,10 +304,10 @@ class ChillTouch(Spell):
     Make a ranged spell attack against the creature to assail it with the chill of
     the grave. On a hit, the target takes 1d8 necrotic damage, and it can't regain
     hit points until the start of your next turn. Until then, the hand clings to the
-     target. If you hit an undead target, it also has disadvantage on attack rolls
+    target. If you hit an undead target, it also has disadvantage on attack rolls
     against you until the end of your next turn.
 
-    At Higher Levels: This spell's
+    **At Higher Levels:** This spell's
     damage increases by 1d8 when you reach 5th level (2d8), 11th level (3d8), and
     17th level (4d8).
     """
@@ -326,8 +326,8 @@ class ChillTouch(Spell):
 class ChromaticOrb(Spell):
     """You hurl a 4-inch-diameter sphere of energy at a creature that you can see
     within range. You choose acid, cold, fire, lightning, poison, or thunder for the
-     type of orb you create, and then make a ranged spell attack against the target.
-     If the attack hits, the creature takes 3d8 damage of the type you chose.
+    type of orb you create, and then make a ranged spell attack against the target.
+    If the attack hits, the creature takes 3d8 damage of the type you chose.
 
     At
     Higher Levels: When you cast this spell using a spell slot of 2nd level or
@@ -349,10 +349,10 @@ class CircleOfDeath(Spell):
     """A sphere of negative energy ripples out in a 60-foot-radius sphere from a point
     within range. Each creature in that area must make a Constitution saving throw.
     A target takes 8d6 necrotic damage on a failed save, or half as much damage on a
-     successful one.
+    successful one.
 
-    At Higher Levels: W hen you cast this spell using a spell slot
-     of 7th level or higher, the damage increases by 2d6 for each slot level above
+    **At Higher Levels:** W hen you cast this spell using a spell slot
+    of 7th level or higher, the damage increases by 2d6 for each slot level above
     6th.
     """
     name = "Circle Of Death"
@@ -402,7 +402,7 @@ class Clairvoyance(Spell):
     hearing. You can use the chosen sense through the sensor as if you were in its
     space. As your action, you can switch between seeing and hearing. A creature
     that can see the sensor (such as a creature benefitting from see invisibility or
-     truesight) sees a luminous, intangible orb about the size of your fist.
+    truesight) sees a luminous, intangible orb about the size of your fist.
     """
     name = "Clairvoyance"
     level = 3
@@ -422,7 +422,7 @@ class Clone(Spell):
     This clone forms inside a sealed vessel and grows to full size and
     maturity after 120 days; you can also choose to have the clone be a younger
     version of the same creature. It remains inert and endures indefinitely, as long
-     as its vessel remains undisturbed.
+    as its vessel remains undisturbed.
 
 
      At any time after the clone matures, if
@@ -448,10 +448,10 @@ class Clone(Spell):
 class CloudOfDaggers(Spell):
     """You fill the air with spinning daggers in a cube 5 feet on each side, centered
     on a point you choose within range. A creature takes 4d4 slashing damage when it
-     enters the spell's area for the first time on a turn or starts its turn there.
+    enters the spell's area for the first time on a turn or starts its turn there.
 
 
-    At Higher Levels: When you cast this spell using a spell slot of 3rd level or
+    **At Higher Levels:** When you cast this spell using a spell slot of 3rd level or
     higher, the damage increases by 2d4 for each slot level above 2nd.
     """
     name = "Cloud Of Daggers"
@@ -483,8 +483,8 @@ class Cloudkill(Spell):
     vapors, being heavier than air, sink to the lowest level of the land, even
     pouring down openings.
 
-    At Higher Levels: When you cast this spell using a spell
-     slot of 6th level or higher, the damage increases by 1d8 for each slot level
+    **At Higher Levels:** When you cast this spell using a spell
+    slot of 6th level or higher, the damage increases by 1d8 for each slot level
     above 5th.
     """
     name = "Cloudkill"
@@ -513,8 +513,8 @@ class ColorSpray(Spell):
     next lowest hit points. A creature's hit points must be equal to or less than
     the remaining total for the creature to be affected.
 
-    At Higher Levels: When you
-     cast this spell using a spell slot of 2nd level or higher, roll an additional
+    **At Higher Levels:** When you
+    cast this spell using a spell slot of 2nd level or higher, roll an additional
     2d10 for each slot level above 1st.
     """
     name = "Color Spray"
@@ -535,33 +535,33 @@ class Command(Spell):
     the command on its next turn.  The spell has no effect if the
     target is undead, if it doesn't understand your language, or if
     your command is directly harmful to it.
-
+    
     Some typical commands and their effects follow. You might issue a
     command other than one described here. If you do so, the DM
     determines how the target behaves. If the target can't follow your
     command, the spell ends.
-
-    **Approach:** The target moves toward you by the shortest and most
-      direct route, ending its turn if it moves within 5 feet of you.
-
-    **Drop:** The target drops whatever it is holding and then ends
-      its turn.
-
-    **Flee:** The target spends its turn moving away from you by the
-      fastest available means.
-
-    **Grovel:** The target falls prone and then ends its turn.
-
-    **Halt:** The target doesn't move and takes no actions. A flying
-      creature stays aloft, provided that it is able to do so. If it
-      must move to stay aloft, it flies the minimum distance needed to
-      remain in the air.
-
+    
+    Approach.
+      The target moves toward you by the shortest and most direct
+      route, ending its turn if it moves within 5 feet of you.
+    Drop.
+      The target drops whatever it is holding and then ends its turn.
+    Flee.
+      The target spends its turn moving away from you by the fastest
+      available means.
+    Grovel.
+      The target falls prone and then ends its turn.
+    Halt.
+      The target doesn't move and takes no actions. A flying creature
+      stays aloft, provided that it is able to do so. If it must move
+      to stay aloft, it flies the minimum distance needed to remain in
+      the air.
+    
     **At Higher Levels:** When you cast this spell using a spell slot
-      of 2nd level or higher, you can affect one additional creature
-      for each slot level above 1st. The creatures must be within 30
-      feet of each other when you target them
-
+    of 2nd level or higher, you can affect one additional creature for
+    each slot level above 1st. The creatures must be within 30 feet of
+    each other when you target them
+    
     """
     name = "Command"
     level = 1
@@ -578,7 +578,7 @@ class Command(Spell):
 class Commune(Spell):
     """You contact your deity or a divine proxy and ask up to three questions that can
     be answered with a yes or no. You must ask your questions before the spell ends.
-     You receive a correct answer for each question.
+    You receive a correct answer for each question.
 
     Divine beings aren't
     necessarily omniscient, so you might receive "unclear" as an answer if a
@@ -587,7 +587,7 @@ class Commune(Spell):
     interests, the DM might offer a short phrase as an answer instead.
 
     If you cast
-     the spell two or more times before finishing your next long rest, there is a
+    the spell two or more times before finishing your next long rest, there is a
     cumulative 25 percent chance for each casting after the first that you get no
     answer. The DM makes this roll in secret.
     """
@@ -650,7 +650,7 @@ class CompelledDuel(Spell):
     restrict the target's movement for that turn.
 
     The spell ends if you attack any
-     other creature, if you cast a spell that targets a hostile creature other than
+    other creature, if you cast a spell that targets a hostile creature other than
     the target, if a creature friendly to you damages the target or casts a harmful
     spell on it, or if you end your turn more than 30 feet away from the target.
     """
@@ -668,11 +668,11 @@ class CompelledDuel(Spell):
 
 class ComprehendLanguages(Spell):
     """For the duration, you understand the literal meaning of any spoken language that
-     you hear.
+    you hear.
     You also understand any spoken language that you hear. You also
     understand any written language that you see, but you must be touching the
     surface of which the words are written. It takes about 1 minute to read one page
-     of text.
+    of text.
 
     This spell doesn't decode secret messages in a text or glyph, such
     as an arcane sigil, that isn't part of a written language.
@@ -693,15 +693,15 @@ class Compulsion(Spell):
     """Creatures of your choice that you can see within range and that can hear you
     must make a Wisdom saving throw.
     A target automatically succeeds on this saving
-     throw if it can't be charmed. On a failed save, a target is affected by this
+    throw if it can't be charmed. On a failed save, a target is affected by this
     spell. Until the spell ends, you can use a bonus action on each of your turns to
-     designate a direction that is horizontal to you. Each affected target must use
+    designate a direction that is horizontal to you. Each affected target must use
     as much of its movement as possible to move in that direction on its next turn.
     It can take its action before it moves. After moving in this way, it can make
     another Wisdom saving throw to try to end the effect.
 
     A target isn't compelled
-     to move into an obviously deadly hazard, such as a fire pit, but it will
+    to move into an obviously deadly hazard, such as a fire pit, but it will
     provoke opportunity attacks to move in the designated direction.
     """
     name = "Compulsion"
@@ -725,7 +725,7 @@ class ConeOfCold(Spell):
     failed save, or half as much damage on a successful one. A creature killed by
     this spell becomes a frozen statue until it thaws.
 
-    At Higher Levels: When you
+    **At Higher Levels:** When you
     cast this spell using a spell slot of 6th level or higher, the damage increases
     by 1d8 for each slot level above 5th.
     """
@@ -755,7 +755,7 @@ class Confusion(Spell):
 
      1. The creature uses
     all its movement to move in a random direction. To determine the direction, roll
-     a d8 and assign a direction to each die face. The creature doesn't take an
+    a d8 and assign a direction to each die face. The creature doesn't take an
     action this turn.
      
     2-6. The creature doesn't move or take actions this turn.
@@ -769,7 +769,7 @@ class Confusion(Spell):
     normally.
 
     At the end of its turns, an affected target can make a Wisdom saving
-     throw. It it succeeds, this effect ends for that target.
+    throw. It it succeeds, this effect ends for that target.
 
     At Higher Levels:
     When you cast this spell using a spell slot of 5th level or higher, the radius
@@ -834,7 +834,7 @@ class ConjureAnimals(Spell):
 class ConjureBarrage(Spell):
     """You throw a nonmagical weapon or fire a piece of nonmagical ammunition into the
     air to create a cone of identical weapons that shoot forward and then disappear.
-     Each creature in a 60-foot cone must succeed on a Dexterity saving throw. A
+    Each creature in a 60-foot cone must succeed on a Dexterity saving throw. A
     creature takes 3d8 damage on a failed save, or half as much damage on a
     successful one. The damage type is the same as that of the weapon or ammunition
     used as a component.
@@ -854,7 +854,7 @@ class ConjureBarrage(Spell):
 class ConjureCelestial(Spell):
     """You summon a celestial of challenge rating 4 or lower, which appears in an
     unoccupied space that you can see within range. The celestial disappears when it
-     drops to 0 hit points or when the spell ends.
+    drops to 0 hit points or when the spell ends.
 
     The celestial is friendly to
     you and your companions for the duration. Roll initiative for the celestial,
@@ -865,7 +865,7 @@ class ConjureCelestial(Spell):
     The DM has the celestial's statistics.
 
 
-    At Higher Levels: When you cast this spell using a 9th-level spell slot, you
+    **At Higher Levels:** When you cast this spell using a 9th-level spell slot, you
     summon a celestial of challenge rating 5 or lower.
     """
     name = "Conjure Celestial"
@@ -884,13 +884,13 @@ class ConjureElemental(Spell):
     """You call forth an elemental servant.
     Choose an area of air, earth, fire, or
     water that fills a 10-foot cube within range. An elemental of challenge rating 5
-     or lower appropriate to the area you chose appears in an unoccupied space
+    or lower appropriate to the area you chose appears in an unoccupied space
     within 10 feet of it. For example, a fire elemental emerges from a bonfire, and
     an earth elemental rises up from the ground. The elemental disappears when it
     drops to 0 hit points or when the spell ends.
 
     The elemental is friendly to you
-     and your companions for the duration. Roll initiative for the elemental, which
+    and your companions for the duration. Roll initiative for the elemental, which
     has its own turns. It obeys any verbal commands that you issue to it (no action
     required by you). If you don't issue any commands to the elemental, it defends
     itself from hostile creatures but otherwise takes no actions.
@@ -899,10 +899,10 @@ class ConjureElemental(Spell):
     concentration is broken, the elemental doesn't disappear. Instead, you lose
     control of the elemental, it becom es hostile toward you and your companions,
     and it might attack. An uncontrolled elemental can't be dismissed by you, and it
-     disappears 1 hour after you summoned it. The DM has the elemental's statistics.
+    disappears 1 hour after you summoned it. The DM has the elemental's statistics.
 
 
-    At Higher Levels: When you cast this spell using a spell slot of 6th level or
+    **At Higher Levels:** When you cast this spell using a spell slot of 6th level or
     higher, the challenge rating increases by 1 for each slot level above 5th.
     """
     name = "Conjure Elemental"
@@ -922,17 +922,17 @@ class ConjureFey(Spell):
     takes the form of a beast of challenge rating 6 or lower.
     It appears in an
     unoccupied space that you can see within range. The fey creature disappears when
-     it drops to 0 hit points or when the spell ends.
+    it drops to 0 hit points or when the spell ends.
 
     The fey creature is friendly
-     to you and your companions for the duration. Roll initiative for the creature,
+    to you and your companions for the duration. Roll initiative for the creature,
     which has its own turns. It obeys any verbal commands that you issue to it (no
     action required by you), as long as they don't violate its alignment. If you
     don't issue any commands to the fey creature, it defends itself from hostile
     creatures but otherwise takes no actions.
 
     If your concentration is broken, the
-     fey creature doesn't disappear. Instead, you lose control of the fey creature,
+    fey creature doesn't disappear. Instead, you lose control of the fey creature,
     it becomes hostile toward you and your companions, and it might attack. An
     uncontrolled fey creature can't be dismissed by you, and it disappears 1 hour
     after you summoned it.
@@ -977,7 +977,7 @@ class ConjureMinorElementals(Spell):
     take no actions.
     The DM has the creatures' statistics.
 
-    At Higher Levels: When
+    **At Higher Levels:** When
     you cast this spell using certain higher-level spell slots, you choose one of
     the summoning options above, and more creatures appear: twice as many with a
     6th-level slot and three times as many with an 8th-level slot.
@@ -1044,7 +1044,7 @@ class ConjureWoodlandBeings(Spell):
     Levels: When you cast this spell using certain higher-level spell slots, you
     choose one of the summoning options above, and more creatures appear:
     twice as
-     many with a 6th-level slot
+    many with a 6th-level slot
     three times as many with an 8th-level slot.
     """
     name = "Conjure Woodland Beings"
@@ -1066,12 +1066,12 @@ class ContactOtherPlane(Spell):
     can strain or even break your mind. When you cast this spell, make a DC 15
     Intelligence saving throw. On a failure, you take 6d6 psychic damage and are
     insane until you finish a long rest. While insane, you can't take actions, can't
-     understand what other creatures say, can't read, and speak only in gibberish. A
-     greater restoration spell cast on you ends this effect.
+    understand what other creatures say, can't read, and speak only in gibberish. A
+    greater restoration spell cast on you ends this effect.
 
     On a successful save,
-     you can ask the entity up to five questions. You must ask your questions before
-     the spell ends. The DM answers each question with one word, such as yes,
+    you can ask the entity up to five questions. You must ask your questions before
+    the spell ends. The DM answers each question with one word, such as yes,
     no, maybe, never, irrelevant, or unclear (if the entity doesn't know
     the answer to the question). If a one-word answer would be misleading, the DM
     might instead offer a short phrase as an answer.
@@ -1096,12 +1096,12 @@ class Contagion(Spell):
 
     At the end of each of the
     target's turns, it must make a Constitution saving throw. After failing three of
-     these saving throws, the disease's effects last for the duration, and the
+    these saving throws, the disease's effects last for the duration, and the
     creature stops making these saves. After succeeding on three of these saving
     throws, the creature recovers from the disease, and the spell ends.
 
     Since this
-     spell induces a natural disease in its target, any effect that removes a
+    spell induces a natural disease in its target, any effect that removes a
     disease or otherwise ameliorates a disease's effects apply to it.
 
     Blinding
@@ -1113,7 +1113,7 @@ class Contagion(Spell):
     Filth Fever 
     A raging fever sweeps through the creature's body. The
     creature has disadvantage on Strength checks, Strength saving throws, and attack
-     rolls that use Strength.
+    rolls that use Strength.
 
     Flesh Rot
     The creature's flesh decays. The creature
@@ -1133,7 +1133,7 @@ class Contagion(Spell):
     Slimy
     Doom
     The creature begins to bleed uncontrollably. The creature has disadvantage
-     on Constitution checks and Constitution saving throws. In addition, whenever
+    on Constitution checks and Constitution saving throws. In addition, whenever
     the creature takes damage, it is stunned until the end of its next turn.
     """
     name = "Contagion"
@@ -1203,19 +1203,19 @@ class ContinualFlame(Spell):
 
 class ControlFlames(Spell):
     """You choose a nonmagical flame that you can see within range and that fits within
-     a 5-foot cube. You affect it in one of the following ways:
+    a 5-foot cube. You affect it in one of the following ways:
 
     - You instantaneously expand the flame 5 feet in one direction,
-      provided that wood or other fuel is present in the new location.
+     provided that wood or other fuel is present in the new location.
     - You instantaneously extinguish the flames within the cube.
     - You double or halve the area of bright light and dim light cast
-      by the flame, change its color, or both. The change lasts for 1
-      hour.
+     by the flame, change its color, or both. The change lasts for 1
+     hour.
     - You cause simple shapes - such as the vague form of a creature,
-      an inanimate object, or a location - to appear within the flames
-      and animate as you like. The shapes last for 1 hour.  If you
-      cast this spell multiple times, you can have up to three
-      non-instantaneous
+     an inanimate object, or a location - to appear within the flames
+     and animate as you like. The shapes last for 1 hour.  If you
+     cast this spell multiple times, you can have up to three
+     non-instantaneous
 
     """
     name = "Control Flames"
@@ -1276,7 +1276,7 @@ class ControlWater(Spell):
 
     When a creature enters the vortex for the first time on a turn or starts its
     turn there, it must make a Strength saving throw. On a failed save, the creature
-     takes 2d8 bludgeoning damage and is caught in the vortex until the spell ends.
+    takes 2d8 bludgeoning damage and is caught in the vortex until the spell ends.
     On a successful save, the creature takes half damage, and isn't caught in the
     vortex. A creature caught in the vortex can use its action to try to swim away
     from the vortex as described above, but has disadvantage on the Strength
@@ -1407,7 +1407,7 @@ class CordonOfArrows(Spell):
     spell, you can designate any creatures you choose, and the spell ignores them.
 
 
-    At Higher Levels: When you cast this spell using a spell slot of 3rd level or
+    **At Higher Levels:** When you cast this spell using a spell slot of 3rd level or
     higher, the amount of ammunition that can be affected increases by two for each
     slot level above 2nd.
     """
@@ -1425,18 +1425,18 @@ class CordonOfArrows(Spell):
 
 class Counterspell(Spell):
     """1 reaction, which you take when you see a creature within 60 feet of you casting
-     a spell
+    a spell
 
     You attempt to interrupt a creature in the process of casting a spell.
-     If the creature is casting a spell of 3rd level or lower, its spell fails and
+    If the creature is casting a spell of 3rd level or lower, its spell fails and
     has no effect. If it is casting a spell of 4th level or higher, make an ability
     check using your spellcasting ability.  The DC equals 10+ the spell's level. On
     a success, the creature's spell fails and has no effect.
 
-    At Higher Levels: When
-     you cast this spell using a spell slot of 4th level or higher, the interrupted
+    **At Higher Levels:** When
+    you cast this spell using a spell slot of 4th level or higher, the interrupted
     spell has no effect if its level is less than or equal to the level of the spell
-     slot you used.
+    slot you used.
     """
     name = "Counterspell"
     level = 3
@@ -1495,20 +1495,20 @@ class CreateFoodAndWater(Spell):
 
 class CreateHomunculus(Spell):
     """While speaking an intricate incantation, you cut yourself with a jewel-encrusted
-     dagger, taking 2d4 piercing damage that can't be reduced in any way. You then
+    dagger, taking 2d4 piercing damage that can't be reduced in any way. You then
     drip your blood on the spell's other components and touch them, transforming
     them into a special construct called a homunculus. The statistics of the
     homunculus are in the Monster Manual. It is your faithful companion, and it dies
-     if you die. Whenever you finish a long rest, you can spend up to half your Hit
+    if you die. Whenever you finish a long rest, you can spend up to half your Hit
     Dice if the homunculus is on the same plane of existence as you. When you do so,
-     roll each die and add your Constitution modifier to it. Your hit point maximum
+    roll each die and add your Constitution modifier to it. Your hit point maximum
     is reduced by the total, and the homunculus's hit point maximum and current hit
     points are
     both increased by it. This process can reduce you to no lower than 1
     hit point. and the change to your and the homunculus's hit points ends when you
     finish your next long rest. The reduction to your hit point maximum can't be
     removed by any means before then, except by the homunculus‘s death. You can have
-     only one homunculus at a time. If you cast this spell while your homunculus
+    only one homunculus at a time. If you cast this spell while your homunculus
     lives, the spell fails.
     """
     name = "Create Homunculus"
@@ -1529,7 +1529,7 @@ class CreateOrDestroyWater(Spell):
     Create Water
     You create up to 10 gallons
     of clean water within range in an open container. Alternatively, the water falls
-     as rain in a 30-foot cube within range, extinguishing exposed flames in the
+    as rain in a 30-foot cube within range, extinguishing exposed flames in the
     area.
 
     Destroy Water 
@@ -1537,7 +1537,7 @@ class CreateOrDestroyWater(Spell):
     container within range. Alternatively, you destroy fog in a 30-foot cube within
     range.
 
-    At Higher Levels: When you cast this spell using a spell slot of 2nd
+    **At Higher Levels:** When you cast this spell using a spell slot of 2nd
     level or higher, you create or destroy 10 additional gallons of water, or the
     size of the cube increases by 5 feet, for each slot level above 1st.
     """
@@ -1559,11 +1559,11 @@ class CreateUndead(Spell):
     (The DM has game statistics for these creatures.)
 
     As a bonus action on each of
-     your turns, you can mentally command any creature you animated with this spell
+    your turns, you can mentally command any creature you animated with this spell
     if the creature is within 120 feet of you (if you control multiple creatures,
     you can command any or all of them at the same time, issuing the same command to
-     each one). You decide what action the creature will take and where it will move
-     during its next turn, or you can issue a general command, such as to guard a
+    each one). You decide what action the creature will take and where it will move
+    during its next turn, or you can issue a general command, such as to guard a
     particular chamber or corridor. If you issue no commands, the creature only
     defends itself against hostile creatures. Once given an order, the creature
     continues to follow it until its task is complete.
@@ -1571,17 +1571,17 @@ class CreateUndead(Spell):
     The creature is under your
     control for 24 hours, after which it stops obeying any command you have given
     it. To maintain control of the creature for another 24 hours, you must cast this
-     spell on the creature before the current 24-hour period ends. This use of the
+    spell on the creature before the current 24-hour period ends. This use of the
     spell reasserts your control over up to three creatures you have animated with
     this spell, rather than animating new ones.
 
-    At Higher Levels: When you cast
+    **At Higher Levels:** When you cast
     this spell using a 7th-level spell slot, you can animate or reassert control
     over four ghouls.
     When you cast this spell using an 8th-level spell slot, you
     can animate or reassert control over five ghouls or two ghasts or wights.
     When
-     you cast this spell using a 9th-level spell slot, you can animate or reassert
+    you cast this spell using a 9th-level spell slot, you can animate or reassert
     control over six ghouls, three ghasts or wights, or two mummies.
     """
     name = "Create Undead"
@@ -1605,7 +1605,7 @@ class Creation(Spell):
 
     The
     duration depends on the object's material. If the object is composed of multiple
-     materials, use the shortest duration.
+    materials, use the shortest duration.
 
     Material - Duration
     Vegetable matter - 1 day
@@ -1619,8 +1619,8 @@ class Creation(Spell):
     material component causes that spell to fail.
 
     **At Higher Levels:** When you cast this spell using a spell slot of
-      6th level or higher, the cube increases by 5 feet for each slot
-      level above 5th.
+     6th level or higher, the cube increases by 5 feet for each slot
+     level above 5th.
 
     """
     name = "Creation"
@@ -1639,16 +1639,16 @@ class CrownOfMadness(Spell):
     """One humanoid of your choice that you can see within range must succeed on a
     Wisdom saving throw or become charmed by you for the duration.
     While the target
-     is charmed in this way, a twisted crown of jagged iron appears on its head, and
-     a madness glows in its eyes.
+    is charmed in this way, a twisted crown of jagged iron appears on its head, and
+    a madness glows in its eyes.
 
     The charmed target must use its action before
     moving on each of its turns to make a melee attack against a creature other than
-     itself that you mentally choose. The target can act normally on its turn if you
-     choose no creature or if none are within its reach.
+    itself that you mentally choose. The target can act normally on its turn if you
+    choose no creature or if none are within its reach.
 
     On your subsequent turns,
-     you must use your action to maintain control over the target, or the spell
+    you must use your action to maintain control over the target, or the spell
     ends. Also, the target can make a Wisdom saving throw at the end of each of its
     turns. On a success, the spell ends.
     """
@@ -1676,7 +1676,7 @@ class CrownOfStars(Spell):
     feet. Ifyou have one to three motes remaining, they shed dim light
     in a 30-foot radius.
 
-    At Higher Levels: When you cast this spell using a spell slot of
+    **At Higher Levels:** When you cast this spell using a spell slot of
     8th level or higher, the number of motes created increases by two
     for each slot level above 7th.
 
@@ -1718,7 +1718,7 @@ class CureWounds(Spell):
     spellcasting ability modifier. This spell has no effect on undead or constructs.
 
 
-    At Higher Levels: When you cast this spell using a spell slot of 2nd level or
+    **At Higher Levels:** When you cast this spell using a spell slot of 2nd level or
     higher, the healing increases by 1d8 for each slot level above 1st.
     """
     name = "Cure Wounds"

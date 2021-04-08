@@ -585,13 +585,13 @@ class NaturalArmor(Feature):
     source = "Race (Lizardfolk)"
 
     def AC_func(self, char, **kwargs):
-        """
-        Implement the Natural Armor AC option
-        """
-        ac = 13 + char.dexterity.modifier
-        if ((char.shield is not None)):
-            ac += char.shield.base_armor_class
-        return ac
+       """
+       Implement the Natural Armor AC option
+       """
+       ac = 13 + char.dexterity.modifier
+       if ((char.shield is not None)):
+          ac += char.shield.base_armor_class
+       return ac
 
 
 class HungryJaws(Feature):
@@ -833,7 +833,7 @@ class SavingFace(Feature):
     name = "Saving Face"
     source = "Race (HobGoblin)"
 
-class MartialTraining(Feature):     #you have to add the weapons of choice to your sheet
+class MartialTraining(Feature):    #you have to add the weapons of choice to your sheet
     """You are proficient with two martial weapons of your choice and with light armor.
 
     """

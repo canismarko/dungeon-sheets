@@ -3,53 +3,54 @@ from dungeonsheets.features.features import Feature
 
 
 class UnarmoredDefenseMonk(Feature):
-    """Beginning at 1st level, while you are wearing no armor and not wearing a
-    shield, your AC equals 10 + your Dexterity modifier + your Wisdom modifier.
-
-    This bonus is computed in the AC given on the Character Sheet above.
-
+    """Beginning at 1st level, while you are wearing no armor and not
+    wearing a shield, your AC equals 10 + your Dexterity modifier +
+    your Wisdom modifier.
+    
+    This bonus is computed in the AC given on the Character Sheet
+    above.
+    
     """
     name = "Unarmored Defense"
     source = 'Monk'
 
 
 class MartialArts(Feature):
-    """At 1st level, your practice of martial arts gives you mastery of combat
-    styles that use unarmed strikes and monk weapons, which are shortswords and
-    any simple melee weapons that don't have the two-handed or heavy
-    property. You gain the following benefits while you are unarmed or wielding
-    only monk weapons and you aren't wearing armor or wielding a shield:
-
-    • You can use Dexterity instead of Strength for the attack and damage rolls
-    of your unarmed strikes and monk weapons.
-
-    • You can roll a d4 in place of the normal damage of your unarmed strike or
-    monk weapon. This die changes as you gain monk levels, as shown in the
-    Martial Arts column of the Monk table.
-
-    • When you use the Attack action with an unarmed strike or a monk weapon on
-    your turn, you can make one unarmed strike as a bonus action. For example,
-    if you take the Attack action and attack with a quarter- staff, you can
-    also make an unarmed strike as a bonus action, assuming you haven't already
-    taken a bonus action this turn.
-
-    Certain monasteries use specializepd forms of the monk weapons. For
-    example, you might use a club that is two lengths of w ood connected by a
-    short chain (called a nunchaku) or a sickle with a shorter, straighter
-    blade (called a kama). Whatever name you use for a monk weapon, you can use
-    the game statistics provided for
-
+    """At 1st level, your practice of martial arts gives you mastery of
+    combat styles that use unarmed strikes and monk weapons, which are
+    shortswords and any simple melee weapons that don't have the
+    two-handed or heavy property. You gain the following benefits
+    while you are unarmed or wielding only monk weapons and you aren't
+    wearing armor or wielding a shield:
+    
+    - You can use Dexterity instead of Strength for the attack and
+      damage rolls of your unarmed strikes and monk weapons.
+    - You can roll a d4 in place of the normal damage of your unarmed
+      strike or monk weapon. This die changes as you gain monk levels,
+      as shown in the Martial Arts column of the Monk table.
+    - When you use the Attack action with an unarmed strike or a monk
+      weapon on your turn, you can make one unarmed strike as a bonus
+      action. For example, if you take the Attack action and attack
+      with a quarter- staff, you can also make an unarmed strike as a
+      bonus action, assuming you haven't already taken a bonus action
+      this turn.
+    
+    Certain monasteries use specializepd forms of the monk
+    weapons. For example, you might use a club that is two lengths of
+    w ood connected by a short chain (called a nunchaku) or a sickle
+    with a shorter, straighter blade (called a kama). Whatever name
+    you use for a monk weapon, you can use the game statistics
+    provided for
+    
     """
     name = "Martial Arts"
     source = 'Monk'
     die = 'd4'
-
+    
     def weapon_func(self, weapon: weapons.Weapon, **kwargs):
-        """
-        Update increasing damage dice and DEX mod of Monk weapons
-        """
+        """Update increasing damage dice and DEX mod of Monk weapons"""
         is_monk_weapon = any([isinstance(weapon, w)
-                              for w in weapons.monk_weapons])
+                         for w in weapons.monk_weapons])
         level = self.owner.Monk.level
         if not is_monk_weapon:
             return weapon
@@ -67,23 +68,25 @@ class MartialArts(Feature):
 
 
 class Ki(Feature):
-    """Starting at 2nd level, your training allows you to harness the mystic
-    energy of ki. Your access to this energy is represented by a number of ki
-    points. Your monk level determines the number of points you have, as shown
-    in the Ki Points column of the Monk table. You can spend these points to
-    fuel various ki features.
-
-    You start knowing three such features: Flurry of Blows, Patient Defense,
-    and Step of the Wind. You learn more ki features as you gain levels in this
-    class. When you spend a ki point, it is unavailable until you finish a
-    short or long rest, at the end of which you draw all of your expended ki
-    back into yourself. You must spend at least 30 minutes of the rest
-    meditating to regain your ki points.
-
-    Some of your ki features require your target to make a saving throw to
-    resist the feature's effects. The saving throw DC is calculated as follows:
-    Ki save DC = 8 + your proficiency bonus + your Wisdom modifier
-
+    """Starting at 2nd level, your training allows you to harness the
+    mystic energy of ki. Your access to this energy is represented by
+    a number of ki points. Your monk level determines the number of
+    points you have, as shown in the Ki Points column of the Monk
+    table. You can spend these points to fuel various ki features.
+    
+    You start knowing three such features: Flurry of Blows, Patient
+    Defense, and Step of the Wind. You learn more ki features as you
+    gain levels in this class. When you spend a ki point, it is
+    unavailable until you finish a short or long rest, at the end of
+    which you draw all of your expended ki back into yourself. You
+    must spend at least 30 minutes of the rest meditating to regain
+    your ki points.
+    
+    Some of your ki features require your target to make a saving
+    throw to resist the feature's effects. The saving throw DC is
+    calculated as follows: Ki save DC = 8 + your proficiency bonus +
+    your Wisdom modifier
+    
     """
     _name = "Ki"
     source = "Monk"
@@ -150,23 +153,23 @@ class UnarmoredMovement(Feature):
 
 
 class DeflectMissiles(Feature):
-    """Starting at 3rd level, you can use your reaction to deflect or catch the
-    missile when you are hit by a ranged weapon attack. When you do so, the
-    damage you take from the attack is reduced by 1d10 + your Dexterity
-    modifier + your monk level. If you reduce the damage to 0, you can catch
-    the missile if it is small enough for you to hold in one hand and you have
-    at least one hand free.
-
-    If you catch a missile in this way, you can spend 1 ki point to make a
-    ranged attack with the weapon or piece of ammunition you just caught, as
-    part of the same reaction. You make this attack with proficiency,
-    regardless of your weapon proficiencies, and the missile counts as a monk
-    weapon for the attack
-
+    """Starting at 3rd level, you can use your reaction to deflect or
+    catch the missile when you are hit by a ranged weapon attack. When
+    you do so, the damage you take from the attack is reduced by 1d10
+    + your Dexterity modifier + your monk level. If you reduce the
+    damage to 0, you can catch the missile if it is small enough for
+    you to hold in one hand and you have at least one hand free.
+    
+    If you catch a missile in this way, you can spend 1 ki point to
+    make a ranged attack with the weapon or piece of ammunition you
+    just caught, as part of the same reaction. You make this attack
+    with proficiency, regardless of your weapon proficiencies, and the
+    missile counts as a monk weapon for the attack
+    
     """
     _name = "Deflect Missiles"
     source = "Monk"
-
+    
     @property
     def name(self):
         mod = self.owner.dexterity.modifier + self.owner.Monk.level
@@ -174,9 +177,9 @@ class DeflectMissiles(Feature):
 
 
 class SlowFall(Feature):
-    """Beginning at 4th level, you can use your reaction when you fall to reduce
-    any falling damage you take by an amount equal to five times your monk
-    level.
+    """Beginning at 4th level, you can use your reaction when you fall to
+    reduce any falling damage you take by an amount equal to five
+    times your monk level.
 
     """
     name = "Slow Fall"
@@ -184,9 +187,9 @@ class SlowFall(Feature):
 
 
 class ExtraAttackMonk(Feature):
-    """Beginning at 5th level, you can attack twice, instead of once, whenever you
-    take the Attack action on your turn
-
+    """Beginning at 5th level, you can attack twice, instead of once,
+    whenever you take the Attack action on your turn
+    
     """
     name = "Extra Attack (2x)"
     source = "Monk"
@@ -194,21 +197,21 @@ class ExtraAttackMonk(Feature):
 
 class StunningStrike(Feature):
     """Starting at 5th level, you can interfere with the flow of ki in an
-    opponent's body. When you hit another creature with a melee weapon attack,
-    you can spend 1 ki point to attempt a stunning strike. The target must
-    succeed on a Constitution saving throw or be stunned until the end of your
-    next turn
-
+    opponent's body. When you hit another creature with a melee weapon
+    attack, you can spend 1 ki point to attempt a stunning strike. The
+    target must succeed on a Constitution saving throw or be stunned
+    until the end of your next turn
+    
     """
     name = "Stunning Strike"
     source = "Monk"
 
 
 class KiEmpoweredStrikes(Feature):
-    """Starting at 6th level, your unarmed strikes count as magical for the
-    purpose of overcoming resistance and immunity to nonmagical attacks and
-    damage
-
+    """Starting at 6th level, your unarmed strikes count as magical for
+    the purpose of overcoming resistance and immunity to nonmagical
+    attacks and damage
+    
     """
     name = "Ki-Empowered Strikes"
     source = "Monk"
@@ -217,58 +220,61 @@ class KiEmpoweredStrikes(Feature):
 class StillnessOfMind(Feature):
     """Starting at 7th level, you can use your action to end one effect on
     yourself that is causing you to be charmed or frightened
-
+    
     """
     name = "Stillness of Mind"
     source = "Monk"
 
 
 class PurityOfBody(Feature):
-    """At 10th level, your mastery of the ki flowing through you makes you immune
-    to disease and poison.
-
+    """At 10th level, your mastery of the ki flowing through you makes you
+    immune to disease and poison.
+    
     """
     name = "Purity of Body"
     source = "Monk"
 
 
 class TongueOfTheSunAndMoon(Feature):
-    """Starting at 13th level, you learn to touch the ki of other minds so that
-    you understand all spoken languages. Moreover, any creature that can
-    understand a language can understand what you say.
-
+    """Starting at 13th level, you learn to touch the ki of other minds so
+    that you understand all spoken languages. Moreover, any creature
+    that can understand a language can understand what you say.
+    
     """
     name = "Tongue of the Sun and Moon"
     source = "Monk"
 
 
 class DiamondSoul(Feature):
-    """Beginning at 14th level, your mastery of ki grants you proficiency in all
-    saving throws. Additionally, whenever you make a saving throw and fail, you
-    can spend 1 ki point to reroll it and take the second result.
-
+    """Beginning at 14th level, your mastery of ki grants you proficiency
+    in all saving throws. Additionally, whenever you make a saving
+    throw and fail, you can spend 1 ki point to reroll it and take the
+    second result.
+    
     """
     name = "Diamond Soul"
     source = "Monk"
 
 
 class TimelessBody(Feature):
-    """At 15th level, your ki sustains you so that you suffer none of the frailty
-    of old age, and you can't be aged magically. You can still die of old age,
-    however. In addition, you no longer need food or water.
-
+    """At 15th level, your ki sustains you so that you suffer none of the
+    frailty of old age, and you can't be aged magically. You can still
+    die of old age, however. In addition, you no longer need food or
+    water.
+    
     """
     name = "Timeless Body"
     source = "Monk"
 
 
 class EmptyBody(Feature):
-    """Beginning at 18th level, you can use your action to spend 4 ki points to
-    become invisible for 1 minute. During that time, you also have resistance
-    to all damage but force damage. Additionally, you can spend 8 ki points to
-    cast the astral projection spell, without needing material components. When
-    you do so, you can't take any other creatures with you.
-
+    """Beginning at 18th level, you can use your action to spend 4 ki
+    points to become invisible for 1 minute. During that time, you
+    also have resistance to all damage but force damage. Additionally,
+    you can spend 8 ki points to cast the astral projection spell,
+    without needing material components. When you do so, you can't
+    take any other creatures with you.
+    
     """
     name = "Empty Body"
     source = "Monk"
@@ -277,7 +283,7 @@ class EmptyBody(Feature):
 class PerfectSelf(Feature):
     """At 20th level, when you roll for initiative and have no ki points
     remaining, you regain 4 ki points.
-
+    
     """
     name = "Perfect Self"
     source = "Monk"
@@ -285,40 +291,41 @@ class PerfectSelf(Feature):
 
 # Way of the Open Hand
 class OpenHandTechnique(Feature):
-    """Starting when you choose this tradition at 3rd level, you can manipulate
-    your enemy's ki when you harness your own. Whenever you hit a creature with
-    one of the attacks granted by your Flurry of Blows, you can impose one of
-    the following effects on that target:
-
-    • It must succeed on a Dexterity saving throw or be knocked prone.
-
-    • It must make a Strength saving throw. If it fails, you can push it up to
-    15 feet away from you.
-
-    • It can't take reactions until the end of your next turn
-
+    """Starting when you choose this tradition at 3rd level, you can
+    manipulate your enemy's ki when you harness your own. Whenever you
+    hit a creature with one of the attacks granted by your *Flurry of
+    Blows*, you can impose one of the following effects on that
+    target:
+    
+    - It must succeed on a Dexterity saving throw or be knocked prone.
+    - It must make a Strength saving throw. If it fails, you can push
+      it up to 15 feet away from you.
+    - It can't take reactions until the end of your next turn
+    
     """
     name = "Open Hand Technique"
     source = "Monk (Way of the Open Hand)"
 
 
 class WholenessOfBody(Feature):
-    """At 6th level, you gain the ability to heal yourself. As an action, you can
-    regain hit points equal to three times your monk level. You must finish a
-    long rest before you can use this feature again
-
+    """At 6th level, you gain the ability to heal yourself. As an action,
+    you can regain hit points equal to three times your monk
+    level. You must finish a long rest before you can use this feature
+    again
+    
     """
     name = "Wholeness of Body"
     source = "Monk (Way of the Open Hand)"
 
 
 class Tranquility(Feature):
-    """Beginning at 11th level, you can enter a special meditation that surrounds
-    you with an aura of peace. At the end of a long rest, you gain the effect
-    of a sanctuary spell that lasts until the start of your next long rest (the
-    spell can end early as normal). The saving throw DC for the spell equals 8
-    + your Wisdom modifier + your proficiency bonus
-
+    """Beginning at 11th level, you can enter a special meditation that
+    surrounds you with an aura of peace. At the end of a long rest,
+    you gain the effect of a sanctuary spell that lasts until the
+    start of your next long rest (the spell can end early as
+    normal). The saving throw DC for the spell equals 8 + your Wisdom
+    modifier + your proficiency bonus
+    
     """
     name = "Tranquility"
     source = "Monk (Way of the Open Hand)"
@@ -326,16 +333,18 @@ class Tranquility(Feature):
 
 class QuiveringPalm(Feature):
     """At 17th level, you gain the ability to set up lethal vibrations in
-    someone's body. When you hit a creature with an unarmed strike, you can
-    spend 3 ki points to start these imperceptible vibrations, which last for a
-    number of days equal to your monk level. The vibrations are harmless unless
-    you use your action to end them. To do so, you and the target must be on
-    the same plane of existence. When you use this action, the creature must
-    make a Constitution saving throw. If it fails, it is reduced to 0 hit
-    points. If it succeeds, it takes 10d10 necrotic damage. You can have only
-    one creature under the effect of this feature at a time. You can choose to
-    end the vibrations harmlessly without using an action.
-
+    someone's body. When you hit a creature with an unarmed strike,
+    you can spend 3 ki points to start these imperceptible vibrations,
+    which last for a number of days equal to your monk level. The
+    vibrations are harmless unless you use your action to end them. To
+    do so, you and the target must be on the same plane of
+    existence. When you use this action, the creature must make a
+    Constitution saving throw. If it fails, it is reduced to 0 hit
+    points. If it succeeds, it takes 10d10 necrotic damage. You can
+    have only one creature under the effect of this feature at a
+    time. You can choose to end the vibrations harmlessly without
+    using an action.
+    
     """
     name = "Quivering Palm"
     source = "Monk (Way of the Open Hand)"
@@ -343,12 +352,13 @@ class QuiveringPalm(Feature):
 
 # Way of Shadow
 class ShadowArts(Feature):
-    """Starting when you choose this tradition at 3rd level, you can use your ki
-    to duplicate the effects of certain spells. As an action, you can spend 2
-    ki points to cast darkness, darkvision, pass without trace, or silence,
-    without providing material components. Additionally, you gain the minor
-    illusion cantrip if you don't already know it.
-
+    """Starting when you choose this tradition at 3rd level, you can use
+    your ki to duplicate the effects of certain spells. As an action,
+    you can spend 2 ki points to cast darkness, darkvision, pass
+    without trace, or silence, without providing material
+    components. Additionally, you gain the minor illusion cantrip if
+    you don't already know it.
+    
     """
     name = "Shadow Arts"
     source = "Monk (Way of Shadow)"
@@ -356,33 +366,34 @@ class ShadowArts(Feature):
 
 class ShadowStep(Feature):
     """At 6th level, you gain the ability to step from one shadow into
-    another. When you are in dim light or darkness, as a bonus action you can
-    teleport up to 60 feet to an unoccupied space you can see that is also in
-    dim light or darkness. You then have advantage on the first melee attack
-    you make before the end of the turn.
-
+    another. When you are in dim light or darkness, as a bonus action
+    you can teleport up to 60 feet to an unoccupied space you can see
+    that is also in dim light or darkness. You then have advantage on
+    the first melee attack you make before the end of the turn.
+    
     """
     name = "Shadow Step"
     source = "Monk (Way of Shadow)"
 
 
 class CloakOfShadows(Feature):
-    """By 11th level, you have learned to become one with the shadows. When you
-    are in an area of dim light or darkness, you can use your action to become
-    invisible. You remain invisible until you make an attack, cast a spell, or
-    are in an area of bright light.
-
+    """By 11th level, you have learned to become one with the
+    shadows. When you are in an area of dim light or darkness, you can
+    use your action to become invisible. You remain invisible until
+    you make an attack, cast a spell, or are in an area of bright
+    light.
+    
     """
     name = "Cloak of Shadows"
     source = "Monk (Way of Shadow)"
 
 
 class Opportunist(Feature):
-    """At 17th level, you can exploit a creature's momentary distraction when it
-    is hit by an attack. Whenever a creature within 5 feet of you is hit by an
-    attack made by a creature other than you, you can use your reaction to make
-    a melee attack against that creature.
-
+    """At 17th level, you can exploit a creature's momentary distraction
+    when it is hit by an attack. Whenever a creature within 5 feet of
+    you is hit by an attack made by a creature other than you, you can
+    use your reaction to make a melee attack against that creature.
+    
     """
     name = "Opportunist"
     source = "Monk (Way of Shadow)"
@@ -390,35 +401,38 @@ class Opportunist(Feature):
 
 # Way of the Four Elements
 class DiscipleOfTheElements(Feature):
-    """When you choose this tradition at 3rd level, you learn magical disciplines
-    that harness the power of the four elements. A discipline requires you to
-    spend ki points each time you use it. You know the Elemental Attunement
-    discipline and one other elemental discipline of your choice, which are
-    detailed in the "Elemental Disciplines" section below.
-
-    You learn one additional elemental discipline of your choice at 6th, 11th,
-    and 17th level. Whenever you learn a new elemental discipline, you can also
-    replace one elemental discipline that you already know with a different
-    discipline.
-
+    """When you choose this tradition at 3rd level, you learn magical
+    disciplines that harness the power of the four elements. A
+    discipline requires you to spend ki points each time you use
+    it. You know the Elemental Attunement discipline and one other
+    elemental discipline of your choice, which are detailed in the
+    "Elemental Disciplines" section below.
+    
+    You learn one additional elemental discipline of your choice at
+    6th, 11th, and 17th level. Whenever you learn a new elemental
+    discipline, you can also replace one elemental discipline that you
+    already know with a different discipline.
+    
     Add your chosen disciplines under "features" in your .py file
+    
+    **Casting Elemental Spells:** Some elemental disciplines allow you
+    to cast spells. See chapter 10 for the general rules of
+    spellcasting. To cast one o f these spells, you use its casting
+    time and other rules, but you don't need to provide material
+    components for it. Once you reach 5th level in this class, you can
+    spend additional ki points to increase the level of an elemental
+    discipline spell that you cast, provided that the spell has an
+    enhanced effect at a higher level, as burning hands does. The
+    spell's level increases by 1 for each additional ki point you
+    spend. For example, if you are a 5th-level monk and use Sweeping
+    Cinder Strike to cast burning hands, you can spend 3 ki points to
+    cast it as a 2nd-level spell (the discipline's base cost of 2 ki
+    points plus 1).
 
-    **Casting Elemental Spells**: Some elemental disciplines allow you to cast
-    spells. See chapter 10 for the general rules of spellcasting. To cast one o
-    f these spells, you use its casting time and other rules, but you don't
-    need to provide material components for it. Once you reach 5th level in
-    this class, you can spend additional ki points to increase the level of an
-    elemental discipline spell that you cast, provided that the spell has an
-    enhanced effect at a higher level, as burning hands does. The spell's level
-    increases by 1 for each additional ki point you spend. For example, if you
-    are a 5th-level monk and use Sweeping Cinder Strike to cast burning hands,
-    you can spend 3 ki points to cast it as a 2nd-level spell (the discipline's
-    base cost of 2 ki points plus 1).
-
-    The maximum number of ki points you can spend to cast a spell in this way
-    (including its base ki point cost and any additional ki points you spend to
-    increase its level) is determined by your monk level, as shown in the
-    Spells and Ki Points table.
+    The maximum number of ki points you can spend to cast a spell in
+    this way (including its base ki point cost and any additional ki
+    points you spend to increase its level) is determined by your monk
+    level, as shown in the Spells and Ki Points table.
 
     Monk Levels 5-8 : 3 Ki points Max
 
@@ -436,19 +450,17 @@ class DiscipleOfTheElements(Feature):
 class ElementalAttunement(Feature):
     """You can use your action to briefly control elemental forces nearby, causing
     one of the following effects of your choice:
-
-    • Create a harmless, instantaneous sensory effect related to air, earth,
-    fire, or water, such as a shower of sparks, a puff of wind, a spray o f
-    light mist, or a gentle rumbling of stone.
-
-    • Instantaneously light or snuff out a candle, a torch, or a small
-    campfire.
-
-    • Chill or warm up to 1 pound of nonliving material for up to 1 hour.
-
-    • Cause earth, fire, water, or mist that can fit within a 1-foot cube to
-    shape itself into a crude form you desig nate for 1 minute.
-
+    - Create a harmless, instantaneous sensory effect related to air,
+      earth, fire, or water, such as a shower of sparks, a puff of
+      wind, a spray o f light mist, or a gentle rumbling of stone.
+    - Instantaneously light or snuff out a candle, a torch, or a small
+      campfire.
+    - Chill or warm up to 1 pound of nonliving material for up to 1
+      hour.
+    - Cause earth, fire, water, or mist that can fit within a 1-foot
+      cube to shape itself into a crude form you desig nate for 1
+      minute.
+    
     """
     name = "Elemental Attunement"
     source = "Monk (Way of the Four Elements)"
@@ -456,9 +468,9 @@ class ElementalAttunement(Feature):
 
 class BreathOfWinter(Feature):
     """You can spend 6 ki points to cast cone of cold.
-
-    **Prerequisite**: 17th Level
-
+    
+    **Prerequisite:** 17th Level
+    
     """
     name = "Breath of Winter"
     source = "Monk (Way of the Four Elements)"
@@ -467,9 +479,9 @@ class BreathOfWinter(Feature):
 
 class ClenchOfTheNorthWind(Feature):
     """You can spend 3 ki points to cast hold person.
-
-    **Prerequisite**: 6th Level
-
+    
+    **Prerequisite:** 6th Level
+    
     """
     name = "Clench of the North Wind"
     source = "Monk (Way of the Four Elements)"
@@ -478,8 +490,9 @@ class ClenchOfTheNorthWind(Feature):
 
 class EternalMountainDefense(Feature):
     """You can spend 5 ki points to cast stoneskin, targeting yourself.
-
-    **Prerequisite**: 11th Level
+    
+    **Prerequisite:** 11th Level
+    
     """
     name = "Eternal Mountain Defense"
     source = "Monk (Way of the Four Elements)"
@@ -487,22 +500,21 @@ class EternalMountainDefense(Feature):
 
 
 class FangsOfTheFireSnake(Feature):
-    """When you use the Attack action on your turn, you can spend 1 ki point to
-    cause tendrils of flame to stretch out from your fists and feet. Your reach
-    with your unarmed strikes increases by 10 feet for that action, as well as
-    the rest o f the turn. A hit with such an attack deals fire damage instead
-    of bludgeoning damage, and if you spend 1 ki point when the attack hits, it
-    also deals an extra 1d10 fire damage
-
+    """When you use the Attack action on your turn, you can spend 1 ki
+    point to cause tendrils of flame to stretch out from your fists
+    and feet. Your reach with your unarmed strikes increases by 10
+    feet for that action, as well as the rest o f the turn. A hit with
+    such an attack deals fire damage instead of bludgeoning damage,
+    and if you spend 1 ki point when the attack hits, it also deals an
+    extra 1d10 fire damage
+    
     """
     name = "Fangs of the Fire Snake"
     source = "Monk (Way of the Four Elements)"
 
 
 class FistOfFourThunders(Feature):
-    """You can spend 2 ki points to cast thunderwave
-
-    """
+    """You can spend 2 ki points to cast thunderwave."""
     name = "Fist of Four Thunders"
     source = "Monk (Way of the Four Elements)"
     spells_known = (spells.Thunderwave,)
@@ -510,14 +522,15 @@ class FistOfFourThunders(Feature):
 
 class FistOfUnbrokenAir(Feature):
     """You can create a blast of compressed air that strikes like a mighty
-    fist. As an action, you can spend 2 ki points and choose a creature within
-    30 feet of you. That creature must make a Strength saving throw. On a
-    failed save, the creature takes 3d10 bludgeoning damage, plus an extra 1d10
-    bludgeoning damage for each additional ki point you spend, and you can push
-    the creature up to 20 feet away from you and knock it prone. On a
-    successful save, the creature takes half as much damage, and you don't push
-    it or knock it prone.
-
+    fist. As an action, you can spend 2 ki points and choose a
+    creature within 30 feet of you. That creature must make a Strength
+    saving throw. On a failed save, the creature takes 3d10
+    bludgeoning damage, plus an extra 1d10 bludgeoning damage for each
+    additional ki point you spend, and you can push the creature up to
+    20 feet away from you and knock it prone. On a successful save,
+    the creature takes half as much damage, and you don't push it or
+    knock it prone.
+    
     """
     name = "Fist of Unbroken Air"
     source = "Monk (Way of the Four Elements)"
@@ -525,9 +538,9 @@ class FistOfUnbrokenAir(Feature):
 
 class FlamesOfThePhoenix(Feature):
     """You can spend 4 ki points to cast fireball.
-
-    **Prerequisite**: 11th Level
-
+    
+    **Prerequisite:** 11th Level
+    
     """
     name = "Flames of the Phoenix"
     source = "Monk (Way of the Four Elements)"
@@ -536,9 +549,9 @@ class FlamesOfThePhoenix(Feature):
 
 class GongOfTheSummit(Feature):
     """You can spend 3 ki points to cast shatter.
-
-    **Prerequisite**: 6th Level
-
+    
+    **Prerequisite:** 6th Level
+    
     """
     name = "Gong of the Summit"
     source = "Monk (Way of the Four Elements)"
@@ -547,9 +560,9 @@ class GongOfTheSummit(Feature):
 
 class MistStance(Feature):
     """You can spend 4 ki points to cast gaseous form, targeting yourself.
-
-    **Prerequisite**: 11th Level
-
+    
+    **Prerequisite:** 11th Level
+    
     """
     name = "Mist Stance"
     source = "Monk (Way of the Four Elements)"
@@ -559,7 +572,7 @@ class MistStance(Feature):
 class RideTheWind(Feature):
     """You can spend 4 ki points to cast fly, targeting yourself
 
-    **Prerequisite**: 11th Level
+    **Prerequisite:** 11th Level
 
     """
     name = "Ride the Wind"
@@ -570,7 +583,7 @@ class RideTheWind(Feature):
 class RiverOfHungryFlame(Feature):
     """You can spend 5 ki points to cast wall of fire.
 
-    **Prerequisite**: 17th Level
+    **Prerequisite:** 17th Level
 
     """
     name = "River of Hungry Flame"
@@ -588,40 +601,41 @@ class RushOfTheGaleSpirits(Feature):
 
 
 class ShapeTheFlowingRiver(Feature):
-    """As an action, you can spend 1 ki point to choose an area of ice or water no
-    larger than 30 feet on a side within 120 feet o f you. You can change water
-    to ice within the area and vice versa, and you can reshape ice in the area
-    in any manner you choose. You can raise or lower the ice's elevation,
-    create or fill in a trench, erect or flatten a wall, or form a pillar. The
-    extent of any such changes can't exceed half the area's largest
-    dimension. For example, if you affect a 30-foot square, you can create a
-    pillar up to 15 feet high, raise or lower the square's elevation by up to
-    15 feet, dig a trench up to 15 feet deep, and so on. You can't shape the
-    ice to trap or injure a creature in the area.
-
+    """As an action, you can spend 1 ki point to choose an area of ice or
+    water no larger than 30 feet on a side within 120 feet o f
+    you. You can change water to ice within the area and vice versa,
+    and you can reshape ice in the area in any manner you choose. You
+    can raise or lower the ice's elevation, create or fill in a
+    trench, erect or flatten a wall, or form a pillar. The extent of
+    any such changes can't exceed half the area's largest
+    dimension. For example, if you affect a 30-foot square, you can
+    create a pillar up to 15 feet high, raise or lower the square's
+    elevation by up to 15 feet, dig a trench up to 15 feet deep, and
+    so on. You can't shape the ice to trap or injure a creature in the
+    area.
+    
     """
     name = "Shape the Flowing River"
     source = "Monk (Way of the Four Elements)"
 
 
 class SweepingCinderStrike(Feature):
-    """You can spend 2 ki points to cast burning hands
-
-    """
+    """You can spend 2 ki points to cast burning hands."""
     name = "Sweeping Cinder Strike"
     source = "Monk (Way of the Four Elements)"
     spells_known = (spells.BurningHands,)
 
 
 class WaterWhip(Feature):
-    """You can spend 2 ki points as a bonus action to create a whip of water that
-    shoves and pulls a creature to unbalance it. A creature that you can see
-    that is within 30 feet of you must make a Dexterity saving throw. On a
-    failed save, the creature takes 3d10 bludgeoning damage, plus an extra 1d10
-    bludgeoning damage for each additional ki point you spend, and you can
-    either knock it prone or pull it up to 25 feet closer to you. On a
-    successful save, the creature takes half as much damage, and you don't pull
-    it or knock it prone
+    """You can spend 2 ki points as a bonus action to create a whip of
+    water that shoves and pulls a creature to unbalance it. A creature
+    that you can see that is within 30 feet of you must make a
+    Dexterity saving throw. On a failed save, the creature takes 3d10
+    bludgeoning damage, plus an extra 1d10 bludgeoning damage for each
+    additional ki point you spend, and you can either knock it prone
+    or pull it up to 25 feet closer to you. On a successful save, the
+    creature takes half as much damage, and you don't pull it or knock
+    it prone
 
     """
     name = "Water Whip"
@@ -630,8 +644,8 @@ class WaterWhip(Feature):
 
 class WaveOfRollingEarth(Feature):
     """You can spend 6 ki points to cast wall of stone
-
-    **Prerequisite**: 17th Level
+    
+    **Prerequisite:** 17th Level
 
     """
     name = "Wave of Rolling Earth"
@@ -704,8 +718,8 @@ class RadiantSunBolt(Feature):
     source = "Monk (Way of the Sun Soul)"
 
     def __init__(self, owner=None):
-        super().__init__(owner=owner)
-        self.owner.wield_weapon("sun bolt")
+       super().__init__(owner=owner)
+       self.owner.wield_weapon("sun bolt")
 
 
 class SearingArcStrike(Feature):
@@ -769,10 +783,10 @@ class TipsySway(Feature):
     """Starting at 6th level, you can move in sudden, swaying ways. You gain the
     following benefits.
 
-    **Leap to Your Feet**: When you're prone, you can stand up
+    **Leap to Your Feet:** When you're prone, you can stand up
     by spending 5 feet of movement, rather than half your speed.
 
-    **Redirect Attack**: When a creature misses you with a melee attack roll,
+    **Redirect Attack:** When a creature misses you with a melee attack roll,
     you can spend 1 ki point as a re- action to cause that attack to hit one
     creature of your choice, other than the attacker, that you can see within 5
     feet of you.
@@ -812,7 +826,7 @@ class PathOfTheKensei(Feature):
     includes instruction in the deft strokes of calligraphy or painting. You
     gain the following benefits.
 
-    **Kensei Weapons**: Choose two types of weapons to be your kensei weapons:
+    **Kensei Weapons:** Choose two types of weapons to be your kensei weapons:
     one melee weapon and one ranged weapon. Each of these weapons can be any
     sim- ple or martial weapon that lacks the heavy and special properties. The
     longbow is also a valid choice. You gain proficiency with these weapons if
@@ -822,19 +836,19 @@ class PathOfTheKensei(Feature):
     choose another type of weapon-either melee or ranged-to be a kensei weapon
     for you. following the criteria above.
 
-    **Agile Parry**: If you make an unarmed strike as part of the Attack action
+    **Agile Parry:** If you make an unarmed strike as part of the Attack action
     on your turn and are holding a kensei weapon, you can use it to defend
     yourself if it is a melee weapon. You gain a +2 bonus to AC until the start
     of your next turn, while the weapon is in your hand and you aren't
     incapacitated.
 
-    **Kensei's Shot**: You can use a bonus action on your turn to make your
+    **Kensei's Shot:** You can use a bonus action on your turn to make your
     ranged attacks with a kensei weapon more deadly. When you do so, any target
     you hit with a ranged attack using a kensei weapon takes an extra 1d4
     damage of the weapons type. You retain this benefit un- til the end of the
     current turn.
 
-    **Way ofthe Brush**: You gain proficiency with your choice of
+    **Way ofthe Brush:** You gain proficiency with your choice of
     calligrapher's supplies or painter's supplies
 
     """
@@ -846,11 +860,11 @@ class OneWithTheBlade(Feature):
     """At 6th level, you extend your ki into your kensei weap- ons, granting you
     the following benefits.
 
-    **Magic Kensei Weapons**: Your attacks with your kensei weapons count as
+    **Magic Kensei Weapons:** Your attacks with your kensei weapons count as
     magical for the purpose of over- coming resistance and immunity to
     nonmagical attacks and damage
 
-    **Deft Strike**: When you hit a target with a kensei weapon, you can spend
+    **Deft Strike:** When you hit a target with a kensei weapon, you can spend
     1 ki point to cause the weapon to deal extra damage to the target equal to
     your Martial Arts die. You can use this feature only once on each of
     your turns.

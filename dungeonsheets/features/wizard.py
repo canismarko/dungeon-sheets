@@ -307,8 +307,8 @@ class AlterMemories(Feature):
 
     @property
     def name(self):
-        num = 1 + max(0, self.owner.charisma.modifier)
-        return self._name + " ({:d} hours)".format(num)
+       num = 1 + max(0, self.owner.charisma.modifier)
+       return self._name + " ({:d} hours)".format(num)
 
 
 # Evocation
@@ -525,24 +525,24 @@ class MinorAlchemy(Feature):
 
 
 class TransmutersStone(Feature):
-    """Starting at 6th level, you can spend 8 hours creating a transmuter's stone
-    that stores transmutation magic. You can benefit from the stone yourself or
-    give it to another creature. A creature gains a benefit of your choice as
-    long as the stone is in the creature's possession. When you create the
-    stone, choose the benefit from the following options:
-
-    • Darkvision out to a range of 60 feet, as described in chapter 8
-
-    • An increase to speed of 10 feet while the creature is unencumbered
-
-    • Proficiency in Constitution saving throws
-
-    • Resistance to acid, cold, fire, lightning, or thunder damage (your
-    choice whenever you choose this benefit)
-
-    Each time you cast a transmutation spell of 1st level or higher, you can
-    change the effect of your stone if the stone is on your person. If you
-    create a new transmuter's stone, the previous one ceases to function
+    """Starting at 6th level, you can spend 8 hours creating a
+    transmuter's stone that stores transmutation magic. You can
+    benefit from the stone yourself or give it to another creature. A
+    creature gains a benefit of your choice as long as the stone is in
+    the creature's possession. When you create the stone, choose the
+    benefit from the following options:
+    
+    - Darkvision out to a range of 60 feet, as described in chapter 8
+    - An increase to speed of 10 feet while the creature is
+      unencumbered
+    - Proficiency in Constitution saving throws
+    - Resistance to acid, cold, fire, lightning, or thunder damage
+      (your choice whenever you choose this benefit)
+    
+    Each time you cast a transmutation spell of 1st level or higher,
+    you can change the effect of your stone if the stone is on your
+    person. If you create a new transmuter's stone, the previous one
+    ceases to function
 
     """
     name = "Transmuter's Stone"
@@ -550,13 +550,14 @@ class TransmutersStone(Feature):
 
 
 class Shapechanger(Feature):
-    """At 10th level, you add the polymorph spell to your spellbook, if it is not
-    there already. You can cast polymorph without expending a spell slot. When
-    you do so, you can target only yourself and transform into a beast whose
-    challenge rating is 1 or lower. Once you cast polymorph in this way, you
-    can't do so again until you finish a short or long rest, though you can
-    still cast it normally using an available spell slot
-
+    """At 10th level, you add the polymorph spell to your spellbook, if it
+    is not there already. You can cast polymorph without expending a
+    spell slot. When you do so, you can target only yourself and
+    transform into a beast whose challenge rating is 1 or lower. Once
+    you cast polymorph in this way, you can't do so again until you
+    finish a short or long rest, though you can still cast it normally
+    using an available spell slot
+    
     """
     name = "Shapechanger"
     source = "Wizard (School of Transmutation)"

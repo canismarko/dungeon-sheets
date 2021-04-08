@@ -25,8 +25,8 @@ class DivineSense(Feature):
 
     @property
     def name(self):
-        num_uses = max(1, 1+self.owner.charisma.modifier)
-        return self._name + ' ({:d}x/LR)'.format(num_uses)
+       num_uses = max(1, 1+self.owner.charisma.modifier)
+       return self._name + ' ({:d}x/LR)'.format(num_uses)
 
 
 class LayOnHands(Feature):
@@ -51,8 +51,8 @@ class LayOnHands(Feature):
 
     @property
     def name(self):
-        level = self.owner.Paladin.level
-        return self._name + " ({:d}HP/LR)".format(level*5)
+       level = self.owner.Paladin.level
+       return self._name + " ({:d}HP/LR)".format(level*5)
 
 
 class PaladinFightingStyle(FeatureSelector):
@@ -68,10 +68,10 @@ class PaladinFightingStyle(FeatureSelector):
     protection
     """
     options = {'defense': Defense,
-               'dueling': Dueling,
-               'great': GreatWeaponFighting,
-               'great-weapon fighting': GreatWeaponFighting,
-               'projection': Protection}
+            'dueling': Dueling,
+            'great': GreatWeaponFighting,
+            'great-weapon fighting': GreatWeaponFighting,
+            'projection': Protection}
     name = "Fighting Style (Select One)"
     source = "Paladin"
 
@@ -152,8 +152,8 @@ class CleansingTouch(Feature):
 
     @property
     def name(self):
-        num_uses = max(1, 1+self.owner.charisma.modifier)
-        return self._name + ' ({:d}x/LR)'.format(num_uses)
+       num_uses = max(1, 1+self.owner.charisma.modifier)
+       return self._name + ' ({:d}x/LR)'.format(num_uses)
 
 
 class ChannelDivinityPaladin(Feature):

@@ -26,8 +26,8 @@ class Bane(Spell):
 class BanishingSmite(Spell):
     """The next time you hit a creature with a weapon attack before this spell ends,
     your weapon crackles with force, and the attack deals an extra 5d10 force damage
-     to the target. Additionally, if this attack reduces the target to 50 hit points
-     of fewer, you banish it. If the target is native to a different plane of
+    to the target. Additionally, if this attack reduces the target to 50 hit points
+    of fewer, you banish it. If the target is native to a different plane of
     existence than the on you're on, the target disappears, returning to its home
     plane. If the target is native to the plane you're on, the creature vanishes
     into a harmless demiplane. While there, the target is incapacitated. It remains
@@ -64,7 +64,7 @@ class Banishment(Spell):
     reappears in the space it left or in the nearest unoccupied space if that space
     is occupied. Otherwise, the target doesn't return.
 
-    At Higher Levels: When you
+    **At Higher Levels:** When you
     cast this spell using a spell slot of 5th level or higher, you can target one
     additional creature for each slot level above 4th.
     """
@@ -117,14 +117,14 @@ class BeaconOfHope(Spell):
 
 class BeastBond(Spell):
     """You establish a telepathic link with one beast you touch that is
-     friendly to you or charmed by you. The spell fails if the beast's
-     Intelligence is 4 or higher.  Until the spell ends, the link is
-     active while you and the beast are within line of sight of each
-     other. Through the link, the beast can understand your telepathic
-     messages to it, and it can telepathically communicate simple
-     emotions and concepts back to you. While the link is active, the
-     beast gains advantage on attack rolls against any creature within
-     5 feet of you that you can see.
+    friendly to you or charmed by you. The spell fails if the beast's
+    Intelligence is 4 or higher.  Until the spell ends, the link is
+    active while you and the beast are within line of sight of each
+    other. Through the link, the beast can understand your telepathic
+    messages to it, and it can telepathically communicate simple
+    emotions and concepts back to you. While the link is active, the
+    beast gains advantage on attack rolls against any creature within
+    5 feet of you that you can see.
 
     """
     name = "Beast Bond"
@@ -160,14 +160,14 @@ class BeastSense(Spell):
 
 class BestowCurse(Spell):
     """You touch a creature, and that creature must succeed on a Wisdom saving throw or
-     become cursed for the duration of the spell. When you cast this spell, choose
+    become cursed for the duration of the spell. When you cast this spell, choose
     the nature of the curse from the following options:* Choose one ability score.
     While cursed, the target has disadvantage on ability checks and saving throws
     made with that ability score.* While cursed, the target has disadvantage on
     attack rolls against you.* While cursed, the target must make a Wisdom saving
     throw at the start of each of its turns. If it fails, it wastes its action that
     turn doing nothing.* While the target is cursed, your attacks and spells deal an
-     extra 1d8 necrotic damage to the target.
+    extra 1d8 necrotic damage to the target.
 
     A remove curse spell ends this
     effect. At the DM's option, you may choose an alternative curse effect, but it
@@ -175,7 +175,7 @@ class BestowCurse(Spell):
     The DM has final say on
     such a curse's effect.
 
-    At Higher Levels: If you cast this spell using a spell
+    **At Higher Levels:** If you cast this spell using a spell
     slot of 4th level or higher, the duration is concentration, up to 10 minutes.
 
     If you use a spell slot of 5th level or higher, the duration is 8 hours.
@@ -269,14 +269,14 @@ class BigbysHand(Spell):
 class BladeBarrier(Spell):
     """You create a vertical wall of whirling, razor-sharp blades made of magical
     energy. The wall appears within range and lasts for the duration. You can make a
-     straight wall up to 100 feet long, 20 feet high, and 5 feet thick, or a ringed
+    straight wall up to 100 feet long, 20 feet high, and 5 feet thick, or a ringed
     wall up to 60 feet in diameter, 20 feet high, and 5 feet thick. The wall
     provides three-quarters cover to creatures behind it, and its space is difficult
-     terrain.
+    terrain.
 
      When a creature enters the wall's area for the first time on a turn
-     or starts its turn there, the creature must make a Dexterity saving throw. On a
-     failed save, the creature takes 6 d10 slashing damage. On a successful save,
+    or starts its turn there, the creature must make a Dexterity saving throw. On a
+    failed save, the creature takes 6 d10 slashing damage. On a successful save,
     the creature takes half as much damage.
     """
     name = "Blade Barrier"
@@ -331,7 +331,7 @@ class Bless(Spell):
 
 class Blight(Spell):
     """Necromantic energy washes over a creature of your choice that you can see within
-     range, draining moisture and vitality from it. The target must make a
+    range, draining moisture and vitality from it. The target must make a
     Constitution saving throw. The target takes 8d8 necrotic damage on a failed
     save, or half as much damage on a successful one. This spell has no effect on
     undead or constructs.
@@ -390,7 +390,7 @@ class BlindnessDeafness(Spell):
     duration. At the end of each of its turns, the target can make a
     Constitution saving throw. On a success, the spell ends.
 
-    At Higher Levels: When you cast this spell using a spell slot of
+    **At Higher Levels:** When you cast this spell using a spell slot of
     3rd level or higher, you can target one additional creature for
     each slot level above 2nd.
 
@@ -409,11 +409,11 @@ class BlindnessDeafness(Spell):
 class Blink(Spell):
     """Roll a d20 at the end of each of your turns for the duration of the spell. On a
     roll of 11 or higher, you vanish from your current plane of existence and appear
-     in the Etheral Plane (the spell fails and the casting is wasted if you were
+    in the Etheral Plane (the spell fails and the casting is wasted if you were
     already on that plane).
 
     At the start of you next turn, and when the spell ends
-     if you are on the Etheral Plane, you return to an unoccupied space of your
+    if you are on the Etheral Plane, you return to an unoccupied space of your
     choice that you can see within 10 feet of the space you vanished from. If no
     unoccupied space is available within that rang, you appear in the nearest
     unoccupied space (chosen at random if more that one space is equally near). You
@@ -421,7 +421,7 @@ class Blink(Spell):
 
     While on the Ethereal Plane, you can see
     and hear the plane you originated from, which is cast in shades of gray, and you
-     can't see anything more than 60 feet away.You can only affect and be affected
+    can't see anything more than 60 feet away.You can only affect and be affected
     by other reatures on the Ethereal Plane. Creature that aren't there can't
     perceive you or interact with you, unless they have the ability to do so.
     """
@@ -439,7 +439,7 @@ class Blink(Spell):
 
 class Blur(Spell):
     """Your body becomes blurred, shifting and wavering to all who can see you. For the
-     duration, any creature has disadvantage on attack rolls against you. An
+    duration, any creature has disadvantage on attack rolls against you. An
     attacker is immune to this effect if it doesnt rely on sight, as with
     blindsight, or can see through illusions, as with truesight.
     """
@@ -497,7 +497,7 @@ class BonesOfTheEarth(Spell):
 
 class BoomingBlade(Spell):
     """As part of the action used to cast this spell, you must make a melee attack with
-     a weapon against one creature within the spell's range, otherwise the spell
+    a weapon against one creature within the spell's range, otherwise the spell
     fails.
     On a hit, the target suffers the attack's normal effects, and it becomes
     sheathed in booming energy until the start of your next turn. If the target
@@ -508,7 +508,7 @@ class BoomingBlade(Spell):
     At
     Higher Levels: At 5th level, the melee attack deals an extra 1d8 thunder damage
     to the target, and the damage the target takes for moving increases to 2d8. Both
-     damage rolls increase by 1d8 at 11th level and 17th level.
+    damage rolls increase by 1d8 at 11th level and 17th level.
     """
     name = "Booming Blade"
     level = 0
@@ -529,7 +529,7 @@ class BrandingSmite(Spell):
     the target sheds dim light in a 5-foot radius and can't become invisible until
     the spell ends.
 
-    At Higher Levels: When you cast this spell using a spell slot
+    **At Higher Levels:** When you cast this spell using a spell slot
     of 3rd level or higher, the extra damage increases by 1d6 for each slot level
     above 2nd.
     """
@@ -555,7 +555,7 @@ class BurningHands(Spell):
     ignites any flammable objects in the area that aren't being worn or carried.
 
     At
-     Higher Levels: When you cast this spell using a spell slot of 2nd level or
+    Higher Levels: When you cast this spell using a spell slot of 2nd level or
     higher, the damage increases by 1d6 for each slot level above 1st.
     """
     name = "Burning Hands"

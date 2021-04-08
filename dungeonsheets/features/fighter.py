@@ -1,7 +1,7 @@
 from dungeonsheets import armor, weapons
 from dungeonsheets.features.features import Feature, FeatureSelector
 from dungeonsheets.features.ranger import (Archery, Defense, Dueling,
-                                           TwoWeaponFighting)
+                                   TwoWeaponFighting)
 
 # Features added for all PHB classes
 # SCAG and XGTE needed
@@ -127,21 +127,21 @@ class FighterFightingStyle(FeatureSelector):
 
     """
     options = {'archery': Archery,
-               'defense': Defense,
-               'dueling': Dueling,
-               'great': GreatWeaponFighting,
-               'great-weapon fighting': GreatWeaponFighting,
-               'projection': Protection,
-               'two-weapon fighting': TwoWeaponFighting,
-               'two-weapon': TwoWeaponFighting,
-               'dual wield': TwoWeaponFighting,
-               'blinding fighting': BlindingFighting,
-               'close quarters shooter': CloseQuartersShooter,
-               'interception': Interception,
-               'mariner': Mariner,
-               'thrown weapon fighting': ThrownWeaponFighting,
-               'tunnel fighter': TunnelFighter,
-               'unarmed fighting': UnarmedFighting}
+            'defense': Defense,
+            'dueling': Dueling,
+            'great': GreatWeaponFighting,
+            'great-weapon fighting': GreatWeaponFighting,
+            'projection': Protection,
+            'two-weapon fighting': TwoWeaponFighting,
+            'two-weapon': TwoWeaponFighting,
+            'dual wield': TwoWeaponFighting,
+            'blinding fighting': BlindingFighting,
+            'close quarters shooter': CloseQuartersShooter,
+            'interception': Interception,
+            'mariner': Mariner,
+            'thrown weapon fighting': ThrownWeaponFighting,
+            'tunnel fighter': TunnelFighter,
+            'unarmed fighting': UnarmedFighting}
     name = "Fighting Style (Select One)"
     source = "Fighter"
 
@@ -183,13 +183,13 @@ class ExtraAttackFighter(Feature):
 
     @property
     def name(self):
-        level = self.owner.Fighter.level
-        if level < 11:
-            return self._name + ' (2x)'
-        elif level < 20:
-            return self._name + ' (3x)'
-        else:
-            return self._name + ' (4x)'
+       level = self.owner.Fighter.level
+       if level < 11:
+          return self._name + ' (2x)'
+       elif level < 20:
+          return self._name + ' (3x)'
+       else:
+          return self._name + ' (4x)'
 
 
 class Indomitable(Feature):
@@ -206,13 +206,13 @@ class Indomitable(Feature):
 
     @property
     def name(self):
-        level = self.owner.Fighter.level
-        if level < 13:
-            return self._name + ' (1x/LR)'
-        elif level < 17:
-            return self._name + ' (2x/LR)'
-        else:
-            return self._name + ' (3x/LR)'
+       level = self.owner.Fighter.level
+       if level < 13:
+          return self._name + ' (1x/LR)'
+       elif level < 17:
+          return self._name + ' (2x/LR)'
+       else:
+          return self._name + ' (3x/LR)'
 
 
 # Champion
@@ -255,14 +255,14 @@ class AdditionalFightingStyle(FeatureSelector):
     two-weapon fighting 2
     """
     options = {'archery 2': Archery,
-               'defense 2': Defense,
-               'dueling 2': Dueling,
-               'great 2': GreatWeaponFighting,
-               'great-weapon fighting 2': GreatWeaponFighting,
-               'projection 2': Protection,
-               'two-weapon fighting 2': TwoWeaponFighting,
-               'two-weapon 2': TwoWeaponFighting,
-               'dual wield 2': TwoWeaponFighting}
+            'defense 2': Defense,
+            'dueling 2': Dueling,
+            'great 2': GreatWeaponFighting,
+            'great-weapon fighting 2': GreatWeaponFighting,
+            'projection 2': Protection,
+            'two-weapon fighting 2': TwoWeaponFighting,
+            'two-weapon 2': TwoWeaponFighting,
+            'dual wield 2': TwoWeaponFighting}
     name = "Fighting Style (Select One)"
     source = "Fighter (Champion)"
 
@@ -314,13 +314,13 @@ class CombatSuperiority(Feature):
 
     @property
     def name(self):
-        level = self.owner.Fighter.level
-        if level < 10:
-            return self._name + ' (d8)'
-        elif level < 18:
-            return self._name + ' (d10)'
-        else:
-            return self._name + ' (d12)'
+       level = self.owner.Fighter.level
+       if level < 10:
+          return self._name + ' (d8)'
+       elif level < 18:
+          return self._name + ' (d10)'
+       else:
+          return self._name + ' (d12)'
 
 
 class StudentOfWar(Feature):
@@ -662,11 +662,11 @@ class RoyalEnvoy(Feature):
     source = "Fighter (Purple Dragon Knight)"
 
     def __init__(self, owner=None):
-        super().__init__(owner=owner)
-        if 'persuasion' not in self.owner.skill_proficiencies:
-            self.owner.skill_proficiencies.append('persuasion')
-        if 'persuasion' not in self.owner.skill_expertise:
-            self.owner.skill_expertise.append('persuasion')
+       super().__init__(owner=owner)
+       if 'persuasion' not in self.owner.skill_proficiencies:
+          self.owner.skill_proficiencies.append('persuasion')
+       if 'persuasion' not in self.owner.skill_expertise:
+          self.owner.skill_expertise.append('persuasion')
 
 
 class InspiringSurge(Feature):
@@ -934,8 +934,8 @@ class UnwaveringMark(Feature):
 
     @property
     def name(self):
-        num = max(1, self.owner.strength.modifier)
-        return self._name + ' ({:d}x/LR)'.format(num)
+       num = max(1, self.owner.strength.modifier)
+       return self._name + ' ({:d}x/LR)'.format(num)
 
 
 class WardingManeuver(Feature):
@@ -956,8 +956,8 @@ class WardingManeuver(Feature):
 
     @property
     def name(self):
-        num = max(1, self.owner.constitution.modifier)
-        return self._name + ' ({:d}x/LR)'.format(num)
+       num = max(1, self.owner.constitution.modifier)
+       return self._name + ' ({:d}x/LR)'.format(num)
 
 
 class HoldTheLine(Feature):

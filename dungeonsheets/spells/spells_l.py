@@ -12,10 +12,10 @@ class LegendLore(Spell):
     The information you
     learn is accurate but might be couched in figurative language. For example, if
     you have a mysterious magic axe on hand, the spell might yield this information:
-     Woe to the evildoer whose hand touches the axe, for even the haft slices the
+    Woe to the evildoer whose hand touches the axe, for even the haft slices the
     hand of the evil ones. Only a true Child of Stone, lover and beloved of Moradin,
-     may awaken the true powers of the axe, and only with the sacred word Rudnogg on
-     the lips.
+    may awaken the true powers of the axe, and only with the sacred word Rudnogg on
+    the lips.
     """
     name = "Legend Lore"
     level = 5
@@ -39,11 +39,11 @@ class LeomundsSecretChest(Spell):
     While the chest remains on the Ethereal Plane, you can
     use an action and touch the replica to recall the chest. It appears in an
     unoccupied space on the ground within 5 feet of you. You can send the chest back
-     to the Ethereal Plane by using an action and touching both the chest and the
+    to the Ethereal Plane by using an action and touching both the chest and the
     replica.
 
     After 60 days, there is a cumulative 5 percent chance per day that the
-     spell's effect ends. This effect ends if you cast this spell again, if the
+    spell's effect ends. This effect ends if you cast this spell again, if the
     smaller replica chest is destroyed, or if you choose to end the spell as an
     action. If the spell ends and the larger chest is on the Ethereal Plane, it is
     irretrievably lost.
@@ -70,7 +70,7 @@ class LeomundsTinyHut(Spell):
     creatures. Creatures and objects within the dome when you cast this spell can
     move through it freely. All other creatures and objects are barred from passing
     through it. Spells and other magical effects can't extend through the dome or be
-     cast through it. The atmosphere inside the space is comfortable and dry,
+    cast through it. The atmosphere inside the space is comfortable and dry,
     regardless of the weather outside.
 
     Until the spell ends, you can command the
@@ -112,8 +112,8 @@ class Levitate(Spell):
     that succeeds on a Constitution saving throw is unaffected.
 
     The target can move
-     only by pushing or pulling against a fixed object or surface within reach (such
-     as a wall or a ceiling), which allows it to move as if it were climbing. You
+    only by pushing or pulling against a fixed object or surface within reach (such
+    as a wall or a ceiling), which allows it to move as if it were climbing. You
     can change the target's altitude by up to 20 feet in either direction on your
     turn. If you are the target, you can move up or down as part of your move.
     Otherwise, you can use your action to move the target, which must remain within
@@ -140,7 +140,7 @@ class LifeTransference(Spell):
     range regains a number of hit points equal to twice the necrotic damage you
     take.
 
-    At Higher Levels: When you cast this spell using a spell slot of 4th
+    **At Higher Levels:** When you cast this spell using a spell slot of 4th
     level or higher, the damage increases by 1d8 for each slot level above 3rd.
     """
     name = "Life Transference"
@@ -159,7 +159,7 @@ class Light(Spell):
     """You touch one object that is no larger than 10 feet in any dimension. Until the
     spell ends, the object sheds bright light in a 20-foot radius and dim light for
     an additional 20 feet. The light can be colored as you like. Completely covering
-     the object with something opaque blocks the light. The spell ends if you cast
+    the object with something opaque blocks the light. The spell ends if you cast
     it again or dismiss it as an action.
 
     If you target an object held or worn by a
@@ -211,14 +211,14 @@ class LightningArrow(Spell):
 
 class LightningBolt(Spell):
     """A stroke of lightning forming a line of 100 feet long and 5 feet wide blasts out
-     from you in a direction you choose. Each creature in the line must make a
+    from you in a direction you choose. Each creature in the line must make a
     Dexterity saving throw. A creature takes 8d6 lightning damage on a failed save,
     or half as much damage on a successful one.
 
     The lightning ignites flammable
     objects in the area that aren't being worn or carried.
 
-    At Higher Levels: When
+    **At Higher Levels:** When
     you cast this spell using a spell slot of 4th level or higher, the damage
     increases by 1d6 for each slot level above 3rd.
     """
@@ -241,8 +241,8 @@ class LightningLure(Spell):
     saving throw or be pulled up to 10 feet in a straight line toward you and then
     take 1d8 lightning damage if it is within 5 feet of you.
 
-    At Higher Levels: This
-     spell's damage increases by 1d8 when you reach 5th level (2d8), 11th level
+    **At Higher Levels:** This
+    spell's damage increases by 1d8 when you reach 5th level (2d8), 11th level
     (3d8), and 17th level (4d8).
     """
     name = "Lightning Lure"
@@ -332,7 +332,7 @@ class Longstrider(Spell):
     """You touch a creature. The target's speed increases by 10 feet until the spell
     ends.
 
-    At Higher Levels: When you cast this spell using a spell slot of 2nd
+    **At Higher Levels:** When you cast this spell using a spell slot of 2nd
     level or higher, you can target one additional creature for each slot level
     above 1st.
     """

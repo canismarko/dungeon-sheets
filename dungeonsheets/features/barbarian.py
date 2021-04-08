@@ -7,18 +7,16 @@ class Rage(Feature):
     """In battle, you fight with primal ferocity. On your turn, you can enter a
     rage as a bonus action. While raging, you gain the following benefits if
     you aren't wearing heavy armor:
-
-    --You have advantage on Strength checks and
-    Strength saving throws.
-
-    --When you make a melee weapon attack using
-    Strength, you gain a bonus to the damage roll that increases as you gain
-    levels as a barbarian, as shown in the Rage Damage column of the Barbarian
-    table.
-
-    --You have resistance to bludgeoning, piercing, and slashing
-    damage.
-
+    
+    - You have advantage on Strength checks and Strength saving
+      throws.
+    - When you make a melee weapon attack using Strength, you gain a
+      bonus to the damage roll that increases as you gain levels as a
+      barbarian, as shown in the Rage Damage column of the Barbarian
+      table.
+    - You have resistance to bludgeoning, piercing, and slashing
+      damage.
+    
     If you are able to cast spells, you can't cast them or concentrate on them
     while raging. Your rage lasts for 1 minute. It ends early if you are
     knocked unconscious or if your turn ends and you haven't attacked a hostile
@@ -26,31 +24,31 @@ class Rage(Feature):
     your rage on your turn as a bonus action. Once you have raged the number of
     times shown for your barbarian level in the Rages column of the Barbarian
     table, you must finish a long rest before you can rage again
-
+    
     """
     _name = "Rage"
     source = "Barbarian"
-
+    
     @property
     def name(self):
-        level = self.owner.Barbarian.level
-        num = 2
-        if level >= 3:
-            num = 3
-        if level >= 6:
-            num = 4
-        if level >= 12:
-            num = 5
-        if level >= 17:
-            num = 6
-        if level >= 20:
-            num = 100
-        damage = '+2'
-        if level >= 9:
-            damage = "+3"
-        if level >= 16:
-            damage = "+4"
-        return self._name + " ({:s}, {:d}x/LR)".format(damage, num)
+       level = self.owner.Barbarian.level
+       num = 2
+       if level >= 3:
+          num = 3
+       if level >= 6:
+          num = 4
+       if level >= 12:
+          num = 5
+       if level >= 17:
+          num = 6
+       if level >= 20:
+          num = 100
+       damage = '+2'
+       if level >= 9:
+          damage = "+3"
+       if level >= 16:
+          damage = "+4"
+       return self._name + " ({:s}, {:d}x/LR)".format(damage, num)
 
 
 class UnarmoredDefenseBarbarian(Feature):
@@ -296,19 +294,19 @@ class TotemSpirit(FeatureSelector):
 
     """
     options = {'bear spirit': BearSpirit,
-               'eagle spirit': EagleSpirit,
-               'wolf spirit': WolfSpirit,
-               'elk spirit': ElkSpirit,
-               'tiger spirit': TigerSpirit}
+            'eagle spirit': EagleSpirit,
+            'wolf spirit': WolfSpirit,
+            'elk spirit': ElkSpirit,
+            'tiger spirit': TigerSpirit}
     name = "Totem Spirit (Select One)"
     source = "Barbarian (Totem Warrior)"
 
 
 class BearAspect(FeatureSelector):
-    """You gain the might of a bear. Your carrying capacity (including maximum
-    load and maximum lift) is doubled, and you have advantage on Strength
-    checks made to push, pull, lift, or break objects.
-
+    """You gain the might of a bear. Your carrying capacity (including
+    maximum load and maximum lift) is doubled, and you have advantage
+    on Strength checks made to push, pull, lift, or break objects.
+    
     """
     name = "Aspect of the Beast (Bear)"
     source = "Barbarian (Totem Warrior)"
@@ -372,10 +370,10 @@ class BeastAspect(FeatureSelector):
 
     """
     options = {'bear aspect': BearAspect,
-               'eagle aspect': EagleAspect,
-               'wolf aspect': WolfAspect,
-               'elk aspect': ElkAspect,
-               'tiger aspect': TigerAspect}
+            'eagle aspect': EagleAspect,
+            'wolf aspect': WolfAspect,
+            'elk aspect': ElkAspect,
+            'tiger aspect': TigerAspect}
     name = "Aspect of the Beast (Select One)"
     source = "Barbarian (Totem Warrior)"
 
@@ -460,10 +458,10 @@ class TotemicAttunement(FeatureSelector):
 
     """
     options = {'bear attunement': BearAttunement,
-               'eagle attunement': EagleAttunement,
-               'wolf attunement': WolfAttunement,
-               'elk attunement': ElkAttunement,
-               'tiger attunement': TigerAttunement}
+            'eagle attunement': EagleAttunement,
+            'wolf attunement': WolfAttunement,
+            'elk attunement': ElkAttunement,
+            'tiger attunement': TigerAttunement}
     name = "Totemic Attunement (Select One)"
     source = "Barbarian (Totem Warrior)"
 
@@ -544,13 +542,13 @@ class SpiritShield(Feature):
 
     @property
     def name(self):
-        level = self.owner.Barbarian.level
-        damage = " (2d6)"
-        if level >= 10:
-            damage = " (3d6)"
-        if level >= 14:
-            damage = " (4d6)"
-        return self._name + damage
+       level = self.owner.Barbarian.level
+       damage = " (2d6)"
+       if level >= 10:
+          damage = " (3d6)"
+       if level >= 14:
+          damage = " (4d6)"
+       return self._name + damage
 
 
 class ConsultTheSpirits(Feature):
@@ -663,8 +661,8 @@ class StormAura(FeatureSelector):
     tundra
     """
     options = {'desert': DesertAura,
-               'sea': SeaAura,
-               'tundra': TundraAura}
+            'sea': SeaAura,
+            'tundra': TundraAura}
     name = "Storm Aura (Select One)"
     source = "Barbarian (Storm Herald)"
 
@@ -723,8 +721,8 @@ class StormSoul(FeatureSelector):
 
     """
     options = {'desert': DesertSoul,
-               'sea': SeaSoul,
-               'tundra': TundraSoul}
+            'sea': SeaSoul,
+            'tundra': TundraSoul}
     name = "Storm Soul (Select One)"
     source = "Barbarian (Storm Herald)"
 
@@ -795,8 +793,8 @@ class RagingStorm(FeatureSelector):
 
     """
     options = {'desert': RagingDesert,
-               'sea': RagingSea,
-               'tundra': RagingTundra}
+            'sea': RagingSea,
+            'tundra': RagingTundra}
     name = "Raging Storm (Select One)"
     source = "Barbarian (Storm Herald)"
 
@@ -815,9 +813,9 @@ class DivineFury(Feature):
 
     @property
     def name(self):
-        level = self.owner.Barbarian.level
-        damage = " (1d6+{:d})".format(level//2)
-        return self._name + damage
+       level = self.owner.Barbarian.level
+       damage = " (1d6+{:d})".format(level//2)
+       return self._name + damage
 
 
 class WarriorOfTheGods(Feature):

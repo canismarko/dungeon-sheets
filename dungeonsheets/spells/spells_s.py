@@ -6,8 +6,8 @@ class SacredFlame(Spell):
     target must succeed on a Dexterity saving throw or take 1d8 radiant damage. The
     target gains no benefit from cover for this saving throw.
 
-    At Higher Levels: The
-     spell's damage increases by 1d8 when you reach 5th level (2d8), 11th level
+    **At Higher Levels:** The
+    spell's damage increases by 1d8 when you reach 5th level (2d8), 11th level
     (3d8), and 17th level (4d8).
     """
     name = "Sacred Flame"
@@ -50,7 +50,7 @@ class Scatter(Spell):
     """The air quivers around up to five creatures of your choice that you can see
     within range. An unwilling creature must succeed on a Wisdom saving throw to
     resist this spell. You teleport each affected target to an unoccupied space that
-     you can see within 120 feet of you. That space must be on the ground or on a
+    you can see within 120 feet of you. That space must be on the ground or on a
     floor.
     """
     name = "Scatter"
@@ -70,7 +70,7 @@ class ScorchingRay(Spell):
     hurl them at one target or several. Make a ranged spell attack for each ray. On
     a hit, the target takes 2d6 fire damage.
 
-    At Higher Levels: When you cast this
+    **At Higher Levels:** When you cast this
     spell using a spell slot of 3rd level or higher, you create one additional ray
     for each slot level above 2nd.
     """
@@ -225,7 +225,7 @@ class Seeming(Spell):
 
 class Sending(Spell):
     """You send a short message of twenty-five words or less to a creature with you are
-     familiar. The creature hears the message in its mind, regonizes you as the
+    familiar. The creature hears the message in its mind, regonizes you as the
     sender if it knows you, and can answer in a like manner immediately. The spell
     enables creatures with Intelligence scores of at least 1 to understand the
     meaning of your message.
@@ -248,17 +248,17 @@ class Sending(Spell):
 
 class Sequester(Spell):
     """By means of this spell, a willing creature of an object can be hidden away, safe
-     from detection for the duration.
+    from detection for the duration.
     When you cast the spell and touch the target,
     it becomes invisible and can't be targeted by divination spells or perceived
     through scrying sensors created by the divination of spells.
 
     If the target is a
-     crreature, it falls into a state of suspended animation. Time ceases to flow
+    crreature, it falls into a state of suspended animation. Time ceases to flow
     for it, and it doesn't grow older.
 
     You can set a condition for the spell to end
-     early. The condition can be anything you choose, but it must occur or be
+    early. The condition can be anything you choose, but it must occur or be
     visible within 1 mile of the target. Examples include after 1,000 years or when
     the tarrasque awakes. This spells also ends if the target takes any damage.
     """
@@ -278,18 +278,18 @@ class ShadowBlade(Spell):
     """You weave together threads of shadow to create a sword of solidified gloom in
     your hand. This magic sword lasts until the spell ends. It counts as a simple
     melee weapon with which you are proficient. It deals 2d8 psychic damage on a hit
-     and has the finesse, light, and thrown properties (range 20/60). In addition,
+    and has the finesse, light, and thrown properties (range 20/60). In addition,
     when you use the sword to attack a target that is in dim light or darkness, you
     make the attack roll with advantage.
     If you drop the weapon or throw it, it
     dissipates at the end of the turn. Thereafter, while the spell persists, you can
-     use a bonus action to cause the sword to reappear in your hand.
+    use a bonus action to cause the sword to reappear in your hand.
 
     At Higher
     Levels: When you cast this spell using a 3rd- or 4th-level spell slot, the
     damage increases to 3d8. When you cast it using a 5th- or 6th-level spell slot,
     the damage increases to 4d8. When you cast it using a spell slot of 7th level or
-     higher, the damage increases to 5d8.
+    higher, the damage increases to 5d8.
     """
     name = "Shadow Blade"
     level = 2
@@ -305,7 +305,7 @@ class ShadowBlade(Spell):
 
 class ShadowOfMoil(Spell):
     """Flame-like shadows wreathe your body until the spell ends, causing you to become
-     heavily obscured to others. The shadows turn dim light within 10 feet of you
+    heavily obscured to others. The shadows turn dim light within 10 feet of you
     into darkness, and bright light in the same area to dim light.
     Until the spell
     ends, you have resistance to radiant damage. In addition, whenever a creature
@@ -326,12 +326,12 @@ class ShadowOfMoil(Spell):
 
 class ShapeWater(Spell):
     """You choose an area of water that you can see within range and that fits within a
-     5-foot cube.
+    5-foot cube.
     You manipulate it in one of the following ways:
 
     - You
     instantaneously move or otherwise change the flow of the water as you direct, up
-     to 5 feet in any direction. This movement doesn't have enough force to cause
+    to 5 feet in any direction. This movement doesn't have enough force to cause
     damage.
 
     - You cause the water to form into simple shapes and animate at your
@@ -339,13 +339,13 @@ class ShapeWater(Spell):
 
     - You change the water's color or
     opacity. The water must be changed in the same way throughout. This change lasts
-     for 1 hour.
+    for 1 hour.
 
     - You freeze the water, provided that there are no crea- tures in
     it. The water unfreezes in 1 hour.
     If you cast this spell multiple times, you
     can have no more than two of its non-instantaneous effects active at a time, and
-     you can dismiss such an effect as an action.
+    you can dismiss such an effect as an action.
     """
     name = "Shape Water"
     level = 0
@@ -376,30 +376,30 @@ class Shapechange(Spell):
     yours. You can't use any legendary actions or lair actions of the new form.
 
     You
-     assume the hit points and Hit Dice of the new form. When you revert to your
+    assume the hit points and Hit Dice of the new form. When you revert to your
     normal, you return to the number of hit points you had before you transformed.
     If you revert as a result of dropping to 0 hit points, any excess damage carries
-     over to your normal form. As long as the excess damage doesn't reduce your
+    over to your normal form. As long as the excess damage doesn't reduce your
     normal form to 0 hitpoints, you aren't knocked unconscious.
 
     You retain the
     benefit of any features from your class, race, or other source and can use them,
-     provided that your new form is physically capable of doing so. You can't use
+    provided that your new form is physically capable of doing so. You can't use
     any special senses you have (for example, darkvision) unless your new form also
     has that sense. You can only speak if the creature can normally speak.
 
     When you
-     transform, you choose whether your equipment falls to the ground, merges into
+    transform, you choose whether your equipment falls to the ground, merges into
     the new form, or is worn by it. Worn equipment functions as normal. The DM
     determines whether it is practical for the new form to wear a piece of
     equipment, based on the creature's shape and size. Your equipment doesn't change
-     shape or size to match the new form, and any equipment that the new form can't
+    shape or size to match the new form, and any equipment that the new form can't
     wear must either fall to the ground or merge into your new form. Equipment that
     merges has no effect in that state.
 
     During this spell's duration, you can use
     your action to assume a different form following the same restrictions and rules
-     for the original form, with one exception: if your new form has more hit pints
+    for the original form, with one exception: if your new form has more hit pints
     than your current one, your hit points remain at their current value.
     """
     name = "Shapechange"
@@ -415,19 +415,21 @@ class Shapechange(Spell):
 
 
 class Shatter(Spell):
-    """A sudden loud ringing noise, painfully intense, erupts from a point of your
-    choice within range. Each creature in a 10-foot-radius sphere centered on that
-    point must make a Constitution saving throw. A creature takes 3d8 thunder damage
-     on a failed save, or half as much damage on a successful one. A creature made
-    of inorganic material such as stone, crystal, or metal has disadvantage on this
-    saving throw.
-
+    """A sudden loud ringing noise, painfully intense, erupts from a point
+    of your choice within range. Each creature in a 10-foot-radius
+    sphere centered on that point must make a Constitution saving
+    throw. A creature takes 3d8 thunder damage on a failed save, or
+    half as much damage on a successful one. A creature made of
+    inorganic material such as stone, crystal, or metal has
+    disadvantage on this saving throw.
+    
     A nonmagical object that isn't being worn or carried also takes
     the damage if it's in the spell's area.
-
-    At Higher Levels: When you cast this
-    spell using a spell slot of 3rd level or higher, the damage increases by 1d8 for
-     each slot level above 2nd.
+    
+    **At Higher Levels:** When you cast this spell using a spell slot
+    of 3rd level or higher, the damage increases by 1d8 for each slot
+    level above 2nd.
+    
     """
     name = "Shatter"
     level = 2
@@ -442,16 +444,15 @@ class Shatter(Spell):
 
 
 class Shield(Spell):
-    """Reaction trigger: You are hit by an attack or targeted by the magic missile
-    spell
+    """An invisible barrier of magical force appears and protects
+    you. Until the start of your next turn, you have a +5 bonus to AC,
+    including against the triggering attack, and you take no damage
+    from *magic missile*.
 
-    An invisible barrier of magical force appears and protects you. Until the
-     start of your next turn, you have a +5 bonus to AC, including against the
-    triggering attack, and you take no damage from magic missile.
     """
     name = "Shield"
     level = 1
-    casting_time = "Special"
+    casting_time = "1 reaction, which you take when you are hit by an attack or targeted by the magic missile spell."
     casting_range = "Self"
     components = ('V', 'S')
     materials = """"""
@@ -463,7 +464,7 @@ class Shield(Spell):
 
 class ShieldOfFaith(Spell):
     """A shimmering field appears and surrounds a creature of your choice within range,
-     granting it a +2 bonus to AC for the duration.
+    granting it a +2 bonus to AC for the duration.
     """
     name = "Shield Of Faith"
     level = 1
@@ -482,7 +483,7 @@ class Shillelagh(Spell):
     power.
     For the duration, you can use your spellcasting ability instead of
     Strength for the attack and damage rolls of melee attacks using that weapon, and
-     the weapon's damage die becomes a d8. The weapon also becomes magical, if it
+    the weapon's damage die becomes a d8. The weapon also becomes magical, if it
     isn't already. The spell ends if you cast it again or if you let go of the
     weapon
     """
@@ -506,8 +507,8 @@ class ShockingGrasp(Spell):
     takes 1d8 lightning damage, and it can't take reactions until the start of its
     next turn.
 
-    At Higher Levels: The spell's damage increases by 1d8 when you reach
-     5th level (2d8), 11th level (3d8), and 17th level (4d8).
+    **At Higher Levels:** The spell's damage increases by 1d8 when you reach
+    5th level (2d8), 11th level (3d8), and 17th level (4d8).
     """
     name = "Shocking Grasp"
     level = 0
@@ -527,7 +528,7 @@ class SickeningRadiance(Spell):
     the spell ends.
     When a creature moves into the spell's area for the first time
     on a turn or starts its turn there, that creature must succeed on a Constitution
-     saving throw or take 4d10 radiant damage, and it suffers one level of
+    saving throw or take 4d10 radiant damage, and it suffers one level of
     exhaustion and emits a dim, greenish light in a 5-foot radius. This light makes
     it impossible for the creature to benefit from being invisible. The light and
     any levels of exhaustion caused by this spell go away when the spell ends.
@@ -579,7 +580,7 @@ class SilentImage(Spell):
     reveals it to be an illusion, because things can pass through it. A creature
     that uses its action to examine the image can determine that it is an illusion
     with a successful Intelligence (Investigation) check against your spell save DC.
-     If a creature discerns the illusion for what it is, the creature can see
+    If a creature discerns the illusion for what it is, the creature can see
     through the image.
     """
     name = "Silent Image"
@@ -598,9 +599,9 @@ class Simulacrum(Spell):
     """You shape an illusory duplicate of one beast or humanoid that is within range
     for the entire casting time of the spell.
     The duplicate is a creature, partially
-     real and formed from ice or snow, and it can take actions and otherwise be
+    real and formed from ice or snow, and it can take actions and otherwise be
     affected as a normal creature. It appears to be the same as the original, but it
-     has half the creature's hit point maximum and is formed without any equipment.
+    has half the creature's hit point maximum and is formed without any equipment.
     Otherwise, the illusion uses all the statistics of the creature it duplicates.
 
 
@@ -673,21 +674,21 @@ class Sleep(Spell):
     """This spell sends creatures into a magical slumber. Roll 5d8, the total is how
     many hit points of creatures this spell can affect. Creatures within 20 feet of
     a point you choose within range are affected in ascending order of their current
-     hit points (ignoring unconscious creatures).
+    hit points (ignoring unconscious creatures).
 
     Starting with the creature that
     has the lowest current hit points, each creature affected by this spell falls
     unconscious until the spell ends, the sleeper takes damage, or someone uses an
     action to shake or slap the sleeper awake. Subtract each creature's hit points
     from the total before moving on to the creature with the next lowest hit points.
-     A creature's hit points must be equal to or less than the remaining total for
+    A creature's hit points must be equal to or less than the remaining total for
     that creature to be affected.
     Undead and creatures immune to being charmed
     aren't affected by this spell.
 
-    At Higher Levels: When you cast this spell using
-     a spell slot of 2nd level or higher, roll an additional 2d8 for each slot level
-     above 1st.
+    **At Higher Levels:** When you cast this spell using
+    a spell slot of 2nd level or higher, roll an additional 2d8 for each slot level
+    above 1st.
     """
     name = "Sleep"
     level = 1
@@ -736,17 +737,17 @@ class Slow(Spell):
     An affected target's speed is halved, it takes
     a -2 penalty to AC and Dexterity saving throws, and it can't use reactions. On
     its turn, it can use either an action or a bonus action, not both. Regardless of
-     the creature's abilities or magic items, it can't make more than one melee or
+    the creature's abilities or magic items, it can't make more than one melee or
     ranged attack during its turn.
 
     If the creature attempts to cast a spell with a
     casting time of 1 action, roll a d20. On an 11 or higher, the spell doesn't take
-     effect until the creature's next turn, and the creature must use its action on
+    effect until the creature's next turn, and the creature must use its action on
     that turn to complete the spell. If it can't, the spell is wasted.
 
     A creature
     affected by this spell makes another Wisdom saving throw at the end of its turn.
-     On a successful save, the effect ends for it.
+    On a successful save, the effect ends for it.
     """
     name = "Slow"
     level = 3
@@ -762,7 +763,7 @@ class Slow(Spell):
 
 class Snare(Spell):
     """As you cast this spell, you use the rope to create a circle with a 5-foot radius
-     on the ground or the floor. When you finish casting, the rope disappears and
+    on the ground or the floor. When you finish casting, the rope disappears and
     the circle becomes a magic trap.
     This trap is nearly invisible, requiring a
     successful Intelligence (Investigation) check against your spell save DC to be
@@ -774,11 +775,11 @@ class Snare(Spell):
     there until the spell ends.
     A restrained creature can make a Dexterity saving
     throw at the end of each of its turns, ending the effect on itself on a success.
-     Alternatively, the creature or someone else who can reach it can use an action
+    Alternatively, the creature or someone else who can reach it can use an action
     to make an Intelligence (Arcana) check against your spell save DC. On a success,
-     the restrained effect ends.
+    the restrained effect ends.
     After the trap is triggered, the spell ends when no
-     creature is restrained by it.
+    creature is restrained by it.
     """
     name = "Snare"
     level = 1
@@ -829,16 +830,16 @@ class SoulCage(Spell):
     You can use a bonus action to drain vigor from the soul and regain 2d8 hit
     points.
     Query Soul. You ask the soul a question (no action required) and receive
-     a brief telepathic answer, which you can understand regardless of the language
+    a brief telepathic answer, which you can understand regardless of the language
     used. The soul knows only what it knew in life, but it must answer you
     truthfully and to the best of its ability. The answer is no more than a sentence
-     or two and might be cryptic.
+    or two and might be cryptic.
     Borrow Experience. You can use a bonus action to
     bolster yourself with the soul's life experience, making your next attack roll,
     ability check, or saving throw with advantage. If you don't use this benefit
     before the start of your next turn, it is lost.
     Eyes of the Dead. You can use an
-     action to name a place the humanoid saw in life, which creates an invisible
+    action to name a place the humanoid saw in life, which creates an invisible
     sensor somewhere in that place if it is on the plane of existence you're
     currently on. The sensor remains for as long as you concentrate, up to 10
     minutes (as if you were concentrating on a spell). You receive visual and
@@ -904,7 +905,7 @@ class SpeakWithDead(Spell):
     target of this spell within the last 10 days.
 
     Until the spell ends, you can ask
-     the corpse up to five questions. The corpse knows only what it knew in life,
+    the corpse up to five questions. The corpse knows only what it knew in life,
     including the languages it knew. Answers are usually brief, cryptic, or
     repetitive, and the corpse is under no compulsion to offer a truthful answer if
     you are hostile to it or it recognizes you as an enemy. This spell doesn't
@@ -927,13 +928,13 @@ class SpeakWithDead(Spell):
 class SpeakWithPlants(Spell):
     """You imbue plants within 30 feet of you with limited sentience and animation,
     giving them the ability to communicate with you and follow your simple commands.
-     You can question plants about events in the spell's area within the past day,
+    You can question plants about events in the spell's area within the past day,
     gaining information about creatures that have passed, weather, and other
     circumstances.
 
     You can also turn difficult terrain caused by plant growth (such
-     as thickets and undergrowth) into ordinary terrain that lasts for the duration.
-     Or you can turn ordinary terrain where plants are present into difficult
+    as thickets and undergrowth) into ordinary terrain that lasts for the duration.
+    Or you can turn ordinary terrain where plants are present into difficult
     terrain that lasts for the duration, causing vines and branches to hinder
     pursuers, for example.
 
@@ -1037,18 +1038,18 @@ class SpiritualWeapon(Spell):
     or until you cast this spell again.
     When you cast the spell, you can make a
     melee spell attack against a creature within 5 feet of the weapon. On a hit, the
-     target takes force damage equal to 1d8 + your spellcasting ability modifier.
+    target takes force damage equal to 1d8 + your spellcasting ability modifier.
 
 
     As a bonus action on your turn, you can move the weapon up to 20 feet and repeat
-     the attack against a creature within 5 feet of it.
+    the attack against a creature within 5 feet of it.
 
     The weapon can take
     whatever form you choose. Clerics of deities who are associated with a
     particular weapon (as St. Cuthbert is known for his mace and Thor for his
     hammer) make this spell's effect resemble that weapon.
 
-    At Higher Levels: When
+    **At Higher Levels:** When
     you cast this spell using a spell slot of 3rd level or higher, the damage
     increases by 1d8 for every two slot levels above the 2nd.
     """
@@ -1068,7 +1069,7 @@ class StaggeringSmite(Spell):
     """The next time you hit a creature with a melee weapon attack during this spell's
     duration, your weapon pierces both body and mind, and the attack deals an extra
     4d6 psychic damage to the target. The target must make a Wisdom saving throw. On
-     a failed save, it has disadvantage on attack rolls and ability checks, and
+    a failed save, it has disadvantage on attack rolls and ability checks, and
     can't take reactions, until the end of its next turn.
     """
     name = "Staggering Smite"
@@ -1105,7 +1106,7 @@ class SteelWindStrike(Spell):
 
 class StinkingCloud(Spell):
     """You create a 20-foot-radius sphere of yellow, nauseating gas centered on a point
-     within range. The cloud spreads around corners, and its area is heavily
+    within range. The cloud spreads around corners, and its area is heavily
     obscured. The cloud lingers in the air for the duration.
 
     Each creature that is
@@ -1132,10 +1133,10 @@ class StinkingCloud(Spell):
 
 class StoneShape(Spell):
     """You touch a stone object of Medium size or smaller or a section of stone no more
-     than 5 feet in any dimension and form it into any shape that suits your
+    than 5 feet in any dimension and form it into any shape that suits your
     purpose. So, for example, you could shape a large rock into a weapon, idol, or
     coffer, or make a small passage through a wall, as long as the wall is less than
-     5 feet thick. You could also shape a stone door or its frame to seal the door
+    5 feet thick. You could also shape a stone door or its frame to seal the door
     shut. The object you create can have up to two hinges and a latch, but finer
     mechanical detail isn't possible.
     """
@@ -1170,7 +1171,7 @@ class Stoneskin(Spell):
 
 class StormOfVengeance(Spell):
     """A churning storm cloud forms, centered on a point you can see and spreading to a
-     radius of 360 feet. Lightning flashes in the area, thunder booms, and strong
+    radius of 360 feet. Lightning flashes in the area, thunder booms, and strong
     winds roar. Each creature under the cloud (no more than 5,000 feet beneath the
     cloud) when it appears must make a Constitution saving throw. On a failed save,
     a creature takes 2d6 thunder damage and becomes deafened for 5 minutes.
@@ -1192,14 +1193,14 @@ class StormOfVengeance(Spell):
 
     Round 4
     Hailstones rain down from the cloud. Each creature under the cloud
-     takes 2d6 bludgeoning damage.
+    takes 2d6 bludgeoning damage.
 
     Round 5-10
     Gusts and freezing rain assail the
     area under the cloud. the area becomes difficult terrain and is heavily
     obscured. Each creature there takes 1d6 cold damage. Ranged weapon attacks in
     the area are impossible. The wind and rain count as a severe distraction for the
-     purposes of maintaining concentration on spells. Finally, gusts of strong wind
+    purposes of maintaining concentration on spells. Finally, gusts of strong wind
     (ranging from 20 to 50 miles per hour) automatically disperse fog, mists, and
     similar phenomena in the area whether mundane or magical.
     """
@@ -1218,12 +1219,12 @@ class StormOfVengeance(Spell):
 class StormSphere(Spell):
     """A 20-foot-radius sphere of whirling air springs into existence centered on a
     point you choose within range. The sphere remains for the spell's duration. Each
-     creature in the sphere when it appears or that ends its turn there must succeed
-     on a Strength saving throw or take 2d6 bludgeoning damage. The sphere's space
+    creature in the sphere when it appears or that ends its turn there must succeed
+    on a Strength saving throw or take 2d6 bludgeoning damage. The sphere's space
     is difficult terrain.
     Until the spell ends, you can use a bonus action on each
     of your turns to cause a bolt of lightning to leap from the center of the sphere
-     toward one creature you choose within 60 feet of the center. Make a ranged
+    toward one creature you choose within 60 feet of the center. Make a ranged
     spell attack. You have advantage on the attack roll if the target is in the
     sphere. On a hit, the target takes 4d6 lightning damage.
     Creatures within 30
@@ -1261,8 +1262,8 @@ class Suggestion(Spell):
     do.
 
     You can also specify conditions that will trigger a special activity during
-     the duration. For example, you might suggest that a knight give her warhorse to
-     the first beggar she meets. If the condition isn't met before the spell
+    the duration. For example, you might suggest that a knight give her warhorse to
+    the first beggar she meets. If the condition isn't met before the spell
     expires, the activity isn't preformed.
 
     If you or any of your companions damage
@@ -1298,7 +1299,7 @@ class SummonGreaterDemon(Spell):
     the duration, and the demon spends its turns pursuing and attacking the nearest
     non-demons to the best of its ability. If you stop concentrating on the spell
     before it reaches its full duration, an uncontrolled demon doesn't disappear for
-     1d6 rounds if it still has hit points.
+    1d6 rounds if it still has hit points.
     As part of casting the spell, you can
     form a circle on the ground with the blood used as a material component. The
     circle is large enough to encompass your space. While the spell lasts, the
@@ -1306,7 +1307,7 @@ class SummonGreaterDemon(Spell):
     within it. Using the material component in this manner consumes it when the
     spell ends.
 
-    At Higher Levels: When you cast this spell using a spell slot of
+    **At Higher Levels:** When you cast this spell using a spell slot of
     5th level or higher, the challenge rating increases by 1 for each slot level
     above 4th.
     """
@@ -1327,7 +1328,7 @@ class SummonLesserDemons(Spell):
     following table to determine what appears.
     d6 / Demons Summoned
     1–2 / Two demons
-     of challenge rating 1 or lower
+    of challenge rating 1 or lower
     3–4 / Four demons of challenge rating 1/2 or
     lower
     5–6 / Eight demons of challenge rating 1/4 or lower
@@ -1335,21 +1336,21 @@ class SummonLesserDemons(Spell):
     The DM chooses the
     demons, such as manes or dretches, and you choose the unoccupied spaces you can
     see within range where they appear. A summoned demon disappears when it drops to
-     0 hit points or when the spell ends.
+    0 hit points or when the spell ends.
     The demons are hostile to all creatures,
     including you. Roll initiative for the summoned demons as a group, which has its
-     own turns. The demons pursue and attack the nearest non-demons to the best of
+    own turns. The demons pursue and attack the nearest non-demons to the best of
     their ability.
     As part of casting the spell, you can form a circle on the ground
-     with the blood used as a material component. The circle is large enough to
+    with the blood used as a material component. The circle is large enough to
     encompass your space. While the spell lasts, the summoned demons can't cross the
-     circle or harm it, and they can't target anyone within it. Using the material
+    circle or harm it, and they can't target anyone within it. Using the material
     component in this manner consumes it when the spell ends.
 
     At Higher Levels:
     When you cast this spell using a spell slot of 6th or 7th level, you summon
     twice as many demons. If you cast it using a spell slot of 8th or 9th level, you
-     summon three times as many demons.
+    summon three times as many demons.
     """
     name = "Summon Lesser Demons"
     level = 3
@@ -1396,12 +1397,12 @@ class Sunburst(Spell):
     """Brilliant sunlight flashes in a 60-foot radius centered on a point you choose
     within range.
     Each creature in that light must make a Constitution saving throw.
-     On a failed save, a creature takes 12d6 radiant damage and is blinded for 1
+    On a failed save, a creature takes 12d6 radiant damage and is blinded for 1
     minute. On a successful save, it takes half as much damage and isn't blinded by
     this spell. Undead and oozes have disadvantage on this saving throw.
 
     A creature
-     blinded by this spell makes another Constitution saving throw at the end of
+    blinded by this spell makes another Constitution saving throw at the end of
     each of its turns. On a successful save, it is no longer blinded.
 
     This spell
@@ -1427,7 +1428,7 @@ class SwiftQuiver(Spell):
     of your turns until the spell ends, you can use a bonus action to make two
     attacks with a weapon that uses ammunition from the quiver. Each time you make
     such a ranged attack, your quiver magically replaces the piece of ammunition you
-     used with a similar piece of nonmagical ammunition. Any pieces of ammunition
+    used with a similar piece of nonmagical ammunition. Any pieces of ammunition
     created by this spell disintegrate when the spell ends. If the quiver leaves
     your possession, the spell ends.
     """
@@ -1449,7 +1450,7 @@ class SwordBurst(Spell):
     creature within range, other than you, must succeed on a Dexterity saving throw
     or take 1d6 force damage.
 
-    At Higher Levels: This spell's damage increases by
+    **At Higher Levels:** This spell's damage increases by
     1d6 when you reach 5th level (2d6), 11th level (3d6), and 17th level (4d6).
     """
     name = "Sword Burst"
@@ -1466,7 +1467,7 @@ class SwordBurst(Spell):
 
 class Symbol(Spell):
     """When you cast this spell, you inscribe a harmful glyph either on a surface (such
-     as a section of floor, a wall, or a table) or within an object that can be
+    as a section of floor, a wall, or a table) or within an object that can be
     closed to conceal the glyph (such as a book, a scroll, or a treasure chest).
     If
     you choose a surface, the glyph can cover an area of the surface no larger than
@@ -1487,7 +1488,7 @@ class Symbol(Spell):
     reading the glyph.
 
     You can further refine the trigger so the spell is activated
-     only under certain circumstances or according to a creature's physical
+    only under certain circumstances or according to a creature's physical
     characteristics (such as height or weight), or physical kind (for example, the
     ward could be set to affect hags or shapechangers). You can also specify
     creatures that don't trigger the glyph, such as those who say a certain
@@ -1497,7 +1498,7 @@ class Symbol(Spell):
     effect. Once triggered, the glyph glows, filling a 60-foot-radius sphere with
     dim light for 10 minutes, after which time the spell ends. Each creature in the
     sphere when the glyph activates is targeted by its effect, as is a creature that
-     enters the sphere for the first time on a turn or ends its turn there.
+    enters the sphere for the first time on a turn or ends its turn there.
 
     Death
 
@@ -1507,20 +1508,20 @@ class Symbol(Spell):
     Discord
     Each
     target must make a Constitution saving throw. On a failed save, a target bickers
-     and argues with other creatures for 1 minute. During this time, it is incapable
-     of meaningful communication and has disadvantage on attack rolls and ability
+    and argues with other creatures for 1 minute. During this time, it is incapable
+    of meaningful communication and has disadvantage on attack rolls and ability
     checks.
     Fear
     Each target must make a Wisdom saving throw and becomes frightened
     for 1 minute on a failed save. While frightened, the target drops whatever it is
-     holding and must move at least 20 feet away from the glyph on each of ist
+    holding and must move at least 20 feet away from the glyph on each of ist
     turns, if able.
 
     Hopelessness
     Each target must make a Charisma saving throw. On
-     a failed save, the target is overwhelmed with despair for 1 minute. During this
-     time, it can't attack or target any creature with harmful abilities, spells, or
-     other magical effects.
+    a failed save, the target is overwhelmed with despair for 1 minute. During this
+    time, it can't attack or target any creature with harmful abilities, spells, or
+    other magical effects.
 
     Insanity
     Each target must make an Intelligence saving
@@ -1536,8 +1537,8 @@ class Symbol(Spell):
     Sleep
     Each
     target must make a Wisdom saving throw and falls unconscious for 10 minutes on a
-     failed save. A creature awakens if it takes damage or if someone uses an action
-     to shake or slap it awake.
+    failed save. A creature awakens if it takes damage or if someone uses an action
+    to shake or slap it awake.
 
     Stunning
     Each target must make a Wisdom saving
@@ -1563,7 +1564,7 @@ class SynapticStatic(Spell):
     save, or half as much damage on a successful one.
     After a failed save, a target
     has muddled thoughts for 1 minute. During that time, it rolls a d6 and subtracts
-     the number rolled from all its attack rolls and ability checks, as well as its
+    the number rolled from all its attack rolls and ability checks, as well as its
     Constitution saving throws to maintain concentration. The target can make an
     Intelligence saving throw at the end of each of its turns, ending the effect on
     itself on a success.

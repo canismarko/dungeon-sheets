@@ -6,7 +6,7 @@ class UnseenServant(Spell):
     tasks at your command until the spell ends. The servant springs into existence
     in an unoccupied space on the ground within range. It has AC 10, 1 hit point,
     and a Strength of 2, and it can't attack. If it drops to 0 hit points, the spell
-     ends.
+    ends.
 
     Once on each of your turns as a bonus action, you can mentally command
     the servant to move up to 15 feet and inteact with an object. The servant can

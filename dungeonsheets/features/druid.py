@@ -4,73 +4,79 @@ from dungeonsheets.features.features import Feature, FeatureSelector
 
 # PHB
 class WildShape(Feature):
-    """Starting at 2nd level, you can use your action to magically assume the
-    shape of a beast that you have seen before. You can use this feature
-    twice. You regain expended uses when you finish a short or long rest. Your
-    druid level determines the beasts you can transform into, as shown in the
-    Beast Shapes table. At 2nd level, for example, you can transform into any
-    beast that has a challenge rating of 1/4 or lower that doesn't have a
-    flying or swimming speed.
-
-    2nd Level: Max CR 1/4, No Flying/Swimming (ex: Wolf)
-
-    4th Level: Max CR 1/2, No Flying (ex: Crocodile)
-
-    8th Level: Max CR 1 (ex: Giant Eagle)
-
-    You can stay in a beast shape for a number of hours equal to half your
-    druid level (rounded down). You then revert to your normal form unless you
-    expend another use of this feature. You can revert to your normal form
-    earlier by using a bonus action on your turn. You automatically revert if
-    you fall unconscious, drop to 0 hit points, or die.
-
+    """Starting at 2nd level, you can use your action to magically assume
+    the shape of a beast that you have seen before. You can use this
+    feature twice. You regain expended uses when you finish a short or
+    long rest. Your druid level determines the beasts you can
+    transform into, as shown in the Beast Shapes table. At 2nd level,
+    for example, you can transform into any beast that has a challenge
+    rating of 1/4 or lower that doesn't have a flying or swimming
+    speed.
+    
+    ===== ====== ================== ===========
+    Level Max CR Limitations        Example
+    ===== ====== ================== ===========
+    2nd   1/4   No Flying/Swimming Wolf
+    4th   1/2   No flying          Crocodile
+    8th   1      --                 Giant eagle
+    ===== ====== ================== ===========
+    
+    You can stay in a beast shape for a number of hours equal to half
+    your druid level (rounded down). You then revert to your normal
+    form unless you expend another use of this feature. You can revert
+    to your normal form earlier by using a bonus action on your
+    turn. You automatically revert if you fall unconscious, drop to 0
+    hit points, or die.
+    
     While you are transformed, the following rules apply:
-
-    • Your game statistics are replaced by the statistics of the beast, but
-    you retain your alignment, personality, and Intelligence, Wisdom, and
-    Charisma scores. You also retain all of your skill and saving throw
-    proficiencies, in addition to gaining those of the creature. If the
-    creature has the same proficiency as you and the bonus in its stat block is
-    higher than yours, use the creature's bonus instead of yours. If the
-    creature has any legendary or lair actions, you can't use them.
-
-    • When you transform, you assume the beast's hit points and Hit Dice. When
-    you revert to your normal form, you return to the number of hit points you
-    had before you transformed. However, if you revert as a result of dropping
-    to 0 hit points, any excess damage carries over to your normal form. For
-    example, if you take 10 damage in animal form and have only 1 hit point
-    left, you revert and take 9 damage. As long as the excess damage doesn't
-    reduce your normal form to 0 hit points, you aren't knocked unconscious.
-
-    • You can't cast spells, and your ability to speak or take any action that
-    requires hands is limited to the capabilities of your beast
-    form. Transforming doesn't break your concentration on a spell you've
-    already cast, however, or prevent you from taking actions that are part of
-    a spell, such as call lightning, that you've already cast.
-
-    • You retain the benefit of any features from your class, race, or other
-    source and can use them if the new form is physically capable of doing
-    so. However, you can't use any of your special senses, such as darkvision,
-    unless your new form also has that sense.
-
-    • You choose whether your equipment falls to the ground in your space,
-    merges into your new form, or is worn by it. Worn equipment functions as
-    normal, but the DM decides whether it is practical for the new form to wear
-    a piece of equipment, based on the creature's shape and size. Your
-    equipment doesn't change size or shape to match the new form, and any
-    equipment that the new form can't wear must either fall to the ground or
-    merge with it. Equipment that merges with the form has no effect until you
-    leave the form.
-
+    
+    - Your game statistics are replaced by the statistics of the
+      beast, but you retain your alignment, personality, and
+      Intelligence, Wisdom, and Charisma scores. You also retain all
+      of your skill and saving throw proficiencies, in addition to
+      gaining those of the creature. If the creature has the same
+      proficiency as you and the bonus in its stat block is higher
+      than yours, use the creature's bonus instead of yours. If the
+      creature has any legendary or lair actions, you can't use them.
+    - When you transform, you assume the beast's hit points and Hit
+      Dice. When you revert to your normal form, you return to the
+      number of hit points you had before you transformed. However, if
+      you revert as a result of dropping to 0 hit points, any excess
+      damage carries over to your normal form. For example, if you
+      take 10 damage in animal form and have only 1 hit point left,
+      you revert and take 9 damage. As long as the excess damage
+      doesn't reduce your normal form to 0 hit points, you aren't
+      knocked unconscious.
+    - You can't cast spells, and your ability to speak or take any
+      action that requires hands is limited to the capabilities of
+      your beast form. Transforming doesn't break your concentration
+      on a spell you've already cast, however, or prevent you from
+      taking actions that are part of a spell, such as call lightning,
+      that you've already cast.
+    - You retain the benefit of any features from your class, race, or
+      other source and can use them if the new form is physically
+      capable of doing so. However, you can't use any of your special
+      senses, such as darkvision, unless your new form also has that
+      sense.
+    - You choose whether your equipment falls to the ground in your
+      space, merges into your new form, or is worn by it. Worn
+      equipment functions as normal, but the DM decides whether it is
+      practical for the new form to wear a piece of equipment, based
+      on the creature's shape and size. Your equipment doesn't change
+      size or shape to match the new form, and any equipment that the
+      new form can't wear must either fall to the ground or merge with
+      it. Equipment that merges with the form has no effect until you
+      leave the form.
+    
     """
     _name = "Wild Shape"
     source = "Druid"
 
     @property
     def name(self):
-        num = 2
-        time = self.owner.Druid.level // 2
-        return self._name + " ({:d}x/SR, {:d} hours)".format(num, time)
+       num = 2
+       time = self.owner.Druid.level // 2
+       return self._name + " ({:d}x/SR, {:d} hours)".format(num, time)
 
 
 class TimelessBody(Feature):
@@ -149,24 +155,24 @@ class _CircleSpells(Feature):
     _name = "Select One"
     source = "Druid (Circle of the Land)"
     _spells = {3: [spells.MirrorImage, spells.MistyStep],
-               5: [spells.WaterBreathing, spells.WaterWalk],
-               7: [spells.ControlWater, spells.FreedomOfMovement],
-               9: [spells.ConjureElemental, spells.Scrying]}
+            5: [spells.WaterBreathing, spells.WaterWalk],
+            7: [spells.ControlWater, spells.FreedomOfMovement],
+            9: [spells.ConjureElemental, spells.Scrying]}
     spells_known = []
     spells_prepared = []
 
     @property
     def name(self):
-        return "Circle Spells ({:s})".format(self._name)
+       return "Circle Spells ({:s})".format(self._name)
 
     def __init__(self, owner=None):
-        if owner is not None:
-            level = owner.Druid.level
-            for lvl, sps in self._spells.items():
-                if level >= lvl:
-                    self.spells_known.extend(sps)
-                    self.spells_prepared.extend(sps)
-        super().__init__(owner=owner)
+       if owner is not None:
+          level = owner.Druid.level
+          for lvl, sps in self._spells.items():
+             if level >= lvl:
+                self.spells_known.extend(sps)
+                self.spells_prepared.extend(sps)
+       super().__init__(owner=owner)
 
 
 class ArcticSpells(_CircleSpells):
@@ -178,9 +184,9 @@ class ArcticSpells(_CircleSpells):
     """
     _name = 'Arctic'
     _spells = {3: [spells.HoldPerson, spells.SpikeGrowth],
-               5: [spells.SleetStorm, spells.Slow],
-               7: [spells.FreedomOfMovement, spells.IceStorm],
-               9: [spells.CommuneWithNature, spells.ConeOfCold]}
+            5: [spells.SleetStorm, spells.Slow],
+            7: [spells.FreedomOfMovement, spells.IceStorm],
+            9: [spells.CommuneWithNature, spells.ConeOfCold]}
 
 
 class CoastSpells(_CircleSpells):
@@ -192,9 +198,9 @@ class CoastSpells(_CircleSpells):
     """
     _name = 'Coast'
     _spells = {3: [spells.MirrorImage, spells.MistyStep],
-               5: [spells.WaterBreathing, spells.WaterWalk],
-               7: [spells.ControlWater, spells.FreedomOfMovement],
-               9: [spells.ConjureElemental, spells.Scrying]}
+            5: [spells.WaterBreathing, spells.WaterWalk],
+            7: [spells.ControlWater, spells.FreedomOfMovement],
+            9: [spells.ConjureElemental, spells.Scrying]}
 
 
 class DesertSpells(_CircleSpells):
@@ -206,9 +212,9 @@ class DesertSpells(_CircleSpells):
     """
     _name = 'Desert'
     _spells = {3: [spells.Blur, spells.Silence],
-               5: [spells.CreateFoodAndWater, spells.ProtectionFromEnergy],
-               7: [spells.Blight, spells.HallucinatoryTerrain],
-               9: [spells.InsectPlague, spells.WallOfStone]}
+            5: [spells.CreateFoodAndWater, spells.ProtectionFromEnergy],
+            7: [spells.Blight, spells.HallucinatoryTerrain],
+            9: [spells.InsectPlague, spells.WallOfStone]}
 
 
 class ForestSpells(_CircleSpells):
@@ -220,9 +226,9 @@ class ForestSpells(_CircleSpells):
     """
     _name = 'Forest'
     _spells = {3: [spells.Barkskin, spells.SpiderClimb],
-               5: [spells.CallLightning, spells.PlantGrowth],
-               7: [spells.Divination, spells.FreedomOfMovement],
-               9: [spells.CommuneWithNature, spells.TreeStride]}
+            5: [spells.CallLightning, spells.PlantGrowth],
+            7: [spells.Divination, spells.FreedomOfMovement],
+            9: [spells.CommuneWithNature, spells.TreeStride]}
 
 
 class GrasslandSpells(_CircleSpells):
@@ -234,9 +240,9 @@ class GrasslandSpells(_CircleSpells):
     """
     _name = 'Grassland'
     _spells = {3: [spells.Invisibility, spells.PassWithoutTrace],
-               5: [spells.Daylight, spells.Haste],
-               7: [spells.Divination, spells.FreedomOfMovement],
-               9: [spells.Dream, spells.InsectPlague]}
+            5: [spells.Daylight, spells.Haste],
+            7: [spells.Divination, spells.FreedomOfMovement],
+            9: [spells.Dream, spells.InsectPlague]}
 
 
 class MountainSpells(_CircleSpells):
@@ -248,9 +254,9 @@ class MountainSpells(_CircleSpells):
     """
     _name = 'Mountain'
     _spells = {3: [spells.SpiderClimb, spells.SpikeGrowth],
-               5: [spells.LightningBolt, spells.MeldIntoStone],
-               7: [spells.StoneShape, spells.Stoneskin],
-               9: [spells.Passwall, spells.WallOfStone]}
+            5: [spells.LightningBolt, spells.MeldIntoStone],
+            7: [spells.StoneShape, spells.Stoneskin],
+            9: [spells.Passwall, spells.WallOfStone]}
 
 
 class SwampSpells(_CircleSpells):
@@ -262,9 +268,9 @@ class SwampSpells(_CircleSpells):
     """
     _name = 'Swamp'
     _spells = {3: [spells.Darkness, spells.MelfsAcidArrow],
-               5: [spells.WaterWalk, spells.StinkingCloud],
-               7: [spells.FreedomOfMovement, spells.LocateCreature],
-               9: [spells.InsectPlague, spells.Scrying]}
+            5: [spells.WaterWalk, spells.StinkingCloud],
+            7: [spells.FreedomOfMovement, spells.LocateCreature],
+            9: [spells.InsectPlague, spells.Scrying]}
 
 
 class UnderdarkSpells(_CircleSpells):
@@ -276,9 +282,9 @@ class UnderdarkSpells(_CircleSpells):
     """
     _name = 'Underdark'
     _spells = {3: [spells.SpiderClimb, spells.Web],
-               5: [spells.GaseousForm, spells.StinkingCloud],
-               7: [spells.GreaterInvisibility, spells.StoneShape],
-               9: [spells.Cloudkill, spells.InsectPlague]}
+            5: [spells.GaseousForm, spells.StinkingCloud],
+            7: [spells.GreaterInvisibility, spells.StoneShape],
+            9: [spells.Cloudkill, spells.InsectPlague]}
 
 
 class SporesSpells(_CircleSpells):
@@ -291,10 +297,10 @@ class SporesSpells(_CircleSpells):
 
     _name = 'Spores'
     _spells = {2: [spells.ChillTouch],
-               3: [spells.BlindnessDeafness, spells.GentleRepose],
-               5: [spells.AnimateDead, spells.GaseousForm],
-               7: [spells.Blight, spells.Confusion],
-               9: [spells.Cloudkill, spells.Contagion]}
+            3: [spells.BlindnessDeafness, spells.GentleRepose],
+            5: [spells.AnimateDead, spells.GaseousForm],
+            7: [spells.Blight, spells.Confusion],
+            9: [spells.Cloudkill, spells.Contagion]}
 
 
 class CircleSpells(FeatureSelector, _CircleSpells):
@@ -321,14 +327,14 @@ class CircleSpells(FeatureSelector, _CircleSpells):
 
     """
     options = {'arctic': ArcticSpells,
-               'coast': CoastSpells,
-               'desert': DesertSpells,
-               'forest': ForestSpells,
-               'grassland': GrasslandSpells,
-               'mountain': MountainSpells,
-               'swamp': SwampSpells,
-               'underdark': UnderdarkSpells,
-               'spores': SporesSpells}
+            'coast': CoastSpells,
+            'desert': DesertSpells,
+            'forest': ForestSpells,
+            'grassland': GrasslandSpells,
+            'mountain': MountainSpells,
+            'swamp': SwampSpells,
+            'underdark': UnderdarkSpells,
+            'spores': SporesSpells}
     name = "Circle Spells (Select One)"
     source = "Druid (Circle of the Land/Spores)"
 
@@ -397,8 +403,8 @@ class CircleForms(Feature):
 
     @property
     def name(self):
-        level = self.owner.Druid.level
-        return self._name + ' (CR {:d})'.format(max(1, level//3))
+       level = self.owner.Druid.level
+       return self._name + ' (CR {:d})'.format(max(1, level//3))
 
 
 class PrimalStrike(Feature):
@@ -450,7 +456,7 @@ class BalmOfTheSummerCourt(Feature):
 
     @property
     def name(self):
-        return self._name + " ({:d}x d6)".format(self.owner.Druid.level)
+       return self._name + " ({:d}x d6)".format(self.owner.Druid.level)
 
 
 class HearthOfMoonlightAndShadow(Feature):
@@ -567,11 +573,11 @@ class MightySummoner(Feature):
     - The creature appears with more hit points than normal: 2 extra hit
 
     - The creature appears with more hit points than normal: 2 extra hit
-      points per Hit Die it has.
+     points per Hit Die it has.
 
     - The damage from its natural weapons is considered magical for the
-      purpose of overcoming immunity and resistance to nonmagical attacks and
-      damage.
+     purpose of overcoming immunity and resistance to nonmagical attacks and
+     damage.
 
     """
     name = "Mighty Summoner"

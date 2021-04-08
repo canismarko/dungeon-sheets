@@ -35,7 +35,7 @@ class Fabricate(Spell):
 
 class FaerieFire(Spell):
     """Each object in a 20-foot cube within range is outlined in blue, green, or violet
-     light (your choice).
+    light (your choice).
     Any creature in the area when the spell is cast is also
     outlined in light if it fails a Dexterity saving throw. For the duration,
     objects and affected creatures shed dim light in a 10-foot radius.
@@ -60,9 +60,9 @@ class FalseLife(Spell):
     """Bolstering yourself with a necromantic facsimile of life, you gain 1d4 + 4
     temporary hit points for the duration.
 
-    At Higher Levels: When you cast this
+    **At Higher Levels:** When you cast this
     spell using a spell slot of 2nd level or higher, you gain 5 additional temporary
-     hit points for each slot level above 1st.
+    hit points for each slot level above 1st.
     """
     name = "False Life"
     level = 1
@@ -100,9 +100,9 @@ class Fear(Spell):
 
     While frightened by this
     spell, a creature must take the Dash action and move away from you by the safest
-     available route on each of its turns, unless there is nowhere to move. If the
+    available route on each of its turns, unless there is nowhere to move. If the
     creature ends its turn in a location where it doesn't have line of sight to you,
-     the creature can make a Wisdom saving throw. On a successful save, the spell
+    the creature can make a Wisdom saving throw. On a successful save, the spell
     ends for that creature.
     """
     name = "Fear"
@@ -121,7 +121,7 @@ class FeatherFall(Spell):
     """Reaction: When you or a creature within 60 feet of you falls
 
     Choose up to five
-     falling creatures within range. A falling creature's rate of descent slows to
+    falling creatures within range. A falling creature's rate of descent slows to
     60 feet per round until the spell ends. If the creature lands before the spell
     ends, it takes no falling damage and can land on its feet, and the spell ends
     for that creature.
@@ -172,7 +172,7 @@ class FeignDeath(Spell):
 
     For the spell's duration, or until you use an
     action to touch the target and dismiss the spell, the target appears dead to all
-     outward inspection and to spells used to determine the target's status. The
+    outward inspection and to spells used to determine the target's status. The
     target is blinded and incapacitated, and its speed drops to 0.
     The target has
     resistance to all damage except psychic damage. If the target is diseased or
@@ -195,7 +195,7 @@ class FindFamiliar(Spell):
     """You gain the service of a familiar, a spirit that takes an animal form you
     choose: bat, cat, crab, frog (toad), hawk. lizard, octopus, owl, poisonous
     snake, fish (quipper), rat, raven, sea horse, spider, or weasel. Appearing in an
-     unoccupied space within range, the familiar has the statistics of the chosen
+    unoccupied space within range, the familiar has the statistics of the chosen
     form, though it is a celestial, fey or fiend (your choice) instead of a beast.
 
 
@@ -204,12 +204,12 @@ class FindFamiliar(Spell):
     can't attack, but it can take other actions as normal.
 
     When the familiar drops
-     to 0 hit points, it disappears, leaving behind no physical form. It reappears
+    to 0 hit points, it disappears, leaving behind no physical form. It reappears
     after you cast this spell again.
 
     While your familiar is within 100 feet of
     you, you can communicate with it telepathically. Additionally, as an action, you
-     can see through your familiar's eyes and hear what it hears until the start of
+    can see through your familiar's eyes and hear what it hears until the start of
     your next turn, gaining the benefits of any special senses that the familiar
     has. During this time, you are deaf and blind with regard to your own senses.
 
@@ -222,11 +222,11 @@ class FindFamiliar(Spell):
     You can't have more
     than one familiar at a time. If you cast this spell while you already have a
     familiar, you instead cause it to adopt a new form. Choose one of the forms from
-     the above list. Your familiar transforms into the chosen creature.
+    the above list. Your familiar transforms into the chosen creature.
 
     Finally,
     when you cast a spell with a range of touch, your familiar can deliver the spell
-     as if it had cast the spell. Your familiar must be within 100 feet of you, and
+    as if it had cast the spell. Your familiar must be within 100 feet of you, and
     it must use its reaction to deliver the spell when you cast it. If the spell
     requires an attack roll, you use your attack modifier for the roll.
     """
@@ -250,11 +250,11 @@ class FindGreaterSteed(Spell):
     chosen form, though it is a celestial, a fey, or a fiend (your choice) instead
     of its normal creature type. Additionally, if it has an Intelligence score of 5
     or lower, its Intelligence becomes 6, and it gains the ability to understand one
-     language of your choice that you speak. You control the mount in combat. While
+    language of your choice that you speak. You control the mount in combat. While
     the mount is within 1 mile of you, you can communicate with it te1epathically.
     While mounted on it, you can make any spell you cast that targets only you also
     target the mount. The mount disappears temporarily when it drops to 0 hit points
-     or when you dismiss it as an action. Casting this spell again re-summons the
+    or when you dismiss it as an action. Casting this spell again re-summons the
     bonded mount, with all its hit points restored and any conditions removed. You
     can't have more than one mount bonded by this spell or find steed at the same
     time. As an action, you can release a mount from its bond, causing it to
@@ -278,7 +278,7 @@ class FindSteed(Spell):
     and loyal steed, creating a long-lasting bond with it. Appearing in an
     unoccupied space within range, the steed takes on a form that you choose, such
     as a warhorse, a pony, a camel, an elk, or a mastiff. (Your DM might allow other
-     animals to be summoned as steeds.) The steed has the statistics of the chosen
+    animals to be summoned as steeds.) The steed has the statistics of the chosen
     form, though it is a celestial, fey, or fiend (your choice) instead of its
     normal type. Additionally, if your steed has an Intelligence of 5 or less, its
     Intelligence becomes 6, and it gains the ability to understand one language of
@@ -287,17 +287,17 @@ class FindSteed(Spell):
     Your steed serves you as a mount, both in combat
     and out, and you have an instinctive bond with it that allows you to fight as a
     seamless unit. While mounted on your steed, you can make any spell you cast that
-     targets only you also target your steed.
+    targets only you also target your steed.
 
     When the steed drops to 0 hit points,
-     it disappears, leaving behind no physical form. You can also dismiss your steed
-     at any time as an action, causing it to disappear. In either case, casting this
-     spell again summons the same steed, restored to its hit point maximum.
+    it disappears, leaving behind no physical form. You can also dismiss your steed
+    at any time as an action, causing it to disappear. In either case, casting this
+    spell again summons the same steed, restored to its hit point maximum.
 
     While
     your steed is within 1 mile of you, you can communicate with it telepathically.
     You can't have more than one steed bonded by this spell at a time. As an action,
-     you can release the steed from its bond at any time, causing it to disappear.
+    you can release the steed from its bond at any time, causing it to disappear.
     """
     name = "Find Steed"
     level = 2
@@ -315,15 +315,15 @@ class FindThePath(Spell):
     """This spell allows you to find the shortest, most direct physical route to a
     specific fixed location that you are familiar with on the same plane of
     existence. If you name a destination on another plan of existence, a destination
-     that moves (such as a mobile fortress), or a destination that isn't specific
+    that moves (such as a mobile fortress), or a destination that isn't specific
     (such as "a green dragon's lair"), the spell fails.
 
     For the duration, as long
     as you are on the same plane of existence as the destination, you know how far
     it is and in what direction it lies. While you are traveling there, whenever you
-     are presented with a choice of paths along the way, you atomatically determine
+    are presented with a choice of paths along the way, you atomatically determine
     which path is the shortest and most direct route (but not necessarily the safest
-     route) to the destination."
+    route) to the destination."
     """
     name = "Find The Path"
     level = 6
@@ -345,10 +345,10 @@ class FindTraps(Spell):
     specifically intended as such by its creator. Thus, the spell would sense an
     area affected by the alarm spell, a glyph of warding, or a mechanical pit trap,
     but it would not reveal a natural weakness in the floor, an unstable ceiling, or
-     a hidden sinkhole.
+    a hidden sinkhole.
 
     This spell merely reveals that a trap is present. You don't
-     learn the location of each trap, but you do learn the general nature of the
+    learn the location of each trap, but you do learn the general nature of the
     danger posed by a trap you sense.
     """
     name = "Find Traps"
@@ -392,8 +392,8 @@ class FireBolt(Spell):
     flammable object hit by this spell ignites if it isn't being worn or carried.
 
 
-    At Higher Levels: This spell's damage increases by 1d10 when you reach 5th level
-     (2d10), 11th level (3d10), and 17th level (4d10).
+    **At Higher Levels:** This spell's damage increases by 1d10 when you reach 5th level
+    (2d10), 11th level (3d10), and 17th level (4d10).
     """
     name = "Fire Bolt"
     level = 0
@@ -444,7 +444,7 @@ class FireStorm(Spell):
 
     The fire damages objects in the area and ignites flammable
     objects that aren't being worn or carried. If you choose, plant life in the area
-     is unaffected by this spell.
+    is unaffected by this spell.
     """
     name = "Fire Storm"
     level = 7
@@ -460,16 +460,16 @@ class FireStorm(Spell):
 
 class Fireball(Spell):
     """A bright streak flashes from your pointing finger to a point you choose within
-    range then blossoms with a low roar into an explosion of flame.
-    Each creature in
-     a 20-foot radius must make a Dexterity saving throw. A target takes 8d6 fire
+    range then blossoms with a low roar into an explosion of flame. Each creature in
+    a 20-foot radius must make a Dexterity saving throw. A target takes 8d6 fire
     damage on a failed save, or half as much damage on a successful one. The fire
     spreads around corners. It ignites flammable objects in the area that aren't
     being worn or carried.
+    
+    **At Higher Levels:** When you cast this spell using a spell slot
+    of 4th level or higher, the damage increases by 1d6 for each slot
+    level above 3rd.
 
-    At Higher Levels: When you cast this spell using a spell
-     slot of 4th level or higher, the damage increases by 1d6 for each slot level
-    above 3rd.
     """
     name = "Fireball"
     level = 3
@@ -490,7 +490,7 @@ class FlameArrows(Spell):
     ammunition when it hits or misses, and the spell ends when twelve pieces of
     ammunition have been drawn from the quiver.
 
-    At Higher Levels: When you cast
+    **At Higher Levels:** When you cast
     this spell using a spell slot of 4th level or higher, the number of pieces of
     ammunition you can affect with this spell increases by two for each slot level
     above 3rd.
@@ -514,12 +514,12 @@ class FlameBlade(Spell):
     it disappears, but you can evoke the blade again as a bonus action.
 
     You can use
-     your action to make a melee spell attack with the fiery blade. On a hit, the
+    your action to make a melee spell attack with the fiery blade. On a hit, the
     target takes 3d6 fire damage.
     The flaming blade sheds bright light in a 10-foot
-     radius and dim light for an additional 10 feet.
+    radius and dim light for an additional 10 feet.
 
-    At Higher Levels: When you
+    **At Higher Levels:** When you
     cast this spell using a spell slot of 4th level or higher, the damage increases
     by 1d6 for every two slot levels above 2nd.
     """
@@ -539,10 +539,10 @@ class FlameStrike(Spell):
     """A vertical column of divine fire roars down from the heavens in a location you
     specify. Each creature in a 10-foot radius, 40-foot-high cylinder centered on a
     point within range must make a Dexterity saving throw. A creature takes 4d6 fire
-     damage and 4d6 radiant damage on a failed save, or half as much damage on a
+    damage and 4d6 radiant damage on a failed save, or half as much damage on a
     successful one.
 
-    At Higher Levels: When you cast this spell using a spell slot
+    **At Higher Levels:** When you cast this spell using a spell slot
     of 6th level or higher, the fire damage or the radiant damage (your choice)
     increases by 1d6 for each slot level above 5th.
     """
@@ -562,12 +562,12 @@ class FlamingSphere(Spell):
     """A 5-foot-diameter sphere of fire appears in an unoccupied space of your choice
     within range and lasts for the duration.
     Any creature that ends its turn within
-     5 feet of the sphere must make a Dexterity saving throw. The creature takes 2d6
-     fire damage on a failed save, or half as much damage on a successful one.
+    5 feet of the sphere must make a Dexterity saving throw. The creature takes 2d6
+    fire damage on a failed save, or half as much damage on a successful one.
 
     As a
-     bonus action, you can move the sphere up to 30 feet. If you ram the sphere into
-     a creature, that creature must make the saving throw against the sphere's
+    bonus action, you can move the sphere up to 30 feet. If you ram the sphere into
+    a creature, that creature must make the saving throw against the sphere's
     damage, and the sphere stops moving this turn.
 
     When you move the sphere, you
@@ -576,7 +576,7 @@ class FlamingSphere(Spell):
     it sheds bright light in a 20-foot radius and dim light for an additional 20
     feet.
 
-    At Higher Levels: When you cast this spell using a spell slot of 3rd
+    **At Higher Levels:** When you cast this spell using a spell slot of 3rd
     level or higher, the damage increases by 1d6 for each slot level above 2nd.
     """
     name = "Flaming Sphere"
@@ -625,10 +625,10 @@ class FleshToStone(Spell):
 
 class Fly(Spell):
     """You touch a willing creature. The target gains a flying speed of 60 feet for the
-     duration. When the spell ends, the target falls if it is still aloft, unless it
-     can stop the fall.
+    duration. When the spell ends, the target falls if it is still aloft, unless it
+    can stop the fall.
 
-    At Higher Levels: When you cast this spell using a spell
+    **At Higher Levels:** When you cast this spell using a spell
     slot of 4th level or higher, you can target one additional creature for each
     slot level above 3rd.
     """
@@ -648,11 +648,11 @@ class FogCloud(Spell):
     """You create a 20-foot-radius sphere of fog centered on a point within range. The
     sphere spreads around corners, and its area is heavily obscured, It lasts for
     the duration or until a wind of moderate or greater speed (at least 10 miles per
-     hour) disperses it.
+    hour) disperses it.
 
-    At Higher Levels: When you cast this spell using a spell
+    **At Higher Levels:** When you cast this spell using a spell
     slot of 2nd level or higher, the radius of the fog increases by 20 feet for each
-     slot level above 1st.
+    slot level above 1st.
     """
     name = "Fog Cloud"
     level = 1
@@ -675,10 +675,10 @@ class Forbiddance(Spell):
     Astral Plane, Ethereal Plane, Feywild, Shadowfell, or the plane shift spell.
 
     In
-     addition, the spell damages types of creatures that you choose when you cast
+    addition, the spell damages types of creatures that you choose when you cast
     it. Choose one or more of the following: celestials, elementals, fey, fiends,
     and undead. When a chosen creature enters the spell's area for the first time on
-     a turn or starts its turn there, the creature takes 5d10 radiant or necrotic
+    a turn or starts its turn there, the creature takes 5d10 radiant or necrotic
     damage (your choice when you cast this spell).
 
     When you cast this spell, you
@@ -687,7 +687,7 @@ class Forbiddance(Spell):
 
     This spell's area can't overlap with the
     area of another forbiddance spell. If you cast forbiddance every day for 30 days
-     in the same location, the spell lasts until it is dispelled, and the material
+    in the same location, the spell lasts until it is dispelled, and the material
     components are consumed on the last casting.
     """
     name = "Forbiddance"
@@ -711,9 +711,9 @@ class Forcecage(Spell):
     feet on a side and is made from 1/2-inch diameter bars spaced 1/2 inch apart.
 
     A
-     prison in the shape of a box can be up to 10 feet on a side, creating a solid
+    prison in the shape of a box can be up to 10 feet on a side, creating a solid
     barrier that prevents any matter from passing through it and blocking any spells
-     cast into or out of the area.
+    cast into or out of the area.
 
     When you cast the spell, any creature that is
     completely inside the cage's area is trapped. Creatures only partially within
@@ -722,9 +722,9 @@ class Forcecage(Spell):
 
     A creature
     inside the cage can't leave it by nonmagical means. If the creature tries to use
-     teleportation or interplanar travel to leave the cage, it must first make a
+    teleportation or interplanar travel to leave the cage, it must first make a
     Charisma saving throw. On a success, the creature can use that magic to exit the
-     cage. On a failure, the creature can't exit the cage and wastes the use of the
+    cage. On a failure, the creature can't exit the cage and wastes the use of the
     spell or effect. The cage also extends into the Ethereal Plane, blocking
     ethereal travel.
     This spell can't be dispelled by dispel magic.
@@ -809,9 +809,9 @@ class Frostbite(Spell):
     """You cause numbing frost to form on one creature that you can see within range.
     The target must make a Constitution saving throw. On a failed save, the target
     takes 1d6 cold damage, and it has disadvantage on the next weapon attack roll it
-     makes before the end of its next turn.
+    makes before the end of its next turn.
     The spell's damage increases by 1d6 when
-     you reach 5th level (2d6), 11th level (3d6), and 17th level (4d6).
+    you reach 5th level (2d6), 11th level (3d6), and 17th level (4d6).
     """
     name = "Frostbite"
     level = 0

@@ -7,8 +7,8 @@ class RaiseDead(Spell):
     rejoin the body, the creature returns to life with 1 hit point.
 
     This spell also
-     neutralizes any poison and cures nonmagical diseases that affected the creature
-     at the time it died. This spell doesn't, however, remove magical diseases,
+    neutralizes any poison and cures nonmagical diseases that affected the creature
+    at the time it died. This spell doesn't, however, remove magical diseases,
     curses, or similar effects; if these aren't first removed prior to casting the
     spell, they take effect when the creature returns to life. The spell can't
     return an undead creature to life.
@@ -19,7 +19,7 @@ class RaiseDead(Spell):
     automatically fails.
 
     Coming back from the dead is an ordeal. The target takes a
-     -4 penalty to all attack rolls, saving throws, and ability checks. Every time
+    -4 penalty to all attack rolls, saving throws, and ability checks. Every time
     the target finishes a long rest, the penalty is reduced by 1 until it
     disappears.
     """
@@ -82,12 +82,12 @@ class RayOfEnfeeblement(Spell):
 
 class RayOfFrost(Spell):
     """A frigid beam of blue-white light streaks toward a creature within range. Make a
-     ranged spell attack against the target. On a hit, it takes 1d8 cold damage, and
-     its speed is reduced by 10 feet until the start of your next turn.
+    ranged spell attack against the target. On a hit, it takes 1d8 cold damage, and
+    its speed is reduced by 10 feet until the start of your next turn.
 
     At Higher
     Levels: The spell's damage increases by 1d8 when you reach 5th level (2d8), 11th
-     level (3d8), and 17th level (4d8).
+    level (3d8), and 17th level (4d8).
     """
     name = "Ray Of Frost"
     level = 0
@@ -106,10 +106,10 @@ class RayOfSickness(Spell):
 
     Make a ranged spell attack against the target. On a hit, the target takes 2d8
     poison damage and must make a Constitution saving throw. On a failed save, it is
-     also poisoned until the end of your next turn.
+    also poisoned until the end of your next turn.
 
-    At Higher Levels: When you cast
-     this spell using a spell slot of 2nd level or higher, the damage increases by
+    **At Higher Levels:** When you cast
+    this spell using a spell slot of 2nd level or higher, the damage increases by
     1d8 for each slot level above 1st.
     """
     name = "Ray Of Sickness"
@@ -128,12 +128,12 @@ class Regenerate(Spell):
     """You touch a creature and stimulate its natural healing ability.
     The target
     regains 4d8 + 15 hit points. For the duration of the spell, the target regains 1
-     hit point at the start of each of its turns (10 hit points each minute).
+    hit point at the start of each of its turns (10 hit points each minute).
 
     The
     target's severed body members (fingers, legs, tails, and so on), if any, are
     restored after 2 minutes. If you have the severed part and hold it to the stump,
-     the spell instantaneously causes the limb to knit to the stump.
+    the spell instantaneously causes the limb to knit to the stump.
     """
     name = "Regenerate"
     level = 7
@@ -176,10 +176,10 @@ class Reincarnate(Spell):
     69-76 Halfling, stout
     77-96 Human
     97-00
-     Tiefling
+    Tiefling
 
     The reincarnated creature recalls its former life and experiences. It
-     retains the capabilities it had in its original form, except it exchanges its
+    retains the capabilities it had in its original form, except it exchanges its
     original race for the new one and changes its racial traits accordingly.
     """
     name = "Reincarnate"
@@ -196,7 +196,7 @@ class Reincarnate(Spell):
 
 class RemoveCurse(Spell):
     """At your touch, all curses affecting one creature or object end. If the object is
-     a cursed magic item, its curse remains, but the spell breaks its owner's
+    a cursed magic item, its curse remains, but the spell breaks its owner's
     attunement to the object so it can be removed or discarded.
     """
     name = "Remove Curse"
@@ -236,7 +236,7 @@ class Resurrection(Spell):
     This spell neutralizes any
     poisons and cures normal diseases afflicting the creature when it died. It
     doesn't, however, remove magical diseases, curses, and the like; if such affects
-     aren't removed prior to casting the spell, they afflict the target on its
+    aren't removed prior to casting the spell, they afflict the target on its
     return to life.
 
     This spell closes all mortal wounds and restores any missing
@@ -248,9 +248,9 @@ class Resurrection(Spell):
 
 
     Casting this spell to restore life to a creature that has been dead for one year
-     or longer taxes you greatly. Until you finish a long rest, you can't cast
+    or longer taxes you greatly. Until you finish a long rest, you can't cast
     spells again, and you have disadvantage on all attack rolls, ability checks, and
-     saving throws.
+    saving throws.
     """
     name = "Resurrection"
     level = 7
@@ -266,9 +266,9 @@ class Resurrection(Spell):
 
 class ReverseGravity(Spell):
     """This spell reverses gravity in a 50-foot-radius, 100-foot high cylinder centered
-     on a point within range.
+    on a point within range.
     All creatures and objects that aren't somehow anchored
-     to the ground in the area fall upward and reach the top of the area when you
+    to the ground in the area fall upward and reach the top of the area when you
     cast this spell. A creature can make a Dexterity saving throw to grab onto a
     fixed object it can reach, thus avoiding the fall.
 
@@ -295,7 +295,7 @@ class ReverseGravity(Spell):
 
 class Revivify(Spell):
     """You touch a creature that has died within the last minute. That creature returns
-     to life with 1 hit point. This spell can't return to life a creature that has
+    to life with 1 hit point. This spell can't return to life a creature that has
     died of old age, nor can it restore any missing body parts.
     """
     name = "Revivify"
@@ -323,7 +323,7 @@ class RopeTrick(Spell):
 
     Attacks and spells can't cross
     through the entrance into or out of the extradimensional space, but those inside
-     can see out of it as if through a 3-foot-by-5-foot window centered on the rope.
+    can see out of it as if through a 3-foot-by-5-foot window centered on the rope.
 
 
     Anything inside the extradimensional space drops out when the spell ends.

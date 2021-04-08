@@ -4,7 +4,7 @@ from dungeonsheets.spells.spells import Spell
 class MaddeningDarkness(Spell):
     """Magical darkness spreads from a point you choose within range to fill a
     60-foot-radius sphere until the spell ends. The darkness spreads around corners.
-     A creature with darkvision can't see through this darkness. Nonmagical light,
+    A creature with darkvision can't see through this darkness. Nonmagical light,
     as well as light created by spells of 8th level or lower, can't illuminate the
     area. Shrieks, gibbering, and mad laughter can be heard within the sphere.
     Whenever a creature starts its turn in the sphere, it must make a Wisdom saving
@@ -26,7 +26,7 @@ class MaddeningDarkness(Spell):
 class Maelstrom(Spell):
     """(paper or leaf in the shape of a funnel)
     A mass of 5-foot-deep water appears and
-     swirls in a 30-foot radius centered on a point you can see within range. The
+    swirls in a 30-foot radius centered on a point you can see within range. The
     point must be on ground or in a body of water. Until the spell ends, that area
     is difficult terrain, and any creature that starts its turn there must succeed
     on a Strength saving throw or take 6d6 bludgeoning damage and be pulled 10 feet
@@ -48,7 +48,7 @@ class MageArmor(Spell):
     """You touch a willing creature who isn't wearing armor, and a protective magical
     force surrounds it until the spell ends. The target's base AC becomes 13 + its
     Dexterity modifier. The spell ends it if the target dons armor or if you dismiss
-     the spell as an action.
+    the spell as an action.
     """
     name = "Mage Armor"
     level = 1
@@ -75,7 +75,7 @@ class MageHand(Spell):
     30 feet each time you use it.
 
     The hand can't attack, activate magical items, or
-     carry more than 10 pounds.
+    carry more than 10 pounds.
     """
     name = "Mage Hand"
     level = 0
@@ -91,17 +91,17 @@ class MageHand(Spell):
 
 class MagicCircle(Spell):
     """You create a 10-foot-radius, 20-foot-tall cylinder of magical energy centered on
-     a point on the ground that you can see within range. Glowing runes appear
+    a point on the ground that you can see within range. Glowing runes appear
     wherever the cylinder intersects with the floor or other surface.
 
     Choose one or
-     more of the following types of creatures: celestials, elementals, fey, fiends,
+    more of the following types of creatures: celestials, elementals, fey, fiends,
     or undead. The circle affects a creature of the chosen type in the following
     ways:
 
     * The creature can't willingly enter the cylinder by nonmagical means. If
-     the creature tries to use teleportation or interplanar travel to do so, it must
-     first succeed on a Charisma saving throw.
+    the creature tries to use teleportation or interplanar travel to do so, it must
+    first succeed on a Charisma saving throw.
     * The creature has disadvantage on
     attack rolls against targets within the cylinder.
     * Targets within the cylinder
@@ -112,8 +112,8 @@ class MagicCircle(Spell):
     preventing a creature of the specified type from leaving the cylinder and
     protecting targets outside it.
 
-    At Higher Levels: When you cast this spell using
-     a spell slot of 4th level or higher, the duration increases by 1 hour for each
+    **At Higher Levels:** When you cast this spell using
+    a spell slot of 4th level or higher, the duration increases by 1 hour for each
     slot level above 3rd.
     """
     name = "Magic Circle"
@@ -133,7 +133,7 @@ class MagicJar(Spell):
     container you used for the spell's material component. While your soul inhabits
     the container, you are aware of your surroundings as if you were in the
     container's space. You can't move or use reactions. The only action you can take
-     is to project your soul up to 100 feet out of the container, either returning
+    is to project your soul up to 100 feet out of the container, either returning
     to your living body (and ending the spell) or attempting to possess a humanoids
     body.
 
@@ -155,18 +155,18 @@ class MagicJar(Spell):
     container using its own senses, but it can't move or take actions at all.
 
     While
-     possessing a body, you can use your action to return from the host body to the
+    possessing a body, you can use your action to return from the host body to the
     container if it is within 100 feet of you, returning the host creature's soul to
-     its body. If the host body dies while you're in it, the creature dies, and you
+    its body. If the host body dies while you're in it, the creature dies, and you
     must make a Charisma saving throw against your own spellcasting DC. On a
     success, you return to the container if it is within 100 feet of you. Otherwise,
-     you die.
+    you die.
 
     If the container is destroyed or the spell ends, your soul
     immediately returns to your body. If your body is more than 100 feet away from
     you, or if your body is dead when you attempt to return to it, you die. If
     another creature's soul is in the container when it is destroyed, the creature's
-     soul returns to its body if the body is alive and within 100 feet. Otherwise,
+    soul returns to its body if the body is alive and within 100 feet. Otherwise,
     that creature dies.
 
     When the spell ends, the container is destroyed.
@@ -190,7 +190,7 @@ class MagicMissile(Spell):
     simultaneously and you can direct them to hit one creature or
     several.
     
-    At Higher Levels: When you cast this spell using a spell slot of
+    **At Higher Levels:** When you cast this spell using a spell slot of
     2nd level or higher, the spell creates one more dart for each slot
     level above 1st.
     
@@ -212,7 +212,7 @@ class MagicMouth(Spell):
     a trigger condition is met.
     Choose an object that you can see and that isn't
     being worn or carried by another creature. Then speak the message, which must be
-     25 words or less, though it can be delivered over as long as 10 minutes.
+    25 words or less, though it can be delivered over as long as 10 minutes.
     Finally, determine the circumstance that will trigger the spell to deliver your
     message.
 
@@ -226,7 +226,7 @@ class MagicMouth(Spell):
 
     The triggering circumstance can be as general or
     as detailed as you like, though it must be based on visual or audible conditions
-     that occur within 30 feet of the object. For example, you could instruct the
+    that occur within 30 feet of the object. For example, you could instruct the
     mouth to speak when any creature moves within 30 feet of the object or when a
     silver bell rings within 30 feet of it.
     """
@@ -245,7 +245,7 @@ class MagicMouth(Spell):
 class MagicStone(Spell):
     """You touch one to three pebbles and imbue them with magic. You or someone else
     can make a ranged spell attack with one of the pebbles by throwing it or hurling
-     it with a sling. If thrown, a pebble has a range of 60 feet. If someone else
+    it with a sling. If thrown, a pebble has a range of 60 feet. If someone else
     attacks with a pebble, that attacker adds your spellcasting ability modifier,
     not the attacker's, to the attack roll. On a hit, the target takes bludgeoning
     damage equal to 1d6 + your spellcasting ability modifier. Whether the attack
@@ -267,7 +267,7 @@ class MagicStone(Spell):
 
 class MagicWeapon(Spell):
     """You touch a nonmagical weapon. Until the spell ends, that weapon becomes a magic
-     weapon with a +1 bonus to attack rolls and damage rolls.
+    weapon with a +1 bonus to attack rolls and damage rolls.
 
     At Higher Levels:
     When you cast this spell using a spell slot of 4th level or higher, the bonus
@@ -292,7 +292,7 @@ class MajorImage(Spell):
     that is no larger than a 20-foot cube.
     The image appears at a spot that you can
     see within range and lasts for the duration. It seems completely real, including
-     sounds, smells, and temperature appropriate to the thing depicted. You can't
+    sounds, smells, and temperature appropriate to the thing depicted. You can't
     create sufficient heat or cold to cause damage, a sound loud enough to deal
     thunder damage or deafen a creature, or a smell that might sicken a creature
     (like a troglodyte's stench).
@@ -301,21 +301,21 @@ class MajorImage(Spell):
     you can use your action to cause the image to move to any other spot within
     range. As the image changes location, you can alter its appearance so that its
     movements appear natural for the image. For example, if you create an image of a
-     creature and move it, you can alter the image so that it appears to be walking.
-     Similarly, you can cause the illusion to make different sounds at different
+    creature and move it, you can alter the image so that it appears to be walking.
+    Similarly, you can cause the illusion to make different sounds at different
     times, even making it carry on a conversation, for example.
 
     Physical
     interaction with the image reveals it to be an illusion, because things can pass
-     through it. A creature that uses its action to examine the image can determine
+    through it. A creature that uses its action to examine the image can determine
     that it is an illusion with a successful Intelligence (Investigation) check
     against your spell save DC. If a creature discerns the illusion for what it is,
     the creature can see through the image, and its other sensory qualities become
     faint to the creature.
 
-    At Higher Levels: When you cast this spell using a spell
-     slot of 6th level or higher, the spell lasts until dispelled, without requiring
-     your concentration.
+    **At Higher Levels:** When you cast this spell using a spell
+    slot of 6th level or higher, the spell lasts until dispelled, without requiring
+    your concentration.
     """
     name = "Major Image"
     level = 3
@@ -356,7 +356,7 @@ class MassHeal(Spell):
     """A flood of healing energy flows from you into injured creatures around you. You
     restore up to 700 hit points, divided as you choose among any number of
     creatures that you can see within range. Creatures healed by this spell are also
-     cured of all diseases and any effect making them blinded or deafened. This
+    cured of all diseases and any effect making them blinded or deafened. This
     spell has no effect on undead or constructs.
     """
     name = "Mass Heal"
@@ -402,19 +402,19 @@ class MassPolymorph(Spell):
     seen whose challenge rating is equal to or less than the target's (or half the
     target's level, if the target doesn't have a challenge rating). The target's
     game statistics, including mental ability scores, are replaced by the statistics
-     of the chosen beast, but the target retains its hit points, alignment, and
+    of the chosen beast, but the target retains its hit points, alignment, and
     personality.
     Each target gains a number of temporary hit points equal to the hit
-     points of its new form. These temporary hit points can't be replaced by
+    points of its new form. These temporary hit points can't be replaced by
     temporary hit points from another source. A target reverts to its normal form
     when it has no more temporary hit points or it dies. If the spell ends before
     then, the creature loses all its temporary hit points and reverts to its normal
     form.
     The creature is limited in the actions it can perform by the nature of its
-     new form. It can't speak, cast spells, or do anything else that requires hands
+    new form. It can't speak, cast spells, or do anything else that requires hands
     or speech. The target's gear melds into the new form.
     The target can't activate,
-     use, wield, or otherwise benefit from any of its equipment.
+    use, wield, or otherwise benefit from any of its equipment.
     """
     name = "Mass Polymorph"
     level = 9
@@ -433,21 +433,21 @@ class MassSuggestion(Spell):
     influence up to twelve creatures of your choice that you can see within range
     and that can hear and understand you.
     Creatures that can't be charmed are immune
-     to this effect. The suggestion must be worded in such a manner as to make the
+    to this effect. The suggestion must be worded in such a manner as to make the
     course of action sound reasonable. Asking the creature to stab itself, throw
     itself onto a spear, immolate itself, or do some other obviously harmful act
     automatically negates the effect of the spell.
 
     Each target must make a Wisdom
     saving throw. On a failed save, it pursues the course of action you described to
-     the best of its ability. The suggested course of action can continue for the
+    the best of its ability. The suggested course of action can continue for the
     entire duration. If the suggested activity can be completed in a shorter time,
     the spell ends when the subject finishes what it was asked to do.
 
     You can also
     specify conditions that will trigger a special activity during the duration. For
-     example, you might suggest that a group of soldiers give all their money to the
-     first beggar they meet. If the condition isn't met before the spell ends, the
+    example, you might suggest that a group of soldiers give all their money to the
+    first beggar they meet. If the condition isn't met before the spell ends, the
     activity isn't performed.
 
     If you or any of your companions damage a creature
@@ -458,7 +458,7 @@ class MassSuggestion(Spell):
 
     When you use an 8th-level spell slot, the duration is 30 days.
     When you use a
-     9th-level spell slot, the duration is a year and a day.
+    9th-level spell slot, the duration is a year and a day.
     """
     name = "Mass Suggestion"
     level = 6
@@ -476,18 +476,18 @@ class MaximiliansEarthenGrasp(Spell):
     """You choose a 5-foot-square unoccupied space on the ground that you can see
     within range. A Medium hand made from compacted soil rises there and reaches
     for
-     one creature you can see within 5 feet of it. The target must make a Strength
+    one creature you can see within 5 feet of it. The target must make a Strength
     saving throw. On a failed save, the target takes 2d6 bludgeoning damage and is
     restrained for the spell's duration.
     As an action, you can cause the hand to
     crush the restrained target, who must make a Strength saving throw. It takes 2d6
-     bludgeoning damage on a failed save, or half as much damage on a successful
+    bludgeoning damage on a failed save, or half as much damage on a successful
     one.
     To break out, the restrained target can make a Strength check against your
     spell save DC. On a success, the target escapes and is no longer restrained by
     the hand.
     As an action, you can cause the hand to reach for a different creature
-     or to move to a different unoccupied space within range. The hand releases a
+    or to move to a different unoccupied space within range. The hand releases a
     restrained target if you do either.
     """
     name = "Maximilians Earthen Grasp"
@@ -509,7 +509,7 @@ class Maze(Spell):
 
     The target can use its action to attempt to escape. When it does so, it
     makes a DC 20 Intelligence check. If it succeeds, it escapes, and the spell ends
-     (a minotaur or goristro demon automatically succeeds).
+    (a minotaur or goristro demon automatically succeeds).
 
     When the spell ends,
     the target reappears in the space it left or, if that space is occupied, in the
@@ -529,17 +529,17 @@ class Maze(Spell):
 
 class MeldIntoStone(Spell):
     """You step into a stone object or surface large enough to fully contain your body,
-     melding yourself and all the equipment you carry with the stone for the
+    melding yourself and all the equipment you carry with the stone for the
     duration.
     Using your movement, you step into the stone at a point you can touch.
-     Nothing of your presence remains visible or otherwise detectable by nonmagical
+    Nothing of your presence remains visible or otherwise detectable by nonmagical
     senses.
 
     While merged with the stone, you can't see what occurs outside it, and
     any Wisdom (Perception) checks you make to hear sounds outside it are made with
     disadvantage. You remain aware of the passage of time and can cast spells on
     yourself while merged in the stone. You can use your movement to leave the stone
-     where you entered it, which ends the spell. You otherwise can't move.
+    where you entered it, which ends the spell. You otherwise can't move.
 
     Minor
     physical damage to the stone doesn't harm you, but its partial destruction or a
@@ -597,7 +597,7 @@ class MelfsMinuteMeteors(Spell):
     A creature takes 2d6 fire damage on a failed save, or half as much damage on a
     successful one.
     At Higher Levels. When you cast this spell using a spell slot of
-     4th level or higher, the number of meteors created increases by two for each
+    4th level or higher, the number of meteors created increases by two for each
     slot level above 3rd.
     """
     name = "Melfs Minute Meteors"
@@ -614,10 +614,10 @@ class MelfsMinuteMeteors(Spell):
 
 class Mending(Spell):
     """This spell repairs a single break or tear in an object you touch, such as broken
-     chain link, two halves of a broken key, a torn cloack, or a leaking wineskin.
+    chain link, two halves of a broken key, a torn cloack, or a leaking wineskin.
 
     As long as the break or tear is no larger than 1 foot in any dimension, you mend
-     it, leaving no trace of the former damage.
+    it, leaving no trace of the former damage.
 
     This spell can physically repair a
     magic item or construct, but the spell can't restore magic to such an object.
@@ -644,7 +644,7 @@ class MentalPrison(Spell):
     might cause the target to perceive itself as being surrounded by fire, floating
     razors, or hideous maws filled with dripping teeth. Whatever form the illusion
     takes, the target can't see or hear anything beyond it and is restrained for the
-     spell's duration. If the target is moved out of the illusion, makes a melee
+    spell's duration. If the target is moved out of the illusion, makes a melee
     attack through it, or reaches any part of its body through it, the target takes
     10d10 psychic damage, and the spell ends.
     """
@@ -724,7 +724,7 @@ class MightyFortress(Spell):
     the enclosed area. The keep has a square base that is 50 feet on each side, and
     it has three floors with 10-foot-high ceilings. Each of the floors can be
     divided into as many rooms as you like, provided each room is at least 5 feet on
-     each side. The floors of the keep are connected by stone staircases, its walls
+    each side. The floors of the keep are connected by stone staircases, its walls
     are 6 inches thick, and interior rooms can have stone doors or open archways as
     you choose. The keep is furnished and decorated however you like, and it
     contains sufficient food to serve a nine-course banquet for up to 100 people
@@ -741,7 +741,7 @@ class MightyFortress(Spell):
     and collapse at the DM's discretion.
     After 7 days or when you cast this spell
     somewhere else, the fortress harmlessly crumbles and sinks back into the ground,
-     leaving any creatures that were inside it safely on the ground.
+    leaving any creatures that were inside it safely on the ground.
     Casting this
     spell on the same spot once every 7 days for a year makes the fortress
     permanent.
@@ -783,7 +783,7 @@ class MindSliver(Spell):
     an Intelligence saving throw or take 1d6 psychic damage and subtract 1d4
     from the next saving throw it makes before the end of your next turn.
 
-    At Higher Levels: This spell’s damage increases by 1d6 when you reach
+    **At Higher Levels:** This spell’s damage increases by 1d6 when you reach
     certain levels: 5th level (2d6), 11th level (3d6), and 17th level (4d6).
     """
     name = "Mind Sliver"
@@ -803,12 +803,12 @@ class MindSpike(Spell):
     must make a Wisdom saving throw, taking 3d8 psychic damage on a failed save, or
     half as much damage on a successful one. On a failed save, you also always know
     the target's location until the spell ends, but only while the two of you are on
-     the same plane of existence. While you have this knowledge, the target can't
+    the same plane of existence. While you have this knowledge, the target can't
     become hidden from you, and if it's invisible, it gains no benefit from that
     condition against you.
 
-    At Higher Levels: When you cast this spell using a spell
-     slot of 3rd level or higher, the damage increases by 1d8 for each slot level
+    **At Higher Levels:** When you cast this spell using a spell
+    slot of 3rd level or higher, the damage increases by 1d8 for each slot level
     above 2nd.
     """
     name = "Mind Spike"
@@ -838,7 +838,7 @@ class MinorIllusion(Spell):
     footprints, or a small chest it must be no larger than a 5-foot cube. The image
     can't create sound, light, smell, or any other sensory effect. Physical
     interaction with the image reveals it to be an illusion, because things can pass
-     through it.
+    through it.
 
     If a creature uses its action to examine the sound or image, the
     creature can determine that it is an illusion with a successful Intelligence
@@ -898,14 +898,14 @@ class MirrorImage(Spell):
     Until the spell
     ends, the duplicates move with you and mimic your actions, shifting position so
     it's impossible to track which image is real. You can use your action to dismiss
-     the illusory duplicates.
+    the illusory duplicates.
 
     Each time a creature targets you with an attack
     during the spell's duration, roll a d20 to determine whether the attack instead
     targets one of your duplicates.
 
     If you have three duplicates, you must roll a 6
-     or higher to change the attack's target to a duplicate. With two duplicates,
+    or higher to change the attack's target to a duplicate. With two duplicates,
     you must roll an 8 or higher. With one duplicate, you must roll an 11 or higher.
 
 
@@ -915,7 +915,7 @@ class MirrorImage(Spell):
     when all three duplicates are destroyed.
 
     A creature is unaffected by this spell
-     if it can't see, if it relies on senses other than sight, such as blindsight,
+    if it can't see, if it relies on senses other than sight, such as blindsight,
     or if it can perceive illusions as false, as with truesight.
     """
     name = "Mirror Image"
@@ -937,7 +937,7 @@ class Mislead(Spell):
 
     You can use your action to move your
     illusory double up to twice your speed and make it gesture, speak, and behave in
-     whatever way you choose.
+    whatever way you choose.
 
     You can see through its eyes and hear through its
     ears as if you were located where it is. On each of your turns as a bonus
@@ -990,28 +990,28 @@ class ModifyMemory(Spell):
     memory of the details of the event, or create a memory of some other event.
 
     You
-     must speak to the target to describe how its memories are affected, and it must
-     be able to understand your language for the modified memories to take root. Its
-     mind fills in any gaps in the details of your description. If the spell ends
+    must speak to the target to describe how its memories are affected, and it must
+    be able to understand your language for the modified memories to take root. Its
+    mind fills in any gaps in the details of your description. If the spell ends
     before you have finished describing the modified memories, the creature's memory
-     isn't altered. Otherwise, the modified memories take hold when the spell ends.
+    isn't altered. Otherwise, the modified memories take hold when the spell ends.
 
 
     A modified memory doesn't necessarily affect how a creature behaves,
     particularly if the memory contradicts the creature's natural inclinations,
     alignment, or beliefs. An illogical modified memory, such as implanting a memory
-     of how much the creature enjoyed dousing itself in acid, is dismissed, perhaps
+    of how much the creature enjoyed dousing itself in acid, is dismissed, perhaps
     as a bad dream. The DM might deem a modified memory too nonsensical to affect a
     creature in a significant manner.
 
     A remove curse or greater restoration spell
     cast on the target restores the creature's true memory.
 
-    At Higher Levels: If
+    **At Higher Levels:** If
     you cast this spell using a spell slot of 6th level or higher, you can alter the
-     target's memories of an event that took place up to 7 days ago (6th level), 30
+    target's memories of an event that took place up to 7 days ago (6th level), 30
     days ago (7th level), 1 year ago (8th level), or any time in the creature's past
-     (9th level).
+    (9th level).
     """
     name = "Modify Memory"
     level = 5
@@ -1034,7 +1034,7 @@ class MoldEarth(Spell):
     enough force to cause damage.
     - You cause shapes, colors, or both to appear on
     the dirt or stone, spelling out words, creating images, or shaping patterns. The
-     changes last for 1 hour.
+    changes last for 1 hour.
     - If the dirt or stone you target is on the ground,
     you cause it to become difficult terrain. Alternatively, you can cause the
     ground to become normal terrain if it is already difficult terrain. This change
@@ -1057,11 +1057,11 @@ class MoldEarth(Spell):
 class Moonbeam(Spell):
     """A silvery beam of pale light shines down in a 5-footradius, 40-foot-high
     cylinder centered on a point within range. Until the spell ends, dim light fills
-     the cylinder.
+    the cylinder.
 
 
     When a creature enters the spell's area for the first time on a
-     turn or starts its turn there, it is engulfed in ghostly flames that cause
+    turn or starts its turn there, it is engulfed in ghostly flames that cause
     searing pain, and it must make a Constitution saving throw. It takes 2d10
     radiant damage on a failed save, or half as much damage on a successful one.
 
@@ -1128,7 +1128,7 @@ class MordenkainensMagnificentMansion(Spell):
     While closed, the portal is invisible.
 
     Beyond the portal is a magnificent foyer
-     with numerous chambers beyond. The atmosphere is clean, fresh, and warm.
+    with numerous chambers beyond. The atmosphere is clean, fresh, and warm.
 
     You
     can create any floor plan you like, but the space can't exceed 50 cubes, each
@@ -1138,10 +1138,10 @@ class MordenkainensMagnificentMansion(Spell):
     decide the visual appearance of these servants and their attire. They are
     completely obedient to your orders. Each servant can perform any task a normal
     human servant could perform, but they can't attack or take any action that would
-     directly harm another creature. Thus the servants can fetch things, clean,
+    directly harm another creature. Thus the servants can fetch things, clean,
     mend, fold clothes, light fires, serve food, pour wine, and so on. The servants
     can go anywhere in the mansion but can't leave it. Furnishings and other objects
-     created by this spell dissipate into smoke if removed from the mansion. When
+    created by this spell dissipate into smoke if removed from the mansion. When
     the spell ends, any creatures inside the extradimensional space are expelled
     into the open spaces nearest to the entrance.
     """
@@ -1161,7 +1161,7 @@ class MordenkainensPrivateSanctum(Spell):
     """You make an area within range magically secure.
     The area is a cube that can be
     as small as 5 feet to as large as 100 feet on each side. The spell lasts for the
-     duration or until you use an action to dismiss it.
+    duration or until you use an action to dismiss it.
 
     When you cast the spell,
     you decide what sort of security the spell provides, choosing any or all of the
@@ -1169,10 +1169,10 @@ class MordenkainensPrivateSanctum(Spell):
     * Sound can't pass through the barrier at the edge of the
     warded area.
     * The barrier of the warded area appears dark and foggy, preventing
-     vision (including darkvision) through it.
+    vision (including darkvision) through it.
     * Sensors created by divination
     spells can't appear inside the protected area or pass through the barrier at its
-     perimeter.
+    perimeter.
     * Creatures in the area can't be targeted by divination spells.
     *
     Nothing can teleport into or out of the warded area.
@@ -1182,9 +1182,9 @@ class MordenkainensPrivateSanctum(Spell):
     Casting this spell on the same spot every day for a
     year makes this effect permanent.
 
-    At Higher Levels: When you cast this spell
+    **At Higher Levels:** When you cast this spell
     using a spell slot of 5th level or higher, you can increase the size of the cube
-     by 100 feet for each slot level beyond 4th. Thus you could protect a cube that
+    by 100 feet for each slot level beyond 4th. Thus you could protect a cube that
     can be up to 200 feet on one side by using a spell slot o f 5th level.
     """
     name = "Mordenkainens Private Sanctum"
@@ -1207,7 +1207,7 @@ class MordenkainensSword(Spell):
     target of your choice within 5 feet of the sword. On a hit. the target takes
     3d10 force damage. Until the spell ends, you can use a bonus action on each of
     your turns to move the sword up to 20 feet to a spot you can see and repeat this
-     attack against the same target or a different one.
+    attack against the same target or a different one.
     """
     name = "Mordenkainens Sword"
     level = 7
@@ -1223,13 +1223,13 @@ class MordenkainensSword(Spell):
 
 class MoveEarth(Spell):
     """Choose an area of terrain no larger than 40 feet on a side within range. You can
-     reshape dirt, sand, or clay in the area in any manner you choose for the
+    reshape dirt, sand, or clay in the area in any manner you choose for the
     duration. You can raise or lower the area's elevation, create or fill in a
     trench, erect or flatten a wall, or form a pillar. The extent of any such
     changes can't exceed half the area's largest dimension. So, if you affect a
     40-foot square, you can create a pillar up to 20 feet high, raise or lower the
     square's elevation by up to 20 feet, dig a trench up to 20 feet deep, and so on.
-     It takes 10 minutes for these changes to complete.
+    It takes 10 minutes for these changes to complete.
 
     At the end of every 10
     minutes you spend concentrating on the spell, you can choose a new area of
@@ -1244,7 +1244,7 @@ class MoveEarth(Spell):
     the terrain would make a structure unstable, it might collapse.
 
     Similarly, this
-     spell doesn't directly affect plant growth. The moved earth carries any plants
+    spell doesn't directly affect plant growth. The moved earth carries any plants
     along with it.
     """
     name = "Move Earth"

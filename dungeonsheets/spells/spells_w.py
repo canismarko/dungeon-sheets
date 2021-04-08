@@ -2,24 +2,25 @@ from dungeonsheets.spells.spells import Spell
 
 
 class WallOfFire(Spell):
-    """You create a wall of fire on a solid surface within range. You can make the wall
-     up to 60 feet long, 20 feet high, and 1 foot thick, or a ringed wall up to 20
-    feet in diameter, 20 feet high, and 1 foot thick. The wall is opaque and lasts
-    for the duration.
-
-    When the wall appears, each creature within its area must
-    make a Dexterity saving throw. On a failed save, a creature takes 5d8 fire
-    damage, or half as much damage on a successful save.
-
-    One side of the wall,
-    selected by you when you cast this spell, deals 5d8 fire damage to each creature
-     that ends its turn within 10 feet of that side or inside the wall. A creature
-    takes the same damage when it enters the wall for the first time on a turn or
+    """You create a wall of fire on a solid surface within range. You can
+    make the wall up to 60 feet long, 20 feet high, and 1 foot thick,
+    or a ringed wall up to 20 feet in diameter, 20 feet high, and 1
+    foot thick. The wall is opaque and lasts for the duration.
+    
+    When the wall appears, each creature within its area must make a
+    Dexterity saving throw. On a failed save, a creature takes 5d8
+    fire damage, or half as much damage on a successful save.
+    
+    One side of the wall, selected by you when you cast this spell,
+    deals 5d8 fire damage to each creature that ends its turn within
+    10 feet of that side or inside the wall. A creature takes the same
+    damage when it enters the wall for the first time on a turn or
     ends its turn there. The other side of the wall deals no damage.
+    
+    **At Higher Levels:** When you cast this spell using a spell slot
+    of 5th level or higher, the damage increases by 1d8 for each slot
+    level above 4th.
 
-    At Higher
-    Levels: When you cast this spell using a spell slot of 5th level or higher, the
-    damage increases by 1d8 for each slot level above 4th.
     """
     name = "Wall Of Fire"
     level = 4
@@ -152,8 +153,8 @@ class WallOfSand(Spell):
     """You conjure up a wall of swirling sand on the ground at a point you can see
     within range. You can make the wall up to 30 feet long, 10 feet high, and 10
     feet thick, and it vanishes when the spell ends. It blocks line of sight but not
-     movement. A creature is blinded while in the wall's space and must spend 3 feet
-     of movement for every 1 foot it moves there.
+    movement. A creature is blinded while in the wall's space and must spend 3 feet
+    of movement for every 1 foot it moves there.
     """
     name = "Wall Of Sand"
     level = 3
@@ -218,11 +219,11 @@ class WallOfThorns(Spell):
     thorns. The wall appears within range on a solid surface and lasts for the
     duration. You choose to make the wall up to 60 feet long, 10 feet high, and 5
     feet thick or a circle that has a 20-foot diameter and is up to 20 feet high and
-     5  feet thick. The wall blocks line of sight.
+    5  feet thick. The wall blocks line of sight.
 
     When the wall appears, each
     creature within its area must make a Dexterity saving throw. On a failed save, a
-     creature takes 7d8 piercing damage, or half as much damage on a successful
+    creature takes 7d8 piercing damage, or half as much damage on a successful
     save.
 
     A creature can move through the wall, albeit slowly and painfully. For
@@ -314,12 +315,12 @@ class WardingWind(Spell):
     The wind has the following effects:
     - It deafens you and other creatures in its area.
     - It extinguishes unprotected flames in its area that are
-      torch-sized or smaller.
+     torch-sized or smaller.
     - The area is difficult terrain for creatures other than you.
     - The attack rolls of ranged weapon attacks have disadvantage if
-      they pass in or out of the wind.
+     they pass in or out of the wind.
     - It hedges out vapor, gas, and fog that can be dispersed by
-      strong wind.
+     strong wind.
 
     """
     name = "Warding Wind"
@@ -353,7 +354,7 @@ class WaterBreathing(Spell):
 
 class WaterWalk(Spell):
     """This spell grants the ability to move across any liquid surface – such as water,
-     acid, mud, snow, quicksand, or lava – as if it were harmless solid ground
+    acid, mud, snow, quicksand, or lava – as if it were harmless solid ground
     (creatures crossing molten lava can still take damage from the heat).
     Up to ten
     willing creatures you can see within range gain this ability for the duration.
@@ -626,30 +627,26 @@ class Wish(Spell):
     """Wish is the mightiest spell a mortal creature can cast. By simply
     speaking aloud, you can alter the very foundations of reality in
     accord with your desires.
-
+    
     The basic use of this spell is to duplicate any other spell of 8th
     level or lower. You don't need to meet any requirements in that
     spell, including costly components. The spell simply takes effect.
     Alternatively, you can create one of the following effects of your
     choice:
-
+    
     - You create one object of up to 25,000 gp in value that isn't a
       magic item. The object can be no more than 300 feet in any
       dimension, and it appears in an unoccupied space you can see on
       the ground.
-
     - You allow up to twenty creatures that you can see to regain all
       hit points, and you end all effects on them described in the
       greater restoration spell.
-
     - You grant up to ten creatures that you can see resistance to a
       damage type you choose.
-
     - You grant up to ten creatures you can see immunity to a single
       spell or other magical effect for 8 hours. For instance, you
       could make yourself and all your com panions immune to a lich's
       life drain attack.
-
     - You undo a single recent event by forcing a reroll of any roll
       made within the last round (including your last turn). Reality
       reshapes itself to accommodate the new result. For example, a
@@ -772,13 +769,13 @@ class WordOfRecall(Spell):
 
 class WrathOfNature(Spell):
     """You call out to the spirits of nature to rouse them against your enemies. Choose
-     a point you can see within range. The spirits cause trees, rocks, and grasses
+    a point you can see within range. The spirits cause trees, rocks, and grasses
     in a 60-foot cube centered on that point to become animated until the spell
     ends.
     Grasses and Undergrowth. Any area of ground in the cube that is covered by
-     grass or undergrowth is difficult terrain for your enemies.
+    grass or undergrowth is difficult terrain for your enemies.
     Trees. At the start
-     of each of your turns, each of your enemies within 10 feet of any tree in the
+    of each of your turns, each of your enemies within 10 feet of any tree in the
     cube must succeed on a Dexterity saving throw or take 4d6 slashing damage from
     whipping branches.
     Roots and Vines. At the end of each of your turns, one
@@ -789,7 +786,7 @@ class WrathOfNature(Spell):
     Rocks. As a bonus
     action on your turn, you can cause a loose rock in the cube to launch at a
     creature you can see in the cube. Make a ranged spell attack against the target.
-     On a hit, the target takes 3d8 nonmagical bludgeoning damage, and it must
+    On a hit, the target takes 3d8 nonmagical bludgeoning damage, and it must
     succeed on a Strength saving throw or fall prone.
     """
     name = "Wrath Of Nature"

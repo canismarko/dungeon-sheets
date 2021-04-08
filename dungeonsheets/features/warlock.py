@@ -91,11 +91,11 @@ class PactBoon(FeatureSelector):
 
     """
     options = {'chain': PactOfTheChain,
-               'pact of the chain': PactOfTheChain,
-               'blade': PactOfTheBlade,
-               'pact of the blade': PactOfTheBlade,
-               'tome': PactOfTheTome,
-               'pact of the tome': PactOfTheTome}
+            'pact of the chain': PactOfTheChain,
+            'blade': PactOfTheBlade,
+            'pact of the blade': PactOfTheBlade,
+            'tome': PactOfTheTome,
+            'pact of the tome': PactOfTheTome}
     name = "Pact Boon (Select One)"
     source = "Warlock"
 
@@ -203,9 +203,9 @@ class DarkOnesBlessing(Feature):
 
     @property
     def name(self):
-        level = self.owner.Warlock.level
-        mod = self.owner.charisma.modifier
-        return self._name + ' ({:d} HP)'.format(level + mod)
+       level = self.owner.Warlock.level
+       mod = self.owner.charisma.modifier
+       return self._name + ' ({:d} HP)'.format(level + mod)
 
 
 class DarkOnesOwnLuck(Feature):
@@ -377,8 +377,8 @@ class HealingLight(Feature):
 
     @property
     def name(self):
-        num = 1 + self.owner.Warlock.level
-        return self._name + " ({:d}d6/LR)".format(num)
+       num = 1 + self.owner.Warlock.level
+       return self._name + " ({:d}d6/LR)".format(num)
 
 
 class RadiantSoul(Feature):
@@ -427,18 +427,16 @@ class HexbladesCurse(Feature):
     of you. The target is cursed for 1 minute. The curse ends early if the
     target dies, you die, or you are incapacitated. Until the curse ends, you
     gain the following benefits:
-
-    • You gain a bonus to damage rolls against the
-    cursed target. The bonus equals your proficiency bonus.
-
-    • Any attack roll you make against the cursed target is a critical hit on
-    a roll of 19 or 20 on the d20.
-
-    --If the cursed target dies, you regain hit points equal to your warlock
-    level + your Charisma modifier (minimum of 1 hit point).
-
+    
+    - You gain a bonus to damage rolls against the cursed target. The
+      bonus equals your proficiency bonus.
+    - Any attack roll you make against the cursed target is a critical
+      hit on a roll of 19 or 20 on the d20.
+    - If the cursed target dies, you regain hit points equal to your
+      warlock level + your Charisma modifier (minimum of 1 hit point).
+    
     You can't use this feature again until you finish a short or long rest.
-
+    
     """
     name = "Hexblades Curse"
     source = "Warlock (Hexblade)"
@@ -463,18 +461,18 @@ class HexWarrior(Feature):
     source = "Warlock (Hexblade)"
 
     def weapon_func(self, weapon: weapons.Weapon, **kwargs):
-        """
-        Swap the weapon's attack bonus modifier for Charisma if
-        it is higher than STR/DEX bonus
-        """
-        if weapon.is_finesse:
-            abils = {'strength': self.owner.strength.modifier,
-                     'dexterity': self.owner.dexterity.modifier,
-                     'charisma': self.owner.charisma.modifier}
-        else:
-            abils = {weapon.ability: getattr(self.owner, weapon.ability).modifier,
-                     'charisma': self.owner.charisma.modifier}
-        weapon.ability = max(abils, key=abils.get)
+       """
+       Swap the weapon's attack bonus modifier for Charisma if
+       it is higher than STR/DEX bonus
+       """
+       if weapon.is_finesse:
+          abils = {'strength': self.owner.strength.modifier,
+                 'dexterity': self.owner.dexterity.modifier,
+                 'charisma': self.owner.charisma.modifier}
+       else:
+          abils = {weapon.ability: getattr(self.owner, weapon.ability).modifier,
+                 'charisma': self.owner.charisma.modifier}
+       weapon.ability = max(abils, key=abils.get)
 
 
 class AccursedSpecter(Feature):
@@ -532,19 +530,19 @@ class Invocation(Feature):
     at_will_spells = ()
 
     def cast_spell_at_will(self, spell):
-        s = spell()
-        s.level = 0
-        if 'M' in s.components:
-            c = list(s.components)
-            c.remove('M')
-            s.components = tuple(c)
-        self.spells_known += (s,)
-        self.spells_prepared += (s,)
+       s = spell()
+       s.level = 0
+       if 'M' in s.components:
+          c = list(s.components)
+          c.remove('M')
+          s.components = tuple(c)
+       self.spells_known += (s,)
+       self.spells_prepared += (s,)
 
     def __init__(self, owner):
-        super().__init__(owner)
-        for s in self.at_will_spells:
-            self.cast_spell_at_will(s)
+       super().__init__(owner)
+       for s in self.at_will_spells:
+          self.cast_spell_at_will(s)
 
 
 # PHB
@@ -953,12 +951,12 @@ class ImprovedPactWeapon(Invocation):
     name = "Improved Pact Weapon"
 
     def weapon_func(self, weapon: weapons.Weapon, **kwargs):
-        """
-        Add +1 to attack and damage if magic is not already magic
-        """
-        if (weapon.attack_bonus == 0) or (weapon.damage_bonus == 0):
-            weapon.attack_bonus += 1
-            weapon.damage_bonus += 1
+       """
+       Add +1 to attack and damage if magic is not already magic
+       """
+       if (weapon.attack_bonus == 0) or (weapon.damage_bonus == 0):
+          weapon.attack_bonus += 1
+          weapon.damage_bonus += 1
 
 
 class LanceOfLethargy(Invocation):

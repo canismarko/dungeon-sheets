@@ -54,7 +54,7 @@ class Earthquake(Spell):
 
     When you cast this spell and at the end of each turn
     you spend concentrating on it, each creature on the ground in the area must make
-     a Dexterity saving throw. On a failed save, the creature is knocked prone.
+    a Dexterity saving throw. On a failed save, the creature is knocked prone.
 
 
     This spell can have additional effects depending on the terrain in the area, as
@@ -64,7 +64,7 @@ class Earthquake(Spell):
     the start of your next turn after you cast the spell. A total of 1d6 such
     fissures open in locations chosen by the DM. Each is 1d10 x 10 feet deep, 10
     feet wide, and extends from one edge of the spell's area to the opposite side. A
-     creature standing on a spot where a fissure opens must succeed on a Dexterity
+    creature standing on a spot where a fissure opens must succeed on a Dexterity
     saving throw or fall in. A creature that successfully saves moves with the
     fissure's edge as it opens.
     A fissure that opens beneath a structure causes it
@@ -80,7 +80,7 @@ class Earthquake(Spell):
     bludgeoning damage, is knocked prone, and is buried in the rubble, requiring a
     DC 20 Strength (Athletics) check as an action to escape. The DM can adjust the
     DC higher or lower, depending on the nature of the rubble. On a successful save,
-     the creature takes half as much damage and doesn't fall prone or become buried.
+    the creature takes half as much damage and doesn't fall prone or become buried.
     """
     name = "Earthquake"
     level = 8
@@ -96,10 +96,10 @@ class Earthquake(Spell):
 
 class EldritchBlast(Spell):
     """A beam of crackling energy streaks toward a creature within range. Make a ranged
-     spell attack against the target. On a hit, the target takes 1d10 force damage.
+    spell attack against the target. On a hit, the target takes 1d10 force damage.
 
 
-    At Higher Levels: The spell creates more than one beam when you reach higher
+    **At Higher Levels:** The spell creates more than one beam when you reach higher
     levels:
     Two beams at 5th level
     Three beams at 11th level
@@ -125,12 +125,12 @@ class ElementalBane(Spell):
     damage types: acid, cold, fire, lightning, or thunder.
     The target must succeed
     on a Constitution saving throw or be affected by the spell for its duration. The
-     first time each turn the affected target takes damage of the chosen type, the
+    first time each turn the affected target takes damage of the chosen type, the
     target takes an extra 2d6 damage of that type. Moreover, the target loses any
     resistance to that damage type until the spell ends.
 
-    At Higher Levels: When you
-     cast this spell using a spell slot of 5th level or higher, you can target one
+    **At Higher Levels:** When you
+    cast this spell using a spell slot of 5th level or higher, you can target one
     additional creature for each slot level above 4th. The creatures must be within
     30 feet of each other when you target them.
     """
@@ -153,7 +153,7 @@ class ElementalWeapon(Spell):
     duration, the weapon has a +1 bonus to attack rolls and deals an extra 1d4
     damage of the chosen type when it hits.
 
-    At Higher Levels: When you cast this
+    **At Higher Levels:** When you cast this
     spell using a spell slot of 5th or 6th level, the bonus to attack rolls
     increases to +2 and the extra damage increases to 2d4.
     When you use a spell
@@ -180,7 +180,7 @@ class EnemiesAbound(Spell):
     ends. Each time the target takes damage, it can repeat the saving throw, ending
     the effect on itself on a success. Whenever the affected creature chooses
     another creature as a target, it must choose the target at random from among the
-     creatures it can see within range of the attack, spell, or other ability it's
+    creatures it can see within range of the attack, spell, or other ability it's
     using. If an enemy provokes an opportunity attack from the affected creature,
     the creature must make that attack if it is able to.
     """
@@ -198,17 +198,17 @@ class EnemiesAbound(Spell):
 
 class Enervation(Spell):
     """A tendril of inky darkness reaches out from you, touching a creature you can see
-     within range to drain life from it. The target must make a Dexterity saving
+    within range to drain life from it. The target must make a Dexterity saving
     throw. On a successful save, the target takes 2d8 necrotic damage, and the spell
-     ends. On a failed save, the target takes 4d8 necrotic damage, and until the
+    ends. On a failed save, the target takes 4d8 necrotic damage, and until the
     spell ends, you can use your action on each of your turns to automatically deal
     4d8 necrotic damage to the target. The spell ends ifyou use your action to do
     anything else, if the target is ever outside the spell's range, or if the target
-     has total cover from you. Whenever the spell deals damage to a target, you
+    has total cover from you. Whenever the spell deals damage to a target, you
     regain hit points equal to half the amount of necrotic damage the target takes.
 
 
-    At Higher Levels: When you cast this spell using a spell slot of 6th level or
+    **At Higher Levels:** When you cast this spell using a spell slot of 6th level or
     higher, the damage increases by 1d8 for each slot level above 5th.
     """
     name = "Enervation"
@@ -225,12 +225,12 @@ class Enervation(Spell):
 
 class EnhanceAbility(Spell):
     """You touch a creature and bestow upon it a magical enhancement. Choose one of the
-     following effects: the target gains the effect until the spell ends.
+    following effects: the target gains the effect until the spell ends.
     - Bear's
     Endurance. The target has advantage on Constitution checks. It also gains 2d6
     temporary hit points, which are lost when the spell ends.
     - Bull's Strength. The
-     target has advantage on Strength checks, and his or her carrying capacity
+    target has advantage on Strength checks, and his or her carrying capacity
     doubles.
     - Cat's Grace. The target has advantage on Dexterity checks. It also
     doesn't take damage from falling 20 feet or less if it isn't incapacitated.
@@ -239,10 +239,10 @@ class EnhanceAbility(Spell):
     - Fox's Cunning.
     The target thas advantage on Intelligence checks.
     - Owl's Wisdom. The target has
-     advantage on Wisdom checks.
+    advantage on Wisdom checks.
 
-    At Higher Levels: When you cast this spell using a
-     spell slot of 3rd level or higher, you can target one additional creature for
+    **At Higher Levels:** When you cast this spell using a
+    spell slot of 3rd level or higher, you can target one additional creature for
     each slot level above 2nd.
     """
     name = "Enhance Ability"
@@ -273,17 +273,17 @@ class Enlargereduce(Spell):
     growth increases its size by one category – from Medium to Large, for example.
     If there isn't enough room for the target to double its size, the creature or
     object attains the maximum possible size in the space available. Until the spell
-     ends, the target also has advantage on Strength checks and Strength saving
+    ends, the target also has advantage on Strength checks and Strength saving
     throws. The target's weapons also grow to match its new size. While these
     weapons are enlarged, the target's attack with them deal 1d4 extra damage.
 
 
     Reduce 
     The target's size is halved in all dimensions, and its weight is reduced
-     to one-eighth of normal. This reduction decreases its size by one category –
+    to one-eighth of normal. This reduction decreases its size by one category –
     from Medium to Small, for example. Until the spell ends, the target also has
     disadvantage on Strength checks and Strength saving throws. The target's weapons
-     also shrink to match its new size. While these weapons are reduced, the
+    also shrink to match its new size. While these weapons are reduced, the
     target's attacks with them deal 1d4 less damage (this can't reduce the damage
     below 1).
     """
@@ -310,9 +310,9 @@ class EnsnaringStrike(Spell):
     restrained by this spell, the target takes 1d6 piercing damage at the start of
     each of its turns. A creature restrained by the vines or one that can touch the
     creature can use its action to make a Strength check against your spell save DC.
-     On a success, the target is freed.
+    On a success, the target is freed.
 
-    At Higher Levels: If you cast this spell
+    **At Higher Levels:** If you cast this spell
     using a spell slot of 2nd level or higher, the damage increases by 1d6 for each
     slot level above 1st.
     """
@@ -331,7 +331,7 @@ class EnsnaringStrike(Spell):
 class Entangle(Spell):
     """Grasping weeds and vines sprout from the ground in a 20-foot square starting
     from a point within range. For the duration, these plants turn the ground in the
-     area into difficult terrain.
+    area into difficult terrain.
 
     A creature in the area when you cast the spell
     must succeed on a Strength saving throw or be restrained by the entangling
@@ -361,7 +361,7 @@ class Enthrall(Spell):
     save. On a failed save, the target has disadvantage on Wisdom (Perception)
     checks made to perceive any creature other than you until the spell ends or
     until the target can no longer hear you. The spell ends if you are incapacitated
-     or can no longer speak.
+    or can no longer speak.
     """
     name = "Enthrall"
     level = 2
@@ -380,11 +380,11 @@ class EruptingEarth(Spell):
     earth and stone erupts in a 20-foot cube centered on that point. Each creature
     in that area must make a Dexterity saving throw. A creature takes 3d12
     bludgeoning damage on a failed save, or half as much damage on a successful one.
-     Additionally, the ground in that area becomes difficult terrain until cleared
+    Additionally, the ground in that area becomes difficult terrain until cleared
     away. Each 5-foot-square portion of the area requires at least 1 minute to clear
-     by hand.
+    by hand.
 
-    At Higher Levels: When you cast this spell using a spell slot of 4rd
+    **At Higher Levels:** When you cast this spell using a spell slot of 4rd
     level or higher, the damage increases by 1d12 for each slot level above 3rd.
     """
     name = "Erupting Earth"
@@ -425,10 +425,11 @@ class Etherealness(Spell):
     no effect if you cast it while you are on the Ethereal Plane or a plane that
     doesn't border it, such as one of the Outer Planes.
 
-    At Higher Levels: When you
-    cast this spell using a spell slot of 8th level or higher, you can target up to
-    three willing creatures (including you) for each slot level above 7th. The
+    **At Higher Levels:** When you cast this spell using a spell slot
+    of 8th level or higher, you can target up to three willing
+    creatures (including you) for each slot level above 7th. The
     creatures must be within 10 feet of you when you cast the spell.
+
     """
     name = "Etherealness"
     level = 7
@@ -445,7 +446,7 @@ class Etherealness(Spell):
 class EvardsBlackTentacles(Spell):
     """Squirming, ebony tentacles fill a 20-foot square on ground that you can see
     within range. For the duration, these tentacles turn the ground in the area into
-     difficult terrain.
+    difficult terrain.
 
     When a creature enters the affected area for the first
     time on a turn or starts its turn there, the creature must succeed on a
@@ -489,9 +490,9 @@ class ExpeditiousRetreat(Spell):
 
 class Eyebite(Spell):
     """For the spell's duration, your eyes become an inky void imbued with dread power.
-     One creature of your choice within 60 feet of you that you can see must succeed
-     on a Wisdom saving throw or be affected by one of the following effects of your
-     choice for the duration. On each of your turns until the spell ends, you can
+    One creature of your choice within 60 feet of you that you can see must succeed
+    on a Wisdom saving throw or be affected by one of the following effects of your
+    choice for the duration. On each of your turns until the spell ends, you can
     use your action to target another creature but can't target a creature again if
     it has succeeded on a saving throw against this casting of eyebite.
 
@@ -505,11 +506,11 @@ class Eyebite(Spell):
     frightened of you. On each of its turns, the frightened creature must take the
     Dash action and move away from you by the safest and shortest available route,
     unless there is nowhere to move. If the target moves to a place at least 60 feet
-     away from you where it can no longer see you, this effect ends.
+    away from you where it can no longer see you, this effect ends.
 
     Sickened 
     The
-     target has disadvantage on attack rolls and ability checks. At the end of each
+    target has disadvantage on attack rolls and ability checks. At the end of each
     of its turns, it can make another Wisdom saving throw. If it succeeds, the
     effect ends.
     """

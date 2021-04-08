@@ -5,11 +5,11 @@ class HailOfThorns(Spell):
     """The next time you hit a creature with a ranged weapon attack before the spell
     ends, this spell creates a rain of thorns that sprouts from your ranged weapon
     or ammunition. In addition to the normal effect of the attack, the target of the
-     attack and each creature within 5 feet of it must make a Dexterity saving
+    attack and each creature within 5 feet of it must make a Dexterity saving
     throw. A creature takes 1d10 piercing damage on a failed save, or half as much
     damage on a successful one.
 
-    At Higher Levels: If you cast this spell using a
+    **At Higher Levels:** If you cast this spell using a
     spell slot of 2nd level or higher, the damage increases by 1d10 for each slot
     level above 1st (to a maximum of 6d10).
     """
@@ -28,7 +28,7 @@ class HailOfThorns(Spell):
 class Hallow(Spell):
     """You touch a point and infuse an area around it with holy (or unholy) power. The
     area can have a radius up to 60 feet, and the spell fails if the radius includes
-     an area already under the effect a hallow spell. The affected area is subject
+    an area already under the effect a hallow spell. The affected area is subject
     to the following effects.
 
     First, celestials, elementals, fey, fiends, and
@@ -42,8 +42,8 @@ class Hallow(Spell):
     following list, or choose an effect offered by the DM. Som e of these effects
     apply to creatures in the area; you can designate whether the effect applies to
     all creatures, creatures that follow a specific deity or leader, or creatures of
-     a specific sort, such as ores or trolls. When a creature that would be affected
-     enters the spell's area for the first time on a turn or starts its turn there,
+    a specific sort, such as ores or trolls. When a creature that would be affected
+    enters the spell's area for the first time on a turn or starts its turn there,
     it can make a Charisma saving throw. On a success, the creature ignores the
     extra effect until it leaves the area.
 
@@ -58,13 +58,13 @@ class Hallow(Spell):
 
     Daylight
     Bright light fills
-     the area. Magical darkness created by spells of a lower level than the slot you
-     used to cast this spell can't extinguish the light.
+    the area. Magical darkness created by spells of a lower level than the slot you
+    used to cast this spell can't extinguish the light.
 
     Energy Protection
     Affected
-     creatures in the area have resistance to one damage type of your choice, except
-     for bludgeoning, piercing, or slashing.
+    creatures in the area have resistance to one damage type of your choice, except
+    for bludgeoning, piercing, or slashing.
 
     Energy Vulnerability
     Affected
@@ -106,9 +106,9 @@ class Hallow(Spell):
 
 class HallucinatoryTerrain(Spell):
     """You make natural terrain in a 150-foot cube in range look, sound, and smell like
-     some other sort of natural terrain. Thus, open fields or a road can be made to
+    some other sort of natural terrain. Thus, open fields or a road can be made to
     resemble a swamp, hill, crevasse, or some other difficult or impassable terrain.
-     A pond can be made to seem like a grassy meadow, a precipice like a gentle
+    A pond can be made to seem like a grassy meadow, a precipice like a gentle
     slope, or a rock-strewn gully like a wide and smooth road. Manufactured
     structures, equipment, and creatures within the area aren't changed in
     appearance.
@@ -118,7 +118,7 @@ class HallucinatoryTerrain(Spell):
     difference isn't obvious by touch, a creature carefully examining the illusion
     can attempt an Intelligence (Investigation) check against your spell save DC to
     disbelieve it. A creature who discerns the illusion for what it is, sees it as a
-     vague image superimposed on the terrain.
+    vague image superimposed on the terrain.
     """
     name = "Hallucinatory Terrain"
     level = 4
@@ -158,8 +158,8 @@ class Haste(Spell):
     """Choose a willing creature that you can see within range. Until the spell ends,
     the target's speed is doubled, it gains a +2 bonus to AC, it has advantage on
     Dexterity saving throws, and it gains an additional action on each of its turns.
-     That action can be used only to take the Attack (one weapon attack only), Dash,
-     Disengage, Hide, or Use an Object action.
+    That action can be used only to take the Attack (one weapon attack only), Dash,
+    Disengage, Hide, or Use an Object action.
 
     When the spell ends, the target
     can't move or take actions until after its next turn, as a wave of lethargy
@@ -183,7 +183,7 @@ class Heal(Spell):
     ends blindness, deafness, and any diseases affecting the target. This spell has
     no effect on constructs or undead.
 
-    At Higher Levels: When you cast this spell
+    **At Higher Levels:** When you cast this spell
     using aspell slot of 7th level or higher, the amount of healing increases by 10
     for each slot level above 6th.
     """
@@ -209,7 +209,7 @@ class HealingSpirit(Spell):
     heal constructs or undead. As a bonus action on your turn, you can move the
     Spirit up to 30 feet to a space you can see.
 
-    At Higher Levels: When you cast
+    **At Higher Levels:** When you cast
     this spell using a spell slot of 3rd level or higher, the healing increases 1d6
     for each slot level above 2nd.
     """
@@ -227,11 +227,11 @@ class HealingSpirit(Spell):
 
 class HealingWord(Spell):
     """A creature of your choice that you can see within range regains hit points equal
-     to 1d4 + your spellcasting ability modifier.
+    to 1d4 + your spellcasting ability modifier.
     This spell has no effect on undead
-     or constructs.
+    or constructs.
 
-    At Higher Levels: When you cast this spell using a spell slot
+    **At Higher Levels:** When you cast this spell using a spell slot
     of 2nd level or higher, the healing increases by 1d4 for each slot level above
     1st.
     """
@@ -249,9 +249,9 @@ class HealingWord(Spell):
 
 class HeatMetal(Spell):
     """Choose a manufactured metal object, such as a metal weapon or a suit of heavy or
-     medium metal armor, that you can see within range. You cause the object to glow
-     red-hot. Any creature in physical contact with the object takes 2d8 fire damage
-     when you cast the spell. Until the spell ends, you can use a bonus action on
+    medium metal armor, that you can see within range. You cause the object to glow
+    red-hot. Any creature in physical contact with the object takes 2d8 fire damage
+    when you cast the spell. Until the spell ends, you can use a bonus action on
     each of your subsequent turns to cause this damage again.
 
     If a creature is
@@ -260,7 +260,7 @@ class HeatMetal(Spell):
     doesn't drop the object, it has disadvantage on attack rolls and ability checks
     until the start of your next turn.
 
-    At Higher Levels: When you cast this spell
+    **At Higher Levels:** When you cast this spell
     using a spell slot of 3rd level or higher, the damage increases by 1d8 for each
     slot level above 2nd.
     """
@@ -278,14 +278,14 @@ class HeatMetal(Spell):
 
 class HellishRebuke(Spell):
     """Reaction: you are being damaged by a creature within 60 feet of you that you can
-     see.
+    see.
 
     You point your finger, and the creature that damaged you is momentarily
     surrounded by hellish flames. The creature must make a Dexterity saving throw.
     It takes 2d10 fire damage on a failed save, or half as much damage on a
     successful one.
 
-    At Higher Levels: When you cast this spell using a spell slot
+    **At Higher Levels:** When you cast this spell using a spell slot
     of 2nd level or higher, the damage increases by 1d10 for each slot level above
     1st.
     """
@@ -308,7 +308,7 @@ class HeroesFeast(Spell):
     creatures can partake of the feast.
 
     A creature that partakes of the feast gains
-     several benefits. The creature is cured of all diseases and poison, becomes
+    several benefits. The creature is cured of all diseases and poison, becomes
     immune to poison and being frightened, and makes all Wisdom saving throws with
     advantage. Its hit point maximum also increases by 2d10, and it gains the same
     number of hit points. These benefits last for 24 hours.
@@ -333,7 +333,7 @@ class Heroism(Spell):
     spell ends, the target loses any remaining temporary hit points from this spell.
 
 
-    At Higher Levels: When you cast this spell using a spell slot of 2nd level or
+    **At Higher Levels:** When you cast this spell using a spell slot of 2nd level or
     higher, you can target one additional creature for each slot level above 1st.
     """
     name = "Heroism"
@@ -352,7 +352,7 @@ class Hex(Spell):
     """You place a curse on a creature that you can see within range. Until the spell
     ends, you deal an extra 1d6 necrotic damage to the target whenever you hit it
     with an attack. Also, choose one ability when you cast the spell. The target has
-     disadvantage on ability checks made with the chosen ability.
+    disadvantage on ability checks made with the chosen ability.
 
     If the target
     drops to 0 hit points before this spell ends, you can use a bonus action on a
@@ -361,7 +361,7 @@ class Hex(Spell):
     A remove curse cast on the
     target ends this spell early.
 
-    At Higher Levels: When you cast this spell using
+    **At Higher Levels:** When you cast this spell using
     a spell slot of 3rd or 4th level, you can maintain your concentration on the
     spell for up to 8 hours.
     When you use a spell slot of 5th level or higher, you
@@ -388,7 +388,7 @@ class HoldMonster(Spell):
     At Higher Levels:
     When you cast this spell using a spell slot of 6th level or higher, you can
     target one additional creature for each slot level above 5th. The creatures must
-     be within 30 feet of each other when you target them.
+    be within 30 feet of each other when you target them.
     """
     name = "Hold Monster"
     level = 5
@@ -408,7 +408,7 @@ class HoldPerson(Spell):
     turns, the target can make another Wisdom saving throw. On a success, the spell
     ends on the target.
 
-    At Higher Levels: When you cast this spell using a spell
+    **At Higher Levels:** When you cast this spell using a spell
     slot of 3rd level or higher, you can target one additional humanoid for each
     slot level above 2nd. The humanoids must be within 30 feet of each other when
     you target them.
@@ -430,7 +430,7 @@ class HolyAura(Spell):
     radius around you.
     Creatures of your choice in that radius when you cast this
     spell shed dim light in a 5-foot radius and have advantage on all saving throws,
-     and other creatures have disadvantage on attack rolls against them until the
+    and other creatures have disadvantage on attack rolls against them until the
     spell ends. In addition, when a fiend or an undead hits an affected creature
     with a melee attack, the aura flashes with brilliant light. The attacker must
     succeed on a Constitution saving throw or be blinded until the spell ends.
@@ -474,8 +474,8 @@ class HolyWeapon(Spell):
 
 class HungerOfHadar(Spell):
     """You open a gateway to the dark between the stars, a region infested with unknown
-     horrors. A 20-foot-radius sphere of blackness and bitter cold appears, centered
-     on a point with range and lasting for the duration. This void is filled with a
+    horrors. A 20-foot-radius sphere of blackness and bitter cold appears, centered
+    on a point with range and lasting for the duration. This void is filled with a
     cacophony of soft whispers and slurping noises that can be heard up to 30 feet
     away. No light, magical or otherwise, can illuminate the area, and creatures
     fully within the area are blinded.
@@ -483,7 +483,7 @@ class HungerOfHadar(Spell):
     The void creates a warp in the fabric of
     space, and the area is difficult terrain. Any creature that starts its turn in
     the area takes 2d6 cold damage. Any creature that ends its turn in the area must
-     succeed on a Dexterity saving throw or take 2d6 acid damage as milky,
+    succeed on a Dexterity saving throw or take 2d6 acid damage as milky,
     otherwordly tentacles rub against it.
     """
     name = "Hunger Of Hadar"
@@ -504,10 +504,10 @@ class HuntersMark(Spell):
     Until the spell ends, you deal an extra 1d6 damage to the target
     whenever you hit it with a weapon attack, and you have advantage on any Wisdom
     (Perception) or Wisdom (Survival) check you make to find it. If the target drops
-     to 0 hit points before this spell ends, you can use a bonus action on a
+    to 0 hit points before this spell ends, you can use a bonus action on a
     subsequent turn of yours to mark a new creature.
 
-    At Higher Levels: When you
+    **At Higher Levels:** When you
     cast this spell using a spell slot of 3rd or 4th level, you can maintain your
     concentration on the spell for up to 8 hours.
     When you use a spell slot of 5th

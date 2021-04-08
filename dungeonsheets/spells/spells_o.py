@@ -5,13 +5,13 @@ class OtilukesFreezingSphere(Spell):
     """A frigid globe of cold energy streaks from your fingertips to a point of your
     choice within range, where it explodes in a 60-foot-radius sphere.
     Each creature
-     within the area must make a Constitution saving throw. On a failed save, a
+    within the area must make a Constitution saving throw. On a failed save, a
     creature takes 10d6 cold damage. On a successful save, it takes half as much
     damage.
 
     If the globe strikes a body of water or a liquid that is principally
     water (not including water-based creatures), it freezes the liquid to a depth of
-     6 inches over an area 30 feet square. This ice lasts for 1 minute. Creatures
+    6 inches over an area 30 feet square. This ice lasts for 1 minute. Creatures
     that were swimming on the surface of frozen water are trapped in the ice. A
     trapped creature can use an action to make a Strength check against your spell
     save DC to break free.
@@ -20,7 +20,7 @@ class OtilukesFreezingSphere(Spell):
     the spell, if you wish. A small globe about the size of a sling stone, cool to
     the touch, appears in your hand. At any time, you or a creature you give the
     globe to can throw the globe (to a range of 40 feet) or hurl it with a sling (to
-     the sling's normal range). It shatters on impact, with the same effect as the
+    the sling's normal range). It shatters on impact, with the same effect as the
     normal casting of the spell. You can also set the globe down without shattering
     it. After 1 minute, if the globe hasn't already shattered, it explodes.
 
@@ -47,7 +47,7 @@ class OtilukesResilientSphere(Spell):
 
     Nothing---not
     physical objects, energy, or other spell effects---can pass through the barrier,
-     in or out, though a creature in the sphere can breathe there. The sphere is
+    in or out, though a creature in the sphere can breathe there. The sphere is
     immune to all damage, and a creature or object inside can't be damaged by
     attacks or effects originating from outside, nor can a creature inside the
     sphere damage anything outside it.

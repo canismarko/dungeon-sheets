@@ -38,10 +38,10 @@ class SneakAttack(Feature):
 
     @property
     def name(self):
-        level = self.owner.Rogue.level
-        dice = ceil(level / 2.)
-        name = self._name + " ({:d}d6)".format(dice)
-        return name
+       level = self.owner.Rogue.level
+       dice = ceil(level / 2.)
+       name = self._name + " ({:d}d6)".format(dice)
+       return name
 
 
 class CunningAction(Feature):
@@ -463,8 +463,8 @@ class Survivalist(Feature):
     """
 
     def __init__(self, owner=None):
-        super().__init__(owner=owner)
-        self.owner.skill_expertise += ("nature", "survival")
+       super().__init__(owner=owner)
+       self.owner.skill_expertise += ("nature", "survival")
 
 
 class SuperiorMobility(Feature):
