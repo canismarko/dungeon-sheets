@@ -169,6 +169,8 @@ def rst_to_latex(rst, top_heading_level=0):
         # No reST, so return an empty string
         tex = ""
     else:
+        # Mark hit dice in monospace font
+        rst = dice_re.sub(r'``\1``', rst)
         tex_parts = latex_parts(rst)
         tex = tex_parts['body']
         # Check for currently un-supported LaTeX commands
