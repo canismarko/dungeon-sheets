@@ -1,3 +1,14 @@
+from dungeonsheets import spells
+
+
+def all_spells():
+    """Generate all the valid spell classes so far defined."""
+    for spell_name, spell in spells.__dict__.items():
+        # Check if it's (a) a class and (b) a subclass of ``Spell``
+        if isinstance(spell, type) and issubclass(spell, Spell):
+            yield spell
+
+
 def create_spell(**params):
     """Create a new subclass of ``Spell`` with given default parameters.
     

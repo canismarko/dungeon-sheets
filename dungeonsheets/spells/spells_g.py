@@ -441,25 +441,26 @@ class GuardianOfNature(Spell):
     powerful guardian. The transformation lasts until the spell
     ends. You choose one of the following forms to assume: Primal
     Beast or Great Tree.
-
+    
     **Primal Beast.** Bestial fur covers your body, your facial
     features become feral, and you gain the following benefits:
-
+    
     - Your walking speed increases by 10 feet.
     - You gain darkvision with a range of 120 feet.
     - You make Strength-based attack rolls with advantage.
     - Your melee weapon attacks deal an extra 1d6 force damage on a
-     hit.
-
+      hit.
+    
     **Great Tree.** Your skin appears barky, leaves sprout from your
     hair, and you gain the following benefits:
-
+    
     - You gain 10 temporary hit points.
     - You make Constitution saving throws with advantage.
-    - You make Dexterity- and Wisdom-based attack rolls with advantage.
+    - You make Dexterity- and Wisdom-based attack rolls with
+      advantage.
     - While you are on the ground, the ground within 15 feet of you is
-     difficult terrain for your enemies.
-
+      difficult terrain for your enemies.
+    
     """
     name = "Guardian Of Nature"
     level = 4
@@ -480,57 +481,49 @@ class GuardsAndWards(Spell):
     tall, and shaped as you desire. You can ward several stories of a
     stronghold by dividing the area among them, as long as you can
     walk into each contiguous area while you are casting the spell.
-
+    
     When you cast this spell, you can specify individuals that are
     unaffected by any or all of the effects that you choose. You can
     also specify a password that, when spoken aloud, makes the speaker
     immune to these effects.
-
+    
     Guards and wards creates the following effects within the warded
     area.
-
-    Corridors: Fog fills all the warded corridors, making them heavily
-    obscured. In addition, at each intersection or branching passage
-    offering a choice of direction, there is a 50 percent chance that
-    a creature other than you will believe it is going in the opposite
-    direction from the one it chooses.
-
-    Doors: All doors in the warded area are magically locked, as if
-    sealed by an arcane lock spell. In addition, you can cover up to
-    ten doors with an illusion (equivalent to the illusory object
-    function of the m inor illusion spell) to make them appear as
-    plain sections of wall.
-
-    Stairs: Webs fill all stairs in the warded area from top to
-    bottom, as the web spell. These strands regrow in 10 minutes if
-    they are burned or torn away while guards and wards lasts.
-
-    Other Spell Effect: You can place your choice of one of the
-    following magical effects within the warded area of the
-    stronghold.
-
-    - Place dancing lights in four corridors. You can designate a
-     simple program that the lights repeat as long as guards and
-     wards lasts.
-
-    - Place magic mouth in two locations.
-
-    - Place stinking cloud in two locations. The vapors appear in the
-     places you designate; they return within 10 minutes if dispersed
-     by wind while guards and wards lasts.
-
-    - Place a constant gust of wind in one corridor or room.
-
-    - Place a suggestion in one location. You select an area of up to
-     5 feet square, and any creature that enters or passes through
-     the area receives the suggestion mentally.
-
+    
+    - **Corridors.** Fog fills all the warded corridors, making them
+      heavily obscured. In addition, at each intersection or branching
+      passage offering a choice of direction, there is a 50 percent
+      chance that a creature other than you will believe it is going
+      in the opposite direction from the one it chooses.
+    - **Doors.** All doors in the warded area are magically locked, as
+      if sealed by an arcane lock spell. In addition, you can cover up
+      to ten doors with an illusion (equivalent to the illusory object
+      function of the m inor illusion spell) to make them appear as
+      plain sections of wall.
+    - **Stairs.** Webs fill all stairs in the warded area from top to
+      bottom, as the web spell. These strands regrow in 10 minutes if
+      they are burned or torn away while guards and wards lasts.
+    - **Other Spell Effect.** You can place your choice of one of the
+      following magical effects within the warded area of the
+      stronghold.
+    
+      - Place dancing lights in four corridors. You can designate a
+        simple program that the lights repeat as long as guards and
+        wards lasts.
+      - Place magic mouth in two locations.
+      - Place stinking cloud in two locations. The vapors appear in
+        the places you designate; they return within 10 minutes if
+        dispersed by wind while guards and wards lasts.
+      - Place a constant gust of wind in one corridor or room.
+      - Place a suggestion in one location. You select an area of up
+        to 5 feet square, and any creature that enters or passes
+        through the area receives the suggestion mentally.
+    
     The whole warded area radiates magic. A dispel magic cast on a
-    specific effect, if successful, removes only that effect.
-
-    You can create a permanently guarded and warded structure by
-    casting this spell there every day for one year.
-
+    specific effect, if successful, removes only that effect.  You can
+    create a permanently guarded and warded structure by casting this
+    spell there every day for one year.
+    
     """
     name = "Guards And Wards"
     level = 6
@@ -619,19 +612,17 @@ class GuidingHand(Spell):
 class Gust(Spell):
     """You seize the air and compel it to create one of the following
     effects at a point you can see within range:
-
+    
     - One Medium or smaller creature that you choose must succeed on a
-     Strength saving throw or be pushed up to 5 feet away from you.
-
+      Strength saving throw or be pushed up to 5 feet away from you.
     - You create a small blast of air capable of moving one object
-     that is neither held nor carried and that weighs no more than 5
-     pounds. The object is pushed up to 10 feet away from you. It
-     isn't pushed with enough force to cause damage.
-
+      that is neither held nor carried and that weighs no more than 5
+      pounds. The object is pushed up to 10 feet away from you. It
+      isn't pushed with enough force to cause damage.
     - You create a harmless sensory affect using air, such as causing
-     leaves to rustle, wind to slam shutters shut, or your clothing
-     to ripple in a breeze.
-
+      leaves to rustle, wind to slam shutters shut, or your clothing
+      to ripple in a breeze.
+    
     """
     name = "Gust"
     level = 0

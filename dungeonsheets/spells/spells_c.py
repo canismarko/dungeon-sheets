@@ -214,28 +214,30 @@ class ChainLightning(Spell):
 class ChaosBolt(Spell):
     """You hurl an undulating, warbling mass of chaotic energy at one
     creature in range. Make a ranged spell attack against the
-    target. On a hit, the target takes 2d8 + 1d6 damage. Choose one of
-    the dSs. The number rolled on that die determines the attacks
+    target. On a hit, the target takes ``2d8+1d6`` damage. Choose one
+    of the d8s. The number rolled on that die determines the attacks
     damage type, as shown below.
-
-    d8 / Damage Type
-    1 / Acid
-    2
-    / Cold
-    3 / Fire
-    4 / Force
-    5 / Lightning
-    6 / Poison
-    7 / Psychic
-    8 / Thunder
-
+    
+    == ===========
+    d8 Damage Type
+    == ===========
+    1  Acid
+    2  Cold
+    3  Fire
+    4  Force
+    5  Lightning
+    6  Poison
+    7  Psychic
+    8  Thunder
+    == ===========
+    
     If you roll the same number on both d8s, the chaotic energy leaps
     from the target to a different creature of your choice within 30
     feet of it. Make a new attack roll against the new target, and
     make a new damage roll, which could cause the chaotic energy to
     leap again. A creature can be targeted only once by each casting
     of this spell.
-
+    
     **At Higher Levels:** When you cast this spell using a spell slot of
     2nd level or higher, each target takes 1d6 extra damage of the
     type rolled for each slot level above 1st.
@@ -619,22 +621,20 @@ class CommuneWithNature(Spell):
     natural underground settings, the radius is limited to 300
     feet. The spell doesn't function where nature has been replaced by
     construction, such as in dungeons and towns.
-
+    
     You instantly gain knowledge of up to three facts of your choice
     about any of the following subjects as they relate to the area:
-
-    -  terrain and bodies of water
-    -  prevalent plants,
-    minerals, animals, or peoples
-    -  powerful celestials, fey, fiends, elementals,
-    or undead
-    -  influence from other planes of existence
-    -  buildings
-
+    
+    - terrain and bodies of water
+    - prevalent plants, minerals, animals, or peoples
+    - powerful celestials, fey, fiends, elementals, or undead
+    - influence from other planes of existence
+    - buildings
+    
     For example, you could determine the location of powerful undead
     in the area, the location of major sources of safe drinking water,
     and the location of any nearby towns.
-
+    
     """
     name = "Commune With Nature"
     level = 5
@@ -1211,21 +1211,22 @@ class ContinualFlame(Spell):
 
 
 class ControlFlames(Spell):
-    """You choose a nonmagical flame that you can see within range and that fits within
-    a 5-foot cube. You affect it in one of the following ways:
-
+    """You choose a nonmagical flame that you can see within range and
+    that fits within a 5-foot cube. You affect it in one of the
+    following ways:
+    
     - You instantaneously expand the flame 5 feet in one direction,
-     provided that wood or other fuel is present in the new location.
+      provided that wood or other fuel is present in the new location.
     - You instantaneously extinguish the flames within the cube.
     - You double or halve the area of bright light and dim light cast
-     by the flame, change its color, or both. The change lasts for 1
-     hour.
+      by the flame, change its color, or both. The change lasts for 1
+      hour.
     - You cause simple shapes - such as the vague form of a creature,
-     an inanimate object, or a location - to appear within the flames
-     and animate as you like. The shapes last for 1 hour.  If you
-     cast this spell multiple times, you can have up to three
-     non-instantaneous
-
+      an inanimate object, or a location - to appear within the flames
+      and animate as you like. The shapes last for 1 hour.  If you
+      cast this spell multiple times, you can have up to three
+      non-instantaneous
+    
     """
     name = "Control Flames"
     level = 0

@@ -1,4 +1,5 @@
-from dungeonsheets.spells.spells import Spell, create_spell
+from dungeonsheets.spells.spells import Spell, create_spell, all_spells
+
 from dungeonsheets.spells.spells_a import *
 from dungeonsheets.spells.spells_b import *
 from dungeonsheets.spells.spells_c import *
