@@ -16,8 +16,8 @@ class WildShape(Feature):
     ===== ====== ================== ===========
     Level Max CR Limitations        Example
     ===== ====== ================== ===========
-    2nd   1/4   No Flying/Swimming Wolf
-    4th   1/2   No flying          Crocodile
+    2nd   1/4    No Flying/Swimming Wolf
+    4th   1/2    No flying          Crocodile
     8th   1      --                 Giant eagle
     ===== ====== ================== ===========
     

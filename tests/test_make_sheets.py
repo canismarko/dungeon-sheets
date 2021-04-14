@@ -117,4 +117,22 @@ class MarkdownTestCase(unittest.TestCase):
         tex = make_sheets.rst_to_latex(md_list)
         self.assertIn("\\begin{itemize}", tex)
 
-
+    def test_simple_table(self):
+        table_rst = """
+            =====  =====  =======
+            A      B      A and B
+            =====  =====  =======
+            False  False  False
+            True   False  False
+            False  True   False
+            True   True   True
+            =====  =====  =======
+        """
+        tex = make_sheets.rst_to_latex(table_rst)
+        # Check begin/end environment is fixed
+        self.assertNotIn("longtable", tex)
+        self.assertIn("supertabular", tex)
+        # Check headers and footers are fixed
+        self.assertNotIn("endfoot", tex)
+        self.assertNotIn("endhead", tex)
+        self.assertNotIn("endfirsthead", tex)

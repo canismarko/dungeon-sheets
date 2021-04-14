@@ -20,6 +20,7 @@ from sphinx.util.docstrings import prepare_docstring
 from dungeonsheets import character as _char
 from dungeonsheets import exceptions, classes, readers
 from dungeonsheets.stats import mod_str
+from dungeonsheets.latex import LatexWriter
 
 
 """Program to take character definitions and build a PDF of the
@@ -29,7 +30,7 @@ bold_re = re.compile(r'\*\*([^*]+)\*\*')
 it_re = re.compile(r'\*([^*]+)\*')
 verb_re = re.compile(r'``([^`]+)``')
 heading_re = re.compile(r'^[ \t\r\f\v]*(.+)\n\s*([-=\^]+)$', flags=re.MULTILINE)
-# A dice string, with optinal backticks: ``1d6 + 3``
+# A dice string, with optional backticks: ``1d6 + 3``
 dice_re = re.compile(r'`*(\d+d\d+(?:\s*\+\s*\d+)?)`*')
 # What defines a list in reST:
 # - a blank line
@@ -69,6 +70,7 @@ def _parse_rst_lists(rst):
         list_items = list_items[1:]  # First item is an empty string
         list_items = [item.replace('\n', ' ').strip() for item in list_items]
         yield list_rst, list_items
+
 
 def _parse_rst_headings(rst):
     """Read headings in reST and iterate.
@@ -136,11 +138,43 @@ def latex_parts(input_string, source_path=None, destination_path=None,
     overrides = {'input_encoding': input_encoding,
                  'doctitle_xform': doctitle,
                  'initial_header_level': initial_header_level}
+    writer = LatexWriter()
     parts = core.publish_parts(
         source=input_string, source_path=source_path,
         destination_path=destination_path,
-        writer_name='latex', settings_overrides=overrides)
+        writer=writer, settings_overrides=overrides)
     return parts
+
+
+def fixed_latex_table_lines(tex):
+    """Replace the longtable package with supertabular package.
+    
+    longtable doesn't work in two column mode, but supertabular does,
+    so we need to replace long-table specific formatting with the
+    supertabular equivalent.
+
+    """
+    if "longtable" in tex and False:
+        begin_re = re.compile(r"\\begin{longtable\*?}" # Beginning of the environment
+                                r"(\[.*\])?" # Optional arguments
+                                r"{(.*)}" # Parameters
+                                )
+        end_re = re.compile(r"\\end{longtable\*?}")
+        foot_re = re.compile(r"(\\endhead\n)(.*)\\endfoot\n\\endlastfoot", flags=(re.MULTILINE|re.DOTALL))
+        head_re = re.compile(r"(\\endfirsthead\n)(.*)\\endhead", flags=(re.MULTILINE|re.DOTALL))
+        firsthead_re = re.compile(r"(\\hline.*)\\endfirsthead", flags=(re.MULTILINE|re.DOTALL))
+        # Convert opening and closing environment
+        tex = begin_re.sub(r"\\begin{supertabular}\1{\2}", tex)
+        tex = end_re.sub(r"\\end{supertabular}", tex)
+        # Convert table headings
+        # Order matters for these substitutions
+        def printlines(t):
+            for l in t.split("\n"): print(l)
+        # import pdb; pdb.set_trace()
+        tex = foot_re.sub(r"\1\\tabletail{%\n\2}", tex)
+        tex = head_re.sub(r"\1\\tablehead{%\n\2}", tex)
+        tex = firsthead_re.sub(r"\\tablefirsthead{\1}", tex)
+    return tex
 
 
 def rst_to_latex(rst, top_heading_level=0):
@@ -174,7 +208,8 @@ def rst_to_latex(rst, top_heading_level=0):
         tex_parts = latex_parts(rst)
         tex = tex_parts['body']
         # Check for currently un-supported LaTeX commands
-        assert "longtable" not in tex
+        tex = fixed_latex_table_lines(tex)
+        # assert "longtable" not in tex
     return tex
 
 
