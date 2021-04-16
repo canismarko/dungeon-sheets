@@ -2,7 +2,7 @@
 
 from unittest import TestCase
 
-from dungeonsheets import monsters, exceptions
+from dungeonsheets import monsters
 
 
 class MonsterTestCase(TestCase):

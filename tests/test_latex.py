@@ -1,53 +1,56 @@
 import unittest
 
-from dungeonsheets import make_sheets, character, spells, features, latex
+from dungeonsheets import spells, features, latex
+
 
 class MarkdownTestCase(unittest.TestCase):
     """Check that conversion of markdown formats to LaTeX code works
     correctly."""
-    
+
     def test_rst_bold(self):
-        text = latex.rst_to_latex('**hello**')
-        self.assertEqual(text, '\n\\textbf{hello}\n')
-    
+        text = latex.rst_to_latex("**hello**")
+        self.assertEqual(text, "\n\\textbf{hello}\n")
+
     def test_hit_dice(self):
-        text = latex.rst_to_latex('1d6+3')
-        self.assertEqual(text.strip("\n"), '\\texttt{1d6+3}')
-    
+        text = latex.rst_to_latex("1d6+3")
+        self.assertEqual(text.strip("\n"), "\\texttt{1d6+3}")
+
     def test_no_text(self):
         text = latex.rst_to_latex(None)
-        self.assertEqual(text, '')
-    
+        self.assertEqual(text, "")
+
     def test_verbatim(self):
-        text = latex.rst_to_latex('``hello, world``')
-        self.assertIn(r'\texttt{hello, world}', text)
+        text = latex.rst_to_latex("``hello, world``")
+        self.assertIn(r"\texttt{hello, world}", text)
 
     def test_literal_backslash(self):
-        text = latex.rst_to_latex(r'\\')
-        self.assertEqual(r'\textbackslash{}', text.strip("\n"))
+        text = latex.rst_to_latex(r"\\")
+        self.assertEqual(r"\textbackslash{}", text.strip("\n"))
 
-    @unittest.skip("Headings are all screwed up because it treats them as the document title")
+    @unittest.skip(
+        "Headings are all screwed up because it treats them as the document title"
+    )
     def test_headings(self):
         # Simple heading by itself
-        text = latex.rst_to_latex('Hello, world\n------------\n\nGoodbye, world')
-        self.assertEqual('\\section*{Hello, world}\n', text)
+        text = latex.rst_to_latex("Hello, world\n------------\n\nGoodbye, world")
+        self.assertEqual("\\section*{Hello, world}\n", text)
         # Simple heading with leading whitespace
-        text = latex.rst_to_latex('    Hello, world\n    ============\n')
-        self.assertEqual('\\section*{Hello, world}\n', text)
+        text = latex.rst_to_latex("    Hello, world\n    ============\n")
+        self.assertEqual("\\section*{Hello, world}\n", text)
         # Heading with text after it
-        text = latex.rst_to_latex('Hello, world\n============\n\nThis is some text')
-        self.assertEqual('\\section*{Hello, world}\n\nThis is some text', text)
+        text = latex.rst_to_latex("Hello, world\n============\n\nThis is some text")
+        self.assertEqual("\\section*{Hello, world}\n\nThis is some text", text)
         # Heading with text before it
-        text = latex.rst_to_latex('This is a paragraph\n\nHello, world\n============\n')
-        self.assertEqual('This is a paragraph\n\n\\section*{Hello, world}\n', text)
+        text = latex.rst_to_latex("This is a paragraph\n\nHello, world\n============\n")
+        self.assertEqual("This is a paragraph\n\n\\section*{Hello, world}\n", text)
         # Check that levels of headings are parsed appropriately
-        text = latex.rst_to_latex('Hello, world\n^^^^^^^^^^^^\n')
-        self.assertEqual('\\subsubsection*{Hello, world}\n', text)
-        text = latex.rst_to_latex('Hello, world\n^^^^^^^^^^^^\n', top_heading_level=3)
-        self.assertEqual('\\subparagraph*{Hello, world}\n', text)
+        text = latex.rst_to_latex("Hello, world\n^^^^^^^^^^^^\n")
+        self.assertEqual("\\subsubsection*{Hello, world}\n", text)
+        text = latex.rst_to_latex("Hello, world\n^^^^^^^^^^^^\n", top_heading_level=3)
+        self.assertEqual("\\subparagraph*{Hello, world}\n", text)
         # This is a bad heading missing with all the underline on one line
-        text = latex.rst_to_latex('Hello, world^^^^^^^^^^^^\n')
-        self.assertEqual('Hello, world\\^\\^\\^\\^\\^\\^\\^\\^\\^\\^\\^\\^\n', text)
+        text = latex.rst_to_latex("Hello, world^^^^^^^^^^^^\n")
+        self.assertEqual("Hello, world\\^\\^\\^\\^\\^\\^\\^\\^\\^\\^\\^\\^\n", text)
 
     def test_bullet_list(self):
         tex = latex.rst_to_latex("\n- Hello\n- World\n\n")
@@ -67,14 +70,14 @@ class MarkdownTestCase(unittest.TestCase):
         """
         tex = latex.rst_to_latex(real_list)
         self.assertIn("\\begin{itemize}", tex)
-    
+
     def test_multiline_bullet_list(self):
         md_list = """
         - Secondhand (you have heard
           of the target) - +5
-        - Firsthand (you have met 
+        - Firsthand (you have met
           the target) - +0
-        - Familiar (you know the target 
+        - Familiar (you know the target
           well) - -5
         
         """
@@ -100,16 +103,17 @@ class MarkdownTestCase(unittest.TestCase):
         self.assertNotIn("endfoot", tex)
         self.assertNotIn("endhead", tex)
         self.assertNotIn("endfirsthead", tex)
-    
+
     def test_rst_all_spells(self):
         for spell in spells.all_spells():
             tex = latex.rst_to_latex(spell.__doc__)
-            self.assertNotIn("DUadmonition", tex,
-                             f"spell {spell} is not valid reStructured text")
-    
+            self.assertNotIn(
+                "DUadmonition", tex, f"spell {spell} is not valid reStructured text"
+            )
+
     def test_rst_all_features(self):
         for feature in features.all_features():
             tex = latex.rst_to_latex(feature.__doc__)
-            self.assertNotIn("DUadmonition", tex,
-                             f"feature {feature} is not valid reStructured text")
-            
+            self.assertNotIn(
+                "DUadmonition", tex, f"feature {feature} is not valid reStructured text"
+            )
