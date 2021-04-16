@@ -44,7 +44,8 @@ Optional External dependencies
 ==============================
 
 * You may use **pdftk** to generate the sheets in PDF format.
-* You will need **pdflatex** installed to generate the PDF spell pages (optional).
+* You will need **pdflatex**, and a few latex packages, installed to
+  generate the PDF spell pages (optional).
 
 If **pdftk** is available, it will be used for pdf generation. If not,
 a fallback python library (pdfrw) will be used. This has some
@@ -62,6 +63,14 @@ One alternative would be to build your PC sheets using docker.
 If the ``pdflatex`` command is available on your system, spellcasters
 will include a spellbook with descriptions of each spell known. If
 not, then this feature will be skipped.
+
+In order to properly format descriptions for spells/features/etc.,
+some additional latex packages are needed. On Ubuntu these can be
+install with:
+
+.. code:: bash
+
+    $ sudo apt-get -y install pdftk texlive-latex-base texlive-latex-extra texlive-fonts-recommended
 
 Usage
 =====

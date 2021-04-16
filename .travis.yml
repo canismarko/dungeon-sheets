@@ -4,7 +4,7 @@ python:
   - "3.7"
   - "3.8"
 before_install:
-  - sudo apt-get -y install pdftk texlive-latex-base texlive-fonts-recommended
+  - sudo apt-get -y install pdftk texlive-latex-base texlive-latex-extra texlive-fonts-recommended
 # command to install dependencies
 install:
   - pip install -r requirements.txt
