@@ -14,8 +14,8 @@ install:
 script:
   - pytest --cov=dungeonsheets tests/
   - cd examples/
-  - makesheets
-  - makesheets -F
+  - makesheets -d
+  - makesheets -dF
   - cd ../
 after_success:
   - coveralls

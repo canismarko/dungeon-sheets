@@ -298,8 +298,32 @@ def create_latex_pdf(character, basename, template, keep_temp_files=False, use_d
         if result.returncode == 0 and not keep_temp_files:
             remove_temp_files(basename)
         if result.returncode != 0:
-            raise exceptions.LatexError(f'Processing of {basename}.tex failed.'
-                                        f' See {basename}.log for details.')
+            # Prepare to raise an exception
+            logfile = Path(f"{basename}.log")
+            err_msg = f'Processing of {basename}.tex failed. See {logfile} for details.'
+            log.error(err_msg)
+            # Load the log file for more details
+            tex_error_msg = tex_error(logfile)
+            if tex_error_msg:
+                for line in tex_error_msg.split("\n"):
+                    log.error(line)
+            raise exceptions.LatexError(err_msg)
+
+
+def tex_error(logfile: Path)->str:
+    """Parse a LaTeX log file and look for errors."""
+    has_error = False
+    error_lines = []
+    if logfile.exists:
+        with open(logfile, mode='r') as fp:
+            for line in fp.readlines():
+                # Check for the start of an error message
+                if "LaTeX Error" in line:
+                    has_error = True
+                # We've already found an error, so save this line for later
+                if has_error:
+                    error_lines.append(line)
+    return "".join(error_lines)
 
 
 def create_spells_pdf(character, basename, flatten=False):
