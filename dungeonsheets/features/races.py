@@ -189,29 +189,22 @@ class DraconicAncestry(Feature):
     """You have draconic ancestry. Choose one type of dragon from the Draconic
     Ancestry table. Your breath weapon and damage resistance are determined by the
     dragon type.
-
-    Dragon • Damage Type • Breath Weapon
-
-    Black • Acid • 5 by 30 ft. line (DEX save)
-
-    Blue • Lightning • 5 by 30 ft. line (DEX save)
-
-    Brass • Fire • 5 by 30 ft. line (DEX save)
-
-    Bronze • Lightning • 5 by 30 ft. line (DEX save)
-
-    Copper • Acid • 5 by 30 ft. line (DEX save)
-
-    Gold • Fire • 15 ft. cone (DEX save)
-
-    Green • Poison • 15 ft. cone (CON save)
-
-    Red • Fire • 15 ft. cone (DEX save)
-
-    Silver • Cold • 15 ft. cone (CON save)
-
-    White • White • 15 ft. cone (CON save)
-
+    
+    ====== =========== ===========================
+    Dragon Damage Type Breath Weapon
+    ====== =========== ===========================
+    Black  Acid        5 by 30 ft. line (DEX save)
+    Blue   Lightning   5 by 30 ft. line (DEX save)
+    Brass  Fire        5 by 30 ft. line (DEX save)
+    Bronze Lightning   5 by 30 ft. line (DEX save)
+    Copper Acid        5 by 30 ft. line (DEX save)
+    Gold   Fire        15 ft. cone (DEX save)
+    Green  Poison      15 ft. cone (CON save)
+    Red    Fire        15 ft. cone (DEX save)
+    Silver Cold        15 ft. cone (CON save)
+    White  White       15 ft. cone (CON save)
+    ====== =========== ===========================
+    
     """
     name = "Draconic Ancestry"
     source = "Race (Dragonborn)"

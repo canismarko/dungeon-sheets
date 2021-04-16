@@ -1,47 +1,10 @@
 \documentclass[10pt,twocolumn,lettersize]{article}
 
-\newlength{\zerosep}
-[% if use_dnd_decorations %]
-  \usepackage[layout=true]{dnd}
-  \setlength{\zerosep}{0em}
-[% else %]
-  \usepackage[margin=1.5cm]{geometry}
-  \usepackage[dvipsnames]{color}
-  \definecolor{mygrey}{gray}{0.7}
-  \setlength{\zerosep}{-1em}
-[% endif %]
-
 [% include 'preamble.tex' %]
 
 \title{Spell Descriptions}
 \author{[[ character.name ]]}
 \date{}
-
-%%% Fallback definitions for Docutils-specific commands
-[% raw %]
-% admonition (specially marked topic)
-\providecommand{\DUadmonition}[2][class-arg]{%
-  % try \DUadmonition#1{#2}:
-  \ifcsname DUadmonition#1\endcsname%
-    \csname DUadmonition#1\endcsname{#2}%
-  \else
-    \begin{center}
-      \fbox{\parbox{0.9\linewidth}{#2}}
-    \end{center}
-  \fi
-}
-
-% title for topics, admonitions, unsupported section levels, and sidebar
-\providecommand*{\DUtitle}[2][class-arg]{%
-  % call \DUtitle#1{#2} if it exists:
-  \ifcsname DUtitle#1\endcsname%
-    \csname DUtitle#1\endcsname{#2}%
-  \else
-    \smallskip\noindent\textbf{#2}\smallskip%
-  \fi
-}
-[% endraw %]
-
 
 \begin{document}
 
@@ -73,7 +36,7 @@
     \item [Range:] [[ spl.casting_range ]] \\
     \item [Components:] [[ spl.component_string ]]
   \end{description}
-  \vspace{\zerosep}
+  % \vspace{\zerosep}
 
   [[ spl.__doc__ | rst_to_latex(top_heading_level=1) ]]
 

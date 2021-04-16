@@ -26,7 +26,7 @@ class TestSpells(TestCase):
         self.assertEqual(NewSpell.name, 'Hello world')
         spell = NewSpell()
         print(spell, spell.__class__, type(spell))
-
+    
     def test_spell_str(self):
         spell = Spell()
         spell.name = "My spell"

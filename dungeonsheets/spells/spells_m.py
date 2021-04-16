@@ -93,28 +93,29 @@ class MagicCircle(Spell):
     """You create a 10-foot-radius, 20-foot-tall cylinder of magical energy centered on
     a point on the ground that you can see within range. Glowing runes appear
     wherever the cylinder intersects with the floor or other surface.
-
-    Choose one or
-    more of the following types of creatures: celestials, elementals, fey, fiends,
-    or undead. The circle affects a creature of the chosen type in the following
-    ways:
-
-    * The creature can't willingly enter the cylinder by nonmagical means. If
-    the creature tries to use teleportation or interplanar travel to do so, it must
-    first succeed on a Charisma saving throw.
-    * The creature has disadvantage on
-    attack rolls against targets within the cylinder.
-    * Targets within the cylinder
-    can't be charmed, frightened, or possessed by the creature.
-
-    When you cast this
-    spell, you can elect to cause its magic to operate in the reverse direction,
-    preventing a creature of the specified type from leaving the cylinder and
-    protecting targets outside it.
-
-    **At Higher Levels:** When you cast this spell using
-    a spell slot of 4th level or higher, the duration increases by 1 hour for each
+    
+    Choose one or more of the following types of creatures:
+    celestials, elementals, fey, fiends, or undead. The circle affects
+    a creature of the chosen type in the following ways:
+    
+    - The creature can't willingly enter the cylinder by nonmagical
+      means. If the creature tries to use teleportation or interplanar
+      travel to do so, it must first succeed on a Charisma saving
+      throw.
+    - The creature has disadvantage on attack rolls against targets
+      within the cylinder.
+    - Targets within the cylinder can't be charmed, frightened, or
+      possessed by the creature.
+    
+    When you cast this spell, you can elect to cause its magic to
+    operate in the reverse direction, preventing a creature of the
+    specified type from leaving the cylinder and protecting targets
+    outside it.
+    
+    **At Higher Levels:** When you cast this spell using a spell slot
+    of 4th level or higher, the duration increases by 1 hour for each
     slot level above 3rd.
+    
     """
     name = "Magic Circle"
     level = 3
@@ -1055,27 +1056,27 @@ class MoldEarth(Spell):
 
 
 class Moonbeam(Spell):
-    """A silvery beam of pale light shines down in a 5-footradius, 40-foot-high
-    cylinder centered on a point within range. Until the spell ends, dim light fills
-    the cylinder.
-
-
+    """A silvery beam of pale light shines down in a 5-footradius,
+    40-foot-high cylinder centered on a point within range. Until the
+    spell ends, dim light fills the cylinder.
+    
     When a creature enters the spell's area for the first time on a
-    turn or starts its turn there, it is engulfed in ghostly flames that cause
-    searing pain, and it must make a Constitution saving throw. It takes 2d10
-    radiant damage on a failed save, or half as much damage on a successful one.
+    turn or starts its turn there, it is engulfed in ghostly flames
+    that cause searing pain, and it must make a Constitution saving
+    throw. It takes 2d10 radiant damage on a failed save, or half as
+    much damage on a successful one.
+    
+    A shapechanger makes its saving throw with disadvantage. If it
+    fails, it also instantly reverts to its original form and can't
+    assume a different form until it leaves the spell's light.
+    
+    On each of your turns after you cast this spell, you can use an
+    action to move the beam 60 feet in any direction.
+    
+    **At Higher Levels:** When you cast this spell using aspell slot
+    of 3rd level or higher, the damage increases by 1d10 for each slot
+    level above 2nd.
 
-    A
-    shapechanger makes its saving throw with disadvantage. If it fails, it also
-    instantly reverts to its original form and can't assume a different form until
-    it leaves the spell's light.
-
-    On each of your turns after you cast this spell,
-    you can use an action to move the beam 60 feet in any direction.
-
-    At Higher
-    Levels: When you cast this spell using aspell slot of 3rd level or higher, the
-    damage increases by 1d1O for each slot level above 2nd.
     """
     name = "Moonbeam"
     level = 2

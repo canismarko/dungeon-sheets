@@ -93,17 +93,15 @@ class Scrying(Spell):
     and the sort of physical connection you have to it. If a target
     knows you're casting this spell, it can fail the saving throw
     voluntarily if it wants to be observed.
-
-    Knowledge - Save Modifier
-    -------------------------
-
+    
+    **Knowledge - Save Modifier**
+    
     - Secondhand (you have heard of the target) - +5
     - Firsthand (you have met the target) - +0
     - Familiar (you know the target well) - -5
-
-    Connection - Save Modifier
-    --------------------------
-
+    
+    **Connection - Save Modifier**
+    
     - Likeness or picture - -2
     - Possession or garment - -4
     - Body part, lock of hair, bit of nail, or the like - -10
@@ -325,27 +323,25 @@ class ShadowOfMoil(Spell):
 
 
 class ShapeWater(Spell):
-    """You choose an area of water that you can see within range and that fits within a
-    5-foot cube.
-    You manipulate it in one of the following ways:
-
-    - You
-    instantaneously move or otherwise change the flow of the water as you direct, up
-    to 5 feet in any direction. This movement doesn't have enough force to cause
-    damage.
-
-    - You cause the water to form into simple shapes and animate at your
-    direction. This change lasts for 1 hour.
-
-    - You change the water's color or
-    opacity. The water must be changed in the same way throughout. This change lasts
-    for 1 hour.
-
+    """You choose an area of water that you can see within range and that
+    fits within a 5-foot cube. You manipulate it in one of the
+    following ways:
+    
+    - You instantaneously move or otherwise change the flow of the
+      water as you direct, up to 5 feet in any direction. This
+      movement doesn't have enough force to cause damage.
+    - You cause the water to form into simple shapes and animate at
+      your direction. This change lasts for 1 hour.
+    - You change the water's color or opacity. The water must be
+      changed in the same way throughout. This change lasts for 1
+      hour.
     - You freeze the water, provided that there are no crea- tures in
-    it. The water unfreezes in 1 hour.
-    If you cast this spell multiple times, you
-    can have no more than two of its non-instantaneous effects active at a time, and
-    you can dismiss such an effect as an action.
+      it. The water unfreezes in 1 hour.
+    
+    If you cast this spell multiple times, you can have no more than
+    two of its non-instantaneous effects active at a time, and you can
+    dismiss such an effect as an action.
+    
     """
     name = "Shape Water"
     level = 0

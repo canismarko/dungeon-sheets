@@ -452,17 +452,17 @@ class GrimHarvest(Feature):
 
 
 class UndeadThralls(Feature):
-    """At 6th level, you add the animate dead spell to your spellbook if it is not
-    there already. When you cast animate dead, you can target one additional
-    corpse or pile of bones, creating another zombie or skeleton, as
-    appropriate. Whenever you create an undead using a necromancy spell, it has
-    additional benefits:
-
-    • The creature's hit point maximum is increased by an amount equal to your
-    wizard level.
-
-    • The creature adds your proficiency bonus to its weapon damage rolls
-
+    """At 6th level, you add the animate dead spell to your spellbook if
+    it is not there already. When you cast animate dead, you can
+    target one additional corpse or pile of bones, creating another
+    zombie or skeleton, as appropriate. Whenever you create an undead
+    using a necromancy spell, it has additional benefits:
+    
+    - The creature's hit point maximum is increased by an amount equal
+      to your wizard level.
+    - The creature adds your proficiency bonus to its weapon damage
+      rolls
+    
     """
     name = "Undead Thralls"
     source = "Wizard (School of Necromancy)"
@@ -595,29 +595,27 @@ class MasterTransmuter(Feature):
 
 # Bladesinging
 class Bladesong(Feature):
-    """Starting at 2nd level, you can invoke a secret elven magic called the
-    Bladesong, provided that you aren't wearing medium or heavy armor or using
-    a shield. It graces you with supernatural speed, agility, and focus. You
-    can use a bonus action to start the Bladesong, which lasts for 1 minute. It
-    ends early if you are incapac- itated, if you don medium or heavy armor or
-    a shield, or if you use two hands to make an attack with a weapon. You can
-    also dismiss the Bladesong at any time you choose (no action required).
-
-    While your Bladesong is active, you gain the follow- ing benefits:
-
-    • You gain a bonus to your AC equal to your Intelligence modifier (minimum
-    of +1).
-
-    • Your walking speed increases by 10 feet.
-
-    • You have advantage on Dexterity (Acrobatics) checks.
-
-    • You gain a bonus to any Constitution saving throw you make to maintain
-    your concentration on a spell. The bonus equals your Intelligence modifier
-    (minimum of +l).
-
-    You can use this feature twice. You regain all expended uses of it when
-    you finish a short or long rest.
+    """Starting at 2nd level, you can invoke a secret Elven magic called
+    the Bladesong, provided that you aren't wearing medium or heavy
+    armor or using a shield. It graces you with supernatural speed,
+    agility, and focus. You can use a bonus action to start the
+    Bladesong, which lasts for 1 minute. It ends early if you are
+    incapac- itated, if you don medium or heavy armor or a shield, or
+    if you use two hands to make an attack with a weapon. You can also
+    dismiss the Bladesong at any time you choose (no action required).
+    
+    While your Bladesong is active, you gain the following benefits:
+    
+    - You gain a bonus to your AC equal to your Intelligence modifier
+      (minimum of +1).
+    - Your walking speed increases by 10 feet.
+    - You have advantage on Dexterity (Acrobatics) checks.
+    - You gain a bonus to any Constitution saving throw you make to
+      maintain your concentration on a spell. The bonus equals your
+      Intelligence modifier (minimum of +l).
+    
+    You can use this feature twice. You regain all expended uses of it
+    when you finish a short or long rest.
 
     """
     name = "Bladesong (2x/SR)"

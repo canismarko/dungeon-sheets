@@ -3,7 +3,7 @@ import os
 from pathlib import Path
 import subprocess
 
-from dungeonsheets import make_sheets, character, spells
+from dungeonsheets import make_sheets, character, spells, features
 
 EG_DIR = os.path.abspath(os.path.join(os.path.split(__file__)[0], '../examples/'))
 CHARFILE = os.path.join(EG_DIR, 'rogue1.py')
@@ -136,9 +136,16 @@ class MarkdownTestCase(unittest.TestCase):
         self.assertNotIn("endfoot", tex)
         self.assertNotIn("endhead", tex)
         self.assertNotIn("endfirsthead", tex)
-
+    
     def test_rst_all_spells(self):
         for spell in spells.all_spells():
             tex = make_sheets.rst_to_latex(spell.__doc__)
             self.assertNotIn("DUadmonition", tex,
                              f"spell {spell} is not valid reStructured text")
+    
+    def test_rst_all_features(self):
+        for feature in features.all_features():
+            tex = make_sheets.rst_to_latex(feature.__doc__)
+            self.assertNotIn("DUadmonition", tex,
+                             f"feature {feature} is not valid reStructured text")
+            

@@ -439,20 +439,24 @@ class InvestitureOfFlame(Spell):
 
 
 class InvestitureOfIce(Spell):
-    """Until the spell ends, ice rimes your body, and you gain the following benefits:
-
-    - You are immune to cold damage and have resistance to fire damage.
-    - You can
-    move across difficult terrain created by ice or snow without spending extra
-    movement.
-    - The ground in a 10-foot radius around you is icy and is difficult
-    terrain for creatures other than you. The radius moves with you.
-    - You can use
-    your action to create a 15-foot cone of freezing wind extending from your
-    outstretched hand in a direction you choose. Each creature in the cone must make
-    a Constitution saving throw. A creature takes 4d6 cold damage on a failed save,
-    or half as much damage on a successful one. A creature that fails its save
-    against this effect has its speed halved until the start of your next turn.
+    """Until the spell ends, ice rimes your body, and you gain the
+    following benefits:
+    
+    - You are immune to cold damage and have resistance to fire
+      damage.
+    - You can move across difficult terrain created by ice or snow
+      without spending extra movement.
+    - The ground in a 10-foot radius around you is icy and is
+      difficult terrain for creatures other than you. The radius moves
+      with you.
+    - You can use your action to create a 15-foot cone of freezing
+      wind extending from your outstretched hand in a direction you
+      choose. Each creature in the cone must make a Constitution
+      saving throw. A creature takes 4d6 cold damage on a failed save,
+      or half as much damage on a successful one. A creature that
+      fails its save against this effect has its speed halved until
+      the start of your next turn.
+    
     """
     name = "Investiture Of Ice"
     level = 6
@@ -469,17 +473,20 @@ class InvestitureOfIce(Spell):
 class InvestitureOfStone(Spell):
     """Until the spell ends, bits of rock spread across your body, and you gain the
     following benefits:
+    
     - You have resistance to bludgeoning, piercing, and slashing
-    damage from nonmagical weapons.
-    - You can use your action to create a small
-    earthquake on the ground in a 15-foot radius centered on you. Other creatures on
-    that ground must succeed on a Dexterity saving throw or be knocked prone.
-    - You
-    can move across difficult terrain made of earth or stone without spending extra
-    movement. You can move through solid earth or stone as if it was air and
-    without destabilizing it, but you can't end your movement there. If you do so,
-    you are ejected to the nearest unoccupied space, this spell ends, and you are
-    stunned until the end of your next turn.
+      damage from nonmagical weapons.
+    - You can use your action to create a small earthquake on the
+      ground in a 15-foot radius centered on you. Other creatures on
+      that ground must succeed on a Dexterity saving throw or be
+      knocked prone.
+    - You can move across difficult terrain made of earth or stone
+      without spending extra movement. You can move through solid
+      earth or stone as if it was air and without destabilizing it,
+      but you can't end your movement there. If you do so, you are
+      ejected to the nearest unoccupied space, this spell ends, and
+      you are stunned until the end of your next turn.
+    
     """
     name = "Investiture Of Stone"
     level = 6

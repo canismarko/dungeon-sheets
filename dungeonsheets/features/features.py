@@ -1,4 +1,12 @@
-from dungeonsheets import weapons
+from dungeonsheets import weapons, features
+
+
+def all_features():
+    """Generate all the valid features classes so far defined."""
+    for feature_name, feature in features.__dict__.items():
+        # Check if it's (a) a class and (b) a subclass of ``Features``
+        if isinstance(feature, type) and issubclass(feature, Feature):
+            yield feature
 
 
 def create_feature(**params):

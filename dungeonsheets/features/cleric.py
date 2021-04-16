@@ -672,25 +672,24 @@ class SoulOfTheForge(Feature):
 
 
 class DivineStrikeForge(DivineStrike):
-    """At 8th level, you gain the ability to infuse your weapon strikes with the
-    fiery power of the forge. Once on each ofyour turns when you hit a creature
-    with a weapon attack, you can cause the attack to deal an extra 1d8 fire
-    damage to the target. When you reach 14th level, the extra damage
-    increases to 2d8
-
+    """At 8th level, you gain the ability to infuse your weapon strikes
+    with the fiery power of the forge. Once on each ofyour turns when
+    you hit a creature with a weapon attack, you can cause the attack
+    to deal an extra 1d8 fire damage to the target. When you reach
+    14th level, the extra damage increases to 2d8
+    
     """
     source = "Cleric (Forge Domain)"
 
 
 class SaintOfForgeAndFire(Feature):
-    """At 17th level, your blessed affinity with fire and metal becomes more
-    powerful:
-
-    • You gain immunity to fire damage.
-
-    • While wearing heavy armor, you have resistance to bludgeoning, piercing,
-    and slashing damage from non-magical attacks
-
+    """At 17th level, your blessed affinity with fire and metal becomes
+    more powerful:
+    
+    - You gain immunity to fire damage.
+    - While wearing heavy armor, you have resistance to bludgeoning,
+      piercing, and slashing damage from non-magical attacks
+    
     """
     name = "Saint of Forge and Fire"
     source = "Cleric (Forge Domain)"

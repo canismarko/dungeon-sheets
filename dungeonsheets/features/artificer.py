@@ -378,18 +378,18 @@ class AlchemicalSavant(Feature):
 
 
 class RestorativeReagents(Feature):
-    """Starting at 9th level, you can incorporate
-    restorative reagents into some of your works:
-
-    - Whenever a creature drinks an experimental elixir you created, the
-     creature gains temporary hit points equal to 2d6 + your Intelligence
-     modifier (minimum of 1 temporary hit point).
-
-    - You can cast lesser restoration without expending a spell slot and
-     without preparing the spell, provided you use alchemist's supplies as the
-     spellcasting focus. You can do so a number of times equal to your
-     Intelligence modifier (minimum of once), and you regain all expended uses
-     when you finish a long rest.
+    """Starting at 9th level, you can incorporate restorative reagents
+    into some of your works:
+    
+    - Whenever a creature drinks an experimental elixir you created,
+      the creature gains temporary hit points equal to 2d6 + your
+      Intelligence modifier (minimum of 1 temporary hit point).
+    - You can cast lesser restoration without expending a spell slot
+      and without preparing the spell, provided you use alchemist's
+      supplies as the spellcasting focus. You can do so a number of
+      times equal to your Intelligence modifier (minimum of once), and
+      you regain all expended uses when you finish a long rest.
+    
     """
     name = "Restorative Reagents"
     source = "Artificer (Alchemist)"
@@ -397,17 +397,18 @@ class RestorativeReagents(Feature):
 
 class ChemicalMastery(Feature):
     """By 15th level, you have been exposed to so many chemicals that they
-    pose little risk to you, and you can use them to quickly end certain
-    ailments:
-
-    - You gain resistance to acid damage and poison damage, and you are immune
-     to the poisoned condition.
-
-    - You can cast greater restoration and heal without expending a spell
-     slot, without preparing the spell, and without material components,
-     provided you use alchemist's supplies as the spellcasting focus. Once
-     you cast either spell with this feature, you can't cast that spell with
-     it again until you finish a long rest.
+    pose little risk to you, and you can use them to quickly end
+    certain ailments:
+    
+    - You gain resistance to acid damage and poison damage, and you
+      are immune to the poisoned condition.
+    - You can cast greater restoration and heal without expending a
+      spell slot, without preparing the spell, and without material
+      components, provided you use alchemist's supplies as the
+      spellcasting focus. Once you cast either spell with this
+      feature, you can't cast that spell with it again until you
+      finish a long rest.
+    
     """
     name = "Chemical Mastery"
     source = "Artificer (Alchemist)"

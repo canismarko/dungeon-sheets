@@ -528,57 +528,60 @@ class SpeechOfTheWoods(Feature):
 
 
 class SpiritTotem(Feature):
-    """Starting at 2nd level, you can call forth nature spirits to influence the
-    world around you. As a bonus action, you can magically summon an
-    incorporeal spirit to a point you can see within 60 feet of you. The spirit
-    creates an aura in a 30-foot radius around that point. It counts as neither
-    a creature nor an object, though it has the spectral appearance of the
-    creature it. represents.
-
-    As a bonus action, you can move the spirit up to 60 feet to a point you can
-    see. The spirit persists for 1 minute or until you're incapacitated. Once
-    you use this feature, you can't use it again until you finish a short or
-    long rest. The effect of the spirit's aura depends on the type of spirit
-    you summon from the options below.
-
-    **Bear Spirit**: The bear spirit grants you and your allies its might and
-    endurance. Each creature ofyour choice in the aura when the spirit appears
-    gains temporary hit points equal to 5 + your druid level. In addition, you
-    and your allies gain advantage on Strength checks and Strength saving
-    throws while in the aura.
-
-    **Hawk Spirit**: The hawk spirit is a consummate hunter, aiding you and
-    your allies with its keen sight. When a creature makes an attack roll
-    against a target in the spirit's aura, you can use your reaction to grant
-    advantage to that attack roll. In addition, you and your allies have
-    advantage on Wisdom (Perception) checks while in the aura
-
-    **Unicorn Spirit**: The unicorn spirit lends its protection to those
-    nearby. You and your allies gain advantage on all ability checks made to
-    detect creatures in the spirit's aura. In addition. if you cast a spell
-    using a spell slot that restores hit points to any creature inside or
-    outside the aura, each creature of your choice in the aura also regains hit
-    points equal to your druid level.
-
+    """Starting at 2nd level, you can call forth nature spirits to
+    influence the world around you. As a bonus action, you can
+    magically summon an incorporeal spirit to a point you can see
+    within 60 feet of you. The spirit creates an aura in a 30-foot
+    radius around that point. It counts as neither a creature nor an
+    object, though it has the spectral appearance of the creature
+    it. represents.
+    
+    As a bonus action, you can move the spirit up to 60 feet to a
+    point you can see. The spirit persists for 1 minute or until
+    you're incapacitated. Once you use this feature, you can't use it
+    again until you finish a short or long rest. The effect of the
+    spirit's aura depends on the type of spirit you summon from the
+    options below.
+    
+    **Bear Spirit**: The bear spirit grants you and your allies its
+    might and endurance. Each creature ofyour choice in the aura when
+    the spirit appears gains temporary hit points equal to 5 + your
+    druid level. In addition, you and your allies gain advantage on
+    Strength checks and Strength saving throws while in the aura.
+    
+    **Hawk Spirit**: The hawk spirit is a consummate hunter, aiding
+    you and your allies with its keen sight. When a creature makes an
+    attack roll against a target in the spirit's aura, you can use
+    your reaction to grant advantage to that attack roll. In addition,
+    you and your allies have advantage on Wisdom (Perception) checks
+    while in the aura
+    
+    **Unicorn Spirit**: The unicorn spirit lends its protection to
+    those nearby. You and your allies gain advantage on all ability
+    checks made to detect creatures in the spirit's aura. In
+    addition. if you cast a spell using a spell slot that restores hit
+    points to any creature inside or outside the aura, each creature
+    of your choice in the aura also regains hit points equal to your
+    druid level.
+    
     """
     name = "Spirit Totem"
     source = "Druid (Circle of the Shepherd)"
 
 
 class MightySummoner(Feature):
-    """Starting at 6th level, beasts and fey that you conjure are more resilient
-    than normal. Any beast or fey summoned or created by a spell that you cast
-    gains the. following benefits:
-
-    - The creature appears with more hit points than normal: 2 extra hit
-
-    - The creature appears with more hit points than normal: 2 extra hit
-     points per Hit Die it has.
-
-    - The damage from its natural weapons is considered magical for the
-     purpose of overcoming immunity and resistance to nonmagical attacks and
-     damage.
-
+    """Starting at 6th level, beasts and fey that you conjure are more
+    resilient than normal. Any beast or fey summoned or created by a
+    spell that you cast gains the. following benefits:
+    
+    - The creature appears with more hit points than normal: 2 extra
+      hit
+    - The creature appears with more hit points than normal: 2 extra
+      hit points per Hit Die it has.
+    - The damage from its natural weapons is considered magical for
+      the purpose of overcoming immunity and resistance to nonmagical
+      attacks and damage.
+    
     """
     name = "Mighty Summoner"
     source = "Druid (Circle of the Shepherd)"
@@ -590,7 +593,7 @@ class GuardianSpirit(Feature):
     that you summoned or created with a spell ends its turn in your
     Spirit Totem aura, that creature regains a number of hit points
     equal to half your druid level.
-
+    
     """
     name = "Guardian Spirit"
     source = "Druid (Circle of the Shepherd)"
@@ -652,19 +655,19 @@ class SymbioticEntity(Feature):
 
 class FungalInfestation(Feature):
     """At 6th level, your spores gain the ability to infest a corpse and
-    animate it. If a beast or a humanoid that ist Small or Medium dies within
-    10 feet of you, you can use your reaction to animate it, causing it to
-    stand up immediately with 1 hit point. The creature uses the zombie stat
-    block in the _Monster Manual_. It remains animate for 1 hour, after which
-    time it collapses and dies.
-
-    In combat, the zombie's turn comes immediately after yours. It obeys your
-    mental commands, and the only action it can take is the Attack action,
-    making one melee attack.
-
-    You can use this feature a number of times equal to your Wisdom modifier
-    (minimum of once), and you regain all expended uses of it when you finish a
-    long rest.
+    animate it. If a beast or a humanoid that is Small or Medium dies
+    within 10 feet of you, you can use your reaction to animate it,
+    causing it to stand up immediately with 1 hit point. The creature
+    uses the zombie stat block in the Monster Manual. It remains
+    animated for 1 hour, after which time it collapses and dies.
+    
+    In combat, the zombie's turn comes immediately after yours. It
+    obeys your mental commands, and the only action it can take is the
+    Attack action, making one melee attack.
+    
+    You can use this feature a number of times equal to your Wisdom
+    modifier (minimum of once), and you regain all expended uses of it
+    when you finish a long rest.
 
     """
     name = "Fungal Infestation"

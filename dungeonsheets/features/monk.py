@@ -448,8 +448,9 @@ class DiscipleOfTheElements(Feature):
 
 
 class ElementalAttunement(Feature):
-    """You can use your action to briefly control elemental forces nearby, causing
-    one of the following effects of your choice:
+    """You can use your action to briefly control elemental forces nearby,
+    causing one of the following effects of your choice:
+    
     - Create a harmless, instantaneous sensory effect related to air,
       earth, fire, or water, such as a shower of sparks, a puff of
       wind, a spray o f light mist, or a gentle rumbling of stone.

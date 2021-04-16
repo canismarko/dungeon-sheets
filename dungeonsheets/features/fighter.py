@@ -124,7 +124,7 @@ class FighterFightingStyle(FeatureSelector):
     - thrown weapon fighting
     - tunnel fighter
     - unarmed fighting
-
+    
     """
     options = {'archery': Archery,
             'defense': Defense,
@@ -334,24 +334,20 @@ class StudentOfWar(Feature):
 
 class KnowYourEnemy(Feature):
     """Starting at 7th level, if you spend at least 1 minute observing or
-    interacting with another creature outside combat, you can learn certain
-    information about its capabilities compared to your own. The DM tells you
-    if the creature is your equal, superior, or inferior in regard to two of
-    the following characteristics of your choice:
+    interacting with another creature outside combat, you can learn
+    certain information about its capabilities compared to your
+    own. The DM tells you if the creature is your equal, superior, or
+    inferior in regard to two of the following characteristics of your
+    choice:
+    
+    - Strength score
+    - Dexterity score
+    - Constitution score
+    - Armor Class
+    - Current hit points
+    - Total class levels (if any)
+    - Fighter class levels (if any)
 
-    --Strength score
-
-    --Dexterity score
-
-    --Constitution score
-
-    --Armor Class
-
-    --Current hit points
-
-    --Total class levels (if any)
-
-    --Fighter class levels (if any)
     """
     name = "Know Your Enemy"
     source = "Fighter (Battle Master)"
