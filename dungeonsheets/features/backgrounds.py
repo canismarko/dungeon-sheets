@@ -17,6 +17,7 @@ class ShelterOfTheFaithful(Feature):
     hazardous and you remain in good standing with your temple.
 
     """
+
     name = "Shelter of the Faithful"
     source = "Background (Acolyte)"
 
@@ -29,6 +30,7 @@ class FalseIdentity(Feature):
     document or the handwriting you are trying to copy.
 
     """
+
     name = "False Identity"
     source = "Background (Charlattan)"
 
@@ -41,6 +43,7 @@ class CriminalContact(Feature):
     messages for you.
 
     """
+
     name = "Criminal Contact"
     source = "Background (Criminal)"
 
@@ -55,6 +58,7 @@ class ByPopularDemand(Feature):
     performed, they typically take a liking to you.
 
     """
+
     name = "By Popular Demand"
     source = "Background (Entertainer)"
 
@@ -67,6 +71,7 @@ class RusticHospitality(Feature):
     not risk their lives for you.
 
     """
+
     name = "Rustic Hospitality"
     source = "Background (Folk Hero)"
 
@@ -90,6 +95,7 @@ class GuildMembership(Feature):
     must make up back dues to remain in the guild's good graces.
 
     """
+
     name = "Guild Membership"
     source = "Background (Guild Artisan)"
 
@@ -109,6 +115,7 @@ class Discovery(Feature):
     your discovery and its impact on the campaign.
 
     """
+
     name = "Discovery"
     source = "Background (Hermit)"
 
@@ -122,6 +129,7 @@ class PositionOfPrivilege(Feature):
     noble if you need to.
 
     """
+
     name = "Position of Privilege"
     source = "Background (Noble)"
 
@@ -134,6 +142,7 @@ class Wanderer(Feature):
     small game, water, and so forth.
 
     """
+
     name = "Wanderer"
     source = "Background (Outlander)"
 
@@ -147,6 +156,7 @@ class Researcher(Feature):
     place, or that it simply cannot be found. Unearthing the deepest secrets of
     the multiverse can require an adventure or even a whole campaign.
     """
+
     name = "Researcher"
     source = "Background (Sage)"
 
@@ -162,6 +172,7 @@ class ShipsPassage(Feature):
     expected to assist the crew during the voyage
 
     """
+
     name = "Ship's Passage"
     source = "Background (Sailor)"
 
@@ -176,6 +187,7 @@ class MilitaryRank(Feature):
     recognized.
 
     """
+
     name = "Military Rank"
     source = "Background (Soldier)"
 
@@ -187,6 +199,7 @@ class CitySecrets(Feature):
     in the city twice as fast as your speed would normally allow.
 
     """
+
     name = "City Secrets"
     source = "Background (Urchin)"
 
@@ -205,6 +218,7 @@ class AllEyesOnYou(Feature):
     hearing about your distant homeland and people.
 
     """
+
     name = "All Eyes on You"
     source = "Background (Far Traveler)"
 
@@ -218,6 +232,7 @@ class EarToTheGround(Feature):
     the local area.
 
     """
+
     name = "Ear to the Ground"
     source = "Background (Urban Bounty Hunter)"
 
@@ -230,6 +245,7 @@ class WatchersEye(Feature):
     likely to be welcome in the former locations rather than the latter.
 
     """
+
     name = "Watcher's Eye"
     source = "Background (City Watch)"
 
@@ -242,6 +258,7 @@ class RespectOfTheStoutFolk(Feature):
     (and possibly your compatriots) the finest accommodations and assistance.
 
     """
+
     name = "Respect of the Stout Folk"
     source = "Background (Clan Crafter)"
 
@@ -261,6 +278,7 @@ class LibraryAccess(Feature):
     scholar.
 
     """
+
     name = "Library Access"
     source = "Background (Cloistered Scholar)"
 
@@ -273,6 +291,7 @@ class CourtFunctionary(Feature):
     are.
 
     """
+
     name = "Court Functionary"
     source = "Background (Courtier)"
 
@@ -286,6 +305,7 @@ class SafeHaven(Feature):
     for you or risk revealing their true identities.
 
     """
+
     name = "Save Haven"
     source = "Background (Faction Agent)"
 
@@ -313,6 +333,7 @@ class Inheritance(Feature):
     until you learn more about what it means to you and what it can do for you.
 
     """
+
     name = "Inheritance"
     source = "Background (Inheritor)"
 
@@ -333,6 +354,7 @@ class KnightlyRegard(Feature):
     he or she is being hunted unjustly.
 
     """
+
     name = "Knightly Regard"
     source = "Background (Knight of the Order)"
 
@@ -349,6 +371,7 @@ class MercenaryLife(Feature):
     Handbook).
 
     """
+
     name = "Mercenary Life"
     source = "Background (Mercenary Veteran)"
 
@@ -365,6 +388,7 @@ class UthgardtHeritage(Feature):
     gods of the First Circle.
 
     """
+
     name = "Uthgardt Heritage"
     source = "Background (Uthgardt Tribe Member)"
 
@@ -383,5 +407,6 @@ class KeptInStyle(Feature):
     actual monetary reward.
 
     """
+
     name = "Kept in Style"
     source = "Background (Waterdhavian Noble)"

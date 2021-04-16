@@ -1,4 +1,3 @@
-from dungeonsheets import armor, weapons
 from dungeonsheets.features.features import Feature, FeatureSelector
 
 
@@ -7,7 +6,7 @@ class Rage(Feature):
     """In battle, you fight with primal ferocity. On your turn, you can enter a
     rage as a bonus action. While raging, you gain the following benefits if
     you aren't wearing heavy armor:
-    
+
     - You have advantage on Strength checks and Strength saving
       throws.
     - When you make a melee weapon attack using Strength, you gain a
@@ -16,7 +15,7 @@ class Rage(Feature):
       table.
     - You have resistance to bludgeoning, piercing, and slashing
       damage.
-    
+
     If you are able to cast spells, you can't cast them or concentrate on them
     while raging. Your rage lasts for 1 minute. It ends early if you are
     knocked unconscious or if your turn ends and you haven't attacked a hostile
@@ -24,31 +23,32 @@ class Rage(Feature):
     your rage on your turn as a bonus action. Once you have raged the number of
     times shown for your barbarian level in the Rages column of the Barbarian
     table, you must finish a long rest before you can rage again
-    
+
     """
+
     _name = "Rage"
     source = "Barbarian"
-    
+
     @property
     def name(self):
-       level = self.owner.Barbarian.level
-       num = 2
-       if level >= 3:
-          num = 3
-       if level >= 6:
-          num = 4
-       if level >= 12:
-          num = 5
-       if level >= 17:
-          num = 6
-       if level >= 20:
-          num = 100
-       damage = '+2'
-       if level >= 9:
-          damage = "+3"
-       if level >= 16:
-          damage = "+4"
-       return self._name + " ({:s}, {:d}x/LR)".format(damage, num)
+        level = self.owner.Barbarian.level
+        num = 2
+        if level >= 3:
+            num = 3
+        if level >= 6:
+            num = 4
+        if level >= 12:
+            num = 5
+        if level >= 17:
+            num = 6
+        if level >= 20:
+            num = 100
+        damage = "+2"
+        if level >= 9:
+            damage = "+3"
+        if level >= 16:
+            damage = "+4"
+        return self._name + " ({:s}, {:d}x/LR)".format(damage, num)
 
 
 class UnarmoredDefenseBarbarian(Feature):
@@ -59,8 +59,9 @@ class UnarmoredDefenseBarbarian(Feature):
     This bonus is computed in the AC given on the Character Sheet above.
 
     """
+
     name = "Unarmored Defense"
-    source = 'Barbarian'
+    source = "Barbarian"
 
 
 class RecklessAttack(Feature):
@@ -71,6 +72,7 @@ class RecklessAttack(Feature):
     against you have advantage until your next turn
 
     """
+
     name = "Reckless Attack"
     source = "Barbarian"
 
@@ -83,6 +85,7 @@ class DangerSense(Feature):
     deafened, or incapacitated.
 
     """
+
     name = "Danger Sense"
     source = "Barbarian"
 
@@ -92,6 +95,7 @@ class ExtraAttackBarbarian(Feature):
     take the Attack action on your turn.
 
     """
+
     name = "Extra Attack (2x)"
     source = "Barbarian"
 
@@ -101,6 +105,7 @@ class FastMovement(Feature):
     wearing heavy armor.
 
     """
+
     name = "Fast Movement"
     source = "Barbarian"
 
@@ -112,6 +117,7 @@ class FeralInstinct(Feature):
     but only if you enter your rage before doing anything else on that turn.
 
     """
+
     name = "Feral Instinct"
     source = "Barbarian"
 
@@ -123,6 +129,7 @@ class BrutalCritical(Feature):
     17th level.
 
     """
+
     name = "Brutal Critical"
     source = "Barbarian"
 
@@ -136,6 +143,7 @@ class RelentlessRage(Feature):
     resets to 10.
 
     """
+
     name = "Relentless Rage"
     source = "Barbarian"
 
@@ -145,6 +153,7 @@ class PersistentRage(Feature):
     you fall unconscious or if you choose to end it.
 
     """
+
     name = "Persistent Rage"
     source = "Barbarian"
 
@@ -154,6 +163,7 @@ class IndomitableMight(Feature):
     your Strength score, you can use that score in place of the total.
 
     """
+
     name = "Indomitable Might"
     source = "Barbarian"
 
@@ -163,6 +173,7 @@ class PrimalChampion(Feature):
     Constitution scores increase by 4. Your maximum for those scores is now 24.
 
     """
+
     name = "Primal Champion"
     source = "Barbarian"
 
@@ -176,6 +187,7 @@ class Frenzy(Feature):
     described in appendix A)
 
     """
+
     name = "Frenzy"
     source = "Barbarian (Berserker)"
 
@@ -186,6 +198,7 @@ class MindlessRage(Feature):
     suspended for the duration of the rage.
 
     """
+
     name = "Mindless Rage"
     source = "Barbarian (Berserker)"
 
@@ -203,6 +216,7 @@ class IntimidatingPresence(Feature):
     throw, you can't use this feature on that creature again for 24 hours.
 
     """
+
     name = "Intimidating Presence"
     source = "Barbarian (Berserker)"
 
@@ -213,6 +227,7 @@ class Retaliation(Feature):
     against that creature.
 
     """
+
     name = "Retaliation"
     source = "Barbarian (Berserker)"
 
@@ -225,6 +240,7 @@ class SpiritSeeker(Feature):
     rituals, as described in chapter 10 of PHB.
 
     """
+
     name = "Spirit Seeker"
     source = "Barbarian (Totem Warrior)"
 
@@ -234,6 +250,7 @@ class BearSpirit(Feature):
     spirit of the bear makes you tough enough to stand up to any punishment.
 
     """
+
     name = "Totem Spirit (Bear)"
     source = "Barbarian (Totem Warrior)"
 
@@ -245,6 +262,7 @@ class EagleSpirit(Feature):
     you into a predator who can weave through the fray with ease.
 
     """
+
     name = "Totem Spirit (Eagle)"
     source = "Barbarian (Totem Warrior)"
 
@@ -255,6 +273,7 @@ class WolfSpirit(Feature):
     spirit of the wolf makes you a leader of hunters
 
     """
+
     name = "Totem Spirit (Wolf)"
     source = "Barbarian (Totem Warrior)"
 
@@ -264,6 +283,7 @@ class ElkSpirit(Feature):
     increases by 15 feet. The spirit of the elk makes you extraordinarily swift
 
     """
+
     name = "Totem Spirit (Elk)"
     source = "Barbarian (Totem Warrior)"
 
@@ -273,6 +293,7 @@ class TigerSpirit(Feature):
     your high jump distance. The spirit of the tiger empowers your leaps
 
     """
+
     name = "Totem Spirit (Tiger)"
     source = "Barbarian (Totem Warrior)"
 
@@ -293,11 +314,14 @@ class TotemSpirit(FeatureSelector):
     tiger spirit
 
     """
-    options = {'bear spirit': BearSpirit,
-            'eagle spirit': EagleSpirit,
-            'wolf spirit': WolfSpirit,
-            'elk spirit': ElkSpirit,
-            'tiger spirit': TigerSpirit}
+
+    options = {
+        "bear spirit": BearSpirit,
+        "eagle spirit": EagleSpirit,
+        "wolf spirit": WolfSpirit,
+        "elk spirit": ElkSpirit,
+        "tiger spirit": TigerSpirit,
+    }
     name = "Totem Spirit (Select One)"
     source = "Barbarian (Totem Warrior)"
 
@@ -306,8 +330,9 @@ class BearAspect(FeatureSelector):
     """You gain the might of a bear. Your carrying capacity (including
     maximum load and maximum lift) is doubled, and you have advantage
     on Strength checks made to push, pull, lift, or break objects.
-    
+
     """
+
     name = "Aspect of the Beast (Bear)"
     source = "Barbarian (Totem Warrior)"
 
@@ -319,6 +344,7 @@ class EagleAspect(FeatureSelector):
     doesn't impose disadvantage on your Wisdom (Perception) checks.
 
     """
+
     name = "Aspect of the Beast (Eagle)"
     source = "Barbarian (Totem Warrior)"
 
@@ -329,6 +355,7 @@ class WolfAspect(FeatureSelector):
     at a normal pace (see chapter 8 for rules on travel pace).
 
     """
+
     name = "Aspect of the Beast (Wolf)"
     source = "Barbarian (Totem Warrior)"
 
@@ -340,6 +367,7 @@ class ElkAspect(FeatureSelector):
     information about travel pace). The elk spirit helps you roam far and fast
 
     """
+
     name = "Aspect of the Beast (Elk)"
     source = "Barbarian (Totem Warrior)"
 
@@ -350,6 +378,7 @@ class TigerAspect(FeatureSelector):
     instincts
 
     """
+
     name = "Aspect of the Beast (Tiger)"
     source = "Barbarian (Totem Warrior)"
 
@@ -369,11 +398,14 @@ class BeastAspect(FeatureSelector):
     tiger aspect
 
     """
-    options = {'bear aspect': BearAspect,
-            'eagle aspect': EagleAspect,
-            'wolf aspect': WolfAspect,
-            'elk aspect': ElkAspect,
-            'tiger aspect': TigerAspect}
+
+    options = {
+        "bear aspect": BearAspect,
+        "eagle aspect": EagleAspect,
+        "wolf aspect": WolfAspect,
+        "elk aspect": ElkAspect,
+        "tiger aspect": TigerAspect,
+    }
     name = "Aspect of the Beast (Select One)"
     source = "Barbarian (Totem Warrior)"
 
@@ -385,6 +417,7 @@ class SpiritWalker(Feature):
     information you seek.
 
     """
+
     name = "Spirit Walker"
     source = "Barbarian (Totem Warrior)"
 
@@ -396,6 +429,7 @@ class BearAttunement(Feature):
     it can't see or hear you or if it can't be frightened.
 
     """
+
     name = "Totemic Attunement (Bear)"
     source = "Barbarian (Totem Warrior)"
 
@@ -406,6 +440,7 @@ class EagleAttunement(Feature):
     turn in the air and nothing else is holding you aloft.
 
     """
+
     name = "Totemic Attunement (Eagle)"
     source = "Barbarian (Totem Warrior)"
 
@@ -415,6 +450,7 @@ class WolfAttunement(Feature):
     a Large or smaller creature prone when you hit it with melee weapon attack.
 
     """
+
     name = "Totemic Attunement (Wolf)"
     source = "Barbarian (Totem Warrior)"
 
@@ -427,6 +463,7 @@ class ElkAttunement(Feature):
     Strength modifier
 
     """
+
     name = "Totemic Attunement (Elk)"
     source = "Barbarian (Totem Warrior)"
 
@@ -438,6 +475,7 @@ class TigerAttunement(Feature):
     against it
 
     """
+
     name = "Totemic Attunement (Tiger)"
     source = "Barbarian (Totem Warrior)"
 
@@ -457,11 +495,14 @@ class TotemicAttunement(FeatureSelector):
     tiger attunement
 
     """
-    options = {'bear attunement': BearAttunement,
-            'eagle attunement': EagleAttunement,
-            'wolf attunement': WolfAttunement,
-            'elk attunement': ElkAttunement,
-            'tiger attunement': TigerAttunement}
+
+    options = {
+        "bear attunement": BearAttunement,
+        "eagle attunement": EagleAttunement,
+        "wolf attunement": WolfAttunement,
+        "elk attunement": ElkAttunement,
+        "tiger attunement": TigerAttunement,
+    }
     name = "Totemic Attunement (Select One)"
     source = "Barbarian (Totem Warrior)"
 
@@ -478,7 +519,8 @@ class BattleragerArmor(Feature):
     piercing damage if your grapple check succeeds.
 
     """
-    name = 'Battlerager Armor'
+
+    name = "Battlerager Armor"
     source = "Barbarian (Battlerager)"
 
 
@@ -488,6 +530,7 @@ class RecklessAbandon(Feature):
     1). They vanish if any of them are left when your rage ends .
 
     """
+
     name = "Reckless Abandon"
     source = "Barbarian (Battlerager)"
 
@@ -497,6 +540,7 @@ class BattleragerCharge(Feature):
     while you are raging.
 
     """
+
     name = "Battlerager Charge"
     source = "Barbarian (Battlerager)"
 
@@ -507,6 +551,7 @@ class SpikedRetribution(Feature):
     aren't incapacitated, and are wearing spiked armor.
 
     """
+
     name = "Spiked Retribution"
     source = "Barbarian (Battlerager)"
 
@@ -523,6 +568,7 @@ class AncestralProtectors(Feature):
     ifyour rage ends
 
     """
+
     name = "Ancestral Protectors"
     source = "Barbarian (Ancestral Guardian)"
 
@@ -537,18 +583,19 @@ class SpiritShield(Feature):
     more: by 3d6 at 10th level and by 4d6 at 14th level.
 
     """
+
     _name = "Spirit Shield"
     source = "Barbarian (Ancestral Guardian)"
 
     @property
     def name(self):
-       level = self.owner.Barbarian.level
-       damage = " (2d6)"
-       if level >= 10:
-          damage = " (3d6)"
-       if level >= 14:
-          damage = " (4d6)"
-       return self._name + damage
+        level = self.owner.Barbarian.level
+        damage = " (2d6)"
+        if level >= 10:
+            damage = " (3d6)"
+        if level >= 14:
+            damage = " (4d6)"
+        return self._name + damage
 
 
 class ConsultTheSpirits(Feature):
@@ -561,6 +608,7 @@ class ConsultTheSpirits(Feature):
     feature again until you finish a short or long rest
 
     """
+
     name = "Consult the Spirits"
     source = "Barbarian (Ancestral Guardian)"
 
@@ -572,6 +620,7 @@ class VengefulAncestors(Feature):
     that your Spirit Shield prevents.
 
     """
+
     name = "Vengeful Ancestors"
     source = "Barbarian (Ancestral Guardian)"
 
@@ -596,6 +645,7 @@ class DesertAura(Feature):
     15th level, and 6 at 20th level.
 
     """
+
     name = "Storm Aura (Desert)"
     source = "Barbarian (Storm Herald)"
 
@@ -621,6 +671,7 @@ class SeaAura(Feature):
     level, and 4d6 at 20th level.
 
     """
+
     name = "Storm Aura (Sea)"
     source = "Barbarian (Storm Herald)"
 
@@ -645,6 +696,7 @@ class TundraAura(Feature):
     level, and 6 at 20th level.
 
     """
+
     name = "Storm Aura (Tundra)"
     source = "Barbarian (Storm Herald)"
 
@@ -660,9 +712,8 @@ class StormAura(FeatureSelector):
 
     tundra
     """
-    options = {'desert': DesertAura,
-            'sea': SeaAura,
-            'tundra': TundraAura}
+
+    options = {"desert": DesertAura, "sea": SeaAura, "tundra": TundraAura}
     name = "Storm Aura (Select One)"
     source = "Barbarian (Storm Herald)"
 
@@ -678,6 +729,7 @@ class DesertSoul(Feature):
     being worn or carried by anyone else and set it on fire
 
     """
+
     name = "Storm Soul (Desert)"
     source = "Barbarian (Storm Herald)"
 
@@ -690,6 +742,7 @@ class SeaSoul(Feature):
     **Sea**: You gain resistance to lightning damage, and
     you can breathe underwater. You also gain a swimming speed of 30 feet.
     """
+
     name = "Storm Soul (Sea)"
     source = "Barbarian (Storm Herald)"
 
@@ -705,6 +758,7 @@ class TundraSoul(Feature):
     Of it into ice, which melts after 1 minute. This action fails if a creature
     is in the cube
     """
+
     name = "Storm Soul (Tundra)"
     source = "Barbarian (Storm Herald)"
 
@@ -720,9 +774,8 @@ class StormSoul(FeatureSelector):
     tundra
 
     """
-    options = {'desert': DesertSoul,
-            'sea': SeaSoul,
-            'tundra': TundraSoul}
+
+    options = {"desert": DesertSoul, "sea": SeaSoul, "tundra": TundraSoul}
     name = "Storm Soul (Select One)"
     source = "Barbarian (Storm Herald)"
 
@@ -733,6 +786,7 @@ class ShieldingStorm(Feature):
     from the Storm Soul fea ture while the creature is in your Storm Aura.
 
     """
+
     name = "Shielding Storm"
     source = "Barbarian (Storm Herald)"
 
@@ -748,6 +802,7 @@ class RagingDesert(Feature):
     equal to half your barbarian level.
 
     """
+
     name = "Raging Storm (Desert)"
     source = "Barbarian (Storm Herald)"
 
@@ -762,6 +817,7 @@ class RagingSea(Feature):
     failed save, the creature is knocked prone, as if struck by a wave.
 
     """
+
     name = "Raging Storm (Sea)"
     source = "Barbarian (Storm Herald)"
 
@@ -777,6 +833,7 @@ class RagingTundra(Feature):
     your next turn, as magical frost covers it
 
     """
+
     name = "Raging Storm (Tundra)"
     source = "Barbarian (Storm Herald)"
 
@@ -792,9 +849,8 @@ class RagingStorm(FeatureSelector):
     tundra
 
     """
-    options = {'desert': RagingDesert,
-            'sea': RagingSea,
-            'tundra': RagingTundra}
+
+    options = {"desert": RagingDesert, "sea": RagingSea, "tundra": RagingTundra}
     name = "Raging Storm (Select One)"
     source = "Barbarian (Storm Herald)"
 
@@ -808,14 +864,15 @@ class DivineFury(Feature):
     you choose the type of damage when you gain this feature.
 
     """
+
     _name = "Divine Fury"
     source = "Barbarian (Zealot)"
 
     @property
     def name(self):
-       level = self.owner.Barbarian.level
-       damage = " (1d6+{:d})".format(level//2)
-       return self._name + damage
+        level = self.owner.Barbarian.level
+        damage = " (1d6+{:d})".format(level // 2)
+        return self._name + damage
 
 
 class WarriorOfTheGods(Feature):
@@ -825,6 +882,7 @@ class WarriorOfTheGods(Feature):
     on you
 
     """
+
     name = "Warrior of the Gods"
     source = "Barbarian (Zealot)"
 
@@ -834,6 +892,7 @@ class FanaticalFocus(Feature):
     you. If you fail a saving throw while you're raging, you can reroll it, and
     you must use the new roll. You can use this ability only once per rage.
     """
+
     name = "Fanatical Focus"
     source = "Barbarian (Zealot)"
 
@@ -847,6 +906,7 @@ class ZealousPresence(Feature):
     until you finish a long rest
 
     """
+
     name = "Zealous Presence"
     source = "Barbarian (Zealot)"
 
@@ -860,5 +920,6 @@ class RageBeyondDeath(Feature):
     your rage ends, and you die then only if you still have 0 hit points.
 
     """
+
     name = "Rage Beyond Death"
     source = "Barbarian (Zealot)"

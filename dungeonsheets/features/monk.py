@@ -1,4 +1,4 @@
-from dungeonsheets import armor, spells, weapons
+from dungeonsheets import spells, weapons
 from dungeonsheets.features.features import Feature
 
 
@@ -6,13 +6,14 @@ class UnarmoredDefenseMonk(Feature):
     """Beginning at 1st level, while you are wearing no armor and not
     wearing a shield, your AC equals 10 + your Dexterity modifier +
     your Wisdom modifier.
-    
+
     This bonus is computed in the AC given on the Character Sheet
     above.
-    
+
     """
+
     name = "Unarmored Defense"
-    source = 'Monk'
+    source = "Monk"
 
 
 class MartialArts(Feature):
@@ -22,7 +23,7 @@ class MartialArts(Feature):
     two-handed or heavy property. You gain the following benefits
     while you are unarmed or wielding only monk weapons and you aren't
     wearing armor or wielding a shield:
-    
+
     - You can use Dexterity instead of Strength for the attack and
       damage rolls of your unarmed strikes and monk weapons.
     - You can roll a d4 in place of the normal damage of your unarmed
@@ -34,36 +35,36 @@ class MartialArts(Feature):
       with a quarter- staff, you can also make an unarmed strike as a
       bonus action, assuming you haven't already taken a bonus action
       this turn.
-    
+
     Certain monasteries use specializepd forms of the monk
     weapons. For example, you might use a club that is two lengths of
     w ood connected by a short chain (called a nunchaku) or a sickle
     with a shorter, straighter blade (called a kama). Whatever name
     you use for a monk weapon, you can use the game statistics
     provided for
-    
+
     """
+
     name = "Martial Arts"
-    source = 'Monk'
-    die = 'd4'
-    
+    source = "Monk"
+    die = "d4"
+
     def weapon_func(self, weapon: weapons.Weapon, **kwargs):
         """Update increasing damage dice and DEX mod of Monk weapons"""
-        is_monk_weapon = any([isinstance(weapon, w)
-                         for w in weapons.monk_weapons])
+        is_monk_weapon = any([isinstance(weapon, w) for w in weapons.monk_weapons])
         level = self.owner.Monk.level
         if not is_monk_weapon:
             return weapon
-        self.die = 'd4'
+        self.die = "d4"
         if level >= 5:
-            self.die = 'd6'
+            self.die = "d6"
         if level >= 11:
-            self.die = 'd8'
+            self.die = "d8"
         if level >= 17:
-            self.die = 'd10'
+            self.die = "d10"
         # check if new damage is better than default
-        if int(self.die[1:]) > int(weapon.base_damage.split('d')[-1]):
-            weapon.base_damage = '1' + str(self.die)
+        if int(self.die[1:]) > int(weapon.base_damage.split("d")[-1]):
+            weapon.base_damage = "1" + str(self.die)
         weapon.is_finesse = True
 
 
@@ -73,7 +74,7 @@ class Ki(Feature):
     a number of ki points. Your monk level determines the number of
     points you have, as shown in the Ki Points column of the Monk
     table. You can spend these points to fuel various ki features.
-    
+
     You start knowing three such features: Flurry of Blows, Patient
     Defense, and Step of the Wind. You learn more ki features as you
     gain levels in this class. When you spend a ki point, it is
@@ -81,13 +82,14 @@ class Ki(Feature):
     which you draw all of your expended ki back into yourself. You
     must spend at least 30 minutes of the rest meditating to regain
     your ki points.
-    
+
     Some of your ki features require your target to make a saving
     throw to resist the feature's effects. The saving throw DC is
     calculated as follows: Ki save DC = 8 + your proficiency bonus +
     your Wisdom modifier
-    
+
     """
+
     _name = "Ki"
     source = "Monk"
 
@@ -103,6 +105,7 @@ class FlurryOfBlows(Feature):
     ki point to make two unarmed strikes as a bonus action
 
     """
+
     name = "Flurry of Blows"
     source = "Monk"
 
@@ -112,6 +115,7 @@ class PatientDefense(Feature):
     turn
 
     """
+
     name = "Patient Defense"
     source = "Monk"
 
@@ -121,6 +125,7 @@ class StepOfTheWind(Feature):
     action on your turn, and your jump distance is doubled for the turn
 
     """
+
     name = "Step of the Wind"
     source = "Monk"
 
@@ -134,6 +139,7 @@ class UnarmoredMovement(Feature):
     across liquids on your turn without falling during the move.
 
     """
+
     name = "Unarmored Movement"
     source = "Monk"
 
@@ -159,17 +165,18 @@ class DeflectMissiles(Feature):
     + your Dexterity modifier + your monk level. If you reduce the
     damage to 0, you can catch the missile if it is small enough for
     you to hold in one hand and you have at least one hand free.
-    
+
     If you catch a missile in this way, you can spend 1 ki point to
     make a ranged attack with the weapon or piece of ammunition you
     just caught, as part of the same reaction. You make this attack
     with proficiency, regardless of your weapon proficiencies, and the
     missile counts as a monk weapon for the attack
-    
+
     """
+
     _name = "Deflect Missiles"
     source = "Monk"
-    
+
     @property
     def name(self):
         mod = self.owner.dexterity.modifier + self.owner.Monk.level
@@ -182,6 +189,7 @@ class SlowFall(Feature):
     times your monk level.
 
     """
+
     name = "Slow Fall"
     source = "Monk"
 
@@ -189,8 +197,9 @@ class SlowFall(Feature):
 class ExtraAttackMonk(Feature):
     """Beginning at 5th level, you can attack twice, instead of once,
     whenever you take the Attack action on your turn
-    
+
     """
+
     name = "Extra Attack (2x)"
     source = "Monk"
 
@@ -201,8 +210,9 @@ class StunningStrike(Feature):
     attack, you can spend 1 ki point to attempt a stunning strike. The
     target must succeed on a Constitution saving throw or be stunned
     until the end of your next turn
-    
+
     """
+
     name = "Stunning Strike"
     source = "Monk"
 
@@ -211,8 +221,9 @@ class KiEmpoweredStrikes(Feature):
     """Starting at 6th level, your unarmed strikes count as magical for
     the purpose of overcoming resistance and immunity to nonmagical
     attacks and damage
-    
+
     """
+
     name = "Ki-Empowered Strikes"
     source = "Monk"
 
@@ -220,8 +231,9 @@ class KiEmpoweredStrikes(Feature):
 class StillnessOfMind(Feature):
     """Starting at 7th level, you can use your action to end one effect on
     yourself that is causing you to be charmed or frightened
-    
+
     """
+
     name = "Stillness of Mind"
     source = "Monk"
 
@@ -229,8 +241,9 @@ class StillnessOfMind(Feature):
 class PurityOfBody(Feature):
     """At 10th level, your mastery of the ki flowing through you makes you
     immune to disease and poison.
-    
+
     """
+
     name = "Purity of Body"
     source = "Monk"
 
@@ -239,8 +252,9 @@ class TongueOfTheSunAndMoon(Feature):
     """Starting at 13th level, you learn to touch the ki of other minds so
     that you understand all spoken languages. Moreover, any creature
     that can understand a language can understand what you say.
-    
+
     """
+
     name = "Tongue of the Sun and Moon"
     source = "Monk"
 
@@ -250,8 +264,9 @@ class DiamondSoul(Feature):
     in all saving throws. Additionally, whenever you make a saving
     throw and fail, you can spend 1 ki point to reroll it and take the
     second result.
-    
+
     """
+
     name = "Diamond Soul"
     source = "Monk"
 
@@ -261,8 +276,9 @@ class TimelessBody(Feature):
     frailty of old age, and you can't be aged magically. You can still
     die of old age, however. In addition, you no longer need food or
     water.
-    
+
     """
+
     name = "Timeless Body"
     source = "Monk"
 
@@ -274,8 +290,9 @@ class EmptyBody(Feature):
     you can spend 8 ki points to cast the astral projection spell,
     without needing material components. When you do so, you can't
     take any other creatures with you.
-    
+
     """
+
     name = "Empty Body"
     source = "Monk"
 
@@ -283,8 +300,9 @@ class EmptyBody(Feature):
 class PerfectSelf(Feature):
     """At 20th level, when you roll for initiative and have no ki points
     remaining, you regain 4 ki points.
-    
+
     """
+
     name = "Perfect Self"
     source = "Monk"
 
@@ -296,13 +314,14 @@ class OpenHandTechnique(Feature):
     hit a creature with one of the attacks granted by your *Flurry of
     Blows*, you can impose one of the following effects on that
     target:
-    
+
     - It must succeed on a Dexterity saving throw or be knocked prone.
     - It must make a Strength saving throw. If it fails, you can push
       it up to 15 feet away from you.
     - It can't take reactions until the end of your next turn
-    
+
     """
+
     name = "Open Hand Technique"
     source = "Monk (Way of the Open Hand)"
 
@@ -312,8 +331,9 @@ class WholenessOfBody(Feature):
     you can regain hit points equal to three times your monk
     level. You must finish a long rest before you can use this feature
     again
-    
+
     """
+
     name = "Wholeness of Body"
     source = "Monk (Way of the Open Hand)"
 
@@ -325,8 +345,9 @@ class Tranquility(Feature):
     start of your next long rest (the spell can end early as
     normal). The saving throw DC for the spell equals 8 + your Wisdom
     modifier + your proficiency bonus
-    
+
     """
+
     name = "Tranquility"
     source = "Monk (Way of the Open Hand)"
 
@@ -344,8 +365,9 @@ class QuiveringPalm(Feature):
     have only one creature under the effect of this feature at a
     time. You can choose to end the vibrations harmlessly without
     using an action.
-    
+
     """
+
     name = "Quivering Palm"
     source = "Monk (Way of the Open Hand)"
 
@@ -358,8 +380,9 @@ class ShadowArts(Feature):
     without trace, or silence, without providing material
     components. Additionally, you gain the minor illusion cantrip if
     you don't already know it.
-    
+
     """
+
     name = "Shadow Arts"
     source = "Monk (Way of Shadow)"
 
@@ -370,8 +393,9 @@ class ShadowStep(Feature):
     you can teleport up to 60 feet to an unoccupied space you can see
     that is also in dim light or darkness. You then have advantage on
     the first melee attack you make before the end of the turn.
-    
+
     """
+
     name = "Shadow Step"
     source = "Monk (Way of Shadow)"
 
@@ -382,8 +406,9 @@ class CloakOfShadows(Feature):
     use your action to become invisible. You remain invisible until
     you make an attack, cast a spell, or are in an area of bright
     light.
-    
+
     """
+
     name = "Cloak of Shadows"
     source = "Monk (Way of Shadow)"
 
@@ -393,8 +418,9 @@ class Opportunist(Feature):
     when it is hit by an attack. Whenever a creature within 5 feet of
     you is hit by an attack made by a creature other than you, you can
     use your reaction to make a melee attack against that creature.
-    
+
     """
+
     name = "Opportunist"
     source = "Monk (Way of Shadow)"
 
@@ -407,14 +433,14 @@ class DiscipleOfTheElements(Feature):
     it. You know the Elemental Attunement discipline and one other
     elemental discipline of your choice, which are detailed in the
     "Elemental Disciplines" section below.
-    
+
     You learn one additional elemental discipline of your choice at
     6th, 11th, and 17th level. Whenever you learn a new elemental
     discipline, you can also replace one elemental discipline that you
     already know with a different discipline.
-    
+
     Add your chosen disciplines under "features" in your .py file
-    
+
     **Casting Elemental Spells:** Some elemental disciplines allow you
     to cast spells. See chapter 10 for the general rules of
     spellcasting. To cast one o f these spells, you use its casting
@@ -443,6 +469,7 @@ class DiscipleOfTheElements(Feature):
     Monk Levels 17-20 : 6 Ki points Max
 
     """
+
     name = "Disciple of the Elements"
     source = "Monk (Way of the Four Elements)"
 
@@ -450,7 +477,7 @@ class DiscipleOfTheElements(Feature):
 class ElementalAttunement(Feature):
     """You can use your action to briefly control elemental forces nearby,
     causing one of the following effects of your choice:
-    
+
     - Create a harmless, instantaneous sensory effect related to air,
       earth, fire, or water, such as a shower of sparks, a puff of
       wind, a spray o f light mist, or a gentle rumbling of stone.
@@ -461,18 +488,20 @@ class ElementalAttunement(Feature):
     - Cause earth, fire, water, or mist that can fit within a 1-foot
       cube to shape itself into a crude form you desig nate for 1
       minute.
-    
+
     """
+
     name = "Elemental Attunement"
     source = "Monk (Way of the Four Elements)"
 
 
 class BreathOfWinter(Feature):
     """You can spend 6 ki points to cast cone of cold.
-    
+
     **Prerequisite:** 17th Level
-    
+
     """
+
     name = "Breath of Winter"
     source = "Monk (Way of the Four Elements)"
     spells_known = (spells.ConeOfCold,)
@@ -480,10 +509,11 @@ class BreathOfWinter(Feature):
 
 class ClenchOfTheNorthWind(Feature):
     """You can spend 3 ki points to cast hold person.
-    
+
     **Prerequisite:** 6th Level
-    
+
     """
+
     name = "Clench of the North Wind"
     source = "Monk (Way of the Four Elements)"
     spells_known = (spells.HoldPerson,)
@@ -491,10 +521,11 @@ class ClenchOfTheNorthWind(Feature):
 
 class EternalMountainDefense(Feature):
     """You can spend 5 ki points to cast stoneskin, targeting yourself.
-    
+
     **Prerequisite:** 11th Level
-    
+
     """
+
     name = "Eternal Mountain Defense"
     source = "Monk (Way of the Four Elements)"
     spells_known = (spells.Stoneskin,)
@@ -508,14 +539,16 @@ class FangsOfTheFireSnake(Feature):
     such an attack deals fire damage instead of bludgeoning damage,
     and if you spend 1 ki point when the attack hits, it also deals an
     extra 1d10 fire damage
-    
+
     """
+
     name = "Fangs of the Fire Snake"
     source = "Monk (Way of the Four Elements)"
 
 
 class FistOfFourThunders(Feature):
     """You can spend 2 ki points to cast thunderwave."""
+
     name = "Fist of Four Thunders"
     source = "Monk (Way of the Four Elements)"
     spells_known = (spells.Thunderwave,)
@@ -531,18 +564,20 @@ class FistOfUnbrokenAir(Feature):
     20 feet away from you and knock it prone. On a successful save,
     the creature takes half as much damage, and you don't push it or
     knock it prone.
-    
+
     """
+
     name = "Fist of Unbroken Air"
     source = "Monk (Way of the Four Elements)"
 
 
 class FlamesOfThePhoenix(Feature):
     """You can spend 4 ki points to cast fireball.
-    
+
     **Prerequisite:** 11th Level
-    
+
     """
+
     name = "Flames of the Phoenix"
     source = "Monk (Way of the Four Elements)"
     spells_known = (spells.Fireball,)
@@ -550,10 +585,11 @@ class FlamesOfThePhoenix(Feature):
 
 class GongOfTheSummit(Feature):
     """You can spend 3 ki points to cast shatter.
-    
+
     **Prerequisite:** 6th Level
-    
+
     """
+
     name = "Gong of the Summit"
     source = "Monk (Way of the Four Elements)"
     spells_known = (spells.Shatter,)
@@ -561,10 +597,11 @@ class GongOfTheSummit(Feature):
 
 class MistStance(Feature):
     """You can spend 4 ki points to cast gaseous form, targeting yourself.
-    
+
     **Prerequisite:** 11th Level
-    
+
     """
+
     name = "Mist Stance"
     source = "Monk (Way of the Four Elements)"
     spells_known = (spells.GaseousForm,)
@@ -576,6 +613,7 @@ class RideTheWind(Feature):
     **Prerequisite:** 11th Level
 
     """
+
     name = "Ride the Wind"
     source = "Monk (Way of the Four Elements)"
     spells_known = (spells.Fly,)
@@ -587,15 +625,15 @@ class RiverOfHungryFlame(Feature):
     **Prerequisite:** 17th Level
 
     """
+
     name = "River of Hungry Flame"
     source = "Monk (Way of the Four Elements)"
     spells_known = (spells.WallOfFire,)
 
 
 class RushOfTheGaleSpirits(Feature):
-    """You can spend 2 ki points to cast gust of wind.
+    """You can spend 2 ki points to cast gust of wind."""
 
-    """
     name = "Rush of the Gale Spirits"
     source = "Monk (Way of the Four Elements)"
     spells_known = (spells.GustOfWind,)
@@ -614,14 +652,16 @@ class ShapeTheFlowingRiver(Feature):
     elevation by up to 15 feet, dig a trench up to 15 feet deep, and
     so on. You can't shape the ice to trap or injure a creature in the
     area.
-    
+
     """
+
     name = "Shape the Flowing River"
     source = "Monk (Way of the Four Elements)"
 
 
 class SweepingCinderStrike(Feature):
     """You can spend 2 ki points to cast burning hands."""
+
     name = "Sweeping Cinder Strike"
     source = "Monk (Way of the Four Elements)"
     spells_known = (spells.BurningHands,)
@@ -639,16 +679,18 @@ class WaterWhip(Feature):
     it prone
 
     """
+
     name = "Water Whip"
     source = "Monk (Way of the Four Elements)"
 
 
 class WaveOfRollingEarth(Feature):
     """You can spend 6 ki points to cast wall of stone
-    
+
     **Prerequisite:** 17th Level
 
     """
+
     name = "Wave of Rolling Earth"
     source = "Monk (Way of the Four Elements)"
     spells_known = (spells.WallOfStone,)
@@ -663,7 +705,8 @@ class TouchOfDeath(Feature):
     level (minimum of 1 temporary hit point)
 
     """
-    name = 'Touch of Death'
+
+    name = "Touch of Death"
     source = "Monk (Way of the Sun Soul)"
 
 
@@ -675,6 +718,7 @@ class HourOfReaping(Feature):
     the end of your next turn
 
     """
+
     name = "Hour of Reaping"
     source = "Monk (Way of the Sun Soul)"
 
@@ -685,6 +729,7 @@ class MasteryOfDeath(Feature):
     action required) to have 1 hit point instead
 
     """
+
     name = "Mastery of Death"
     source = "Monk (Way of the Sun Soul)"
 
@@ -697,6 +742,7 @@ class TouchOfTheLongDeath(Feature):
     save, or half as much damage on a suc- cessful one
 
     """
+
     name = "Touch of the Long Death"
     source = "Monk (Way of the Sun Soul)"
 
@@ -715,12 +761,13 @@ class RadiantSunBolt(Feature):
     attacks with it as a bonus action.
 
     """
+
     name = "Radiant Sun Bolt"
     source = "Monk (Way of the Sun Soul)"
 
     def __init__(self, owner=None):
-       super().__init__(owner=owner)
-       self.owner.wield_weapon("sun bolt")
+        super().__init__(owner=owner)
+        self.owner.wield_weapon("sun bolt")
 
 
 class SearingArcStrike(Feature):
@@ -734,6 +781,7 @@ class SearingArcStrike(Feature):
     down)
 
     """
+
     name = "Searing Arc Strike"
     source = "Monk (Way of the Sun Soul)"
     spells_known = (spells.BurningHands,)
@@ -751,6 +799,7 @@ class SearingSunburst(Feature):
     maximum of 3, increases the damage by 2d6.
 
     """
+
     name = "Searing Sunburst"
     source = "Monk (Way of the Sun Soul)"
 
@@ -764,6 +813,7 @@ class SunShield(Feature):
     Wisdom modifier
 
     """
+
     name = "Sun Shield"
     source = "Monk (Way of the Sun Soul)"
 
@@ -776,6 +826,7 @@ class DrunkenTechnique(Feature):
     end of the current turn
 
     """
+
     name = "Drunken Technique"
     source = "Monk (Way of the Drunken Master)"
 
@@ -793,6 +844,7 @@ class TipsySway(Feature):
     feet of you.
 
     """
+
     name = "Tipsy Sway"
     source = "Monk (Way of the Drunken Master)"
 
@@ -804,6 +856,7 @@ class DrunkardsLuck(Feature):
     the disadvantage for that roll
 
     """
+
     name = "Drunkard's Luck"
     source = "Monk (Way of the Drunken Master)"
 
@@ -816,6 +869,7 @@ class IntoxicatedFrenzy(Feature):
     targets a different creature this turn
 
     """
+
     name = "Intoxicated Frenzy"
     source = "Monk (Way of the Drunken Master)"
 
@@ -853,6 +907,7 @@ class PathOfTheKensei(Feature):
     calligrapher's supplies or painter's supplies
 
     """
+
     name = "Path of the Kensei"
     source = "Monk (Way of the Kensei)"
 
@@ -871,6 +926,7 @@ class OneWithTheBlade(Feature):
     your turns.
 
     """
+
     name = "One with the Blade"
     source = "Monk (Way of the Kensei)"
 
@@ -885,6 +941,7 @@ class SharpenTheBlade(Feature):
     rolls
 
     """
+
     name = "Sharpen the Blade"
     source = "Monk (Way of the Kensei)"
 
@@ -896,5 +953,6 @@ class UnerringAccuracy(Feature):
     turns.
 
     """
+
     name = "Unerring Accuracy"
     source = "Monk (Way of the Kensei)"

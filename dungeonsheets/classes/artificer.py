@@ -14,9 +14,11 @@ class Alchemist(SubClass):
 
     name = "Alchemist"
     features_by_level = defaultdict(list)
-    features_by_level[3] = [features.AlchemistToolProficiency,
-                            features.AlchemistSpells,
-                            features.ExperimentalElixir]
+    features_by_level[3] = [
+        features.AlchemistToolProficiency,
+        features.AlchemistSpells,
+        features.ExperimentalElixir,
+    ]
     features_by_level[5] = [features.AlchemicalSavant]
     features_by_level[9] = [features.RestorativeReagents]
     features_by_level[15] = [features.ChemicalMastery]
@@ -35,9 +37,11 @@ class Artillerist(SubClass):
 
     name = "Artillerist"
     features_by_level = defaultdict(list)
-    features_by_level[3] = [features.ArtilleristSpells,
-                            features.ArtilleristToolProficiency,
-                            features.EldritchCannon]
+    features_by_level[3] = [
+        features.ArtilleristSpells,
+        features.ArtilleristToolProficiency,
+        features.EldritchCannon,
+    ]
     features_by_level[5] = [features.ArcaneFirearm]
     features_by_level[9] = [features.ExplosiveCannon]
     features_by_level[15] = [features.FortifiedPosition]
@@ -60,10 +64,12 @@ class BattleSmith(SubClass):
 
     name = "Battle Smith"
     features_by_level = defaultdict(list)
-    features_by_level[3] = [features.BattleSmithSpells,
-                            features.BattleSmithToolProficiency,
-                            features.BattleReady,
-                            features.SteelDefender]
+    features_by_level[3] = [
+        features.BattleSmithSpells,
+        features.BattleSmithToolProficiency,
+        features.BattleReady,
+        features.SteelDefender,
+    ]
     features_by_level[5] = [features.ExtraAttackBattleSmith]
     features_by_level[9] = [features.ArcaneJolt]
     features_by_level[15] = [features.ImprovedDefender]
@@ -74,25 +80,42 @@ class Artificer(CharClass):
     hit_dice_faces = 8
     subclass_select_level = 3
     subclasses_available = (Alchemist, Artillerist, BattleSmith)
-    saving_throw_proficiencies = ('intelligence', 'constitution')
-    primary_abilities = ('intelligence',)
+    saving_throw_proficiencies = ("intelligence", "constitution")
+    primary_abilities = ("intelligence",)
     _proficiencies_text = (
-            'Light armor', 'Medium armor', 'Shields', 'Simple weapons',
-            "Thieve's tools", "Tinker's tools",
-            "One type of artisan's tools of your choice")
+        "Light armor",
+        "Medium armor",
+        "Shields",
+        "Simple weapons",
+        "Thieve's tools",
+        "Tinker's tools",
+        "One type of artisan's tools of your choice",
+    )
     _multiclass_proficiencies_text = (
-            "Light armor", "Medium armor", "Shields",
-            "Thieve's tools", "Tinker's tools")
+        "Light armor",
+        "Medium armor",
+        "Shields",
+        "Thieve's tools",
+        "Tinker's tools",
+    )
     weapon_proficiencies = (weapons.SimpleWeapon,)
     infusions = []
     class_skill_choices = (
-            'Arcana', 'History', 'Investigation',
-            'Medicine', 'Nature', 'Perception', 'Sleight of Hand')
+        "Arcana",
+        "History",
+        "Investigation",
+        "Medicine",
+        "Nature",
+        "Perception",
+        "Sleight of Hand",
+    )
     features_by_level = defaultdict(list)
-    features_by_level[1] = [features.MagicalTinkering,
-                            features.FirearmProficiency,
-                            features.ArtificerSpellcasting,
-                            features.ArtificerRitualCasting]
+    features_by_level[1] = [
+        features.MagicalTinkering,
+        features.FirearmProficiency,
+        features.ArtificerSpellcasting,
+        features.ArtificerRitualCasting,
+    ]
     features_by_level[2] = [features.InfuseItem]
     features_by_level[3] = [features.TheRightToolForTheJob]
     features_by_level[6] = [features.ToolExpertise]
@@ -102,26 +125,26 @@ class Artificer(CharClass):
     features_by_level[14] = [features.MagicItemSavant]
     features_by_level[18] = [features.MagicItemMaster]
     features_by_level[20] = [features.SoulOfArtifice]
-    spellcasting_ability = 'intelligence'
+    spellcasting_ability = "intelligence"
     spell_slots_by_level = {
-            1:  (2, 2, 0, 0, 0, 0, 0, 0, 0, 0),
-            2:  (2, 2, 0, 0, 0, 0, 0, 0, 0, 0),
-            3:  (2, 3, 0, 0, 0, 0, 0, 0, 0, 0),
-            4:  (2, 3, 0, 0, 0, 0, 0, 0, 0, 0),
-            5:  (2, 4, 2, 0, 0, 0, 0, 0, 0, 0),
-            6:  (2, 4, 2, 0, 0, 0, 0, 0, 0, 0),
-            7:  (2, 4, 3, 0, 0, 0, 0, 0, 0, 0),
-            8:  (2, 4, 3, 0, 0, 0, 0, 0, 0, 0),
-            9:  (2, 4, 3, 2, 0, 0, 0, 0, 0, 0),
-            10: (3, 4, 3, 2, 0, 0, 0, 0, 0, 0),
-            11: (3, 4, 3, 3, 0, 0, 0, 0, 0, 0),
-            12: (3, 4, 3, 3, 0, 0, 0, 0, 0, 0),
-            13: (3, 4, 3, 3, 1, 0, 0, 0, 0, 0),
-            14: (4, 4, 3, 3, 1, 0, 0, 0, 0, 0),
-            15: (4, 4, 3, 3, 2, 0, 0, 0, 0, 0),
-            16: (4, 4, 3, 3, 2, 0, 0, 0, 0, 0),
-            17: (4, 4, 3, 3, 3, 1, 0, 0, 0, 0),
-            18: (4, 4, 3, 3, 3, 1, 0, 0, 0, 0),
-            19: (4, 4, 3, 3, 3, 2, 0, 0, 0, 0),
-            20: (4, 4, 3, 3, 3, 2, 0, 0, 0, 0)
-            }
+        1: (2, 2, 0, 0, 0, 0, 0, 0, 0, 0),
+        2: (2, 2, 0, 0, 0, 0, 0, 0, 0, 0),
+        3: (2, 3, 0, 0, 0, 0, 0, 0, 0, 0),
+        4: (2, 3, 0, 0, 0, 0, 0, 0, 0, 0),
+        5: (2, 4, 2, 0, 0, 0, 0, 0, 0, 0),
+        6: (2, 4, 2, 0, 0, 0, 0, 0, 0, 0),
+        7: (2, 4, 3, 0, 0, 0, 0, 0, 0, 0),
+        8: (2, 4, 3, 0, 0, 0, 0, 0, 0, 0),
+        9: (2, 4, 3, 2, 0, 0, 0, 0, 0, 0),
+        10: (3, 4, 3, 2, 0, 0, 0, 0, 0, 0),
+        11: (3, 4, 3, 3, 0, 0, 0, 0, 0, 0),
+        12: (3, 4, 3, 3, 0, 0, 0, 0, 0, 0),
+        13: (3, 4, 3, 3, 1, 0, 0, 0, 0, 0),
+        14: (4, 4, 3, 3, 1, 0, 0, 0, 0, 0),
+        15: (4, 4, 3, 3, 2, 0, 0, 0, 0, 0),
+        16: (4, 4, 3, 3, 2, 0, 0, 0, 0, 0),
+        17: (4, 4, 3, 3, 3, 1, 0, 0, 0, 0),
+        18: (4, 4, 3, 3, 3, 1, 0, 0, 0, 0),
+        19: (4, 4, 3, 3, 3, 2, 0, 0, 0, 0),
+        20: (4, 4, 3, 3, 3, 2, 0, 0, 0, 0),
+    }

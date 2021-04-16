@@ -3,10 +3,11 @@ from collections import defaultdict
 from dungeonsheets.features import Feature, FeatureSelector
 
 
-class CharClass():
+class CharClass:
     """
     A generic Character Class (not to be confused with builtin class)
     """
+
     name = "Default"
     level = 1
     hit_dice_faces = 2
@@ -28,8 +29,7 @@ class CharClass():
     subclasses_available = ()
     features_by_level = defaultdict(list)
 
-    def __init__(self, level, owner=None, subclass=None, feature_choices=[],
-                 **params):
+    def __init__(self, level, owner=None, subclass=None, feature_choices=[], **params):
         self.level = level
         self.owner = owner
         # For ex: add "char.Monk" attribute
@@ -41,8 +41,7 @@ class CharClass():
             fs = []
             for f in cls.features_by_level[i]:
                 if issubclass(f, FeatureSelector):
-                    fs.append(f(owner=self.owner,
-                                feature_choices=feature_choices))
+                    fs.append(f(owner=self.owner, feature_choices=feature_choices))
                 elif issubclass(f, Feature):
                     fs.append(f(owner=self.owner))
             self.features_by_level[i] = fs
@@ -63,7 +62,7 @@ class CharClass():
         Intended to be replaced by classes so they can
         define their own methods of picking subclass by string.
         """
-        if subclass_str in ['', 'None', 'none', None]:
+        if subclass_str in ["", "None", "none", None]:
             return None
         for sc in self.subclasses_available:
             if subclass_str.lower() in sc.name.lower():
@@ -78,34 +77,37 @@ class CharClass():
             fs = []
             for f in subcls.features_by_level[i]:
                 if issubclass(f, FeatureSelector):
-                    fs.append(f(owner=self.owner,
-                                feature_choices=feature_choices))
+                    fs.append(f(owner=self.owner, feature_choices=feature_choices))
                 elif issubclass(f, Feature):
                     fs.append(f(owner=self.owner))
             self.features_by_level[i].extend(fs)
-        for attr in ('weapon_proficiencies', '_proficiencies_text'):
-            new_list = tuple(getattr(self, attr, ())) + tuple(getattr(self.subclass, attr, ()))
+        for attr in ("weapon_proficiencies", "_proficiencies_text"):
+            new_list = tuple(getattr(self, attr, ())) + tuple(
+                getattr(self.subclass, attr, ())
+            )
             setattr(self, attr, new_list)
         # All subclass proficiencies transfer, regardless of if this is primary class
         self.multiclass_weapon_proficiencies += tuple(subcls.weapon_proficiencies)
         self._multiclass_proficiencies_text += tuple(subcls._proficiencies_text)
-        self.spellcasting_ability = (self.spellcasting_ability or
-                                     subcls.spellcasting_ability)
-        self.spell_slots_by_level = (self.spell_slots_by_level or
-                                     subcls.spell_slots_by_level)
+        self.spellcasting_ability = (
+            self.spellcasting_ability or subcls.spellcasting_ability
+        )
+        self.spell_slots_by_level = (
+            self.spell_slots_by_level or subcls.spell_slots_by_level
+        )
         self.spells_known.extend([S() for S in subcls.spells_known])
         self.spells_prepared.extend([S() for S in subcls.spells_prepared])
 
     @property
     def features(self):
         features = ()
-        for lvl in range(1, self.level+1):
+        for lvl in range(1, self.level + 1):
             features += tuple(self.features_by_level[lvl])
         return features
 
     @property
     def is_spellcaster(self):
-        result = (self.spellcasting_ability is not None)
+        result = self.spellcasting_ability is not None
         return result
 
     def spell_slots(self, spell_level):
@@ -116,20 +118,21 @@ class CharClass():
             return self.spell_slots_by_level[self.level][spell_level]
 
     def __str__(self):
-        s = 'Level {:d} {:s}'.format(self.level, self.name)
+        s = "Level {:d} {:s}".format(self.level, self.name)
         if isinstance(self.subclass, SubClass):
-            s += ' ({:s})'.format(str(self.subclass))
+            s += " ({:s})".format(str(self.subclass))
         return s
 
     def __repr__(self):
-        return '\"{:s}\"'.format(str(self))
+        return '"{:s}"'.format(str(self))
 
 
-class SubClass():
+class SubClass:
     """
     A generic subclass object. Add more detail in the __doc__ attribute.
     """
-    name = ''
+
+    name = ""
     features_by_level = defaultdict(list)
     weapon_proficiencies = ()
     _proficiencies_text = ()
@@ -146,4 +149,4 @@ class SubClass():
         return self.name
 
     def __repr__(self):
-        return "\"{:s}\"".format(self.name)
+        return '"{:s}"'.format(self.name)

@@ -17,16 +17,20 @@ class LegendLore(Spell):
     may awaken the true powers of the axe, and only with the sacred word Rudnogg on
     the lips.
     """
+
     name = "Legend Lore"
     level = 5
     casting_time = "10 minutes"
     casting_range = "Self"
-    components = ('V', 'S', 'M')
-    materials = """Incense worth at least 250 gp, which the spell consumes, and four ivory strips worth at least 50 gp each"""
+    components = ("V", "S", "M")
+    materials = (
+        "Incense worth at least 250 gp, which the spell consumes, and four ivory strips"
+        " worth at least 50 gp each"
+    )
     duration = "Instantaneous"
     ritual = False
     magic_school = "Divination"
-    classes = ('Bard', 'Cleric', 'Wizard')
+    classes = ("Bard", "Cleric", "Wizard")
 
 
 class LeomundsSecretChest(Spell):
@@ -48,16 +52,21 @@ class LeomundsSecretChest(Spell):
     action. If the spell ends and the larger chest is on the Ethereal Plane, it is
     irretrievably lost.
     """
+
     name = "Leomunds Secret Chest"
     level = 4
     casting_time = "1 action"
     casting_range = "Touch"
-    components = ('V', 'S', 'M')
-    materials = """An exquisite chest, 3 feet by 2 feet by 2 feet, constructed from rare materials worth at least 5,000 gp, and a tiny replica made from the same materials worth at least 50 gp"""
+    components = ("V", "S", "M")
+    materials = (
+        "An exquisite chest, 3 feet by 2 feet by 2 feet, constructed from rare"
+        " materials worth at least 5,000 gp, and a tiny replica made from the same"
+        " materials worth at least 50 gp"
+    )
     duration = "Instantaneous"
     ritual = False
     magic_school = "Conjuration"
-    classes = ('Wizard',)
+    classes = ("Wizard",)
 
 
 class LeomundsTinyHut(Spell):
@@ -77,32 +86,34 @@ class LeomundsTinyHut(Spell):
     interior to become dimly lit or dark. The dome is opaque from the outside, of
     any color you choose, but it is transparent from the inside.
     """
+
     name = "Leomunds Tiny Hut"
     level = 3
     casting_time = "1 minute"
     casting_range = "Self (10-foot-radius hemisphere)"
-    components = ('V', 'S', 'M')
-    materials = """A small crystal bead"""
+    components = ("V", "S", "M")
+    materials = "A small crystal bead"
     duration = "8 hours"
     ritual = True
     magic_school = "Evocation"
-    classes = ('Bard', 'Wizard')
+    classes = ("Bard", "Wizard")
 
 
 class LesserRestoration(Spell):
     """You touch a creature and can end either one disease or one condition afflicting
     it. The condition can be blinded, deafened, paralyzed, or poisoned.
     """
+
     name = "Lesser Restoration"
     level = 2
     casting_time = "1 action"
     casting_range = "Touch"
-    components = ('V', 'S')
-    materials = """"""
+    components = ("V", "S")
+    materials = ""
     duration = "Instantaneous"
     ritual = False
     magic_school = "Abjuration"
-    classes = ('Bard', 'Cleric', 'Druid', 'Paladin', 'Ranger')
+    classes = ("Bard", "Cleric", "Druid", "Paladin", "Ranger")
 
 
 class Levitate(Spell):
@@ -122,16 +133,20 @@ class Levitate(Spell):
     When the spell ends, the target floats gently to the ground
     if it is still aloft.
     """
+
     name = "Levitate"
     level = 2
     casting_time = "1 action"
     casting_range = "60 feet"
-    components = ('V', 'S', 'M')
-    materials = """Either a small leather loop or a piece of golden wire bent into a cup shape with a long shank on one end"""
+    components = ("V", "S", "M")
+    materials = (
+        "Either a small leather loop or a piece of golden wire bent into a cup shape"
+        " with a long shank on one end"
+    )
     duration = "Concentration, up to 10 minutes"
     ritual = False
     magic_school = "Transmutation"
-    classes = ('Sorcerer', 'Wizard')
+    classes = ("Sorcerer", "Wizard")
 
 
 class LifeTransference(Spell):
@@ -143,16 +158,17 @@ class LifeTransference(Spell):
     **At Higher Levels:** When you cast this spell using a spell slot of 4th
     level or higher, the damage increases by 1d8 for each slot level above 3rd.
     """
+
     name = "Life Transference"
     level = 3
     casting_time = "1 action"
     casting_range = "30 feet"
-    components = ('V', 'S')
-    materials = """"""
+    components = ("V", "S")
+    materials = ""
     duration = "Instantaneous"
     ritual = False
     magic_school = "Necromancy"
-    classes = ('Cleric', 'Wizard')
+    classes = ("Cleric", "Wizard")
 
 
 class Light(Spell):
@@ -166,16 +182,17 @@ class Light(Spell):
     hostile creature, that creature must succeed on a Dexterity saving throw to
     avoid the spell.
     """
+
     name = "Light"
     level = 0
     casting_time = "1 action"
     casting_range = "Touch"
-    components = ('V', 'M')
-    materials = """A firefly or phosphorescent moss"""
+    components = ("V", "M")
+    materials = "A firefly or phosphorescent moss"
     duration = "1 hour"
     ritual = False
     magic_school = "Evocation"
-    classes = ('Bard', 'Cleric', 'Sorcerer', 'Wizard')
+    classes = ("Bard", "Cleric", "Sorcerer", "Wizard")
 
 
 class LightningArrow(Spell):
@@ -197,16 +214,17 @@ class LightningArrow(Spell):
     higher, the damage for both effects of the spell increases by 1d8 for each slot
     level above 3rd.
     """
+
     name = "Lightning Arrow"
     level = 3
     casting_time = "1 bonus action"
     casting_range = "Self"
-    components = ('V', 'S')
-    materials = """"""
+    components = ("V", "S")
+    materials = ""
     duration = "Concentration, up to 1 minute"
     ritual = False
     magic_school = "Transmutation"
-    classes = ('Ranger',)
+    classes = ("Ranger",)
 
 
 class LightningBolt(Spell):
@@ -222,16 +240,17 @@ class LightningBolt(Spell):
     you cast this spell using a spell slot of 4th level or higher, the damage
     increases by 1d6 for each slot level above 3rd.
     """
+
     name = "Lightning Bolt"
     level = 3
     casting_time = "1 action"
     casting_range = "Self (100-foot line)"
-    components = ('V', 'S', 'M')
-    materials = """A bit of fur and a rod of amber, crystal, or glass"""
+    components = ("V", "S", "M")
+    materials = "A bit of fur and a rod of amber, crystal, or glass"
     duration = "Instantaneous"
     ritual = False
     magic_school = "Evocation"
-    classes = ('Sorcerer', 'Wizard')
+    classes = ("Sorcerer", "Wizard")
 
 
 class LightningLure(Spell):
@@ -245,16 +264,17 @@ class LightningLure(Spell):
     spell's damage increases by 1d8 when you reach 5th level (2d8), 11th level
     (3d8), and 17th level (4d8).
     """
+
     name = "Lightning Lure"
     level = 0
     casting_time = "1 action"
     casting_range = "15 feet"
-    components = ('V',)
-    materials = """"""
+    components = ("V",)
+    materials = ""
     duration = "Instantaneous"
     ritual = False
     magic_school = "Evocation"
-    classes = ('Sorcerer', 'Warlock', 'Wizard')
+    classes = ("Sorcerer", "Warlock", "Wizard")
 
 
 class LocateAnimalsOrPlants(Spell):
@@ -262,16 +282,17 @@ class LocateAnimalsOrPlants(Spell):
     of nature in your surroundings, you learn the direction and distance to the
     closest creature or plant of that kind within 5 miles, if any are present.
     """
+
     name = "Locate Animals Or Plants"
     level = 2
     casting_time = "1 action"
     casting_range = "Self"
-    components = ('V', 'S', 'M')
-    materials = """A bit of fur from a bloodhound"""
+    components = ("V", "S", "M")
+    materials = "A bit of fur from a bloodhound"
     duration = "Instantaneous"
     ritual = True
     magic_school = "Divination"
-    classes = ('Bard', 'Druid', 'Ranger')
+    classes = ("Bard", "Druid", "Ranger")
 
 
 class LocateCreature(Spell):
@@ -290,16 +311,17 @@ class LocateCreature(Spell):
     locate a creature if running water at least 10 feet wide blocks a direct path
     between you and the creature.
     """
+
     name = "Locate Creature"
     level = 4
     casting_time = "1 action"
     casting_range = "Self"
-    components = ('V', 'S', 'M')
-    materials = """A bit of fur from a bloodhound"""
+    components = ("V", "S", "M")
+    materials = "A bit of fur from a bloodhound"
     duration = "Concentration, up to 1 hour"
     ritual = False
     magic_school = "Divination"
-    classes = ('Bard', 'Cleric', 'Druid', 'Paladin', 'Ranger', 'Wizard')
+    classes = ("Bard", "Cleric", "Druid", "Paladin", "Ranger", "Wizard")
 
 
 class LocateObject(Spell):
@@ -316,16 +338,17 @@ class LocateObject(Spell):
     This spell can't locate an object if any thickness
     of lead, even a thin sheet, blocks a direct path between you and the object.
     """
+
     name = "Locate Object"
     level = 2
     casting_time = "1 action"
     casting_range = "Self"
-    components = ('V', 'S', 'M')
-    materials = """A forked twig"""
+    components = ("V", "S", "M")
+    materials = "A forked twig"
     duration = "Concentration, up to 10 minutes"
     ritual = False
     magic_school = "Divination"
-    classes = ('Bard', 'Cleric', 'Druid', 'Paladin', 'Ranger', 'Wizard')
+    classes = ("Bard", "Cleric", "Druid", "Paladin", "Ranger", "Wizard")
 
 
 class Longstrider(Spell):
@@ -336,15 +359,14 @@ class Longstrider(Spell):
     level or higher, you can target one additional creature for each slot level
     above 1st.
     """
+
     name = "Longstrider"
     level = 1
     casting_time = "1 action"
     casting_range = "Touch"
-    components = ('V', 'S', 'M')
-    materials = """A pinch of dirt"""
+    components = ("V", "S", "M")
+    materials = "A pinch of dirt"
     duration = "1 hour"
     ritual = False
     magic_school = "Transmutation"
-    classes = ('Bard', 'Druid', 'Ranger', 'Wizard')
-
-
+    classes = ("Bard", "Druid", "Ranger", "Wizard")

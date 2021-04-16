@@ -34,6 +34,7 @@ class FontOfMagic(Feature):
     5th Level Slot <--> 7 sorcery points
 
     """
+
     name = "Font of Magic"
     source = "Sorceror"
 
@@ -45,6 +46,7 @@ class Metamagic(Feature):
     option on a spell when you cast it, unless otherwise noted
 
     """
+
     name = "Metamagic"
     source = "Sorceror (Metamagic)"
 
@@ -54,6 +56,7 @@ class SorcerousRestoration(Feature):
     short rest.
 
     """
+
     name = "Sorcerous Restoration"
     source = "Sorceror"
 
@@ -67,6 +70,7 @@ class CarefulSpell(Metamagic):
     automatically succeeds on its saving throw against the spell.
 
     """
+
     name = "Careful Spell"
 
 
@@ -77,6 +81,7 @@ class DistantSpell(Metamagic):
     of the spell 30 feet
 
     """
+
     name = "Distant Spell"
 
 
@@ -88,6 +93,7 @@ class EmpoweredSpell(Metamagic):
     spell.
 
     """
+
     name = "Empowered Spell"
 
 
@@ -97,6 +103,7 @@ class ExtendedSpell(Metamagic):
     hours.
 
     """
+
     name = "Extended Spell"
 
 
@@ -106,6 +113,7 @@ class HeightenedSpell(Metamagic):
     the spell disadvantage on its first saving throw made against the spell
 
     """
+
     name = "Heightened Spell"
 
 
@@ -115,6 +123,7 @@ class QuickenedSpell(Metamagic):
     casting.
 
     """
+
     name = "Quickened Spell"
 
 
@@ -123,6 +132,7 @@ class SubtleSpell(Metamagic):
     somatic or verbal components.
 
     """
+
     name = "Subtle Spell"
 
 
@@ -133,6 +143,7 @@ class TwinnedSpell(Metamagic):
     sorcery point if the spell is a cantrip)
 
     """
+
     name = "Twinned Spell"
 
 
@@ -144,6 +155,7 @@ class WildMagicSurge(Feature):
     1, roll on the Wild Magic Surge table to create a random magical effect.
 
     """
+
     name = "Wild Magic Surge"
     source = "Sorceror (Wild Magic)"
 
@@ -158,6 +170,7 @@ class TidesOfChaos(Feature):
     spell of 1st level or higher. You then regain the use of this feature.
 
     """
+
     name = "Tides of Chaos"
     source = "Sorceror (Wild Magic)"
 
@@ -171,8 +184,9 @@ class BendLuck(Feature):
     before any effects of the roll occur.
 
     """
-    name = 'Bend Luck'
-    source = 'Sorceror (Wild Magic)'
+
+    name = "Bend Luck"
+    source = "Sorceror (Wild Magic)"
 
 
 class ControlledChaos(Feature):
@@ -181,7 +195,8 @@ class ControlledChaos(Feature):
     and use either number.
 
     """
-    name = 'Controlled Chaos'
+
+    name = "Controlled Chaos"
     source = "Sorceror (Wild Magic)"
 
 
@@ -192,6 +207,7 @@ class SpellBombardment(Feature):
     add that roll to the damage. You can use the feature only once per turn.
 
     """
+
     name = "Spell Bombardment"
     source = "Sorceror (Wild Magic)"
 
@@ -209,6 +225,7 @@ class DraconicResilience(Feature):
     This bonus is computed in the AC given on the Character Sheet above.
 
     """
+
     name = "Draconic Resilience"
     source = "Sorceror (Draconic Bloodline)"
 
@@ -244,6 +261,7 @@ class DragonAncestor(Feature):
     doubled if it applies to the check.
 
     """
+
     name = "Dragon Ancestor"
     source = "Sorceror (Draconic Bloodline)"
 
@@ -255,6 +273,7 @@ class ElementalAffinity(Feature):
     to that damage type for 1 hour
 
     """
+
     name = "Elemental Affinity"
     source = "Sorceror (Draconic Bloodline)"
 
@@ -268,6 +287,7 @@ class ElementalAdept(Feature):
     a different damage type.
 
     """
+
     name = "Elemental Adept"
     source = "Sorceror (Feats)"
 
@@ -282,6 +302,7 @@ class DragonWings(Feature):
     manifest them
 
     """
+
     name = "Dragon Wings"
     source = "Sorceror (Draconic Bloodline)"
 
@@ -298,6 +319,7 @@ class DraconicPresence(Feature):
     succeeds on this saving throw is immune to your aura for 24 hours.
 
     """
+
     name = "Draconic Presence"
     source = "Sorceror (Draconic Bloodline)"
 
@@ -329,6 +351,7 @@ class DivineMagic(Feature):
     Neutrality : Protection from Evil and Good
 
     """
+
     name = "Divine Magic"
     source = "Sorceror (Divine Soul)"
 
@@ -339,6 +362,7 @@ class FavoredByTheGods(Feature):
     the total, possibly changing
 
     """
+
     name = "Favored by the Gods"
     source = "Sorceror (Divine Soul)"
 
@@ -351,6 +375,7 @@ class EmpoweredHealing(Feature):
     incapacitated. You can use this feature only once per turn.
 
     """
+
     name = "Empowered Healing"
     source = "Sorceror (Divine Soul)"
 
@@ -365,6 +390,7 @@ class OtherworldlyWings(Feature):
     neutrality
 
     """
+
     name = "Otherworldly Wings"
     source = "Sorceror (Divine Soul)"
 
@@ -377,6 +403,7 @@ class UnearthlyRecovery(Feature):
     a long rest
 
     """
+
     name = "Unearthly Recovery"
     source = "Sorceror (Divine Soul)"
 
@@ -390,6 +417,7 @@ class EyesOfTheDark(Feature):
     created by the spell.
 
     """
+
     name = "Eyes of the Dark"
     source = "Sorceror (Shadow Magic)"
     spells_known = (spells.Darkness,)
@@ -406,6 +434,7 @@ class StrengthOfTheGrave(Feature):
     until you finish a long rest
 
     """
+
     name = "Strength of the Grave"
     source = "Sorceror (Shadow Magic)"
 
@@ -417,7 +446,7 @@ class HoundOfIllOmen(Feature):
     can see within 120 feet of you. The hound uses the dire wolf's statistics
     (see the Monster Manual or appendix C in the Player's Handbook), with the
     following changes:
-    
+
     - The hound is size Medium, not Large, and it counts as a
       monstrosity, not a beast.
     - It appears with a number of temporary hit points equal to half
@@ -428,7 +457,7 @@ class HoundOfIllOmen(Feature):
     - At the start of its turn, the hound automatically knows its
       target's location. If the target was hidden, it is no longer
       hidden from the hound.
-    
+
     The hound appears in an unoccupied space of your choice within 30
     feet of the target. Roll initiative for the hound. On its turn, it
     can move only toward its target by the most direct route, and it
@@ -438,8 +467,9 @@ class HoundOfIllOmen(Feature):
     disadvantage on saving throws against any spell you cast. The
     hound disappears if it is reduced to 0 hit points, if its target
     is reduced to 0 hit points, or after 5 minutes.
-    
+
     """
+
     name = "Hound of Ill Omen"
     source = "Sorceror (Shadow Magic)"
 
@@ -451,6 +481,7 @@ class ShadowWalk(Feature):
     that is also in dim light or darkness
 
     """
+
     name = "Shadow Walk"
     source = "Sorceror (Shadow Magic)"
 
@@ -465,6 +496,7 @@ class UmbralForm(Feature):
     or if you dismiss it as a bonus action.
 
     """
+
     name = "Umbral Form"
     source = "Sorceror (Shadow Magic)"
 
@@ -477,6 +509,7 @@ class TempestuousMagic(Feature):
     fly up to 10 feet without provoking opportunity attacks
 
     """
+
     name = "Tempestuous Magic"
     source = "Sorceror (Storm Sorcery)"
 
@@ -490,6 +523,7 @@ class HeartOfTheStorm(Feature):
     activates) equal to half your sorcerer level.
 
     """
+
     name = "Heart of the Storm"
     source = "Sorceror (Storm Sorcery)"
 
@@ -504,6 +538,7 @@ class StormGuide(Feature):
     turn. This feature doesn't alter the speed of the wind.
 
     """
+
     name = "Storm Guide"
     source = "Sorceror (Storm Sorcery)"
 
@@ -516,6 +551,7 @@ class StormsFury(Feature):
     pushed in a straight line up to 20 feet away from you.
 
     """
+
     name = "Storm's Fury"
     source = "Sorceror (Storm Sorcery)"
 
@@ -530,5 +566,6 @@ class WindSoul(Feature):
     long rest
 
     """
+
     name = "Wind Soul"
     source = "Sorceror (Storm Sorcery)"

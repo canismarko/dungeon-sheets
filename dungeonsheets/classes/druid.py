@@ -19,6 +19,7 @@ class LandCircle(SubClass):
     mysterious rites
 
     """
+
     name = "Circle of the Land"
     circle = "land"
     features_by_level = defaultdict(list)
@@ -42,6 +43,7 @@ class MoonCircle(SubClass):
     monster. The wild is in the druid's blood.
 
     """
+
     name = "Circle of the Moon"
     circle = "moon"
     features_by_level = defaultdict(list)
@@ -62,6 +64,7 @@ class DreamsCircle(SubClass):
     blur together and where the weary can find rest.
 
     """
+
     name = "Circle of Dreams"
     circle = "dreams"
     features_by_level = defaultdict(list)
@@ -90,9 +93,10 @@ class ShepherdCircle(SubClass):
     the wilderness are with them
 
     """
+
     name = "Circle of the Shepherd"
     circle = "shepherd"
-    languages = ('Sylvan',)
+    languages = ("Sylvan",)
     features_by_level = defaultdict(list)
     features_by_level[2] = [features.SpeechOfTheWoods, features.SpiritTotem]
     features_by_level[6] = [features.MightySummoner]
@@ -100,7 +104,7 @@ class ShepherdCircle(SubClass):
     features_by_level[14] = [features.FaithfulSummons]
 
 
-#GGTR
+# GGTR
 class SporesCircle(SubClass):
     """Druids of the Circle of Spores find beauty in decay. They see within
     mold and other fungi the ability to transform lifeless material into
@@ -121,54 +125,90 @@ class SporesCircle(SubClass):
     name = "Circle of Spores"
     circle = "spores"
     features_by_level = defaultdict(list)
-    features_by_level[2] = [features.CircleSpells, features.HaloOfSpores, features.SymbioticEntity]
+    features_by_level[2] = [
+        features.CircleSpells,
+        features.HaloOfSpores,
+        features.SymbioticEntity,
+    ]
     features_by_level[6] = [features.FungalInfestation]
     features_by_level[10] = [features.SpreadingSpores]
     features_by_level[14] = [features.FungalBody]
 
 
 class Druid(CharClass):
-    name = 'Druid'
+    name = "Druid"
     _wild_shapes = ()
-    _circle = ''
+    _circle = ""
     hit_dice_faces = 8
     subclass_select_level = 2
-    saving_throw_proficiencies = ('intelligence', 'wisdom')
-    primary_abilities = ('wisdom',)
-    languages = 'Druidic'
+    saving_throw_proficiencies = ("intelligence", "wisdom")
+    primary_abilities = ("wisdom",)
+    languages = "Druidic"
     _proficiencies_text = (
-        'Light armor', 'medium armor',
-        'shields (druids will not wear armor or use shields made of metal)',
-        'clubs', 'daggers', 'darts', 'javelins', 'maces', 'quarterstaffs',
-        'scimitars', 'sickles', 'slings', 'spears')
-    weapon_proficiencies = (weapons.Club, weapons.Dagger, weapons.Dart,
-                            weapons.Javelin, weapons.Mace,
-                            weapons.Quarterstaff, weapons.Scimitar,
-                            weapons.Sickle, weapons.Sling, weapons.Spear)
+        "Light armor",
+        "medium armor",
+        "shields (druids will not wear armor or use shields made of metal)",
+        "clubs",
+        "daggers",
+        "darts",
+        "javelins",
+        "maces",
+        "quarterstaffs",
+        "scimitars",
+        "sickles",
+        "slings",
+        "spears",
+    )
+    weapon_proficiencies = (
+        weapons.Club,
+        weapons.Dagger,
+        weapons.Dart,
+        weapons.Javelin,
+        weapons.Mace,
+        weapons.Quarterstaff,
+        weapons.Scimitar,
+        weapons.Sickle,
+        weapons.Sling,
+        weapons.Spear,
+    )
     multiclass_weapon_proficiencies = ()
     _multiclass_proficiencies_text = (
-        'Light armor', 'medium armor',
-        'shields (druids will not wear armor or use shields made of metal)')
-    class_skill_choices = ('Arcana', 'Animal Handling', 'Insight',
-                           'Medicine', 'Nature', 'Perception', 'Religion',
-                           'Survival')
+        "Light armor",
+        "medium armor",
+        "shields (druids will not wear armor or use shields made of metal)",
+    )
+    class_skill_choices = (
+        "Arcana",
+        "Animal Handling",
+        "Insight",
+        "Medicine",
+        "Nature",
+        "Perception",
+        "Religion",
+        "Survival",
+    )
     features_by_level = defaultdict(list)
     features_by_level[2] = [features.WildShape]
     features_by_level[18] = [features.TimelessBody, features.BeastSpells]
     features_by_level[20] = [features.Archdruid]
-    subclasses_available = (LandCircle, MoonCircle, DreamsCircle,
-                            ShepherdCircle, SporesCircle)
-    spellcasting_ability = 'wisdom'
+    subclasses_available = (
+        LandCircle,
+        MoonCircle,
+        DreamsCircle,
+        ShepherdCircle,
+        SporesCircle,
+    )
+    spellcasting_ability = "wisdom"
     spell_slots_by_level = {
-        1:  (2, 2, 0, 0, 0, 0, 0, 0, 0, 0),
-        2:  (2, 3, 0, 0, 0, 0, 0, 0, 0, 0),
-        3:  (2, 4, 2, 0, 0, 0, 0, 0, 0, 0),
-        4:  (3, 4, 3, 0, 0, 0, 0, 0, 0, 0),
-        5:  (3, 4, 3, 2, 0, 0, 0, 0, 0, 0),
-        6:  (3, 4, 3, 3, 0, 0, 0, 0, 0, 0),
-        7:  (3, 4, 3, 3, 1, 0, 0, 0, 0, 0),
-        8:  (3, 4, 3, 3, 2, 0, 0, 0, 0, 0),
-        9:  (3, 4, 3, 3, 3, 1, 0, 0, 0, 0),
+        1: (2, 2, 0, 0, 0, 0, 0, 0, 0, 0),
+        2: (2, 3, 0, 0, 0, 0, 0, 0, 0, 0),
+        3: (2, 4, 2, 0, 0, 0, 0, 0, 0, 0),
+        4: (3, 4, 3, 0, 0, 0, 0, 0, 0, 0),
+        5: (3, 4, 3, 2, 0, 0, 0, 0, 0, 0),
+        6: (3, 4, 3, 3, 0, 0, 0, 0, 0, 0),
+        7: (3, 4, 3, 3, 1, 0, 0, 0, 0, 0),
+        8: (3, 4, 3, 3, 2, 0, 0, 0, 0, 0),
+        9: (3, 4, 3, 3, 3, 1, 0, 0, 0, 0),
         10: (4, 4, 3, 3, 3, 2, 0, 0, 0, 0),
         11: (4, 4, 3, 3, 3, 2, 1, 0, 0, 0),
         12: (4, 4, 3, 3, 3, 2, 1, 0, 0, 0),
@@ -183,11 +223,12 @@ class Druid(CharClass):
     }
 
     def select_subclass(self, subclass_str):
-        if subclass_str in ['', 'None', 'none', None]:
+        if subclass_str in ["", "None", "none", None]:
             return None
         for sc in self.subclasses_available:
-            if ((subclass_str.lower() == sc.circle.lower())
-                or (subclass_str.lower() in sc.name.lower())):
+            if (subclass_str.lower() == sc.circle.lower()) or (
+                subclass_str.lower() in sc.name.lower()
+            ):
                 return sc(owner=self.owner)
         return None
 
@@ -234,13 +275,16 @@ class Druid(CharClass):
                     NewMonster = findattr(monsters, shape)
                     new_shape = NewMonster()
                 except AttributeError:
-                    msg = f'Wild shape "{shape}" not found. Please add it to ``monsters.py``'
+                    msg = (
+                        f"Wild shape '{shape}' not found. Please add it to"
+                        " ``monsters.py``"
+                    )
                     raise exceptions.MonsterError(msg)
             actual_shapes.append(new_shape)
         # Save the updated list for later
         self._wild_shapes = actual_shapes
 
-    def can_assume_shape(self, shape: monsters.Monster)-> bool:
+    def can_assume_shape(self, shape: monsters.Monster) -> bool:
         """Determine if a given shape meets the requirements for transforming.
 
         See Pg 66 of player's handbook.
@@ -263,11 +307,11 @@ class Druid(CharClass):
             max_swim = 0
             max_fly = 0
         elif self.level < 4:
-            max_cr = 1/4
+            max_cr = 1 / 4
             max_swim = 0
             max_fly = 0
         elif self.level < 8:
-            max_cr = 1/2
+            max_cr = 1 / 2
             max_swim = None
             max_fly = 0
         else:
@@ -281,9 +325,9 @@ class Druid(CharClass):
             elif self.level >= 6:
                 max_cr = math.floor(self.level / 3)
         # Check if the beast shape can be assumed
-        valid_cr = (max_cr is None or shape.challenge_rating <= max_cr)
-        valid_swim = (max_swim is None or shape.swim_speed <= max_swim)
-        valid_fly = (max_fly is None or shape.fly_speed <= max_fly)
+        valid_cr = max_cr is None or shape.challenge_rating <= max_cr
+        valid_swim = max_swim is None or shape.swim_speed <= max_swim
+        valid_fly = max_fly is None or shape.fly_speed <= max_fly
         can_assume = shape.is_beast and valid_cr and valid_swim and valid_fly
         return can_assume
 
@@ -294,6 +338,7 @@ class Druid(CharClass):
     @spells.setter
     def spells(self, val):
         if len(val) > 0:
-            warnings.warn("Druids cannot learn spells, "
-                          "use ``spells_prepared`` instead.",
-                          RuntimeWarning)
+            warnings.warn(
+                "Druids cannot learn spells, use ``spells_prepared`` instead.",
+                RuntimeWarning,
+            )

@@ -9,16 +9,17 @@ class PassWithoutTrace(Spell):
     tracked except by magical means. A creature that receives this bonus leaves
     behind no tracks or other traces of its passage.
     """
+
     name = "Pass Without Trace"
     level = 2
     casting_time = "1 action"
     casting_range = "Self"
-    components = ('V', 'S', 'M')
-    materials = """Ashes from a burned leaf of mistletoe and a sprig of spruce"""
+    components = ("V", "S", "M")
+    materials = "Ashes from a burned leaf of mistletoe and a sprig of spruce"
     duration = "Concentration, up to 1 hour"
     ritual = False
     magic_school = "Abjuration"
-    classes = ('Druid', 'Ranger')
+    classes = ("Druid", "Ranger")
 
 
 class Passwall(Spell):
@@ -32,16 +33,17 @@ class Passwall(Spell):
     still in the passage created by the spell are safely ejected to an unoccupied
     space nearest to the surface on which you cast the spell.
     """
+
     name = "Passwall"
     level = 5
     casting_time = "1 action"
     casting_range = "30 feet"
-    components = ('V', 'S', 'M')
-    materials = """A pinch of sesame seeds"""
+    components = ("V", "S", "M")
+    materials = "A pinch of sesame seeds"
     duration = "1 hour"
     ritual = False
     magic_school = "Transmutation"
-    classes = ('Wizard',)
+    classes = ("Wizard",)
 
 
 class PhantasmalForce(Spell):
@@ -52,15 +54,15 @@ class PhantasmalForce(Spell):
     choice that is no larger than a 10-foot cube and that is
     perceivable only to the target for the duration. This spell has no
     effect on undead or constructs.
-    
+
     The phantasm includes sound, temperature, and other stimuli, also
     evident only to the creature.
-    
+
     The target can use its action to examine the phantasm with an
     Intelligence (Investigation) check against your spell save DC. If
     the check succeeds, the target realizes that the phantasm is an
     illusion, and the spell ends.
-    
+
     While a target is affected by the spell, the target treats the
     phantasm as if it were real. The target rationalizes any illogical
     outcomes from interacting with the phantasm. For example, a target
@@ -69,7 +71,7 @@ class PhantasmalForce(Spell):
     fall, it still believes that the bridge exists and comes up with
     some other explanation for its fall - it was pushed, it slipped,
     or a strong wind might have knocked it off.
-    
+
     An affected target is so convinced of the phantasm's reality that
     it can even take damage from the illusion. A phantasm created to
     appear as a creature can attack the target. Similarly, a phantasm
@@ -80,18 +82,19 @@ class PhantasmalForce(Spell):
     or hazard that could logically deal damage, such as by
     attacking. The target perceives the damage as a type appropriate
     to the illusion.
-    
+
     """
+
     name = "Phantasmal Force"
     level = 2
     casting_time = "1 action"
     casting_range = "60 feet"
-    components = ('V', 'S', 'M')
-    materials = """A bit of fleece"""
+    components = ("V", "S", "M")
+    materials = "A bit of fleece"
     duration = "Concentration, up to 1 minute"
     ritual = False
     magic_school = "Illusion"
-    classes = ('Bard', 'Sorcerer', 'Wizard')
+    classes = ("Bard", "Sorcerer", "Wizard")
 
 
 class PhantasmalKiller(Spell):
@@ -102,22 +105,23 @@ class PhantasmalKiller(Spell):
     duration. At the end of each of the target's turns before the
     spell ends, the target must succeed on a Wisdom saving throw or
     take 4d10 psychic damage. On a successful save, the spell ends.
-    
+
     **At Higher Levels:** When you cast this spell using a spell slot
     of 5th level or higher, the damage increases by 1d10 for each slot
     level above 4th.
-    
+
     """
+
     name = "Phantasmal Killer"
     level = 4
     casting_time = "1 action"
     casting_range = "120 feet"
-    components = ('V', 'S')
-    materials = """"""
+    components = ("V", "S")
+    materials = ""
     duration = "Concentration, up to 1 minute"
     ritual = False
     magic_school = "Illusion"
-    classes = ('Wizard',)
+    classes = ("Wizard",)
 
 
 class PhantomSteed(Spell):
@@ -134,16 +138,17 @@ class PhantomSteed(Spell):
     dismount. The spell ends if you use an action to dismiss it or if the steed
     takes any damage.
     """
+
     name = "Phantom Steed"
     level = 3
     casting_time = "1 minute"
     casting_range = "30 feet"
-    components = ('V', 'S')
-    materials = """"""
+    components = ("V", "S")
+    materials = ""
     duration = "1 hour"
     ritual = True
     magic_school = "Illusion"
-    classes = ('Wizard',)
+    classes = ("Wizard",)
 
 
 class PlanarAlly(Spell):
@@ -188,16 +193,17 @@ class PlanarAlly(Spell):
     A creature enlisted to join your group counts as a member of it, receiving a
     full share of experience points awarded.
     """
+
     name = "Planar Ally"
     level = 6
     casting_time = "10 minutes"
     casting_range = "60 feet"
-    components = ('V', 'S')
-    materials = """"""
+    components = ("V", "S")
+    materials = ""
     duration = "Instantaneous"
     ritual = False
     magic_school = "Conjuration"
-    classes = ('Cleric',)
+    classes = ("Cleric",)
 
 
 class PlanarBinding(Spell):
@@ -230,16 +236,17 @@ class PlanarBinding(Spell):
     1 year
     and 1 day with a 9th-level spell slot.
     """
+
     name = "Planar Binding"
     level = 5
     casting_time = "1 hour"
     casting_range = "60 feet"
-    components = ('V', 'S', 'M')
-    materials = """A jewel worth at least 1,000 gp, which the spell consumes"""
+    components = ("V", "S", "M")
+    materials = "A jewel worth at least 1,000 gp, which the spell consumes"
     duration = "24 hours"
     ritual = False
     magic_school = "Abjuration"
-    classes = ('Bard', 'Cleric', 'Druid', 'Wizard')
+    classes = ("Bard", "Cleric", "Druid", "Wizard")
 
 
 class PlaneShift(Spell):
@@ -264,16 +271,20 @@ class PlaneShift(Spell):
     random location on the plane of existence you specify. A creature so transported
     must find its own way back to your current plane of existence.
     """
+
     name = "Plane Shift"
     level = 7
     casting_time = "1 action"
     casting_range = "Touch"
-    components = ('V', 'S', 'M')
-    materials = """A forked, metal rod worth at least 250 gp, attuned to a particular plane of existence"""
+    components = ("V", "S", "M")
+    materials = (
+        "A forked, metal rod worth at least 250 gp, attuned to a particular plane of"
+        " existence"
+    )
     duration = "Instantaneous"
     ritual = False
     magic_school = "Conjuration"
-    classes = ('Cleric', 'Druid', 'Sorcerer', 'Warlock', 'Wizard')
+    classes = ("Cleric", "Druid", "Sorcerer", "Warlock", "Wizard")
 
 
 class PlantGrowth(Spell):
@@ -294,16 +305,17 @@ class PlantGrowth(Spell):
     enriched for 1 year. The plants yield twice the normal amount of food when
     harvested.
     """
+
     name = "Plant Growth"
     level = 3
     casting_time = "Special"
     casting_range = "150 feet"
-    components = ('V', 'S')
-    materials = """"""
+    components = ("V", "S")
+    materials = ""
     duration = "Instantaneous"
     ritual = False
     magic_school = "Transmutation"
-    classes = ('Bard', 'Druid', 'Ranger')
+    classes = ("Bard", "Druid", "Ranger")
 
 
 class PoisonSpray(Spell):
@@ -315,16 +327,17 @@ class PoisonSpray(Spell):
     increases by 1d12 when you reach 5th level (2d12), 11th level (3d12), 17th level
     (4d12).
     """
+
     name = "Poison Spray"
     level = 0
     casting_time = "1 action"
     casting_range = "10 feet"
-    components = ('V', 'S')
-    materials = """"""
+    components = ("V", "S")
+    materials = ""
     duration = "Instantaneous"
     ritual = False
     magic_school = "Conjuration"
-    classes = ('Druid', 'Sorcerer', 'Warlock', 'Wizard')
+    classes = ("Druid", "Sorcerer", "Warlock", "Wizard")
 
 
 class Polymorph(Spell):
@@ -355,16 +368,17 @@ class Polymorph(Spell):
     activate, use, wield, or otherwise benefit from any of its equipment. This spell
     can't affect a target that has 0 hit points.
     """
+
     name = "Polymorph"
     level = 4
     casting_time = "1 action"
     casting_range = "60 feet"
-    components = ('V', 'S', 'M')
-    materials = """A caterpillar cocoon"""
+    components = ("V", "S", "M")
+    materials = "A caterpillar cocoon"
     duration = "Concentration, up to 1 hour"
     ritual = False
     magic_school = "Transmutation"
-    classes = ('Bard', 'Druid', 'Sorcerer', 'Wizard')
+    classes = ("Bard", "Druid", "Sorcerer", "Wizard")
 
 
 class PowerWordHeal(Spell):
@@ -373,16 +387,17 @@ class PowerWordHeal(Spell):
     stunned, the condition ends. If the creature is prone, it can use its reaction
     to stand up. This spell has no effect on undead or constructs.
     """
+
     name = "Power Word Heal"
     level = 9
     casting_time = "1 action"
     casting_range = "Touch"
-    components = ('V', 'S')
-    materials = """"""
+    components = ("V", "S")
+    materials = ""
     duration = "Instantaneous"
     ritual = False
     magic_school = "Evocation"
-    classes = ('Bard',)
+    classes = ("Bard",)
 
 
 class PowerWordKill(Spell):
@@ -390,16 +405,17 @@ class PowerWordKill(Spell):
     to die instantly. If the creature you chose has 100 hit points or fewer, it
     dies. Otherwise, the spell has no effect.
     """
+
     name = "Power Word Kill"
     level = 9
     casting_time = "1 action"
     casting_range = "60 feet"
-    components = ('V',)
-    materials = """"""
+    components = ("V",)
+    materials = ""
     duration = "Instantaneous"
     ritual = False
     magic_school = "Enchantment"
-    classes = ('Bard', 'Sorcerer', 'Warlock', 'Wizard')
+    classes = ("Bard", "Sorcerer", "Warlock", "Wizard")
 
 
 class PowerWordPain(Spell):
@@ -417,16 +433,17 @@ class PowerWordPain(Spell):
     Constitution saving throw at the end of each of its turns. On a successful save,
     the pain ends.
     """
+
     name = "Power Word Pain"
     level = 7
     casting_time = "1 action"
     casting_range = "60 feet"
-    components = ('V',)
-    materials = """"""
+    components = ("V",)
+    materials = ""
     duration = "Instantaneous"
     ritual = False
     magic_school = "Enchantment"
-    classes = ('Sorcerer', 'Warlock', 'Wizard')
+    classes = ("Sorcerer", "Warlock", "Wizard")
 
 
 class PowerWordStun(Spell):
@@ -436,16 +453,17 @@ class PowerWordStun(Spell):
     must make a Constitution saving throw at the end of each of its turns. On a
     successful save, this stunning effect ends.
     """
+
     name = "Power Word Stun"
     level = 8
     casting_time = "1 action"
     casting_range = "60 feet"
-    components = ('V',)
-    materials = """"""
+    components = ("V",)
+    materials = ""
     duration = "Instantaneous"
     ritual = False
     magic_school = "Enchantment"
-    classes = ('Bard', 'Sorcerer', 'Warlock', 'Wizard')
+    classes = ("Bard", "Sorcerer", "Warlock", "Wizard")
 
 
 class PrayerOfHealing(Spell):
@@ -457,16 +475,17 @@ class PrayerOfHealing(Spell):
     using a spell slot of 3rd level or higher, the healing increases by 1d8 for each
     slot level above 2nd.
     """
+
     name = "Prayer Of Healing"
     level = 2
     casting_time = "10 minutes"
     casting_range = "30 feet"
-    components = ('V',)
-    materials = """"""
+    components = ("V",)
+    materials = ""
     duration = "Instantaneous"
     ritual = False
     magic_school = "Evocation"
-    classes = ('Cleric',)
+    classes = ("Cleric",)
 
 
 class Prestidigitation(Spell):
@@ -490,16 +509,17 @@ class Prestidigitation(Spell):
     can have up to three of its non-instantaneous effects active at a time, and you
     can dismiss such an effect as an action.
     """
+
     name = "Prestidigitation"
     level = 0
     casting_time = "1 action"
     casting_range = "10 feet"
-    components = ('V', 'S')
-    materials = """"""
+    components = ("V", "S")
+    materials = ""
     duration = "Up to 1 hour"
     ritual = False
     magic_school = "Transmutation"
-    classes = ('Bard', 'Sorcerer', 'Warlock', 'Wizard')
+    classes = ("Bard", "Sorcerer", "Warlock", "Wizard")
 
 
 class PrimalSavagery(Spell):
@@ -510,16 +530,17 @@ class PrimalSavagery(Spell):
     increases by 1d10 when you reach 5th level (2d10), 11th level (3d10), and 17th
     level (4d10).
     """
+
     name = "Primal Savagery"
     level = 0
     casting_time = "1 action"
     casting_range = "Self"
-    components = ('S',)
-    materials = """"""
+    components = ("S",)
+    materials = ""
     duration = "Instantaneous"
     ritual = False
     magic_school = "Transmutation"
-    classes = ('Druid',)
+    classes = ("Druid",)
 
 
 class PrimordialWard(Spell):
@@ -531,16 +552,17 @@ class PrimordialWard(Spell):
     triggering damage. If you do so, the resistances end, and you have the immunity
     until the end of your next turn, at which time the spell ends.
     """
+
     name = "Primordial Ward"
     level = 6
     casting_time = "1 action"
     casting_range = "Self"
-    components = ('V', 'S')
-    materials = """"""
+    components = ("V", "S")
+    materials = ""
     duration = "Concentration, up to 1 minute"
     ritual = False
     magic_school = "Abjuration"
-    classes = ('Druid',)
+    classes = ("Druid",)
 
 
 class PrismaticSpray(Spell):
@@ -584,16 +606,17 @@ class PrismaticSpray(Spell):
     8. Special. The target is struck by two rays. Roll
     twice more, rerolling any 8.
     """
+
     name = "Prismatic Spray"
     level = 7
     casting_time = "1 action"
     casting_range = "Self (60-foot cone)"
-    components = ('V', 'S')
-    materials = """"""
+    components = ("V", "S")
+    materials = ""
     duration = "Instantaneous"
     ritual = False
     magic_school = "Evocation"
-    classes = ('Sorcerer', 'Wizard')
+    classes = ("Sorcerer", "Wizard")
 
 
 class PrismaticWall(Spell):
@@ -672,16 +695,17 @@ class PrismaticWall(Spell):
     higher level that can end spells and magical effects.
 
     """
+
     name = "Prismatic Wall"
     level = 9
     casting_time = "1 action"
     casting_range = "60 feet"
-    components = ('V', 'S')
-    materials = """"""
+    components = ("V", "S")
+    materials = ""
     duration = "10 minutes"
     ritual = False
     magic_school = "Abjuration"
-    classes = ('Wizard',)
+    classes = ("Wizard",)
 
 
 class ProduceFlame(Spell):
@@ -700,16 +724,17 @@ class ProduceFlame(Spell):
     Higher Levels: This spell's damage increases by 1d8 when you reach 5th level
     (2d8), 11th level (3d8), and 17th level (4d8).
     """
+
     name = "Produce Flame"
     level = 0
     casting_time = "1 action"
     casting_range = "Self"
-    components = ('V', 'S')
-    materials = """"""
+    components = ("V", "S")
+    materials = ""
     duration = "10 minutes"
     ritual = False
     magic_school = "Conjuration"
-    classes = ('Druid',)
+    classes = ("Druid",)
 
 
 class ProgrammedIllusion(Spell):
@@ -739,16 +764,17 @@ class ProgrammedIllusion(Spell):
     illusion for what it is, the creature can see through the image, and any noise
     it makes sounds hollow to the creature.
     """
+
     name = "Programmed Illusion"
     level = 6
     casting_time = "1 action"
     casting_range = "120 feet"
-    components = ('V', 'S', 'M')
-    materials = """A bit of fleece and jade dust worth at least 25 gp"""
+    components = ("V", "S", "M")
+    materials = "A bit of fleece and jade dust worth at least 25 gp"
     duration = "Until dispelled"
     ritual = False
     magic_school = "Illusion"
-    classes = ('Bard', 'Wizard')
+    classes = ("Bard", "Wizard")
 
 
 class ProjectImage(Spell):
@@ -776,32 +802,34 @@ class ProjectImage(Spell):
     it is, the creature can see through the image, and any noise it makes sounds
     hollow to the creature.
     """
+
     name = "Project Image"
     level = 7
     casting_time = "1 action"
     casting_range = "500 miles"
-    components = ('V', 'S', 'M')
-    materials = """A small replica of you made from materials worth at least 5 gp"""
+    components = ("V", "S", "M")
+    materials = "A small replica of you made from materials worth at least 5 gp"
     duration = "Concentration, up to 1 day"
     ritual = False
     magic_school = "Illusion"
-    classes = ('Bard', 'Wizard')
+    classes = ("Bard", "Wizard")
 
 
 class ProtectionFromEnergy(Spell):
     """For the duration, the willing creature you touch has resistance to one damage
     type of your choice: acid, cold, fire, lightning, or thunder.
     """
+
     name = "Protection From Energy"
     level = 3
     casting_time = "1 action"
     casting_range = "Touch"
-    components = ('V', 'S')
-    materials = """"""
+    components = ("V", "S")
+    materials = ""
     duration = "Concentration, up to 1 hour"
     ritual = False
     magic_school = "Abjuration"
-    classes = ('Cleric', 'Druid', 'Ranger', 'Sorcerer', 'Wizard')
+    classes = ("Cleric", "Druid", "Ranger", "Sorcerer", "Wizard")
 
 
 class ProtectionFromEvilAndGood(Spell):
@@ -815,16 +843,17 @@ class ProtectionFromEvilAndGood(Spell):
     frightened, or possessed by such a creature, the target has advantage on any new
     saving throw against the relevant effect.
     """
+
     name = "Protection From Evil And Good"
     level = 1
     casting_time = "1 action"
     casting_range = "Touch"
-    components = ('V', 'S', 'M')
-    materials = """Holy water or powdered silver and iron, which the spell consumes"""
+    components = ("V", "S", "M")
+    materials = "Holy water or powdered silver and iron, which the spell consumes"
     duration = "Concentration, up to 10 minutes"
     ritual = False
     magic_school = "Abjuration"
-    classes = ('Cleric', 'Paladin', 'Warlock', 'Wizard')
+    classes = ("Cleric", "Paladin", "Warlock", "Wizard")
 
 
 class ProtectionFromPoison(Spell):
@@ -836,16 +865,17 @@ class ProtectionFromPoison(Spell):
     advantage on saving throws against being poisoned, and it has resistance to
     poison damage.
     """
+
     name = "Protection From Poison"
     level = 2
     casting_time = "1 action"
     casting_range = "Touch"
-    components = ('V', 'S')
-    materials = """"""
+    components = ("V", "S")
+    materials = ""
     duration = "1 hour"
     ritual = False
     magic_school = "Abjuration"
-    classes = ('Cleric', 'Druid', 'Paladin', 'Ranger')
+    classes = ("Cleric", "Druid", "Paladin", "Ranger")
 
 
 class PsychicScream(Spell):
@@ -860,32 +890,34 @@ class PsychicScream(Spell):
     A stunned target can make an Intelligence saving throw at the end
     of each of its turns. On a successful save, the stunning effect ends.
     """
+
     name = "Psychic Scream"
     level = 9
     casting_time = "1 action"
     casting_range = "90 feet"
-    components = ('S',)
-    materials = """"""
+    components = ("S",)
+    materials = ""
     duration = "Instantaneous"
     ritual = False
     magic_school = "Enchantment"
-    classes = ('Bard', 'Sorcerer', 'Warlock', 'Wizard')
+    classes = ("Bard", "Sorcerer", "Warlock", "Wizard")
 
 
 class PurifyFoodAndDrink(Spell):
     """All nonmagical food and drink within a 5-foot-radius sphere centered on a point
     of your choice within range is purified and rendered free of poison and disease.
     """
+
     name = "Purify Food And Drink"
     level = 1
     casting_time = "1 action"
     casting_range = "10 feet"
-    components = ('V', 'S')
-    materials = """"""
+    components = ("V", "S")
+    materials = ""
     duration = "Instantaneous"
     ritual = True
     magic_school = "Transmutation"
-    classes = ('Cleric', 'Druid', 'Paladin')
+    classes = ("Cleric", "Druid", "Paladin")
 
 
 class Pyrotechnics(Spell):
@@ -900,15 +932,14 @@ class Pyrotechnics(Spell):
     20-foot radius, moving around corners. The area of the smoke is heavily
     obscured. The smoke persists for 1 minute or until a strong wind disperses it.
     """
+
     name = "Pyrotechnics"
     level = 2
     casting_time = "1 action"
     casting_range = "60 feet"
-    components = ('V', 'S')
-    materials = """"""
+    components = ("V", "S")
+    materials = ""
     duration = "Instantaneous"
     ritual = False
     magic_school = "Transmutation"
-    classes = ('Bard', 'Sorcerer', 'Wizard')
-
-
+    classes = ("Bard", "Sorcerer", "Wizard")

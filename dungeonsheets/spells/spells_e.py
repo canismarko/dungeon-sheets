@@ -9,16 +9,17 @@ class EarthTremor(Spell):
     At Higher Levels. When you cast this spell using a spell slot of 2nd level or
     higher, the damage increases by 1d6 for each slot level above 1st.
     """
+
     name = "Earth Tremor"
     level = 1
     casting_time = "1 action"
     casting_range = "Self (10-foot radius)"
-    components = ('V', 'S')
-    materials = """"""
+    components = ("V", "S")
+    materials = ""
     duration = "Instantaneous"
     ritual = False
     magic_school = "Evocation"
-    classes = ('Bard', 'Druid', 'Sorcerer', 'Wizard')
+    classes = ("Bard", "Druid", "Sorcerer", "Wizard")
 
 
 class Earthbind(Spell):
@@ -28,16 +29,17 @@ class Earthbind(Spell):
     airborne creature affected by this spell descends at 60 feet per round until it
     reaches the ground or the spell ends.
     """
+
     name = "Earthbind"
     level = 2
     casting_time = "1 action"
     casting_range = "300 feet"
-    components = ('V',)
-    materials = """"""
+    components = ("V",)
+    materials = ""
     duration = "Concentration, up to 1 minute"
     ritual = False
     magic_school = "Transmutation"
-    classes = ('Druid', 'Sorcerer', 'Warlock', 'Wizard')
+    classes = ("Druid", "Sorcerer", "Warlock", "Wizard")
 
 
 class Earthquake(Spell):
@@ -82,16 +84,17 @@ class Earthquake(Spell):
     DC higher or lower, depending on the nature of the rubble. On a successful save,
     the creature takes half as much damage and doesn't fall prone or become buried.
     """
+
     name = "Earthquake"
     level = 8
     casting_time = "1 action"
     casting_range = "500 feet"
-    components = ('V', 'S', 'M')
-    materials = """A pinch o f dirt, a piece o f rock, and a lump of clay"""
+    components = ("V", "S", "M")
+    materials = "A pinch o f dirt, a piece o f rock, and a lump of clay"
     duration = "Concentration, up to 1 minute"
     ritual = False
     magic_school = "Evocation"
-    classes = ('Cleric', 'Druid', 'Sorcerer')
+    classes = ("Cleric", "Druid", "Sorcerer")
 
 
 class EldritchBlast(Spell):
@@ -108,16 +111,17 @@ class EldritchBlast(Spell):
     You can direct the beams at the same target or at different ones. Make
     a separate attack roll for each beam.
     """
+
     name = "Eldritch Blast"
     level = 0
     casting_time = "1 action"
     casting_range = "120 feet"
-    components = ('V', 'S')
-    materials = """"""
+    components = ("V", "S")
+    materials = ""
     duration = "Instantaneous"
     ritual = False
     magic_school = "Evocation"
-    classes = ('Warlock',)
+    classes = ("Warlock",)
 
 
 class ElementalBane(Spell):
@@ -134,16 +138,17 @@ class ElementalBane(Spell):
     additional creature for each slot level above 4th. The creatures must be within
     30 feet of each other when you target them.
     """
+
     name = "Elemental Bane"
     level = 4
     casting_time = "1 action"
     casting_range = "90 feet"
-    components = ('V', 'S')
-    materials = """"""
+    components = ("V", "S")
+    materials = ""
     duration = "Concentration, up to 1 minute"
     ritual = False
     magic_school = "Transmutation"
-    classes = ('Druid', 'Wizard', 'Warlock')
+    classes = ("Druid", "Wizard", "Warlock")
 
 
 class ElementalWeapon(Spell):
@@ -160,16 +165,17 @@ class ElementalWeapon(Spell):
     slot of 7th level or higher, the bonus increases to +3 and the extra damage
     increases to 3d4.
     """
+
     name = "Elemental Weapon"
     level = 3
     casting_time = "1 action"
     casting_range = "Touch"
-    components = ('V', 'S')
-    materials = """"""
+    components = ("V", "S")
+    materials = ""
     duration = "Concentration, up to 1 hour"
     ritual = False
     magic_school = "Transmutation"
-    classes = ('Paladin',)
+    classes = ("Paladin",)
 
 
 class EnemiesAbound(Spell):
@@ -184,16 +190,17 @@ class EnemiesAbound(Spell):
     using. If an enemy provokes an opportunity attack from the affected creature,
     the creature must make that attack if it is able to.
     """
+
     name = "Enemies Abound"
     level = 3
     casting_time = "1 action"
     casting_range = "120 feet"
-    components = ('V', 'S')
-    materials = """"""
+    components = ("V", "S")
+    materials = ""
     duration = "Concentration, up to 1 minute"
     ritual = False
     magic_school = "Enchantment"
-    classes = ('Bard', 'Sorcerer', 'Warlock', 'Wizard')
+    classes = ("Bard", "Sorcerer", "Warlock", "Wizard")
 
 
 class Enervation(Spell):
@@ -211,16 +218,17 @@ class Enervation(Spell):
     **At Higher Levels:** When you cast this spell using a spell slot of 6th level or
     higher, the damage increases by 1d8 for each slot level above 5th.
     """
+
     name = "Enervation"
     level = 5
     casting_time = "1 action"
     casting_range = "60 feet"
-    components = ('V', 'S')
-    materials = """"""
+    components = ("V", "S")
+    materials = ""
     duration = "Concentration, up to 1 minute"
     ritual = False
     magic_school = "Necromancy"
-    classes = ('Sorcerer', 'Warlock', 'Wizard')
+    classes = ("Sorcerer", "Warlock", "Wizard")
 
 
 class EnhanceAbility(Spell):
@@ -245,16 +253,17 @@ class EnhanceAbility(Spell):
     spell slot of 3rd level or higher, you can target one additional creature for
     each slot level above 2nd.
     """
+
     name = "Enhance Ability"
     level = 2
     casting_time = "1 action"
     casting_range = "Touch"
-    components = ('V', 'S', 'M')
-    materials = """Fur or a feather from a beast"""
+    components = ("V", "S", "M")
+    materials = "Fur or a feather from a beast"
     duration = "Concentration, up to 1 hour"
     ritual = False
     magic_school = "Transmutation"
-    classes = ('Bard', 'Cleric', 'Druid', 'Sorcerer')
+    classes = ("Bard", "Cleric", "Druid", "Sorcerer")
 
 
 class Enlargereduce(Spell):
@@ -267,7 +276,7 @@ class Enlargereduce(Spell):
     everything it is wearing and carrying changes size with it. Any item dropped by
     an affected creature returns to normal size at once.
 
-    Enlarge 
+    Enlarge
     The target's
     size doubles in all dimensions, and its weight is multiplied by eight. This
     growth increases its size by one category – from Medium to Large, for example.
@@ -278,7 +287,7 @@ class Enlargereduce(Spell):
     weapons are enlarged, the target's attack with them deal 1d4 extra damage.
 
 
-    Reduce 
+    Reduce
     The target's size is halved in all dimensions, and its weight is reduced
     to one-eighth of normal. This reduction decreases its size by one category –
     from Medium to Small, for example. Until the spell ends, the target also has
@@ -287,16 +296,17 @@ class Enlargereduce(Spell):
     target's attacks with them deal 1d4 less damage (this can't reduce the damage
     below 1).
     """
+
     name = "Enlargereduce"
     level = 2
     casting_time = "1 action"
     casting_range = "30 feet"
-    components = ('V', 'S', 'M')
-    materials = """A pinch of powdered iron"""
+    components = ("V", "S", "M")
+    materials = "A pinch of powdered iron"
     duration = "Concentration, up to 1 minute"
     ritual = False
     magic_school = "Transmutation"
-    classes = ('Sorcerer', 'Wizard')
+    classes = ("Sorcerer", "Wizard")
 
 
 class EnsnaringStrike(Spell):
@@ -316,16 +326,17 @@ class EnsnaringStrike(Spell):
     using a spell slot of 2nd level or higher, the damage increases by 1d6 for each
     slot level above 1st.
     """
+
     name = "Ensnaring Strike"
     level = 1
     casting_time = "1 bonus action"
     casting_range = "Self"
-    components = ('V',)
-    materials = """"""
+    components = ("V",)
+    materials = ""
     duration = "Concentration, up to 1 minute"
     ritual = False
     magic_school = "Conjuration"
-    classes = ('Ranger',)
+    classes = ("Ranger",)
 
 
 class Entangle(Spell):
@@ -341,16 +352,17 @@ class Entangle(Spell):
 
     When the spell ends, the conjured plants wilt away.
     """
+
     name = "Entangle"
     level = 1
     casting_time = "1 action"
     casting_range = "90 feet"
-    components = ('V', 'S')
-    materials = """"""
+    components = ("V", "S")
+    materials = ""
     duration = "Concentration, up to 1 minute"
     ritual = False
     magic_school = "Conjuration"
-    classes = ('Druid',)
+    classes = ("Druid",)
 
 
 class Enthrall(Spell):
@@ -363,16 +375,17 @@ class Enthrall(Spell):
     until the target can no longer hear you. The spell ends if you are incapacitated
     or can no longer speak.
     """
+
     name = "Enthrall"
     level = 2
     casting_time = "1 action"
     casting_range = "60 feet"
-    components = ('V', 'S')
-    materials = """"""
+    components = ("V", "S")
+    materials = ""
     duration = "1 minute"
     ritual = False
     magic_school = "Enchantment"
-    classes = ('Bard', 'Warlock')
+    classes = ("Bard", "Warlock")
 
 
 class EruptingEarth(Spell):
@@ -387,16 +400,17 @@ class EruptingEarth(Spell):
     **At Higher Levels:** When you cast this spell using a spell slot of 4rd
     level or higher, the damage increases by 1d12 for each slot level above 3rd.
     """
+
     name = "Erupting Earth"
     level = 3
     casting_time = "1 action"
     casting_range = "120 feet"
-    components = ('V', 'S', 'M')
-    materials = """A piece of obsidian"""
+    components = ("V", "S", "M")
+    materials = "A piece of obsidian"
     duration = "Instantaneous"
     ritual = False
     magic_school = "Transmutation"
-    classes = ('Druid', 'Sorcerer', 'Wizard')
+    classes = ("Druid", "Sorcerer", "Wizard")
 
 
 class Etherealness(Spell):
@@ -431,16 +445,17 @@ class Etherealness(Spell):
     creatures must be within 10 feet of you when you cast the spell.
 
     """
+
     name = "Etherealness"
     level = 7
     casting_time = "1 action"
     casting_range = "Self"
-    components = ('V', 'S')
-    materials = """"""
+    components = ("V", "S")
+    materials = ""
     duration = "Up to 8 hours"
     ritual = False
     magic_school = "Transmutation"
-    classes = ('Bard', 'Cleric', 'Sorcerer', 'Warlock', 'Wizard')
+    classes = ("Bard", "Cleric", "Sorcerer", "Warlock", "Wizard")
 
 
 class EvardsBlackTentacles(Spell):
@@ -459,16 +474,17 @@ class EvardsBlackTentacles(Spell):
     Dexterity check (its choice) against your spell save DC. On a success, it frees
     itself.
     """
+
     name = "Evards Black Tentacles"
     level = 4
     casting_time = "1 action"
     casting_range = "90 feet"
-    components = ('V', 'S', 'M')
-    materials = """A piece of tentacle from a giant octopus or a giant squid"""
+    components = ("V", "S", "M")
+    materials = "A piece of tentacle from a giant octopus or a giant squid"
     duration = "Concentration, up to 1 minute"
     ritual = False
     magic_school = "Conjuration"
-    classes = ('Wizard',)
+    classes = ("Wizard",)
 
 
 class ExpeditiousRetreat(Spell):
@@ -476,53 +492,55 @@ class ExpeditiousRetreat(Spell):
     and then as a bonus action on each of your turns until the spell ends, you can
     take the Dash action.
     """
+
     name = "Expeditious Retreat"
     level = 1
     casting_time = "1 bonus action"
     casting_range = "Self"
-    components = ('V', 'S')
-    materials = """"""
+    components = ("V", "S")
+    materials = ""
     duration = "Concentration, up to 10 minutes"
     ritual = False
     magic_school = "Transmutation"
-    classes = ('Sorcerer', 'Warlock', 'Wizard')
+    classes = ("Sorcerer", "Warlock", "Wizard")
 
 
 class Eyebite(Spell):
-    """For the spell's duration, your eyes become an inky void imbued with dread power.
-    One creature of your choice within 60 feet of you that you can see must succeed
-    on a Wisdom saving throw or be affected by one of the following effects of your
-    choice for the duration. On each of your turns until the spell ends, you can
-    use your action to target another creature but can't target a creature again if
-    it has succeeded on a saving throw against this casting of eyebite.
+    """For the spell's duration, your eyes become an inky void imbued with
+    dread power.  One creature of your choice within 60 feet of you
+    that you can see must succeed on a Wisdom saving throw or be
+    affected by one of the following effects of your choice for the
+    duration. On each of your turns until the spell ends, you can use
+    your action to target another creature but can't target a creature
+    again if it has succeeded on a saving throw against this casting
+    of eyebite.
 
-    Asleep 
+    Asleep
+      The target falls unconscious. It wakes up if it takes any damage
+      or if another creature uses its action to shake the sleeper
+      awake.
 
-    The target galls unconscious. It wakes up if it takes any damage or if another
-    creature uses its action to shake the sleeper awake.
+    Panicked
+      The target is frightened of you. On each of its turns, the
+      frightened creature must take the Dash action and move away from
+      you by the safest and shortest available route, unless there is
+      nowhere to move. If the target moves to a place at least 60 feet
+      away from you where it can no longer see you, this effect ends.
 
-    Panicked 
-    The target is
-    frightened of you. On each of its turns, the frightened creature must take the
-    Dash action and move away from you by the safest and shortest available route,
-    unless there is nowhere to move. If the target moves to a place at least 60 feet
-    away from you where it can no longer see you, this effect ends.
+    Sickened
+      The target has disadvantage on attack rolls and ability
+      checks. At the end of each of its turns, it can make another
+      Wisdom saving throw. If it succeeds, the effect ends.
 
-    Sickened 
-    The
-    target has disadvantage on attack rolls and ability checks. At the end of each
-    of its turns, it can make another Wisdom saving throw. If it succeeds, the
-    effect ends.
     """
+
     name = "Eyebite"
     level = 6
     casting_time = "1 action"
     casting_range = "Self"
-    components = ('V', 'S')
-    materials = """"""
+    components = ("V", "S")
+    materials = ""
     duration = "Concentration, up to 1 minute"
     ritual = False
     magic_school = "Necromancy"
-    classes = ('Bard', 'Sorcerer', 'Warlock', 'Wizard')
-
-
+    classes = ("Bard", "Sorcerer", "Warlock", "Wizard")

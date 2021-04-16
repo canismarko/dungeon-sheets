@@ -14,6 +14,7 @@ class Thief(SubClass):
     unfamiliar languages, and using magic items you normally couldn't employ
 
     """
+
     name = "Thief"
     features_by_level = defaultdict(list)
     features_by_level[3] = [features.FastHands, features.SecondStoryWork]
@@ -30,8 +31,9 @@ class Assassin(SubClass):
     deadly efficiency
 
     """
+
     name = "Assassin"
-    _proficiencies_text = ('disguise kit', "poisoner's kit")
+    _proficiencies_text = ("disguise kit", "poisoner's kit")
     features_by_level = defaultdict(list)
     features_by_level[3] = [features.Assassinate]
     features_by_level[9] = [features.InfiltrationExpertise]
@@ -46,24 +48,25 @@ class ArcaneTrickster(SubClass):
     significant number of adventurers.
 
     """
+
     name = "Arcane Trickster"
     features_by_level = defaultdict(list)
     features_by_level[3] = [features.MageHandLegerdemain]
     features_by_level[9] = [features.MagicalAmbush]
     features_by_level[13] = [features.VersatileTrickster]
     features_by_level[17] = [features.SpellThief]
-    spellcasting_ability = 'intelligence'
+    spellcasting_ability = "intelligence"
     multiclass_spellslots_by_level = {
         # char_lvl: (cantrips, 1st, 2nd, 3rd, ...)
-        1:  (0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
-        2:  (0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
-        3:  (3, 2, 0, 0, 0, 0, 0, 0, 0, 0),
-        4:  (3, 3, 0, 0, 0, 0, 0, 0, 0, 0),
-        5:  (3, 3, 0, 0, 0, 0, 0, 0, 0, 0),
-        6:  (3, 3, 0, 0, 0, 0, 0, 0, 0, 0),
-        7:  (3, 4, 2, 0, 0, 0, 0, 0, 0, 0),
-        8:  (3, 4, 2, 0, 0, 0, 0, 0, 0, 0),
-        9:  (3, 4, 2, 0, 0, 0, 0, 0, 0, 0),
+        1: (0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+        2: (0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+        3: (3, 2, 0, 0, 0, 0, 0, 0, 0, 0),
+        4: (3, 3, 0, 0, 0, 0, 0, 0, 0, 0),
+        5: (3, 3, 0, 0, 0, 0, 0, 0, 0, 0),
+        6: (3, 3, 0, 0, 0, 0, 0, 0, 0, 0),
+        7: (3, 4, 2, 0, 0, 0, 0, 0, 0, 0),
+        8: (3, 4, 2, 0, 0, 0, 0, 0, 0, 0),
+        9: (3, 4, 2, 0, 0, 0, 0, 0, 0, 0),
         10: (4, 4, 3, 0, 0, 0, 0, 0, 0, 0),
         11: (4, 4, 3, 0, 0, 0, 0, 0, 0, 0),
         12: (4, 4, 3, 0, 0, 0, 0, 0, 0, 0),
@@ -88,10 +91,14 @@ class Inquisitive(SubClass):
     deductions make you well equipped to expose and end hidden evils
 
     """
+
     name = "Inquisitive"
     features_by_level = defaultdict(list)
-    features_by_level[3] = [features.EarForDeceit, features.EyeForDetail,
-                            features.InsightfulFighting]
+    features_by_level[3] = [
+        features.EarForDeceit,
+        features.EyeForDetail,
+        features.InsightfulFighting,
+    ]
     features_by_level[9] = [features.SteadyEye]
     features_by_level[13] = [features.UnerringEye]
     features_by_level[17] = [features.EyeForWeakness]
@@ -104,10 +111,10 @@ class Mastermind(SubClass):
     and favors are some of your favorite treasures.
 
     """
+
     name = "Mastermind"
     features_by_level = defaultdict(list)
-    features_by_level[3] = [features.MasterOfIntrigue,
-                            features.MasterOfTactics]
+    features_by_level[3] = [features.MasterOfIntrigue, features.MasterOfTactics]
     features_by_level[9] = [features.InsightfulManipulator]
     features_by_level[13] = [features.Misdirection]
     features_by_level[17] = [features.SoulOfDeceit]
@@ -122,6 +129,7 @@ class Scout(SubClass):
     Scouts as- sume as they range the world.
 
     """
+
     name = "Scout"
     skill_proficiencies = ("nature", "survival")
     features_by_level = defaultdict(list)
@@ -140,6 +148,7 @@ class Swashbuckler(SubClass):
     darting away from an opponent
 
     """
+
     name = "Swashbuckler"
     features_by_level = defaultdict(list)
     features_by_level[3] = [features.FancyFootwork, features.RakishAudacity]
@@ -149,24 +158,46 @@ class Swashbuckler(SubClass):
 
 
 class Rogue(CharClass):
-    name = 'Rogue'
+    name = "Rogue"
     hit_dice_faces = 8
     subclass_select_level = 3
-    saving_throw_proficiencies = ('dexterity', 'intelligence')
-    primary_abilities = ('dexterity',)
+    saving_throw_proficiencies = ("dexterity", "intelligence")
+    primary_abilities = ("dexterity",)
     _proficiencies_text = (
-        'light armor', 'simple weapons', 'hand crossbows', 'longswords',
-        'rapiers', 'shortswords', "thieves' tools")
-    weapon_proficiencies = (weapons.SimpleWeapon, weapons.HandCrossbow,
-                            weapons.Longsword, weapons.Rapier,
-                            weapons.Shortsword)
+        "light armor",
+        "simple weapons",
+        "hand crossbows",
+        "longswords",
+        "rapiers",
+        "shortswords",
+        "thieves' tools",
+    )
+    weapon_proficiencies = (
+        weapons.SimpleWeapon,
+        weapons.HandCrossbow,
+        weapons.Longsword,
+        weapons.Rapier,
+        weapons.Shortsword,
+    )
     multiclass_weapon_proficiencies = ()
-    _multiclass_proficiencies_text = ('light armor', "thieves' tools",
-                                      '[choose one skill from Rogue list]')
-    class_skill_choices = ('Acrobatics', 'Athletics', 'Deception',
-                           'Insight', 'Intimidation', 'Investigation',
-                           'Perception', 'Performance', 'Persuasion',
-                           'Sleight of Hand', 'Stealth')
+    _multiclass_proficiencies_text = (
+        "light armor",
+        "thieves' tools",
+        "[choose one skill from Rogue list]",
+    )
+    class_skill_choices = (
+        "Acrobatics",
+        "Athletics",
+        "Deception",
+        "Insight",
+        "Intimidation",
+        "Investigation",
+        "Perception",
+        "Performance",
+        "Persuasion",
+        "Sleight of Hand",
+        "Stealth",
+    )
     num_skill_choices = 4
     features_by_level = defaultdict(list)
     features_by_level[1] = [features.RogueExpertise, features.SneakAttack]
@@ -178,12 +209,18 @@ class Rogue(CharClass):
     features_by_level[15] = [features.SlipperyMind]
     features_by_level[18] = [features.Elusive]
     features_by_level[20] = [features.StrokeOfLuck]
-    subclasses_available = (Thief, Assassin, ArcaneTrickster,
-                            Inquisitive, Mastermind, Scout, Swashbuckler)
+    subclasses_available = (
+        Thief,
+        Assassin,
+        ArcaneTrickster,
+        Inquisitive,
+        Mastermind,
+        Scout,
+        Swashbuckler,
+    )
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         # slippery mind feature
         if self.owner.Rogue.level >= 15:
-            self.saving_throw_proficiencies = ('dexterity', 'intelligence',
-                                               'wisdom')
+            self.saving_throw_proficiencies = ("dexterity", "intelligence", "wisdom")

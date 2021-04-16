@@ -28,16 +28,17 @@ class OtilukesFreezingSphere(Spell):
     Higher Levels: When you cast this spell using a spell slot of 7th level or
     higher, the damage increases by 1d6 for each slot level above 6th
     """
+
     name = "Otilukes Freezing Sphere"
     level = 6
     casting_time = "1 action"
     casting_range = "300 feet"
-    components = ('V', 'S', 'M')
-    materials = """A small crystal sphere"""
+    components = ("V", "S", "M")
+    materials = "A small crystal sphere"
     duration = "Instantaneous"
     ritual = False
     magic_school = "Evocation"
-    classes = ('Wizard',)
+    classes = ("Wizard",)
 
 
 class OtilukesResilientSphere(Spell):
@@ -61,16 +62,20 @@ class OtilukesResilientSphere(Spell):
     A disintegrate spell targeting the globe destroys it without
     harming anything inside it.
     """
+
     name = "Otilukes Resilient Sphere"
     level = 4
     casting_time = "1 action"
     casting_range = "30 feet"
-    components = ('V', 'S', 'M')
-    materials = """A hemispherical piece of clear crystal and a matching hemispherical piece of gum arabic"""
+    components = ("V", "S", "M")
+    materials = (
+        "A hemispherical piece of clear crystal and a matching hemispherical piece of"
+        " gum arabic"
+    )
     duration = "Concentration, up to 1 minute"
     ritual = False
     magic_school = "Evocation"
-    classes = ('Wizard',)
+    classes = ("Wizard",)
 
 
 class OttosIrresistibleDance(Spell):
@@ -85,15 +90,14 @@ class OttosIrresistibleDance(Spell):
     it. As an action, a dancing creature makes a Wisdom saving throw to regain
     control of itself. On a successful save, the spell ends.
     """
+
     name = "Ottos Irresistible Dance"
     level = 6
     casting_time = "1 action"
     casting_range = "30 feet"
-    components = ('V',)
-    materials = """"""
+    components = ("V",)
+    materials = ""
     duration = "Concentration, up to 1 minute"
     ritual = False
     magic_school = "Enchantment"
-    classes = ('Bard', 'Wizard')
-
-
+    classes = ("Bard", "Wizard")

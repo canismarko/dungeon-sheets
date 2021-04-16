@@ -10,16 +10,17 @@ class SacredFlame(Spell):
     spell's damage increases by 1d8 when you reach 5th level (2d8), 11th level
     (3d8), and 17th level (4d8).
     """
+
     name = "Sacred Flame"
     level = 0
     casting_time = "1 action"
     casting_range = "60 feet"
-    components = ('V', 'S')
-    materials = """"""
+    components = ("V", "S")
+    materials = ""
     duration = "Instantaneous"
     ritual = False
     magic_school = "Evocation"
-    classes = ('Cleric',)
+    classes = ("Cleric",)
 
 
 class Sanctuary(Spell):
@@ -34,16 +35,17 @@ class Sanctuary(Spell):
     creature makes an attack or casts a spell that affects an enemy creature, this
     spell ends.
     """
+
     name = "Sanctuary"
     level = 1
     casting_time = "1 bonus action"
     casting_range = "30 feet"
-    components = ('V', 'S', 'M')
-    materials = """A small silver mirror"""
+    components = ("V", "S", "M")
+    materials = "A small silver mirror"
     duration = "1 minute"
     ritual = False
     magic_school = "Abjuration"
-    classes = ('Cleric',)
+    classes = ("Cleric",)
 
 
 class Scatter(Spell):
@@ -53,16 +55,17 @@ class Scatter(Spell):
     you can see within 120 feet of you. That space must be on the ground or on a
     floor.
     """
+
     name = "Scatter"
     level = 6
     casting_time = "1 action"
     casting_range = "30 feet"
-    components = ('V',)
-    materials = """"""
+    components = ("V",)
+    materials = ""
     duration = "Instantaneous"
     ritual = False
     magic_school = "Conjuration"
-    classes = ('Sorcerer', 'Warlock', 'Wizard')
+    classes = ("Sorcerer", "Warlock", "Wizard")
 
 
 class ScorchingRay(Spell):
@@ -74,16 +77,17 @@ class ScorchingRay(Spell):
     spell using a spell slot of 3rd level or higher, you create one additional ray
     for each slot level above 2nd.
     """
+
     name = "Scorching Ray"
     level = 2
     casting_time = "1 action"
     casting_range = "120 feet"
-    components = ('V', 'S')
-    materials = """"""
+    components = ("V", "S")
+    materials = ""
     duration = "Instantaneous"
     ritual = False
     magic_school = "Evocation"
-    classes = ('Sorcerer', 'Wizard')
+    classes = ("Sorcerer", "Wizard")
 
 
 class Scrying(Spell):
@@ -93,15 +97,15 @@ class Scrying(Spell):
     and the sort of physical connection you have to it. If a target
     knows you're casting this spell, it can fail the saving throw
     voluntarily if it wants to be observed.
-    
+
     **Knowledge - Save Modifier**
-    
+
     - Secondhand (you have heard of the target) - +5
     - Firsthand (you have met the target) - +0
     - Familiar (you know the target well) - -5
-    
+
     **Connection - Save Modifier**
-    
+
     - Likeness or picture - -2
     - Possession or garment - -4
     - Body part, lock of hair, bit of nail, or the like - -10
@@ -121,16 +125,20 @@ class Scrying(Spell):
     sensor appears at that location and doesn't move.
 
     """
+
     name = "Scrying"
     level = 5
     casting_time = "10 minutes"
     casting_range = "Self"
-    components = ('V', 'S', 'M')
-    materials = """A focus worth at least 1,000 gp, such as a crystal ball, a silver mirror, or a font filled with holy water"""
+    components = ("V", "S", "M")
+    materials = (
+        "A focus worth at least 1,000 gp, such as a crystal ball, a silver mirror, or a"
+        " font filled with holy water"
+    )
     duration = "Concentration, up to 10 minutes"
     ritual = False
     magic_school = "Divination"
-    classes = ('Bard', 'Cleric', 'Druid', 'Warlock', 'Wizard')
+    classes = ("Bard", "Cleric", "Druid", "Warlock", "Wizard")
 
 
 class SearingSmite(Spell):
@@ -151,16 +159,17 @@ class SearingSmite(Spell):
     attack increases by 1d6 for each slot
 
     """
+
     name = "Searing Smite"
     level = 1
     casting_time = "1 bonus action"
     casting_range = "Self"
-    components = ('V',)
-    materials = """"""
+    components = ("V",)
+    materials = ""
     duration = "Concentration, up to 1 minute"
     ritual = False
     magic_school = "Evocation"
-    classes = ('Paladin',)
+    classes = ("Paladin",)
 
 
 class SeeInvisibility(Spell):
@@ -170,16 +179,17 @@ class SeeInvisibility(Spell):
     translucent.
 
     """
+
     name = "See Invisibility"
     level = 2
     casting_time = "1 action"
     casting_range = "Self"
-    components = ('V', 'S', 'M')
-    materials = """A pinch of talc and a small sprinkling of powdered silver"""
+    components = ("V", "S", "M")
+    materials = "A pinch of talc and a small sprinkling of powdered silver"
     duration = "1 hour"
     ritual = False
     magic_school = "Divination"
-    classes = ('Bard', 'Sorcerer', 'Wizard')
+    classes = ("Bard", "Sorcerer", "Wizard")
 
 
 class Seeming(Spell):
@@ -209,16 +219,17 @@ class Seeming(Spell):
     against your spell save DC. If it succeeds, it becomes aware that the target is
     disguised.
     """
+
     name = "Seeming"
     level = 5
     casting_time = "1 action"
     casting_range = "30 feet"
-    components = ('V', 'S')
-    materials = """"""
+    components = ("V", "S")
+    materials = ""
     duration = "8 hours"
     ritual = False
     magic_school = "Illusion"
-    classes = ('Bard', 'Sorcerer', 'Wizard')
+    classes = ("Bard", "Sorcerer", "Wizard")
 
 
 class Sending(Spell):
@@ -232,16 +243,17 @@ class Sending(Spell):
     to other planes of existence, but if the target is on a different plane than
     you, there is a 5 percent chance that the message doesn't arrive.
     """
+
     name = "Sending"
     level = 3
     casting_time = "1 action"
     casting_range = "Unlimited"
-    components = ('V', 'S', 'M')
-    materials = """A short piece of fine copper wire"""
+    components = ("V", "S", "M")
+    materials = "A short piece of fine copper wire"
     duration = "1 round"
     ritual = False
     magic_school = "Evocation"
-    classes = ('Bard', 'Cleric', 'Wizard')
+    classes = ("Bard", "Cleric", "Wizard")
 
 
 class Sequester(Spell):
@@ -260,16 +272,20 @@ class Sequester(Spell):
     visible within 1 mile of the target. Examples include after 1,000 years or when
     the tarrasque awakes. This spells also ends if the target takes any damage.
     """
+
     name = "Sequester"
     level = 7
     casting_time = "1 action"
     casting_range = "Touch"
-    components = ('V', 'S', 'M')
-    materials = """A powder composed of diamond, emerald, ruby, and sapphire dust worth at least 5,000 gp, which the spell consumes"""
+    components = ("V", "S", "M")
+    materials = (
+        "A powder composed of diamond, emerald, ruby, and sapphire dust worth at least"
+        " 5,000 gp, which the spell consumes"
+    )
     duration = "Until dispelled"
     ritual = False
     magic_school = "Transmutation"
-    classes = ('Wizard',)
+    classes = ("Wizard",)
 
 
 class ShadowBlade(Spell):
@@ -289,16 +305,17 @@ class ShadowBlade(Spell):
     the damage increases to 4d8. When you cast it using a spell slot of 7th level or
     higher, the damage increases to 5d8.
     """
+
     name = "Shadow Blade"
     level = 2
     casting_time = "1 bonus action"
     casting_range = "Self"
-    components = ('V', 'S')
-    materials = """"""
+    components = ("V", "S")
+    materials = ""
     duration = "Concentration, up to 1 minute"
     ritual = False
     magic_school = "Illusion"
-    classes = ('Sorcerer', 'Warlock', 'Wizard')
+    classes = ("Sorcerer", "Warlock", "Wizard")
 
 
 class ShadowOfMoil(Spell):
@@ -310,23 +327,24 @@ class ShadowOfMoil(Spell):
     within 10 feet of you hits you with an attack, the shadows lash out at that
     creature, dealing it 2d8 necrotic damage.
     """
+
     name = "Shadow Of Moil"
     level = 4
     casting_time = "1 action"
     casting_range = "Self"
-    components = ('V', 'S', 'M')
-    materials = """An undead eyeball encased in a gem worth at least 150 gp"""
+    components = ("V", "S", "M")
+    materials = "An undead eyeball encased in a gem worth at least 150 gp"
     duration = "Concentration, up to 1 minute"
     ritual = False
     magic_school = "Necromancy"
-    classes = ('Warlock',)
+    classes = ("Warlock",)
 
 
 class ShapeWater(Spell):
     """You choose an area of water that you can see within range and that
     fits within a 5-foot cube. You manipulate it in one of the
     following ways:
-    
+
     - You instantaneously move or otherwise change the flow of the
       water as you direct, up to 5 feet in any direction. This
       movement doesn't have enough force to cause damage.
@@ -337,22 +355,23 @@ class ShapeWater(Spell):
       hour.
     - You freeze the water, provided that there are no crea- tures in
       it. The water unfreezes in 1 hour.
-    
+
     If you cast this spell multiple times, you can have no more than
     two of its non-instantaneous effects active at a time, and you can
     dismiss such an effect as an action.
-    
+
     """
+
     name = "Shape Water"
     level = 0
     casting_time = "1 action"
     casting_range = "30 feet"
-    components = ('S',)
-    materials = """"""
+    components = ("S",)
+    materials = ""
     duration = "Instantaneous or 1 hour"
     ritual = False
     magic_school = "Transmutation"
-    classes = ('Druid', 'Sorcerer', 'Wizard')
+    classes = ("Druid", "Sorcerer", "Wizard")
 
 
 class Shapechange(Spell):
@@ -398,16 +417,20 @@ class Shapechange(Spell):
     for the original form, with one exception: if your new form has more hit pints
     than your current one, your hit points remain at their current value.
     """
+
     name = "Shapechange"
     level = 9
     casting_time = "1 action"
     casting_range = "Self"
-    components = ('V', 'S', 'M')
-    materials = """A jade circlet worth at least 1,500 gp, which you must place on your head before you cast the spell"""
+    components = ("V", "S", "M")
+    materials = (
+        "A jade circlet worth at least 1,500 gp, which you must place on your head"
+        " before you cast the spell"
+    )
     duration = "Concentration, up to 1 hour"
     ritual = False
     magic_school = "Transmutation"
-    classes = ('Druid', 'Wizard')
+    classes = ("Druid", "Wizard")
 
 
 class Shatter(Spell):
@@ -418,25 +441,26 @@ class Shatter(Spell):
     half as much damage on a successful one. A creature made of
     inorganic material such as stone, crystal, or metal has
     disadvantage on this saving throw.
-    
+
     A nonmagical object that isn't being worn or carried also takes
     the damage if it's in the spell's area.
-    
+
     **At Higher Levels:** When you cast this spell using a spell slot
     of 3rd level or higher, the damage increases by 1d8 for each slot
     level above 2nd.
-    
+
     """
+
     name = "Shatter"
     level = 2
     casting_time = "1 action"
     casting_range = "60 feet"
-    components = ('V', 'S', 'M')
-    materials = """A chip of mica"""
+    components = ("V", "S", "M")
+    materials = "A chip of mica"
     duration = "Instantaneous"
     ritual = False
     magic_school = "Evocation"
-    classes = ('Bard', 'Sorcerer', 'Warlock', 'Wizard')
+    classes = ("Bard", "Sorcerer", "Warlock", "Wizard")
 
 
 class Shield(Spell):
@@ -446,32 +470,37 @@ class Shield(Spell):
     from *magic missile*.
 
     """
+
     name = "Shield"
     level = 1
-    casting_time = "1 reaction, which you take when you are hit by an attack or targeted by the magic missile spell."
+    casting_time = (
+        "1 reaction, which you take when you are hit by an attack or targeted by the"
+        " magic missile spell."
+    )
     casting_range = "Self"
-    components = ('V', 'S')
-    materials = """"""
+    components = ("V", "S")
+    materials = ""
     duration = "1 round"
     ritual = False
     magic_school = "Abjuration"
-    classes = ('Sorcerer', 'Wizard')
+    classes = ("Sorcerer", "Wizard")
 
 
 class ShieldOfFaith(Spell):
     """A shimmering field appears and surrounds a creature of your choice within range,
     granting it a +2 bonus to AC for the duration.
     """
+
     name = "Shield Of Faith"
     level = 1
     casting_time = "1 bonus action"
     casting_range = "60 feet"
-    components = ('V', 'S', 'M')
-    materials = """A small parchment with a bit of holy text written on it"""
+    components = ("V", "S", "M")
+    materials = "A small parchment with a bit of holy text written on it"
     duration = "Concentration, up to 10 minutes"
     ritual = False
     magic_school = "Abjuration"
-    classes = ('Cleric', 'Paladin')
+    classes = ("Cleric", "Paladin")
 
 
 class Shillelagh(Spell):
@@ -483,16 +512,17 @@ class Shillelagh(Spell):
     isn't already. The spell ends if you cast it again or if you let go of the
     weapon
     """
+
     name = "Shillelagh"
     level = 0
     casting_time = "1 bonus action"
     casting_range = "Touch"
-    components = ('V', 'S', 'M')
-    materials = """Mistletoe, a shamrock leaf, and a club or quarterstaff"""
+    components = ("V", "S", "M")
+    materials = "Mistletoe, a shamrock leaf, and a club or quarterstaff"
     duration = "1 minute"
     ritual = False
     magic_school = "Transmutation"
-    classes = ('Druid',)
+    classes = ("Druid",)
 
 
 class ShockingGrasp(Spell):
@@ -506,16 +536,17 @@ class ShockingGrasp(Spell):
     **At Higher Levels:** The spell's damage increases by 1d8 when you reach
     5th level (2d8), 11th level (3d8), and 17th level (4d8).
     """
+
     name = "Shocking Grasp"
     level = 0
     casting_time = "1 action"
     casting_range = "Touch"
-    components = ('V', 'S')
-    materials = """"""
+    components = ("V", "S")
+    materials = ""
     duration = "Instantaneous"
     ritual = False
     magic_school = "Evocation"
-    classes = ('Sorcerer', 'Wizard')
+    classes = ("Sorcerer", "Wizard")
 
 
 class SickeningRadiance(Spell):
@@ -529,16 +560,17 @@ class SickeningRadiance(Spell):
     it impossible for the creature to benefit from being invisible. The light and
     any levels of exhaustion caused by this spell go away when the spell ends.
     """
+
     name = "Sickening Radiance"
     level = 4
     casting_time = "1 action"
     casting_range = "120 feet"
-    components = ('V', 'S')
-    materials = """"""
+    components = ("V", "S")
+    materials = ""
     duration = "Concentration, up to 10 minutes"
     ritual = False
     magic_school = "Evocation"
-    classes = ('Sorcerer', 'Warlock', 'Wizard')
+    classes = ("Sorcerer", "Warlock", "Wizard")
 
 
 class Silence(Spell):
@@ -548,16 +580,17 @@ class Silence(Spell):
     entirely inside it. Casting a spell that includes a verbal component is impossible
     there.
     """
+
     name = "Silence"
     level = 2
     casting_time = "1 action"
     casting_range = "120 feet"
-    components = ('V', 'S')
-    materials = """"""
+    components = ("V", "S")
+    materials = ""
     duration = "Concentration, up to 10 minutes"
     ritual = True
     magic_school = "Illusion"
-    classes = ('Bard', 'Cleric', 'Ranger')
+    classes = ("Bard", "Cleric", "Ranger")
 
 
 class SilentImage(Spell):
@@ -579,16 +612,17 @@ class SilentImage(Spell):
     If a creature discerns the illusion for what it is, the creature can see
     through the image.
     """
+
     name = "Silent Image"
     level = 1
     casting_time = "1 action"
     casting_range = "60 feet"
-    components = ('V', 'S', 'M')
-    materials = """A bit of fleece"""
+    components = ("V", "S", "M")
+    materials = "A bit of fleece"
     duration = "Concentration, up to 10 minutes"
     ritual = False
     magic_school = "Illusion"
-    classes = ('Bard', 'Sorcerer', 'Wizard')
+    classes = ("Bard", "Sorcerer", "Wizard")
 
 
 class Simulacrum(Spell):
@@ -615,16 +649,22 @@ class Simulacrum(Spell):
     If you cast this spell again, any
     currently active duplicates you created with this spell are instantly destroyed.
     """
+
     name = "Simulacrum"
     level = 7
     casting_time = "12 hours"
     casting_range = "Touch"
-    components = ('V', 'S', 'M')
-    materials = """Snow or ice in quantities sufficient to made a life-size copy of the duplicated creature; some hair, fingernail clippings, or other piece of that creature's body placed inside the snow or ice; and powdered ruby worth 1,500 gp, sprinkled over the duplicate and consumed by the spell"""
+    components = ("V", "S", "M")
+    materials = (
+        "Snow or ice in quantities sufficient to made a life-size copy of the"
+        " duplicated creature; some hair, fingernail clippings, or other piece of that"
+        " creature's body placed inside the snow or ice; and powdered ruby worth 1,500"
+        " gp, sprinkled over the duplicate and consumed by the spell"
+    )
     duration = "Until dispelled"
     ritual = False
     magic_school = "Illusion"
-    classes = ('Wizard',)
+    classes = ("Wizard",)
 
 
 class SkillEmpowerment(Spell):
@@ -636,16 +676,17 @@ class SkillEmpowerment(Spell):
     proficient and that isn't already benefiting from an effect, such as Expertise,
     that doubles its proficiency bonus.
     """
+
     name = "Skill Empowerment"
     level = 5
     casting_time = "1 action"
     casting_range = "Touch"
-    components = ('V', 'S')
-    materials = """"""
+    components = ("V", "S")
+    materials = ""
     duration = "Concentration, up to 1 hour"
     ritual = False
     magic_school = "Transmutation"
-    classes = ('Bard', 'Sorcerer', 'Wizard')
+    classes = ("Bard", "Sorcerer", "Wizard")
 
 
 class Skywrite(Spell):
@@ -654,16 +695,17 @@ class Skywrite(Spell):
     words dissipate when the spell ends. A strong wind can disperse the clouds and
     end the spell early.
     """
+
     name = "Skywrite"
     level = 2
     casting_time = "1 action"
     casting_range = "Sight"
-    components = ('V', 'S')
-    materials = """"""
+    components = ("V", "S")
+    materials = ""
     duration = "Concentration, up to 1 hour"
     ritual = True
     magic_school = "Transmutation"
-    classes = ('Bard', 'Druid', 'Wizard')
+    classes = ("Bard", "Druid", "Wizard")
 
 
 class Sleep(Spell):
@@ -686,16 +728,17 @@ class Sleep(Spell):
     a spell slot of 2nd level or higher, roll an additional 2d8 for each slot level
     above 1st.
     """
+
     name = "Sleep"
     level = 1
     casting_time = "1 action"
     casting_range = "90 feet"
-    components = ('V', 'S', 'M')
-    materials = """A pinch of fine sand, rose petals, or a cricket"""
+    components = ("V", "S", "M")
+    materials = "A pinch of fine sand, rose petals, or a cricket"
     duration = "1 minute"
     ritual = False
     magic_school = "Enchantment"
-    classes = ('Bard', 'Sorcerer', 'Wizard')
+    classes = ("Bard", "Sorcerer", "Wizard")
 
 
 class SleetStorm(Spell):
@@ -713,16 +756,17 @@ class SleetStorm(Spell):
     successful Constitution saving throw against your spell save DC or lose
     concentration.
     """
+
     name = "Sleet Storm"
     level = 3
     casting_time = "1 action"
     casting_range = "150 feet"
-    components = ('V', 'S', 'M')
-    materials = """A pinch of dust and a few drops of water"""
+    components = ("V", "S", "M")
+    materials = "A pinch of dust and a few drops of water"
     duration = "Concentration, up to 1 minute"
     ritual = False
     magic_school = "Conjuration"
-    classes = ('Druid', 'Sorcerer', 'Wizard')
+    classes = ("Druid", "Sorcerer", "Wizard")
 
 
 class Slow(Spell):
@@ -745,16 +789,17 @@ class Slow(Spell):
     affected by this spell makes another Wisdom saving throw at the end of its turn.
     On a successful save, the effect ends for it.
     """
+
     name = "Slow"
     level = 3
     casting_time = "1 action"
     casting_range = "120 feet"
-    components = ('V', 'S', 'M')
-    materials = """A drop of molasses"""
+    components = ("V", "S", "M")
+    materials = "A drop of molasses"
     duration = "Concentration, up to 1 minute"
     ritual = False
     magic_school = "Transmutation"
-    classes = ('Sorcerer', 'Wizard')
+    classes = ("Sorcerer", "Wizard")
 
 
 class Snare(Spell):
@@ -777,16 +822,17 @@ class Snare(Spell):
     After the trap is triggered, the spell ends when no
     creature is restrained by it.
     """
+
     name = "Snare"
     level = 1
     casting_time = "1 minute"
     casting_range = "Touch"
-    components = ('S', 'M')
-    materials = """25 feet of rope, which the spell consumes"""
+    components = ("S", "M")
+    materials = "25 feet of rope, which the spell consumes"
     duration = "8 hours"
     ritual = False
     magic_school = "Abjuration"
-    classes = ('Druid', 'Ranger', 'Wizard')
+    classes = ("Druid", "Ranger", "Wizard")
 
 
 class SnillocsSnowballSwarm(Spell):
@@ -799,16 +845,17 @@ class SnillocsSnowballSwarm(Spell):
     Higher Levels. When you cast this spell using a spell slot of 3rd level or
     higher, the damage increases by 1d6 for each slot level above 2nd.
     """
+
     name = "Snillocs Snowball Swarm"
     level = 2
     casting_time = "1 action"
     casting_range = "90 feet"
-    components = ('V', 'S', 'M')
-    materials = """"""
+    components = ("V", "S", "M")
+    materials = ""
     duration = "Instantaneous"
     ritual = False
     magic_school = "Evocation"
-    classes = ('Sorcerer', 'Wizard')
+    classes = ("Sorcerer", "Wizard")
 
 
 class SoulCage(Spell):
@@ -845,32 +892,34 @@ class SoulCage(Spell):
     or truesight) sees a translucent image of the tormented humanoid whose soul you
     caged.
     """
+
     name = "Soul Cage"
     level = 6
     casting_time = "Special"
     casting_range = "60 feet"
-    components = ('V', 'S', 'M')
-    materials = """A tiny silver cage worth 100 gp"""
+    components = ("V", "S", "M")
+    materials = "A tiny silver cage worth 100 gp"
     duration = "8 hours"
     ritual = False
     magic_school = "Necromancy"
-    classes = ('Warlock', 'Wizard')
+    classes = ("Warlock", "Wizard")
 
 
 class SpareTheDying(Spell):
     """You touch a living creature that has 0 hit points. The creature becomes stable.
     This spell has no effect on undead or constructs.
     """
+
     name = "Spare The Dying"
     level = 0
     casting_time = "1 action"
     casting_range = "Touch"
-    components = ('V', 'S')
-    materials = """"""
+    components = ("V", "S")
+    materials = ""
     duration = "Instantaneous"
     ritual = False
     magic_school = "Necromancy"
-    classes = ('Cleric',)
+    classes = ("Cleric",)
 
 
 class SpeakWithAnimals(Spell):
@@ -882,16 +931,17 @@ class SpeakWithAnimals(Spell):
     within the past day. You might be able to persuade a beast to perform a small
     favor for you, at the DM's discretion.
     """
+
     name = "Speak With Animals"
     level = 1
     casting_time = "1 action"
     casting_range = "Self"
-    components = ('V', 'S')
-    materials = """"""
+    components = ("V", "S")
+    materials = ""
     duration = "10 minutes"
     ritual = True
     magic_school = "Divination"
-    classes = ('Bard', 'Druid', 'Ranger')
+    classes = ("Bard", "Druid", "Ranger")
 
 
 class SpeakWithDead(Spell):
@@ -909,16 +959,17 @@ class SpeakWithDead(Spell):
     corpse can't learn new information, doesn't comprehend anything that has
     happened since it died, and can't speculate about future events.
     """
+
     name = "Speak With Dead"
     level = 3
     casting_time = "1 action"
     casting_range = "10 feet"
-    components = ('V', 'S', 'M')
-    materials = """Burning incense"""
+    components = ("V", "S", "M")
+    materials = "Burning incense"
     duration = "10 minutes"
     ritual = False
     magic_school = "Necromancy"
-    classes = ('Bard', 'Cleric')
+    classes = ("Bard", "Cleric")
 
 
 class SpeakWithPlants(Spell):
@@ -946,16 +997,17 @@ class SpeakWithPlants(Spell):
     This spell can cause the plants created by the entangle spell to release a
     restrained creature.
     """
+
     name = "Speak With Plants"
     level = 3
     casting_time = "1 action"
     casting_range = "Self (30-foot radius)"
-    components = ('V', 'S')
-    materials = """"""
+    components = ("V", "S")
+    materials = ""
     duration = "10 minutes"
     ritual = False
     magic_school = "Transmutation"
-    classes = ('Bard', 'Druid', 'Ranger')
+    classes = ("Bard", "Druid", "Ranger")
 
 
 class SpiderClimb(Spell):
@@ -964,16 +1016,17 @@ class SpiderClimb(Spell):
     leaving its hands free. The target also gains a climbing speed equal to its
     walking speed.
     """
+
     name = "Spider Climb"
     level = 2
     casting_time = "1 action"
     casting_range = "Touch"
-    components = ('V', 'S', 'M')
-    materials = """A drop of bitumen and a spider"""
+    components = ("V", "S", "M")
+    materials = "A drop of bitumen and a spider"
     duration = "Concentration, up to 1 hour"
     ritual = False
     magic_school = "Transmutation"
-    classes = ('Sorcerer', 'Warlock', 'Wizard')
+    classes = ("Sorcerer", "Warlock", "Wizard")
 
 
 class SpikeGrowth(Spell):
@@ -987,16 +1040,17 @@ class SpikeGrowth(Spell):
     the spell is case must make a Wisdom (Perception) check against your spell save
     DC to recognize the terrain as hazardous before entering it.
     """
+
     name = "Spike Growth"
     level = 2
     casting_time = "1 action"
     casting_range = "150 feet"
-    components = ('V', 'S', 'M')
-    materials = """Seven sharp thorns or seven small twigs, each sharpened to a point"""
+    components = ("V", "S", "M")
+    materials = "Seven sharp thorns or seven small twigs, each sharpened to a point"
     duration = "Concentration, up to 10 minutes"
     ritual = False
     magic_school = "Transmutation"
-    classes = ('Druid', 'Ranger')
+    classes = ("Druid", "Ranger")
 
 
 class SpiritGuardians(Spell):
@@ -1017,16 +1071,17 @@ class SpiritGuardians(Spell):
     Higher Levels: When you cast this spell using a spell slot of 4th level or
     higher, the damage increases by 1d8 for each slot level above 3rd.
     """
+
     name = "Spirit Guardians"
     level = 3
     casting_time = "1 action"
     casting_range = "Self (15-foot-radius)"
-    components = ('V', 'S', 'M')
-    materials = """A holy symbol"""
+    components = ("V", "S", "M")
+    materials = "A holy symbol"
     duration = "Concentration, up to 10 minutes"
     ritual = False
     magic_school = "Conjuration"
-    classes = ('Cleric',)
+    classes = ("Cleric",)
 
 
 class SpiritualWeapon(Spell):
@@ -1049,16 +1104,17 @@ class SpiritualWeapon(Spell):
     you cast this spell using a spell slot of 3rd level or higher, the damage
     increases by 1d8 for every two slot levels above the 2nd.
     """
+
     name = "Spiritual Weapon"
     level = 2
     casting_time = "1 bonus action"
     casting_range = "60 feet"
-    components = ('V', 'S')
-    materials = """"""
+    components = ("V", "S")
+    materials = ""
     duration = "1 minute"
     ritual = False
     magic_school = "Evocation"
-    classes = ('Cleric',)
+    classes = ("Cleric",)
 
 
 class StaggeringSmite(Spell):
@@ -1068,16 +1124,17 @@ class StaggeringSmite(Spell):
     a failed save, it has disadvantage on attack rolls and ability checks, and
     can't take reactions, until the end of its next turn.
     """
+
     name = "Staggering Smite"
     level = 4
     casting_time = "1 bonus action"
     casting_range = "Self"
-    components = ('V',)
-    materials = """"""
+    components = ("V",)
+    materials = ""
     duration = "Concentration, up to 1 minute"
     ritual = False
     magic_school = "Evocation"
-    classes = ('Paladin',)
+    classes = ("Paladin",)
 
 
 class SteelWindStrike(Spell):
@@ -1088,16 +1145,17 @@ class SteelWindStrike(Spell):
     then teleport to an unoccupied space you can see within 5 feet of one of the
     targets you hit or missed.
     """
+
     name = "Steel Wind Strike"
     level = 5
     casting_time = "1 action"
     casting_range = "30 feet"
-    components = ('S', 'M')
-    materials = """A melee weapon worth at least 1 sp"""
+    components = ("S", "M")
+    materials = "A melee weapon worth at least 1 sp"
     duration = "Instantaneous"
     ritual = False
     magic_school = "Conjuration"
-    classes = ('Ranger', 'Wizard')
+    classes = ("Ranger", "Wizard")
 
 
 class StinkingCloud(Spell):
@@ -1115,16 +1173,17 @@ class StinkingCloud(Spell):
     (at least 10 miles per hour) disperses the cloud after 4 rounds. A strong wind
     (at least 20 miles per hour) disperses it after 1 round.
     """
+
     name = "Stinking Cloud"
     level = 3
     casting_time = "1 action"
     casting_range = "90 feet"
-    components = ('V', 'S', 'M')
-    materials = """A rotten egg or several skunk cabbage leaves"""
+    components = ("V", "S", "M")
+    materials = "A rotten egg or several skunk cabbage leaves"
     duration = "Concentration, up to 1 minute"
     ritual = False
     magic_school = "Conjuration"
-    classes = ('Bard', 'Sorcerer', 'Wizard')
+    classes = ("Bard", "Sorcerer", "Wizard")
 
 
 class StoneShape(Spell):
@@ -1136,16 +1195,20 @@ class StoneShape(Spell):
     shut. The object you create can have up to two hinges and a latch, but finer
     mechanical detail isn't possible.
     """
+
     name = "Stone Shape"
     level = 4
     casting_time = "1 action"
     casting_range = "Touch"
-    components = ('V', 'S', 'M')
-    materials = """Soft clay, which must be worked into roughly the desired shape of the stone object"""
+    components = ("V", "S", "M")
+    materials = (
+        "Soft clay, which must be worked into roughly the desired shape of the stone"
+        " object"
+    )
     duration = "Instantaneous"
     ritual = False
     magic_school = "Transmutation"
-    classes = ('Cleric', 'Druid', 'Wizard')
+    classes = ("Cleric", "Druid", "Wizard")
 
 
 class Stoneskin(Spell):
@@ -1153,16 +1216,17 @@ class Stoneskin(Spell):
     Until the spell ends, the target has resistance to nonmagical bludgeoning,
     piercing, and slashing damage.
     """
+
     name = "Stoneskin"
     level = 4
     casting_time = "1 action"
     casting_range = "Touch"
-    components = ('V', 'S', 'M')
-    materials = """Diamond dust worth 100 gp, which the spell consumes"""
+    components = ("V", "S", "M")
+    materials = "Diamond dust worth 100 gp, which the spell consumes"
     duration = "Concentration, up to 1 hour"
     ritual = False
     magic_school = "Abjuration"
-    classes = ('Druid', 'Ranger', 'Sorcerer', 'Wizard')
+    classes = ("Druid", "Ranger", "Sorcerer", "Wizard")
 
 
 class StormOfVengeance(Spell):
@@ -1200,16 +1264,17 @@ class StormOfVengeance(Spell):
     (ranging from 20 to 50 miles per hour) automatically disperse fog, mists, and
     similar phenomena in the area whether mundane or magical.
     """
+
     name = "Storm Of Vengeance"
     level = 9
     casting_time = "1 action"
     casting_range = "Sight"
-    components = ('V', 'S')
-    materials = """"""
+    components = ("V", "S")
+    materials = ""
     duration = "Concentration, up to 1 minute"
     ritual = False
     magic_school = "Conjuration"
-    classes = ('Druid',)
+    classes = ("Druid",)
 
 
 class StormSphere(Spell):
@@ -1230,16 +1295,17 @@ class StormSphere(Spell):
     level or higher, the damage increases for each of its effects by 1d6 for each
     slot level above 4th.
     """
+
     name = "Storm Sphere"
     level = 4
     casting_time = "1 action"
     casting_range = "150 feet"
-    components = ('V', 'S')
-    materials = """"""
+    components = ("V", "S")
+    materials = ""
     duration = "Concentration, up to 1 minute"
     ritual = False
     magic_school = "Evocation"
-    classes = ('Sorcerer', 'Wizard')
+    classes = ("Sorcerer", "Wizard")
 
 
 class Suggestion(Spell):
@@ -1265,16 +1331,19 @@ class Suggestion(Spell):
     If you or any of your companions damage
     the target, the spell ends.
     """
+
     name = "Suggestion"
     level = 2
     casting_time = "1 action"
     casting_range = "30 feet"
-    components = ('V', 'M')
-    materials = """A snake's tongue and either a bit of honeycomb or a drop of sweet oil"""
+    components = ("V", "M")
+    materials = (
+        """A snake's tongue and either a bit of honeycomb or a drop of sweet oil"""
+    )
     duration = "Concentration, up to 8 hours"
     ritual = False
     magic_school = "Enchantment"
-    classes = ('Bard', 'Sorcerer', 'Warlock', 'Wizard')
+    classes = ("Bard", "Sorcerer", "Warlock", "Wizard")
 
 
 class SummonGreaterDemon(Spell):
@@ -1307,16 +1376,17 @@ class SummonGreaterDemon(Spell):
     5th level or higher, the challenge rating increases by 1 for each slot level
     above 4th.
     """
+
     name = "Summon Greater Demon"
     level = 4
     casting_time = "1 action"
     casting_range = "60 feet"
-    components = ('V', 'S', 'M')
-    materials = """A vial of blood from a humanoid killed within the past 24 hours"""
+    components = ("V", "S", "M")
+    materials = "A vial of blood from a humanoid killed within the past 24 hours"
     duration = "Concentration, up to 1 hour"
     ritual = False
     magic_school = "Conjuration"
-    classes = ('Warlock', 'Wizard')
+    classes = ("Warlock", "Wizard")
 
 
 class SummonLesserDemons(Spell):
@@ -1348,16 +1418,17 @@ class SummonLesserDemons(Spell):
     twice as many demons. If you cast it using a spell slot of 8th or 9th level, you
     summon three times as many demons.
     """
+
     name = "Summon Lesser Demons"
     level = 3
     casting_time = "1 action"
     casting_range = "60 feet"
-    components = ('V', 'S', 'M')
-    materials = """A vial of blood from a humanoid killed within the past 24 hours"""
+    components = ("V", "S", "M")
+    materials = "A vial of blood from a humanoid killed within the past 24 hours"
     duration = "Concentration, up to 1 hour"
     ritual = False
     magic_school = "Conjuration"
-    classes = ('Warlock', 'Wizard')
+    classes = ("Warlock", "Wizard")
 
 
 class Sunbeam(Spell):
@@ -1377,16 +1448,17 @@ class Sunbeam(Spell):
     bright light in a 30-foot radius and dim light for an additional 30 feet.
     The light is sunlight.
     """
+
     name = "Sunbeam"
     level = 6
     casting_time = "1 action"
     casting_range = "Self (60-foot line)"
-    components = ('V', 'S', 'M')
-    materials = """A magnifying glass"""
+    components = ("V", "S", "M")
+    materials = "A magnifying glass"
     duration = "Concentration, up to 1 minute"
     ritual = False
     magic_school = "Evocation"
-    classes = ('Druid', 'Sorcerer', 'Wizard')
+    classes = ("Druid", "Sorcerer", "Wizard")
 
 
 class Sunburst(Spell):
@@ -1404,16 +1476,17 @@ class Sunburst(Spell):
     This spell
     dispels any darkness in its area that was created by a spell.
     """
+
     name = "Sunburst"
     level = 8
     casting_time = "1 action"
     casting_range = "150 feet"
-    components = ('V', 'S', 'M')
-    materials = """Fire and a piece of sunstone"""
+    components = ("V", "S", "M")
+    materials = "Fire and a piece of sunstone"
     duration = "Instantaneous"
     ritual = False
     magic_school = "Evocation"
-    classes = ('Druid', 'Sorcerer', 'Wizard')
+    classes = ("Druid", "Sorcerer", "Wizard")
 
 
 class SwiftQuiver(Spell):
@@ -1428,16 +1501,17 @@ class SwiftQuiver(Spell):
     created by this spell disintegrate when the spell ends. If the quiver leaves
     your possession, the spell ends.
     """
+
     name = "Swift Quiver"
     level = 5
     casting_time = "1 bonus action"
     casting_range = "Touch"
-    components = ('V', 'S', 'M')
-    materials = """A quiver containing at least one piece of ammunition"""
+    components = ("V", "S", "M")
+    materials = "A quiver containing at least one piece of ammunition"
     duration = "Concentration, up to 1 minute"
     ritual = False
     magic_school = "Transmutation"
-    classes = ('Ranger',)
+    classes = ("Ranger",)
 
 
 class SwordBurst(Spell):
@@ -1449,16 +1523,17 @@ class SwordBurst(Spell):
     **At Higher Levels:** This spell's damage increases by
     1d6 when you reach 5th level (2d6), 11th level (3d6), and 17th level (4d6).
     """
+
     name = "Sword Burst"
     level = 0
     casting_time = "1 action"
     casting_range = "5 feet"
-    components = ('V',)
-    materials = """"""
+    components = ("V",)
+    materials = ""
     duration = "Instantaneous"
     ritual = False
     magic_school = "Conjuration"
-    classes = ('Sorcerer', 'Warlock', 'Wizard')
+    classes = ("Sorcerer", "Warlock", "Wizard")
 
 
 class Symbol(Spell):
@@ -1540,16 +1615,20 @@ class Symbol(Spell):
     Each target must make a Wisdom saving
     throw and becomes stunned for 1 minute on a failed save.
     """
+
     name = "Symbol"
     level = 7
     casting_time = "1 minute"
     casting_range = "Touch"
-    components = ('V', 'S', 'M')
-    materials = """Mercury, phosphorus, and powdered diamond and opal with a total value of at least 1,000 gp, which the spell consumes"""
+    components = ("V", "S", "M")
+    materials = (
+        "Mercury, phosphorus, and powdered diamond and opal with a total value of at"
+        " least 1,000 gp, which the spell consumes"
+    )
     duration = "Until dispelled or triggered"
     ritual = False
     magic_school = "Abjuration"
-    classes = ('Bard', 'Cleric', 'Wizard')
+    classes = ("Bard", "Cleric", "Wizard")
 
 
 class SynapticStatic(Spell):
@@ -1565,15 +1644,14 @@ class SynapticStatic(Spell):
     Intelligence saving throw at the end of each of its turns, ending the effect on
     itself on a success.
     """
+
     name = "Synaptic Static"
     level = 5
     casting_time = "1 action"
     casting_range = "120 feet"
-    components = ('V', 'S')
-    materials = """"""
+    components = ("V", "S")
+    materials = ""
     duration = "Instantaneous"
     ritual = False
     magic_school = "Enchantment"
-    classes = ('Bard', 'Sorcerer', 'Warlock', 'Wizard')
-
-
+    classes = ("Bard", "Sorcerer", "Warlock", "Wizard")

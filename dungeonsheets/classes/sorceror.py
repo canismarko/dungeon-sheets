@@ -15,11 +15,11 @@ class DraconicBloodline(SubClass):
     result of a pact or some other exceptional circumstance.
 
     """
+
     name = "Draconic Bloodline"
-    languages = ('draconic',)
+    languages = ("draconic",)
     features_by_level = defaultdict(list)
-    features_by_level[1] = [features.DragonAncestor,
-                            features.DraconicResilience]
+    features_by_level[1] = [features.DragonAncestor, features.DraconicResilience]
     features_by_level[6] = [features.ElementalAffinity]
     features_by_level[14] = [features.DragonWings]
     features_by_level[18] = [features.DraconicPresence]
@@ -35,6 +35,7 @@ class WildMagic(SubClass):
     chaotic magic churns within you, waiting for any outlet.
 
     """
+
     name = "Wild Magic"
     features_by_level = defaultdict(list)
     features_by_level[1] = [features.WildMagicSurge, features.TidesOfChaos]
@@ -63,6 +64,7 @@ class DivineSoul(SubClass):
     dominated by a few bloodlines and preserved over generations
 
     """
+
     name = "Divine Soul"
     features_by_level = defaultdict(list)
     features_by_level[1] = [features.DivineMagic, features.FavoredByTheGods]
@@ -84,11 +86,14 @@ class ShadowMagic(SubClass):
     Quirks table to create a quirk for your character
 
     """
+
     name = "Shadow Magic"
     features_by_level = defaultdict(list)
-    features_by_level[1] = [features.EyesOfTheDark,
-                            features.SuperiorDarkvision,
-                            features.StrengthOfTheGrave]
+    features_by_level[1] = [
+        features.EyesOfTheDark,
+        features.SuperiorDarkvision,
+        features.StrengthOfTheGrave,
+    ]
     features_by_level[6] = [features.HoundOfIllOmen]
     features_by_level[14] = [features.ShadowWalk]
     features_by_level[18] = [features.UmbralForm]
@@ -108,6 +113,7 @@ class StormSorcery(SubClass):
     and other waterborne threats.
 
     """
+
     name = "Storm Sorcery"
     languages = ("primordial",)
     features_by_level = defaultdict(list)
@@ -118,38 +124,58 @@ class StormSorcery(SubClass):
 
 
 class Sorceror(CharClass):
-    name = 'Sorceror'
+    name = "Sorceror"
     hit_dice_faces = 6
     subclass_select_level = 1
-    saving_throw_proficiencies = ('constitution', 'charisma')
-    primary_abilities = ('charisma',)
-    _proficiencies_text = ('daggers', 'darts', 'slings',
-                           'quarterstaffs', 'light crossbows')
-    weapon_proficiencies = (weapons.Dagger, weapons.Dart,
-                            weapons.Sling, weapons.Quarterstaff,
-                            weapons.LightCrossbow)
+    saving_throw_proficiencies = ("constitution", "charisma")
+    primary_abilities = ("charisma",)
+    _proficiencies_text = (
+        "daggers",
+        "darts",
+        "slings",
+        "quarterstaffs",
+        "light crossbows",
+    )
+    weapon_proficiencies = (
+        weapons.Dagger,
+        weapons.Dart,
+        weapons.Sling,
+        weapons.Quarterstaff,
+        weapons.LightCrossbow,
+    )
     multiclass_weapon_proficiencies = ()
     _multiclass_proficiencies_text = ()
-    class_skill_choices = ('Arcana', 'Deception', 'Insight',
-                           'Intimidation', 'Persuasion', 'Religion')
+    class_skill_choices = (
+        "Arcana",
+        "Deception",
+        "Insight",
+        "Intimidation",
+        "Persuasion",
+        "Religion",
+    )
     features_by_level = defaultdict(list)
     features_by_level[2] = [features.FontOfMagic]
     features_by_level[3] = [features.Metamagic]
     features_by_level[20] = [features.SorcerousRestoration]
-    subclasses_available = (DraconicBloodline, WildMagic, DivineSoul,
-                            ShadowMagic, StormSorcery)
-    spellcasting_ability = 'charisma'
+    subclasses_available = (
+        DraconicBloodline,
+        WildMagic,
+        DivineSoul,
+        ShadowMagic,
+        StormSorcery,
+    )
+    spellcasting_ability = "charisma"
     spell_slots_by_level = {
         # char_lvl: (cantrips, 1st, 2nd, 3rd, ...)
-        1:  (4, 2, 0, 0, 0, 0, 0, 0, 0, 0),
-        2:  (4, 3, 0, 0, 0, 0, 0, 0, 0, 0),
-        3:  (4, 4, 2, 0, 0, 0, 0, 0, 0, 0),
-        4:  (5, 4, 3, 0, 0, 0, 0, 0, 0, 0),
-        5:  (5, 4, 3, 2, 0, 0, 0, 0, 0, 0),
-        6:  (5, 4, 3, 3, 0, 0, 0, 0, 0, 0),
-        7:  (5, 4, 3, 3, 1, 0, 0, 0, 0, 0),
-        8:  (5, 4, 3, 3, 2, 0, 0, 0, 0, 0),
-        9:  (5, 4, 3, 3, 3, 1, 0, 0, 0, 0),
+        1: (4, 2, 0, 0, 0, 0, 0, 0, 0, 0),
+        2: (4, 3, 0, 0, 0, 0, 0, 0, 0, 0),
+        3: (4, 4, 2, 0, 0, 0, 0, 0, 0, 0),
+        4: (5, 4, 3, 0, 0, 0, 0, 0, 0, 0),
+        5: (5, 4, 3, 2, 0, 0, 0, 0, 0, 0),
+        6: (5, 4, 3, 3, 0, 0, 0, 0, 0, 0),
+        7: (5, 4, 3, 3, 1, 0, 0, 0, 0, 0),
+        8: (5, 4, 3, 3, 2, 0, 0, 0, 0, 0),
+        9: (5, 4, 3, 3, 3, 1, 0, 0, 0, 0),
         10: (6, 4, 3, 3, 3, 2, 0, 0, 0, 0),
         11: (6, 4, 3, 3, 3, 2, 1, 0, 0, 0),
         12: (6, 4, 3, 3, 3, 2, 1, 0, 0, 0),

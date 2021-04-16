@@ -13,16 +13,17 @@ class HailOfThorns(Spell):
     spell slot of 2nd level or higher, the damage increases by 1d10 for each slot
     level above 1st (to a maximum of 6d10).
     """
+
     name = "Hail Of Thorns"
     level = 1
     casting_time = "1 bonus action"
     casting_range = "Self"
-    components = ('V',)
-    materials = """"""
+    components = ("V",)
+    materials = ""
     duration = "Concentration, up to 1 minute"
     ritual = False
     magic_school = "Conjuration"
-    classes = ('Ranger',)
+    classes = ("Ranger",)
 
 
 class Hallow(Spell):
@@ -92,16 +93,19 @@ class Hallow(Spell):
     Affected creatures can communicate with any
     other creature in the area, even if they don't share a common language.
     """
+
     name = "Hallow"
     level = 5
     casting_time = "24 hours"
     casting_range = "Touch"
-    components = ('V', 'S', 'M')
-    materials = """Herbs, oils, and incense worth at least 1,000 gp, which the spell consumes"""
+    components = ("V", "S", "M")
+    materials = (
+        """Herbs, oils, and incense worth at least 1,000 gp, which the spell consumes"""
+    )
     duration = "Until dispelled"
     ritual = False
     magic_school = "Evocation"
-    classes = ('Cleric',)
+    classes = ("Cleric",)
 
 
 class HallucinatoryTerrain(Spell):
@@ -120,16 +124,17 @@ class HallucinatoryTerrain(Spell):
     disbelieve it. A creature who discerns the illusion for what it is, sees it as a
     vague image superimposed on the terrain.
     """
+
     name = "Hallucinatory Terrain"
     level = 4
     casting_time = "10 minutes"
     casting_range = "300 feet"
-    components = ('V', 'S', 'M')
-    materials = """A stone, a twig, and a bit of green plant"""
+    components = ("V", "S", "M")
+    materials = "A stone, a twig, and a bit of green plant"
     duration = "24 hours"
     ritual = False
     magic_school = "Illusion"
-    classes = ('Bard', 'Druid', 'Warlock', 'Wizard')
+    classes = ("Bard", "Druid", "Warlock", "Wizard")
 
 
 class Harm(Spell):
@@ -142,16 +147,17 @@ class Harm(Spell):
     damage it took. Any effect that removes a disease allows a creature's hit point
     maximum to return to normal before that time passes.
     """
+
     name = "Harm"
     level = 6
     casting_time = "1 action"
     casting_range = "60 feet"
-    components = ('V', 'S')
-    materials = """"""
+    components = ("V", "S")
+    materials = ""
     duration = "Instantaneous"
     ritual = False
     magic_school = "Necromancy"
-    classes = ('Cleric',)
+    classes = ("Cleric",)
 
 
 class Haste(Spell):
@@ -165,16 +171,17 @@ class Haste(Spell):
     can't move or take actions until after its next turn, as a wave of lethargy
     sweeps over it.
     """
+
     name = "Haste"
     level = 3
     casting_time = "1 action"
     casting_range = "30 feet"
-    components = ('V', 'S', 'M')
-    materials = """A shaving of licorice root"""
+    components = ("V", "S", "M")
+    materials = "A shaving of licorice root"
     duration = "Concentration, up to 1 minute"
     ritual = False
     magic_school = "Transmutation"
-    classes = ('Sorcerer', 'Wizard')
+    classes = ("Sorcerer", "Wizard")
 
 
 class Heal(Spell):
@@ -187,16 +194,17 @@ class Heal(Spell):
     using aspell slot of 7th level or higher, the amount of healing increases by 10
     for each slot level above 6th.
     """
+
     name = "Heal"
     level = 6
     casting_time = "1 action"
     casting_range = "60 feet"
-    components = ('V', 'S')
-    materials = """"""
+    components = ("V", "S")
+    materials = ""
     duration = "Instantaneous"
     ritual = False
     magic_school = "Evocation"
-    classes = ('Cleric', 'Druid')
+    classes = ("Cleric", "Druid")
 
 
 class HealingSpirit(Spell):
@@ -213,16 +221,17 @@ class HealingSpirit(Spell):
     this spell using a spell slot of 3rd level or higher, the healing increases 1d6
     for each slot level above 2nd.
     """
+
     name = "Healing Spirit"
     level = 2
     casting_time = "1 bonus action"
     casting_range = "60 feet"
-    components = ('V', 'S')
-    materials = """"""
+    components = ("V", "S")
+    materials = ""
     duration = "Concentration, up to 1 minute"
     ritual = False
     magic_school = "Conjuration"
-    classes = ('Druid', 'Ranger')
+    classes = ("Druid", "Ranger")
 
 
 class HealingWord(Spell):
@@ -235,16 +244,17 @@ class HealingWord(Spell):
     of 2nd level or higher, the healing increases by 1d4 for each slot level above
     1st.
     """
+
     name = "Healing Word"
     level = 1
     casting_time = "1 bonus action"
     casting_range = "60 feet"
-    components = ('V',)
-    materials = """"""
+    components = ("V",)
+    materials = ""
     duration = "Instantaneous"
     ritual = False
     magic_school = "Evocation"
-    classes = ('Bard', 'Cleric', 'Druid')
+    classes = ("Bard", "Cleric", "Druid")
 
 
 class HeatMetal(Spell):
@@ -264,16 +274,17 @@ class HeatMetal(Spell):
     using a spell slot of 3rd level or higher, the damage increases by 1d8 for each
     slot level above 2nd.
     """
+
     name = "Heat Metal"
     level = 2
     casting_time = "1 action"
     casting_range = "60 feet"
-    components = ('V', 'S', 'M')
-    materials = """A piece of iron and a flame"""
+    components = ("V", "S", "M")
+    materials = "A piece of iron and a flame"
     duration = "Concentration, up to 1 minute"
     ritual = False
     magic_school = "Transmutation"
-    classes = ('Bard', 'Druid')
+    classes = ("Bard", "Druid")
 
 
 class HellishRebuke(Spell):
@@ -289,16 +300,17 @@ class HellishRebuke(Spell):
     of 2nd level or higher, the damage increases by 1d10 for each slot level above
     1st.
     """
+
     name = "Hellish Rebuke"
     level = 1
     casting_time = "Special"
     casting_range = "60 feet"
-    components = ('V', 'S')
-    materials = """"""
+    components = ("V", "S")
+    materials = ""
     duration = "Instantaneous"
     ritual = False
     magic_school = "Evocation"
-    classes = ('Warlock',)
+    classes = ("Warlock",)
 
 
 class HeroesFeast(Spell):
@@ -313,16 +325,19 @@ class HeroesFeast(Spell):
     advantage. Its hit point maximum also increases by 2d10, and it gains the same
     number of hit points. These benefits last for 24 hours.
     """
+
     name = "Heroes Feast"
     level = 6
     casting_time = "10 minutes"
     casting_range = "30 feet"
-    components = ('V', 'S', 'M')
-    materials = """A gem-encrusted bowl worth at least 1,000 gp, which the spell consumes"""
+    components = ("V", "S", "M")
+    materials = (
+        """A gem-encrusted bowl worth at least 1,000 gp, which the spell consumes"""
+    )
     duration = "Instantaneous"
     ritual = False
     magic_school = "Conjuration"
-    classes = ('Cleric', 'Druid')
+    classes = ("Cleric", "Druid")
 
 
 class Heroism(Spell):
@@ -336,16 +351,17 @@ class Heroism(Spell):
     **At Higher Levels:** When you cast this spell using a spell slot of 2nd level or
     higher, you can target one additional creature for each slot level above 1st.
     """
+
     name = "Heroism"
     level = 1
     casting_time = "1 action"
     casting_range = "Touch"
-    components = ('V', 'S')
-    materials = """"""
+    components = ("V", "S")
+    materials = ""
     duration = "Concentration, up to 1 minute"
     ritual = False
     magic_school = "Enchantment"
-    classes = ('Bard', 'Paladin')
+    classes = ("Bard", "Paladin")
 
 
 class Hex(Spell):
@@ -367,16 +383,17 @@ class Hex(Spell):
     When you use a spell slot of 5th level or higher, you
     can maintain your concentration on the spell for up to 24 hours.
     """
+
     name = "Hex"
     level = 1
     casting_time = "1 bonus action"
     casting_range = "90 feet"
-    components = ('V', 'S', 'M')
-    materials = """The petrified eye of a newt"""
+    components = ("V", "S", "M")
+    materials = "The petrified eye of a newt"
     duration = "Concentration, up to 1 hour"
     ritual = False
     magic_school = "Enchantment"
-    classes = ('Warlock',)
+    classes = ("Warlock",)
 
 
 class HoldMonster(Spell):
@@ -390,16 +407,17 @@ class HoldMonster(Spell):
     target one additional creature for each slot level above 5th. The creatures must
     be within 30 feet of each other when you target them.
     """
+
     name = "Hold Monster"
     level = 5
     casting_time = "1 action"
     casting_range = "90 feet"
-    components = ('V', 'S', 'M')
-    materials = """A small, straight piece of iron"""
+    components = ("V", "S", "M")
+    materials = "A small, straight piece of iron"
     duration = "Concentration, up to 1 minute"
     ritual = False
     magic_school = "Enchantment"
-    classes = ('Bard', 'Sorcerer', 'Warlock', 'Wizard')
+    classes = ("Bard", "Sorcerer", "Warlock", "Wizard")
 
 
 class HoldPerson(Spell):
@@ -413,16 +431,17 @@ class HoldPerson(Spell):
     slot level above 2nd. The humanoids must be within 30 feet of each other when
     you target them.
     """
+
     name = "Hold Person"
     level = 2
     casting_time = "1 action"
     casting_range = "60 feet"
-    components = ('V', 'S', 'M')
-    materials = """A small, straight piece of iron"""
+    components = ("V", "S", "M")
+    materials = "A small, straight piece of iron"
     duration = "Concentration, up to 1 minute"
     ritual = False
     magic_school = "Enchantment"
-    classes = ('Bard', 'Cleric', 'Druid', 'Sorcerer', 'Warlock', 'Wizard')
+    classes = ("Bard", "Cleric", "Druid", "Sorcerer", "Warlock", "Wizard")
 
 
 class HolyAura(Spell):
@@ -435,16 +454,21 @@ class HolyAura(Spell):
     with a melee attack, the aura flashes with brilliant light. The attacker must
     succeed on a Constitution saving throw or be blinded until the spell ends.
     """
+
     name = "Holy Aura"
     level = 8
     casting_time = "1 action"
     casting_range = "Self"
-    components = ('V', 'S', 'M')
-    materials = """A tiny reliquary worth at least 1,000 gp containing a sacred relic, such as a scrap of cloth from a saint's robe or a piece of parchment from a religious text"""
+    components = ("V", "S", "M")
+    materials = (
+        "A tiny reliquary worth at least 1,000 gp containing a sacred relic, such as a"
+        " scrap of cloth from a saint's robe or a piece of parchment from a religious"
+        " text"
+    )
     duration = "Concentration, up to 1 minute"
     ritual = False
     magic_school = "Abjuration"
-    classes = ('Cleric',)
+    classes = ("Cleric",)
 
 
 class HolyWeapon(Spell):
@@ -460,16 +484,17 @@ class HolyWeapon(Spell):
     end of each Ofits turns, a blinded creature can make a Constitution saving
     throw, ending the effect on itselfon a success.
     """
+
     name = "Holy Weapon"
     level = 5
     casting_time = "1 bonus action"
     casting_range = "Touch"
-    components = ('V', 'S')
-    materials = """"""
+    components = ("V", "S")
+    materials = ""
     duration = "Concentration, up to 1 hour"
     ritual = False
     magic_school = "Evocation"
-    classes = ('Cleric', 'Paladin')
+    classes = ("Cleric", "Paladin")
 
 
 class HungerOfHadar(Spell):
@@ -486,16 +511,17 @@ class HungerOfHadar(Spell):
     succeed on a Dexterity saving throw or take 2d6 acid damage as milky,
     otherwordly tentacles rub against it.
     """
+
     name = "Hunger Of Hadar"
     level = 3
     casting_time = "1 action"
     casting_range = "150 feet"
-    components = ('V', 'S', 'M')
-    materials = """A pickled octopus tentacle"""
+    components = ("V", "S", "M")
+    materials = "A pickled octopus tentacle"
     duration = "Concentration, up to 1 minute"
     ritual = False
     magic_school = "Conjuration"
-    classes = ('Warlock',)
+    classes = ("Warlock",)
 
 
 class HuntersMark(Spell):
@@ -514,16 +540,17 @@ class HuntersMark(Spell):
     level or higher, you can maintain your concentration on the spell for up to 24
     hours.
     """
+
     name = "Hunters Mark"
     level = 1
     casting_time = "1 bonus action"
     casting_range = "90 feet"
-    components = ('V',)
-    materials = """"""
+    components = ("V",)
+    materials = ""
     duration = "Concentration, up to 1 hour"
     ritual = False
     magic_school = "Divination"
-    classes = ('Ranger',)
+    classes = ("Ranger",)
 
 
 class HypnoticPattern(Spell):
@@ -538,15 +565,17 @@ class HypnoticPattern(Spell):
     for an affected creature if it takes any damage or if someone else uses an
     action to shake the creature out of its stupor.
     """
+
     name = "Hypnotic Pattern"
     level = 3
     casting_time = "1 action"
     casting_range = "120 feet"
-    components = ('S', 'M')
-    materials = """A glowing stick of incense or a crystal vial filled with phosphorescent material"""
+    components = ("S", "M")
+    materials = (
+        "A glowing stick of incense or a crystal vial filled with phosphorescent"
+        " material"
+    )
     duration = "Concentration, up to 1 minute"
     ritual = False
     magic_school = "Illusion"
-    classes = ('Bard', 'Sorcerer', 'Warlock', 'Wizard')
-
-
+    classes = ("Bard", "Sorcerer", "Warlock", "Wizard")

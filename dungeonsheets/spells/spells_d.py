@@ -13,16 +13,17 @@ class DancingLights(Spell):
     to a new spot within range. A light must be within 20 feet of another light
     created by this spell, and a light winks out if it exceeds the spell's range.
     """
+
     name = "Dancing Lights"
     level = 0
     casting_time = "1 action"
     casting_range = "120 feet"
-    components = ('V', 'S', 'M')
-    materials = """A bit of phosphorus or wychwood, or a glowworm"""
+    components = ("V", "S", "M")
+    materials = "A bit of phosphorus or wychwood, or a glowworm"
     duration = "Concentration, up to 1 minute"
     ritual = False
     magic_school = "Evocation"
-    classes = ('Bard', 'Sorcerer', 'Wizard')
+    classes = ("Bard", "Sorcerer", "Wizard")
 
 
 class DanseMacabre(Spell):
@@ -46,16 +47,17 @@ class DanseMacabre(Spell):
     this spell using a spell slot‘ of 6th level or higher, you animate up to two
     additional corpses for each slot level above 5th.
     """
+
     name = "Danse Macabre"
     level = 5
     casting_time = "1 action"
     casting_range = "60 feet"
-    components = ('V', 'S')
-    materials = """"""
+    components = ("V", "S")
+    materials = ""
     duration = "Concentration, up to 1 hour"
     ritual = False
     magic_school = "Necromancy"
-    classes = ('Warlock', 'Wizard')
+    classes = ("Warlock", "Wizard")
 
 
 class Darkness(Spell):
@@ -63,7 +65,7 @@ class Darkness(Spell):
     radius sphere for the duration.
     The darkness spreads around corners. A creature
     with darkvision can't see through this darkness, and nonmagical light can't
-    illuminate it. 
+    illuminate it.
 
     If the point you choose is on an object you are holding or one
     that isn't being worn or carried, the darkness emanates from the object and
@@ -74,16 +76,17 @@ class Darkness(Spell):
     area overlaps with an area of light created by a spell of 2nd level or lower,
     the spell that created the light is dispelled.
     """
+
     name = "Darkness"
     level = 2
     casting_time = "1 action"
     casting_range = "60 feet"
-    components = ('V', 'M')
-    materials = """Bat fur and a drop of pitch or piece of coal"""
+    components = ("V", "M")
+    materials = "Bat fur and a drop of pitch or piece of coal"
     duration = "Concentration, up to 10 minutes"
     ritual = False
     magic_school = "Evocation"
-    classes = ('Sorcerer', 'Warlock', 'Wizard')
+    classes = ("Sorcerer", "Warlock", "Wizard")
 
 
 class Darkvision(Spell):
@@ -91,16 +94,17 @@ class Darkvision(Spell):
     For the
     duration, that creature has darkvision out to a range of 60 feet.
     """
+
     name = "Darkvision"
     level = 2
     casting_time = "1 action"
     casting_range = "Touch"
-    components = ('V', 'S', 'M')
-    materials = """Either a pinch of dried carrot or an agate"""
+    components = ("V", "S", "M")
+    materials = "Either a pinch of dried carrot or an agate"
     duration = "8 hours"
     ritual = False
     magic_school = "Transmutation"
-    classes = ('Sorcerer', 'Wizard', 'Druid', 'Ranger')
+    classes = ("Sorcerer", "Wizard", "Druid", "Ranger")
 
 
 class Dawn(Spell):
@@ -113,16 +117,17 @@ class Dawn(Spell):
     feet of the cylinder, you can move it up to 60 feet as a bonus action on your
     turn.
     """
+
     name = "Dawn"
     level = 5
     casting_time = "1 action"
     casting_range = "60 feet"
-    components = ('V', 'S', 'M')
-    materials = """A sunburst pendant worth at least 100 gp"""
+    components = ("V", "S", "M")
+    materials = "A sunburst pendant worth at least 100 gp"
     duration = "Concentration, up to 1 minute"
     ritual = False
     magic_school = "Evocation"
-    classes = ('Cleric', 'Wizard')
+    classes = ("Cleric", "Wizard")
 
 
 class Daylight(Spell):
@@ -140,16 +145,17 @@ class Daylight(Spell):
     of darkness created by a spell of 3rd level or lower, the spell that created the
     darkness is dispelled.
     """
+
     name = "Daylight"
     level = 3
     casting_time = "1 action"
     casting_range = "60 feet"
-    components = ('V', 'S')
-    materials = """"""
+    components = ("V", "S")
+    materials = ""
     duration = "1 hour"
     ritual = False
     magic_school = "Evocation"
-    classes = ('Cleric', 'Druid', 'Paladin', 'Ranger', 'Sorcerer')
+    classes = ("Cleric", "Druid", "Paladin", "Ranger", "Sorcerer")
 
 
 class DeathWard(Spell):
@@ -161,16 +167,17 @@ class DeathWard(Spell):
     instantaneously without dealing damage, that effect is instead negated against
     the target, and the spells ends.
     """
+
     name = "Death Ward"
     level = 4
     casting_time = "1 action"
     casting_range = "Touch"
-    components = ('V', 'S')
-    materials = """"""
+    components = ("V", "S")
+    materials = ""
     duration = "8 hours"
     ritual = False
     magic_school = "Abjuration"
-    classes = ('Cleric', 'Paladin')
+    classes = ("Cleric", "Paladin")
 
 
 class DelayedBlastFireball(Spell):
@@ -200,16 +207,17 @@ class DelayedBlastFireball(Spell):
     Higher Levels: When you cast this spell using a spell slot of 8th level or
     higher, the base damage increases by 1d6 for each slot level above 7th.
     """
+
     name = "Delayed Blast Fireball"
     level = 7
     casting_time = "1 action"
     casting_range = "150 feet"
-    components = ('V', 'S', 'M')
-    materials = """A tiny ball of bat guano and sulfur"""
+    components = ("V", "S", "M")
+    materials = "A tiny ball of bat guano and sulfur"
     duration = "Concentration, up to 1 minute"
     ritual = False
     magic_school = "Evocation"
-    classes = ('Sorcerer', 'Wizard')
+    classes = ("Sorcerer", "Wizard")
 
 
 class Demiplane(Spell):
@@ -228,16 +236,17 @@ class Demiplane(Spell):
     spell by another creature, you can have the shadowy door connect to its
     demiplane instead.
     """
+
     name = "Demiplane"
     level = 8
     casting_time = "1 action"
     casting_range = "60 feet"
-    components = ('S',)
-    materials = """"""
+    components = ("S",)
+    materials = ""
     duration = "1 hour"
     ritual = False
     magic_school = "Conjuration"
-    classes = ('Warlock', 'Wizard')
+    classes = ("Warlock", "Wizard")
 
 
 class DestructiveWave(Spell):
@@ -247,16 +256,17 @@ class DestructiveWave(Spell):
     necrotic damage (your choice), and be knocked prone. A creature that succeeds on
     its saving throw takes half as much damage and isn't knocked prone.
     """
+
     name = "Destructive Wave"
     level = 5
     casting_time = "1 action"
     casting_range = "Self (30-foot radius)"
-    components = ('V',)
-    materials = """"""
+    components = ("V",)
+    materials = ""
     duration = "Instantaneous"
     ritual = False
     magic_school = "Evocation"
-    classes = ('Paladin',)
+    classes = ("Paladin",)
 
 
 class DetectEvilAndGood(Spell):
@@ -269,16 +279,17 @@ class DetectEvilAndGood(Spell):
     most barriers, but it is blocked by 1 foot of stone, 1 inch of common metal, a
     thin sheet of lead, or 3 feet of wood or dirt.
     """
+
     name = "Detect Evil And Good"
     level = 1
     casting_time = "1 action"
     casting_range = "Self"
-    components = ('V', 'S')
-    materials = """"""
+    components = ("V", "S")
+    materials = ""
     duration = "Concentration, up to 10 minutes"
     ritual = False
     magic_school = "Divination"
-    classes = ('Cleric', 'Paladin')
+    classes = ("Cleric", "Paladin")
 
 
 class DetectMagic(Spell):
@@ -291,16 +302,17 @@ class DetectMagic(Spell):
     by 1 foot of stone, 1 inch of common metal, a thin sheet of lead, or 3 feet of
     wood or dirt.
     """
+
     name = "Detect Magic"
     level = 1
     casting_time = "1 action"
     casting_range = "Self"
-    components = ('V', 'S')
-    materials = """"""
+    components = ("V", "S")
+    materials = ""
     duration = "Concentration, up to 10 minutes"
     ritual = True
     magic_school = "Divination"
-    classes = ('Bard', 'Cleric', 'Druid', 'Paladin', 'Ranger', 'Sorcerer', 'Wizard')
+    classes = ("Bard", "Cleric", "Druid", "Paladin", "Ranger", "Sorcerer", "Wizard")
 
 
 class DetectPoisonAndDisease(Spell):
@@ -312,16 +324,17 @@ class DetectPoisonAndDisease(Spell):
     most barriers, but is blocked by 1 foot of stone, 1 inch of common metal, a thin
     sheet of lead, or 3 feet of wood or dirt.
     """
+
     name = "Detect Poison And Disease"
     level = 1
     casting_time = "1 action"
     casting_range = "Self"
-    components = ('V', 'S', 'M')
-    materials = """A yew leaf"""
+    components = ("V", "S", "M")
+    materials = "A yew leaf"
     duration = "Concentration, up to 10 minutes"
     ritual = False
     magic_school = "Divination"
-    classes = ('Cleric', 'Druid', 'Paladin', 'Ranger')
+    classes = ("Cleric", "Druid", "Paladin", "Ranger")
 
 
 class DetectThoughts(Spell):
@@ -360,16 +373,17 @@ class DetectThoughts(Spell):
     you can read its thoughts for the rest of the duration as described above, even
     if you can't see it, but it must still be within range.
     """
+
     name = "Detect Thoughts"
     level = 2
     casting_time = "1 action"
     casting_range = "Self"
-    components = ('V', 'S', 'M')
-    materials = """A copper piece"""
+    components = ("V", "S", "M")
+    materials = "A copper piece"
     duration = "Concentration, up to 1 minute"
     ritual = False
     magic_school = "Divination"
-    classes = ('Bard', 'Sorcerer', 'Wizard')
+    classes = ("Bard", "Sorcerer", "Wizard")
 
 
 class DimensionDoor(Spell):
@@ -389,16 +403,17 @@ class DimensionDoor(Spell):
     traveling with you each take 4d6 force damage, and the spell fails to teleport
     you.
     """
+
     name = "Dimension Door"
     level = 4
     casting_time = "1 action"
     casting_range = "500 feet"
-    components = ('V',)
-    materials = """"""
+    components = ("V",)
+    materials = ""
     duration = "Instantaneous"
     ritual = False
     magic_school = "Conjuration"
-    classes = ('Bard', 'Sorcerer', 'Warlock', 'Wizard')
+    classes = ("Bard", "Sorcerer", "Warlock", "Wizard")
 
 
 class DisguiseSelf(Spell):
@@ -419,16 +434,17 @@ class DisguiseSelf(Spell):
     disguised, a creature can use its action to inspect your appearance and must
     succeed on an Intelligence (Investigation) check against your spell save DC.
     """
+
     name = "Disguise Self"
     level = 1
     casting_time = "1 action"
     casting_range = "Self"
-    components = ('V', 'S')
-    materials = """"""
+    components = ("V", "S")
+    materials = ""
     duration = "1 hour"
     ritual = False
     magic_school = "Illusion"
-    classes = ('Bard', 'Sorcerer', 'Wizard')
+    classes = ("Bard", "Sorcerer", "Wizard")
 
 
 class Disintegrate(Spell):
@@ -456,16 +472,17 @@ class Disintegrate(Spell):
     spell using a spell slot of 7th level or higher, the damage increases by 3d6 for
     each slot level above 6th.
     """
+
     name = "Disintegrate"
     level = 6
     casting_time = "1 action"
     casting_range = "60 feet"
-    components = ('V', 'S', 'M')
-    materials = """A lodestone and a pinch of dust"""
+    components = ("V", "S", "M")
+    materials = "A lodestone and a pinch of dust"
     duration = "Instantaneous"
     ritual = False
     magic_school = "Transmutation"
-    classes = ('Sorcerer', 'Wizard')
+    classes = ("Sorcerer", "Wizard")
 
 
 class DispelEvilAndGood(Spell):
@@ -477,13 +494,13 @@ class DispelEvilAndGood(Spell):
     You can end the spell early by using either of the following special
     functions.
 
-    Break  Enchantment 
+    Break  Enchantment
     As your action, you touch a creature you can
     reach that is charmed, frightened, or possessed by a celestial, an elemental, a
     fey, a fiend, or an undead. The creature you touch is no longer charmed,
     frightened, or possessed by such creatures.
 
-    Dismissal 
+    Dismissal
     As your action, make a
     melee spell attack against a celestial, an elemental, a fey, a fiend, or an
     undead you can reach. On a hit, you attempt to drive the creature back to its
@@ -491,16 +508,17 @@ class DispelEvilAndGood(Spell):
     to its home plane (if it isn't there already). If they aren't on their home
     plane, undead are sent to the Shadowfell, and fey are sent to the Feywild.
     """
+
     name = "Dispel Evil And Good"
     level = 5
     casting_time = "1 action"
     casting_range = "Self"
-    components = ('V', 'S', 'M')
-    materials = """Holy water or powdered silver and iron"""
+    components = ("V", "S", "M")
+    materials = "Holy water or powdered silver and iron"
     duration = "Concentration, up to 1 minute"
     ritual = False
     magic_school = "Abjuration"
-    classes = ('Cleric', 'Paladin')
+    classes = ("Cleric", "Paladin")
 
 
 class DispelMagic(Spell):
@@ -514,16 +532,17 @@ class DispelMagic(Spell):
     automatically end the effects of a spell on the target if the spell's level is
     equal to or less than the level of the spell slot you used.
     """
+
     name = "Dispel Magic"
     level = 3
     casting_time = "1 action"
     casting_range = "120 feet"
-    components = ('V', 'S')
-    materials = """"""
+    components = ("V", "S")
+    materials = ""
     duration = "Instantaneous"
     ritual = False
     magic_school = "Abjuration"
-    classes = ('Bard', 'Cleric', 'Druid', 'Paladin', 'Sorcerer', 'Warlock', 'Wizard')
+    classes = ("Bard", "Cleric", "Druid", "Paladin", "Sorcerer", "Warlock", "Wizard")
 
 
 class DissonantWhispers(Spell):
@@ -540,16 +559,17 @@ class DissonantWhispers(Spell):
     Higher Levels: When you cast this spell using a spell slot of 2nd level or
     higher, the damage increases by 1d6 for each slot level above 1st
     """
+
     name = "Dissonant Whispers"
     level = 1
     casting_time = "1 action"
     casting_range = "60 feet"
-    components = ('V',)
-    materials = """"""
+    components = ("V",)
+    materials = ""
     duration = "Instantaneous"
     ritual = False
     magic_school = "Enchantment"
-    classes = ('Bard',)
+    classes = ("Bard",)
 
 
 class Divination(Spell):
@@ -567,65 +587,69 @@ class Divination(Spell):
     percent chance for each casting after the first that you get a random reading.
     The DM makes this roll in secret.
     """
+
     name = "Divination"
     level = 4
     casting_time = "1 action"
     casting_range = "Self"
-    components = ('V', 'S', 'M')
-    materials = """Incense and a sacrificial offering appropriate to your religion, together worth at least 25 gp, which the spell consumes"""
+    components = ("V", "S", "M")
+    materials = (
+        "Incense and a sacrificial offering appropriate to your religion, together"
+        " worth at least 25 gp, which the spell consumes"
+    )
     duration = "Instantaneous"
     ritual = True
     magic_school = "Divination"
-    classes = ('Cleric',)
+    classes = ("Cleric",)
 
 
 class DivineFavor(Spell):
     """Your prayer empowers you with divine radiance. Until the spell ends, your weapon
     attacks deal and extra 1d4 radiant damage on a hit.
     """
+
     name = "Divine Favor"
     level = 1
     casting_time = "1 bonus action"
     casting_range = "Self"
-    components = ('V', 'S')
-    materials = """"""
+    components = ("V", "S")
+    materials = ""
     duration = "Concentration, up to 1 minute"
     ritual = False
     magic_school = "Evocation"
-    classes = ('Paladin',)
+    classes = ("Paladin",)
 
 
 class DivineWord(Spell):
-    """You utter a divine word, imbued with the power that shaped the world at the dawn
-    of creation.
-    Choose any number of creatures you can see within range. Each
-    creature that can hear you must make a Charisma saving throw. On a failed save,
-    a creature suffers an effect based on its current hit points:
+    """You utter a divine word, imbued with the power that shaped the
+    world at the dawn of creation.  Choose any number of creatures you
+    can see within range. Each creature that can hear you must make a
+    Charisma saving throw. On a failed save, a creature suffers an
+    effect based on its current hit points:
 
-     -  50 hit
-    points or fewer: deafened for 1 minute
-     -  40 hit points or fewer: deafened and
-    blinded for 10 minutes
-     -  30 hit points or fewer: blinded, deafened, and
-    stunned for 1 hour
-     -  20 hit points or fewer: killed instantly
+    - 50 hit points or fewer: deafened for 1 minute
+    - 40 hit points or fewer: deafened and blinded for 10 minutes
+    - 30 hit points or fewer: blinded, deafened, and stunned for 1
+      hour
+    - 20 hit points or fewer: killed instantly
 
-    Regardless of
-    its current hit points, a celestial, an elemental, a fey, or a fiend that fails
-    its save is forced back to its plane of origin (if it isn't there already) and
-    can't return to your current plane for 24 hours by any means short of a wish
-    spell.
+    Regardless of its current hit points, a celestial, an elemental, a
+    fey, or a fiend that fails its save is forced back to its plane of
+    origin (if it isn't there already) and can't return to your
+    current plane for 24 hours by any means short of a wish spell.
+
     """
+
     name = "Divine Word"
     level = 7
     casting_time = "1 bonus action"
     casting_range = "30 feet"
-    components = ('V',)
-    materials = """"""
+    components = ("V",)
+    materials = ""
     duration = "Instantaneous"
     ritual = False
     magic_school = "Evocation"
-    classes = ('Cleric',)
+    classes = ("Cleric",)
 
 
 class DominateBeast(Spell):
@@ -658,16 +682,17 @@ class DominateBeast(Spell):
     a spell slot of 7th level or higher, the duration is concentration, up to
     8 hours
     """
+
     name = "Dominate Beast"
     level = 4
     casting_time = "1 action"
     casting_range = "60 feet"
-    components = ('V', 'S')
-    materials = """"""
+    components = ("V", "S")
+    materials = ""
     duration = "Concentration, up to 1 minute"
     ritual = False
     magic_school = "Enchantment"
-    classes = ('Druid', 'Sorcerer')
+    classes = ("Druid", "Sorcerer")
 
 
 class DominateMonster(Spell):
@@ -699,16 +724,17 @@ class DominateMonster(Spell):
     **At Higher Levels:** When you cast this spell with
     a 9th-level spell slot, the duration is concentration, up to 8 hours.
     """
+
     name = "Dominate Monster"
     level = 8
     casting_time = "1 action"
     casting_range = "60 feet"
-    components = ('V', 'S')
-    materials = """"""
+    components = ("V", "S")
+    materials = ""
     duration = "Concentration, up to 1 hour"
     ritual = False
     magic_school = "Enchantment"
-    classes = ('Bard', 'Sorcerer', 'Warlock', 'Wizard')
+    classes = ("Bard", "Sorcerer", "Warlock", "Wizard")
 
 
 class DominatePerson(Spell):
@@ -741,16 +767,17 @@ class DominatePerson(Spell):
     a spell slot of 8th level or higher, the duration is concentration, up to
     8 hours.
     """
+
     name = "Dominate Person"
     level = 5
     casting_time = "1 action"
     casting_range = "60 feet"
-    components = ('V', 'S')
-    materials = """"""
+    components = ("V", "S")
+    materials = ""
     duration = "Concentration, up to 1 minute"
     ritual = False
     magic_school = "Enchantment"
-    classes = ('Bard', 'Sorcerer', 'Wizard')
+    classes = ("Bard", "Sorcerer", "Wizard")
 
 
 class DragonsBreath(Spell):
@@ -765,16 +792,17 @@ class DragonsBreath(Spell):
     this spell using a spell slot of 3rd level or higher, the damage increases by
     1d6 for each slot level above 2nd.
     """
+
     name = "Dragons Breath"
     level = 2
     casting_time = "1 bonus action"
     casting_range = "Touch"
-    components = ('V', 'S', 'M')
-    materials = """A hot pepper"""
+    components = ("V", "S", "M")
+    materials = "A hot pepper"
     duration = "Concentration, up to 1 minute"
     ritual = False
     magic_school = "Transmutation"
-    classes = ('Sorcerer', 'Wizard')
+    classes = ("Sorcerer", "Wizard")
 
 
 class DrawmijsInstantSummons(Spell):
@@ -795,16 +823,17 @@ class DrawmijsInstantSummons(Spell):
     Dispel magic or a similar
     effect successfully applied to the sapphire ends this spell's effect.
     """
+
     name = "Drawmijs Instant Summons"
     level = 6
     casting_time = "1 minute"
     casting_range = "Touch"
-    components = ('V', 'S', 'M')
-    materials = """A sapphire worth 1,000 gp"""
+    components = ("V", "S", "M")
+    materials = "A sapphire worth 1,000 gp"
     duration = "Until dispelled"
     ritual = True
     magic_school = "Conjuration"
-    classes = ('Wizard',)
+    classes = ("Wizard",)
 
 
 class Dream(Spell):
@@ -840,17 +869,18 @@ class Dream(Spell):
     or similar portion of the target's body, the target makes its saving
     throw with disadvantage.
     """
+
     name = "Dream"
     level = 5
     casting_time = "1 minute"
     casting_range = "Special"
-    components = ('V', 'S', 'M')
+    components = ("V", "S", "M")
     materials = """A handful of sand, a dab of ink, and a writing quill plucked from a
 sleeping bird"""
     duration = "8 hours"
     ritual = False
     magic_school = "Illusion"
-    classes = ('Bard', 'Druid', 'Warlock', 'Wizard')
+    classes = ("Bard", "Druid", "Warlock", "Wizard")
 
 
 class DruidGrove(Spell):
@@ -897,22 +927,26 @@ class DruidGrove(Spell):
     To a creature immune to this effect, the winds are a
     fragrant, gentle breeze, and the area of spike growth is harmless.
     """
+
     name = "Druid Grove"
     level = 6
     casting_time = "10 minutes"
     casting_range = "Touch"
-    components = ('V', 'S', 'M')
-    materials = """Mistletoe, which the spell consumes, that was harvested with a golden sickle under the light of a full moon"""
+    components = ("V", "S", "M")
+    materials = (
+        "Mistletoe, which the spell consumes, that was harvested with a golden sickle"
+        " under the light of a full moon"
+    )
     duration = "24 hours"
     ritual = False
     magic_school = "Abjuration"
-    classes = ('Druid',)
+    classes = ("Druid",)
 
 
 class Druidcraft(Spell):
     """Whispering to the spirits of nature, you create one of the following effects
     within range:
-    
+
     - You create a tiny, harmless sensory effect that predicts what
       the weather will be at your location for the next 24 hours. The
       effect might manifest as a golden orb for clear skies, a cloud
@@ -922,21 +956,22 @@ class Druidcraft(Spell):
       bud bloom.
     - You create an instantaneous, harmless sensory effect, such as
       falling leaves, a puff of wind, the sound of a small animal, or
-      the faint odor of skunk. The effect  must fit in a 5-foot cube.
+      the faint odor of skunk. The effect must fit in a 5-foot cube.
     - You instantly light or snuff out a candle, a torch, or a small
       campfire.
-    
+
     """
+
     name = "Druidcraft"
     level = 0
     casting_time = "1 action"
     casting_range = "30 feet"
-    components = ('V', 'S')
-    materials = """"""
+    components = ("V", "S")
+    materials = ""
     duration = "Instantaneous"
     ritual = False
     magic_school = "Transmutation"
-    classes = ('Druid',)
+    classes = ("Druid",)
 
 
 class DustDevil(Spell):
@@ -957,15 +992,14 @@ class DustDevil(Spell):
     Higher Levels. When you cast this spell using a spell slot of 3rd level or
     higher, the damage increases by 1d8 for each slot level above 2nd.
     """
+
     name = "Dust Devil"
     level = 2
     casting_time = "1 action"
     casting_range = "60 feet"
-    components = ('V', 'S', 'M')
-    materials = """"""
+    components = ("V", "S", "M")
+    materials = ""
     duration = "Instantaneous"
     ritual = False
     magic_school = "Conjuration"
-    classes = ('Druid', 'Sorcerer', 'Wizard')
-
-
+    classes = ("Druid", "Sorcerer", "Wizard")

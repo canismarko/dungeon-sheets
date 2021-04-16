@@ -12,6 +12,7 @@ class BerserkerPath(SubClass):
     battle, heedless of your own health or well-being.
 
     """
+
     name = "Path of the Berserker"
     features_by_level = defaultdict(list)
     features_by_level[3] = [features.Frenzy]
@@ -31,6 +32,7 @@ class TotemWarriorPath(SubClass):
     totem animal spirit, though exceptions exist.
 
     """
+
     name = "Path of the Totem Warrior"
     features_by_level = defaultdict(list)
     features_by_level[3] = [features.SpiritSeeker, features.TotemSpirit]
@@ -48,6 +50,7 @@ class BattleragerPath(SubClass):
     themselves over to the fury of battle.
 
     """
+
     name = "Path of the Battlerager"
     features_by_level = defaultdict(list)
     features_by_level[3] = [features.BattleragerArmor]
@@ -72,6 +75,7 @@ class AncestralGuardianPath(SubClass):
     rivals.
 
     """
+
     name = "Path of the Ancestral Guardian"
     features_by_level = defaultdict(list)
     features_by_level[3] = [features.AncestralProtectors]
@@ -93,6 +97,7 @@ class StormHeraldPath(SubClass):
     world's end, or deep in the hottest deserts.
 
     """
+
     name = "Path of the Storm Herald"
     features_by_level = defaultdict(list)
     features_by_level[3] = [features.StormAura]
@@ -113,6 +118,7 @@ class ZealotPath(SubClass):
     but few are good
 
     """
+
     name = "Path of the Zealot"
     features_by_level = defaultdict(list)
     features_by_level[3] = [features.DivineFury, features.WarriorOfTheGods]
@@ -122,26 +128,41 @@ class ZealotPath(SubClass):
 
 
 class Barbarian(CharClass):
-    name = 'Barbarian'
+    name = "Barbarian"
     hit_dice_faces = 12
     subclass_select_level = 3
-    saving_throw_proficiencies = ('strength', 'constitution')
-    primary_abilities = ('strength',)
+    saving_throw_proficiencies = ("strength", "constitution")
+    primary_abilities = ("strength",)
     weapon_proficiencies = (weapons.SimpleWeapon, weapons.MartialWeapon)
-    _proficiencies_text = ('light armor', 'medium armor', 'shields',
-                           'simple weapons', 'martial weapons')
+    _proficiencies_text = (
+        "light armor",
+        "medium armor",
+        "shields",
+        "simple weapons",
+        "martial weapons",
+    )
     multiclass_weapon_proficiencies = weapon_proficiencies
-    _multiclass_proficiencies_text = ('shields', 'simple weapons',
-                                      'martial weapons')
-    class_skill_choices = ('Animal Handling', 'Athletics',
-                           'Intimidation', 'Nature', 'Perception', 'Survival')
-    subclasses_available = (BerserkerPath, TotemWarriorPath, BattleragerPath,
-                            AncestralGuardianPath, StormHeraldPath, ZealotPath)
+    _multiclass_proficiencies_text = ("shields", "simple weapons", "martial weapons")
+    class_skill_choices = (
+        "Animal Handling",
+        "Athletics",
+        "Intimidation",
+        "Nature",
+        "Perception",
+        "Survival",
+    )
+    subclasses_available = (
+        BerserkerPath,
+        TotemWarriorPath,
+        BattleragerPath,
+        AncestralGuardianPath,
+        StormHeraldPath,
+        ZealotPath,
+    )
     features_by_level = defaultdict(list)
     features_by_level[1] = [features.Rage, features.UnarmoredDefenseBarbarian]
     features_by_level[2] = [features.RecklessAttack, features.DangerSense]
-    features_by_level[5] = [features.ExtraAttackBarbarian,
-                            features.FastMovement]
+    features_by_level[5] = [features.ExtraAttackBarbarian, features.FastMovement]
     features_by_level[7] = [features.FeralInstinct]
     features_by_level[9] = [features.BrutalCritical]
     features_by_level[11] = [features.RelentlessRage]

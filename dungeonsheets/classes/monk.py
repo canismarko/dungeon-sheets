@@ -1,4 +1,4 @@
-__all__ = ('Monk')
+__all__ = "Monk"
 
 from collections import defaultdict
 
@@ -14,6 +14,7 @@ class OpenHandWay(SubClass):
     advanced meditation that can protect them from harm.
 
     """
+
     name = "Way of the Open Hand"
     features_by_level = defaultdict(list)
     features_by_level[3] = [features.OpenHandTechnique]
@@ -33,6 +34,7 @@ class ShadowWay(SubClass):
     the unquestioning obedience of their students
 
     """
+
     name = "Way of Shadow"
     features_by_level = defaultdict(list)
     features_by_level[3] = [features.ShadowArts]
@@ -53,11 +55,14 @@ class FourElementsWay(SubClass):
     phoenixes, fish, plants, mountains, and cresting waves.
 
     """
+
     name = "Way of the Four Elements"
-    spellcasting_ability = 'wisdom'
+    spellcasting_ability = "wisdom"
     features_by_level = defaultdict(list)
-    features_by_level[3] = [features.DiscipleOfTheElements,
-                            features.ElementalAttunement]
+    features_by_level[3] = [
+        features.DiscipleOfTheElements,
+        features.ElementalAttunement,
+    ]
 
 
 # SCAG
@@ -69,6 +74,7 @@ class LongDeathWay(SubClass):
     martial arts, yielding a deadly fighting style.
 
     """
+
     name = "Way of the Long Death"
     features_by_level = defaultdict(list)
     features_by_level[3] = [features.TouchOfDeath]
@@ -84,6 +90,7 @@ class SunSoulWay(SubClass):
     creature
 
     """
+
     name = "Way of the Sun Soul"
     features_by_level = defaultdict(list)
     features_by_level[3] = [features.RadiantSunBolt]
@@ -106,6 +113,7 @@ class DrunkenMasterWay(SubClass):
     joined, the drunken master can be a maddening, masterful foe
 
     """
+
     name = "Way of the Drunken Master"
     _proficiencies_text = ("brewer's suplies",)
     skill_proficiencies = ("performance",)
@@ -129,6 +137,7 @@ class KenseiWay(SubClass):
     devotion, practice, and study.
 
     """
+
     name = "Way of the Kensei"
     features_by_level = defaultdict(list)
     features_by_level[3] = [features.PathOfTheKensei]
@@ -138,31 +147,46 @@ class KenseiWay(SubClass):
 
 
 class Monk(CharClass):
-    name = 'Monk'
+    name = "Monk"
     hit_dice_faces = 8
     subclass_select_level = 3
-    saving_throw_proficiencies = ('strength', 'dexterity')
-    primary_abilities = ('dexterity', 'wisdom')
+    saving_throw_proficiencies = ("strength", "dexterity")
+    primary_abilities = ("dexterity", "wisdom")
     _proficiencies_text = (
-        'simple weapons', 'shortswords', 'unarmed',
-        "one type of artisan's tools or one musical instrument")
-    weapon_proficiencies = (weapons.Shortsword, weapons.Unarmed,
-                            weapons.SimpleWeapon)
+        "simple weapons",
+        "shortswords",
+        "unarmed",
+        "one type of artisan's tools or one musical instrument",
+    )
+    weapon_proficiencies = (weapons.Shortsword, weapons.Unarmed, weapons.SimpleWeapon)
     multiclass_weapon_proficiencies = weapon_proficiencies
-    _multiclass_proficiencies_text = ('simple weapons', 'shortswords',
-                                      'unarmed')
-    class_skill_choices = ('Acrobatics', 'Athletics', 'History', 'Insight',
-                           'Religion', 'Stealth')
-    subclasses_available = (OpenHandWay, ShadowWay,
-                            FourElementsWay, SunSoulWay,
-                            LongDeathWay, DrunkenMasterWay,
-                            KenseiWay)
+    _multiclass_proficiencies_text = ("simple weapons", "shortswords", "unarmed")
+    class_skill_choices = (
+        "Acrobatics",
+        "Athletics",
+        "History",
+        "Insight",
+        "Religion",
+        "Stealth",
+    )
+    subclasses_available = (
+        OpenHandWay,
+        ShadowWay,
+        FourElementsWay,
+        SunSoulWay,
+        LongDeathWay,
+        DrunkenMasterWay,
+        KenseiWay,
+    )
     features_by_level = defaultdict(list)
-    features_by_level[1] = [features.UnarmoredDefenseMonk,
-                            features.MartialArts]
-    features_by_level[2] = [features.Ki, features.FlurryOfBlows,
-                            features.PatientDefense, features.StepOfTheWind,
-                            features.UnarmoredMovement]
+    features_by_level[1] = [features.UnarmoredDefenseMonk, features.MartialArts]
+    features_by_level[2] = [
+        features.Ki,
+        features.FlurryOfBlows,
+        features.PatientDefense,
+        features.StepOfTheWind,
+        features.UnarmoredMovement,
+    ]
     features_by_level[3] = [features.DeflectMissiles]
     features_by_level[4] = [features.SlowFall]
     features_by_level[5] = [features.ExtraAttackMonk, features.StunningStrike]

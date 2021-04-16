@@ -21,18 +21,19 @@ class ChannelDivinity(Feature):
     rests. When you finish a short or long rest, you regain your expended uses.
 
     """
+
     _name = "Channel Divinity"
     source = "Cleric"
 
     @property
     def name(self):
-       level = self.owner.Cleric.level
-       if level < 6:
-          return "Channel Divinity (1x/SR)"
-       elif level < 18:
-          return "Channel Divinity (2x/SR)"
-       else:
-          return "Channel Divinity (3x/SR)"
+        level = self.owner.Cleric.level
+        if level < 6:
+            return "Channel Divinity (1x/SR)"
+        elif level < 18:
+            return "Channel Divinity (2x/SR)"
+        else:
+            return "Channel Divinity (3x/SR)"
 
 
 class TurnUndead(Feature):
@@ -48,6 +49,7 @@ class TurnUndead(Feature):
     nowhere to move, the creature can use the Dodge action.
 
     """
+
     name = "Channel Divinity: Turn Undead"
     source = "Cleric"
 
@@ -59,22 +61,23 @@ class DestroyUndead(Feature):
     table.
 
     """
+
     _name = "Destroy Undead"
     source = "Cleric"
 
     @property
     def name(self):
-       level = self.owner.Cleric.level
-       name = self._name + ' (CR 1/2)'
-       if level >= 8:
-          name = self._name + ' (CR 1)'
-       if level >= 11:
-          name = self._name + ' (CR 2)'
-       if level >= 14:
-          name = self._name + ' (CR 3)'
-       if level >= 17:
-          name = self._name + ' (CR 4)'
-       return name
+        level = self.owner.Cleric.level
+        name = self._name + " (CR 1/2)"
+        if level >= 8:
+            name = self._name + " (CR 1)"
+        if level >= 11:
+            name = self._name + " (CR 2)"
+        if level >= 14:
+            name = self._name + " (CR 3)"
+        if level >= 17:
+            name = self._name + " (CR 4)"
+        return name
 
 
 class DivineIntervention(Feature):
@@ -94,6 +97,7 @@ class DivineIntervention(Feature):
     required.
 
     """
+
     name = "Divine Intervention"
     source = "Cleric"
 
@@ -102,16 +106,17 @@ class DivineStrike(Feature):
     """
     Generic Divine Strike
     """
+
     _name = "Divine Strike"
     source = "Cleric"
 
     @property
     def name(self):
-       level = self.owner.Cleric.level
-       damage = ' (1d8)'
-       if level >= 14:
-          damage = ' (2d8)'
-       return self._name + damage
+        level = self.owner.Cleric.level
+        damage = " (1d8)"
+        if level >= 14:
+            damage = " (2d8)"
+        return self._name + damage
 
 
 # Knowledge Domain
@@ -122,6 +127,7 @@ class BlessingsOfKnowledge(Feature):
     check you make that uses either of those skills.
 
     """
+
     name = "Blessings of Knowledge"
     source = "Cleric (Knowledge Domain)"
 
@@ -132,6 +138,7 @@ class KnowledgeOfTheAncients(DivineIntervention):
     10 minutes, you have proficiency with the chosen skill or tool.
 
     """
+
     name = "Divine Intervention: Knowledge of the Ancients"
     source = "Cleric (Knowledge Domain)"
 
@@ -153,6 +160,7 @@ class ReadThoughts(DivineIntervention):
     spell.
 
     """
+
     name = "Divine Intervention: Read Thoughts"
     source = "Cleric (Knowledge Domain)"
 
@@ -162,6 +170,7 @@ class PotentSpellcasting(Feature):
     with any cleric cantrip.
 
     """
+
     name = "Potent Spellcasting"
     source = "Cleric"
 
@@ -193,6 +202,7 @@ class VisionsOfThePast(Feature):
     nevertheless important in your current situation.
 
     """
+
     name = "Visions of the Past"
     source = "Cleric (Knowledge Domain)"
 
@@ -205,6 +215,7 @@ class DiscipleOfLife(Feature):
     + the spell's level
 
     """
+
     name = "Disciple of Life"
     source = "Cleric (Life Domain)"
 
@@ -219,6 +230,7 @@ class PreserveLife(ChannelDivinity):
     construct.
 
     """
+
     name = "Channel Divinity: Preserve Life"
     source = "Cleric (Life Domain)"
 
@@ -230,6 +242,7 @@ class BlessedHealer(Feature):
     spell's level.
 
     """
+
     name = "Blessed Healer"
     source = "Cleric (Life Domain)"
 
@@ -242,6 +255,7 @@ class DivineStrikeLife(DivineStrike):
     2d8.
 
     """
+
     source = "Cleric (Life Domain)"
 
 
@@ -252,6 +266,7 @@ class SupremeHealing(Feature):
     a creature, you restore 12.
 
     """
+
     name = "Supreme Healing"
     source = "Cleric (Life Domain)"
 
@@ -267,13 +282,14 @@ class WardingFlare(Feature):
     minimum of once). You regain all expended uses when you finish a long rest
 
     """
+
     _name = "Warding Flare"
     source = "Cleric (Light Domain)"
 
     @property
     def name(self):
-       times = max(1, self.owner.wisdom.modifier)
-       return self._name + " ({:d}x/LR)".format(times)
+        times = max(1, self.owner.wisdom.modifier)
+        return self._name + " ({:d}x/LR)".format(times)
 
 
 class RadianceOfTheDawn(ChannelDivinity):
@@ -288,6 +304,7 @@ class RadianceOfTheDawn(ChannelDivinity):
     successful one. A creature that has total cover from you is not affected.
 
     """
+
     name = "Channel Divinity: Radiance of the Dawn"
     source = "Cleric (Light Domain)"
 
@@ -298,6 +315,7 @@ class ImprovedFlare(Feature):
     than you.
 
     """
+
     name = "Improved Flare"
     source = "Cleric (Light Domain)"
 
@@ -310,6 +328,7 @@ class CoronaOfLight(Feature):
     throws against any spell that deals fire or radiant damage
 
     """
+
     name = "Corona of Light"
     source = "Cleric (Light Domain)"
 
@@ -321,6 +340,7 @@ class AcolyteOfNature(Feature):
     Nature, or Survival.
 
     """
+
     name = "Acolyte of Nature"
     source = "Cleric (Nature Domain)"
 
@@ -336,6 +356,7 @@ class CharmAnimalsAndPlants(ChannelDivinity):
     and other creatures you designate.
 
     """
+
     name = "Channel Divinity: Charm Animals and Plants"
     source = "Cleric (Nature Domain)"
 
@@ -346,6 +367,7 @@ class DampenElements(Feature):
     to grant resistance to the creature against that instance of the damage.
 
     """
+
     name = "Dampen Elements"
     source = "Cleric (Nature Domain)"
 
@@ -358,6 +380,7 @@ class DivineStrikeNature(DivineStrike):
     the extra damage increases to 2d8.
 
     """
+
     source = "Cleric (Nature Domain)"
 
 
@@ -368,6 +391,7 @@ class MasterOfNature(Feature):
     each of those creatures will do on its next turn.
 
     """
+
     name = "Master of Nature"
     source = "Cleric (Nature Domain)"
 
@@ -384,13 +408,14 @@ class WrathOfTheStorm(Feature):
     minimum of once). You regain all expended uses when you finish a long rest.
 
     """
+
     _name = "Wrath of the Storm"
     source = "Cleric (Tempest Domain)"
 
     @property
     def name(self):
-       num_uses = max(1, self.owner.wisdom.modifier)
-       return self._name + ' ({:d}x/LR)'.format(num_uses)
+        num_uses = max(1, self.owner.wisdom.modifier)
+        return self._name + " ({:d}x/LR)".format(num_uses)
 
 
 class DestructiveWrath(ChannelDivinity):
@@ -401,6 +426,7 @@ class DestructiveWrath(ChannelDivinity):
     Divinity to deal maximum damage, instead of rolling.
 
     """
+
     name = "Channel Divinity: Destructive Wrath"
     source = "Cleric (Tempest Domain)"
 
@@ -410,6 +436,7 @@ class ThunderboltStrike(Feature):
     creature, you can also push it up to 10 feet away from you.
 
     """
+
     name = "Thunderbolt Strike"
     source = "Cleric (Tempest Domain)"
 
@@ -422,6 +449,7 @@ class DivineStrikeTempest(DivineStrike):
     2d8.
 
     """
+
     source = "Cleric (Tempest Domain)"
 
 
@@ -430,6 +458,7 @@ class Stormborn(Feature):
     whenever you are not underground or indoors.
 
     """
+
     name = "Stormborn"
     source = "Cleric (Tempest Domain)"
 
@@ -442,6 +471,7 @@ class BlessingOfTheTrickster(Feature):
     this feature again
 
     """
+
     name = "Blessing of the Trickster"
     source = "Cleric (Trickery Domain)"
 
@@ -462,6 +492,7 @@ class InvokeDuplicity(ChannelDivinity):
     distracting the illusion is to the target.
 
     """
+
     name = "Channel Divinity: Invoke Duplicity"
     source = "Cleric (Trickery Domain)"
 
@@ -472,6 +503,7 @@ class CloakOfShadows(ChannelDivinity):
     visible if you attack or cast a spell.
 
     """
+
     name = "Channel Divinity: Cloak of Shadows"
     source = "Cleric (Trickery Domain)"
 
@@ -484,6 +516,7 @@ class DivineStrikeTrickery(DivineStrike):
     damage increases to 2d8.
 
     """
+
     source = "Cleric (Trickery Domain)"
 
 
@@ -493,6 +526,7 @@ class ImprovedDuplicity(Feature):
     move any number of them up to 30 feet, to a maximum range of 120 feet.
 
     """
+
     name = "Improved Duplicity"
     source = "Cleric (Trickery Domain)"
 
@@ -506,13 +540,14 @@ class WarPriest(Feature):
     when you finish a long rest
 
     """
+
     _name = "War Priest"
     source = "Cleric (War Domain)"
 
     @property
     def name(self):
-       num = max(1, self.owner.wisdom.modifier)
-       return self._name + " ({:d}x/LR)".format(num)
+        num = max(1, self.owner.wisdom.modifier)
+        return self._name + " ({:d}x/LR)".format(num)
 
 
 class GuidedStrike(ChannelDivinity):
@@ -523,6 +558,7 @@ class GuidedStrike(ChannelDivinity):
     misses
 
     """
+
     name = "Channel Divinity: Guided Strike"
     source = "Cleric (War Domain)"
 
@@ -534,6 +570,7 @@ class WarGodsBlessing(ChannelDivinity):
     but before the DM says whether the attack hits or misses.
 
     """
+
     name = "Channel Divinity: War Gods Blessing"
     source = "Cleric (War Domain)"
 
@@ -545,6 +582,7 @@ class DivineStrikeWar(DivineStrike):
     same type dealt by the weapon to the target. When you reach 14th level, the
     extra damage increases to 2d8.
     """
+
     source = "Cleric (War Domain)"
 
 
@@ -553,6 +591,7 @@ class AvatarOfBattle(Feature):
     damage from nonmagical weapons.
 
     """
+
     name = "Avatar of Battle"
     source = "Cleric (War Domain)"
 
@@ -564,6 +603,7 @@ class ArcaneInitiate(Feature):
     spell list. For you, these cantrips count as cleric cantrips
 
     """
+
     name = "Arcane Initiate"
     source = "Cleric (Arcana Domain)"
 
@@ -595,6 +635,7 @@ class ArcaneAbjuration(ChannelDivinity):
     17th level : CR 4
 
     """
+
     name = "Channel Divinity: Arcane Abjuration"
     source = "Cleric (Arcana Domain)"
 
@@ -606,6 +647,7 @@ class SpellBreaker(Feature):
     level of the spell slot you use to cast the healing spell
 
     """
+
     name = "Spell Breaker"
     source = "Cleric (Arcana Domain)"
 
@@ -617,6 +659,7 @@ class ArcaneMastery(Feature):
     prepared and count as cleric spells for you.
 
     """
+
     name = "Arcane Mastery"
     source = "Cleric (Arcana Domain)"
 
@@ -632,6 +675,7 @@ class BlessingOfTheForge(Feature):
     you finish a long rest
 
     """
+
     name = "Blessing of the Forge"
     source = "Cleric (Forge Domain)"
 
@@ -654,6 +698,7 @@ class ArtisansBlessing(Feature):
     original during the ritual.
 
     """
+
     name = "Channel Divinity: Artisans Blessing"
     source = "Cleric (Forge Domain)"
 
@@ -667,6 +712,7 @@ class SoulOfTheForge(Feature):
     • While wearing heavy armor, you gain a +1 bonus to AC.
 
     """
+
     name = "Soul of the Forge"
     source = "Cleric (Forge Domain)"
 
@@ -677,20 +723,22 @@ class DivineStrikeForge(DivineStrike):
     you hit a creature with a weapon attack, you can cause the attack
     to deal an extra 1d8 fire damage to the target. When you reach
     14th level, the extra damage increases to 2d8
-    
+
     """
+
     source = "Cleric (Forge Domain)"
 
 
 class SaintOfForgeAndFire(Feature):
     """At 17th level, your blessed affinity with fire and metal becomes
     more powerful:
-    
+
     - You gain immunity to fire damage.
     - While wearing heavy armor, you have resistance to bludgeoning,
       piercing, and slashing damage from non-magical attacks
-    
+
     """
+
     name = "Saint of Forge and Fire"
     source = "Cleric (Forge Domain)"
 
@@ -706,6 +754,7 @@ class CircleOfMortality(Feature):
     action
 
     """
+
     spells_known = (spells.SpareTheDying,)
     spells_prepared = (spells.SpareTheDying,)
     name = "Circle of Mortality"
@@ -726,13 +775,14 @@ class EyesOfTheGrave(Feature):
     long rest
 
     """
+
     _name = "Eyes of the Grave"
     source = "Cleric (Grave Domain)"
 
     @property
     def name(self):
-       num = max(1, self.owner.wisdom.modifier)
-       return self._name + " ({:d}x/LR)".format(num)
+        num = max(1, self.owner.wisdom.modifier)
+        return self._name + " ({:d}x/LR)".format(num)
 
 
 class PathToTheGrave(ChannelDivinity):
@@ -744,6 +794,7 @@ class PathToTheGrave(ChannelDivinity):
     attack's damage, and then the curse ends
 
     """
+
     name = "Channel Divinity: Path to the Grave"
     source = "Cleric (Grave Domain)"
 
@@ -757,13 +808,14 @@ class SentinelAtDeathsDoor(Feature):
     all expended uses when you finish a long rest.
 
     """
+
     _name = "Sentinel at Death's Door"
     source = "Cleric (Grave Domain)"
 
     @property
     def name(self):
-       num = max(1, self.owner.wisdom.modifier)
-       return self._name + " ({:d}x/LR)".format(num)
+        num = max(1, self.owner.wisdom.modifier)
+        return self._name + " ({:d}x/LR)".format(num)
 
 
 class KeeperOfSouls(Feature):
@@ -775,8 +827,10 @@ class KeeperOfSouls(Feature):
     can't do so again until the start ofyour next turn.
 
     """
+
     name = "Keeper of Souls"
     source = "Cleric (Grave Domain)"
+
 
 class Reaper(Feature):
     """At 1st level, you learn one necromancy cantrip of your choice from any
@@ -785,8 +839,10 @@ class Reaper(Feature):
     within 5 feet of each other.
 
     """
+
     name = "Reaper"
     source = "Cleric (Death Domain)"
+
 
 class TouchOfDeathCleric(Feature):
     """Starting at 2nd level, you can use Channel Divinity to destroy another
@@ -795,8 +851,10 @@ class TouchOfDeathCleric(Feature):
     the target. The damage equals 5 + twice your cleric level.
 
     """
+
     name = "Channel Divinity: Touch of Death"
     source = "Cleric (Death Domain)"
+
 
 class InescapableDestruction(Feature):
     """Starting at 6th level, your ability to channel negative energy becomes
@@ -804,8 +862,10 @@ class InescapableDestruction(Feature):
     Divinity options ignores resistance to necrotic damage
 
     """
+
     name = "Inescapable Destruction"
     source = "Cleric (Death Domain)"
+
 
 class DivineStrikeDeath(DivineStrike):
     """At 8th level, you gain the ability to infuse your weapon strikes with
@@ -815,7 +875,9 @@ class DivineStrikeDeath(DivineStrike):
     increases to 2d8.
 
     """
+
     source = "Cleric (Death Domain)"
+
 
 class ImprovedReaper(Feature):
     """Starting at 17th level, when you cast a necromancy spell of 1st through
@@ -824,5 +886,6 @@ class ImprovedReaper(Feature):
     consumes its material components, you must provide them for each target.
 
     """
+
     name = "Improved Reaper"
     source = "Cleric (Death Domain)"

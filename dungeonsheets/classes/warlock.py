@@ -16,6 +16,7 @@ class Archfey(SubClass):
     hags
 
     """
+
     name = "The Archfey Patron"
     features_by_level = defaultdict(list)
     features_by_level[1] = [features.FeyPresence]
@@ -33,8 +34,9 @@ class Fiend(SubClass):
     Fraz'Urb-luu, and Baphomet; archdevils such as Asmodeus, Dispater,
     Mephistopheles, and Belial; pit fiends and balors that are
     especially mighty; and ultroloths and other lords of the yugoloths
-    
+
     """
+
     name = "The Fiend Patron"
     features_by_level = defaultdict(list)
     features_by_level[1] = [features.DarkOnesBlessing]
@@ -59,6 +61,7 @@ class GreatOldOne(SubClass):
     Returner; Great Cthulhu; and other unfathomable beings.
 
     """
+
     name = "The Great Old One Patron"
     features_by_level = defaultdict(list)
     features_by_level[1] = [features.AwakenedMind]
@@ -84,6 +87,7 @@ class Undying(SubClass):
     Unther
 
     """
+
     name = "The Undying Patron"
     features_by_level = defaultdict(list)
     features_by_level[1] = [features.AmongTheDead]
@@ -110,6 +114,7 @@ class Celestial(SubClass):
     places of the world.
 
     """
+
     name = "The Celestial Patron"
     spells_known = spells_prepared = (spells.Light, spells.SacredFlame)
     features_by_level = defaultdict(list)
@@ -136,9 +141,10 @@ class Hexblade(SubClass):
     to manipulate events on the Material Plane to her inscrutable ends
 
     """
+
     name = "Hexblade Patron"
     weapon_proficiencies = (weapons.MartialWeapon,)
-    _proficiencies_text = ['martial weapons', 'medium armor', 'shields']
+    _proficiencies_text = ["martial weapons", "medium armor", "shields"]
     features_by_level = defaultdict(list)
     features_by_level[1] = [features.HexbladesCurse, features.HexWarrior]
     features_by_level[6] = [features.AccursedSpecter]
@@ -147,36 +153,41 @@ class Hexblade(SubClass):
 
 
 class Warlock(CharClass):
-    name = 'Warlock'
+    name = "Warlock"
     hit_dice_faces = 8
     subclass_select_level = 1
-    saving_throw_proficiencies = ('wisdom', 'charisma')
-    primary_abilities = ('charisma',)
+    saving_throw_proficiencies = ("wisdom", "charisma")
+    primary_abilities = ("charisma",)
     _proficiencies_text = ("light Armor", "simple weapons")
-    class_skill_choices = ('Arcana', 'Deception', 'History',
-                           'Intimidation', 'Investigation', 'Nature',
-                           'Religion')
+    class_skill_choices = (
+        "Arcana",
+        "Deception",
+        "History",
+        "Intimidation",
+        "Investigation",
+        "Nature",
+        "Religion",
+    )
     weapon_proficiencies = (weapons.SimpleWeapon,)
     multiclass_weapon_proficiencies = weapon_proficiencies
-    _multiclass_proficiencies_text = ('light armor', 'simple weapons')
+    _multiclass_proficiencies_text = ("light armor", "simple weapons")
     features_by_level = defaultdict(list)
     features_by_level[2] = [features.EldritchInvocation]
     features_by_level[3] = [features.PactBoon]
     features_by_level[11] = [features.MysticArcanum]
     features_by_level[20] = [features.EldritchMaster]
-    subclasses_available = (Archfey, Fiend, GreatOldOne, Undying, Celestial,
-                            Hexblade)
-    spellcasting_ability = 'charisma'
+    subclasses_available = (Archfey, Fiend, GreatOldOne, Undying, Celestial, Hexblade)
+    spellcasting_ability = "charisma"
     spell_slots_by_level = {
-        1:  (2, 1, 0, 0, 0, 0, 0, 0, 0, 0),
-        2:  (2, 2, 0, 0, 0, 0, 0, 0, 0, 0),
-        3:  (2, 0, 2, 0, 0, 0, 0, 0, 0, 0),
-        4:  (3, 0, 2, 0, 0, 0, 0, 0, 0, 0),
-        5:  (3, 0, 0, 3, 0, 0, 0, 0, 0, 0),
-        6:  (3, 0, 0, 3, 0, 0, 0, 0, 0, 0),
-        7:  (3, 0, 0, 0, 2, 0, 0, 0, 0, 0),
-        8:  (3, 0, 0, 0, 2, 0, 0, 0, 0, 0),
-        9:  (3, 0, 0, 0, 0, 2, 0, 0, 0, 0),
+        1: (2, 1, 0, 0, 0, 0, 0, 0, 0, 0),
+        2: (2, 2, 0, 0, 0, 0, 0, 0, 0, 0),
+        3: (2, 0, 2, 0, 0, 0, 0, 0, 0, 0),
+        4: (3, 0, 2, 0, 0, 0, 0, 0, 0, 0),
+        5: (3, 0, 0, 3, 0, 0, 0, 0, 0, 0),
+        6: (3, 0, 0, 3, 0, 0, 0, 0, 0, 0),
+        7: (3, 0, 0, 0, 2, 0, 0, 0, 0, 0),
+        8: (3, 0, 0, 0, 2, 0, 0, 0, 0, 0),
+        9: (3, 0, 0, 0, 0, 2, 0, 0, 0, 0),
         10: (4, 0, 0, 0, 0, 2, 0, 0, 0, 0),
         11: (4, 0, 0, 0, 0, 3, 0, 0, 0, 0),
         12: (4, 0, 0, 0, 0, 3, 0, 0, 0, 0),

@@ -9,16 +9,17 @@ class ZephyrStrike(Spell):
     damage on a hit. Whether you hit or miss, your walking speed increases by 30
     feet until the end of that turn.
     """
+
     name = "Zephyr Strike"
     level = 1
     casting_time = "1 bonus action"
     casting_range = "Self"
-    components = ('V',)
-    materials = """"""
+    components = ("V",)
+    materials = ""
     duration = "Concentration, up to 1 minute"
     ritual = False
     magic_school = "Transmutation"
-    classes = ('Ranger',)
+    classes = ("Ranger",)
 
 
 class ZoneOfTruth(Spell):
@@ -35,15 +36,14 @@ class ZoneOfTruth(Spell):
     with a lie. Such creatures can be evasive in its answers as long as it remains
     within the boundaries of the truth.
     """
+
     name = "Zone Of Truth"
     level = 2
     casting_time = "1 action"
     casting_range = "60 feet"
-    components = ('V', 'S')
-    materials = """"""
+    components = ("V", "S")
+    materials = ""
     duration = "10 minutes"
     ritual = False
     magic_school = "Enchantment"
-    classes = ('Bard', 'Cleric', 'Paladin')
-
-
+    classes = ("Bard", "Cleric", "Paladin")

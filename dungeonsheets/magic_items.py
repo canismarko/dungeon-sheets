@@ -1,13 +1,14 @@
-class MagicItem():
+class MagicItem:
     """
     Generic Magic Item. Add description here.
 
     """
-    name = ''
+
+    name = ""
     ac_bonus = 0
     requires_attunement = False
     needs_implementation = False
-    rarity = ''
+    rarity = ""
 
     def __init__(self, owner=None):
         self.owner = owner
@@ -16,7 +17,7 @@ class MagicItem():
         return self.name
 
     def __repr__(self):
-        return '\"{:s}\"'.format(str(self))
+        return '"{:s}"'.format(str(self))
 
 
 class CloakOfProtection(MagicItem):
@@ -24,10 +25,11 @@ class CloakOfProtection(MagicItem):
     You gain a +1 bonus to AC and Saving Throws while wearing this cloak.
 
     """
+
     name = "Cloak of Protection"
     ac_bonus = 1
     requires_attunement = True
-    rarity = 'Uncommon'
+    rarity = "Uncommon"
 
 
 class RingOfProtection(MagicItem):
@@ -35,10 +37,11 @@ class RingOfProtection(MagicItem):
     You gain a +1 bonus to AC and Saving Throws while wearing this ring.
 
     """
+
     name = "Ring of Protection"
     ac_bonus = 1
     requires_attunement = True
-    rarity = 'Rare'
+    rarity = "Rare"
 
 
 class DecanterOfEndlessWater(MagicItem):
@@ -64,8 +67,9 @@ class DecanterOfEndlessWater(MagicItem):
     you.
 
     """
+
     name = "Decanter of Endless Water"
-    rarity = 'Uncommon'
+    rarity = "Uncommon"
 
 
 class ToothOfAnimalFriendship(MagicItem):
@@ -74,8 +78,9 @@ class ToothOfAnimalFriendship(MagicItem):
 
     The charge resets at the next Dawn.
     """
+
     name = "Tooth of Animal Friendship"
-    rarity = 'Uncommon'
+    rarity = "Uncommon"
 
 
 class CloakOfBillowing(MagicItem):
@@ -83,6 +88,7 @@ class CloakOfBillowing(MagicItem):
     dramatically.
 
     """
+
     name = "Cloak of Billowing"
     rarity = "Common"
 
@@ -95,6 +101,7 @@ class CloakOfDisplacement(MagicItem):
     property is suppressed while you are incapacitated, restrained, or
     otherwise unable to move.
     """
+
     name = "Cloak of Displacement"
     rarity = "Rare"
 
@@ -110,6 +117,7 @@ class CapeOfTheMountebank(MagicItem):
     your next turn. A light or stronger wind disperses the smoke.
 
     """
+
     name = "Cape of the Mountebank"
     rarity = "Rare"
     requires_attunement = True
@@ -123,6 +131,7 @@ class EyesOfCharming(MagicItem):
     dawn.
 
     """
+
     name = "Eyes of Charming"
     rarity = "Uncommon"
     requires_attunement = True
@@ -133,6 +142,7 @@ class CharlattansDie(MagicItem):
     rolls.
 
     """
+
     name = "Charlattan's Die"
     rarity = "Common"
 
@@ -144,7 +154,8 @@ class PipeOfSmokeMonsters(MagicItem):
     loses its shape after a few seconds, becoming an ordi- nary puff of smoke.
 
     """
-    name = 'Pipe of Smoke Monsters'
+
+    name = "Pipe of Smoke Monsters"
     rarity = "Common"
 
 
@@ -157,6 +168,7 @@ class CoinsOfCommunication(MagicItem):
     the holder of any of the coins until the following dawn.
 
     """
+
     name = "Coins of Communication"
     rarity = "Uncommon"
 
@@ -170,6 +182,7 @@ class FlameTongue(MagicItem):
     drop or sheathe the sword
 
     """
+
     name = "Flame Tongue"
     rarity = "Rare"
     requires_attunement = True
@@ -189,6 +202,7 @@ class SpearOfLightning(MagicItem):
     The spear's property can't be used again until the next dawn. In the
     meantime, the spear can still be used as a Magic Weapon.
     """
+
     requires_attunement = True
     name = "Lightning Spear"
 
@@ -196,6 +210,7 @@ class SpearOfLightning(MagicItem):
 class AmuletOfTheEel(MagicItem):
     """While holding this amulet, you can breath water and air, and have a
     swimming speed of 20'."""
+
     name = "Amulet of the Eel"
 
 
@@ -213,6 +228,7 @@ class BracersOfMagnetism(MagicItem):
 
     The magnetic effect fails if the bracers are more than 10' apart.
     """
+
     requires_attunement = True
     name = "Bracers of Magnetism"
 
@@ -224,6 +240,7 @@ class ShieldOfFaces(MagicItem):
     "crying", etc.)
 
     """
+
     requires_attunement = True
     name = "Shield of Faces"
 
@@ -232,6 +249,7 @@ class GlowingSword(MagicItem):
     """
     This strange longsword glows at odd times.
     """
+
     name = "Glowing Sword"
 
 
@@ -241,5 +259,6 @@ class PearlOfPower(MagicItem):
     4th Level or higher, the new slot is 3rd Level. Once you have used
     the pearl, it can't be used again until the next dawn.
     """
+
     requires_attunement = True
     name = "Pearl of Power"

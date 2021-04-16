@@ -1,18 +1,20 @@
-from dungeonsheets import spells, weapons
-from dungeonsheets.features.features import Feature, FeatureSelector
+from dungeonsheets import spells
+from dungeonsheets.features.features import Feature
 
 
 # PHB
 class ArcaneRecovery(Feature):
-    """You have learned to regain some of your magical energy by studying your
-    spellbook. Once per day when you finish a short rest, you can choose
-    expended spell slots to recover. The spell slots can have a combined level
-    that is equal to or less than half your wizard level (rounded up), and none
-    of the slots can be 6th level or higher. For example, if you're a 4th-level
-    wizard, you can recover up to two levels worth o f spell slots. You can
-    recover either a 2nd-level spell slot or two 1st-level spell slots
+    """You have learned to regain some of your magical energy by studying
+    your spellbook. Once per day when you finish a short rest, you can
+    choose expended spell slots to recover. The spell slots can have a
+    combined level that is equal to or less than half your wizard
+    level (rounded up), and none of the slots can be 6th level or
+    higher. For example, if you're a 4th-level wizard, you can recover
+    up to two levels worth o f spell slots. You can recover either a
+    2nd-level spell slot or two 1st-level spell slots
 
     """
+
     name = "Arcane Recovery"
     source = "Wizard"
 
@@ -27,6 +29,7 @@ class SpellMastery(Feature):
     o f the spells you chose for different spells of the same levels.
 
     """
+
     name = "Spell Mastery"
     source = "Wizard"
 
@@ -42,6 +45,7 @@ class SignatureSpells(Feature):
     expend a spell slot as normal.
 
     """
+
     name = "Signature Spells"
     source = "Wizard"
 
@@ -52,6 +56,7 @@ class AbjurationSavant(Feature):
     must spend to copy an abjuration spell into your spellbook is halved.
 
     """
+
     name = "Abjuration Savant"
     source = "Wizard (School of Abjuration)"
 
@@ -71,6 +76,7 @@ class ArcaneWard(Feature):
     finish a long rest
 
     """
+
     name = "Arcane Ward"
     source = "Wizard (School of Abjuration)"
 
@@ -82,6 +88,7 @@ class ProjectedWard(Feature):
     warded creature takes any remaining damage
 
     """
+
     name = "Projected Ward"
     source = "Wizard (School of Abjuration)"
 
@@ -93,6 +100,7 @@ class ImprovedAbjuration(Feature):
     ability check.
 
     """
+
     name = "Improved Abjuration"
     source = "Wizard (School of Abjuration)"
 
@@ -102,6 +110,7 @@ class SpellResistance(Feature):
     spells. Furthermore, you have resistance against the damage of spells
 
     """
+
     name = "Spell Resistance"
     source = "Wizard (School of Abjuration)"
 
@@ -112,6 +121,7 @@ class ConjurationSavant(Feature):
     must spend to copy a conjuration spell into your spellbook is halved.
 
     """
+
     name = "Conjuration Savant"
     source = "Wizard (School of Conjuration)"
 
@@ -126,6 +136,7 @@ class MinorIllusion(Feature):
     after 1 hour, when you use this feature again, or if it takes any damage.
 
     """
+
     name = "Minor Illusion"
     source = "Wizard (School of Conjuration)"
 
@@ -139,6 +150,7 @@ class BenignTransposition(Feature):
     conjuration spell of 1st level or higher.
 
     """
+
     name = "Benign Transposition"
     source = "Wizard (School of Conjuration)"
 
@@ -148,6 +160,7 @@ class FocusedConjuration(Feature):
     spell, your concentration can't be broken as a result of taking damage
 
     """
+
     name = "Focused Conjuration"
     source = "Wizard (School of Conjuration)"
 
@@ -157,6 +170,7 @@ class DurableSummons(Feature):
     conjuration spell has 30 temporary hit points
 
     """
+
     name = "Durable Summons"
     source = "Wizard (School of Conjuration)"
 
@@ -167,6 +181,7 @@ class DivinationSavant(Feature):
     must spend to copy a divination spell into your spellbook is halved.  P
 
     """
+
     name = "Divination Savant"
     source = "Wizard (School of Divination)"
 
@@ -182,6 +197,7 @@ class Portent(Feature):
     unused foretelling rolls
 
     """
+
     name = "Portent"
     source = "Wizard (School of Divination)"
 
@@ -194,6 +210,7 @@ class ExpertDivination(Feature):
     the spell you cast and can't be higher than 5th level.
 
     """
+
     name = "Expert Divination"
     source = "Wizard (School of Divination)"
 
@@ -216,7 +233,8 @@ class TheThirdEye(Feature):
     feet of you that are within line of sight
 
     """
-    name = 'The Third Eye'
+
+    name = "The Third Eye"
     source = "Wizard (School of Divination)"
 
 
@@ -226,6 +244,7 @@ class GreaterPortent(Feature):
     for your Portent feature, rather than two
 
     """
+
     name = "Greater Portent"
     source = "Wizard (School of Divination)"
 
@@ -236,6 +255,7 @@ class EnchantmentSavant(Feature):
     must spend to copy an enchantment spell into your spellbook is halved
 
     """
+
     name = "Enchantment Savant"
     source = "Wizard (School of Enchantment)"
 
@@ -258,6 +278,7 @@ class HypnoticGaze(Feature):
     until you finish a long rest
 
     """
+
     name = "Hypnotic Gaze"
     source = "Wizard (School of Enchantment)"
 
@@ -275,6 +296,7 @@ class InstinctiveGaze(Feature):
     misses. Creatures that can't be charmed are immune to this effect.
 
     """
+
     name = "Instinctive Gaze"
     source = "Wizard (School of Enchanment)"
 
@@ -285,6 +307,7 @@ class SplitEnchantment(Feature):
     creature.
 
     """
+
     name = "Split Enchantment"
     source = "Wizard (School of Enchanment)"
 
@@ -302,13 +325,14 @@ class AlterMemories(Feature):
     time can't exceed the duration of your enchantment spell.
 
     """
+
     _name = "Alter Memories"
     source = "Wizard (School of Enchanment)"
 
     @property
     def name(self):
-       num = 1 + max(0, self.owner.charisma.modifier)
-       return self._name + " ({:d} hours)".format(num)
+        num = 1 + max(0, self.owner.charisma.modifier)
+        return self._name + " ({:d} hours)".format(num)
 
 
 # Evocation
@@ -317,6 +341,7 @@ class EvocationSavant(Feature):
     must spend to copy an evocation spell into your spellbook is halved.
 
     """
+
     name = "Evocation Savant"
     source = "Wizard (School of Evocation)"
 
@@ -330,6 +355,7 @@ class SculptSpells(Feature):
     would normally take half damage on a successful save
 
     """
+
     name = "Sculpt Spells"
     source = "Wizard (School of Evocation)"
 
@@ -341,6 +367,7 @@ class PotentCantrip(Feature):
     but suffers no additional effect from the cantrip
 
     """
+
     name = "Potent Cantrip"
     source = "Wizard (School of Evocation)"
 
@@ -350,6 +377,7 @@ class EmpoweredEvocation(Feature):
     damage roll of any wizard evocation spell you cast
 
     """
+
     name = "Empowered Evocation"
     source = "Wizard (School of Evocation)"
 
@@ -365,6 +393,7 @@ class Overchannel(Feature):
     by 1d12. This damage ignores resistance and immunity.
 
     """
+
     name = "Overchannel"
     source = "Wizard (School of Evocation)"
 
@@ -375,6 +404,7 @@ class IllusionSavant(Feature):
     must spend to copy an illusion spell into your spellbook is halved.
 
     """
+
     name = "Illusion Savant"
     source = "Wizard (School of Illusion)"
 
@@ -387,6 +417,7 @@ class ImprovedMinorIllusion(Feature):
     and an image with a single casting o f the spell.
 
     """
+
     name = "Improved Minor Illusion"
     source = "Wizard (School of Illusion)"
 
@@ -398,6 +429,7 @@ class MalleableIllusions(Feature):
     that you can see the illusion
 
     """
+
     name = "Malleable Illusions"
     source = "Wizard (School of Illusion)"
 
@@ -411,6 +443,7 @@ class IllusorySelf(Feature):
     feature, you can't use it again until you finish a short or long rest.
 
     """
+
     name = "Illusory Self"
     source = "Wizard (School of Illusion)"
 
@@ -426,6 +459,7 @@ class IllusoryReality(Feature):
     cross. The object can't deal damage or otherwise directly harm anyone
 
     """
+
     name = "Illusory Reality"
     source = "Wizard (School of Illusion)"
 
@@ -436,6 +470,7 @@ class NecromancySavant(Feature):
     must spend to copy an Necromancy spell into your spellbook is halved.
 
     """
+
     name = "Necromancy Savant"
     source = "Wizard (School of Necromancy)"
 
@@ -446,7 +481,8 @@ class GrimHarvest(Feature):
     with a spell of 1st level or higher, you regain hit points equal to twice
     the spell's level, or three times its level if the spell belongs to the
     School of Necromancy. You don't gain this benefit for killing constructs or
-    undead """
+    undead"""
+
     name = "Grim Harvest"
     source = "Wizard (School of Necromancy)"
 
@@ -457,13 +493,14 @@ class UndeadThralls(Feature):
     target one additional corpse or pile of bones, creating another
     zombie or skeleton, as appropriate. Whenever you create an undead
     using a necromancy spell, it has additional benefits:
-    
+
     - The creature's hit point maximum is increased by an amount equal
       to your wizard level.
     - The creature adds your proficiency bonus to its weapon damage
       rolls
-    
+
     """
+
     name = "Undead Thralls"
     source = "Wizard (School of Necromancy)"
     spells_known = (spells.AnimateDead,)
@@ -476,6 +513,7 @@ class InuredToUndeath(Feature):
     some of their worst effects
 
     """
+
     name = "Inured to Undeath"
     source = "Wizard (School of Necromancy)"
 
@@ -494,6 +532,7 @@ class CommandUndead(Feature):
     breaks free
 
     """
+
     name = "Command Undead"
     source = "Wizard (School of Necromancy)"
 
@@ -504,6 +543,7 @@ class TransmutationSavant(Feature):
     must spend to copy an Transmutation spell into your spellbook is halved.
 
     """
+
     name = "Transmutation Savant"
     source = "Wizard (School of Transmutation)"
 
@@ -520,6 +560,7 @@ class MinorAlchemy(Feature):
     reverts to its original substance
 
     """
+
     name = "Minor Alchemy"
     source = "Wizard (School of Transmutation)"
 
@@ -531,20 +572,21 @@ class TransmutersStone(Feature):
     creature gains a benefit of your choice as long as the stone is in
     the creature's possession. When you create the stone, choose the
     benefit from the following options:
-    
+
     - Darkvision out to a range of 60 feet, as described in chapter 8
     - An increase to speed of 10 feet while the creature is
       unencumbered
     - Proficiency in Constitution saving throws
     - Resistance to acid, cold, fire, lightning, or thunder damage
       (your choice whenever you choose this benefit)
-    
+
     Each time you cast a transmutation spell of 1st level or higher,
     you can change the effect of your stone if the stone is on your
     person. If you create a new transmuter's stone, the previous one
     ceases to function
 
     """
+
     name = "Transmuter's Stone"
     source = "Wizard (School of Transmutation)"
 
@@ -557,8 +599,9 @@ class Shapechanger(Feature):
     you cast polymorph in this way, you can't do so again until you
     finish a short or long rest, though you can still cast it normally
     using an available spell slot
-    
+
     """
+
     name = "Shapechanger"
     source = "Wizard (School of Transmutation)"
     spells_known = spells_prepared = (spells.Polymorph,)
@@ -589,6 +632,7 @@ class MasterTransmuter(Feature):
     13 years. This effect doesn't extend the creature's lifespan
 
     """
+
     name = "Master Transmuter"
     source = "Wizard (School of Transmutation)"
 
@@ -603,9 +647,9 @@ class Bladesong(Feature):
     incapac- itated, if you don medium or heavy armor or a shield, or
     if you use two hands to make an attack with a weapon. You can also
     dismiss the Bladesong at any time you choose (no action required).
-    
+
     While your Bladesong is active, you gain the following benefits:
-    
+
     - You gain a bonus to your AC equal to your Intelligence modifier
       (minimum of +1).
     - Your walking speed increases by 10 feet.
@@ -613,11 +657,12 @@ class Bladesong(Feature):
     - You gain a bonus to any Constitution saving throw you make to
       maintain your concentration on a spell. The bonus equals your
       Intelligence modifier (minimum of +l).
-    
+
     You can use this feature twice. You regain all expended uses of it
     when you finish a short or long rest.
 
     """
+
     name = "Bladesong (2x/SR)"
     source = "Wizard (School of Bladesinging)"
 
@@ -627,6 +672,7 @@ class ExtraAttackBladesinging(Feature):
     take the Attack action on your turn.
 
     """
+
     name = "Extra Attack (2x)"
     source = "Wizard (School of Bladesinging)"
 
@@ -638,6 +684,7 @@ class SongOfDefense(Feature):
     amount equal to five times the spell slot's level.
 
     """
+
     name = "Song of Defense"
     source = "Wizard (School of Bladesinging)"
 
@@ -647,6 +694,7 @@ class SongOfVictory(Feature):
     to the damage of your melee weapon attacks while you r Bladesong is active
 
     """
+
     name = "Song of Victory"
     source = "Wizard (School of Bladesinging)"
 
@@ -660,6 +708,7 @@ class ArcaneDeflection(Feature):
     cast spells other than cantrips until the end of your next turn.
 
     """
+
     name = "Arcane Deflection"
     source = "Wizard (School of War Magic)"
 
@@ -671,6 +720,7 @@ class TacticalWit(Feature):
     character sheet).
 
     """
+
     name = "Tactical Wit"
     source = "Wizard (School of War Magic)"
 
@@ -690,6 +740,7 @@ class PowerSurge(Feature):
     target. The ex- tra damage equals half your wizard level.
 
     """
+
     name = "Power Surge"
     source = "Wizard (School of War Magic)"
 
@@ -700,6 +751,7 @@ class DurableMagic(Feature):
     saving throws.
 
     """
+
     name = "Durable Magic"
     source = "Wizard (School of War Magic)"
 
@@ -712,5 +764,6 @@ class DeflectingShroud(Feature):
     level.
 
     """
+
     name = "Deflecting Shroud"
     source = "Wizard (School of War Magic)"

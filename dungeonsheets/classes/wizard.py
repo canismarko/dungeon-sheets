@@ -17,6 +17,7 @@ class Abjuration(SubClass):
     spying, and when portals to other planes of existence must be closed.
 
     """
+
     name = "School of Abjuration"
     features_by_level = defaultdict(list)
     features_by_level[2] = [features.AbjurationSavant, features.ArcaneWard]
@@ -33,6 +34,7 @@ class Conjuration(SubClass):
     distances, even to other planes of existence, in an instant
 
     """
+
     name = "School of Conjuration"
     features_by_level = defaultdict(list)
     features_by_level[2] = [features.ConjurationSavant, features.MinorIllusion]
@@ -49,6 +51,7 @@ class Divination(SubClass):
     viewing, supernatural knowledge, and foresight.
 
     """
+
     name = "School of Divination"
     features_by_level = defaultdict(list)
     features_by_level[2] = [features.DivinationSavant, features.Portent]
@@ -65,6 +68,7 @@ class Enchantment(SubClass):
     unwilling into their service. Most enchanters fall somewhere in between.
 
     """
+
     name = "School of Enchantment"
     features_by_level = defaultdict(list)
     features_by_level[2] = [features.EnchantmentSavant, features.HypnoticGaze]
@@ -82,6 +86,7 @@ class Evocation(SubClass):
     adventurers, or aspiring tyrants.
 
     """
+
     name = "School of Evocation"
     features_by_level = defaultdict(list)
     features_by_level[2] = [features.EvocationSavant, features.SculptSpells]
@@ -99,10 +104,10 @@ class Illusion(SubClass):
     using their illusions to frighten and fool others for their personal gain.
 
     """
+
     name = "School of Illusion"
     features_by_level = defaultdict(list)
-    features_by_level[2] = [features.IllusionSavant,
-                            features.ImprovedMinorIllusion]
+    features_by_level[2] = [features.IllusionSavant, features.ImprovedMinorIllusion]
     features_by_level[6] = [features.MalleableIllusions]
     features_by_level[10] = [features.IllusorySelf]
     features_by_level[14] = [features.IllusoryReality]
@@ -120,6 +125,7 @@ class Necromancy(SubClass):
     they manipulate are considered taboo by many societies
 
     """
+
     name = "School of Necromancy"
     features_by_level = defaultdict(list)
     features_by_level[2] = [features.NecromancySavant, features.GrimHarvest]
@@ -141,10 +147,10 @@ class Transmutation(SubClass):
     the gods to make and destroy worlds
 
     """
+
     name = "School of Transmutation"
     features_by_level = defaultdict(list)
-    features_by_level[2] = [features.TransmutationSavant,
-                            features.MinorAlchemy]
+    features_by_level[2] = [features.TransmutationSavant, features.MinorAlchemy]
     features_by_level[6] = [features.TransmutersStone]
     features_by_level[10] = [features.Shapechanger]
     features_by_level[14] = [features.MasterTransmuter]
@@ -161,11 +167,14 @@ class Bladesinging(SubClass):
     magic into devastating attacks and a cunning defense
 
     """
+
     name = "School of Bladesinging"
-    _proficiencies_text = ('light armor',)
-    skill_proficiencies = ('performance',)
+    _proficiencies_text = ("light armor",)
+    skill_proficiencies = ("performance",)
     features_by_level = defaultdict(list)
-    features_by_level[2] = [features.Bladesong,]
+    features_by_level[2] = [
+        features.Bladesong,
+    ]
     features_by_level[6] = [features.ExtraAttackBladesinging]
     features_by_level[10] = [features.SongOfDefense]
     features_by_level[14] = [features.SongOfVictory]
@@ -193,6 +202,7 @@ class WarMagic(SubClass):
     before I can cast it?
 
     """
+
     name = "School of War Magic"
     features_by_level = defaultdict(list)
     features_by_level[2] = [features.ArcaneDeflection, features.TacticalWit]
@@ -202,39 +212,56 @@ class WarMagic(SubClass):
 
 
 class Wizard(CharClass):
-    name = 'Wizard'
+    name = "Wizard"
     hit_dice_faces = 6
     subclass_select_level = 2
-    saving_throw_proficiencies = ('intelligence', 'wisdom')
-    primary_abilities = ('intelligence',)
-    _proficiencies_text = ('daggers', 'darts', 'slings',
-                           'quarterstaffs', 'light crossbows')
-    weapon_proficiencies = (weapons.Dagger, weapons.Dart,
-                            weapons.Sling, weapons.Quarterstaff,
-                            weapons.LightCrossbow)
+    saving_throw_proficiencies = ("intelligence", "wisdom")
+    primary_abilities = ("intelligence",)
+    _proficiencies_text = (
+        "daggers",
+        "darts",
+        "slings",
+        "quarterstaffs",
+        "light crossbows",
+    )
+    weapon_proficiencies = (
+        weapons.Dagger,
+        weapons.Dart,
+        weapons.Sling,
+        weapons.Quarterstaff,
+        weapons.LightCrossbow,
+    )
     multiclass_weapon_proficiencies = ()
     _multiclass_proficiencies_text = ()
-    class_skill_choices = ('Arcana', 'History', 'Investigation',
-                           'Medicine', 'Religion')
+    class_skill_choices = ("Arcana", "History", "Investigation", "Medicine", "Religion")
     features_by_level = defaultdict(list)
     features_by_level[1] = [features.ArcaneRecovery]
     features_by_level[18] = [features.SpellMastery]
     features_by_level[18] = [features.SignatureSpells]
-    subclasses_available = (Abjuration, Conjuration, Divination, Enchantment,
-                            Evocation, Illusion, Necromancy, Transmutation,
-                            Bladesinging, WarMagic)
-    spellcasting_ability = 'intelligence'
+    subclasses_available = (
+        Abjuration,
+        Conjuration,
+        Divination,
+        Enchantment,
+        Evocation,
+        Illusion,
+        Necromancy,
+        Transmutation,
+        Bladesinging,
+        WarMagic,
+    )
+    spellcasting_ability = "intelligence"
     spell_slots_by_level = {
         # char_lvl: (cantrips, 1st, 2nd, 3rd, ...)
-        1:  (3, 2, 0, 0, 0, 0, 0, 0, 0, 0),
-        2:  (3, 3, 0, 0, 0, 0, 0, 0, 0, 0),
-        3:  (3, 4, 2, 0, 0, 0, 0, 0, 0, 0),
-        4:  (4, 4, 3, 0, 0, 0, 0, 0, 0, 0),
-        5:  (4, 4, 3, 2, 0, 0, 0, 0, 0, 0),
-        6:  (4, 4, 3, 3, 0, 0, 0, 0, 0, 0),
-        7:  (4, 4, 3, 3, 1, 0, 0, 0, 0, 0),
-        8:  (4, 4, 3, 3, 2, 0, 0, 0, 0, 0),
-        9:  (4, 4, 3, 3, 3, 1, 0, 0, 0, 0),
+        1: (3, 2, 0, 0, 0, 0, 0, 0, 0, 0),
+        2: (3, 3, 0, 0, 0, 0, 0, 0, 0, 0),
+        3: (3, 4, 2, 0, 0, 0, 0, 0, 0, 0),
+        4: (4, 4, 3, 0, 0, 0, 0, 0, 0, 0),
+        5: (4, 4, 3, 2, 0, 0, 0, 0, 0, 0),
+        6: (4, 4, 3, 3, 0, 0, 0, 0, 0, 0),
+        7: (4, 4, 3, 3, 1, 0, 0, 0, 0, 0),
+        8: (4, 4, 3, 3, 2, 0, 0, 0, 0, 0),
+        9: (4, 4, 3, 3, 3, 1, 0, 0, 0, 0),
         10: (5, 4, 3, 3, 3, 2, 0, 0, 0, 0),
         11: (5, 4, 3, 3, 3, 2, 1, 0, 0, 0),
         12: (5, 4, 3, 3, 3, 2, 1, 0, 0, 0),
@@ -247,4 +274,3 @@ class Wizard(CharClass):
         19: (5, 4, 3, 3, 3, 3, 2, 1, 1, 1),
         20: (5, 4, 3, 3, 3, 3, 2, 2, 1, 1),
     }
-

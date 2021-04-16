@@ -1,6 +1,21 @@
-__all__ = ('CharClass', 'Artificer', 'Barbarian', 'Bard', 'Cleric', 'Druid', 'Fighter',
-           'Monk', 'Paladin', 'Ranger', 'Rogue', 'Sorceror', 'Warlock',
-           'Wizard', 'RevisedRanger', 'available_classes')
+__all__ = (
+    "CharClass",
+    "Artificer",
+    "Barbarian",
+    "Bard",
+    "Cleric",
+    "Druid",
+    "Fighter",
+    "Monk",
+    "Paladin",
+    "Ranger",
+    "Rogue",
+    "Sorceror",
+    "Warlock",
+    "Wizard",
+    "RevisedRanger",
+    "available_classes",
+)
 
 from dungeonsheets.classes.artificer import Artificer
 from dungeonsheets.classes.barbarian import Barbarian
@@ -17,5 +32,19 @@ from dungeonsheets.classes.sorceror import Sorceror
 from dungeonsheets.classes.warlock import Warlock
 from dungeonsheets.classes.wizard import Wizard
 
-available_classes = [Artificer, Barbarian, Bard, Cleric, Druid, Fighter, Monk, Paladin,
-                     Ranger, Rogue, Sorceror, Warlock, Wizard, RevisedRanger]
+available_classes = [
+    Artificer,
+    Barbarian,
+    Bard,
+    Cleric,
+    Druid,
+    Fighter,
+    Monk,
+    Paladin,
+    Ranger,
+    Rogue,
+    Sorceror,
+    Warlock,
+    Wizard,
+    RevisedRanger,
+]

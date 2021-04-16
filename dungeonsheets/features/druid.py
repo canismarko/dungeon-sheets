@@ -12,7 +12,7 @@ class WildShape(Feature):
     for example, you can transform into any beast that has a challenge
     rating of 1/4 or lower that doesn't have a flying or swimming
     speed.
-    
+
     ===== ====== ================== ===========
     Level Max CR Limitations        Example
     ===== ====== ================== ===========
@@ -20,16 +20,16 @@ class WildShape(Feature):
     4th   1/2    No flying          Crocodile
     8th   1      --                 Giant eagle
     ===== ====== ================== ===========
-    
+
     You can stay in a beast shape for a number of hours equal to half
     your druid level (rounded down). You then revert to your normal
     form unless you expend another use of this feature. You can revert
     to your normal form earlier by using a bonus action on your
     turn. You automatically revert if you fall unconscious, drop to 0
     hit points, or die.
-    
+
     While you are transformed, the following rules apply:
-    
+
     - Your game statistics are replaced by the statistics of the
       beast, but you retain your alignment, personality, and
       Intelligence, Wisdom, and Charisma scores. You also retain all
@@ -67,16 +67,17 @@ class WildShape(Feature):
       new form can't wear must either fall to the ground or merge with
       it. Equipment that merges with the form has no effect until you
       leave the form.
-    
+
     """
+
     _name = "Wild Shape"
     source = "Druid"
 
     @property
     def name(self):
-       num = 2
-       time = self.owner.Druid.level // 2
-       return self._name + " ({:d}x/SR, {:d} hours)".format(num, time)
+        num = 2
+        time = self.owner.Druid.level // 2
+        return self._name + " ({:d}x/SR, {:d} hours)".format(num, time)
 
 
 class TimelessBody(Feature):
@@ -84,6 +85,7 @@ class TimelessBody(Feature):
     more slowly. For every 10 years that pass, your body ages only 1 year.
 
     """
+
     name = "Timeless Body"
     source = "Druid"
 
@@ -95,6 +97,7 @@ class BeastSpells(Feature):
     provide material components.
 
     """
+
     name = "Beast Spells"
     source = "Druid"
 
@@ -108,6 +111,7 @@ class Archdruid(Feature):
     and your beast shape from Wild Shape
 
     """
+
     name = "Archdruid"
     source = "Druid"
 
@@ -118,6 +122,7 @@ class BonusCantrip(Feature):
     cantrip of your choice
 
     """
+
     name = "Bonus Cantrip"
     source = "Druid (Circle of the Land)"
 
@@ -135,6 +140,7 @@ class NaturalRecovery(Feature):
     1st-level slots.
 
     """
+
     name = "Natural Recovery"
     source = "Druid (Circle of the Land)"
 
@@ -152,27 +158,30 @@ class _CircleSpells(Feature):
     spell is nonetheless a druid spell for you.
 
     """
+
     _name = "Select One"
     source = "Druid (Circle of the Land)"
-    _spells = {3: [spells.MirrorImage, spells.MistyStep],
-            5: [spells.WaterBreathing, spells.WaterWalk],
-            7: [spells.ControlWater, spells.FreedomOfMovement],
-            9: [spells.ConjureElemental, spells.Scrying]}
+    _spells = {
+        3: [spells.MirrorImage, spells.MistyStep],
+        5: [spells.WaterBreathing, spells.WaterWalk],
+        7: [spells.ControlWater, spells.FreedomOfMovement],
+        9: [spells.ConjureElemental, spells.Scrying],
+    }
     spells_known = []
     spells_prepared = []
 
     @property
     def name(self):
-       return "Circle Spells ({:s})".format(self._name)
+        return "Circle Spells ({:s})".format(self._name)
 
     def __init__(self, owner=None):
-       if owner is not None:
-          level = owner.Druid.level
-          for lvl, sps in self._spells.items():
-             if level >= lvl:
-                self.spells_known.extend(sps)
-                self.spells_prepared.extend(sps)
-       super().__init__(owner=owner)
+        if owner is not None:
+            level = owner.Druid.level
+            for lvl, sps in self._spells.items():
+                if level >= lvl:
+                    self.spells_known.extend(sps)
+                    self.spells_prepared.extend(sps)
+        super().__init__(owner=owner)
 
 
 class ArcticSpells(_CircleSpells):
@@ -182,11 +191,14 @@ class ArcticSpells(_CircleSpells):
     These spells are included in your Spell Sheet
 
     """
-    _name = 'Arctic'
-    _spells = {3: [spells.HoldPerson, spells.SpikeGrowth],
-            5: [spells.SleetStorm, spells.Slow],
-            7: [spells.FreedomOfMovement, spells.IceStorm],
-            9: [spells.CommuneWithNature, spells.ConeOfCold]}
+
+    _name = "Arctic"
+    _spells = {
+        3: [spells.HoldPerson, spells.SpikeGrowth],
+        5: [spells.SleetStorm, spells.Slow],
+        7: [spells.FreedomOfMovement, spells.IceStorm],
+        9: [spells.CommuneWithNature, spells.ConeOfCold],
+    }
 
 
 class CoastSpells(_CircleSpells):
@@ -196,11 +208,14 @@ class CoastSpells(_CircleSpells):
     These spells are included in your Spell Sheet
 
     """
-    _name = 'Coast'
-    _spells = {3: [spells.MirrorImage, spells.MistyStep],
-            5: [spells.WaterBreathing, spells.WaterWalk],
-            7: [spells.ControlWater, spells.FreedomOfMovement],
-            9: [spells.ConjureElemental, spells.Scrying]}
+
+    _name = "Coast"
+    _spells = {
+        3: [spells.MirrorImage, spells.MistyStep],
+        5: [spells.WaterBreathing, spells.WaterWalk],
+        7: [spells.ControlWater, spells.FreedomOfMovement],
+        9: [spells.ConjureElemental, spells.Scrying],
+    }
 
 
 class DesertSpells(_CircleSpells):
@@ -210,11 +225,14 @@ class DesertSpells(_CircleSpells):
     These spells are included in your Spell Sheet
 
     """
-    _name = 'Desert'
-    _spells = {3: [spells.Blur, spells.Silence],
-            5: [spells.CreateFoodAndWater, spells.ProtectionFromEnergy],
-            7: [spells.Blight, spells.HallucinatoryTerrain],
-            9: [spells.InsectPlague, spells.WallOfStone]}
+
+    _name = "Desert"
+    _spells = {
+        3: [spells.Blur, spells.Silence],
+        5: [spells.CreateFoodAndWater, spells.ProtectionFromEnergy],
+        7: [spells.Blight, spells.HallucinatoryTerrain],
+        9: [spells.InsectPlague, spells.WallOfStone],
+    }
 
 
 class ForestSpells(_CircleSpells):
@@ -224,11 +242,14 @@ class ForestSpells(_CircleSpells):
     These spells are included in your Spell Sheet
 
     """
-    _name = 'Forest'
-    _spells = {3: [spells.Barkskin, spells.SpiderClimb],
-            5: [spells.CallLightning, spells.PlantGrowth],
-            7: [spells.Divination, spells.FreedomOfMovement],
-            9: [spells.CommuneWithNature, spells.TreeStride]}
+
+    _name = "Forest"
+    _spells = {
+        3: [spells.Barkskin, spells.SpiderClimb],
+        5: [spells.CallLightning, spells.PlantGrowth],
+        7: [spells.Divination, spells.FreedomOfMovement],
+        9: [spells.CommuneWithNature, spells.TreeStride],
+    }
 
 
 class GrasslandSpells(_CircleSpells):
@@ -238,11 +259,14 @@ class GrasslandSpells(_CircleSpells):
     These spells are included in your Spell Sheet
 
     """
-    _name = 'Grassland'
-    _spells = {3: [spells.Invisibility, spells.PassWithoutTrace],
-            5: [spells.Daylight, spells.Haste],
-            7: [spells.Divination, spells.FreedomOfMovement],
-            9: [spells.Dream, spells.InsectPlague]}
+
+    _name = "Grassland"
+    _spells = {
+        3: [spells.Invisibility, spells.PassWithoutTrace],
+        5: [spells.Daylight, spells.Haste],
+        7: [spells.Divination, spells.FreedomOfMovement],
+        9: [spells.Dream, spells.InsectPlague],
+    }
 
 
 class MountainSpells(_CircleSpells):
@@ -252,11 +276,14 @@ class MountainSpells(_CircleSpells):
     These spells are included in your Spell Sheet
 
     """
-    _name = 'Mountain'
-    _spells = {3: [spells.SpiderClimb, spells.SpikeGrowth],
-            5: [spells.LightningBolt, spells.MeldIntoStone],
-            7: [spells.StoneShape, spells.Stoneskin],
-            9: [spells.Passwall, spells.WallOfStone]}
+
+    _name = "Mountain"
+    _spells = {
+        3: [spells.SpiderClimb, spells.SpikeGrowth],
+        5: [spells.LightningBolt, spells.MeldIntoStone],
+        7: [spells.StoneShape, spells.Stoneskin],
+        9: [spells.Passwall, spells.WallOfStone],
+    }
 
 
 class SwampSpells(_CircleSpells):
@@ -266,11 +293,14 @@ class SwampSpells(_CircleSpells):
     These spells are included in your Spell Sheet
 
     """
-    _name = 'Swamp'
-    _spells = {3: [spells.Darkness, spells.MelfsAcidArrow],
-            5: [spells.WaterWalk, spells.StinkingCloud],
-            7: [spells.FreedomOfMovement, spells.LocateCreature],
-            9: [spells.InsectPlague, spells.Scrying]}
+
+    _name = "Swamp"
+    _spells = {
+        3: [spells.Darkness, spells.MelfsAcidArrow],
+        5: [spells.WaterWalk, spells.StinkingCloud],
+        7: [spells.FreedomOfMovement, spells.LocateCreature],
+        9: [spells.InsectPlague, spells.Scrying],
+    }
 
 
 class UnderdarkSpells(_CircleSpells):
@@ -280,11 +310,14 @@ class UnderdarkSpells(_CircleSpells):
     These spells are included in your Spell Sheet
 
     """
-    _name = 'Underdark'
-    _spells = {3: [spells.SpiderClimb, spells.Web],
-            5: [spells.GaseousForm, spells.StinkingCloud],
-            7: [spells.GreaterInvisibility, spells.StoneShape],
-            9: [spells.Cloudkill, spells.InsectPlague]}
+
+    _name = "Underdark"
+    _spells = {
+        3: [spells.SpiderClimb, spells.Web],
+        5: [spells.GaseousForm, spells.StinkingCloud],
+        7: [spells.GreaterInvisibility, spells.StoneShape],
+        9: [spells.Cloudkill, spells.InsectPlague],
+    }
 
 
 class SporesSpells(_CircleSpells):
@@ -295,12 +328,14 @@ class SporesSpells(_CircleSpells):
 
     """
 
-    _name = 'Spores'
-    _spells = {2: [spells.ChillTouch],
-            3: [spells.BlindnessDeafness, spells.GentleRepose],
-            5: [spells.AnimateDead, spells.GaseousForm],
-            7: [spells.Blight, spells.Confusion],
-            9: [spells.Cloudkill, spells.Contagion]}
+    _name = "Spores"
+    _spells = {
+        2: [spells.ChillTouch],
+        3: [spells.BlindnessDeafness, spells.GentleRepose],
+        5: [spells.AnimateDead, spells.GaseousForm],
+        7: [spells.Blight, spells.Confusion],
+        9: [spells.Cloudkill, spells.Contagion],
+    }
 
 
 class CircleSpells(FeatureSelector, _CircleSpells):
@@ -326,15 +361,18 @@ class CircleSpells(FeatureSelector, _CircleSpells):
     spores
 
     """
-    options = {'arctic': ArcticSpells,
-            'coast': CoastSpells,
-            'desert': DesertSpells,
-            'forest': ForestSpells,
-            'grassland': GrasslandSpells,
-            'mountain': MountainSpells,
-            'swamp': SwampSpells,
-            'underdark': UnderdarkSpells,
-            'spores': SporesSpells}
+
+    options = {
+        "arctic": ArcticSpells,
+        "coast": CoastSpells,
+        "desert": DesertSpells,
+        "forest": ForestSpells,
+        "grassland": GrasslandSpells,
+        "mountain": MountainSpells,
+        "swamp": SwampSpells,
+        "underdark": UnderdarkSpells,
+        "spores": SporesSpells,
+    }
     name = "Circle Spells (Select One)"
     source = "Druid (Circle of the Land/Spores)"
 
@@ -348,6 +386,7 @@ class LandsStride(Feature):
     impede movement, such those created by the entangle spell.
 
     """
+
     name = "Land's Stride"
     source = "Class (Many)"
 
@@ -357,6 +396,7 @@ class NaturesWard(Feature):
     or fey, and you are immune to poison and disease
 
     """
+
     name = "Nature's Ward"
     source = "Druid (Circle of the Land)"
 
@@ -371,6 +411,7 @@ class NaturesSanctuary(Feature):
     creature is aware of this effect before it makes its attack against you
 
     """
+
     name = "Nature's Sanctuary"
     source = "Druid (Circle of the Land)"
 
@@ -384,6 +425,7 @@ class CombatWildShape(Feature):
     of the spell slot expended.
 
     """
+
     name = "Combat Wild Shape"
     source = "Druid (Circle of the Moon)"
 
@@ -398,13 +440,14 @@ class CircleForms(Feature):
     down
 
     """
+
     _name = "Circle Forms"
     source = "Druid (Circle of the Moon)"
 
     @property
     def name(self):
-       level = self.owner.Druid.level
-       return self._name + ' (CR {:d})'.format(max(1, level//3))
+        level = self.owner.Druid.level
+        return self._name + " (CR {:d})".format(max(1, level // 3))
 
 
 class PrimalStrike(Feature):
@@ -413,6 +456,7 @@ class PrimalStrike(Feature):
     damage.
 
     """
+
     name = "Primal Strike"
     source = "Druid (Circle of the Moon)"
 
@@ -423,6 +467,7 @@ class ElementalWildShape(Feature):
     water elemental.
 
     """
+
     name = "Elemental Wild Shape"
     source = "Druid (Circle of the Moon)"
 
@@ -432,6 +477,7 @@ class ThousandForms(Feature):
     more subtle ways. You can cast the alter self spell at will.
 
     """
+
     name = "Thousand Forms"
     source = "Druid (Circle of the Moon)"
     spells_known = (spells.AlterSelf,)
@@ -451,12 +497,13 @@ class BalmOfTheSummerCourt(Feature):
     long rest.
 
     """
+
     _name = "Balm Of The Summer Court"
     source = "Druid (Circle of Dreams)"
 
     @property
     def name(self):
-       return self._name + " ({:d}x d6)".format(self.owner.Druid.level)
+        return self._name + " ({:d}x d6)".format(self.owner.Druid.level)
 
 
 class HearthOfMoonlightAndShadow(Feature):
@@ -472,6 +519,7 @@ class HearthOfMoonlightAndShadow(Feature):
     sphere vanishes at the end of the rest or when you leave the sphere
 
     """
+
     name = "Hearth of Moonlight and Shadow"
     source = "Druid (Circle of the Moon)"
 
@@ -488,6 +536,7 @@ class HiddenPaths(Feature):
     and you regain all expended uses of it when you finish a long rest
 
     """
+
     name = "Hidden Paths"
     source = "Druid (Circle of the Moon)"
 
@@ -507,6 +556,7 @@ class WalkerInDreams(Feature):
     a long rest.
 
     """
+
     name = "Walker in Dreams"
     source = "Druid (Circle of the Moon)"
 
@@ -523,6 +573,7 @@ class SpeechOfTheWoods(Feature):
     them as you would with any nonplayer character.
 
     """
+
     name = "Speech of the Woods"
     source = "Druid (Circle of the Shepherd)"
 
@@ -535,27 +586,27 @@ class SpiritTotem(Feature):
     radius around that point. It counts as neither a creature nor an
     object, though it has the spectral appearance of the creature
     it. represents.
-    
+
     As a bonus action, you can move the spirit up to 60 feet to a
     point you can see. The spirit persists for 1 minute or until
     you're incapacitated. Once you use this feature, you can't use it
     again until you finish a short or long rest. The effect of the
     spirit's aura depends on the type of spirit you summon from the
     options below.
-    
+
     **Bear Spirit**: The bear spirit grants you and your allies its
     might and endurance. Each creature ofyour choice in the aura when
     the spirit appears gains temporary hit points equal to 5 + your
     druid level. In addition, you and your allies gain advantage on
     Strength checks and Strength saving throws while in the aura.
-    
+
     **Hawk Spirit**: The hawk spirit is a consummate hunter, aiding
     you and your allies with its keen sight. When a creature makes an
     attack roll against a target in the spirit's aura, you can use
     your reaction to grant advantage to that attack roll. In addition,
     you and your allies have advantage on Wisdom (Perception) checks
     while in the aura
-    
+
     **Unicorn Spirit**: The unicorn spirit lends its protection to
     those nearby. You and your allies gain advantage on all ability
     checks made to detect creatures in the spirit's aura. In
@@ -563,8 +614,9 @@ class SpiritTotem(Feature):
     points to any creature inside or outside the aura, each creature
     of your choice in the aura also regains hit points equal to your
     druid level.
-    
+
     """
+
     name = "Spirit Totem"
     source = "Druid (Circle of the Shepherd)"
 
@@ -573,7 +625,7 @@ class MightySummoner(Feature):
     """Starting at 6th level, beasts and fey that you conjure are more
     resilient than normal. Any beast or fey summoned or created by a
     spell that you cast gains the. following benefits:
-    
+
     - The creature appears with more hit points than normal: 2 extra
       hit
     - The creature appears with more hit points than normal: 2 extra
@@ -581,8 +633,9 @@ class MightySummoner(Feature):
     - The damage from its natural weapons is considered magical for
       the purpose of overcoming immunity and resistance to nonmagical
       attacks and damage.
-    
+
     """
+
     name = "Mighty Summoner"
     source = "Druid (Circle of the Shepherd)"
 
@@ -593,8 +646,9 @@ class GuardianSpirit(Feature):
     that you summoned or created with a spell ends its turn in your
     Spirit Totem aura, that creature regains a number of hit points
     equal to half your druid level.
-    
+
     """
+
     name = "Guardian Spirit"
     source = "Druid (Circle of the Shepherd)"
 
@@ -613,11 +667,12 @@ class FaithfulSummons(Feature):
     you finish a long rest
 
     """
+
     name = "Faithful Summons"
     source = "Druid (Circle of the Shepherd)"
 
 
-#Circle of Spores
+# Circle of Spores
 class HaloOfSpores(Feature):
     """Starting at 2nd level, you are surrounded by invisible, necrotic spores
     that are harmless until you unleash them on a creature nearby. When a
@@ -628,6 +683,7 @@ class HaloOfSpores(Feature):
     10th level, and 1d10 at 14th level
 
     """
+
     name = "Halo of Spores"
     source = "Druid (Cirlce of Spores)"
 
@@ -649,6 +705,7 @@ class SymbioticEntity(Feature):
     points, or until you use your Wild Shape again.
 
     """
+
     name = "Symbiotic Entity"
     source = "Druid (Circle of Spores)"
 
@@ -660,16 +717,17 @@ class FungalInfestation(Feature):
     causing it to stand up immediately with 1 hit point. The creature
     uses the zombie stat block in the Monster Manual. It remains
     animated for 1 hour, after which time it collapses and dies.
-    
+
     In combat, the zombie's turn comes immediately after yours. It
     obeys your mental commands, and the only action it can take is the
     Attack action, making one melee attack.
-    
+
     You can use this feature a number of times equal to your Wisdom
     modifier (minimum of once), and you regain all expended uses of it
     when you finish a long rest.
 
     """
+
     name = "Fungal Infestation"
     source = "Druid (Circle of Spores)"
 
@@ -691,6 +749,7 @@ class SpreadingSpores(Feature):
     reaction.
 
     """
+
     name = "Spreading Spores"
     source = "Druid (Circle of Spores)"
 
@@ -701,6 +760,6 @@ class FungalBody(Feature):
     you counts as a normal hit instead, unless you're incapacitated.
 
     """
+
     name = "Fungal Body"
     source = "Druid (Circle of Spores)"
-

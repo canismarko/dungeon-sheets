@@ -19,15 +19,14 @@ class UnseenServant(Spell):
     you command the servant to perform a task that would move it more than 60 feet
     away from you, the spell ends.
     """
+
     name = "Unseen Servant"
     level = 1
     casting_time = "1 action"
     casting_range = "60 feet"
-    components = ('V', 'S', 'M')
-    materials = """A piece of string and a bit of wood"""
+    components = ("V", "S", "M")
+    materials = "A piece of string and a bit of wood"
     duration = "1 hour"
     ritual = True
     magic_school = "Conjuration"
-    classes = ('Bard', 'Warlock', 'Wizard')
-
-
+    classes = ("Bard", "Warlock", "Wizard")

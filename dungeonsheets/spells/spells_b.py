@@ -11,16 +11,17 @@ class Bane(Spell):
     Levels: When you cast this spell using a spelslot of 2nd level or higher, you
     can target one aditional creature for each slot level above 1st.
     """
+
     name = "Bane"
     level = 1
     casting_time = "1 action"
     casting_range = "30 feet"
-    components = ('V', 'S', 'M')
-    materials = """A drop of blood"""
+    components = ("V", "S", "M")
+    materials = "A drop of blood"
     duration = "Concentration, up to 1 minute"
     ritual = False
     magic_school = "Enchantment"
-    classes = ('Bard', 'Cleric')
+    classes = ("Bard", "Cleric")
 
 
 class BanishingSmite(Spell):
@@ -34,16 +35,17 @@ class BanishingSmite(Spell):
     there until the spell ends, at which point the target reappears in the space it
     left or in the nearest unoccupied space if that space is occupied.
     """
+
     name = "Banishing Smite"
     level = 5
     casting_time = "1 bonus action"
     casting_range = "Self"
-    components = ('V',)
-    materials = """"""
+    components = ("V",)
+    materials = ""
     duration = "Concentration, up to 1 minute"
     ritual = False
     magic_school = "Abjuration"
-    classes = ('Paladin',)
+    classes = ("Paladin",)
 
 
 class Banishment(Spell):
@@ -68,16 +70,17 @@ class Banishment(Spell):
     cast this spell using a spell slot of 5th level or higher, you can target one
     additional creature for each slot level above 4th.
     """
+
     name = "Banishment"
     level = 4
     casting_time = "1 action"
     casting_range = "60 feet"
-    components = ('V', 'S', 'M')
-    materials = """An item distasteful to the target"""
+    components = ("V", "S", "M")
+    materials = "An item distasteful to the target"
     duration = "Concentration, up to 1 minute"
     ritual = False
     magic_school = "Abjuration"
-    classes = ('Cleric', 'Paladin', 'Sorcerer', 'Warlock', 'Wizard')
+    classes = ("Cleric", "Paladin", "Sorcerer", "Warlock", "Wizard")
 
 
 class Barkskin(Spell):
@@ -85,16 +88,17 @@ class Barkskin(Spell):
     rough, bark-like appearance, and the target's AC can't be less than 16,
     regardless of what kind of armor it is wearing.
     """
+
     name = "Barkskin"
     level = 2
     casting_time = "1 action"
     casting_range = "Touch"
-    components = ('V', 'S', 'M')
-    materials = """A handful of oak bark"""
+    components = ("V", "S", "M")
+    materials = "A handful of oak bark"
     duration = "Concentration, up to 1 hour"
     ritual = False
     magic_school = "Transmutation"
-    classes = ('Druid', 'Ranger')
+    classes = ("Druid", "Ranger")
 
 
 class BeaconOfHope(Spell):
@@ -103,16 +107,17 @@ class BeaconOfHope(Spell):
     death saving throws, and regains the maximum number of hit points possible from
     any healing.
     """
+
     name = "Beacon Of Hope"
     level = 3
     casting_time = "1 action"
     casting_range = "30 feet"
-    components = ('V', 'S')
-    materials = """"""
+    components = ("V", "S")
+    materials = ""
     duration = "Concentration, up to 1 minute"
     ritual = False
     magic_school = "Abjuration"
-    classes = ('Cleric',)
+    classes = ("Cleric",)
 
 
 class BeastBond(Spell):
@@ -127,16 +132,17 @@ class BeastBond(Spell):
     5 feet of you that you can see.
 
     """
+
     name = "Beast Bond"
     level = 1
     casting_time = "1 action"
     casting_range = "Touch"
-    components = ('V', 'S', 'M')
-    materials = """A bit of fur wrapped in a cloth"""
+    components = ("V", "S", "M")
+    materials = "A bit of fur wrapped in a cloth"
     duration = "Instantaneous"
     ritual = False
     magic_school = "Divination"
-    classes = ('Druid', 'Ranger')
+    classes = ("Druid", "Ranger")
 
 
 class BeastSense(Spell):
@@ -146,16 +152,17 @@ class BeastSense(Spell):
     to your normal senses.
 
     """
+
     name = "Beast Sense"
     level = 2
     casting_time = "1 action"
     casting_range = "Touch"
-    components = ('S',)
-    materials = """"""
+    components = ("S",)
+    materials = ""
     duration = "Concentration, up to 1 hour"
     ritual = True
     magic_school = "Divination"
-    classes = ('Druid', 'Ranger')
+    classes = ("Druid", "Ranger")
 
 
 class BestowCurse(Spell):
@@ -187,16 +194,17 @@ class BestowCurse(Spell):
     spell slot of 5th level or higher grants a duration that doesn't require
     concentration.
     """
+
     name = "Bestow Curse"
     level = 3
     casting_time = "1 action"
     casting_range = "Touch"
-    components = ('V', 'S')
-    materials = """"""
+    components = ("V", "S")
+    materials = ""
     duration = "Concentration, up to 1 minute"
     ritual = False
     magic_school = "Necromancy"
-    classes = ('Bard', 'Cleric', 'Wizard')
+    classes = ("Bard", "Cleric", "Wizard")
 
 
 class BigbysHand(Spell):
@@ -254,16 +262,17 @@ class BigbysHand(Spell):
     by 2d6 for each slot level above 5th.
 
     """
+
     name = "Bigbys Hand"
     level = 5
     casting_time = "1 action"
     casting_range = "120 feet"
-    components = ('V', 'S', 'M')
-    materials = """An eggshell and a snakeskin glove"""
+    components = ("V", "S", "M")
+    materials = "An eggshell and a snakeskin glove"
     duration = "Instantaneous"
     ritual = False
     magic_school = "Evocation"
-    classes = ('Wizard',)
+    classes = ("Wizard",)
 
 
 class BladeBarrier(Spell):
@@ -279,16 +288,17 @@ class BladeBarrier(Spell):
     failed save, the creature takes 6 d10 slashing damage. On a successful save,
     the creature takes half as much damage.
     """
+
     name = "Blade Barrier"
     level = 6
     casting_time = "1 action"
     casting_range = "90 feet"
-    components = ('V', 'S')
-    materials = """"""
+    components = ("V", "S")
+    materials = ""
     duration = "Concentration, up to 10 minutes"
     ritual = False
     magic_school = "Evocation"
-    classes = ('Cleric',)
+    classes = ("Cleric",)
 
 
 class BladeWard(Spell):
@@ -296,16 +306,17 @@ class BladeWard(Spell):
     your next turn, you have resistance against bludgeoning, piercing, and slashing
     damage dealt by weapon attacks.
     """
+
     name = "Blade Ward"
     level = 0
     casting_time = "1 action"
     casting_range = "Self"
-    components = ('V', 'S')
-    materials = """"""
+    components = ("V", "S")
+    materials = ""
     duration = "1 round"
     ritual = False
     magic_school = "Abjuration"
-    classes = ('Bard', 'Sorcerer', 'Warlock', 'Wizard')
+    classes = ("Bard", "Sorcerer", "Warlock", "Wizard")
 
 
 class Bless(Spell):
@@ -317,16 +328,17 @@ class Bless(Spell):
     Higher Levels: When you cast this spell using a spell slot of 2nd level or
     higher, you can target one additional creature for each slot level above 1st.
     """
+
     name = "Bless"
     level = 1
     casting_time = "1 action"
     casting_range = "30 feet"
-    components = ('V', 'S', 'M')
-    materials = """A sprinkling of holy water"""
+    components = ("V", "S", "M")
+    materials = "A sprinkling of holy water"
     duration = "Concentration, up to 1 minute"
     ritual = False
     magic_school = "Enchantment"
-    classes = ('Cleric', 'Paladin')
+    classes = ("Cleric", "Paladin")
 
 
 class Blight(Spell):
@@ -347,16 +359,17 @@ class Blight(Spell):
     Levels: When you cast this spell using a spell slot of 5th level or higher, the
     damage increases by 1d8 for each slot level above 4th.
     """
+
     name = "Blight"
     level = 4
     casting_time = "1 action"
     casting_range = "30 feet"
-    components = ('V', 'S')
-    materials = """"""
+    components = ("V", "S")
+    materials = ""
     duration = "Instantaneous"
     ritual = False
     magic_school = "Necromancy"
-    classes = ('Druid', 'Sorcerer', 'Warlock', 'Wizard')
+    classes = ("Druid", "Sorcerer", "Warlock", "Wizard")
 
 
 class BlindingSmite(Spell):
@@ -371,16 +384,17 @@ class BlindingSmite(Spell):
     no longer blinded.
 
     """
+
     name = "Blinding Smite"
     level = 3
     casting_time = "1 bonus action"
     casting_range = "Self"
-    components = ('V',)
-    materials = """"""
+    components = ("V",)
+    materials = ""
     duration = "Concentration, up to 1 minute"
     ritual = False
     magic_school = "Evocation"
-    classes = ('Paladin',)
+    classes = ("Paladin",)
 
 
 class BlindnessDeafness(Spell):
@@ -395,15 +409,16 @@ class BlindnessDeafness(Spell):
     each slot level above 2nd.
 
     """
+
     name = "Blindness/Deafness"
     level = 2
     casting_time = "1 action"
     casting_range = "30 feet"
-    components = ('V',)
+    components = ("V",)
     duration = "1 minute"
     ritual = False
     magic_school = "Necromancy"
-    classes = ('Bard', 'Cleric', 'Sorcerer', 'Wizard')
+    classes = ("Bard", "Cleric", "Sorcerer", "Wizard")
 
 
 class Blink(Spell):
@@ -425,16 +440,17 @@ class Blink(Spell):
     by other reatures on the Ethereal Plane. Creature that aren't there can't
     perceive you or interact with you, unless they have the ability to do so.
     """
+
     name = "Blink"
     level = 3
     casting_time = "1 action"
     casting_range = "Self"
-    components = ('V', 'S')
-    materials = """"""
+    components = ("V", "S")
+    materials = ""
     duration = "1 minute"
     ritual = False
     magic_school = "Transmutation"
-    classes = ('Sorcerer', 'Wizard')
+    classes = ("Sorcerer", "Wizard")
 
 
 class Blur(Spell):
@@ -443,16 +459,17 @@ class Blur(Spell):
     attacker is immune to this effect if it doesnt rely on sight, as with
     blindsight, or can see through illusions, as with truesight.
     """
+
     name = "Blur"
     level = 2
     casting_time = "1 action"
     casting_range = "Self"
-    components = ('V',)
-    materials = """"""
+    components = ("V",)
+    materials = ""
     duration = "Concentration, up to 1 minute"
     ritual = False
     magic_school = "Illusion"
-    classes = ('Sorcerer', 'Wizard')
+    classes = ("Sorcerer", "Wizard")
 
 
 class BonesOfTheEarth(Spell):
@@ -484,15 +501,16 @@ class BonesOfTheEarth(Spell):
     each slot level above 6th.
 
     """
+
     name = "Bones Of The Earth"
     level = 6
     casting_time = "1 action"
     casting_range = "120 feet"
-    components = ('V', 'S')
+    components = ("V", "S")
     duration = "Instantaneous"
     ritual = False
     magic_school = "Transmutation"
-    classes = ('Druid',)
+    classes = ("Druid",)
 
 
 class BoomingBlade(Spell):
@@ -510,16 +528,17 @@ class BoomingBlade(Spell):
     to the target, and the damage the target takes for moving increases to 2d8. Both
     damage rolls increase by 1d8 at 11th level and 17th level.
     """
+
     name = "Booming Blade"
     level = 0
     casting_time = "1 action"
     casting_range = "5 feet"
-    components = ('V', 'M')
-    materials = """A weapon"""
+    components = ("V", "M")
+    materials = "A weapon"
     duration = "Instantaneous"
     ritual = False
     magic_school = "Evocation"
-    classes = ('Sorcerer', 'Warlock', 'Wizard')
+    classes = ("Sorcerer", "Warlock", "Wizard")
 
 
 class BrandingSmite(Spell):
@@ -533,16 +552,17 @@ class BrandingSmite(Spell):
     of 3rd level or higher, the extra damage increases by 1d6 for each slot level
     above 2nd.
     """
+
     name = "Branding Smite"
     level = 2
     casting_time = "1 bonus action"
     casting_range = "Self"
-    components = ('V',)
-    materials = """"""
+    components = ("V",)
+    materials = ""
     duration = "Concentration, up to 1 minute"
     ritual = False
     magic_school = "Evocation"
-    classes = ('Paladin',)
+    classes = ("Paladin",)
 
 
 class BurningHands(Spell):
@@ -558,13 +578,14 @@ class BurningHands(Spell):
     Higher Levels: When you cast this spell using a spell slot of 2nd level or
     higher, the damage increases by 1d6 for each slot level above 1st.
     """
+
     name = "Burning Hands"
     level = 1
     casting_time = "1 action"
     casting_range = "Self (15-foot cone)"
-    components = ('V', 'S')
-    materials = """"""
+    components = ("V", "S")
+    materials = ""
     duration = "Instantaneous"
     ritual = False
     magic_school = "Evocation"
-    classes = ('Sorcerer', 'Wizard')
+    classes = ("Sorcerer", "Wizard")

@@ -16,6 +16,7 @@ class RogueExpertise(Feature):
     Add these skills to "skill_expertise" in your character.py file
 
     """
+
     name = "Expertise"
     source = "Rogue"
 
@@ -33,15 +34,16 @@ class SneakAttack(Feature):
     The amount of the extra damage increases as you gain levels in this class,
     as shown in the Sneak Attack column of the Rogue table.
     """
+
     _name = "Sneak Attack"
     source = "Rogue"
 
     @property
     def name(self):
-       level = self.owner.Rogue.level
-       dice = ceil(level / 2.)
-       name = self._name + " ({:d}d6)".format(dice)
-       return name
+        level = self.owner.Rogue.level
+        dice = ceil(level / 2.0)
+        name = self._name + " ({:d}d6)".format(dice)
+        return name
 
 
 class CunningAction(Feature):
@@ -51,6 +53,7 @@ class CunningAction(Feature):
     action.
 
     """
+
     name = "Cunning Action"
     source = "Rogue"
 
@@ -60,6 +63,7 @@ class UncannyDodge(Feature):
     attack, you can use your reaction to halve the attack's damage against you.
 
     """
+
     name = "Uncanny Dodge"
     source = "Class (many)"
 
@@ -72,6 +76,7 @@ class Evasion(Feature):
     if you succeed on the saving throw, and only half damage if you fail.
 
     """
+
     name = "Evasion"
     source = "Class (many)"
 
@@ -82,6 +87,7 @@ class ReliableTalent(Feature):
     proficiency bonus, you can treat a d20 roll of 9 or lower as a 10.
 
     """
+
     name = "Reliable Talent"
     source = "Rogue"
 
@@ -90,6 +96,7 @@ class BlindSense(Feature):
     """Starting at 14th level, if you are able to hear, you are aware of the
     location of any hidden or invisible creature within 10 feet of you.
     """
+
     name = "Blind Sense"
     source = "Rogue"
 
@@ -99,7 +106,8 @@ class SlipperyMind(Feature):
     proficiency in W isdom saving throws.
 
     """
-    name = 'Slippery Mind'
+
+    name = "Slippery Mind"
     source = "Rogue"
 
 
@@ -109,6 +117,7 @@ class Elusive(Feature):
     aren't incapacitated.
 
     """
+
     name = "Elusive"
     source = "Rogue"
 
@@ -123,6 +132,7 @@ class StrokeOfLuck(Feature):
     or long rest.
 
     """
+
     name = "Stroke of Luck"
     source = "Rogue"
 
@@ -134,6 +144,7 @@ class FastHands(Feature):
     to disarm a trap or open a lock, or take the Use an Object action.
 
     """
+
     name = "Fast Hands"
     source = "Rogue (Thief)"
 
@@ -145,6 +156,7 @@ class SecondStoryWork(Feature):
     a number of feet equal to your Dexterity modifier.
 
     """
+
     name = "Second-Story Work"
     source = "Rogue (Thief)"
 
@@ -154,6 +166,7 @@ class SupremeSneak(Feature):
     you move no more than half your speed on the same turn
 
     """
+
     name = "Supreme Sneak"
     source = "Rogue (Thief)"
 
@@ -164,6 +177,7 @@ class UseMagicDevice(Feature):
     ignore all class, race, and level requirements on the use of magic items
 
     """
+
     name = "Use Magic Device"
     source = "Rogue (Thief)"
 
@@ -176,6 +190,7 @@ class ThiefsReflexes(Feature):
     you are surprised.
 
     """
+
     name = "Thief's Reflexes"
     source = "Rogue (Thief)"
 
@@ -188,6 +203,7 @@ class Assassinate(Feature):
     against a creature that is surprised is a critical hit.
 
     """
+
     name = "Assassinate"
     source = "Rogue (Assassin)"
 
@@ -205,6 +221,7 @@ class InfiltrationExpertise(Feature):
     to.
 
     """
+
     name = "Infiltration Expertise"
     source = "Rogue (Assassin)"
 
@@ -219,6 +236,7 @@ class Imposter(Feature):
     detection
 
     """
+
     name = "Imposter"
     source = "Rogue (Assassin)"
 
@@ -230,6 +248,7 @@ class DeathStrike(Feature):
     a failed save, double the damage of your attack against the creature
 
     """
+
     name = "Death Strike"
     source = "Rogue (Assassin)"
 
@@ -239,21 +258,22 @@ class MageHandLegerdemain(Feature):
     """Starting at 3rd level, when you cast mage hand, you can make the
     spectral hand invisible, and you can perform the following
     additional tasks with it:
-    
+
     - You can stow one object the hand is holding in a container worn
       or carried by another creature.
     - You can retrieve an object in a container worn or carried by
       another creature.
     - You can use thieves' tools to pick locks and disarm traps at
       range
-    
+
     You can perform one of these tasks without being noticed by a
     creature if you succeed on a Dexterity (Sleight of Hand) check
     contested by the creature's Wisdom (Perception) check. In
     addition, you can use the bonus action granted by your Cunning
     Action to control the hand.
-    
+
     """
+
     name = "Mage Hand Legerdemain"
     source = "Rogue (Arcane Trickster)"
 
@@ -264,6 +284,7 @@ class MagicalAmbush(Feature):
     against the spell this turn
 
     """
+
     name = "Magical Ambush"
     source = "Rogue (Arcane Trickster)"
 
@@ -275,6 +296,7 @@ class VersatileTrickster(Feature):
     advantage on attack rolls against that creature until the end of the turn.
 
     """
+
     name = "Versatile Trickster"
     source = "Rogue (Arcane Trickster)"
 
@@ -294,6 +316,7 @@ class SpellThief(Feature):
     you can't use it again until you finish a long rest
 
     """
+
     name = "Spell Thief"
     source = "Rogue (Arcane Trickster)"
 
@@ -306,6 +329,7 @@ class EarForDeceit(Feature):
     8.
 
     """
+
     name = "Ear for Deceit"
     source = "Rogue (Inquisitive)"
 
@@ -316,6 +340,7 @@ class EyeForDetail(Feature):
     Intelligence (Investigation) check to uncover or decipher clues
 
     """
+
     name = "Eye for Detail"
     source = "Rogue (Inquisitive)"
 
@@ -331,6 +356,7 @@ class InsightfulFighting(Feature):
     against a different target
 
     """
+
     name = "Insightful Fighting"
     source = "Rogue (Inquisitive)"
 
@@ -341,6 +367,7 @@ class SteadyEye(Feature):
     on the same turn
 
     """
+
     name = "Steady Eye"
     source = "Rogue (Inquisitive)"
 
@@ -356,6 +383,7 @@ class UnerringEye(Feature):
     expended uses of it when you finish a long rest
 
     """
+
     name = "Unerring Eye"
     source = "Rogue (Inquisitive)"
 
@@ -367,6 +395,7 @@ class EyeForWeakness(Feature):
     increases by 3d6
 
     """
+
     name = "Eye for Weakness"
     source = "Rogue (Inquisitive)"
 
@@ -381,6 +410,7 @@ class MasterOfIntrigue(Feature):
     particular land, provided that you know the language.
 
     """
+
     name = "Master of Intrigue"
     source = "Rogue (Mastermind)"
 
@@ -392,6 +422,7 @@ class MasterOfTactics(Feature):
     you, rather than within 5 feet of you, if the target can see or hear you
 
     """
+
     name = "Master of Tactics"
     source = "Rogue (Mastermind)"
 
@@ -415,6 +446,7 @@ class InsightfulManipulator(Feature):
     creature's history or one of its personality traits, if it has any
 
     """
+
     name = "Insightful Manipulator"
     source = "Rogue (Mastermind)"
 
@@ -427,6 +459,7 @@ class Misdirection(Feature):
     of you
 
     """
+
     name = "Misdirection"
     source = "Rogue (Mastermind)"
 
@@ -440,6 +473,7 @@ class SoulOfDeceit(Feature):
     you so choose, and you can't be compelled to tell the truth by magic
 
     """
+
     name = "Soul of Deceit"
     source = "Rogue (Masterind)"
 
@@ -451,6 +485,7 @@ class Skirmisher(Feature):
     within 5 feet of you. This movement doesn't provoke opportunity attacks
 
     """
+
     name = "Skirmisher"
     source = "Rogue (Scout)"
 
@@ -464,8 +499,8 @@ class Survivalist(Feature):
     """
 
     def __init__(self, owner=None):
-       super().__init__(owner=owner)
-       self.owner.skill_expertise += ("nature", "survival")
+        super().__init__(owner=owner)
+        self.owner.skill_expertise += ("nature", "survival")
 
 
 class SuperiorMobility(Feature):
@@ -473,6 +508,7 @@ class SuperiorMobility(Feature):
     climbing or swimming speed, this increase applies to that speed as well.
 
     """
+
     name = "Superior Mobility"
     source = "Rogue (Scout)"
     needs_implementation = True  # apply to climbing and swimming
@@ -486,6 +522,7 @@ class AmbushMaster(Feature):
     the start ofyour next turn
 
     """
+
     name = "Ambush Master"
     source = "Rogue (Scout)"
 
@@ -498,6 +535,7 @@ class SuddenStrike(Feature):
     same target more than once in a turn
 
     """
+
     name = "Sudden Strike"
     source = "Rogue (Scout)"
 
@@ -510,6 +548,7 @@ class FancyFootwork(Feature):
     against you for the rest ofyour turn
 
     """
+
     name = "Fancy Footwork"
     source = "Rogue (Swashbuckler)"
 
@@ -524,6 +563,7 @@ class RakishAudacity(Feature):
     other rules for Sneak Attack still apply to you.
 
     """
+
     name = "Rakish Audacity"
     source = "Rogue (Swashbuckler)"
 
@@ -545,6 +585,7 @@ class Panache(Feature):
     or your companions do anything harmful to it
 
     """
+
     name = "Panache"
     source = "Rogue (Swashbuckler)"
 
@@ -555,6 +596,7 @@ class ElegantManeuver(Feature):
     check you make during the same turn
 
     """
+
     name = "Elegant Maneuver"
     source = "Rogue (Swashbuckler)"
 
@@ -566,6 +608,6 @@ class MasterDuelist(Feature):
     until you finish a short or long rest
 
     """
+
     name = "Master Duelist"
     source = "Rogue (Swashbuckler)"
-

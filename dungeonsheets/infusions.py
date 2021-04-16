@@ -2,17 +2,17 @@ class Infusion:
     name = "Unknown infusion"
     item = "Item to be infused"
     prerequisite = ""
-    classes = ('Artificer',)
+    classes = ("Artificer",)
 
     def __str__(self):
-        indicator = ('$', self.special_material)
+        indicator = ("$", self.special_material)
         if indicator:
             return self.name + f' ({"".join(indicator)})'
         else:
             return self.name
 
     def __repr__(self):
-        return "\"{:s}\"".format(self.name)
+        return '"{:s}"'.format(self.name)
 
     def __eq__(self, other):
         return self.name == other.name
@@ -22,7 +22,7 @@ class Infusion:
 
     @property
     def special_material(self):
-        return 'worth at least' in self.item.lower()
+        return "worth at least" in self.item.lower()
 
 
 class BootsOfTheWindingPath(Infusion):

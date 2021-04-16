@@ -18,6 +18,7 @@ class EldritchInvocation(Feature):
     could learn at that level.
 
     """
+
     name = "Eldritch Invocations"
     source = "Warlock"
 
@@ -32,6 +33,7 @@ class PactOfTheChain(Feature):
     of your own attacks to allow your familiar to make one attack of its own.
 
     """
+
     name = "Pact of the Chain"
     source = "Warlock"
     spells_known = spells_prepared = (spells.FindFamiliar,)
@@ -60,6 +62,7 @@ class PactOfTheBlade(Feature):
     breaks.
 
     """
+
     name = "Pact of the Blade"
     source = "Warlock"
 
@@ -76,6 +79,7 @@ class PactOfTheTome(Feature):
     turns to ash when you die.
 
     """
+
     name = "Pact of the Tome"
     source = "Warlock"
 
@@ -90,12 +94,15 @@ class PactBoon(FeatureSelector):
     pact of the tome
 
     """
-    options = {'chain': PactOfTheChain,
-            'pact of the chain': PactOfTheChain,
-            'blade': PactOfTheBlade,
-            'pact of the blade': PactOfTheBlade,
-            'tome': PactOfTheTome,
-            'pact of the tome': PactOfTheTome}
+
+    options = {
+        "chain": PactOfTheChain,
+        "pact of the chain": PactOfTheChain,
+        "blade": PactOfTheBlade,
+        "pact of the blade": PactOfTheBlade,
+        "tome": PactOfTheTome,
+        "pact of the tome": PactOfTheTome,
+    }
     name = "Pact Boon (Select One)"
     source = "Warlock"
 
@@ -114,6 +121,7 @@ class MysticArcanum(Feature):
     your Mystic Arcanum when you finish a long rest.
 
     """
+
     name = "Mystic Arcanum"
     source = "Warlock"
 
@@ -126,6 +134,7 @@ class EldritchMaster(Feature):
     feature, you must finish a long rest before you can do so again.
 
     """
+
     name = "Eldritch Master"
     source = "Warlock"
 
@@ -142,6 +151,7 @@ class FeyPresence(Feature):
     feature, you can't use it again until you finish a short or long rest.
 
     """
+
     name = "Fey Presence"
     source = "Warlock (Archfey Patron)"
 
@@ -155,6 +165,7 @@ class MistyEscape(Feature):
     short or long rest
 
     """
+
     name = "Misty Escape"
     source = "Warlock (Archfey Patron)"
 
@@ -168,6 +179,7 @@ class BeguilingDefenses(Feature):
     be charmed by you for 1 minute or until the creature takes any damage.
 
     """
+
     name = "Beguiling Defenses"
     source = "Warlock (Archfey Patron)"
 
@@ -187,6 +199,7 @@ class DarkDelirium(Feature):
     use this feature again.
 
     """
+
     name = "Dark Delirium"
     source = "Warlock (Archfey Patron)"
 
@@ -198,14 +211,15 @@ class DarkOnesBlessing(Feature):
     warlock level (minimum of 1)
 
     """
+
     _name = "Dark One's Blessing"
     source = "Warlock (The Fiend Patron)"
 
     @property
     def name(self):
-       level = self.owner.Warlock.level
-       mod = self.owner.charisma.modifier
-       return self._name + ' ({:d} HP)'.format(level + mod)
+        level = self.owner.Warlock.level
+        mod = self.owner.charisma.modifier
+        return self._name + " ({:d} HP)".format(level + mod)
 
 
 class DarkOnesOwnLuck(Feature):
@@ -218,6 +232,7 @@ class DarkOnesOwnLuck(Feature):
     or long rest.
 
     """
+
     name = "Dark One's Own Luck"
     source = "Warlock (The Fiend Patron)"
 
@@ -229,6 +244,7 @@ class FiendishResilience(Feature):
     silver weapons ignores this resistance.
 
     """
+
     name = "Fiendish Resilience"
     source = "Warlock (The Fiend Patron)"
 
@@ -246,6 +262,7 @@ class HurlThroughHell(Feature):
     rest.
 
     """
+
     name = "Hurl Through Hell"
     source = "Warlock (The Fiend Patron)"
 
@@ -259,6 +276,7 @@ class AwakenedMind(Feature):
     but the creature must be able to understand at least one language
 
     """
+
     name = "Awakened Mind"
     source = "Warlock (Great Old One Patron)"
 
@@ -273,6 +291,7 @@ class EntropicWard(Feature):
     finish a short or long rest.
 
     """
+
     name = "Entropic Ward"
     source = "Warlock (Great Old One Patron)"
 
@@ -284,6 +303,7 @@ class ThoughtShield(Feature):
     same amount of damage that you do
 
     """
+
     name = "Thought Shield"
     source = "Warlock (Great Old One Patron)"
 
@@ -297,6 +317,7 @@ class CreateThrall(Feature):
     creature as long as the two of you are on the same plane of existence
 
     """
+
     name = "Create Thrall"
     source = "Warlock (Great Old One Patron)"
 
@@ -316,6 +337,7 @@ class AmongTheDead(Feature):
     if you target it with an attack or a harmful spell.
 
     """
+
     name = "Among the Dead"
     source = "Warlock (The Undying Patron)"
     spells_known = spells_prepared = (spells.SpareTheDying,)
@@ -330,6 +352,7 @@ class DefyDeath(Feature):
     long rest
 
     """
+
     name = "Defy Death"
     source = "Warlock (The Undying Patron)"
 
@@ -342,6 +365,7 @@ class UndyingNature(Feature):
     ages only 1 year, and you are immune to being magically aged
 
     """
+
     name = "Undying Nature"
     source = "Warlock (The Undying Patron)"
 
@@ -355,6 +379,7 @@ class IndestructibleLife(Feature):
     use it again until you finish a short or long rest.
 
     """
+
     name = "Indestructible Life"
     source = "Warlock (The Undying Patron)"
 
@@ -372,13 +397,14 @@ class HealingLight(Feature):
     rest
 
     """
+
     _name = "Healing Light"
     source = "Warlock (The Celestial Patron)"
 
     @property
     def name(self):
-       num = 1 + self.owner.Warlock.level
-       return self._name + " ({:d}d6/LR)".format(num)
+        num = 1 + self.owner.Warlock.level
+        return self._name + " ({:d}d6/LR)".format(num)
 
 
 class RadiantSoul(Feature):
@@ -389,6 +415,7 @@ class RadiantSoul(Feature):
     one of its targets.
 
     """
+
     name = "Radiant Soul"
     source = "Warlock (The Celestial Patron)"
 
@@ -401,6 +428,7 @@ class CelestialResilience(Feature):
     equal to half your warlock level + your Charisma modifier
 
     """
+
     _name = "Celestial Resilience"
     source = "Warlock (The Celestial Patron)"
 
@@ -416,6 +444,7 @@ class SearingVengeance(Feature):
     this feature, you can't use it again until you finish a long rest.
 
     """
+
     name = "Searing Vengeance"
     source = "Warlock (The Celestial Patron)"
 
@@ -427,17 +456,18 @@ class HexbladesCurse(Feature):
     of you. The target is cursed for 1 minute. The curse ends early if the
     target dies, you die, or you are incapacitated. Until the curse ends, you
     gain the following benefits:
-    
+
     - You gain a bonus to damage rolls against the cursed target. The
       bonus equals your proficiency bonus.
     - Any attack roll you make against the cursed target is a critical
       hit on a roll of 19 or 20 on the d20.
     - If the cursed target dies, you regain hit points equal to your
       warlock level + your Charisma modifier (minimum of 1 hit point).
-    
+
     You can't use this feature again until you finish a short or long rest.
-    
+
     """
+
     name = "Hexblades Curse"
     source = "Warlock (Hexblade)"
 
@@ -457,22 +487,27 @@ class HexWarrior(Feature):
     you conjure with that feature, no matter the weapon's type
 
     """
-    name = 'Hex Warrior'
+
+    name = "Hex Warrior"
     source = "Warlock (Hexblade)"
 
     def weapon_func(self, weapon: weapons.Weapon, **kwargs):
-       """
-       Swap the weapon's attack bonus modifier for Charisma if
-       it is higher than STR/DEX bonus
-       """
-       if weapon.is_finesse:
-          abils = {'strength': self.owner.strength.modifier,
-                 'dexterity': self.owner.dexterity.modifier,
-                 'charisma': self.owner.charisma.modifier}
-       else:
-          abils = {weapon.ability: getattr(self.owner, weapon.ability).modifier,
-                 'charisma': self.owner.charisma.modifier}
-       weapon.ability = max(abils, key=abils.get)
+        """
+        Swap the weapon's attack bonus modifier for Charisma if
+        it is higher than STR/DEX bonus
+        """
+        if weapon.is_finesse:
+            abils = {
+                "strength": self.owner.strength.modifier,
+                "dexterity": self.owner.dexterity.modifier,
+                "charisma": self.owner.charisma.modifier,
+            }
+        else:
+            abils = {
+                weapon.ability: getattr(self.owner, weapon.ability).modifier,
+                "charisma": self.owner.charisma.modifier,
+            }
+        weapon.ability = max(abils, key=abils.get)
 
 
 class AccursedSpecter(Feature):
@@ -492,6 +527,7 @@ class AccursedSpecter(Feature):
     until you finish a long rest.
 
     """
+
     name = "Accursed Specter"
     source = "Warlock (Hexblade)"
 
@@ -503,6 +539,7 @@ class ArmorOfHexes(Feature):
     its roll.
 
     """
+
     name = "Armor of Hexes"
     source = "Warlock (Hexblade)"
 
@@ -516,6 +553,7 @@ class MasterOfHexes(Feature):
     previously cursed creature.
 
     """
+
     name = "Master of Hexes"
     source = "Warlock (Hexblade)"
 
@@ -525,24 +563,25 @@ class Invocation(Feature):
     """
     A generic Eldritch Invocation. Add details in features/warlock.py
     """
-    name = 'Unnamed Invocation'
+
+    name = "Unnamed Invocation"
     source = "Warlock (Eldritch Invocations)"
     at_will_spells = ()
 
     def cast_spell_at_will(self, spell):
-       s = spell()
-       s.level = 0
-       if 'M' in s.components:
-          c = list(s.components)
-          c.remove('M')
-          s.components = tuple(c)
-       self.spells_known += (s,)
-       self.spells_prepared += (s,)
+        s = spell()
+        s.level = 0
+        if "M" in s.components:
+            c = list(s.components)
+            c.remove("M")
+            s.components = tuple(c)
+        self.spells_known += (s,)
+        self.spells_prepared += (s,)
 
     def __init__(self, owner):
-       super().__init__(owner)
-       for s in self.at_will_spells:
-          self.cast_spell_at_will(s)
+        super().__init__(owner)
+        for s in self.at_will_spells:
+            self.cast_spell_at_will(s)
 
 
 # PHB
@@ -551,6 +590,7 @@ class AgonizingBlast(Invocation):
     deals on a hit.
 
     """
+
     name = "Agonizing Blast"
 
 
@@ -559,6 +599,7 @@ class ArmorOfShadows(Invocation):
     or material components
 
     """
+
     name = "Armor of Shadows"
     at_will_spells = (spells.MageArmor,)
 
@@ -570,22 +611,21 @@ class AscendantStep(Invocation):
     **Prerequisite: 9th level**
 
     """
-    name = 'Ascendant Step'
+
+    name = "Ascendant Step"
     at_will_spells = (spells.Levitate,)
 
 
 class BeastSpeech(Invocation):
-    """You can cast speak with animals at will, without expending a spell slot.
+    """You can cast speak with animals at will, without expending a spell slot."""
 
-    """
     name = "Beast Speech"
     at_will_spells = (spells.SpeakWithAnimals,)
 
 
 class BeguilingInfluence(Invocation):
-    """You gain proficiency in the Deception and Persuasion skills.
+    """You gain proficiency in the Deception and Persuasion skills."""
 
-    """
     name = "Beguiling Influence"
     needs_implementation = True
 
@@ -596,6 +636,7 @@ class BewitchingWhispers(Invocation):
 
     **Prerequisite**: 7th Level
     """
+
     name = "Bewitching Whispers"
 
 
@@ -616,6 +657,7 @@ class BookOfAncientSecrets(Invocation):
     rare inks needed to inscribe it
 
     """
+
     name = "Book of Ancient Secrets"
 
 
@@ -627,6 +669,7 @@ class ChainsOfCarceri(Invocation):
 
     **Prerequisites**: 15th level, Pact of the Chain Feature
     """
+
     name = "Chains of Carceri"
 
 
@@ -635,6 +678,7 @@ class DevilsSight(Invocation):
     distance of 120 feet.
 
     """
+
     name = "Devil's Sight"
 
 
@@ -643,21 +687,20 @@ class DreadfulWord(Invocation):
     again until you finish a long rest.
 
     """
+
     name = "Dreadful Word"
 
 
 class EldritchSight(Invocation):
-    """You can cast detect magic at will, without expending a spell slot.
+    """You can cast detect magic at will, without expending a spell slot."""
 
-    """
     name = "Eldritch Sight"
     at_will_spells = (spells.DetectMagic,)
 
 
 class EldritchSpear(Invocation):
-    """When you cast eldritch blast, its range is 300 feet.
+    """When you cast eldritch blast, its range is 300 feet."""
 
-    """
     name = "Eldritch Spear"
 
 
@@ -666,6 +709,7 @@ class EyesOfTheRuneKeeper(Invocation):
     You can read all writing.
 
     """
+
     name = "Eyes of the Rune Keeper"
 
 
@@ -674,6 +718,7 @@ class FiendishVigor(Invocation):
     expending a spell slot or material components.
 
     """
+
     name = "Fiendish Vigor"
     at_will_spells = (spells.FalseLife,)
 
@@ -688,6 +733,7 @@ class GazeOfTwoMinds(Invocation):
     blinded and deafened to your own surroundings.
 
     """
+
     name = "Gaze of Two Minds"
 
 
@@ -697,14 +743,14 @@ class LifeDrinker(Invocation):
 
     **Prerequisite**: 12th Level, Pact of the Blade
     """
+
     name = "Life Drinker"
     needs_implementation = True
 
 
 class MaskOfManyFaces(Invocation):
-    """You can cast disguise self at will, without expending a spell slot.
+    """You can cast disguise self at will, without expending a spell slot."""
 
-    """
     name = "Mask of Many Faces"
     at_will_spells = (spells.DisguiseSelf,)
 
@@ -715,6 +761,7 @@ class MasterOfMyriadForms(Invocation):
 
     **Prerequisite**: 15th Level
     """
+
     name = "Master of Myriad Forms"
     at_will_spells = (spells.AlterSelf,)
 
@@ -725,6 +772,7 @@ class MinionsOfChaos(Invocation):
 
     **Prerequisite**: 9th Level
     """
+
     name = "Minions of Chaos"
 
 
@@ -733,6 +781,7 @@ class MireTheMind(Invocation):
     until you finish a long rest.
 
     """
+
     name = "Mire the Mind"
 
 
@@ -741,6 +790,7 @@ class MistyVisions(Invocation):
     material components.
 
     """
+
     name = "Misty Visions"
     at_will_spells = (spells.SilentImage,)
 
@@ -751,6 +801,7 @@ class OneWithShadows(Invocation):
 
     **Prerequisite**: 5th Level
     """
+
     name = "One with Shadows"
 
 
@@ -761,15 +812,17 @@ class OtherworldlyLeap(Invocation):
     **Prerequisite**: 9th Level
 
     """
+
     name = "Otherworldly Leap"
     at_will_spells = (spells.Jump,)
 
 
 class RepellingBlast(Invocation):
     """When you hit a creature with eldritch blast, you can push the creature up
-to 10 feet away from you in a straight line.
+    to 10 feet away from you in a straight line.
 
     """
+
     name = "Repelling Blast"
 
 
@@ -779,6 +832,7 @@ class SculptorOfFlesh(Invocation):
 
     **Prerequisite**: 7th Level
     """
+
     name = "Sculptor of Flesh"
 
 
@@ -789,6 +843,7 @@ class SignOfIllOmen(Invocation):
     **Prerequisite**: 5th Level
 
     """
+
     name = "Sign of Ill Omen"
 
 
@@ -797,6 +852,7 @@ class ThiefOfFiveFates(Invocation):
     until you finish a long rest.
 
     """
+
     name = "Thief of Five Fates"
 
 
@@ -806,6 +862,7 @@ class ThirstingBlade(Invocation):
 
     **Prerequisite**: 5th Level, Pact of the Blade
     """
+
     name = "Thirsting Blade"
 
 
@@ -815,6 +872,7 @@ class VisionsOfDistantRealms(Invocation):
 
     **Prerequisite**: 15th level
     """
+
     name = "Visions of Distant Realms"
     at_will_spells = (spells.ArcaneEye,)
 
@@ -829,6 +887,7 @@ class VoiceOfTheChainMaster(Invocation):
     **Prerequisite**: Pact of the Chain
 
     """
+
     name = "Voice of the Chain Master"
 
 
@@ -838,6 +897,7 @@ class WhispersOfTheGrave(Invocation):
     **Prerequsite**: 9th Level
 
     """
+
     name = "Whispers of the Grave"
     at_will_spells = (spells.SpeakWithDead,)
 
@@ -848,6 +908,7 @@ class WitchSight(Invocation):
     and within line of sight.
 
     """
+
     name = "Witch Sight"
 
 
@@ -859,6 +920,7 @@ class AspectOfTheMoon(Invocation):
 
     **Prerequisite**: Pact of the Tome
     """
+
     name = "Aspect of the Moon"
 
 
@@ -878,6 +940,7 @@ class CloakOfFlies(Invocation):
 
     **Prerequisite**: 5th level
     """
+
     name = "Cloak of Flies"
 
 
@@ -890,6 +953,7 @@ class EldritchSmite(Invocation):
     **Prerequisite**: 5th level, Pact of the Blade
 
     """
+
     name = "Eldritch Smite"
 
 
@@ -905,6 +969,7 @@ class GhostlyGaze(Invocation):
 
     **Prerequisite**: 7th level
     """
+
     name = "Ghostly Gaze"
 
 
@@ -915,6 +980,7 @@ class GiftOfTheDepths(Invocation):
 
     **Prerequisite**: 5th level
     """
+
     name = "Gift of the Depths"
 
 
@@ -925,6 +991,7 @@ class GiftOfTheEverLivingOnes(Invocation):
 
     **Prerequisite**: Pact of the Chain
     """
+
     name = "Gift of the Ever-Living Ones"
 
 
@@ -933,6 +1000,7 @@ class GraspOfHadar(Invocation):
     blast, you can move that creature in a straight line 10 feet closer to you
 
     """
+
     name = "Grasp of Hadar"
 
 
@@ -948,15 +1016,16 @@ class ImprovedPactWeapon(Invocation):
 
     **Prerequisite**: Pact of the Blade
     """
+
     name = "Improved Pact Weapon"
 
     def weapon_func(self, weapon: weapons.Weapon, **kwargs):
-       """
-       Add +1 to attack and damage if magic is not already magic
-       """
-       if (weapon.attack_bonus == 0) or (weapon.damage_bonus == 0):
-          weapon.attack_bonus += 1
-          weapon.damage_bonus += 1
+        """
+        Add +1 to attack and damage if magic is not already magic
+        """
+        if (weapon.attack_bonus == 0) or (weapon.damage_bonus == 0):
+            weapon.attack_bonus += 1
+            weapon.damage_bonus += 1
 
 
 class LanceOfLethargy(Invocation):
@@ -965,6 +1034,7 @@ class LanceOfLethargy(Invocation):
     next turn.
 
     """
+
     name = "Lance of Lethargy"
 
 
@@ -979,6 +1049,7 @@ class MaddeningHex(Invocation):
 
     **Prerequisite**: 5th level
     """
+
     name = "Maddening Hex"
 
 
@@ -990,6 +1061,7 @@ class RelentlessHex(Invocation):
     teleport in this way, you must be able to see the cursed target.
 
     """
+
     name = "Relentless Hex"
 
 
@@ -999,6 +1071,7 @@ class ShroudOfShadow(Invocation):
     **Prerequisite**: 15th Level
 
     """
+
     at_will_spells = (spells.Invisibility,)
     name = "Shroud of Shadow"
 
@@ -1018,6 +1091,7 @@ class TombOfLevistus(Invocation):
     **Prerequisite**: 5th Level
 
     """
+
     name = "Tomb of Levistus"
 
 
@@ -1026,4 +1100,5 @@ class TrickstersEscape(Invocation):
     slot. You regain the ability to do so when you finish a long rest
 
     """
+
     name = "Tricksters Escape"

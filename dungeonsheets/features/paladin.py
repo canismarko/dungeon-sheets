@@ -1,4 +1,3 @@
-from dungeonsheets import armor, weapons
 from dungeonsheets.features.features import Feature, FeatureSelector
 from dungeonsheets.features.fighter import GreatWeaponFighting, Protection
 from dungeonsheets.features.ranger import Defense, Dueling
@@ -20,13 +19,14 @@ class DivineSense(Feature):
     modifier. When you finish a long rest, you regain all expended uses.
 
     """
+
     _name = "Divine Sense"
     source = "Paladin"
 
     @property
     def name(self):
-       num_uses = max(1, 1+self.owner.charisma.modifier)
-       return self._name + ' ({:d}x/LR)'.format(num_uses)
+        num_uses = max(1, 1 + self.owner.charisma.modifier)
+        return self._name + " ({:d}x/LR)".format(num_uses)
 
 
 class LayOnHands(Feature):
@@ -46,13 +46,14 @@ class LayOnHands(Feature):
     This feature has no effect on undead and constructs
 
     """
+
     _name = "Lay on Hands"
     source = "Paladin"
 
     @property
     def name(self):
-       level = self.owner.Paladin.level
-       return self._name + " ({:d}HP/LR)".format(level*5)
+        level = self.owner.Paladin.level
+        return self._name + " ({:d}HP/LR)".format(level * 5)
 
 
 class PaladinFightingStyle(FeatureSelector):
@@ -67,11 +68,14 @@ class PaladinFightingStyle(FeatureSelector):
 
     protection
     """
-    options = {'defense': Defense,
-            'dueling': Dueling,
-            'great': GreatWeaponFighting,
-            'great-weapon fighting': GreatWeaponFighting,
-            'projection': Protection}
+
+    options = {
+        "defense": Defense,
+        "dueling": Dueling,
+        "great": GreatWeaponFighting,
+        "great-weapon fighting": GreatWeaponFighting,
+        "projection": Protection,
+    }
     name = "Fighting Style (Select One)"
     source = "Paladin"
 
@@ -84,13 +88,15 @@ class DivineSmite(Feature):
     5d8. The damage increases by 1d8 if the target is an undead or a fiend.
 
     """
+
     name = "Divine Smite"
     source = "Paladin"
 
 
 class DivineHealth(Feature):
     """By 3rd level, the divine magic flowing through you makes you immune to
-    disease """
+    disease"""
+
     name = "Divine Health"
     source = "Paladin"
 
@@ -100,6 +106,7 @@ class ExtraAttackPaladin(Feature):
     take the Attack action on your turn
 
     """
+
     name = "Extra Attack (2x)"
     source = "Paladin"
 
@@ -113,6 +120,7 @@ class AuraOfProtection(Feature):
     At 18th level, the range of this aura increases to 30 feet.
 
     """
+
     name = "Aura of Protection"
     source = "Paladin"
 
@@ -124,6 +132,7 @@ class AuraOfCourage(Feature):
     At 18th level, the range of this aura increases to 30 feet
 
     """
+
     name = "Aura of Courage"
     source = "Paladin"
 
@@ -136,6 +145,7 @@ class ImprovedDivineSmite(Feature):
     damage of your Divine Smite.
 
     """
+
     name = "Improved Divine Smite"
     source = "Paladin"
 
@@ -147,13 +157,14 @@ class CleansingTouch(Feature):
     once). You regain expended uses when you finish a long rest.
 
     """
+
     _name = "Cleansing Touch"
     source = "Paladin"
 
     @property
     def name(self):
-       num_uses = max(1, 1+self.owner.charisma.modifier)
-       return self._name + ' ({:d}x/LR)'.format(num_uses)
+        num_uses = max(1, 1 + self.owner.charisma.modifier)
+        return self._name + " ({:d}x/LR)".format(num_uses)
 
 
 class ChannelDivinityPaladin(Feature):
@@ -168,6 +179,7 @@ class ChannelDivinityPaladin(Feature):
     effect from this class, the DC equals your paladin spell save DC.
 
     """
+
     name = "Channel Divinity (1x/SR)"
     source = "Paladin"
 
@@ -186,6 +198,7 @@ class SacredWeapon(Feature):
     this effect ends.
 
     """
+
     name = "Channel Divinity: Sacred Weapon"
     source = "Paladin (Oath of Devotion)"
 
@@ -204,6 +217,7 @@ class TurnTheUnholy(Feature):
     nowhere to move, the creature can use the Dodge action.
 
     """
+
     name = "Channel Divinity: Turn the Unholy"
     source = "Paladin (Oath of Devotion)"
 
@@ -214,6 +228,7 @@ class AuraOfDevotion(Feature):
     aura increases to 30 feet.
 
     """
+
     name = "Aura of Devotion"
     source = "Paladin (Oath of Devotion)"
 
@@ -223,6 +238,7 @@ class PurityOfSpirit(Feature):
     from evil and good spell.
 
     """
+
     name = "Purity of Spirit"
     source = "Paladin (Oath of Devotion)"
 
@@ -240,6 +256,7 @@ class HolyNimbus(Feature):
     it again until you finish a long rest.
 
     """
+
     name = "Holy Nimbus"
     source = "Paladin (Oath of Devotion)"
 
@@ -252,6 +269,7 @@ class EmissaryOfPeace(Feature):
     (Persuasion) checks for the next 10 minutes.
 
     """
+
     name = "Channel Divinity: Emissary of Peace"
     source = "Paladin (Oath of Redemption)"
 
@@ -265,6 +283,7 @@ class RebukeTheViolent(Feature):
     successful save, it takes half as much damage.
 
     """
+
     name = "Channel Divinity: Rebuke the Violent"
     source = "Paladin (Oath of Redemption)"
 
@@ -278,6 +297,7 @@ class AuraOfTheGuardian(Feature):
     the range of this aura increases to 30 feet.
 
     """
+
     name = "Aura of the Guardian"
     source = "Paladin (Oath of Redemption)"
 
@@ -289,6 +309,7 @@ class ProtectiveSpirit(Feature):
     aren't incapacitated.
 
     """
+
     name = "Protective Spirit"
     source = "Paladin (Oath of Redemption)"
 
@@ -307,5 +328,6 @@ class EmissaryOfRedemption(Feature):
     you finish a long rest
 
     """
+
     name = "Emissary of Redemption"
     source = "Paladin (Oath of Redemption)"

@@ -13,16 +13,17 @@ class TashasHideousLaughter(Spell):
     throw. The target has advantage on the saving throw ifit's triggered by damage.
     On a success, the spell ends.
     """
+
     name = "Tashas Hideous Laughter"
     level = 1
     casting_time = "1 action"
     casting_range = "30 feet"
-    components = ('V', 'S', 'M')
-    materials = """Tiny tarts and a feather that is waved in the air"""
+    components = ("V", "S", "M")
+    materials = "Tiny tarts and a feather that is waved in the air"
     duration = "Concentration, up to 1 minute"
     ritual = False
     magic_school = "Enchantment"
-    classes = ('Bard', 'Wizard')
+    classes = ("Bard", "Wizard")
 
 
 class Telekinesis(Spell):
@@ -60,16 +61,17 @@ class Telekinesis(Spell):
     or retrieving an item from an open container, or pouring the contents from a
     vial.
     """
+
     name = "Telekinesis"
     level = 5
     casting_time = "1 action"
     casting_range = "60 feet"
-    components = ('V', 'S')
-    materials = """"""
+    components = ("V", "S")
+    materials = ""
     duration = "Concentration, up to 10 minutes"
     ritual = False
     magic_school = "Transmutation"
-    classes = ('Sorcerer', 'Wizard')
+    classes = ("Sorcerer", "Wizard")
 
 
 class Telepathy(Spell):
@@ -86,16 +88,17 @@ class Telepathy(Spell):
     the meaning of your words and take in the scope of any sensory messages you send
     to it.
     """
+
     name = "Telepathy"
     level = 8
     casting_time = "1 action"
     casting_range = "Unlimited"
-    components = ('V', 'S', 'M')
-    materials = """A pair of linked silver rings"""
+    components = ("V", "S", "M")
+    materials = "A pair of linked silver rings"
     duration = "24 hours"
     ritual = False
     magic_school = "Evocation"
-    classes = ('Wizard',)
+    classes = ("Wizard",)
 
 
 class Teleport(Spell):
@@ -105,12 +108,12 @@ class Teleport(Spell):
     select. If you target an object, it must be able to fit entirely
     inside a 10-foot cube, and it can't be held or carried by an
     unwilling creature.
-    
+
     The destination you choose must be known to you, and it must be on
     the same plane of existence as you. Your familiarity with the
     destination determines whether you arrive there successfully. The
     DM rolls d100 and consults the table.
-    
+
     ================= ====== ============ ========== =========
     Familiarity       Mishap Similar Area Off Target On Target
     ================= ====== ============ ========== =========
@@ -122,7 +125,7 @@ class Teleport(Spell):
     Description       01–43  44–53        54–73      74–100
     False destination 01–50  51–100       --         --
     ================= ====== ============ ========== =========
-    
+
     Familiarity.
       "Permanent circle" means a permanent teleportation circle whose
       sigil sequence you know. "Associated object" means that you
@@ -130,7 +133,7 @@ class Teleport(Spell):
       last six months, such as a book from a wizard's library, bed
       linen from a royal suite, or a chunk of marble from a lich's
       secret tomb.
-      
+
       "Very familiar" is a place you have been very often, a place you
       have carefully studied, or a place you can see when you cast the
       spell. "Seen casually" is someplace you have seen more than once
@@ -138,7 +141,7 @@ class Teleport(Spell):
       place you have seen once, possibly using magic. "Description" is
       a place whose location and appearance you know through someone
       else's description, perhaps from a map.
-      
+
       "False destination" is a place that doesn't exist. Perhaps you
       tried to scry an enemy's sanctum but instead viewed an illusion,
       or you are attempting to teleport to a familiar location that no
@@ -173,18 +176,19 @@ class Teleport(Spell):
       3d10 force damage, and the DM rerolls on the table to see where
       you wind up (multiple mishaps can occur, dealing damage each
       time).
-    
+
     """
+
     name = "Teleport"
     level = 7
     casting_time = "1 action"
     casting_range = "10 feet"
-    components = ('V',)
-    materials = """"""
+    components = ("V",)
+    materials = ""
     duration = "Instantaneous"
     ritual = False
     magic_school = "Conjuration"
-    classes = ('Bard', 'Sorcerer', 'Wizard')
+    classes = ("Bard", "Sorcerer", "Wizard")
 
 
 class TeleportationCircle(Spell):
@@ -211,16 +215,20 @@ class TeleportationCircle(Spell):
     one year. You need not use the circle to teleport when you cast the spell in
     this way.
     """
+
     name = "Teleportation Circle"
     level = 5
     casting_time = "1 minute"
     casting_range = "10 feet"
-    components = ('V', 'M')
-    materials = """Rare chalks and inks infused with precious gems with 50 gp, which the spell consumes"""
+    components = ("V", "M")
+    materials = (
+        "Rare chalks and inks infused with precious gems with 50 gp, which the spell"
+        " consumes"
+    )
     duration = "1 round"
     ritual = False
     magic_school = "Conjuration"
-    classes = ('Bard', 'Sorcerer', 'Wizard')
+    classes = ("Bard", "Sorcerer", "Wizard")
 
 
 class TempleOfTheGods(Spell):
@@ -260,16 +268,17 @@ class TempleOfTheGods(Spell):
     Casting this spell on the same
     spot every day for a year makes this effect permanent.
     """
+
     name = "Temple Of The Gods"
     level = 7
     casting_time = "1 hour"
     casting_range = "120 feet"
-    components = ('V', 'S', 'M')
-    materials = """A holy symbol worth at least 5 gp"""
+    components = ("V", "S", "M")
+    materials = "A holy symbol worth at least 5 gp"
     duration = "24 hours"
     ritual = False
     magic_school = "Conjuration"
-    classes = ('Cleric',)
+    classes = ("Cleric",)
 
 
 class TensersFloatingDisk(Spell):
@@ -290,16 +299,17 @@ class TensersFloatingDisk(Spell):
     If you move more than 100 feet from the disk (typically because it can't
     move around an obstacle to follow you), the spell ends.
     """
+
     name = "Tensers Floating Disk"
     level = 1
     casting_time = "1 action"
     casting_range = "30 feet"
-    components = ('V', 'S', 'M')
-    materials = """A drop of mercury"""
+    components = ("V", "S", "M")
+    materials = "A drop of mercury"
     duration = "1 hour"
     ritual = True
     magic_school = "Conjuration"
-    classes = ('Wizard',)
+    classes = ("Wizard",)
 
 
 class TensersTransformation(Spell):
@@ -325,23 +335,24 @@ class TensersTransformation(Spell):
     the spell ends, you must succeed on a DC 15 Constitution saving throw or suffer
     one level of exhaustion.
     """
+
     name = "Tensers Transformation"
     level = 6
     casting_time = "1 action"
     casting_range = "Self"
-    components = ('V', 'S', 'M')
-    materials = """A few hairs from a bull"""
+    components = ("V", "S", "M")
+    materials = "A few hairs from a bull"
     duration = "Concentration, up to 10 minutes"
     ritual = False
     magic_school = "Transmutation"
-    classes = ('Wizard',)
+    classes = ("Wizard",)
 
 
 class Thaumaturgy(Spell):
     """You manifest a minor wonder, a sign of supernatural power, within
     range. You create one of the following magical effects within
     range:
-    
+
     - Your voice booms up to three times as loud as normal for 1
       minute.
     - You cause flames to flicker, brighten, dim, or change color for
@@ -353,22 +364,23 @@ class Thaumaturgy(Spell):
     - You instantaneously cause an unlocked door or window to fly open
       or slam shut.
     - You alter the appearance of your eyes for 1 minute.
-    
+
     If you cast this spell multiple times, you can have up to three of
     its 1-minute effects active at a time, and you can dismiss such an
     effect as an action.
 
     """
+
     name = "Thaumaturgy"
     level = 0
     casting_time = "1 action"
     casting_range = "30 feet"
-    components = ('V',)
-    materials = """"""
+    components = ("V",)
+    materials = ""
     duration = "Up to 1 minute"
     ritual = False
     magic_school = "Transmutation"
-    classes = ('Cleric',)
+    classes = ("Cleric",)
 
 
 class ThornWhip(Spell):
@@ -381,16 +393,17 @@ class ThornWhip(Spell):
     **At Higher Levels:** This spell's damage increases by 1d6 when you reach 5th
     level (2d6), 11th level (3d6), and 17th level (4d6).
     """
+
     name = "Thorn Whip"
     level = 0
     casting_time = "1 action"
     casting_range = "30 feet"
-    components = ('V', 'S', 'M')
-    materials = """The stem of a plant with thorns"""
+    components = ("V", "S", "M")
+    materials = "The stem of a plant with thorns"
     duration = "Instantaneous"
     ritual = False
     magic_school = "Transmutation"
-    classes = ('Druid',)
+    classes = ("Druid",)
 
 
 class ThunderStep(Spell):
@@ -410,16 +423,17 @@ class ThunderStep(Spell):
     **At Higher Levels:** When you cast this spell using a spell slot of
     4th level or higher, the damage increases by 1d10 for each slot level above 3rd.
     """
+
     name = "Thunder Step"
     level = 3
     casting_time = "1 action"
     casting_range = "90 feet"
-    components = ('V',)
-    materials = """"""
+    components = ("V",)
+    materials = ""
     duration = "Instantaneous"
     ritual = False
     magic_school = "Conjuration"
-    classes = ('Sorcerer', 'Warlock', 'Wizard')
+    classes = ("Sorcerer", "Warlock", "Wizard")
 
 
 class Thunderclap(Spell):
@@ -431,16 +445,17 @@ class Thunderclap(Spell):
     damage increases by 1d6 when you reach 5th level (2d6), 11th level (3d6), and
     17th level (4d6).
     """
+
     name = "Thunderclap"
     level = 0
     casting_time = "1 action"
     casting_range = "5 feet"
-    components = ('S',)
-    materials = """"""
+    components = ("S",)
+    materials = ""
     duration = "Instantaneous"
     ritual = False
     magic_school = "Evocation"
-    classes = ('Bard', 'Sorcerer', 'Druid', 'Warlock', 'Wizard')
+    classes = ("Bard", "Sorcerer", "Druid", "Warlock", "Wizard")
 
 
 class ThunderousSmite(Spell):
@@ -450,16 +465,17 @@ class ThunderousSmite(Spell):
     target is a creature, it must succeed on a Strength saving throw or be pushed 10
     feet away from you and knocked prone.
     """
+
     name = "Thunderous Smite"
     level = 1
     casting_time = "1 bonus action"
     casting_range = "Self"
-    components = ('V',)
-    materials = """"""
+    components = ("V",)
+    materials = ""
     duration = "Concentration, up to 1 minute"
     ritual = False
     magic_school = "Evocation"
-    classes = ('Paladin',)
+    classes = ("Paladin",)
 
 
 class Thunderwave(Spell):
@@ -478,16 +494,17 @@ class Thunderwave(Spell):
     cast this spell using a spell slot of 2nd level or higher, the damage increases
     by 1d8 for each slot level above 1st.
     """
+
     name = "Thunderwave"
     level = 1
     casting_time = "1 action"
     casting_range = "Self (15-foot cube)"
-    components = ('V', 'S')
-    materials = """"""
+    components = ("V", "S")
+    materials = ""
     duration = "Instantaneous"
     ritual = False
     magic_school = "Evocation"
-    classes = ('Bard', 'Druid', 'Sorcerer', 'Wizard')
+    classes = ("Bard", "Druid", "Sorcerer", "Wizard")
 
 
 class TidalWave(Spell):
@@ -499,16 +516,17 @@ class TidalWave(Spell):
     then spreads out across the ground in all directions, extinguishing unprotected
     flames in its area and within 30 feet of it, and then it vanishes.
     """
+
     name = "Tidal Wave"
     level = 3
     casting_time = "1 action"
     casting_range = "120 feet"
-    components = ('V', 'S', 'M')
-    materials = """A drop of water"""
+    components = ("V", "S", "M")
+    materials = "A drop of water"
     duration = "Instantaneous"
     ritual = False
     magic_school = "Conjuration"
-    classes = ('Druid', 'Wizard', 'Sorcerer')
+    classes = ("Druid", "Wizard", "Sorcerer")
 
 
 class TimeStop(Spell):
@@ -522,16 +540,17 @@ class TimeStop(Spell):
     than you. In addition, the spell ends if you move to a place more than 1,000
     feet from the location where you cast it.
     """
+
     name = "Time Stop"
     level = 9
     casting_time = "1 action"
     casting_range = "Self"
-    components = ('V',)
-    materials = """"""
+    components = ("V",)
+    materials = ""
     duration = "Instantaneous"
     ritual = False
     magic_school = "Transmutation"
-    classes = ('Sorcerer', 'Wizard')
+    classes = ("Sorcerer", "Wizard")
 
 
 class TinyServant(Spell):
@@ -556,16 +575,17 @@ class TinyServant(Spell):
     When you cast this spell using a spell slot of 4th level or higher, you can
     animate two additional objects for each slot level above 3rd.
     """
+
     name = "Tiny Servant"
     level = 3
     casting_time = "1 minute"
     casting_range = "Touch"
-    components = ('V', 'S')
-    materials = """"""
+    components = ("V", "S")
+    materials = ""
     duration = "8 hours"
     ritual = False
     magic_school = "Transmutation"
-    classes = ('Wizard',)
+    classes = ("Wizard",)
 
 
 class TollTheDead(Spell):
@@ -577,16 +597,17 @@ class TollTheDead(Spell):
     by one die when you reach 5th level (2d8 or 2d12), 11th level (3d8 or 3d12), and
     17th level (4d8 or 4d12).
     """
+
     name = "Toll The Dead"
     level = 0
     casting_time = "1 action"
     casting_range = "60 feet"
-    components = ('V', 'S')
-    materials = """"""
+    components = ("V", "S")
+    materials = ""
     duration = "Instantaneous"
     ritual = False
     magic_school = "Necromancy"
-    classes = ('Warlock', 'Wizard', 'Cleric')
+    classes = ("Warlock", "Wizard", "Cleric")
 
 
 class Tongues(Spell):
@@ -594,16 +615,17 @@ class Tongues(Spell):
     language it hears. Moreover, when the target speaks, any creature that knows at
     least one language and can hear the target understands what it says.
     """
+
     name = "Tongues"
     level = 3
     casting_time = "1 action"
     casting_range = "Touch"
-    components = ('V', 'M')
-    materials = """A small clay model of a ziggurat"""
+    components = ("V", "M")
+    materials = "A small clay model of a ziggurat"
     duration = "1 hour"
     ritual = False
     magic_school = "Divination"
-    classes = ('Bard', 'Cleric', 'Sorcerer', 'Warlock', 'Wizard')
+    classes = ("Bard", "Cleric", "Sorcerer", "Warlock", "Wizard")
 
 
 class TransmuteRock(Spell):
@@ -634,16 +656,17 @@ class TransmuteRock(Spell):
     on a DC 20 Strength check or by dealing damage to it. The rock has AC 15 and 25
     hit points, and it is immune to poison and psychic damage.
     """
+
     name = "Transmute Rock"
     level = 5
     casting_time = "1 action"
     casting_range = "120 feet"
-    components = ('V', 'S', 'M')
-    materials = """Clay and water"""
+    components = ("V", "S", "M")
+    materials = "Clay and water"
     duration = "Instantaneous"
     ritual = False
     magic_school = "Transmutation"
-    classes = ('Druid', 'Wizard')
+    classes = ("Druid", "Wizard")
 
 
 class TransportViaPlants(Spell):
@@ -653,16 +676,17 @@ class TransportViaPlants(Spell):
     the duration, any creature can step into the target plant and exit from the
     destination plant by using 5 feet of movement.
     """
+
     name = "Transport Via Plants"
     level = 6
     casting_time = "1 action"
     casting_range = "10 feet"
-    components = ('V', 'S')
-    materials = """"""
+    components = ("V", "S")
+    materials = ""
     duration = "1 round"
     ritual = False
     magic_school = "Conjuration"
-    classes = ('Druid',)
+    classes = ("Druid",)
 
 
 class TreeStride(Spell):
@@ -680,16 +704,17 @@ class TreeStride(Spell):
     You can use this transportation ability once per round for the duration. You
     must end each turn outside a tree.
     """
+
     name = "Tree Stride"
     level = 5
     casting_time = "1 action"
     casting_range = "Self"
-    components = ('V', 'S')
-    materials = """"""
+    components = ("V", "S")
+    materials = ""
     duration = "Concentration, up to 1 minute"
     ritual = False
     magic_school = "Conjuration"
-    classes = ('Druid', 'Ranger')
+    classes = ("Druid", "Ranger")
 
 
 class TruePolymorph(Spell):
@@ -745,16 +770,17 @@ class TruePolymorph(Spell):
 
     This spell can't affect a target that has 0 hit points.
     """
+
     name = "True Polymorph"
     level = 9
     casting_time = "1 action"
     casting_range = "30 feet"
-    components = ('V', 'S', 'M')
-    materials = """A drop of mercury, a dollop of gum arabic, and a wisp of smoke"""
+    components = ("V", "S", "M")
+    materials = "A drop of mercury, a dollop of gum arabic, and a wisp of smoke"
     duration = "Concentration, up to 1 hour"
     ritual = False
     magic_school = "Transmutation"
-    classes = ('Bard', 'Warlock', 'Wizard')
+    classes = ("Bard", "Warlock", "Wizard")
 
 
 class TrueResurrection(Spell):
@@ -771,16 +797,20 @@ class TrueResurrection(Spell):
     longer exists, in which case you must speak the creature's name. The creature
     then appears in an unoccupied space you choose within 10 feet of you.
     """
+
     name = "True Resurrection"
     level = 9
     casting_time = "1 hour"
     casting_range = "Touch"
-    components = ('V', 'S', 'M')
-    materials = """A sprinkle of holy water and diamonds worth at least 25,000 gp, which the spell consumes"""
+    components = ("V", "S", "M")
+    materials = (
+        "A sprinkle of holy water and diamonds worth at least 25,000 gp, which the"
+        " spell consumes"
+    )
     duration = "Instantaneous"
     ritual = False
     magic_school = "Necromancy"
-    classes = ('Cleric', 'Druid')
+    classes = ("Cleric", "Druid")
 
 
 class TrueSeeing(Spell):
@@ -789,16 +819,20 @@ class TrueSeeing(Spell):
     doors hidden by magic, and can see into the Ethereal Plane, all out to a range
     of 120 feet.
     """
+
     name = "True Seeing"
     level = 6
     casting_time = "1 action"
     casting_range = "Touch"
-    components = ('V', 'S', 'M')
-    materials = """An ointment for the eyes that costs 25 gp; is made from mushroom powder, saffron, and fat; and is consumed by the spell"""
+    components = ("V", "S", "M")
+    materials = (
+        "An ointment for the eyes that costs 25 gp; is made from mushroom powder,"
+        " saffron, and fat; and is consumed by the spell"
+    )
     duration = "1 hour"
     ritual = False
     magic_school = "Divination"
-    classes = ('Bard', 'Cleric', 'Sorcerer', 'Warlock', 'Wizard')
+    classes = ("Bard", "Cleric", "Sorcerer", "Warlock", "Wizard")
 
 
 class TrueStrike(Spell):
@@ -807,16 +841,17 @@ class TrueStrike(Spell):
     advantage on your first attack roll against the target, provided that this spell
     hasn't ended.
     """
+
     name = "True Strike"
     level = 0
     casting_time = "1 action"
     casting_range = "30 feet"
-    components = ('S',)
-    materials = """"""
+    components = ("S",)
+    materials = ""
     duration = "Concentration, up to 1 round"
     ritual = False
     magic_school = "Divination"
-    classes = ('Bard', 'Sorcerer', 'Warlock', 'Wizard')
+    classes = ("Bard", "Sorcerer", "Warlock", "Wizard")
 
 
 class Tsunami(Spell):
@@ -843,13 +878,14 @@ class Tsunami(Spell):
     against your spell save DC in order to move at all. If it fails the check, it
     can't move. A creature that moves out of the area falls to the ground.
     """
+
     name = "Tsunami"
     level = 8
     casting_time = "1 minute"
     casting_range = "Sight"
-    components = ('V', 'S')
-    materials = """"""
+    components = ("V", "S")
+    materials = ""
     duration = "Concentration, up to 6 rounds"
     ritual = False
     magic_school = "Conjuration"
-    classes = ('Druid',)
+    classes = ("Druid",)

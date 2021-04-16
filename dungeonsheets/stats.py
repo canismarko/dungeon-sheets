@@ -3,15 +3,27 @@ from collections import namedtuple
 from math import ceil
 
 from dungeonsheets.armor import Armor, HeavyArmor, NoArmor, NoShield, Shield
-from dungeonsheets.features import (AmbushMaster, Defense, DraconicResilience,
-                                    DreadAmbusher, FastMovement, FeralInstinct,
-                                    GiftOfTheDepths, JackOfAllTrades,
-                                    NaturalArmor, NaturalExplorerRevised,
-                                    QuickDraw, RakishAudacity,
-                                    RemarkableAthelete, SeaSoul,
-                                    SoulOfTheForge, SuperiorMobility,
-                                    UnarmoredDefenseBarbarian,
-                                    UnarmoredDefenseMonk, UnarmoredMovement)
+from dungeonsheets.features import (
+    AmbushMaster,
+    Defense,
+    DraconicResilience,
+    DreadAmbusher,
+    FastMovement,
+    FeralInstinct,
+    GiftOfTheDepths,
+    JackOfAllTrades,
+    NaturalArmor,
+    NaturalExplorerRevised,
+    QuickDraw,
+    RakishAudacity,
+    RemarkableAthelete,
+    SeaSoul,
+    SoulOfTheForge,
+    SuperiorMobility,
+    UnarmoredDefenseBarbarian,
+    UnarmoredDefenseMonk,
+    UnarmoredMovement,
+)
 from dungeonsheets.weapons import Weapon
 
 
@@ -25,12 +37,12 @@ def findattr(obj, name):
     # check for +X weapons, armor, shields
     bonus = 0
     for i in range(1, 11):
-        if (f'+{i}' in name) or (f'+ {i}' in name):
+        if (f"+{i}" in name) or (f"+ {i}" in name):
             bonus = i
-            name = name.replace(f'+{i}', '').replace(f'+ {i}', '')
+            name = name.replace(f"+{i}", "").replace(f"+ {i}", "")
             break
-    py_name = name.replace('-', '_').replace(' ', '_').replace("'", "")
-    camel_case = "".join([s.capitalize() for s in py_name.split('_')])
+    py_name = name.replace("-", "_").replace(" ", "_").replace("'", "")
+    camel_case = "".join([s.capitalize() for s in py_name.split("_")])
     if hasattr(obj, py_name):
         # Direct lookup
         attr = getattr(obj, py_name)
@@ -38,27 +50,30 @@ def findattr(obj, name):
         # CamelCase lookup
         attr = getattr(obj, camel_case)
     else:
-        raise AttributeError(f'{obj} has no attribute {name}')
+        raise AttributeError(f"{obj} has no attribute {name}")
     if bonus > 0:
-        if issubclass(attr, Weapon) or issubclass(attr, Shield) or issubclass(attr, Armor):
+        if (
+            issubclass(attr, Weapon)
+            or issubclass(attr, Shield)
+            or issubclass(attr, Armor)
+        ):
             attr = attr.improved_version(bonus)
     return attr
 
 
 def mod_str(modifier):
     """Converts a modifier to a string, eg 2 -> '+2'."""
-    return '{:+d}'.format(modifier)
+    return "{:+d}".format(modifier)
     if modifier == 0:
         return str(modifier)
     else:
-        return '{:+}'.format(modifier)
+        return "{:+}".format(modifier)
 
 
-AbilityScore = namedtuple('AbilityScore',
-                          ('value', 'modifier', 'saving_throw'))
+AbilityScore = namedtuple("AbilityScore", ("value", "modifier", "saving_throw"))
 
 
-class Ability():
+class Ability:
     ability_name = None
 
     def __init__(self, default_value=10):
@@ -68,11 +83,9 @@ class Ability():
         self.ability_name = name
 
     def _check_dict(self, obj):
-        if not hasattr(obj, '_ability_scores'):
+        if not hasattr(obj, "_ability_scores"):
             # No ability score dictionary exists
-            obj._ability_scores = {
-                self.ability_name: self.default_value
-            }
+            obj._ability_scores = {self.ability_name: self.default_value}
         elif self.ability_name not in obj._ability_scores.keys():
             # ability score dictionary exists but doesn't have this ability
             obj._ability_scores[self.ability_name] = self.default_value
@@ -83,8 +96,10 @@ class Ability():
         modifier = math.floor((score - 10) / 2)
         # Check for proficiency
         saving_throw = modifier
-        if self.ability_name is not None and hasattr(character, 'saving_throw_proficiencies'):
-            is_proficient = (self.ability_name in character.saving_throw_proficiencies)
+        if self.ability_name is not None and hasattr(
+            character, "saving_throw_proficiencies"
+        ):
+            is_proficient = self.ability_name in character.saving_throw_proficiencies
             if is_proficient:
                 saving_throw += character.proficiency_bonus
         # Create the named tuple
@@ -97,14 +112,14 @@ class Ability():
         self.value = val
 
 
-class Skill():
+class Skill:
     """An ability-based skill, such as athletics."""
 
     def __init__(self, ability):
         self.ability_name = ability
 
     def __set_name__(self, character, name):
-        self.skill_name = name.lower().replace('_', ' ')
+        self.skill_name = name.lower().replace("_", " ")
         self.character = character
 
     def __get__(self, character, owner):
@@ -117,9 +132,8 @@ class Skill():
         elif character.has_feature(JackOfAllTrades):
             modifier += character.proficiency_bonus // 2
         elif character.has_feature(RemarkableAthelete):
-            if self.ability_name.lower() in ('strength',
-                                             'dexterity', 'constitution'):
-                modifier += ceil(character.proficienc_bonus / 2.)
+            if self.ability_name.lower() in ("strength", "dexterity", "constitution"):
+                modifier += ceil(character.proficienc_bonus / 2.0)
 
         # Check for expertise
         is_expert = self.skill_name in character.skill_expertise
@@ -128,7 +142,7 @@ class Skill():
         return modifier
 
 
-class ArmorClass():
+class ArmorClass:
     """
     The Armor Class of a character
     """
@@ -147,7 +161,7 @@ class ArmorClass():
         ac += shield.base_armor_class
         # Compute feature-specific additions
         if char.has_feature(UnarmoredDefenseMonk):
-            if (isinstance(armor, NoArmor) and isinstance(shield, NoShield)):
+            if isinstance(armor, NoArmor) and isinstance(shield, NoShield):
                 ac += char.wisdom.modifier
         if char.has_feature(UnarmoredDefenseBarbarian):
             if isinstance(armor, NoArmor):
@@ -163,19 +177,19 @@ class ArmorClass():
                 ac += 1
         # Check if any magic items add to AC
         for mitem in char.magic_items:
-            if hasattr(mitem, 'ac_bonus'):
+            if hasattr(mitem, "ac_bonus"):
                 ac += mitem.ac_bonus
         return ac
 
 
-class Speed():
+class Speed:
     """
     The speed of a character
     """
 
     def __get__(self, char, Character):
         speed = char.race.speed
-        other_speed = ''
+        other_speed = ""
         if isinstance(speed, str):
             other_speed = speed[2:]
             speed = int(speed[:2])  # ignore other speeds, like fly
@@ -189,16 +203,17 @@ class Speed():
                 if isinstance(f, UnarmoredMovement):
                     speed += f.speed_bonus
         if char.has_feature(GiftOfTheDepths):
-            if 'swim' not in other_speed:
-                other_speed += ' ({:d} swim)'.format(speed)
+            if "swim" not in other_speed:
+                other_speed += " ({:d} swim)".format(speed)
         if char.has_feature(SeaSoul):
-            if 'swim' not in other_speed:
-                other_speed += ' (30 swim)'
-        return '{:d}{:s}'.format(speed, other_speed)
+            if "swim" not in other_speed:
+                other_speed += " (30 swim)"
+        return "{:d}{:s}".format(speed, other_speed)
 
 
-class Initiative():
+class Initiative:
     """A character's initiative"""
+
     def __get__(self, char, Character):
         ini = char.dexterity.modifier
         if char.has_feature(QuickDraw):
@@ -207,10 +222,12 @@ class Initiative():
             ini += char.wisdom.modifier
         if char.has_feature(RakishAudacity):
             ini += char.charisma.modifier
-        ini = '{:+d}'.format(ini)
-        has_advantage = (char.has_feature(NaturalExplorerRevised) or
-                         char.has_feature(FeralInstinct) or
-                         char.has_feature(AmbushMaster))
+        ini = "{:+d}".format(ini)
+        has_advantage = (
+            char.has_feature(NaturalExplorerRevised)
+            or char.has_feature(FeralInstinct)
+            or char.has_feature(AmbushMaster)
+        )
         if has_advantage:
-            ini += '(A)'
+            ini += "(A)"
         return ini

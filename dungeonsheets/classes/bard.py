@@ -26,6 +26,7 @@ class CollegeOfLore(SubClass):
     authority.
 
     """
+
     name = "College of Lore"
     features_by_level = defaultdict(list)
     features_by_level[3] = [features.LoreProficiencies, features.CuttingWords]
@@ -44,9 +45,10 @@ class CollegeOfValor(SubClass):
     old
 
     """
+
     name = "College of Valor"
     weapon_proficiencies = (weapons.MartialWeapon,)
-    _proficencies_text = ('martial weapons', 'medium armor', 'shields')
+    _proficencies_text = ("martial weapons", "medium armor", "shields")
     features_by_level = defaultdict(list)
     features_by_level[3] = [features.CombatInspiration]
     features_by_level[6] = [features.BardExtraAttack]
@@ -71,10 +73,13 @@ class CollegeOfGlamour(SubClass):
     undermine oppressors.
 
     """
+
     name = "College of Glamour"
     features_by_level = defaultdict(list)
-    features_by_level[3] = [features.MantleOfInspiration,
-                            features.EnthrallingPerformance]
+    features_by_level[3] = [
+        features.MantleOfInspiration,
+        features.EnthrallingPerformance,
+    ]
     features_by_level[6] = [features.MantleOfMajesty]
     features_by_level[14] = [features.UnbreakableMajesty]
 
@@ -101,13 +106,16 @@ class CollegeOfSwords(SubClass):
     adventurers.
 
     """
+
     name = "College of Swords"
     features_by_level = defaultdict(list)
     weapon_prociciencies = (weapons.Scimitar,)
-    _proficiencies_text = ('medium armor', 'scimitar')
-    features_by_level[3] = [features.SwordsProficiency,
-                            features.BardFightingStyle,
-                            features.BladeFlourish]
+    _proficiencies_text = ("medium armor", "scimitar")
+    features_by_level[3] = [
+        features.SwordsProficiency,
+        features.BardFightingStyle,
+        features.BladeFlourish,
+    ]
     features_by_level[6] = [features.BardExtraAttack]
     features_by_level[14] = [features.MastersFlourish]
 
@@ -129,6 +137,7 @@ class CollegeOfWhispers(SubClass):
     of power
 
     """
+
     name = "College of Whispers"
     features_by_level = defaultdict(list)
     features_by_level[3] = [features.PsychicBlades, features.WordsOfTerror]
@@ -137,29 +146,61 @@ class CollegeOfWhispers(SubClass):
 
 
 class Bard(CharClass):
-    name = 'Bard'
+    name = "Bard"
     hit_dice_faces = 8
     subclass_select_level = 3
-    saving_throw_proficiencies = ('dexterity', 'charisma')
-    primary_abilities = ('charisma',)
+    saving_throw_proficiencies = ("dexterity", "charisma")
+    primary_abilities = ("charisma",)
     _proficiencies_text = (
-        'Light armor', 'simple weapons', 'hand crossbows', 'longswords',
-        'rapiers', 'shortswords', 'three musical instruments of your choice')
-    weapon_proficiencies = (weapons.HandCrossbow, weapons.Longsword,
-                            weapons.Rapier, weapons.Shortsword,
-                            weapons.SimpleWeapon)
-    class_skill_choices = ('Acrobatics', 'Animal Handling', 'Arcana',
-                           'Athletics', 'Deception', 'History', 'Insight',
-                           'Intimidation', 'Investigation', 'Medicine',
-                           'Nature', 'Perception', 'Performance', 'Persuasion',
-                           'Religion', 'Sleight of Hand', 'Stealth',
-                           'Survival')
+        "Light armor",
+        "simple weapons",
+        "hand crossbows",
+        "longswords",
+        "rapiers",
+        "shortswords",
+        "three musical instruments of your choice",
+    )
+    weapon_proficiencies = (
+        weapons.HandCrossbow,
+        weapons.Longsword,
+        weapons.Rapier,
+        weapons.Shortsword,
+        weapons.SimpleWeapon,
+    )
+    class_skill_choices = (
+        "Acrobatics",
+        "Animal Handling",
+        "Arcana",
+        "Athletics",
+        "Deception",
+        "History",
+        "Insight",
+        "Intimidation",
+        "Investigation",
+        "Medicine",
+        "Nature",
+        "Perception",
+        "Performance",
+        "Persuasion",
+        "Religion",
+        "Sleight of Hand",
+        "Stealth",
+        "Survival",
+    )
     multiclass_weapon_proficiencies = ()
-    _multiclass_proficiencies_text = ('Light Armor', '[choose one skill]',
-                                      '[choose one musical instrument]')
+    _multiclass_proficiencies_text = (
+        "Light Armor",
+        "[choose one skill]",
+        "[choose one musical instrument]",
+    )
     num_skill_choices = 3
-    subclasses_available = (CollegeOfLore, CollegeOfValor, CollegeOfGlamour,
-                            CollegeOfSwords, CollegeOfWhispers)
+    subclasses_available = (
+        CollegeOfLore,
+        CollegeOfValor,
+        CollegeOfGlamour,
+        CollegeOfSwords,
+        CollegeOfWhispers,
+    )
     features_by_level = defaultdict(list)
     features_by_level[1] = [features.BardicInspiration]
     features_by_level[2] = [features.SongOfRest, features.JackOfAllTrades]
@@ -168,18 +209,18 @@ class Bard(CharClass):
     features_by_level[6] = [features.Countercharm]
     features_by_level[10] = [features.MagicalSecrets]
     features_by_level[20] = [features.SuperiorInspiration]
-    spellcasting_ability = 'charisma'
+    spellcasting_ability = "charisma"
     spell_slots_by_level = {
         # char_lvl: (cantrips, 1st, 2nd, 3rd, ...)
-        1:  (2, 2, 0, 0, 0, 0, 0, 0, 0, 0),
-        2:  (2, 3, 0, 0, 0, 0, 0, 0, 0, 0),
-        3:  (2, 4, 2, 0, 0, 0, 0, 0, 0, 0),
-        4:  (3, 4, 3, 0, 0, 0, 0, 0, 0, 0),
-        5:  (3, 4, 3, 2, 0, 0, 0, 0, 0, 0),
-        6:  (3, 4, 3, 3, 0, 0, 0, 0, 0, 0),
-        7:  (3, 4, 3, 3, 1, 0, 0, 0, 0, 0),
-        8:  (3, 4, 3, 3, 2, 0, 0, 0, 0, 0),
-        9:  (4, 4, 3, 3, 3, 1, 0, 0, 0, 0),
+        1: (2, 2, 0, 0, 0, 0, 0, 0, 0, 0),
+        2: (2, 3, 0, 0, 0, 0, 0, 0, 0, 0),
+        3: (2, 4, 2, 0, 0, 0, 0, 0, 0, 0),
+        4: (3, 4, 3, 0, 0, 0, 0, 0, 0, 0),
+        5: (3, 4, 3, 2, 0, 0, 0, 0, 0, 0),
+        6: (3, 4, 3, 3, 0, 0, 0, 0, 0, 0),
+        7: (3, 4, 3, 3, 1, 0, 0, 0, 0, 0),
+        8: (3, 4, 3, 3, 2, 0, 0, 0, 0, 0),
+        9: (4, 4, 3, 3, 3, 1, 0, 0, 0, 0),
         10: (4, 4, 3, 3, 3, 2, 0, 0, 0, 0),
         11: (4, 4, 3, 3, 3, 2, 1, 0, 0, 0),
         12: (4, 4, 3, 3, 3, 2, 1, 0, 0, 0),

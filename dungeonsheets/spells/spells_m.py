@@ -11,16 +11,17 @@ class MaddeningDarkness(Spell):
     throw, taking 8d8 psychic damage on a failed save, or half as much damage on a
     successful one.
     """
+
     name = "Maddening Darkness"
     level = 8
     casting_time = "1 action"
     casting_range = "150 feet"
-    components = ('V', 'M')
-    materials = """A drop of pitch mixed with a drop of mercury"""
+    components = ("V", "M")
+    materials = "A drop of pitch mixed with a drop of mercury"
     duration = "Concentration, up to 10 minutes"
     ritual = False
     magic_school = "Evocation"
-    classes = ('Warlock', 'Wizard')
+    classes = ("Warlock", "Wizard")
 
 
 class Maelstrom(Spell):
@@ -32,16 +33,17 @@ class Maelstrom(Spell):
     on a Strength saving throw or take 6d6 bludgeoning damage and be pulled 10 feet
     toward the center.
     """
+
     name = "Maelstrom"
     level = 5
     casting_time = "1 action"
     casting_range = "120 feet"
-    components = ('V', 'S', 'M')
-    materials = """"""
+    components = ("V", "S", "M")
+    materials = ""
     duration = "Concentration, up to 1 minute"
     ritual = False
     magic_school = "Evocation"
-    classes = ('Druid',)
+    classes = ("Druid",)
 
 
 class MageArmor(Spell):
@@ -50,16 +52,17 @@ class MageArmor(Spell):
     Dexterity modifier. The spell ends it if the target dons armor or if you dismiss
     the spell as an action.
     """
+
     name = "Mage Armor"
     level = 1
     casting_time = "1 action"
     casting_range = "Touch"
-    components = ('V', 'S', 'M')
-    materials = """A piece of cured leather"""
+    components = ("V", "S", "M")
+    materials = "A piece of cured leather"
     duration = "8 hours"
     ritual = False
     magic_school = "Abjuration"
-    classes = ('Sorcerer', 'Wizard')
+    classes = ("Sorcerer", "Wizard")
 
 
 class MageHand(Spell):
@@ -77,27 +80,28 @@ class MageHand(Spell):
     The hand can't attack, activate magical items, or
     carry more than 10 pounds.
     """
+
     name = "Mage Hand"
     level = 0
     casting_time = "1 action"
     casting_range = "30 feet"
-    components = ('V', 'S')
-    materials = """"""
+    components = ("V", "S")
+    materials = ""
     duration = "1 minute"
     ritual = False
     magic_school = "Conjuration"
-    classes = ('Bard', 'Sorcerer', 'Warlock', 'Wizard')
+    classes = ("Bard", "Sorcerer", "Warlock", "Wizard")
 
 
 class MagicCircle(Spell):
     """You create a 10-foot-radius, 20-foot-tall cylinder of magical energy centered on
     a point on the ground that you can see within range. Glowing runes appear
     wherever the cylinder intersects with the floor or other surface.
-    
+
     Choose one or more of the following types of creatures:
     celestials, elementals, fey, fiends, or undead. The circle affects
     a creature of the chosen type in the following ways:
-    
+
     - The creature can't willingly enter the cylinder by nonmagical
       means. If the creature tries to use teleportation or interplanar
       travel to do so, it must first succeed on a Charisma saving
@@ -106,27 +110,31 @@ class MagicCircle(Spell):
       within the cylinder.
     - Targets within the cylinder can't be charmed, frightened, or
       possessed by the creature.
-    
+
     When you cast this spell, you can elect to cause its magic to
     operate in the reverse direction, preventing a creature of the
     specified type from leaving the cylinder and protecting targets
     outside it.
-    
+
     **At Higher Levels:** When you cast this spell using a spell slot
     of 4th level or higher, the duration increases by 1 hour for each
     slot level above 3rd.
-    
+
     """
+
     name = "Magic Circle"
     level = 3
     casting_time = "1 minute"
     casting_range = "10 feet"
-    components = ('V', 'S', 'M')
-    materials = """Holy water or powdered silver and iron worth at least 100 gp, which the spell consumes"""
+    components = ("V", "S", "M")
+    materials = (
+        "Holy water or powdered silver and iron worth at least 100 gp, which the spell"
+        " consumes"
+    )
     duration = "1 hour"
     ritual = False
     magic_school = "Abjuration"
-    classes = ('Cleric', 'Paladin', 'Warlock', 'Wizard')
+    classes = ("Cleric", "Paladin", "Warlock", "Wizard")
 
 
 class MagicJar(Spell):
@@ -172,16 +180,20 @@ class MagicJar(Spell):
 
     When the spell ends, the container is destroyed.
     """
+
     name = "Magic Jar"
     level = 6
     casting_time = "1 minute"
     casting_range = "Self"
-    components = ('V', 'S', 'M')
-    materials = """A gem, crystal, reliquary, or some other ornamental container worth at least 500 gp"""
+    components = ("V", "S", "M")
+    materials = (
+        "A gem, crystal, reliquary, or some other ornamental container worth at least"
+        " 500 gp"
+    )
     duration = "Until dispelled"
     ritual = False
     magic_school = "Necromancy"
-    classes = ('Wizard',)
+    classes = ("Wizard",)
 
 
 class MagicMissile(Spell):
@@ -190,22 +202,23 @@ class MagicMissile(Spell):
     deals 1d4 + 1 force damage to its target. The darts all strike
     simultaneously and you can direct them to hit one creature or
     several.
-    
+
     **At Higher Levels:** When you cast this spell using a spell slot of
     2nd level or higher, the spell creates one more dart for each slot
     level above 1st.
-    
+
     """
+
     name = "Magic Missile"
     level = 1
     casting_time = "1 action"
     casting_range = "120 feet"
-    components = ('V', 'S')
-    materials = """"""
+    components = ("V", "S")
+    materials = ""
     duration = "Instantaneous"
     ritual = False
     magic_school = "Evocation"
-    classes = ('Sorcerer', 'Wizard')
+    classes = ("Sorcerer", "Wizard")
 
 
 class MagicMouth(Spell):
@@ -231,16 +244,20 @@ class MagicMouth(Spell):
     mouth to speak when any creature moves within 30 feet of the object or when a
     silver bell rings within 30 feet of it.
     """
+
     name = "Magic Mouth"
     level = 2
     casting_time = "1 minute"
     casting_range = "30 feet"
-    components = ('V', 'S', 'M')
-    materials = """A small bit of honeycomb and jade dust worth at least 10 gp, which the spell consumes"""
+    components = ("V", "S", "M")
+    materials = (
+        "A small bit of honeycomb and jade dust worth at least 10 gp, which the spell"
+        " consumes"
+    )
     duration = "Until dispelled"
     ritual = True
     magic_school = "Illusion"
-    classes = ('Bard', 'Wizard')
+    classes = ("Bard", "Wizard")
 
 
 class MagicStone(Spell):
@@ -254,16 +271,17 @@ class MagicStone(Spell):
     If you cast this spell again,
     the spell ends on any pebbles still affected by your previous casting.
     """
+
     name = "Magic Stone"
     level = 0
     casting_time = "1 bonus action"
     casting_range = "Touch"
-    components = ('V', 'S')
-    materials = """"""
+    components = ("V", "S")
+    materials = ""
     duration = "1 minute"
     ritual = False
     magic_school = "Transmutation"
-    classes = ('Druid', 'Warlock')
+    classes = ("Druid", "Warlock")
 
 
 class MagicWeapon(Spell):
@@ -276,16 +294,17 @@ class MagicWeapon(Spell):
     When you use a spell slot of 6th level or higher, the bonus
     increases to +3.
     """
+
     name = "Magic Weapon"
     level = 2
     casting_time = "1 bonus action"
     casting_range = "Touch"
-    components = ('V', 'S')
-    materials = """"""
+    components = ("V", "S")
+    materials = ""
     duration = "Concentration, up to 1 hour"
     ritual = False
     magic_school = "Transmutation"
-    classes = ('Paladin', 'Wizard')
+    classes = ("Paladin", "Wizard")
 
 
 class MajorImage(Spell):
@@ -318,16 +337,17 @@ class MajorImage(Spell):
     slot of 6th level or higher, the spell lasts until dispelled, without requiring
     your concentration.
     """
+
     name = "Major Image"
     level = 3
     casting_time = "1 action"
     casting_range = "120 feet"
-    components = ('V', 'S', 'M')
-    materials = """A bit of fleece"""
+    components = ("V", "S", "M")
+    materials = "A bit of fleece"
     duration = "Concentration, up to 10 minutes"
     ritual = False
     magic_school = "Illusion"
-    classes = ('Bard', 'Sorcerer', 'Warlock', 'Wizard')
+    classes = ("Bard", "Sorcerer", "Warlock", "Wizard")
 
 
 class MassCureWounds(Spell):
@@ -341,16 +361,17 @@ class MassCureWounds(Spell):
     When you cast this spell using a spell slot of 6th level or higher, the healing
     increases by 1d8 for each slot level above 5th.
     """
+
     name = "Mass Cure Wounds"
     level = 5
     casting_time = "1 action"
     casting_range = "60 feet"
-    components = ('V', 'S')
-    materials = """"""
+    components = ("V", "S")
+    materials = ""
     duration = "Instantaneous"
     ritual = False
     magic_school = "Evocation"
-    classes = ('Bard', 'Cleric', 'Druid')
+    classes = ("Bard", "Cleric", "Druid")
 
 
 class MassHeal(Spell):
@@ -360,16 +381,17 @@ class MassHeal(Spell):
     cured of all diseases and any effect making them blinded or deafened. This
     spell has no effect on undead or constructs.
     """
+
     name = "Mass Heal"
     level = 9
     casting_time = "1 action"
     casting_range = "60 feet"
-    components = ('V', 'S')
-    materials = """"""
+    components = ("V", "S")
+    materials = ""
     duration = "Instantaneous"
     ritual = False
     magic_school = "Evocation"
-    classes = ('Cleric',)
+    classes = ("Cleric",)
 
 
 class MassHealingWord(Spell):
@@ -381,16 +403,17 @@ class MassHealingWord(Spell):
     Levels: When you cast this spell using a spell slot of 4th level or higher, the
     healing increases by 1d4 for each slot level above 3rd.
     """
+
     name = "Mass Healing Word"
     level = 3
     casting_time = "1 bonus action"
     casting_range = "60 feet"
-    components = ('V',)
-    materials = """"""
+    components = ("V",)
+    materials = ""
     duration = "Instantaneous"
     ritual = False
     magic_school = "Evocation"
-    classes = ('Cleric',)
+    classes = ("Cleric",)
 
 
 class MassPolymorph(Spell):
@@ -417,16 +440,17 @@ class MassPolymorph(Spell):
     The target can't activate,
     use, wield, or otherwise benefit from any of its equipment.
     """
+
     name = "Mass Polymorph"
     level = 9
     casting_time = "1 action"
     casting_range = "120 feet"
-    components = ('V.S', 'M')
-    materials = """A caterpillar cocoon"""
+    components = ("V.S", "M")
+    materials = "A caterpillar cocoon"
     duration = "Concentration, up to 1 hour"
     ritual = False
     magic_school = "Transmutation"
-    classes = ('Sorcerer', 'Wizard', 'Bard')
+    classes = ("Sorcerer", "Wizard", "Bard")
 
 
 class MassSuggestion(Spell):
@@ -461,16 +485,19 @@ class MassSuggestion(Spell):
     When you use a
     9th-level spell slot, the duration is a year and a day.
     """
+
     name = "Mass Suggestion"
     level = 6
     casting_time = "1 action"
     casting_range = "60 feet"
-    components = ('V', 'M')
-    materials = """A snake's tongue and either a bit of honeycomb or a drop of sweet oil"""
+    components = ("V", "M")
+    materials = (
+        """A snake's tongue and either a bit of honeycomb or a drop of sweet oil"""
+    )
     duration = "24 hours"
     ritual = False
     magic_school = "Enchantment"
-    classes = ('Bard', 'Sorcerer', 'Warlock', 'Wizard')
+    classes = ("Bard", "Sorcerer", "Warlock", "Wizard")
 
 
 class MaximiliansEarthenGrasp(Spell):
@@ -491,16 +518,17 @@ class MaximiliansEarthenGrasp(Spell):
     or to move to a different unoccupied space within range. The hand releases a
     restrained target if you do either.
     """
+
     name = "Maximilians Earthen Grasp"
     level = 2
     casting_time = "1 action"
     casting_range = "30 feet"
-    components = ('V', 'S', 'M')
-    materials = """A miniature hand sculpted from clay"""
+    components = ("V", "S", "M")
+    materials = "A miniature hand sculpted from clay"
     duration = "Concentration, up to 1 minute"
     ritual = False
     magic_school = "Transmutation"
-    classes = ('Sorcerer', 'Wizard')
+    classes = ("Sorcerer", "Wizard")
 
 
 class Maze(Spell):
@@ -516,16 +544,17 @@ class Maze(Spell):
     the target reappears in the space it left or, if that space is occupied, in the
     nearest unoccupied space.
     """
+
     name = "Maze"
     level = 8
     casting_time = "1 action"
     casting_range = "60 feet"
-    components = ('V', 'S')
-    materials = """"""
+    components = ("V", "S")
+    materials = ""
     duration = "Concentration, up to 10 minutes"
     ritual = False
     magic_school = "Conjuration"
-    classes = ('Wizard',)
+    classes = ("Wizard",)
 
 
 class MeldIntoStone(Spell):
@@ -550,16 +579,17 @@ class MeldIntoStone(Spell):
     damage to you. If expelled, you fall prone in an unoccupied space closest to
     where you first entered.
     """
+
     name = "Meld Into Stone"
     level = 3
     casting_time = "1 action"
     casting_range = "Touch"
-    components = ('V', 'S')
-    materials = """"""
+    components = ("V", "S")
+    materials = ""
     duration = "8 hours"
     ritual = True
     magic_school = "Transmutation"
-    classes = ('Cleric', 'Druid')
+    classes = ("Cleric", "Druid")
 
 
 class MelfsAcidArrow(Spell):
@@ -574,16 +604,17 @@ class MelfsAcidArrow(Spell):
     Levels: When you cast this spell using a spell slot of 3rd level or higher, the
     damage (both initial and later) increases by 1d4 for each slot level above 2nd.
     """
+
     name = "Melfs Acid Arrow"
     level = 2
     casting_time = "1 action"
     casting_range = "90 feet"
-    components = ('V', 'S', 'M')
-    materials = """Powdered rhubarb leaf and an adder's stomach"""
+    components = ("V", "S", "M")
+    materials = "Powdered rhubarb leaf and an adder's stomach"
     duration = "Instantaneous"
     ritual = False
     magic_school = "Evocation"
-    classes = ('Wizard',)
+    classes = ("Wizard",)
 
 
 class MelfsMinuteMeteors(Spell):
@@ -601,16 +632,17 @@ class MelfsMinuteMeteors(Spell):
     4th level or higher, the number of meteors created increases by two for each
     slot level above 3rd.
     """
+
     name = "Melfs Minute Meteors"
     level = 3
     casting_time = "1 action"
     casting_range = "Self"
-    components = ('V', 'S', 'M')
-    materials = """"""
+    components = ("V", "S", "M")
+    materials = ""
     duration = "Concentration, up to 10 minutes"
     ritual = False
     magic_school = "Evocation"
-    classes = ('Sorcerer', 'Wizard')
+    classes = ("Sorcerer", "Wizard")
 
 
 class Mending(Spell):
@@ -623,16 +655,17 @@ class Mending(Spell):
     This spell can physically repair a
     magic item or construct, but the spell can't restore magic to such an object.
     """
+
     name = "Mending"
     level = 0
     casting_time = "1 minute"
     casting_range = "Touch"
-    components = ('V', 'S', 'M')
-    materials = """Two lodestones"""
+    components = ("V", "S", "M")
+    materials = "Two lodestones"
     duration = "Instantaneous"
     ritual = False
     magic_school = "Transmutation"
-    classes = ('Bard', 'Cleric', 'Druid', 'Sorcerer', 'Wizard')
+    classes = ("Bard", "Cleric", "Druid", "Sorcerer", "Wizard")
 
 
 class MentalPrison(Spell):
@@ -649,16 +682,17 @@ class MentalPrison(Spell):
     attack through it, or reaches any part of its body through it, the target takes
     10d10 psychic damage, and the spell ends.
     """
+
     name = "Mental Prison"
     level = 6
     casting_time = "1 action"
     casting_range = "60 feet"
-    components = ('S',)
-    materials = """"""
+    components = ("S",)
+    materials = ""
     duration = "Concentration, up to 1 minute"
     ritual = False
     magic_school = "Illusion"
-    classes = ('Sorcerer', 'Warlock', 'Wizard')
+    classes = ("Sorcerer", "Warlock", "Wizard")
 
 
 class Message(Spell):
@@ -673,16 +707,17 @@ class Message(Spell):
     blocks the spell. The spell doesn't have to follow a straight line and can
     travel freely around corners or through openings.
     """
+
     name = "Message"
     level = 0
     casting_time = "1 action"
     casting_range = "120 feet"
-    components = ('V', 'S', 'M')
-    materials = """A short piece of copper wire"""
+    components = ("V", "S", "M")
+    materials = "A short piece of copper wire"
     duration = "1 round"
     ritual = False
     magic_school = "Transmutation"
-    classes = ('Bard', 'Sorcerer', 'Wizard')
+    classes = ("Bard", "Sorcerer", "Wizard")
 
 
 class MeteorSwarm(Spell):
@@ -697,16 +732,17 @@ class MeteorSwarm(Spell):
     The spell damages objects
     in the area and ignites flammable objects that aren't being worn or carried.
     """
+
     name = "Meteor Swarm"
     level = 9
     casting_time = "1 action"
     casting_range = "1 mile"
-    components = ('V', 'S')
-    materials = """"""
+    components = ("V", "S")
+    materials = ""
     duration = "Instantaneous"
     ritual = False
     magic_school = "Evocation"
-    classes = ('Sorcerer', 'Wizard')
+    classes = ("Sorcerer", "Wizard")
 
 
 class MightyFortress(Spell):
@@ -747,16 +783,17 @@ class MightyFortress(Spell):
     spell on the same spot once every 7 days for a year makes the fortress
     permanent.
     """
+
     name = "Mighty Fortress"
     level = 8
     casting_time = "1 minute"
     casting_range = "1 mile"
-    components = ('V', 'S', 'M')
-    materials = """A diamond worth at least 500 gp, which the spell consumes"""
+    components = ("V", "S", "M")
+    materials = "A diamond worth at least 500 gp, which the spell consumes"
     duration = "Instantaneous"
     ritual = False
     magic_school = "Conjuration"
-    classes = ('Wizard',)
+    classes = ("Wizard",)
 
 
 class MindBlank(Spell):
@@ -766,16 +803,17 @@ class MindBlank(Spell):
     and spells or effects of similar power used to affect the target's mind or to
     gain information about the target.
     """
+
     name = "Mind Blank"
     level = 8
     casting_time = "1 action"
     casting_range = "Touch"
-    components = ('V', 'S')
-    materials = """"""
+    components = ("V", "S")
+    materials = ""
     duration = "24 hours"
     ritual = False
     magic_school = "Abjuration"
-    classes = ('Bard', 'Wizard')
+    classes = ("Bard", "Wizard")
 
 
 class MindSliver(Spell):
@@ -787,16 +825,17 @@ class MindSliver(Spell):
     **At Higher Levels:** This spell’s damage increases by 1d6 when you reach
     certain levels: 5th level (2d6), 11th level (3d6), and 17th level (4d6).
     """
+
     name = "Mind Sliver"
     level = 0
     casting_time = "1 action"
     casting_range = "60 feet"
-    components = ('V',)
-    materials = """"""
+    components = ("V",)
+    materials = ""
     duration = "1 round"
     ritual = False
     magic_school = "Enchantment"
-    classes = ('Sorcerer', 'Warlock', 'Wizard')
+    classes = ("Sorcerer", "Warlock", "Wizard")
 
 
 class MindSpike(Spell):
@@ -812,16 +851,17 @@ class MindSpike(Spell):
     slot of 3rd level or higher, the damage increases by 1d8 for each slot level
     above 2nd.
     """
+
     name = "Mind Spike"
     level = 2
     casting_time = "1 action"
     casting_range = "60 feet"
-    components = ('S',)
-    materials = """"""
+    components = ("S",)
+    materials = ""
     duration = "Concentration, up to 1 hour"
     ritual = False
     magic_school = "Divination"
-    classes = ('Sorcerer', 'Warlock', 'Wizard')
+    classes = ("Sorcerer", "Warlock", "Wizard")
 
 
 class MinorIllusion(Spell):
@@ -846,16 +886,17 @@ class MinorIllusion(Spell):
     (Investigation) check against your spell save DC. If a creature discerns the
     illusion for what it is, the illusion becomes faint to the creature.
     """
+
     name = "Minor Illusion"
     level = 0
     casting_time = "1 action"
     casting_range = "30 feet"
-    components = ('S', 'M')
-    materials = """A bit of fleece"""
+    components = ("S", "M")
+    materials = "A bit of fleece"
     duration = "1 minute"
     ritual = False
     magic_school = "Illusion"
-    classes = ('Bard', 'Sorcerer', 'Warlock', 'Wizard')
+    classes = ("Bard", "Sorcerer", "Warlock", "Wizard")
 
 
 class MirageArcane(Spell):
@@ -882,16 +923,17 @@ class MirageArcane(Spell):
     so while the creature is aware of the illusion's presence, the creature can
     still physically interact with the illusion.
     """
+
     name = "Mirage Arcane"
     level = 7
     casting_time = "10 minutes"
     casting_range = "Sight"
-    components = ('V', 'S')
-    materials = """"""
+    components = ("V", "S")
+    materials = ""
     duration = "10 days"
     ritual = False
     magic_school = "Illusion"
-    classes = ('Bard', 'Druid', 'Wizard')
+    classes = ("Bard", "Druid", "Wizard")
 
 
 class MirrorImage(Spell):
@@ -919,16 +961,17 @@ class MirrorImage(Spell):
     if it can't see, if it relies on senses other than sight, such as blindsight,
     or if it can perceive illusions as false, as with truesight.
     """
+
     name = "Mirror Image"
     level = 2
     casting_time = "1 action"
     casting_range = "Self"
-    components = ('V', 'S')
-    materials = """"""
+    components = ("V", "S")
+    materials = ""
     duration = "1 minute"
     ritual = False
     magic_school = "Illusion"
-    classes = ('Sorcerer', 'Warlock', 'Wizard')
+    classes = ("Sorcerer", "Warlock", "Wizard")
 
 
 class Mislead(Spell):
@@ -946,32 +989,34 @@ class Mislead(Spell):
     While you are using its senses, you are blinded and deafened in regard to your
     own surroundings.
     """
+
     name = "Mislead"
     level = 5
     casting_time = "1 action"
     casting_range = "Self"
-    components = ('S',)
-    materials = """"""
+    components = ("S",)
+    materials = ""
     duration = "Concentration, up to 1 hour"
     ritual = False
     magic_school = "Illusion"
-    classes = ('Bard', 'Wizard')
+    classes = ("Bard", "Wizard")
 
 
 class MistyStep(Spell):
     """Briefly surrounded by silvery mist, you teleport up to 30 feet to an unoccupied
     space that you can see.
     """
+
     name = "Misty Step"
     level = 2
     casting_time = "1 bonus action"
     casting_range = "Self"
-    components = ('V',)
-    materials = """"""
+    components = ("V",)
+    materials = ""
     duration = "Instantaneous"
     ritual = False
     magic_school = "Conjuration"
-    classes = ('Sorcerer', 'Warlock', 'Wizard')
+    classes = ("Sorcerer", "Warlock", "Wizard")
 
 
 class ModifyMemory(Spell):
@@ -1014,16 +1059,17 @@ class ModifyMemory(Spell):
     days ago (7th level), 1 year ago (8th level), or any time in the creature's past
     (9th level).
     """
+
     name = "Modify Memory"
     level = 5
     casting_time = "1 action"
     casting_range = "30 feet"
-    components = ('V', 'S')
-    materials = """"""
+    components = ("V", "S")
+    materials = ""
     duration = "Concentration, up to 1 minute"
     ritual = False
     magic_school = "Enchantment"
-    classes = ('Bard', 'Wizard')
+    classes = ("Bard", "Wizard")
 
 
 class MoldEarth(Spell):
@@ -1043,51 +1089,55 @@ class MoldEarth(Spell):
     than two of its non-instantaneous effects active at a time, and you can dismiss
     such an effect as an action.
     """
+
     name = "Mold Earth"
     level = 0
     casting_time = "1 action"
     casting_range = "30 feet"
-    components = ('S',)
-    materials = """"""
+    components = ("S",)
+    materials = ""
     duration = "Instantaneous or 1 hour"
     ritual = False
     magic_school = "Transmutation"
-    classes = ('Druid', 'Sorcerer', 'Wizard')
+    classes = ("Druid", "Sorcerer", "Wizard")
 
 
 class Moonbeam(Spell):
     """A silvery beam of pale light shines down in a 5-footradius,
     40-foot-high cylinder centered on a point within range. Until the
     spell ends, dim light fills the cylinder.
-    
+
     When a creature enters the spell's area for the first time on a
     turn or starts its turn there, it is engulfed in ghostly flames
     that cause searing pain, and it must make a Constitution saving
     throw. It takes 2d10 radiant damage on a failed save, or half as
     much damage on a successful one.
-    
+
     A shapechanger makes its saving throw with disadvantage. If it
     fails, it also instantly reverts to its original form and can't
     assume a different form until it leaves the spell's light.
-    
+
     On each of your turns after you cast this spell, you can use an
     action to move the beam 60 feet in any direction.
-    
+
     **At Higher Levels:** When you cast this spell using aspell slot
     of 3rd level or higher, the damage increases by 1d10 for each slot
     level above 2nd.
 
     """
+
     name = "Moonbeam"
     level = 2
     casting_time = "1 action"
     casting_range = "120 feet"
-    components = ('V', 'S', 'M')
-    materials = """Several seeds of any moonseed plant and a piece of opalescent feldspar"""
+    components = ("V", "S", "M")
+    materials = (
+        """Several seeds of any moonseed plant and a piece of opalescent feldspar"""
+    )
     duration = "Concentration, up to 1 minute"
     ritual = False
     magic_school = "Evocation"
-    classes = ('Druid',)
+    classes = ("Druid",)
 
 
 class MordenkainensFaithfulHound(Spell):
@@ -1107,16 +1157,17 @@ class MordenkainensFaithfulHound(Spell):
     spellcasting ability modifier + your proficiency bonus. On a hit, it deals 4d8
     piercing damage.
     """
+
     name = "Mordenkainens Faithful Hound"
     level = 4
     casting_time = "1 action"
     casting_range = "30 feet"
-    components = ('V', 'S', 'M')
-    materials = """A tiny silver whistle, a piece of bone, and a thread"""
+    components = ("V", "S", "M")
+    materials = "A tiny silver whistle, a piece of bone, and a thread"
     duration = "8 hours"
     ritual = False
     magic_school = "Conjuration"
-    classes = ('Wizard',)
+    classes = ("Wizard",)
 
 
 class MordenkainensMagnificentMansion(Spell):
@@ -1146,16 +1197,20 @@ class MordenkainensMagnificentMansion(Spell):
     the spell ends, any creatures inside the extradimensional space are expelled
     into the open spaces nearest to the entrance.
     """
+
     name = "Mordenkainens Magnificent Mansion"
     level = 7
     casting_time = "1 minute"
     casting_range = "300 feet"
-    components = ('V', 'S', 'M')
-    materials = """A miniature portal carved from ivory, a small piece of polished marble, and a tiny silver spoon, each item worth at least 5 gp"""
+    components = ("V", "S", "M")
+    materials = (
+        "A miniature portal carved from ivory, a small piece of polished marble, and a"
+        " tiny silver spoon, each item worth at least 5 gp"
+    )
     duration = "24 hours"
     ritual = False
     magic_school = "Conjuration"
-    classes = ('Bard', 'Wizard')
+    classes = ("Bard", "Wizard")
 
 
 class MordenkainensPrivateSanctum(Spell):
@@ -1188,16 +1243,20 @@ class MordenkainensPrivateSanctum(Spell):
     by 100 feet for each slot level beyond 4th. Thus you could protect a cube that
     can be up to 200 feet on one side by using a spell slot o f 5th level.
     """
+
     name = "Mordenkainens Private Sanctum"
     level = 4
     casting_time = "10 minutes"
     casting_range = "120 feet"
-    components = ('V', 'S', 'M')
-    materials = """A thin sheet of lead, a piece of opaque glass, a wad of cotton or cloth, and powdered chrysolite"""
+    components = ("V", "S", "M")
+    materials = (
+        "A thin sheet of lead, a piece of opaque glass, a wad of cotton or cloth, and"
+        " powdered chrysolite"
+    )
     duration = "24 hours"
     ritual = False
     magic_school = "Abjuration"
-    classes = ('Wizard',)
+    classes = ("Wizard",)
 
 
 class MordenkainensSword(Spell):
@@ -1210,16 +1269,20 @@ class MordenkainensSword(Spell):
     your turns to move the sword up to 20 feet to a spot you can see and repeat this
     attack against the same target or a different one.
     """
+
     name = "Mordenkainens Sword"
     level = 7
     casting_time = "1 action"
     casting_range = "60 feet"
-    components = ('V', 'S', 'M')
-    materials = """A miniature platinum sword with a grip and pommel of copper and zinc, worth 250 gp"""
+    components = ("V", "S", "M")
+    materials = (
+        "A miniature platinum sword with a grip and pommel of copper and zinc, worth"
+        " 250 gp"
+    )
     duration = "Concentration, up to 1 minute"
     ritual = False
     magic_school = "Evocation"
-    classes = ('Bard', 'Wizard')
+    classes = ("Bard", "Wizard")
 
 
 class MoveEarth(Spell):
@@ -1248,15 +1311,17 @@ class MoveEarth(Spell):
     spell doesn't directly affect plant growth. The moved earth carries any plants
     along with it.
     """
+
     name = "Move Earth"
     level = 6
     casting_time = "1 action"
     casting_range = "120 feet"
-    components = ('V', 'S', 'M')
-    materials = """An iron blade and a small bag containing a mixture of soils-clay, loam, and sand"""
+    components = ("V", "S", "M")
+    materials = (
+        "An iron blade and a small bag containing a mixture of soils-clay, loam, and"
+        " sand"
+    )
     duration = "Concentration, up to 2 hours"
     ritual = False
     magic_school = "Transmutation"
-    classes = ('Druid', 'Sorcerer', 'Wizard')
-
-
+    classes = ("Druid", "Sorcerer", "Wizard")

@@ -13,9 +13,9 @@ install:
 # command to run tests
 script:
   - pytest --cov=dungeonsheets tests/
+  - flake8 dungeonsheets/ --exit-zero
   - cd examples/
   - makesheets -d
-  - makesheets -dF
   - cd ../
 after_success:
   - coveralls

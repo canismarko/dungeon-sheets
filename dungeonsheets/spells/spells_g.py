@@ -22,16 +22,17 @@ class GaseousForm(Spell):
     can't attack or cast spells.
 
     """
+
     name = "Gaseous Form"
     level = 3
     casting_time = "1 action"
     casting_range = "Touch"
-    components = ('V', 'S', 'M')
-    materials = """A bit of gauze and a wisp of smoke"""
+    components = ("V", "S", "M")
+    materials = "A bit of gauze and a wisp of smoke"
     duration = "Concentration, up to 1 hour"
     ritual = False
     magic_school = "Transmutation"
-    classes = ('Sorcerer', 'Warlock', 'Wizard')
+    classes = ("Sorcerer", "Warlock", "Wizard")
 
 
 class Gate(Spell):
@@ -61,16 +62,17 @@ class Gate(Spell):
     you, or help you.
 
     """
+
     name = "Gate"
     level = 9
     casting_time = "1 action"
     casting_range = "60 feet"
-    components = ('V', 'S', 'M')
-    materials = """A diamond worth at least 5,000 gp"""
+    components = ("V", "S", "M")
+    materials = "A diamond worth at least 5,000 gp"
     duration = "Concentration, up to 1 minute"
     ritual = False
     magic_school = "Conjuration"
-    classes = ('Cleric', 'Sorcerer', 'Wizard')
+    classes = ("Cleric", "Sorcerer", "Wizard")
 
 
 class Geas(Spell):
@@ -97,21 +99,22 @@ class Geas(Spell):
     ended by one of the spells mentioned above.
 
     """
+
     name = "Geas"
     level = 5
     casting_time = "1 minute"
     casting_range = "60 feet"
-    components = ('V',)
-    materials = """"""
+    components = ("V",)
+    materials = ""
     duration = "30 days"
     ritual = False
     magic_school = "Enchantment"
-    classes = ('Bard', 'Cleric', 'Druid', 'Paladin', 'Wizard')
+    classes = ("Bard", "Cleric", "Druid", "Paladin", "Wizard")
 
 
 class GentleRepose(Spell):
-    """You touch a corpse or other remains. For the duration, the target is protected
-    from decay and can't become undead.
+    """You touch a corpse or other remains. For the duration, the target
+    is protected from decay and can't become undead.
 
     The spell also effectively extends the time limit on raising the
     target from the dead, since days spent under the influence of this
@@ -119,63 +122,73 @@ class GentleRepose(Spell):
     dead.
 
     """
+
     name = "Gentle Repose"
     level = 2
     casting_time = "1 action"
     casting_range = "Touch"
-    components = ('V', 'S', 'M')
-    materials = """A pinch of salt and one copper piece placed on each of the corpse's eyes, which must remain there for the duration"""
+    components = ("V", "S", "M")
+    materials = (
+        "A pinch of salt and one copper piece placed on each of the corpse's eyes,"
+        " which must remain there for the duration"
+    )
     duration = "10 days"
     ritual = True
     magic_school = "Necromancy"
-    classes = ('Cleric', 'Wizard')
+    classes = ("Cleric", "Wizard")
 
 
 class GiantInsect(Spell):
-    """You transform up to ten centipedes, three spiders, five wasps, or one scorpion
-    within range into giant versions of their natural forms for the duration. A
-    centipede becomes a giant centipede, a spider becaomes a giant spider, a wasp
-    becomes a giant wasp, and a scorpion becomes a giant scorpion.
+    """You transform up to ten centipedes, three spiders, five wasps, or
+    one scorpion within range into giant versions of their natural
+    forms for the duration. A centipede becomes a giant centipede, a
+    spider becaomes a giant spider, a wasp becomes a giant wasp, and a
+    scorpion becomes a giant scorpion.
 
-    Each creature
-    obeys your verbal commands, and in combat, they act on your turn each round. The
-    DM has the statistics for these creatures and resolves their actions and
-    movement.
+    Each creature obeys your verbal commands, and in combat, they act
+    on your turn each round. The DM has the statistics for these
+    creatures and resolves their actions and movement.
 
-    A creature remains in its giant size for the duration, until it drops
-    to 0 hit points, or until you use an action to dismiss the effect on it.
+    A creature remains in its giant size for the duration, until it
+    drops to 0 hit points, or until you use an action to dismiss the
+    effect on it.
 
-    The
-    DM might allow you to choose different targets. For example, if you transform a
-    bee, its giant version might have the same statistics as a giant wasp.
+    The DM might allow you to choose different targets. For example,
+    if you transform a bee, its giant version might have the same
+    statistics as a giant wasp.
+
     """
+
     name = "Giant Insect"
     level = 4
     casting_time = "1 action"
     casting_range = "30 feet"
-    components = ('V', 'S')
-    materials = """"""
+    components = ("V", "S")
+    materials = ""
     duration = "Concentration, up to 10 minutes"
     ritual = False
     magic_school = "Transmutation"
-    classes = ('Druid',)
+    classes = ("Druid",)
 
 
 class Glibness(Spell):
-    """Until the spell ends, when you make a Charisma check, you can replace the number
-    you roll with a 15. Additionally, no matter what you say, magic that would
-    determine if you are telling the truth indicates that you are being truthful.
+    """Until the spell ends, when you make a Charisma check, you can
+    replace the number you roll with a 15. Additionally, no matter
+    what you say, magic that would determine if you are telling the
+    truth indicates that you are being truthful.
+
     """
+
     name = "Glibness"
     level = 8
     casting_time = "1 action"
     casting_range = "Self"
-    components = ('V',)
-    materials = """"""
+    components = ("V",)
+    materials = ""
     duration = "1 hour"
     ritual = False
     magic_school = "Transmutation"
-    classes = ('Bard', 'Warlock')
+    classes = ("Bard", "Warlock")
 
 
 class GlobeOfInvulnerability(Spell):
@@ -194,16 +207,17 @@ class GlobeOfInvulnerability(Spell):
     higher for each slot level above 6th.
 
     """
+
     name = "Globe Of Invulnerability"
     level = 6
     casting_time = "1 action"
     casting_range = "Self (10-foot radius)"
-    components = ('V', 'S', 'M')
-    materials = """A glass or crystal bead that shatters when the spell ends"""
+    components = ("V", "S", "M")
+    materials = "A glass or crystal bead that shatters when the spell ends"
     duration = "Concentration, up to 1 minute"
     ritual = False
     magic_school = "Abjuration"
-    classes = ('Sorcerer', 'Wizard')
+    classes = ("Sorcerer", "Wizard")
 
 
 class GlyphOfWarding(Spell):
@@ -270,16 +284,75 @@ class GlyphOfWarding(Spell):
     the slot you use for the glyph of warding.
 
     """
+
     name = "Glyph Of Warding"
     level = 3
     casting_time = "1 hour"
     casting_range = "Touch"
-    components = ('V', 'S', 'M')
-    materials = """Incense and powdered diamond worth at least 200 gp, which the spell consumes"""
+    components = ("V", "S", "M")
+    materials = (
+        "Incense and powdered diamond worth at least 200 gp, which the spell consumes"
+    )
     duration = "Until dispelled or triggered"
     ritual = False
     magic_school = "Abjuration"
-    classes = ('you', 'cast', 'this', 'spell', 'using', 'a', 'spell', 'slot', 'of', '4th', 'level', 'or', 'higher', 'the', 'damage', 'of', 'an', 'explosive', 'runes', 'glyph', 'increases', 'by', '1d8', 'for', 'each', 'slot', 'level', 'above', '3rd.', 'If', 'you', 'create', 'a', 'spell', 'glyph', 'you', 'can', 'store', 'any', 'spell', 'of', 'up', 'to', 'the', 'same', 'level', 'as', 'the', 'slot', 'you', 'use', 'for', 'the', 'glyph', 'of')
+    classes = (
+        "you",
+        "cast",
+        "this",
+        "spell",
+        "using",
+        "a",
+        "spell",
+        "slot",
+        "of",
+        "4th",
+        "level",
+        "or",
+        "higher",
+        "the",
+        "damage",
+        "of",
+        "an",
+        "explosive",
+        "runes",
+        "glyph",
+        "increases",
+        "by",
+        "1d8",
+        "for",
+        "each",
+        "slot",
+        "level",
+        "above",
+        "3rd.",
+        "If",
+        "you",
+        "create",
+        "a",
+        "spell",
+        "glyph",
+        "you",
+        "can",
+        "store",
+        "any",
+        "spell",
+        "of",
+        "up",
+        "to",
+        "the",
+        "same",
+        "level",
+        "as",
+        "the",
+        "slot",
+        "you",
+        "use",
+        "for",
+        "the",
+        "glyph",
+        "of",
+    )
 
 
 class Goodberry(Spell):
@@ -290,16 +363,17 @@ class Goodberry(Spell):
     The berries lose their potency if they have not been
     consumed within 24 hours of the casting of this spell.
     """
+
     name = "Goodberry"
     level = 1
     casting_time = "1 action"
     casting_range = "Touch"
-    components = ('V', 'S', 'M')
-    materials = """A sprig of mistletoe"""
+    components = ("V", "S", "M")
+    materials = "A sprig of mistletoe"
     duration = "Instantaneous"
     ritual = False
     magic_school = "Transmutation"
-    classes = ('Druid', 'Ranger')
+    classes = ("Druid", "Ranger")
 
 
 class GraspingVine(Spell):
@@ -312,16 +386,17 @@ class GraspingVine(Spell):
     Until the spell ends, you can direct the vine to lash out at
     the same creature or another one as a bonus action on each of your turns.
     """
+
     name = "Grasping Vine"
     level = 4
     casting_time = "1 bonus action"
     casting_range = "30 feet"
-    components = ('V', 'S')
-    materials = """"""
+    components = ("V", "S")
+    materials = ""
     duration = "Concentration, up to 1 minute"
     ritual = False
     magic_school = "Conjuration"
-    classes = ('Druid', 'Ranger')
+    classes = ("Druid", "Ranger")
 
 
 class Grease(Spell):
@@ -333,16 +408,17 @@ class Grease(Spell):
     throw or fall prone. A creature that enters the area or ends its turn there must
     also succeed on a Dexterity saving throw or fall prone.
     """
+
     name = "Grease"
     level = 1
     casting_time = "1 action"
     casting_range = "60 feet"
-    components = ('V', 'S', 'M')
-    materials = """A bit of pork rind or butter"""
+    components = ("V", "S", "M")
+    materials = "A bit of pork rind or butter"
     duration = "1 minute"
     ritual = False
     magic_school = "Conjuration"
-    classes = ('Wizard',)
+    classes = ("Wizard",)
 
 
 class GreaterInvisibility(Spell):
@@ -351,16 +427,17 @@ class GreaterInvisibility(Spell):
     long as it is on the target's person.
 
     """
+
     name = "Greater Invisibility"
     level = 4
     casting_time = "1 action"
     casting_range = "Touch"
-    components = ('V', 'S')
-    materials = """"""
+    components = ("V", "S")
+    materials = ""
     duration = "Concentration, up to 1 minute"
     ritual = False
     magic_school = "Illusion"
-    classes = ('Bard', 'Sorcerer', 'Wizard')
+    classes = ("Bard", "Sorcerer", "Wizard")
 
 
 class GreaterRestoration(Spell):
@@ -374,16 +451,17 @@ class GreaterRestoration(Spell):
     - One effect reducing the target's hit point maximum
 
     """
+
     name = "Greater Restoration"
     level = 5
     casting_time = "1 action"
     casting_range = "Touch"
-    components = ('V', 'S', 'M')
-    materials = """Diamond dust worth at least 100 gp, which the spell consumes"""
+    components = ("V", "S", "M")
+    materials = "Diamond dust worth at least 100 gp, which the spell consumes"
     duration = "Instantaneous"
     ritual = False
     magic_school = "Abjuration"
-    classes = ('Bard', 'Cleric', 'Druid')
+    classes = ("Bard", "Cleric", "Druid")
 
 
 class GreenFlameBlade(Spell):
@@ -400,16 +478,17 @@ class GreenFlameBlade(Spell):
     increases to 1d8 + your spellcasting ability modifier. Both damage rolls
     increase by 1d8 at 11th level and 17th level.
     """
+
     name = "Green-Flame Blade"
     level = 0
     casting_time = "1 action"
     casting_range = "5 feet"
-    components = ('V', 'M')
-    materials = """A weapon"""
+    components = ("V", "M")
+    materials = "A weapon"
     duration = "Instantaneous"
     ritual = False
     magic_school = "Evocation"
-    classes = ('Sorcerer', 'Warlock', 'Wizard')
+    classes = ("Sorcerer", "Warlock", "Wizard")
 
 
 class GuardianOfFaith(Spell):
@@ -424,16 +503,17 @@ class GuardianOfFaith(Spell):
     or half as much damage on a successful one. The guardian vanishes when it has
     dealt a total of 60 damage.
     """
+
     name = "Guardian Of Faith"
     level = 4
     casting_time = "1 action"
     casting_range = "30 feet"
-    components = ('V',)
-    materials = """"""
+    components = ("V",)
+    materials = ""
     duration = "8 hours"
     ritual = False
     magic_school = "Conjuration"
-    classes = ('Cleric',)
+    classes = ("Cleric",)
 
 
 class GuardianOfNature(Spell):
@@ -441,37 +521,38 @@ class GuardianOfNature(Spell):
     powerful guardian. The transformation lasts until the spell
     ends. You choose one of the following forms to assume: Primal
     Beast or Great Tree.
-    
+
     **Primal Beast.** Bestial fur covers your body, your facial
     features become feral, and you gain the following benefits:
-    
+
     - Your walking speed increases by 10 feet.
     - You gain darkvision with a range of 120 feet.
     - You make Strength-based attack rolls with advantage.
     - Your melee weapon attacks deal an extra 1d6 force damage on a
       hit.
-    
+
     **Great Tree.** Your skin appears barky, leaves sprout from your
     hair, and you gain the following benefits:
-    
+
     - You gain 10 temporary hit points.
     - You make Constitution saving throws with advantage.
     - You make Dexterity- and Wisdom-based attack rolls with
       advantage.
     - While you are on the ground, the ground within 15 feet of you is
       difficult terrain for your enemies.
-    
+
     """
+
     name = "Guardian Of Nature"
     level = 4
     casting_time = "1 bonus action"
     casting_range = "Self"
-    components = ('V',)
-    materials = """"""
+    components = ("V",)
+    materials = ""
     duration = "Concentration, up to 1 minute"
     ritual = False
     magic_school = "Transmutation"
-    classes = ('Druid', 'Ranger')
+    classes = ("Druid", "Ranger")
 
 
 class GuardsAndWards(Spell):
@@ -481,15 +562,15 @@ class GuardsAndWards(Spell):
     tall, and shaped as you desire. You can ward several stories of a
     stronghold by dividing the area among them, as long as you can
     walk into each contiguous area while you are casting the spell.
-    
+
     When you cast this spell, you can specify individuals that are
     unaffected by any or all of the effects that you choose. You can
     also specify a password that, when spoken aloud, makes the speaker
     immune to these effects.
-    
+
     Guards and wards creates the following effects within the warded
     area.
-    
+
     - **Corridors.** Fog fills all the warded corridors, making them
       heavily obscured. In addition, at each intersection or branching
       passage offering a choice of direction, there is a 50 percent
@@ -506,7 +587,7 @@ class GuardsAndWards(Spell):
     - **Other Spell Effect.** You can place your choice of one of the
       following magical effects within the warded area of the
       stronghold.
-    
+
       - Place dancing lights in four corridors. You can designate a
         simple program that the lights repeat as long as guards and
         wards lasts.
@@ -518,23 +599,28 @@ class GuardsAndWards(Spell):
       - Place a suggestion in one location. You select an area of up
         to 5 feet square, and any creature that enters or passes
         through the area receives the suggestion mentally.
-    
+
     The whole warded area radiates magic. A dispel magic cast on a
     specific effect, if successful, removes only that effect.  You can
     create a permanently guarded and warded structure by casting this
     spell there every day for one year.
-    
+
     """
+
     name = "Guards And Wards"
     level = 6
     casting_time = "10 minutes"
     casting_range = "Touch"
-    components = ('V', 'S', 'M')
-    materials = "Burning incense, a small measure of brimstone and oil, a knotted string, a small amount of umber hulk blood, and a small silver rod worth at least 10 gp"
+    components = ("V", "S", "M")
+    materials = (
+        "Burning incense, a small measure of brimstone and "
+        "oil, a knotted string, a small amount of umber hulk blood, and "
+        "a small silver rod worth at least 10 gp"
+    )
     duration = "24 hours"
     ritual = False
     magic_school = "Abjuration"
-    classes = ('Bard', 'Wizard')
+    classes = ("Bard", "Wizard")
 
 
 class Guidance(Spell):
@@ -542,40 +628,43 @@ class Guidance(Spell):
     a d4 and add the number rolled to one ability check of its choice. It can roll
     the die before or after making the ability check. The spell then ends.
     """
+
     name = "Guidance"
     level = 0
     casting_time = "1 action"
     casting_range = "Touch"
-    components = ('V', 'S')
-    materials = """"""
+    components = ("V", "S")
+    materials = ""
     duration = "Concentration, up to 1 minute"
     ritual = False
     magic_school = "Divination"
-    classes = ('Cleric', 'Druid')
+    classes = ("Cleric", "Druid")
 
 
 class GuidingBolt(Spell):
-    """A flash of light streaks toward a creature of your choice within range.
-    Make a
-    ranged spell attack against the target. On a hit, the target takes 4d6 radiant
-    damage, and the next attack roll made against this target before the end of your
-    next turn has advantage, thanks to the mystical dim light glittering on the
+    """A flash of light streaks toward a creature of your choice within
+    range.  Make a ranged spell attack against the target. On a hit,
+    the target takes 4d6 radiant damage, and the next attack roll made
+    against this target before the end of your next turn has
+    advantage, thanks to the mystical dim light glittering on the
     target until then.
 
-    **At Higher Levels:** When you cast this spell using a spell
-    slot of 2nd level or higher, the damage increases by 1d6 for each slot level
-    above 1st.
+    **At Higher Levels:** When you cast this spell using a spell slot
+    of 2nd level or higher, the damage increases by 1d6 for each slot
+    level above 1st.
+
     """
+
     name = "Guiding Bolt"
     level = 1
     casting_time = "1 action"
     casting_range = "120 feet"
-    components = ('V', 'S')
-    materials = """"""
+    components = ("V", "S")
+    materials = ""
     duration = "1 round"
     ritual = False
     magic_school = "Evocation"
-    classes = ('Cleric',)
+    classes = ("Cleric",)
 
 
 class GuidingHand(Spell):
@@ -597,22 +686,23 @@ class GuidingHand(Spell):
     do and beckons for you to follow once every 1d4 minutes.
 
     """
+
     name = "Guiding Hand"
     level = 1
     casting_time = "1 minute"
     casting_range = "5 feet"
-    components = ('V', 'S')
-    materials = """"""
+    components = ("V", "S")
+    materials = ""
     duration = "Concentration, up to 8 hours"
     ritual = True
     magic_scool = "Divination"
-    classes = ('Bard', 'Cleric', 'Druid', 'Wizard')
+    classes = ("Bard", "Cleric", "Druid", "Wizard")
 
 
 class Gust(Spell):
     """You seize the air and compel it to create one of the following
     effects at a point you can see within range:
-    
+
     - One Medium or smaller creature that you choose must succeed on a
       Strength saving throw or be pushed up to 5 feet away from you.
     - You create a small blast of air capable of moving one object
@@ -622,18 +712,19 @@ class Gust(Spell):
     - You create a harmless sensory affect using air, such as causing
       leaves to rustle, wind to slam shutters shut, or your clothing
       to ripple in a breeze.
-    
+
     """
+
     name = "Gust"
     level = 0
     casting_time = "1 action"
     casting_range = "30 feet"
-    components = ('V', 'S')
-    materials = """"""
+    components = ("V", "S")
+    materials = ""
     duration = "Instantaneous"
     ritual = False
     magic_school = "Transmutation"
-    classes = ('Druid', 'Sorcerer', 'Wizard')
+    classes = ("Druid", "Sorcerer", "Wizard")
 
 
 class GustOfWind(Spell):
@@ -655,13 +746,14 @@ class GustOfWind(Spell):
     can change the direction in which the line blasts from you.
 
     """
+
     name = "Gust Of Wind"
     level = 2
     casting_time = "1 action"
     casting_range = "Self (60-foot line)"
-    components = ('V', 'S', 'M')
-    materials = """A legume seed"""
+    components = ("V", "S", "M")
+    materials = "A legume seed"
     duration = "Concentration, up to 1 minute"
     ritual = False
     magic_school = "Evocation"
-    classes = ('Druid', 'Sorcerer', 'Wizard')
+    classes = ("Druid", "Sorcerer", "Wizard")

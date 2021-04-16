@@ -11,16 +11,17 @@ class NegativeEnergyFlood(Spell):
     with this spell, the target doesn't make a saving throw. Instead, roll 5d12.
     The target gains half the total as temporary hit points.
     """
+
     name = "Negative Energy Flood"
     level = 5
     casting_time = "1 action"
     casting_range = "60 feet"
-    components = ('',)
-    materials = """A broken bone and a square of black silk"""
+    components = ("",)
+    materials = "A broken bone and a square of black silk"
     duration = "Instantaneous"
     ritual = False
     magic_school = "Necromancy"
-    classes = ('Warlock', 'Wizard')
+    classes = ("Warlock", "Wizard")
 
 
 class Nondetection(Spell):
@@ -30,16 +31,20 @@ class Nondetection(Spell):
     in any dimension. The target can't be targeted by any divination magic or
     perceived through magical scrying sensors.
     """
+
     name = "Nondetection"
     level = 3
     casting_time = "1 action"
     casting_range = "Touch"
-    components = ('V', 'S', 'M')
-    materials = """A pinch of diamond dust worth 25 gp sprinkled over the target, which the spell consumes"""
+    components = ("V", "S", "M")
+    materials = (
+        "A pinch of diamond dust worth 25 gp sprinkled over the target, which the spell"
+        " consumes"
+    )
     duration = "8 hours"
     ritual = False
     magic_school = "Abjuration"
-    classes = ('Bard', 'Ranger', 'Wizard')
+    classes = ("Bard", "Ranger", "Wizard")
 
 
 class NystulsMagicAura(Spell):
@@ -69,15 +74,14 @@ class NystulsMagicAura(Spell):
     sym bol spell. You choose a creature type and other spells and magical effects
     treat the target as if it were a creature of that type or of that alignment.
     """
+
     name = "Nystuls Magic Aura"
     level = 2
     casting_time = "1 action"
     casting_range = "Touch"
-    components = ('V', 'S', 'M')
-    materials = """A small square of silk"""
+    components = ("V", "S", "M")
+    materials = "A small square of silk"
     duration = "24 hours"
     ritual = False
     magic_school = "Illusion"
-    classes = ('Wizard',)
-
-
+    classes = ("Wizard",)

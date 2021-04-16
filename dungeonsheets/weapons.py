@@ -1,4 +1,4 @@
-class Weapon():
+class Weapon:
     name = ""
     cost = "0 gp"
     base_damage = "1d4"
@@ -7,7 +7,7 @@ class Weapon():
     damage_type = "p"
     weight = 1  # In lbs
     properties = ""
-    ability = 'strength'
+    ability = "strength"
     is_finesse = False
     features_applied = False
 
@@ -17,12 +17,12 @@ class Weapon():
     @classmethod
     def improved_version(cls, bonus):
         bonus = int(bonus)
-        
+
         class NewWeapon(cls):
-            name = f'+{bonus} ' + cls.name
+            name = f"+{bonus} " + cls.name
             damage_bonus = bonus
             attack_bonus = bonus
-            
+
         return NewWeapon
 
     def apply_features(self):
@@ -37,11 +37,12 @@ class Weapon():
             return 0
         else:
             if self.is_finesse:
-                return max(self.wielder.strength.modifier,
-                           self.wielder.dexterity.modifier)
+                return max(
+                    self.wielder.strength.modifier, self.wielder.dexterity.modifier
+                )
             else:
                 return getattr(self.wielder, self.ability).modifier
-        
+
     @property
     def attack_modifier(self):
         self.apply_features()
@@ -51,7 +52,7 @@ class Weapon():
             if self.wielder.is_proficient(self):
                 mod += self.wielder.proficiency_bonus
         return mod
-    
+
     @property
     def damage(self):
         self.apply_features()
@@ -60,24 +61,24 @@ class Weapon():
         if self.wielder is not None:
             bonus += self.ability_mod
         if bonus != 0:
-            dam_str += '{:+d}'.format(bonus)
+            dam_str += "{:+d}".format(bonus)
         return dam_str
 
     def __str__(self):
         return self.name
 
     def __repr__(self):
-        return "\"{:s}\"".format(self.name)
+        return '"{:s}"'.format(self.name)
 
 
 class MeleeWeapon(Weapon):
     name = "Melee Weapons"
-    ability = 'strength'
+    ability = "strength"
 
 
 class RangedWeapon(Weapon):
     name = "Ranged Weapons"
-    ability = 'dexterity'
+    ability = "dexterity"
 
 
 class SimpleWeapon(Weapon):
@@ -86,7 +87,7 @@ class SimpleWeapon(Weapon):
 
 class MartialWeapon(Weapon):
     name = "Martial Weapons"
-    
+
 
 class Club(SimpleWeapon, MeleeWeapon):
     name = "Club"
@@ -95,7 +96,7 @@ class Club(SimpleWeapon, MeleeWeapon):
     damage_type = "b"
     weight = 2
     properties = "Light"
-    ability = 'strength'
+    ability = "strength"
 
 
 class Dagger(SimpleWeapon, MeleeWeapon):
@@ -106,7 +107,7 @@ class Dagger(SimpleWeapon, MeleeWeapon):
     weight = 1
     properties = "Finesse, light, thrown (range 20/60)"
     is_finesse = True
-    ability = 'strength'
+    ability = "strength"
 
 
 class Greatclub(SimpleWeapon, MeleeWeapon):
@@ -116,7 +117,7 @@ class Greatclub(SimpleWeapon, MeleeWeapon):
     damage_type = "b"
     weight = 10
     properties = "Two-handed"
-    ability = 'strength'
+    ability = "strength"
 
 
 class Handaxe(SimpleWeapon, MeleeWeapon):
@@ -126,7 +127,7 @@ class Handaxe(SimpleWeapon, MeleeWeapon):
     damage_type = "s"
     weight = 2
     properties = "Light, thrown (range 20/60)"
-    ability = 'strength'
+    ability = "strength"
 
 
 class Javelin(SimpleWeapon, MeleeWeapon):
@@ -136,7 +137,7 @@ class Javelin(SimpleWeapon, MeleeWeapon):
     damage_type = "p"
     weight = 2
     properties = "Thrown (range 30/120)"
-    ability = 'strength'
+    ability = "strength"
 
 
 class LightHammer(SimpleWeapon, MeleeWeapon):
@@ -146,7 +147,7 @@ class LightHammer(SimpleWeapon, MeleeWeapon):
     damage_type = "b"
     weight = 2
     properties = "Light, thrown (range 20/60)"
-    ability = 'strength'
+    ability = "strength"
 
 
 class Mace(SimpleWeapon, MeleeWeapon):
@@ -156,7 +157,7 @@ class Mace(SimpleWeapon, MeleeWeapon):
     damage_type = "b"
     weight = 4
     properties = ""
-    ability = 'strength'
+    ability = "strength"
 
 
 class Quarterstaff(SimpleWeapon, MeleeWeapon):
@@ -166,7 +167,7 @@ class Quarterstaff(SimpleWeapon, MeleeWeapon):
     damage_type = "b"
     weight = 4
     properties = "Versatile (1d8)"
-    ability = 'strength'
+    ability = "strength"
 
 
 class Sickle(SimpleWeapon, MeleeWeapon):
@@ -176,7 +177,7 @@ class Sickle(SimpleWeapon, MeleeWeapon):
     damage_type = "s"
     weight = 2
     properties = "Light"
-    ability = 'strength'
+    ability = "strength"
 
 
 class Spear(SimpleWeapon, MeleeWeapon):
@@ -186,7 +187,7 @@ class Spear(SimpleWeapon, MeleeWeapon):
     damage_type = "p"
     weight = 3
     properties = "Thrown (range 20/60), versatile (1d8)"
-    ability = 'strength'
+    ability = "strength"
 
 
 class LightCrossbow(SimpleWeapon, RangedWeapon):
@@ -196,7 +197,7 @@ class LightCrossbow(SimpleWeapon, RangedWeapon):
     damage_type = "p"
     weight = 5
     properties = "Ammunition (range 80/320), loading, two-handed"
-    ability = 'dexterity'
+    ability = "dexterity"
 
 
 class Dart(SimpleWeapon, RangedWeapon):
@@ -207,7 +208,7 @@ class Dart(SimpleWeapon, RangedWeapon):
     weight = 0.25
     properties = "Finesse, thrown (range 20/60)"
     is_finesse = True
-    ability = 'dexterity'
+    ability = "dexterity"
 
 
 class Shortbow(SimpleWeapon, RangedWeapon):
@@ -217,7 +218,7 @@ class Shortbow(SimpleWeapon, RangedWeapon):
     damage_type = "p"
     weight = 2
     properties = "Ammunition (range 80/320), two-handed"
-    ability = 'dexterity'
+    ability = "dexterity"
 
 
 class Sling(SimpleWeapon, RangedWeapon):
@@ -227,7 +228,7 @@ class Sling(SimpleWeapon, RangedWeapon):
     damage_type = "b"
     weight = 0
     properties = "Ammunition (range 30/120)"
-    ability = 'dexterity'
+    ability = "dexterity"
 
 
 class Battleaxe(MartialWeapon, MeleeWeapon):
@@ -237,7 +238,7 @@ class Battleaxe(MartialWeapon, MeleeWeapon):
     damage_type = "s"
     weight = 4
     properties = "Versatile (1d10)"
-    ability = 'strength'
+    ability = "strength"
 
 
 class Flail(MartialWeapon, MeleeWeapon):
@@ -247,7 +248,7 @@ class Flail(MartialWeapon, MeleeWeapon):
     damage_type = "b"
     weight = 2
     properties = ""
-    ability = 'strength'
+    ability = "strength"
 
 
 class Glaive(MartialWeapon, MeleeWeapon):
@@ -257,7 +258,7 @@ class Glaive(MartialWeapon, MeleeWeapon):
     damage_type = "s"
     weight = 6
     properties = "Heavy, reach, two-handed"
-    ability = 'strength'
+    ability = "strength"
 
 
 class Greataxe(MartialWeapon, MeleeWeapon):
@@ -267,7 +268,7 @@ class Greataxe(MartialWeapon, MeleeWeapon):
     damage_type = "s"
     weight = 7
     properties = "Heavy, two-handed"
-    ability = 'strength'
+    ability = "strength"
 
 
 class Greatsword(MartialWeapon, MeleeWeapon):
@@ -277,7 +278,7 @@ class Greatsword(MartialWeapon, MeleeWeapon):
     damage_type = "s"
     weight = 6
     properties = "Heavy, two-handed"
-    ability = 'strength'
+    ability = "strength"
 
 
 class Halberd(MartialWeapon, MeleeWeapon):
@@ -287,7 +288,7 @@ class Halberd(MartialWeapon, MeleeWeapon):
     damage_type = "s"
     weight = 6
     properties = "Heavy, reach, two-handed"
-    ability = 'strength'
+    ability = "strength"
 
 
 class Lance(MartialWeapon, MeleeWeapon):
@@ -297,7 +298,7 @@ class Lance(MartialWeapon, MeleeWeapon):
     damage_type = "p"
     weight = 6
     properties = "Reach, special"
-    ability = 'strength'
+    ability = "strength"
 
 
 class Longsword(MartialWeapon, MeleeWeapon):
@@ -307,7 +308,7 @@ class Longsword(MartialWeapon, MeleeWeapon):
     damage_type = "s"
     weight = 3
     properties = "Versatile (1d10)"
-    ability = 'strength'
+    ability = "strength"
 
 
 class Maul(MartialWeapon, MeleeWeapon):
@@ -317,7 +318,7 @@ class Maul(MartialWeapon, MeleeWeapon):
     damage_type = "b"
     weight = 10
     properties = "Heavy, two-handed"
-    ability = 'strength'
+    ability = "strength"
 
 
 class Morningstar(MartialWeapon, MeleeWeapon):
@@ -327,7 +328,7 @@ class Morningstar(MartialWeapon, MeleeWeapon):
     damage_type = "p"
     weight = 4
     properties = ""
-    ability = 'strength'
+    ability = "strength"
 
 
 class Pike(MartialWeapon, MeleeWeapon):
@@ -337,7 +338,7 @@ class Pike(MartialWeapon, MeleeWeapon):
     damage_type = "p"
     weight = 18
     properties = "Heavy, reach, two-handed"
-    ability = 'strength'
+    ability = "strength"
 
 
 class Rapier(MartialWeapon, MeleeWeapon):
@@ -348,7 +349,7 @@ class Rapier(MartialWeapon, MeleeWeapon):
     weight = 2
     properties = "Finesse"
     is_finesse = True
-    ability = 'strength'
+    ability = "strength"
 
 
 class Scimitar(MartialWeapon, MeleeWeapon):
@@ -359,7 +360,7 @@ class Scimitar(MartialWeapon, MeleeWeapon):
     weight = 3
     properties = "Finesse, light"
     is_finesse = True
-    ability = 'strength'
+    ability = "strength"
 
 
 class Shortsword(MartialWeapon, MeleeWeapon):
@@ -370,13 +371,13 @@ class Shortsword(MartialWeapon, MeleeWeapon):
     weight = 0
     properties = "Finesse, light"
     is_finesse = True
-    ability = 'strength'
+    ability = "strength"
 
 
 class ThrowingHammer(MartialWeapon, MeleeWeapon):
     name = "Throwing Hammer"
     cost = "15 gp"
-    base_damage = '1d6'
+    base_damage = "1d6"
     damage_type = "b"
     weight = 4
     properties = "Thrown (range 60/120)"
@@ -390,7 +391,7 @@ class Trident(MartialWeapon, MeleeWeapon):
     damage_type = "p"
     weight = 4
     properties = "Thrown (range 20/60), versatile (1d8)"
-    ability = 'strength'
+    ability = "strength"
 
 
 class WarPick(MartialWeapon, MeleeWeapon):
@@ -400,7 +401,7 @@ class WarPick(MartialWeapon, MeleeWeapon):
     damage_type = "p"
     weight = 2
     properties = ""
-    ability = 'strength'
+    ability = "strength"
 
 
 class Warhammer(MartialWeapon, MeleeWeapon):
@@ -410,7 +411,7 @@ class Warhammer(MartialWeapon, MeleeWeapon):
     damage_type = "b"
     weight = 2
     properties = "Versatile (1d10)"
-    ability = 'strength'
+    ability = "strength"
 
 
 class Whip(MartialWeapon, MeleeWeapon):
@@ -421,7 +422,7 @@ class Whip(MartialWeapon, MeleeWeapon):
     weight = 3
     properties = "Finesse, reach"
     is_finesse = True
-    ability = 'strength'
+    ability = "strength"
 
 
 class Blowgun(MartialWeapon, RangedWeapon):
@@ -431,7 +432,7 @@ class Blowgun(MartialWeapon, RangedWeapon):
     damage_type = "p"
     weight = 1
     properties = "Ammunition (range 25/100), loading"
-    ability = 'dexterity'
+    ability = "dexterity"
 
 
 class HandCrossbow(MartialWeapon, RangedWeapon):
@@ -441,7 +442,7 @@ class HandCrossbow(MartialWeapon, RangedWeapon):
     damage_type = "p"
     weight = 3
     properties = "Ammunition (range 30/120), light, loading"
-    ability = 'dexterity'
+    ability = "dexterity"
 
 
 class HeavyCrossbow(MartialWeapon, RangedWeapon):
@@ -451,7 +452,7 @@ class HeavyCrossbow(MartialWeapon, RangedWeapon):
     damage_type = "p"
     weight = 18
     properties = "Ammunition (range 100/400), heaving, loading, two-handed"
-    ability = 'dexterity'
+    ability = "dexterity"
 
 
 class Longbow(MartialWeapon, RangedWeapon):
@@ -461,7 +462,7 @@ class Longbow(MartialWeapon, RangedWeapon):
     damage_type = "p"
     weight = 2
     properties = "Ammunition (range 150/600), heavy, two-handed"
-    ability = 'dexterity'
+    ability = "dexterity"
 
 
 class Net(MartialWeapon, RangedWeapon):
@@ -471,9 +472,9 @@ class Net(MartialWeapon, RangedWeapon):
     damage_type = ""
     weight = 3
     properties = "Special, thrown (range 5/15)"
-    ability = 'strength'
+    ability = "strength"
 
-    
+
 class Unarmed(MeleeWeapon):
     name = "Unarmed"
     cost = "0 gp"
@@ -484,7 +485,7 @@ class Unarmed(MeleeWeapon):
     ability = "strength"
 
 
-MonkUnarmedStrike = Unarmed    
+MonkUnarmedStrike = Unarmed
 UnarmedStrike = Unarmed
 
 
@@ -495,14 +496,14 @@ class SunBolt(RangedWeapon):
     damage_type = "r"
     weight = 0
     properties = "(range 20/60)"
-    ability = 'dexterity'
+    ability = "dexterity"
 
-    
+
 # Custom weapons
 class HeavyPunch(MeleeWeapon):
     base_damage = "1d4"
     name = "Heavy Punch"
-    damage_type = 'b'
+    damage_type = "b"
     damage_bonus = 10  # Heavy weapon master
     attack_bonus = -5  # Heavy weapon master
 
@@ -510,7 +511,7 @@ class HeavyPunch(MeleeWeapon):
 class Bite(MeleeWeapon):
     name = "Bite"
     base_damage = "1d4"
-    damage_type = 'p'
+    damage_type = "p"
     cost = "0 gp"
     weight = 0
     properties = ""
@@ -518,51 +519,51 @@ class Bite(MeleeWeapon):
 
 
 class Talons(MeleeWeapon):
-    name = 'Talons'
-    base_damage = '1d4'
-    damage_type = 's'
-    cost = '0 gp'
+    name = "Talons"
+    base_damage = "1d4"
+    damage_type = "s"
+    cost = "0 gp"
     weight = 0
-    properties = ''
-    ability = 'strength'
+    properties = ""
+    ability = "strength"
 
 
 class Claws(MeleeWeapon):
-    name = 'Claws'
-    base_damage = '1d4'
-    damage_type = 's'
-    cost = '0 gp'
+    name = "Claws"
+    base_damage = "1d4"
+    damage_type = "s"
+    cost = "0 gp"
     weight = 0
-    properties = ''
-    ability = 'strength'
+    properties = ""
+    ability = "strength"
 
 
 class Firearm(RangedWeapon):
-    name = 'Firearm'
-    ability = 'dexterity'
-    damage_type = 'p'
-    
-    
+    name = "Firearm"
+    ability = "dexterity"
+    damage_type = "p"
+
+
 class Blunderbuss(Firearm):
-    name = 'Blunderbuss'
-    base_damage = '2d8'
-    cost = '300 gp'
+    name = "Blunderbuss"
+    base_damage = "2d8"
+    cost = "300 gp"
     weight = 10
     properties = "Ammunition (range 15/60), Reload 1, Misfire 2"
 
 
 class Pistol(Firearm):
-    name = 'Pistol'
-    base_damage = '1d10'
-    cost = '150 gp'
+    name = "Pistol"
+    base_damage = "1d10"
+    cost = "150 gp"
     weight = 3
     properties = "Ammunition (range 60/240), Reload 4, Misfire 1"
 
-    
+
 class Musket(Firearm):
-    name = 'Musket'
-    base_damage = '1d12'
-    cost = '300'
+    name = "Musket"
+    base_damage = "1d12"
+    cost = "300"
     weight = 10
     properties = "Ammunition (range 120/480), Two-Handed, Reload 1, Misfire 2"
 
@@ -573,7 +574,7 @@ class FlameTongue(Greatsword):
     damage_bonus = 1
     attack_bonus = 1
     base_damage = "4d6"
-    damage_type = 'f'
+    damage_type = "f"
 
 
 class SpearOfLightning(Spear):
@@ -583,21 +584,58 @@ class SpearOfLightning(Spear):
 
 
 # Some lists of weapons for easy proficiency resolution
-simple_melee_weapons = (Club, Dagger, Greatclub, Handaxe, Javelin,
-                        LightHammer, Mace, Quarterstaff, Sickle, Spear)
+simple_melee_weapons = (
+    Club,
+    Dagger,
+    Greatclub,
+    Handaxe,
+    Javelin,
+    LightHammer,
+    Mace,
+    Quarterstaff,
+    Sickle,
+    Spear,
+)
 simple_ranged_weapons = (LightCrossbow, Dart, Shortbow, Sling)
 simple_weapons = simple_melee_weapons + simple_ranged_weapons
 
-martial_melee_weapons = (Battleaxe, Flail, Glaive, Greataxe,
-                         Greatsword, Halberd, Lance, Longsword, Maul,
-                         Morningstar, Pike, Rapier, Scimitar,
-                         Shortsword, ThrowingHammer, Trident, WarPick,
-                         Warhammer, Whip)
-martial_ranged_weapons = (Blowgun, HandCrossbow, HeavyCrossbow,
-                          Longbow, Net)
+martial_melee_weapons = (
+    Battleaxe,
+    Flail,
+    Glaive,
+    Greataxe,
+    Greatsword,
+    Halberd,
+    Lance,
+    Longsword,
+    Maul,
+    Morningstar,
+    Pike,
+    Rapier,
+    Scimitar,
+    Shortsword,
+    ThrowingHammer,
+    Trident,
+    WarPick,
+    Warhammer,
+    Whip,
+)
+martial_ranged_weapons = (Blowgun, HandCrossbow, HeavyCrossbow, Longbow, Net)
 martial_weapons = martial_melee_weapons + martial_ranged_weapons
 
-monk_weapons = (Shortsword, Unarmed, Club, Dagger, Handaxe, Javelin,
-                LightHammer, Mace, Quarterstaff, Sickle, Spear, SunBolt)
+monk_weapons = (
+    Shortsword,
+    Unarmed,
+    Club,
+    Dagger,
+    Handaxe,
+    Javelin,
+    LightHammer,
+    Mace,
+    Quarterstaff,
+    Sickle,
+    Spear,
+    SunBolt,
+)
 
 firearms = (Firearm, Blunderbuss, Pistol, Musket)

@@ -40,12 +40,15 @@ class KnowledgeDomain(ClericDomain):
     Goibhniu.
 
     """
+
     name = "Knowledge Domain"
-    _domain_spells = {1: [spells.Command, spells.Identify],
-                      3: [spells.Augury, spells.Suggestion],
-                      5: [spells.Nondetection, spells.SpeakWithDead],
-                      7: [spells.ArcaneEye, spells.Confusion],
-                      9: [spells.LegendLore, spells.Scrying]}
+    _domain_spells = {
+        1: [spells.Command, spells.Identify],
+        3: [spells.Augury, spells.Suggestion],
+        5: [spells.Nondetection, spells.SpeakWithDead],
+        7: [spells.ArcaneEye, spells.Confusion],
+        9: [spells.LegendLore, spells.Scrying],
+    }
     features_by_level = defaultdict(list)
     features_by_level[1] = [features.BlessingsOfKnowledge]
     features_by_level[2] = [features.KnowledgeOfTheAncients]
@@ -66,13 +69,16 @@ class LifeDomain(ClericDomain):
     home and community (such as Hestia, Hathor, and Boldrei).
 
     """
+
     name = "Life Domain"
-    _domain_spells = {1: [spells.Bless, spells.CureWounds],
-                      3: [spells.LesserRestoration, spells.SpiritualWeapon],
-                      5: [spells.BeaconOfHope, spells.Revivify],
-                      7: [spells.DeathWard, spells.GuardianOfFaith],
-                      9: [spells.MassCureWounds, spells.RaiseDead]}
-    _proficiencies_text = ('heavy armor',)
+    _domain_spells = {
+        1: [spells.Bless, spells.CureWounds],
+        3: [spells.LesserRestoration, spells.SpiritualWeapon],
+        5: [spells.BeaconOfHope, spells.Revivify],
+        7: [spells.DeathWard, spells.GuardianOfFaith],
+        9: [spells.MassCureWounds, spells.RaiseDead],
+    }
+    _proficiencies_text = ("heavy armor",)
     features_by_level = defaultdict(list)
     features_by_level[1] = [features.DiscipleOfLife]
     features_by_level[2] = [features.PreserveLife]
@@ -94,12 +100,15 @@ class LightDomain(ClericDomain):
     chasing away lies and burning away darkness.
 
     """
+
     name = "Light Domain"
-    _domain_spells = {1: [spells.BurningHands, spells.FaerieFire],
-                      3: [spells.FlamingSphere, spells.ScorchingRay],
-                      5: [spells.Daylight, spells.Fireball],
-                      7: [spells.GuardianOfFaith, spells.WallOfFire],
-                      9: [spells.FlameStrike, spells.Scrying]}
+    _domain_spells = {
+        1: [spells.BurningHands, spells.FaerieFire],
+        3: [spells.FlamingSphere, spells.ScorchingRay],
+        5: [spells.Daylight, spells.Fireball],
+        7: [spells.GuardianOfFaith, spells.WallOfFire],
+        9: [spells.FlameStrike, spells.Scrying],
+    }
     spells_known = (spells.Light,)
     spells_prepared = (spells.Light,)
     features_by_level = defaultdict(list)
@@ -123,13 +132,16 @@ class NatureDomain(ClericDomain):
     the crops of those who anger their gods.
 
     """
+
     name = "Nature Domain"
-    _domain_spells = {1: [spells.AnimalFriendship, spells.SpeakWithAnimals],
-                      3: [spells.Barkskin, spells.SpikeGrowth],
-                      5: [spells.PlantGrowth, spells.WindWall],
-                      7: [spells.DominateBeast, spells.GraspingVine],
-                      9: [spells.InsectPlague, spells.TreeStride]}
-    _proficiencies_text = ('heavy armor',)
+    _domain_spells = {
+        1: [spells.AnimalFriendship, spells.SpeakWithAnimals],
+        3: [spells.Barkskin, spells.SpikeGrowth],
+        5: [spells.PlantGrowth, spells.WindWall],
+        7: [spells.DominateBeast, spells.GraspingVine],
+        9: [spells.InsectPlague, spells.TreeStride],
+    }
+    _proficiencies_text = ("heavy armor",)
     features_by_level = defaultdict(list)
     features_by_level[1] = [features.AcolyteOfNature]
     features_by_level[2] = [features.CharmAnimalsAndPlants]
@@ -152,14 +164,17 @@ class TempestDomain(ClericDomain):
     wrath.
 
     """
+
     name = "Tempest Domain"
-    _domain_spells = {1: [spells.FogCloud, spells.Thunderwave],
-                      3: [spells.GustOfWind, spells.Shatter],
-                      5: [spells.CallLightning, spells.SleetStorm],
-                      7: [spells.ControlWater, spells.IceStorm],
-                      9: [spells.DestructiveWave, spells.InsectPlague]}
+    _domain_spells = {
+        1: [spells.FogCloud, spells.Thunderwave],
+        3: [spells.GustOfWind, spells.Shatter],
+        5: [spells.CallLightning, spells.SleetStorm],
+        7: [spells.ControlWater, spells.IceStorm],
+        9: [spells.DestructiveWave, spells.InsectPlague],
+    }
     weapon_proficiencies = (weapons.MartialWeapon,)
-    _proficiencies_text = ('martial weapons', 'heavy armor')
+    _proficiencies_text = ("martial weapons", "heavy armor")
     features_by_level = defaultdict(list)
     features_by_level[1] = [features.WrathOfTheStorm]
     features_by_level[2] = [features.DestructiveWrath]
@@ -179,12 +194,15 @@ class TrickeryDomain(ClericDomain):
     theft rather than direct confrontation.
 
     """
+
     name = "Trickery Domain"
-    _domain_spells = {1: [spells.CharmPerson, spells.DisguiseSelf],
-                      3: [spells.MirrorImage, spells.PassWithoutTrace],
-                      5: [spells.Blink, spells.DispelMagic],
-                      7: [spells.DimensionDoor, spells.Polymorph],
-                      9: [spells.DominatePerson, spells.ModifyMemory]}
+    _domain_spells = {
+        1: [spells.CharmPerson, spells.DisguiseSelf],
+        3: [spells.MirrorImage, spells.PassWithoutTrace],
+        5: [spells.Blink, spells.DispelMagic],
+        7: [spells.DimensionDoor, spells.Polymorph],
+        9: [spells.DominatePerson, spells.ModifyMemory],
+    }
     features_by_level = defaultdict(list)
     features_by_level[1] = [features.BlessingOfTheTrickster]
     features_by_level[2] = [features.InvokeDuplicity]
@@ -208,14 +226,17 @@ class WarDomain(ClericDomain):
     warriors in any circumstance.
 
     """
+
     name = "War Domain"
-    _domain_spells = {1: [spells.DivineFavor, spells.ShieldOfFaith],
-                      3: [spells.MagicWeapon, spells.SpiritualWeapon],
-                      5: [spells.CrusadersMantle, spells.SpiritGuardians],
-                      7: [spells.FreedomOfMovement, spells.Stoneskin],
-                      9: [spells.FlameStrike, spells.HoldMonster]}
+    _domain_spells = {
+        1: [spells.DivineFavor, spells.ShieldOfFaith],
+        3: [spells.MagicWeapon, spells.SpiritualWeapon],
+        5: [spells.CrusadersMantle, spells.SpiritGuardians],
+        7: [spells.FreedomOfMovement, spells.Stoneskin],
+        9: [spells.FlameStrike, spells.HoldMonster],
+    }
     weapon_proficiencies = (weapons.MartialWeapon,)
-    _proficiencies_text = ('martial weapons', 'heavy armor')
+    _proficiencies_text = ("martial weapons", "heavy armor")
     features_by_level = defaultdict(list)
     features_by_level[1] = [features.WarPriest]
     features_by_level[2] = [features.GuidedStrike]
@@ -241,12 +262,15 @@ class ArcanaDomain(ClericDomain):
     Nuitari of Krynn; and Boccob, Vecna, and WeeJas of Greyhawk.
 
     """
+
     name = "Arcana Domain"
-    _domain_spells = {1: [spells.DetectMagic, spells.MagicMissile],
-                      3: [spells.MagicWeapon, spells.NystulsMagicAura],
-                      5: [spells.DispelMagic, spells.MagicCircle],
-                      7: [spells.ArcaneEye, spells.LeomundsSecretChest],
-                      9: [spells.PlanarBinding, spells.TeleportationCircle]}
+    _domain_spells = {
+        1: [spells.DetectMagic, spells.MagicMissile],
+        3: [spells.MagicWeapon, spells.NystulsMagicAura],
+        5: [spells.DispelMagic, spells.MagicCircle],
+        7: [spells.ArcaneEye, spells.LeomundsSecretChest],
+        9: [spells.PlanarBinding, spells.TeleportationCircle],
+    }
     features_by_level = defaultdict(list)
     features_by_level[1] = [features.ArcaneInitiate]
     features_by_level[2] = [features.ArcaneAbjuration]
@@ -271,13 +295,16 @@ class ForgeDomain(ClericDomain):
     Goibhniu.
 
     """
+
     name = "Forge Domain"
-    _domain_spells = {1: [spells.Identify, spells.SearingSmite],
-                      3: [spells.HeatMetal, spells.MagicWeapon],
-                      5: [spells.ElementalWeapon, spells.ProtectionFromEnergy],
-                      7: [spells.Fabricate, spells.WallOfFire],
-                      9: [spells.AnimateObjects, spells.Creation]}
-    _proficiencies_text = ('heavy armor', "smith's tools")
+    _domain_spells = {
+        1: [spells.Identify, spells.SearingSmite],
+        3: [spells.HeatMetal, spells.MagicWeapon],
+        5: [spells.ElementalWeapon, spells.ProtectionFromEnergy],
+        7: [spells.Fabricate, spells.WallOfFire],
+        9: [spells.AnimateObjects, spells.Creation],
+    }
+    _proficiencies_text = ("heavy armor", "smith's tools")
     features_by_level = defaultdict(list)
     features_by_level[1] = [features.BlessingOfTheForge]
     features_by_level[2] = [features.ArtisansBlessing]
@@ -299,19 +326,22 @@ class GraveDomain(ClericDomain):
     death will eventually get its due.
 
     """
+
     name = "Grave Domain"
-    _domain_spells = {1: [spells.Bane, spells.FalseLife],
-                      3: [spells.GentleRepose, spells.RayOfEnfeeblement],
-                      5: [spells.Revivify, spells.VampiricTouch],
-                      7: [spells.Blight, spells.DeathWard],
-                      9: [spells.AntilifeShell, spells.RaiseDead]}
+    _domain_spells = {
+        1: [spells.Bane, spells.FalseLife],
+        3: [spells.GentleRepose, spells.RayOfEnfeeblement],
+        5: [spells.Revivify, spells.VampiricTouch],
+        7: [spells.Blight, spells.DeathWard],
+        9: [spells.AntilifeShell, spells.RaiseDead],
+    }
     features_by_level = defaultdict(list)
-    features_by_level[1] = [features.CircleOfMortality,
-                            features.EyesOfTheGrave]
+    features_by_level[1] = [features.CircleOfMortality, features.EyesOfTheGrave]
     features_by_level[2] = [features.PathToTheGrave]
     features_by_level[6] = [features.SentinelAtDeathsDoor]
     features_by_level[8] = [features.PotentSpellcasting]
     features_by_level[17] = [features.KeeperOfSouls]
+
 
 class DeathDomain(ClericDomain):
     """The Death domain is concerned with the forces that cause death, as
@@ -323,54 +353,73 @@ class DeathDomain(ClericDomain):
     and the underworld (Hades and Hel)..
 
     """
+
     name = "Death Domain"
-    _domain_spells = {1: [spells.FalseLife, spells.RayOfSickness],
-                      3: [spells.BlindnessDeafness, spells.RayOfEnfeeblement],
-                      5: [spells.AnimateDead, spells.VampiricTouch],
-                      7: [spells.Blight, spells.DeathWard],
-                      9: [spells.AntilifeShell, spells.Cloudkill]}
+    _domain_spells = {
+        1: [spells.FalseLife, spells.RayOfSickness],
+        3: [spells.BlindnessDeafness, spells.RayOfEnfeeblement],
+        5: [spells.AnimateDead, spells.VampiricTouch],
+        7: [spells.Blight, spells.DeathWard],
+        9: [spells.AntilifeShell, spells.Cloudkill],
+    }
     weapon_proficiencies = (weapons.MartialWeapon,)
-    _proficiencies_text = ('martial weapons',)
+    _proficiencies_text = ("martial weapons",)
     features_by_level = defaultdict(list)
     features_by_level[1] = [features.Reaper]
-    features_by_level[2] = [features.TouchOfDeathCleric] #a different one though
+    features_by_level[2] = [features.TouchOfDeathCleric]  # a different one though
     features_by_level[6] = [features.InescapableDestruction]
     features_by_level[8] = [features.DivineStrikeDeath]
     features_by_level[17] = [features.ImprovedReaper]
 
+
 class Cleric(CharClass):
-    name = 'Cleric'
+    name = "Cleric"
     hit_dice_faces = 8
     subclass_select_level = 1
-    saving_throw_proficiencies = ('wisdom', 'charisma')
-    primary_abilities = ('wisdom',)
-    _proficiencies_text = ('light armor', 'medium armor', 'shields',
-                           'all simple weapons')
+    saving_throw_proficiencies = ("wisdom", "charisma")
+    primary_abilities = ("wisdom",)
+    _proficiencies_text = (
+        "light armor",
+        "medium armor",
+        "shields",
+        "all simple weapons",
+    )
     weapon_proficiencies = (weapons.SimpleWeapon,)
     multiclass_weapon_proficiencies = ()
-    _multiclass_proficiencies_text = ('light armor', 'medium armor', 'shields')
-    class_skill_choices = ('History', 'Insight', 'Medicine',
-                           'Persuasion', 'Religion')
+    _multiclass_proficiencies_text = ("light armor", "medium armor", "shields")
+    class_skill_choices = ("History", "Insight", "Medicine", "Persuasion", "Religion")
     features_by_level = defaultdict(list)
-    features_by_level[2] = (features.ChannelDivinity, features.TurnUndead,)
-    features_by_level[5] = (features.DestroyUndead, )
+    features_by_level[2] = (
+        features.ChannelDivinity,
+        features.TurnUndead,
+    )
+    features_by_level[5] = (features.DestroyUndead,)
     features_by_level[10] = (features.DivineIntervention,)
-    subclasses_available = (KnowledgeDomain, LifeDomain, LightDomain,
-                            NatureDomain, TempestDomain, TrickeryDomain,
-                            WarDomain, ArcanaDomain, ForgeDomain,
-                            GraveDomain, DeathDomain)
-    spellcasting_ability = 'wisdom'
+    subclasses_available = (
+        KnowledgeDomain,
+        LifeDomain,
+        LightDomain,
+        NatureDomain,
+        TempestDomain,
+        TrickeryDomain,
+        WarDomain,
+        ArcanaDomain,
+        ForgeDomain,
+        GraveDomain,
+        DeathDomain,
+    )
+    spellcasting_ability = "wisdom"
     spell_slots_by_level = {
         # char_lvl: (cantrips, 1st, 2nd, 3rd, ...)
-        1:  (3, 2, 0, 0, 0, 0, 0, 0, 0, 0),
-        2:  (3, 3, 0, 0, 0, 0, 0, 0, 0, 0),
-        3:  (3, 4, 2, 0, 0, 0, 0, 0, 0, 0),
-        4:  (4, 4, 3, 0, 0, 0, 0, 0, 0, 0),
-        5:  (4, 4, 3, 2, 0, 0, 0, 0, 0, 0),
-        6:  (4, 4, 3, 3, 0, 0, 0, 0, 0, 0),
-        7:  (4, 4, 3, 3, 1, 0, 0, 0, 0, 0),
-        8:  (4, 4, 3, 3, 2, 0, 0, 0, 0, 0),
-        9:  (4, 4, 3, 3, 3, 1, 0, 0, 0, 0),
+        1: (3, 2, 0, 0, 0, 0, 0, 0, 0, 0),
+        2: (3, 3, 0, 0, 0, 0, 0, 0, 0, 0),
+        3: (3, 4, 2, 0, 0, 0, 0, 0, 0, 0),
+        4: (4, 4, 3, 0, 0, 0, 0, 0, 0, 0),
+        5: (4, 4, 3, 2, 0, 0, 0, 0, 0, 0),
+        6: (4, 4, 3, 3, 0, 0, 0, 0, 0, 0),
+        7: (4, 4, 3, 3, 1, 0, 0, 0, 0, 0),
+        8: (4, 4, 3, 3, 2, 0, 0, 0, 0, 0),
+        9: (4, 4, 3, 3, 3, 1, 0, 0, 0, 0),
         10: (5, 4, 3, 3, 3, 2, 0, 0, 0, 0),
         11: (5, 4, 3, 3, 3, 2, 1, 0, 0, 0),
         12: (5, 4, 3, 3, 3, 2, 1, 0, 0, 0),

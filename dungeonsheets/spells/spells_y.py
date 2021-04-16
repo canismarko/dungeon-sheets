@@ -1,1 +1,1 @@
-from dungeonsheets.spells.spells import Spell
+from dungeonsheets.spells.spells import Spell  # noqa

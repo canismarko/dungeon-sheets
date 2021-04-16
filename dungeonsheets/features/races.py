@@ -1,4 +1,4 @@
-from dungeonsheets import armor, spells
+from dungeonsheets import spells
 from dungeonsheets.features.features import Feature
 
 
@@ -10,6 +10,7 @@ class Darkvision(Feature):
     color in darkness, only shades of gray.
 
     """
+
     name = "Darkvision (60')"
     source = "Race"
 
@@ -21,14 +22,17 @@ class SuperiorDarkvision(Feature):
     color in darkness, only shades of gray.
 
     """
+
     name = "Darkvision (120')"
     source = "Race"
 
 
 class PowerfulBuild(Feature):
+    """You count as one size larger when determining your carrying
+    capacity and the weight you can push, drag, or lift.
+
     """
-    You count as one size larger when determining your carrying capacity and the weight you can push, drag, or lift.
-    """
+
     name = "Powerful Build"
     source = "Race"
 
@@ -38,6 +42,7 @@ class Amphibious(Feature):
     You can breath air and water
 
     """
+
     name = "Amphibious"
     source = "Race"
 
@@ -48,6 +53,7 @@ class DwarvenResilience(Feature):
     against poison damage
 
     """
+
     name = "Dwarven Resilience"
     source = "Race (Dwarf)"
 
@@ -59,6 +65,7 @@ class Stonecunning(Feature):
     proficiency bonus. Languages.
 
     """
+
     name = "Stonecunning"
     source = "Race (Dwarf)"
 
@@ -69,6 +76,7 @@ class DwarvenToughness(Feature):
     increases by 1, and it increases by 1 every time you gain a level.
 
     """
+
     name = "DwarvenToughness"
     source = "Race (Hill Dwarf)"
     needs_implementation = True
@@ -80,6 +88,7 @@ class FeyAncestry(Feature):
     put you to sleep.
 
     """
+
     name = "Fey Ancestry"
     source = "Race (Elf)"
 
@@ -93,6 +102,7 @@ class Trance(Feature):
     does from 8 hours of sleep.
 
     """
+
     name = "Trance"
     source = "Race (Elf)"
 
@@ -102,6 +112,7 @@ class ElfCantrip(Feature):
     list. Intelligence is your spellcasting ability for it.
 
     """
+
     name = "Cantrip"
     source = "Race (High-Elf)"
     needs_implementation = True
@@ -112,6 +123,7 @@ class MaskOfTheWild(Feature):
     heavy rain, falling snow, mist, and other natural phenomena.
 
     """
+
     name = "Mask of the Wild"
     source = "Race (Wood Elf)"
 
@@ -122,6 +134,7 @@ class SunlightSensitivity(Feature):
     trying to perceive is in direct sunlight.
 
     """
+
     name = "Sunlight Sensitivity"
     source = "Race (Dark Elf)"
 
@@ -133,6 +146,7 @@ class DrowMagic(Feature):
     ability for these spells.
 
     """
+
     name = "Drow Magic"
     source = "Race (Dark Elf)"
     spells_known = spells_prepared = (spells.DancingLights,)
@@ -144,14 +158,14 @@ class Lucky(Feature):
     reroll the die and must use the new roll.
 
     """
+
     name = "Lucky"
     source = "Race (Halfling)"
 
 
 class Brave(Feature):
-    """You have advantage on saving throws against being frightened.
+    """You have advantage on saving throws against being frightened."""
 
-    """
     name = "Brave"
     source = "Race (Halfling)"
 
@@ -160,6 +174,7 @@ class HalflingNimbleness(Feature):
     """
     You can move through the space of any creature that is of a size larger than yours.
     """
+
     name = "Halfling Nimbleness"
     source = "Race (Halfling)"
 
@@ -169,6 +184,7 @@ class NaturallyStealthy(Feature):
     is at least one size larger than you.
 
     """
+
     name = "Naturally Stealthy"
     source = "Race (Lightfoot Halfling)"
 
@@ -178,6 +194,7 @@ class StoutResilience(Feature):
     against poison damage.
 
     """
+
     name = "Stout Resilience"
     source = "Race (Stout Halfling)"
 
@@ -189,7 +206,7 @@ class DraconicAncestry(Feature):
     """You have draconic ancestry. Choose one type of dragon from the Draconic
     Ancestry table. Your breath weapon and damage resistance are determined by the
     dragon type.
-    
+
     ====== =========== ===========================
     Dragon Damage Type Breath Weapon
     ====== =========== ===========================
@@ -204,8 +221,9 @@ class DraconicAncestry(Feature):
     Silver Cold        15 ft. cone (CON save)
     White  White       15 ft. cone (CON save)
     ====== =========== ===========================
-    
+
     """
+
     name = "Draconic Ancestry"
     source = "Race (Dragonborn)"
 
@@ -223,6 +241,7 @@ class BreathWeapon(Feature):
     long rest. Damage
 
     """
+
     name = "Breath Weapon"
     source = "Race (Dragonborn)"
 
@@ -232,6 +251,7 @@ class DraconicResistance(Feature):
     ancestry. Languages.
 
     """
+
     name = "Damage Resistance"
     source = "Race (Dragonborn)"
 
@@ -242,6 +262,7 @@ class GnomeCunning(Feature):
     against magic.
 
     """
+
     name = "Gnome Cunning"
     source = "Race (Gnome)"
 
@@ -251,6 +272,7 @@ class NaturalIllusionist(Feature):
     ability for it.
 
     """
+
     name = "Natural Illusionist"
     source = "Race (Forest Gnome)"
 
@@ -262,6 +284,7 @@ class SpeakWithSmallBeasts(Feature):
 
 
     """
+
     name = "Speak with Small Beasts"
     source = "Race (Forest Gnome)"
 
@@ -273,6 +296,7 @@ class ArtificersLore(Feature):
     apply. Tinker.
 
     """
+
     name = "Artificer's Lore"
     source = "Race (Rock Gnome)"
 
@@ -299,6 +323,7 @@ class Tinker(Feature):
     volume. The box stops playing when it reaches the song's end or when
 
     """
+
     name = "Tinker"
     source = "Race (Rock Gnome)"
 
@@ -307,29 +332,10 @@ class StoneCamouflage(Feature):
     """
     You have advantage on Dexterity (stealth) checks to hide in rocky terrain.
     """
+
     name = "Stone Camouflage"
     source = "Race (Deep Gnome)"
 
-
-# Goblins
-class FuryOfTheSmall(Feature):
-    """
-    When you damage a creature with an attack or a spell and the creature's
-    size is larger than yours, you can cause the attack or spell to deal extra
-    damage to the creature. The extra damage equals your level. Once you use
-    this trait, you can't use it again until you finish a short or long rest.
-    """
-    name = "Fury of the Small"
-    source = "Race (Goblin)"
-
-
-class NimbleEscape(Feature):
-    """
-    You can take the Disengage or Hide action as a bonus action on each of your
-    turns.
-    """
-    name = "Nimble Escape"
-    source = "Race (Goblin)"
 
 # Half-Elves
 
@@ -340,6 +346,7 @@ class RelentlessEndurance(Feature):
     long rest.
 
     """
+
     name = "Relentless Endurance"
     source = "Race (Half-Orc)"
 
@@ -350,15 +357,15 @@ class SavageAttacks(Feature):
     damage of the critical hit.
 
     """
+
     name = "Savage Attacks"
     source = "Race (Half-Orc)"
 
 
 # Tiefling
 class HellishResistance(Feature):
-    """You have resistance to fire damage.
+    """You have resistance to fire damage."""
 
-    """
     name = "Hellish Resistance"
     source = "Race (Tiefling)"
 
@@ -370,6 +377,7 @@ class InfernalLegacy(Feature):
     your spellcasting ability for these spells.
 
     """
+
     name = "Infernal Legacy"
     source = "Race (Tiefling)"
     spells_known = spells_prepared = (spells.Thaumaturgy,)
@@ -381,6 +389,7 @@ class CelestialResistance(Feature):
     You have resistance to necrotic damage and radiant damage.
 
     """
+
     name = "Celestial Resistance"
     source = "Race (Aasimar)"
 
@@ -391,14 +400,14 @@ class HealingHands(Feature):
     again until you finish a long rest.
 
     """
+
     name = "Healing Hands"
     source = "Race (Aasimar)"
 
 
 class LightBearer(Feature):
-    """You know the light cantrip. Charisma is your spellcasting ability for it.
+    """You know the light cantrip. Charisma is your spellcasting ability for it."""
 
-    """
     name = "Light Bearer"
     source = "Race (Aasimar)"
 
@@ -418,6 +427,7 @@ class RadiantSoul(Feature):
     rest.
 
     """
+
     name = "Radiant Soul"
     source = "Race (Protector Aasimar)"
 
@@ -439,6 +449,7 @@ class RadiantConsumption(Feature):
     rest.
 
     """
+
     name = "Radiant Consumption"
     source = "Race (Scourge Aasimar)"
 
@@ -461,6 +472,7 @@ class NecroticShroud(Feature):
     rest.
 
     """
+
     name = "Necrotic Shroud"
     source = "Race (Fallen Aasimar)"
 
@@ -475,6 +487,7 @@ class FirbolgMagic(Feature):
     elves.
 
     """
+
     name = "Firbolg Magic"
     source = "Race (Firbolg)"
 
@@ -486,6 +499,7 @@ class HiddenStep(Feature):
     finish a short or long rest.
 
     """
+
     name = "Hidden Step"
     source = "Race (Firbolg)"
 
@@ -497,6 +511,7 @@ class SpeechOfBeastAndLeaf(Feature):
     Charisma checks you make to influence them.
 
     """
+
     name = "Speech of Beast and Leaf"
     source = "Race (Firbolg)"
 
@@ -510,6 +525,7 @@ class StonesEndurance(Feature):
     rest.
 
     """
+
     name = "Stones Endurance"
     source = "Race (Goliath)"
 
@@ -520,6 +536,7 @@ class MountainBorn(Feature):
     chapter 5 of the Dungeon Master's Guide.
 
     """
+
     name = "Mountain Born"
     source = "Race (Goliath)"
 
@@ -531,6 +548,7 @@ class ExpertForgery(Feature):
     objects.
 
     """
+
     name = "Expert Forgery"
     source = "Race (Kenku)"
 
@@ -541,6 +559,7 @@ class Mimicry(Feature):
     Wisdom (Insight) check opposed by your Charisma (Deception) check.
 
     """
+
     name = "Mimicry"
     source = "Race (Kenku)"
 
@@ -555,6 +574,7 @@ class CunningArtisan(Feature):
     tools.
 
     """
+
     name = "Cunning Artisan"
     source = "Race (Lizardfolk)"
 
@@ -563,6 +583,7 @@ class HoldBreath(Feature):
     """
     You can hold your breath for up to 15 minutes at a time.
     """
+
     name = "Hold Breath"
     source = "Race (Lizardfolk)"
 
@@ -574,17 +595,18 @@ class NaturalArmor(Feature):
     benefits apply as normal while you use your natural armor.
 
     """
+
     name = "Natural Armor"
     source = "Race (Lizardfolk)"
 
     def AC_func(self, char, **kwargs):
-       """
-       Implement the Natural Armor AC option
-       """
-       ac = 13 + char.dexterity.modifier
-       if ((char.shield is not None)):
-          ac += char.shield.base_armor_class
-       return ac
+        """
+        Implement the Natural Armor AC option
+        """
+        ac = 13 + char.dexterity.modifier
+        if char.shield is not None:
+            ac += char.shield.base_armor_class
+        return ac
 
 
 class HungryJaws(Feature):
@@ -595,6 +617,7 @@ class HungryJaws(Feature):
     until you finish a short or long rest.
 
     """
+
     name = "Hungry Jaws"
     source = "Race (Lizardfolk)"
 
@@ -607,11 +630,13 @@ class FelineAgility(Feature):
     on one of your turns.
 
     """
+
     name = "Feline Agility"
     source = "Race (Tabaxi)"
 
 
 # Triton
+
 
 class ControlAirAndWater(Feature):
     """A child of the sea, you can call on the magic of elemental air and
@@ -622,6 +647,7 @@ class ControlAirAndWater(Feature):
     rest. Charisma is your spellcasting ability for these spells.
 
     """
+
     name = "Control Air and Water"
     source = "Race (Triton)"
 
@@ -633,6 +659,7 @@ class EmissaryOfTheSea(Feature):
     understand them in return.
 
     """
+
     name = "Emissary Of The Sea"
     source = "Race (Triton)"
 
@@ -643,6 +670,7 @@ class GuardiansOfTheDepths(Feature):
     environment.
 
     """
+
     name = "Guardians of the Depths"
     source = "Race (Triton)"
 
@@ -651,9 +679,8 @@ class GuardiansOfTheDepths(Feature):
 
 # Genasi
 class UnendingBreath(Feature):
-    """You can hold your breath indefinitely while you're not incapacitated.
+    """You can hold your breath indefinitely while you're not incapacitated."""
 
-    """
     name = "Unending Breath"
     source = "Race (Air Genasi)"
 
@@ -664,6 +691,7 @@ class MingleWithTheWind(Feature):
     a long rest. Constitution is your spellcasting ability for this spell.
 
     """
+
     name = "Mingle with the Wind"
     source = "Race (Air Genasi)"
 
@@ -673,6 +701,7 @@ class EarthWalk(Feature):
     expending extra movement.
 
     """
+
     name = "Earth Walk"
     source = "Race (Earth Genasi)"
 
@@ -684,6 +713,7 @@ class MergeWithStone(Feature):
     spell.
 
     """
+
     name = "Merge with Stone"
     source = "Race (Earth Genasi)"
 
@@ -692,6 +722,7 @@ class FireResistance(Feature):
     """
     You have resistance to fire damage.
     """
+
     name = "Fire Resistance"
     source = "Race (Fire Genasi)"
 
@@ -703,6 +734,7 @@ class ReachToTheBlaze(Feature):
     rest. Constitution is your spellcasting ability for these spells.
 
     """
+
     name = "Reach to the Blaze"
     source = "Race (Fire Genasi)"
 
@@ -712,6 +744,7 @@ class AcidResistance(Feature):
     You have resistance to acid damage.
 
     """
+
     name = "Acid Resistance"
     source = "Race (Water Genasi)"
 
@@ -724,26 +757,33 @@ class CallToTheWave(Feature):
     spells.
 
     """
+
     name = "Call to the Wave"
     source = "Race (Water Genasi)"
 
+
 # RFTLW Races
+
 
 class DualMind(Feature):
     """
     You have advantage on all Wisdom saving throws.
 
     """
+
     name = "Dual Mind"
     source = "Race (Kalashtar)"
+
 
 class MentalDiscipline(Feature):
     """
     You have resistance to psychic damage.
 
     """
+
     name = "Mental Discipline"
     source = "Race (Kalashtar)"
+
 
 class MindLink(Feature):
     """
@@ -762,8 +802,10 @@ class MindLink(Feature):
     takes it away from another creature who has it.
 
     """
+
     name = "Mind Link"
     source = "Race (Kalashtar)"
+
 
 class SeveredFromDreams(Feature):
     """
@@ -775,46 +817,58 @@ class SeveredFromDreams(Feature):
     you to sleep, like 'sleep'.
 
     """
+
     name = "Severed from Dreams"
     source = "Race (Kalashtar)"
 
-#monsterous races
-#bugbear
+
+# monsterous races
+# bugbear
 class LongLimbed(Feature):
-    """ When you make a melee attack on your turn, your reach for it is 5 feet greater than normal.
+    """When you make a melee attack on your turn, your reach for it is 5
+    feet greater than normal.
 
     """
+
     name = "Long-Limbed"
     source = "Race (BugBear)"
 
+
 class SupriseAttack(Feature):
-    """ If you surprise a creature and hit it with an attack on your first turn
+    """If you surprise a creature and hit it with an attack on your first turn
     in combat, the attack deals an extra 2d6 damage to it. You can use this trait
     only once per combat.
 
     """
+
     name = "Suprise Attack"
     source = "Race (BugBear)"
 
-#goblin
-class FuryOfTheSmall(Feature):
-    """When you damage a creature with an attack or a spell and the creature's size
-    is larger than yours, you can cause the attack or spell to deal extra damage to
-    the creature. The extra damage equals your level. Once you use this trait, you
-    can't use it again until you finish a short or long rest.
 
+# Goblins
+class FuryOfTheSmall(Feature):
     """
+    When you damage a creature with an attack or a spell and the creature's
+    size is larger than yours, you can cause the attack or spell to deal extra
+    damage to the creature. The extra damage equals your level. Once you use
+    this trait, you can't use it again until you finish a short or long rest.
+    """
+
     name = "Fury of the Small"
     source = "Race (Goblin)"
 
-class NimbleEscape(Feature):
-    """ You can take the Disengage or Hide action as a bonus action on each of your turns.
 
+class NimbleEscape(Feature):
     """
+    You can take the Disengage or Hide action as a bonus action on each of your
+    turns.
+    """
+
     name = "Nimble Escape"
     source = "Race (Goblin)"
 
-#HobGoblin
+
+# HobGoblin
 class SavingFace(Feature):
     """Hobgoblins are careful not to show weakness in front of their allies, for fear
     of losing status. If you miss with an attack roll or fail an ability check or a
@@ -823,19 +877,24 @@ class SavingFace(Feature):
     can't use it again until you finish a short or long rest.
 
     """
+
     name = "Saving Face"
     source = "Race (HobGoblin)"
 
-class MartialTraining(Feature):    #you have to add the weapons of choice to your sheet
-    """You are proficient with two martial weapons of your choice and with light armor.
+
+class MartialTraining(Feature):  # you have to add the weapons of choice to your sheet
+    """You are proficient with two martial weapons of your choice and with
+    light armor.
 
     """
+
     name = "Martial Training"
     source = "Race (HobGoblin)"
 
-#kobold
+
+# kobold
 class GrovelCowerAndBeg(Feature):
-    """ As an action on your turn, you can cower pathetically to
+    """As an action on your turn, you can cower pathetically to
     distract nearby foes. Until the end of your next turn, your
     allies gain advantage on attack rolls against enemies
     within 10 feet of you that can see you. Once you use this
@@ -843,27 +902,33 @@ class GrovelCowerAndBeg(Feature):
     or long rest
 
     """
+
     name = "Grovel Cower and Beg"
     source = "Race (Kobold)"
+
 
 class PackTactics(Feature):
     """You have advantage on an attack roll against a creature
     if at least one of your allies is within 5 feet of the
     creature and the ally isn't incapacitated.
     """
+
     name = "Pack Tactics"
     source = "Race (Kobold)"
 
+
 class Aggressive(Feature):
-    """ As a bonus action, you can move up to your speed
+    """As a bonus action, you can move up to your speed
     toward an enemy of your choice that you can see or hear.
     You must end this move closer to the enemy than you started.
 
     """
+
     name = "Aggressive"
     source = "Race (Orc)"
 
-#yuan-ti pureblood
+
+# yuan-ti pureblood
 class InnateSpellcasting(Feature):
     """You know the poison spray cantrip. You can cast animal
     friendship an unlimited number of times with this trait,
@@ -873,19 +938,20 @@ class InnateSpellcasting(Feature):
     your spellcasting ability for these spells.
 
     """
+
     name = "Innate Spellcasting"
     source = "Race (Yuan-Ti Pureblood)"
 
-class MagicResistance(Feature):
-    """ You have advantage on saving throws against spells and other magical effects.
 
-    """
+class MagicResistance(Feature):
+    """You have advantage on saving throws against spells and other magical effects."""
+
     name = "Magic Resistance"
     source = "Race (Yuan_Ti Pureblood)"
 
-class PoisonImmunity(Feature):
-    """You are immune to poison damage and the poi~oned condition.
 
-    """
+class PoisonImmunity(Feature):
+    """You are immune to poison damage and the poi~oned condition."""
+
     name = "Poison Immunity"
     source = "Race (Yuan_Ti Pureblood)"

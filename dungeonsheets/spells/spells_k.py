@@ -18,15 +18,14 @@ class Knock(Spell):
     cast the spell, a loud knock, audible from as far away as 300 feet, emanates
     from the target object.
     """
+
     name = "Knock"
     level = 2
     casting_time = "1 action"
     casting_range = "60 feet"
-    components = ('V',)
-    materials = """"""
+    components = ("V",)
+    materials = ""
     duration = "Instantaneous"
     ritual = False
     magic_school = "Transmutation"
-    classes = ('Bard', 'Sorcerer', 'Wizard')
-
-
+    classes = ("Bard", "Sorcerer", "Wizard")

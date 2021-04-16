@@ -6,32 +6,33 @@ class WallOfFire(Spell):
     make the wall up to 60 feet long, 20 feet high, and 1 foot thick,
     or a ringed wall up to 20 feet in diameter, 20 feet high, and 1
     foot thick. The wall is opaque and lasts for the duration.
-    
+
     When the wall appears, each creature within its area must make a
     Dexterity saving throw. On a failed save, a creature takes 5d8
     fire damage, or half as much damage on a successful save.
-    
+
     One side of the wall, selected by you when you cast this spell,
     deals 5d8 fire damage to each creature that ends its turn within
     10 feet of that side or inside the wall. A creature takes the same
     damage when it enters the wall for the first time on a turn or
     ends its turn there. The other side of the wall deals no damage.
-    
+
     **At Higher Levels:** When you cast this spell using a spell slot
     of 5th level or higher, the damage increases by 1d8 for each slot
     level above 4th.
 
     """
+
     name = "Wall Of Fire"
     level = 4
     casting_time = "1 action"
     casting_range = "120 feet"
-    components = ('V', 'S', 'M')
-    materials = """A small piece of phosphorus"""
+    components = ("V", "S", "M")
+    materials = "A small piece of phosphorus"
     duration = "Concentration, up to 1 minute"
     ritual = False
     magic_school = "Evocation"
-    classes = ('Druid', 'Sorcerer', 'Wizard')
+    classes = ("Druid", "Sorcerer", "Wizard")
 
 
 class WallOfForce(Spell):
@@ -54,16 +55,17 @@ class WallOfForce(Spell):
     wall.
 
     """
+
     name = "Wall Of Force"
     level = 5
     casting_time = "1 action"
     casting_range = "120 feet"
-    components = ('V', 'S', 'M')
-    materials = """A pinch of powder made by crushing a clear gemstone"""
+    components = ("V", "S", "M")
+    materials = "A pinch of powder made by crushing a clear gemstone"
     duration = "Concentration, up to 10 minutes"
     ritual = False
     magic_school = "Evocation"
-    classes = ('Wizard',)
+    classes = ("Wizard",)
 
 
 class WallOfIce(Spell):
@@ -95,16 +97,17 @@ class WallOfIce(Spell):
     frigid air increases by 1d6, for each slot level above 6th.
 
     """
+
     name = "Wall Of Ice"
     level = 6
     casting_time = "1 action"
     casting_range = "120 feet"
-    components = ('V', 'S', 'M')
-    materials = """A small piece of quartz"""
+    components = ("V", "S", "M")
+    materials = "A small piece of quartz"
     duration = "Concentration, up to 10 minutes"
     ritual = False
     magic_school = "Evocation"
-    classes = ('Wizard',)
+    classes = ("Wizard",)
 
 
 class WallOfLight(Spell):
@@ -137,16 +140,17 @@ class WallOfLight(Spell):
     level above 5th.
 
     """
+
     name = "Wall Of Light"
     level = 5
     casting_time = "1 action"
     casting_range = "120 feet"
-    components = ('V', 'S', 'M')
-    materials = """A hand mirror"""
+    components = ("V", "S", "M")
+    materials = "A hand mirror"
     duration = "Concentration, up to 10 minutes"
     ritual = False
     magic_school = "Evocation"
-    classes = ('Sorcerer', 'Warlock', 'Wizard')
+    classes = ("Sorcerer", "Warlock", "Wizard")
 
 
 class WallOfSand(Spell):
@@ -156,16 +160,17 @@ class WallOfSand(Spell):
     movement. A creature is blinded while in the wall's space and must spend 3 feet
     of movement for every 1 foot it moves there.
     """
+
     name = "Wall Of Sand"
     level = 3
     casting_time = "1 action"
     casting_range = "90 feet"
-    components = ('V', 'S', 'M')
-    materials = """A handful of sand"""
+    components = ("V", "S", "M")
+    materials = "A handful of sand"
     duration = "Instantaneous"
     ritual = False
     magic_school = "Evocation"
-    classes = ('Wizard',)
+    classes = ("Wizard",)
 
 
 class WallOfStone(Spell):
@@ -202,16 +207,17 @@ class WallOfStone(Spell):
     dispelled. Otherwise, the wall disappears when the spell ends.
 
     """
+
     name = "Wall Of Stone"
     level = 5
     casting_time = "1 action"
     casting_range = "120 feet"
-    components = ('V', 'S', 'M')
-    materials = """A small block of granite"""
+    components = ("V", "S", "M")
+    materials = "A small block of granite"
     duration = "Concentration, up to 10 minutes"
     ritual = False
     magic_school = "Evocation"
-    classes = ('Druid', 'Sorcerer', 'Wizard')
+    classes = ("Druid", "Sorcerer", "Wizard")
 
 
 class WallOfThorns(Spell):
@@ -236,16 +242,17 @@ class WallOfThorns(Spell):
     Higher Levels: When you cast this spell using a spell slot of 7th level or
     higher, both types o f damage increase by 1d8 for each slot level above 6th.
     """
+
     name = "Wall Of Thorns"
     level = 6
     casting_time = "1 action"
     casting_range = "120 feet"
-    components = ('V', 'S', 'M')
-    materials = """A handful of thorns"""
+    components = ("V", "S", "M")
+    materials = "A handful of thorns"
     duration = "Concentration, up to 10 minutes"
     ritual = False
     magic_school = "Conjuration"
-    classes = ('Druid',)
+    classes = ("Druid",)
 
 
 class WallOfWater(Spell):
@@ -269,16 +276,17 @@ class WallOfWater(Spell):
     fill it.
 
     """
+
     name = "Wall Of Water"
     level = 3
     casting_time = "1 action"
     casting_range = "60 feet"
-    components = ('V', 'S', 'M')
-    materials = """"""
+    components = ("V", "S", "M")
+    materials = ""
     duration = "Instantaneous"
     ritual = False
     magic_school = "Evocation"
-    classes = ('Druid', 'Sorcerer', 'Wizard')
+    classes = ("Druid", "Sorcerer", "Wizard")
 
 
 class WardingBond(Spell):
@@ -295,23 +303,27 @@ class WardingBond(Spell):
     on either of the connected creatures. You can also dismiss the spell as an
     action.
     """
+
     name = "Warding Bond"
     level = 2
     casting_time = "1 action"
     casting_range = "Touch"
-    components = ('V', 'S', 'M')
-    materials = """A pair of platinum rings worth at least 50 gp each, which you and target must wear for the duration"""
+    components = ("V", "S", "M")
+    materials = (
+        "A pair of platinum rings worth at least 50 gp each, which you and target must"
+        " wear for the duration"
+    )
     duration = "1 hour"
     ritual = False
     magic_school = "Abjuration"
-    classes = ('Cleric',)
+    classes = ("Cleric",)
 
 
 class WardingWind(Spell):
     """A strong wind (20 miles per hour) blows around you in a 10-foot
     radius and moves with you, remaining centered on you. The wind
     lasts for the spell's duration.
-    
+
     The wind has the following effects:
 
     - It deafens you and other creatures in its area.
@@ -322,18 +334,19 @@ class WardingWind(Spell):
       they pass in or out of the wind.
     - It hedges out vapor, gas, and fog that can be dispersed by
       strong wind.
-    
+
     """
+
     name = "Warding Wind"
     level = 2
     casting_time = "1 action"
     casting_range = "Self"
-    components = ('V',)
-    materials = """"""
+    components = ("V",)
+    materials = ""
     duration = "Concentration, up to 10 minutes"
     ritual = False
     magic_school = "Evocation"
-    classes = ('Bard', 'Druid', 'Sorcerer', 'Wizard')
+    classes = ("Bard", "Druid", "Sorcerer", "Wizard")
 
 
 class WaterBreathing(Spell):
@@ -341,16 +354,17 @@ class WaterBreathing(Spell):
     ability to breathe underwater until the spell ends. Affected creatures also
     retain their normal mode of respiration.
     """
+
     name = "Water Breathing"
     level = 3
     casting_time = "1 action"
     casting_range = "30 feet"
-    components = ('V', 'S', 'M')
-    materials = """A short reed or piece of straw"""
+    components = ("V", "S", "M")
+    materials = "A short reed or piece of straw"
     duration = "24 hours"
     ritual = True
     magic_school = "Transmutation"
-    classes = ('Druid', 'Ranger', 'Sorcerer', 'Wizard')
+    classes = ("Druid", "Ranger", "Sorcerer", "Wizard")
 
 
 class WaterWalk(Spell):
@@ -364,16 +378,17 @@ class WaterWalk(Spell):
     If you target a creature submerged in a liquid, the spell carries the target to
     the surface of the liquid at a rate of 60 feet per round.
     """
+
     name = "Water Walk"
     level = 3
     casting_time = "1 action"
     casting_range = "30 feet"
-    components = ('V', 'S', 'M')
-    materials = """A piece of cork"""
+    components = ("V", "S", "M")
+    materials = "A piece of cork"
     duration = "1 hour"
     ritual = True
     magic_school = "Transmutation"
-    classes = ('Cleric', 'Druid', 'Ranger', 'Sorcerer')
+    classes = ("Cleric", "Druid", "Ranger", "Sorcerer")
 
 
 class WaterySphere(Spell):
@@ -409,16 +424,17 @@ class WaterySphere(Spell):
     falls.
 
     """
+
     name = "Watery Sphere"
     level = 4
     casting_time = "1 action"
     casting_range = "90 feet"
-    components = ('V', 'S', 'M')
-    materials = """A droplet of water"""
+    components = ("V", "S", "M")
+    materials = "A droplet of water"
     duration = "Concentration, up to 1 minute"
     ritual = False
     magic_school = "Conjuration"
-    classes = ('Druid', 'Sorcerer', 'Wizard')
+    classes = ("Druid", "Sorcerer", "Wizard")
 
 
 class Web(Spell):
@@ -447,16 +463,17 @@ class Web(Spell):
     that starts its turn in the fire.
 
     """
+
     name = "Web"
     level = 2
     casting_time = "1 action"
     casting_range = "60 feet"
-    components = ('V', 'S', 'M')
-    materials = """A bit of spiderweb"""
+    components = ("V", "S", "M")
+    materials = "A bit of spiderweb"
     duration = "Concentration, up to 1 hour"
     ritual = False
     magic_school = "Conjuration"
-    classes = ('Sorcerer', 'Wizard')
+    classes = ("Sorcerer", "Wizard")
 
 
 class Weird(Spell):
@@ -473,16 +490,17 @@ class Weird(Spell):
     the spell ends for that creature.
 
     """
+
     name = "Weird"
     level = 9
     casting_time = "1 action"
     casting_range = "120 feet"
-    components = ('V', 'S')
-    materials = """"""
+    components = ("V", "S")
+    materials = ""
     duration = "Concentration, up to 1 minute"
     ritual = False
     magic_school = "Illusion"
-    classes = ('Wizard',)
+    classes = ("Wizard",)
 
 
 class Whirlwind(Spell):
@@ -513,16 +531,17 @@ class Whirlwind(Spell):
     3d6 x 10 feet away from it in a random direction.
 
     """
+
     name = "Whirlwind"
     level = 7
     casting_time = "1 action"
     casting_range = "300 feet"
-    components = ('V', 'M')
-    materials = """A piece of straw"""
+    components = ("V", "M")
+    materials = "A piece of straw"
     duration = "Concentration, up to 1 minute"
     ritual = False
     magic_school = "Evocation"
-    classes = ('Druid', 'Wizard', 'Sorcerer')
+    classes = ("Druid", "Wizard", "Sorcerer")
 
 
 class WildCunning(Spell):
@@ -549,15 +568,16 @@ class WildCunning(Spell):
     -- Have the spirits instantly break down a campsite, which includes putting
     out a fire, taking down tents, packing up bags, and burying any rubbish.
     """
+
     name = "Wild Cunning"
     level = 1
     casting_time = "1 action"
     casting_range = "120 feet"
-    components = ('V', 'S')
-    materials = """"""
+    components = ("V", "S")
+    materials = ""
     duration = "Insantaneous"
     magic_school = "Transmutation"
-    classes = ('Druid', 'Ranger')
+    classes = ("Druid", "Ranger")
 
 
 class WindWalk(Spell):
@@ -577,16 +597,17 @@ class WindWalk(Spell):
     creature falls the remaining distance.
 
     """
+
     name = "Wind Walk"
     level = 6
     casting_time = "1 minute"
     casting_range = "30 feet"
-    components = ('V', 'S', 'M')
-    materials = """Fire and holy water"""
+    components = ("V", "S", "M")
+    materials = "Fire and holy water"
     duration = "8 hours"
     ritual = False
     magic_school = "Transmutation"
-    classes = ('Druid',)
+    classes = ("Druid",)
 
 
 class WindWall(Spell):
@@ -612,29 +633,30 @@ class WindWall(Spell):
     through it.
 
     """
+
     name = "Wind Wall"
     level = 3
     casting_time = "1 action"
     casting_range = "120 feet"
-    components = ('V', 'S', 'M')
-    materials = """A tiny fan and a feather of exotic origin"""
+    components = ("V", "S", "M")
+    materials = "A tiny fan and a feather of exotic origin"
     duration = "Concentration, up to 1 minute"
     ritual = False
     magic_school = "Evocation"
-    classes = ('Druid', 'Ranger')
+    classes = ("Druid", "Ranger")
 
 
 class Wish(Spell):
     """Wish is the mightiest spell a mortal creature can cast. By simply
     speaking aloud, you can alter the very foundations of reality in
     accord with your desires.
-    
+
     The basic use of this spell is to duplicate any other spell of 8th
     level or lower. You don't need to meet any requirements in that
     spell, including costly components. The spell simply takes effect.
     Alternatively, you can create one of the following effects of your
     choice:
-    
+
     - You create one object of up to 25,000 gp in value that isn't a
       magic item. The object can be no more than 300 feet in any
       dimension, and it appears in an unoccupied space you can see on
@@ -681,16 +703,17 @@ class Wish(Spell):
     cast wish ever again if you suffer this stress.
 
     """
+
     name = "Wish"
     level = 9
     casting_time = "1 action"
     casting_range = "Self"
-    components = ('V',)
-    materials = """"""
+    components = ("V",)
+    materials = ""
     duration = "Instantaneous"
     ritual = False
     magic_school = "Conjuration"
-    classes = ('Sorcerer', 'Wizard')
+    classes = ("Sorcerer", "Wizard")
 
 
 class WitchBolt(Spell):
@@ -709,16 +732,17 @@ class WitchBolt(Spell):
     each slot level above 1st.
 
     """
+
     name = "Witch Bolt"
     level = 1
     casting_time = "1 action"
     casting_range = "30 feet"
-    components = ('V', 'S', 'M')
-    materials = """A twig from a tree that has been struck by lightning"""
+    components = ("V", "S", "M")
+    materials = "A twig from a tree that has been struck by lightning"
     duration = "Concentration, up to 1 minute"
     ritual = False
     magic_school = "Evocation"
-    classes = ('Sorcerer', 'Warlock', 'Wizard')
+    classes = ("Sorcerer", "Warlock", "Wizard")
 
 
 class WordOfRadiance(Spell):
@@ -730,16 +754,17 @@ class WordOfRadiance(Spell):
     (2d6), 11th level (3d6), and 17th level (4d6).
 
     """
+
     name = "Word Of Radiance"
     level = 0
     casting_time = "1 action"
     casting_range = "5 feet"
-    components = ('V', 'M')
-    materials = """A holy symbol"""
+    components = ("V", "M")
+    materials = "A holy symbol"
     duration = "Instantaneous"
     ritual = False
     magic_school = "Evocation"
-    classes = ('Cleric',)
+    classes = ("Cleric",)
 
 
 class WordOfRecall(Spell):
@@ -756,16 +781,17 @@ class WordOfRecall(Spell):
     area that isn’t dedicated to your deity, the spell has no effect.
 
     """
+
     name = "Word Of Recall"
     level = 6
     casting_time = "1 action"
     casting_range = "5 feet"
-    components = ('V',)
-    materials = """"""
+    components = ("V",)
+    materials = ""
     duration = "Instantaneous"
     ritual = False
     magic_school = "Conjuration"
-    classes = ('Cleric',)
+    classes = ("Cleric",)
 
 
 class WrathOfNature(Spell):
@@ -790,16 +816,17 @@ class WrathOfNature(Spell):
     On a hit, the target takes 3d8 nonmagical bludgeoning damage, and it must
     succeed on a Strength saving throw or fall prone.
     """
+
     name = "Wrath Of Nature"
     level = 5
     casting_time = "1 action"
     casting_range = "120 feet"
-    components = ('V', 'S')
-    materials = """"""
+    components = ("V", "S")
+    materials = ""
     duration = "Concentration, up to 1 minute"
     ritual = False
     magic_school = "Evocation"
-    classes = ('Druid', 'Ranger')
+    classes = ("Druid", "Ranger")
 
 
 class WrathfulSmite(Spell):
@@ -810,16 +837,17 @@ class WrathfulSmite(Spell):
     action, the creature can make a Wisdom check against your spell
     save DC to steel its resolve and end this spell.
     """
+
     name = "Wrathful Smite"
     level = 1
     casting_time = "1 bonus action"
     casting_range = "Self"
-    components = ('V',)
-    materials = """"""
+    components = ("V",)
+    materials = ""
     duration = "Concentration, up to 1 minute"
     ritual = False
     magic_school = "Evocation"
-    classes = ('Paladin',)
+    classes = ("Paladin",)
 
 
 class Wristpocket(Spell):
@@ -832,13 +860,14 @@ class Wristpocket(Spell):
     the extradimensional space. An object still in the pocket plane when
     the spell ends appears in your space, at your feet.
     """
+
     name = "Wristpocket"
     level = 2
     casting_time = "1 action"
     casting_range = "Self"
-    components = ('S',)
-    materials = """"""
+    components = ("S",)
+    materials = ""
     duration = "Concentration, up to 1 hour"
     ritual = True
     magic_school = "Dunamancy"
-    classes = ('Wizard',)
+    classes = ("Wizard",)

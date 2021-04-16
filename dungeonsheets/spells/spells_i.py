@@ -12,16 +12,17 @@ class IceKnife(Spell):
     When you cast this spell using a spell slot of 2nd level or higher, the cold
     damage increases by 1d6 for each slot level above 1st.
     """
+
     name = "Ice Knife"
     level = 1
     casting_time = "1 action"
     casting_range = "60 feet"
-    components = ('S', 'M')
-    materials = """"""
+    components = ("S", "M")
+    materials = ""
     duration = "Instantaneous"
     ritual = False
     magic_school = "Conjuration"
-    classes = ('Druid', 'Sorcerer', 'Wizard')
+    classes = ("Druid", "Sorcerer", "Wizard")
 
 
 class IceStorm(Spell):
@@ -39,16 +40,17 @@ class IceStorm(Spell):
     slot of 5th level or higher, the bludgeoning damage increases by 1d8 for each
     slot level above 4th.
     """
+
     name = "Ice Storm"
     level = 4
     casting_time = "1 action"
     casting_range = "300 feet"
-    components = ('V', 'S', 'M')
-    materials = """A pinch of dust and a few drops of water"""
+    components = ("V", "S", "M")
+    materials = "A pinch of dust and a few drops of water"
     duration = "Instantaneous"
     ritual = False
     magic_school = "Evocation"
-    classes = ('Druid', 'Sorcerer', 'Wizard')
+    classes = ("Druid", "Sorcerer", "Wizard")
 
 
 class Identify(Spell):
@@ -62,16 +64,17 @@ class Identify(Spell):
     If you instead touch a creature throughout the casting, you learn
     what spells, if any, are currently affecting it.
     """
+
     name = "Identify"
     level = 1
     casting_time = "1 minute"
     casting_range = "Touch"
-    components = ('V', 'S', 'M')
-    materials = """A pearl worth at least 100 gp and an owl feather"""
+    components = ("V", "S", "M")
+    materials = "A pearl worth at least 100 gp and an owl feather"
     duration = "Instantaneous"
     ritual = True
     magic_school = "Divination"
-    classes = ('Bard', 'Wizard')
+    classes = ("Bard", "Wizard")
 
 
 class IdInsinuation(Spell):
@@ -81,14 +84,15 @@ class IdInsinuation(Spell):
     takes 1d12 psychic damage, and it can then make another Wisdom saving throw. On a
     success, the spell ends on the target.
     """
+
     name = "Id Insinuation"
     level = 1
     casting_time = "1 action"
     casting_range = "60ft"
-    components = ('V', 'S')
+    components = ("V", "S")
     duration = "1 minute"
     magic_school = "Enchantment"
-    classes = ('Sorcerer')
+    classes = "Sorcerer"
 
 
 class IllusoryDragon(Spell):
@@ -117,16 +121,17 @@ class IllusoryDragon(Spell):
     creature discerns the illusion for what it is, the creature can see through it
     and has advantage on saving throws against its breath.
     """
+
     name = "Illusory Dragon"
     level = 8
     casting_time = "1 action"
     casting_range = "120 feet"
-    components = ('S',)
-    materials = """"""
+    components = ("S",)
+    materials = ""
     duration = "Concentration, up to 1 minute"
     ritual = False
     magic_school = "Illusion"
-    classes = ('Wizard',)
+    classes = ("Wizard",)
 
 
 class IllusoryScript(Spell):
@@ -146,16 +151,17 @@ class IllusoryScript(Spell):
     A creature
     with truesight can read the hidden message.
     """
+
     name = "Illusory Script"
     level = 1
     casting_time = "1 minute"
     casting_range = "Touch"
-    components = ('S', 'M')
-    materials = """A lead-based ink worth at least 10 gp, which the spell consumes"""
+    components = ("S", "M")
+    materials = "A lead-based ink worth at least 10 gp, which the spell consumes"
     duration = "10 days"
     ritual = True
     magic_school = "Illusion"
-    classes = ('Bard', 'Warlock', 'Wizard')
+    classes = ("Bard", "Warlock", "Wizard")
 
 
 class Immolation(Spell):
@@ -170,98 +176,106 @@ class Immolation(Spell):
     If damage from this spell kills a target, the target is
     turned to ash.
     """
+
     name = "Immolation"
     level = 5
     casting_time = "1 action"
     casting_range = "90 feet"
-    components = ('V',)
-    materials = """"""
+    components = ("V",)
+    materials = ""
     duration = "Concentration, up to 1 minute"
     ritual = False
     magic_school = "Evocation"
-    classes = ('Sorcerer', 'Wizard')
+    classes = ("Sorcerer", "Wizard")
 
 
 class Imprisonment(Spell):
-    """You create a magical restraint to hold a creature that you can see within range.
+    """You create a magical restraint to hold a creature that you can see within range.
 
-    The target must succeed on a Wisdom saving throw or be bound by the spell; if
-    it succeeds, it is immune to this spell if you cast it again. While affected by
-    this spell, the creature doesn't need to breathe, eat, or drink, and it doesn't
-    age. Divination spells can't locate or perceive the target.
+    The target must succeed on a Wisdom saving throw or be bound by the spell; if
+    it succeeds, it is immune to this spell if you cast it again. While affected by
+    this spell, the creature doesn't need to breathe, eat, or drink, and it doesn't
+    age. Divination spells can't locate or perceive the target.
 
     When you cast the
-    spell, you choose one of the following forms of imprisonment. 
+    spell, you choose one of the following forms of imprisonment.
 
     Burial
     The
-    target is entombed far beneath the earth in a sphere of magical force that is
-    just large enough to contain the target. Nothing can pass through the
-    sphere, nor can any creature teleport or use planar travel to get into or out of
+    target is entombed far beneath the earth in a sphere of magical force that is
+    just large enough to contain the target. Nothing can pass through the
+    sphere, nor can any creature teleport or use planar travel to get into or out of
     it.
-    The special component for this version of the spell is a small mithral orb.
+    The special component for this version of the spell is a small mithral orb.
 
 
     Chaining
-    Heavy chains, firmly rooted in the ground, hold the target in place.
+    Heavy chains, firmly rooted in the ground, hold the target in place.
     The target is restrained until the spell ends, and it can't move or be moved by
-    any means until then.
+    any means until then.
     The special component for this version of the spell is
-    a fine chain of precious metal.
+    a fine chain of precious metal.
 
     Hedged Prison
     The spell transports the target
-    into a tiny demiplane that is warded against teleportation and planar travel.
-    The demiplane can be a labyrinth, a cage, a tower, or any similar confined
-    structure or area of your choice.
+    into a tiny demiplane that is warded against teleportation and planar travel.
+    The demiplane can be a labyrinth, a cage, a tower, or any similar confined
+    structure or area of your choice.
     The special component for this version of the
-    spell is a miniature representation of the prison made from jade.
+    spell is a miniature representation of the prison made from jade.
 
     Minimus
     Containment
-    The target shrinks to a height of 1 inch and is imprisoned inside a
+    The target shrinks to a height of 1 inch and is imprisoned inside a
     gemstone or similarobject. Light can pass through the gemstone
-    normally (allowing the target to see out and other creatures to see in), but
-    nothing else can pass through, even by means of teleportation or planar travel.
-    The gemstone can't be cut or broken while the spell remains in effect.
+    normally (allowing the target to see out and other creatures to see in), but
+    nothing else can pass through, even by means of teleportation or planar travel.
+    The gemstone can't be cut or broken while the spell remains in effect.
     The
-    special component for this version of the spell is a large, transparent
-    gemstone, such as a corundum, diamond, or ruby.
+    special component for this version of the spell is a large, transparent
+    gemstone, such as a corundum, diamond, or ruby.
 
     Slumber
     The target falls asleep
     and can't be awoken.
     The special component for this version of the
-    spell consists of rare soporific herbs. 
+    spell consists of rare soporific herbs.
 
     Ending the Spell
     During the casting of
-    the spell, in any of its versions, you can specify a condition that will cause
-    the spell to end and release the target. The condition can be as specific or as
-    elaborate as you choose, but the DM must agree that the condition is reasonable
-    and has a likelihood of coming to pass. The conditions can be based on a
-    creature's name, identity, or deity but otherwise must be based on
-    observable actions or qualities and not based on intangibles such as level,
+    the spell, in any of its versions, you can specify a condition that will cause
+    the spell to end and release the target. The condition can be as specific or as
+    elaborate as you choose, but the DM must agree that the condition is reasonable
+    and has a likelihood of coming to pass. The conditions can be based on a
+    creature's name, identity, or deity but otherwise must be based on
+    observable actions or qualities and not based on intangibles such as level,
     class, or hit points.
 
     A dispel magic spell can end the spell only if it is
-    cast as a 9th-level spell, targeting either the prison or the special component
+    cast as a 9th-level spell, targeting either the prison or the special component
     used to create it.
 
-    You can use a particular special component to create only
-    one prison at a time. If you cast the spell again using the same component, the
-    target of the first casting is immediately freed from its binding.
+    You can use a particular special component to create only one
+    prison at a time. If you cast the spell again using the same
+    component, the target of the first casting is immediately freed
+    from its binding.
+
     """
+
     name = "Imprisonment"
     level = 9
     casting_time = "1 minute"
     casting_range = "30 feet"
-    components = ('V', 'S', 'M')
-    materials = """A vellum depiction or a carved statuette in the likeness of the target, and a special component that varies according to the version of the spell you choose, worth at least 500 gp per hit die of the target"""
+    components = ("V", "S", "M")
+    materials = (
+        "A vellum depiction or a carved statuette in the likeness of the target, and a"
+        " special component that varies according to the version of the spell you"
+        " choose, worth at least 500 gp per hit die of the target"
+    )
     duration = "Until dispelled"
     ritual = False
     magic_school = "Abjuration"
-    classes = ('Warlock', 'Wizard')
+    classes = ("Warlock", "Wizard")
 
 
 class IncendiaryCloud(Spell):
@@ -281,16 +295,17 @@ class IncendiaryCloud(Spell):
     moves 10 feet directly away from you in a direction that you choose at the start
     of each of your turns.
     """
+
     name = "Incendiary Cloud"
     level = 8
     casting_time = "1 action"
     casting_range = "150 feet"
-    components = ('V', 'S')
-    materials = """"""
+    components = ("V", "S")
+    materials = ""
     duration = "Concentration, up to 1 minute"
     ritual = False
     magic_school = "Conjuration"
-    classes = ('Sorcerer', 'Wizard')
+    classes = ("Sorcerer", "Wizard")
 
 
 class InfernalCalling(Spell):
@@ -330,16 +345,17 @@ class InfernalCalling(Spell):
     a spell slot of 6th level or higher, the challenge rating increases by 1 for
     each slot level above 5th.
     """
+
     name = "Infernal Calling"
     level = 5
     casting_time = "1 minute"
     casting_range = "90 feet"
-    components = ('V', 'S', 'M')
-    materials = """A ruby worth at least 999 gp"""
+    components = ("V", "S", "M")
+    materials = "A ruby worth at least 999 gp"
     duration = "Concentration, up to 1 hour"
     ritual = False
     magic_school = "Conjuration"
-    classes = ('Warlock', 'Wizard')
+    classes = ("Warlock", "Wizard")
 
 
 class Infestation(Spell):
@@ -353,16 +369,17 @@ class Infestation(Spell):
     The spell's damage increases by 1d6 when you reach 5th level
     (2d6), 11th level (3d6), and 17th level (4d6).
     """
+
     name = "Infestation"
     level = 0
     casting_time = "1 action"
     casting_range = "30 feet"
-    components = ('V', 'S', 'M')
-    materials = """A living flea"""
+    components = ("V", "S", "M")
+    materials = "A living flea"
     duration = "Instantaneous"
     ritual = False
     magic_school = "Conjuration"
-    classes = ('Druid', 'Sorcerer', 'Warlock', 'Wizard')
+    classes = ("Druid", "Sorcerer", "Warlock", "Wizard")
 
 
 class InflictWounds(Spell):
@@ -373,16 +390,17 @@ class InflictWounds(Spell):
     spell slot of 2nd level or higher, the damage increases by 1d10 for each slot
     level above 1st.
     """
+
     name = "Inflict Wounds"
     level = 1
     casting_time = "1 action"
     casting_range = "Touch"
-    components = ('V', 'S')
-    materials = """"""
+    components = ("V", "S")
+    materials = ""
     duration = "Instantaneous"
     ritual = False
     magic_school = "Necromancy"
-    classes = ('Cleric',)
+    classes = ("Cleric",)
 
 
 class InsectPlague(Spell):
@@ -400,16 +418,17 @@ class InsectPlague(Spell):
     **At Higher Levels:** When you cast this spell using a spell slot of 6th
     level or higher, the damage increases by 1d10 for each slot level above 5th.
     """
+
     name = "Insect Plague"
     level = 5
     casting_time = "1 action"
     casting_range = "300 feet"
-    components = ('V', 'S', 'M')
-    materials = """A few grains of sugar, some kernels of grain, and a smear of fat"""
+    components = ("V", "S", "M")
+    materials = "A few grains of sugar, some kernels of grain, and a smear of fat"
     duration = "Concentration, up to 10 minutes"
     ritual = False
     magic_school = "Conjuration"
-    classes = ('Cleric', 'Druid', 'Sorcerer')
+    classes = ("Cleric", "Druid", "Sorcerer")
 
 
 class InvestitureOfFlame(Spell):
@@ -426,22 +445,23 @@ class InvestitureOfFlame(Spell):
     the line must make a Dexterity saving throw. A creature takes 4d8 fire damage on
     a failed save, or half as much damage on a successful one.
     """
+
     name = "Investiture Of Flame"
     level = 6
     casting_time = "1 action"
     casting_range = "Self"
-    components = ('V', 'S')
-    materials = """"""
+    components = ("V", "S")
+    materials = ""
     duration = "Concentration, up to 10 minutes"
     ritual = False
     magic_school = "Transmutation"
-    classes = ('Druid', 'Sorcerer', 'Warlock', 'Wizard')
+    classes = ("Druid", "Sorcerer", "Warlock", "Wizard")
 
 
 class InvestitureOfIce(Spell):
     """Until the spell ends, ice rimes your body, and you gain the
     following benefits:
-    
+
     - You are immune to cold damage and have resistance to fire
       damage.
     - You can move across difficult terrain created by ice or snow
@@ -456,24 +476,25 @@ class InvestitureOfIce(Spell):
       or half as much damage on a successful one. A creature that
       fails its save against this effect has its speed halved until
       the start of your next turn.
-    
+
     """
+
     name = "Investiture Of Ice"
     level = 6
     casting_time = "1 action"
     casting_range = "Self"
-    components = ('V', 'S')
-    materials = """"""
+    components = ("V", "S")
+    materials = ""
     duration = "Concentration, up to 10 minutes"
     ritual = False
     magic_school = "Transmutation"
-    classes = ('Druid', 'Sorcerer', 'Warlock', 'Wizard')
+    classes = ("Druid", "Sorcerer", "Warlock", "Wizard")
 
 
 class InvestitureOfStone(Spell):
     """Until the spell ends, bits of rock spread across your body, and you gain the
     following benefits:
-    
+
     - You have resistance to bludgeoning, piercing, and slashing
       damage from nonmagical weapons.
     - You can use your action to create a small earthquake on the
@@ -486,18 +507,19 @@ class InvestitureOfStone(Spell):
       but you can't end your movement there. If you do so, you are
       ejected to the nearest unoccupied space, this spell ends, and
       you are stunned until the end of your next turn.
-    
+
     """
+
     name = "Investiture Of Stone"
     level = 6
     casting_time = "1 action"
     casting_range = "Self"
-    components = ('V', 'S')
-    materials = """"""
+    components = ("V", "S")
+    materials = ""
     duration = "Concentration, up to 10 minutes"
     ritual = False
     magic_school = "Transmutation"
-    classes = ('Druid', 'Sorcerer', 'Warlock', 'Wizard')
+    classes = ("Druid", "Sorcerer", "Warlock", "Wizard")
 
 
 class InvestitureOfWind(Spell):
@@ -515,16 +537,17 @@ class InvestitureOfWind(Spell):
     fails the save, that creature is also pushed up to 10 feet away from the center
     of the cube.
     """
+
     name = "Investiture Of Wind"
     level = 6
     casting_time = "1 action"
     casting_range = "Self"
-    components = ('V', 'S')
-    materials = """"""
+    components = ("V", "S")
+    materials = ""
     duration = "Concentration, up to 10 minutes"
     ritual = False
     magic_school = "Transmutation"
-    classes = ('Druid', 'Sorcerer', 'Warlock', 'Wizard')
+    classes = ("Druid", "Sorcerer", "Warlock", "Wizard")
 
 
 class Invisibility(Spell):
@@ -536,30 +559,31 @@ class Invisibility(Spell):
     When you cast this spell using a spell slot of 3rd level or higher, you can
     target one additional creature for each slot level above 2nd.
     """
+
     name = "Invisibility"
     level = 2
     casting_time = "1 action"
     casting_range = "Touch"
-    components = ('V', 'S', 'M')
-    materials = """An eyelash encased in gum arabic"""
+    components = ("V", "S", "M")
+    materials = "An eyelash encased in gum arabic"
     duration = "Concentration, up to 1 hour"
     ritual = False
     magic_school = "Illusion"
-    classes = ('Bard', 'Sorcerer', 'Warlock', 'Wizard')
+    classes = ("Bard", "Sorcerer", "Warlock", "Wizard")
 
 
 class Invulnerability(Spell):
-    """You are immune to all damage until the spell ends.
-    """
+    """You are immune to all damage until the spell ends."""
+
     name = "Invulnerability"
     level = 9
     casting_time = "1 action"
     casting_range = "Self"
-    components = ('V', 'S', 'M')
-    materials = """A small piece of adamantine worth at least 500 gp, which the spell consumes"""
+    components = ("V", "S", "M")
+    materials = (
+        "A small piece of adamantine worth at least 500 gp, which the spell consumes"
+    )
     duration = "Concentration, up to 10 minutes"
     ritual = False
     magic_school = "Abjuration"
-    classes = ('Wizard',)
-
-
+    classes = ("Wizard",)

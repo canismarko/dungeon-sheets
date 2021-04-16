@@ -57,13 +57,15 @@ class OathOfDevotion(PaladinOath):
     you.
 
     """
+
     name = "Oath of Devotion"
-    _oath_spells = {3: [spells.ProtectionFromEvilAndGood,
-                        spells.Sanctuary],
-                    5: [spells.LesserRestoration, spells.ZoneOfTruth],
-                    9: [spells.BeaconOfHope, spells.DispelMagic],
-                    13: [spells.FreedomOfMovement, spells.GuardianOfFaith],
-                    17: [spells.Commune, spells.FlameStrike]}
+    _oath_spells = {
+        3: [spells.ProtectionFromEvilAndGood, spells.Sanctuary],
+        5: [spells.LesserRestoration, spells.ZoneOfTruth],
+        9: [spells.BeaconOfHope, spells.DispelMagic],
+        13: [spells.FreedomOfMovement, spells.GuardianOfFaith],
+        17: [spells.Commune, spells.FlameStrike],
+    }
     features_by_level = defaultdict(list)
     features_by_level[3] = [features.SacredWeapon, features.TurnTheUnholy]
     features_by_level[7] = [features.AuraOfDevotion]
@@ -101,12 +103,15 @@ class OathOfAncients(PaladinOath):
     light of your joy and courage shine forth in all your deeds.
 
     """
+
     name = "Oath of The Ancients"
-    _oath_spells = {3: [spells.EnsnaringStrike, spells.SpeakWithAnimals],
-                    5: [spells.Moonbeam, spells.MistyStep],
-                    9: [spells.PlantGrowth, spells.ProtectionFromEnergy],
-                    13: [spells.IceStorm, spells.Stoneskin],
-                    17: [spells.CommuneWithNature, spells.TreeStride]}
+    _oath_spells = {
+        3: [spells.EnsnaringStrike, spells.SpeakWithAnimals],
+        5: [spells.Moonbeam, spells.MistyStep],
+        9: [spells.PlantGrowth, spells.ProtectionFromEnergy],
+        13: [spells.IceStorm, spells.Stoneskin],
+        17: [spells.CommuneWithNature, spells.TreeStride],
+    }
     features_by_level = defaultdict(list)
 
 
@@ -140,12 +145,15 @@ class OathOfVengeance(PaladinOath):
     to stop them. I must help those harmed by their misdeeds.
 
     """
+
     name = "Oath of Vengeance"
-    _oath_spells = {3: [spells.Bane, spells.HuntersMark],
-                    5: [spells.HoldPerson, spells.MistyStep],
-                    9: [spells.Haste, spells.ProtectionFromEnergy],
-                    13: [spells.Banishment, spells.DimensionDoor],
-                    17: [spells.HoldMonster, spells.Scrying]}
+    _oath_spells = {
+        3: [spells.Bane, spells.HuntersMark],
+        5: [spells.HoldPerson, spells.MistyStep],
+        9: [spells.Haste, spells.ProtectionFromEnergy],
+        13: [spells.Banishment, spells.DimensionDoor],
+        17: [spells.HoldMonster, spells.Scrying],
+    }
     features_by_level = defaultdict(list)
 
 
@@ -179,12 +187,15 @@ class OathOfCrown(PaladinOath):
     you are responsible for fulfilling your duties and obligations.
 
     """
+
     name = "Oath of The Crown"
-    _oath_spells = {3: [spells.Command, spells.CompelledDuel],
-                    5: [spells.WardingBond, spells.ZoneOfTruth],
-                    9: [spells.AuraOfVitality, spells.SpiritGuardians],
-                    13: [spells.Banishment, spells.GuardianOfFaith],
-                    17: [spells.CircleOfPower, spells.Geas]}
+    _oath_spells = {
+        3: [spells.Command, spells.CompelledDuel],
+        5: [spells.WardingBond, spells.ZoneOfTruth],
+        9: [spells.AuraOfVitality, spells.SpiritGuardians],
+        13: [spells.Banishment, spells.GuardianOfFaith],
+        17: [spells.CircleOfPower, spells.Geas],
+    }
     features_by_level = defaultdict(list)
 
 
@@ -195,7 +206,7 @@ class OathOfConquest(PaladinOath):
     chaos. Sometimes called knight tyrants or iron mongers, those
     who swear this oath gather into grim orders that serve gods or
     philosophies of war and well-ordered might.
-    
+
     Some of these paladins go so far as to consort with the powers of
     the Nine Hells, valuing the rule of law over the balm of
     mercy. The archdevil Bel, warlord of Avernus, counts many of these
@@ -205,10 +216,10 @@ class OathOfConquest(PaladinOath):
     of their lords. These knights are often most fiercely resisted by
     other paladins of this oath, who believe that the hell knights
     have wandered too far into darkness.
-    
+
     **Tenets of Conquest:** A paladin who takes this oath has the
     tenets of conquest seared on the upper arm.
-    
+
     Douse the Flame of Hope.
       It is not enough to merely defeat an enemy in battle. Your
       victory must be so overwhelming that your enemies' will to
@@ -221,14 +232,17 @@ class OathOfConquest(PaladinOath):
     Strength Above All.
       You shall rule until a stronger one arises. Then you must grow
       mightier and meet the challenge, or fall to your own ruin.
-    
+
     """
+
     name = "Oath of Conquest"
-    _oath_spells = {3: [spells.ArmorOfAgathys, spells.Command],
-                    5: [spells.HoldPerson, spells.SpiritualWeapon],
-                    9: [spells.BestowCurse, spells.Fear],
-                    13: [spells.DominateBeast, spells.Stoneskin],
-                    17: [spells.Cloudkill, spells.DominatePerson]}
+    _oath_spells = {
+        3: [spells.ArmorOfAgathys, spells.Command],
+        5: [spells.HoldPerson, spells.SpiritualWeapon],
+        9: [spells.BestowCurse, spells.Fear],
+        13: [spells.DominateBeast, spells.Stoneskin],
+        17: [spells.Cloudkill, spells.DominatePerson],
+    }
     features_by_level = defaultdict(list)
 
 
@@ -271,15 +285,17 @@ class OathOfRedemption(PaladinOath):
     through with it knowing your path is just.
 
     """
+
     name = "Oath of Redemption"
-    _oath_spells = {3: [spells.Sanctuary, spells.Sleep],
-                    5: [spells.CalmEmotions, spells.HoldPerson],
-                    9: [spells.Counterspell, spells.HypnoticPattern],
-                    13: [spells.OtilukesResilientSphere, spells.Stoneskin],
-                    17: [spells.HoldMonster, spells.WallOfForce]}
+    _oath_spells = {
+        3: [spells.Sanctuary, spells.Sleep],
+        5: [spells.CalmEmotions, spells.HoldPerson],
+        9: [spells.Counterspell, spells.HypnoticPattern],
+        13: [spells.OtilukesResilientSphere, spells.Stoneskin],
+        17: [spells.HoldMonster, spells.WallOfForce],
+    }
     features_by_level = defaultdict(list)
-    features_by_level[3] = [features.EmissaryOfPeace,
-                            features.RebukeTheViolent]
+    features_by_level[3] = [features.EmissaryOfPeace, features.RebukeTheViolent]
     features_by_level[7] = [features.AuraOfTheGuardian]
     features_by_level[15] = [features.ProtectiveSpirit]
     features_by_level[20] = [features.EmissaryOfRedemption]
@@ -310,60 +326,76 @@ class OathOfZor(PaladinOath):
 
 
     """
+
     name = "Oath of Zor"
-    _oath_spells = {3: [spells.Sanctuary, spells.Sleep],
-                    5: [spells.CalmEmotions, spells.HoldPerson],
-                    9: [spells.Counterspell, spells.HypnoticPattern],
-                    13: [spells.OtilukesResilientSphere, spells.Stoneskin],
-                    17: [spells.HoldMonster, spells.WallOfForce]}
+    _oath_spells = {
+        3: [spells.Sanctuary, spells.Sleep],
+        5: [spells.CalmEmotions, spells.HoldPerson],
+        9: [spells.Counterspell, spells.HypnoticPattern],
+        13: [spells.OtilukesResilientSphere, spells.Stoneskin],
+        17: [spells.HoldMonster, spells.WallOfForce],
+    }
     features_by_level = defaultdict(list)
-    features_by_level[3] = [features.EmissaryOfPeace,
-                            features.RebukeTheViolent]
+    features_by_level[3] = [features.EmissaryOfPeace, features.RebukeTheViolent]
     features_by_level[7] = [features.AuraOfTheGuardian]
     features_by_level[15] = [features.ProtectiveSpirit]
     features_by_level[20] = [features.EmissaryOfRedemption]
 
 
 class Paladin(CharClass):
-    name = 'Paladin'
+    name = "Paladin"
     hit_dice_faces = 10
     subclass_select_level = 3
-    saving_throw_proficiencies = ('wisdom', 'charisma')
-    primary_abilities = ('strength', 'charisma')
-    _proficiencies_text = ('All armor', 'shields', 'simple weapons',
-                           'martial weapons')
+    saving_throw_proficiencies = ("wisdom", "charisma")
+    primary_abilities = ("strength", "charisma")
+    _proficiencies_text = ("All armor", "shields", "simple weapons", "martial weapons")
     weapon_proficiencies = (weapons.SimpleWeapon, weapons.MartialWeapon)
     multiclass_weapon_proficiencies = weapon_proficiencies
-    _multiclass_proficiencies_text = ('light armor', 'medium armor', 'shields',
-                                      'simple weapons', 'martial weapons')
-    class_skill_choices = ("Athletics", 'Insight', 'Intimidation',
-                           'Medicine', 'Persuasion', 'Religion')
+    _multiclass_proficiencies_text = (
+        "light armor",
+        "medium armor",
+        "shields",
+        "simple weapons",
+        "martial weapons",
+    )
+    class_skill_choices = (
+        "Athletics",
+        "Insight",
+        "Intimidation",
+        "Medicine",
+        "Persuasion",
+        "Religion",
+    )
     features_by_level = defaultdict(list)
     features_by_level[1] = [features.DivineSense, features.LayOnHands]
-    features_by_level[2] = [features.PaladinFightingStyle,
-                            features.DivineSmite]
-    features_by_level[3] = [features.DivineHealth,
-                            features.ChannelDivinityPaladin]
+    features_by_level[2] = [features.PaladinFightingStyle, features.DivineSmite]
+    features_by_level[3] = [features.DivineHealth, features.ChannelDivinityPaladin]
     features_by_level[5] = [features.ExtraAttackPaladin]
     features_by_level[6] = [features.AuraOfProtection]
     features_by_level[10] = [features.AuraOfCourage]
     features_by_level[11] = [features.ImprovedDivineSmite]
     features_by_level[14] = [features.CleansingTouch]
-    subclasses_available = (OathOfDevotion, OathOfAncients, OathOfVengeance,
-                            OathOfCrown, OathOfConquest, OathOfRedemption,
-                            OathOfZor)
-    spellcasting_ability = 'charisma'
+    subclasses_available = (
+        OathOfDevotion,
+        OathOfAncients,
+        OathOfVengeance,
+        OathOfCrown,
+        OathOfConquest,
+        OathOfRedemption,
+        OathOfZor,
+    )
+    spellcasting_ability = "charisma"
     spell_slots_by_level = {
         # char_lvl: (cantrips, 1st, 2nd, 3rd, ...)
-        1:  (0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
-        2:  (0, 2, 0, 0, 0, 0, 0, 0, 0, 0),
-        3:  (0, 3, 0, 0, 0, 0, 0, 0, 0, 0),
-        4:  (0, 3, 0, 0, 0, 0, 0, 0, 0, 0),
-        5:  (0, 4, 2, 0, 0, 0, 0, 0, 0, 0),
-        6:  (0, 4, 2, 0, 0, 0, 0, 0, 0, 0),
-        7:  (0, 4, 3, 0, 0, 0, 0, 0, 0, 0),
-        8:  (0, 4, 3, 0, 0, 0, 0, 0, 0, 0),
-        9:  (0, 4, 3, 2, 0, 0, 0, 0, 0, 0),
+        1: (0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+        2: (0, 2, 0, 0, 0, 0, 0, 0, 0, 0),
+        3: (0, 3, 0, 0, 0, 0, 0, 0, 0, 0),
+        4: (0, 3, 0, 0, 0, 0, 0, 0, 0, 0),
+        5: (0, 4, 2, 0, 0, 0, 0, 0, 0, 0),
+        6: (0, 4, 2, 0, 0, 0, 0, 0, 0, 0),
+        7: (0, 4, 3, 0, 0, 0, 0, 0, 0, 0),
+        8: (0, 4, 3, 0, 0, 0, 0, 0, 0, 0),
+        9: (0, 4, 3, 2, 0, 0, 0, 0, 0, 0),
         10: (0, 4, 3, 2, 0, 0, 0, 0, 0, 0),
         11: (0, 4, 3, 3, 0, 0, 0, 0, 0, 0),
         12: (0, 4, 3, 3, 0, 0, 0, 0, 0, 0),

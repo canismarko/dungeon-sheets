@@ -1,4 +1,4 @@
-from dungeonsheets import armor, weapons
+from dungeonsheets import weapons
 from dungeonsheets.features.features import Feature, FeatureSelector
 from dungeonsheets.features.rogue import Evasion, UncannyDodge
 
@@ -22,6 +22,7 @@ class FavoredEnemy(Feature):
     monsters you have encountered on your adventures.
 
     """
+
     name = "Favored Enemy"
     source = "Ranger"
     languages = ("[Select One]",)
@@ -33,13 +34,13 @@ class NaturalExplorer(Feature):
     one type of favored terrain: arctic, coast, desert, forest,
     grassland, mountain, swamp, or the Underdark. You choose
     additional favored terrain types at 6th and 10th
-    
+
     When you make an Intelligence or Wisdom check related to your
     favored terrain, your proficiency bonus is doubled if you are
     using a skill that you're proficient in. While traveling for an
     hour or more in your favored terrain, you gain the following
     benefits:
-    
+
     - Difficult terrain doesn't slow your group's travel.
     - Your group can't become lost except by magical means.
     - Even when you are engaged in another activity while traveling
@@ -54,6 +55,7 @@ class NaturalExplorer(Feature):
       area.
 
     """
+
     name = "Natural Explorer"
     source = "Ranger"
 
@@ -63,15 +65,16 @@ class Archery(Feature):
     You gain a +2 bonus to attack rolls you make
     with ranged weapons (included in stats on Character Sheet).
     """
+
     name = "Fighting Style (Archery)"
     source = "Ranger"
 
     def weapon_func(self, weapon: weapons.Weapon, **kwargs):
-       """
-       +2 attack roll bonus if weapon is ranged
-       """
-       if isinstance(weapon, weapons.RangedWeapon):
-          weapon.attack_bonus += 2
+        """
+        +2 attack roll bonus if weapon is ranged
+        """
+        if isinstance(weapon, weapons.RangedWeapon):
+            weapon.attack_bonus += 2
 
 
 class Defense(Feature):
@@ -79,6 +82,7 @@ class Defense(Feature):
     While you are wearing armor, you gain a +1 bonus to AC (included in
     stats on Character Sheet).
     """
+
     name = "Fighting Style (Defense)"
     source = "Ranger"
 
@@ -88,16 +92,19 @@ class Dueling(Feature):
     gain a +2 bonus to damage rolls with that weapon.
 
     """
+
     name = "Fighting Style (Dueling)"
     source = "Ranger"
 
     def weapon_func(self, weapon: weapons.Weapon, **kwargs):
-       """
-       +2 attack roll bonus if melee weapon is not two handed
-       """
-       if (isinstance(weapon, weapons.MeleeWeapon)
-             and "two-handed" not in weapon.properties.lower()):
-          weapon.damage_bonus += 2
+        """
+        +2 attack roll bonus if melee weapon is not two handed
+        """
+        if (
+            isinstance(weapon, weapons.MeleeWeapon)
+            and "two-handed" not in weapon.properties.lower()
+        ):
+            weapon.damage_bonus += 2
 
 
 class TwoWeaponFighting(Feature):
@@ -105,6 +112,7 @@ class TwoWeaponFighting(Feature):
     to the damage of the second attack.
 
     """
+
     name = "Fighting Style (Two-Weapon Fighting)"
     source = "Ranger"
 
@@ -121,12 +129,15 @@ class RangerFightingStyle(FeatureSelector):
 
     two-weapon fighting
     """
-    options = {'archery': Archery,
-            'defense': Defense,
-            'dueling': Dueling,
-            'two-weapon fighting': TwoWeaponFighting,
-            'two-weapon': TwoWeaponFighting,
-            'dual wield': TwoWeaponFighting}
+
+    options = {
+        "archery": Archery,
+        "defense": Defense,
+        "dueling": Dueling,
+        "two-weapon fighting": TwoWeaponFighting,
+        "two-weapon": TwoWeaponFighting,
+        "dual wield": TwoWeaponFighting,
+    }
     name = "Fighting Style (Select One)"
     source = "Ranger"
 
@@ -141,6 +152,7 @@ class PrimevalAwareness(Feature):
     the creatures' location or number.
 
     """
+
     name = "Primeval Awareness"
     source = "Ranger"
 
@@ -150,6 +162,7 @@ class ExtraAttackRanger(Feature):
     take the Attack action on your turn.
 
     """
+
     name = "Extra Attack (2x)"
     source = "Ranger"
 
@@ -167,6 +180,7 @@ class HideInPlainSight(Feature):
     a reaction, you must camouflage yourself again to gain this benefit
 
     """
+
     name = "Hide in Plain Sight"
     source = "Ranger"
 
@@ -177,6 +191,7 @@ class Vanish(Feature):
     choose to leave a trail.
 
     """
+
     name = "Vanish"
     source = "Ranger"
 
@@ -190,6 +205,7 @@ class FeralSenses(Feature):
     deafened
 
     """
+
     name = "Feral Senses"
     source = "Ranger"
 
@@ -202,6 +218,7 @@ class FoeSlayer(Feature):
     before any effects of the roll are applied.
 
     """
+
     name = "Foe Slayer"
     source = "Ranger"
 
@@ -213,6 +230,7 @@ class ColossusSlayer(Feature):
     its hit point maximum. You can deal this extra damage only once per turn.
 
     """
+
     name = "Colossus Slayer"
     source = "Ranger (Hunter)"
 
@@ -223,6 +241,7 @@ class GiantKiller(Feature):
     immediately after its attack, provided that you can see the creature.
 
     """
+
     name = "Giant Killer"
     source = "Ranger (Hunter)"
 
@@ -233,6 +252,7 @@ class HordeBreaker(Feature):
     within 5 feet of the original target and within range of your weapon.
 
     """
+
     name = "Horde Breaker"
     source = "Ranger (Hunter)"
 
@@ -248,17 +268,19 @@ class HuntersPrey(FeatureSelector):
     horde breaker
 
     """
-    options = {'colossus slayer': ColossusSlayer,
-            'giant killer': GiantKiller,
-            'horde breaker': HordeBreaker}
+
+    options = {
+        "colossus slayer": ColossusSlayer,
+        "giant killer": GiantKiller,
+        "horde breaker": HordeBreaker,
+    }
     name = "Hunter's Prey (Select One)"
     source = "Ranger (Hunter)"
 
 
 class EscapeTheHorde(Feature):
-    """Opportunity attacks against you are made with disadvantage
+    """Opportunity attacks against you are made with disadvantage"""
 
-    """
     name = "Escape the Horde"
     source = "Ranger (Hunter)"
 
@@ -268,14 +290,14 @@ class MultiattackDefense(Feature):
     all subsequent attacks made by that creature for the rest of the turn.
 
     """
+
     name = "Multiattack Defense"
     source = "Ranger (Hunter)"
 
 
 class SteelWill(Feature):
-    """You have advantage on saving throws against being frightened.
+    """You have advantage on saving throws against being frightened."""
 
-    """
     name = "Steel Will"
     source = "Ranger (Hunter)"
 
@@ -291,9 +313,12 @@ class DefensiveTactics(FeatureSelector):
     steel will
 
     """
-    options = {'escape the horde': EscapeTheHorde,
-            'multiattack defense': MultiattackDefense,
-            'steel will': SteelWill}
+
+    options = {
+        "escape the horde": EscapeTheHorde,
+        "multiattack defense": MultiattackDefense,
+        "steel will": SteelWill,
+    }
     name = "Defensive Tactics (Select One)"
     source = "Ranger (Hunter)"
 
@@ -305,6 +330,7 @@ class Volley(Feature):
     separate attack roll for each target
 
     """
+
     name = "Volley"
     source = "Ranger (Hunter)"
 
@@ -314,6 +340,7 @@ class WhirlwindAttack(Feature):
     creatures within 5 feet of you, with a separate attack roll for each target
 
     """
+
     name = "Whirlwind Attack"
     source = "Ranger (Hunter)"
 
@@ -327,8 +354,8 @@ class MultiattackRanger(FeatureSelector):
     whirlwind attack
 
     """
-    options = {'volley': Volley,
-            'whirlwind attack': WhirlwindAttack}
+
+    options = {"volley": Volley, "whirlwind attack": WhirlwindAttack}
     name = "Multiattack (Select One)"
     source = "Ranger (Hunter)"
 
@@ -339,6 +366,7 @@ class StandAgainstTheTide(Feature):
     creature (other than itself) of your choice
 
     """
+
     name = "Stand Against the Tide"
     source = "Ranger (Hunter)"
 
@@ -354,9 +382,12 @@ class SuperiorHuntersDefense(FeatureSelector):
     uncanny dodge
 
     """
-    options = {'evasion': Evasion,
-            'stand against of the tide': StandAgainstTheTide,
-            'uncanny dodge': UncannyDodge}
+
+    options = {
+        "evasion": Evasion,
+        "stand against of the tide": StandAgainstTheTide,
+        "uncanny dodge": UncannyDodge,
+    }
     name = "Superior Hunter's Defense (Select One)"
     source = "Ranger (Hunter)"
 
@@ -386,6 +417,7 @@ class RangersCompanion(Feature):
     hostile to you, either the same type of beast as before or a different one.
 
     """
+
     name = "Ranger's Companion"
     source = "Ranger (Beast Master)"
 
@@ -396,6 +428,7 @@ class ExceptionalTraining(Feature):
     Dash, Disengage, Dodge, or Help action on its turn
 
     """
+
     name = "Exceptional Training"
     source = "Ranger (Beast Master)"
 
@@ -405,6 +438,7 @@ class BestialFury(Feature):
     command it to use the Attack action.
 
     """
+
     name = "Bestial Fury"
     source = "Ranger (Beast Master)"
 
@@ -415,6 +449,7 @@ class ShareSpells(Feature):
     feet of you
 
     """
+
     name = "Share Spells"
     source = "Ranger (Beast Master)"
 
@@ -430,7 +465,8 @@ class DreadAmbusher(Feature):
     weapons damage type.
 
     """
-    name = 'Dread Ambusher'
+
+    name = "Dread Ambusher"
     source = "Ranger (Gloom Stalker)"
 
 
@@ -442,6 +478,7 @@ class UmbralSight(Feature):
     that darkness.
 
     """
+
     name = "Umbral Sight"
     source = "Ranger (Gloom Stalker)"
 
@@ -453,12 +490,13 @@ class IronMind(Feature):
     Intelligence or Charisma saving throws (your choice)
 
     """
+
     name = "Iron Mind"
     source = "Ranger (Gloom Stalker)"
     needs_implementation = True
 
     def __init__(self, owner=None):
-       super().__init__(owner=owner)
+        super().__init__(owner=owner)
 
 
 class StalkersFlurry(Feature):
@@ -468,6 +506,7 @@ class StalkersFlurry(Feature):
     same action
 
     """
+
     name = "Stalker's Flurry"
     source = "Ranger (Gloom Stalker)"
 
@@ -480,6 +519,7 @@ class ShadowyDodge(Feature):
     know the outcome of the attack roll.
 
     """
+
     name = "Shadowy Dodge"
     source = "Ranger (Gloom Stalker)"
 
@@ -492,6 +532,7 @@ class DetectPortal(Feature):
     can't use it again until you finish a short or long rest.
 
     """
+
     name = "Detect Portal"
     source = "Ranger (Horizon Walker)"
 
@@ -505,15 +546,16 @@ class PlanarWarrior(Feature):
     reach 11th level in this class, the extra damage increases to 2d8.
 
     """
+
     _name = "Planar Warrior"
     source = "Ranger (Horizon Walker)"
 
     @property
     def name(self):
-       if self.owner.Ranger.level < 11:
-          return self._name + " (1d8/f)"
-       else:
-          return self._name + " (2d8/f)"
+        if self.owner.Ranger.level < 11:
+            return self._name + " (1d8/f)"
+        else:
+            return self._name + " (2d8/f)"
 
 
 class EtherealStep(Feature):
@@ -524,6 +566,7 @@ class EtherealStep(Feature):
     short or long rest
 
     """
+
     name = "Ethereal Step"
     source = "Ranger (Horizon Walker)"
 
@@ -536,6 +579,7 @@ class DistantStrike(Feature):
     attack with it against a third creature.
 
     """
+
     name = "Distant Strike"
     source = "Ranger (Horizon Walker)"
 
@@ -547,6 +591,7 @@ class SpectralDefense(Feature):
     give yourself resistance to all of that attack's damage on this turn
 
     """
+
     name = "Spectral Defense"
     source = "Ranger (Horizon Walker)"
 
@@ -563,13 +608,14 @@ class HuntersSense(Feature):
     once). You regain all expended uses of it when you finish a long rest.
 
     """
+
     _name = "Hunter's Sense"
     source = "Ranger (Monster Slayer)"
 
     @property
     def name(self):
-       num = max(1, self.owner.wisdom.modifier)
-       return self._num + " ({:d}x/LR)".format(num)
+        num = max(1, self.owner.wisdom.modifier)
+        return self._num + " ({:d}x/LR)".format(num)
 
 
 class SlayersPrey(Feature):
@@ -581,6 +627,7 @@ class SlayersPrey(Feature):
     long rest. It ends early if you designate a different creature
 
     """
+
     name = "Slayer's Prey"
     source = "Ranger (Monster Slayer)"
 
@@ -592,6 +639,7 @@ class SupernaturalDefense(Feature):
     targets grapple, add 1d6 to your roll
 
     """
+
     name = "Supernatural Defense"
     source = "Ranger (Monster Slayer)"
 
@@ -605,6 +653,7 @@ class MagicUsersNemesis(Feature):
     it again until you finish a short or long rest.
 
     """
+
     name = "Magic User's Nemesis"
     source = "Ranger (Monster Slayer)"
 
@@ -618,6 +667,7 @@ class SlayersCounter(Feature):
     to the attack's normal effects
 
     """
+
     name = "Slayer's Counter"
     source = "Ranger (Monster Slayer)"
 
@@ -639,6 +689,7 @@ class FavoredEnemyRevised(Feature):
     it. However, you are free to pick any language you wish to learn
 
     """
+
     name = "Favored Enemy"
     source = "Revised Ranger"
 
@@ -647,15 +698,15 @@ class NaturalExplorerRevised(Feature):
     """You are a master of navigating the natural world, and you react
     with swift and decisive action when attacked. This grants you the
     following benefits:
-    
+
     - You ignore difficult terrain.
     - You have advantage on initiative rolls.
     - On your first turn during combat, you have advantage on attack rolls
       against creatures that have not yet acted.
-    
+
     In addition, you are skilled at navigating the wilderness. You
     gain the following benefits when traveling for an hour or more:
-    
+
     - Difficult terrain doesn't slow your group's travel.
     - Your group can't become lost except by magical means.
     - Even when you are engaged in another activity while traveling
@@ -668,8 +719,9 @@ class NaturalExplorerRevised(Feature):
     - While tracking other creatures, you also learn their exact
       number, their sizes, and how long ago they passed through the
       area.
-    
+
     """
+
     name = "Natural Explorer"
     source = "Revised Ranger"
 
@@ -699,6 +751,7 @@ class PrimevalAwarenessRevised(Feature):
     learn this information for each group.
 
     """
+
     name = "Primeval Awareness"
     source = "Revised Ranger"
 
@@ -715,6 +768,7 @@ class GreaterFavoredEnemy(Feature):
     abilities used by a greater favored enemy.
 
     """
+
     name = "Greated Favored Enemy"
     source = "Revised Ranger"
 
@@ -724,6 +778,7 @@ class FleetOfFoot(Feature):
     your turn.
 
     """
+
     name = "Fleet of Foot"
     source = "Revised Ranger"
 
@@ -743,6 +798,7 @@ class HideInPlainSightRevised(Feature):
     motionless and gain this benefit until you are detected
 
     """
+
     name = "Hide in Plain Sight"
     source = "Revised Ranger"
 
@@ -776,6 +832,7 @@ class AnimalCompanion(Feature):
     is replaced by the restored companion
 
     """
+
     name = "Animal Companion"
     source = "Revised Ranger (Animal Companion)"
 
@@ -812,6 +869,7 @@ class CompanionsBond(Feature):
     is a beloved companion for whom I would gladly give my life.\"
 
     """
+
     name = "Companions Bond"
     source = "Revised Ranger (Beast Conclave)"
 
@@ -821,6 +879,7 @@ class CoordinatedAttack(Feature):
     fighting team. When you use the Attack action on your turn, if your
     companion can see you, it can use its reaction to make a melee attack.
     """
+
     name = "Coordinated Attack"
     source = "Revised Ranger (Beast Conclave)"
 
@@ -830,6 +889,7 @@ class BeastsDefense(Feature):
     saving throw
 
     """
+
     name = "Beast's Defense"
     source = "Revised Ranger (Beast Conclave)"
 
@@ -840,6 +900,7 @@ class StormOfClawsAndFangs(Feature):
     attack roll for each target
 
     """
+
     name = "Storm of Claws and Fangs"
     source = "Revised Ranger (Beast Conclave)"
 
@@ -850,6 +911,7 @@ class SuperiorBeastsDefense(Feature):
     against it.
 
     """
+
     name = "Superior Beast's Defense"
     source = "Revised Ranger (Beast Conclave)"
 
@@ -865,6 +927,7 @@ class UnderdarkScout(Feature):
     benefit from its darkvision
 
     """
+
     name = "Underdark Scout"
     source = "Revised Ranger (Deep Stalker Conclave)"
 
@@ -876,5 +939,6 @@ class StalkersDodge(Feature):
     is made, but it must be used before the outcome of the roll is determined
 
     """
+
     name = "Stalker's Dodge"
     source = "Revised Ranger (Deep Stalker Conclave)"

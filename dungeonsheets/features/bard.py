@@ -26,24 +26,25 @@ class BardicInspiration(Feature):
     at 15th level.
 
     """
+
     _name = "Bardic Inspiration"
     source = "Bard"
 
     @property
     def name(self):
-       level = self.owner.Bard.level
-       die = 'd6'
-       if level >= 5:
-          die = 'd8'
-       if level >= 10:
-          die = 'd10'
-       if level >= 15:
-          die = 'd12'
-       num = max(1, self.owner.charisma.modifier)
-       rest = 'LR'
-       if level >= 5:  # font of inspiration
-          rest = 'SR'
-       return self._name + " ({:d}{:s}/{:s})".format(num, die, rest)
+        level = self.owner.Bard.level
+        die = "d6"
+        if level >= 5:
+            die = "d8"
+        if level >= 10:
+            die = "d10"
+        if level >= 15:
+            die = "d12"
+        num = max(1, self.owner.charisma.modifier)
+        rest = "LR"
+        if level >= 5:  # font of inspiration
+            rest = "SR"
+        return self._name + " ({:d}{:s}/{:s})".format(num, die, rest)
 
 
 class JackOfAllTrades(Feature):
@@ -52,6 +53,7 @@ class JackOfAllTrades(Feature):
     proficiency bonus. (Included in stats on Character Sheet above).
 
     """
+
     name = "Jack of All Trades"
     source = "Bard"
 
@@ -65,20 +67,21 @@ class SongOfRest(Feature):
     1d8 at 9th level, to 1d10 at 13th level, and to 1d12 at 17th level.
 
     """
+
     _name = "Song of Rest"
     source = "Bard"
 
     @property
     def name(self):
-       level = self.owner.Bard.level
-       die = ' (1d6)'
-       if level >= 9:
-          die = ' (1d8)'
-       if level >= 13:
-          die = ' (1d10)'
-       if level >= 17:
-          die = ' (1d12)'
-       return self._name + die
+        level = self.owner.Bard.level
+        die = " (1d6)"
+        if level >= 9:
+            die = " (1d8)"
+        if level >= 13:
+            die = " (1d10)"
+        if level >= 17:
+            die = " (1d12)"
+        return self._name + die
 
 
 class BardExpertise(Feature):
@@ -90,6 +93,7 @@ class BardExpertise(Feature):
     Add these skills to "skill_expertise" in your character.py file
 
     """
+
     name = "Expertise"
     source = "Bard"
 
@@ -99,6 +103,7 @@ class FontOfInspiration(Feature):
     Bardic Inspiration when you finish a short or long rest.
 
     """
+
     name = "Font of Inspiration"
     source = "Bard"
 
@@ -114,6 +119,7 @@ class Countercharm(Feature):
     required).
 
     """
+
     name = "Countercharm"
     source = "Bard"
 
@@ -127,6 +133,7 @@ class MagicalSecrets(Feature):
     additional spells from any class at 14th level and again at 18th level.
 
     """
+
     name = "Magical Secrets"
     source = "Bard"
 
@@ -136,6 +143,7 @@ class SuperiorInspiration(Feature):
     Inspiration left, you regain one use.
 
     """
+
     name = "Superior Inspiration"
     source = "Bard"
 
@@ -146,6 +154,7 @@ class LoreProficiencies(Feature):
     three skills o f your choice.
 
     """
+
     name = "Bonus Proficiencies"
     source = "Bard (College of Lore)"
 
@@ -163,6 +172,7 @@ class CuttingWords(Feature):
     immune to being charmed.
 
     """
+
     name = "Cutting Words"
     source = "Bard (College of Lore)"
 
@@ -174,6 +184,7 @@ class AdditionalMagicalSecrets(Feature):
     against the number of bard spells you know.
 
     """
+
     name = "Additional Magical Secrets"
     source = "Bard (College of Lore)"
 
@@ -186,6 +197,7 @@ class PeerlessSkill(Feature):
     or fail
 
     """
+
     name = "Peerless Skill"
     source = "Bard (College of Lore)"
 
@@ -200,6 +212,7 @@ class CombatInspiration(Feature):
     attack, after seeing the roll but before knowing whether it hits or misses
 
     """
+
     name = "Combat Inspiration"
     source = "Bard (College of Valor)"
 
@@ -209,6 +222,7 @@ class BardExtraAttack(Feature):
     take the Attack action on your turn
 
     """
+
     name = "Extra Attack (x2)"
     source = "Bard (College of Valor)"
 
@@ -219,6 +233,7 @@ class BardBattleMagic(Feature):
     spell, you can make one weapon attack as a bonus action
 
     """
+
     name = "Battle Magic"
     source = "Bard (College of Valor)"
 
@@ -238,14 +253,15 @@ class MantleOfInspiration(Feature):
     5th level, 11 at 10th level, and 14 at 15th level.
 
     """
+
     _name = "Mantle of Inspiration"
     source = "Bard (College of Glamour)"
 
     @property
     def name(self):
-       level = self.owner.Bard.level
-       hp = 5 + 3*(level // 5)
-       return self._name + " ({:d}HP)".format(hp)
+        level = self.owner.Bard.level
+        hp = 5 + 3 * (level // 5)
+        return self._name + " ({:d}HP)".format(hp)
 
 
 class EnthrallingPerformance(Feature):
@@ -267,6 +283,7 @@ class EnthrallingPerformance(Feature):
     you finish a short or long rest
 
     """
+
     name = "Enthralling Performance"
     source = "Bard (College of Glamour)"
 
@@ -284,6 +301,7 @@ class MantleOfMajesty(Feature):
     can't use it again until you finish a long rest
 
     """
+
     name = "Mantle of Majesty"
     source = "Bard (College of Glamour)"
 
@@ -304,6 +322,7 @@ class UnbreakableMajesty(Feature):
     you finish a short or long rest.
 
     """
+
     name = "Unbreakable Majesty"
     source = "Bard (College of Glamour)"
 
@@ -316,6 +335,7 @@ class SwordsProficiency(Feature):
     spells
 
     """
+
     name = "Bonus Proficiencies"
     source = "Bard (College of Swords)"
 
@@ -328,10 +348,13 @@ class BardFightingStyle(FeatureSelector):
 
     two-weapon fighting
     """
-    options = {'dueling': Dueling,
-            'two-weapon fighting': TwoWeaponFighting,
-            'two-weapon': TwoWeaponFighting,
-            'dual wield': TwoWeaponFighting}
+
+    options = {
+        "dueling": Dueling,
+        "two-weapon fighting": TwoWeaponFighting,
+        "two-weapon": TwoWeaponFighting,
+        "dual wield": TwoWeaponFighting,
+    }
     name = "Fighting Style (Select One)"
     source = "Bard (College of Swords)"
 
@@ -363,6 +386,7 @@ class BladeFlourish(Feature):
     target.
 
     """
+
     name = "Blade Flourish"
     source = "Bard (College of Swords)"
 
@@ -371,6 +395,7 @@ class MastersFlourish(Feature):
     """Starting at 14th level, whenever you use a Blade Flourish option, you can
     roll a d6 and use it instead of expend- ing a Bardic Inspiration die.
     """
+
     name = "Master's Flourish"
     source = "Bard (College of Swords)"
 
@@ -386,20 +411,21 @@ class PsychicBlades(Feature):
     at 10th level, and 8d6 at 15th level.
 
     """
+
     _name = "Psychic Blades"
     source = "Bard (College of Whispers)"
 
     @property
     def name(self):
-       level = self.owner.Bard.level
-       dice = ' (2d6)'
-       if level >= 5:
-          dice = ' (3d6)'
-       if level >= 10:
-          dice = ' (5d6)'
-       if level >= 15:
-          dice = ' (8d6)'
-       return self._name + dice
+        level = self.owner.Bard.level
+        dice = " (2d6)"
+        if level >= 5:
+            dice = " (3d6)"
+        if level >= 10:
+            dice = " (5d6)"
+        if level >= 15:
+            dice = " (8d6)"
+        return self._name + dice
 
 
 class WordsOfTerror(Feature):
@@ -417,6 +443,7 @@ class WordsOfTerror(Feature):
     until you finish a short or long rest.
 
     """
+
     name = "Words of Terror"
     source = "Bard (College of Whispers)"
 
@@ -441,6 +468,7 @@ class MantleOfWhispers(Feature):
     until you finish a short or long rest.
 
     """
+
     name = "Mantle of Whispers"
     source = "Bard (College of Whispers)"
 
@@ -466,5 +494,6 @@ class ShadowLore(Feature):
     feature, you can't use it again until / you finish a long rest.
 
     """
+
     name = "Shadow Lore"
     source = "Bard (College of Whispers)"

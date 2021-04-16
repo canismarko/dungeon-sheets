@@ -1,7 +1,5 @@
-from dungeonsheets import armor, weapons
 from dungeonsheets.features.features import Feature, FeatureSelector
-from dungeonsheets.features.ranger import (Archery, Defense, Dueling,
-                                   TwoWeaponFighting)
+from dungeonsheets.features.ranger import Archery, Defense, Dueling, TwoWeaponFighting
 
 # Features added for all PHB classes
 # SCAG and XGTE needed
@@ -15,8 +13,8 @@ class GreatWeaponFighting(Feature):
     have the two-handed or versatile property for you to gain this benefit.
     """
 
-    name = 'Fighting Style (Great Weapon Fighting)'
-    source = 'Fighter'
+    name = "Fighting Style (Great Weapon Fighting)"
+    source = "Fighter"
 
 
 class Protection(Feature):
@@ -25,8 +23,8 @@ class Protection(Feature):
     attack roll. You must be wielding a shield.
     """
 
-    name = 'Fighting Style (Protection)'
-    source = 'Fighter'
+    name = "Fighting Style (Protection)"
+    source = "Fighter"
 
 
 # UA
@@ -35,8 +33,8 @@ class BlindingFighting(Feature):
     rolls against it, provided the creature isn’t hidden from you.
     """
 
-    name = 'Fighting Style (Blinding Fighting)'
-    source = 'Fighter'
+    name = "Fighting Style (Blinding Fighting)"
+    source = "Fighter"
 
 
 class CloseQuartersShooter(Feature):
@@ -46,8 +44,8 @@ class CloseQuartersShooter(Feature):
     30 feet of you. You have a +1 bonus to attack rolls on ranged attacks.
     """
 
-    name = 'Fighting Style (Close Quarters Shooter)'
-    source = 'Fighter'
+    name = "Fighting Style (Close Quarters Shooter)"
+    source = "Fighter"
 
 
 class Interception(Feature):
@@ -57,8 +55,8 @@ class Interception(Feature):
     be wielding a shield or a simple or martial weapon to use this reaction.
     """
 
-    name = 'Fighting Style (Interception)'
-    source = 'Fighter'
+    name = "Fighting Style (Interception)"
+    source = "Fighter"
 
 
 class Mariner(Feature):
@@ -67,20 +65,21 @@ class Mariner(Feature):
     gain a +1 bonus to armor class.
     """
 
-    name = 'Fighting Style (Mariner)'
-    source = 'Fighter'
+    name = "Fighting Style (Mariner)"
+    source = "Fighter"
 
 
 class ThrownWeaponFighting(Feature):
     """You can draw a weapon that has the thrown property as part of the
     attack you make with the weapon.
-    
+
     In addition, when you hit with a ranged attack using a thrown
     weapon, you gain a +1 bonus to the damage roll.
 
     """
-    name = 'Fighting Style (Thrown Weapon Fighting)'
-    source = 'Fighter'
+
+    name = "Fighting Style (Thrown Weapon Fighting)"
+    source = "Fighter"
 
 
 class TunnelFighter(Feature):
@@ -90,27 +89,29 @@ class TunnelFighter(Feature):
     reaction to make a melee attack against a creature that moves more than
     5 feet while within your reach.
     """
-    name = 'Fighting Style (Tunnel Fighter)'
-    source = 'Fighter'
+
+    name = "Fighting Style (Tunnel Fighter)"
+    source = "Fighter"
 
 
 class UnarmedFighting(Feature):
     """Your unarmed strikes can deal bludgeoning damage equal to 1d6 + your
     Strength modifier. If you strike with two free hands, the d6 becomes a d8.
-    
+
     When you successfully start a grapple, you can deal 1d4
     bludgeoning damage to the grappled creature. Until the grapple
     ends, you can also deal this damage to the creature whenever you
     hit it with a melee attack.
-    
+
     """
-    name = 'Fighting Style (Unarmed Fighting)'
-    source = 'Fighter'
+
+    name = "Fighting Style (Unarmed Fighting)"
+    source = "Fighter"
 
 
 class FighterFightingStyle(FeatureSelector):
     """Select a Fighting Style by choosing in feature_choices:
-    
+
     - archery
     - defense
     - dueling
@@ -124,24 +125,27 @@ class FighterFightingStyle(FeatureSelector):
     - thrown weapon fighting
     - tunnel fighter
     - unarmed fighting
-    
+
     """
-    options = {'archery': Archery,
-            'defense': Defense,
-            'dueling': Dueling,
-            'great': GreatWeaponFighting,
-            'great-weapon fighting': GreatWeaponFighting,
-            'projection': Protection,
-            'two-weapon fighting': TwoWeaponFighting,
-            'two-weapon': TwoWeaponFighting,
-            'dual wield': TwoWeaponFighting,
-            'blinding fighting': BlindingFighting,
-            'close quarters shooter': CloseQuartersShooter,
-            'interception': Interception,
-            'mariner': Mariner,
-            'thrown weapon fighting': ThrownWeaponFighting,
-            'tunnel fighter': TunnelFighter,
-            'unarmed fighting': UnarmedFighting}
+
+    options = {
+        "archery": Archery,
+        "defense": Defense,
+        "dueling": Dueling,
+        "great": GreatWeaponFighting,
+        "great-weapon fighting": GreatWeaponFighting,
+        "projection": Protection,
+        "two-weapon fighting": TwoWeaponFighting,
+        "two-weapon": TwoWeaponFighting,
+        "dual wield": TwoWeaponFighting,
+        "blinding fighting": BlindingFighting,
+        "close quarters shooter": CloseQuartersShooter,
+        "interception": Interception,
+        "mariner": Mariner,
+        "thrown weapon fighting": ThrownWeaponFighting,
+        "tunnel fighter": TunnelFighter,
+        "unarmed fighting": UnarmedFighting,
+    }
     name = "Fighting Style (Select One)"
     source = "Fighter"
 
@@ -153,6 +157,7 @@ class SecondWind(Feature):
     finish a short or long rest before you can use it again
 
     """
+
     name = "Second Wind"
     source = "Fighter"
 
@@ -167,6 +172,7 @@ class ActionSurge(Feature):
     rest, but only once on the same turn.
 
     """
+
     name = "Action Surge"
     source = "Fighter"
 
@@ -178,18 +184,19 @@ class ExtraAttackFighter(Feature):
     20th level in this class.
 
     """
+
     _name = "Extra Attack"
     source = "Fighter"
 
     @property
     def name(self):
-       level = self.owner.Fighter.level
-       if level < 11:
-          return self._name + ' (2x)'
-       elif level < 20:
-          return self._name + ' (3x)'
-       else:
-          return self._name + ' (4x)'
+        level = self.owner.Fighter.level
+        if level < 11:
+            return self._name + " (2x)"
+        elif level < 20:
+            return self._name + " (3x)"
+        else:
+            return self._name + " (4x)"
 
 
 class Indomitable(Feature):
@@ -201,18 +208,19 @@ class Indomitable(Feature):
     and three times between long rests starting at 17th level.
 
     """
+
     _name = "Indomitable"
     source = "Fighter"
 
     @property
     def name(self):
-       level = self.owner.Fighter.level
-       if level < 13:
-          return self._name + ' (1x/LR)'
-       elif level < 17:
-          return self._name + ' (2x/LR)'
-       else:
-          return self._name + ' (3x/LR)'
+        level = self.owner.Fighter.level
+        if level < 13:
+            return self._name + " (1x/LR)"
+        elif level < 17:
+            return self._name + " (2x/LR)"
+        else:
+            return self._name + " (3x/LR)"
 
 
 # Champion
@@ -221,6 +229,7 @@ class ImprovedCritical(Feature):
     score a critical hit on a roll of 19 or 20.
 
     """
+
     name = "Improved Critical"
     source = "Fighter (Champion)"
 
@@ -234,6 +243,7 @@ class RemarkableAthelete(Feature):
     increases by a number of feet equal to your Strength modifier.
 
     """
+
     name = "Remarkable Athelete"
     source = "Fighter (Champion)"
 
@@ -254,15 +264,18 @@ class AdditionalFightingStyle(FeatureSelector):
 
     two-weapon fighting 2
     """
-    options = {'archery 2': Archery,
-            'defense 2': Defense,
-            'dueling 2': Dueling,
-            'great 2': GreatWeaponFighting,
-            'great-weapon fighting 2': GreatWeaponFighting,
-            'projection 2': Protection,
-            'two-weapon fighting 2': TwoWeaponFighting,
-            'two-weapon 2': TwoWeaponFighting,
-            'dual wield 2': TwoWeaponFighting}
+
+    options = {
+        "archery 2": Archery,
+        "defense 2": Defense,
+        "dueling 2": Dueling,
+        "great 2": GreatWeaponFighting,
+        "great-weapon fighting 2": GreatWeaponFighting,
+        "projection 2": Protection,
+        "two-weapon fighting 2": TwoWeaponFighting,
+        "two-weapon 2": TwoWeaponFighting,
+        "dual wield 2": TwoWeaponFighting,
+    }
     name = "Fighting Style (Select One)"
     source = "Fighter (Champion)"
 
@@ -271,6 +284,7 @@ class SuperiorCritical(Feature):
     """Starting at 15th level, your weapon attacks score a critical hit on a roll
     of 18-20 .
     """
+
     name = "Superior Critical"
     source = "Fighter (Champion)"
 
@@ -282,6 +296,7 @@ class Survivor(Feature):
     left. You don't gain this benefit if you have 0 hit points.
 
     """
+
     name = "Survivor"
     source = "Fighter (Champion)"
 
@@ -310,17 +325,18 @@ class CombatSuperiority(Feature):
     modifier (your choice)
 
     """
+
     _name = "Combat Superiority"
 
     @property
     def name(self):
-       level = self.owner.Fighter.level
-       if level < 10:
-          return self._name + ' (d8)'
-       elif level < 18:
-          return self._name + ' (d10)'
-       else:
-          return self._name + ' (d12)'
+        level = self.owner.Fighter.level
+        if level < 10:
+            return self._name + " (d8)"
+        elif level < 18:
+            return self._name + " (d10)"
+        else:
+            return self._name + " (d12)"
 
 
 class StudentOfWar(Feature):
@@ -328,6 +344,7 @@ class StudentOfWar(Feature):
     choice.
 
     """
+
     name = "Student of War"
     source = "Fighter (Battle Master)"
 
@@ -339,7 +356,7 @@ class KnowYourEnemy(Feature):
     own. The DM tells you if the creature is your equal, superior, or
     inferior in regard to two of the following characteristics of your
     choice:
-    
+
     - Strength score
     - Dexterity score
     - Constitution score
@@ -349,6 +366,7 @@ class KnowYourEnemy(Feature):
     - Fighter class levels (if any)
 
     """
+
     name = "Know Your Enemy"
     source = "Fighter (Battle Master)"
 
@@ -358,6 +376,7 @@ class Relentless(Feature):
     dice remaining, you regain 1 superiority die.
 
     """
+
     name = "Relentless"
     source = "Fighter (Battle Master)"
 
@@ -367,6 +386,7 @@ class Maneuver(Feature):
     """
     A generic Maneuver
     """
+
     name = "Maneuver"
     source = "Fighter Maneuver (Battle Master)"
 
@@ -380,6 +400,7 @@ class CommandersStrike(Maneuver):
     attack's damage roll.
 
     """
+
     name = "Commander's Strike"
 
 
@@ -392,6 +413,7 @@ class DisarmingAttack(Maneuver):
     feet.
 
     """
+
     name = "Disarming Attack"
 
 
@@ -403,6 +425,7 @@ class DistractingStrike(Maneuver):
     if the attack is made before the start of your next turn.
 
     """
+
     name = "Distracting Strike"
 
 
@@ -411,6 +434,7 @@ class EvasiveFootwork(Maneuver):
     adding the number rolled to your AC until you stop moving.
 
     """
+
     name = "Evasive Footwork"
 
 
@@ -421,6 +445,7 @@ class FeintingAttack(Maneuver):
     hits, add the superiority die to the attack's damage roll.
 
     """
+
     name = "Feinting Attack"
 
 
@@ -433,6 +458,7 @@ class GoadingAttack(Maneuver):
     turn.
 
     """
+
     name = "Goading Attack"
 
 
@@ -442,6 +468,7 @@ class LungingAttack(Maneuver):
     hit, you add the superiority die to the attack's damage roll.
 
     """
+
     name = "Lunging Attack"
 
 
@@ -454,6 +481,7 @@ class ManeuveringAttack(Maneuver):
     attacks from the target of your attack.
 
     """
+
     name = "Maneuvering Attack"
 
 
@@ -465,6 +493,7 @@ class MenacingAttack(Maneuver):
     next turn.
 
     """
+
     name = "Menacing Attack"
 
 
@@ -474,6 +503,7 @@ class Parry(Maneuver):
     you roll on your superiority die + your Dexterity modifier.
 
     """
+
     name = "Parry"
 
 
@@ -484,6 +514,7 @@ class PrecisionAttack(Maneuver):
     applied
 
     """
+
     name = "Precision Attack"
 
 
@@ -495,6 +526,7 @@ class PushingAttack(Maneuver):
     the target up to 15 feet away from you.
 
     """
+
     name = "Pushing Attack"
 
 
@@ -505,6 +537,7 @@ class Rally(Maneuver):
     hit points equal to the superiority die roll + your Charisma modifier.
 
     """
+
     name = "Rally"
 
 
@@ -515,6 +548,7 @@ class Riposte(Maneuver):
     roll
 
     """
+
     name = "Riposte"
 
 
@@ -527,6 +561,7 @@ class SweepingAttack(Maneuver):
     die. The damage is of the same type dealt by the original attack. Trip
 
     """
+
     name = "Sweeping Attack"
 
 
@@ -538,6 +573,7 @@ class TripingAttack(Maneuver):
     the target prone
 
     """
+
     name = "Triping Attack"
 
 
@@ -563,6 +599,7 @@ class EldritchKnightSpellcasting(Feature):
     spell you gained at 8th, 14th, or 20th level.
 
     """
+
     name = "Spellcasting"
     source = "Fighter (Eldritch Knight)"
 
@@ -584,6 +621,7 @@ class WeaponBond(Feature):
     must break the bond with one of the other two.
 
     """
+
     name = "Weapon Bond"
     source = "Fighter (Eldritch Knight)"
 
@@ -593,6 +631,7 @@ class WarMagic(Feature):
     make one weapon attack as a bonus action.
 
     """
+
     name = "War Magic"
     source = "Fighter (Eldritch Knight)"
 
@@ -604,6 +643,7 @@ class EldritchStrike(Feature):
     against a spell you cast before the end of your next turn.
 
     """
+
     name = "Eldritch Strike"
     source = "Fighter (Eldritch Knight)"
 
@@ -614,6 +654,7 @@ class ArcaneCharge(Feature):
     teleport before or after the additional action.
 
     """
+
     name = "Arcane Charge"
     source = "Fighter (Eldritch Knight)"
 
@@ -623,6 +664,7 @@ class ImprovedWarMagic(Feature):
     make one weapon attack as a bonus action.
 
     """
+
     name = "Improved War Magic"
     source = "Fighter (Eldritch Knight)"
 
@@ -636,6 +678,7 @@ class RallyingCry(Feature):
     level, provided that the creature can see or hear you
 
     """
+
     name = "Rallying Cry"
     source = "Fighter (Purple Dragon Knight)"
 
@@ -654,15 +697,16 @@ class RoyalEnvoy(Feature):
     you gain from this feature
 
     """
+
     name = "Royal Envoy"
     source = "Fighter (Purple Dragon Knight)"
 
     def __init__(self, owner=None):
-       super().__init__(owner=owner)
-       if 'persuasion' not in self.owner.skill_proficiencies:
-          self.owner.skill_proficiencies.append('persuasion')
-       if 'persuasion' not in self.owner.skill_expertise:
-          self.owner.skill_expertise.append('persuasion')
+        super().__init__(owner=owner)
+        if "persuasion" not in self.owner.skill_proficiencies:
+            self.owner.skill_proficiencies.append("persuasion")
+        if "persuasion" not in self.owner.skill_expertise:
+            self.owner.skill_expertise.append("persuasion")
 
 
 class InspiringSurge(Feature):
@@ -673,6 +717,7 @@ class InspiringSurge(Feature):
     two allies within 60 feet of you, rather than one.
 
     """
+
     name = "Inspiring Surge"
     source = "Fighter (Purple Dragon Knight)"
 
@@ -686,6 +731,7 @@ class Bulwark(Feature):
     or hear you, it can reroll its saving throw and must use the new roll
 
     """
+
     name = "Bulwark"
     source = "Fighter (Purple Dragon Knight)"
 
@@ -698,6 +744,7 @@ class ArcaneArcherLore(Feature):
     you choose to learn either the prestidigr'tation or the drufdcraft cantrip
 
     """
+
     name = "Arcane Archer Lore"
     source = "Fighter (Arcane Archer)"
 
@@ -724,6 +771,7 @@ class ArcaneShot(Feature):
     your proficiency bonus + your Intelligence modifier
 
     """
+
     name = "Arcane Shot (2x/SR)"
     source = "Fighter (Arcane Archer)"
 
@@ -736,6 +784,7 @@ class MagicArrow(Feature):
     after it hits or misses its target.
 
     """
+
     name = "Magic Arrow"
     source = "Fighter (Arcane Archer)"
 
@@ -747,6 +796,7 @@ class CurvingShot(Feature):
     within 60 feet of the original target
 
     """
+
     name = "Curving Shot"
     source = "Fighter (Arcane Archer)"
 
@@ -757,6 +807,7 @@ class EverReadyShot(Feature):
     you regain one use of it.
 
     """
+
     name = "Ever-Ready Shot"
     source = "Fighter (Arcane Archer)"
 
@@ -773,6 +824,7 @@ class BanishingArrow(Feature):
     damage when the arrow hits it.
 
     """
+
     name = "Arcane Shot: Banishing Arrow"
     source = "Fighter (Arcane Archer)"
 
@@ -788,6 +840,7 @@ class BeguilingArrow(Feature):
     level in this class.
 
     """
+
     name = "Arcane Shot: Beguiling Arrow"
     source = "Fighter (Arcane Archer)"
 
@@ -800,6 +853,7 @@ class BurstingArrow(Feature):
     when you reach 18th level in this class
 
     """
+
     name = "Arcane Shot: Bursting Arrow"
     source = "Fighter (Arcane Archer)"
 
@@ -812,6 +866,7 @@ class EnfeeblingArrow(Feature):
     4d6 when you reach 18th level in this class.
 
     """
+
     name = "Arcane Shot: Enfeebling Arrow"
     source = "Fighter (Arcane Archer)"
 
@@ -829,6 +884,7 @@ class GraspingArrow(Feature):
     in this class
 
     """
+
     name = "Arcane Shot: Grasping Arrow"
     source = "Fighter (Arcane Archer)"
 
@@ -845,6 +901,7 @@ class PiercingArrow(Feature):
     in this class.
 
     """
+
     name = "Arcane Shot: Piercing Arrow"
     source = "Fighter (Arcane Archer)"
 
@@ -864,6 +921,7 @@ class SeekingArrow(Feature):
     force damage increases to 2d6 when you reach 18th level in this class.
 
     """
+
     name = "Arcane Shot: Seeking Arrow"
     source = "Fighter (Arcane Archer)"
 
@@ -877,6 +935,7 @@ class ShadowArrow(Feature):
     class
 
     """
+
     name = "Shadow Arrow"
     source = "Fighter (Arcane Archer)"
 
@@ -889,6 +948,7 @@ class BonusProficiencyCavalier(Feature):
     choice.
 
     """
+
     name = "Bonus Proficiency"
     source = "Fighter (Cavalier)"
 
@@ -901,6 +961,7 @@ class BornToTheSaddle(Feature):
     costs you only 5 feet of movement, rather than half your speed.
 
     """
+
     name = "Born to the Saddle"
     source = "Fighter (Cavalier)"
 
@@ -925,13 +986,14 @@ class UnwaveringMark(Feature):
     and you regain all expended uses of it when you finish a long rest
 
     """
+
     _name = "Unwavering Mark"
     source = "Fighter (Cavalier)"
 
     @property
     def name(self):
-       num = max(1, self.owner.strength.modifier)
-       return self._name + ' ({:d}x/LR)'.format(num)
+        num = max(1, self.owner.strength.modifier)
+        return self._name + " ({:d}x/LR)".format(num)
 
 
 class WardingManeuver(Feature):
@@ -947,13 +1009,14 @@ class WardingManeuver(Feature):
     finish a long rest
 
     """
+
     _name = "Warding Maneuver"
     source = "Fighter (Cavalier)"
 
     @property
     def name(self):
-       num = max(1, self.owner.constitution.modifier)
-       return self._name + ' ({:d}x/LR)'.format(num)
+        num = max(1, self.owner.constitution.modifier)
+        return self._name + " ({:d}x/LR)".format(num)
 
 
 class HoldTheLine(Feature):
@@ -963,6 +1026,7 @@ class HoldTheLine(Feature):
     the target's speed is reduced to 0 until the end of the current turn.
 
     """
+
     name = "Hold the Line"
     source = "Fighter (Cavalier)"
 
@@ -976,6 +1040,7 @@ class FerociousCharger(Feature):
     on each of your turns
 
     """
+
     name = "Ferocious Charger"
     source = "Fighter (Cavalier)"
 
@@ -988,6 +1053,7 @@ class VigilantDefender(Feature):
     that you take your normal reaction
 
     """
+
     name = "Vigiland Defender"
     source = "Fighter (Cavalier)"
 
@@ -999,6 +1065,7 @@ class BonusProficiencySamurai(Feature):
     Persuasion. Alterna- tively, you learn one language of your choice.
 
     """
+
     name = "Bonus Proficiency"
     source = "Fighter (Samurai)"
 
@@ -1014,6 +1081,7 @@ class FightingSpirit(Feature):
     a long rest.
 
     """
+
     name = "Fighting Spirit (3x/LR)"
     source = "Fighter (Samurai)"
 
@@ -1027,6 +1095,7 @@ class ElegantCourtier(Feature):
     in Intelligence or Charisma saving throws (your choice).
 
     """
+
     name = "Elegant Courtier"
     source = "Fighter (Samurai)"
     needs_implementation = True
@@ -1037,6 +1106,7 @@ class TirelessSpirit(Feature):
     Fighting Spirit remaining, you regain one use.
 
     """
+
     name = "Tireless Spirit"
     source = "Fighter (Samurai)"
 
@@ -1049,6 +1119,7 @@ class RapidStrike(Feature):
     same action. You can do so no more than once per turn
 
     """
+
     name = "Rapid Strike"
     source = "Fighter (Samurai)"
 
@@ -1065,6 +1136,7 @@ class StrengthBeforeDeath(Feature):
     again until you finish a long rest.
 
     """
+
     name = "Strength Before Death"
     source = "Fighter (Samurai)"
 
@@ -1078,6 +1150,7 @@ class Gunsmith(Feature):
     available through crafting.
 
     """
+
     name = "Gunsmith"
     source = "Fighter (Gunslinger)"
 
@@ -1142,6 +1215,7 @@ class AdeptMarksman(Feature):
     below next to the price.
 
     """
+
     name = "Adept Marksman"
     source = "Fighter (Gunslinger"
 
@@ -1152,6 +1226,7 @@ class QuickDraw(Feature):
     single object interaction on your turn.
 
     """
+
     name = "Quick Draw"
     source = "Fighter (Gunslinger)"
 
@@ -1162,14 +1237,14 @@ class RapidRepair(Feature):
     broken) firearm as a bonus action.
 
     """
+
     name = "Rapid Repair"
     source = "Fighter (Gunslinger)"
 
 
 class LightningReload(Feature):
-    """Starting at 15th level, you can reload any firearm as a bonus action.
+    """Starting at 15th level, you can reload any firearm as a bonus action."""
 
-    """
     name = "Lightning Repaid"
     source = "Fighter (Gunslinger)"
 
@@ -1179,6 +1254,7 @@ class ViciousIntent(Feature):
     and you regain a grit point on a roll of 19 or 20 on a d20 attack roll.
 
     """
+
     name = "Vicious Intent"
     source = "Fighter (Gunslinger)"
 
@@ -1189,6 +1265,7 @@ class HemorrhagingCritical(Feature):
     attack at the end of its next turn.
 
     """
+
     name = "Hemorrhaging Critical"
     source = "Fighter (Gunslinger)"
 
@@ -1199,6 +1276,7 @@ class BullyingShot(Feature):
     Charisma (Intimidation) check to gain advantage on the roll.
 
     """
+
     name = "Bullying Shot"
     source = "Gunslinger (Trick Shot)"
 
@@ -1210,6 +1288,7 @@ class DazingShot(Feature):
     disadvantage on attacks until the end of their next turn.
 
     """
+
     name = "Dazing Shot"
     source = "Gunslinger (Trick Shot)"
 
@@ -1219,6 +1298,7 @@ class DeadeyeShot(Feature):
     point to gain advantage on the attack roll.
 
     """
+
     name = "Deadeye Shot"
     source = "Gunslinger (Trick Shot)"
 
@@ -1231,6 +1311,7 @@ class DisarmingShot(Feature):
     away from you.
 
     """
+
     name = "Disarming Shot"
     source = "Gunslinger (Trick Shot)"
 
@@ -1242,6 +1323,7 @@ class ForcefulShot(Feature):
     or be pushed 15 feet away from you.
 
     """
+
     name = "Forceful Shot"
     source = "Gunslinger (Trick Shot)"
 
@@ -1255,6 +1337,7 @@ class PiercingShot(Feature):
     increment. Only the initial attack can misfire.
 
     """
+
     name = "Piercing Shot"
     source = "Gunslinger (Trick Shot)"
 
@@ -1265,6 +1348,7 @@ class WingingShot(Feature):
     normal damage and must make a Strength saving throw or be knocked prone.
 
     """
+
     name = "Winging Shot"
     source = "Gunslinger (Trick Shot)"
 
@@ -1277,5 +1361,6 @@ class ViolentShot(Feature):
     point spent when determining the damage.
 
     """
+
     name = "Violent Shot"
     source = "Gunslinger (Trick Shot)"

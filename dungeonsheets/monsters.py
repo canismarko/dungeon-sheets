@@ -5,8 +5,9 @@ shape forms."""
 from dungeonsheets.stats import Ability
 
 
-class Monster():
+class Monster:
     """A monster that may be encountered when adventuring."""
+
     name = "Generic Monster"
     description = ""
     challenge_rating = 0
@@ -24,11 +25,11 @@ class Monster():
     swim_speed = 0
     fly_speed = 0
     hp_max = 10
-    hit_dice = '1d6'
+    hit_dice = "1d6"
 
     @property
     def is_beast(self):
-        is_beast = 'beast' in self.description.lower()
+        is_beast = "beast" in self.description.lower()
         return is_beast
 
 
@@ -43,6 +44,7 @@ class Ankylosaurus(Monster):
     knocked prone.
 
     """
+
     name = "Ankylosaurus"
     description = "Huge beast, unaligned"
     challenge_rating = 3
@@ -59,7 +61,7 @@ class Ankylosaurus(Monster):
     swim_speed = 0
     fly_speed = 0
     hp_max = 68
-    hit_dice = '8d12+16'
+    hit_dice = "8d12+16"
 
 
 class Ape(Monster):
@@ -72,6 +74,7 @@ class Ape(Monster):
     target. *Hit:* 6 (1d6+3) bludgeoning damage.
 
     """
+
     name = "Ape"
     description = "Medium beast, unaligned"
     challenge_rating = 1 / 2
@@ -88,7 +91,7 @@ class Ape(Monster):
     swim_speed = 0
     fly_speed = 0
     hp_max = 19
-    hit_dice = '3d8+6'
+    hit_dice = "3d8+6"
 
 
 class BlackBear(Monster):
@@ -106,6 +109,7 @@ class BlackBear(Monster):
 
     **Climbing speed:** 30 ft.
     """
+
     name = "Black bear"
     description = "Medium beast, unaligned"
     challenge_rating = 1 / 2
@@ -122,7 +126,7 @@ class BlackBear(Monster):
     swim_speed = 0
     fly_speed = 0
     hp_max = 19
-    hit_dice = '3d8+6'
+    hit_dice = "3d8+6"
 
 
 class Crocodile(Monster):
@@ -134,9 +138,10 @@ class Crocodile(Monster):
       Restrained, and the crocodile can't bite another target.
 
     """
+
     name = "Crocodile"
     description = "Large beast, unaligned"
-    challenge_rating = 1/2
+    challenge_rating = 1 / 2
     armor_class = 12
     skills = "Stealth +2"
     senses = "Passive perception 10"
@@ -150,7 +155,8 @@ class Crocodile(Monster):
     swim_speed = 30
     fly_speed = 0
     hp_max = 19
-    hit_dice = '3d10+3'
+    hit_dice = "3d10+3"
+
 
 class GiantEagle(Monster):
     """A giant eagle is a noble creature that speaks its own language and
@@ -171,6 +177,7 @@ class GiantEagle(Monster):
       target. *Hit:* 10 (2d6 + 3) slashing damage.
 
     """
+
     name = "Giant eagle"
     description = "Large beast, neutral good"
     challenge_rating = 1
@@ -188,7 +195,7 @@ class GiantEagle(Monster):
     swim_speed = 0
     fly_speed = 80
     hp_max = 26
-    hit_dice = '4d10+4'
+    hit_dice = "4d10+4"
 
 
 class GiantFrog(Monster):
@@ -197,9 +204,10 @@ class GiantFrog(Monster):
     **Standing Leap.** The frog's long jump is up to 20 feet and its
     high jump is up to 10 feet , with or without a running start.
     """
+
     name = "Giant frog"
     description = "Medium beast, unaligned"
-    challenge_rating = 1/4
+    challenge_rating = 1 / 4
     armor_class = 11
     skills = "Pe rce ption +2, Stealth +3"
     senses = "darkvi sion 30ft., passive Perception 12"
@@ -214,7 +222,7 @@ class GiantFrog(Monster):
     swim_speed = 30
     fly_speed = 0
     hp_max = 18
-    hit_dice = '4d8'
+    hit_dice = "4d8"
 
 
 class GiantRat(Monster):
@@ -228,9 +236,10 @@ class GiantRat(Monster):
     **Bite:** Melee Weapon Attack: +4 to hit, reach 5 ft., one
     creature. Hit: 4 (1d4+2) piercing damage.
     """
+
     name = "Giant rat"
     description = "Small beast, unaligned"
-    challenge_rating = 1/8
+    challenge_rating = 1 / 8
     armor_class = 12
     skills = ""
     senses = "Darkvision 60 ft., Passive perception 10"
@@ -245,7 +254,7 @@ class GiantRat(Monster):
     swim_speed = 0
     fly_speed = 0
     hp_max = 7
-    hit_dice = '2d6'
+    hit_dice = "2d6"
 
 
 class GiantPoisonousSnake(Monster):
@@ -255,9 +264,10 @@ class GiantPoisonousSnake(Monster):
     damage on a failed save, or half as much damage on a
     successful one.
     """
+
     name = "Giant poisonous snake"
     description = "Medium beast, unaligned"
-    challenge_rating = 1/4
+    challenge_rating = 1 / 4
     armor_class = 14
     skills = ""
     senses = "blindsight 10 ft., passive Perception 12"
@@ -272,7 +282,7 @@ class GiantPoisonousSnake(Monster):
     swim_speed = 30
     fly_speed = 0
     hp_max = 11
-    hit_dice = '2d8+2'
+    hit_dice = "2d8+2"
 
 
 class PoisonousSnake(Monster):
@@ -281,9 +291,10 @@ class PoisonousSnake(Monster):
     Constitution saving throw, taking 5 (2d4) poison dam age on a
     failed save, or ha lf as much damage on a successful one.
     """
+
     name = "Poisonous snake"
     description = "Tiny beast, unaligned"
-    challenge_rating = 1/8
+    challenge_rating = 1 / 8
     armor_class = 13
     skills = ""
     senses = "blindsight 10 ft., passive Perception 10"
@@ -298,7 +309,7 @@ class PoisonousSnake(Monster):
     swim_speed = 30
     fly_speed = 0
     hp_max = 2
-    hit_dice = '1d4'
+    hit_dice = "1d4"
 
 
 class Quipper(Monster):
@@ -314,6 +325,7 @@ class Quipper(Monster):
     **Bite:** Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit:
     1 piercing damage.
     """
+
     name = "Quipper"
     description = "Tiny beast, unaligned"
     challenge_rating = 0
@@ -331,7 +343,7 @@ class Quipper(Monster):
     swim_speed = 40
     fly_speed = 0
     hp_max = 1
-    hit_dice = '1d4-1'
+    hit_dice = "1d4-1"
 
 
 class Rat(Monster):
@@ -342,6 +354,7 @@ class Rat(Monster):
     target. Hit: 1 piercing damage.
 
     """
+
     name = "Rat"
     description = "Tiny beast, unaligned"
     challenge_rating = 0
@@ -356,7 +369,7 @@ class Rat(Monster):
     charisma = Ability(4)
     speed = 20
     hp_max = 1
-    hit_dice = '1d4-2'
+    hit_dice = "1d4-2"
 
 
 class ReefShark(Monster):
@@ -374,9 +387,10 @@ class ReefShark(Monster):
     **Bite:** Melee Weapon Attack: +4 to hit, reach 5 ft., one target.
     Hit: 6 (1d8 + 2) piercing damage.
     """
+
     name = "Reef shark"
     description = "Medium beast, unaligned"
-    challenge_rating = 1/2
+    challenge_rating = 1 / 2
     armor_class = 12
     skills = "Perception +2"
     senses = "blindsight 30 ft., passive Perception 12"
@@ -391,7 +405,7 @@ class ReefShark(Monster):
     swim_speed = 40
     fly_speed = 0
     hp_max = 22
-    hit_dice = '4d8+4'
+    hit_dice = "4d8+4"
 
 
 class Spider(Monster):
@@ -410,6 +424,7 @@ class Spider(Monster):
     DC 9 Constitution saving throw or take 2 (1d4) poison damage.
 
     """
+
     name = "Spider"
     description = "Tiny beast, unaligned"
     challenge_rating = 0
@@ -424,7 +439,7 @@ class Spider(Monster):
     charisma = Ability(2)
     speed = 20
     hp_max = 1
-    hit_dice = '1d4-1'
+    hit_dice = "1d4-1"
 
 
 class SwarmOfRats(Monster):
@@ -442,15 +457,18 @@ class SwarmOfRats(Monster):
       fewer.
 
     """
+
     name = "Swarm of Rats"
     description = "Medium swarm of tiny beasts, unaligned"
-    challenge_rating = 1/4
+    challenge_rating = 1 / 4
     armor_class = 10
     skills = ""
     senses = "Darkvision 30 Ft., passive Perception 10"
     damage_resistance = "Bludgeoning, Piercing, Slashing"
-    condition_immunities = ("Charmed, Frightened, Grappled, Paralyzed, "
-                            "Petrified, Prone, Restrained, Stunned")
+    condition_immunities = (
+        "Charmed, Frightened, Grappled, Paralyzed, "
+        "Petrified, Prone, Restrained, Stunned"
+    )
     strength = Ability(9)
     dexterity = Ability(11)
     constitution = Ability(9)
@@ -459,7 +477,7 @@ class SwarmOfRats(Monster):
     charisma = Ability(3)
     speed = 30
     hp_max = 24
-    hit_dice = '7d8-7'
+    hit_dice = "7d8-7"
 
 
 class Wolf(Monster):
@@ -476,9 +494,10 @@ class Wolf(Monster):
     knocked prone
 
     """
+
     name = "Wolf"
     description = "Medium beast, unaligned"
-    challenge_rating = 1/4
+    challenge_rating = 1 / 4
     armor_class = 13
     skills = "Perception +3, Stealth +4"
     senses = "Passive Perception 13"
@@ -490,4 +509,4 @@ class Wolf(Monster):
     charisma = Ability(6)
     speed = 40
     hp_max = 11
-    hit_dice = '2d8+2'
+    hit_dice = "2d8+2"

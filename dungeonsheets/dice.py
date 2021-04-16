@@ -3,8 +3,9 @@ from collections import namedtuple
 
 from dungeonsheets.exceptions import DiceError
 
-dice_re = re.compile('(\d+)d(\d+)', flags=re.I)
-Dice = namedtuple('Dice', ('num', 'faces'))
+dice_re = re.compile(r"(\d+)d(\d+)", flags=re.I)
+Dice = namedtuple("Dice", ("num", "faces"))
+
 
 def read_dice_str(dice_str):
     """Interpret a D&D dice string, eg. 3d10.
@@ -19,6 +20,5 @@ def read_dice_str(dice_str):
     match = dice_re.match(dice_str)
     if match is None:
         raise DiceError(f"Cannot interpret dice string {dice_str}")
-    dice = Dice(num=int(match.group(1)),
-                faces=int(match.group(2)))
+    dice = Dice(num=int(match.group(1)), faces=int(match.group(2)))
     return dice

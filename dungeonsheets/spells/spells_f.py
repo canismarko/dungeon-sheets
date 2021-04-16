@@ -21,16 +21,17 @@ class Fabricate(Spell):
     jewelry, weapons, glass, or armor, unless you have proficiency with the type of
     artisan's tools used to craft such objects.
     """
+
     name = "Fabricate"
     level = 4
     casting_time = "10 minutes"
     casting_range = "120 feet"
-    components = ('V', 'S')
-    materials = """"""
+    components = ("V", "S")
+    materials = ""
     duration = "Instantaneous"
     ritual = False
     magic_school = "Transmutation"
-    classes = ('Wizard',)
+    classes = ("Wizard",)
 
 
 class FaerieFire(Spell):
@@ -44,16 +45,17 @@ class FaerieFire(Spell):
     roll against an affected creature or object has advantage if the attacker can
     see it, and the affected creature or object can't benefit from being invisible.
     """
+
     name = "Faerie Fire"
     level = 1
     casting_time = "1 action"
     casting_range = "60 feet"
-    components = ('V',)
-    materials = """"""
+    components = ("V",)
+    materials = ""
     duration = "Concentration, up to 1 minute"
     ritual = False
     magic_school = "Evocation"
-    classes = ('Bard', 'Druid')
+    classes = ("Bard", "Druid")
 
 
 class FalseLife(Spell):
@@ -64,16 +66,17 @@ class FalseLife(Spell):
     spell using a spell slot of 2nd level or higher, you gain 5 additional temporary
     hit points for each slot level above 1st.
     """
+
     name = "False Life"
     level = 1
     casting_time = "1 action"
     casting_range = "Self"
-    components = ('V', 'S', 'M')
-    materials = """A small amount of alcohol or distilled spirits"""
+    components = ("V", "S", "M")
+    materials = "A small amount of alcohol or distilled spirits"
     duration = "1 hour"
     ritual = False
     magic_school = "Necromancy"
-    classes = ('Sorcerer', 'Wizard')
+    classes = ("Sorcerer", "Wizard")
 
 
 class FarStep(Spell):
@@ -81,16 +84,17 @@ class FarStep(Spell):
     turns before the spell ends, you can use a bonus action to teleport in this way
     again.
     """
+
     name = "Far Step"
     level = 5
     casting_time = "1 bonus action"
     casting_range = "Self"
-    components = ('V',)
-    materials = """"""
+    components = ("V",)
+    materials = ""
     duration = "Concentration, up to 1 minute"
     ritual = False
     magic_school = "Conjuration"
-    classes = ('Sorcerer', 'Warlock', 'Wizard')
+    classes = ("Sorcerer", "Warlock", "Wizard")
 
 
 class Fear(Spell):
@@ -105,16 +109,17 @@ class Fear(Spell):
     the creature can make a Wisdom saving throw. On a successful save, the spell
     ends for that creature.
     """
+
     name = "Fear"
     level = 3
     casting_time = "1 action"
     casting_range = "Self (30-foot cone)"
-    components = ('V', 'S', 'M')
-    materials = """A white feather or the heart of a hen"""
+    components = ("V", "S", "M")
+    materials = "A white feather or the heart of a hen"
     duration = "Concentration, up to 1 minute"
     ritual = False
     magic_school = "Illusion"
-    classes = ('Bard', 'Sorcerer', 'Warlock', 'Wizard')
+    classes = ("Bard", "Sorcerer", "Warlock", "Wizard")
 
 
 class FeatherFall(Spell):
@@ -126,16 +131,17 @@ class FeatherFall(Spell):
     ends, it takes no falling damage and can land on its feet, and the spell ends
     for that creature.
     """
+
     name = "Feather Fall"
     level = 1
     casting_time = "Special"
     casting_range = "60 feet"
-    components = ('V', 'M')
-    materials = """A small feather or piece of down"""
+    components = ("V", "M")
+    materials = "A small feather or piece of down"
     duration = "1 minute"
     ritual = False
     magic_school = "Transmutation"
-    classes = ('Bard', 'Sorcerer', 'Wizard')
+    classes = ("Bard", "Sorcerer", "Wizard")
 
 
 class Feeblemind(Spell):
@@ -154,16 +160,17 @@ class Feeblemind(Spell):
 
     The spell can also be ended by greater restoration, heal or wish.
     """
+
     name = "Feeblemind"
     level = 8
     casting_time = "1 action"
     casting_range = "150 feet"
-    components = ('V', 'S', 'M')
-    materials = """A handful of clay, crystal, glass, or mineral spheres"""
+    components = ("V", "S", "M")
+    materials = "A handful of clay, crystal, glass, or mineral spheres"
     duration = "Instantaneous"
     ritual = False
     magic_school = "Enchantment"
-    classes = ('Bard', 'Druid', 'Warlock', 'Wizard')
+    classes = ("Bard", "Druid", "Warlock", "Wizard")
 
 
 class FeignDeath(Spell):
@@ -179,16 +186,17 @@ class FeignDeath(Spell):
     poisoned when you cast the spell, or becomes diseased or poisoned while under
     the spell's effect, the disease and poison have no effect until the spell ends.
     """
+
     name = "Feign Death"
     level = 3
     casting_time = "1 action"
     casting_range = "Touch"
-    components = ('V', 'S', 'M')
-    materials = """A pinch of graveyard dirt"""
+    components = ("V", "S", "M")
+    materials = "A pinch of graveyard dirt"
     duration = "1 hour"
     ritual = True
     magic_school = "Necromancy"
-    classes = ('Bard', 'Cleric', 'Druid', 'Wizard')
+    classes = ("Bard", "Cleric", "Druid", "Wizard")
 
 
 class FindFamiliar(Spell):
@@ -230,16 +238,20 @@ class FindFamiliar(Spell):
     it must use its reaction to deliver the spell when you cast it. If the spell
     requires an attack roll, you use your attack modifier for the roll.
     """
+
     name = "Find Familiar"
     level = 1
     casting_time = "1 hour"
     casting_range = "10 feet"
-    components = ('V', 'S', 'M')
-    materials = """10 gp worth of charcoal, incense, and herbs that must be consumed by fire in a brass brazier"""
+    components = ("V", "S", "M")
+    materials = (
+        "10 gp worth of charcoal, incense, and herbs that must be consumed by fire in a"
+        " brass brazier"
+    )
     duration = "Instantaneous"
     ritual = True
     magic_school = "Conjuration"
-    classes = ('Wizard',)
+    classes = ("Wizard",)
 
 
 class FindGreaterSteed(Spell):
@@ -261,16 +273,17 @@ class FindGreaterSteed(Spell):
     disappear permanently. Whenever the mount disappears, it leaves behind any
     objects it was wearing or carrying.
     """
+
     name = "Find Greater Steed"
     level = 4
     casting_time = "10 minutes"
     casting_range = "30 feet"
-    components = ('V', 'S')
-    materials = """"""
+    components = ("V", "S")
+    materials = ""
     duration = "Instantaneous"
     ritual = False
     magic_school = "Conjuration"
-    classes = ('Paladin',)
+    classes = ("Paladin",)
 
 
 class FindSteed(Spell):
@@ -299,16 +312,17 @@ class FindSteed(Spell):
     You can't have more than one steed bonded by this spell at a time. As an action,
     you can release the steed from its bond at any time, causing it to disappear.
     """
+
     name = "Find Steed"
     level = 2
     casting_time = "10 minutes"
     casting_range = "30 feet"
-    components = ('V', 'S')
-    materials = """"""
+    components = ("V", "S")
+    materials = ""
     duration = "Instantaneous"
     ritual = False
     magic_school = "Conjuration"
-    classes = ('Paladin',)
+    classes = ("Paladin",)
 
 
 class FindThePath(Spell):
@@ -325,16 +339,20 @@ class FindThePath(Spell):
     which path is the shortest and most direct route (but not necessarily the safest
     route) to the destination."
     """
+
     name = "Find The Path"
     level = 6
     casting_time = "1 minute"
     casting_range = "Self"
-    components = ('V', 'S', 'M')
-    materials = """A set of divinatory tools – such as bones, ivory sticks, cards, teeth, or carved runes – worth 100 gp and an object from the location you wish to find"""
+    components = ("V", "S", "M")
+    materials = (
+        "A set of divinatory tools – such as bones, ivory sticks, cards, teeth, or"
+        " carved runes – worth 100 gp and an object from the location you wish to find"
+    )
     duration = "Concentration, up to 1 day"
     ritual = False
     magic_school = "Divination"
-    classes = ('Bard', 'Cleric', 'Druid')
+    classes = ("Bard", "Cleric", "Druid")
 
 
 class FindTraps(Spell):
@@ -351,16 +369,17 @@ class FindTraps(Spell):
     learn the location of each trap, but you do learn the general nature of the
     danger posed by a trap you sense.
     """
+
     name = "Find Traps"
     level = 2
     casting_time = "1 action"
     casting_range = "120 feet"
-    components = ('V', 'S')
-    materials = """"""
+    components = ("V", "S")
+    materials = ""
     duration = "Instantaneous"
     ritual = False
     magic_school = "Divination"
-    classes = ('Cleric', 'Druid', 'Ranger')
+    classes = ("Cleric", "Druid", "Ranger")
 
 
 class FingerOfDeath(Spell):
@@ -374,16 +393,17 @@ class FingerOfDeath(Spell):
     of your next turn as a zombie that is permanently under your command, following
     your verbal orders to the best of its ability.
     """
+
     name = "Finger Of Death"
     level = 7
     casting_time = "1 action"
     casting_range = "60 feet"
-    components = ('V', 'S')
-    materials = """"""
+    components = ("V", "S")
+    materials = ""
     duration = "Instantaneous"
     ritual = False
     magic_school = "Necromancy"
-    classes = ('Sorcerer', 'Warlock', 'Wizard')
+    classes = ("Sorcerer", "Warlock", "Wizard")
 
 
 class FireBolt(Spell):
@@ -395,16 +415,17 @@ class FireBolt(Spell):
     **At Higher Levels:** This spell's damage increases by 1d10 when you reach 5th level
     (2d10), 11th level (3d10), and 17th level (4d10).
     """
+
     name = "Fire Bolt"
     level = 0
     casting_time = "1 action"
     casting_range = "120 feet"
-    components = ('V', 'S')
-    materials = """"""
+    components = ("V", "S")
+    materials = ""
     duration = "Instantaneous"
     ritual = False
     magic_school = "Evocation"
-    classes = ('Sorcerer', 'Wizard')
+    classes = ("Sorcerer", "Wizard")
 
 
 class FireShield(Spell):
@@ -421,16 +442,17 @@ class FireShield(Spell):
     melee attack, the shield erupts with flame. The attacker takes 2d8 fire damage
     from a warm shield, or 2d8 cold damage from a cold shield.
     """
+
     name = "Fire Shield"
     level = 4
     casting_time = "1 action"
     casting_range = "Self"
-    components = ('V', 'S', 'M')
-    materials = """A bit of phosphorus or a firefly"""
+    components = ("V", "S", "M")
+    materials = "A bit of phosphorus or a firefly"
     duration = "10 minutes"
     ritual = False
     magic_school = "Evocation"
-    classes = ('Wizard',)
+    classes = ("Wizard",)
 
 
 class FireStorm(Spell):
@@ -446,16 +468,17 @@ class FireStorm(Spell):
     objects that aren't being worn or carried. If you choose, plant life in the area
     is unaffected by this spell.
     """
+
     name = "Fire Storm"
     level = 7
     casting_time = "1 action"
     casting_range = "150 feet"
-    components = ('V', 'S')
-    materials = """"""
+    components = ("V", "S")
+    materials = ""
     duration = "Instantaneous"
     ritual = False
     magic_school = "Evocation"
-    classes = ('Cleric', 'Druid', 'Sorcerer')
+    classes = ("Cleric", "Druid", "Sorcerer")
 
 
 class Fireball(Spell):
@@ -465,22 +488,23 @@ class Fireball(Spell):
     damage on a failed save, or half as much damage on a successful one. The fire
     spreads around corners. It ignites flammable objects in the area that aren't
     being worn or carried.
-    
+
     **At Higher Levels:** When you cast this spell using a spell slot
     of 4th level or higher, the damage increases by 1d6 for each slot
     level above 3rd.
 
     """
+
     name = "Fireball"
     level = 3
     casting_time = "1 action"
     casting_range = "150 feet"
-    components = ('V', 'S', 'M')
-    materials = """A tiny ball of bat guano and sulfur"""
+    components = ("V", "S", "M")
+    materials = "A tiny ball of bat guano and sulfur"
     duration = "Instantaneous"
     ritual = False
     magic_school = "Evocation"
-    classes = ('Sorcerer', 'Wizard')
+    classes = ("Sorcerer", "Wizard")
 
 
 class FlameArrows(Spell):
@@ -495,16 +519,17 @@ class FlameArrows(Spell):
     ammunition you can affect with this spell increases by two for each slot level
     above 3rd.
     """
+
     name = "Flame Arrows"
     level = 3
     casting_time = "1 action"
     casting_range = "Touch"
-    components = ('V', 'S')
-    materials = """"""
+    components = ("V", "S")
+    materials = ""
     duration = "Concentration, up to 1 hour"
     ritual = False
     magic_school = "Transmutation"
-    classes = ('Druid', 'Ranger', 'Sorcerer', 'Wizard')
+    classes = ("Druid", "Ranger", "Sorcerer", "Wizard")
 
 
 class FlameBlade(Spell):
@@ -523,16 +548,17 @@ class FlameBlade(Spell):
     cast this spell using a spell slot of 4th level or higher, the damage increases
     by 1d6 for every two slot levels above 2nd.
     """
+
     name = "Flame Blade"
     level = 2
     casting_time = "1 bonus action"
     casting_range = "Self"
-    components = ('V', 'S', 'M')
-    materials = """Leaf of sumac"""
+    components = ("V", "S", "M")
+    materials = "Leaf of sumac"
     duration = "Concentration, up to 10 minutes"
     ritual = False
     magic_school = "Evocation"
-    classes = ('Druid',)
+    classes = ("Druid",)
 
 
 class FlameStrike(Spell):
@@ -546,16 +572,17 @@ class FlameStrike(Spell):
     of 6th level or higher, the fire damage or the radiant damage (your choice)
     increases by 1d6 for each slot level above 5th.
     """
+
     name = "Flame Strike"
     level = 5
     casting_time = "1 action"
     casting_range = "60 feet"
-    components = ('V', 'S', 'M')
-    materials = """Pinch of sulfur"""
+    components = ("V", "S", "M")
+    materials = "Pinch of sulfur"
     duration = "Instantaneous"
     ritual = False
     magic_school = "Evocation"
-    classes = ('Cleric',)
+    classes = ("Cleric",)
 
 
 class FlamingSphere(Spell):
@@ -579,16 +606,19 @@ class FlamingSphere(Spell):
     **At Higher Levels:** When you cast this spell using a spell slot of 3rd
     level or higher, the damage increases by 1d6 for each slot level above 2nd.
     """
+
     name = "Flaming Sphere"
     level = 2
     casting_time = "1 action"
     casting_range = "60 feet"
-    components = ('V', 'S', 'M')
-    materials = """A bit of tallow, a pinch of brimstone, and a dusting of powdered iron"""
+    components = ("V", "S", "M")
+    materials = (
+        """A bit of tallow, a pinch of brimstone, and a dusting of powdered iron"""
+    )
     duration = "Concentration, up to 1 minute"
     ritual = False
     magic_school = "Conjuration"
-    classes = ('Druid', 'Wizard')
+    classes = ("Druid", "Wizard")
 
 
 class FleshToStone(Spell):
@@ -611,16 +641,17 @@ class FleshToStone(Spell):
     concentration on this spell for the entire possible duration, the creature is
     turned to stone until the effect is removed.
     """
+
     name = "Flesh To Stone"
     level = 6
     casting_time = "1 action"
     casting_range = "60 feet"
-    components = ('V', 'S', 'M')
-    materials = """A pinch of lime, water, and earth"""
+    components = ("V", "S", "M")
+    materials = "A pinch of lime, water, and earth"
     duration = "Concentration, up to 1 minute"
     ritual = False
     magic_school = "Transmutation"
-    classes = ('Warlock', 'Wizard')
+    classes = ("Warlock", "Wizard")
 
 
 class Fly(Spell):
@@ -632,16 +663,17 @@ class Fly(Spell):
     slot of 4th level or higher, you can target one additional creature for each
     slot level above 3rd.
     """
+
     name = "Fly"
     level = 3
     casting_time = "1 action"
     casting_range = "Touch"
-    components = ('V', 'S', 'M')
-    materials = """A wing feather from any bird"""
+    components = ("V", "S", "M")
+    materials = "A wing feather from any bird"
     duration = "Concentration, up to 10 minutes"
     ritual = False
     magic_school = "Transmutation"
-    classes = ('Sorcerer', 'Warlock', 'Wizard')
+    classes = ("Sorcerer", "Warlock", "Wizard")
 
 
 class FogCloud(Spell):
@@ -654,16 +686,17 @@ class FogCloud(Spell):
     slot of 2nd level or higher, the radius of the fog increases by 20 feet for each
     slot level above 1st.
     """
+
     name = "Fog Cloud"
     level = 1
     casting_time = "1 action"
     casting_range = "120 feet"
-    components = ('V', 'S')
-    materials = """"""
+    components = ("V", "S")
+    materials = ""
     duration = "Concentration, up to 1 hour"
     ritual = False
     magic_school = "Conjuration"
-    classes = ('Druid', 'Ranger', 'Sorcerer', 'Wizard')
+    classes = ("Druid", "Ranger", "Sorcerer", "Wizard")
 
 
 class Forbiddance(Spell):
@@ -690,16 +723,20 @@ class Forbiddance(Spell):
     in the same location, the spell lasts until it is dispelled, and the material
     components are consumed on the last casting.
     """
+
     name = "Forbiddance"
     level = 6
     casting_time = "10 minutes"
     casting_range = "Touch"
-    components = ('V', 'S', 'M')
-    materials = """A sprinkling of holy water, rare incense, and powdered ruby worth at least 1,000 gp"""
+    components = ("V", "S", "M")
+    materials = (
+        "A sprinkling of holy water, rare incense, and powdered ruby worth at least"
+        " 1,000 gp"
+    )
     duration = "1 day"
     ritual = True
     magic_school = "Abjuration"
-    classes = ('Cleric',)
+    classes = ("Cleric",)
 
 
 class Forcecage(Spell):
@@ -729,16 +766,17 @@ class Forcecage(Spell):
     ethereal travel.
     This spell can't be dispelled by dispel magic.
     """
+
     name = "Forcecage"
     level = 7
     casting_time = "1 action"
     casting_range = "100 feet"
-    components = ('V', 'S', 'M')
-    materials = """Ruby dust worth 1,500 gp"""
+    components = ("V", "S", "M")
+    materials = "Ruby dust worth 1,500 gp"
     duration = "1 hour"
     ritual = False
     magic_school = "Evocation"
-    classes = ('Bard', 'Warlock', 'Wizard')
+    classes = ("Bard", "Warlock", "Wizard")
 
 
 class Foresight(Spell):
@@ -750,16 +788,17 @@ class Foresight(Spell):
     This spell immediately ends if you cast it again before its duration
     ends.
     """
+
     name = "Foresight"
     level = 9
     casting_time = "1 minute"
     casting_range = "Touch"
-    components = ('V', 'S', 'M')
-    materials = """A hummingbird feather"""
+    components = ("V", "S", "M")
+    materials = "A hummingbird feather"
     duration = "8 hours"
     ritual = False
     magic_school = "Divination"
-    classes = ('Bard', 'Druid', 'Warlock', 'Wizard')
+    classes = ("Bard", "Druid", "Warlock", "Wizard")
 
 
 class FreedomOfMovement(Spell):
@@ -773,16 +812,17 @@ class FreedomOfMovement(Spell):
     grappled. Finally, being underwater imposes no penalties on the target's
     movement or attacks.
     """
+
     name = "Freedom Of Movement"
     level = 4
     casting_time = "1 action"
     casting_range = "Touch"
-    components = ('V', 'S', 'M')
-    materials = """A leather strap, bound around the arm or a similar appendage"""
+    components = ("V", "S", "M")
+    materials = "A leather strap, bound around the arm or a similar appendage"
     duration = "Instantaneous"
     ritual = False
     magic_school = "Abjuration"
-    classes = ('Bard', 'Cleric', 'Druid', 'Ranger')
+    classes = ("Bard", "Cleric", "Druid", "Ranger")
 
 
 class Friends(Spell):
@@ -793,16 +833,17 @@ class Friends(Spell):
     might seek retribution in other ways (at the DM's discretion), depending on the
     nature of your interaction with it.
     """
+
     name = "Friends"
     level = 0
     casting_time = "1 action"
     casting_range = "Self"
-    components = ('S', 'M')
-    materials = """A small amount of makeup applied to the face as this spell is cast"""
+    components = ("S", "M")
+    materials = "A small amount of makeup applied to the face as this spell is cast"
     duration = "Concentration, up to 1 minute"
     ritual = False
     magic_school = "Enchantment"
-    classes = ('Bard', 'Sorcerer', 'Warlock', 'Wizard')
+    classes = ("Bard", "Sorcerer", "Warlock", "Wizard")
 
 
 class Frostbite(Spell):
@@ -813,15 +854,14 @@ class Frostbite(Spell):
     The spell's damage increases by 1d6 when
     you reach 5th level (2d6), 11th level (3d6), and 17th level (4d6).
     """
+
     name = "Frostbite"
     level = 0
     casting_time = "1 action"
     casting_range = "60 feet"
-    components = ('V', 'S')
-    materials = """"""
+    components = ("V", "S")
+    materials = ""
     duration = "Instantaneous"
     ritual = False
     magic_school = "Evocation"
-    classes = ('Druid', 'Sorcerer', 'Warlock', 'Wizard')
-
-
+    classes = ("Druid", "Sorcerer", "Warlock", "Wizard")

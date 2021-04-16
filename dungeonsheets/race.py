@@ -4,12 +4,12 @@ from dungeonsheets import features as feats
 from dungeonsheets import spells, weapons
 
 
-class Race():
+class Race:
     name = "Unknown"
     size = "medium"
     speed = 30
     owner = None
-    languages = ('Common', )
+    languages = ("Common",)
     proficiencies_text = tuple()
     weapon_proficiences = tuple()
     skill_proficiencies = ()
@@ -33,8 +33,9 @@ class Race():
         self.features = tuple([f(owner=self.owner) for f in cls.features])
         self.features_by_level = defaultdict(list)
         for i in range(1, 21):
-            self.features_by_level[i] = [f(owner=self.owner)for f in
-                                         cls.features_by_level[i]]
+            self.features_by_level[i] = [
+                f(owner=self.owner) for f in cls.features_by_level[i]
+            ]
         self.spells_known = [S() for S in cls.spells_known]
 
     @property
@@ -45,7 +46,7 @@ class Race():
         return self.name
 
     def __repr__(self):
-        return "\"{:s}\"".format(self.name)
+        return '"{:s}"'.format(self.name)
 
 
 # Dwarves
@@ -55,10 +56,13 @@ class _Dwarf(Race):
     speed = 25
     languages = ("Common", "Dwarvish")
     constitution_bonus = 2
-    proficiencies_text = ('battleaxes', 'handaxes', 'throwing hammers',
-                          'warhammers')
-    weapon_proficiences = (weapons.Battleaxe, weapons.Handaxe,
-                           weapons.ThrowingHammer, weapons.Warhammer)
+    proficiencies_text = ("battleaxes", "handaxes", "throwing hammers", "warhammers")
+    weapon_proficiences = (
+        weapons.Battleaxe,
+        weapons.Handaxe,
+        weapons.ThrowingHammer,
+        weapons.Warhammer,
+    )
     features = (feats.Darkvision, feats.DwarvenResilience, feats.Stonecunning)
 
 
@@ -80,26 +84,34 @@ class _Elf(Race):
     size = "medium"
     speed = 30
     dexterity_bonus = 2
-    skill_proficiencies = ('perception',)
-    languages = ('Common', 'Elvish')
+    skill_proficiencies = ("perception",)
+    languages = ("Common", "Elvish")
     features = (feats.Darkvision, feats.FeyAncestry, feats.Trance)
 
 
 class HighElf(_Elf):
     name = "High Elf"
-    weapon_proficiencies = (weapons.Longsword, weapons.Shortsword,
-                            weapons.Shortbow, weapons.Longbow)
-    proficiencies_text = ('longswords', 'shortswords', 'shortbows', 'longbows')
+    weapon_proficiencies = (
+        weapons.Longsword,
+        weapons.Shortsword,
+        weapons.Shortbow,
+        weapons.Longbow,
+    )
+    proficiencies_text = ("longswords", "shortswords", "shortbows", "longbows")
     intelligence_bonus = 1
-    languages = ('Common', 'Elvish', '[choose one]')
+    languages = ("Common", "Elvish", "[choose one]")
     features = _Elf.features + (feats.ElfCantrip,)
 
 
 class WoodElf(_Elf):
     name = "Wood Elf"
-    weapon_proficiencies = (weapons.Longsword, weapons.Shortsword,
-                            weapons.Shortbow, weapons.Longbow)
-    proficiencies_text = ('longswords', 'shortswords', 'shortbows', 'longbows')
+    weapon_proficiencies = (
+        weapons.Longsword,
+        weapons.Shortsword,
+        weapons.Shortbow,
+        weapons.Longbow,
+    )
+    proficiencies_text = ("longswords", "shortswords", "shortbows", "longbows")
     wisdom_bonus = 1
     speed = 35
     features = _Elf.features + (feats.MaskOfTheWild,)
@@ -107,12 +119,16 @@ class WoodElf(_Elf):
 
 class DarkElf(_Elf):
     name = "Dark Elf"
-    weapon_proficiencies = (weapons.Rapier, weapons.Shortsword,
-                            weapons.HandCrossbow)
-    proficiencies_text = ('rapiers', 'shortswords', 'hand crossbows')
+    weapon_proficiencies = (weapons.Rapier, weapons.Shortsword, weapons.HandCrossbow)
+    proficiencies_text = ("rapiers", "shortswords", "hand crossbows")
     charisma_bonus = 1
-    features = (feats.SuperiorDarkvision, feats.FeyAncestry, feats.Trance,
-                feats.SunlightSensitivity, feats.DrowMagic)
+    features = (
+        feats.SuperiorDarkvision,
+        feats.FeyAncestry,
+        feats.Trance,
+        feats.SunlightSensitivity,
+        feats.DrowMagic,
+    )
     spells_known = (spells.DancingLights,)
 
 
@@ -122,7 +138,7 @@ class _Halfling(Race):
     size = "small"
     speed = 25
     dexterity_bonus = 2
-    languages = ('Common', 'Halfling')
+    languages = ("Common", "Halfling")
     features = (feats.Lucky, feats.Brave, feats.HalflingNimbleness)
 
 
@@ -149,11 +165,11 @@ class Human(Race):
     intelligence_bonus = 1
     wisdom_bonus = 1
     charisma_bonus = 1
-    languages = ("Common", '[choose one]')
+    languages = ("Common", "[choose one]")
 
 
 class Rashemi(Human):
-    name = 'Rashemi'
+    name = "Rashemi"
 
 
 # Dragonborn
@@ -164,8 +180,7 @@ class Dragonborn(Race):
     strength_bonus = 2
     charisma_bonus = 1
     languages = ("Common", "Draconic")
-    features = (feats.DraconicAncestry, feats.BreathWeapon,
-                feats.DraconicResistance)
+    features = (feats.DraconicAncestry, feats.BreathWeapon, feats.DraconicResistance)
 
 
 # Gnomes
@@ -181,24 +196,21 @@ class _Gnome(Race):
 class ForestGnome(_Gnome):
     name = "Forest Gnome"
     dexterity_bonus = 1
-    features = _Gnome.features + (feats.NaturalIllusionist,
-                                  feats.SpeakWithSmallBeasts)
+    features = _Gnome.features + (feats.NaturalIllusionist, feats.SpeakWithSmallBeasts)
     spells_known = (spells.MinorIllusion,)
 
 
 class RockGnome(_Gnome):
     name = "Rock Gnome"
     constitution_bonus = 1
-    features = _Gnome.features + (feats.ArtificersLore,
-                                  feats.Tinker)
+    features = _Gnome.features + (feats.ArtificersLore, feats.Tinker)
 
 
 class DeepGnome(_Gnome):
     name = "Deep Gnome"
     dexterity_bonus = 1
     languages = ("Common", "Gnomish", "Undercommon")
-    features = (feats.SuperiorDarkvision, feats.GnomeCunning,
-                feats.StoneCamouflage)
+    features = (feats.SuperiorDarkvision, feats.GnomeCunning, feats.StoneCamouflage)
 
 
 # Half-elves
@@ -207,11 +219,26 @@ class HalfElf(Race):
     size = "medium"
     speed = 30
     charisma_bonus = 2
-    skill_choices = ('acrobatics', 'animal handling', 'arcana',
-                     'athletics', 'deception', 'history', 'insight',
-                     'intimidation', 'investigation', 'medicine', 'nature',
-                     'perception', 'performance', 'persuasion', 'religion',
-                     'sleight of hand', 'stealth', 'survival')
+    skill_choices = (
+        "acrobatics",
+        "animal handling",
+        "arcana",
+        "athletics",
+        "deception",
+        "history",
+        "insight",
+        "intimidation",
+        "investigation",
+        "medicine",
+        "nature",
+        "perception",
+        "performance",
+        "persuasion",
+        "religion",
+        "sleight of hand",
+        "stealth",
+        "survival",
+    )
     num_skill_choices = 2
     languages = ("Common", "Elvish", "[choose one]")
     features = (feats.Darkvision, feats.FeyAncestry)
@@ -224,10 +251,9 @@ class HalfOrc(Race):
     speed = 30
     strength_bonus = 2
     constitution_bonus = 1
-    skill_proficiencies = ('intimidation',)
+    skill_proficiencies = ("intimidation",)
     languages = ("Common", "Orc")
-    features = (feats.Darkvision, feats.RelentlessEndurance,
-                feats.SavageAttacks)
+    features = (feats.Darkvision, feats.RelentlessEndurance, feats.SavageAttacks)
 
 
 # Tielflings
@@ -238,19 +264,22 @@ class Tiefling(Race):
     intelligence_bonus = 1
     charisma_bonus = 2
     languages = ("Common", "Infernal")
-    features = (feats.Darkvision, feats.HellishResistance,
-                feats.InfernalLegacy)
+    features = (feats.Darkvision, feats.HellishResistance, feats.InfernalLegacy)
 
 
 # Aassimar
 class _Aasimar(Race):
-    name = 'Aasimar'
-    size = 'medium'
+    name = "Aasimar"
+    size = "medium"
     speed = 30
     charisma_bonus = 2
     languages = ("Common", "Celestial")
-    features = (feats.Darkvision, feats.CelestialResistance,
-                feats.HealingHands, feats.LightBearer)
+    features = (
+        feats.Darkvision,
+        feats.CelestialResistance,
+        feats.HealingHands,
+        feats.LightBearer,
+    )
     spells_known = (spells.Light,)
 
 
@@ -285,8 +314,12 @@ class Firbolg(Race):
     speed = 30
     wisdom_bonus = 2
     strength_bonus = 1
-    features = (feats.FirbolgMagic, feats.HiddenStep,
-                feats.PowerfulBuild, feats.SpeechOfBeastAndLeaf)
+    features = (
+        feats.FirbolgMagic,
+        feats.HiddenStep,
+        feats.PowerfulBuild,
+        feats.SpeechOfBeastAndLeaf,
+    )
     languages = ("Common", "Elvish", "Giant")
 
 
@@ -297,24 +330,26 @@ class Goliath(Race):
     speed = 30
     skill_proficiencies = ("athletics",)
     languages = ("Common", "Giant")
-    features = (feats.StonesEndurance, feats.PowerfulBuild,
-                feats.MountainBorn)
+    features = (feats.StonesEndurance, feats.PowerfulBuild, feats.MountainBorn)
 
 
 # Lizardfolk
 class Lizardfolk(Race):
-    name = 'Lizardfolk'
-    size = 'medium'
+    name = "Lizardfolk"
+    size = "medium"
     speed = """30 (30 swim)"""
     constitution_bonus = 2
     wisdom_bonus = 1
-    languages = ('Common', 'Draconic')
+    languages = ("Common", "Draconic")
     weapon_proficiencies = (weapons.Bite,)
-    proficiencies_text = ('bite',)
-    features = (feats.CunningArtisan, feats.HoldBreath,
-                feats.NaturalArmor, feats.HungryJaws)
-    skill_choices = ('animal handling', 'nature', 'perception',
-                     'stealth', 'survival')
+    proficiencies_text = ("bite",)
+    features = (
+        feats.CunningArtisan,
+        feats.HoldBreath,
+        feats.NaturalArmor,
+        feats.HungryJaws,
+    )
+    skill_choices = ("animal handling", "nature", "perception", "stealth", "survival")
 
     def __init__(self, owner=None):
         super().__init__(owner=owner)
@@ -323,30 +358,35 @@ class Lizardfolk(Race):
 
 # Kenku
 class Kenku(Race):
-    name = 'Kenku'
-    size = 'medium'
+    name = "Kenku"
+    size = "medium"
     speed = 30
     dexterity_bonus = 2
     wisdom_bonus = 1
-    languages = ('Common', 'Auran')
-    skill_choices = ('acrobatics', 'deception', 'stealth',
-                     'sleight of hand')
+    languages = ("Common", "Auran")
+    skill_choices = ("acrobatics", "deception", "stealth", "sleight of hand")
     num_skill_choices = 2
-    features = (feats.ExpertForgery, feats.Mimicry,)
+    features = (
+        feats.ExpertForgery,
+        feats.Mimicry,
+    )
 
 
 # Tabaxi
 class Tabaxi(Race):
-    name = 'Tabaxi'
-    size = 'medium'
+    name = "Tabaxi"
+    size = "medium"
     dexterity_bonus = 2
     charisma_bonus = 1
     speed = "30 (20 climb)"
     languages = ("Common", "[Choose One]")
     weapon_proficiencies = (weapons.Claws,)
-    proficiences_text = ('Claws',)
-    skill_proficiencies = ('perception', 'stealth')
-    features = (feats.Darkvision, feats.FelineAgility,)
+    proficiences_text = ("Claws",)
+    skill_proficiencies = ("perception", "stealth")
+    features = (
+        feats.Darkvision,
+        feats.FelineAgility,
+    )
 
     def __init__(self, owner=None):
         super().__init__(owner=owner)
@@ -361,22 +401,26 @@ class Triton(Race):
     constitution_bonus = 1
     charisma_bonus = 1
     speed = "30 (30 swim)"
-    features = (feats.Amphibious, feats.ControlAirAndWater,
-                feats.EmissaryOfTheSea, feats.GuardiansOfTheDepths)
+    features = (
+        feats.Amphibious,
+        feats.ControlAirAndWater,
+        feats.EmissaryOfTheSea,
+        feats.GuardiansOfTheDepths,
+    )
     languages = ("Common", "Primordial")
     spells_known = (spells.FogCloud,)
 
 
 # Aarakocra
 class Aarakocra(Race):
-    name = 'Aarakocra'
-    size = 'medium'
+    name = "Aarakocra"
+    size = "medium"
     speed = "25 (50 fly)"
     dexterity_bonus = 2
     wisdom_bonus = 1
-    languages = ('Common', 'Aarakocra', 'Auran')
+    languages = ("Common", "Aarakocra", "Auran")
     weapon_proficiencies = (weapons.Talons,)
-    proficiences_text = ('Talons',)
+    proficiences_text = ("Talons",)
 
     def __init__(self, owner=None):
         super().__init__(owner=owner)
@@ -387,16 +431,15 @@ class Aarakocra(Race):
 class _Genasi(Race):
     name = "Genasi"
     constitution_bonus = 2
-    size = 'medium'
+    size = "medium"
     speed = 30
-    languages = ("Common", 'Primoridal')
+    languages = ("Common", "Primoridal")
 
 
 class AirGenasi(_Genasi):
     name = "Air Genasi"
     dexterity_bonus = 1
-    features = (feats.UnendingBreath,
-                feats.MingleWithTheWind)
+    features = (feats.UnendingBreath, feats.MingleWithTheWind)
 
 
 class EarthGenasi(_Genasi):
@@ -408,101 +451,146 @@ class EarthGenasi(_Genasi):
 class FireGenasi(_Genasi):
     name = "Fire Genasi"
     intelligence_bonus = 1
-    features = (feats.Darkvision, feats.FireResistance,
-                feats.ReachToTheBlaze)
+    features = (feats.Darkvision, feats.FireResistance, feats.ReachToTheBlaze)
 
 
 class WaterGenasi(_Genasi):
     name = "Water Genasi"
     wisdom_bonus = 1
     speed = "30 (30 swim)"
-    features = (feats.AcidResistance, feats.Amphibious,
-                feats.CallToTheWave)
+    features = (feats.AcidResistance, feats.Amphibious, feats.CallToTheWave)
+
 
 # Eberron Races
 class Kalashtar(Race):
     name = "Kalashtar"
     wisdom_bonus = 2
     charisma_bonus = 1
-    size = 'medium'
+    size = "medium"
     speed = 30
-    languages = ("Common", "Quori",) # Not sure how to have a "+1 language of your choice" - naviabbot
-    features = (feats.DualMind, feats.MentalDiscipline, feats.MindLink, feats.SeveredFromDreams)
+    languages = (
+        "Common",
+        "Quori",
+    )  # Not sure how to have a "+1 language of your choice" - naviabbot
+    features = (
+        feats.DualMind,
+        feats.MentalDiscipline,
+        feats.MindLink,
+        feats.SeveredFromDreams,
+    )
+
 
 class BugBear(Race):
     name = "BugBear"
     strength_bonus = 2
     dexterity_bonus = 1
-    size = 'medium'
+    size = "medium"
     speed = 30
-    features = (feats.Darkvision, feats.LongLimbed,
-                feats.PowerfulBuild, feats.SupriseAttack)
-    skill_proficiencies = ("stealth", )
+    features = (
+        feats.Darkvision,
+        feats.LongLimbed,
+        feats.PowerfulBuild,
+        feats.SupriseAttack,
+    )
+    skill_proficiencies = ("stealth",)
     languages = ("Common", "Goblin")
+
 
 class Goblin(Race):
     name = "Goblin"
     dexterity_bonus = 2
     constitution_bonus = 1
-    size = 'small'
+    size = "small"
     speed = 30
-    features = (feats.Darkvision, feats.FuryOfTheSmall,
-                feats.NimbleEscape)
+    features = (feats.Darkvision, feats.FuryOfTheSmall, feats.NimbleEscape)
     languages = ("Common", "Goblin")
+
 
 class HobGoblin(Race):
     name = "HobGoblin"
     constitution_bonus = 2
     intelligence_bonus = 1
-    size = 'medium'
+    size = "medium"
     speed = 30
     features = (feats.Darkvision, feats.SavingFace)
-    proficiencies_text = ('light armor', '[Chose two martial melee weapons]')
+    proficiencies_text = ("light armor", "[Chose two martial melee weapons]")
     languages = ("Common", "Goblin")
+
 
 class Kobold(Race):
     name = "Kobold"
     dexterity_bonus = 2
     strength_bonus = -2
-    size = 'small'
+    size = "small"
     speed = 30
-    features = (feats.Darkvision, feats.PackTactics,
-                feats.GrovelCowerAndBeg, feats.SunlightSensitivity)
+    features = (
+        feats.Darkvision,
+        feats.PackTactics,
+        feats.GrovelCowerAndBeg,
+        feats.SunlightSensitivity,
+    )
     languages = ("Common", "Draconic")
+
 
 class Orc(Race):
     name = "Orc"
     strength_bonus = 2
     constitution_bonus = 1
     intelligence_bonus = -2
-    size = 'medium'
+    size = "medium"
     speed = 30
-    skill_proficiencies = ('intimidation',)
-    features = (feats.Darkvision, feats.Aggressive,
-                feats.PowerfulBuild)
+    skill_proficiencies = ("intimidation",)
+    features = (feats.Darkvision, feats.Aggressive, feats.PowerfulBuild)
     languages = ("Common", "Orc")
+
 
 class PureBlood(Race):
     name = "Yuan-Ti Pureblood"
     charisma_bonus = 2
     intelligence_bonus = 1
-    size = 'medium'
+    size = "medium"
     speed = 30
-    features = (feats.Darkvision, feats.InnateSpellcasting,
-                feats.MagicResistance, feats.PoisonImmunity)
+    features = (
+        feats.Darkvision,
+        feats.InnateSpellcasting,
+        feats.MagicResistance,
+        feats.PoisonImmunity,
+    )
     spells_known = (spells.PoisonSpray,)
     languages = ("Common", "Abyssal", "Draconic")
 
 
-PHB_races = [HillDwarf, MountainDwarf, HighElf, WoodElf, DarkElf,
-             LightfootHalfling, StoutHalfling, Rashemi, Dragonborn,
-             ForestGnome, RockGnome, HalfElf, HalfOrc, Tiefling, Human]
+PHB_races = [
+    HillDwarf,
+    MountainDwarf,
+    HighElf,
+    WoodElf,
+    DarkElf,
+    LightfootHalfling,
+    StoutHalfling,
+    Rashemi,
+    Dragonborn,
+    ForestGnome,
+    RockGnome,
+    HalfElf,
+    HalfOrc,
+    Tiefling,
+    Human,
+]
 
-VOLO_races = [ProtectorAasimar, ScourgeAasimar, FallenAasimar,
-              Firbolg, Goliath, Lizardfolk, Kenku, Tabaxi, Triton]
+VOLO_races = [
+    ProtectorAasimar,
+    ScourgeAasimar,
+    FallenAasimar,
+    Firbolg,
+    Goliath,
+    Lizardfolk,
+    Kenku,
+    Tabaxi,
+    Triton,
+]
 
-EE_races = [Aarakocra, DeepGnome, AirGenasi, FireGenasi, EarthGenasi,
-            WaterGenasi]
+EE_races = [Aarakocra, DeepGnome, AirGenasi, FireGenasi, EarthGenasi, WaterGenasi]
 
 MONSTER_races = [BugBear, Goblin, HobGoblin, Kobold, Orc, PureBlood]
 
@@ -511,7 +599,16 @@ RFTLW_races = [Kalashtar]
 # Guildmaster's Guide to Ravnica
 GGTR_races = [Goblin]
 
-available_races = PHB_races + VOLO_races + EE_races + MONSTER_races + RFTLW_races + GGTR_races
+available_races = (
+    PHB_races + VOLO_races + EE_races + MONSTER_races + RFTLW_races + GGTR_races
+)
 
 __all__ = tuple([r.name for r in available_races]) + (
-    'available_races', 'PHB_races', 'VOLO_races', 'EE_races', 'MONSTER_races', 'RFTLW_races', 'GGTR_races')
+    "available_races",
+    "PHB_races",
+    "VOLO_races",
+    "EE_races",
+    "MONSTER_races",
+    "RFTLW_races",
+    "GGTR_races",
+)

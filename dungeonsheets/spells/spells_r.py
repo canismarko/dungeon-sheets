@@ -23,16 +23,17 @@ class RaiseDead(Spell):
     the target finishes a long rest, the penalty is reduced by 1 until it
     disappears.
     """
+
     name = "Raise Dead"
     level = 5
     casting_time = "1 hour"
     casting_range = "Touch"
-    components = ('V', 'S', 'M')
-    materials = """A diamond worth at least 500 gp, which the spell consumes"""
+    components = ("V", "S", "M")
+    materials = "A diamond worth at least 500 gp, which the spell consumes"
     duration = "Instantaneous"
     ritual = False
     magic_school = "Necromancy"
-    classes = ('Bard', 'Cleric', 'Paladin')
+    classes = ("Bard", "Cleric", "Paladin")
 
 
 class RarysTelepathicBond(Spell):
@@ -46,16 +47,17 @@ class RarysTelepathicBond(Spell):
     is possible over any distance, though it can't extend to other planes of
     existence.
     """
+
     name = "Rarys Telepathic Bond"
     level = 5
     casting_time = "1 action"
     casting_range = "30 feet"
-    components = ('V', 'S', 'M')
-    materials = """Pieces of eggshell from two different kinds of creatures"""
+    components = ("V", "S", "M")
+    materials = "Pieces of eggshell from two different kinds of creatures"
     duration = "1 hour"
     ritual = True
     magic_school = "Divination"
-    classes = ('Wizard',)
+    classes = ("Wizard",)
 
 
 class RayOfEnfeeblement(Spell):
@@ -68,16 +70,17 @@ class RayOfEnfeeblement(Spell):
     At the end of each of the target's turns, it can make a
     Constitution saving throw against the spell. On a success, the spell ends.
     """
+
     name = "Ray Of Enfeeblement"
     level = 2
     casting_time = "1 action"
     casting_range = "60 feet"
-    components = ('V', 'S')
-    materials = """"""
+    components = ("V", "S")
+    materials = ""
     duration = "Concentration, up to 1 minute"
     ritual = False
     magic_school = "Necromancy"
-    classes = ('Warlock', 'Wizard')
+    classes = ("Warlock", "Wizard")
 
 
 class RayOfFrost(Spell):
@@ -89,16 +92,17 @@ class RayOfFrost(Spell):
     Levels: The spell's damage increases by 1d8 when you reach 5th level (2d8), 11th
     level (3d8), and 17th level (4d8).
     """
+
     name = "Ray Of Frost"
     level = 0
     casting_time = "1 action"
     casting_range = "60 feet"
-    components = ('V', 'S')
-    materials = """"""
+    components = ("V", "S")
+    materials = ""
     duration = "Instantaneous"
     ritual = False
     magic_school = "Evocation"
-    classes = ('Sorcerer', 'Wizard')
+    classes = ("Sorcerer", "Wizard")
 
 
 class RayOfSickness(Spell):
@@ -112,16 +116,17 @@ class RayOfSickness(Spell):
     this spell using a spell slot of 2nd level or higher, the damage increases by
     1d8 for each slot level above 1st.
     """
+
     name = "Ray Of Sickness"
     level = 1
     casting_time = "1 action"
     casting_range = "60 feet"
-    components = ('V', 'S')
-    materials = """"""
+    components = ("V", "S")
+    materials = ""
     duration = "Instantaneous"
     ritual = False
     magic_school = "Necromancy"
-    classes = ('Sorcerer', 'Wizard')
+    classes = ("Sorcerer", "Wizard")
 
 
 class Regenerate(Spell):
@@ -135,16 +140,17 @@ class Regenerate(Spell):
     restored after 2 minutes. If you have the severed part and hold it to the stump,
     the spell instantaneously causes the limb to knit to the stump.
     """
+
     name = "Regenerate"
     level = 7
     casting_time = "1 minute"
     casting_range = "Touch"
-    components = ('V', 'S', 'M')
-    materials = """A prayer wheel and holy water"""
+    components = ("V", "S", "M")
+    materials = "A prayer wheel and holy water"
     duration = "1 hour"
     ritual = False
     magic_school = "Transmutation"
-    classes = ('Bard', 'Cleric', 'Druid')
+    classes = ("Bard", "Cleric", "Druid")
 
 
 class Reincarnate(Spell):
@@ -182,16 +188,19 @@ class Reincarnate(Spell):
     retains the capabilities it had in its original form, except it exchanges its
     original race for the new one and changes its racial traits accordingly.
     """
+
     name = "Reincarnate"
     level = 5
     casting_time = "1 hour"
     casting_range = "Touch"
-    components = ('V', 'S', 'M')
-    materials = """Rare oils and unguents worth at least 1,000 gp, which the spell consumes"""
+    components = ("V", "S", "M")
+    materials = (
+        """Rare oils and unguents worth at least 1,000 gp, which the spell consumes"""
+    )
     duration = "Instantaneous"
     ritual = False
     magic_school = "Transmutation"
-    classes = ('Druid',)
+    classes = ("Druid",)
 
 
 class RemoveCurse(Spell):
@@ -199,16 +208,17 @@ class RemoveCurse(Spell):
     a cursed magic item, its curse remains, but the spell breaks its owner's
     attunement to the object so it can be removed or discarded.
     """
+
     name = "Remove Curse"
     level = 3
     casting_time = "1 action"
     casting_range = "Touch"
-    components = ('V', 'S')
-    materials = """"""
+    components = ("V", "S")
+    materials = ""
     duration = "Instantaneous"
     ritual = False
     magic_school = "Abjuration"
-    classes = ('Cleric', 'Paladin', 'Warlock', 'Wizard')
+    classes = ("Cleric", "Paladin", "Warlock", "Wizard")
 
 
 class Resistance(Spell):
@@ -216,16 +226,17 @@ class Resistance(Spell):
     a d4 and add the number rolled to one saving throw of its choice. It can roll
     the die before or after the saving throw. The spell then ends.
     """
+
     name = "Resistance"
     level = 0
     casting_time = "1 action"
     casting_range = "Touch"
-    components = ('V', 'S', 'M')
-    materials = """A miniature cloak"""
+    components = ("V", "S", "M")
+    materials = "A miniature cloak"
     duration = "Concentration, up to 1 minute"
     ritual = False
     magic_school = "Abjuration"
-    classes = ('Cleric', 'Druid')
+    classes = ("Cleric", "Druid")
 
 
 class Resurrection(Spell):
@@ -252,16 +263,17 @@ class Resurrection(Spell):
     spells again, and you have disadvantage on all attack rolls, ability checks, and
     saving throws.
     """
+
     name = "Resurrection"
     level = 7
     casting_time = "1 hour"
     casting_range = "Touch"
-    components = ('V', 'S', 'M')
-    materials = """A diamond worth at least 1,000 gp, which the spell consumes"""
+    components = ("V", "S", "M")
+    materials = "A diamond worth at least 1,000 gp, which the spell consumes"
     duration = "Instantaneous"
     ritual = False
     magic_school = "Necromancy"
-    classes = ('Bard', 'Cleric')
+    classes = ("Bard", "Cleric")
 
 
 class ReverseGravity(Spell):
@@ -281,16 +293,17 @@ class ReverseGravity(Spell):
     At the end of the duration, affected
     objects and creatures fall back down.
     """
+
     name = "Reverse Gravity"
     level = 7
     casting_time = "1 action"
     casting_range = "100 feet"
-    components = ('V', 'S', 'M')
-    materials = """A lodestone and iron filings"""
+    components = ("V", "S", "M")
+    materials = "A lodestone and iron filings"
     duration = "Concentration, up to 1 minute"
     ritual = False
     magic_school = "Transmutation"
-    classes = ('Druid', 'Sorcerer', 'Wizard')
+    classes = ("Druid", "Sorcerer", "Wizard")
 
 
 class Revivify(Spell):
@@ -298,16 +311,17 @@ class Revivify(Spell):
     to life with 1 hit point. This spell can't return to life a creature that has
     died of old age, nor can it restore any missing body parts.
     """
+
     name = "Revivify"
     level = 3
     casting_time = "1 action"
     casting_range = "Touch"
-    components = ('V', 'S', 'M')
-    materials = """Diamonds worth 300 gp, which the spell consumes"""
+    components = ("V", "S", "M")
+    materials = "Diamonds worth 300 gp, which the spell consumes"
     duration = "Instantaneous"
     ritual = False
     magic_school = "Necromancy"
-    classes = ('Cleric', 'Paladin')
+    classes = ("Cleric", "Paladin")
 
 
 class RopeTrick(Spell):
@@ -328,15 +342,14 @@ class RopeTrick(Spell):
 
     Anything inside the extradimensional space drops out when the spell ends.
     """
+
     name = "Rope Trick"
     level = 2
     casting_time = "1 action"
     casting_range = "Touch"
-    components = ('V', 'S', 'M')
-    materials = """Powdered corn extract and a twisted loop of parchment"""
+    components = ("V", "S", "M")
+    materials = "Powdered corn extract and a twisted loop of parchment"
     duration = "1 hour"
     ritual = False
     magic_school = "Transmutation"
-    classes = ('Wizard',)
-
-
+    classes = ("Wizard",)

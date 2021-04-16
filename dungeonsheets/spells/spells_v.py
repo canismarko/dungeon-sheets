@@ -12,16 +12,17 @@ class VampiricTouch(Spell):
     cast this spell using a spell slot of 4th level or higher, the damage increases
     by 1d6 for each slot level above 3rd.
     """
+
     name = "Vampiric Touch"
     level = 3
     casting_time = "1 action"
     casting_range = "Self"
-    components = ('V', 'S')
-    materials = """"""
+    components = ("V", "S")
+    materials = ""
     duration = "Concentration, up to 1 minute"
     ritual = False
     magic_school = "Necromancy"
-    classes = ('Warlock', 'Wizard')
+    classes = ("Warlock", "Wizard")
 
 
 class ViciousMockery(Spell):
@@ -35,16 +36,17 @@ class ViciousMockery(Spell):
     **At Higher Levels:** This spell's damage increases by 1d4 when you
     reach 5th level (2d4), 11th level (3d4), and 17th level (4d4).
     """
+
     name = "Vicious Mockery"
     level = 0
     casting_time = "1 action"
     casting_range = "60 feet"
-    components = ('V',)
-    materials = """"""
+    components = ("V",)
+    materials = ""
     duration = "Instantaneous"
     ritual = False
     magic_school = "Enchantment"
-    classes = ('Bard',)
+    classes = ("Bard",)
 
 
 class VitriolicSphere(Spell):
@@ -59,15 +61,14 @@ class VitriolicSphere(Spell):
     using a spell slot of 5th level or higher, the initial damage increases by 2d4
     for each slot level above 4th.
     """
+
     name = "Vitriolic Sphere"
     level = 4
     casting_time = "1 action"
     casting_range = "150 feet"
-    components = ('V', 'S', 'M')
-    materials = """A drop of giant slug bile"""
+    components = ("V", "S", "M")
+    materials = "A drop of giant slug bile"
     duration = "Instantaneous"
     ritual = False
     magic_school = "Evocation"
-    classes = ('Sorcerer', 'Wizard')
-
-
+    classes = ("Sorcerer", "Wizard")
