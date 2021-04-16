@@ -4,7 +4,7 @@ python:
   - "3.7"
   - "3.8"
 before_install:
-  - sudo apt-get -y install pdftk texlive-latex-base  
+  - sudo apt-get -y install pdftk texlive-latex-base texlive-fonts-recommended
 # command to install dependencies
 install:
   - pip install -r requirements.txt
@@ -15,6 +15,7 @@ script:
   - pytest --cov=dungeonsheets tests/
   - cd examples/
   - makesheets
+  - makesheets -F
   - cd ../
 after_success:
   - coveralls
