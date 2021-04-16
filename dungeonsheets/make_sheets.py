@@ -124,10 +124,12 @@ PDFTK_CMD = "pdftk"
 def text_box(string):
     """Format a string for displaying in a text box."""
     # remove multiple whitespace without removing linebreaks
-    new_string = " ".join(string.replace("\n", r"\m").split())
+    new_string = " ".join(string.replace("\n", "\m").split())  # noqa: W605
     # Remove *single* line breaks, swap *multi* line breaks to single (fdf: \r)
     new_string = (
-        new_string.replace(r"\m \m", r"\r").replace(r"\m\m", r"\r").replace(r"\m", " ")
+        new_string.replace("\m \m", "\r")  # noqa: W605
+        .replace("\m\m", "\r")  # noqa: W605
+        .replace("\m", " ")  # noqa: W605
     )
     return new_string
 
