@@ -216,7 +216,7 @@ def make_sheet(
         )
         sheets.append(spell_base + ".pdf")
     # end of PDF gen
-    
+
     if character.is_spellcaster:
         tex.append(create_spellbook_tex(character, use_dnd_decorations=fancy_decorations))
 

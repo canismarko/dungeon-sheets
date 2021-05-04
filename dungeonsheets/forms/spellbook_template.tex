@@ -3,15 +3,14 @@
 [% for spl in character.spells %]
 
   [% if use_dnd_decorations %]  
-    \DndSpellHeader
+  \DndSpellHeader
     {[[ spl.name ]]}
     {[% if spl.level > 0 %][[ ordinals[spl.level] ]]-level [[ spl.magic_school ]][% else %][[ spl.magic_school ]] Cantrip[% endif %] [% if spl.ritual %](\textit{ritual})[% endif %]}
     {[[ spl.casting_time ]]}
     {[[ spl.casting_range ]]}
     {[[ spl.component_string ]]}
     {[% if spl.ritual %]Concentration, up to [% endif %][[ spl.duration ]]}
-
-    [% else %]
+  [% else %]
   \section*{[[ spl.name ]]}
     [% if spl.level > 0 %] %
       \textit{[[ spl.magic_school ]] Level [[ spl.level ]]} %
@@ -24,8 +23,7 @@
       (\textit{ritual})%
     [% elif spl.concentration %]%
       (\textit{concentration})%
-    [% endif %]%            
-              
+    [% endif %]%                     
     %% \noindent
     \begin{description}
       \setlength{\itemsep}{\zerosep}%
@@ -36,7 +34,6 @@
       \item [Components:] [[ spl.component_string ]]
     \end{description}
     % \vspace{\zerosep}
-
   [% endif %]
   [[ spl.__doc__ | rst_to_latex(top_heading_level=1) ]]
 
