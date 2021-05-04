@@ -25,6 +25,17 @@ PDFTK_CMD = "pdftk"
 
 log = logging.getLogger(__name__)
 
+ORDINALS = {
+    1: "1st",
+    2: "2nd", 
+    3: "3rd", 
+    4: "4th", 
+    5: "5th", 
+    6: "6th", 
+    7: "7th", 
+    8: "8th",
+    9: "9th"
+}
 
 """Program to take character definitions and build a PDF of the
 character sheet."""
@@ -145,7 +156,7 @@ def create_spellbook_tex(
     use_dnd_decorations: bool = False,
 ) -> str:
     template = jinja_env.get_template("spellbook_template.tex")
-    return template.render(character=character, use_dnd_decorations=use_dnd_decorations)
+    return template.render(character=character, ordinals=ORDINALS, use_dnd_decorations=use_dnd_decorations)
 
 
 def create_features_tex(
@@ -206,10 +217,10 @@ def make_sheet(
         sheets.append(spell_base + ".pdf")
     # end of PDF gen
     
-    if len(character.features) > 0:
+    if character.is_spellcaster:
         tex.append(create_spellbook_tex(character, use_dnd_decorations=fancy_decorations))
 
-    if character.is_spellcaster:
+    if len(character.spells) > 0:
         tex.append(create_spellbook_tex(character, use_dnd_decorations=fancy_decorations))
     # Create a list of Artificer infusions
     infusions = getattr(character, "infusions", [])
@@ -221,10 +232,9 @@ def make_sheet(
         tex.append(create_druid_shapes_tex(character, use_dnd_decorations=fancy_decorations))
 
 
-    print(tex)
     tex.append(jinja_env.get_template("postamble.tex").render(use_dnd_decorations=fancy_decorations))
     latex.create_latex_pdf("".join(tex), "name", keep_temp_files=debug)
-    if len(tex) > 3:
+    if len(tex) > 2:
         sheets.append("name.pdf")
     # Typeset combined LaTeX file
     

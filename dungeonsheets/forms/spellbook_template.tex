@@ -1,16 +1,17 @@
+\section*{Spells}
+
 [% for spl in character.spells %]
 
   [% if use_dnd_decorations %]  
     \DndSpellHeader
     {[[ spl.name ]]}
-    {[% if spl.level > 0 %][[ spl.magic_school ]] Level [[ spl.level ]][% else %][[ spl.magic_school ]] Cantrip[% endif %]}
+    {[% if spl.level > 0 %][[ ordinals[spl.level] ]]-level [[ spl.magic_school ]][% else %][[ spl.magic_school ]] Cantrip[% endif %]}
     {[[ spl.casting_time ]]}
     {[[ spl.casting_range ]]}
     {[[ spl.component_string ]]}
     {[[ spl.duration ]]}
 
-    [[ spl.__doc__ | rst_to_latex(top_heading_level=1) ]]
-  [% else %]
+    [% else %]
   \section*{[[ spl.name ]]}
     [% if spl.level > 0 %] %
       \textit{[[ spl.magic_school ]] Level [[ spl.level ]]} %
@@ -36,6 +37,7 @@
     \end{description}
     % \vspace{\zerosep}
 
-    [[ spl.__doc__ | rst_to_latex(top_heading_level=1) ]]
   [% endif %]
+  [[ spl.__doc__ | rst_to_latex(top_heading_level=1) ]]
+
 [% endfor %]
