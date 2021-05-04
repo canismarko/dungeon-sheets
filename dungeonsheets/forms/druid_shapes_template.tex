@@ -1,17 +1,6 @@
-\documentclass[twocolumn,lettersize]{article}
-
-[% include 'preamble.tex' %]
-
-\title{Wild Shapes}
-\date{}
-
-\author{[[ character.name ]]}
-
-\begin{document}
-
 \twocolumn[
   \begin{@twocolumnfalse}
-    \maketitle
+%    \maketitle
     \section*{Known Beasts}
     [% for shape in character.all_wild_shapes|sort(attribute="name") %]%
     [[ shape.name ]][% if not loop.last %], [% endif %]%
@@ -73,5 +62,3 @@
 
   } %\color
 [% endfor %]
-
-\end{document}

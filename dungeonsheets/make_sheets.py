@@ -15,7 +15,11 @@ from jinja2 import Environment, PackageLoader
 from dungeonsheets import character as _char
 from dungeonsheets import exceptions, readers, latex
 from dungeonsheets.stats import mod_str
-from dungeonsheets.fill_pdf_template import create_character_pdf_template, create_spells_pdf_template
+from dungeonsheets.fill_pdf_template import (
+    create_character_pdf_template,
+    create_spells_pdf_template,
+)
+from dungeonsheets.character import Character
 
 PDFTK_CMD = "pdftk"
 
@@ -118,59 +122,47 @@ jinja_env.filters["mod_str"] = mod_str
 
 PDFTK_CMD = "pdftk"
 
-def create_druid_shapes_pdf(
-    character, basename, keep_temp_files=False, use_dnd_decorations=False
-):
+
+def create_druid_shapes_tex(
+    character: Character,
+    use_dnd_decorations: bool = False,
+) -> str:
     template = jinja_env.get_template("druid_shapes_template.tex")
-    return latex.create_latex_pdf(
-        character,
-        basename,
-        template,
-        keep_temp_files=keep_temp_files,
-        use_dnd_decorations=use_dnd_decorations,
-    )
+    return template.render(character=character, use_dnd_decorations=use_dnd_decorations)
 
 
-def create_infusions_pdf(
-    character, basename, keep_temp_files=False, use_dnd_decorations=False
-):
+
+def create_infusions_tex(
+    character: Character,
+    use_dnd_decorations: bool = False,
+) -> str:
     template = jinja_env.get_template("infusions_template.tex")
-    return latex.create_latex_pdf(
-        character,
-        basename,
-        template,
-        keep_temp_files=keep_temp_files,
-        use_dnd_decorations=use_dnd_decorations,
-    )
+    return template.render(character=character, use_dnd_decorations=use_dnd_decorations)
 
 
-def create_spellbook_pdf(
-    character, basename, keep_temp_files=False, use_dnd_decorations=False
-):
+def create_spellbook_tex(
+    character: Character,
+    use_dnd_decorations: bool = False,
+) -> str:
     template = jinja_env.get_template("spellbook_template.tex")
-    return latex.create_latex_pdf(
-        character,
-        basename,
-        template,
-        keep_temp_files=keep_temp_files,
-        use_dnd_decorations=use_dnd_decorations,
-    )
+    return template.render(character=character, use_dnd_decorations=use_dnd_decorations)
 
 
-def create_features_pdf(
-    character, basename, keep_temp_files=False, use_dnd_decorations=False
-):
+def create_features_tex(
+    character: Character,
+    use_dnd_decorations: bool = False,
+) -> str:
     template = jinja_env.get_template("features_template.tex")
-    return latex.create_latex_pdf(
-        character,
-        basename,
-        template,
-        keep_temp_files=keep_temp_files,
-        use_dnd_decorations=use_dnd_decorations,
-    )
+    return template.render(character=character, use_dnd_decorations=use_dnd_decorations)
+
 
 def make_sheet(
-    character_file, character=None, flatten=False, latex_template=True, fancy_decorations=False, debug=False
+    character_file,
+    character=None,
+    flatten=False,
+    latex_template=True,
+    fancy_decorations=False,
+    debug=False,
 ):
     """Prepare a PDF character sheet from the given character file.
 
@@ -198,6 +190,9 @@ def make_sheet(
     char_base = os.path.splitext(character_file)[0] + "_char"
     sheets = [char_base + ".pdf"]
     pages = []
+    tex = [jinja_env.get_template("preamble.tex").render(use_dnd_decorations=fancy_decorations)]
+
+    # Start of PDF gen
     char_pdf = create_character_pdf_template(
         character=character, basename=char_base, flatten=flatten
     )
@@ -205,61 +200,35 @@ def make_sheet(
     if character.is_spellcaster:
         # Create spell sheet
         spell_base = "{:s}_spells".format(os.path.splitext(character_file)[0])
-        create_spells_pdf_template(character=character, basename=spell_base, flatten=flatten)
+        create_spells_pdf_template(
+            character=character, basename=spell_base, flatten=flatten
+        )
         sheets.append(spell_base + ".pdf")
+    # end of PDF gen
+    
     if len(character.features) > 0:
-        feat_base = "{:s}_feats".format(os.path.splitext(character_file)[0])
-        try:
-            create_features_pdf(
-                character=character,
-                basename=feat_base,
-                keep_temp_files=debug,
-                use_dnd_decorations=fancy_decorations,
-            )
-        except exceptions.LatexNotFoundError:
-            log.warning(
-                "``pdflatex`` not available. Skipping features book "
-                f"for {character.name}"
-            )
-        else:
-            sheets.append(feat_base + ".pdf")
+        tex.append(create_spellbook_tex(character, use_dnd_decorations=fancy_decorations))
+
     if character.is_spellcaster:
-        # Create spell book
-        spellbook_base = os.path.splitext(character_file)[0] + "_spellbook"
-        try:
-            create_spellbook_pdf(
-                character=character,
-                basename=spellbook_base,
-                keep_temp_files=debug,
-                use_dnd_decorations=fancy_decorations,
-            )
-        except exceptions.LatexNotFoundError:
-            log.warning(
-                f"``pdflatex`` not available. Skipping spellbook for {character.name}"
-            )
-        else:
-            sheets.append(spellbook_base + ".pdf")
+        tex.append(create_spellbook_tex(character, use_dnd_decorations=fancy_decorations))
     # Create a list of Artificer infusions
     infusions = getattr(character, "infusions", [])
     if len(infusions) > 0:
-        infusions_base = os.path.splitext(character_file)[0] + "_infusions"
-        try:
-            create_infusions_pdf(
-                character=character,
-                basename=infusions_base,
-                keep_temp_files=debug,
-                use_dnd_decorations=fancy_decorations,
-            )
-        except exceptions.LatexNotFoundError:
-            log.warning(
-                "``pdflatex`` not available. Skipping infusions list "
-                f"for {character.name}"
-            )
-        else:
-            sheets.append(infusions_base + ".pdf")
+        tex.append(create_infusions_tex(character, use_dnd_decorations=fancy_decorations))
     # Create a list of Druid wild_shapes
     wild_shapes = getattr(character, "wild_shapes", [])
     if len(wild_shapes) > 0:
+        tex.append(create_druid_shapes_tex(character, use_dnd_decorations=fancy_decorations))
+
+
+    print(tex)
+    tex.append(jinja_env.get_template("postamble.tex").render(use_dnd_decorations=fancy_decorations))
+    latex.create_latex_pdf("".join(tex), "name", keep_temp_files=debug)
+    if len(tex) > 3:
+        sheets.append("name.pdf")
+    # Typeset combined LaTeX file
+    
+    """
         shapes_base = os.path.splitext(character_file)[0] + "_wild_shapes"
         try:
             create_druid_shapes_pdf(
@@ -275,6 +244,7 @@ def make_sheet(
             )
         else:
             sheets.append(shapes_base + ".pdf")
+        """
     # Combine sheets into final pdf
     final_pdf = os.path.splitext(character_file)[0] + ".pdf"
     merge_pdfs(sheets, final_pdf, clean_up=True)

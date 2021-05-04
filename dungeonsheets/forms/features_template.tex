@@ -1,15 +1,3 @@
-\documentclass[10pt,twocolumn,lettersize]{article}
-
-[% include 'preamble.tex' %]
-
-\title{Features and Magic Items}
-\author{[[ character.name ]]}
-\date{}
-
-\begin{document}
-
-\maketitle
-
 \section*{Subclasses}
            
 [% for sc in character.subclasses if sc not in ['', None, 'None', 'none']%]
@@ -54,5 +42,3 @@
   [[ mitem.__doc__|rst_to_latex ]]
 
   [% endfor %]
-    
-\end{document}
