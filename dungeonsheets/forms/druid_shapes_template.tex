@@ -3,6 +3,9 @@
 
 [% if use_dnd_decorations %]
   [% for shape in character.all_wild_shapes|sort(attribute='challenge_rating') %]
+   [% if not character.can_assume_shape(shape) %]
+   \subsection*{Cannot assume form}
+   [% endif %]
     \begin{DndMonster}{[[ shape.name ]]}
         \DndMonsterType{[[ shape.description ]]}
     
@@ -24,14 +27,14 @@
 
         \DndMonsterDetails[
             %saving-throws = {Str +0, Dex +0, Con +0, Int +0, Wis +0, Cha +0},
-            %skills = {Acrobatics +0, Animal Handling +0, Arcana +0, Athletics +0, Deception +0, History +0, Insight +0, Intimidation +0, Investigation +0, Medicine +0, Nature +0, Perception +0, Performance +0, Persuasion +0, Religion +0, Sleight of Hand +0, Stealth +0, Survival +0},
+            skills = {[[ shape.skills ]]},
             %damage-vulnerabilities = {cold},
-            %damage-resistances = {bludgeoning, piercing, and slashing from nonmagical attacks},
+            damage-resistances = {[[ shape.damage_resistance ]]},
             %damage-immunities = {poison},
-            %condition-immunities = {poisoned},
+            condition-immunities = {[[ shape.condition_immunities ]]},
             senses = {[[ shape.senses ]]},
-            languages = {[[ shape.languages ]]},
-            %challenge = 1,
+            languages = {[% if shape.languages %][[ shape.languages ]][% else %] --- [% endif %]},
+            challenge = {[[ shape.challenge_rating ]]},
           ]
         %\DndMonsterSection{Actions}
         [[ shape.__doc__ | rst_to_latex(top_heading_level=2) ]]
