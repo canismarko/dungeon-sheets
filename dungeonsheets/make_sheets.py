@@ -220,8 +220,6 @@ def make_sheet(
     if character.is_spellcaster:
         tex.append(create_spellbook_tex(character, use_dnd_decorations=fancy_decorations))
 
-    if len(character.spells) > 0:
-        tex.append(create_spellbook_tex(character, use_dnd_decorations=fancy_decorations))
     # Create a list of Artificer infusions
     infusions = getattr(character, "infusions", [])
     if len(infusions) > 0:
