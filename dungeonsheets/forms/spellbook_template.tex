@@ -5,11 +5,11 @@
   [% if use_dnd_decorations %]  
     \DndSpellHeader
     {[[ spl.name ]]}
-    {[% if spl.level > 0 %][[ ordinals[spl.level] ]]-level [[ spl.magic_school ]][% else %][[ spl.magic_school ]] Cantrip[% endif %]}
+    {[% if spl.level > 0 %][[ ordinals[spl.level] ]]-level [[ spl.magic_school ]][% else %][[ spl.magic_school ]] Cantrip[% endif %] [% if spl.ritual %](\textit{ritual})[% endif %]}
     {[[ spl.casting_time ]]}
     {[[ spl.casting_range ]]}
     {[[ spl.component_string ]]}
-    {[[ spl.duration ]]}
+    {[% if spl.ritual %]Concentration, up to [% endif %][[ spl.duration ]]}
 
     [% else %]
   \section*{[[ spl.name ]]}
