@@ -245,6 +245,7 @@ def make_sheet(
 
     # Create a list of Artificer infusions
     if getattr(character, "infusions", []):
+        print(character.infusions)
         tex.append(create_infusions_tex(character, use_dnd_decorations=fancy_decorations))
     
     # Create a list of Druid wild_shapes
