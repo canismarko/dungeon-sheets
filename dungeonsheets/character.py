@@ -392,7 +392,7 @@ class Character:
 
     @property
     def subclasses(self):
-        return list([c.subclass or "" for c in self.class_list])
+        return [c.subclass for c in self.class_list if c.subclass is not None]
 
     @property
     def level(self):

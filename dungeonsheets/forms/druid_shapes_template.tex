@@ -1,10 +1,9 @@
-\newpage
 \section*{Known Beasts}
 
 [% if use_dnd_decorations %]
   [% for shape in character.all_wild_shapes|sort(attribute='challenge_rating') %]
    [% if not character.can_assume_shape(shape) %]
-   \subsection*{Cannot assume form}
+     \subsection*{Cannot assume form}
    [% endif %]
     \begin{DndMonster}{[[ shape.name ]]}
         \DndMonsterType{[[ shape.description ]]}

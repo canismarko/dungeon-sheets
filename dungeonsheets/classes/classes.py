@@ -133,6 +133,7 @@ class SubClass:
     """
 
     name = ""
+    character_class = CharClass
     features_by_level = defaultdict(list)
     weapon_proficiencies = ()
     _proficiencies_text = ()

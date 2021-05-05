@@ -134,22 +134,26 @@ jinja_env.filters["mod_str"] = mod_str
 PDFTK_CMD = "pdftk"
 
 
-def create_druid_shapes_tex(
+def create_subclasses_tex(
     character: Character,
     use_dnd_decorations: bool = False,
 ) -> str:
-    template = jinja_env.get_template("druid_shapes_template.tex")
+    template = jinja_env.get_template("subclasses_template.tex")
     return template.render(character=character, use_dnd_decorations=use_dnd_decorations)
 
-
-
-def create_infusions_tex(
+def create_features_tex(
     character: Character,
     use_dnd_decorations: bool = False,
 ) -> str:
-    template = jinja_env.get_template("infusions_template.tex")
+    template = jinja_env.get_template("features_template.tex")
     return template.render(character=character, use_dnd_decorations=use_dnd_decorations)
 
+def create_magic_items_tex(
+    character: Character,
+    use_dnd_decorations: bool = False,
+) -> str:
+    template = jinja_env.get_template("magic_items_template.tex")
+    return template.render(character=character, use_dnd_decorations=use_dnd_decorations)
 
 def create_spellbook_tex(
     character: Character,
@@ -158,12 +162,18 @@ def create_spellbook_tex(
     template = jinja_env.get_template("spellbook_template.tex")
     return template.render(character=character, ordinals=ORDINALS, use_dnd_decorations=use_dnd_decorations)
 
-
-def create_features_tex(
+def create_infusions_tex(
     character: Character,
     use_dnd_decorations: bool = False,
 ) -> str:
-    template = jinja_env.get_template("features_template.tex")
+    template = jinja_env.get_template("infusions_template.tex")
+    return template.render(character=character, use_dnd_decorations=use_dnd_decorations)
+
+def create_druid_shapes_tex(
+    character: Character,
+    use_dnd_decorations: bool = False,
+) -> str:
+    template = jinja_env.get_template("druid_shapes_template.tex")
     return template.render(character=character, use_dnd_decorations=use_dnd_decorations)
 
 
@@ -217,23 +227,35 @@ def make_sheet(
         sheets.append(spell_base + ".pdf")
     # end of PDF gen
 
+    features_base = "{:s}_features".format(os.path.splitext(character_file)[0])
+    # Create a list of subcasses
+    if character.subclasses:
+        tex.append(create_subclasses_tex(character, use_dnd_decorations=fancy_decorations))
+
+    # Create a list of features
+    if character.features:
+        tex.append(create_features_tex(character, use_dnd_decorations=fancy_decorations))
+
+    if character.magic_items:
+        tex.append(create_magic_items_tex(character, use_dnd_decorations=fancy_decorations))
+
+    # Create a list of spells
     if character.is_spellcaster:
         tex.append(create_spellbook_tex(character, use_dnd_decorations=fancy_decorations))
 
     # Create a list of Artificer infusions
-    infusions = getattr(character, "infusions", [])
-    if len(infusions) > 0:
+    if getattr(character, "infusions", []):
         tex.append(create_infusions_tex(character, use_dnd_decorations=fancy_decorations))
+    
     # Create a list of Druid wild_shapes
-    wild_shapes = getattr(character, "wild_shapes", [])
-    if len(wild_shapes) > 0:
+    if getattr(character, "wild_shapes", []):
         tex.append(create_druid_shapes_tex(character, use_dnd_decorations=fancy_decorations))
 
 
     tex.append(jinja_env.get_template("postamble.tex").render(use_dnd_decorations=fancy_decorations))
-    latex.create_latex_pdf("".join(tex), "name", keep_temp_files=debug)
+    latex.create_latex_pdf("".join(tex), features_base, keep_temp_files=debug)
     if len(tex) > 2:
-        sheets.append("name.pdf")
+        sheets.append(features_base + ".pdf")
     # Typeset combined LaTeX file
     
     """

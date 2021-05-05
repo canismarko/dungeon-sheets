@@ -1,44 +1,23 @@
-\section*{Subclasses}
-           
-[% for sc in character.subclasses if sc not in ['', None, 'None', 'none']%]
+ \section*{Features}
+[% if use_dnd_decorations %]
+  [% for feat in character.features %]
+    \DndFeatHeader{[[ feat.name ]]}[Source: [[ feat.source ]]]
 
-  \subsection*{Subclass: [[ sc.name ]]}
+    [[ feat.__doc__|rst_to_latex ]]
+  [% endfor %]
+[% else %]
+  [% for feat in character.features %]
 
-  [[ sc.__doc__ | rst_to_latex(top_heading_level=2) ]]
+    \subsection*{[[ feat.name ]]}
 
-[% endfor %]
-  
-\section*{Features}
+    \noindent
+    \textbf{Source:} [[ feat.source ]] \\
 
-[% for feat in character.features %]
-
-  \subsection*{[[ feat.name ]]}
-
-  \noindent
-  \textbf{Source:} [[ feat.source ]] \\
-
-  [% if feat.needs_implementation %] %
-    \textbf{**Not included in stats on Character Sheet} %
-  [% endif %] %
-             
-  [[ feat.__doc__|rst_to_latex ]]
-
-[% endfor %]
-
-\section*{Magic Items}
-
-[% for mitem in character.magic_items %]
-
-  \subsection*{[[ mitem.name ]]}
-
-  \noindent
-  \textbf{Requires Attunement:} [[ mitem.requires_attunement ]] \\
-  \textbf{Rarity:} [[ mitem.rarity ]] \\
-
-  [% if mitem.needs_implementation %] %
-    \textbf{**Not included in stats on Character Sheet} %
-  [% endif %] %
-             
-  [[ mitem.__doc__|rst_to_latex ]]
+    [% if feat.needs_implementation %] %
+      \textbf{**Not included in stats on Character Sheet} %
+    [% endif %] %
+              
+    [[ feat.__doc__|rst_to_latex ]]
 
   [% endfor %]
+[% endif %]

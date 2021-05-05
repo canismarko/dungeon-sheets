@@ -65,7 +65,7 @@ def create_latex_pdf(
         "-interaction=nonstopmode",
         tex_file,
     ]
-    passes = 2 if use_dnd_decorations else 1
+    passes = 3 if use_dnd_decorations else 1
     try:
         for i in range(passes):
             result = subprocess.run(
