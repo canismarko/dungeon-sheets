@@ -587,7 +587,7 @@ class Character:
             spells |= set(c.spells_known) | set(c.spells_prepared)
         if self.race is not None:
             spells |= set(self.race.spells_known) | set(self.race.spells_prepared)
-        return sorted(tuple(spells), key=(lambda x: (x.name))
+        return sorted(tuple(spells), key=(lambda x: x.name))
 
     @property
     def spells_prepared(self):
