@@ -71,9 +71,6 @@ class Spell:
     def __hash__(self):
         return 0
 
-    def __lt__(self, other):
-        return (self.level, self.name) < (other.level, other.name)
-
     @property
     def component_string(self):
         s = f'{", ".join(self.components)}'
