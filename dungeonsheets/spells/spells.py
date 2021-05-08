@@ -63,7 +63,7 @@ class Spell:
         return s
 
     def __repr__(self):
-        return '"{:s}"'.format(self.name)
+        return f"{self.level} {self.name}"
 
     def __eq__(self, other):
         return (self.name == other.name) and (self.level == other.level)

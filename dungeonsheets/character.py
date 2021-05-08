@@ -392,7 +392,7 @@ class Character:
 
     @property
     def subclasses(self):
-        return list([c.subclass or "" for c in self.class_list])
+        return [c.subclass for c in self.class_list if c.subclass is not None]
 
     @property
     def level(self):
@@ -587,7 +587,7 @@ class Character:
             spells |= set(c.spells_known) | set(c.spells_prepared)
         if self.race is not None:
             spells |= set(self.race.spells_known) | set(self.race.spells_prepared)
-        return sorted(tuple(spells), key=(lambda x: (x.name)))
+        return sorted(tuple(spells), key=(lambda x: x.name))
 
     @property
     def spells_prepared(self):
@@ -598,7 +598,7 @@ class Character:
             spells |= set(c.spells_prepared)
         if self.race is not None:
             spells |= set(self.race.spells_prepared)
-        return sorted(tuple(spells), key=(lambda x: (x.name)))
+        return sorted(tuple(spells), key=(lambda x: x.name))
 
     def set_attrs(self, **attrs):
         """

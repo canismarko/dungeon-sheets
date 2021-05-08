@@ -9,6 +9,7 @@ class MagicItem:
     requires_attunement = False
     needs_implementation = False
     rarity = ""
+    item_type = ""
 
     def __init__(self, owner=None):
         self.owner = owner
@@ -42,6 +43,7 @@ class RingOfProtection(MagicItem):
     ac_bonus = 1
     requires_attunement = True
     rarity = "Rare"
+    item_type = "Ring"
 
 
 class DecanterOfEndlessWater(MagicItem):
@@ -70,6 +72,7 @@ class DecanterOfEndlessWater(MagicItem):
 
     name = "Decanter of Endless Water"
     rarity = "Uncommon"
+    item_type = "Wondrous item"
 
 
 class ToothOfAnimalFriendship(MagicItem):

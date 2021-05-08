@@ -77,7 +77,7 @@ class DwarvenToughness(Feature):
 
     """
 
-    name = "DwarvenToughness"
+    name = "Dwarven Toughness"
     source = "Race (Hill Dwarf)"
     needs_implementation = True
 

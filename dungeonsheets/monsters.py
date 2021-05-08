@@ -132,10 +132,10 @@ class BlackBear(Monster):
 class Crocodile(Monster):
     """**Hold Breath:** The crocodile can hold its breath for 15 minutes.
 
-    **Bite:** *Melee Weapon Attack:* +4 to hit, reach 5 ft., one
-      creature. *Hit:* 7 (1d10+2) piercing damage, and the target is
-      Grappled (escape DC 12). Until this grapple ends, the target is
-      Restrained, and the crocodile can't bite another target.
+    **Bite.** *Melee Weapon Attack:* +4 to hit, reach 5 ft., one
+    creature. *Hit:* 7 (1d10+2) piercing damage, and the target is
+    Grappled (escape DC 12). Until this grapple ends, the target is
+    Restrained, and the crocodile can't bite another target.
 
     """
 
@@ -144,7 +144,7 @@ class Crocodile(Monster):
     challenge_rating = 1 / 2
     armor_class = 12
     skills = "Stealth +2"
-    senses = "Passive perception 10"
+    senses = "passive Perception 10"
     strength = Ability(15)
     dexterity = Ability(10)
     constitution = Ability(13)
@@ -165,16 +165,16 @@ class GiantEagle(Monster):
     the young as normal eagles).
 
     **Keen Sight:** The eagle has advantage on Wisdom (Perception)
-      checks that rely on sight.
+    checks that rely on sight.
 
     **Multiattack:** The eagle makes two attacks: one with its beak
-      and one with its talons.
+    and one with its talons.
 
     **Beak:** *Melee Weapon Attack:* +5 to hit, reach 5 ft., one
-      target. *Hit:* 6 (1d6 + 3) piercing damage.
+    target. *Hit:* 6 (1d6 + 3) piercing damage.
 
     **Talons:** *Melee Weapon Attack:* +5 to hit, reach 5 ft., one
-      target. *Hit:* 10 (2d6 + 3) slashing damage.
+    target. *Hit:* 10 (2d6 + 3) slashing damage.
 
     """
 
@@ -184,7 +184,7 @@ class GiantEagle(Monster):
     armor_class = 13
     skills = "Perception +4"
     senses = "Passive perception 14"
-    languages = "Giant Eagle, understands common and Auran but can't speak."
+    languages = "understands common and Auran but can't speak."
     strength = Ability(16)
     dexterity = Ability(17)
     constitution = Ability(13)
@@ -486,7 +486,7 @@ class Wolf(Monster):
 
     **Pack Tactics.** The wolf has advantage on an attack roll against a
     creature if at least one of the wolf's allies is within 5 ft. of
-    the creature and the ally isn't incapacitated.  Actions
+    the creature and the ally isn't incapacitated.
 
     **Bite.** *Melee Weapon Attack:* +4 to hit, reach 5 ft., one
     target. *Hit:* (2d4+2) piercing damage. If the target is a
@@ -500,7 +500,7 @@ class Wolf(Monster):
     challenge_rating = 1 / 4
     armor_class = 13
     skills = "Perception +3, Stealth +4"
-    senses = "Passive Perception 13"
+    senses = "passive Perception 13"
     strength = Ability(12)
     dexterity = Ability(15)
     constitution = Ability(12)
