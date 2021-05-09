@@ -250,34 +250,20 @@ def make_sheet(
     # Create a list of Druid wild_shapes
     if getattr(character, "wild_shapes", []):
         tex.append(create_druid_shapes_tex(character, use_dnd_decorations=fancy_decorations))
-
-
-    tex.append(jinja_env.get_template("postamble.tex").render(use_dnd_decorations=fancy_decorations))
-    latex.create_latex_pdf("".join(tex), features_base, keep_temp_files=debug)
-    if len(tex) > 2:
-        sheets.append(features_base + ".pdf")
-    # Typeset combined LaTeX file
     
-    """
-        shapes_base = os.path.splitext(character_file)[0] + "_wild_shapes"
-        try:
-            create_druid_shapes_pdf(
-                character=character,
-                basename=shapes_base,
-                keep_temp_files=debug,
-                use_dnd_decorations=fancy_decorations,
-            )
-        except exceptions.LatexNotFoundError:
-            log.warning(
-                "``pdflatex`` not available. Skipping wild shapes list "
-                f"for {character.name}"
-            )
-        else:
-            sheets.append(shapes_base + ".pdf")
-        """
-    # Combine sheets into final pdf
-    final_pdf = os.path.splitext(character_file)[0] + ".pdf"
-    merge_pdfs(sheets, final_pdf, clean_up=True)
+    tex.append(jinja_env.get_template("postamble.tex").render(use_dnd_decorations=fancy_decorations))
+    
+    # Typeset combined LaTeX file
+    try:
+        if len(tex) > 2:
+            latex.create_latex_pdf("".join(tex), features_base, keep_temp_files=debug, use_dnd_decorations=fancy_decorations)
+            sheets.append(features_base + ".pdf")
+            final_pdf = os.path.splitext(character_file)[0] + ".pdf"
+            merge_pdfs(sheets, final_pdf, clean_up=True)
+    except exceptions.LatexNotFoundError:
+        log.warning(
+            f"``pdflatex`` not available. Skipping features for {character.name}"
+        )
 
 
 def merge_pdfs(src_filenames, dest_filename, clean_up=False):
