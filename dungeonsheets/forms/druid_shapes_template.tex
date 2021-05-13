@@ -1,77 +1,97 @@
-\documentclass[twocolumn,lettersize]{article}
+\section*{Known Beasts}
 
-[% include 'preamble.tex' %]
+[% if use_dnd_decorations %]
+  [% for shape in character.all_wild_shapes|sort(attribute='challenge_rating') %]
+   [% if not character.can_assume_shape(shape) %]
+     \subsection*{Cannot assume form}
+   [% endif %]
+    \begin{DndMonster}{[[ shape.name ]]}
+        \DndMonsterType{[[ shape.description ]]}
+    
+        % If you want to use commas in the key values, enclose the values in braces.
+        \DndMonsterBasics[
+            armor-class = {[[ shape.armor_class ]]},
+            hit-points  = {[[ shape.hp_max ]] ([[ shape.hit_dice ]])},
+            speed       = {[[ shape.speed ]] ft.[% if shape.swim_speed %], [[ shape.swim_speed ]]ft. swim[% endif %][% if shape.fly_speed %], [[ shape.fly_speed ]] ft. fly[% endif %]},
+          ]
+    
+        \DndMonsterAbilityScores[
+            str = [[ shape.strength.value ]],
+            dex = [[ shape.dexterity.value ]],
+            con = [[ shape.constitution.value ]],
+            int = [[ character.intelligence.value ]],
+            wis = [[ character.wisdom.value ]],
+            cha = [[ character.charisma.value ]],
+          ]
 
-\title{Wild Shapes}
-\date{}
+        \DndMonsterDetails[
+            %saving-throws = {Str +0, Dex +0, Con +0, Int +0, Wis +0, Cha +0},
+            skills = {[[ shape.skills ]]},
+            %damage-vulnerabilities = {cold},
+            damage-resistances = {[[ shape.damage_resistance ]]},
+            %damage-immunities = {poison},
+            condition-immunities = {[[ shape.condition_immunities ]]},
+            senses = {[[ shape.senses ]]},
+            languages = {[% if shape.languages %][[ shape.languages ]][% else %] --- [% endif %]},
+            challenge = {[[ shape.challenge_rating ]]},
+          ]
+        %\DndMonsterSection{Actions}
+        [[ shape.__doc__ | rst_to_latex(top_heading_level=2) ]]
+    \end{DndMonster}
+  [% endfor %]
+  
+[% else %]
+  [% for shape in character.all_wild_shapes|sort(attribute='challenge_rating') %]
+    [% if not character.can_assume_shape(shape) %]
+      {\color{mygrey}
+    [% else %]
+      {
+    [% endif %]
 
-\author{[[ character.name ]]}
+    \section*{[[ shape.name ]]}
+    [% if shape.description %]  
+    \subsection*{[[ shape.description ]]}
+    [% endif %]
 
-\begin{document}
+    \begin{tabular}{c | c | c}
+      Armor Class & Hit Points & Speed \\
+      \hline
+      [[ shape.armor_class ]] &
+      [[ shape.hp_max ]] ([[ shape.hit_dice ]]) &
+      [[ shape.speed ]] \\
+      [% if shape.swim_speed %]
+        & & [[ shape.swim_speed ]] swim \\
+        [% endif %]
+      [% if shape.fly_speed %]
+        & & [[ shape.fly_speed ]] fly \\
+        [% endif %]
+        
+    \end{tabular}
 
-\twocolumn[
-  \begin{@twocolumnfalse}
-    \maketitle
-    \section*{Known Beasts}
-    [% for shape in character.all_wild_shapes|sort(attribute="name") %]%
-    [[ shape.name ]][% if not loop.last %], [% endif %]%
-    [% endfor %]%
-    \vspace{3ex}
-  \end{@twocolumnfalse}
-]
+    \vspace{0.2cm}
 
-[% for shape in character.all_wild_shapes|sort(attribute='challenge_rating') %]
-  [% if not character.can_assume_shape(shape) %]
-    {\color{mygrey}
-  [% else %]
-    {
-  [% endif %]
+    \begin{tabular}{c | c | c}
+      STR & DEX & CON \\
+      \hline
+      [[ shape.strength.value ]] ([[ shape.strength.modifier|mod_str ]]) &
+      [[ shape.dexterity.value ]] ([[ shape.dexterity.modifier|mod_str ]]) &
+      [[ shape.constitution.value ]] ([[ shape.constitution.modifier|mod_str ]]) \\
+    \end{tabular}
 
-  \section*{[[ shape.name ]]}
-  [% if shape.description %]  
-  \subsection*{[[ shape.description ]]}
-  [% endif %]
+    \vspace{0.2cm}
 
-  \begin{tabular}{c | c | c}
-    Armor Class & Hit Points & Speed \\
-    \hline
-    [[ shape.armor_class ]] &
-    [[ shape.hp_max ]] ([[ shape.hit_dice ]]) &
-    [[ shape.speed ]] \\
-    [% if shape.swim_speed %]
-      & & [[ shape.swim_speed ]] swim \\
-      [% endif %]
-    [% if shape.fly_speed %]
-      & & [[ shape.fly_speed ]] fly \\
-      [% endif %]
-      
-  \end{tabular}
+    \begin{tabular}{p{0.1\textwidth} p{0.32\textwidth}}
+      \textbf{Skills:} & [[ shape.skills ]] \\
+      \textbf{Senses:} & [[ shape.senses ]] \\
+      \textbf{Languages:} & [[ shape.languages ]] \\
+      \textbf{Resistance:} & [[ shape.damage_resistance ]] \\
+      \textbf{Immunities:} & [[ shape.condition_immunities ]] \\
+    \end{tabular}
 
-  \vspace{0.2cm}
+    \vspace{0.2cm}
 
-  \begin{tabular}{c | c | c}
-    STR & DEX & CON \\
-    \hline
-    [[ shape.strength.value ]] ([[ shape.strength.modifier|mod_str ]]) &
-    [[ shape.dexterity.value ]] ([[ shape.dexterity.modifier|mod_str ]]) &
-    [[ shape.constitution.value ]] ([[ shape.constitution.modifier|mod_str ]]) \\
-  \end{tabular}
+    [[ shape.__doc__ | rst_to_latex(top_heading_level=2) ]]
 
-  \vspace{0.2cm}
-
-  \begin{tabular}{p{0.1\textwidth} p{0.32\textwidth}}
-    \textbf{Skills:} & [[ shape.skills ]] \\
-    \textbf{Senses:} & [[ shape.senses ]] \\
-    \textbf{Languages:} & [[ shape.languages ]] \\
-    \textbf{Resistance:} & [[ shape.damage_resistance ]] \\
-    \textbf{Immunities:} & [[ shape.condition_immunities ]] \\
-  \end{tabular}
-
-  \vspace{0.2cm}
-
-  [[ shape.__doc__ | rst_to_latex(top_heading_level=2) ]]
-
-  } %\color
-[% endfor %]
-
-\end{document}
+    } %\color
+  [% endfor %]
+[% endif %]

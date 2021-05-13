@@ -1,18 +1,7 @@
-\documentclass[10pt,twocolumn,lettersize]{article}
-
-[% include 'preamble.tex' %]
-
-\title{Infusion Descriptions}
-\author{[[ character.name ]] (Artificer [[ character.Artificer.level ]] level)}
-\date{}
-
-\begin{document}
-
-\maketitle
-
+\section*{Infusions}
 [% for inf in character.infusions %]
 
-  \section*{[[ inf.name ]]}
+  \subsection*{[[ inf.name ]]}
 
   [% if inf.prerequisite %]%
 
@@ -30,5 +19,3 @@
   [[ inf.__doc__ | rst_to_latex(top_heading_level=2) ]]
 
 [% endfor %]
-
-\end{document}
