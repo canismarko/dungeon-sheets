@@ -16,6 +16,9 @@ A tool to create character sheets for Dungeons and Dragons.
    :target: https://dungeon-sheets.readthedocs.io/en/latest/?badge=latest
    :alt: Documentation Status
 
+.. image:: https://img.shields.io/badge/code%20style-black-000000.svg
+   :target: https://github.com/psf/black
+
 Documentation
 =============
 
