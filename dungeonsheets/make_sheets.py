@@ -245,10 +245,6 @@ def merge_pdfs(src_filenames, dest_filename, clean_up=False):
                 os.remove(sheet)
 
 
-# # Deprecated:
-# load_character_file = readers.read_character_file
-
-
 def _build(filename, args) -> int:
     basename = filename.stem
     print(f"Processing {basename}...")

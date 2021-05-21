@@ -10,15 +10,6 @@ EG_DIR = os.path.abspath(os.path.join(os.path.split(__file__)[0], "../examples/"
 CHARFILE = os.path.join(EG_DIR, "rogue1.py")
 
 
-class CharacterFileTestCase(unittest.TestCase):
-    example_dir = Path(__file__).parent.parent / "examples"
-
-    def test_load_character_file(self):
-        charfile = CHARFILE
-        result = make_sheets.load_character_file(charfile)
-        self.assertEqual(result["strength"], 10)
-
-
 class PdfOutputTestCase(unittest.TestCase):
     basename = "clara"
 
