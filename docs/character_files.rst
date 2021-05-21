@@ -326,16 +326,20 @@ recommended subclass method above, so that attributes and descriptions
 can be given.
 
     
-VTTES JSON Files
-================
+Roll20 (VTTES) and Foundry JSON Files
+=====================================
 
-Dungeonsheets has partial support for reading JSON files exporting
-using the `VTTES browser extension`_. This allows character sheets to
-be exported from systems like Roll20.net, and then rendered into full
-character sheets.
+Dungeonsheets has partial support for reading JSON files exported
+either from roll20.net using the `VTTES browser extension`_, or
+directly from `Foundry VTT`_ by choosing *export data* from the
+actor's right-click menu. This allows character sheets to be exported
+from roll20.net and foundry, and then rendered into full character
+sheets.
 
 .. _player's handbook: http://dnd.wizards.com/products/tabletop-games/rpg-products/rpg_playershandbook
 
 .. _issue: https://github.com/canismarko/dungeon-sheets/issues
 
 .. _VTTES browser extension: https://wiki.5e.tools/index.php/R20es_Install_Guide
+
+.. _Foundry VTT: https://foundryvtt.com/article/actors/

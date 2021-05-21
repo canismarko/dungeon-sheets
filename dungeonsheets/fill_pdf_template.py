@@ -27,6 +27,7 @@ def text_box(string):
     )
     return new_string
 
+
 def create_character_pdf_template(character, basename, flatten=False):
     # Prepare the list of fields
     fields = {
@@ -444,6 +445,7 @@ def create_spells_pdf_template(character, basename, flatten=False):
     dirname = os.path.join(os.path.dirname(os.path.abspath(__file__)), "forms/")
     src_pdf = os.path.join(dirname, "blank-spell-sheet-default.pdf")
     make_pdf(fields, src_pdf=src_pdf, basename=basename, flatten=flatten)
+
 
 def make_pdf(fields: dict, src_pdf: str, basename: str, flatten: bool = False):
     """Create a new PDF by applying fields to a src PDF document.

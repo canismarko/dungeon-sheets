@@ -4,6 +4,7 @@ import re
 import warnings
 import math
 from types import ModuleType
+from typing import Sequence, Union
 
 import jinja2
 
@@ -223,13 +224,38 @@ class Character:
     custom_features = list()
     feature_choices = list()
 
-    def __init__(self, **attrs):
-        """Takes a bunch of attrs and passes them to ``set_attrs``"""
+    def __init__(
+        self,
+        classes: Sequence = [],
+        levels: Sequence[int] = [],
+        subclasses: Sequence = [],
+        **attrs,
+    ):
+        """Create a new character from attributes *attrs*.
+
+        **Multiclassing** can be accomplished by a list of class names
+        *classes*, and a list of class levels *levels*.
+
+        Parameters
+        ==========
+        classes
+          Strings with class names, or character class definitions
+          representing the characters various D&D classes.
+        levels
+          The class levels for each corresponding class entry in
+          *classes*.
+        subclasses
+          Subclasses that apply for this character.
+        **attrs
+          Additional keyword parameters to set as attributes for this
+          character.
+
+        """
         self.clear()
         # make sure class, race, background are set first
-        my_classes = attrs.pop("classes", [])
-        my_levels = attrs.pop("levels", [])
-        my_subclasses = attrs.pop("subclasses", [])
+        my_classes = classes
+        my_levels = levels
+        my_subclasses = subclasses
         # backwards compatability
         if len(my_classes) == 0:
             if "class" in attrs:
@@ -281,8 +307,9 @@ class Character:
         cls: (classes.CharClass, type, str),
         level: (int, str),
         subclass=None,
-        feature_choices=[],
+        feature_choices: Sequence = [],
     ):
+        """Add a class, level, and subclass the character has attained."""
         if isinstance(cls, str):
             cls = cls.strip().title().replace(" ", "")
             try:
@@ -298,8 +325,18 @@ class Character:
         )
 
     def add_classes(
-        self, classes_list=[], levels=[], subclasses=[], feature_choices=[]
+        self,
+        classes_list: Sequence[Union[str, classes.CharClass]] = [],
+        levels: Sequence[Union[int, float, str]] = [],
+        subclasses: Sequence = [],
+        feature_choices: Sequence = [],
     ):
+        """Add several classes, levels, etc.
+
+        The lists can also be single values for a single class
+        character.
+
+        """
         if isinstance(classes_list, str):
             classes_list = [classes_list]
         if (
@@ -909,7 +946,7 @@ class Character:
             return ()
 
     @classmethod
-    def load(cls, character_file):
+    def load(Cls, character_file):
         # Create a character from the character definition
         char_props = read_character_file(character_file)
         classes = char_props.get("classes", [])
@@ -920,7 +957,7 @@ class Character:
             ]
             char_props["levels"] = [str(char_props.pop("level"))]
         # Create the character with loaded properties
-        char = Character(**char_props)
+        char = Cls(**char_props)
         return char
 
     def save(self, filename, template_file="character_template.txt"):

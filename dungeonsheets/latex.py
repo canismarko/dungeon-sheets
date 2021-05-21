@@ -46,9 +46,7 @@ def _remove_temp_files(basename_):
             filename.unlink()
 
 
-def create_latex_pdf(
-    tex, basename, keep_temp_files=False, use_dnd_decorations=False
-):
+def create_latex_pdf(tex, basename, keep_temp_files=False, use_dnd_decorations=False):
     # Create tex document
     tex_file = f"{basename}.tex"
     with open(tex_file, mode="w", encoding="utf-8") as f:
