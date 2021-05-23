@@ -11,7 +11,7 @@ class Executable(ABC):
 
     @abstractmethod
     def execute(self, subj, obj=None):
-        return Event(self, subj, obj)
+        """Execute the given action"""
 
 
 class Action(Executable):

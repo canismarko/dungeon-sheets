@@ -18,16 +18,13 @@ class Encounter:
     def allies(self, agent):
         """Who sides with the given agent in an encounter?"""
         if agent in self.group_a:
-            return list(set(self.group_a) - set(agent))
+            return list(set(self.group_a) - set([agent]))
         else:
-            return list(set(self.group_b) - set(agent))
+            return list(set(self.group_b) - set([agent]))
 
     def reset(self):
         self.events = []
         self.long_rest()
-
-    def rating(self):
-        raise NotImplementedError()  # Deadly for Python :/
 
     def simulate(self):
         """Who will win?"""
@@ -47,6 +44,10 @@ class Encounter:
                     return self.events
 
         return self.events  # Should never get here -- self.is_encounter_over() will end it
+
+    def rating(self):
+        """Encounter Rating"""
+        raise NotImplementedError()
 
     def is_encounter_over(self):
         """If all members of one party are at HP <= 0, it's over"""

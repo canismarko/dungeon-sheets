@@ -15,8 +15,8 @@ from dungeonsheets.dice import roll
 class TestEncounter(TestCase):
     """Tests for features and feature-related activities."""
 
-    def test_simple_rat_fight(self):
-        """A fight against a giant rat"""
+    def setUp(self):
+
         char = SimpleRanger()
 
         class StravajiaxenAttack(Attack):
@@ -24,8 +24,7 @@ class TestEncounter(TestCase):
             #  creating a player character and classes
 
             def __init__(self, subj, obj):
-                self.subj = subj
-                self.obj = obj
+                super(StravajiaxenAttack, self).__init__(subj, obj)
 
             def execute(self):
                 result = roll(20) + self.subj.dexterity.modifier + self.subj.proficiency_bonus
@@ -42,8 +41,7 @@ class TestEncounter(TestCase):
         class GiantRatAttack(Attack):
 
             def __init__(self, subj, obj):
-                self.subj = subj
-                self.obj = obj
+                super(GiantRatAttack, self).__init__(subj, obj)
 
             def execute(self):
                 result = roll(20) + 4
@@ -58,8 +56,26 @@ class TestEncounter(TestCase):
         enemy = GiantRat()
         enemy.name = "Nameless Rat"  # I don't want things to be personal...
         enemy.default_actions.append(GiantRatAttack)
+        self.default_player = char
+        self.default_enemy = enemy
 
-        battle = Encounter([char], [enemy])
+    def test_encounter_rating(self):
+        battle = Encounter([self.default_player], [self.default_enemy])
+        self.assertRaises(NotImplementedError, battle.rating)
+
+    def test_opponents(self):
+        battle = Encounter([self.default_player], [self.default_enemy])
+        self.assertEqual([self.default_enemy], battle.opponents(self.default_player))
+        self.assertEqual([self.default_player], battle.opponents(self.default_enemy))
+
+    def test_allies(self):
+        battle = Encounter([self.default_player], [self.default_enemy])
+        self.assertEqual(0, len(battle.allies(self.default_player)))
+        self.assertEqual(0, len(battle.allies(self.default_enemy)))
+
+    def test_simple_rat_fight(self):
+        """A fight against a giant rat"""
+        battle = Encounter([self.default_player], [self.default_enemy])
         battle.reset()
         results = battle.simulate()
         for event in results:
