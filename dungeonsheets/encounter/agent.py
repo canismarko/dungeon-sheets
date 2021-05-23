@@ -97,7 +97,6 @@ class Agent(ABC):
         self.default_reactions = list()
         self.default_legendary_actions = list()
         self.default_lair_actions = list()
-        self.long_rest()
 
     def roll_initiative(self):
         init_mod, adv = self.numerical_initiative

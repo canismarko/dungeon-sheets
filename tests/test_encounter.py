@@ -60,6 +60,7 @@ class TestEncounter(TestCase):
         enemy.default_actions.append(GiantRatAttack)
 
         battle = Encounter([char], [enemy])
+        battle.reset()
         results = battle.simulate()
         for event in results:
             print(str(event))
