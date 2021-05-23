@@ -4,6 +4,21 @@ class Agent:
     strategies = ("Random", "Greedy", "KillWeakest")
     strategy = "Greedy"
 
+    # Hit points
+    hp_max = None
+    # Base stats (ability scores)
+    strength = Ability()
+    dexterity = Ability()
+    constitution = Ability()
+    intelligence = Ability()
+    wisdom = Ability()
+    charisma = Ability()
+    armor_class = ArmorClass()
+    initiative = Initiative()
+    speed = Speed()
+
+    languages = ""
+
     def __init__(self):
         pass
 
