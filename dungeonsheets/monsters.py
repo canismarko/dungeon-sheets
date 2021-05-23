@@ -3,7 +3,7 @@ shape forms."""
 
 
 from dungeonsheets.stats import Ability
-from dungeonsheets.agent import Agent
+from dungeonsheets.encounter.agent import Agent
 
 
 class Monster(Agent):

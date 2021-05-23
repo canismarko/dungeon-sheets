@@ -12,7 +12,7 @@ class TestEncounter(TestCase):
     """Tests for features and feature-related activities."""
 
     def test_simulation(self):
-        """Can I run an encounter against Schlangdedrosa Magentawrath?"""
+        """Can I run an encounter against Langdedrosa Cyanwrath?"""
         char = Character()
         char.set_attrs(name="Stravajiaxen")
         char.set_attrs(weapons=["greataxe"])
@@ -22,7 +22,7 @@ class TestEncounter(TestCase):
         char.set_attrs(race="half orc")
         char.set_attrs(inspiration=False)
 
-        class SchlangdedrosaMagentawrath(Monster):
+        class LangdedrosaCyanwrath(Monster):
             """
             **Action Surge (Recharges on a Short or Long Rest).** On his turn, Langdedrosa
             can take one additional action.
@@ -46,7 +46,7 @@ class TestEncounter(TestCase):
             **Climbing speed:** 30 ft.
             """
 
-            name = "Schlangdedrosa Magentawrath"
+            name = "Langdedrosa Cyanwrath"
             description = "Medium humanoid (half-dragon), lawful evil"
             challenge_rating = 4
             armor_class = 17
@@ -64,7 +64,7 @@ class TestEncounter(TestCase):
             hp_max = 57
             hit_dice = "6d12+18"
 
-        schlang = SchlangdedrosaMagentawrath()
+        lang = LangdedrosaCyanwrath()
 
-        battle = Encounter([char], [schlang])
+        battle = Encounter([char], [lang])
         results = battle.simulate()

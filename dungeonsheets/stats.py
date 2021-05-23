@@ -240,23 +240,3 @@ class Initiative(NumericalInitiative):
         if has_advantage:
             ini += "(A)"
         return ini
-
-
-###########################
-# STATUS
-###########################
-
-class CurrentHP:
-    """A Numerical Representation of Current HP"""
-
-    def __get__(self, char, Character):
-        if not char.hp_max:
-            char.__set_hp_max()
-            return char.hp_max
-
-
-class CurrentInitiative(NumericalInitiative):
-    """A Numerical Representation of a Character's Rolled Initiative"""
-
-    def __get__(self, char, Character):
-        ini, has_advantage = super(CurrentInitiative, self).__get__(char, Character)

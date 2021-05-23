@@ -1,6 +1,8 @@
 from dungeonsheets.conditions.conditions import Blinded, Charmed
-from dungeonsheets.stats import Ability, ArmorClass, Initiative, Speed, Skill, CurrentInitiative, CurrentHP
+from dungeonsheets.stats import Ability, ArmorClass, Initiative, Speed, Skill, CurrentInitiative, CurrentHP, \
+    NumericalInitiative
 from abc import ABC
+from dungeonsheets.utils import roll
 
 
 class Agent(ABC):
@@ -81,14 +83,35 @@ class Agent(ABC):
     feature_choices = list()
 
     # Current Status:
-    initiative_roll = CurrentInitiative()
-    current_hp = CurrentHP()
+    numerical_initiative = NumericalInitiative()
+    _initiative_roll = False
+    _current_hp = None
     statuses = list()
 
     # TODO: Pull in the monster class-variables here too
 
     def __init__(self):
         pass
+
+    def roll_initiative(self):
+        init_mod, adv = self.numerical_initiative
+        val = roll(20)
+        if adv:
+            val = max(val, roll(20))
+        self._initiative_roll = val + init_mod
+
+    @property
+    def current_hp(self):
+        if self._current_hp is None:
+            self._current_hp = self.hp_max
+        return self._current_hp
+
+    @property
+    def initiative_roll(self):
+        if self._initiative_roll is False:
+            self.roll_initiative()
+        return self._initiative_roll
+
 
     # TODO: Perhaps these are better stored like the skills are as objects with a __get__?
 

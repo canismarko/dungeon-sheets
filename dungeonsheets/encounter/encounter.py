@@ -18,7 +18,6 @@ class Encounter:
 
         self.all_agents = sorted(self.all_agents, key=lambda a: a.initiative_roll)
 
-        raise NotImplementedError()  # Apparently the mind flayers win for now
 
     def analyze(self):
         """So, really... how deadly *is* it?"""

@@ -20,10 +20,10 @@ from dungeonsheets import (
     spells,
     weapons,
 )
-from dungeonsheets.stats import Ability, ArmorClass, Initiative, Skill, Speed, findattr
+from dungeonsheets.stats import findattr
 from dungeonsheets.weapons import Weapon
 from dungeonsheets.readers import read_character_file
-from dungeonsheets.agent import Agent
+from dungeonsheets.encounter.agent import Agent
 
 
 def read(fname):
