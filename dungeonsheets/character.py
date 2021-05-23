@@ -23,6 +23,7 @@ from dungeonsheets import (
 from dungeonsheets.stats import Ability, ArmorClass, Initiative, Skill, Speed, findattr
 from dungeonsheets.weapons import Weapon
 from dungeonsheets.readers import read_character_file
+from dungeonsheets.agent import Agent
 
 
 def read(fname):
@@ -145,7 +146,7 @@ def _resolve_mechanic(mechanic, module, SuperClass, warning_message=None):
     return Mechanic
 
 
-class Character:
+class Character(Actor):
     """A generic player character."""
 
     # General attirubtes

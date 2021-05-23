@@ -3,9 +3,10 @@ shape forms."""
 
 
 from dungeonsheets.stats import Ability
+from dungeonsheets.agent import Agent
 
 
-class Monster:
+class Monster(Agent):
     """A monster that may be encountered when adventuring."""
 
     name = "Generic Monster"
@@ -209,8 +210,8 @@ class GiantFrog(Monster):
     description = "Medium beast, unaligned"
     challenge_rating = 1 / 4
     armor_class = 11
-    skills = "Pe rce ption +2, Stealth +3"
-    senses = "darkvi sion 30ft., passive Perception 12"
+    skills = "Perception +2, Stealth +3"
+    senses = "darkvision 30ft., passive Perception 12"
     languages = ""
     strength = Ability(12)
     dexterity = Ability(13)
@@ -242,7 +243,7 @@ class GiantRat(Monster):
     challenge_rating = 1 / 8
     armor_class = 12
     skills = ""
-    senses = "Darkvision 60 ft., Passive perception 10"
+    senses = "Darkvision 60 ft., passive Perception 10"
     languages = ""
     strength = Ability(7)
     dexterity = Ability(15)
