@@ -1,0 +1,1 @@
+from dungeonsheets.encounter.encounter import Encounter

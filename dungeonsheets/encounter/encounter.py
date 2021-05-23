@@ -7,6 +7,7 @@ class Encounter:
         if len(parties) is not 2:
             raise NotImplementedError("Haven't implemented AI for 3+ groups")  # TODO: Implement this
 
+        # Combine all parties into a single group
         self.all_agents = parties[0]
         for party in parties[1:]:
             self.all_agents += party

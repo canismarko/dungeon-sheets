@@ -3,17 +3,20 @@
 from unittest import TestCase
 
 from dungeonsheets.character import Character
+from dungeonsheets.encounter import Encounter
+from dungeonsheets.monsters import Monster
+from dungeonsheets.stats import Ability
 
 
 class TestEncounter(TestCase):
     """Tests for features and feature-related activities."""
 
-    def test_simulation():
+    def test_simulation(self):
         """Can I run an encounter against Schlangdedrosa Magentawrath?"""
         char = Character()
         char.set_attrs(name="Stravajiaxen")
-        char.set_attrs(weapons=["shortsword"])
-        char.set_attrs(armor="leather armor", shield="shield")
+        char.set_attrs(weapons=["greataxe"])
+        char.set_attrs(armor="split mail")
 
         # Check that race gets set to an object
         char.set_attrs(race="half orc")
@@ -63,4 +66,5 @@ class TestEncounter(TestCase):
 
         schlang = SchlangdedrosaMagentawrath()
 
-        battle = Encounter([])
+        battle = Encounter([char], [schlang])
+        results = battle.simulate()
