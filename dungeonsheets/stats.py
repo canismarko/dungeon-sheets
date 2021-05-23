@@ -211,8 +211,8 @@ class Speed:
         return "{:d}{:s}".format(speed, other_speed)
 
 
-class Initiative:
-    """A character's initiative"""
+class NumericalInitiative:
+    """A numerical representation of initiative"""
 
     def __get__(self, char, Character):
         ini = char.dexterity.modifier
@@ -222,12 +222,21 @@ class Initiative:
             ini += char.wisdom.modifier
         if char.has_feature(RakishAudacity):
             ini += char.charisma.modifier
-        ini = "{:+d}".format(ini)
+
         has_advantage = (
-            char.has_feature(NaturalExplorerRevised)
-            or char.has_feature(FeralInstinct)
-            or char.has_feature(AmbushMaster)
+                char.has_feature(NaturalExplorerRevised)
+                or char.has_feature(FeralInstinct)
+                or char.has_feature(AmbushMaster)
         )
+        return ini, has_advantage
+
+
+class Initiative(NumericalInitiative):
+    """A character's initiative"""
+
+    def __get__(self, char, Character):
+        ini, has_advantage = super(Initiative, self).__get__(char, Character)
+        ini = "{:+d}".format(ini)
         if has_advantage:
             ini += "(A)"
         return ini

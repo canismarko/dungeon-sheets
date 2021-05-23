@@ -1,3 +1,6 @@
+from dungeonsheets.stats import Ability, ArmorClass, Initiative, Speed
+
+
 class Agent:
     """An actor in an encounter"""
 

@@ -146,7 +146,7 @@ def _resolve_mechanic(mechanic, module, SuperClass, warning_message=None):
     return Mechanic
 
 
-class Character(Actor):
+class Character(Agent):
     """A generic player character."""
 
     # General attirubtes
