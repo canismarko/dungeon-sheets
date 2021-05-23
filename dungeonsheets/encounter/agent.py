@@ -1,5 +1,6 @@
 from dungeonsheets.conditions.conditions import Blinded, Charmed
-from dungeonsheets.stats import Ability, ArmorClass, Initiative, Speed, Skill, CurrentInitiative, CurrentHP, \
+from dungeonsheets.encounter.actions import Attack
+from dungeonsheets.stats import Ability, ArmorClass, Initiative, Speed, Skill, \
     NumericalInitiative
 from abc import ABC
 from dungeonsheets.utils import roll
@@ -91,7 +92,7 @@ class Agent(ABC):
     # TODO: Pull in the monster class-variables here too
 
     def __init__(self):
-        pass
+        self.long_rest()
 
     def roll_initiative(self):
         init_mod, adv = self.numerical_initiative
@@ -112,40 +113,101 @@ class Agent(ABC):
             self.roll_initiative()
         return self._initiative_roll
 
+    def make_actions(self, encounter):
+        """Return a series of actions"""
 
-    # TODO: Perhaps these are better stored like the skills are as objects with a __get__?
+        # TODO: Dramatically improve logic, consider healing, consider encounter state, etc.
+        best_opponent = encounter.opponents(self)[0]  # TODO: Choose opponent cleverly
+        action = Attack(self, best_opponent)
+        event = action.execute()
+        return [event]  # TODO: Also allow bonus actions, etc.
+
+    def long_rest(self):
+        self.current_hp = self.hp_max
+        self._free_actions = self._default_free_actions
+        # TODO: Support spell slots
+        self.new_turn()
+
+    def new_turn(self):
+        self._actions = self._default_actions
+        self._bonus_actions = self._default_bonus_actions
+        self._reactions = self._default_reactions
+        self._legendary_actions = self._default_legendary_actions
+        self._lair_actions = self._default_lair_actions
+
+    # TODO: Consider having a single list of actions and gain or lose them each
+    #  turn based on their sub-type instead.
 
     @property
-    def actions(self):
+    def default_actions(self):
         """All the things I can do in a turn"""
         return []
-    
+
     @property
-    def free_actions(self):
+    def default_free_actions(self):
         """Stuff I can do as much as I want in a turn"""
         return []
 
     @property
-    def movement(self):
+    def default_movement(self):
         """Where I can go in a turn"""
         return []
 
     @property
-    def bonus_actions(self):
+    def default_bonus_actions(self):
         """Things I can do once in addition to an action"""
         return []
 
     @property
-    def reactions(self):
+    def default_reactions(self):
         """Things I can do in response to an action"""
         return []
 
     @property
-    def lair_actions(self):
+    def default_lair_actions(self):
         """Things I can do at initiative count 20"""
         return []
 
     @property
-    def legendary_actions(self):
-        """Things I can do so many times in a turn after another agent acts"""
+    def default_legendary_actions(self):
+        """Things I can do only so many times in a turn after another agent acts"""
         return []
+
+    @property
+    def default_long_rest_actions(self):
+        """Actions I gain back if I've had a long rest"""
+
+    @property
+    def actions(self):
+        """All the remaining things I can do in a turn"""
+        return self._actions
+    
+    @property
+    def free_actions(self):
+        """Stuff I can do as much as I want in a turn"""
+        return self._free_actions
+
+    @property
+    def movement(self):
+        """The rest of where I can go in a turn"""
+        return self._movement
+
+    @property
+    def bonus_actions(self):
+        """The rest of the things I can do once in addition to an action"""
+        return self._bonus_actions
+
+    @property
+    def reactions(self):
+        """The remaining things I can do in response to an action"""
+        return self._reactions
+
+    @property
+    def lair_actions(self):
+        """Remaining things I can do at initiative count 20"""
+        return self._lair_actions
+
+    @property
+    def legendary_actions(self):
+        """Remaining things I can do only so many times in a turn after another agent acts"""
+        return self._legendary_actions
