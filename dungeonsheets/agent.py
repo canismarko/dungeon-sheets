@@ -1,8 +1,10 @@
-from dungeonsheets.stats import Ability, ArmorClass, Initiative, Speed, Skill
+from dungeonsheets.conditions.conditions import Blinded, Charmed
+from dungeonsheets.stats import Ability, ArmorClass, Initiative, Speed, Skill, CurrentInitiative, CurrentHP
+from abc import ABC
 
 
-class Agent:
-    """An actor in an encounter"""
+class Agent(ABC):
+    """An actor in an encounter. Use Monster or Character, not this class directly!"""
 
     # General attributes
     name = ""
@@ -51,6 +53,10 @@ class Agent:
     stealth = Skill(ability="dexterity")
     survival = Skill(ability="wisdom")
 
+    # Conditions
+    blinded = Blinded()
+    charmed = Charmed()
+    # TODO finish me!
 
     # Inventory
     cp = 0
@@ -74,8 +80,17 @@ class Agent:
     custom_features = list()
     feature_choices = list()
 
+    # Current Status:
+    initiative_roll = CurrentInitiative()
+    current_hp = CurrentHP()
+    statuses = list()
+
+    # TODO: Pull in the monster class-variables here too
+
     def __init__(self):
         pass
+
+    # TODO: Perhaps these are better stored like the skills are as objects with a __get__?
 
     @property
     def actions(self):
