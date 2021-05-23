@@ -6,7 +6,7 @@ class Encounter:
         self.group_b = group_b
         self.all_agents = group_a + group_b
 
-        self._events = []
+        self.events = []  # Should be private?
 
     def opponents(self, agent):
         """Who opposes the given agent in an encounter?"""
@@ -23,7 +23,7 @@ class Encounter:
             return list(set(self.group_b) - set(agent))
 
     def reset(self):
-        self._events = []
+        self.events = []
         self.long_rest()
 
     def rating(self):
@@ -48,8 +48,6 @@ class Encounter:
 
         return self.events  # Should never get here -- self.is_encounter_over() will end it
 
-        raise NotImplementedError()  # TODO: Finish the encounter
-
     def is_encounter_over(self):
         """If all members of one party are at HP <= 0, it's over"""
         return (
@@ -67,11 +65,3 @@ class Encounter:
         for agent in self.all_agents:
             agent.new_turn()
 
-    @property
-    def events(self):
-        """What series of events went down in the encounter?"""
-        return self._events
-
-    def analyze(self):
-        """So, really... how deadly *is* it?"""
-        raise NotImplementedError()  # TODO: Run a Monte-Carlo simulation

@@ -3,7 +3,7 @@ from dungeonsheets.encounter.actions import Attack
 from dungeonsheets.stats import Ability, ArmorClass, Initiative, Speed, Skill, \
     NumericalInitiative
 from abc import ABC
-from dungeonsheets.utils import roll
+from dungeonsheets.dice import roll
 
 
 class Agent(ABC):
@@ -92,6 +92,11 @@ class Agent(ABC):
     # TODO: Pull in the monster class-variables here too
 
     def __init__(self):
+        self.default_actions = list()
+        self.default_bonus_actions = list()
+        self.default_reactions = list()
+        self.default_legendary_actions = list()
+        self.default_lair_actions = list()
         self.long_rest()
 
     def roll_initiative(self):
@@ -107,6 +112,13 @@ class Agent(ABC):
             self._current_hp = self.hp_max
         return self._current_hp
 
+    @current_hp.setter
+    def current_hp(self, val):
+        if val < 0:
+            self._current_hp = 0
+        else:
+            self._current_hp = val
+
     @property
     def initiative_roll(self):
         if self._initiative_roll is False:
@@ -116,76 +128,37 @@ class Agent(ABC):
     def make_actions(self, encounter):
         """Return a series of actions"""
 
-        # TODO: Dramatically improve logic, consider healing, consider encounter state, etc.
+        # TODO: Dramatically improve logic, consider healing,
+        #  consider encounter state, consider strategy etc.
         best_opponent = encounter.opponents(self)[0]  # TODO: Choose opponent cleverly
-        action = Attack(self, best_opponent)
+        action = self.actions[0](self, best_opponent)
         event = action.execute()
+        encounter.events.append(event)
         return [event]  # TODO: Also allow bonus actions, etc.
 
     def long_rest(self):
         self.current_hp = self.hp_max
-        self._free_actions = self._default_free_actions
         # TODO: Support spell slots
         self.new_turn()
 
     def new_turn(self):
-        self._actions = self._default_actions
-        self._bonus_actions = self._default_bonus_actions
-        self._reactions = self._default_reactions
-        self._legendary_actions = self._default_legendary_actions
-        self._lair_actions = self._default_lair_actions
+        self._actions = self.default_actions
+        self._bonus_actions = self.default_bonus_actions
+        self._reactions = self.default_reactions
+        self._legendary_actions = self.default_legendary_actions
+        self._lair_actions = self.default_lair_actions
+
+    def has_feature(self, *args, **kwargs):
+        return False  # TODO: Save list of monster features as a list to check
 
     # TODO: Consider having a single list of actions and gain or lose them each
-    #  turn based on their sub-type instead.
-
-    @property
-    def default_actions(self):
-        """All the things I can do in a turn"""
-        return []
-
-    @property
-    def default_free_actions(self):
-        """Stuff I can do as much as I want in a turn"""
-        return []
-
-    @property
-    def default_movement(self):
-        """Where I can go in a turn"""
-        return []
-
-    @property
-    def default_bonus_actions(self):
-        """Things I can do once in addition to an action"""
-        return []
-
-    @property
-    def default_reactions(self):
-        """Things I can do in response to an action"""
-        return []
-
-    @property
-    def default_lair_actions(self):
-        """Things I can do at initiative count 20"""
-        return []
-
-    @property
-    def default_legendary_actions(self):
-        """Things I can do only so many times in a turn after another agent acts"""
-        return []
-
-    @property
-    def default_long_rest_actions(self):
-        """Actions I gain back if I've had a long rest"""
+    #  turn based on interrogating their sub-type instead, using isinstance or
+    #  another method.
 
     @property
     def actions(self):
         """All the remaining things I can do in a turn"""
         return self._actions
-    
-    @property
-    def free_actions(self):
-        """Stuff I can do as much as I want in a turn"""
-        return self._free_actions
 
     @property
     def movement(self):

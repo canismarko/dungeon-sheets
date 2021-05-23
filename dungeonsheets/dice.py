@@ -1,3 +1,4 @@
+import random
 import re
 from collections import namedtuple
 
@@ -22,3 +23,11 @@ def read_dice_str(dice_str):
         raise DiceError(f"Cannot interpret dice string {dice_str}")
     dice = Dice(num=int(match.group(1)), faces=int(match.group(2)))
     return dice
+
+
+def roll(a, b=None):
+    """roll(20) means roll 1d20, roll(2, 6) means roll 2d6"""
+    if b is None:
+        return random.randint(1, a)
+    else:
+        return sum([random.randint(1, b) for _ in range(a)])

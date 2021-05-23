@@ -28,6 +28,9 @@ class Monster(Agent):
     hp_max = 10
     hit_dice = "1d6"
 
+    def __init__(self):
+        super(Monster, self).__init__()
+
     @property
     def is_beast(self):
         is_beast = "beast" in self.description.lower()

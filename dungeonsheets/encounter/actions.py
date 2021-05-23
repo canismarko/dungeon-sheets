@@ -1,15 +1,6 @@
 from abc import ABC, abstractmethod
 
-class Event:
-    """An event between one and possibly more entities"""
-
-    subj = None
-    obj = None
-
-    def __init__(self, action, subj, obj):
-        self.action = action
-        self.subj = subj
-        self.obj = obj
+from dungeonsheets.encounter.events import Event
 
 
 class Executable(ABC):
@@ -52,10 +43,3 @@ class Attack(Action):
     def __init__(self, subj, obj):
         self.subj = subj
         self.obj = obj
-
-    def execute(self):
-        # Subject makes an attack roll
-        # Compare attack roll to object's AC
-        # Store the results to look into the event later
-
-        pass  # TODO: Write how to do this

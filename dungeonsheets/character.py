@@ -197,6 +197,7 @@ class Character(Agent):
           character.
 
         """
+        super(Character, self).__init__()
         self.clear()
         # make sure class, race, background are set first
         my_classes = classes
