@@ -28,11 +28,7 @@ class TestDice(TestCase):
 
     def test_multi_rolling(self):
         num_tests = 100
-        rolls = []
         for _ in range(num_tests):
             result = roll(2, 4)  # Roll 2d4
             self.assertGreaterEqual(result, 2)
             self.assertLessEqual(result, 8)
-            rolls.append(result)
-        print(rolls)
-        self.assertGreaterEqual(max(rolls), 7)  # Must sometimes get a 7 or 8 after rolling 2d4 100 times
