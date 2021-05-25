@@ -129,7 +129,7 @@ class Skill:
             modifier += entity.proficiency_bonus // 2
         elif entity.has_feature(RemarkableAthelete):
             if self.ability_name.lower() in ("strength", "dexterity", "constitution"):
-                modifier += ceil(entity.proficienc_bonus / 2.0)
+                modifier += ceil(entity.proficiency_bonus / 2.0)
 
         # Check for expertise
         is_expert = self.skill_name in entity.skill_expertise
