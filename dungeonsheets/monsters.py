@@ -44,7 +44,7 @@ class Ankylosaurus(Monster):
     challenge_rating = 3
     armor_class = 15
     skills = ""
-    senses = "Passive perception 11"
+    senses = "passive Perception 11"
     strength = Ability(19)
     dexterity = Ability(11)
     constitution = Ability(15)
@@ -74,7 +74,7 @@ class Ape(Monster):
     challenge_rating = 1 / 2
     armor_class = 12
     skills = "Athletics +5, Perception +3"
-    senses = "Passive perception 13"
+    senses = "passive Perception 13"
     strength = Ability(16)
     dexterity = Ability(14)
     constitution = Ability(14)
@@ -109,7 +109,7 @@ class BlackBear(Monster):
     challenge_rating = 1 / 2
     armor_class = 11
     skills = "Perception +3"
-    senses = "Passive perception 13"
+    senses = "passive Perception 13"
     strength = Ability(15)
     dexterity = Ability(10)
     constitution = Ability(14)
@@ -177,7 +177,7 @@ class GiantEagle(Monster):
     challenge_rating = 1
     armor_class = 13
     skills = "Perception +4"
-    senses = "Passive perception 14"
+    senses = "passive Perception 14"
     languages = "understands common and Auran but can't speak."
     strength = Ability(16)
     dexterity = Ability(17)
@@ -281,9 +281,9 @@ class GiantPoisonousSnake(Monster):
 
 class PoisonousSnake(Monster):
     """**Bite:** Melee Weapon Attack: +5 to hit, reach 5 ft., one target.
-    Hit: 1 piercing damage, and the target must ma ke a DC 10
+    Hit: 1 piercing damage, and the target must make a DC 10
     Constitution saving throw, taking 5 (2d4) poison dam age on a
-    failed save, or ha lf as much damage on a successful one.
+    failed save, or half as much damage on a successful one.
     """
 
     name = "Poisonous snake"
