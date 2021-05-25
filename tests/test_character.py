@@ -64,7 +64,7 @@ class TestCharacter(TestCase):
         self.assertEqual(char.spells[0].name, "my spell!")
 
     def test_homebrew_infusions(self):
-        char = Character(class_list="artificer")
+        char = Character(classes="artificer")
 
         class MyInfusion(infusions.Infusion):
             name = "my infusion!"
@@ -74,7 +74,7 @@ class TestCharacter(TestCase):
         self.assertIsInstance(char.infusions[0], infusions.Infusion)
         self.assertEqual(char.infusions[0].name, "my infusion!")
         # Pass a previously undefined infusion
-        char = Character(class_list="artificer")
+        char = Character(classes="artificer")
         char.set_attrs(infusions=("spam_infusion",))
         self.assertIsInstance(char.infusions[0], infusions.Infusion)
         self.assertEqual(char.infusions[0].name, "Spam Infusion")
@@ -129,7 +129,7 @@ class TestCharacter(TestCase):
         self.assertEqual(repr(char), "<Wizard: Inara>")
 
     def test_is_proficient(self):
-        char = Character(class_list=["Wizard"])
+        char = Character(classes=["Wizard"])
         char.weapon_proficiencies
         sword = Shortsword()
         # Check for not-proficient weapon

@@ -163,7 +163,7 @@ class Character(Entity):
 
     def __init__(
         self,
-        class_list: Sequence = [],
+        classes: Sequence = [],
         levels: Sequence[int] = [],
         subclasses: Sequence = [],
         **attrs,
@@ -175,7 +175,7 @@ class Character(Entity):
 
         Parameters
         ==========
-        class_list
+        classes
           Strings with class names, or character class definitions
           representing the characters various D&D classes.
         levels
@@ -191,7 +191,7 @@ class Character(Entity):
         super(Character, self).__init__()
         self.clear()
         # make sure class, race, background are set first
-        my_classes = class_list
+        my_classes = classes
         my_levels = levels
         my_subclasses = subclasses
         # backwards compatability
@@ -219,7 +219,7 @@ class Character(Entity):
         self.__set_max_hp(attrs.get("hp_max", None))
 
     def clear(self):
-        # reset class-definied items
+        # reset class-defined items
         self.class_list = list()
         self.weapons = list()
         self.magic_items = list()
