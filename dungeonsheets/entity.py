@@ -1,12 +1,14 @@
-from dungeonsheets.stats import Ability, ArmorClass, Initiative, Speed, Skill,
+from dungeonsheets.stats import Ability, ArmorClass, Initiative, Speed, Skill
 from abc import ABC
 import os
+
 
 def read(fname):
     return open(os.path.join(os.path.dirname(__file__), fname)).read()
 
 
 __version__ = read("../VERSION").strip()
+
 
 class Entity(ABC):
     """A thing with stats. Use Monster or Character, not this class directly!"""
