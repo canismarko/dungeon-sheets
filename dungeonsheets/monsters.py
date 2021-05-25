@@ -3,27 +3,17 @@ shape forms."""
 
 
 from dungeonsheets.stats import Ability
-from dungeonsheets.encounter.agent import Agent
+from dungeonsheets.entity import Entity
 
 
-class Monster(Agent):
+class Monster(Entity):
     """A monster that may be encountered when adventuring."""
 
     name = "Generic Monster"
     description = ""
     challenge_rating = 0
-    armor_class = 0
     skills = "Perception +3, Stealth +4"
-    senses = ""
-    languages = ""
-    strength = Ability()
-    dexterity = Ability()
-    constitution = Ability()
-    intelligence = Ability()
-    wisdom = Ability()
-    charisma = Ability()
-    speed = 30
-    swim_speed = 0
+    swim_speed = 0  # TODO: Consider refactoring stats.Speed to consider all of these just like we do stats.Ability
     fly_speed = 0
     hp_max = 10
     hit_dice = "1d6"

@@ -23,14 +23,7 @@ from dungeonsheets import (
 from dungeonsheets.stats import findattr
 from dungeonsheets.weapons import Weapon
 from dungeonsheets.readers import read_character_file
-from dungeonsheets.encounter.agent import Agent
-
-
-def read(fname):
-    return open(os.path.join(os.path.dirname(__file__), fname)).read()
-
-
-__version__ = read("../VERSION").strip()
+from dungeonsheets.entity import Entity
 
 
 dice_re = re.compile(r"(\d+)d(\d+)")
@@ -146,17 +139,15 @@ def _resolve_mechanic(mechanic, module, SuperClass, warning_message=None):
     return Mechanic
 
 
-class Character(Agent):
+class Character(Entity):
     """A generic player character."""
 
+    # Character-specific
     player_name = ""
-
-    dungeonsheets_version = __version__
     xp = 0
     inspiration = False
     attacks_and_spellcasting = ""
     class_list = list()
-    _race = None
     _background = None
 
     # Characteristics
@@ -172,7 +163,7 @@ class Character(Agent):
 
     def __init__(
         self,
-        classes: Sequence = [],
+        class_list: Sequence = [],
         levels: Sequence[int] = [],
         subclasses: Sequence = [],
         **attrs,
@@ -184,7 +175,7 @@ class Character(Agent):
 
         Parameters
         ==========
-        classes
+        class_list
           Strings with class names, or character class definitions
           representing the characters various D&D classes.
         levels
@@ -200,7 +191,7 @@ class Character(Agent):
         super(Character, self).__init__()
         self.clear()
         # make sure class, race, background are set first
-        my_classes = classes
+        my_classes = class_list
         my_levels = levels
         my_subclasses = subclasses
         # backwards compatability
@@ -931,7 +922,7 @@ class Character(Agent):
         make_sheet(filename, character=self, flatten=kwargs.get("flatten", True))
 
 
-# Add backwards compatability for tests
+# Add backwards compatibility for tests
 class Artificer(Character):
     def __init__(self, level=1, **attrs):
         attrs["classes"] = ["Artificer"]
