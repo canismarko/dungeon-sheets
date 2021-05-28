@@ -17,6 +17,7 @@ from dungeonsheets import exceptions, readers, latex
 from dungeonsheets.stats import mod_str
 from dungeonsheets.fill_pdf_template import (
     create_character_pdf_template,
+    create_personality_pdf_template,
     create_spells_pdf_template,
 )
 from dungeonsheets.character import Character
@@ -136,7 +137,8 @@ def make_sheet(
 
     # Set the fields in the FDF
     char_base = os.path.splitext(character_file)[0] + "_char"
-    sheets = [char_base + ".pdf"]
+    person_base = os.path.splitext(character_file)[0] + "_person"
+    sheets = [char_base + ".pdf", person_base + ".pdf"]
     pages = []
     tex = [
         jinja_env.get_template("preamble.tex").render(
@@ -149,6 +151,10 @@ def make_sheet(
         character=character, basename=char_base, flatten=flatten
     )
     pages.append(char_pdf)
+    person_pdf = create_personality_pdf_template(
+        character=character, basename=person_base, flatten=flatten
+    )
+    pages.append(person_pdf)
     if character.is_spellcaster:
         # Create spell sheet
         spell_base = "{:s}_spells".format(os.path.splitext(character_file)[0])
