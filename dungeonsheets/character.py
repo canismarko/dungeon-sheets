@@ -223,6 +223,21 @@ class Character:
     # Features IN MAJOR DEVELOPMENT
     custom_features = list()
     feature_choices = list()
+    # Appearance
+    # portrait = placeholder not sure how to implement
+    age = 0
+    height = ''
+    weight = ''
+    eyes = ''
+    skin = ''
+    hair = ''
+    # Background
+    allies = ''
+    faction_name = ''
+    # faction_symbol = placeholder not sure how to implement
+    backstory = ''
+    other_feats_traits = ''
+    treasure = ''
 
     def __init__(
         self,
