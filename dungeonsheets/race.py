@@ -256,7 +256,7 @@ class HalfOrc(Race):
     features = (feats.Darkvision, feats.RelentlessEndurance, feats.SavageAttacks)
 
 
-# Tielflings
+# Tieflings
 class Tiefling(Race):
     name = "Tiefling"
     size = "medium"
@@ -267,7 +267,7 @@ class Tiefling(Race):
     features = (feats.Darkvision, feats.HellishResistance, feats.InfernalLegacy)
 
 
-# Aassimar
+# Aasimar
 class _Aasimar(Race):
     name = "Aasimar"
     size = "medium"
