@@ -235,6 +235,11 @@ class TestCharacter(TestCase):
         char.race = None
         self.assertEqual(char.speed, "30")
 
+    def test_load_char(self):
+        char = Character.load({"name": "Dave", "sheet_type": "character"})
+        self.assertFalse(hasattr(char, "sheet_type"),
+                         "'sheet_type' not stripped from char props")
+
 
 class DruidTestCase(TestCase):
     def test_learned_spells(self):

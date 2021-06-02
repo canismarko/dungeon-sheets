@@ -12,8 +12,7 @@ from itertools import product
 
 from jinja2 import Environment, PackageLoader
 
-from dungeonsheets import character as _char
-from dungeonsheets import exceptions, readers, latex
+from dungeonsheets import character as _char, exceptions, readers, latex
 from dungeonsheets.stats import mod_str
 from dungeonsheets.fill_pdf_template import (
     create_character_pdf_template,
@@ -132,7 +131,8 @@ def make_sheet(
 
     """
     if character is None:
-        character = _char.Character.load(character_file)
+        char_props = readers.read_sheet_file(character_file)
+        character = _char.Character.load(char_props)
 
     # Set the fields in the FDF
     char_base = os.path.splitext(character_file)[0] + "_char"

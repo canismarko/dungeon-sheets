@@ -12,7 +12,7 @@ from dungeonsheets import exceptions
 log = logging.getLogger(__file__)
 
 
-def read_character_file(filename: str):
+def read_sheet_file(filename: str):
     """Create a character object from the given definition file.
 
     The definition file should be an importable python file or a JSON

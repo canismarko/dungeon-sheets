@@ -3,27 +3,40 @@ from pathlib import Path
 import unittest
 import types
 
-from dungeonsheets.readers import read_character_file
+from dungeonsheets import exceptions
+from dungeonsheets.readers import read_sheet_file
 
 EG_DIR = (Path(__file__).parent.parent / "examples").resolve()
 CHAR_PYTHON_FILE = EG_DIR / "rogue1.py"
+GM_PYTHON_FILE = EG_DIR / "gm.py"
 ROLL20_JSON_FILE = EG_DIR / "barbarian3.json"
 FOUNDRY_JSON_FILE = EG_DIR / "bard3_foundry.json"
 SPELLCASTER_JSON_FILE = EG_DIR / "artificer2.json"
 
 
 class PythonReaderTests(unittest.TestCase):
-    def test_load_python_file(self):
+    def test_load_python_gm_sheet(self):
+        gmfile = GM_PYTHON_FILE
+        result = read_sheet_file(gmfile)
+        self.assertEqual(result["sheet_type"], "gm")
+    
+    def test_load_python_character(self):
         charfile = CHAR_PYTHON_FILE
-        result = read_character_file(charfile)
+        result = read_sheet_file(charfile)
         self.assertEqual(result["strength"], 10)
+
+    def test_load_bad_file(self):
+        """This file is not a valid character, so should fail."""
+        this_file = __file__
+        with self.assertRaises(exceptions.CharacterFileFormatError):
+            read_sheet_file(this_file)
 
 
 class Roll20ReaderTests(unittest.TestCase):
     def test_load_json_file(self):
         charfile = ROLL20_JSON_FILE
         with warnings.catch_warnings(record=True):
-            result = read_character_file(charfile)
+            result = read_sheet_file(charfile)
         expected_data = dict(
             name="Ulthar Jenkins",
             classes=["Barbarian"],
@@ -88,7 +101,7 @@ class Roll20ReaderTests(unittest.TestCase):
     def test_load_json_spells(self):
         charfile = SPELLCASTER_JSON_FILE
         with warnings.catch_warnings(record=True):
-            result = read_character_file(charfile)
+            result = read_sheet_file(charfile)
         expected_data = dict(
             spells_prepared=[
                 "cure wounds",
@@ -127,7 +140,7 @@ class FoundryReaderTests(unittest.TestCase):
     def test_load_json_file(self):
         charfile = FOUNDRY_JSON_FILE
         with warnings.catch_warnings(record=True):
-            result = read_character_file(charfile)
+            result = read_sheet_file(charfile)
         expected_data = dict(
             name="Sam Lloyd",
             classes=["Bard"],
@@ -207,7 +220,7 @@ class FoundryReaderTests(unittest.TestCase):
     def test_load_json_spells(self):
         charfile = SPELLCASTER_JSON_FILE
         with warnings.catch_warnings(record=True):
-            result = read_character_file(charfile)
+            result = read_sheet_file(charfile)
         expected_data = dict(
             spells_prepared=[
                 "cure wounds",
