@@ -238,20 +238,21 @@ class BardBattleMagic(Feature):
     source = "Bard (College of Valor)"
 
 
-# College of Glamour
+# XgtE - College of Glamour:
 class MantleOfInspiration(Feature):
-    """When you join the College of Glamour at 3rd level, you gain the ability to
-    weave a song of fey magic that imbues your allies with vigor and speed. As
-    a bonus action, you can expend one use of your Bardic Inspiration to grant
-    yourself a wondrous appearance. When you do so, choose a number of
-    creatures you can see and that can see you within 60 feet of you, up to a
-    number equal to your Charisma modifier (mini mum of one). Each of them
-    gains 5 temporary hit points. When a creature gains these temporary hit
-    points, it can immediately use its reaction to move up to its speed,
-    without provoking opportunity attacks. The number of temporary hit points
-    inoreases when you reach certain levels in this class, increasing to 8 at
-    5th level, 11 at 10th level, and 14 at 15th level.
-
+    """When you join the College of Glamour at 3rd level, you gain the
+    ability to weave a song of fey magic that imbues your allies with
+    vigor and speed. As a bonus action, you can expend one use of your
+    Bardic Inspiration to grant yourself a wondrous appearance. When
+    you do so, choose a number of creatures you can see and that can
+    see you within 60 feet of you, up to a number equal to your
+    Charisma modifier (minimum of one). Each of them gains 5 temporary
+    hit points. When a creature gains these temporary hit points, it
+    can immediately use its reaction to move up to its speed, without
+    provoking opportunity attacks. The number of temporary hit points
+    increases when you reach certain levels in this class, increasing
+    to 8 at 5th level, 11 at 10th level, and 14 at 15th level.
+    
     """
 
     _name = "Mantle of Inspiration"
@@ -402,13 +403,14 @@ class MastersFlourish(Feature):
 
 # College of Whispers
 class PsychicBlades(Feature):
-    """When you join the College of Whispers at 3rd level, you gain the ability to
-    make your weapon attacks magically toxic to a creature's mind. When you hit
-    a creature with a weapon attack, you can expend one use ofyour Bardic
-    Inspiration to deal an extra 2d6 psychic damage to that target. You can do
-    so only once per round on your turn. The psychic damage increases when you
-    reach certain levels in this class, increasing to 3d6 at 5th level, 5d6
-    at 10th level, and 8d6 at 15th level.
+    """When you join the College of Whispers at 3rd level, you gain the
+    ability to make your weapon attacks magically toxic to a
+    creature's mind. When you hit a creature with a weapon attack, you
+    can expend one use ofyour Bardic Inspiration to deal an extra 2d6
+    psychic damage to that target. You can do so only once per round
+    on your turn. The psychic damage increases when you reach certain
+    levels in this class, increasing to 3d6 at 5th level, 5d6 at 10th
+    level, and 8d6 at 15th level.
 
     """
 

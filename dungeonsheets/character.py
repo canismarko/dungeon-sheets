@@ -882,7 +882,7 @@ class Character(Entity):
             return tuple([i.name for i in self.infusions])
         else:
             return ()
-
+    
     @classmethod
     def load(Cls, char_props: MutableMapping):
         """Factory Creates a character from the character definition.

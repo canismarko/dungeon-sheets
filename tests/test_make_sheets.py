@@ -1,12 +1,55 @@
 import unittest
 import os
+from pathlib import Path
 
-from dungeonsheets import make_sheets, character
+from dungeonsheets import make_sheets, character, monsters
 from dungeonsheets.classes import monk
 
+EG_DIR = Path(__file__).parent.parent.resolve() / "examples"
+CHARFILE = EG_DIR / "rogue1.py"
+GMFILE = EG_DIR / "gm.py"
 
-EG_DIR = os.path.abspath(os.path.join(os.path.split(__file__)[0], "../examples/"))
-CHARFILE = os.path.join(EG_DIR, "rogue1.py")
+
+class MakeSheetsTestCase(unittest.TestCase):
+    char_pdf = Path(f"{CHARFILE.stem}.pdf")
+    gm_pdf = Path(f"{GMFILE.stem}.pdf").resolve()
+
+    def tearDown(self):
+        if self.char_pdf.exists():
+            self.char_pdf.unlink()
+        if self.gm_pdf.exists():
+            self.gm_pdf.unlink()
+
+    def test_main(self):
+        make_sheets.main(args=[str(CHARFILE), "--debug"])
+    
+    def test_make_sheets(self):
+        # Character PDF
+        make_sheets.make_sheet(sheet_file=CHARFILE)
+        # Was the PDF created?
+        self.assertTrue(self.char_pdf.exists(),
+                        f"Character PDF ({self.char_pdf.resolve()}) not created.")
+        # GM PDF
+        make_sheets.make_sheet(sheet_file=GMFILE)
+        self.assertTrue(self.gm_pdf.exists)
+        # Was the PDF created?
+        self.assertTrue(self.gm_pdf.exists(),
+                        f"GM PDF ({self.gm_pdf.resolve()}) not created.")
+
+    def test_make_fancy_sheets(self):
+        # Character PDF
+        make_sheets.make_sheet(sheet_file=CHARFILE,
+                               fancy_decorations=True)
+        # Was the PDF created?
+        self.assertTrue(self.char_pdf.exists(),
+                        f"Character PDF ({self.char_pdf.resolve()}) not created.")
+        # GM PDF
+        make_sheets.make_sheet(sheet_file=GMFILE,
+                               fancy_decorations=True)
+        self.assertTrue(self.gm_pdf.exists)
+        # Was the PDF created?
+        self.assertTrue(self.gm_pdf.exists(),
+                        f"GM PDF ({self.gm_pdf.resolve()}) not created.")
 
 
 class PdfOutputTestCase(unittest.TestCase):
@@ -80,3 +123,8 @@ class TexCreatorTestCase(unittest.TestCase):
         tex = make_sheets.create_druid_shapes_tex(character=char)
         self.assertIn(r"\section*{Known Beasts}", tex)
         self.assertIn(r"\section*{Crocodile}", tex)
+
+    def test_create_monsters_tex(self):
+        monsters_ = [monsters.GiantEagle()]
+        tex = make_sheets.create_monsters_tex(monsters=monsters_)
+        self.assertIn(r"Giant eagle", tex)

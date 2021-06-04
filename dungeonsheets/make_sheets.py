@@ -9,11 +9,12 @@ import re
 from pathlib import Path
 from multiprocessing import Pool, cpu_count
 from itertools import product
+from typing import Union, Mapping, Sequence
 
 from jinja2 import Environment, PackageLoader
 
-from dungeonsheets import character as _char, exceptions, readers, latex
-from dungeonsheets.stats import mod_str
+from dungeonsheets import character as _char, exceptions, readers, latex, monsters
+from dungeonsheets.stats import mod_str, findattr
 from dungeonsheets.fill_pdf_template import (
     create_character_pdf_template,
     create_spells_pdf_template,
@@ -22,8 +23,6 @@ from dungeonsheets.character import Character
 
 """Program to take character definitions and build a PDF of the
 character sheet."""
-
-PDFTK_CMD = "pdftk"
 
 log = logging.getLogger(__name__)
 
@@ -53,6 +52,10 @@ jinja_env.filters["mod_str"] = mod_str
 PDFTK_CMD = "pdftk"
 
 
+# Custom types
+File = Union[Path, str]
+
+
 def create_subclasses_tex(
     character: Character,
     use_dnd_decorations: bool = False,
@@ -75,6 +78,15 @@ def create_magic_items_tex(
 ) -> str:
     template = jinja_env.get_template("magic_items_template.tex")
     return template.render(character=character, use_dnd_decorations=use_dnd_decorations)
+
+
+def create_monsters_tex(
+    monsters: Sequence[Union[monsters.Monster, str]],
+    use_dnd_decorations: bool = False,
+) -> str:
+    # Convert strings to Monster objects
+    template = jinja_env.get_template("monsters_template.tex")
+    return template.render(monsters=monsters, use_dnd_decorations=use_dnd_decorations)
 
 
 def create_spellbook_tex(
@@ -103,23 +115,15 @@ def create_druid_shapes_tex(
     return template.render(character=character, use_dnd_decorations=use_dnd_decorations)
 
 
-def make_sheet(
-    character_file,
-    character=None,
-    flatten=False,
-    latex_template=True,
-    fancy_decorations=False,
-    debug=False,
-):
-    """Prepare a PDF character sheet from the given character file.
-
+def make_sheet(sheet_file: File,
+               flatten: bool = False,
+               fancy_decorations: bool = False,
+               debug: bool = False):
+    """Make a character or GM sheet into a PDF.
     Parameters
     ----------
-    character_file : str
+    sheet_file
       File (.py) to load character from. Will save PDF using same name
-    character : Character, optional
-      If provided, will not load from the character file, just use
-      file for PDF name
     flatten : bool, optional
       If true, the resulting PDF will look better and won't be
       fillable form.
@@ -130,17 +134,119 @@ def make_sheet(
       Provide extra info and preserve temporary files.
 
     """
+    # Parse the file
+    sheet_file = Path(sheet_file)
+    base_name = sheet_file.stem
+    sheet_props = readers.read_sheet_file(sheet_file)
+    # Create the sheet
+    if sheet_props.get("sheet_type", "") == "gm":
+        ret = make_gm_sheet(basename=base_name, gm_props=sheet_props,
+                            fancy_decorations=fancy_decorations,
+                            debug=debug)
+    else:
+        ret = make_character_sheet(
+            basename=base_name,
+            character_props=sheet_props,
+            flatten=flatten,
+            fancy_decorations=fancy_decorations,
+            debug=debug)
+    return ret
+
+
+def make_gm_sheet(
+    basename: str,
+    gm_props: Mapping,
+    fancy_decorations: bool = False,
+    debug: bool = False,
+):
+    """Prepare a PDF character sheet from the given character file.
+
+    Parameters
+    ----------
+    basename
+      The basename for saving files.
+    gm_props
+      Properties for creating the GM notes.
+    fancy_decorations
+      Use fancy page layout and decorations for extra sheets, namely
+      the dnd style file: https://github.com/rpgtex/DND-5e-LaTeX-Template.
+    debug
+      Provide extra info and preserve temporary files.
+
+    """
+    tex = [
+        jinja_env.get_template("preamble.tex").render(
+            use_dnd_decorations=fancy_decorations,
+            title=gm_props['session_title'],
+        )
+    ]
+    # Add the monsters
+    monsters_ = [findattr(monsters, m)() for m in gm_props.get("monsters", [])]
+    if len(monsters_) > 0:
+        tex.append(
+            create_monsters_tex(monsters_, use_dnd_decorations=fancy_decorations)
+        )
+    # Add the closing TeX
+    tex.append(
+        jinja_env.get_template("postamble.tex").render(
+            use_dnd_decorations=fancy_decorations
+        )
+    )
+    # Typeset combined LaTeX file
+    try:
+        if len(tex) > 2:
+            latex.create_latex_pdf(
+                tex="".join(tex),
+                basename=basename,
+                keep_temp_files=debug,
+                use_dnd_decorations=fancy_decorations,
+            )
+    except exceptions.LatexNotFoundError:
+        log.warning(
+            f"``pdflatex`` not available. Skipping {basename}"
+        )
+
+
+def make_character_sheet(
+    basename: str,
+    character_props: Mapping,
+    character: Character = None,
+    flatten: bool = False,
+    fancy_decorations: bool = False,
+    debug: bool = False,
+):
+    """Prepare a PDF character sheet from the given character file.
+
+    Parameters
+    ----------
+    basename
+      The basename for saving files (PDFs, etc).
+    character_props
+      Properties to load character from.
+    character
+      If provided, will not load from the character file, just use
+      file for PDF name
+    flatten
+      If true, the resulting PDF will look better and won't be
+      fillable form.
+    fancy_decorations
+      Use fancy page layout and decorations for extra sheets, namely
+      the dnd style file: https://github.com/rpgtex/DND-5e-LaTeX-Template.
+    debug
+      Provide extra info and preserve temporary files.
+
+    """
     if character is None:
-        char_props = readers.read_sheet_file(character_file)
-        character = _char.Character.load(char_props)
+        character = _char.Character.load(character_props)
 
     # Set the fields in the FDF
-    char_base = os.path.splitext(character_file)[0] + "_char"
+    char_base = basename + "_char"
     sheets = [char_base + ".pdf"]
     pages = []
     tex = [
         jinja_env.get_template("preamble.tex").render(
-            use_dnd_decorations=fancy_decorations
+            use_dnd_decorations=fancy_decorations,
+            title="Features, Magical Items and Spells",
         )
     ]
 
@@ -151,14 +257,13 @@ def make_sheet(
     pages.append(char_pdf)
     if character.is_spellcaster:
         # Create spell sheet
-        spell_base = "{:s}_spells".format(os.path.splitext(character_file)[0])
+        spell_base = "{:s}_spells".format(basename)
         create_spells_pdf_template(
             character=character, basename=spell_base, flatten=flatten
         )
         sheets.append(spell_base + ".pdf")
     # end of PDF gen
-
-    features_base = "{:s}_features".format(os.path.splitext(character_file)[0])
+    features_base = "{:s}_features".format(basename)
     # Create a list of subcasses
     if character.subclasses:
         tex.append(
@@ -199,18 +304,18 @@ def make_sheet(
             use_dnd_decorations=fancy_decorations
         )
     )
-
+    
     # Typeset combined LaTeX file
     try:
         if len(tex) > 2:
             latex.create_latex_pdf(
-                "".join(tex),
-                features_base,
+                tex="".join(tex),
+                basename=features_base,
                 keep_temp_files=debug,
                 use_dnd_decorations=fancy_decorations,
             )
             sheets.append(features_base + ".pdf")
-            final_pdf = os.path.splitext(character_file)[0] + ".pdf"
+            final_pdf = f"{basename}.pdf"
             merge_pdfs(sheets, final_pdf, clean_up=True)
     except exceptions.LatexNotFoundError:
         log.warning(
@@ -250,7 +355,7 @@ def _build(filename, args) -> int:
     print(f"Processing {basename}...")
     try:
         make_sheet(
-            character_file=filename,
+            sheet_file=filename,
             flatten=(not args.editable),
             debug=args.debug,
             fancy_decorations=args.fancy_decorations,
@@ -268,7 +373,7 @@ def _build(filename, args) -> int:
     return 1
 
 
-def main():
+def main(args=None):
     # Prepare an argument parser
     parser = argparse.ArgumentParser(
         description="Prepare Dungeons and Dragons character sheets as PDFs"
@@ -307,7 +412,7 @@ def main():
         action="store_true",
         help="Provide verbose logging for debugging purposes.",
     )
-    args = parser.parse_args()
+    args = parser.parse_args(args)
     # Prepare logging if necessary
     if args.debug:
         logging.basicConfig(level=logging.DEBUG)
@@ -326,6 +431,8 @@ def main():
                 valid_files.extend(get_char_files(f, parse_dirs=args.recursive))
         elif fpath.suffix in known_extensions:
             valid_files.append(fpath)
+        else:
+            log.info(f"Unhandled file: {str(fpath)}")
         return valid_files
 
     temp_filenames = []
@@ -344,6 +451,7 @@ def main():
     # Process the requested files
     if args.debug:
         for filename in filenames:
+            print("building")
             _build(filename, args)
     else:
         with Pool(cpu_count()) as p:

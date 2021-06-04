@@ -8,3 +8,7 @@ monsters, etc.
 dungeonsheets_version = "0.14.0"
 
 sheet_type = "gm"
+
+session_title = "Objects in Space"
+
+monsters = ["wolf", "giant eagle"]
