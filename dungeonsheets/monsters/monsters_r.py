@@ -8,7 +8,6 @@ from dungeonsheets.monsters.monsters import Monster
 from dungeonsheets.stats import Ability
 
 
-
 class Rakshasa(Monster):
     """
     **Limited Magic Immunity**: The rakshasa can't be affected or detected by spells of 6th level or lower unless it wishes to be. It has advantage on saving throws against all other spells and magical effects.

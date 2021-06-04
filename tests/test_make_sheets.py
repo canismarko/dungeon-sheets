@@ -127,4 +127,4 @@ class TexCreatorTestCase(unittest.TestCase):
     def test_create_monsters_tex(self):
         monsters_ = [monsters.GiantEagle()]
         tex = make_sheets.create_monsters_tex(monsters=monsters_)
-        self.assertIn(r"Giant eagle", tex)
+        self.assertIn(r"Giant Eagle", tex)

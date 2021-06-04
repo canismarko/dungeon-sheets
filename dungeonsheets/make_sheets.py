@@ -115,10 +115,12 @@ def create_druid_shapes_tex(
     return template.render(character=character, use_dnd_decorations=use_dnd_decorations)
 
 
-def make_sheet(sheet_file: File,
-               flatten: bool = False,
-               fancy_decorations: bool = False,
-               debug: bool = False):
+def make_sheet(
+    sheet_file: File,
+    flatten: bool = False,
+    fancy_decorations: bool = False,
+    debug: bool = False,
+):
     """Make a character or GM sheet into a PDF.
     Parameters
     ----------
@@ -140,16 +142,20 @@ def make_sheet(sheet_file: File,
     sheet_props = readers.read_sheet_file(sheet_file)
     # Create the sheet
     if sheet_props.get("sheet_type", "") == "gm":
-        ret = make_gm_sheet(basename=base_name, gm_props=sheet_props,
-                            fancy_decorations=fancy_decorations,
-                            debug=debug)
+        ret = make_gm_sheet(
+            basename=base_name,
+            gm_props=sheet_props,
+            fancy_decorations=fancy_decorations,
+            debug=debug,
+        )
     else:
         ret = make_character_sheet(
             basename=base_name,
             character_props=sheet_props,
             flatten=flatten,
             fancy_decorations=fancy_decorations,
-            debug=debug)
+            debug=debug,
+        )
     return ret
 
 
@@ -177,7 +183,7 @@ def make_gm_sheet(
     tex = [
         jinja_env.get_template("preamble.tex").render(
             use_dnd_decorations=fancy_decorations,
-            title=gm_props['session_title'],
+            title=gm_props["session_title"],
         )
     ]
     # Add the monsters
@@ -202,9 +208,7 @@ def make_gm_sheet(
                 use_dnd_decorations=fancy_decorations,
             )
     except exceptions.LatexNotFoundError:
-        log.warning(
-            f"``pdflatex`` not available. Skipping {basename}"
-        )
+        log.warning(f"``pdflatex`` not available. Skipping {basename}")
 
 
 def make_character_sheet(
@@ -304,7 +308,7 @@ def make_character_sheet(
             use_dnd_decorations=fancy_decorations
         )
     )
-    
+
     # Typeset combined LaTeX file
     try:
         if len(tex) > 2:

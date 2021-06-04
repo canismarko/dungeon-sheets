@@ -8,7 +8,6 @@ from dungeonsheets.monsters.monsters import Monster
 from dungeonsheets.stats import Ability
 
 
-
 class KillerWhale(Monster):
     """
     **Echolocation**: The whale can't use its blindsight while deafened.
@@ -132,7 +131,10 @@ class Kraken(Monster):
     armor_class = 18
     skills = ""
     senses = "Truesight 120 ft., Passive Perception 14"
-    languages = "understands Abyssal, Celestial, Infernal, and Primordial but can't speak, telepathy 120 ft."
+    languages = (
+        "understands Abyssal, Celestial, Infernal, and Primordial but can't speak,"
+        " telepathy 120 ft."
+    )
     strength = Ability(30)
     dexterity = Ability(11)
     constitution = Ability(25)

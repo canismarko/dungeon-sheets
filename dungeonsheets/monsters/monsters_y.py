@@ -8,7 +8,6 @@ from dungeonsheets.monsters.monsters import Monster
 from dungeonsheets.stats import Ability
 
 
-
 class YoungBlackDragon(Monster):
     """
     **Amphibious**: The dragon can breathe air and water.

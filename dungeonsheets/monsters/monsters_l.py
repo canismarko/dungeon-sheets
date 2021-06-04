@@ -8,7 +8,6 @@ from dungeonsheets.monsters.monsters import Monster
 from dungeonsheets.stats import Ability
 
 
-
 class Lamia(Monster):
     """
     **Innate Spellcasting**: The lamia's innate spellcasting ability is Charisma (spell save DC 13). It can innately cast the following spells, requiring no material components. At will: disguise self (any humanoid form), major image 3/day each: charm person, mirror image, scrying, suggestion 1/day: geas

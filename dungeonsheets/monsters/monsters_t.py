@@ -8,7 +8,6 @@ from dungeonsheets.monsters.monsters import Monster
 from dungeonsheets.stats import Ability
 
 
-
 class Tarrasque(Monster):
     """
     **Legendary Resistance**: If the tarrasque fails a saving throw, it can choose to succeed instead.

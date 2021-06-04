@@ -252,7 +252,7 @@ class MantleOfInspiration(Feature):
     provoking opportunity attacks. The number of temporary hit points
     increases when you reach certain levels in this class, increasing
     to 8 at 5th level, 11 at 10th level, and 14 at 15th level.
-    
+
     """
 
     _name = "Mantle of Inspiration"

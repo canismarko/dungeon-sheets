@@ -8,7 +8,6 @@ from dungeonsheets.monsters.monsters import Monster
 from dungeonsheets.stats import Ability
 
 
-
 class HalfRedDragonVeteran(Monster):
     """
     **Multiattack**: The veteran makes two longsword attacks. If it has a shortsword drawn, it can also make a shortsword attack.

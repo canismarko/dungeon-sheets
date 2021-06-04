@@ -8,7 +8,6 @@ from dungeonsheets.monsters.monsters import Monster
 from dungeonsheets.stats import Ability
 
 
-
 class Eagle(Monster):
     """
     **Keen Sight**: The eagle has advantage on Wisdom (Perception) checks that rely on sight.

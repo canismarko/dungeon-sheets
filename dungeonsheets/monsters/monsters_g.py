@@ -8,16 +8,19 @@ from dungeonsheets.monsters.monsters import Monster
 from dungeonsheets.stats import Ability
 
 
-
 class Gargoyle(Monster):
-    """
-    **False Appearance**: While the gargoyle remains motion less, it is indistinguishable from an inanimate statue.
+    """**False Appearance**: While the gargoyle remains motion less, it is
+    indistinguishable from an inanimate statue.
 
-    **Multiattack**: The gargoyle makes two attacks: one with its bite and one with its claws.
+    **Multiattack**: The gargoyle makes two attacks: one with its bite
+      and one with its claws.
 
-    **Bite**: Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 5 (1d6 + 2) piercing damage.
+    **Bite**: Melee Weapon Attack: +4 to hit, reach 5 ft., one
+      target. Hit: 5 (1d6 + 2) piercing damage.
 
-    **Claws**: Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 5 (1d6 + 2) slashing damage.
+    **Claws**: Melee Weapon Attack: +4 to hit, reach 5 ft., one
+      target. Hit: 5 (1d6 + 2) slashing damage.
+
     """
 
     name = "Gargoyle"
@@ -413,14 +416,18 @@ class GiantCrocodile(Monster):
 
 
 class GiantEagle(Monster):
-    """
-    **Keen Sight**: The eagle has advantage on Wisdom (Perception) checks that rely on sight.
+    """**Keen Sight**: The eagle has advantage on Wisdom (Perception)
+    checks that rely on sight.
 
-    **Multiattack**: The eagle makes two attacks: one with its beak and one with its talons.
+    **Multiattack**: The eagle makes two attacks: one with its beak
+      and one with its talons.
 
-    **Beak**: Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 6 (1d6 + 3) piercing damage.
+    **Beak**: Melee Weapon Attack: +5 to hit, reach 5 ft., one
+      target. Hit: 6 (1d6 + 3) piercing damage.
 
-    **Talons**: Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 10 (2d6 + 3) slashing damage.
+    **Talons**: Melee Weapon Attack: +5 to hit, reach 5 ft., one
+      target. Hit: 10 (2d6 + 3) slashing damage.
+
     """
 
     name = "Giant Eagle"
@@ -1491,7 +1498,10 @@ class Grimlock(Monster):
     challenge_rating = 0.25
     armor_class = 11
     skills = "Athletics +5, Perception +3, Stealth +3"
-    senses = "Blindsight 30 ft. or 10 ft. while deafened (blind beyond this radius), Passive Perception 13"
+    senses = (
+        "Blindsight 30 ft. or 10 ft. while deafened (blind beyond this radius), Passive"
+        " Perception 13"
+    )
     languages = "Undercommon"
     strength = Ability(16)
     dexterity = Ability(12)

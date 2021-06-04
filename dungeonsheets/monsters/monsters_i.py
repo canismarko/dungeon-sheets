@@ -8,7 +8,6 @@ from dungeonsheets.monsters.monsters import Monster
 from dungeonsheets.stats import Ability
 
 
-
 class IceDevil(Monster):
     """
     **Devil's Sight**: Magical darkness doesn't impede the devil's darkvision.

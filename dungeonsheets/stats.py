@@ -220,9 +220,9 @@ class NumericalInitiative:
             ini += entity.charisma.modifier
 
         has_advantage = (
-                entity.has_feature(NaturalExplorerRevised)
-                or entity.has_feature(FeralInstinct)
-                or entity.has_feature(AmbushMaster)
+            entity.has_feature(NaturalExplorerRevised)
+            or entity.has_feature(FeralInstinct)
+            or entity.has_feature(AmbushMaster)
         )
         return ini, has_advantage
 

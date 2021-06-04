@@ -8,7 +8,6 @@ from dungeonsheets.monsters.monsters import Monster
 from dungeonsheets.stats import Ability
 
 
-
 class Nalfeshnee(Monster):
     """
     **Magic Resistance**: The nalfeshnee has advantage on saving throws against spells and other magical effects.

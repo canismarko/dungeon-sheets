@@ -8,7 +8,6 @@ from dungeonsheets.monsters.monsters import Monster
 from dungeonsheets.stats import Ability
 
 
-
 class Panther(Monster):
     """
     **Keen Smell**: The panther has advantage on Wisdom (Perception) checks that rely on smell.

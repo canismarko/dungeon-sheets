@@ -8,7 +8,6 @@ from dungeonsheets.monsters.monsters import Monster
 from dungeonsheets.stats import Ability
 
 
-
 class Aboleth(Monster):
     """
     **Amphibious**: The aboleth can breathe air and water.

@@ -22,7 +22,6 @@ from dungeonsheets import (
 )
 from dungeonsheets.stats import findattr
 from dungeonsheets.weapons import Weapon
-from dungeonsheets.readers import read_sheet_file
 from dungeonsheets.entity import Entity
 
 
@@ -882,26 +881,26 @@ class Character(Entity):
             return tuple([i.name for i in self.infusions])
         else:
             return ()
-    
+
     @classmethod
     def load(Cls, char_props: MutableMapping):
         """Factory Creates a character from the character definition.
-        
+
         Parameters
         ==========
         char_props
           Keys and values holding all the attributes of the
           character. E.g. ``char_props['strength'] = 16``
-        
+
         Returns
         =======
         char
           The initialized ``Character`` object with associated
           parameters.
-        
+
         """
         # Parse the sheet type
-        char_props.pop('sheet_type', "")
+        char_props.pop("sheet_type", "")
         # Load classes
         classes = char_props.get("classes", [])
         # backwards compatability

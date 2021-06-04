@@ -8,7 +8,6 @@ from dungeonsheets.monsters.monsters import Monster
 from dungeonsheets.stats import Ability
 
 
-
 class Jackal(Monster):
     """
     **Keen Hearing and Smell**: The jackal has advantage on Wisdom (Perception) checks that rely on hearing or smell.

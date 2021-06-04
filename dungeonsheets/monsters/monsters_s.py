@@ -8,7 +8,6 @@ from dungeonsheets.monsters.monsters import Monster
 from dungeonsheets.stats import Ability
 
 
-
 class SaberToothedTiger(Monster):
     """
     **Keen Smell**: The tiger has advantage on Wisdom (Perception) checks that rely on smell.
@@ -645,7 +644,10 @@ class Spy(Monster):
     description = "Medium humanoid, any alignment"
     challenge_rating = 1
     armor_class = 12
-    skills = "Deception +5, Insight +4, Investigation +5, Perception +6, Persuasion +5, Stealth +4"
+    skills = (
+        "Deception +5, Insight +4, Investigation +5, Perception +6, Persuasion +5,"
+        " Stealth +4"
+    )
     senses = "Passive Perception 16"
     languages = "any two languages"
     strength = Ability(10)

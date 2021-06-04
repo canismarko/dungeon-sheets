@@ -4,7 +4,6 @@ shape forms.
 """
 
 
-from dungeonsheets.stats import Ability
 from dungeonsheets.entity import Entity
 
 
@@ -15,7 +14,10 @@ class Monster(Entity):
     description = ""
     challenge_rating = 0
     skills = "Perception +3, Stealth +4"
-    swim_speed = 0  # TODO: Consider refactoring stats.Speed to consider all of these just like we do stats.Ability
+    # TODO: Consider refactoring stats.Speed to consider all of these
+    # just like we do stats.Ability
+    
+    swim_speed = 0
     fly_speed = 0
     climb_speed = 0
     hp_max = 10
@@ -28,4 +30,3 @@ class Monster(Entity):
     def is_beast(self):
         is_beast = "beast" in self.description.lower()
         return is_beast
-

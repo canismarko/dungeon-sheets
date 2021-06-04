@@ -8,7 +8,6 @@ from dungeonsheets.monsters.monsters import Monster
 from dungeonsheets.stats import Ability
 
 
-
 class Darkmantle(Monster):
     """
     **Echolocation**: The darkmantle can't use its blindsight while deafened.
@@ -368,7 +367,9 @@ class Dretch(Monster):
     armor_class = 11
     skills = ""
     senses = "Darkvision 60 ft., Passive Perception 9"
-    languages = "Abyssal, telepathy 60 ft. (works only with creatures that understand Abyssal)"
+    languages = (
+        "Abyssal, telepathy 60 ft. (works only with creatures that understand Abyssal)"
+    )
     strength = Ability(11)
     dexterity = Ability(11)
     constitution = Ability(12)

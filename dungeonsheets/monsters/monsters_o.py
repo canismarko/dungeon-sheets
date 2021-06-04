@@ -8,7 +8,6 @@ from dungeonsheets.monsters.monsters import Monster
 from dungeonsheets.stats import Ability
 
 
-
 class OchreJelly(Monster):
     """
     **Amorphous**: The jelly can move through a space as narrow as 1 inch wide without squeezing.
