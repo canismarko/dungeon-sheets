@@ -32,7 +32,7 @@ Before submitting pull requests, please check the following:
 
 - All tests in ``tests/`` pass.
 - All example character sheets in the ``examples/`` directory build
-  properly.
+  properly, both with and without the ``--fancy`` option.
 - The submission passes linting by `flake8`_ (optional).
 - The submission is formatted by `black`_ (optional).
 
