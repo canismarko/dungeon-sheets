@@ -9,7 +9,7 @@ import re
 from pathlib import Path
 from multiprocessing import Pool, cpu_count
 from itertools import product
-from typing import Union, Mapping, Sequence
+from typing import Union, Mapping, Sequence, Optional
 
 from jinja2 import Environment, PackageLoader
 
@@ -20,6 +20,7 @@ from dungeonsheets.fill_pdf_template import (
     create_spells_pdf_template,
 )
 from dungeonsheets.character import Character
+from dungeonsheets.entity import Entity
 
 """Program to take character definitions and build a PDF of the
 character sheet."""
@@ -89,6 +90,14 @@ def create_monsters_tex(
     return template.render(monsters=monsters, use_dnd_decorations=use_dnd_decorations)
 
 
+def create_party_summary_tex(
+        party: Sequence[Entity],
+        use_dnd_decorations: bool = False,
+        ) -> str:
+    template = jinja_env.get_template("party_summary_template.tex")
+    return template.render(party=party, use_dnd_decorations=use_dnd_decorations)
+
+
 def create_spellbook_tex(
     character: Character,
     use_dnd_decorations: bool = False,
@@ -138,20 +147,17 @@ def make_sheet(
     """
     # Parse the file
     sheet_file = Path(sheet_file)
-    base_name = sheet_file.stem
     sheet_props = readers.read_sheet_file(sheet_file)
     # Create the sheet
     if sheet_props.get("sheet_type", "") == "gm":
         ret = make_gm_sheet(
-            basename=base_name,
-            gm_props=sheet_props,
+            gm_file=sheet_file,
             fancy_decorations=fancy_decorations,
             debug=debug,
         )
     else:
         ret = make_character_sheet(
-            basename=base_name,
-            character_props=sheet_props,
+            char_file=sheet_file,
             flatten=flatten,
             fancy_decorations=fancy_decorations,
             debug=debug,
@@ -160,8 +166,7 @@ def make_sheet(
 
 
 def make_gm_sheet(
-    basename: str,
-    gm_props: Mapping,
+    gm_file: Union[str, Path],
     fancy_decorations: bool = False,
     debug: bool = False,
 ):
@@ -169,10 +174,8 @@ def make_gm_sheet(
 
     Parameters
     ----------
-    basename
-      The basename for saving files.
-    gm_props
-      Properties for creating the GM notes.
+    gm_file
+      The file with the gm_sheet definitions.
     fancy_decorations
       Use fancy page layout and decorations for extra sheets, namely
       the dnd style file: https://github.com/rpgtex/DND-5e-LaTeX-Template.
@@ -180,12 +183,33 @@ def make_gm_sheet(
       Provide extra info and preserve temporary files.
 
     """
+    # Parse the GM file and filename
+    gm_file = Path(gm_file)
+    basename = gm_file.stem
+    gm_props = readers.read_sheet_file(gm_file)
+    # Create the intro tex
     tex = [
         jinja_env.get_template("preamble.tex").render(
             use_dnd_decorations=fancy_decorations,
             title=gm_props["session_title"],
         )
     ]
+    # Add the party stats table
+    party = []
+    for char_file in gm_props.get("party", []):
+        # Resolve the file path
+        char_file = Path(char_file)
+        if not char_file.is_absolute():
+            char_file = gm_file.parent / char_file
+        char_file = char_file.resolve()
+        # Load the character file
+        character_props = readers.read_sheet_file(char_file)
+        member = _char.Character.load(character_props)
+        party.append(member)
+    if len(party) > 0:
+        tex.append(
+            create_party_summary_tex(party, use_dnd_decorations=fancy_decorations)
+        )
     # Add the monsters
     monsters_ = [findattr(monsters, m)() for m in gm_props.get("monsters", [])]
     if len(monsters_) > 0:
@@ -212,9 +236,8 @@ def make_gm_sheet(
 
 
 def make_character_sheet(
-    basename: str,
-    character_props: Mapping,
-    character: Character = None,
+    char_file: Union[str, Path],
+    character: Optional[Character] = None,
     flatten: bool = False,
     fancy_decorations: bool = False,
     debug: bool = False,
@@ -225,8 +248,6 @@ def make_character_sheet(
     ----------
     basename
       The basename for saving files (PDFs, etc).
-    character_props
-      Properties to load character from.
     character
       If provided, will not load from the character file, just use
       file for PDF name
@@ -240,10 +261,12 @@ def make_character_sheet(
       Provide extra info and preserve temporary files.
 
     """
+    # Load properties from file
     if character is None:
+        character_props = readers.read_sheet_file(char_file)
         character = _char.Character.load(character_props)
-
     # Set the fields in the FDF
+    basename = char_file.stem
     char_base = basename + "_char"
     sheets = [char_base + ".pdf"]
     pages = []

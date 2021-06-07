@@ -25,7 +25,7 @@ interpreted as a character sheet.
 Basic Info
 ==========
 
-Currently, only two attributes are supported: ``monsters`` and
+Currently, these attributes are supported: ``monsters`` and
 ``session_title``. More attributes will be added in the future, but if
 there's something specific you have a need for, please consider
 `contributing`_ an issue or pull-request.
@@ -34,9 +34,14 @@ there's something specific you have a need for, please consider
   
    session_title = "Objects in Space"
    monsters = ["ogre", "giant eagle"]
+   party = ["rogue1.py", "paladin2.py"]
 
 ``monsters`` should be a list of either strings or subclasses of
 :py:class:`Monster`. These entries will then by listed on the
 resulting PDF with their stat block and features.
+
+``party`` contains a list of filenames for the characters in the
+party. These will produce a summary table of the attributes of your
+party.
 
 .. _contributing: https://github.com/canismarko/dungeon-sheets/blob/master/CONTRIBUTING.rst

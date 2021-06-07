@@ -11,4 +11,6 @@ sheet_type = "gm"
 
 session_title = "Objects in Space"
 
+party = ["rogue1.py", "paladin2.py"]
+
 monsters = ["wolf", "giant eagle"]

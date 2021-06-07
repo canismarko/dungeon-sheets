@@ -78,6 +78,7 @@ class TexCreatorTestCase(unittest.TestCase):
 
     def new_character(self):
         char = character.Character(
+            name="Dr. Who",
             classes=["Monk", "Druid", "Artificer"],
             levels=[1, 1, 1],
             subclasses=["way of the open hand", None, None],
@@ -128,3 +129,10 @@ class TexCreatorTestCase(unittest.TestCase):
         monsters_ = [monsters.GiantEagle()]
         tex = make_sheets.create_monsters_tex(monsters=monsters_)
         self.assertIn(r"Giant Eagle", tex)
+
+    def test_create_party_summary_tex(self):
+        char = self.new_character()
+        tex = make_sheets.create_party_summary_tex(party=[char])
+        self.assertIn(r"\section*{Party}", tex)
+        self.assertIn(char.name, tex)
+
