@@ -23,6 +23,8 @@ alignment = "Lawful good"
 
 xp = 0
 hp_max = 105
+hp_current = 92
+hp_temp = 0
 inspiration = 0  # integer inspiration value
 
 # Ability Scores
@@ -107,3 +109,17 @@ flaws = """TODO: Describe your characters interesting flaws.
 
 features_and_traits = """TODO: Describe other features and abilities your
 character has."""
+
+age = 22
+height = "3'11\""
+weight = "47lb"
+eyes = "Brown"
+skin = "White tan"
+hair = "Short and brown"
+# Background
+allies = """TODO: List what allies your character has."""
+faction_name = "TODO: Name of your faction"
+# faction_symbol = placeholder not sure how to implement
+backstory = """TODO: Describe your character's backstory"""
+other_feats_traits = """TODO: Describe your character's other feats and traits"""
+treasure = """TODO: Describe what treasures you character owns."""
