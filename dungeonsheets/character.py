@@ -4,7 +4,7 @@ import re
 import warnings
 import math
 from types import ModuleType
-from typing import Sequence, Union
+from typing import Sequence, Union, MutableMapping
 
 import jinja2
 
@@ -22,7 +22,6 @@ from dungeonsheets import (
 )
 from dungeonsheets.stats import findattr
 from dungeonsheets.weapons import Weapon
-from dungeonsheets.readers import read_character_file
 from dungeonsheets.entity import Entity
 
 
@@ -922,9 +921,25 @@ class Character(Entity):
             return ()
 
     @classmethod
-    def load(Cls, character_file):
-        # Create a character from the character definition
-        char_props = read_character_file(character_file)
+    def load(Cls, char_props: MutableMapping):
+        """Factory Creates a character from the character definition.
+
+        Parameters
+        ==========
+        char_props
+          Keys and values holding all the attributes of the
+          character. E.g. ``char_props['strength'] = 16``
+
+        Returns
+        =======
+        char
+          The initialized ``Character`` object with associated
+          parameters.
+
+        """
+        # Parse the sheet type
+        char_props.pop("sheet_type", "")
+        # Load classes
         classes = char_props.get("classes", [])
         # backwards compatability
         if (len(classes) == 0) and ("character_class" in char_props):

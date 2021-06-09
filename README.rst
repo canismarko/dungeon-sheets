@@ -2,7 +2,8 @@
  Dungeon Sheets
 ================
 
-A tool to create character sheets for Dungeons and Dragons.
+A tool to create character sheets and session notes for Dungeons and
+Dragons 5th edition (D&D 5e).
 
 .. image:: https://travis-ci.com/canismarko/dungeon-sheets.svg?branch=master
    :target: https://travis-ci.com/canismarko/dungeon-sheets
@@ -78,16 +79,17 @@ install with:
 Usage
 =====
 
-Each character is described by a python (or a VTTES JSON) file, which
-gives many attributes associated with the character. See examples_ for
-more information about the character descriptions.
+Each character or set of GM notes is described by a python (or a VTTES
+JSON) file, which gives many attributes associated with the
+character. See examples_ for more information about the character
+descriptions.
 
 .. _examples: https://github.com/canismarko/dungeon-sheets/tree/master/examples
 
 The PDF's can then be generated using the ``makesheets`` command. If
 no filename is given, the current directory will be parsed and any
-character files found will be processed. If the ``--recursive`` option
-is used, sub-folders will also be parsed.
+valid files found will be processed. If the ``--recursive`` option is
+used, sub-folders will also be parsed.
 
 .. code:: bash
 

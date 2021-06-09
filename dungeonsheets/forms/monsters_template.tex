@@ -1,0 +1,89 @@
+\section*{Monsters}
+
+[% if use_dnd_decorations %]
+  [% for monster in monsters|sort(attribute='name') %]
+    \begin{DndMonster}{[[ monster.name ]]}
+        \DndMonsterType{[[ monster.description ]]}
+    
+        % If you want to use commas in the key values, enclose the values in braces.
+        \DndMonsterBasics[
+            armor-class = {[[ monster.armor_class ]]},
+            hit-points  = {[[ monster.hp_max ]] ([[ monster.hit_dice ]])},
+            speed       = {[[ monster.speed ]] ft.[% if monster.swim_speed %], [[ monster.swim_speed ]]ft. swim[% endif %][% if monster.fly_speed %], [[ monster.fly_speed ]] ft. fly[% endif %]},
+          ]
+    
+        \DndMonsterAbilityScores[
+            str = [[ monster.strength.value ]],
+            dex = [[ monster.dexterity.value ]],
+            con = [[ monster.constitution.value ]],
+            int = [[ monster.intelligence.value ]],
+            wis = [[ monster.wisdom.value ]],
+            cha = [[ monster.charisma.value ]],
+          ]
+
+        \DndMonsterDetails[
+            %saving-throws = {Str +0, Dex +0, Con +0, Int +0, Wis +0, Cha +0},
+            skills = {[[ monster.skills ]]},
+            %damage-vulnerabilities = {cold},
+            damage-resistances = {[[ monster.damage_resistance ]]},
+            %damage-immunities = {poison},
+            condition-immunities = {[[ monster.condition_immunities ]]},
+            senses = {[[ monster.senses ]]},
+            languages = {[% if monster.languages %][[ monster.languages ]][% else %] --- [% endif %]},
+            challenge = {[[ monster.challenge_rating ]]},
+          ]
+        %\DndMonsterSection{Actions}
+        [[ monster.__doc__ | rst_to_latex(top_heading_level=2) ]]
+    \end{DndMonster}
+  [% endfor %]
+  
+[% else %]
+  [% for monster in monsters|sort(attribute='name') %]
+    {
+    \section*{[[ monster.name ]]}
+    [% if monster.description %]  
+    \subsection*{[[ monster.description ]]}
+    [% endif %]
+
+    \begin{tabular}{c | c | c}
+      Armor Class & Hit Points & Speed \\
+      \hline
+      [[ monster.armor_class ]] &
+      [[ monster.hp_max ]] ([[ monster.hit_dice ]]) &
+      [[ monster.speed ]] \\
+      [% if monster.swim_speed %]
+        & & [[ monster.swim_speed ]] swim \\
+        [% endif %]
+      [% if monster.fly_speed %]
+        & & [[ monster.fly_speed ]] fly \\
+        [% endif %]
+        
+    \end{tabular}
+
+    \vspace{0.2cm}
+
+    \begin{tabular}{c | c | c}
+      STR & DEX & CON \\
+      \hline
+      [[ monster.strength.value ]] ([[ monster.strength.modifier|mod_str ]]) &
+      [[ monster.dexterity.value ]] ([[ monster.dexterity.modifier|mod_str ]]) &
+      [[ monster.constitution.value ]] ([[ monster.constitution.modifier|mod_str ]]) \\
+    \end{tabular}
+
+    \vspace{0.2cm}
+
+    \begin{tabular}{p{0.1\textwidth} p{0.32\textwidth}}
+      \textbf{Skills:} & [[ monster.skills ]] \\
+      \textbf{Senses:} & [[ monster.senses ]] \\
+      \textbf{Languages:} & [[ monster.languages ]] \\
+      \textbf{Resistance:} & [[ monster.damage_resistance ]] \\
+      \textbf{Immunities:} & [[ monster.condition_immunities ]] \\
+    \end{tabular}
+
+    \vspace{0.2cm}
+
+    [[ monster.__doc__ | rst_to_latex(top_heading_level=2) ]]
+
+    } %\color
+  [% endfor %]
+[% endif %]

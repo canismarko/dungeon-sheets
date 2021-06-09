@@ -80,7 +80,6 @@ def create_latex_pdf(tex, basename, keep_temp_files=False, use_dnd_decorations=F
             # Prepare to raise an exception
             logfile = Path(f"{basename}.log")
             err_msg = f"Processing of {basename}.tex failed. See {logfile} for details."
-            log.error(err_msg)
             # Load the log file for more details
             tex_error_msg = tex_error(logfile)
             if tex_error_msg:
@@ -93,7 +92,7 @@ def tex_error(logfile: Path) -> str:
     """Parse a LaTeX log file and look for errors."""
     has_error = False
     error_lines = []
-    if logfile.exists:
+    if logfile.exists():
         with open(logfile, mode="r") as fp:
             for line in fp.readlines():
                 # Check for the start of an error message
