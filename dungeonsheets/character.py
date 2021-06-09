@@ -159,6 +159,8 @@ class Character:
     xp = 0
     # Hit points
     hp_max = None
+    hp_current = None
+    hp_temp = None
     # Base stats (ability scores)
     strength = Ability()
     dexterity = Ability()

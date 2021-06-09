@@ -87,6 +87,8 @@ def create_character_pdf_template(character, basename, flatten=False):
         # Hit points
         "HDTotal": character.hit_dice,
         "HPMax": str(character.hp_max),
+        "HPCurrent": str(character.hp_current),
+        "HPTemp": str(character.hp_temp),
         # Personality traits and other features
         "PersonalityTraits ": text_box(character.personality_traits),
         "Ideals": text_box(character.ideals),
