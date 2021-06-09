@@ -20,16 +20,10 @@ from dungeonsheets import (
     spells,
     weapons,
 )
-from dungeonsheets.stats import Ability, ArmorClass, Initiative, Skill, Speed, findattr
+from dungeonsheets.stats import findattr
 from dungeonsheets.weapons import Weapon
 from dungeonsheets.readers import read_character_file
-
-
-def read(fname):
-    return open(os.path.join(os.path.dirname(__file__), fname)).read()
-
-
-__version__ = read("../VERSION").strip()
+from dungeonsheets.entity import Entity
 
 
 dice_re = re.compile(r"(\d+)d(\d+)")
@@ -145,17 +139,11 @@ def _resolve_mechanic(mechanic, module, SuperClass, warning_message=None):
     return Mechanic
 
 
-class Character:
+class Character(Entity):
     """A generic player character."""
 
-    # General attirubtes
-    name = ""
+    # Character-specific
     player_name = ""
-    alignment = "Neutral"
-    dungeonsheets_version = __version__
-    class_list = list()
-    _race = None
-    _background = None
     xp = 0
     # Hit points
     hp_max = None
@@ -172,32 +160,11 @@ class Character:
     initiative = Initiative()
     speed = Speed()
     inspiration = False
-    _saving_throw_proficiencies = tuple()  # use to overwrite class proficiencies
-    other_weapon_proficiencies = tuple()  # add to class/race proficiencies
-    skill_proficiencies = list()
-    skill_expertise = list()
-    languages = ""
-    # Skills
-    acrobatics = Skill(ability="dexterity")
-    animal_handling = Skill(ability="wisdom")
-    arcana = Skill(ability="intelligence")
-    athletics = Skill(ability="strength")
-    deception = Skill(ability="charisma")
-    history = Skill(ability="intelligence")
-    insight = Skill(ability="wisdom")
-    intimidation = Skill(ability="charisma")
-    investigation = Skill(ability="intelligence")
-    medicine = Skill(ability="wisdom")
-    nature = Skill(ability="intelligence")
-    perception = Skill(ability="wisdom")
-    performance = Skill(ability="charisma")
-    persuasion = Skill(ability="charisma")
-    religion = Skill(ability="intelligence")
-    sleight_of_hand = Skill(ability="dexterity")
-    stealth = Skill(ability="dexterity")
-    survival = Skill(ability="wisdom")
-    # Characteristics
     attacks_and_spellcasting = ""
+    class_list = list()
+    _background = None
+
+    # Characteristics
     personality_traits = (
         "TODO: Describe how your character behaves, interacts with others"
     )
@@ -205,17 +172,7 @@ class Character:
     bonds = "TODO: Describe your character's commitments or ongoing quests."
     flaws = "TODO: Describe your character's interesting flaws."
     features_and_traits = "Describe any other features and abilities."
-    # Inventory
-    cp = 0
-    sp = 0
-    ep = 0
-    gp = 0
-    pp = 0
-    equipment = ""
-    weapons = list()
-    magic_items = list()
-    armor = None
-    shield = None
+
     _proficiencies_text = list()
     # Magic
     spellcasting_ability = None
@@ -225,6 +182,7 @@ class Character:
     # Features IN MAJOR DEVELOPMENT
     custom_features = list()
     feature_choices = list()
+
     # Appearance
     # portrait = placeholder not sure how to implement
     age = 0
@@ -268,6 +226,7 @@ class Character:
           character.
 
         """
+        super(Character, self).__init__()
         self.clear()
         # make sure class, race, background are set first
         my_classes = classes
@@ -298,7 +257,7 @@ class Character:
         self.__set_max_hp(attrs.get("hp_max", None))
 
     def clear(self):
-        # reset class-definied items
+        # reset class-defined items
         self.class_list = list()
         self.weapons = list()
         self.magic_items = list()
@@ -1001,7 +960,7 @@ class Character:
         make_sheet(filename, character=self, flatten=kwargs.get("flatten", True))
 
 
-# Add backwards compatability for tests
+# Add backwards compatibility for tests
 class Artificer(Character):
     def __init__(self, level=1, **attrs):
         attrs["classes"] = ["Artificer"]
