@@ -338,6 +338,16 @@ class Inheritance(Feature):
     source = "Background (Inheritor)"
 
 
+class InsideInformant(Feature):
+    """You have connections to your previous employer or other groups you
+    dealt with during your previous employment. You can communicate
+    with your contacts, gaining information at the DM's discretion.
+    
+    """
+    name = "Inside Informant"
+    source = "Background (Rival Intern)"
+
+
 class KnightlyRegard(Feature):
     """You receive shelter and succor from members of your knightly order and those
     who are sympathetic to its aims. If your order is a religious one, you can

@@ -297,7 +297,7 @@ class Enlargereduce(Spell):
     below 1).
     """
 
-    name = "Enlargereduce"
+    name = "Enlarge/Reduce"
     level = 2
     casting_time = "1 action"
     casting_range = "30 feet"

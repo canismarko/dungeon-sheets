@@ -95,3 +95,6 @@ class TestStats(TestCase):
         # Swapping spaces for capitalization
         self.assertEqual(stats.findattr(test_class, "my attr"), test_class.my_attr)
         self.assertEqual(stats.findattr(test_class, "your attr"), test_class.YourAttr)
+        # Check for extra functuation
+        self.assertEqual(stats.findattr(test_class, "my attr"), test_class.my_attr)
+        self.assertEqual(stats.findattr(test_class, "Your/Attr"), test_class.YourAttr)

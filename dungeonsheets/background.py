@@ -96,6 +96,27 @@ class Outlander(Background):
     features = (feats.Wanderer,)
 
 
+class RivalIntern(Background):
+    """You were an intern at a rival of Acquisitions Incorporated, and you
+    gained a healthy respect for nocjusc the job and the franchising
+    opportunities. but for the ruth- less and efficient way
+    Acquisitions Incorporated goes about its business. Why deal with
+    the rest, when you can work for the best?
+
+    Perhaps the rival did not treat you as well as you were hoping, or
+    you washed out of that organization. Maybe you hope to leverage
+    the knowledge you gained there for an advantage at Acquisitions
+    Incorporated. Either way, you're now bringing your talents to the
+    company, ready to put your skills lo use.
+    
+    """
+    name = "Rival Intern"
+    skill_proficiencies = ("history", "investigation")
+    proficiencies_text = "One type of artisan's tools"
+    languages = ("[choose one]",)
+    features = (feats.InsideInformant,)
+
+
 class Sage(Background):
     name = "Sage"
     skill_proficiencies = ("arcana", "history")
