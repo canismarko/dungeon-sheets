@@ -8,6 +8,63 @@ from dungeonsheets.monsters.monsters import Monster
 from dungeonsheets.stats import Ability
 
 
+class Dao(Monster):
+    """Earth Glide.
+      The dao can burrow through nonmagical unworked earth and
+      stone. While doing so, the dao doesn't distrub the material it
+      moves through.
+    Elemental Demise.
+      If the dao dies, its body disintegrates into crystalline powder,
+      leaving behind only equipment the dao was wearing or carrying.
+    Innate Spellcasting.
+      The dao's innate spellcasting ability is Charisma (spell save DC
+      14, +6 to hit with spell attacks). It can innately cast the
+      following spells, requiring no material components:
+      
+      At will: detect evil and good, detect magic, stone shape. 3/day
+      each: passwall, move earth, tongues. 1/day each: conjure
+      elemental (earth elemental only), gaseous form, invisibility,
+      phantasmal killer, plane shift, wall of stone.
+    Sure-Footed.
+      The dao has advantage on Strength and Dexterity saving throws
+      made against effects that would knock it prone.
+    Multiattack.
+      The dao makes two fist attacks or two maul attacks.
+    Fist.
+      *Melee weapon attack:* +10 to hit, reach 5ft., one
+      target. *Hit:* 15 (2d8 + 6) bludgeoning damage.
+    Maul.
+      *Melee weapon attack:* +10 to hit, reach 5ft., one
+      target. *Hit:* 20 (4d6 + 6) bludgeoning damage. If the target is
+      a Huge or smaller creature, it must succeed on a DC 18 Strength
+      check or be knocked prone.
+    
+    """
+    name = "Dao"
+    description = "Large elemental, neutral evil"
+    challenge_rating = 11
+    armor_class = 18
+    skills = ""
+    saving_throws = "Int +5, Wis +5, Cha +6"
+    condition_immunities = "petrified"
+    senses = "darkvision 120ft., passive Perception 11"
+    languages = "Terran"
+    strength = Ability(23)
+    dexterity = Ability(12)
+    constitution = Ability(24)
+    intelligence = Ability(12)
+    wisdom = Ability(13)
+    charisma = Ability(14)
+    speed = 30
+    swim_speed = 0
+    fly_speed = 30
+    climb_speed = 0
+    burrow_speed = 30
+    hp_max = 187
+    hit_dice = "15d10 + 105"
+
+
+
 class Darkmantle(Monster):
     """
     **Echolocation**: The darkmantle can't use its blindsight while deafened.

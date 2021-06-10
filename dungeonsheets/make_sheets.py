@@ -9,7 +9,7 @@ import re
 from pathlib import Path
 from multiprocessing import Pool, cpu_count
 from itertools import product
-from typing import Union, Mapping, Sequence, Optional
+from typing import Union, Sequence, Optional
 
 from jinja2 import Environment, PackageLoader
 
@@ -93,7 +93,7 @@ def create_monsters_tex(
 def create_party_summary_tex(
         party: Sequence[Entity],
         use_dnd_decorations: bool = False,
-        ) -> str:
+) -> str:
     template = jinja_env.get_template("party_summary_template.tex")
     return template.render(party=party, use_dnd_decorations=use_dnd_decorations)
 
@@ -211,7 +211,24 @@ def make_gm_sheet(
             create_party_summary_tex(party, use_dnd_decorations=fancy_decorations)
         )
     # Add the monsters
-    monsters_ = [findattr(monsters, m)() for m in gm_props.get("monsters", [])]
+    monsters_ = []
+    for monster in gm_props.get("monsters", []):
+        if isinstance(monster, monsters.Monster):
+            # It's already a monster, so just add it
+            new_monster = monster
+        else:
+            try:
+                MyMonster = findattr(monsters, monster)
+            except AttributeError:
+                msg = (
+                    f"Monster '{monster}' not found. Please add it to"
+                    " ``monsters.py``"
+                )
+                warnings.warn(msg)
+                continue
+            else:
+                new_monster = MyMonster()
+        monsters_.append(new_monster)
     if len(monsters_) > 0:
         tex.append(
             create_monsters_tex(monsters_, use_dnd_decorations=fancy_decorations)

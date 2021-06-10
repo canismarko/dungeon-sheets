@@ -9,21 +9,51 @@ from dungeonsheets.stats import Ability
 
 
 class Aboleth(Monster):
-    """
-    **Amphibious**: The aboleth can breathe air and water.
+    """Amphibious
+      The aboleth can breathe air and water.
+    Mucous Cloud
+      While underwater, the aboleth is surrounded by transformative
+      mucus. A creature that touches the aboleth or that hits it with
+      a melee attack while within 5 ft. of it must make a DC 14
+      Constitution saving throw. On a failure, the creature is
+      diseased for 1d4 hours. The diseased creature can breathe only
+      underwater.
+    Probing Telepathy
+      If a creature communicates telepathically with the aboleth, the
+      aboleth learns the creature's greatest desires if the aboleth
+      can see the creature.
+    Multiattack
+      The aboleth makes three tentacle attacks.
+    Tentacle
+      Melee Weapon Attack: +9 to hit, reach 10 ft., one target. Hit:
+      12 (2d6 + 5) bludgeoning damage. If the target is a creature, it
+      must succeed on a DC 14 Constitution saving throw or become
+      diseased. The disease has no effect for 1 minute and can be
+      removed by any magic that cures disease. After 1 minute, the
+      diseased creature's skin becomes translucent and slimy, the
+      creature can't regain hit points unless it is underwater, and
+      the disease can be removed only by heal or another
+      disease-curing spell of 6th level or higher. When the creature
+      is outside a body of water, it takes 6 (1d12) acid damage every
+      10 minutes unless moisture is applied to the skin before 10
+      minutes have passed.
+    Tail
+      Melee Weapon Attack: +9 to hit, reach 10 ft. one target. Hit: 15
+      (3d6 + 5) bludgeoning damage.
+    Enslave
+      The aboleth targets one creature it can see within 30 ft. of
+      it. The target must succeed on a DC 14 Wisdom saving throw or be
+      magically charmed by the aboleth until the aboleth dies or until
+      it is on a different plane of existence from the target. The
+      charmed target is under the aboleth's control and can't take
+      reactions, and the aboleth and the target can communicate
+      telepathically with each other over any distance.
+      
+      Whenever the charmed target takes damage, the target can repeat
+      the saving throw. On a success, the effect ends. No more than
+      once every 24 hours, the target can also repeat the saving throw
+      when it is at least 1 mile away from the aboleth.
 
-    **Mucous Cloud**: While underwater, the aboleth is surrounded by transformative mucus. A creature that touches the aboleth or that hits it with a melee attack while within 5 ft. of it must make a DC 14 Constitution saving throw. On a failure, the creature is diseased for 1d4 hours. The diseased creature can breathe only underwater.
-
-    **Probing Telepathy**: If a creature communicates telepathically with the aboleth, the aboleth learns the creature's greatest desires if the aboleth can see the creature.
-
-    **Multiattack**: The aboleth makes three tentacle attacks.
-
-    **Tentacle**: Melee Weapon Attack: +9 to hit, reach 10 ft., one target. Hit: 12 (2d6 + 5) bludgeoning damage. If the target is a creature, it must succeed on a DC 14 Constitution saving throw or become diseased. The disease has no effect for 1 minute and can be removed by any magic that cures disease. After 1 minute, the diseased creature's skin becomes translucent and slimy, the creature can't regain hit points unless it is underwater, and the disease can be removed only by heal or another disease-curing spell of 6th level or higher. When the creature is outside a body of water, it takes 6 (1d12) acid damage every 10 minutes unless moisture is applied to the skin before 10 minutes have passed.
-
-    **Tail**: Melee Weapon Attack: +9 to hit, reach 10 ft. one target. Hit: 15 (3d6 + 5) bludgeoning damage.
-
-    **Enslave**: The aboleth targets one creature it can see within 30 ft. of it. The target must succeed on a DC 14 Wisdom saving throw or be magically charmed by the aboleth until the aboleth dies or until it is on a different plane of existence from the target. The charmed target is under the aboleth's control and can't take reactions, and the aboleth and the target can communicate telepathically with each other over any distance.
-    Whenever the charmed target takes damage, the target can repeat the saving throw. On a success, the effect ends. No more than once every 24 hours, the target can also repeat the saving throw when it is at least 1 mile away from the aboleth.
     """
 
     name = "Aboleth"
@@ -48,15 +78,20 @@ class Aboleth(Monster):
 
 
 class Acolyte(Monster):
-    """
-    **Spellcasting**: The acolyte is a 1st-level spellcaster. Its spellcasting ability is Wisdom (spell save DC 12, +4 to hit with spell attacks). The acolyte has following cleric spells prepared:
+    """Spellcasting
+      
+      The acolyte is a 1st-level spellcaster. Its spellcasting ability
+      is Wisdom (spell save DC 12, +4 to hit with spell attacks). The
+      acolyte has following cleric spells prepared:
 
     - Cantrips (at will): light, sacred flame, thaumaturgy
     - 1st level (3 slots): bless, cure wounds, sanctuary
 
-    **Club**: Melee Weapon Attack: +2 to hit, reach 5 ft., one target. Hit: 2 (1d4) bludgeoning damage.
-    """
+    Club
+      Melee Weapon Attack: +2 to hit, reach 5 ft., one target. Hit: 2
+      (1d4) bludgeoning damage.
 
+    """
     name = "Acolyte"
     description = "Medium humanoid, any alignment"
     challenge_rating = 0.25

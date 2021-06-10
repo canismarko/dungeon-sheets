@@ -1,7 +1,7 @@
 \section*{Party}
 
 [% if use_dnd_decorations %]
-  \begin{DndTable}[header=Nice Table]{l c c c c c c c c}
+  \begin{DndTable}{r c c c c c c c c}
     & AC & Str & Dex & Con & Int & Wis & Cha \\
     [% for member in party %]
       [[ member.name[:14] ]]
@@ -16,7 +16,7 @@
     [% endfor %]    
   \end{DndTable}
 [% else %]
-  \begin{tabular}{l | c c c c c c c}
+  \begin{tabular}{r | c c c c c c c}
     & AC & Str & Dex & Con & Int & Wis & Cha \\
     \hline\hline
     [% for member in party %]

@@ -3,7 +3,7 @@ import os
 from pathlib import Path
 
 from dungeonsheets import make_sheets, character, monsters
-from dungeonsheets.classes import monk
+
 
 EG_DIR = Path(__file__).parent.parent.resolve() / "examples"
 CHARFILE = EG_DIR / "rogue1.py"
@@ -73,6 +73,21 @@ class PdfOutputTestCase(unittest.TestCase):
         self.assertTrue(os.path.exists(pdf_name), f"{pdf_name} not created.")
 
 
+class VashtaNerada(monsters.Monster):
+    """Scariest monster ever, but luckily only for testing."""
+    name = "Vashta Nerada"
+    speed = 35
+    fly_speed = 45
+    swim_speed = 55
+    burrow_speed = 65
+    condition_immunities = "petrified"
+    saving_throws = "Dex +8"
+    damage_immunities = "Bludgeoning"
+    damage_resistances = "Lightning"
+    challenge_rating = 93
+    
+
+
 class TexCreatorTestCase(unittest.TestCase):
     """Test various helper functions for creating TeX from a character."""
 
@@ -129,10 +144,36 @@ class TexCreatorTestCase(unittest.TestCase):
         monsters_ = [monsters.GiantEagle()]
         tex = make_sheets.create_monsters_tex(monsters=monsters_)
         self.assertIn(r"Giant Eagle", tex)
+        # Check extended properties
+        monsters_ = [VashtaNerada()]
+        tex = make_sheets.create_monsters_tex(monsters=monsters_)
+        self.assertIn(r"Vashta Nerada", tex)
+        self.assertIn(r"35", tex)
+        self.assertIn(r"45 fly", tex)
+        self.assertIn(r"55 swim", tex)
+        self.assertIn(r"65 burrow", tex)
+        self.assertIn(r"petrified", tex)
+        self.assertIn(r"Saves:", tex)
+        self.assertIn(r"Dam. Immun.:", tex)
+        self.assertIn(r"Dam. Res.:", tex)
+        self.assertIn(r"Dam. Vuln.:", tex)
+        self.assertIn(r"Senses:", tex)
+        self.assertIn(r"Challenge:", tex)
+        self.assertIn(r"Languages:", tex)
+        self.assertIn(r"Skills:", tex)
+        # Check fancy extended properties
+        tex = make_sheets.create_monsters_tex(monsters=monsters_,
+                                              use_dnd_decorations=True)
+        self.assertIn(r"Vashta Nerada", tex)
+        self.assertIn(r"35 ft.", tex)
+        self.assertIn(r"45 ft. fly", tex)
+        self.assertIn(r"55 ft. swim", tex)
+        self.assertIn(r"65 ft. burrow", tex)
+        self.assertIn(r"petrified", tex)
+        self.assertIn(r"saving-throws = {Dex +8}", tex)
 
     def test_create_party_summary_tex(self):
         char = self.new_character()
         tex = make_sheets.create_party_summary_tex(party=[char])
         self.assertIn(r"\section*{Party}", tex)
         self.assertIn(char.name, tex)
-

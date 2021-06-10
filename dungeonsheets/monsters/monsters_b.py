@@ -425,17 +425,88 @@ class BlackDragonWyrmling(Monster):
     hit_dice = "6d8"
 
 
+# PotA
+class BlackEarthPriest(Monster):
+    """Spellcasting.
+      The priest is a 5th-level spellcaster. Its spellcasting ability
+      is Charisma (spell save DC 13, +5 to hit with spell attacks). It
+      knows the following sorcerer spells (an asterisked spell is from
+      *Princes of the Apocalypse* appendix B):
+    Cantrips (at will):
+      acid splash, blade ward, light, mending, mold earth*
+    1st level (4 slots):
+      earth tremor,* expeditious retreat, shield
+    2nd level (3 slots):
+      shatter, spider climb
+    3rd level (2 slots):
+      slow
+    Multiattack.
+      The priest makes two melee attacks.
+    Glaive.
+      *Melee Weapon Attack:* +4 to hit, reach 10 ft., one
+       target. *Hit:* 7 (1d10 + 2) slashing damage.
+    Unyielding.
+      When the priest is subjected to an effect that would move it,
+      knock it prone, or both, it can use its reaction to be neither
+      moved nor knocked prone.
+
+    The priests of the Black Earth are drivers and organizers of
+    Ogrémoch's cult. They are the true believers, seeing Ogrémoch as a
+    divine force, and they have developed a twisted dogma to explain
+    how the evil of elemental earth is destined to remake the world
+    and rule over all. The Black Earth priests form a cabal of leaders
+    whose fanaticism and magical power serve as the backbone of the
+    cult. Individuals ofunusual power hold higher rank in the cult,
+    but the priests provide the cult leader with his or her authority
+    over the rest of Ogrémoch's followers.
+
+    """
+    name = "Black Earth Priest"
+    description = "Medium humanoid (human), neutral evil"
+    challenge_rating = 3
+    armor_class = 17
+    skills = "Intimidation +5, Religion +3, Persuasion +5"
+    senses = "passive Perception 10"
+    languages = "Common, Terran"
+    strength = Ability(15)
+    dexterity = Ability(11)
+    constitution = Ability(14)
+    intelligence = Ability(12)
+    wisdom = Ability(10)
+    charisma = Ability(16)
+    speed = 30
+    swim_speed = 0
+    fly_speed = 0
+    climb_speed = 0
+    hp_max = 45
+    hit_dice = "7d8 + 14"
+
+
 class BlackPudding(Monster):
+    """Amorphous.
+      The pudding can move through a space as narrow as 1 inch wide without squeezing.
+    Corrosive Form.
+      A creature that touches the pudding or hits it with a melee
+      attack while within 5 feet of it takes 4 (1d8) acid damage. Any
+      nonmagical weapon made of metal or wood that hits the pudding
+      corrodes. After dealing damage, the weapon takes a permanent and
+      cumulative -1 penalty to damage rolls. If its penalty drops to
+      -5, the weapon is destroyed. Nonmagical ammunition made of metal
+      or wood that hits the pudding is destroyed after dealing
+      damage. The pudding can eat through 2-inch-thick, nonmagical
+      wood or metal in 1 round.
+    Spider Climb.
+      The pudding can climb difficult surfaces, including upside down
+      on ceilings, without needing to make an ability check.
+    Pseudopod.
+      Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 6
+      (1d6 + 3) bludgeoning damage plus 18 (4d8) acid damage. In
+      addition, nonmagical armor worn by the target is partly
+      dissolved and takes a permanent and cumulative -1 penalty to the
+      AC it offers. The armor is destroyed if the penalty reduces its
+      AC to 10.
+    
     """
-    **Amorphous**: The pudding can move through a space as narrow as 1 inch wide without squeezing.
-
-    **Corrosive Form**: A creature that touches the pudding or hits it with a melee attack while within 5 feet of it takes 4 (1d8) acid damage. Any nonmagical weapon made of metal or wood that hits the pudding corrodes. After dealing damage, the weapon takes a permanent and cumulative -1 penalty to damage rolls. If its penalty drops to -5, the weapon is destroyed. Nonmagical ammunition made of metal or wood that hits the pudding is destroyed after dealing damage. The pudding can eat through 2-inch-thick, nonmagical wood or metal in 1 round.
-
-    **Spider Climb**: The pudding can climb difficult surfaces, including upside down on ceilings, without needing to make an ability check.
-
-    **Pseudopod**: Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 6 (1d6 + 3) bludgeoning damage plus 18 (4d8) acid damage. In addition, nonmagical armor worn by the target is partly dissolved and takes a permanent and cumulative -1 penalty to the AC it offers. The armor is destroyed if the penalty reduces its AC to 10.
-    """
-
     name = "Black Pudding"
     description = "Large ooze, unaligned"
     challenge_rating = 4
@@ -735,15 +806,81 @@ class Bugbear(Monster):
     hit_dice = "5d8"
 
 
+# PotA
+class Burrowshark(Monster):
+    """Elite warriors of the earth cult, burrowsharks are fierce champions
+    who ride trained bulettes into battle. While their powerful mounts
+    rend and tear foes to pieces, burrowsharks leap to the ground and
+    cut down their foes without mercy.
+
+    Burrowsharks are much like Black Earth guards, since both have
+    uncanny footing and special armor. For burrowsharks, an additional
+    gift of Ogremoch's might establishes a magical bond between the
+    burrowshark and a bulette, allowing the rider to burrow with its
+    mount and sense what its mount senses.
+
+    Bond of the Black Earth
+      The burrowshark is magically bound to a bulette trained to serve
+      as its mount. While mounted on its bulette, the burrowshark
+      shares the bulette's sense and can ride the bulette while it
+      burrows. The bonded bulette obeys the burrowshark's commands. If
+      its mount dies, the burrowshark can train a new bulette to serve
+      as its bonded mount, a process requiring a month.
+    Multiattack
+      The burrowshark makes three melee attacks.
+    Spear
+      Melee or ranged weapon attack: +6 to hit, reach 5ft. or range
+      20/60ft., one target. Hit: 7 (1d6+4) piercing damage, or 8
+      (1d8+4) piercing damage if used with two hands to make a melee
+      attack.
+    Unyielding
+      When the burrowshark is subjected to an effect that would move
+      it, knock it prone, or both, it can use its reaction to be
+      neither moved nor knocked prone.
+
+    """
+    name = "Burrowshark"
+    description = "Medium humanoid (human), neutral evil"
+    challenge_rating = 4
+    armor_class = 18
+    skills = "Animal handling +2, Athletics +6, Intimidation + 3, Perception +2"
+    senses = "passive Perception 12"
+    languages = "Common"
+    strength = Ability(18)
+    dexterity = Ability(12)
+    constitution = Ability(16)
+    intelligence = Ability(10)
+    wisdom = Ability(11)
+    charisma = Ability(13)
+    speed = 30
+    swim_speed = 0
+    fly_speed = 0
+    climb_speed = 0
+    hp_max = 82
+    hit_dice = "11d8+33"
+
+
 class Bulette(Monster):
+    """Standing Leap
+      The bulette's long jump is up to 30 ft. and its high jump is up
+      to 15 ft., with or without a running start.
+    Bite
+      Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 30
+      (4d12 + 4) piercing damage.
+    Deadly Leap
+      If the bulette jumps at least 15 ft. as part of its movement, it
+      can then use this action to land on its ft. in a space that
+      contains one or more other creatures. Each of those creatures
+      must succeed on a DC 16 Strength or Dexterity saving throw
+      (target's choice) or be knocked prone and take 14 (3d6 + 4)
+      bludgeoning damage plus 14 (3d6 + 4) slashing damage. On a
+      successful save, the creature takes only half the damage, isn't
+      knocked prone, and is pushed 5 ft. out of the bulette's space
+      into an unoccupied space of the creature's choice. If no
+      unoccupied space is within range, the creature instead falls
+      prone in the bulette's space.
+
     """
-    **Standing Leap**: The bulette's long jump is up to 30 ft. and its high jump is up to 15 ft., with or without a running start.
-
-    **Bite**: Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 30 (4d12 + 4) piercing damage.
-
-    **Deadly Leap**: If the bulette jumps at least 15 ft. as part of its movement, it can then use this action to land on its ft. in a space that contains one or more other creatures. Each of those creatures must succeed on a DC 16 Strength or Dexterity saving throw (target's choice) or be knocked prone and take 14 (3d6 + 4) bludgeoning damage plus 14 (3d6 + 4) slashing damage. On a successful save, the creature takes only half the damage, isn't knocked prone, and is pushed 5 ft. out of the bulette's space into an unoccupied space of the creature's choice. If no unoccupied space is within range, the creature instead falls prone in the bulette's space.
-    """
-
     name = "Bulette"
     description = "Large monstrosity, unaligned"
     challenge_rating = 5
@@ -762,4 +899,4 @@ class Bulette(Monster):
     fly_speed = 0
     climb_speed = 0
     hp_max = 94
-    hit_dice = "9d10"
+    hit_dice = "9d10+45"

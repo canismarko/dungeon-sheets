@@ -299,6 +299,47 @@ class Shadow(Monster):
     hit_dice = "3d8"
 
 
+class ShadowDemon(Monster):
+    """Incorporeal Movement.
+      The demon can move through other creatures and objects as if
+      they were difficult terrain. It takes 5 (1d10) force damage if
+      it ends its turn inside an object.
+    Light Sensitivity.
+      While in bright light, the demon has disadvantage on attack
+      rolls, as well as on Wisdom (Perception) checks that rely on
+      sight.
+    Shadow Stealth.
+      While in dim light or darkness, the demon can take the Hide
+      action as a bonus action.
+    Claws.
+      *Melee Weapon Attack:* +5 to hit, reach 5ft., one
+      creature. *Hit:* 10 (2d6+3) psychic damage or, if the demon
+      had advantage on the attack roll, 17 (4d6+3) psychic damage.
+    """
+    name = "Shadow Demon"
+    description = "Medium fiend (demon), chaotic evil"
+    challenge_rating = 4
+    armor_class = 13
+    skills = "Stealth +7"
+    saving_throws = "Dex +5, Cha +4"
+    damage_vulnerabilities = "radiant"
+    damage_resistances = "acid, fire, necrotic, thunder; bludgeoning, piercing, and slashing from nonmagical attacks"
+    damage_immunities = "cold, lightning, poison"
+    condition_immunities = "exhaustion, grappled, paralyzed, petrified, poisoned, prone, restrained"
+    senses = "Darkvision 120 ft., Passive Perception 11"
+    languages = "Abyssal, telepathy 120 ft."
+    strength = Ability(1)
+    dexterity = Ability(17)
+    constitution = Ability(12)
+    intelligence = Ability(14)
+    wisdom = Ability(13)
+    charisma = Ability(14)
+    speed = 30
+    fly_speed = 30
+    hp_max = 66
+    hit_dice = "12d8 + 12"
+
+
 class ShamblingMound(Monster):
     """
     **Lightning Absorption**: Whenever the shambling mound is subjected to lightning damage, it takes no damage and regains a number of hit points equal to the lightning damage dealt.
@@ -771,7 +812,6 @@ class StoneGolem(Monster):
 
     **Slow**: The golem targets one or more creatures it can see within 10 ft. of it. Each target must make a DC 17 Wisdom saving throw against this magic. On a failed save, a target can't use reactions, its speed is halved, and it can't make more than one attack on its turn. In addition, the target can take either an action or a bonus action on its turn, not both. These effects last for 1 minute. A target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.
     """
-
     name = "Stone Golem"
     description = "Large construct, unaligned"
     challenge_rating = 10
@@ -791,6 +831,69 @@ class StoneGolem(Monster):
     climb_speed = 0
     hp_max = 178
     hit_dice = "17d10"
+
+
+class Stonemelder(Monster):
+    """Death Burst.
+      When the stonemelder dies, it turns to stone and explodes in a
+      burst of rock shards, becoming a smoking pile of rubble. Each
+      creature within 10 feet of the exploding stonemelder must make a
+      DC 14 Dexterity saving throw, taking 11 (2d10) bludgeoning
+      damage on a failed save, or half as much damage on a successful
+      one.
+    Spellcasting.
+      The stonemelder is a 7th-level spellcaster. Its spellcasting
+      ability is Charisma (spell save DC 13, +5 to hit with spell
+      attacks. It knows the following sorcerer spells (an asterisked
+      spell is from *Princes of the Apocalypse* appendix B):
+    Cantrips (at will):
+      acid splash, blade ward, light mending, mold earth*
+    1st level (4 slots):
+      expeditious retreat, false life, shield
+    2nd level (3 slots):
+      Maximilian's earthen grasp,* shatter
+    3rd level (3 slots):
+      erupting earth,* meld into stone
+    4th level (1 slots):
+      stoneskin
+    Black Earth Rod.
+      *Melee Weapon Attack:* +5 to hit, reach 5 ft., one
+      target. *Hit:* 5 (1d6 + 2) bludgeoning damage. The stonemelder
+      can also expend a spell slot to deal extra damage, dealing 2d8
+      bludgeoning damage for a 1st level slot, plus an additional 1d8
+      for each level of the slot above 1st.
+
+    Stonemelders are spellcasters who gain their power from Ogrémoch,
+    using elemental earth magic to sheathe their bodies in carapaces
+    of rock. They are elite champions of the cult and answer only to
+    the cult leaders. Not even the Black Earth priests tell
+    stonemelders what to do.
+
+    Each stonemelder carries a weapon known as a Black Earth rod. Such
+    a rod is like an ordinary mace, but in the hands of a stonemelder,
+    it serves as a conduit for Ogrémoch's wrath.
+
+    """
+    name = "Stonemelder"
+    description = "Medium humanoid (human), neutral evil"
+    challenge_rating = 4
+    armor_class = 17
+    skills = "Intimidation +5, Perception +2"
+    senses = "termorsense 30 ft., passive Perception 12"
+    languages = "Common, Terran"
+    strength = Ability(15)
+    dexterity = Ability(10)
+    constitution = Ability(16)
+    intelligence = Ability(12)
+    wisdom = Ability(11)
+    charisma = Ability(17)
+    speed = 30
+    swim_speed = 0
+    fly_speed = 0
+    climb_speed = 0
+    hp_max = 75
+    hit_dice = "10d8 + 30"
+
 
 
 class StormGiant(Monster):

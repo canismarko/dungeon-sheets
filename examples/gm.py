@@ -13,4 +13,4 @@ session_title = "Objects in Space"
 
 party = ["rogue1.py", "paladin2.py"]
 
-monsters = ["wolf", "giant eagle"]
+monsters = ["aboleth", "wolf", "giant eagle", "Vashta Nerada"]
