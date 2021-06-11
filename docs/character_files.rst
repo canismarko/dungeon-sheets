@@ -310,7 +310,10 @@ files:
 
 .. code:: python
 
-    import my_homebrew
+    from dungeonsheets import import_homebrew
+    
+    
+    my_homebrew = import_homebrew("my_campaign.py")
 
     weapons = ["shortsword", my_homebrew.DullSword]
 

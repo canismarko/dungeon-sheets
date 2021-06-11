@@ -7,3 +7,5 @@ from dungeonsheets.infusions import Infusion
 from dungeonsheets.weapons import Weapon
 from dungeonsheets.armor import Armor, Shield
 from dungeonsheets.magic_items import MagicItem
+from dungeonsheets.monsters import Monster
+from dungeonsheets.stats import Ability

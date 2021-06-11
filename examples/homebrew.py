@@ -6,7 +6,10 @@ Modify this file as you level up and then re-generate the character
 sheet by running ``makesheets`` from the command line.
 
 """
-from dungeonsheets import mechanics
+from dungeonsheets import mechanics, import_homebrew
+
+# Load the module containing the homebrew content.
+campaign = import_homebrew("homebrew_campaign.py")
 
 dungeonsheets_version = "0.9.4"
 
@@ -93,7 +96,7 @@ class LegoShield(mechanics.Shield):
     base_armor_class = 114
 
 
-weapons = (DullSword, "rusty_shiv")  # Example: ('shortsword', 'longsword')
+weapons = (DullSword, "rusty_shiv", campaign.BrightSword)  # Example: ('shortsword', 'longsword')
 magic_items = (RobeOfBreadSummoning, "staff_of_the_arbor_abode")
 armor = PlasticArmor # Eg "leather armor"
 shield = LegoShield  # Eg "shield"
