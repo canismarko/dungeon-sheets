@@ -458,9 +458,17 @@ def create_spells_pdf_template(character, basename, flatten=False):
             3083,
         ),
     }
+    # Prepare the lists of spells for each level
     for level in field_numbers.keys():
-        spells = tuple(spl for spl in character.spells if spl.level == level)
-        field_names = tuple(f"Spells {i}" for i in field_numbers[level])
+        spells = [spl for spl in character.spells if spl.level == level]
+        # Determine if we should omit un-prepared spells to save space
+        if len(spells) > len(field_numbers[level]):
+            spells = [s for s in spells if s in character.spells_prepared]
+            warnings.warn(f"{character.name} knows more spells than the number of "
+                          "lines available in spell sheet. Limited to prepared "
+                          "spells only.")
+        # Build the list of PDF controls to set/toggle
+        field_names = [f"Spells {i}" for i in field_numbers[level]]
         prep_names = tuple(f"Check Box {i}" for i in prep_numbers[level])
         for spell, field, chk_field in zip(spells, field_names, prep_names):
             fields[field] = str(spell)
