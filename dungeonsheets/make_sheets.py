@@ -284,8 +284,9 @@ def make_character_sheet(
         character_props = readers.read_sheet_file(char_file)
         character = _char.Character.load(character_props)
     # Set the fields in the FDF
-    char_base = os.path.splitext(character_file)[0] + "_char"
-    person_base = os.path.splitext(character_file)[0] + "_person"
+    basename = char_file.stem
+    char_base = basename + "_char"
+    person_base = basename + "_person"
     sheets = [char_base + ".pdf", person_base + ".pdf"]
     pages = []
     tex = [

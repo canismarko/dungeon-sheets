@@ -148,15 +148,17 @@ def create_character_pdf_template(character, basename, flatten=False):
         ("Wpn Name 2", "Wpn2 AtkBonus ", "Wpn2 Damage "),
         ("Wpn Name 3", "Wpn3 AtkBonus  ", "Wpn3 Damage "),
     ]
-    if len(character.weapons) == 0:
+    if len(character.weapons) == 0 or hasattr(character, 'Monk'):
         character.wield_weapon("unarmed")
     for _fields, weapon in zip(weapon_fields, character.weapons):
         name_field, atk_field, dmg_field = _fields
         fields[name_field] = weapon.name
         fields[atk_field] = "{:+d}".format(weapon.attack_modifier)
         fields[dmg_field] = f"{weapon.damage}/{weapon.damage_type}"
+    # Additional attacks beyond 3
+    attack = [f"{w.name}: Atk {weapon.attack_modifier:+d}, Dam {weapon.damage}/{weapon.damage_type}"
+              for w in character.weapons[len(weapon_fields):]]
     # Other attack information
-    attack = []
     if character.armor:
         attack.append(f"Armor: {character.armor}")
     if character.shield:

@@ -314,6 +314,12 @@ class Roll20CharacterReader(JSONCharacterReader):
 
 
 class FoundryCharacterReader(JSONCharacterReader):
+    # List of weapons to ignore, only for class features that get added automatically
+    _invalid_weapons = [
+        "unarmed strike (monk)",
+        "<no name>",
+    ]
+    
     def _skill_proficiency_value(self, key: str) -> float:
         proficiency_labels = {
             "acrobatics": "acr",
@@ -377,7 +383,8 @@ class FoundryCharacterReader(JSONCharacterReader):
         """Iterator over the weapons the character is carrying in her inventory."""
         items = self.json_data()["items"]
         for item in items:
-            if item["type"] == "weapon" and item["name"] != "<no name>":
+            is_valid_weapon = (item["type"] == "weapon" and item["name"].lower() not in self._invalid_weapons)
+            if is_valid_weapon:
                 yield item["name"].lower()
 
     def armor(self):

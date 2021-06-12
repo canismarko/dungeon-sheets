@@ -32,7 +32,7 @@ class MartialArts(Feature):
     - When you use the Attack action with an unarmed strike or a monk
       weapon on your turn, you can make one unarmed strike as a bonus
       action. For example, if you take the Attack action and attack
-      with a quarter- staff, you can also make an unarmed strike as a
+      with a quarterstaff, you can also make an unarmed strike as a
       bonus action, assuming you haven't already taken a bonus action
       this turn.
 
