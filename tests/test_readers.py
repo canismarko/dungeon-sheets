@@ -9,7 +9,7 @@ from dungeonsheets.readers import read_sheet_file
 
 EG_DIR = (Path(__file__).parent.parent / "examples").resolve()
 CHAR_PYTHON_FILE = EG_DIR / "rogue1.py"
-GM_PYTHON_FILE = EG_DIR / "gm.py"
+GM_PYTHON_FILE = EG_DIR / "gm-session-notes.py"
 ROLL20_JSON_FILE = EG_DIR / "barbarian3.json"
 FOUNDRY_JSON_FILE = EG_DIR / "bard3_foundry.json"
 SPELLCASTER_JSON_FILE = EG_DIR / "artificer2.json"

@@ -7,7 +7,7 @@ from dungeonsheets import make_sheets, character, monsters
 
 EG_DIR = Path(__file__).parent.parent.resolve() / "examples"
 CHARFILE = EG_DIR / "rogue1.py"
-GMFILE = EG_DIR / "gm.py"
+GMFILE = EG_DIR / "gm-session-notes.py"
 
 
 class MakeSheetsTestCase(unittest.TestCase):

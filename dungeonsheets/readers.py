@@ -47,7 +47,7 @@ def read_sheet_file(filename: Union[str, Path]) -> dict:
     char_props = {}
     parent_sheets = these_props.pop('parent_sheets', [])
     for parent_sheet in parent_sheets:
-        parent_sheet = Path(parent_sheet)
+        parent_sheet = (filename.parent / parent_sheet).resolve()
         if parent_sheet != filename:
             parent_props = read_sheet_file(parent_sheet)
             char_props.update(parent_props)
