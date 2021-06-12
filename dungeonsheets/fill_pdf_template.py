@@ -39,7 +39,7 @@ def create_character_pdf_template(character, basename, flatten=False):
         "Race ": str(character.race),
         "Alignment": character.alignment,
         "XP": str(character.xp),
-        "Inspiration": str("Yes" if character.inspiration else "No"),
+        "Inspiration": str("Yes" if character.inspiration else ""),
         # Abilities
         "ProfBonus": mod_str(character.proficiency_bonus),
         "STRmod": str(character.strength.value),
@@ -87,8 +87,8 @@ def create_character_pdf_template(character, basename, flatten=False):
         # Hit points
         "HDTotal": character.hit_dice,
         "HPMax": str(character.hp_max),
-        "HPCurrent": str(character.hp_current),
-        "HPTemp": str(character.hp_temp),
+        "HPCurrent": str(character.hp_current) if character.hp_current is not None else "",
+        "HPTemp": str(character.hp_temp) if character.hp_temp > 0 else "",
         # Personality traits and other features
         "PersonalityTraits ": text_box(character.personality_traits),
         "Ideals": text_box(character.ideals),

@@ -146,7 +146,7 @@ class Character(Entity):
     xp = 0
     # Extra hit points info, for characters only
     hp_current = None
-    hp_temp = None
+    hp_temp = 0
     # Base stats (ability scores)
     inspiration = False
     attacks_and_spellcasting = ""

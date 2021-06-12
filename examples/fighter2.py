@@ -23,7 +23,7 @@ alignment = "Lawful evil"
 
 xp = 0
 hp_max = 54
-inspiration = 0  # integer inspiration value
+inspiration = True  # integer inspiration value
 
 # Ability Scores
 strength = 15
