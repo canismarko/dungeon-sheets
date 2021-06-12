@@ -87,6 +87,8 @@ def create_character_pdf_template(character, basename, flatten=False):
         # Hit points
         "HDTotal": character.hit_dice,
         "HPMax": str(character.hp_max),
+        "HPCurrent": str(character.hp_current),
+        "HPTemp": str(character.hp_temp),
         # Personality traits and other features
         "PersonalityTraits ": text_box(character.personality_traits),
         "Ideals": text_box(character.ideals),
@@ -169,6 +171,30 @@ def create_character_pdf_template(character, basename, flatten=False):
     # Prepare the actual PDF
     dirname = os.path.join(os.path.dirname(os.path.abspath(__file__)), "forms/")
     src_pdf = os.path.join(dirname, "blank-character-sheet-default.pdf")
+    return make_pdf(fields, src_pdf=src_pdf, basename=basename, flatten=flatten)
+
+
+def create_personality_pdf_template(character, basename, flatten=False):
+    # Prepare the list of fields
+    fields = {
+        "CharacterName 2": character.name,
+        "Age": str(character.age),
+        "Height": character.height,
+        "Weight": character.weight,
+        "Eyes": character.eyes,
+        "Skin": character.skin,
+        "Hair": character.hair,
+        # "CHARACTER IMAGE": None
+        # "Faction Symbol Image": None
+        "Allies": text_box(character.allies),
+        "FactionName": character.faction_name,
+        "Backstory": text_box(character.backstory),
+        "Feat+Traits": text_box(character.other_feats_traits),
+        "Treasure": text_box(character.treasure)
+    }
+    # Prepare the actual PDF
+    dirname = os.path.join(os.path.dirname(os.path.abspath(__file__)), "forms/")
+    src_pdf = os.path.join(dirname, "blank-personality-sheet-default.pdf")
     return make_pdf(fields, src_pdf=src_pdf, basename=basename, flatten=flatten)
 
 

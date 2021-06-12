@@ -144,6 +144,20 @@ class Character(Entity):
     # Character-specific
     player_name = ""
     xp = 0
+    # Hit points
+    hp_max = None
+    hp_current = None
+    hp_temp = None
+    # Base stats (ability scores)
+    strength = Ability()
+    dexterity = Ability()
+    constitution = Ability()
+    intelligence = Ability()
+    wisdom = Ability()
+    charisma = Ability()
+    armor_class = ArmorClass()
+    initiative = Initiative()
+    speed = Speed()
     inspiration = False
     attacks_and_spellcasting = ""
     class_list = list()
@@ -159,6 +173,30 @@ class Character(Entity):
     features_and_traits = "Describe any other features and abilities."
 
     _proficiencies_text = list()
+    # Magic
+    spellcasting_ability = None
+    _spells = list()
+    _spells_prepared = list()
+    infusions = list()
+    # Features IN MAJOR DEVELOPMENT
+    custom_features = list()
+    feature_choices = list()
+
+    # Appearance
+    # portrait = placeholder not sure how to implement
+    age = 0
+    height = ''
+    weight = ''
+    eyes = ''
+    skin = ''
+    hair = ''
+    # Background
+    allies = ''
+    faction_name = ''
+    # faction_symbol = placeholder not sure how to implement
+    backstory = ''
+    other_feats_traits = ''
+    treasure = ''
 
     def __init__(
         self,
