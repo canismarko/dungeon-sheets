@@ -12,6 +12,7 @@ Welcome to Dungeonsheets's documentation!
 
    character_files
    gm_notes
+   advanced_features
    examples
 
 Indices and tables

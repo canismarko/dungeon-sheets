@@ -2,6 +2,7 @@ import warnings
 from pathlib import Path
 import unittest
 import types
+from contextlib import contextmanager
 
 from dungeonsheets import exceptions
 from dungeonsheets.readers import read_sheet_file
@@ -15,6 +16,35 @@ SPELLCASTER_JSON_FILE = EG_DIR / "artificer2.json"
 
 
 class PythonReaderTests(unittest.TestCase):
+    @contextmanager
+    def inherited_sheets(self):
+        """Create some cascading sheets to be inherited."""
+        child = Path("child_sheet.py")
+        parent = Path("parent_sheet.py")
+        # Write inheritance files
+        with open(parent, mode="w") as fp:
+            fp.writelines("\n".join([
+                "dungeonsheets_version = '0.15.0'",
+                "background = 'entertainer'",
+            ]) + "\n")
+        with open(child, mode="w") as fp:
+            fp.writelines("\n".join([
+                "dungeonsheets_version = '0.15.0'",
+                "name = 'Douglass Adams'",
+                f"parent_sheets = ['{str(parent)}']",
+            ]) + "\n")
+        # Drop back into the calling code
+        yield child, parent
+        # Remove temporary files
+        child.unlink()
+        parent.unlink()
+
+    def test_cascading_sheets(self):
+        with self.inherited_sheets() as (child, parent):
+            char_props = read_sheet_file(child)
+        self.assertEqual(char_props["name"], "Douglass Adams")
+        self.assertEqual(char_props["background"], "entertainer")
+    
     def test_load_python_gm_sheet(self):
         gmfile = GM_PYTHON_FILE
         result = read_sheet_file(gmfile)

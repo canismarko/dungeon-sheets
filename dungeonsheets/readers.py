@@ -4,6 +4,7 @@ import json
 import re
 from functools import lru_cache
 import logging
+from typing import Union
 
 from pathlib import Path
 
@@ -12,17 +13,25 @@ from dungeonsheets import exceptions
 log = logging.getLogger(__file__)
 
 
-def read_sheet_file(filename: str):
+def read_sheet_file(filename: Union[str, Path]) -> dict:
     """Create a character object from the given definition file.
 
     The definition file should be an importable python file or a JSON
     file following one of the supported formats, filled with variables
     describing the character.
 
+    This function also resolves any *parent_sheets* attributes in the
+    given sheet, loading parent sheets and updating those attributes.
+
     Parameters
     ----------
     filename
       The path to the file that will be imported.
+
+    Returns
+    -------
+    char_props
+      Dictionary with the import character properties.
 
     """
     filename = Path(filename)
@@ -33,8 +42,17 @@ def read_sheet_file(filename: str):
     except KeyError:
         raise ValueError(f"Character definition {filename} is not a known file type.")
     else:
-        new_char = reader()
-    return new_char
+        these_props = reader()
+    # Resolve parent_sheets
+    char_props = {}
+    parent_sheets = these_props.pop('parent_sheets', [])
+    for parent_sheet in parent_sheets:
+        parent_sheet = Path(parent_sheet)
+        if parent_sheet != filename:
+            parent_props = read_sheet_file(parent_sheet)
+            char_props.update(parent_props)
+    char_props.update(these_props)
+    return char_props
 
 
 class BaseCharacterReader:
