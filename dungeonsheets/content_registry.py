@@ -3,7 +3,7 @@ from functools import lru_cache
 import importlib.util
 from typing import Union, List, Optional
 
-from dungeonsheets import weapons, monsters, race, background, armor, spells, infusions, magic_items
+from dungeonsheets import weapons, monsters, race, background, armor, spells, infusions, magic_items, features
 
 
 class ContentRegistry():
@@ -80,6 +80,7 @@ default_content_registry.add_module(armor)
 default_content_registry.add_module(spells)
 default_content_registry.add_module(infusions)
 default_content_registry.add_module(magic_items)
+default_content_registry.add_module(features)
 
 
 def find_content(name: str, valid_classes: Optional[List]):
@@ -100,7 +101,7 @@ def find_content(name: str, valid_classes: Optional[List]):
     return default_content_registry.findattr(name, valid_classes=valid_classes)
 
 
-@lru_cache
+@lru_cache()
 def import_homebrew(filepath: Union[str, Path]):
     """Import a module file containing homebrew content.
 

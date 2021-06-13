@@ -69,23 +69,32 @@ multiclass_spellslots_by_level = {
 }
 
 
-def _resolve_mechanic(mechanic, module, SuperClass, warning_message=None):
+def _resolve_mechanic(mechanic, SuperClass, warning_message=None):
     """Take a raw entry in a character sheet and turn it into a usable object.
 
     Eg: spells can be defined in many ways. This function accepts all
     of those options and returns an actual *Spell* class that can be
     used by a character::
 
+        >>> _resolve_mechanic("mage_hand", SuperClass=spells.Spell)
+        
+        >>> _resolve_mechanic("mage_hand", SuperClass=None)
+        
         >>> from dungeonsheets import spells
-        >>> _resolve_mechanic("mage_hand", spells, None)
         >>> class MySpell(spells.Spell): pass
-        >>> _resolve_mechanic(MySpell, None, spells.Spell)
-        >>> _resolve_mechanic("hocus pocus", spells, None)
+        >>> _resolve_mechanic(MySpell, SuperClass=spells.Spell)
+        
+        >>> _resolve_mechanic("hocus pocus", SuperClass=spells.Spell)
 
     The acceptable entries for *mechanic*, in priority order, are:
       1. A subclass of *SuperClass*
-      2. A string with the name of a defined spell in *module*
+      2. A string with the name of defined content
       3. The name of an unknown spell (creates generic object using *factory*)
+
+    *SuperClass* can be ``None`` to match any class, however this will
+    raise an exception if more than one content type has this
+    name. For example, "shield" can refer to both the armor or the
+    spell, so ``_resolve_mechanic("shield")`` will raise an exception.
 
     Parameters
     ==========
@@ -93,8 +102,6 @@ def _resolve_mechanic(mechanic, module, SuperClass, warning_message=None):
       The thing to be resolved, either a string with the name of the
       mechanic, or a subclass of *ParentClass* describing the
       mechanic.
-    module : module
-      A python module in which to look for the defined string in *name*.
     SuperClass : type
       Class to determine whether *mechanic* should just be allowed
       through as is.
@@ -120,7 +127,8 @@ def _resolve_mechanic(mechanic, module, SuperClass, warning_message=None):
     else:
         try:
             # Retrieve pre-defined mechanic
-            Mechanic = find_content(mechanic, valid_classes=[SuperClass])
+            valid_classes = [SuperClass] if SuperClass is not None else []
+            Mechanic = find_content(mechanic, valid_classes=valid_classes)
         except AttributeError:
             # No pre-defined mechanic available
             if warning_message is not None:
@@ -618,7 +626,6 @@ class Character(Entity):
                     )
                     ThisMagicItem = _resolve_mechanic(
                         mechanic=mitem,
-                        module=magic_items,
                         SuperClass=magic_items.MagicItem,
                         warning_message=msg,
                     )
@@ -627,7 +634,7 @@ class Character(Entity):
                 self.other_weapon_proficiencies = ()
                 msg = 'Magic Item "{}" not defined. Please add it to ``weapons.py``'
                 wps = set(
-                    [_resolve_mechanic(w, weapons, weapons.Weapon, msg) for w in val]
+                    [_resolve_mechanic(w, SuperClass=weapons.Weapon, warning_message=msg) for w in val]
                 )
                 wps -= set(self.weapon_proficiencies)
                 self.other_weapon_proficiencies = list(wps)
@@ -646,7 +653,6 @@ class Character(Entity):
                     msg = 'Feature "{}" not defined. Please add it to ``features.py``'
                     ThisFeature = _resolve_mechanic(
                         mechanic=f,
-                        module=features,
                         SuperClass=features.Feature,
                         warning_message=msg,
                     )
@@ -659,7 +665,6 @@ class Character(Entity):
                     msg = 'Spell "{}" not defined. Please add it to ``spells.py``'
                     ThisSpell = _resolve_mechanic(
                         mechanic=spell_name,
-                        module=spells,
                         SuperClass=spells.Spell,
                         warning_message=msg,
                     )
@@ -683,7 +688,6 @@ class Character(Entity):
                         )
                         ThisInfusion = _resolve_mechanic(
                             mechanic=infusion_name,
-                            module=infusions,
                             SuperClass=infusions.Infusion,
                             warning_message=msg,
                         )
@@ -793,7 +797,6 @@ class Character(Entity):
                 msg = 'Unnown armor "{}". Please add it to ``armor.py``.'
                 NewArmor = _resolve_mechanic(
                     mechanic=new_armor,
-                    module=armor,
                     SuperClass=armor.Armor,
                     warning_message=msg,
                 )
@@ -834,7 +837,6 @@ class Character(Entity):
             msg = 'Unknown weapon "{}". Please add it to ``weapons.py``.'
             ThisWeapon = _resolve_mechanic(
                 mechanic=weapon,
-                module=weapons,
                 SuperClass=weapons.Weapon,
                 warning_message=msg,
             )

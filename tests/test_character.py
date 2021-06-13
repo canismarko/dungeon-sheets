@@ -79,24 +79,23 @@ class TestCharacter(TestCase):
         self.assertIsInstance(char.infusions[0], infusions.Infusion)
         self.assertEqual(char.infusions[0].name, "Spam Infusion")
 
-    @expectedFailure
     def test_resolve_mechanic(self):
         # Test a well defined mechanic
-        NewSpell = _resolve_mechanic("mage_hand", spells, None)
+        NewSpell = _resolve_mechanic("mage_hand", None)
         self.assertTrue(issubclass(NewSpell, spells.Spell))
 
         # Test an unknown mechanic
         def new_spell(**params):
             return spells.Spell
 
-        NewSpell = _resolve_mechanic("hocus_pocus", spells, spells.Spell)
+        NewSpell = _resolve_mechanic("hocus_pocus", spells.Spell)
         self.assertTrue(issubclass(NewSpell, spells.Spell))
 
         # Test direct resolution of a proper subclass
         class MySpell(spells.Spell):
             pass
 
-        NewSpell = _resolve_mechanic(MySpell, spells, spells.Spell)
+        NewSpell = _resolve_mechanic(MySpell, spells.Spell)
 
     def test_wield_weapon(self):
         char = Character()
