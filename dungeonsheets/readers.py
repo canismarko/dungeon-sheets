@@ -34,7 +34,7 @@ def read_sheet_file(filename: Union[str, Path]) -> dict:
       Dictionary with the import character properties.
 
     """
-    filename = Path(filename)
+    filename = Path(filename).resolve()
     # Parse the file name
     ext = filename.suffix
     try:
@@ -52,6 +52,9 @@ def read_sheet_file(filename: Union[str, Path]) -> dict:
             parent_props = read_sheet_file(parent_sheet)
             char_props.update(parent_props)
     char_props.update(these_props)
+    # Remove imported dungeonsheets modules
+    char_props.pop("import_homebrew", None)
+    char_props.pop("mechanics", None)
     return char_props
 
 

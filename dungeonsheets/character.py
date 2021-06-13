@@ -20,7 +20,7 @@ from dungeonsheets import (
     spells,
     weapons,
 )
-from dungeonsheets.stats import findattr
+from dungeonsheets.content_registry import find_content
 from dungeonsheets.weapons import Weapon
 from dungeonsheets.entity import Entity
 
@@ -120,7 +120,7 @@ def _resolve_mechanic(mechanic, module, SuperClass, warning_message=None):
     else:
         try:
             # Retrieve pre-defined mechanic
-            Mechanic = findattr(module, mechanic)
+            Mechanic = find_content(mechanic, valid_classes=[SuperClass])
         except AttributeError:
             # No pre-defined mechanic available
             if warning_message is not None:
@@ -336,7 +336,7 @@ class Character(Entity):
             self._race = newrace(owner=self)
         elif isinstance(newrace, str):
             try:
-                self._race = findattr(race, newrace)(owner=self)
+                self._race = find_content(newrace, valid_classes=[race.Race])(owner=self)
             except AttributeError:
                 msg = f'Race "{newrace}" not defined. Please add it to ``race.py``'
                 self._race = race.Race(owner=self)
@@ -357,7 +357,7 @@ class Character(Entity):
             self._background = bg(owner=self)
         elif isinstance(bg, str):
             try:
-                self._background = findattr(background, bg)(owner=self)
+                self._background = find_content(bg, valid_classes=[background.Background])(owner=self)
             except AttributeError:
                 msg = (
                     f'Background "{bg}" not defined. Please add it to ``background.py``'
@@ -812,7 +812,7 @@ class Character(Entity):
         """
         if shield not in ("", "None", None):
             try:
-                NewShield = findattr(armor, shield)
+                NewShield = find_content(shield, valid_classes=[armor.Shield])
             except AttributeError:
                 # Not a string, so just treat it as Armor
                 NewShield = shield

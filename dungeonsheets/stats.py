@@ -27,40 +27,6 @@ from dungeonsheets.features import (
 from dungeonsheets.weapons import Weapon
 
 
-def findattr(obj, name):
-    """Similar to builtin getattr(obj, name) but more forgiving to
-    whitespace and capitalization.
-
-    """
-    # Come up with several options
-    name = name.strip()
-    # check for +X weapons, armor, shields
-    bonus = 0
-    for i in range(1, 11):
-        if (f"+{i}" in name) or (f"+ {i}" in name):
-            bonus = i
-            name = name.replace(f"+{i}", "").replace(f"+ {i}", "")
-            break
-    py_name = name.replace("-", "_").replace(" ", "_").replace("'", "").replace("/", "")
-    camel_case = "".join([s.capitalize() for s in py_name.split("_")])
-    if hasattr(obj, py_name):
-        # Direct lookup
-        attr = getattr(obj, py_name)
-    elif hasattr(obj, camel_case):
-        # CamelCase lookup
-        attr = getattr(obj, camel_case)
-    else:
-        raise AttributeError(f"{obj} has no attribute {name}")
-    if bonus > 0:
-        if (
-            issubclass(attr, Weapon)
-            or issubclass(attr, Shield)
-            or issubclass(attr, Armor)
-        ):
-            attr = attr.improved_version(bonus)
-    return attr
-
-
 def mod_str(modifier):
     """Converts a modifier to a string, eg 2 -> '+2'."""
     return "{:+d}".format(modifier)

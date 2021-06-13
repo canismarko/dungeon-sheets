@@ -62,7 +62,10 @@ files:
 
     weapons = ["shortsword", my_homebrew.DullSword]
 
-See the :ref:`homebrew example` example for more examples.
+The :py:func:`import_homebrew` function also registers the module with
+the global content manager, so in the above example ``weapons =
+[my_homebrew.DullSword]`` and ``weapons = ["dull sword"]`` are
+equivalent. See the :ref:`homebrew example` example for more examples.
 
 Strings
 -------

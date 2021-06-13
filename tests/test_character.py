@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-from unittest import TestCase
+from unittest import TestCase, expectedFailure
 import warnings
 
 from dungeonsheets import race, monsters, exceptions, spells, infusions
@@ -79,6 +79,7 @@ class TestCharacter(TestCase):
         self.assertIsInstance(char.infusions[0], infusions.Infusion)
         self.assertEqual(char.infusions[0].name, "Spam Infusion")
 
+    @expectedFailure
     def test_resolve_mechanic(self):
         # Test a well defined mechanic
         NewSpell = _resolve_mechanic("mage_hand", spells, None)

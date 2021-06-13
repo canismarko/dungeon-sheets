@@ -4,7 +4,7 @@ from collections import defaultdict
 
 from dungeonsheets import exceptions, features, monsters, weapons
 from dungeonsheets.classes.classes import CharClass, SubClass
-from dungeonsheets.stats import findattr
+from dungeonsheets.content_registry import find_content
 
 
 # PHB
@@ -272,7 +272,7 @@ class Druid(CharClass):
             else:
                 # Not already a monster so see if we can find one
                 try:
-                    NewMonster = findattr(monsters, shape)
+                    NewMonster = find_content(shape, valid_classes=[monsters.Monster])
                     new_shape = NewMonster()
                 except AttributeError:
                     msg = (

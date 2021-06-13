@@ -14,7 +14,8 @@ from typing import Union, Sequence, Optional
 from jinja2 import Environment, PackageLoader
 
 from dungeonsheets import character as _char, exceptions, readers, latex, monsters
-from dungeonsheets.stats import mod_str, findattr
+from dungeonsheets.stats import mod_str
+from dungeonsheets.content_registry import find_content
 from dungeonsheets.fill_pdf_template import (
     create_character_pdf_template,
     create_personality_pdf_template,
@@ -219,7 +220,7 @@ def make_gm_sheet(
             new_monster = monster
         else:
             try:
-                MyMonster = findattr(monsters, monster)
+                MyMonster = find_content(monster, valid_classes=[monsters.Monster])
             except AttributeError:
                 msg = (
                     f"Monster '{monster}' not found. Please add it to"

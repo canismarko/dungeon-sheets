@@ -12,7 +12,7 @@ __all__ = (
 
 from dungeonsheets import background, features, race, spells, weapons, mechanics
 from dungeonsheets.character import Character
-from dungeonsheets.homebrew import import_homebrew
+from dungeonsheets.content_registry import import_homebrew
 
 import os
 

@@ -156,7 +156,7 @@ def create_character_pdf_template(character, basename, flatten=False):
         fields[atk_field] = "{:+d}".format(weapon.attack_modifier)
         fields[dmg_field] = f"{weapon.damage}/{weapon.damage_type}"
     # Additional attacks beyond 3
-    attack = [f"{w.name}: Atk {weapon.attack_modifier:+d}, Dam {weapon.damage}/{weapon.damage_type}"
+    attack = [f"{w.name}: Atk {w.attack_modifier:+d}, Dam {w.damage}/{w.damage_type}"
               for w in character.weapons[len(weapon_fields):]]
     # Other attack information
     if character.armor:
