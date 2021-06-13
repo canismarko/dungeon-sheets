@@ -72,6 +72,7 @@ class TestStats(TestCase):
         class MyClass(character.Character):
             dexterity = stats.Ability(14)
             acrobatics = stats.Skill(ability="dexterity")
+            sleight_of_hand = stats.Skill(ability="dexterity")
             skill_proficiencies = []
             proficiency_bonus = 2
 
@@ -80,3 +81,6 @@ class TestStats(TestCase):
         # Check for a proficiency
         my_class.skill_proficiencies = ["acrobatics"]
         self.assertEqual(my_class.acrobatics, 4)
+        # Check for a proficiency with spaces in the name
+        my_class.skill_proficiencies = ["sleight_of_hand"]
+        self.assertEqual(my_class.sleight_of_hand, 4)
