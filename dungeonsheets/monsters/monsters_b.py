@@ -426,6 +426,52 @@ class BlackDragonWyrmling(Monster):
 
 
 # PotA
+class BlackEarthGuard(Monster):
+    """Multiattack.
+      The guard makes two melee attacks.
+    Morningstar.
+      *Melee Weapon Attack:* +5 to hit, reach 5 ft., one
+      target. *Hit:* 7 (1d8 + 3) piercing damage.
+    Unyielding.
+      When the guard is subjected to an effect that would move it,
+      knock it prone, or both, it can use its reaction to be neither
+      moved nor knocked prone.
+
+    Black Earth guards are the warriors of the earth cult. They are
+    brutal, heavily armored thugs devoted to Ogrémoch. That devotion
+    has granted them an uncanny ability to hold their ground against
+    the buffeting assaults. It has also earned them the right to wear
+    special plate armor of elemental stone, which breaks down when the
+    guard is slain.
+
+    These guards are fanatically loyal to the Black Earth priests and
+    the leaders of the cult. They fight to the death if commanded to
+    do so by their superiors. Those with more potential become
+    burrowsharks.
+
+    """
+    name = "Black Earth Guard"
+    description = "Medium humanoid (human), neutral evil"
+    challenge_rating = 2
+    armor_class = 18
+    skills = "Intimidation +1, Perception +2"
+    senses = "passive Perception 12"
+    languages = "Common"
+    strength = Ability(17)
+    dexterity = Ability(11)
+    constitution = Ability(14)
+    intelligence = Ability(10)
+    wisdom = Ability(10)
+    charisma = Ability(9)
+    speed = 30
+    swim_speed = 0
+    fly_speed = 0
+    climb_speed = 0
+    hp_max = 39
+    hit_dice = "6d8 + 12"
+
+
+# PotA
 class BlackEarthPriest(Monster):
     """Spellcasting.
       The priest is a 5th-level spellcaster. Its spellcasting ability

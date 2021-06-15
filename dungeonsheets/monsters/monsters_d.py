@@ -165,6 +165,9 @@ class DeepGnomeSvirfneblin(Monster):
     hit_dice = "3d6"
 
 
+DeepGnome = DeepGnomeSvirfneblin
+
+
 class Deer(Monster):
     """
     **Bite**: Melee Weapon Attack: +2 to hit, reach 5 ft., one target. Hit: 2 (1d4) piercing damage.

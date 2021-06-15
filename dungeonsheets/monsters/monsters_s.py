@@ -972,7 +972,7 @@ class SuccubusIncubus(Monster):
     hit_dice = "12d8"
 
 
-class SwarmofBats(Monster):
+class SwarmOfBats(Monster):
     """
     **Echolocation**: The swarm can't use its blindsight while deafened.
 
@@ -1004,7 +1004,7 @@ class SwarmofBats(Monster):
     hit_dice = "5d8"
 
 
-class SwarmofBeetles(Monster):
+class SwarmOfBeetles(Monster):
     """
     **Swarm**: The swarm can occupy another creature's space and vice versa, and the swarm can move through any opening large enough for a Tiny insect. The swarm can't regain hit points or gain temporary hit points.
 
@@ -1032,7 +1032,7 @@ class SwarmofBeetles(Monster):
     hit_dice = "5d8"
 
 
-class SwarmofCentipedes(Monster):
+class SwarmOfCentipedes(Monster):
     """
     **Swarm**: The swarm can occupy another creature's space and vice versa, and the swarm can move through any opening large enough for a Tiny insect. The swarm can't regain hit points or gain temporary hit points.
 
@@ -1061,7 +1061,7 @@ class SwarmofCentipedes(Monster):
     hit_dice = "5d8"
 
 
-class SwarmofInsects(Monster):
+class SwarmOfInsects(Monster):
     """
     **Swarm**: The swarm can occupy another creature's space and vice versa, and the swarm can move through any opening large enough for a Tiny insect. The swarm can't regain hit points or gain temporary hit points.
 
@@ -1089,7 +1089,7 @@ class SwarmofInsects(Monster):
     hit_dice = "5d8"
 
 
-class SwarmofPoisonousSnakes(Monster):
+class SwarmOfPoisonousSnakes(Monster):
     """
     **Swarm**: The swarm can occupy another creature's space and vice versa, and the swarm can move through any opening large enough for a Tiny snake. The swarm can't regain hit points or gain temporary hit points.
 
@@ -1117,7 +1117,7 @@ class SwarmofPoisonousSnakes(Monster):
     hit_dice = "8d8"
 
 
-class SwarmofQuippers(Monster):
+class SwarmOfQuippers(Monster):
     """
     **Blood Frenzy**: The swarm has advantage on melee attack rolls against any creature that doesn't have all its hit points.
 
@@ -1149,7 +1149,7 @@ class SwarmofQuippers(Monster):
     hit_dice = "8d8"
 
 
-class SwarmofRats(Monster):
+class SwarmOfRats(Monster):
     """
     **Keen Smell**: The swarm has advantage on Wisdom (Perception) checks that rely on smell.
 
@@ -1179,7 +1179,7 @@ class SwarmofRats(Monster):
     hit_dice = "7d8"
 
 
-class SwarmofRavens(Monster):
+class SwarmOfRavens(Monster):
     """
     **Swarm**: The swarm can occupy another creature's space and vice versa, and the swarm can move through any opening large enough for a Tiny raven. The swarm can't regain hit points or gain temporary hit points.
 
@@ -1207,7 +1207,7 @@ class SwarmofRavens(Monster):
     hit_dice = "7d8"
 
 
-class SwarmofSpiders(Monster):
+class SwarmOfSpiders(Monster):
     """
     **Swarm**: The swarm can occupy another creature's space and vice versa, and the swarm can move through any opening large enough for a Tiny insect. The swarm can't regain hit points or gain temporary hit points.
 
@@ -1241,7 +1241,7 @@ class SwarmofSpiders(Monster):
     hit_dice = "5d8"
 
 
-class SwarmofWasps(Monster):
+class SwarmOfWasps(Monster):
     """
     **Swarm**: The swarm can occupy another creature's space and vice versa, and the swarm can move through any opening large enough for a Tiny insect. The swarm can't regain hit points or gain temporary hit points.
 

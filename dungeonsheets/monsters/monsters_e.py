@@ -37,16 +37,19 @@ class Eagle(Monster):
 
 
 class EarthElemental(Monster):
+    """Earth Glide.
+      The elemental can burrow through nonmagical, unworked earth and
+      stone. While doing so, the elemental doesn't disturb the
+      material it moves through.
+    Siege Monster.
+      The elemental deals double damage to objects and structures.
+    Multiattack.
+      The elemental makes two slam attacks.
+    Slam.
+      Melee Weapon Attack: +8 to hit, reach 10 ft., one target. Hit:
+      14 (2d8 + 5) bludgeoning damage.
+    
     """
-    **Earth Glide**: The elemental can burrow through nonmagical, unworked earth and stone. While doing so, the elemental doesn't disturb the material it moves through.
-
-    **Siege Monster**: The elemental deals double damage to objects and structures.
-
-    **Multiattack**: The elemental makes two slam attacks.
-
-    **Slam**: Melee Weapon Attack: +8 to hit, reach 10 ft., one target. Hit: 14 (2d8 + 5) bludgeoning damage.
-    """
-
     name = "Earth Elemental"
     description = "Large elemental, neutral"
     challenge_rating = 5
@@ -66,6 +69,51 @@ class EarthElemental(Monster):
     climb_speed = 0
     hp_max = 126
     hit_dice = "12d10"
+
+
+# MTF
+class EarthElementalMyrmidon(Monster):
+    """Magic Weapons.
+      The myrmidon's weapon attacks are magical.
+    Multiattack.
+      The myrmidon makes two maul attacks.
+    Maul.
+      *Melee Weapon Attack:* +7 to hit, reach 5 ft., one
+      target. *Hit:* 11 (2d6 + 4) bludgeoning damage.
+    Thunderous Strike (Recharge 6).
+      The myrmidon makes one maul attack. On a hit, the target takes
+      an extra 16 (3d10) thunder damage, and the target must succeed
+      on a DC 14 Strength saving throw or be knocked prone.
+
+    Elemental myrmidons are elementals conjured and bound by magic
+    into ritually created suits of plate armor. In this form, they
+    possess no recollection of their former existence as free
+    elementals. They exist only to follow the commands of their
+    creators.
+
+    """
+    name = "Earth Elemental Myrmidon"
+    description = "Medium elemental, neutral"
+    challenge_rating = 7
+    armor_class = 18
+    damage_resistances = "bludgeoning, piercing, and slashing from nonmagical weapons"
+    damage_immunities = "poison"
+    condition_immunities = "paralyzed, petrified, poisoned, prone"
+    skills = ""
+    senses = "Darkvision 60 ft., Passive Perception 10"
+    languages = "Terran, one language of its creator's choice"
+    strength = Ability(18)
+    dexterity = Ability(10)
+    constitution = Ability(17)
+    intelligence = Ability(8)
+    wisdom = Ability(10)
+    charisma = Ability(10)
+    speed = 30
+    swim_speed = 0
+    fly_speed = 0
+    climb_speed = 0
+    hp_max = 127
+    hit_dice = "17d8 + 51"
 
 
 class Efreeti(Monster):
