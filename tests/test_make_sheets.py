@@ -174,6 +174,14 @@ class TexCreatorTestCase(unittest.TestCase):
 
     def test_create_party_summary_tex(self):
         char = self.new_character()
-        tex = make_sheets.create_party_summary_tex(party=[char])
+        tex = make_sheets.create_party_summary_tex(party=[char], summary_rst="")
         self.assertIn(r"\section*{Party}", tex)
         self.assertIn(char.name, tex)
+    
+    def test_create_summary_tex(self):
+        rst = "The party's create *adventure*."
+        tex = make_sheets.create_party_summary_tex(party=[], summary_rst=rst)
+        self.assertIn(r"\section*{Summary}", tex)
+        # Check that the RST is parsed
+        self.assertIn(r"\emph{adventure}", tex)
+

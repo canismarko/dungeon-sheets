@@ -45,7 +45,7 @@ def read_sheet_file(filename: Union[str, Path]) -> dict:
         these_props = reader()
     # Resolve parent_sheets
     char_props = {}
-    parent_sheets = these_props.pop('parent_sheets', [])
+    parent_sheets = these_props.pop("parent_sheets", [])
     for parent_sheet in parent_sheets:
         parent_sheet = (filename.parent / parent_sheet).resolve()
         if parent_sheet != filename:
@@ -322,7 +322,7 @@ class FoundryCharacterReader(JSONCharacterReader):
         "unarmed strike (monk)",
         "<no name>",
     ]
-    
+
     def _skill_proficiency_value(self, key: str) -> float:
         proficiency_labels = {
             "acrobatics": "acr",
@@ -386,7 +386,10 @@ class FoundryCharacterReader(JSONCharacterReader):
         """Iterator over the weapons the character is carrying in her inventory."""
         items = self.json_data()["items"]
         for item in items:
-            is_valid_weapon = (item["type"] == "weapon" and item["name"].lower() not in self._invalid_weapons)
+            is_valid_weapon = (
+                item["type"] == "weapon"
+                and item["name"].lower() not in self._invalid_weapons
+            )
             if is_valid_weapon:
                 yield item["name"].lower()
 

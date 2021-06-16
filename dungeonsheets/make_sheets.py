@@ -93,11 +93,15 @@ def create_monsters_tex(
 
 
 def create_party_summary_tex(
-        party: Sequence[Entity],
-        use_dnd_decorations: bool = False,
+    party: Sequence[Entity],
+    summary_rst: str,
+    use_dnd_decorations: bool = False,
 ) -> str:
+    log.debug("Preparing summary table for party: %s", party)
     template = jinja_env.get_template("party_summary_template.tex")
-    return template.render(party=party, use_dnd_decorations=use_dnd_decorations)
+    return template.render(
+        party=party, summary=summary_rst, use_dnd_decorations=use_dnd_decorations
+    )
 
 
 def create_spellbook_tex(
@@ -196,7 +200,7 @@ def make_gm_sheet(
             title=gm_props["session_title"],
         )
     ]
-    # Add the party stats table
+    # Add the party stats table and session summary
     party = []
     for char_file in gm_props.get("party", []):
         # Resolve the file path
@@ -208,10 +212,12 @@ def make_gm_sheet(
         character_props = readers.read_sheet_file(char_file)
         member = _char.Character.load(character_props)
         party.append(member)
-    if len(party) > 0:
-        tex.append(
-            create_party_summary_tex(party, use_dnd_decorations=fancy_decorations)
+    summary = gm_props.get("summary", "")
+    tex.append(
+        create_party_summary_tex(
+            party, summary_rst=summary, use_dnd_decorations=fancy_decorations
         )
+    )
     # Add the monsters
     monsters_ = []
     for monster in gm_props.get("monsters", []):
@@ -222,10 +228,7 @@ def make_gm_sheet(
             try:
                 MyMonster = find_content(monster, valid_classes=[monsters.Monster])
             except AttributeError:
-                msg = (
-                    f"Monster '{monster}' not found. Please add it to"
-                    " ``monsters.py``"
-                )
+                msg = f"Monster '{monster}' not found. Please add it to ``monsters.py``"
                 warnings.warn(msg)
                 continue
             else:

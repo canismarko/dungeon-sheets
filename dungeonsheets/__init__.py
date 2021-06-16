@@ -7,7 +7,7 @@ __all__ = (
     "race",
     "background",
     "spells",
-    "import_homebrew"
+    "import_homebrew",
 )
 
 from dungeonsheets import background, features, race, spells, weapons, mechanics

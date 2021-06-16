@@ -316,6 +316,7 @@ class ShadowDemon(Monster):
       creature. *Hit:* 10 (2d6+3) psychic damage or, if the demon
       had advantage on the attack roll, 17 (4d6+3) psychic damage.
     """
+
     name = "Shadow Demon"
     description = "Medium fiend (demon), chaotic evil"
     challenge_rating = 4
@@ -323,9 +324,14 @@ class ShadowDemon(Monster):
     skills = "Stealth +7"
     saving_throws = "Dex +5, Cha +4"
     damage_vulnerabilities = "radiant"
-    damage_resistances = "acid, fire, necrotic, thunder; bludgeoning, piercing, and slashing from nonmagical attacks"
+    damage_resistances = (
+        "acid, fire, necrotic, thunder; bludgeoning, piercing, and slashing from"
+        " nonmagical attacks"
+    )
     damage_immunities = "cold, lightning, poison"
-    condition_immunities = "exhaustion, grappled, paralyzed, petrified, poisoned, prone, restrained"
+    condition_immunities = (
+        "exhaustion, grappled, paralyzed, petrified, poisoned, prone, restrained"
+    )
     senses = "Darkvision 120 ft., Passive Perception 11"
     languages = "Abyssal, telepathy 120 ft."
     strength = Ability(1)
@@ -812,6 +818,7 @@ class StoneGolem(Monster):
 
     **Slow**: The golem targets one or more creatures it can see within 10 ft. of it. Each target must make a DC 17 Wisdom saving throw against this magic. On a failed save, a target can't use reactions, its speed is halved, and it can't make more than one attack on its turn. In addition, the target can take either an action or a bonus action on its turn, not both. These effects last for 1 minute. A target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.
     """
+
     name = "Stone Golem"
     description = "Large construct, unaligned"
     challenge_rating = 10
@@ -874,6 +881,7 @@ class Stonemelder(Monster):
     it serves as a conduit for Ogrémoch's wrath.
 
     """
+
     name = "Stonemelder"
     description = "Medium humanoid (human), neutral evil"
     challenge_rating = 4
@@ -893,7 +901,6 @@ class Stonemelder(Monster):
     climb_speed = 0
     hp_max = 75
     hit_dice = "10d8 + 30"
-
 
 
 class StormGiant(Monster):

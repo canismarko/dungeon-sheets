@@ -20,7 +20,7 @@ class Dao(Monster):
       The dao's innate spellcasting ability is Charisma (spell save DC
       14, +6 to hit with spell attacks). It can innately cast the
       following spells, requiring no material components:
-      
+
       At will: detect evil and good, detect magic, stone shape. 3/day
       each: passwall, move earth, tongues. 1/day each: conjure
       elemental (earth elemental only), gaseous form, invisibility,
@@ -38,8 +38,9 @@ class Dao(Monster):
       target. *Hit:* 20 (4d6 + 6) bludgeoning damage. If the target is
       a Huge or smaller creature, it must succeed on a DC 18 Strength
       check or be knocked prone.
-    
+
     """
+
     name = "Dao"
     description = "Large elemental, neutral evil"
     challenge_rating = 11
@@ -62,7 +63,6 @@ class Dao(Monster):
     burrow_speed = 30
     hp_max = 187
     hit_dice = "15d10 + 105"
-
 
 
 class Darkmantle(Monster):

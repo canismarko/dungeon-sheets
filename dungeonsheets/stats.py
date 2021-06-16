@@ -3,7 +3,7 @@ from collections import namedtuple
 from math import ceil
 import logging
 
-from dungeonsheets.armor import Armor, HeavyArmor, NoArmor, NoShield, Shield
+from dungeonsheets.armor import HeavyArmor, NoArmor, NoShield
 from dungeonsheets.features import (
     AmbushMaster,
     Defense,
@@ -25,7 +25,6 @@ from dungeonsheets.features import (
     UnarmoredDefenseMonk,
     UnarmoredMovement,
 )
-from dungeonsheets.weapons import Weapon
 
 
 log = logging.getLogger(__name__)
@@ -89,14 +88,15 @@ class Skill:
         self.character = entity
 
     def __get__(self, entity, owner):
-        log.debug("Getting skill '%s' for '%s'",
-                  self.skill_name, entity.name)
+        log.debug("Getting skill '%s' for '%s'", self.skill_name, entity.name)
         ability = getattr(entity, self.ability_name)
         modifier = ability.modifier
         # Check for proficiency
         proficiencies = [p.replace("_", " ") for p in entity.skill_proficiencies]
         is_proficient = self.skill_name in proficiencies
-        log.debug("%s is proficient in %s: %s", entity.name, self.skill_name, is_proficient)
+        log.debug(
+            "%s is proficient in %s: %s", entity.name, self.skill_name, is_proficient
+        )
         if is_proficient:
             modifier += entity.proficiency_bonus
         elif entity.has_feature(JackOfAllTrades):
@@ -109,8 +109,7 @@ class Skill:
         is_expert = self.skill_name in entity.skill_expertise
         if is_expert:
             modifier += entity.proficiency_bonus
-        log.debug("'%s' modifier for '%s': %d",
-                  self.skill_name, entity.name, modifier)
+        log.info("'%s' modifier for '%s': %d", self.skill_name, entity.name, modifier)
         return modifier
 
 

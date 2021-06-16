@@ -108,8 +108,9 @@ class RivalIntern(Background):
     the knowledge you gained there for an advantage at Acquisitions
     Incorporated. Either way, you're now bringing your talents to the
     company, ready to put your skills lo use.
-    
+
     """
+
     name = "Rival Intern"
     skill_proficiencies = ("history", "investigation")
     proficiencies_text = ("One type of artisan's tools",)

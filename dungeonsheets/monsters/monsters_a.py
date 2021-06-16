@@ -48,7 +48,7 @@ class Aboleth(Monster):
       charmed target is under the aboleth's control and can't take
       reactions, and the aboleth and the target can communicate
       telepathically with each other over any distance.
-      
+
       Whenever the charmed target takes damage, the target can repeat
       the saving throw. On a success, the effect ends. No more than
       once every 24 hours, the target can also repeat the saving throw
@@ -79,7 +79,7 @@ class Aboleth(Monster):
 
 class Acolyte(Monster):
     """Spellcasting
-      
+
       The acolyte is a 1st-level spellcaster. Its spellcasting ability
       is Wisdom (spell save DC 12, +4 to hit with spell attacks). The
       acolyte has following cleric spells prepared:
@@ -92,6 +92,7 @@ class Acolyte(Monster):
       (1d4) bludgeoning damage.
 
     """
+
     name = "Acolyte"
     description = "Medium humanoid, any alignment"
     challenge_rating = 0.25

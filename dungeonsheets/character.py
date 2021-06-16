@@ -77,13 +77,13 @@ def _resolve_mechanic(mechanic, SuperClass, warning_message=None):
     used by a character::
 
         >>> _resolve_mechanic("mage_hand", SuperClass=spells.Spell)
-        
+
         >>> _resolve_mechanic("mage_hand", SuperClass=None)
-        
+
         >>> from dungeonsheets import spells
         >>> class MySpell(spells.Spell): pass
         >>> _resolve_mechanic(MySpell, SuperClass=spells.Spell)
-        
+
         >>> _resolve_mechanic("hocus pocus", SuperClass=spells.Spell)
 
     The acceptable entries for *mechanic*, in priority order, are:
@@ -175,18 +175,18 @@ class Character(Entity):
     # Appearance
     # portrait = placeholder not sure how to implement
     age = 0
-    height = ''
-    weight = ''
-    eyes = ''
-    skin = ''
-    hair = ''
+    height = ""
+    weight = ""
+    eyes = ""
+    skin = ""
+    hair = ""
     # Background
-    allies = ''
-    faction_name = ''
+    allies = ""
+    faction_name = ""
     # faction_symbol = placeholder not sure how to implement
-    backstory = ''
-    other_feats_traits = ''
-    treasure = ''
+    backstory = ""
+    other_feats_traits = ""
+    treasure = ""
 
     def __init__(
         self,
@@ -344,7 +344,9 @@ class Character(Entity):
             self._race = newrace(owner=self)
         elif isinstance(newrace, str):
             try:
-                self._race = find_content(newrace, valid_classes=[race.Race])(owner=self)
+                self._race = find_content(newrace, valid_classes=[race.Race])(
+                    owner=self
+                )
             except AttributeError:
                 msg = f'Race "{newrace}" not defined. Please add it to ``race.py``'
                 self._race = race.Race(owner=self)
@@ -365,7 +367,9 @@ class Character(Entity):
             self._background = bg(owner=self)
         elif isinstance(bg, str):
             try:
-                self._background = find_content(bg, valid_classes=[background.Background])(owner=self)
+                self._background = find_content(
+                    bg, valid_classes=[background.Background]
+                )(owner=self)
             except AttributeError:
                 msg = (
                     f'Background "{bg}" not defined. Please add it to ``background.py``'
@@ -634,7 +638,12 @@ class Character(Entity):
                 self.other_weapon_proficiencies = ()
                 msg = 'Magic Item "{}" not defined. Please add it to ``weapons.py``'
                 wps = set(
-                    [_resolve_mechanic(w, SuperClass=weapons.Weapon, warning_message=msg) for w in val]
+                    [
+                        _resolve_mechanic(
+                            w, SuperClass=weapons.Weapon, warning_message=msg
+                        )
+                        for w in val
+                    ]
                 )
                 wps -= set(self.weapon_proficiencies)
                 self.other_weapon_proficiencies = list(wps)

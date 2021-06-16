@@ -342,8 +342,9 @@ class InsideInformant(Feature):
     """You have connections to your previous employer or other groups you
     dealt with during your previous employment. You can communicate
     with your contacts, gaining information at the DM's discretion.
-    
+
     """
+
     name = "Inside Informant"
     source = "Background (Rival Intern)"
 

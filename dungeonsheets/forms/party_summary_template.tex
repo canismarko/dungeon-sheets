@@ -1,3 +1,13 @@
+[% if summary %]
+
+  \section*{Summary}
+
+  [[ summary | rst_to_latex ]]
+
+[% endif %]
+
+[% if party %]
+
 \section*{Party}
 
 [% if use_dnd_decorations %]
@@ -54,4 +64,6 @@
       \\
     [% endfor %]
   \end{tabular}
+[% endif %]
+
 [% endif %]

@@ -3,29 +3,39 @@ from functools import lru_cache
 import importlib.util
 from typing import Union, List, Optional
 
-from dungeonsheets import weapons, monsters, race, background, armor, spells, infusions, magic_items, features
+from dungeonsheets import (
+    weapons,
+    monsters,
+    race,
+    background,
+    armor,
+    spells,
+    infusions,
+    magic_items,
+    features,
+)
 
 
-class ContentRegistry():
+class ContentRegistry:
     modules = None
 
     def __init__(self):
         self.modules = []
-    
+
     def add_module(self, new_module):
         if new_module not in self.modules:
             self.modules.append(new_module)
 
     def findattr(self, name, valid_classes=[]):
         """Resolve the name of a piece of content to the corresponding Class.
-        
+
         Similar to builtin getattr(obj, name) but more forgiving to
         whitespace and capitalization.
 
         valid_classes
           If given, only subclasses of classes in this list will be
           returned.
-        
+
         """
         # Come up with several options
         name = name.strip()
@@ -36,7 +46,9 @@ class ContentRegistry():
                 bonus = i
                 name = name.replace(f"+{i}", "").replace(f"+ {i}", "")
                 break
-        py_name = name.replace("-", "_").replace(" ", "_").replace("'", "").replace("/", "")
+        py_name = (
+            name.replace("-", "_").replace(" ", "_").replace("'", "").replace("/", "")
+        )
         camel_case = "".join([s.capitalize() for s in py_name.split("_")])
         # Check each module in the registry
         found_attrs = []
@@ -51,7 +63,12 @@ class ContentRegistry():
         if len(valid_classes) > 0:
             is_valid = [False for attr in found_attrs]
             for cls in valid_classes:
-                is_valid = [v or isinstance(attr, cls) or (isinstance(attr, type) and issubclass(attr, cls)) for v, attr in zip(is_valid, found_attrs)]
+                is_valid = [
+                    v
+                    or isinstance(attr, cls)
+                    or (isinstance(attr, type) and issubclass(attr, cls))
+                    for v, attr in zip(is_valid, found_attrs)
+                ]
             found_attrs = [attr for attr, v in zip(found_attrs, is_valid) if v]
         # Check that we found a valid, unique attribute
         if len(found_attrs) == 0:
@@ -94,7 +111,7 @@ def find_content(name: str, valid_classes: Optional[List]):
     valid_classes
       A list of parent classes to look for. If ``None`` or ``[]``, all
       classes will be considered valid.
-    
+
     """
     if valid_classes is None:
         valid_classes = []
@@ -112,7 +129,7 @@ def import_homebrew(filepath: Union[str, Path]):
     ==========
     filepath
       The location of the python file containing the homebrew content.
-    
+
     Returns
     =======
     mod

@@ -21,7 +21,7 @@ class Monster(Entity):
     saving_throws = ""
     # TODO: Consider refactoring stats.Speed to consider all of these
     # just like we do stats.Ability
-    
+
     swim_speed = 0
     fly_speed = 0
     climb_speed = 0

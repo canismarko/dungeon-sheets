@@ -450,6 +450,7 @@ class BlackEarthGuard(Monster):
     burrowsharks.
 
     """
+
     name = "Black Earth Guard"
     description = "Medium humanoid (human), neutral evil"
     challenge_rating = 2
@@ -507,6 +508,7 @@ class BlackEarthPriest(Monster):
     over the rest of Ogrémoch's followers.
 
     """
+
     name = "Black Earth Priest"
     description = "Medium humanoid (human), neutral evil"
     challenge_rating = 3
@@ -551,8 +553,9 @@ class BlackPudding(Monster):
       dissolved and takes a permanent and cumulative -1 penalty to the
       AC it offers. The armor is destroyed if the penalty reduces its
       AC to 10.
-    
+
     """
+
     name = "Black Pudding"
     description = "Large ooze, unaligned"
     challenge_rating = 4
@@ -885,6 +888,7 @@ class Burrowshark(Monster):
       neither moved nor knocked prone.
 
     """
+
     name = "Burrowshark"
     description = "Medium humanoid (human), neutral evil"
     challenge_rating = 4
@@ -927,6 +931,7 @@ class Bulette(Monster):
       prone in the bulette's space.
 
     """
+
     name = "Bulette"
     description = "Large monstrosity, unaligned"
     challenge_rating = 5
@@ -944,5 +949,6 @@ class Bulette(Monster):
     swim_speed = 0
     fly_speed = 0
     climb_speed = 0
+    burrow_speed = 40
     hp_max = 94
     hit_dice = "9d10+45"

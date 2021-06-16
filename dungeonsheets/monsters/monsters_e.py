@@ -48,8 +48,9 @@ class EarthElemental(Monster):
     Slam.
       Melee Weapon Attack: +8 to hit, reach 10 ft., one target. Hit:
       14 (2d8 + 5) bludgeoning damage.
-    
+
     """
+
     name = "Earth Elemental"
     description = "Large elemental, neutral"
     challenge_rating = 5
@@ -92,6 +93,7 @@ class EarthElementalMyrmidon(Monster):
     creators.
 
     """
+
     name = "Earth Elemental Myrmidon"
     description = "Medium elemental, neutral"
     challenge_rating = 7

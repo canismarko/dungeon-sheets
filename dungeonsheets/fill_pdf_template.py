@@ -87,7 +87,9 @@ def create_character_pdf_template(character, basename, flatten=False):
         # Hit points
         "HDTotal": character.hit_dice,
         "HPMax": str(character.hp_max),
-        "HPCurrent": str(character.hp_current) if character.hp_current is not None else "",
+        "HPCurrent": str(character.hp_current)
+        if character.hp_current is not None
+        else "",
         "HPTemp": str(character.hp_temp) if character.hp_temp > 0 else "",
         # Personality traits and other features
         "PersonalityTraits ": text_box(character.personality_traits),
@@ -148,7 +150,7 @@ def create_character_pdf_template(character, basename, flatten=False):
         ("Wpn Name 2", "Wpn2 AtkBonus ", "Wpn2 Damage "),
         ("Wpn Name 3", "Wpn3 AtkBonus  ", "Wpn3 Damage "),
     ]
-    if len(character.weapons) == 0 or hasattr(character, 'Monk'):
+    if len(character.weapons) == 0 or hasattr(character, "Monk"):
         character.wield_weapon("unarmed")
     for _fields, weapon in zip(weapon_fields, character.weapons):
         name_field, atk_field, dmg_field = _fields
@@ -156,8 +158,10 @@ def create_character_pdf_template(character, basename, flatten=False):
         fields[atk_field] = "{:+d}".format(weapon.attack_modifier)
         fields[dmg_field] = f"{weapon.damage}/{weapon.damage_type}"
     # Additional attacks beyond 3
-    attack = [f"{w.name}: Atk {w.attack_modifier:+d}, Dam {w.damage}/{w.damage_type}"
-              for w in character.weapons[len(weapon_fields):]]
+    attack = [
+        f"{w.name}: Atk {w.attack_modifier:+d}, Dam {w.damage}/{w.damage_type}"
+        for w in character.weapons[len(weapon_fields):]
+    ]
     # Other attack information
     if character.armor:
         attack.append(f"Armor: {character.armor}")
@@ -192,7 +196,7 @@ def create_personality_pdf_template(character, basename, flatten=False):
         "FactionName": character.faction_name,
         "Backstory": text_box(character.backstory),
         "Feat+Traits": text_box(character.other_feats_traits),
-        "Treasure": text_box(character.treasure)
+        "Treasure": text_box(character.treasure),
     }
     # Prepare the actual PDF
     dirname = os.path.join(os.path.dirname(os.path.abspath(__file__)), "forms/")
@@ -464,9 +468,11 @@ def create_spells_pdf_template(character, basename, flatten=False):
         # Determine if we should omit un-prepared spells to save space
         if len(spells) > len(field_numbers[level]):
             spells = [s for s in spells if s in character.spells_prepared]
-            warnings.warn(f"{character.name} knows more spells than the number of "
-                          "lines available in spell sheet. Limited to prepared "
-                          "spells only.")
+            warnings.warn(
+                f"{character.name} knows more spells than the number of "
+                "lines available in spell sheet. Limited to prepared "
+                "spells only."
+            )
         # Build the list of PDF controls to set/toggle
         field_names = [f"Spells {i}" for i in field_numbers[level]]
         prep_names = tuple(f"Check Box {i}" for i in prep_numbers[level])

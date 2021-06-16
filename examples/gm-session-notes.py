@@ -9,6 +9,8 @@ dungeonsheets_version = "0.15.0"
 
 sheet_type = "gm"
 
+summary = """The party is about the enter the dungeon of *eternal tortuosity*."""
+
 session_title = "Objects in Space - Session 1"
 
 parent_sheets = ["gm-campaign-notes.py"]
