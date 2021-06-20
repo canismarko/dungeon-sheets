@@ -79,13 +79,12 @@ class Aboleth(Monster):
 
 class Acolyte(Monster):
     """Spellcasting
-
       The acolyte is a 1st-level spellcaster. Its spellcasting ability
       is Wisdom (spell save DC 12, +4 to hit with spell attacks). The
       acolyte has following cleric spells prepared:
 
-    - Cantrips (at will): light, sacred flame, thaumaturgy
-    - 1st level (3 slots): bless, cure wounds, sanctuary
+      - Cantrips (at will): light, sacred flame, thaumaturgy
+      - 1st level (3 slots): bless, cure wounds, sanctuary
 
     Club
       Melee Weapon Attack: +2 to hit, reach 5 ft., one target. Hit: 2
@@ -115,22 +114,37 @@ class Acolyte(Monster):
 
 
 class AdultBlackDragon(Monster):
-    """
-    **Amphibious**: The dragon can breathe air and water.
+    """Amphibious.
+      The dragon can breathe air and water.
+    Legendary Resistance.
+      If the dragon fails a saving throw, it can choose to succeed
+      instead.
+    Multiattack.
+      The dragon can use its Frightful Presence. It then makes three
+      attacks: one with its bite and two with its claws.
+    Bite.
+      Melee Weapon Attack: +11 to hit, reach 10 ft., one target. Hit:
+      17 (2d10 + 6) piercing damage plus 4 (1d8) acid damage.
+    Claw.
+      Melee Weapon Attack: +11 to hit, reach 5 ft., one target. Hit:
+      13 (2d6 + 6) slashing damage.
+    Tail.
+      Melee Weapon Attack: +11 to hit, reach 15 ft., one target. Hit:
+      15 (2d8 + 6) bludgeoning damage.
+    Frightful Presence.
+      Each creature of the dragon's choice that is within 120 feet of
+      the dragon and aware of it must succeed on a DC 16 Wisdom saving
+      throw or become frightened for 1 minute. A creature can repeat
+      the saving throw at the end of each of its turns, ending the
+      effect on itself on a success. If a creature's saving throw is
+      successful or the effect ends for it, the creature is immune to
+      the dragon's Frightful Presence for the next 24 hours.
+    Acid Breath.
+      The dragon exhales acid in a 60-foot line that is 5 feet
+      wide. Each creature in that line must make a DC 18 Dexterity
+      saving throw, taking 54 (12d8) acid damage on a failed save, or
+      half as much damage on a successful one.
 
-    **Legendary Resistance**: If the dragon fails a saving throw, it can choose to succeed instead.
-
-    **Multiattack**: The dragon can use its Frightful Presence. It then makes three attacks: one with its bite and two with its claws.
-
-    **Bite**: Melee Weapon Attack: +11 to hit, reach 10 ft., one target. Hit: 17 (2d10 + 6) piercing damage plus 4 (1d8) acid damage.
-
-    **Claw**: Melee Weapon Attack: +11 to hit, reach 5 ft., one target. Hit: 13 (2d6 + 6) slashing damage.
-
-    **Tail**: Melee Weapon Attack: +11 to hit, reach 15 ft., one target. Hit: 15 (2d8 + 6) bludgeoning damage.
-
-    **Frightful Presence**: Each creature of the dragon's choice that is within 120 feet of the dragon and aware of it must succeed on a DC 16 Wisdom saving throw or become frightened for 1 minute. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. If a creature's saving throw is successful or the effect ends for it, the creature is immune to the dragon's Frightful Presence for the next 24 hours.
-
-    **Acid Breath**: The dragon exhales acid in a 60-foot line that is 5 feet wide. Each creature in that line must make a DC 18 Dexterity saving throw, taking 54 (12d8) acid damage on a failed save, or half as much damage on a successful one.
     """
 
     name = "Adult Black Dragon"
@@ -155,20 +169,35 @@ class AdultBlackDragon(Monster):
 
 
 class AdultBlueDragon(Monster):
-    """
-    **Legendary Resistance**: If the dragon fails a saving throw, it can choose to succeed instead.
+    """Legendary Resistance.
+      If the dragon fails a saving throw, it can choose to succeed
+      instead.
+    Multiattack.
+      The dragon can use its Frightful Presence. It then makes three
+      attacks: one with its bite and two with its claws.
+    Bite.
+      Melee Weapon Attack: +12 to hit, reach 10 ft., one target. Hit:
+      18 (2d10 + 7) piercing damage plus 5 (1d10) lightning damage.
+    Claw.
+      Melee Weapon Attack: +12 to hit, reach 5 ft., one target. Hit:
+      14 (2d6 + 7) slashing damage.
+    Tail.
+      Melee Weapon Attack: +12 to hit, reach 15 ft., one target. Hit:
+      16 (2d8 + 7) bludgeoning damage.
+    Frightful Presence.
+      Each creature of the dragon's choice that is within 120 ft. of
+      the dragon and aware of it must succeed on a DC 17 Wisdom saving
+      throw or become frightened for 1 minute. A creature can repeat
+      the saving throw at the end of each of its turns, ending the
+      effect on itself on a success. If a creature's saving throw is
+      successful or the effect ends for it, the creature is immune to
+      the dragon's Frightful Presence for the next 24 hours.
+    Lightning Breath.
+      The dragon exhales lightning in a 90-foot line that is 5
+      ft. wide. Each creature in that line must make a DC 19 Dexterity
+      saving throw, taking 66 (12d10) lightning damage on a failed
+      save, or half as much damage on a successful one.
 
-    **Multiattack**: The dragon can use its Frightful Presence. It then makes three attacks: one with its bite and two with its claws.
-
-    **Bite**: Melee Weapon Attack: +12 to hit, reach 10 ft., one target. Hit: 18 (2d10 + 7) piercing damage plus 5 (1d10) lightning damage.
-
-    **Claw**: Melee Weapon Attack: +12 to hit, reach 5 ft., one target. Hit: 14 (2d6 + 7) slashing damage.
-
-    **Tail**: Melee Weapon Attack: +12 to hit, reach 15 ft., one target. Hit: 16 (2d8 + 7) bludgeoning damage.
-
-    **Frightful Presence**: Each creature of the dragon's choice that is within 120 ft. of the dragon and aware of it must succeed on a DC 17 Wisdom saving throw or become frightened for 1 minute. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. If a creature's saving throw is successful or the effect ends for it, the creature is immune to the dragon's Frightful Presence for the next 24 hours.
-
-    **Lightning Breath**: The dragon exhales lightning in a 90-foot line that is 5 ft. wide. Each creature in that line must make a DC 19 Dexterity saving throw, taking 66 (12d10) lightning damage on a failed save, or half as much damage on a successful one.
     """
 
     name = "Adult Blue Dragon"
@@ -193,22 +222,44 @@ class AdultBlueDragon(Monster):
 
 
 class AdultBrassDragon(Monster):
-    """
-    **Legendary Resistance**: If the dragon fails a saving throw, it can choose to succeed instead.
+    """Legendary Resistance.
+      If the dragon fails a saving throw, it can choose to succeed
+      instead.
+    Multiattack.
+      The dragon can use its Frightful Presence. It then makes three
+      attacks: one with its bite and two with its claws.
+    Bite.
+      Melee Weapon Attack: +11 to hit, reach 10 ft., one target. Hit:
+      17 (2d10 + 6) piercing damage.
+    Claw.
+      Melee Weapon Attack: +11 to hit, reach 5 ft., one target. Hit:
+      13 (2d6 + 6) slashing damage.
+    Tail.
+      Melee Weapon Attack: +11 to hit, reach 15 ft., one target. Hit:
+      15 (2d8 + 6) bludgeoning damage.
+    Frightful Presence.
+      Each creature of the dragon's choice that is within 120 feet of
+      the dragon and aware of it must succeed on a DC 16 Wisdom saving
+      throw or become frightened for 1 minute. A creature can repeat
+      the saving throw at the end of each of its turns, ending the
+      effect on itself on a success. If a creature's saving throw is
+      successful or the effect ends for it, the creature is immune to
+      the dragon's Frightful Presence for the next 24 hours .
+    Breath Weapons.
+      The dragon uses one of the following breath weapons.
 
-    **Multiattack**: The dragon can use its Frightful Presence. It then makes three attacks: one with its bite and two with its claws.
+      Fire Breath.
+        The dragon exhales fire in an 60-foot line that is 5 feet
+        wide. Each creature in that line must make a DC 18 Dexterity
+        saving throw, taking 45 (13d6) fire damage on a failed save,
+        or half as much damage on a successful one.
+      Sleep Breath.
+        The dragon exhales sleep gas in a 60-foot cone. Each creature
+        in that area must succeed on a DC 18 Constitution saving throw
+        or fall unconscious for 10 minutes. This effect ends for a
+        creature if the creature takes damage or someone uses an
+        action to wake it.
 
-    **Bite**: Melee Weapon Attack: +11 to hit, reach 10 ft., one target. Hit: 17 (2d10 + 6) piercing damage.
-
-    **Claw**: Melee Weapon Attack: +11 to hit, reach 5 ft., one target. Hit: 13 (2d6 + 6) slashing damage.
-
-    **Tail**: Melee Weapon Attack: +11 to hit, reach 15 ft., one target. Hit: 15 (2d8 + 6) bludgeoning damage.
-
-    **Frightful Presence**: Each creature of the dragon's choice that is within 120 feet of the dragon and aware of it must succeed on a DC 16 Wisdom saving throw or become frightened for 1 minute. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. If a creature's saving throw is successful or the effect ends for it, the creature is immune to the dragon's Frightful Presence for the next 24 hours .
-
-    **Breath Weapons**: The dragon uses one of the following breath weapons.
-    Fire Breath. The dragon exhales fire in an 60-foot line that is 5 feet wide. Each creature in that line must make a DC 18 Dexterity saving throw, taking 45 (13d6) fire damage on a failed save, or half as much damage on a successful one.
-    Sleep Breath. The dragon exhales sleep gas in a 60-foot cone. Each creature in that area must succeed on a DC 18 Constitution saving throw or fall unconscious for 10 minutes. This effect ends for a creature if the creature takes damage or someone uses an action to wake it.
     """
 
     name = "Adult Brass Dragon"
@@ -233,24 +284,45 @@ class AdultBrassDragon(Monster):
 
 
 class AdultBronzeDragon(Monster):
-    """
-    **Amphibious**: The dragon can breathe air and water.
+    """Amphibious.
+      The dragon can breathe air and water.
+    Legendary Resistance.
+      If the dragon fails a saving throw, it can choose to succeed
+      instead.
+    Multiattack.
+      The dragon can use its Frightful Presence. It then makes three
+      attacks: one with its bite and two with its claws.
+    Bite.
+      Melee Weapon Attack: +12 to hit, reach 10 ft., one target. Hit:
+      18 (2d10 + 7) piercing damage.
+    Claw.
+      Melee Weapon Attack: +12 to hit, reach 5 ft., one target. Hit:
+      14 (2d6 + 7) slashing damage.
+    Tail.
+      Melee Weapon Attack: +12 to hit, reach 15 ft., one target. Hit:
+      16 (2d8 + 7) bludgeoning damage.
+    Frightful Presence.
+      Each creature of the dragon's choice that is within 120 feet of
+      the dragon and aware of it must succeed on a DC 17 Wisdom saving
+      throw or become frightened for 1 minute. A creature can repeat
+      the saving throw at the end of each of its turns, ending the
+      effect on itself on a success. If a creature's saving throw is
+      successful or the effect ends for it, the creature is immune to
+      the dragon's Frightful Presence for the next 24 hours.
+    Breath Weapons.
+      The dragon uses one of the following breath weapons.
 
-    **Legendary Resistance**: If the dragon fails a saving throw, it can choose to succeed instead.
+      Lightning Breath.
+        The dragon exhales lightning in a 90-foot line that is 5 feet
+        wide. Each creature in that line must make a DC 19 Dexterity
+        saving throw, taking 66 (12d10) lightning damage on a failed
+        save, or half as much damage on a successful one.
+      Repulsion Breath.
+        The dragon exhales repulsion energy in a 30-foot cone. Each
+        creature in that area must succeed on a DC 19 Strength saving
+        throw. On a failed save, the creature is pushed 60 feet away
+        from the dragon.
 
-    **Multiattack**: The dragon can use its Frightful Presence. It then makes three attacks: one with its bite and two with its claws.
-
-    **Bite**: Melee Weapon Attack: +12 to hit, reach 10 ft., one target. Hit: 18 (2d10 + 7) piercing damage.
-
-    **Claw**: Melee Weapon Attack: +12 to hit, reach 5 ft., one target. Hit: 14 (2d6 + 7) slashing damage.
-
-    **Tail**: Melee Weapon Attack: +12 to hit, reach 15 ft., one target. Hit: 16 (2d8 + 7) bludgeoning damage.
-
-    **Frightful Presence**: Each creature of the dragon's choice that is within 120 feet of the dragon and aware of it must succeed on a DC 17 Wisdom saving throw or become frightened for 1 minute. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. If a creature's saving throw is successful or the effect ends for it, the creature is immune to the dragon's Frightful Presence for the next 24 hours.
-
-    **Breath Weapons**: The dragon uses one of the following breath weapons.
-    Lightning Breath. The dragon exhales lightning in a 90-foot line that is 5 feet wide. Each creature in that line must make a DC 19 Dexterity saving throw, taking 66 (12d10) lightning damage on a failed save, or half as much damage on a successful one.
-    Repulsion Breath. The dragon exhales repulsion energy in a 30-foot cone. Each creature in that area must succeed on a DC 19 Strength saving throw. On a failed save, the creature is pushed 60 feet away from the dragon.
     """
 
     name = "Adult Bronze Dragon"
@@ -275,22 +347,47 @@ class AdultBronzeDragon(Monster):
 
 
 class AdultCopperDragon(Monster):
-    """
-    **Legendary Resistance**: If the dragon fails a saving throw, it can choose to succeed instead.
+    """Legendary Resistance.
+      If the dragon fails a saving throw, it can choose to succeed instead.
+    Multiattack.
+      The dragon can use its Frightful Presence. It then makes three
+      attacks: one with its bite and two with its claws.
+    Bite.
+      Melee Weapon Attack: +11 to hit, reach 10 ft., one target. Hit:
+      17 (2d10 + 6) piercing damage.
+    Claw.
+      Melee Weapon Attack: +11 to hit, reach 5 ft., one target. Hit:
+      13 (2d6 + 6) slashing damage.
+    Tail.
+      Melee Weapon Attack: +11 to hit, reach 15 ft., one target. Hit:
+      15 (2d8 + 6) bludgeoning damage.
+    Frightful Presence.
+      Each creature of the dragon's choice that is within 120 feet of
+      the dragon and aware of it must succeed on a DC 16 Wisdom saving
+      throw or become frightened for 1 minute. A creature can repeat
+      the saving throw at the end of each of its turns, ending the
+      effect on itself on a success. If a creature's saving throw is
+      successful or the effect ends for it, the creature is immune to
+      the dragon's Frightful Presence for the next 24 hours.
+    Breath Weapons.
+      The dragon uses one of the following breath weapons.
 
-    **Multiattack**: The dragon can use its Frightful Presence. It then makes three attacks: one with its bite and two with its claws.
+      Acid Breath.
+        The dragon exhales acid in an 60-foot line that is 5 feet
+        wide. Each creature in that line must make a DC 18 Dexterity
+        saving throw, taking 54 (12d8) acid damage on a failed save,
+        or half as much damage on a successful one.
+      Slowing Breath.
+        The dragon exhales gas in a 60-foot cone. Each creature in
+        that area must succeed on a DC 18 Constitution saving
+        throw. On a failed save, the creature can't use reactions, its
+        speed is halved, and it can't make more than one attack on its
+        turn. In addition, the creature can use either an action or a
+        bonus action on its turn, but not both. These effects last for
+        1 minute. The creature can repeat the saving throw at the end
+        of each of its turns, ending the effect on itself with a
+        successful save.
 
-    **Bite**: Melee Weapon Attack: +11 to hit, reach 10 ft., one target. Hit: 17 (2d10 + 6) piercing damage.
-
-    **Claw**: Melee Weapon Attack: +11 to hit, reach 5 ft., one target. Hit: 13 (2d6 + 6) slashing damage.
-
-    **Tail**: Melee Weapon Attack: +11 to hit, reach 15 ft., one target. Hit: 15 (2d8 + 6) bludgeoning damage.
-
-    **Frightful Presence**: Each creature of the dragon's choice that is within 120 feet of the dragon and aware of it must succeed on a DC 16 Wisdom saving throw or become frightened for 1 minute. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. If a creature's saving throw is successful or the effect ends for it, the creature is immune to the dragon's Frightful Presence for the next 24 hours.
-
-    **Breath Weapons**: The dragon uses one of the following breath weapons.
-    Acid Breath. The dragon exhales acid in an 60-foot line that is 5 feet wide. Each creature in that line must make a DC 18 Dexterity saving throw, taking 54 (12d8) acid damage on a failed save, or half as much damage on a successful one.
-    Slowing Breath. The dragon exhales gas in a 60-foot cone. Each creature in that area must succeed on a DC 18 Constitution saving throw. On a failed save, the creature can't use reactions, its speed is halved, and it can't make more than one attack on its turn. In addition, the creature can use either an action or a bonus action on its turn, but not both. These effects last for 1 minute. The creature can repeat the saving throw at the end of each of its turns, ending the effect on itself with a successful save.
     """
 
     name = "Adult Copper Dragon"
@@ -315,24 +412,47 @@ class AdultCopperDragon(Monster):
 
 
 class AdultGoldDragon(Monster):
-    """
-    **Amphibious**: The dragon can breathe air and water.
+    """Amphibious.
+      The dragon can breathe air and water.
+    Legendary Resistance.
+      If the dragon fails a saving throw, it can choose to succeed
+      instead.
+    Multiattack.
+      The dragon can use its Frightful Presence. It then makes three
+      attacks: one with its bite and two with its claws.
+    Bite.
+      Melee Weapon Attack: +14 to hit, reach 10 ft., one target. Hit:
+      19 (2d10 + 8) piercing damage.
+    Claw.
+      Melee Weapon Attack: +14 to hit, reach 5 ft., one target. Hit:
+      15 (2d6 + 8) slashing damage.
+    Tail.
+      Melee Weapon Attack: +14 to hit, reach 15 ft., one target. Hit:
+      17 (2d8 + 8) bludgeoning damage.
+    Frightful Presence.
+      Each creature of the dragon's choice that is within 120 feet of
+      the dragon and aware of it must succeed on a DC 21 Wisdom saving
+      throw or become frightened for 1 minute. A creature can repeat
+      the saving throw at the end of each of its turns, ending the
+      effect on itself on a success. If a creature's saving throw is
+      successful or the effect ends for it, the creature is immune to
+      the dragon's Frightful Presence for the next 24 hours.
+    Breath Weapons.
+      The dragon uses one of the following breath weapons.
 
-    **Legendary Resistance**: If the dragon fails a saving throw, it can choose to succeed instead.
+      Fire Breath.
+        The dragon exhales fire in a 60-foot cone. Each creature in
+        that area must make a DC 21 Dexterity saving throw, taking 66
+        (12d10) fire damage on a failed save, or half as much damage
+        on a successful one.
+      Weakening Breath.
+        The dragon exhales gas in a 60-foot cone. Each creature in
+        that area must succeed on a DC 21 Strength saving throw or
+        have disadvantage on Strength-based attack rolls, Strength
+        checks, and Strength saving throws for 1 minute. A creature
+        can repeat the saving throw at the end of each of its turns,
+        ending the effect on itself on a success.
 
-    **Multiattack**: The dragon can use its Frightful Presence. It then makes three attacks: one with its bite and two with its claws.
-
-    **Bite**: Melee Weapon Attack: +14 to hit, reach 10 ft., one target. Hit: 19 (2d10 + 8) piercing damage.
-
-    **Claw**: Melee Weapon Attack: +14 to hit, reach 5 ft., one target. Hit: 15 (2d6 + 8) slashing damage.
-
-    **Tail**: Melee Weapon Attack: +14 to hit, reach 15 ft., one target. Hit: 17 (2d8 + 8) bludgeoning damage.
-
-    **Frightful Presence**: Each creature of the dragon's choice that is within 120 feet of the dragon and aware of it must succeed on a DC 21 Wisdom saving throw or become frightened for 1 minute. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. If a creature's saving throw is successful or the effect ends for it, the creature is immune to the dragon's Frightful Presence for the next 24 hours.
-
-    **Breath Weapons**: The dragon uses one of the following breath weapons.
-    Fire Breath. The dragon exhales fire in a 60-foot cone. Each creature in that area must make a DC 21 Dexterity saving throw, taking 66 (12d10) fire damage on a failed save, or half as much damage on a successful one.
-    Weakening Breath. The dragon exhales gas in a 60-foot cone. Each creature in that area must succeed on a DC 21 Strength saving throw or have disadvantage on Strength-based attack rolls, Strength checks, and Strength saving throws for 1 minute. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.
     """
 
     name = "Adult Gold Dragon"
@@ -357,22 +477,37 @@ class AdultGoldDragon(Monster):
 
 
 class AdultGreenDragon(Monster):
-    """
-    **Amphibious**: The dragon can breathe air and water.
+    """Amphibious.
+      The dragon can breathe air and water.
+    Legendary Resistance.
+      If the dragon fails a saving throw, it can choose to succeed
+      instead.
+    Multiattack.
+      The dragon can use its Frightful Presence. It then makes three
+      attacks: one with its bite and two with its claws.
+    Bite.
+      Melee Weapon Attack: +11 to hit, reach 10 ft., one target. Hit:
+      17 (2d10 + 6) piercing damage plus 7 (2d6) poison damage.
+    Claw.
+      Melee Weapon Attack: +11 to hit, reach 5 ft., one target. Hit:
+      13 (2d6 + 6) slashing damage.
+    Tail.
+      Melee Weapon Attack: +11 to hit, reach 15 ft., one target. Hit:
+      15 (2d8 + 6) bludgeoning damage.
+    Frightful Presence.
+      Each creature of the dragon's choice that is within 120 feet of
+      the dragon and aware of it must succeed on a DC 16 Wisdom saving
+      throw or become frightened for 1 minute. A creature can repeat
+      the saving throw at the end of each of its turns, ending the
+      effect on itself on a success. If a creature's saving throw is
+      successful or the effect ends for it, the creature is immune to
+      the dragon's Frightful Presence for the next 24 hours .
+    Poison Breath.
+      The dragon exhales poisonous gas in a 60-foot cone. Each
+      creature in that area must make a DC 18 Constitution saving
+      throw, taking 56 (16d6) poison damage on a failed save, or half
+      as much damage on a successful one.
 
-    **Legendary Resistance**: If the dragon fails a saving throw, it can choose to succeed instead.
-
-    **Multiattack**: The dragon can use its Frightful Presence. It then makes three attacks: one with its bite and two with its claws.
-
-    **Bite**: Melee Weapon Attack: +11 to hit, reach 10 ft., one target. Hit: 17 (2d10 + 6) piercing damage plus 7 (2d6) poison damage.
-
-    **Claw**: Melee Weapon Attack: +11 to hit, reach 5 ft., one target. Hit: 13 (2d6 + 6) slashing damage.
-
-    **Tail**: Melee Weapon Attack: +11 to hit, reach 15 ft., one target. Hit: 15 (2d8 + 6) bludgeoning damage.
-
-    **Frightful Presence**: Each creature of the dragon's choice that is within 120 feet of the dragon and aware of it must succeed on a DC 16 Wisdom saving throw or become frightened for 1 minute. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. If a creature's saving throw is successful or the effect ends for it, the creature is immune to the dragon's Frightful Presence for the next 24 hours .
-
-    **Poison Breath**: The dragon exhales poisonous gas in a 60-foot cone. Each creature in that area must make a DC 18 Constitution saving throw, taking 56 (16d6) poison damage on a failed save, or half as much damage on a successful one.
     """
 
     name = "Adult Green Dragon"
@@ -397,25 +532,57 @@ class AdultGreenDragon(Monster):
 
 
 class AdultRedDragon(Monster):
-    """
-    **Legendary Resistance**: If the dragon fails a saving throw, it can choose to succeed instead.
+    """Legendary Resistance.
+      If the dragon fails a saving throw, it can choose to succeed
+      instead.
+    Multiattack.
+      The dragon can use its Frightful Presence. It then makes three
+      attacks: one with its bite and two with its claws.
+    Bite.
+      Melee Weapon Attack: +14 to hit, reach 10 ft., one target. Hit:
+      19 (2d10 + 8) piercing damage plus 7 (2d6) fire damage.
+    Claw.
+      Melee Weapon Attack: +14 to hit, reach 5 ft., one target. Hit:
+      15 (2d6 + 8) slashing damage.
+    Tail.
+      Melee Weapon Attack: +14 to hit, reach 15 ft., one target. Hit:
+      17 (2d8 + 8) bludgeoning damage.
+    Frightful Presence.
+      Each creature of the dragon's choice that is within 120 ft. of
+      the dragon and aware of it must succeed on a DC 19 Wisdom saving
+      throw or become frightened for 1 minute. A creature can repeat
+      the saving throw at the end of each of its turns, ending the
+      effect on itself on a success. If a creature's saving throw is
+      successful or the effect ends for it, the creature is immune to
+      the dragon's Frightful Presence for the next 24 hours.
+    Fire Breath.
+      The dragon exhales fire in a 60-foot cone. Each creature in that
+      area must make a DC 21 Dexterity saving throw, taking 63 (18d6)
+      fire damage on a failed save, or half as much damage on a
+      successful one.
+    Lair Actions.
+      On initiative count 20 (losing initiative ties), the dragon
+      takes a lair action to cause one of the following effects: the
+      dragon can't use the same effect two rounds in a row:
 
-    **Multiattack**: The dragon can use its Frightful Presence. It then makes three attacks: one with its bite and two with its claws.
+      - Magma erupts from a point on the ground the dragon can see
+        within 120 feet of it, creating a 20-foot-high, 5-foot-radius
+        geyser. Each creature in the geyser's area must make a DC 15
+        Dexterity saving throw, taking 21 (6d6) fire damage on a
+        failed save, or half as much damage on a successful one.
+      - A tremor shakes the lair in a 60-foot-radius around the
+        dragon. Each creature other than the dragon on the ground in
+        that area must succeed on a DC 15 Dexterity saving throw or be
+        knocked prone.
+      - Volcanic gases form a cloud in a 20-foot-radius sphere
+        centered on a point the dragon can see within 120 feet of
+        it. The sphere spreads around corners, and its area is lightly
+        obscured. It lasts until initiative count 20 on the next
+        round. Each creature that starts its turn in the cloud must
+        succeed on a DC 13 Constitution saving throw or be poisoned
+        until the end of its turn. While poisoned in this way, a
+        creature is incapacitated.
 
-    **Bite**: Melee Weapon Attack: +14 to hit, reach 10 ft., one target. Hit: 19 (2d10 + 8) piercing damage plus 7 (2d6) fire damage.
-
-    **Claw**: Melee Weapon Attack: +14 to hit, reach 5 ft., one target. Hit: 15 (2d6 + 8) slashing damage.
-
-    **Tail**: Melee Weapon Attack: +14 to hit, reach 15 ft., one target. Hit: 17 (2d8 + 8) bludgeoning damage.
-
-    **Frightful Presence**: Each creature of the dragon's choice that is within 120 ft. of the dragon and aware of it must succeed on a DC 19 Wisdom saving throw or become frightened for 1 minute. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. If a creature's saving throw is successful or the effect ends for it, the creature is immune to the dragon's Frightful Presence for the next 24 hours.
-
-    **Fire Breath**: The dragon exhales fire in a 60-foot cone. Each creature in that area must make a DC 21 Dexterity saving throw, taking 63 (18d6) fire damage on a failed save, or half as much damage on a successful one.
-
-    **Lair Actions**: On initiative count 20 (losing initiative ties), the dragon takes a lair action to cause one of the following effects: the dragon can't use the same effect two rounds in a row:
-    - Magma erupts from a point on the ground the dragon can see within 120 feet of it, creating a 20-foot-high, 5-foot-radius geyser. Each creature in the geyser's area must make a DC 15 Dexterity saving throw, taking 21 (6d6) fire damage on a failed save, or half as much damage on a successful one.
-    - A tremor shakes the lair in a 60-foot-radius around the dragon. Each creature other than the dragon on the ground in that area must succeed on a DC 15 Dexterity saving throw or be knocked prone.
-    - Volcanic gases form a cloud in a 20-foot-radius sphere centered on a point the dragon can see within 120 feet of it. The sphere spreads around corners, and its area is lightly obscured. It lasts until initiative count 20 on the next round. Each creature that starts its turn in the cloud must succeed on a DC 13 Constitution saving throw or be poisoned until the end of its turn. While poisoned in this way, a creature is incapacitated.
     """
 
     name = "Adult Red Dragon"
@@ -440,22 +607,44 @@ class AdultRedDragon(Monster):
 
 
 class AdultSilverDragon(Monster):
-    """
-    **Legendary Resistance**: If the dragon fails a saving throw, it can choose to succeed instead.
+    """Legendary Resistance.
+      If the dragon fails a saving throw, it can choose to succeed
+      instead.
+    Multiattack.
+      The dragon can use its Frightful Presence. It then makes three
+      attacks: one with its bite and two with its claws.
+    Bite.
+      Melee Weapon Attack: +13 to hit, reach 10 ft., one target. Hit:
+      19 (2d10 + 8) piercing damage.
+    Claw.
+      Melee Weapon Attack: +13 to hit, reach 5 ft., one target. Hit:
+      15 (2d6 + 8) slashing damage.
+    Tail.
+      Melee Weapon Attack: +13 to hit, reach 15 ft., one target. Hit:
+      17 (2d8 + 8) bludgeoning damage.
+    Frightful Presence.
+      Each creature of the dragon's choice that is within 120 feet of
+      the dragon and aware of it must succeed on a DC 18 Wisdom saving
+      throw or become frightened for 1 minute. A creature can repeat
+      the saving throw at the end of each of its turns, ending the
+      effect on itself on a success. If a creature's saving throw is
+      successful or the effect ends for it, the creature is immune to
+      the dragon's Frightful Presence for the next 24 hours.
+    Breath Weapons.
+      The dragon uses one of the following breath weapons.
 
-    **Multiattack**: The dragon can use its Frightful Presence. It then makes three attacks: one with its bite and two with its claws.
+      Cold Breath.
+        The dragon exhales an icy blast in a 60-foot cone. Each
+        creature in that area must make a DC 20 Constitution saving
+        throw, taking 58 (13d8) cold damage on a failed save, or half
+        as much damage on a successful one.
+      Paralyzing Breath.
+        The dragon exhales paralyzing gas in a 60-foot cone. Each
+        creature in that area must succeed on a DC 20 Constitution
+        saving throw or be paralyzed for 1 minute. A creature can
+        repeat the saving throw at the end of each of its turns,
+        ending the effect on itself on a success.
 
-    **Bite**: Melee Weapon Attack: +13 to hit, reach 10 ft., one target. Hit: 19 (2d10 + 8) piercing damage.
-
-    **Claw**: Melee Weapon Attack: +13 to hit, reach 5 ft., one target. Hit: 15 (2d6 + 8) slashing damage.
-
-    **Tail**: Melee Weapon Attack: +13 to hit, reach 15 ft., one target. Hit: 17 (2d8 + 8) bludgeoning damage.
-
-    **Frightful Presence**: Each creature of the dragon's choice that is within 120 feet of the dragon and aware of it must succeed on a DC 18 Wisdom saving throw or become frightened for 1 minute. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. If a creature's saving throw is successful or the effect ends for it, the creature is immune to the dragon's Frightful Presence for the next 24 hours.
-
-    **Breath Weapons**: The dragon uses one of the following breath weapons.
-    Cold Breath. The dragon exhales an icy blast in a 60-foot cone. Each creature in that area must make a DC 20 Constitution saving throw, taking 58 (13d8) cold damage on a failed save, or half as much damage on a successful one.
-    Paralyzing Breath. The dragon exhales paralyzing gas in a 60-foot cone. Each creature in that area must succeed on a DC 20 Constitution saving throw or be paralyzed for 1 minute. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.
     """
 
     name = "Adult Silver Dragon"
@@ -480,22 +669,38 @@ class AdultSilverDragon(Monster):
 
 
 class AdultWhiteDragon(Monster):
-    """
-    **Ice Walk**: The dragon can move across and climb icy surfaces without needing to make an ability check. Additionally, difficult terrain composed of ice or snow doesn't cost it extra moment.
-
-    **Legendary Resistance**: If the dragon fails a saving throw, it can choose to succeed instead.
-
-    **Multiattack**: The dragon can use its Frightful Presence. It then makes three attacks: one with its bite and two with its claws.
-
-    **Bite**: Melee Weapon Attack: +11 to hit, reach 10 ft., one target. Hit: 17 (2d10 + 6) piercing damage plus 4 (1d8) cold damage.
-
-    **Claw**: Melee Weapon Attack: +11 to hit, reach 5 ft., one target. Hit: 13 (2d6 + 6) slashing damage.
-
-    **Tail**: Melee Weapon Attack: +11 to hit, reach 15 ft., one target. Hit: 15 (2d8 + 6) bludgeoning damage.
-
-    **Frightful Presence**: Each creature of the dragon's choice that is within 120 ft. of the dragon and aware of it must succeed on a DC 14 Wisdom saving throw or become frightened for 1 minute. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. If a creature's saving throw is successful or the effect ends for it, the creature is immune to the dragon's Frightful Presence for the next 24 hours.
-
-    **Cold Breath**: The dragon exhales an icy blast in a 60-foot cone. Each creature in that area must make a DC 19 Constitution saving throw, taking 54 (12d8) cold damage on a failed save, or half as much damage on a successful one.
+    """Ice Walk.
+      The dragon can move across and climb icy surfaces without
+      needing to make an ability check. Additionally, difficult
+      terrain composed of ice or snow doesn't cost it extra moment.
+    Legendary Resistance.
+      If the dragon fails a saving throw, it can choose to succeed
+      instead.
+    Multiattack.
+      The dragon can use its Frightful Presence. It then makes three
+      attacks: one with its bite and two with its claws.
+    Bite.
+      Melee Weapon Attack: +11 to hit, reach 10 ft., one target. Hit:
+      17 (2d10 + 6) piercing damage plus 4 (1d8) cold damage.
+    Claw.
+      Melee Weapon Attack: +11 to hit, reach 5 ft., one target. Hit:
+      13 (2d6 + 6) slashing damage.
+    Tail.
+      Melee Weapon Attack: +11 to hit, reach 15 ft., one target. Hit:
+      15 (2d8 + 6) bludgeoning damage.
+    Frightful Presence.
+      Each creature of the dragon's choice that is within 120 ft. of
+      the dragon and aware of it must succeed on a DC 14 Wisdom saving
+      throw or become frightened for 1 minute. A creature can repeat
+      the saving throw at the end of each of its turns, ending the
+      effect on itself on a success. If a creature's saving throw is
+      successful or the effect ends for it, the creature is immune to
+      the dragon's Frightful Presence for the next 24 hours.
+    Cold Breath.
+      The dragon exhales an icy blast in a 60-foot cone. Each creature
+      in that area must make a DC 19 Constitution saving throw, taking
+      54 (12d8) cold damage on a failed save, or half as much damage
+      on a successful one.
     """
 
     name = "Adult White Dragon"
@@ -520,15 +725,29 @@ class AdultWhiteDragon(Monster):
 
 
 class AirElemental(Monster):
-    """
-    **Air Form**: The elemental can enter a hostile creature's space and stop there. It can move through a space as narrow as 1 inch wide without squeezing.
+    """Air Form.
+      The elemental can enter a hostile creature's space and stop
+      there. It can move through a space as narrow as 1 inch wide
+      without squeezing.
+    Multiattack.
+      The elemental makes two slam attacks.
+    Slam.
+      Melee Weapon Attack: +8 to hit, reach 5 ft., one target. Hit: 14
+      (2d8 + 5) bludgeoning damage.
+    Whirlwind.
+      Each creature in the elemental's space must make a DC 13
+      Strength saving throw. On a failure, a target takes 15 (3d8 + 2)
+      bludgeoning damage and is flung up 20 feet away from the
+      elemental in a random direction and knocked prone. If a thrown
+      target strikes an object, such as a wall or floor, the target
+      takes 3 (1d6) bludgeoning damage for every 10 feet it was
+      thrown. If the target is thrown at another creature, that
+      creature must succeed on a DC 13 Dexterity saving throw or take
+      the same damage and be knocked prone.
 
-    **Multiattack**: The elemental makes two slam attacks.
+      If the saving throw is successful, the target takes half the
+      bludgeoning damage and isn't flung away or knocked prone.
 
-    **Slam**: Melee Weapon Attack: +8 to hit, reach 5 ft., one target. Hit: 14 (2d8 + 5) bludgeoning damage.
-
-    **Whirlwind**: Each creature in the elemental's space must make a DC 13 Strength saving throw. On a failure, a target takes 15 (3d8 + 2) bludgeoning damage and is flung up 20 feet away from the elemental in a random direction and knocked prone. If a thrown target strikes an object, such as a wall or floor, the target takes 3 (1d6) bludgeoning damage for every 10 feet it was thrown. If the target is thrown at another creature, that creature must succeed on a DC 13 Dexterity saving throw or take the same damage and be knocked prone.
-    If the saving throw is successful, the target takes half the bludgeoning damage and isn't flung away or knocked prone.
     """
 
     name = "Air Elemental"
@@ -553,22 +772,36 @@ class AirElemental(Monster):
 
 
 class AncientBlackDragon(Monster):
-    """
-    **Amphibious**: The dragon can breathe air and water.
-
-    **Legendary Resistance**: If the dragon fails a saving throw, it can choose to succeed instead.
-
-    **Multiattack**: The dragon can use its Frightful Presence. It then makes three attacks: one with its bite and two with its claws.
-
-    **Bite**: Melee Weapon Attack:+ 15 to hit, reach 15 ft., one target. Hit: 19 (2d10 + 8) piercing damage plus 9 (2d8) acid damage.
-
-    **Claw**: Melee Weapon Attack: +15 to hit, reach 10 ft., one target. Hit: 15 (2d6 + 8) slashing damage.
-
-    **Tail**: Melee Weapon Attack: +15 to hit, reach 20 ft ., one target. Hit: 17 (2d8 + 8) bludgeoning damage.
-
-    **Frightful Presence**: Each creature of the dragon's choice that is within 120 feet of the dragon and aware of it must succeed on a DC 19 Wisdom saving throw or become frightened for 1 minute. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. If a creature's saving throw is successful or the effect ends for it, the creature is immune to the dragon's Frightful Presence for the next 24 hours.
-
-    **Acid Breath**: The dragon exhales acid in a 90-foot line that is 10 feet wide. Each creature in that line must make a DC 22 Dexterity saving throw, taking 67 (15d8) acid damage on a failed save, or half as much damage on a successful one.
+    """Amphibious.
+      The dragon can breathe air and water.
+    Legendary Resistance.
+      If the dragon fails a saving throw, it can choose to succeed
+      instead.
+    Multiattack.
+      The dragon can use its Frightful Presence. It then makes three
+      attacks: one with its bite and two with its claws.
+    Bite.
+      Melee Weapon Attack:+ 15 to hit, reach 15 ft., one target. Hit:
+      19 (2d10 + 8) piercing damage plus 9 (2d8) acid damage.
+    Claw.
+      Melee Weapon Attack: +15 to hit, reach 10 ft., one target. Hit:
+      15 (2d6 + 8) slashing damage.
+    Tail.
+      Melee Weapon Attack: +15 to hit, reach 20 ft ., one target. Hit:
+      17 (2d8 + 8) bludgeoning damage.
+    Frightful Presence.
+      Each creature of the dragon's choice that is within 120 feet of
+      the dragon and aware of it must succeed on a DC 19 Wisdom saving
+      throw or become frightened for 1 minute. A creature can repeat
+      the saving throw at the end of each of its turns, ending the
+      effect on itself on a success. If a creature's saving throw is
+      successful or the effect ends for it, the creature is immune to
+      the dragon's Frightful Presence for the next 24 hours.
+    Acid Breath.
+      The dragon exhales acid in a 90-foot line that is 10 feet
+      wide. Each creature in that line must make a DC 22 Dexterity
+      saving throw, taking 67 (15d8) acid damage on a failed save, or
+      half as much damage on a successful one.
     """
 
     name = "Ancient Black Dragon"
@@ -593,18 +826,31 @@ class AncientBlackDragon(Monster):
 
 
 class AncientBlueDragon(Monster):
-    """
-    **Multiattack**: The dragon can use its Frightful Presence. It then makes three attacks: one with its bite and two with its claws.
-
-    **Bite**: Melee Weapon Attack: +16 to hit, reach 15 ft., one target. Hit: 20 (2d10 + 9) piercing damage plus 11 (2d10) lightning damage.
-
-    **Claw**: Melee Weapon Attack: +16 to hit, reach 10 ft., one target. Hit: 16 (2d6 + 9) slashing damage.
-
-    **Tail**: Melee Weapon Attack: +16 to hit, reach 20 ft., one target. Hit: 18 (2d8 + 9) bludgeoning damage.
-
-    **Frightful Presence**: Each creature of the dragon's choice that is within 120 feet of the dragon and aware of it must succeed on a DC 20 Wisdom saving throw or become frightened for 1 minute. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. If a creature's saving throw is successful or the effect ends for it, the creature is immune to the dragon's Frightful Presence for the next 24 hours.
-
-    **Lightning Breath**: The dragon exhales lightning in a 120-foot line that is 10 feet wide. Each creature in that line must make a DC 23 Dexterity saving throw, taking 88 (16d10) lightning damage on a failed save, or half as much damage on a successful one.
+    """Multiattack.
+      The dragon can use its Frightful Presence. It then makes three
+      attacks: one with its bite and two with its claws.
+    Bite.
+      Melee Weapon Attack: +16 to hit, reach 15 ft., one target. Hit:
+      20 (2d10 + 9) piercing damage plus 11 (2d10) lightning damage.
+    Claw.
+      Melee Weapon Attack: +16 to hit, reach 10 ft., one target. Hit:
+      16 (2d6 + 9) slashing damage.
+    Tail.
+      Melee Weapon Attack: +16 to hit, reach 20 ft., one target. Hit:
+      18 (2d8 + 9) bludgeoning damage.
+    Frightful Presence.
+      Each creature of the dragon's choice that is within 120 feet of
+      the dragon and aware of it must succeed on a DC 20 Wisdom saving
+      throw or become frightened for 1 minute. A creature can repeat
+      the saving throw at the end of each of its turns, ending the
+      effect on itself on a success. If a creature's saving throw is
+      successful or the effect ends for it, the creature is immune to
+      the dragon's Frightful Presence for the next 24 hours.
+    Lightning Breath.
+      The dragon exhales lightning in a 120-foot line that is 10 feet
+      wide. Each creature in that line must make a DC 23 Dexterity
+      saving throw, taking 88 (16d10) lightning damage on a failed
+      save, or half as much damage on a successful one.
     """
 
     name = "Ancient Blue Dragon"
@@ -629,25 +875,57 @@ class AncientBlueDragon(Monster):
 
 
 class AncientBrassDragon(Monster):
-    """
-    **Legendary Resistance**: If the dragon fails a saving throw, it can choose to succeed instead.
+    """Legendary Resistance.
+      If the dragon fails a saving throw, it can choose to succeed
+      instead.
+    Multiattack.
+      The dragon can use its Frightful Presence. It then makes three
+      attacks: one with its bite and two with its claws.
+    Bite.
+      Melee Weapon Attack: +14 to hit, reach 15 ft., one target. Hit:
+      19 (2d10 + 8) piercing damage.
+    Claw.
+      Melee Weapon Attack: +14 to hit, reach 10 ft., one target. Hit:
+      15 (2d6 + 8) slashing damage.
+    Tail.
+      Melee Weapon Attack: +14 to hit, reach 20 ft., one target. Hit:
+      17 (2d8 + 8) bludgeoning damage.
+    Frightful Presence.
+      Each creature of the dragon's choice that is within 120 feet of
+      the dragon and aware of it must succeed on a DC 18 Wisdom saving
+      throw or become frightened for 1 minute. A creature can repeat
+      the saving throw at the end of each of its turns, ending the
+      effect on itself on a success. If a creature's saving throw is
+      successful or the effect ends for it, the creature is immune to
+      the dragon's Frightful Presence for the next 24 hours.
+    Breath Weapons.
+      The dragon uses one of the following breath weapons:
 
-    **Multiattack**: The dragon can use its Frightful Presence. It then makes three attacks: one with its bite and two with its claws.
+      Fire Breath.
+        The dragon exhales fire in an 90-foot line that is 10 feet
+        wide. Each creature in that line must make a DC 21 Dexterity
+        saving throw, taking 56 (16d6) fire damage on a failed save,
+        or half as much damage on a successful one.
+      Sleep Breath.
+        The dragon exhales sleep gas in a 90-foot cone. Each creature
+        in that area must succeed on a DC 21 Constitution saving throw
+        or fall unconscious for 10 minutes. This effect ends for a
+        creature if the creature takes damage or someone uses an
+        action to wake it.
+    Change Shape.
+      The dragon magically polymorphs into a humanoid or beast that
+      has a challenge rating no higher than its own, or back into its
+      true form. It reverts to its true form if it dies. Any equipment
+      it is wearing or carrying is absorbed or borne by the new form
+      (the dragon's choice).
 
-    **Bite**: Melee Weapon Attack: +14 to hit, reach 15 ft., one target. Hit: 19 (2d10 + 8) piercing damage.
+      In a new form, the dragon retains its alignment, hit points, Hit
+      Dice, ability to speak, proficiencies, Legendary Resistance,
+      lair actions, and Intelligence, Wisdom, and Charisma scores, as
+      well as this action. Its statistics and capabilities are
+      otherwise replaced by those of the new form, except any class
+      features or legendary actions of that form.
 
-    **Claw**: Melee Weapon Attack: +14 to hit, reach 10 ft., one target. Hit: 15 (2d6 + 8) slashing damage.
-
-    **Tail**: Melee Weapon Attack: +14 to hit, reach 20 ft., one target. Hit: 17 (2d8 + 8) bludgeoning damage.
-
-    **Frightful Presence**: Each creature of the dragon's choice that is within 120 feet of the dragon and aware of it must succeed on a DC 18 Wisdom saving throw or become frightened for 1 minute. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. If a creature's saving throw is successful or the effect ends for it, the creature is immune to the dragon's Frightful Presence for the next 24 hours.
-
-    **Breath Weapons**: The dragon uses one of the following breath weapons:
-    Fire Breath. The dragon exhales fire in an 90-foot line that is 10 feet wide. Each creature in that line must make a DC 21 Dexterity saving throw, taking 56 (16d6) fire damage on a failed save, or half as much damage on a successful one.
-    Sleep Breath. The dragon exhales sleep gas in a 90-foot cone. Each creature in that area must succeed on a DC 21 Constitution saving throw or fall unconscious for 10 minutes. This effect ends for a creature if the creature takes damage or someone uses an action to wake it.
-
-    **Change Shape**: The dragon magically polymorphs into a humanoid or beast that has a challenge rating no higher than its own, or back into its true form. It reverts to its true form if it dies. Any equipment it is wearing or carrying is absorbed or borne by the new form (the dragon's choice).
-    In a new form, the dragon retains its alignment, hit points, Hit Dice, ability to speak, proficiencies, Legendary Resistance, lair actions, and Intelligence, Wisdom, and Charisma scores, as well as this action. Its statistics and capabilities are otherwise replaced by those of the new form, except any class features or legendary actions of that form.
     """
 
     name = "Ancient Brass Dragon"
@@ -672,27 +950,58 @@ class AncientBrassDragon(Monster):
 
 
 class AncientBronzeDragon(Monster):
-    """
-    **Amphibious**: The dragon can breathe air and water.
+    """Amphibious.
+      The dragon can breathe air and water.
+    Legendary Resistance.
+      If the dragon fails a saving throw, it can choose to succeed
+      instead.
+    Multiattack.
+      The dragon can use its Frightful Presence. It then makes three
+      attacks: one with its bite and two with its claws.
+    Bite.
+      Melee Weapon Attack: +16 to hit, reach 15 ft., one target. Hit:
+      20 (2d10 + 9) piercing damage.
+    Claw.
+      Melee Weapon Attack: +16 to hit, reach 10 ft., one target. Hit:
+      16 (2d6 + 9) slashing damage.
+    Tail.
+      Melee Weapon Attack: +16 to hit, reach 20 ft., one target. Hit:
+      18 (2d8 + 9) bludgeoning damage.
+    Frightful Presence.
+      Each creature of the dragon's choice that is within 120 feet of
+      the dragon and aware of it must succeed on a DC 20 Wisdom saving
+      throw or become frightened for 1 minute. A creature can repeat
+      the saving throw at the end of each of its turns, ending the
+      effect on itself on a success. If a creature's saving throw is
+      successful or the effect ends for it, the creature is immune to
+      the dragon's Frightful Presence for the next 24 hours.
+    Breath Weapons.
+      The dragon uses one of the following breath weapons.
 
-    **Legendary Resistance**: If the dragon fails a saving throw, it can choose to succeed instead.
+      Lightning Breath.
+        The dragon exhales lightning in a 120-foot line that is 10
+        feet wide. Each creature in that line must make a DC 23
+        Dexterity saving throw, taking 88 (16d10) lightning damage on
+        a failed save, or half as much damage on a successful one.
+      Repulsion Breath.
+        The dragon exhales repulsion energy in a 30-foot cone. Each
+        creature in that area must succeed on a DC 23 Strength saving
+        throw. On a failed save, the creature is pushed 60 feet away
+        from the dragon.
+    Change Shape.
+      The dragon magically polymorphs into a humanoid or beast that
+      has a challenge rating no higher than its own, or back into its
+      true form. It reverts to its true form if it dies. Any equipment
+      it is wearing or carrying is absorbed or borne by the new form
+      (the dragon's choice).
 
-    **Multiattack**: The dragon can use its Frightful Presence. It then makes three attacks: one with its bite and two with its claws.
+      In a new form, the dragon retains its alignment, hit points, Hit
+      Dice, ability to speak, proficiencies, Legendary Resistance,
+      lair actions, and Intelligence, Wisdom, and Charisma scores, as
+      well as this action. Its statistics and capabilities are
+      otherwise replaced by those of the new form, except any class
+      features or legendary actions of that form.
 
-    **Bite**: Melee Weapon Attack: +16 to hit, reach 15 ft., one target. Hit: 20 (2d10 + 9) piercing damage.
-
-    **Claw**: Melee Weapon Attack: +16 to hit, reach 10 ft., one target. Hit: 16 (2d6 + 9) slashing damage.
-
-    **Tail**: Melee Weapon Attack: +16 to hit, reach 20 ft., one target. Hit: 18 (2d8 + 9) bludgeoning damage.
-
-    **Frightful Presence**: Each creature of the dragon's choice that is within 120 feet of the dragon and aware of it must succeed on a DC 20 Wisdom saving throw or become frightened for 1 minute. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. If a creature's saving throw is successful or the effect ends for it, the creature is immune to the dragon's Frightful Presence for the next 24 hours.
-
-    **Breath Weapons**: The dragon uses one of the following breath weapons.
-    Lightning Breath. The dragon exhales lightning in a 120-foot line that is 10 feet wide. Each creature in that line must make a DC 23 Dexterity saving throw, taking 88 (16d10) lightning damage on a failed save, or half as much damage on a successful one.
-    Repulsion Breath. The dragon exhales repulsion energy in a 30-foot cone. Each creature in that area must succeed on a DC 23 Strength saving throw. On a failed save, the creature is pushed 60 feet away from the dragon.
-
-    **Change Shape**: The dragon magically polymorphs into a humanoid or beast that has a challenge rating no higher than its own, or back into its true form. It reverts to its true form if it dies. Any equipment it is wearing or carrying is absorbed or borne by the new form (the dragon's choice).
-    In a new form, the dragon retains its alignment, hit points, Hit Dice, ability to speak, proficiencies, Legendary Resistance, lair actions, and Intelligence, Wisdom, and Charisma scores, as well as this action. Its statistics and capabilities are otherwise replaced by those of the new form, except any class features or legendary actions of that form.
     """
 
     name = "Ancient Bronze Dragon"
@@ -717,25 +1026,61 @@ class AncientBronzeDragon(Monster):
 
 
 class AncientCopperDragon(Monster):
-    """
-    **Legendary Resistance**: If the dragon fails a saving throw, it can choose to succeed instead.
+    """Legendary Resistance.
+      If the dragon fails a saving throw, it can choose to succeed
+      instead.
+    Multiattack.
+      The dragon can use its Frightful Presence. It then makes three
+      attacks: one with its bite and two with its claws.
+    Bite.
+      Melee Weapon Attack: +15 to hit, reach 15 ft., one target. Hit:
+      19 (2d10 + 8) piercing damage.
+    Claw.
+      Melee Weapon Attack: +15 to hit, reach 10 ft., one target. Hit:
+      15 (2d6 + 8) slashing damage.
+    Tail.
+      Melee Weapon Attack: +15 to hit, reach 20 ft., one target. Hit:
+      17 (2d8 + 8) bludgeoning damage.
+    Frightful Presence.
+      Each creature of the dragon's choice that is within 120 feet of
+      the dragon and aware of it must succeed on a DC 19 Wisdom saving
+      throw or become frightened for 1 minute. A creature can repeat
+      the saving throw at the end of each of its turns, ending the
+      effect on itself on a success. If a creature's saving throw is
+      successful or the effect ends for it, the creature is immune to
+      the dragon's Frightful Presence for the next 24 hours.
+    Breath Weapons.
+      The dragon uses one of the following breath weapons.
 
-    **Multiattack**: The dragon can use its Frightful Presence. It then makes three attacks: one with its bite and two with its claws.
+      Acid Breath.
+        The dragon exhales acid in an 90-foot line that is 10 feet
+        wide. Each creature in that line must make a DC 22 Dexterity
+        saving throw, taking 63 (14d8) acid damage on a failed save,
+        or half as much damage on a successful one.
+      Slowing Breath.
+        The dragon exhales gas in a 90-foot cone. Each creature in
+        that area must succeed on a DC 22 Constitution saving
+        throw. On a failed save, the creature can't use reactions, its
+        speed is halved, and it can't make more than one attack on its
+        turn. In addition, the creature can use either an action or a
+        bonus action on its turn, but not both. These effects last for
+        1 minute. The creature can repeat the saving throw at the end
+        of each of its turns, ending the effect on itself with a
+        successful save.
+    Change Shape.
+      The dragon magically polymorphs into a humanoid or beast that
+      has a challenge rating no higher than its own, or back into its
+      true form. It reverts to its true form if it dies. Any equipment
+      it is wearing or carrying is absorbed or borne by the new form
+      (the dragon's choice).
 
-    **Bite**: Melee Weapon Attack: +15 to hit, reach 15 ft., one target. Hit: 19 (2d10 + 8) piercing damage.
+      In a new form, the dragon retains its alignment, hit points, Hit
+      Dice, ability to speak, proficiencies, Legendary Resistance,
+      lair actions, and Intelligence, Wisdom, and Charisma scores, as
+      well as this action. Its statistics and capabilities are
+      otherwise replaced by those of the new form, except any class
+      features or legendary actions of that form.
 
-    **Claw**: Melee Weapon Attack: +15 to hit, reach 10 ft., one target. Hit: 15 (2d6 + 8) slashing damage.
-
-    **Tail**: Melee Weapon Attack: +15 to hit, reach 20 ft., one target. Hit: 17 (2d8 + 8) bludgeoning damage.
-
-    **Frightful Presence**: Each creature of the dragon's choice that is within 120 feet of the dragon and aware of it must succeed on a DC 19 Wisdom saving throw or become frightened for 1 minute. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. If a creature's saving throw is successful or the effect ends for it, the creature is immune to the dragon's Frightful Presence for the next 24 hours.
-
-    **Breath Weapons**: The dragon uses one of the following breath weapons.
-    Acid Breath. The dragon exhales acid in an 90-foot line that is 10 feet wide. Each creature in that line must make a DC 22 Dexterity saving throw, taking 63 (14d8) acid damage on a failed save, or half as much damage on a successful one.
-    Slowing Breath. The dragon exhales gas in a 90-foot cone. Each creature in that area must succeed on a DC 22 Constitution saving throw. On a failed save, the creature can't use reactions, its speed is halved, and it can't make more than one attack on its turn. In addition, the creature can use either an action or a bonus action on its turn, but not both. These effects last for 1 minute. The creature can repeat the saving throw at the end of each of its turns, ending the effect on itself with a successful save.
-
-    **Change Shape**: The dragon magically polymorphs into a humanoid or beast that has a challenge rating no higher than its own, or back into its true form. It reverts to its true form if it dies. Any equipment it is wearing or carrying is absorbed or borne by the new form (the dragon's choice).
-    In a new form, the dragon retains its alignment, hit points, Hit Dice, ability to speak, proficiencies, Legendary Resistance, lair actions, and Intelligence, Wisdom, and Charisma scores, as well as this action. Its statistics and capabilities are otherwise replaced by those of the new form, except any class features or legendary actions of that form.
     """
 
     name = "Ancient Copper Dragon"
@@ -760,27 +1105,60 @@ class AncientCopperDragon(Monster):
 
 
 class AncientGoldDragon(Monster):
-    """
-    **Amphibious**: The dragon can breathe air and water.
+    """Amphibious.
+      The dragon can breathe air and water.
+    Legendary Resistance.
+      If the dragon fails a saving throw, it can choose to succeed
+      instead.
+    Multiattack.
+      The dragon can use its Frightful Presence. It then makes three
+      attacks: one with its bite and two with its claws.
+    Bite.
+      Melee Weapon Attack: +17 to hit, reach 15 ft., one target. Hit:
+      21 (2d10 + 10) piercing damage.
+    Claw.
+      Melee Weapon Attack: +17 to hit, reach 10 ft., one target. Hit:
+      17 (2d6 + 10) slashing damage.
+    Tail.
+      Melee Weapon Attack: +17 to hit, reach 20 ft., one target. Hit:
+      19 (2d8 + 10) bludgeoning damage.
+    Frightful Presence.
+      Each creature of the dragon's choice that is within 120 feet of
+      the dragon and aware of it must succeed on a DC 24 Wisdom saving
+      throw or become frightened for 1 minute. A creature can repeat
+      the saving throw at the end of each of its turns, ending the
+      effect on itself on a success. If a creature's saving throw is
+      successful or the effect ends for it, the creature is immune to
+      the dragon's Frightful Presence for the next 24 hours.
+    Breath Weapons.
+      The dragon uses one of the following breath weapons.
 
-    **Legendary Resistance**: If the dragon fails a saving throw, it can choose to succeed instead.
+      Fire Breath.
+        The dragon exhales fire in a 90-foot cone. Each creature in
+        that area must make a DC 24 Dexterity saving throw, taking 71
+        (13d10) fire damage on a failed save, or half as much damage
+        on a successful one.
+      Weakening Breath.
+        The dragon exhales gas in a 90-foot cone. Each creature in
+        that area must succeed on a DC 24 Strength saving throw or
+        have disadvantage on Strength-based attack rolls, Strength
+        checks, and Strength saving throws for 1 minute. A creature
+        can repeat the saving throw at the end of each of its turns,
+        ending the effect on itself on a success.
+    Change Shape.
+      The dragon magically polymorphs into a humanoid or beast that
+      has a challenge rating no higher than its own, or back into its
+      true form. It reverts to its true form if it dies. Any equipment
+      it is wearing or carrying is absorbed or borne by the new form
+      (the dragon's choice).
 
-    **Multiattack**: The dragon can use its Frightful Presence. It then makes three attacks: one with its bite and two with its claws.
+      In a new form, the dragon retains its alignment, hit points, Hit
+      Dice, ability to speak, proficiencies, Legendary Resistance,
+      lair actions, and Intelligence, Wisdom, and Charisma scores, as
+      well as this action. Its statistics and capabilities are
+      otherwise replaced by those of the new form, except any class
+      features or legendary actions of that form.
 
-    **Bite**: Melee Weapon Attack: +17 to hit, reach 15 ft., one target. Hit: 21 (2d10 + 10) piercing damage.
-
-    **Claw**: Melee Weapon Attack: +17 to hit, reach 10 ft., one target. Hit: 17 (2d6 + 10) slashing damage.
-
-    **Tail**: Melee Weapon Attack: +17 to hit, reach 20 ft., one target. Hit: 19 (2d8 + 10) bludgeoning damage.
-
-    **Frightful Presence**: Each creature of the dragon's choice that is within 120 feet of the dragon and aware of it must succeed on a DC 24 Wisdom saving throw or become frightened for 1 minute. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. If a creature's saving throw is successful or the effect ends for it, the creature is immune to the dragon's Frightful Presence for the next 24 hours.
-
-    **Breath Weapons**: The dragon uses one of the following breath weapons.
-    Fire Breath. The dragon exhales fire in a 90-foot cone. Each creature in that area must make a DC 24 Dexterity saving throw, taking 71 (13d10) fire damage on a failed save, or half as much damage on a successful one.
-    Weakening Breath. The dragon exhales gas in a 90-foot cone. Each creature in that area must succeed on a DC 24 Strength saving throw or have disadvantage on Strength-based attack rolls, Strength checks, and Strength saving throws for 1 minute. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.
-
-    **Change Shape**: The dragon magically polymorphs into a humanoid or beast that has a challenge rating no higher than its own, or back into its true form. It reverts to its true form if it dies. Any equipment it is wearing or carrying is absorbed or borne by the new form (the dragon's choice).
-    In a new form, the dragon retains its alignment, hit points, Hit Dice, ability to speak, proficiencies, Legendary Resistance, lair actions, and Intelligence, Wisdom, and Charisma scores, as well as this action. Its statistics and capabilities are otherwise replaced by those of the new form, except any class features or legendary actions of that form.
     """
 
     name = "Ancient Gold Dragon"
@@ -805,22 +1183,36 @@ class AncientGoldDragon(Monster):
 
 
 class AncientGreenDragon(Monster):
-    """
-    **Amphibious**: The dragon can breathe air and water.
-
-    **Legendary Resistance**: If the dragon fails a saving throw, it can choose to succeed instead.
-
-    **Multiattack**: The dragon can use its Frightful Presence. It then makes three attacks: one with its bite and two with its claws.
-
-    **Bite**: Melee Weapon Attack: +15 to hit, reach 15 ft., one target. Hit: 19 (2d10 + 8) piercing damage plus 10 (3d6) poison damage.
-
-    **Claw**: Melee Weapon Attack: +15 to hit, reach 10 ft., one target. Hit: 22 (4d6 + 8) slashing damage.
-
-    **Tail**: Melee Weapon Attack: +15 to hit, reach 20 ft., one target. Hit: 17 (2d8 + 8) bludgeoning damage.
-
-    **Frightful Presence**: Each creature of the dragon's choice that is within 120 feet of the dragon and aware of it must succeed on a DC 19 Wisdom saving throw or become frightened for 1 minute. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. If a creature's saving throw is successful or the effect ends for it, the creature is immune to the dragon's Frightful Presence for the next 24 hours.
-
-    **Poison Breath**: The dragon exhales poisonous gas in a 90-foot cone. Each creature in that area must make a DC 22 Constitution saving throw, taking 77 (22d6) poison damage on a failed save, or half as much damage on a successful one.
+    """Amphibious.
+      The dragon can breathe air and water.
+    Legendary Resistance.
+      If the dragon fails a saving throw, it can choose to succeed
+      instead.
+    Multiattack.
+      The dragon can use its Frightful Presence. It then makes three
+      attacks: one with its bite and two with its claws.
+    Bite.
+      Melee Weapon Attack: +15 to hit, reach 15 ft., one target. Hit:
+      19 (2d10 + 8) piercing damage plus 10 (3d6) poison damage.
+    Claw.
+      Melee Weapon Attack: +15 to hit, reach 10 ft., one target. Hit:
+      22 (4d6 + 8) slashing damage.
+    Tail.
+      Melee Weapon Attack: +15 to hit, reach 20 ft., one target. Hit:
+      17 (2d8 + 8) bludgeoning damage.
+    Frightful Presence.
+      Each creature of the dragon's choice that is within 120 feet of
+      the dragon and aware of it must succeed on a DC 19 Wisdom saving
+      throw or become frightened for 1 minute. A creature can repeat
+      the saving throw at the end of each of its turns, ending the
+      effect on itself on a success. If a creature's saving throw is
+      successful or the effect ends for it, the creature is immune to
+      the dragon's Frightful Presence for the next 24 hours.
+    Poison Breath.
+      The dragon exhales poisonous gas in a 90-foot cone. Each
+      creature in that area must make a DC 22 Constitution saving
+      throw, taking 77 (22d6) poison damage on a failed save, or half
+      as much damage on a successful one.
     """
 
     name = "Ancient Green Dragon"
@@ -845,20 +1237,34 @@ class AncientGreenDragon(Monster):
 
 
 class AncientRedDragon(Monster):
-    """
-    **Legendary Resistance**: If the dragon fails a saving throw, it can choose to succeed instead.
-
-    **Multiattack**: The dragon can use its Frightful Presence. It then makes three attacks: one with its bite and two with its claws.
-
-    **Bite**: Melee Weapon Attack: +17 to hit, reach 15 ft., one target. Hit: 21 (2d10 + 10) piercing damage plus 14 (4d6) fire damage.
-
-    **Claw**: Melee Weapon Attack: +17 to hit, reach 10 ft., one target. Hit: 17 (2d6 + 10) slashing damage.
-
-    **Tail**: Melee Weapon Attack: +17 to hit, reach 20 ft., one target. Hit: 19 (2d8 + 10) bludgeoning damage.
-
-    **Frightful Presence**: Each creature of the dragon's choice that is within 120 feet of the dragon and aware of it must succeed on a DC 21 Wisdom saving throw or become frightened for 1 minute. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. If a creature's saving throw is successful or the effect ends for it, the creature is immune to the dragon's Frightful Presence for the next 24 hours.
-
-    **Fire Breath**: The dragon exhales fire in a 90-foot cone. Each creature in that area must make a DC 24 Dexterity saving throw, taking 91 (26d6) fire damage on a failed save, or half as much damage on a successful one.
+    """Legendary Resistance.
+      If the dragon fails a saving throw, it can choose to succeed
+      instead.
+    Multiattack.
+      The dragon can use its Frightful Presence. It then makes three
+      attacks: one with its bite and two with its claws.
+    Bite.
+      Melee Weapon Attack: +17 to hit, reach 15 ft., one target. Hit:
+      21 (2d10 + 10) piercing damage plus 14 (4d6) fire damage.
+    Claw.
+      Melee Weapon Attack: +17 to hit, reach 10 ft., one target. Hit:
+      17 (2d6 + 10) slashing damage.
+    Tail.
+      Melee Weapon Attack: +17 to hit, reach 20 ft., one target. Hit:
+      19 (2d8 + 10) bludgeoning damage.
+    Frightful Presence.
+      Each creature of the dragon's choice that is within 120 feet of
+      the dragon and aware of it must succeed on a DC 21 Wisdom saving
+      throw or become frightened for 1 minute. A creature can repeat
+      the saving throw at the end of each of its turns, ending the
+      effect on itself on a success. If a creature's saving throw is
+      successful or the effect ends for it, the creature is immune to
+      the dragon's Frightful Presence for the next 24 hours.
+    Fire Breath.
+      The dragon exhales fire in a 90-foot cone. Each creature in that
+      area must make a DC 24 Dexterity saving throw, taking 91 (26d6)
+      fire damage on a failed save, or half as much damage on a
+      successful one.
     """
 
     name = "Ancient Red Dragon"
@@ -883,25 +1289,57 @@ class AncientRedDragon(Monster):
 
 
 class AncientSilverDragon(Monster):
-    """
-    **Legendary Resistance**: If the dragon fails a saving throw, it can choose to succeed instead.
+    """Legendary Resistance.
+      If the dragon fails a saving throw, it can choose to succeed
+      instead.
+    Multiattack.
+      The dragon can use its Frightful Presence. It then makes three
+      attacks: one with its bite and two with its claws.
+    Bite.
+      Melee Weapon Attack: +17 to hit, reach 15 ft., one target. Hit:
+      21 (2d10 + 10) piercing damage.
+    Claw.
+      Melee Weapon Attack: +17 to hit, reach 10 ft., one target. Hit:
+      17 (2d6 + 10) slashing damage.
+    Tail.
+      Melee Weapon Attack: +17 to hit, reach 20 ft., one target. Hit:
+      19 (2d8 + 10) bludgeoning damage.
+    Frightful Presence.
+      Each creature of the dragon's choice that is within 120 feet of
+      the dragon and aware of it must succeed on a DC 21 Wisdom saving
+      throw or become frightened for 1 minute. A creature can repeat
+      the saving throw at the end of each of its turns, ending the
+      effect on itself on a success. If a creature's saving throw is
+      successful or the effect ends for it, the creature is immune to
+      the dragon's Frightful Presence for the next 24 hours.
+    Breath Weapons.
+      The dragon uses one of the following breath weapons.
 
-    **Multiattack**: The dragon can use its Frightful Presence. It then makes three attacks: one with its bite and two with its claws.
+      Cold Breath.
+        The dragon exhales an icy blast in a 90-foot cone. Each
+        creature in that area must make a DC 24 Constitution saving
+        throw, taking 67 (15d8) cold damage on a failed save, or half
+        as much damage on a successful one.
+      Paralyzing Breath.
+        The dragon exhales paralyzing gas in a 90- foot cone. Each
+        creature in that area must succeed on a DC 24 Constitution
+        saving throw or be paralyzed for 1 minute. A creature can
+        repeat the saving throw at the end of each of its turns,
+        ending the effect on itself on a success.
+    Change Shape.
+      The dragon magically polymorphs into a humanoid or beast that
+      has a challenge rating no higher than its own, or back into its
+      true form. It reverts to its true form if it dies. Any equipment
+      it is wearing or carrying is absorbed or borne by the new form
+      (the dragon's choice).
 
-    **Bite**: Melee Weapon Attack: +17 to hit, reach 15 ft., one target. Hit: 21 (2d10 + 10) piercing damage.
+      In a new form, the dragon retains its alignment, hit points, Hit
+      Dice, ability to speak, proficiencies, Legendary Resistance,
+      lair actions, and Intelligence, Wisdom, and Charisma scores, as
+      well as this action. Its statistics and capabilities are
+      otherwise replaced by those of the new form, except any class
+      features or legendary actions of that form.
 
-    **Claw**: Melee Weapon Attack: +17 to hit, reach 10 ft., one target. Hit: 17 (2d6 + 10) slashing damage.
-
-    **Tail**: Melee Weapon Attack: +17 to hit, reach 20 ft., one target. Hit: 19 (2d8 + 10) bludgeoning damage.
-
-    **Frightful Presence**: Each creature of the dragon's choice that is within 120 feet of the dragon and aware of it must succeed on a DC 21 Wisdom saving throw or become frightened for 1 minute. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. If a creature's saving throw is successful or the effect ends for it, the creature is immune to the dragon's Frightful Presence for the next 24 hours.
-
-    **Breath Weapons**: The dragon uses one of the following breath weapons.
-    Cold Breath. The dragon exhales an icy blast in a 90-foot cone. Each creature in that area must make a DC 24 Constitution saving throw, taking 67 (15d8) cold damage on a failed save, or half as much damage on a successful one.
-    Paralyzing Breath. The dragon exhales paralyzing gas in a 90- foot cone. Each creature in that area must succeed on a DC 24 Constitution saving throw or be paralyzed for 1 minute. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.
-
-    **Change Shape**: The dragon magically polymorphs into a humanoid or beast that has a challenge rating no higher than its own, or back into its true form. It reverts to its true form if it dies. Any equipment it is wearing or carrying is absorbed or borne by the new form (the dragon's choice).
-    In a new form, the dragon retains its alignment, hit points, Hit Dice, ability to speak, proficiencies, Legendary Resistance, lair actions, and Intelligence, Wisdom, and Charisma scores, as well as this action. Its statistics and capabilities are otherwise replaced by those of the new form, except any class features or legendary actions of that form.
     """
 
     name = "Ancient Silver Dragon"
@@ -926,22 +1364,39 @@ class AncientSilverDragon(Monster):
 
 
 class AncientWhiteDragon(Monster):
-    """
-    **Ice Walk**: The dragon can move across and climb icy surfaces without needing to make an ability check. Additionally, difficult terrain composed of ice or snow doesn't cost it extra moment.
+    """Ice Walk.
+      The dragon can move across and climb icy surfaces without
+      needing to make an ability check. Additionally, difficult
+      terrain composed of ice or snow doesn't cost it extra moment.
+    Legendary Resistance.
+      If the dragon fails a saving throw, it can choose to succeed
+      instead.
+    Multiattack.
+      The dragon can use its Frightful Presence. It then makes three
+      attacks: one with its bite and two with its claws.
+    Bite.
+      Melee Weapon Attack: +14 to hit, reach 15 ft., one target. Hit:
+      19 (2d10 + 8) piercing damage plus 9 (2d8) cold damage.
+    Claw.
+      Melee Weapon Attack: +14 to hit, reach 10 ft., one target. Hit:
+      15 (2d6 + 8) slashing damage.
+    Tail.
+      Melee Weapon Attack: +14 to hit, reach 20 ft., one target. Hit:
+      17 (2d8 + 8) bludgeoning damage.
+    Frightful Presence.
+      Each creature of the dragon's choice that is within 120 feet of
+      the dragon and aware of it must succeed on a DC 16 Wisdom saving
+      throw or become frightened for 1 minute. A creature can repeat
+      the saving throw at the end of each of its turns, ending the
+      effect on itself on a success. If a creature's saving throw is
+      successful or the effect ends for it, the creature is immune to
+      the dragon's Frightful Presence for the next 24 hours .
+    Cold Breath.
+      The dragon exhales an icy blast in a 90-foot cone. Each creature
+      in that area must make a DC 22 Constitution saving throw, taking
+      72 (l6d8) cold damage on a failed save, or half as much damage
+      on a successful one.
 
-    **Legendary Resistance**: If the dragon fails a saving throw, it can choose to succeed instead.
-
-    **Multiattack**: The dragon can use its Frightful Presence. It then makes three attacks: one with its bite and two with its claws.
-
-    **Bite**: Melee Weapon Attack: +14 to hit, reach 15 ft., one target. Hit: 19 (2d10 + 8) piercing damage plus 9 (2d8) cold damage.
-
-    **Claw**: Melee Weapon Attack: +14 to hit, reach 10 ft., one target. Hit: 15 (2d6 + 8) slashing damage.
-
-    **Tail**: Melee Weapon Attack: +14 to hit, reach 20 ft., one target. Hit: 17 (2d8 + 8) bludgeoning damage.
-
-    **Frightful Presence**: Each creature of the dragon's choice that is within 120 feet of the dragon and aware of it must succeed on a DC 16 Wisdom saving throw or become frightened for 1 minute. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. If a creature's saving throw is successful or the effect ends for it, the creature is immune to the dragon's Frightful Presence for the next 24 hours .
-
-    **Cold Breath**: The dragon exhales an icy blast in a 90-foot cone. Each creature in that area must make a DC 22 Constitution saving throw, taking 72 (l6d8) cold damage on a failed save, or half as much damage on a successful one.
     """
 
     name = "Ancient White Dragon"
@@ -966,32 +1421,54 @@ class AncientWhiteDragon(Monster):
 
 
 class Androsphinx(Monster):
-    """
-    **Inscrutable**: The sphinx is immune to any effect that would sense its emotions or read its thoughts, as well as any divination spell that it refuses. Wisdom (Insight) checks made to ascertain the sphinx's intentions or sincerity have disadvantage.
+    """Inscrutable.
+      The sphinx is immune to any effect that would sense its emotions
+      or read its thoughts, as well as any divination spell that it
+      refuses. Wisdom (Insight) checks made to ascertain the sphinx's
+      intentions or sincerity have disadvantage.
+    Magic Weapons.
+      The sphinx's weapon attacks are magical.
+    Spellcasting.
+      The sphinx is a 12th-level spellcaster. Its spellcasting ability
+      is Wisdom (spell save DC 18, +10 to hit with spell attacks). It
+      requires no material components to cast its spells. The sphinx
+      has the following cleric spells prepared:
 
-    **Magic Weapons**: The sphinx's weapon attacks are magical.
+      - Cantrips (at will): sacred flame, spare the dying, thaumaturgy
+      - 1st level (4 slots): command, detect evil and good, detect magic
+      - 2nd level (3 slots): lesser restoration, zone of truth
+      - 3rd level (3 slots): dispel magic, tongues
+      - 4th level (3 slots): banishment, freedom of movement
+      - 5th level (2 slots): flame strike, greater restoration
+      - 6th level (1 slot): heroes' feast
 
-    **Spellcasting**: The sphinx is a 12th-level spellcaster. Its spellcasting ability is Wisdom (spell save DC 18, +10 to hit with spell attacks). It requires no material components to cast its spells. The sphinx has the following cleric spells prepared:
+    Multiattack.
+      The sphinx makes two claw attacks.
+    Claw.
+      Melee Weapon Attack: +12 to hit, reach 5 ft., one target. Hit:
+      17 (2d10 + 6) slashing damage.
+    Roar.
+      The sphinx emits a magical roar. Each time it roars before
+      finishing a long rest, the roar is louder and the effect is
+      different, as detailed below. Each creature within 500 feet of
+      the sphinx and able to hear the roar must make a saving throw.
 
-    - Cantrips (at will): sacred flame, spare the dying, thaumaturgy
-    - 1st level (4 slots): command, detect evil and good, detect magic
-    - 2nd level (3 slots): lesser restoration, zone of truth
-    - 3rd level (3 slots): dispel magic, tongues
-    - 4th level (3 slots): banishment, freedom of movement
-    - 5th level (2 slots): flame strike, greater restoration
-    - 6th level (1 slot): heroes' feast
+      First Roar.
+        Each creature that fails a DC 18 Wisdom saving throw is
+        frightened for 1 minute. A frightened creature can repeat the
+        saving throw at the end of each of its turns, ending the
+        effect on itself on a success.
+      Second Roar.
+        Each creature that fails a DC 18 Wisdom saving throw is
+        deafened and frightened for 1 minute. A frightened creature is
+        paralyzed and can repeat the saving throw at the end of each
+        of its turns, ending the effect on itself on a success.
+      Third Roar.
+        Each creature makes a DC 18 Constitution saving throw. On a
+        failed save, a creature takes 44 (8d10) thunder damage and is
+        knocked prone. On a successful save, the creature takes half
+        as much damage and isn't knocked prone.
 
-    **Multiattack**: The sphinx makes two claw attacks.
-
-    **Claw**: Melee Weapon Attack: +12 to hit, reach 5 ft., one target. Hit: 17 (2d10 + 6) slashing damage.
-
-    **Roar**: The sphinx emits a magical roar. Each time it roars before finishing a long rest, the roar is louder and the effect is different, as detailed below. Each creature within 500 feet of the sphinx and able to hear the roar must make a saving throw.
-
-    First Roar. Each creature that fails a DC 18 Wisdom saving throw is frightened for 1 minute. A frightened creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.
-
-    Second Roar. Each creature that fails a DC 18 Wisdom saving throw is deafened and frightened for 1 minute. A frightened creature is paralyzed and can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.
-
-    Third Roar. Each creature makes a DC 18 Constitution saving throw. On a failed save, a creature takes 44 (8d10) thunder damage and is knocked prone. On a successful save, the creature takes half as much damage and isn't knocked prone.
     """
 
     name = "Androsphinx"
@@ -1016,14 +1493,20 @@ class Androsphinx(Monster):
 
 
 class AnimatedArmor(Monster):
-    """
-    **Antimagic Susceptibility**: The armor is incapacitated while in the area of an antimagic field. If targeted by dispel magic, the armor must succeed on a Constitution saving throw against the caster's spell save DC or fall unconscious for 1 minute.
+    """Antimagic Susceptibility.
+      The armor is incapacitated while in the area of an antimagic
+      field. If targeted by dispel magic, the armor must succeed on a
+      Constitution saving throw against the caster's spell save DC or
+      fall unconscious for 1 minute.
+    False Appearance.
+      While the armor remains motionless, it is indistinguishable from
+      a normal suit of armor.
+    Multiattack.
+      The armor makes two melee attacks.
+    Slam.
+      Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 5
+      (1d6 + 2) bludgeoning damage.
 
-    **False Appearance**: While the armor remains motionless, it is indistinguishable from a normal suit of armor.
-
-    **Multiattack**: The armor makes two melee attacks.
-
-    **Slam**: Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 5 (1d6 + 2) bludgeoning damage.
     """
 
     name = "Animated Armor"
@@ -1048,10 +1531,19 @@ class AnimatedArmor(Monster):
 
 
 class Ankheg(Monster):
-    """
-    **Bite**: Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 10 (2d6 + 3) slashing damage plus 3 (1d6) acid damage. If the target is a Large or smaller creature, it is grappled (escape DC 13). Until this grapple ends, the ankheg can bite only the grappled creature and has advantage on attack rolls to do so.
+    """Bite.
+      Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 10
+      (2d6 + 3) slashing damage plus 3 (1d6) acid damage. If the
+      target is a Large or smaller creature, it is grappled (escape DC
+      13). Until this grapple ends, the ankheg can bite only the
+      grappled creature and has advantage on attack rolls to do so.
+    Acid Spray (Recharge 6):
+      The ankheg spits acid in a line that is 30 ft. long and 5
+      ft. wide, provided that it has no creature grappled. Each
+      creature in that line must make a DC 13 Dexterity saving throw,
+      taking 10 (3d6) acid damage on a failed save, or half as much
+      damage on a successful one.
 
-    **Acid Spray (Recharge 6)**: The ankheg spits acid in a line that is 30 ft. long and 5 ft. wide, provided that it has no creature grappled. Each creature in that line must make a DC 13 Dexterity saving throw, taking 10 (3d6) acid damage on a failed save, or half as much damage on a successful one.
     """
 
     name = "Ankheg"
@@ -1079,16 +1571,15 @@ class Ankylosaurus(Monster):
     """Thick armor plating covers the body of the plant-eating dinosaur
     ankylosaurus, which defends itself against predators with a
     knobbed tail that delivers a devastating strike.
-
-    **Tail:** *Melee Weapon Attack:* +7 to hit, reach 10 ft., one
-    target. *Hit:* 18 (4d6+4) bludgeoning damage. If the target is a
-    creature, it must succeed on a DC 14 Strength saving throw or be
-    knocked prone.
+    Tail.
+      *Melee Weapon Attack:* +7 to hit, reach 10 ft., one
+      target. *Hit:* 18 (4d6+4) bludgeoning damage. If the target is a
+      creature, it must succeed on a DC 14 Strength saving throw or be
+      knocked prone.
 
     """
 
     # TODO: This doesn't appear to be SRD
-
     name = "Ankylosaurus"
     description = "Huge beast, unaligned"
     challenge_rating = 3
@@ -1110,12 +1601,14 @@ class Ankylosaurus(Monster):
 
 
 class Ape(Monster):
-    """
-    **Multiattack**: The ape makes two fist attacks.
-
-    **Fist**: Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 6 (1d6 + 3) bludgeoning damage.
-
-    **Rock**: Ranged Weapon Attack: +5 to hit, range 25/50 ft., one target. Hit: 6 (1d6 + 3) bludgeoning damage.
+    """Multiattack.
+      The ape makes two fist attacks.
+    Fist.
+      Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 6
+      (1d6 + 3) bludgeoning damage.
+    Rock.
+      Ranged Weapon Attack: +5 to hit, range 25/50 ft., one
+      target. Hit: 6 (1d6 + 3) bludgeoning damage.
     """
 
     name = "Ape"
@@ -1140,24 +1633,33 @@ class Ape(Monster):
 
 
 class Archmage(Monster):
-    """
-    **Magic Resistance**: The archmage has advantage on saving throws against spells and other magical effects.
+    """Magic Resistance.
+      The archmage has advantage on saving throws against spells and
+      other magical effects.
+    Spellcasting.
+      The archmage is an 18th-level spellcaster. Its spellcasting
+      ability is Intelligence (spell save DC 17, +9 to hit with spell
+      attacks). The archmage can cast disguise self and invisibility
+      at will and has the following wizard spells prepared:
 
-    **Spellcasting**: The archmage is an 18th-level spellcaster. Its spellcasting ability is Intelligence (spell save DC 17, +9 to hit with spell attacks). The archmage can cast disguise self and invisibility at will and has the following wizard spells prepared:
+      - Cantrips (at will): fire bolt, light, mage hand,
+        prestidigitation, shocking grasp
+      - 1st level (4 slots): detect magic, identify, mage armor*,
+        magic missile
+      - 2nd level (3 slots): detect thoughts, mirror image, misty step
+      - 3rd level (3 slots): counterspell, fly, lightning bolt
+      - 4th level (3 slots): banishment, fire shield, stoneskin*
+      - 5th level (3 slots): cone of cold, scrying, wall of force
+      - 6th level (1 slot): globe of invulnerability
+      - 7th level (1 slot): teleport
+      - 8th level (1 slot): mind blank*
+      - 9th level (1 slot): time stop
 
-    - Cantrips (at will): fire bolt, light, mage hand, prestidigitation, shocking grasp
-    - 1st level (4 slots): detect magic, identify, mage armor*, magic missile
-    - 2nd level (3 slots): detect thoughts, mirror image, misty step
-    - 3rd level (3 slots): counterspell, fly, lightning bolt
-    - 4th level (3 slots): banishment, fire shield, stoneskin*
-    - 5th level (3 slots): cone of cold, scrying, wall of force
-    - 6th level (1 slot): globe of invulnerability
-    - 7th level (1 slot): teleport
-    - 8th level (1 slot): mind blank*
-    - 9th level (1 slot): time stop
-    * The archmage casts these spells on itself before combat.
+      * The archmage casts these spells on itself before combat.
+    Dagger.
+      Melee or Ranged Weapon Attack: +6 to hit, reach 5 ft. or range
+      20/60 ft., one target. Hit: 4 (1d4 + 2) piercing damage.
 
-    **Dagger**: Melee or Ranged Weapon Attack: +6 to hit, reach 5 ft. or range 20/60 ft., one target. Hit: 4 (1d4 + 2) piercing damage.
     """
 
     name = "Archmage"
@@ -1182,18 +1684,35 @@ class Archmage(Monster):
 
 
 class Assassin(Monster):
-    """
-    **Assassinate**: During its first turn, the assassin has advantage on attack rolls against any creature that hasn't taken a turn. Any hit the assassin scores against a surprised creature is a critical hit.
+    """Assassinate.
+      During its first turn, the assassin has advantage on attack
+      rolls against any creature that hasn't taken a turn. Any hit the
+      assassin scores against a surprised creature is a critical hit.
+    Evasion.
+      If the assassin is subjected to an effect that allows it to make
+      a Dexterity saving throw to take only half damage, the assassin
+      instead takes no damage if it succeeds on the saving throw, and
+      only half damage if it fails.
+    Sneak Attack (1/Turn).
+      The assassin deals an extra 13 (4d6) damage when it hits a
+      target with a weapon attack and has advantage on the attack
+      roll, or when the target is within 5 ft. of an ally of the
+      assassin that isn't incapacitated and the assassin doesn't have
+      disadvantage on the attack roll.
+    Multiattack.
+      The assassin makes two shortsword attacks.
+    Shortsword.
+      Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 6
+      (1d6 + 3) piercing damage, and the target must make a DC 15
+      Constitution saving throw, taking 24 (7d6) poison damage on a
+      failed save, or half as much damage on a successful one.
+    Light Crossbow.
+      Ranged Weapon Attack: +6 to hit, range 80/320 ft., one
+      target. Hit: 7 (1d8 + 3) piercing damage, and the target must
+      make a DC 15 Constitution saving throw, taking 24 (7d6) poison
+      damage on a failed save, or half as much damage on a successful
+      one.
 
-    **Evasion**: If the assassin is subjected to an effect that allows it to make a Dexterity saving throw to take only half damage, the assassin instead takes no damage if it succeeds on the saving throw, and only half damage if it fails.
-
-    **Sneak Attack (1/Turn)**: The assassin deals an extra 13 (4d6) damage when it hits a target with a weapon attack and has advantage on the attack roll, or when the target is within 5 ft. of an ally of the assassin that isn't incapacitated and the assassin doesn't have disadvantage on the attack roll.
-
-    **Multiattack**: The assassin makes two shortsword attacks.
-
-    **Shortsword**: Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 6 (1d6 + 3) piercing damage, and the target must make a DC 15 Constitution saving throw, taking 24 (7d6) poison damage on a failed save, or half as much damage on a successful one.
-
-    **Light Crossbow**: Ranged Weapon Attack: +6 to hit, range 80/320 ft., one target. Hit: 7 (1d8 + 3) piercing damage, and the target must make a DC 15 Constitution saving throw, taking 24 (7d6) poison damage on a failed save, or half as much damage on a successful one.
     """
 
     name = "Assassin"
@@ -1218,10 +1737,13 @@ class Assassin(Monster):
 
 
 class AwakenedShrub(Monster):
-    """
-    **False Appearance**: While the shrub remains motionless, it is indistinguishable from a normal shrub.
+    """False Appearance.
+      While the shrub remains motionless, it is indistinguishable from
+      a normal shrub.
+    Rake.
+      Melee Weapon Attack: +1 to hit, reach 5 ft., one target. Hit: 1
+      (1d4 - 1) slashing damage.
 
-    **Rake**: Melee Weapon Attack: +1 to hit, reach 5 ft., one target. Hit: 1 (1d4 - 1) slashing damage.
     """
 
     name = "Awakened Shrub"
@@ -1246,10 +1768,13 @@ class AwakenedShrub(Monster):
 
 
 class AwakenedTree(Monster):
-    """
-    **False Appearance**: While the tree remains motionless, it is indistinguishable from a normal tree.
+    """False Appearance.
+      While the tree remains motionless, it is indistinguishable from
+      a normal tree.
+    Slam.
+      Melee Weapon Attack: +6 to hit, reach 10 ft., one target. Hit:
+      14 (3d6 + 4) bludgeoning damage.
 
-    **Slam**: Melee Weapon Attack: +6 to hit, reach 10 ft., one target. Hit: 14 (3d6 + 4) bludgeoning damage.
     """
 
     name = "Awakened Tree"
@@ -1274,8 +1799,10 @@ class AwakenedTree(Monster):
 
 
 class AxeBeak(Monster):
-    """
-    **Beak**: Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 6 (1d8 + 2) slashing damage.
+    """Beak.
+    Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 6
+    (1d8 + 2) slashing damage.
+
     """
 
     name = "Axe Beak"
@@ -1300,14 +1827,20 @@ class AxeBeak(Monster):
 
 
 class Azer(Monster):
-    """
-    **Heated Body**: A creature that touches the azer or hits it with a melee attack while within 5 ft. of it takes 5 (1d10) fire damage.
-
-    **Heated Weapons**: When the azer hits with a metal melee weapon, it deals an extra 3 (1d6) fire damage (included in the attack).
-
-    **Illumination**: The azer sheds bright light in a 10-foot radius and dim light for an additional 10 ft..
-
-    **Warhammer**: Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 7 (1d8 + 3) bludgeoning damage, or 8 (1d10 + 3) bludgeoning damage if used with two hands to make a melee attack, plus 3 (1d6) fire damage.
+    """Heated Body.
+      A creature that touches the azer or hits it with a melee attack
+      while within 5 ft. of it takes 5 (1d10) fire damage.
+    Heated Weapons.
+      When the azer hits with a metal melee weapon, it deals an extra
+      3 (1d6) fire damage (included in the attack).
+    Illumination.
+      The azer sheds bright light in a 10-foot radius and dim light
+      for an additional 10 ft..
+    Warhammer.
+      Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 7
+      (1d8 + 3) bludgeoning damage, or 8 (1d10 + 3) bludgeoning damage
+      if used with two hands to make a melee attack, plus 3 (1d6) fire
+      damage.
     """
 
     name = "Azer"
