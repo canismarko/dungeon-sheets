@@ -130,6 +130,15 @@ def create_druid_shapes_tex(
     return template.render(character=character, use_dnd_decorations=use_dnd_decorations)
 
 
+def create_random_tables_tex(
+        conjure_animals: bool,
+        use_dnd_decorations: bool = False,
+) -> str:
+    template = jinja_env.get_template("random_tables_template.tex")
+    return template.render(conjure_animals=conjure_animals,
+                           use_dnd_decorations=use_dnd_decorations)
+
+
 def make_sheet(
     sheet_file: File,
     flatten: bool = False,
@@ -197,12 +206,12 @@ def make_gm_sheet(
     tex = [
         jinja_env.get_template("preamble.tex").render(
             use_dnd_decorations=fancy_decorations,
-            title=gm_props["session_title"],
+            title=gm_props.pop("session_title", "GM Session Notes"),
         )
     ]
     # Add the party stats table and session summary
     party = []
-    for char_file in gm_props.get("party", []):
+    for char_file in gm_props.pop("party", []):
         # Resolve the file path
         char_file = Path(char_file)
         if not char_file.is_absolute():
@@ -212,7 +221,7 @@ def make_gm_sheet(
         character_props = readers.read_sheet_file(char_file)
         member = _char.Character.load(character_props)
         party.append(member)
-    summary = gm_props.get("summary", "")
+    summary = gm_props.pop("summary", "")
     tex.append(
         create_party_summary_tex(
             party, summary_rst=summary, use_dnd_decorations=fancy_decorations
@@ -220,7 +229,7 @@ def make_gm_sheet(
     )
     # Add the monsters
     monsters_ = []
-    for monster in gm_props.get("monsters", []):
+    for monster in gm_props.pop("monsters", []):
         if isinstance(monster, monsters.Monster):
             # It's already a monster, so just add it
             new_monster = monster
@@ -238,12 +247,27 @@ def make_gm_sheet(
         tex.append(
             create_monsters_tex(monsters_, use_dnd_decorations=fancy_decorations)
         )
+    # Add the random tables
+    random_tables = [s.replace(" ", "_").lower() for s in gm_props.pop("random_tables")]
+    tex.append(
+        create_random_tables_tex(
+            conjure_animals=("conjure_animals" in random_tables),
+            use_dnd_decorations=fancy_decorations,
+        )
+    )
     # Add the closing TeX
     tex.append(
         jinja_env.get_template("postamble.tex").render(
             use_dnd_decorations=fancy_decorations
         )
     )
+    # Warn about any unhandled sheet properties
+    gm_props.pop("dungeonsheets_version")
+    gm_props.pop("sheet_type")
+    if len(gm_props.keys()) > 0:
+        msg = f"Unhandled attributes in '{str(gm_file)}': {','.join(gm_props.keys())}"
+        log.warn(msg)
+        warnings.warn(msg)
     # Typeset combined LaTeX file
     try:
         if len(tex) > 2:

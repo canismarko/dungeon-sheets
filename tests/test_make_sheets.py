@@ -185,3 +185,8 @@ class TexCreatorTestCase(unittest.TestCase):
         # Check that the RST is parsed
         self.assertIn(r"\emph{adventure}", tex)
 
+    def test_random_tables_tex(self):
+        tex = make_sheets.create_random_tables_tex(
+            conjure_animals=True,
+        )
+        self.assertIn(r"\subsection*{Conjure Animals}", tex)

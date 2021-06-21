@@ -45,3 +45,18 @@ party. These will produce a summary table of the attributes of your
 party.
 
 .. _contributing: https://github.com/canismarko/dungeon-sheets/blob/master/CONTRIBUTING.rst
+
+Random Tables
+=============
+
+Random tables can be used in-game to make decisions on-the-fly. These
+tables can be included in the PDF using ``random_tables``. Currently the following random tables are available.
+
+- **"conjure animals"** - A list of options to choose from when a
+  player casts the *Conjure Animals* spell.
+
+.. code-block:: python
+   :caption: Example:	  
+   
+   random_tables = ["conjure animals"]	 
+
