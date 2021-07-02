@@ -1,7 +1,9 @@
+\pdfbookmark[0]{Monsters}{Monsters}
 \section*{Monsters}
 
 [% if use_dnd_decorations %]
   [% for monster in monsters|sort(attribute='name') %]
+    \pdfbookmark[1]{[[ monster.name ]]}{Monsters - [[ monster.name ]]}
     \begin{DndMonster}{[[ monster.name ]]}
         \DndMonsterType{[[ monster.description ]]}
     
@@ -40,6 +42,7 @@
 [% else %]
   [% for monster in monsters|sort(attribute='name') %]
     {
+    \pdfbookmark[1]{[[ monster.name ]]}{Monsters - [[ monster.name ]]}
     \section*{[[ monster.name ]]}
     [% if monster.description %]  
     \subsection*{[[ monster.description ]]}

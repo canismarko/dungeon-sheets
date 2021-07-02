@@ -1,5 +1,5 @@
 [% if summary %]
-
+  \pdfbookmark[1]{Summary}{Summary}
   \section*{Summary}
 
   [[ summary | rst_to_latex ]]
@@ -7,7 +7,7 @@
 [% endif %]
 
 [% if party %]
-
+\pdfbookmark[1]{Party}{Party}
 \section*{Party}
 
 [% if use_dnd_decorations %]
