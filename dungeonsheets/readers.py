@@ -529,7 +529,7 @@ class FoundryCharacterReader(JSONCharacterReader):
         char_props["_proficiencies_text"] = tool_profs
         # Combat stats
         char_props["hp_max"] = self.as_int(
-            json_data["data"]["attributes"]["hp"]["value"]
+            json_data["data"]["attributes"]["hp"]["max"]
         )
         # Equipment
         currency = json_data["data"]["currency"]

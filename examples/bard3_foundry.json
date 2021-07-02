@@ -53,7 +53,7 @@
         "min": 0
       },
       "hp": {
-        "value": 47,
+        "value": 33,
         "min": 0,
         "max": 47,
         "temp": null,
