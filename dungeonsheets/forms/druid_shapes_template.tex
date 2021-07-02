@@ -1,7 +1,9 @@
+\pdfbookmark[0]{Known Beasts}{Known Beasts}
 \section*{Known Beasts}
 
 [% if use_dnd_decorations %]
   [% for shape in character.all_wild_shapes|sort(attribute='challenge_rating') %]
+    \pdfbookmark[1]{[[ shape.name ]]}{Known Beasts - [[ shape.name ]]}
    [% if not character.can_assume_shape(shape) %]
      \subsection*{Cannot assume form}
    [% endif %]
@@ -42,6 +44,7 @@
   
 [% else %]
   [% for shape in character.all_wild_shapes|sort(attribute='challenge_rating') %]
+    \pdfbookmark[1]{[[ shape.name ]]}{Known Beasts - [[ shape.name ]]}
     [% if not character.can_assume_shape(shape) %]
       {\color{mygrey}
     [% else %]

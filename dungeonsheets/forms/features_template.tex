@@ -1,13 +1,15 @@
- \section*{Features}
+\pdfbookmark[0]{Features}{Features}
+\section*{Features}
 [% if use_dnd_decorations %]
   [% for feat in character.features %]
+    \pdfbookmark[1]{[[ feat.name ]]}{Features - [[ feat.name ]]}
     \DndFeatHeader{[[ feat.name ]]}[Source: [[ feat.source ]]]
 
     [[ feat.__doc__|rst_to_latex ]]
   [% endfor %]
 [% else %]
   [% for feat in character.features %]
-
+    \pdfbookmark[1]{[[ feat.name ]]}{Features - [[ feat.name ]]}
     \subsection*{[[ feat.name ]]}
 
     \noindent

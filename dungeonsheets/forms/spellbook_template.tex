@@ -1,7 +1,8 @@
+\pdfbookmark[0]{Spells}{Spells}
 \section*{Spells}
 
 [% for spl in character.spells %]
-
+  \pdfbookmark[1]{[[ spl.name ]]}{Spells - [[ spl.name ]]}
   [% if use_dnd_decorations %]  
   \DndSpellHeader
     {[[ spl.name ]]}

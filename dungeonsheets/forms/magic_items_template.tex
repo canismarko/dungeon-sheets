@@ -1,7 +1,9 @@
+\pdfbookmark[0]{Magic Items}{Magic Items}
 \section*{Magic Items}
 
 [% if use_dnd_decorations %]
-    [% for mitem in character.magic_items %]
+  [% for mitem in character.magic_items %]
+    \pdfbookmark[1]{[[ mitem.name ]]}{Magic Items - [[ mitem.name ]]}
         \DndItemHeader{[[ mitem.name ]]}{[% if mitem.item_type %][[ mitem.item_type ]], [[ mitem.rarity.lower() ]][% else %][[ mitem.rarity ]] item[% endif %][% if mitem.requires_attunement %] (requires attunement)[% endif %]}
         [% if mitem.needs_implementation %] %
             \textbf{**Not included in stats on Character Sheet} %
@@ -11,7 +13,7 @@
     [% endfor %]
 [% else %]
     [% for mitem in character.magic_items %]
-
+    \pdfbookmark[1]{[[ mitem.name ]]}{Magic Items - [[ mitem.name ]]}
     \subsection*{[[ mitem.name ]]}
 
     \noindent
