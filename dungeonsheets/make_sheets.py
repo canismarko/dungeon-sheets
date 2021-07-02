@@ -248,7 +248,7 @@ def make_gm_sheet(
             create_monsters_tex(monsters_, use_dnd_decorations=fancy_decorations)
         )
     # Add the random tables
-    random_tables = [s.replace(" ", "_").lower() for s in gm_props.pop("random_tables")]
+    random_tables = [s.replace(" ", "_").lower() for s in gm_props.pop("random_tables", [])]
     tex.append(
         create_random_tables_tex(
             conjure_animals=("conjure_animals" in random_tables),
