@@ -10,17 +10,29 @@ from dungeonsheets.stats import Ability
 
 class Nalfeshnee(Monster):
     """
-    **Magic Resistance**: The nalfeshnee has advantage on saving throws against spells and other magical effects.
+    Magic Resistance.
 
-    **Multiattack**: The nalfeshnee uses Horror Nimbus if it can. It then makes three attacks: one with its bite and two with its claws.
+      The nalfeshnee has advantage on saving throws against spells and other magical effects.
 
-    **Bite**: Melee Weapon Attack: +10 to hit, reach 5 ft., one target. Hit: 32 (5d10 + 5) piercing damage.
+    Multiattack.
 
-    **Claw**: Melee Weapon Attack: +10 to hit, reach 10 ft., one target. Hit: 15 (3d6 + 5) slashing damage.
+      The nalfeshnee uses Horror Nimbus if it can. It then makes three attacks: one with its bite and two with its claws.
 
-    **Horror Nimbus**: The nalfeshnee magically emits scintillating, multicolored light. Each creature within 15 feet of the nalfeshnee that can see the light must succeed on a DC 15 Wisdom saving throw or be frightened for 1 minute. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. If a creature's saving throw is successful or the effect ends for it, the creature is immune to the nalfeshnee's Horror Nimbus for the next 24 hours.
+    Bite.
 
-    **Teleport**: The nalfeshnee magically teleports, along with any equipment it is wearing or carrying, up to 120 feet to an unoccupied space it can see.
+      Melee Weapon Attack: +10 to hit, reach 5 ft., one target. Hit: 32 (5d10 + 5) piercing damage.
+
+    Claw.
+
+      Melee Weapon Attack: +10 to hit, reach 10 ft., one target. Hit: 15 (3d6 + 5) slashing damage.
+
+    Horror Nimbus.
+
+      The nalfeshnee magically emits scintillating, multicolored light. Each creature within 15 feet of the nalfeshnee that can see the light must succeed on a DC 15 Wisdom saving throw or be frightened for 1 minute. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. If a creature's saving throw is successful or the effect ends for it, the creature is immune to the nalfeshnee's Horror Nimbus for the next 24 hours.
+
+    Teleport.
+
+      The nalfeshnee magically teleports, along with any equipment it is wearing or carrying, up to 120 feet to an unoccupied space it can see.
 
     **Variant: Summon Demon**: The demon chooses what to summon and attempts a magical summoning.
     A nalfeshnee has a 50 percent chance of summoning 1d4 vrocks, 1d3 hezrous, 1d2 glabrezus, or one nalfeshnee.
@@ -50,24 +62,36 @@ class Nalfeshnee(Monster):
 
 class NightHag(Monster):
     """
-    **Innate Spellcasting**: The hag's innate spellcasting ability is Charisma (spell save DC 14, +6 to hit with spell attacks). She can innately cast the following spells, requiring no material components:
+    Innate Spellcasting.
+
+      The hag's innate spellcasting ability is Charisma (spell save DC 14, +6 to hit with spell attacks). She can innately cast the following spells, requiring no material components:
 
     At will: detect magic, magic missile
     2/day each: plane shift (self only), ray of enfeeblement, sleep
 
-    **Magic Resistance**: The hag has advantage on saving throws against spells and other magical effects.
+    Magic Resistance.
 
-    **Night Hag Items**: A night hag carries two very rare magic items that she must craft for herself If either object is lost, the night hag will go to great lengths to retrieve it, as creating a new tool takes time and effort.
+      The hag has advantage on saving throws against spells and other magical effects.
+
+    Night Hag Items.
+
+      A night hag carries two very rare magic items that she must craft for herself If either object is lost, the night hag will go to great lengths to retrieve it, as creating a new tool takes time and effort.
     Heartstone: This lustrous black gem allows a night hag to become ethereal while it is in her possession. The touch of a heartstone also cures any disease. Crafting a heartstone takes 30 days.
     Soul Bag: When an evil humanoid dies as a result of a night hag's Nightmare Haunting, the hag catches the soul in this black sack made of stitched flesh. A soul bag can hold only one evil soul at a time, and only the night hag who crafted the bag can catch a soul with it. Crafting a soul bag takes 7 days and a humanoid sacrifice (whose flesh is used to make the bag).
 
     **Claws (Hag Form Only)**: Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 13 (2d8 + 4) slashing damage.
 
-    **Change Shape**: The hag magically polymorphs into a Small or Medium female humanoid, or back into her true form. Her statistics are the same in each form. Any equipment she is wearing or carrying isn't transformed. She reverts to her true form if she dies.
+    Change Shape.
 
-    **Etherealness**: The hag magically enters the Ethereal Plane from the Material Plane, or vice versa. To do so, the hag must have a heartstone in her possession.
+      The hag magically polymorphs into a Small or Medium female humanoid, or back into her true form. Her statistics are the same in each form. Any equipment she is wearing or carrying isn't transformed. She reverts to her true form if she dies.
 
-    **Nightmare Haunting**: While on the Ethereal Plane, the hag magically touches a sleeping humanoid on the Material Plane. A protection from evil and good spell cast on the target prevents this contact, as does a magic circle. As long as the contact persists, the target has dreadful visions. If these visions last for at least 1 hour, the target gains no benefit from its rest, and its hit point maximum is reduced by 5 (1d10). If this effect reduces the target's hit point maximum to 0, the target dies, and if the target was evil, its soul is trapped in the hag's soul bag. The reduction to the target's hit point maximum lasts until removed by the greater restoration spell or similar magic.
+    Etherealness.
+
+      The hag magically enters the Ethereal Plane from the Material Plane, or vice versa. To do so, the hag must have a heartstone in her possession.
+
+    Nightmare Haunting.
+
+      While on the Ethereal Plane, the hag magically touches a sleeping humanoid on the Material Plane. A protection from evil and good spell cast on the target prevents this contact, as does a magic circle. As long as the contact persists, the target has dreadful visions. If these visions last for at least 1 hour, the target gains no benefit from its rest, and its hit point maximum is reduced by 5 (1d10). If this effect reduces the target's hit point maximum to 0, the target dies, and if the target was evil, its soul is trapped in the hag's soul bag. The reduction to the target's hit point maximum lasts until removed by the greater restoration spell or similar magic.
     """
 
     name = "Night Hag"
@@ -93,13 +117,21 @@ class NightHag(Monster):
 
 class Nightmare(Monster):
     """
-    **Confer Fire Resistance**: The nightmare can grant resistance to fire damage to anyone riding it.
+    Confer Fire Resistance.
 
-    **Illumination**: The nightmare sheds bright light in a 10-foot radius and dim light for an additional 10 feet.
+      The nightmare can grant resistance to fire damage to anyone riding it.
 
-    **Hooves**: Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 13 (2d8 + 4) bludgeoning damage plus 7 (2d6) fire damage.
+    Illumination.
 
-    **Ethereal Stride**: The nightmare and up to three willing creatures within 5 feet of it magically enter the Ethereal Plane from the Material Plane, or vice versa.
+      The nightmare sheds bright light in a 10-foot radius and dim light for an additional 10 feet.
+
+    Hooves.
+
+      Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 13 (2d8 + 4) bludgeoning damage plus 7 (2d6) fire damage.
+
+    Ethereal Stride.
+
+      The nightmare and up to three willing creatures within 5 feet of it magically enter the Ethereal Plane from the Material Plane, or vice versa.
     """
 
     name = "Nightmare"
@@ -125,7 +157,9 @@ class Nightmare(Monster):
 
 class Noble(Monster):
     """
-    **Rapier**: Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: 5 (1d8 + 1) piercing damage.
+    Rapier.
+
+      Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: 5 (1d8 + 1) piercing damage.
     """
 
     name = "Noble"

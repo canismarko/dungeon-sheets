@@ -10,11 +10,17 @@ from dungeonsheets.stats import Ability
 
 class OchreJelly(Monster):
     """
-    **Amorphous**: The jelly can move through a space as narrow as 1 inch wide without squeezing.
+    Amorphous.
 
-    **Spider Climb**: The jelly can climb difficult surfaces, including upside down on ceilings, without needing to make an ability check.
+      The jelly can move through a space as narrow as 1 inch wide without squeezing.
 
-    **Pseudopod**: Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 9 (2d6 + 2) bludgeoning damage plus 3 (1d6) acid damage.
+    Spider Climb.
+
+      The jelly can climb difficult surfaces, including upside down on ceilings, without needing to make an ability check.
+
+    Pseudopod.
+
+      Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 9 (2d6 + 2) bludgeoning damage plus 3 (1d6) acid damage.
     """
 
     name = "Ochre Jelly"
@@ -40,15 +46,25 @@ class OchreJelly(Monster):
 
 class Octopus(Monster):
     """
-    **Hold Breath**: While out of water, the octopus can hold its breath for 30 minutes.
+    Hold Breath.
 
-    **Underwater Camouflage**: The octopus has advantage on Dexterity (Stealth) checks made while underwater.
+      While out of water, the octopus can hold its breath for 30 minutes.
 
-    **Water Breathing**: The octopus can breathe only underwater.
+    Underwater Camouflage.
 
-    **Tentacles**: Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 1 bludgeoning damage, and the target is grappled (escape DC 10). Until this grapple ends, the octopus can't use its tentacles on another target.
+      The octopus has advantage on Dexterity (Stealth) checks made while underwater.
 
-    **Ink Cloud**: A 5-foot-radius cloud of ink extends all around the octopus if it is underwater. The area is heavily obscured for 1 minute, although a significant current can disperse the ink. After releasing the ink, the octopus can use the Dash action as a bonus action.
+    Water Breathing.
+
+      The octopus can breathe only underwater.
+
+    Tentacles.
+
+      Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 1 bludgeoning damage, and the target is grappled (escape DC 10). Until this grapple ends, the octopus can't use its tentacles on another target.
+
+    Ink Cloud.
+
+      A 5-foot-radius cloud of ink extends all around the octopus if it is underwater. The area is heavily obscured for 1 minute, although a significant current can disperse the ink. After releasing the ink, the octopus can use the Dash action as a bonus action.
     """
 
     name = "Octopus"
@@ -74,9 +90,13 @@ class Octopus(Monster):
 
 class Ogre(Monster):
     """
-    **Greatclub**: Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 13 (2d8 + 4) bludgeoning damage.
+    Greatclub.
 
-    **Javelin**: Melee or Ranged Weapon Attack: +6 to hit, reach 5 ft. or range 30/120 ft., one target. Hit: 11 (2d6 + 4) piercing damage.
+      Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 13 (2d8 + 4) bludgeoning damage.
+
+    Javelin.
+
+      Melee or Ranged Weapon Attack: +6 to hit, reach 5 ft. or range 30/120 ft., one target. Hit: 11 (2d6 + 4) piercing damage.
     """
 
     name = "Ogre"
@@ -102,9 +122,13 @@ class Ogre(Monster):
 
 class OgreZombie(Monster):
     """
-    **Undead Fortitude**: If damage reduces the zombie to 0 hit points, it must make a Constitution saving throw with a DC of 5+the damage taken, unless the damage is radiant or from a critical hit. On a success, the zombie drops to 1 hit point instead.
+    Undead Fortitude.
 
-    **Morningstar**: Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 13 (2d8 + 4) bludgeoning damage.
+      If damage reduces the zombie to 0 hit points, it must make a Constitution saving throw with a DC of 5+the damage taken, unless the damage is radiant or from a critical hit. On a success, the zombie drops to 1 hit point instead.
+
+    Morningstar.
+
+      Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 13 (2d8 + 4) bludgeoning damage.
     """
 
     name = "Ogre Zombie"
@@ -130,22 +154,34 @@ class OgreZombie(Monster):
 
 class Oni(Monster):
     """
-    **Innate Spellcasting**: The oni's innate spellcasting ability is Charisma (spell save DC 13). The oni can innately cast the following spells, requiring no material components:
+    Innate Spellcasting.
+
+      The oni's innate spellcasting ability is Charisma (spell save DC 13). The oni can innately cast the following spells, requiring no material components:
 
     At will: darkness, invisibility
     1/day each: charm person, cone of cold, gaseous form, sleep
 
-    **Magic Weapons**: The oni's weapon attacks are magical.
+    Magic Weapons.
 
-    **Regeneration**: The oni regains 10 hit points at the start of its turn if it has at least 1 hit point.
+      The oni's weapon attacks are magical.
 
-    **Multiattack**: The oni makes two attacks, either with its claws or its glaive.
+    Regeneration.
+
+      The oni regains 10 hit points at the start of its turn if it has at least 1 hit point.
+
+    Multiattack.
+
+      The oni makes two attacks, either with its claws or its glaive.
 
     **Claw (Oni Form Only)**: Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 8 (1d8 + 4) slashing damage.
 
-    **Glaive**: Melee Weapon Attack: +7 to hit, reach 10 ft., one target. Hit: 15 (2d10 + 4) slashing damage, or 9 (1d10 + 4) slashing damage in Small or Medium form.
+    Glaive.
 
-    **Change Shape**: The oni magically polymorphs into a Small or Medium humanoid, into a Large giant, or back into its true form. Other than its size, its statistics are the same in each form. The only equipment that is transformed is its glaive, which shrinks so that it can be wielded in humanoid form. If the oni dies, it reverts to its true form, and its glaive reverts to its normal size.
+      Melee Weapon Attack: +7 to hit, reach 10 ft., one target. Hit: 15 (2d10 + 4) slashing damage, or 9 (1d10 + 4) slashing damage in Small or Medium form.
+
+    Change Shape.
+
+      The oni magically polymorphs into a Small or Medium humanoid, into a Large giant, or back into its true form. Other than its size, its statistics are the same in each form. The only equipment that is transformed is its glaive, which shrinks so that it can be wielded in humanoid form. If the oni dies, it reverts to its true form, and its glaive reverts to its normal size.
     """
 
     name = "Oni"
@@ -171,11 +207,17 @@ class Oni(Monster):
 
 class Orc(Monster):
     """
-    **Aggressive**: As a bonus action, the orc can move up to its speed toward a hostile creature that it can see.
+    Aggressive.
 
-    **Greataxe**: Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 9 (1d12 + 3) slashing damage.
+      As a bonus action, the orc can move up to its speed toward a hostile creature that it can see.
 
-    **Javelin**: Melee or Ranged Weapon Attack: +5 to hit, reach 5 ft. or range 30/120 ft., one target. Hit: 6 (1d6 + 3) piercing damage.
+    Greataxe.
+
+      Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 9 (1d12 + 3) slashing damage.
+
+    Javelin.
+
+      Melee or Ranged Weapon Attack: +5 to hit, reach 5 ft. or range 30/120 ft., one target. Hit: 6 (1d6 + 3) piercing damage.
     """
 
     name = "Orc"
@@ -201,15 +243,25 @@ class Orc(Monster):
 
 class Otyugh(Monster):
     """
-    **Limited Telepathy**: The otyugh can magically transmit simple messages and images to any creature within 120 ft. of it that can understand a language. This form of telepathy doesn't allow the receiving creature to telepathically respond.
+    Limited Telepathy.
 
-    **Multiattack**: The otyugh makes three attacks: one with its bite and two with its tentacles.
+      The otyugh can magically transmit simple messages and images to any creature within 120 ft. of it that can understand a language. This form of telepathy doesn't allow the receiving creature to telepathically respond.
 
-    **Bite**: Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 12 (2d8 + 3) piercing damage. If the target is a creature, it must succeed on a DC 15 Constitution saving throw against disease or become poisoned until the disease is cured. Every 24 hours that elapse, the target must repeat the saving throw, reducing its hit point maximum by 5 (1d10) on a failure. The disease is cured on a success. The target dies if the disease reduces its hit point maximum to 0. This reduction to the target's hit point maximum lasts until the disease is cured.
+    Multiattack.
 
-    **Tentacle**: Melee Weapon Attack: +6 to hit, reach 10 ft., one target. Hit: 7 (1d8 + 3) bludgeoning damage plus 4 (1d8) piercing damage. If the target is Medium or smaller, it is grappled (escape DC 13) and restrained until the grapple ends. The otyugh has two tentacles, each of which can grapple one target.
+      The otyugh makes three attacks: one with its bite and two with its tentacles.
 
-    **Tentacle Slam**: The otyugh slams creatures grappled by it into each other or a solid surface. Each creature must succeed on a DC 14 Constitution saving throw or take 10 (2d6 + 3) bludgeoning damage and be stunned until the end of the otyugh's next turn. On a successful save, the target takes half the bludgeoning damage and isn't stunned.
+    Bite.
+
+      Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 12 (2d8 + 3) piercing damage. If the target is a creature, it must succeed on a DC 15 Constitution saving throw against disease or become poisoned until the disease is cured. Every 24 hours that elapse, the target must repeat the saving throw, reducing its hit point maximum by 5 (1d10) on a failure. The disease is cured on a success. The target dies if the disease reduces its hit point maximum to 0. This reduction to the target's hit point maximum lasts until the disease is cured.
+
+    Tentacle.
+
+      Melee Weapon Attack: +6 to hit, reach 10 ft., one target. Hit: 7 (1d8 + 3) bludgeoning damage plus 4 (1d8) piercing damage. If the target is Medium or smaller, it is grappled (escape DC 13) and restrained until the grapple ends. The otyugh has two tentacles, each of which can grapple one target.
+
+    Tentacle Slam.
+
+      The otyugh slams creatures grappled by it into each other or a solid surface. Each creature must succeed on a DC 14 Constitution saving throw or take 10 (2d6 + 3) bludgeoning damage and be stunned until the end of the otyugh's next turn. On a successful save, the target takes half the bludgeoning damage and isn't stunned.
     """
 
     name = "Otyugh"
@@ -235,11 +287,17 @@ class Otyugh(Monster):
 
 class Owl(Monster):
     """
-    **Flyby**: The owl doesn't provoke opportunity attacks when it flies out of an enemy's reach.
+    Flyby.
 
-    **Keen Hearing and Sight**: The owl has advantage on Wisdom (Perception) checks that rely on hearing or sight.
+      The owl doesn't provoke opportunity attacks when it flies out of an enemy's reach.
 
-    **Talons**: Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: 1 slashing damage.
+    Keen Hearing and Sight.
+
+      The owl has advantage on Wisdom (Perception) checks that rely on hearing or sight.
+
+    Talons.
+
+      Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: 1 slashing damage.
     """
 
     name = "Owl"
@@ -265,13 +323,21 @@ class Owl(Monster):
 
 class Owlbear(Monster):
     """
-    **Keen Sight and Smell**: The owlbear has advantage on Wisdom (Perception) checks that rely on sight or smell.
+    Keen Sight and Smell.
 
-    **Multiattack**: The owlbear makes two attacks: one with its beak and one with its claws.
+      The owlbear has advantage on Wisdom (Perception) checks that rely on sight or smell.
 
-    **Beak**: Melee Weapon Attack: +7 to hit, reach 5 ft., one creature. Hit: 10 (1d10 + 5) piercing damage.
+    Multiattack.
 
-    **Claws**: Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 14 (2d8 + 5) slashing damage.
+      The owlbear makes two attacks: one with its beak and one with its claws.
+
+    Beak.
+
+      Melee Weapon Attack: +7 to hit, reach 5 ft., one creature. Hit: 10 (1d10 + 5) piercing damage.
+
+    Claws.
+
+      Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 14 (2d8 + 5) slashing damage.
     """
 
     name = "Owlbear"

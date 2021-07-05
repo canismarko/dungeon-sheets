@@ -10,7 +10,9 @@ from dungeonsheets.stats import Ability
 
 class Mage(Monster):
     """
-    **Spellcasting**: The mage is a 9th-level spellcaster. Its spellcasting ability is Intelligence (spell save DC 14, +6 to hit with spell attacks). The mage has the following wizard spells prepared:
+    Spellcasting.
+
+      The mage is a 9th-level spellcaster. Its spellcasting ability is Intelligence (spell save DC 14, +6 to hit with spell attacks). The mage has the following wizard spells prepared:
 
     - Cantrips (at will): fire bolt, light, mage hand, prestidigitation
     - 1st level (4 slots): detect magic, mage armor, magic missile, shield
@@ -19,7 +21,9 @@ class Mage(Monster):
     - 4th level (3 slots): greater invisibility, ice storm
     - 5th level (1 slot): cone of cold
 
-    **Dagger**: Melee or Ranged Weapon Attack: +5 to hit, reach 5 ft. or range 20/60 ft., one target. Hit: 4 (1d4 + 2) piercing damage.
+    Dagger.
+
+      Melee or Ranged Weapon Attack: +5 to hit, reach 5 ft. or range 20/60 ft., one target. Hit: 4 (1d4 + 2) piercing damage.
     """
 
     name = "Mage"
@@ -45,13 +49,21 @@ class Mage(Monster):
 
 class MagmaMephit(Monster):
     """
-    **Death Burst**: When the mephit dies, it explodes in a burst of lava. Each creature within 5 ft. of it must make a DC 11 Dexterity saving throw, taking 7 (2d6) fire damage on a failed save, or half as much damage on a successful one.
+    Death Burst.
 
-    **False Appearance**: While the mephit remains motionless, it is indistinguishable from an ordinary mound of magma.
+      When the mephit dies, it explodes in a burst of lava. Each creature within 5 ft. of it must make a DC 11 Dexterity saving throw, taking 7 (2d6) fire damage on a failed save, or half as much damage on a successful one.
 
-    **Innate Spellcasting**: The mephit can innately cast heat metal (spell save DC 10), requiring no material components. Its innate spellcasting ability is Charisma.
+    False Appearance.
 
-    **Claws**: Melee Weapon Attack: +3 to hit, reach 5 ft ., one creature. Hit: 3 (1d4 + 1) slashing damage plus 2 (1d4) fire damage.
+      While the mephit remains motionless, it is indistinguishable from an ordinary mound of magma.
+
+    Innate Spellcasting.
+
+      The mephit can innately cast heat metal (spell save DC 10), requiring no material components. Its innate spellcasting ability is Charisma.
+
+    Claws.
+
+      Melee Weapon Attack: +3 to hit, reach 5 ft ., one creature. Hit: 3 (1d4 + 1) slashing damage plus 2 (1d4) fire damage.
 
     **Fire Breath (Recharge 6)**: The mephit exhales a 15-foot cone of fire. Each creature in that area must make a DC 11 Dexterity saving throw, taking 7 (2d6) fire damage on a failed save, or half as much damage on a successful one.
 
@@ -81,11 +93,17 @@ class MagmaMephit(Monster):
 
 class Magmin(Monster):
     """
-    **Death Burst**: When the magmin dies, it explodes in a burst of fire and magma. Each creature within 10 ft. of it must make a DC 11 Dexterity saving throw, taking 7 (2d6) fire damage on a failed save, or half as much damage on a successful one. Flammable objects that aren't being worn or carried in that area are ignited.
+    Death Burst.
 
-    **Ignited Illumination**: As a bonus action, the magmin can set itself ablaze or extinguish its flames. While ablaze, the magmin sheds bright light in a 10-foot radius and dim light for an additional 10 ft.
+      When the magmin dies, it explodes in a burst of fire and magma. Each creature within 10 ft. of it must make a DC 11 Dexterity saving throw, taking 7 (2d6) fire damage on a failed save, or half as much damage on a successful one. Flammable objects that aren't being worn or carried in that area are ignited.
 
-    **Touch**: Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 7 (2d6) fire damage. If the target is a creature or a flammable object, it ignites. Until a target takes an action to douse the fire, the target takes 3 (1d6) fire damage at the end of each of its turns.
+    Ignited Illumination.
+
+      As a bonus action, the magmin can set itself ablaze or extinguish its flames. While ablaze, the magmin sheds bright light in a 10-foot radius and dim light for an additional 10 ft.
+
+    Touch.
+
+      Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 7 (2d6) fire damage. If the target is a creature or a flammable object, it ignites. Until a target takes an action to douse the fire, the target takes 3 (1d6) fire damage at the end of each of its turns.
     """
 
     name = "Magmin"
@@ -111,11 +129,17 @@ class Magmin(Monster):
 
 class Mammoth(Monster):
     """
-    **Trampling Charge**: If the mammoth moves at least 20 ft. straight toward a creature and then hits it with a gore attack on the same turn, that target must succeed on a DC 18 Strength saving throw or be knocked prone. If the target is prone, the mammoth can make one stomp attack against it as a bonus action.
+    Trampling Charge.
 
-    **Gore**: Melee Weapon Attack: +10 to hit, reach 10 ft., one target. Hit: 25 (4d8 + 7) piercing damage.
+      If the mammoth moves at least 20 ft. straight toward a creature and then hits it with a gore attack on the same turn, that target must succeed on a DC 18 Strength saving throw or be knocked prone. If the target is prone, the mammoth can make one stomp attack against it as a bonus action.
 
-    **Stomp**: Melee Weapon Attack: +10 to hit, reach 5 ft., one prone creature. Hit: 29 (4d10 + 7) bludgeoning damage.
+    Gore.
+
+      Melee Weapon Attack: +10 to hit, reach 10 ft., one target. Hit: 25 (4d8 + 7) piercing damage.
+
+    Stomp.
+
+      Melee Weapon Attack: +10 to hit, reach 5 ft., one prone creature. Hit: 29 (4d10 + 7) bludgeoning damage.
     """
 
     name = "Mammoth"
@@ -141,15 +165,25 @@ class Mammoth(Monster):
 
 class Manticore(Monster):
     """
-    **Tail Spike Regrowth**: The manticore has twenty-four tail spikes. Used spikes regrow when the manticore finishes a long rest.
+    Tail Spike Regrowth.
 
-    **Multiattack**: The manticore makes three attacks: one with its bite and two with its claws or three with its tail spikes.
+      The manticore has twenty-four tail spikes. Used spikes regrow when the manticore finishes a long rest.
 
-    **Bite**: Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 7 (1d8 + 3) piercing damage.
+    Multiattack.
 
-    **Claw**: Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 6 (1d6 + 3) slashing damage.
+      The manticore makes three attacks: one with its bite and two with its claws or three with its tail spikes.
 
-    **Tail Spike**: Ranged Weapon Attack: +5 to hit, range 100/200 ft., one target. Hit: 7 (1d8 + 3) piercing damage.
+    Bite.
+
+      Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 7 (1d8 + 3) piercing damage.
+
+    Claw.
+
+      Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 6 (1d6 + 3) slashing damage.
+
+    Tail Spike.
+
+      Ranged Weapon Attack: +5 to hit, range 100/200 ft., one target. Hit: 7 (1d8 + 3) piercing damage.
     """
 
     name = "Manticore"
@@ -175,19 +209,33 @@ class Manticore(Monster):
 
 class Marilith(Monster):
     """
-    **Magic Resistance**: The marilith has advantage on saving throws against spells and other magical effects.
+    Magic Resistance.
 
-    **Magic Weapons**: The marilith's weapon attacks are magical.
+      The marilith has advantage on saving throws against spells and other magical effects.
 
-    **Reactive**: The marilith can take one reaction on every turn in combat.
+    Magic Weapons.
 
-    **Multiattack**: The marilith can make seven attacks: six with its longswords and one with its tail.
+      The marilith's weapon attacks are magical.
 
-    **Longsword**: Melee Weapon Attack: +9 to hit, reach 5 ft., one target. Hit: 13 (2d8 + 4) slashing damage.
+    Reactive.
 
-    **Tail**: Melee Weapon Attack: +9 to hit, reach 10 ft., one creature. Hit: 15 (2d10 + 4) bludgeoning damage. If the target is Medium or smaller, it is grappled (escape DC 19). Until this grapple ends, the target is restrained, the marilith can automatically hit the target with its tail, and the marilith can't make tail attacks against other targets.
+      The marilith can take one reaction on every turn in combat.
 
-    **Teleport**: The marilith magically teleports, along with any equipment it is wearing or carrying, up to 120 feet to an unoccupied space it can see.
+    Multiattack.
+
+      The marilith can make seven attacks: six with its longswords and one with its tail.
+
+    Longsword.
+
+      Melee Weapon Attack: +9 to hit, reach 5 ft., one target. Hit: 13 (2d8 + 4) slashing damage.
+
+    Tail.
+
+      Melee Weapon Attack: +9 to hit, reach 10 ft., one creature. Hit: 15 (2d10 + 4) bludgeoning damage. If the target is Medium or smaller, it is grappled (escape DC 19). Until this grapple ends, the target is restrained, the marilith can automatically hit the target with its tail, and the marilith can't make tail attacks against other targets.
+
+    Teleport.
+
+      The marilith magically teleports, along with any equipment it is wearing or carrying, up to 120 feet to an unoccupied space it can see.
 
     **Variant: Summon Demon**: The demon chooses what to summon and attempts a magical summoning.
     A marilith has a 50 percent chance of summoning 1d6 vrocks, 1d4 hezrous, 1d3 glabrezus, 1d2 nalfeshnees, or one marilith.
@@ -217,9 +265,13 @@ class Marilith(Monster):
 
 class Mastiff(Monster):
     """
-    **Keen Hearing and Smell**: The mastiff has advantage on Wisdom (Perception) checks that rely on hearing or smell.
+    Keen Hearing and Smell.
 
-    **Bite**: Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: 4 (1d6 + 1) piercing damage. If the target is a creature, it must succeed on a DC 11 Strength saving throw or be knocked prone.
+      The mastiff has advantage on Wisdom (Perception) checks that rely on hearing or smell.
+
+    Bite.
+
+      Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: 4 (1d6 + 1) piercing damage. If the target is a creature, it must succeed on a DC 11 Strength saving throw or be knocked prone.
     """
 
     name = "Mastiff"
@@ -245,17 +297,27 @@ class Mastiff(Monster):
 
 class Medusa(Monster):
     """
-    **Petrifying Gaze**: When a creature that can see the medusa's eyes starts its turn within 30 ft. of the medusa, the medusa can force it to make a DC 14 Constitution saving throw if the medusa isn't incapacitated and can see the creature. If the saving throw fails by 5 or more, the creature is instantly petrified. Otherwise, a creature that fails the save begins to turn to stone and is restrained. The restrained creature must repeat the saving throw at the end of its next turn, becoming petrified on a failure or ending the effect on a success. The petrification lasts until the creature is freed by the greater restoration spell or other magic.
+    Petrifying Gaze.
+
+      When a creature that can see the medusa's eyes starts its turn within 30 ft. of the medusa, the medusa can force it to make a DC 14 Constitution saving throw if the medusa isn't incapacitated and can see the creature. If the saving throw fails by 5 or more, the creature is instantly petrified. Otherwise, a creature that fails the save begins to turn to stone and is restrained. The restrained creature must repeat the saving throw at the end of its next turn, becoming petrified on a failure or ending the effect on a success. The petrification lasts until the creature is freed by the greater restoration spell or other magic.
     Unless surprised, a creature can avert its eyes to avoid the saving throw at the start of its turn. If the creature does so, it can't see the medusa until the start of its next turn, when it can avert its eyes again. If the creature looks at the medusa in the meantime, it must immediately make the save.
     If the medusa sees itself reflected on a polished surface within 30 ft. of it and in an area of bright light, the medusa is, due to its curse, affected by its own gaze.
 
-    **Multiattack**: The medusa makes either three melee attacks--one with its snake hair and two with its shortsword--or two ranged attacks with its longbow.
+    Multiattack.
 
-    **Snake Hair**: Melee Weapon Attack: +5 to hit, reach 5 ft., one creature. Hit: 4 (1d4 + 2) piercing damage plus 14 (4d6) poison damage.
+      The medusa makes either three melee attacks--one with its snake hair and two with its shortsword--or two ranged attacks with its longbow.
 
-    **Shortsword**: Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 5 (1d6 + 2) piercing damage.
+    Snake Hair.
 
-    **Longbow**: Ranged Weapon Attack: +5 to hit, range 150/600 ft., one target. Hit: 6 (1d8 + 2) piercing damage plus 7 (2d6) poison damage.
+      Melee Weapon Attack: +5 to hit, reach 5 ft., one creature. Hit: 4 (1d4 + 2) piercing damage plus 14 (4d6) poison damage.
+
+    Shortsword.
+
+      Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 5 (1d6 + 2) piercing damage.
+
+    Longbow.
+
+      Ranged Weapon Attack: +5 to hit, range 150/600 ft., one target. Hit: 6 (1d8 + 2) piercing damage plus 7 (2d6) poison damage.
     """
 
     name = "Medusa"
@@ -281,9 +343,13 @@ class Medusa(Monster):
 
 class Merfolk(Monster):
     """
-    **Amphibious**: The merfolk can breathe air and water.
+    Amphibious.
 
-    **Spear**: Melee or Ranged Weapon Attack: +2 to hit, reach 5 ft. or range 20/60 ft., one target. Hit: 3 (1d6) piercing damage, or 4 (1d8) piercing damage if used with two hands to make a melee attack.
+      The merfolk can breathe air and water.
+
+    Spear.
+
+      Melee or Ranged Weapon Attack: +2 to hit, reach 5 ft. or range 20/60 ft., one target. Hit: 3 (1d6) piercing damage, or 4 (1d8) piercing damage if used with two hands to make a melee attack.
     """
 
     name = "Merfolk"
@@ -309,15 +375,25 @@ class Merfolk(Monster):
 
 class Merrow(Monster):
     """
-    **Amphibious**: The merrow can breathe air and water.
+    Amphibious.
 
-    **Multiattack**: The merrow makes two attacks: one with its bite and one with its claws or harpoon.
+      The merrow can breathe air and water.
 
-    **Bite**: Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 8 (1d8 + 4) piercing damage.
+    Multiattack.
 
-    **Claws**: Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 9 (2d4 + 4) slashing damage.
+      The merrow makes two attacks: one with its bite and one with its claws or harpoon.
 
-    **Harpoon**: Melee or Ranged Weapon Attack: +6 to hit, reach 5 ft. or range 20/60 ft., one target. Hit: 11 (2d6 + 4) piercing damage. If the target is a Huge or smaller creature, it must succeed on a Strength contest against the merrow or be pulled up to 20 feet toward the merrow.
+    Bite.
+
+      Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 8 (1d8 + 4) piercing damage.
+
+    Claws.
+
+      Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 9 (2d4 + 4) slashing damage.
+
+    Harpoon.
+
+      Melee or Ranged Weapon Attack: +6 to hit, reach 5 ft. or range 20/60 ft., one target. Hit: 11 (2d6 + 4) piercing damage. If the target is a Huge or smaller creature, it must succeed on a Strength contest against the merrow or be pulled up to 20 feet toward the merrow.
     """
 
     name = "Merrow"
@@ -343,17 +419,25 @@ class Merrow(Monster):
 
 class Mimic(Monster):
     """
-    **Shapechanger**: The mimic can use its action to polymorph into an object or back into its true, amorphous form. Its statistics are the same in each form. Any equipment it is wearing or carrying isn 't transformed. It reverts to its true form if it dies.
+    Shapechanger.
+
+      The mimic can use its action to polymorph into an object or back into its true, amorphous form. Its statistics are the same in each form. Any equipment it is wearing or carrying isn 't transformed. It reverts to its true form if it dies.
 
     **Adhesive (Object Form Only)**: The mimic adheres to anything that touches it. A Huge or smaller creature adhered to the mimic is also grappled by it (escape DC 13). Ability checks made to escape this grapple have disadvantage.
 
     **False Appearance (Object Form Only)**: While the mimic remains motionless, it is indistinguishable from an ordinary object.
 
-    **Grappler**: The mimic has advantage on attack rolls against any creature grappled by it.
+    Grappler.
 
-    **Pseudopod**: Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 7 (1d8 + 3) bludgeoning damage. If the mimic is in object form, the target is subjected to its Adhesive trait.
+      The mimic has advantage on attack rolls against any creature grappled by it.
 
-    **Bite**: Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 7 (1d8 + 3) piercing damage plus 4 (1d8) acid damage.
+    Pseudopod.
+
+      Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 7 (1d8 + 3) bludgeoning damage. If the mimic is in object form, the target is subjected to its Adhesive trait.
+
+    Bite.
+
+      Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 7 (1d8 + 3) piercing damage plus 4 (1d8) acid damage.
     """
 
     name = "Mimic"
@@ -379,15 +463,25 @@ class Mimic(Monster):
 
 class Minotaur(Monster):
     """
-    **Charge**: If the minotaur moves at least 10 ft. straight toward a target and then hits it with a gore attack on the same turn, the target takes an extra 9 (2d8) piercing damage. If the target is a creature, it must succeed on a DC 14 Strength saving throw or be pushed up to 10 ft. away and knocked prone.
+    Charge.
 
-    **Labyrinthine Recall**: The minotaur can perfectly recall any path it has traveled.
+      If the minotaur moves at least 10 ft. straight toward a target and then hits it with a gore attack on the same turn, the target takes an extra 9 (2d8) piercing damage. If the target is a creature, it must succeed on a DC 14 Strength saving throw or be pushed up to 10 ft. away and knocked prone.
 
-    **Reckless**: At the start of its turn, the minotaur can gain advantage on all melee weapon attack rolls it makes during that turn, but attack rolls against it have advantage until the start of its next turn.
+    Labyrinthine Recall.
 
-    **Greataxe**: Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 17 (2d12 + 4) slashing damage.
+      The minotaur can perfectly recall any path it has traveled.
 
-    **Gore**: Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 13 (2d8 + 4) piercing damage.
+    Reckless.
+
+      At the start of its turn, the minotaur can gain advantage on all melee weapon attack rolls it makes during that turn, but attack rolls against it have advantage until the start of its next turn.
+
+    Greataxe.
+
+      Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 17 (2d12 + 4) slashing damage.
+
+    Gore.
+
+      Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 13 (2d8 + 4) piercing damage.
     """
 
     name = "Minotaur"
@@ -413,11 +507,17 @@ class Minotaur(Monster):
 
 class MinotaurSkeleton(Monster):
     """
-    **Charge**: If the skeleton moves at least 10 feet straight toward a target and then hits it with a gore attack on the same turn, the target takes an extra 9 (2d8) piercing damage. If the target is a creature, it must succeed on a DC 14 Strength saving throw or be pushed up to 10 feet away and knocked prone.
+    Charge.
 
-    **Greataxe**: Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 17 (2d12 + 4) slashing damage.
+      If the skeleton moves at least 10 feet straight toward a target and then hits it with a gore attack on the same turn, the target takes an extra 9 (2d8) piercing damage. If the target is a creature, it must succeed on a DC 14 Strength saving throw or be pushed up to 10 feet away and knocked prone.
 
-    **Gore**: Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 13 (2d8 + 4) piercing damage.
+    Greataxe.
+
+      Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 17 (2d12 + 4) slashing damage.
+
+    Gore.
+
+      Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 13 (2d8 + 4) piercing damage.
     """
 
     name = "Minotaur Skeleton"
@@ -443,11 +543,15 @@ class MinotaurSkeleton(Monster):
 
 class Mule(Monster):
     """
-    **Beast of Burden**: The mule is considered to be a Large animal for the purpose of determining its carrying capacity.
+    Beast of Burden.
+
+      The mule is considered to be a Large animal for the purpose of determining its carrying capacity.
 
     **Sure-Footed**: The mule has advantage on Strength and Dexterity saving throws made against effects that would knock it prone.
 
-    **Hooves**: Melee Weapon Attack: +2 to hit, reach 5 ft., one target. Hit: 4 (1d4 + 2) bludgeoning damage.
+    Hooves.
+
+      Melee Weapon Attack: +2 to hit, reach 5 ft., one target. Hit: 4 (1d4 + 2) bludgeoning damage.
     """
 
     name = "Mule"
@@ -473,11 +577,17 @@ class Mule(Monster):
 
 class Mummy(Monster):
     """
-    **Multiattack**: The mummy can use its Dreadful Glare and makes one attack with its rotting fist.
+    Multiattack.
 
-    **Rotting Fist**: Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 10 (2d6 + 3) bludgeoning damage plus 10 (3d6) necrotic damage. If the target is a creature, it must succeed on a DC 12 Constitution saving throw or be cursed with mummy rot. The cursed target can't regain hit points, and its hit point maximum decreases by 10 (3d6) for every 24 hours that elapse. If the curse reduces the target's hit point maximum to 0, the target dies, and its body turns to dust. The curse lasts until removed by the remove curse spell or other magic.
+      The mummy can use its Dreadful Glare and makes one attack with its rotting fist.
 
-    **Dreadful Glare**: The mummy targets one creature it can see within 60 ft. of it. If the target can see the mummy, it must succeed on a DC 11 Wisdom saving throw against this magic or become frightened until the end of the mummy's next turn. If the target fails the saving throw by 5 or more, it is also paralyzed for the same duration. A target that succeeds on the saving throw is immune to the Dreadful Glare of all mummies (but not mummy lords) for the next 24 hours.
+    Rotting Fist.
+
+      Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 10 (2d6 + 3) bludgeoning damage plus 10 (3d6) necrotic damage. If the target is a creature, it must succeed on a DC 12 Constitution saving throw or be cursed with mummy rot. The cursed target can't regain hit points, and its hit point maximum decreases by 10 (3d6) for every 24 hours that elapse. If the curse reduces the target's hit point maximum to 0, the target dies, and its body turns to dust. The curse lasts until removed by the remove curse spell or other magic.
+
+    Dreadful Glare.
+
+      The mummy targets one creature it can see within 60 ft. of it. If the target can see the mummy, it must succeed on a DC 11 Wisdom saving throw against this magic or become frightened until the end of the mummy's next turn. If the target fails the saving throw by 5 or more, it is also paralyzed for the same duration. A target that succeeds on the saving throw is immune to the Dreadful Glare of all mummies (but not mummy lords) for the next 24 hours.
     """
 
     name = "Mummy"
@@ -503,11 +613,17 @@ class Mummy(Monster):
 
 class MummyLord(Monster):
     """
-    **Magic Resistance**: The mummy lord has advantage on saving throws against spells and other magical effects.
+    Magic Resistance.
 
-    **Rejuvenation**: A destroyed mummy lord gains a new body in 24 hours if its heart is intact, regaining all its hit points and becoming active again. The new body appears within 5 feet of the mummy lord's heart.
+      The mummy lord has advantage on saving throws against spells and other magical effects.
 
-    **Spellcasting**: The mummy lord is a 10th-level spellcaster. Its spellcasting ability is Wisdom (spell save DC 17, +9 to hit with spell attacks). The mummy lord has the following cleric spells prepared:
+    Rejuvenation.
+
+      A destroyed mummy lord gains a new body in 24 hours if its heart is intact, regaining all its hit points and becoming active again. The new body appears within 5 feet of the mummy lord's heart.
+
+    Spellcasting.
+
+      The mummy lord is a 10th-level spellcaster. Its spellcasting ability is Wisdom (spell save DC 17, +9 to hit with spell attacks). The mummy lord has the following cleric spells prepared:
 
     - Cantrips (at will): sacred flame, thaumaturgy
     - 1st level (4 slots): command, guiding bolt, shield of faith
@@ -517,11 +633,17 @@ class MummyLord(Monster):
     - 5th level (2 slots): contagion, insect plague
     - 6th level (1 slot): harm
 
-    **Multiattack**: The mummy can use its Dreadful Glare and makes one attack with its rotting fist.
+    Multiattack.
 
-    **Rotting Fist**: Melee Weapon Attack: +9 to hit, reach 5 ft., one target. Hit: 14 (3d6 + 4) bludgeoning damage plus 21 (6d6) necrotic damage. If the target is a creature, it must succeed on a DC 16 Constitution saving throw or be cursed with mummy rot. The cursed target can't regain hit points, and its hit point maximum decreases by 10 (3d6) for every 24 hours that elapse. If the curse reduces the target's hit point maximum to 0, the target dies, and its body turns to dust. The curse lasts until removed by the remove curse spell or other magic.
+      The mummy can use its Dreadful Glare and makes one attack with its rotting fist.
 
-    **Dreadful Glare**: The mummy lord targets one creature it can see within 60 feet of it. If the target can see the mummy lord, it must succeed on a DC 16 Wisdom saving throw against this magic or become frightened until the end of the mummy's next turn. If the target fails the saving throw by 5 or more, it is also paralyzed for the same duration. A target that succeeds on the saving throw is immune to the Dreadful Glare of all mummies and mummy lords for the next 24 hours.
+    Rotting Fist.
+
+      Melee Weapon Attack: +9 to hit, reach 5 ft., one target. Hit: 14 (3d6 + 4) bludgeoning damage plus 21 (6d6) necrotic damage. If the target is a creature, it must succeed on a DC 16 Constitution saving throw or be cursed with mummy rot. The cursed target can't regain hit points, and its hit point maximum decreases by 10 (3d6) for every 24 hours that elapse. If the curse reduces the target's hit point maximum to 0, the target dies, and its body turns to dust. The curse lasts until removed by the remove curse spell or other magic.
+
+    Dreadful Glare.
+
+      The mummy lord targets one creature it can see within 60 feet of it. If the target can see the mummy lord, it must succeed on a DC 16 Wisdom saving throw against this magic or become frightened until the end of the mummy's next turn. If the target fails the saving throw by 5 or more, it is also paralyzed for the same duration. A target that succeeds on the saving throw is immune to the Dreadful Glare of all mummies and mummy lords for the next 24 hours.
     """
 
     name = "Mummy Lord"

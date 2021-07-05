@@ -10,13 +10,21 @@ from dungeonsheets.stats import Ability
 
 class SaberToothedTiger(Monster):
     """
-    **Keen Smell**: The tiger has advantage on Wisdom (Perception) checks that rely on smell.
+    Keen Smell.
 
-    **Pounce**: If the tiger moves at least 20 ft. straight toward a creature and then hits it with a claw attack on the same turn, that target must succeed on a DC 14 Strength saving throw or be knocked prone. If the target is prone, the tiger can make one bite attack against it as a bonus action.
+      The tiger has advantage on Wisdom (Perception) checks that rely on smell.
 
-    **Bite**: Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 10 (1d10 + 5) piercing damage.
+    Pounce.
 
-    **Claw**: Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 12 (2d6 + 5) slashing damage.
+      If the tiger moves at least 20 ft. straight toward a creature and then hits it with a claw attack on the same turn, that target must succeed on a DC 14 Strength saving throw or be knocked prone. If the target is prone, the tiger can make one bite attack against it as a bonus action.
+
+    Bite.
+
+      Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 10 (1d10 + 5) piercing damage.
+
+    Claw.
+
+      Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 12 (2d6 + 5) slashing damage.
     """
 
     name = "Saber-Toothed Tiger"
@@ -42,19 +50,33 @@ class SaberToothedTiger(Monster):
 
 class Sahuagin(Monster):
     """
-    **Blood Frenzy**: The sahuagin has advantage on melee attack rolls against any creature that doesn't have all its hit points.
+    Blood Frenzy.
 
-    **Limited Amphibiousness**: The sahuagin can breathe air and water, but it needs to be submerged at least once every 4 hours to avoid suffocating.
+      The sahuagin has advantage on melee attack rolls against any creature that doesn't have all its hit points.
 
-    **Shark Telepathy**: The sahuagin can magically command any shark within 120 feet of it, using a limited telepathy.
+    Limited Amphibiousness.
 
-    **Multiattack**: The sahuagin makes two melee attacks: one with its bite and one with its claws or spear.
+      The sahuagin can breathe air and water, but it needs to be submerged at least once every 4 hours to avoid suffocating.
 
-    **Bite**: Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: 3 (1d4 + 1) piercing damage.
+    Shark Telepathy.
 
-    **Claws**: Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: 3 (1d4 + 1) slashing damage.
+      The sahuagin can magically command any shark within 120 feet of it, using a limited telepathy.
 
-    **Spear**: Melee or Ranged Weapon Attack: +3 to hit, reach 5 ft. or range 20/60 ft., one target. Hit: 4 (1d6 + 1) piercing damage, or 5 (1d8 + 1) piercing damage if used with two hands to make a melee attack.
+    Multiattack.
+
+      The sahuagin makes two melee attacks: one with its bite and one with its claws or spear.
+
+    Bite.
+
+      Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: 3 (1d4 + 1) piercing damage.
+
+    Claws.
+
+      Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: 3 (1d4 + 1) slashing damage.
+
+    Spear.
+
+      Melee or Ranged Weapon Attack: +3 to hit, reach 5 ft. or range 20/60 ft., one target. Hit: 4 (1d6 + 1) piercing damage, or 5 (1d8 + 1) piercing damage if used with two hands to make a melee attack.
     """
 
     name = "Sahuagin"
@@ -80,15 +102,25 @@ class Sahuagin(Monster):
 
 class Salamander(Monster):
     """
-    **Heated Body**: A creature that touches the salamander or hits it with a melee attack while within 5 ft. of it takes 7 (2d6) fire damage.
+    Heated Body.
 
-    **Heated Weapons**: Any metal melee weapon the salamander wields deals an extra 3 (1d6) fire damage on a hit (included in the attack).
+      A creature that touches the salamander or hits it with a melee attack while within 5 ft. of it takes 7 (2d6) fire damage.
 
-    **Multiattack**: The salamander makes two attacks: one with its spear and one with its tail.
+    Heated Weapons.
 
-    **Spear**: Melee or Ranged Weapon Attack: +7 to hit, reach 5 ft. or range 20 ft./60 ft., one target. Hit: 11 (2d6 + 4) piercing damage, or 13 (2d8 + 4) piercing damage if used with two hands to make a melee attack, plus 3 (1d6) fire damage.
+      Any metal melee weapon the salamander wields deals an extra 3 (1d6) fire damage on a hit (included in the attack).
 
-    **Tail**: Melee Weapon Attack: +7 to hit, reach 10 ft., one target. Hit: 11 (2d6 + 4) bludgeoning damage plus 7 (2d6) fire damage, and the target is grappled (escape DC 14). Until this grapple ends, the target is restrained, the salamander can automatically hit the target with its tail, and the salamander can't make tail attacks against other targets.
+    Multiattack.
+
+      The salamander makes two attacks: one with its spear and one with its tail.
+
+    Spear.
+
+      Melee or Ranged Weapon Attack: +7 to hit, reach 5 ft. or range 20 ft./60 ft., one target. Hit: 11 (2d6 + 4) piercing damage, or 13 (2d8 + 4) piercing damage if used with two hands to make a melee attack, plus 3 (1d6) fire damage.
+
+    Tail.
+
+      Melee Weapon Attack: +7 to hit, reach 10 ft., one target. Hit: 11 (2d6 + 4) bludgeoning damage plus 7 (2d6) fire damage, and the target is grappled (escape DC 14). Until this grapple ends, the target is restrained, the salamander can automatically hit the target with its tail, and the salamander can't make tail attacks against other targets.
     """
 
     name = "Salamander"
@@ -114,13 +146,21 @@ class Salamander(Monster):
 
 class Satyr(Monster):
     """
-    **Magic Resistance**: The satyr has advantage on saving throws against spells and other magical effects.
+    Magic Resistance.
 
-    **Ram**: Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: 6 (2d4 + 1) bludgeoning damage.
+      The satyr has advantage on saving throws against spells and other magical effects.
 
-    **Shortsword**: Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 6 (1 d6 + 3) piercing damage.
+    Ram.
 
-    **Shortbow**: Ranged Weapon Attack: +5 to hit, range 80/320 ft., one target. Hit: 6 (1d6 + 3) piercing damage.
+      Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: 6 (2d4 + 1) bludgeoning damage.
+
+    Shortsword.
+
+      Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 6 (1 d6 + 3) piercing damage.
+
+    Shortbow.
+
+      Ranged Weapon Attack: +5 to hit, range 80/320 ft., one target. Hit: 6 (1d6 + 3) piercing damage.
 
     **Variant: Panpipes**: Gentle Lullaby. The creature falls asleep and is unconscious for 1 minute. The effect ends if the creature takes damage or if someone takes an action to shake the creature awake.
     """
@@ -148,7 +188,9 @@ class Satyr(Monster):
 
 class Scorpion(Monster):
     """
-    **Sting**: Melee Weapon Attack: +2 to hit, reach 5 ft., one creature. Hit: 1 piercing damage, and the target must make a DC 9 Constitution saving throw, taking 4 (1d8) poison damage on a failed save, or half as much damage on a successful one.
+    Sting.
+
+      Melee Weapon Attack: +2 to hit, reach 5 ft., one creature. Hit: 1 piercing damage, and the target must make a DC 9 Constitution saving throw, taking 4 (1d8) poison damage on a failed save, or half as much damage on a successful one.
     """
 
     name = "Scorpion"
@@ -174,13 +216,21 @@ class Scorpion(Monster):
 
 class Scout(Monster):
     """
-    **Keen Hearing and Sight**: The scout has advantage on Wisdom (Perception) checks that rely on hearing or sight.
+    Keen Hearing and Sight.
 
-    **Multiattack**: The scout makes two melee attacks or two ranged attacks.
+      The scout has advantage on Wisdom (Perception) checks that rely on hearing or sight.
 
-    **Shortsword**: Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 5 (1d6 + 2) piercing damage.
+    Multiattack.
 
-    **Longbow**: Ranged Weapon Attack: +4 to hit, ranged 150/600 ft., one target. Hit: 6 (1d8 + 2) piercing damage.
+      The scout makes two melee attacks or two ranged attacks.
+
+    Shortsword.
+
+      Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 5 (1d6 + 2) piercing damage.
+
+    Longbow.
+
+      Ranged Weapon Attack: +4 to hit, ranged 150/600 ft., one target. Hit: 6 (1d8 + 2) piercing damage.
     """
 
     name = "Scout"
@@ -206,16 +256,26 @@ class Scout(Monster):
 
 class SeaHag(Monster):
     """
-    **Amphibious**: The hag can breathe air and water.
+    Amphibious.
 
-    **Horrific Appearance**: Any humanoid that starts its turn within 30 feet of the hag and can see the hag's true form must make a DC 11 Wisdom saving throw. On a failed save, the creature is frightened for 1 minute. A creature can repeat the saving throw at the end of each of its turns, with disadvantage if the hag is within line of sight, ending the effect on itself on a success. If a creature's saving throw is successful or the effect ends for it, the creature is immune to the hag's Horrific Appearance for the next 24 hours.
+      The hag can breathe air and water.
+
+    Horrific Appearance.
+
+      Any humanoid that starts its turn within 30 feet of the hag and can see the hag's true form must make a DC 11 Wisdom saving throw. On a failed save, the creature is frightened for 1 minute. A creature can repeat the saving throw at the end of each of its turns, with disadvantage if the hag is within line of sight, ending the effect on itself on a success. If a creature's saving throw is successful or the effect ends for it, the creature is immune to the hag's Horrific Appearance for the next 24 hours.
     Unless the target is surprised or the revelation of the hag's true form is sudden, the target can avert its eyes and avoid making the initial saving throw. Until the start of its next turn, a creature that averts its eyes has disadvantage on attack rolls against the hag.
 
-    **Claws**: Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 10 (2d6 + 3) slashing damage.
+    Claws.
 
-    **Death Glare**: The hag targets one frightened creature she can see within 30 ft. of her. If the target can see the hag, it must succeed on a DC 11 Wisdom saving throw against this magic or drop to 0 hit points.
+      Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 10 (2d6 + 3) slashing damage.
 
-    **Illusory Appearance**: The hag covers herself and anything she is wearing or carrying with a magical illusion that makes her look like an ugly creature of her general size and humanoid shape. The effect ends if the hag takes a bonus action to end it or if she dies.
+    Death Glare.
+
+      The hag targets one frightened creature she can see within 30 ft. of her. If the target can see the hag, it must succeed on a DC 11 Wisdom saving throw against this magic or drop to 0 hit points.
+
+    Illusory Appearance.
+
+      The hag covers herself and anything she is wearing or carrying with a magical illusion that makes her look like an ugly creature of her general size and humanoid shape. The effect ends if the hag takes a bonus action to end it or if she dies.
     The changes wrought by this effect fail to hold up to physical inspection. For example, the hag could appear to have no claws, but someone touching her hand might feel the claws. Otherwise, a creature must take an action to visually inspect the illusion and succeed on a DC 16 Intelligence (Investigation) check to discern that the hag is disguised.
     """
 
@@ -242,7 +302,9 @@ class SeaHag(Monster):
 
 class SeaHorse(Monster):
     """
-    **Water Breathing**: The sea horse can breathe only underwater.
+    Water Breathing.
+
+      The sea horse can breathe only underwater.
     """
 
     name = "Sea Horse"
@@ -268,13 +330,21 @@ class SeaHorse(Monster):
 
 class Shadow(Monster):
     """
-    **Amorphous**: The shadow can move through a space as narrow as 1 inch wide without squeezing.
+    Amorphous.
 
-    **Shadow Stealth**: While in dim light or darkness, the shadow can take the Hide action as a bonus action. Its stealth bonus is also improved to +6.
+      The shadow can move through a space as narrow as 1 inch wide without squeezing.
 
-    **Sunlight Weakness**: While in sunlight, the shadow has disadvantage on attack rolls, ability checks, and saving throws.
+    Shadow Stealth.
 
-    **Strength Drain**: Melee Weapon Attack: +4 to hit, reach 5 ft., one creature. Hit: 9 (2d6 + 2) necrotic damage, and the target's Strength score is reduced by 1d4. The target dies if this reduces its Strength to 0. Otherwise, the reduction lasts until the target finishes a short or long rest.
+      While in dim light or darkness, the shadow can take the Hide action as a bonus action. Its stealth bonus is also improved to +6.
+
+    Sunlight Weakness.
+
+      While in sunlight, the shadow has disadvantage on attack rolls, ability checks, and saving throws.
+
+    Strength Drain.
+
+      Melee Weapon Attack: +4 to hit, reach 5 ft., one creature. Hit: 9 (2d6 + 2) necrotic damage, and the target's Strength score is reduced by 1d4. The target dies if this reduces its Strength to 0. Otherwise, the reduction lasts until the target finishes a short or long rest.
     If a non-evil humanoid dies from this attack, a new shadow rises from the corpse 1d4 hours later.
     """
 
@@ -348,13 +418,21 @@ class ShadowDemon(Monster):
 
 class ShamblingMound(Monster):
     """
-    **Lightning Absorption**: Whenever the shambling mound is subjected to lightning damage, it takes no damage and regains a number of hit points equal to the lightning damage dealt.
+    Lightning Absorption.
 
-    **Multiattack**: The shambling mound makes two slam attacks. If both attacks hit a Medium or smaller target, the target is grappled (escape DC 14), and the shambling mound uses its Engulf on it.
+      Whenever the shambling mound is subjected to lightning damage, it takes no damage and regains a number of hit points equal to the lightning damage dealt.
 
-    **Slam**: Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 13 (2d8 + 4) bludgeoning damage.
+    Multiattack.
 
-    **Engulf**: The shambling mound engulfs a Medium or smaller creature grappled by it. The engulfed target is blinded, restrained, and unable to breathe, and it must succeed on a DC 14 Constitution saving throw at the start of each of the mound's turns or take 13 (2d8 + 4) bludgeoning damage. If the mound moves, the engulfed target moves with it. The mound can have only one creature engulfed at a time.
+      The shambling mound makes two slam attacks. If both attacks hit a Medium or smaller target, the target is grappled (escape DC 14), and the shambling mound uses its Engulf on it.
+
+    Slam.
+
+      Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 13 (2d8 + 4) bludgeoning damage.
+
+    Engulf.
+
+      The shambling mound engulfs a Medium or smaller creature grappled by it. The engulfed target is blinded, restrained, and unable to breathe, and it must succeed on a DC 14 Constitution saving throw at the start of each of the mound's turns or take 13 (2d8 + 4) bludgeoning damage. If the mound moves, the engulfed target moves with it. The mound can have only one creature engulfed at a time.
     """
 
     name = "Shambling Mound"
@@ -380,15 +458,25 @@ class ShamblingMound(Monster):
 
 class ShieldGuardian(Monster):
     """
-    **Bound**: The shield guardian is magically bound to an amulet. As long as the guardian and its amulet are on the same plane of existence, the amulet's wearer can telepathically call the guardian to travel to it, and the guardian knows the distance and direction to the amulet. If the guardian is within 60 feet of the amulet's wearer, half of any damage the wearer takes (rounded up) is transferred to the guardian.
+    Bound.
 
-    **Regeneration**: The shield guardian regains 10 hit points at the start of its turn if it has at least 1 hit. point.
+      The shield guardian is magically bound to an amulet. As long as the guardian and its amulet are on the same plane of existence, the amulet's wearer can telepathically call the guardian to travel to it, and the guardian knows the distance and direction to the amulet. If the guardian is within 60 feet of the amulet's wearer, half of any damage the wearer takes (rounded up) is transferred to the guardian.
 
-    **Spell Storing**: A spellcaster who wears the shield guardian's amulet can cause the guardian to store one spell of 4th level or lower. To do so, the wearer must cast the spell on the guardian. The spell has no effect but is stored within the guardian. When commanded to do so by the wearer or when a situation arises that was predefined by the spellcaster, the guardian casts the stored spell with any parameters set by the original caster, requiring no components. When the spell is cast or a new spell is stored, any previously stored spell is lost.
+    Regeneration.
 
-    **Multiattack**: The guardian makes two fist attacks.
+      The shield guardian regains 10 hit points at the start of its turn if it has at least 1 hit. point.
 
-    **Fist**: Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 11 (2d6 + 4) bludgeoning damage.
+    Spell Storing.
+
+      A spellcaster who wears the shield guardian's amulet can cause the guardian to store one spell of 4th level or lower. To do so, the wearer must cast the spell on the guardian. The spell has no effect but is stored within the guardian. When commanded to do so by the wearer or when a situation arises that was predefined by the spellcaster, the guardian casts the stored spell with any parameters set by the original caster, requiring no components. When the spell is cast or a new spell is stored, any previously stored spell is lost.
+
+    Multiattack.
+
+      The guardian makes two fist attacks.
+
+    Fist.
+
+      Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 11 (2d6 + 4) bludgeoning damage.
     """
 
     name = "Shield Guardian"
@@ -414,9 +502,13 @@ class ShieldGuardian(Monster):
 
 class Shrieker(Monster):
     """
-    **False Appearance**: While the shrieker remains motionless, it is indistinguishable from an ordinary fungus.
+    False Appearance.
 
-    **Shriek**: When bright light or a creature is within 30 feet of the shrieker, it emits a shriek audible within 300 feet of it. The shrieker continues to shriek until the disturbance moves out of range and for 1d4 of the shrieker's turns afterward
+      While the shrieker remains motionless, it is indistinguishable from an ordinary fungus.
+
+    Shriek.
+
+      When bright light or a creature is within 30 feet of the shrieker, it emits a shriek audible within 300 feet of it. The shrieker continues to shriek until the disturbance moves out of range and for 1d4 of the shrieker's turns afterward
     """
 
     name = "Shrieker"
@@ -442,9 +534,13 @@ class Shrieker(Monster):
 
 class SilverDragonWyrmling(Monster):
     """
-    **Bite**: Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 9 (1d10 + 4) piercing damage.
+    Bite.
 
-    **Breath Weapons**: The dragon uses one of the following breath weapons.
+      Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 9 (1d10 + 4) piercing damage.
+
+    Breath Weapons.
+
+      The dragon uses one of the following breath weapons.
     Cold Breath. The dragon exhales an icy blast in a 15-foot cone. Each creature in that area must make a DC 13 Constitution saving throw, taking 18 (4d8) cold damage on a failed save, or half as much damage on a successful one.
     Paralyzing Breath. The dragon exhales paralyzing gas in a 15-foot cone. Each creature in that area must succeed on a DC 13 Constitution saving throw or be paralyzed for 1 minute. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.
     """
@@ -472,9 +568,13 @@ class SilverDragonWyrmling(Monster):
 
 class Skeleton(Monster):
     """
-    **Shortsword**: Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 5 (1d6 + 2) piercing damage.
+    Shortsword.
 
-    **Shortbow**: Ranged Weapon Attack: +4 to hit, range 80/320 ft., one target. Hit: 5 (1d6 + 2) piercing damage.
+      Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 5 (1d6 + 2) piercing damage.
+
+    Shortbow.
+
+      Ranged Weapon Attack: +4 to hit, range 80/320 ft., one target. Hit: 5 (1d6 + 2) piercing damage.
     """
 
     name = "Skeleton"
@@ -500,26 +600,44 @@ class Skeleton(Monster):
 
 class Solar(Monster):
     """
-    **Angelic Weapons**: The solar's weapon attacks are magical. When the solar hits with any weapon, the weapon deals an extra 6d8 radiant damage (included in the attack).
+    Angelic Weapons.
 
-    **Divine Awareness**: The solar knows if it hears a lie.
+      The solar's weapon attacks are magical. When the solar hits with any weapon, the weapon deals an extra 6d8 radiant damage (included in the attack).
 
-    **Innate Spellcasting**: The solar's spell casting ability is Charisma (spell save DC 25). It can innately cast the following spells, requiring no material components:
+    Divine Awareness.
+
+      The solar knows if it hears a lie.
+
+    Innate Spellcasting.
+
+      The solar's spell casting ability is Charisma (spell save DC 25). It can innately cast the following spells, requiring no material components:
     At will: detect evil and good, invisibility (self only)
     3/day each: blade barrier, dispel evil and good, resurrection
     1/day each: commune, control weather
 
-    **Magic Resistance**: The solar has advantage on saving throws against spells and other magical effects.
+    Magic Resistance.
 
-    **Multiattack**: The solar makes two greatsword attacks.
+      The solar has advantage on saving throws against spells and other magical effects.
 
-    **Greatsword**: Melee Weapon Attack: +15 to hit, reach 5 ft., one target. Hit: 22 (4d6 + 8) slashing damage plus 27 (6d8) radiant damage.
+    Multiattack.
 
-    **Slaying Longbow**: Ranged Weapon Attack: +13 to hit, range 150/600 ft., one target. Hit: 15 (2d8 + 6) piercing damage plus 27 (6d8) radiant damage. If the target is a creature that has 190 hit points or fewer, it must succeed on a DC 15 Constitution saving throw or die.
+      The solar makes two greatsword attacks.
 
-    **Flying Sword**: The solar releases its greatsword to hover magically in an unoccupied space within 5 ft. of it. If the solar can see the sword, the solar can mentally command it as a bonus action to fly up to 50 ft. and either make one attack against a target or return to the solar's hands. If the hovering sword is targeted by any effect, the solar is considered to be holding it. The hovering sword falls if the solar dies.
+    Greatsword.
 
-    **Healing Touch**: The solar touches another creature. The target magically regains 40 (8d8 + 4) hit points and is freed from any curse, disease, poison, blindness, or deafness.
+      Melee Weapon Attack: +15 to hit, reach 5 ft., one target. Hit: 22 (4d6 + 8) slashing damage plus 27 (6d8) radiant damage.
+
+    Slaying Longbow.
+
+      Ranged Weapon Attack: +13 to hit, range 150/600 ft., one target. Hit: 15 (2d8 + 6) piercing damage plus 27 (6d8) radiant damage. If the target is a creature that has 190 hit points or fewer, it must succeed on a DC 15 Constitution saving throw or die.
+
+    Flying Sword.
+
+      The solar releases its greatsword to hover magically in an unoccupied space within 5 ft. of it. If the solar can see the sword, the solar can mentally command it as a bonus action to fly up to 50 ft. and either make one attack against a target or return to the solar's hands. If the hovering sword is targeted by any effect, the solar is considered to be holding it. The hovering sword falls if the solar dies.
+
+    Healing Touch.
+
+      The solar touches another creature. The target magically regains 40 (8d8 + 4) hit points and is freed from any curse, disease, poison, blindness, or deafness.
     """
 
     name = "Solar"
@@ -545,11 +663,17 @@ class Solar(Monster):
 
 class Specter(Monster):
     """
-    **Incorporeal Movement**: The specter can move through other creatures and objects as if they were difficult terrain. It takes 5 (1d10) force damage if it ends its turn inside an object.
+    Incorporeal Movement.
 
-    **Sunlight Sensitivity**: While in sunlight, the specter has disadvantage on attack rolls, as well as on Wisdom (Perception) checks that rely on sight.
+      The specter can move through other creatures and objects as if they were difficult terrain. It takes 5 (1d10) force damage if it ends its turn inside an object.
 
-    **Life Drain**: Melee Spell Attack: +4 to hit, reach 5 ft., one creature. Hit: 10 (3d6) necrotic damage. The target must succeed on a DC 10 Constitution saving throw or its hit point maximum is reduced by an amount equal to the damage taken. This reduction lasts until the creature finishes a long rest. The target dies if this effect reduces its hit point maximum to 0.
+    Sunlight Sensitivity.
+
+      While in sunlight, the specter has disadvantage on attack rolls, as well as on Wisdom (Perception) checks that rely on sight.
+
+    Life Drain.
+
+      Melee Spell Attack: +4 to hit, reach 5 ft., one creature. Hit: 10 (3d6) necrotic damage. The target must succeed on a DC 10 Constitution saving throw or its hit point maximum is reduced by an amount equal to the damage taken. This reduction lasts until the creature finishes a long rest. The target dies if this effect reduces its hit point maximum to 0.
     """
 
     name = "Specter"
@@ -575,13 +699,21 @@ class Specter(Monster):
 
 class Spider(Monster):
     """
-    **Spider Climb**: The spider can climb difficult surfaces, including upside down on ceilings, without needing to make an ability check.
+    Spider Climb.
 
-    **Web Sense**: While in contact with a web, the spider knows the exact location of any other creature in contact with the same web.
+      The spider can climb difficult surfaces, including upside down on ceilings, without needing to make an ability check.
 
-    **Web Walker**: The spider ignores movement restrictions caused by webbing.
+    Web Sense.
 
-    **Bite**: Melee Weapon Attack: +4 to hit, reach 5 ft., one creature. Hit: 1 piercing damage, and the target must succeed on a DC 9 Constitution saving throw or take 2 (1d4) poison damage.
+      While in contact with a web, the spider knows the exact location of any other creature in contact with the same web.
+
+    Web Walker.
+
+      The spider ignores movement restrictions caused by webbing.
+
+    Bite.
+
+      Melee Weapon Attack: +4 to hit, reach 5 ft., one creature. Hit: 1 piercing damage, and the target must succeed on a DC 9 Constitution saving throw or take 2 (1d4) poison damage.
     """
 
     name = "Spider"
@@ -607,9 +739,13 @@ class Spider(Monster):
 
 class SpiritNaga(Monster):
     """
-    **Rejuvenation**: If it dies, the naga returns to life in 1d6 days and regains all its hit points. Only a wish spell can prevent this trait from functioning.
+    Rejuvenation.
 
-    **Spellcasting**: The naga is a 10th-level spellcaster. Its spellcasting ability is Intelligence (spell save DC 14, +6 to hit with spell attacks), and it needs only verbal components to cast its spells. It has the following wizard spells prepared:
+      If it dies, the naga returns to life in 1d6 days and regains all its hit points. Only a wish spell can prevent this trait from functioning.
+
+    Spellcasting.
+
+      The naga is a 10th-level spellcaster. Its spellcasting ability is Intelligence (spell save DC 14, +6 to hit with spell attacks), and it needs only verbal components to cast its spells. It has the following wizard spells prepared:
 
     - Cantrips (at will): mage hand, minor illusion, ray of frost
     - 1st level (4 slots): charm person, detect magic, sleep
@@ -618,7 +754,9 @@ class SpiritNaga(Monster):
     - 4th level (3 slots): blight, dimension door
     - 5th level (2 slots): dominate person
 
-    **Bite**: Melee Weapon Attack: +7 to hit, reach 10 ft., one creature. Hit: 7 (1d6 + 4) piercing damage, and the target must make a DC 13 Constitution saving throw, taking 31 (7d8) poison damage on a failed save, or half as much damage on a successful one.
+    Bite.
+
+      Melee Weapon Attack: +7 to hit, reach 10 ft., one creature. Hit: 7 (1d6 + 4) piercing damage, and the target must make a DC 13 Constitution saving throw, taking 31 (7d8) poison damage on a failed save, or half as much damage on a successful one.
     """
 
     name = "Spirit Naga"
@@ -644,13 +782,21 @@ class SpiritNaga(Monster):
 
 class Sprite(Monster):
     """
-    **Longsword**: Melee Weapon Attack: +2 to hit, reach 5 ft., one target. Hit: 1 slashing damage.
+    Longsword.
 
-    **Shortbow**: Ranged Weapon Attack: +6 to hit, range 40/160 ft., one target. Hit: 1 piercing damage, and the target must succeed on a DC 10 Constitution saving throw or become poisoned for 1 minute. If its saving throw result is 5 or lower, the poisoned target falls unconscious for the same duration, or until it takes damage or another creature takes an action to shake it awake.
+      Melee Weapon Attack: +2 to hit, reach 5 ft., one target. Hit: 1 slashing damage.
 
-    **Heart Sight**: The sprite touches a creature and magically knows the creature's current emotional state. If the target fails a DC 10 Charisma saving throw, the sprite also knows the creature's alignment. Celestials, fiends, and undead automatically fail the saving throw.
+    Shortbow.
 
-    **Invisibility**: The sprite magically turns invisible until it attacks or casts a spell, or until its concentration ends (as if concentrating on a spell). Any equipment the sprite wears or carries is invisible with it.
+      Ranged Weapon Attack: +6 to hit, range 40/160 ft., one target. Hit: 1 piercing damage, and the target must succeed on a DC 10 Constitution saving throw or become poisoned for 1 minute. If its saving throw result is 5 or lower, the poisoned target falls unconscious for the same duration, or until it takes damage or another creature takes an action to shake it awake.
+
+    Heart Sight.
+
+      The sprite touches a creature and magically knows the creature's current emotional state. If the target fails a DC 10 Charisma saving throw, the sprite also knows the creature's alignment. Celestials, fiends, and undead automatically fail the saving throw.
+
+    Invisibility.
+
+      The sprite magically turns invisible until it attacks or casts a spell, or until its concentration ends (as if concentrating on a spell). Any equipment the sprite wears or carries is invisible with it.
     """
 
     name = "Sprite"
@@ -676,15 +822,23 @@ class Sprite(Monster):
 
 class Spy(Monster):
     """
-    **Cunning Action**: On each of its turns, the spy can use a bonus action to take the Dash, Disengage, or Hide action.
+    Cunning Action.
+
+      On each of its turns, the spy can use a bonus action to take the Dash, Disengage, or Hide action.
 
     **Sneak Attack (1/Turn)**: The spy deals an extra 7 (2d6) damage when it hits a target with a weapon attack and has advantage on the attack roll, or when the target is within 5 ft. of an ally of the spy that isn't incapacitated and the spy doesn't have disadvantage on the attack roll.
 
-    **Multiattack**: The spy makes two melee attacks.
+    Multiattack.
 
-    **Shortsword**: Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 5 (1d6 + 2) piercing damage.
+      The spy makes two melee attacks.
 
-    **Hand Crossbow**: Ranged Weapon Attack: +4 to hit, range 30/120 ft., one target. Hit: 5 (1d6 + 2) piercing damage.
+    Shortsword.
+
+      Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 5 (1d6 + 2) piercing damage.
+
+    Hand Crossbow.
+
+      Ranged Weapon Attack: +4 to hit, range 30/120 ft., one target. Hit: 5 (1d6 + 2) piercing damage.
     """
 
     name = "Spy"
@@ -713,11 +867,17 @@ class Spy(Monster):
 
 class SteamMephit(Monster):
     """
-    **Death Burst**: When the mephit dies, it explodes in a cloud of steam. Each creature within 5 ft. of the mephit must succeed on a DC 10 Dexterity saving throw or take 4 (1d8) fire damage.
+    Death Burst.
 
-    **Innate Spellcasting**: The mephit can innately cast blur, requiring no material components. Its innate spellcasting ability is Charisma.
+      When the mephit dies, it explodes in a cloud of steam. Each creature within 5 ft. of the mephit must succeed on a DC 10 Dexterity saving throw or take 4 (1d8) fire damage.
 
-    **Claws**: Melee Weapon Attack: +2 to hit, reach 5 ft., one creature. Hit: 2 (1d4) slashing damage plus 2 (1d4) fire damage.
+    Innate Spellcasting.
+
+      The mephit can innately cast blur, requiring no material components. Its innate spellcasting ability is Charisma.
+
+    Claws.
+
+      Melee Weapon Attack: +2 to hit, reach 5 ft., one creature. Hit: 2 (1d4) slashing damage plus 2 (1d4) fire damage.
 
     **Steam Breath (Recharge 6)**: The mephit exhales a 15-foot cone of scalding steam. Each creature in that area must succeed on a DC 10 Dexterity saving throw, taking 4 (1d8) fire damage on a failed save, or half as much damage on a successful one.
 
@@ -747,7 +907,9 @@ class SteamMephit(Monster):
 
 class Stirge(Monster):
     """
-    **Blood Drain**: Melee Weapon Attack: +5 to hit, reach 5 ft., one creature. Hit: 5 (1d4 + 3) piercing damage, and the stirge attaches to the target. While attached, the stirge doesn't attack. Instead, at the start of each of the stirge's turns, the target loses 5 (1d4 + 3) hit points due to blood loss.
+    Blood Drain.
+
+      Melee Weapon Attack: +5 to hit, reach 5 ft., one creature. Hit: 5 (1d4 + 3) piercing damage, and the stirge attaches to the target. While attached, the stirge doesn't attack. Instead, at the start of each of the stirge's turns, the target loses 5 (1d4 + 3) hit points due to blood loss.
     The stirge can detach itself by spending 5 feet of its movement. It does so after it drains 10 hit points of blood from the target or the target dies. A creature, including the target, can use its action to detach the stirge.
     """
 
@@ -774,13 +936,21 @@ class Stirge(Monster):
 
 class StoneGiant(Monster):
     """
-    **Stone Camouflage**: The giant has advantage on Dexterity (Stealth) checks made to hide in rocky terrain.
+    Stone Camouflage.
 
-    **Multiattack**: The giant makes two greatclub attacks.
+      The giant has advantage on Dexterity (Stealth) checks made to hide in rocky terrain.
 
-    **Greatclub**: Melee Weapon Attack: +9 to hit, reach 15 ft., one target. Hit: 19 (3d8 + 6) bludgeoning damage.
+    Multiattack.
 
-    **Rock**: Ranged Weapon Attack: +9 to hit, range 60/240 ft., one target. Hit: 28 (4d10 + 6) bludgeoning damage. If the target is a creature, it must succeed on a DC 17 Strength saving throw or be knocked prone.
+      The giant makes two greatclub attacks.
+
+    Greatclub.
+
+      Melee Weapon Attack: +9 to hit, reach 15 ft., one target. Hit: 19 (3d8 + 6) bludgeoning damage.
+
+    Rock.
+
+      Ranged Weapon Attack: +9 to hit, range 60/240 ft., one target. Hit: 28 (4d10 + 6) bludgeoning damage. If the target is a creature, it must succeed on a DC 17 Strength saving throw or be knocked prone.
     """
 
     name = "Stone Giant"
@@ -806,17 +976,29 @@ class StoneGiant(Monster):
 
 class StoneGolem(Monster):
     """
-    **Immutable Form**: The golem is immune to any spell or effect that would alter its form.
+    Immutable Form.
 
-    **Magic Resistance**: The golem has advantage on saving throws against spells and other magical effects.
+      The golem is immune to any spell or effect that would alter its form.
 
-    **Magic Weapons**: The golem's weapon attacks are magical.
+    Magic Resistance.
 
-    **Multiattack**: The golem makes two slam attacks.
+      The golem has advantage on saving throws against spells and other magical effects.
 
-    **Slam**: Melee Weapon Attack: +10 to hit, reach 5 ft., one target. Hit: 19 (3d8 + 6) bludgeoning damage.
+    Magic Weapons.
 
-    **Slow**: The golem targets one or more creatures it can see within 10 ft. of it. Each target must make a DC 17 Wisdom saving throw against this magic. On a failed save, a target can't use reactions, its speed is halved, and it can't make more than one attack on its turn. In addition, the target can take either an action or a bonus action on its turn, not both. These effects last for 1 minute. A target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.
+      The golem's weapon attacks are magical.
+
+    Multiattack.
+
+      The golem makes two slam attacks.
+
+    Slam.
+
+      Melee Weapon Attack: +10 to hit, reach 5 ft., one target. Hit: 19 (3d8 + 6) bludgeoning damage.
+
+    Slow.
+
+      The golem targets one or more creatures it can see within 10 ft. of it. Each target must make a DC 17 Wisdom saving throw against this magic. On a failed save, a target can't use reactions, its speed is halved, and it can't make more than one attack on its turn. In addition, the target can take either an action or a bonus action on its turn, not both. These effects last for 1 minute. A target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.
     """
 
     name = "Stone Golem"
@@ -905,20 +1087,32 @@ class Stonemelder(Monster):
 
 class StormGiant(Monster):
     """
-    **Amphibious**: The giant can breathe air and water.
+    Amphibious.
 
-    **Innate Spellcasting**: The giant's innate spellcasting ability is Charisma (spell save DC 17). It can innately cast the following spells, requiring no material components:
+      The giant can breathe air and water.
+
+    Innate Spellcasting.
+
+      The giant's innate spellcasting ability is Charisma (spell save DC 17). It can innately cast the following spells, requiring no material components:
 
     At will: detect magic, feather fall, levitate, light
     3/day each: control weather, water breathing
 
-    **Multiattack**: The giant makes two greatsword attacks.
+    Multiattack.
 
-    **Greatsword**: Melee Weapon Attack: +14 to hit, reach 10 ft., one target. Hit: 30 (6d6 + 9) slashing damage.
+      The giant makes two greatsword attacks.
 
-    **Rock**: Ranged Weapon Attack: +14 to hit, range 60/240 ft., one target. Hit: 35 (4d12 + 9) bludgeoning damage.
+    Greatsword.
 
-    **Lightning Strike**: The giant hurls a magical lightning bolt at a point it can see within 500 feet of it. Each creature within 10 feet of that point must make a DC 17 Dexterity saving throw, taking 54 (12d8) lightning damage on a failed save, or half as much damage on a successful one.
+      Melee Weapon Attack: +14 to hit, reach 10 ft., one target. Hit: 30 (6d6 + 9) slashing damage.
+
+    Rock.
+
+      Ranged Weapon Attack: +14 to hit, range 60/240 ft., one target. Hit: 35 (4d12 + 9) bludgeoning damage.
+
+    Lightning Strike.
+
+      The giant hurls a magical lightning bolt at a point it can see within 500 feet of it. Each creature within 10 feet of that point must make a DC 17 Dexterity saving throw, taking 54 (12d8) lightning damage on a failed save, or half as much damage on a successful one.
     """
 
     name = "Storm Giant"
@@ -944,18 +1138,28 @@ class StormGiant(Monster):
 
 class SuccubusIncubus(Monster):
     """
-    **Telepathic Bond**: The fiend ignores the range restriction on its telepathy when communicating with a creature it has charmed. The two don't even need to be on the same plane of existence.
+    Telepathic Bond.
 
-    **Shapechanger**: The fiend can use its action to polymorph into a Small or Medium humanoid, or back into its true form. Without wings, the fiend loses its flying speed. Other than its size and speed, its statistics are the same in each form. Any equipment it is wearing or carrying isn't transformed. It reverts to its true form if it dies.
+      The fiend ignores the range restriction on its telepathy when communicating with a creature it has charmed. The two don't even need to be on the same plane of existence.
+
+    Shapechanger.
+
+      The fiend can use its action to polymorph into a Small or Medium humanoid, or back into its true form. Without wings, the fiend loses its flying speed. Other than its size and speed, its statistics are the same in each form. Any equipment it is wearing or carrying isn't transformed. It reverts to its true form if it dies.
 
     **Claw (Fiend Form Only)**: Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 6 (1d6 + 3) slashing damage.
 
-    **Charm**: One humanoid the fiend can see within 30 feet of it must succeed on a DC 15 Wisdom saving throw or be magically charmed for 1 day. The charmed target obeys the fiend's verbal or telepathic commands. If the target suffers any harm or receives a suicidal command, it can repeat the saving throw, ending the effect on a success. If the target successfully saves against the effect, or if the effect on it ends, the target is immune to this fiend's Charm for the next 24 hours.
+    Charm.
+
+      One humanoid the fiend can see within 30 feet of it must succeed on a DC 15 Wisdom saving throw or be magically charmed for 1 day. The charmed target obeys the fiend's verbal or telepathic commands. If the target suffers any harm or receives a suicidal command, it can repeat the saving throw, ending the effect on a success. If the target successfully saves against the effect, or if the effect on it ends, the target is immune to this fiend's Charm for the next 24 hours.
     The fiend can have only one target charmed at a time. If it charms another, the effect on the previous target ends.
 
-    **Draining Kiss**: The fiend kisses a creature charmed by it or a willing creature. The target must make a DC 15 Constitution saving throw against this magic, taking 32 (5d10 + 5) psychic damage on a failed save, or half as much damage on a successful one. The target's hit point maximum is reduced by an amount equal to the damage taken. This reduction lasts until the target finishes a long rest. The target dies if this effect reduces its hit point maximum to 0.
+    Draining Kiss.
 
-    **Etherealness**: The fiend magically enters the Ethereal Plane from the Material Plane, or vice versa.
+      The fiend kisses a creature charmed by it or a willing creature. The target must make a DC 15 Constitution saving throw against this magic, taking 32 (5d10 + 5) psychic damage on a failed save, or half as much damage on a successful one. The target's hit point maximum is reduced by an amount equal to the damage taken. This reduction lasts until the target finishes a long rest. The target dies if this effect reduces its hit point maximum to 0.
+
+    Etherealness.
+
+      The fiend magically enters the Ethereal Plane from the Material Plane, or vice versa.
     """
 
     name = "Succubus/Incubus"
@@ -981,13 +1185,21 @@ class SuccubusIncubus(Monster):
 
 class SwarmOfBats(Monster):
     """
-    **Echolocation**: The swarm can't use its blindsight while deafened.
+    Echolocation.
 
-    **Keen Hearing**: The swarm has advantage on Wisdom (Perception) checks that rely on hearing.
+      The swarm can't use its blindsight while deafened.
 
-    **Swarm**: The swarm can occupy another creature's space and vice versa, and the swarm can move through any opening large enough for a Tiny bat. The swarm can't regain hit points or gain temporary hit points.
+    Keen Hearing.
 
-    **Bites**: Melee Weapon Attack: +4 to hit, reach 0 ft., one creature in the swarm's space. Hit: 5 (2d4) piercing damage, or 2 (1d4) piercing damage if the swarm has half of its hit points or fewer.
+      The swarm has advantage on Wisdom (Perception) checks that rely on hearing.
+
+    Swarm.
+
+      The swarm can occupy another creature's space and vice versa, and the swarm can move through any opening large enough for a Tiny bat. The swarm can't regain hit points or gain temporary hit points.
+
+    Bites.
+
+      Melee Weapon Attack: +4 to hit, reach 0 ft., one creature in the swarm's space. Hit: 5 (2d4) piercing damage, or 2 (1d4) piercing damage if the swarm has half of its hit points or fewer.
     """
 
     name = "Swarm of Bats"
@@ -1013,9 +1225,13 @@ class SwarmOfBats(Monster):
 
 class SwarmOfBeetles(Monster):
     """
-    **Swarm**: The swarm can occupy another creature's space and vice versa, and the swarm can move through any opening large enough for a Tiny insect. The swarm can't regain hit points or gain temporary hit points.
+    Swarm.
 
-    **Bites**: Melee Weapon Attack: +3 to hit, reach 0 ft., one target in the swarm's space. Hit: 10 (4d4) piercing damage, or 5 (2d4) piercing damage if the swarm has half of its hit points or fewer.
+      The swarm can occupy another creature's space and vice versa, and the swarm can move through any opening large enough for a Tiny insect. The swarm can't regain hit points or gain temporary hit points.
+
+    Bites.
+
+      Melee Weapon Attack: +3 to hit, reach 0 ft., one target in the swarm's space. Hit: 10 (4d4) piercing damage, or 5 (2d4) piercing damage if the swarm has half of its hit points or fewer.
     """
 
     name = "Swarm of Beetles"
@@ -1041,9 +1257,13 @@ class SwarmOfBeetles(Monster):
 
 class SwarmOfCentipedes(Monster):
     """
-    **Swarm**: The swarm can occupy another creature's space and vice versa, and the swarm can move through any opening large enough for a Tiny insect. The swarm can't regain hit points or gain temporary hit points.
+    Swarm.
 
-    **Bites**: Melee Weapon Attack: +3 to hit, reach 0 ft., one target in the swarm's space. Hit: 10 (4d4) piercing damage, or 5 (2d4) piercing damage if the swarm has half of its hit points or fewer.
+      The swarm can occupy another creature's space and vice versa, and the swarm can move through any opening large enough for a Tiny insect. The swarm can't regain hit points or gain temporary hit points.
+
+    Bites.
+
+      Melee Weapon Attack: +3 to hit, reach 0 ft., one target in the swarm's space. Hit: 10 (4d4) piercing damage, or 5 (2d4) piercing damage if the swarm has half of its hit points or fewer.
     A creature reduced to 0 hit points by a swarm of centipedes is stable but poisoned for 1 hour, even after regaining hit points, and paralyzed while poisoned in this way.
     """
 
@@ -1070,9 +1290,13 @@ class SwarmOfCentipedes(Monster):
 
 class SwarmOfInsects(Monster):
     """
-    **Swarm**: The swarm can occupy another creature's space and vice versa, and the swarm can move through any opening large enough for a Tiny insect. The swarm can't regain hit points or gain temporary hit points.
+    Swarm.
 
-    **Bites**: Melee Weapon Attack: +3 to hit, reach 0 ft., one target in the swarm's space. Hit: 10 (4d4) piercing damage, or 5 (2d4) piercing damage if the swarm has half of its hit points or fewer.
+      The swarm can occupy another creature's space and vice versa, and the swarm can move through any opening large enough for a Tiny insect. The swarm can't regain hit points or gain temporary hit points.
+
+    Bites.
+
+      Melee Weapon Attack: +3 to hit, reach 0 ft., one target in the swarm's space. Hit: 10 (4d4) piercing damage, or 5 (2d4) piercing damage if the swarm has half of its hit points or fewer.
     """
 
     name = "Swarm of Insects"
@@ -1098,9 +1322,13 @@ class SwarmOfInsects(Monster):
 
 class SwarmOfPoisonousSnakes(Monster):
     """
-    **Swarm**: The swarm can occupy another creature's space and vice versa, and the swarm can move through any opening large enough for a Tiny snake. The swarm can't regain hit points or gain temporary hit points.
+    Swarm.
 
-    **Bites**: Melee Weapon Attack: +6 to hit, reach 0 ft., one creature in the swarm's space. Hit: 7 (2d6) piercing damage, or 3 (1d6) piercing damage if the swarm has half of its hit points or fewer. The target must make a DC 10 Constitution saving throw, taking 14 (4d6) poison damage on a failed save, or half as much damage on a successful one.
+      The swarm can occupy another creature's space and vice versa, and the swarm can move through any opening large enough for a Tiny snake. The swarm can't regain hit points or gain temporary hit points.
+
+    Bites.
+
+      Melee Weapon Attack: +6 to hit, reach 0 ft., one creature in the swarm's space. Hit: 7 (2d6) piercing damage, or 3 (1d6) piercing damage if the swarm has half of its hit points or fewer. The target must make a DC 10 Constitution saving throw, taking 14 (4d6) poison damage on a failed save, or half as much damage on a successful one.
     """
 
     name = "Swarm of Poisonous Snakes"
@@ -1126,13 +1354,21 @@ class SwarmOfPoisonousSnakes(Monster):
 
 class SwarmOfQuippers(Monster):
     """
-    **Blood Frenzy**: The swarm has advantage on melee attack rolls against any creature that doesn't have all its hit points.
+    Blood Frenzy.
 
-    **Swarm**: The swarm can occupy another creature's space and vice versa, and the swarm can move through any opening large enough for a Tiny quipper. The swarm can't regain hit points or gain temporary hit points.
+      The swarm has advantage on melee attack rolls against any creature that doesn't have all its hit points.
 
-    **Water Breathing**: The swarm can breathe only underwater.
+    Swarm.
 
-    **Bites**: Melee Weapon Attack: +5 to hit, reach 0 ft., one creature in the swarm's space. Hit: 14 (4d6) piercing damage, or 7 (2d6) piercing damage if the swarm has half of its hit points or fewer.
+      The swarm can occupy another creature's space and vice versa, and the swarm can move through any opening large enough for a Tiny quipper. The swarm can't regain hit points or gain temporary hit points.
+
+    Water Breathing.
+
+      The swarm can breathe only underwater.
+
+    Bites.
+
+      Melee Weapon Attack: +5 to hit, reach 0 ft., one creature in the swarm's space. Hit: 14 (4d6) piercing damage, or 7 (2d6) piercing damage if the swarm has half of its hit points or fewer.
     """
 
     name = "Swarm of Quippers"
@@ -1158,11 +1394,17 @@ class SwarmOfQuippers(Monster):
 
 class SwarmOfRats(Monster):
     """
-    **Keen Smell**: The swarm has advantage on Wisdom (Perception) checks that rely on smell.
+    Keen Smell.
 
-    **Swarm**: The swarm can occupy another creature's space and vice versa, and the swarm can move through any opening large enough for a Tiny rat. The swarm can't regain hit points or gain temporary hit points.
+      The swarm has advantage on Wisdom (Perception) checks that rely on smell.
 
-    **Bites**: Melee Weapon Attack: +2 to hit, reach 0 ft., one target in the swarm's space. Hit: 7 (2d6) piercing damage, or 3 (1d6) piercing damage if the swarm has half of its hit points or fewer.
+    Swarm.
+
+      The swarm can occupy another creature's space and vice versa, and the swarm can move through any opening large enough for a Tiny rat. The swarm can't regain hit points or gain temporary hit points.
+
+    Bites.
+
+      Melee Weapon Attack: +2 to hit, reach 0 ft., one target in the swarm's space. Hit: 7 (2d6) piercing damage, or 3 (1d6) piercing damage if the swarm has half of its hit points or fewer.
     """
 
     name = "Swarm of Rats"
@@ -1188,9 +1430,13 @@ class SwarmOfRats(Monster):
 
 class SwarmOfRavens(Monster):
     """
-    **Swarm**: The swarm can occupy another creature's space and vice versa, and the swarm can move through any opening large enough for a Tiny raven. The swarm can't regain hit points or gain temporary hit points.
+    Swarm.
 
-    **Beaks**: Melee Weapon Attack: +4 to hit, reach 5 ft., one target in the swarm's space. Hit: 7 (2d6) piercing damage, or 3 (1d6) piercing damage if the swarm has half of its hit points or fewer.
+      The swarm can occupy another creature's space and vice versa, and the swarm can move through any opening large enough for a Tiny raven. The swarm can't regain hit points or gain temporary hit points.
+
+    Beaks.
+
+      Melee Weapon Attack: +4 to hit, reach 5 ft., one target in the swarm's space. Hit: 7 (2d6) piercing damage, or 3 (1d6) piercing damage if the swarm has half of its hit points or fewer.
     """
 
     name = "Swarm of Ravens"
@@ -1216,15 +1462,25 @@ class SwarmOfRavens(Monster):
 
 class SwarmOfSpiders(Monster):
     """
-    **Swarm**: The swarm can occupy another creature's space and vice versa, and the swarm can move through any opening large enough for a Tiny insect. The swarm can't regain hit points or gain temporary hit points.
+    Swarm.
 
-    **Spider Climb**: The swarm can climb difficult surfaces, including upside down on ceilings, without needing to make an ability check.
+      The swarm can occupy another creature's space and vice versa, and the swarm can move through any opening large enough for a Tiny insect. The swarm can't regain hit points or gain temporary hit points.
 
-    **Web Sense**: While in contact with a web, the swarm knows the exact location of any other creature in contact with the same web.
+    Spider Climb.
 
-    **Web Walker**: The swarm ignores movement restrictions caused by webbing.
+      The swarm can climb difficult surfaces, including upside down on ceilings, without needing to make an ability check.
 
-    **Bites**: Melee Weapon Attack: +3 to hit, reach 0 ft., one target in the swarm's space. Hit: 10 (4d4) piercing damage, or 5 (2d4) piercing damage if the swarm has half of its hit points or fewer.
+    Web Sense.
+
+      While in contact with a web, the swarm knows the exact location of any other creature in contact with the same web.
+
+    Web Walker.
+
+      The swarm ignores movement restrictions caused by webbing.
+
+    Bites.
+
+      Melee Weapon Attack: +3 to hit, reach 0 ft., one target in the swarm's space. Hit: 10 (4d4) piercing damage, or 5 (2d4) piercing damage if the swarm has half of its hit points or fewer.
     """
 
     name = "Swarm of Spiders"
@@ -1250,9 +1506,13 @@ class SwarmOfSpiders(Monster):
 
 class SwarmOfWasps(Monster):
     """
-    **Swarm**: The swarm can occupy another creature's space and vice versa, and the swarm can move through any opening large enough for a Tiny insect. The swarm can't regain hit points or gain temporary hit points.
+    Swarm.
 
-    **Bites**: Melee Weapon Attack: +3 to hit, reach 0 ft., one target in the swarm's space. Hit: 10 (4d4) piercing damage, or 5 (2d4) piercing damage if the swarm has half of its hit points or fewer.
+      The swarm can occupy another creature's space and vice versa, and the swarm can move through any opening large enough for a Tiny insect. The swarm can't regain hit points or gain temporary hit points.
+
+    Bites.
+
+      Melee Weapon Attack: +3 to hit, reach 0 ft., one target in the swarm's space. Hit: 10 (4d4) piercing damage, or 5 (2d4) piercing damage if the swarm has half of its hit points or fewer.
     """
 
     name = "Swarm of Wasps"

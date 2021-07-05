@@ -10,11 +10,17 @@ from dungeonsheets.stats import Ability
 
 class Jackal(Monster):
     """
-    **Keen Hearing and Smell**: The jackal has advantage on Wisdom (Perception) checks that rely on hearing or smell.
+    Keen Hearing and Smell.
 
-    **Pack Tactics**: The jackal has advantage on an attack roll against a creature if at least one of the jackal's allies is within 5 ft. of the creature and the ally isn't incapacitated.
+      The jackal has advantage on Wisdom (Perception) checks that rely on hearing or smell.
 
-    **Bite**: Melee Weapon Attack: +1 to hit, reach 5 ft., one target. Hit: 1 (1d4 - 1) piercing damage.
+    Pack Tactics.
+
+      The jackal has advantage on an attack roll against a creature if at least one of the jackal's allies is within 5 ft. of the creature and the ally isn't incapacitated.
+
+    Bite.
+
+      Melee Weapon Attack: +1 to hit, reach 5 ft., one target. Hit: 1 (1d4 - 1) piercing damage.
     """
 
     name = "Jackal"

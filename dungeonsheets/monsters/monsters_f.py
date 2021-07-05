@@ -10,15 +10,25 @@ from dungeonsheets.stats import Ability
 
 class FireElemental(Monster):
     """
-    **Fire Form**: The elemental can move through a space as narrow as 1 inch wide without squeezing. A creature that touches the elemental or hits it with a melee attack while within 5 ft. of it takes 5 (1d10) fire damage. In addition, the elemental can enter a hostile creature's space and stop there. The first time it enters a creature's space on a turn, that creature takes 5 (1d10) fire damage and catches fire; until someone takes an action to douse the fire, the creature takes 5 (1d10) fire damage at the start of each of its turns.
+    Fire Form.
 
-    **Illumination**: The elemental sheds bright light in a 30-foot radius and dim light in an additional 30 ft..
+      The elemental can move through a space as narrow as 1 inch wide without squeezing. A creature that touches the elemental or hits it with a melee attack while within 5 ft. of it takes 5 (1d10) fire damage. In addition, the elemental can enter a hostile creature's space and stop there. The first time it enters a creature's space on a turn, that creature takes 5 (1d10) fire damage and catches fire; until someone takes an action to douse the fire, the creature takes 5 (1d10) fire damage at the start of each of its turns.
 
-    **Water Susceptibility**: For every 5 ft. the elemental moves in water, or for every gallon of water splashed on it, it takes 1 cold damage.
+    Illumination.
 
-    **Multiattack**: The elemental makes two touch attacks.
+      The elemental sheds bright light in a 30-foot radius and dim light in an additional 30 ft..
 
-    **Touch**: Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 10 (2d6 + 3) fire damage. If the target is a creature or a flammable object, it ignites. Until a creature takes an action to douse the fire, the target takes 5 (1d10) fire damage at the start of each of its turns.
+    Water Susceptibility.
+
+      For every 5 ft. the elemental moves in water, or for every gallon of water splashed on it, it takes 1 cold damage.
+
+    Multiattack.
+
+      The elemental makes two touch attacks.
+
+    Touch.
+
+      Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 10 (2d6 + 3) fire damage. If the target is a creature or a flammable object, it ignites. Until a creature takes an action to douse the fire, the target takes 5 (1d10) fire damage at the start of each of its turns.
     """
 
     name = "Fire Elemental"
@@ -44,11 +54,17 @@ class FireElemental(Monster):
 
 class FireGiant(Monster):
     """
-    **Multiattack**: The giant makes two greatsword attacks.
+    Multiattack.
 
-    **Greatsword**: Melee Weapon Attack: +11 to hit, reach 10 ft., one target. Hit: 28 (6d6 + 7) slashing damage.
+      The giant makes two greatsword attacks.
 
-    **Rock**: Ranged Weapon Attack: +11 to hit, range 60/240 ft., one target. Hit: 29 (4d10 + 7) bludgeoning damage.
+    Greatsword.
+
+      Melee Weapon Attack: +11 to hit, reach 10 ft., one target. Hit: 28 (6d6 + 7) slashing damage.
+
+    Rock.
+
+      Ranged Weapon Attack: +11 to hit, range 60/240 ft., one target. Hit: 29 (4d10 + 7) bludgeoning damage.
     """
 
     name = "Fire Giant"
@@ -74,22 +90,38 @@ class FireGiant(Monster):
 
 class FleshGolem(Monster):
     """
-    **Berserk**: Whenever the golem starts its turn with 40 hit points or fewer, roll a d6. On a 6, the golem goes berserk. On each of its turns while berserk, the golem attacks the nearest creature it can see. If no creature is near enough to move to and attack, the golem attacks an object, with preference for an object smaller than itself. Once the golem goes berserk, it continues to do so until it is destroyed or regains all its hit points.
+    Berserk.
+
+      Whenever the golem starts its turn with 40 hit points or fewer, roll a d6. On a 6, the golem goes berserk. On each of its turns while berserk, the golem attacks the nearest creature it can see. If no creature is near enough to move to and attack, the golem attacks an object, with preference for an object smaller than itself. Once the golem goes berserk, it continues to do so until it is destroyed or regains all its hit points.
     The golem's creator, if within 60 feet of the berserk golem, can try to calm it by speaking firmly and persuasively. The golem must be able to hear its creator, who must take an action to make a DC 15 Charisma (Persuasion) check. If the check succeeds, the golem ceases being berserk. If it takes damage while still at 40 hit points or fewer, the golem might go berserk again.
 
-    **Aversion of Fire**: If the golem takes fire damage, it has disadvantage on attack rolls and ability checks until the end of its next turn.
+    Aversion of Fire.
 
-    **Immutable Form**: The golem is immune to any spell or effect that would alter its form.
+      If the golem takes fire damage, it has disadvantage on attack rolls and ability checks until the end of its next turn.
 
-    **Lightning Absorption**: Whenever the golem is subjected to lightning damage, it takes no damage and instead regains a number of hit points equal to the lightning damage dealt.
+    Immutable Form.
 
-    **Magic Resistance**: The golem has advantage on saving throws against spells and other magical effects.
+      The golem is immune to any spell or effect that would alter its form.
 
-    **Magic Weapons**: The golem's weapon attacks are magical.
+    Lightning Absorption.
 
-    **Multiattack**: The golem makes two slam attacks.
+      Whenever the golem is subjected to lightning damage, it takes no damage and instead regains a number of hit points equal to the lightning damage dealt.
 
-    **Slam**: Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 13 (2d8 + 4) bludgeoning damage.
+    Magic Resistance.
+
+      The golem has advantage on saving throws against spells and other magical effects.
+
+    Magic Weapons.
+
+      The golem's weapon attacks are magical.
+
+    Multiattack.
+
+      The golem makes two slam attacks.
+
+    Slam.
+
+      Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 13 (2d8 + 4) bludgeoning damage.
     """
 
     name = "Flesh Golem"
@@ -115,9 +147,13 @@ class FleshGolem(Monster):
 
 class FlyingSnake(Monster):
     """
-    **Flyby**: The snake doesn't provoke opportunity attacks when it flies out of an enemy's reach.
+    Flyby.
 
-    **Bite**: Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 1 piercing damage plus 7 (3d4) poison damage.
+      The snake doesn't provoke opportunity attacks when it flies out of an enemy's reach.
+
+    Bite.
+
+      Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 1 piercing damage plus 7 (3d4) poison damage.
     """
 
     name = "Flying Snake"
@@ -143,11 +179,17 @@ class FlyingSnake(Monster):
 
 class FlyingSword(Monster):
     """
-    **Antimagic Susceptibility**: The sword is incapacitated while in the area of an antimagic field. If targeted by dispel magic, the sword must succeed on a Constitution saving throw against the caster's spell save DC or fall unconscious for 1 minute.
+    Antimagic Susceptibility.
 
-    **False Appearance**: While the sword remains motionless and isn't flying, it is indistinguishable from a normal sword.
+      The sword is incapacitated while in the area of an antimagic field. If targeted by dispel magic, the sword must succeed on a Constitution saving throw against the caster's spell save DC or fall unconscious for 1 minute.
 
-    **Longsword**: Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: 5 (1d8 + 1) slashing damage.
+    False Appearance.
+
+      While the sword remains motionless and isn't flying, it is indistinguishable from a normal sword.
+
+    Longsword.
+
+      Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: 5 (1d8 + 1) slashing damage.
     """
 
     name = "Flying Sword"
@@ -173,9 +215,13 @@ class FlyingSword(Monster):
 
 class Frog(Monster):
     """
-    **Amphibious**: The frog can breathe air and water
+    Amphibious.
 
-    **Standing Leap**: The frog's long jump is up to 10 ft. and its high jump is up to 5 ft., with or without a running start.
+      The frog can breathe air and water
+
+    Standing Leap.
+
+      The frog's long jump is up to 10 ft. and its high jump is up to 5 ft., with or without a running start.
     """
 
     name = "Frog"
@@ -201,11 +247,17 @@ class Frog(Monster):
 
 class FrostGiant(Monster):
     """
-    **Multiattack**: The giant makes two greataxe attacks.
+    Multiattack.
 
-    **Greataxe**: Melee Weapon Attack: +9 to hit, reach 10 ft., one target. Hit: 25 (3d12 + 6) slashing damage.
+      The giant makes two greataxe attacks.
 
-    **Rock**: Ranged Weapon Attack: +9 to hit, range 60/240 ft., one target. Hit: 28 (4d10 + 6) bludgeoning damage.
+    Greataxe.
+
+      Melee Weapon Attack: +9 to hit, reach 10 ft., one target. Hit: 25 (3d12 + 6) slashing damage.
+
+    Rock.
+
+      Ranged Weapon Attack: +9 to hit, range 60/240 ft., one target. Hit: 28 (4d10 + 6) bludgeoning damage.
     """
 
     name = "Frost Giant"

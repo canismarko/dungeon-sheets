@@ -10,20 +10,32 @@ from dungeonsheets.stats import Ability
 
 class Vampire(Monster):
     """
-    **Shapechanger**: If the vampire isn't in sun light or running water, it can use its action to polymorph into a Tiny bat or a Medium cloud of mist, or back into its true form.
+    Shapechanger.
+
+      If the vampire isn't in sun light or running water, it can use its action to polymorph into a Tiny bat or a Medium cloud of mist, or back into its true form.
     While in bat form, the vampire can't speak, its walking speed is 5 feet, and it has a flying speed of 30 feet. Its statistics, other than its size and speed, are unchanged. Anything it is wearing transforms with it, but nothing it is carrying does. It reverts to its true form if it dies.
     While in mist form, the vampire can't take any actions, speak, or manipulate objects. It is weightless, has a flying speed of 20 feet, can hover, and can enter a hostile creature's space and stop there. In addition, if air can pass through a space, the mist can do so without squeezing, and it can't pass through water. It has advantage on Strength, Dexterity, and Constitution saving throws, and it is immune to all nonmagical damage, except the damage it takes from sunlight.
 
-    **Legendary Resistance**: If the vampire fails a saving throw, it can choose to succeed instead.
+    Legendary Resistance.
 
-    **Misty Escape**: When it drops to 0 hit points outside its resting place, the vampire transforms into a cloud of mist (as in the Shapechanger trait) instead of falling unconscious, provided that it isn't in sunlight or running water. If it can't transform, it is destroyed.
+      If the vampire fails a saving throw, it can choose to succeed instead.
+
+    Misty Escape.
+
+      When it drops to 0 hit points outside its resting place, the vampire transforms into a cloud of mist (as in the Shapechanger trait) instead of falling unconscious, provided that it isn't in sunlight or running water. If it can't transform, it is destroyed.
     While it has 0 hit points in mist form, it can't revert to its vampire form, and it must reach its resting place within 2 hours or be destroyed. Once in its resting place, it reverts to its vampire form. It is then paralyzed until it regains at least 1 hit point. After spending 1 hour in its resting place with 0 hit points, it regains 1 hit point.
 
-    **Regeneration**: The vampire regains 20 hit points at the start of its turn if it has at least 1 hit point and isn't in sunlight or running water. If the vampire takes radiant damage or damage from holy water, this trait doesn't function at the start of the vampire's next turn.
+    Regeneration.
 
-    **Spider Climb**: The vampire can climb difficult surfaces, including upside down on ceilings, without needing to make an ability check.
+      The vampire regains 20 hit points at the start of its turn if it has at least 1 hit point and isn't in sunlight or running water. If the vampire takes radiant damage or damage from holy water, this trait doesn't function at the start of the vampire's next turn.
 
-    **Vampire Weaknesses**: The vampire has the following flaws:
+    Spider Climb.
+
+      The vampire can climb difficult surfaces, including upside down on ceilings, without needing to make an ability check.
+
+    Vampire Weaknesses.
+
+      The vampire has the following flaws:
     Forbiddance. The vampire can't enter a residence without an invitation from one of the occupants.
     Harmed by Running Water. The vampire takes 20 acid damage if it ends its turn in running water.
     Stake to the Heart. If a piercing weapon made of wood is driven into the vampire's heart while the vampire is incapacitated in its resting place, the vampire is paralyzed until the stake is removed.
@@ -35,10 +47,14 @@ class Vampire(Monster):
 
     **Bite (Bat or Vampire Form Only)**: Melee Weapon Attack: +9 to hit, reach 5 ft., one willing creature, or a creature that is grappled by the vampire, incapacitated, or restrained. Hit: 7 (1d6 + 4) piercing damage plus 10 (3d6) necrotic damage. The target's hit point maximum is reduced by an amount equal to the necrotic damage taken, and the vampire regains hit points equal to that amount. The reduction lasts until the target finishes a long rest. The target dies if this effect reduces its hit point maximum to 0. A humanoid slain in this way and then buried in the ground rises the following night as a vampire spawn under the vampire's control.
 
-    **Charm**: The vampire targets one humanoid it can see within 30 ft. of it. If the target can see the vampire, the target must succeed on a DC 17 Wisdom saving throw against this magic or be charmed by the vampire. The charmed target regards the vampire as a trusted friend to be heeded and protected. Although the target isn't under the vampire's control, it takes the vampire's requests or actions in the most favorable way it can, and it is a willing target for the vampire's bit attack.
+    Charm.
+
+      The vampire targets one humanoid it can see within 30 ft. of it. If the target can see the vampire, the target must succeed on a DC 17 Wisdom saving throw against this magic or be charmed by the vampire. The charmed target regards the vampire as a trusted friend to be heeded and protected. Although the target isn't under the vampire's control, it takes the vampire's requests or actions in the most favorable way it can, and it is a willing target for the vampire's bit attack.
     Each time the vampire or the vampire's companions do anything harmful to the target, it can repeat the saving throw, ending the effect on itself on a success. Otherwise, the effect lasts 24 hours or until the vampire is destroyed, is on a different plane of existence than the target, or takes a bonus action to end the effect.
 
-    **Children of the Night**: The vampire magically calls 2d4 swarms of bats or rats, provided that the sun isn't up. While outdoors, the vampire can call 3d6 wolves instead. The called creatures arrive in 1d4 rounds, acting as allies of the vampire and obeying its spoken commands. The beasts remain for 1 hour, until the vampire dies, or until the vampire dismisses them as a bonus action.
+    Children of the Night.
+
+      The vampire magically calls 2d4 swarms of bats or rats, provided that the sun isn't up. While outdoors, the vampire can call 3d6 wolves instead. The called creatures arrive in 1d4 rounds, acting as allies of the vampire and obeying its spoken commands. The beasts remain for 1 hour, until the vampire dies, or until the vampire dismisses them as a bonus action.
     """
 
     name = "Vampire"
@@ -64,21 +80,33 @@ class Vampire(Monster):
 
 class VampireSpawn(Monster):
     """
-    **Regeneration**: The vampire regains 10 hit points at the start of its turn if it has at least 1 hit point and isn't in sunlight or running water. If the vampire takes radiant damage or damage from holy water, this trait doesn't function at the start of the vampire's next turn.
+    Regeneration.
 
-    **Spider Climb**: The vampire can climb difficult surfaces, including upside down on ceilings, without needing to make an ability check.
+      The vampire regains 10 hit points at the start of its turn if it has at least 1 hit point and isn't in sunlight or running water. If the vampire takes radiant damage or damage from holy water, this trait doesn't function at the start of the vampire's next turn.
 
-    **Vampire Weaknesses**: The vampire has the following flaws:
+    Spider Climb.
+
+      The vampire can climb difficult surfaces, including upside down on ceilings, without needing to make an ability check.
+
+    Vampire Weaknesses.
+
+      The vampire has the following flaws:
     Forbiddance. The vampire can't enter a residence without an invitation from one of the occupants.
     Harmed by Running Water. The vampire takes 20 acid damage when it ends its turn in running water.
     Stake to the Heart. The vampire is destroyed if a piercing weapon made of wood is driven into its heart while it is incapacitated in its resting place.
     Sunlight Hypersensitivity. The vampire takes 20 radiant damage when it starts its turn in sunlight. While in sunlight, it has disadvantage on attack rolls and ability checks.
 
-    **Multiattack**: The vampire makes two attacks, only one of which can be a bite attack.
+    Multiattack.
 
-    **Bite**: Melee Weapon Attack: +6 to hit, reach 5 ft., one willing creature, or a creature that is grappled by the vampire, incapacitated, or restrained. Hit: 6 (1d6 + 3) piercing damage plus 7 (2d6) necrotic damage. The target's hit point maximum is reduced by an amount equal to the necrotic damage taken, and the vampire regains hit points equal to that amount. The reduction lasts until the target finishes a long rest. The target dies if this effect reduces its hit point maximum to 0.
+      The vampire makes two attacks, only one of which can be a bite attack.
 
-    **Claws**: Melee Weapon Attack: +6 to hit, reach 5 ft., one creature. Hit: 8 (2d4 + 3) slashing damage. Instead of dealing damage, the vampire can grapple the target (escape DC 13).
+    Bite.
+
+      Melee Weapon Attack: +6 to hit, reach 5 ft., one willing creature, or a creature that is grappled by the vampire, incapacitated, or restrained. Hit: 6 (1d6 + 3) piercing damage plus 7 (2d6) necrotic damage. The target's hit point maximum is reduced by an amount equal to the necrotic damage taken, and the vampire regains hit points equal to that amount. The reduction lasts until the target finishes a long rest. The target dies if this effect reduces its hit point maximum to 0.
+
+    Claws.
+
+      Melee Weapon Attack: +6 to hit, reach 5 ft., one creature. Hit: 8 (2d4 + 3) slashing damage. Instead of dealing damage, the vampire can grapple the target (escape DC 13).
     """
 
     name = "Vampire Spawn"
@@ -104,13 +132,21 @@ class VampireSpawn(Monster):
 
 class Veteran(Monster):
     """
-    **Multiattack**: The veteran makes two longsword attacks. If it has a shortsword drawn, it can also make a shortsword attack.
+    Multiattack.
 
-    **Longsword**: Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 7 (1d8 + 3) slashing damage, or 8 (1d10 + 3) slashing damage if used with two hands.
+      The veteran makes two longsword attacks. If it has a shortsword drawn, it can also make a shortsword attack.
 
-    **Shortsword**: Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 6 (1d6 + 3) piercing damage.
+    Longsword.
 
-    **Heavy Crossbow**: Ranged Weapon Attack: +3 to hit, range 100/400 ft., one target. Hit: 6 (1d10 + 1) piercing damage.
+      Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 7 (1d8 + 3) slashing damage, or 8 (1d10 + 3) slashing damage if used with two hands.
+
+    Shortsword.
+
+      Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 6 (1d6 + 3) piercing damage.
+
+    Heavy Crossbow.
+
+      Ranged Weapon Attack: +3 to hit, range 100/400 ft., one target. Hit: 6 (1d10 + 1) piercing damage.
     """
 
     name = "Veteran"
@@ -136,11 +172,17 @@ class Veteran(Monster):
 
 class VioletFungus(Monster):
     """
-    **False Appearance**: While the violet fungus remains motionless, it is indistinguishable from an ordinary fungus.
+    False Appearance.
 
-    **Multiattack**: The fungus makes 1d4 Rotting Touch attacks.
+      While the violet fungus remains motionless, it is indistinguishable from an ordinary fungus.
 
-    **Rotting Touch**: Melee Weapon Attack: +2 to hit, reach 10 ft., one creature. Hit: 4 (1d8) necrotic damage.
+    Multiattack.
+
+      The fungus makes 1d4 Rotting Touch attacks.
+
+    Rotting Touch.
+
+      Melee Weapon Attack: +2 to hit, reach 10 ft., one creature. Hit: 4 (1d8) necrotic damage.
     """
 
     name = "Violet Fungus"
@@ -166,17 +208,27 @@ class VioletFungus(Monster):
 
 class Vrock(Monster):
     """
-    **Magic Resistance**: The vrock has advantage on saving throws against spells and other magical effects.
+    Magic Resistance.
 
-    **Multiattack**: The vrock makes two attacks: one with its beak and one with its talons.
+      The vrock has advantage on saving throws against spells and other magical effects.
 
-    **Beak**: Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 10 (2d6 + 3) piercing damage.
+    Multiattack.
 
-    **Talons**: Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 14 (2d10 + 3) slashing damage.
+      The vrock makes two attacks: one with its beak and one with its talons.
+
+    Beak.
+
+      Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 10 (2d6 + 3) piercing damage.
+
+    Talons.
+
+      Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 14 (2d10 + 3) slashing damage.
 
     **Spores (Recharge 6)**: A 15-foot-radius cloud of toxic spores extends out from the vrock. The spores spread around corners. Each creature in that area must succeed on a DC 14 Constitution saving throw or become poisoned. While poisoned in this way, a target takes 5 (1d10) poison damage at the start of each of its turns. A target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. Emptying a vial of holy water on the target also ends the effect on it.
 
-    **Stunning Screech**: The vrock emits a horrific screech. Each creature within 20 feet of it that can hear it and that isn't a demon must succeed on a DC 14 Constitution saving throw or be stunned until the end of the vrock's next turn .
+    Stunning Screech.
+
+      The vrock emits a horrific screech. Each creature within 20 feet of it that can hear it and that isn't a demon must succeed on a DC 14 Constitution saving throw or be stunned until the end of the vrock's next turn .
 
     **Variant: Summon Demon**: The demon chooses what to summon and attempts a magical summoning.
     A vrock has a 30 percent chance of summoning 2d4 dretches or one vrock.
@@ -206,11 +258,17 @@ class Vrock(Monster):
 
 class Vulture(Monster):
     """
-    **Keen Sight and Smell**: The vulture has advantage on Wisdom (Perception) checks that rely on sight or smell.
+    Keen Sight and Smell.
 
-    **Pack Tactics**: The vulture has advantage on an attack roll against a creature if at least one of the vulture's allies is within 5 ft. of the creature and the ally isn't incapacitated.
+      The vulture has advantage on Wisdom (Perception) checks that rely on sight or smell.
 
-    **Beak**: Melee Weapon Attack: +2 to hit, reach 5 ft., one target. Hit: 2 (1d4) piercing damage.
+    Pack Tactics.
+
+      The vulture has advantage on an attack roll against a creature if at least one of the vulture's allies is within 5 ft. of the creature and the ally isn't incapacitated.
+
+    Beak.
+
+      Melee Weapon Attack: +2 to hit, reach 5 ft., one target. Hit: 2 (1d4) piercing damage.
     """
 
     name = "Vulture"

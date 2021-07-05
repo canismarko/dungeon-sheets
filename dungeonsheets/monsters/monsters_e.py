@@ -10,9 +10,13 @@ from dungeonsheets.stats import Ability
 
 class Eagle(Monster):
     """
-    **Keen Sight**: The eagle has advantage on Wisdom (Perception) checks that rely on sight.
+    Keen Sight.
 
-    **Talons**: Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 4 (1d4 + 2) slashing damage.
+      The eagle has advantage on Wisdom (Perception) checks that rely on sight.
+
+    Talons.
+
+      Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 4 (1d4 + 2) slashing damage.
     """
 
     name = "Eagle"
@@ -120,9 +124,13 @@ class EarthElementalMyrmidon(Monster):
 
 class Efreeti(Monster):
     """
-    **Elemental Demise**: If the efreeti dies, its body disintegrates in a flash of fire and puff of smoke, leaving behind only equipment the djinni was wearing or carrying.
+    Elemental Demise.
 
-    **Innate Spellcasting**: The efreeti's innate spell casting ability is Charisma (spell save DC 15, +7 to hit with spell attacks). It can innately cast the following spells, requiring no material components:
+      If the efreeti dies, its body disintegrates in a flash of fire and puff of smoke, leaving behind only equipment the djinni was wearing or carrying.
+
+    Innate Spellcasting.
+
+      The efreeti's innate spell casting ability is Charisma (spell save DC 15, +7 to hit with spell attacks). It can innately cast the following spells, requiring no material components:
 
     At will: detect magic
     3/day: enlarge/reduce, tongues
@@ -136,11 +144,17 @@ class Efreeti(Monster):
     The genie power to grant wishes is legendary among mortals. Only the most potent genies, such as those among the nobility, can do so. A particular genie that has this power can grant one to three wishes to a creature that isn't a genie. Once a genie has granted its limit of wishes, it can't grant wishes again for some amount of time (usually 1 year). and cosmic law dictates that the same genie can expend its limit of wishes on a specific creature only once in that creature's existence.
     To be granted a wish, a creature within 60 feet of the genie states a desired effect to it. The genie can then cast the wish spell on the creature's behalf to bring about the effect. Depending on the genie's nature, the genie might try to pervert the intent of the wish by exploiting the wish's poor wording. The perversion of the wording is usually crafted to be to the genie's benefit.
 
-    **Multiattack**: The efreeti makes two scimitar attacks or uses its Hurl Flame twice.
+    Multiattack.
 
-    **Scimitar**: Melee Weapon Attack: +10 to hit, reach 5 ft., one target. Hit: 13 (2d6 + 6) slashing damage plus 7 (2d6) fire damage.
+      The efreeti makes two scimitar attacks or uses its Hurl Flame twice.
 
-    **Hurl Flame**: Ranged Spell Attack: +7 to hit, range 120 ft., one target. Hit: 17 (5d6) fire damage.
+    Scimitar.
+
+      Melee Weapon Attack: +10 to hit, reach 5 ft., one target. Hit: 13 (2d6 + 6) slashing damage plus 7 (2d6) fire damage.
+
+    Hurl Flame.
+
+      Ranged Spell Attack: +7 to hit, range 120 ft., one target. Hit: 17 (5d6) fire damage.
     """
 
     name = "Efreeti"
@@ -166,11 +180,17 @@ class Efreeti(Monster):
 
 class Elephant(Monster):
     """
-    **Trampling Charge**: If the elephant moves at least 20 ft. straight toward a creature and then hits it with a gore attack on the same turn, that target must succeed on a DC 12 Strength saving throw or be knocked prone. If the target is prone, the elephant can make one stomp attack against it as a bonus action.
+    Trampling Charge.
 
-    **Gore**: Melee Weapon Attack: +8 to hit, reach 5 ft., one target. Hit: 19 (3d8 + 6) piercing damage.
+      If the elephant moves at least 20 ft. straight toward a creature and then hits it with a gore attack on the same turn, that target must succeed on a DC 12 Strength saving throw or be knocked prone. If the target is prone, the elephant can make one stomp attack against it as a bonus action.
 
-    **Stomp**: Melee Weapon Attack: +8 to hit, reach 5 ft., one prone creature. Hit: 22 (3d10 + 6) bludgeoning damage.
+    Gore.
+
+      Melee Weapon Attack: +8 to hit, reach 5 ft., one target. Hit: 19 (3d8 + 6) piercing damage.
+
+    Stomp.
+
+      Melee Weapon Attack: +8 to hit, reach 5 ft., one prone creature. Hit: 22 (3d10 + 6) bludgeoning damage.
     """
 
     name = "Elephant"
@@ -196,11 +216,17 @@ class Elephant(Monster):
 
 class Elk(Monster):
     """
-    **Charge**: If the elk moves at least 20 ft. straight toward a target and then hits it with a ram attack on the same turn, the target takes an extra 7 (2d6) damage. If the target is a creature, it must succeed on a DC 13 Strength saving throw or be knocked prone.
+    Charge.
 
-    **Ram**: Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 6 (1d6 + 3) bludgeoning damage.
+      If the elk moves at least 20 ft. straight toward a target and then hits it with a ram attack on the same turn, the target takes an extra 7 (2d6) damage. If the target is a creature, it must succeed on a DC 13 Strength saving throw or be knocked prone.
 
-    **Hooves**: Melee Weapon Attack: +5 to hit, reach 5 ft., one prone creature. Hit: 8 (2d4 + 3) bludgeoning damage.
+    Ram.
+
+      Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 6 (1d6 + 3) bludgeoning damage.
+
+    Hooves.
+
+      Melee Weapon Attack: +5 to hit, reach 5 ft., one prone creature. Hit: 8 (2d4 + 3) bludgeoning damage.
     """
 
     name = "Elk"
@@ -226,15 +252,25 @@ class Elk(Monster):
 
 class Erinyes(Monster):
     """
-    **Hellish Weapons**: The erinyes's weapon attacks are magical and deal an extra 13 (3d8) poison damage on a hit (included in the attacks).
+    Hellish Weapons.
 
-    **Magic Resistance**: The erinyes has advantage on saving throws against spells and other magical effects.
+      The erinyes's weapon attacks are magical and deal an extra 13 (3d8) poison damage on a hit (included in the attacks).
 
-    **Multiattack**: The erinyes makes three attacks
+    Magic Resistance.
 
-    **Longsword**: Melee Weapon Attack: +8 to hit, reach 5 ft., one target. Hit: 8 (1d8 + 4) slashing damage, or 9 (1d10 + 4) slashing damage if used with two hands, plus 13 (3d8) poison damage.
+      The erinyes has advantage on saving throws against spells and other magical effects.
 
-    **Longbow**: Ranged Weapon Attack: +7 to hit, range 150/600 ft., one target. Hit: 7 (1d8 + 3) piercing damage plus 13 (3d8) poison damage, and the target must succeed on a DC 14 Constitution saving throw or be poisoned. The poison lasts until it is removed by the lesser restoration spell or similar magic.
+    Multiattack.
+
+      The erinyes makes three attacks
+
+    Longsword.
+
+      Melee Weapon Attack: +8 to hit, reach 5 ft., one target. Hit: 8 (1d8 + 4) slashing damage, or 9 (1d10 + 4) slashing damage if used with two hands, plus 13 (3d8) poison damage.
+
+    Longbow.
+
+      Ranged Weapon Attack: +7 to hit, range 150/600 ft., one target. Hit: 7 (1d8 + 3) piercing damage plus 13 (3d8) poison damage, and the target must succeed on a DC 14 Constitution saving throw or be poisoned. The poison lasts until it is removed by the lesser restoration spell or similar magic.
 
     **Variant: Rope of Entanglement**: Some erinyes carry a rope of entanglement (detailed in the Dungeon Master's Guide). When such an erinyes uses its Multiattack, the erinyes can use the rope in place of two of the attacks.
     """
@@ -262,19 +298,33 @@ class Erinyes(Monster):
 
 class Ettercap(Monster):
     """
-    **Spider Climb**: The ettercap can climb difficult surfaces, including upside down on ceilings, without needing to make an ability check.
+    Spider Climb.
 
-    **Web Sense**: While in contact with a web, the ettercap knows the exact location of any other creature in contact with the same web.
+      The ettercap can climb difficult surfaces, including upside down on ceilings, without needing to make an ability check.
 
-    **Web Walker**: The ettercap ignores movement restrictions caused by webbing.
+    Web Sense.
 
-    **Multiattack**: The ettercap makes two attacks: one with its bite and one with its claws.
+      While in contact with a web, the ettercap knows the exact location of any other creature in contact with the same web.
 
-    **Bite**: Melee Weapon Attack: +4 to hit, reach 5 ft., one creature. Hit: 6 (1d8 + 2) piercing damage plus 4 (1d8) poison damage. The target must succeed on a DC 11 Constitution saving throw or be poisoned for 1 minute. The creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.
+    Web Walker.
 
-    **Claws**: Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 7 (2d4 + 2) slashing damage.
+      The ettercap ignores movement restrictions caused by webbing.
 
-    **Web**: Ranged Weapon Attack: +4 to hit, range 30/60 ft., one Large or smaller creature. Hit: The creature is restrained by webbing. As an action, the restrained creature can make a DC 11 Strength check, escaping from the webbing on a success. The effect ends if the webbing is destroyed. The webbing has AC 10, 5 hit points, is vulnerable to fire damage and immune to bludgeoning damage.
+    Multiattack.
+
+      The ettercap makes two attacks: one with its bite and one with its claws.
+
+    Bite.
+
+      Melee Weapon Attack: +4 to hit, reach 5 ft., one creature. Hit: 6 (1d8 + 2) piercing damage plus 4 (1d8) poison damage. The target must succeed on a DC 11 Constitution saving throw or be poisoned for 1 minute. The creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.
+
+    Claws.
+
+      Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 7 (2d4 + 2) slashing damage.
+
+    Web.
+
+      Ranged Weapon Attack: +4 to hit, range 30/60 ft., one Large or smaller creature. Hit: The creature is restrained by webbing. As an action, the restrained creature can make a DC 11 Strength check, escaping from the webbing on a success. The effect ends if the webbing is destroyed. The webbing has AC 10, 5 hit points, is vulnerable to fire damage and immune to bludgeoning damage.
 
     **Variant: Web Garrote**: Melee Weapon Attack: +4 to hit, reach 5 ft., one Medium or Small creature against which the ettercap has advantage on the attack roll. Hit: 4 (1d4 + 2) bludgeoning damage, and the target is grappled (escape DC 12). Until this grapple ends, the target can't breathe, and the ettercap has advantage on attack rolls against it.
     """
@@ -302,15 +352,25 @@ class Ettercap(Monster):
 
 class Ettin(Monster):
     """
-    **Two Heads**: The ettin has advantage on Wisdom (Perception) checks and on saving throws against being blinded, charmed, deafened, frightened, stunned, and knocked unconscious.
+    Two Heads.
 
-    **Wakeful**: When one of the ettin's heads is asleep, its other head is awake.
+      The ettin has advantage on Wisdom (Perception) checks and on saving throws against being blinded, charmed, deafened, frightened, stunned, and knocked unconscious.
 
-    **Multiattack**: The ettin makes two attacks: one with its battleaxe and one with its morningstar.
+    Wakeful.
 
-    **Battleaxe**: Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 14 (2d8 + 5) slashing damage.
+      When one of the ettin's heads is asleep, its other head is awake.
 
-    **Morningstar**: Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 14 (2d8 + 5) piercing damage.
+    Multiattack.
+
+      The ettin makes two attacks: one with its battleaxe and one with its morningstar.
+
+    Battleaxe.
+
+      Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 14 (2d8 + 5) slashing damage.
+
+    Morningstar.
+
+      Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 14 (2d8 + 5) piercing damage.
     """
 
     name = "Ettin"

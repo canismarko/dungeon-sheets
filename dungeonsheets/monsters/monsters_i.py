@@ -12,17 +12,29 @@ class IceDevil(Monster):
     """
     **Devil's Sight**: Magical darkness doesn't impede the devil's darkvision.
 
-    **Magic Resistance**: The devil has advantage on saving throws against spells and other magical effects.
+    Magic Resistance.
 
-    **Multiattack**: The devil makes three attacks: one with its bite, one with its claws, and one with its tail.
+      The devil has advantage on saving throws against spells and other magical effects.
 
-    **Bite**: Melee Weapon Attack: +10 to hit, reach 5 ft., one target. Hit: 12 (2d6 + 5) piercing damage plus 10 (3d6) cold damage.
+    Multiattack.
 
-    **Claws**: Melee Weapon Attack: +10 to hit, reach 5 ft., one target. Hit: 10 (2d4 + 5) slashing damage plus 10 (3d6) cold damage.
+      The devil makes three attacks: one with its bite, one with its claws, and one with its tail.
 
-    **Tail**: Melee Weapon Attack:+10 to hit, reach 10 ft., one target. Hit: 12 (2d6 + 5) bludgeoning damage plus 10 (3d6) cold damage.
+    Bite.
 
-    **Wall of Ice**: The devil magically forms an opaque wall of ice on a solid surface it can see within 60 feet of it. The wall is 1 foot thick and up to 30 feet long and 10 feet high, or it's a hemispherical dome up to 20 feet in diameter.
+      Melee Weapon Attack: +10 to hit, reach 5 ft., one target. Hit: 12 (2d6 + 5) piercing damage plus 10 (3d6) cold damage.
+
+    Claws.
+
+      Melee Weapon Attack: +10 to hit, reach 5 ft., one target. Hit: 10 (2d4 + 5) slashing damage plus 10 (3d6) cold damage.
+
+    Tail.
+
+      Melee Weapon Attack:+10 to hit, reach 10 ft., one target. Hit: 12 (2d6 + 5) bludgeoning damage plus 10 (3d6) cold damage.
+
+    Wall of Ice.
+
+      The devil magically forms an opaque wall of ice on a solid surface it can see within 60 feet of it. The wall is 1 foot thick and up to 30 feet long and 10 feet high, or it's a hemispherical dome up to 20 feet in diameter.
     When the wall appears, each creature in its space is pushed out of it by the shortest route. The creature chooses which side of the wall to end up on, unless the creature is incapacitated. The creature then makes a DC 17 Dexterity saving throw, taking 35 (10d6) cold damage on a failed save, or half as much damage on a successful one.
     The wall lasts for 1 minute or until the devil is incapacitated or dies. The wall can be damaged and breached; each 10-foot section has AC 5, 30 hit points, vulnerability to fire damage, and immunity to acid, cold, necrotic, poison, and psychic damage. If a section is destroyed, it leaves behind a sheet of frigid air in the space the wall occupied. Whenever a creature finishes moving through the frigid air on a turn, willingly or otherwise, the creature must make a DC 17 Constitution saving throw, taking 17 (5d6) cold damage on a failed save, or half as much damage on a successful one. The frigid air dissipates when the rest of the wall vanishes.
     """
@@ -50,13 +62,21 @@ class IceDevil(Monster):
 
 class IceMephit(Monster):
     """
-    **Death Burst**: When the mephit dies, it explodes in a burst of jagged ice. Each creature within 5 ft. of it must make a DC 10 Dexterity saving throw, taking 4 (1d8) slashing damage on a failed save, or half as much damage on a successful one.
+    Death Burst.
 
-    **False Appearance**: While the mephit remains motionless, it is indistinguishable from an ordinary shard of ice.
+      When the mephit dies, it explodes in a burst of jagged ice. Each creature within 5 ft. of it must make a DC 10 Dexterity saving throw, taking 4 (1d8) slashing damage on a failed save, or half as much damage on a successful one.
 
-    **Innate Spellcasting**: The mephit can innately cast fog cloud, requiring no material components. Its innate spellcasting ability is Charisma.
+    False Appearance.
 
-    **Claws**: Melee Weapon Attack: +3 to hit, reach 5 ft., one creature. Hit: 3 (1d4 + 1) slashing damage plus 2 (1d4) cold damage.
+      While the mephit remains motionless, it is indistinguishable from an ordinary shard of ice.
+
+    Innate Spellcasting.
+
+      The mephit can innately cast fog cloud, requiring no material components. Its innate spellcasting ability is Charisma.
+
+    Claws.
+
+      Melee Weapon Attack: +3 to hit, reach 5 ft., one creature. Hit: 3 (1d4 + 1) slashing damage plus 2 (1d4) cold damage.
 
     **Frost Breath (Recharge 6)**: The mephit exhales a 15-foot cone of cold air. Each creature in that area must succeed on a DC 10 Dexterity saving throw, taking 5 (2d4) cold damage on a failed save, or half as much damage on a successful one.
 
@@ -86,17 +106,23 @@ class IceMephit(Monster):
 
 class Imp(Monster):
     """
-    **Shapechanger**: The imp can use its action to polymorph into a beast form that resembles a rat (speed 20 ft.), a raven (20 ft., fly 60 ft.), or a spider (20 ft., climb 20 ft.), or back into its true form. Its statistics are the same in each form, except for the speed changes noted. Any equipment it is wearing or carrying isn't transformed. It reverts to its true form if it dies.
+    Shapechanger.
+
+      The imp can use its action to polymorph into a beast form that resembles a rat (speed 20 ft.), a raven (20 ft., fly 60 ft.), or a spider (20 ft., climb 20 ft.), or back into its true form. Its statistics are the same in each form, except for the speed changes noted. Any equipment it is wearing or carrying isn't transformed. It reverts to its true form if it dies.
 
     **Devil's Sight**: Magical darkness doesn't impede the imp's darkvision.
 
-    **Magic Resistance**: The imp has advantage on saving throws against spells and other magical effects.
+    Magic Resistance.
+
+      The imp has advantage on saving throws against spells and other magical effects.
 
     **Variant: Familiar**: The imp can serve another creature as a familiar, forming a telepathic bond with its willing master. While the two are bonded, the master can sense what the quasit senses as long as they are within 1 mile of each other. While the imp is within 10 feet of its master, the master shares the quasit's Magic Resistance trait. At any time and for any reason, the imp can end its service as a familiar, ending the telepathic bond.
 
     **Sting (Bite in Beast Form)**: Melee Weapon Attack: +5 to hit, reach 5 ft ., one target. Hit: 5 (1d4 + 3) piercing damage, and the target must make on a DC 11 Constitution saving throw, taking 10 (3d6) poison damage on a failed save, or half as much damage on a successful one.
 
-    **Invisibility**: The imp magically turns invisible until it attacks, or until its concentration ends (as if concentrating on a spell). Any equipment the imp wears or carries is invisible with it.
+    Invisibility.
+
+      The imp magically turns invisible until it attacks, or until its concentration ends (as if concentrating on a spell). Any equipment the imp wears or carries is invisible with it.
     """
 
     name = "Imp"
@@ -122,13 +148,21 @@ class Imp(Monster):
 
 class InvisibleStalker(Monster):
     """
-    **Invisibility**: The stalker is invisible.
+    Invisibility.
 
-    **Faultless Tracker**: The stalker is given a quarry by its summoner. The stalker knows the direction and distance to its quarry as long as the two of them are on the same plane of existence. The stalker also knows the location of its summoner.
+      The stalker is invisible.
 
-    **Multiattack**: The stalker makes two slam attacks.
+    Faultless Tracker.
 
-    **Slam**: Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 10 (2d6 + 3) bludgeoning damage.
+      The stalker is given a quarry by its summoner. The stalker knows the direction and distance to its quarry as long as the two of them are on the same plane of existence. The stalker also knows the location of its summoner.
+
+    Multiattack.
+
+      The stalker makes two slam attacks.
+
+    Slam.
+
+      Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 10 (2d6 + 3) bludgeoning damage.
     """
 
     name = "Invisible Stalker"
@@ -154,21 +188,37 @@ class InvisibleStalker(Monster):
 
 class IronGolem(Monster):
     """
-    **Fire Absorption**: Whenever the golem is subjected to fire damage, it takes no damage and instead regains a number of hit points equal to the fire damage dealt.
+    Fire Absorption.
 
-    **Immutable Form**: The golem is immune to any spell or effect that would alter its form.
+      Whenever the golem is subjected to fire damage, it takes no damage and instead regains a number of hit points equal to the fire damage dealt.
 
-    **Magic Resistance**: The golem has advantage on saving throws against spells and other magical effects.
+    Immutable Form.
 
-    **Magic Weapons**: The golem's weapon attacks are magical.
+      The golem is immune to any spell or effect that would alter its form.
 
-    **Multiattack**: The golem makes two melee attacks.
+    Magic Resistance.
 
-    **Slam**: Melee Weapon Attack: +13 to hit, reach 5 ft., one target. Hit: 20 (3d8 + 7) bludgeoning damage.
+      The golem has advantage on saving throws against spells and other magical effects.
 
-    **Sword**: Melee Weapon Attack: +13 to hit, reach 10 ft., one target. Hit: 23 (3d10 + 7) slashing damage.
+    Magic Weapons.
 
-    **Poison Breath**: The golem exhales poisonous gas in a 15-foot cone. Each creature in that area must make a DC 19 Constitution saving throw, taking 45 (l0d8) poison damage on a failed save, or half as much damage on a successful one.
+      The golem's weapon attacks are magical.
+
+    Multiattack.
+
+      The golem makes two melee attacks.
+
+    Slam.
+
+      Melee Weapon Attack: +13 to hit, reach 5 ft., one target. Hit: 20 (3d8 + 7) bludgeoning damage.
+
+    Sword.
+
+      Melee Weapon Attack: +13 to hit, reach 10 ft., one target. Hit: 23 (3d10 + 7) slashing damage.
+
+    Poison Breath.
+
+      The golem exhales poisonous gas in a 15-foot cone. Each creature in that area must make a DC 19 Constitution saving throw, taking 45 (l0d8) poison damage on a failed save, or half as much damage on a successful one.
     """
 
     name = "Iron Golem"
