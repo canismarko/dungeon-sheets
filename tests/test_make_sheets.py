@@ -52,6 +52,21 @@ class MakeSheetsTestCase(unittest.TestCase):
                         f"GM PDF ({self.gm_pdf.resolve()}) not created.")
 
 
+class EpubOutputTestCase(unittest.TestCase):
+    gm_epub = Path(f"{GMFILE.stem}.epub").resolve()
+
+    def tearDown(self):
+        for f in [self.gm_epub]:
+            if f.exists():
+                f.unlink()
+
+    def test_file_created(self):
+        # Check that a file is created once the function is run
+        # self.assertFalse(os.path.exists(pdf_name), f'{pdf_name} already exists.')
+        make_sheets.make_gm_sheet(gm_file=GMFILE, output_format="epub")
+        self.assertTrue(self.gm_epub.exists(), f"{self.gm_epub} not created.")
+
+
 class PdfOutputTestCase(unittest.TestCase):
     basename = "clara"
 
@@ -142,11 +157,11 @@ class TexCreatorTestCase(unittest.TestCase):
 
     def test_create_monsters_tex(self):
         monsters_ = [monsters.GiantEagle()]
-        tex = make_sheets.create_monsters_tex(monsters=monsters_)
+        tex = make_sheets.create_monsters_content(monsters=monsters_, suffix="tex")
         self.assertIn(r"Giant Eagle", tex)
         # Check extended properties
         monsters_ = [VashtaNerada()]
-        tex = make_sheets.create_monsters_tex(monsters=monsters_)
+        tex = make_sheets.create_monsters_content(monsters=monsters_, suffix="tex")
         self.assertIn(r"Vashta Nerada", tex)
         self.assertIn(r"35", tex)
         self.assertIn(r"45 fly", tex)
@@ -162,8 +177,9 @@ class TexCreatorTestCase(unittest.TestCase):
         self.assertIn(r"Languages:", tex)
         self.assertIn(r"Skills:", tex)
         # Check fancy extended properties
-        tex = make_sheets.create_monsters_tex(monsters=monsters_,
-                                              use_dnd_decorations=True)
+        tex = make_sheets.create_monsters_content(monsters=monsters_,
+                                                  suffix="tex",
+                                                  use_dnd_decorations=True)
         self.assertIn(r"Vashta Nerada", tex)
         self.assertIn(r"35 ft.", tex)
         self.assertIn(r"45 ft. fly", tex)
@@ -171,22 +187,23 @@ class TexCreatorTestCase(unittest.TestCase):
         self.assertIn(r"65 ft. burrow", tex)
         self.assertIn(r"petrified", tex)
         self.assertIn(r"saving-throws = {Dex +8}", tex)
-
+    
     def test_create_party_summary_tex(self):
         char = self.new_character()
-        tex = make_sheets.create_party_summary_tex(party=[char], summary_rst="")
+        tex = make_sheets.create_party_summary_content(party=[char], suffix="tex", summary_rst="")
         self.assertIn(r"\section*{Party}", tex)
         self.assertIn(char.name, tex)
     
     def test_create_summary_tex(self):
         rst = "The party's create *adventure*."
-        tex = make_sheets.create_party_summary_tex(party=[], summary_rst=rst)
+        tex = make_sheets.create_party_summary_content(party=[], suffix="tex", summary_rst=rst)
         self.assertIn(r"\section*{Summary}", tex)
         # Check that the RST is parsed
         self.assertIn(r"\emph{adventure}", tex)
 
     def test_random_tables_tex(self):
-        tex = make_sheets.create_random_tables_tex(
+        tex = make_sheets.create_random_tables_content(
+            suffix="tex",
             conjure_animals=True,
         )
         self.assertIn(r"\subsection*{Conjure Animals}", tex)

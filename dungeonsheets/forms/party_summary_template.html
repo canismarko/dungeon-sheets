@@ -1,0 +1,56 @@
+[% if summary %]
+
+<h1 id="gm-summary">Summary</h1>
+
+[[ summary | rst_to_html ]]
+
+[% endif %]
+
+[% if party %]
+
+<h1 id="gm-party">Party</h1>
+
+<table>
+  <tr>
+    <th>&nbsp;</th>
+    <th>Str</th>
+    <th>Dex</th>
+    <th>Con</th>
+    <th>Int</th>
+    <th>Wis</th>
+    <th>Cha</th>
+  </tr>
+  [% for member in party %]
+  <tr>
+    <td>[[ member.name ]]</td>
+    <td>[[ member.strength.modifier | mod_str ]]</td>
+    <td>[[ member.dexterity.modifier | mod_str ]]</td>
+    <td>[[ member.constitution.modifier | mod_str ]]</td>
+    <td>[[ member.intelligence.modifier | mod_str ]]</td>
+    <td>[[ member.wisdom.modifier | mod_str ]]</td>
+    <td>[[ member.charisma.modifier | mod_str ]]</td>
+  </tr>
+  [% endfor %]    
+</table>
+
+<table>
+  <tr>
+    <th>&nbsp;</th>
+    <th>AC</th>
+    <th>Pass. Per.</th>
+    <th>Spell DC</th>
+  </tr>
+  [% for member in party %]
+  <tr>
+    <td>[[ member.name[:28] ]]</td>
+    <td>[[ member.armor_class ]]</td>
+    <td>[[ member.perception + 10 ]]</td>
+    <td>[% for class in member.class_list %]
+          [% if class.spellcasting_ability %] [[ member.spell_save_dc(class) ]], [% endif %]
+        [% endfor %]
+    </td>
+  </tr>
+  [% endfor %]    
+</table>
+
+[% endif %]

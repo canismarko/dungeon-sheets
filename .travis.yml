@@ -24,6 +24,7 @@ script:
   - cd examples/
   - makesheets --debug
   - makesheets --debug --fancy
+  - makesheets --debug --output-format=epub
   - cd ../
 after_success:
   - coveralls
