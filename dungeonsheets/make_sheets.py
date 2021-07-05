@@ -13,7 +13,7 @@ from typing import Union, Sequence, Optional
 
 from jinja2 import Environment, PackageLoader
 
-from dungeonsheets import character as _char, exceptions, readers, latex, epub, monsters
+from dungeonsheets import character as _char, exceptions, readers, latex, monsters
 from dungeonsheets.stats import mod_str
 from dungeonsheets.content_registry import find_content
 from dungeonsheets.fill_pdf_template import (
@@ -49,7 +49,6 @@ jinja_env = Environment(
     variable_end_string="]]",
 )
 jinja_env.filters["rst_to_latex"] = latex.rst_to_latex
-jinja_env.filters["rst_to_html"] = epub.rst_to_html
 jinja_env.filters["mod_str"] = mod_str
 
 
@@ -84,24 +83,22 @@ def create_magic_items_tex(
     return template.render(character=character, use_dnd_decorations=use_dnd_decorations)
 
 
-def create_monsters_content(
+def create_monsters_tex(
     monsters: Sequence[Union[monsters.Monster, str]],
-    suffix: str,
     use_dnd_decorations: bool = False,
 ) -> str:
     # Convert strings to Monster objects
-    template = jinja_env.get_template(f"monsters_template.{suffix}")
+    template = jinja_env.get_template("monsters_template.tex")
     return template.render(monsters=monsters, use_dnd_decorations=use_dnd_decorations)
 
 
-def create_party_summary_content(
+def create_party_summary_tex(
     party: Sequence[Entity],
     summary_rst: str,
-    suffix: str,
     use_dnd_decorations: bool = False,
 ) -> str:
     log.debug("Preparing summary table for party: %s", party)
-    template = jinja_env.get_template(f"party_summary_template.{suffix}")
+    template = jinja_env.get_template("party_summary_template.tex")
     return template.render(
         party=party, summary=summary_rst, use_dnd_decorations=use_dnd_decorations
     )
@@ -133,12 +130,11 @@ def create_druid_shapes_tex(
     return template.render(character=character, use_dnd_decorations=use_dnd_decorations)
 
 
-def create_random_tables_content(
+def create_random_tables_tex(
         conjure_animals: bool,
-        suffix: str,
         use_dnd_decorations: bool = False,
 ) -> str:
-    template = jinja_env.get_template(f"random_tables_template.{suffix}")
+    template = jinja_env.get_template("random_tables_template.tex")
     return template.render(conjure_animals=conjure_animals,
                            use_dnd_decorations=use_dnd_decorations)
 
@@ -146,7 +142,6 @@ def create_random_tables_content(
 def make_sheet(
     sheet_file: File,
     flatten: bool = False,
-    output_format: str = "pdf",
     fancy_decorations: bool = False,
     debug: bool = False,
 ):
@@ -158,8 +153,6 @@ def make_sheet(
     flatten : bool, optional
       If true, the resulting PDF will look better and won't be
       fillable form.
-    output_format
-      Either "pdf" or "epub" to generate a PDF file or an EPUB file.
     fancy_decorations : bool, optional
       Use fancy page layout and decorations for extra sheets, namely
       the dnd style file: https://github.com/rpgtex/DND-5e-LaTeX-Template.
@@ -174,7 +167,6 @@ def make_sheet(
     if sheet_props.get("sheet_type", "") == "gm":
         ret = make_gm_sheet(
             gm_file=sheet_file,
-            output_format=output_format,
             fancy_decorations=fancy_decorations,
             debug=debug,
         )
@@ -188,15 +180,8 @@ def make_sheet(
     return ret
 
 
-format_suffixes = {
-    "pdf": "tex",
-    "epub": "html",
-}
-
-
 def make_gm_sheet(
     gm_file: Union[str, Path],
-    output_format: str = "pdf",
     fancy_decorations: bool = False,
     debug: bool = False,
 ):
@@ -206,8 +191,6 @@ def make_gm_sheet(
     ----------
     gm_file
       The file with the gm_sheet definitions.
-    output_format
-      Either "pdf" or "epub" to generate a PDF file or an EPUB file.
     fancy_decorations
       Use fancy page layout and decorations for extra sheets, namely
       the dnd style file: https://github.com/rpgtex/DND-5e-LaTeX-Template.
@@ -220,9 +203,8 @@ def make_gm_sheet(
     basename = gm_file.stem
     gm_props = readers.read_sheet_file(gm_file)
     # Create the intro tex
-    content_suffix = format_suffixes[output_format]
-    content = [
-        jinja_env.get_template(f"preamble.{content_suffix}").render(
+    tex = [
+        jinja_env.get_template("preamble.tex").render(
             use_dnd_decorations=fancy_decorations,
             title=gm_props.pop("session_title", "GM Session Notes"),
         )
@@ -240,9 +222,9 @@ def make_gm_sheet(
         member = _char.Character.load(character_props)
         party.append(member)
     summary = gm_props.pop("summary", "")
-    content.append(
-        create_party_summary_content(
-            party, summary_rst=summary, suffix=content_suffix, use_dnd_decorations=fancy_decorations
+    tex.append(
+        create_party_summary_tex(
+            party, summary_rst=summary, use_dnd_decorations=fancy_decorations
         )
     )
     # Add the monsters
@@ -262,21 +244,20 @@ def make_gm_sheet(
                 new_monster = MyMonster()
         monsters_.append(new_monster)
     if len(monsters_) > 0:
-        content.append(
-            create_monsters_content(monsters_, suffix=content_suffix, use_dnd_decorations=fancy_decorations)
+        tex.append(
+            create_monsters_tex(monsters_, use_dnd_decorations=fancy_decorations)
         )
     # Add the random tables
     random_tables = [s.replace(" ", "_").lower() for s in gm_props.pop("random_tables", [])]
-    content.append(
-        create_random_tables_content(
+    tex.append(
+        create_random_tables_tex(
             conjure_animals=("conjure_animals" in random_tables),
-            suffix=content_suffix,
             use_dnd_decorations=fancy_decorations,
         )
     )
     # Add the closing TeX
-    content.append(
-        jinja_env.get_template(f"postamble.{format_suffixes[output_format]}").render(
+    tex.append(
+        jinja_env.get_template("postamble.tex").render(
             use_dnd_decorations=fancy_decorations
         )
     )
@@ -287,30 +268,17 @@ def make_gm_sheet(
         msg = f"Unhandled attributes in '{str(gm_file)}': {','.join(gm_props.keys())}"
         log.warn(msg)
         warnings.warn(msg)
-    # Produce the combined output depending on the format requested
-    if output_format == "pdf":
-        # Typeset combined LaTeX file
-        try:
-            if len(content) > 2:
-                latex.create_latex_pdf(
-                    tex="".join(content),
-                    basename=basename,
-                    keep_temp_files=debug,
-                    use_dnd_decorations=fancy_decorations,
-                )
-        except exceptions.LatexNotFoundError:
-            log.warning(f"``pdflatex`` not available. Skipping {basename}")
-    elif output_format == "epub":
-        epub.create_epub(
-            chapters={"GM Sheet": "".join(content)},
-            basename=basename,
-            title=gm_props.get("session_title", f"GM Notes: {basename}"),
-            use_dnd_decorations=fancy_decorations,
-        )
-    else:
-        raise exceptions.UnknownOutputFormat(
-            f"Unknown output format requested: {output_format}. Valid options are: 'pdf', 'epub'"
-        )
+    # Typeset combined LaTeX file
+    try:
+        if len(tex) > 2:
+            latex.create_latex_pdf(
+                tex="".join(tex),
+                basename=basename,
+                keep_temp_files=debug,
+                use_dnd_decorations=fancy_decorations,
+            )
+    except exceptions.LatexNotFoundError:
+        log.warning(f"``pdflatex`` not available. Skipping {basename}")
 
 
 def make_character_sheet(
@@ -343,6 +311,10 @@ def make_character_sheet(
     if character is None:
         character_props = readers.read_sheet_file(char_file)
         character = _char.Character.load(character_props)
+    # Load image file if present
+    portrait_file=""
+    if character.portrait:
+        portrait_file=char_file.stem + ".jpeg"
     # Set the fields in the FDF
     basename = char_file.stem
     char_base = basename + "_char"
@@ -362,7 +334,7 @@ def make_character_sheet(
     )
     pages.append(char_pdf)
     person_pdf = create_personality_pdf_template(
-        character=character, basename=person_base, flatten=flatten
+        character=character, basename=person_base, portrait_file=portrait_file, flatten=flatten
     )
     pages.append(person_pdf)
     if character.is_spellcaster:
@@ -467,7 +439,6 @@ def _build(filename, args) -> int:
         make_sheet(
             sheet_file=filename,
             flatten=(not args.editable),
-            output_format=args.output_format,
             debug=args.debug,
             fancy_decorations=args.fancy_decorations,
         )
@@ -518,12 +489,6 @@ def main(args=None):
         ),
     )
     parser.add_argument(
-        "--output-format", "-o",
-        help="Specify the output format for the sheets.",
-        choices=["pdf", "epub"],
-        default="pdf",
-    )
-    parser.add_argument(
         "--debug",
         "-d",
         action="store_true",
@@ -568,7 +533,7 @@ def main(args=None):
     # Process the requested files
     if args.debug:
         for filename in filenames:
-            log.debug("building")
+            print("building")
             _build(filename, args)
     else:
         with Pool(cpu_count()) as p:
