@@ -4,4 +4,5 @@ npyscreen
 jinja2
 sphinx
 pdfrw
+EbookLib
 reportlab
