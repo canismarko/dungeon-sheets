@@ -1,11 +1,11 @@
 from typing import Mapping
 
-from ebooklib import epub
+from ebooklib import epub, ITEM_STYLE
 from docutils import core
 from sphinx.util.docstrings import prepare_docstring
 from docutils.writers.html5_polyglot import Writer as HTMLWriter
 
-from dungeonsheets.latex import dice_re
+from dungeonsheets.forms import dice_re, jinja_environment
 
 
 def create_epub(
@@ -35,12 +35,21 @@ def create_epub(
     book.set_identifier('id123456')
     book.set_title(title)
     book.set_language('en')
+    # Add the css files
+    css_template = jinja_env.get_template("dungeonsheets_epub.css")
+    style = css_template.render(use_dnd_decorations=use_dnd_decorations)
+    css = epub.EpubItem(uid="style_default", file_name="style/gm_sheet.css",
+                        media_type="text/css", content=style)
+    book.add_item(css)    
     # Create the separate chapters
     html_chapters = []
     for chap_title, content in chapters.items():
         chap_fname = "{}.html".format(chap_title.replace(" ", "_").lower())
-        chapter = epub.EpubHtml(title=chap_title, file_name=chap_fname, lang="en")
+        chapter = epub.EpubHtml(title=chap_title,
+                                file_name=chap_fname, lang="en",
+                                media_type="application/xhtml+xml")
         chapter.set_content(content)
+        chapter.add_item(css)
         book.add_item(chapter)
         html_chapters.append(chapter)
     # Add the table of contents
@@ -137,3 +146,14 @@ def rst_to_html(rst, top_heading_level=0):
         _html_parts = html_parts(rst)
         html = _html_parts["body"]
     return html
+
+
+def to_heading_id(inpt: str) -> str:
+    """Take a string and make it suitable for use as an HTML header id."""
+    return inpt.replace(" ", "-")
+
+
+# Prepare the jinja environment
+jinja_env = jinja_environment()
+jinja_env.filters['rst_to_html'] = rst_to_html
+jinja_env.filters['to_heading_id'] = to_heading_id

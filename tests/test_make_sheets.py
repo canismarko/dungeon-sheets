@@ -55,10 +55,10 @@ class MakeSheetsTestCase(unittest.TestCase):
 class EpubOutputTestCase(unittest.TestCase):
     gm_epub = Path(f"{GMFILE.stem}.epub").resolve()
 
-    def tearDown(self):
-        for f in [self.gm_epub]:
-            if f.exists():
-                f.unlink()
+    # def tearDown(self):
+    #     for f in [self.gm_epub]:
+    #         if f.exists():
+    #             f.unlink()
 
     def test_file_created(self):
         # Check that a file is created once the function is run

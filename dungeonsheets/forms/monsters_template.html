@@ -1,10 +1,10 @@
 <h1 id="gm-monsters">Monsters</h1>
 
 [% for monster in monsters|sort(attribute='name') %]
-<h1 id="gm-monsters-[[ monster.name ]]">[[ monster.name ]]</h1>
+<h2 id="gm-monsters-[[ monster.name|to_heading_id ]]">[[ monster.name ]]</h1>
 
 [% if monster.description %]  
-<h2>[[ monster.description ]]</h2>
+<h3>[[ monster.description ]]</h2>
 [% endif %]
 
 <!-- Basic properties -->

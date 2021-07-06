@@ -8,13 +8,10 @@ from docutils.writers.latex2e import Writer, Table, LaTeXTranslator
 from sphinx.util.docstrings import prepare_docstring
 
 from dungeonsheets import exceptions
+from dungeonsheets.forms import dice_re
 
 
 log = logging.getLogger(__name__)
-
-
-# A dice string, with optional backticks: ``1d6 + 3``
-dice_re = re.compile(r"`*(\d+d\d+(?:\s*\+\s*\d+)?)`*")
 
 
 class LatexWriter(Writer):

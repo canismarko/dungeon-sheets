@@ -11,10 +11,8 @@ from multiprocessing import Pool, cpu_count
 from itertools import product
 from typing import Union, Sequence, Optional
 
-from jinja2 import Environment, PackageLoader
-
-from dungeonsheets import character as _char, exceptions, readers, latex, epub, monsters
-from dungeonsheets.stats import mod_str
+from dungeonsheets import character as _char, exceptions, readers, latex, epub, monsters, forms
+from dungeonsheets.forms import mod_str
 from dungeonsheets.content_registry import find_content
 from dungeonsheets.fill_pdf_template import (
     create_character_pdf_template,
@@ -41,19 +39,14 @@ ORDINALS = {
     9: "9th",
 }
 
-jinja_env = Environment(
-    loader=PackageLoader("dungeonsheets", "forms"),
-    block_start_string="[%",
-    block_end_string="%]",
-    variable_start_string="[[",
-    variable_end_string="]]",
-)
-jinja_env.filters["rst_to_latex"] = latex.rst_to_latex
-jinja_env.filters["rst_to_html"] = epub.rst_to_html
-jinja_env.filters["mod_str"] = mod_str
-
 
 PDFTK_CMD = "pdftk"
+
+
+jinja_env = forms.jinja_environment()
+jinja_env.filters["rst_to_latex"] = latex.rst_to_latex
+jinja_env.filters["rst_to_html"] = epub.rst_to_html
+jinja_env.filters["to_heading_id"] = epub.to_heading_id
 
 
 # Custom types
@@ -219,12 +212,13 @@ def make_gm_sheet(
     gm_file = Path(gm_file)
     basename = gm_file.stem
     gm_props = readers.read_sheet_file(gm_file)
+    session_title = gm_props.get("session_title", f"GM Notes: {basename}")
     # Create the intro tex
     content_suffix = format_suffixes[output_format]
     content = [
         jinja_env.get_template(f"preamble.{content_suffix}").render(
             use_dnd_decorations=fancy_decorations,
-            title=gm_props.pop("session_title", "GM Session Notes"),
+            title=session_title,
         )
     ]
     # Add the party stats table and session summary
@@ -302,9 +296,9 @@ def make_gm_sheet(
             log.warning(f"``pdflatex`` not available. Skipping {basename}")
     elif output_format == "epub":
         epub.create_epub(
-            chapters={"GM Sheet": "".join(content)},
+            chapters={session_title: "".join(content)},
             basename=basename,
-            title=gm_props.get("session_title", f"GM Notes: {basename}"),
+            title=session_title,
             use_dnd_decorations=fancy_decorations,
         )
     else:

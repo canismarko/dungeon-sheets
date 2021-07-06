@@ -6,7 +6,7 @@ import warnings
 import pdfrw
 from fdfgen import forge_fdf
 
-from dungeonsheets.stats import mod_str
+from dungeonsheets.forms import mod_str
 
 CHECKBOX_ON = "Yes"
 CHECKBOX_OFF = "Off"
