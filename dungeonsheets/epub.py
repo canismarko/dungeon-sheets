@@ -1,4 +1,6 @@
 from typing import Mapping
+from html.parser import HTMLParser
+import re
 
 from ebooklib import epub, ITEM_STYLE
 from docutils import core
@@ -40,11 +42,13 @@ def create_epub(
     style = css_template.render(use_dnd_decorations=use_dnd_decorations)
     css = epub.EpubItem(uid="style_default", file_name="style/gm_sheet.css",
                         media_type="text/css", content=style)
-    book.add_item(css)    
+    book.add_item(css)
+    toc = ["nav"]
     # Create the separate chapters
     html_chapters = []
     for chap_title, content in chapters.items():
-        chap_fname = "{}.html".format(chap_title.replace(" ", "_").lower())
+        chap_fname = chap_title.replace(" - ", "-").replace(" ", "_").lower()
+        chap_fname = "{}.html".format(chap_fname)
         chapter = epub.EpubHtml(title=chap_title,
                                 file_name=chap_fname, lang="en",
                                 media_type="application/xhtml+xml")
@@ -52,8 +56,10 @@ def create_epub(
         chapter.add_item(css)
         book.add_item(chapter)
         html_chapters.append(chapter)
+        # Add entries for the table of contents
+        toc.append(toc_from_headings(html=content, filename=chap_fname, chapter_title=chap_title))
     # Add the table of contents
-    book.toc = html_chapters
+    book.toc = toc
     book.spine = ("nav", *html_chapters)
     # add default NCX and Nav file
     book.add_item(epub.EpubNcx())
@@ -61,6 +67,103 @@ def create_epub(
     # Save the file
     epub_fname = f"{basename}.epub"
     epub.write_epub(epub_fname, book)
+
+
+class HeadingParser(HTMLParser):
+    tag_re = re.compile("h(\d+)")
+    _curr_level = None
+    _curr_id = None
+    _curr_title = None
+    
+    def __init__(self, *args, **kwargs):
+        self.headings = []
+        super().__init__(*args, **kwargs)
+
+    def heading_level(self, tag):
+        match = self.tag_re.match(tag)
+        if match:
+            return int(match.group(1))
+        else:
+            return None
+    
+    def handle_starttag(self, tag, attrs):
+        this_level = self.heading_level(tag)
+        if this_level is not None:
+            # Found a heading, so process the properties
+            self._curr_level = this_level
+            attrs = {k: v for k, v in attrs}
+            self._curr_id = attrs.get('id')
+            
+    def handle_endtag(self, tag):
+        this_level = self.heading_level(tag)
+        if this_level is not None and this_level == self._curr_level:
+            heading = {
+                "level": this_level,
+                "id": self._curr_id,
+                "title": self._curr_title
+            }
+            self.headings.append(heading)
+
+    def handle_data(self, data):
+        # Save the title
+        if self._curr_level is not None:
+            self._curr_title = data
+
+
+def toc_from_headings(html: str, filename: str = "", chapter_title: str = "Sheet") -> list:
+    """Accept a chapter of HTML, and extract a table of contents segment.
+
+    Parameters
+    ----------
+    html
+      The HTML block to be parsed.
+    filename
+      The name of this file to be used for hrefs. E.g.
+      "index.html#heading_1".
+    
+    Returns
+    -------
+    toc
+      A sequence of table-of-contents links.
+    
+    """
+    # [(<ebooklib.epub.Section at 0x7fdf903595d0>,
+    #   [(<ebooklib.epub.Section at 0x7fdf90359310>,
+    #     [<ebooklib.epub.Link at 0x7fdf90359bd0>,
+    #      <ebooklib.epub.Link at 0x7fdf90359c50>])])]
+    # Parse the HTML
+    parser = HeadingParser()
+    parser.feed(html)
+    headings = parser.headings
+    # Parse into a table of contents
+    if len(headings) == 0:
+        # No headings found, so just the chapter link
+        toc = epub.Link(href=filename, title=chapter_title, uid=filename)
+    else:
+        # Add a section for the chapter as a whole
+        toc = (epub.Section(href=filename, title=chapter_title), [])
+        sections_stack = [toc]
+        # Parse all the headings
+        for idx, heading in enumerate(headings):
+            # Determine where we are in the tree
+            href = f"{filename}#{heading['id']}"
+            parent_section = sections_stack[-1]
+            is_last = idx == (len(headings) - 1)
+            is_leaf = is_last or heading['level'] >= headings[idx+1]['level']
+            # Add a leaf or branch depending on the heading structure
+            if is_leaf:
+                parent_section[1].append(epub.Link(href=href, title=heading['title'], uid=href))
+            else:
+                new_section = (epub.Section(href=href, title=heading['title']),
+                               [])
+                parent_section[1].append(new_section)
+                sections_stack.append(new_section)
+            # Walk back up the stack
+            if not is_last:
+                for idx in range(max(0, heading['level'] - headings[idx + 1]['level'])):
+                    sections_stack.pop()
+
+    return toc
 
 
 def html_parts(

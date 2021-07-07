@@ -37,3 +37,6 @@ div.system-message {
   border-width: 2px;
   color: red;
 }
+.literal {
+    font-family: monospace;
+}

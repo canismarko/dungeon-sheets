@@ -279,7 +279,7 @@ def make_gm_sheet(
     gm_props.pop("sheet_type")
     if len(gm_props.keys()) > 0:
         msg = f"Unhandled attributes in '{str(gm_file)}': {','.join(gm_props.keys())}"
-        log.warn(msg)
+        log.warning(msg)
         warnings.warn(msg)
     # Produce the combined output depending on the format requested
     if output_format == "pdf":
