@@ -362,11 +362,11 @@ def make_character_sheet(
 
     # Start of PDF gen
     char_pdf = create_character_pdf_template(
-        character=character, basename=char_base, portrait_file=portrait_file, flatten=flatten
+        character=character, basename=char_base, flatten=flatten
     )
     pages.append(char_pdf)
     person_pdf = create_personality_pdf_template(
-        character=character, basename=person_base, flatten=flatten
+        character=character, basename=person_base, portrait_file=portrait_file, flatten=flatten
     )
     pages.append(person_pdf)
     if character.is_spellcaster:

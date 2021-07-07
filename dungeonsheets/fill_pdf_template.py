@@ -182,7 +182,7 @@ def create_character_pdf_template(character, basename, flatten=False):
     return make_pdf(fields, src_pdf=src_pdf, basename=basename, flatten=flatten, portrait="")
 
 
-def create_personality_pdf_template(character, basename, portrait_file, flatten=False):
+def create_personality_pdf_template(character, basename, portrait_file="", flatten=False):
     # Prepare the list of fields
     fields = {
         "CharacterName 2": character.name,
