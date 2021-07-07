@@ -630,8 +630,8 @@ def make_image_pdf(src_img:str, dest_pdf:str):
     packet = io.BytesIO()
     can = canvas.Canvas(packet)
     x_start = 10
-    y_start = 250
-    can.drawImage(src_img, x_start, y_start, width=160, preserveAspectRatio=True, mask='auto')
+    y_start = 240
+    can.drawImage(src_img, x_start, y_start, width=175, preserveAspectRatio=True, mask='auto')
     can.showPage()
     can.save()
  
