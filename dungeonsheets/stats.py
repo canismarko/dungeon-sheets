@@ -30,6 +30,11 @@ from dungeonsheets.features import (
 log = logging.getLogger(__name__)
 
 
+def mod_str(modifier):
+    """Converts a modifier to a string, eg 2 -> '+2'."""
+    return "{:+d}".format(modifier)
+
+
 AbilityScore = namedtuple("AbilityScore", ("value", "modifier", "saving_throw"))
 
 

@@ -9,7 +9,7 @@ from dungeonsheets.stats import Ability
 
 
 class Baboon(Monster):
-    """ Pack Tactics.
+    """Pack Tactics.
       The baboon has advantage on an attack roll against a creature if
       at least one of the baboon's allies is within 5 ft. of the
       creature and the ally isn't incapacitated.
@@ -109,11 +109,11 @@ class Balor(Monster):
     Variant: Summon Demon.
       The demon chooses what to summon and attempts a magical
       summoning.
-      
+
       A balor has a 50 percent chance of summoning 1d8 vrocks, 1d6
       hezrous, 1d4 glabrezus, 1d3 nalfeshnees, 1d2 mariliths, or one
       goristro.
-      
+
       A summoned demon appears in an unoccupied space within 60 feet
       of its summoner, acts as an ally of its summoner, and can't
       summon other demons. It remains for 1 minute, until it or its
@@ -148,7 +148,7 @@ class Bandit(Monster):
     Light Crossbow.
       Ranged Weapon Attack: +3 to hit, range 80 ft./320 ft., one
       target. Hit: 5 (1d8 + 1) piercing damage.
-    
+
     """
 
     name = "Bandit"
@@ -262,20 +262,20 @@ class Basilisk(Monster):
       success, the effect ends. On a failure, the creature is
       petrified until freed by the greater restoration spell or other
       magic.
-      
+
       A creature that isn't surprised can avert its eyes to avoid the
       saving throw at the start of its turn. If it does so, it can't
       see the basilisk until the start of its next turn, when it can
       avert its eyes again. If it looks at the basilisk in the
       meantime, it must immediately make the save.
-      
+
       If the basilisk sees its reflection within 30 ft. of it in
       bright light, it mistakes itself for a rival and targets itself
       with its gaze.
     Bite.
       Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 10
       (2d6 + 3) piercing damage plus 7 (2d6) poison damage.
-    
+
     """
 
     name = "Basilisk"
@@ -410,7 +410,7 @@ class Behir(Monster):
       other effects outside the behir, and it takes 21 (6d6) acid
       damage at the start of each of the behir's turns. A behir can
       have only one creature swallowed at a time.
-      
+
       If the behir takes 30 damage or more on a single turn from the
       swallowed creature, the behir must succeed on a DC 14
       Constitution saving throw at the end of that turn or regurgitate

@@ -11,7 +11,15 @@ from multiprocessing import Pool, cpu_count
 from itertools import product
 from typing import Union, Sequence, Optional
 
-from dungeonsheets import character as _char, exceptions, readers, latex, epub, monsters, forms
+from dungeonsheets import (
+    character as _char,
+    exceptions,
+    readers,
+    latex,
+    epub,
+    monsters,
+    forms,
+)
 from dungeonsheets.forms import mod_str
 from dungeonsheets.content_registry import find_content
 from dungeonsheets.fill_pdf_template import (
@@ -127,13 +135,14 @@ def create_druid_shapes_tex(
 
 
 def create_random_tables_content(
-        conjure_animals: bool,
-        suffix: str,
-        use_dnd_decorations: bool = False,
+    conjure_animals: bool,
+    suffix: str,
+    use_dnd_decorations: bool = False,
 ) -> str:
     template = jinja_env.get_template(f"random_tables_template.{suffix}")
-    return template.render(conjure_animals=conjure_animals,
-                           use_dnd_decorations=use_dnd_decorations)
+    return template.render(
+        conjure_animals=conjure_animals, use_dnd_decorations=use_dnd_decorations
+    )
 
 
 def make_sheet(
@@ -236,7 +245,10 @@ def make_gm_sheet(
     summary = gm_props.pop("summary", "")
     content.append(
         create_party_summary_content(
-            party, summary_rst=summary, suffix=content_suffix, use_dnd_decorations=fancy_decorations
+            party,
+            summary_rst=summary,
+            suffix=content_suffix,
+            use_dnd_decorations=fancy_decorations,
         )
     )
     # Add the monsters
@@ -257,10 +269,14 @@ def make_gm_sheet(
         monsters_.append(new_monster)
     if len(monsters_) > 0:
         content.append(
-            create_monsters_content(monsters_, suffix=content_suffix, use_dnd_decorations=fancy_decorations)
+            create_monsters_content(
+                monsters_, suffix=content_suffix, use_dnd_decorations=fancy_decorations
+            )
         )
     # Add the random tables
-    random_tables = [s.replace(" ", "_").lower() for s in gm_props.pop("random_tables", [])]
+    random_tables = [
+        s.replace(" ", "_").lower() for s in gm_props.pop("random_tables", [])
+    ]
     content.append(
         create_random_tables_content(
             conjure_animals=("conjure_animals" in random_tables),
@@ -303,7 +319,8 @@ def make_gm_sheet(
         )
     else:
         raise exceptions.UnknownOutputFormat(
-            f"Unknown output format requested: {output_format}. Valid options are: 'pdf', 'epub'"
+            f"Unknown output format requested: {output_format}. Valid options are:"
+            " 'pdf', 'epub'"
         )
 
 
@@ -512,7 +529,8 @@ def main(args=None):
         ),
     )
     parser.add_argument(
-        "--output-format", "-o",
+        "--output-format",
+        "-o",
         help="Specify the output format for the sheets.",
         choices=["pdf", "epub"],
         default="pdf",

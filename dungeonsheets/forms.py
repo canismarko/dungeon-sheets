@@ -3,13 +3,11 @@ import re
 from jinja2 import Environment, PackageLoader
 
 
+from dungeonsheets.stats import mod_str
+
+
 # A dice string, with optional backticks: ``1d6 + 3``
 dice_re = re.compile(r"`*(\d+d\d+(?:\s*\+\s*\d+)?)`*")
-
-
-def mod_str(modifier):
-    """Converts a modifier to a string, eg 2 -> '+2'."""
-    return "{:+d}".format(modifier)
 
 
 def jinja_environment():
@@ -34,5 +32,3 @@ def jinja_environment():
     )
     jinja_env.filters["mod_str"] = mod_str
     return jinja_env
-
-

@@ -25,5 +25,6 @@ class JSONFormatError(RuntimeError):
 class UnknownFileType(RuntimeError):
     """The input file does not match one of the known formats."""
 
+
 class UnknownOutputFormat(RuntimeError):
     """The output format requested is not one of the known outputs."""
