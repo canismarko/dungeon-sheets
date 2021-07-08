@@ -3,6 +3,9 @@ examples/*.pdf
 examples/*.aux
 examples/*.tex
 
+# Generated epub files
+examples/*.epub
+
 # Emacs temp files
 *~
 

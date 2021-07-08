@@ -54,17 +54,22 @@ class MakeSheetsTestCase(unittest.TestCase):
 
 class EpubOutputTestCase(unittest.TestCase):
     gm_epub = Path(f"{GMFILE.stem}.epub").resolve()
+    char_epub = Path(f"{CHARFILE.stem}.epub").resolve()
 
     def tearDown(self):
-        for f in [self.gm_epub]:
+        for f in [self.gm_epub, self.char_epub]:
             if f.exists():
                 f.unlink()
 
-    def test_file_created(self):
+    def test_gm_file_created(self):
         # Check that a file is created once the function is run
-        # self.assertFalse(os.path.exists(pdf_name), f'{pdf_name} already exists.')
         make_sheets.make_gm_sheet(gm_file=GMFILE, output_format="epub")
         self.assertTrue(self.gm_epub.exists(), f"{self.gm_epub} not created.")
+
+    def test_character_file_created(self):
+        # Check that a file is created once the function is run
+        make_sheets.make_character_sheet(char_file=CHARFILE, output_format="epub")
+        self.assertTrue(self.char_epub.exists(), f"{self.char_epub} not created.")        
 
 
 class PdfOutputTestCase(unittest.TestCase):
@@ -121,37 +126,37 @@ class TexCreatorTestCase(unittest.TestCase):
 
     def test_create_subclasses_tex(self):
         char = self.new_character()
-        tex = make_sheets.create_subclasses_tex(character=char)
+        tex = make_sheets.create_subclasses_content(character=char, content_suffix="tex")
         self.assertIn(r"\section*{Subclasses}", tex)
         self.assertIn(r"\subsection*{Way of the Open Hand}", tex)
 
     def test_create_features_tex(self):
         char = self.new_character()
-        tex = make_sheets.create_features_tex(character=char)
+        tex = make_sheets.create_features_content(character=char, content_suffix="tex")
         self.assertIn(r"\section*{Features}", tex)
         self.assertIn(r"\subsection*{Martial Arts}", tex)
 
     def test_create_magic_items_tex(self):
         char = self.new_character()
-        tex = make_sheets.create_magic_items_tex(character=char)
+        tex = make_sheets.create_magic_items_content(character=char, content_suffix="tex")
         self.assertIn(r"\section*{Magic Items}", tex)
         self.assertIn(r"\subsection*{Cloak of Protection}", tex)
 
     def test_create_spellbook_tex(self):
         char = self.new_character()
-        tex = make_sheets.create_spellbook_tex(character=char)
+        tex = make_sheets.create_spellbook_content(character=char, content_suffix="tex")
         self.assertIn(r"\section*{Spells}", tex)
         self.assertIn(r"\section*{Invisibility}", tex)
 
     def test_create_infusions_tex(self):
         char = self.new_character()
-        tex = make_sheets.create_infusions_tex(character=char)
+        tex = make_sheets.create_infusions_content(character=char, content_suffix="tex")
         self.assertIn(r"\section*{Infusions}", tex)
         self.assertIn(r"\subsection*{Boots of the Winding Path}", tex)
 
     def test_create_druid_shapes_tex(self):
         char = self.new_character()
-        tex = make_sheets.create_druid_shapes_tex(character=char)
+        tex = make_sheets.create_druid_shapes_content(character=char, content_suffix="tex")
         self.assertIn(r"\section*{Known Beasts}", tex)
         self.assertIn(r"\section*{Crocodile}", tex)
 

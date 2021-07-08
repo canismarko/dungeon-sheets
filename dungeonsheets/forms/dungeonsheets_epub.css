@@ -1,7 +1,20 @@
 h1, h2, h3, h4, h5, h6 {
   color: #58180d;
 }
+
 /* End fancy decorations */
+.known-beast-disabled {
+    color: lightgrey;
+}
+.not-implemented {
+    font-weight: bold;
+    color: darkred;
+    background: pink;
+}
+
+.spell-school {
+    font-style: italic;
+}
 
 table {
   margin-bottom: 10px;
@@ -32,10 +45,10 @@ dd > p {
 
 div.system-message {
   background: pink;
-  border-color: red;
+  border-color: darkred;
   border-style: solid;
   border-width: 2px;
-  color: red;
+  color: darkred;
 }
 .literal {
     font-family: monospace;

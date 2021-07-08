@@ -1,0 +1,52 @@
+<h1 id="known-beasts">Known Beasts</h1>
+
+[% for shape in character.all_wild_shapes|sort(attribute='challenge_rating') %]
+
+
+<block class="[% if not character.can_assume_shape(shape) %]known-beast-disabled[% endif %]">
+
+  <h2 id="known-beasts-[[ shape.name | to_heading_id ]]">[[ shape.name ]]</h2>
+
+  [% if shape.description %]
+  <p>[[ shape.description ]]</p>
+  [% endif %]
+
+  <table>
+    <tr>
+      <th>Armor Class</th>
+      <th>Hit Points</th>
+      <th>Speed</th>
+    </tr>
+    <tr>
+      <td>[[ shape.armor_class ]]</td>
+      <td>[[ shape.hp_max ]] ([[ shape.hit_dice ]])</td>
+      <td>[[ shape.speed ]][% if shape.swim_speed %], [[ shape.swim_speed ]] swim[% endif %][% if shape.fly_speed %], [[ shape.fly_speed ]] fly[% endif %]</td>
+    </tr>
+  </table>
+
+  <table>
+    <tr>
+      <th>STR</th>
+      <th>DEX</th>
+      <th>CON</th>
+    </tr>
+    <tr>
+      <td>[[ shape.strength.value ]] ([[ shape.strength.modifier|mod_str ]])</td>
+      <td>[[ shape.dexterity.value ]] ([[ shape.dexterity.modifier|mod_str ]])</td>
+      <td>[[ shape.constitution.value ]] ([[ shape.constitution.modifier|mod_str ]])</td>
+    </tr>
+  </table>
+  
+  <dl>  
+    <dt>Skills:</dt><dd>[[ shape.skills ]]</dd>
+    <dt>Senses:</dt><dd>[[ shape.senses ]]</dd>
+    <dt>Languages:</dt><dd>[[ shape.languages ]]</dd>
+    <dt>Resistance:</dt><dd>[[ shape.damage_resistance ]]</dd>
+    <dt>Immunities:</dt><dd>[[ shape.condition_immunities ]]</dd>
+  </dl>
+
+  <p>[[ shape.__doc__ | rst_to_html(top_heading_level=2) ]]</p>
+
+  [% endfor %]
+
+</block>

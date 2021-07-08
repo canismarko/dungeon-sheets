@@ -1,0 +1,19 @@
+<h1 id="infusions">Infusions</h1>
+
+[% for inf in character.infusions %]
+<h2 id="infusions-[[ inf.name | to_heading_id ]]">[[ inf.name ]]</h2>
+
+<dl>
+  [% if inf.prerequisite %]
+  <dt>Prerequisite:</dt>
+  <dd>[[ inf.prerequisite ]]</dd>
+  [% endif %]
+  [% if inf.item %]
+  <dt>Item:</dt>
+  <dd>[[ inf.item ]]</dd>
+  [% endif %]
+</dl>
+
+[[ inf.__doc__ | rst_to_html(top_heading_level=2) ]]
+
+[% endfor %]

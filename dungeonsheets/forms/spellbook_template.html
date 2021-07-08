@@ -1,0 +1,40 @@
+<h1 id="spells">Spells</h1>
+
+[% for spl in character.spells %]
+
+<h2 id="spells-[[ spl.name | to_heading_id ]]">[[ spl.name ]]</h2>
+
+<p class="spell-school">
+  <!-- Spell school and level -->
+  [% if spl.level > 0 %]
+  [[ spl.magic_school ]] Level [[ spl.level ]]
+  [% else %]
+  [[ spl.magic_school ]] Cantrip
+  [% endif %]
+
+  <!-- Ritual and/or concentration -->
+  [% if spl.ritual and spl.concentration %]
+  (ritual, concentration)
+  [% elif spl.ritual %]
+  (ritual)
+  [% elif spl.concentration %]
+  (concentration)
+  [% endif %]                    
+</p>
+
+<dl class="spell-details">
+  <dt>Casting Time:</dt>
+  <dd>[[ spl.casting_time ]]</dd>
+  <dt>Duration:</dt>
+  <dd>[[ spl.duration ]]</dd>
+  <dt>Range:</dt>
+  <dd>[[ spl.casting_range ]]</dd>
+  <dt>Components:</dt>
+  <dd>[[ spl.component_string ]]</dd>
+</dl>
+
+<block class="spell-description">
+  [[ spl.__doc__ | rst_to_html(top_heading_level=1) ]]
+</block>
+
+[% endfor %]

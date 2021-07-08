@@ -103,10 +103,9 @@ class BlindSense(Feature):
 
 class SlipperyMind(Feature):
     """By 15th level, you have acquired greater mental strength. You gain
-    proficiency in W isdom saving throws.
+    proficiency in Wisdom saving throws.
 
     """
-
     name = "Slippery Mind"
     source = "Rogue"
 

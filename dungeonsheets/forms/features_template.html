@@ -1,0 +1,13 @@
+<h1 id="features">Features</h1>
+
+[% for feat in character.features %]
+<h2 id="features-[[ feat.name | to_heading_id ]]">[[ feat.name ]]</h2>
+
+<dl>
+  <dt>Source:</dt>
+  <dd>[[ feat.source ]]</dd>
+</dl>
+
+[[ feat.__doc__|rst_to_html ]]
+
+[% endfor %]

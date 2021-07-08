@@ -1,0 +1,8 @@
+<h1 id="subclasses">Subclasses</h1>
+
+[% for sc in character.subclasses if sc not in ['', None, 'None', 'none']%]
+<h2 id="subclasses-[[ sc.name | to_heading_id ]]">[[ sc.name ]]</h2><!-- Would like to add source here -->
+  
+ [[ sc.__doc__ | rst_to_html(top_heading_level=2) ]]
+
+[% endfor %]

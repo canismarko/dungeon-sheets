@@ -1,0 +1,19 @@
+<h1 id="magic-items">Magic Items</h1>
+
+[% for mitem in character.magic_items %]
+<h2 id="magic-items-[[ mitem.name | to_heading_id ]]">[[ mitem.name ]]</h2>
+
+<dl>
+  <dt>Requires Attunement:</dt>
+  <dd>[[ mitem.requires_attunement ]]</dd>
+  <dt>Rarity:</dt>
+  <dd>[[ mitem.rarity ]]</dd>
+</dl>
+
+[% if mitem.needs_implementation %]
+<p class="not-implemented">**Not included in stats on Character Sheet</p>
+[% endif %]
+                
+[[ mitem.__doc__|rst_to_html ]]
+
+[% endfor %]

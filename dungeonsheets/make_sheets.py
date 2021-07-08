@@ -61,28 +61,22 @@ jinja_env.filters["to_heading_id"] = epub.to_heading_id
 File = Union[Path, str]
 
 
-def create_subclasses_tex(
-    character: Character,
-    use_dnd_decorations: bool = False,
-) -> str:
-    template = jinja_env.get_template("subclasses_template.tex")
-    return template.render(character=character, use_dnd_decorations=use_dnd_decorations)
+class CharacterRenderer():
+    def __init__(self, template_name: str):
+        self.template_name = template_name
+        
+    def __call__(self, character: Character, content_suffix: str = "tex", use_dnd_decorations: bool = False):
+        template = jinja_env.get_template(self.template_name.format(suffix=content_suffix))
+        return template.render(character=character,
+                               use_dnd_decorations=use_dnd_decorations, ordinals=ORDINALS)
 
 
-def create_features_tex(
-    character: Character,
-    use_dnd_decorations: bool = False,
-) -> str:
-    template = jinja_env.get_template("features_template.tex")
-    return template.render(character=character, use_dnd_decorations=use_dnd_decorations)
-
-
-def create_magic_items_tex(
-    character: Character,
-    use_dnd_decorations: bool = False,
-) -> str:
-    template = jinja_env.get_template("magic_items_template.tex")
-    return template.render(character=character, use_dnd_decorations=use_dnd_decorations)
+create_subclasses_content = CharacterRenderer("subclasses_template.{suffix}")
+create_features_content = CharacterRenderer("features_template.{suffix}")
+create_magic_items_content = CharacterRenderer("magic_items_template.{suffix}")
+create_spellbook_content = CharacterRenderer("spellbook_template.{suffix}")
+create_infusions_content = CharacterRenderer("infusions_template.{suffix}")
+create_druid_shapes_content = CharacterRenderer("druid_shapes_template.{suffix}")
 
 
 def create_monsters_content(
@@ -108,30 +102,6 @@ def create_party_summary_content(
     )
 
 
-def create_spellbook_tex(
-    character: Character,
-    use_dnd_decorations: bool = False,
-) -> str:
-    template = jinja_env.get_template("spellbook_template.tex")
-    return template.render(
-        character=character, ordinals=ORDINALS, use_dnd_decorations=use_dnd_decorations
-    )
-
-
-def create_infusions_tex(
-    character: Character,
-    use_dnd_decorations: bool = False,
-) -> str:
-    template = jinja_env.get_template("infusions_template.tex")
-    return template.render(character=character, use_dnd_decorations=use_dnd_decorations)
-
-
-def create_druid_shapes_tex(
-    character: Character,
-    use_dnd_decorations: bool = False,
-) -> str:
-    template = jinja_env.get_template("druid_shapes_template.tex")
-    return template.render(character=character, use_dnd_decorations=use_dnd_decorations)
 
 
 def create_random_tables_content(
@@ -184,6 +154,7 @@ def make_sheet(
         ret = make_character_sheet(
             char_file=sheet_file,
             flatten=flatten,
+            output_format=output_format,
             fancy_decorations=fancy_decorations,
             debug=debug,
         )
@@ -328,6 +299,7 @@ def make_character_sheet(
     char_file: Union[str, Path],
     character: Optional[Character] = None,
     flatten: bool = False,
+    output_format: str = "pdf",
     fancy_decorations: bool = False,
     debug: bool = False,
 ):
@@ -343,6 +315,8 @@ def make_character_sheet(
     flatten
       If true, the resulting PDF will look better and won't be
       fillable form.
+    output_format
+      Either "pdf" or "epub" to generate a PDF file or an EPUB file.
     fancy_decorations
       Use fancy page layout and decorations for extra sheets, namely
       the dnd style file: https://github.com/rpgtex/DND-5e-LaTeX-Template.
@@ -360,13 +334,14 @@ def make_character_sheet(
     person_base = basename + "_person"
     sheets = [char_base + ".pdf", person_base + ".pdf"]
     pages = []
-    tex = [
-        jinja_env.get_template("preamble.tex").render(
+    # Prepare the tex/html content
+    content_suffix = format_suffixes[output_format]
+    content = [
+        jinja_env.get_template(f"preamble.{content_suffix}").render(
             use_dnd_decorations=fancy_decorations,
             title="Features, Magical Items and Spells",
         )
     ]
-
     # Start of PDF gen
     char_pdf = create_character_pdf_template(
         character=character, basename=char_base, flatten=flatten
@@ -387,60 +362,69 @@ def make_character_sheet(
     features_base = "{:s}_features".format(basename)
     # Create a list of subcasses
     if character.subclasses:
-        tex.append(
-            create_subclasses_tex(character, use_dnd_decorations=fancy_decorations)
-        )
-
-    # Create a list of features
+        content.append( create_subclasses_content(character,
+                                                  content_suffix=content_suffix,
+                                                  use_dnd_decorations=fancy_decorations) )
+    # Create a list of features and magic items
     if character.features:
-        tex.append(
-            create_features_tex(character, use_dnd_decorations=fancy_decorations)
+        content.append(
+            create_features_content(character, content_suffix=content_suffix, use_dnd_decorations=fancy_decorations)
         )
-
     if character.magic_items:
-        tex.append(
-            create_magic_items_tex(character, use_dnd_decorations=fancy_decorations)
+        content.append(
+            create_magic_items_content(character, content_suffix=content_suffix, use_dnd_decorations=fancy_decorations)
         )
-
     # Create a list of spells
     if character.is_spellcaster:
-        tex.append(
-            create_spellbook_tex(character, use_dnd_decorations=fancy_decorations)
+        content.append(
+            create_spellbook_content(character, content_suffix=content_suffix, use_dnd_decorations=fancy_decorations)
         )
 
     # Create a list of Artificer infusions
     if getattr(character, "infusions", []):
-        tex.append(
-            create_infusions_tex(character, use_dnd_decorations=fancy_decorations)
+        content.append(
+            create_infusions_content(character, content_suffix=content_suffix, use_dnd_decorations=fancy_decorations)
         )
 
     # Create a list of Druid wild_shapes
     if getattr(character, "wild_shapes", []):
-        tex.append(
-            create_druid_shapes_tex(character, use_dnd_decorations=fancy_decorations)
+        content.append(
+            create_druid_shapes_content(character, content_suffix=content_suffix, use_dnd_decorations=fancy_decorations)
         )
 
-    tex.append(
-        jinja_env.get_template("postamble.tex").render(
+    content.append(
+        jinja_env.get_template(f"postamble.{content_suffix}").render(
             use_dnd_decorations=fancy_decorations
         )
     )
-
     # Typeset combined LaTeX file
-    try:
-        if len(tex) > 2:
-            latex.create_latex_pdf(
-                tex="".join(tex),
-                basename=features_base,
-                keep_temp_files=debug,
-                use_dnd_decorations=fancy_decorations,
+    if output_format == "pdf":
+        try:
+            if len(content) > 2:
+                latex.create_latex_pdf(
+                    tex="".join(content),
+                    basename=features_base,
+                    keep_temp_files=debug,
+                    use_dnd_decorations=fancy_decorations,
+                )
+                sheets.append(features_base + ".pdf")
+                final_pdf = f"{basename}.pdf"
+                merge_pdfs(sheets, final_pdf, clean_up=True)
+        except exceptions.LatexNotFoundError:
+            log.warning(
+                f"``pdflatex`` not available. Skipping features for {character.name}"
             )
-            sheets.append(features_base + ".pdf")
-            final_pdf = f"{basename}.pdf"
-            merge_pdfs(sheets, final_pdf, clean_up=True)
-    except exceptions.LatexNotFoundError:
-        log.warning(
-            f"``pdflatex`` not available. Skipping features for {character.name}"
+    elif output_format == "epub":
+        epub.create_epub(
+            chapters={character.name: "".join(content)},
+            basename=basename,
+            title=character.name,
+            use_dnd_decorations=fancy_decorations,
+        )            
+    else:
+        raise exceptions.UnknownOutputFormat(
+            f"Unknown output format requested: {output_format}. Valid options are:"
+            " 'pdf', 'epub'"
         )
 
 
