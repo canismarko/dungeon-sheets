@@ -55,6 +55,10 @@ def read_sheet_file(filename: Union[str, Path]) -> dict:
     # Remove imported dungeonsheets modules
     char_props.pop("import_homebrew", None)
     char_props.pop("mechanics", None)
+    # Remove private variables (start with a '_')
+    for attr in list(char_props.keys()):
+        if attr[0] == "_":
+            char_props.pop(attr)
     return char_props
 
 

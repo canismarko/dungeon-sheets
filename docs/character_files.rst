@@ -11,7 +11,8 @@
 
 Dungeonsheets expects one file per character, with a ``.py``
 extension. This file is a python module, most likely with a series of
-variables set describing the character. They are roughly grouped into
+variables set describing the character. Any attribute beginning with
+an underscore ('_') will be ignored. They are roughly grouped into
 sections, which are documented below. Additionally, some
 :ref:`examples<examples>` may be useful.
 

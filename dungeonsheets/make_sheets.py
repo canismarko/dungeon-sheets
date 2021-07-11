@@ -282,8 +282,15 @@ def make_gm_sheet(
         except exceptions.LatexNotFoundError:
             log.warning(f"``pdflatex`` not available. Skipping {basename}")
     elif output_format == "epub":
+        chapters = {session_title: "".join(content)}
+        # Make sheets in the epub for each party member
+        for char in party:
+            char_html = make_character_content(char, "html",
+                                               fancy_decorations=fancy_decorations)
+            chapters[char.name] = "".join(char_html)
+        # Create the combined HTML file
         epub.create_epub(
-            chapters={session_title: "".join(content)},
+            chapters=chapters,
             basename=basename,
             title=session_title,
             use_dnd_decorations=fancy_decorations,
