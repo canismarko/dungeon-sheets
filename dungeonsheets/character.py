@@ -248,7 +248,7 @@ class Character(Entity):
     def clear(self):
         # reset class-defined items
         self.class_list = list()
-        self.weapons = list()
+        self._weapons = list()
         self.magic_items = list()
         self._saving_throw_proficiencies = tuple()
         self.other_weapon_proficiencies = tuple()
@@ -850,8 +850,16 @@ class Character(Entity):
                 warning_message=msg,
             )
         # Save it to the array
-        self.weapons.append(ThisWeapon(wielder=self))
+        self._weapons.append(ThisWeapon(wielder=self))
 
+    @property
+    def weapons(self):
+        my_weapons = self._weapons.copy()
+        # Account for unarmed strike
+        if len(my_weapons) == 0 or hasattr(self, "Monk"):
+            my_weapons.append(weapons.Unarmed(wielder=self))
+        return my_weapons
+    
     @property
     def hit_dice(self):
         """What type and how many dice to use for re-gaining hit points.

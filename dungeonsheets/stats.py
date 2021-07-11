@@ -17,7 +17,7 @@ from dungeonsheets.features import (
     NaturalExplorerRevised,
     QuickDraw,
     RakishAudacity,
-    RemarkableAthelete,
+    RemarkableAthlete,
     SeaSoul,
     SoulOfTheForge,
     SuperiorMobility,
@@ -35,7 +35,11 @@ def mod_str(modifier):
     return "{:+d}".format(modifier)
 
 
-AbilityScore = namedtuple("AbilityScore", ("value", "modifier", "saving_throw"))
+def ability_mod_str(character, ability):
+    return mod_str(getattr(character, ability).modifier)
+
+
+AbilityScore = namedtuple("AbilityScore", ("value", "modifier", "saving_throw", "name"))
 
 
 class Ability:
@@ -68,7 +72,7 @@ class Ability:
             if is_proficient:
                 saving_throw += entity.proficiency_bonus
         # Create the named tuple
-        value = AbilityScore(modifier=modifier, value=score, saving_throw=saving_throw)
+        value = AbilityScore(modifier=modifier, value=score, saving_throw=saving_throw, name=self.ability_name)
         return value
 
     def __set__(self, entity, val):
@@ -78,38 +82,98 @@ class Ability:
 
 
 class Skill:
-    """An ability-based skill, such as athletics."""
+    """An ability-based skill, such as athletics.
 
+    Attributes
+    ----------
+    ability_name:
+      The name of the ability, as a python-compatible string.
+    skill_name:
+      The name of the base ability that determines the skill
+      modifier.
+    is_proficient
+      Bool that describes if the owner is proficient in this skill.
+    is_expertise
+      Bool that describes if the owner has expertise in this skill.
+    is_jack_of_all_trades
+      Bool that describes if this skill benefits from Jack of All
+      Trades feature (False if already proficient).
+    is_remarkable_athlete
+      Bool that describes if this skill benefits from Remarkable
+      Athlete feature (False if already proficient).
+    modifier
+      The base ability modifier, after relevant proficiency bonuses
+      have been applied.
+    proficiency_modifier
+      The bonus that is applied to the base ability. Usually the same
+      as the owner's proficiency bonus if ``is_proficient`` is True,
+      but can be different based on class features.,
+
+    """
+    
+    ability_name = ""
+    skill_name = ""
+    entity = None
+    
     def __init__(self, ability):
         self.ability_name = ability
 
-    def __set_name__(self, entity, name):
+    def __set_name__(self, owner, name):
         self.skill_name = name.lower().replace("_", " ")
-        self.character = entity
 
     def __get__(self, entity, owner):
-        log.debug("Getting skill '%s' for '%s'", self.skill_name, entity.name)
-        ability = getattr(entity, self.ability_name)
-        modifier = ability.modifier
-        # Check for proficiency
-        proficiencies = [p.replace("_", " ") for p in entity.skill_proficiencies]
-        is_proficient = self.skill_name in proficiencies
-        log.debug(
-            "%s is proficient in %s: %s", entity.name, self.skill_name, is_proficient
-        )
-        if is_proficient:
-            modifier += entity.proficiency_bonus
-        elif entity.has_feature(JackOfAllTrades):
-            modifier += entity.proficiency_bonus // 2
-        elif entity.has_feature(RemarkableAthelete):
-            if self.ability_name.lower() in ("strength", "dexterity", "constitution"):
-                modifier += ceil(entity.proficiency_bonus / 2.0)
+        self.entity = entity
+        return self
 
+    def __str__(self):
+        return self.skill_name.title()
+
+    @property
+    def is_remarkable_athlete(self):
+        already_proficient = (self.is_proficient or self.is_expertise)
+        if self.entity.has_feature(RemarkableAthlete) and not already_proficient:
+            return True
+        else:
+            return False
+
+    @property
+    def is_jack_of_all_trades(self):
+        already_proficient = (self.is_proficient or self.is_expertise or self.is_remarkable_athlete)
+        if self.entity.has_feature(JackOfAllTrades) and not already_proficient:
+            return True
+        else:
+            return False
+
+    @property
+    def is_proficient(self):
+        # Check for proficiency
+        proficiencies = [p.replace("_", " ") for p in self.entity.skill_proficiencies]
+        is_proficient = self.skill_name in proficiencies
+        return is_proficient
+
+    @property
+    def is_expertise(self):
+        return self.skill_name in self.entity.skill_expertise
+
+    @property
+    def proficiency_modifier(self):
+        modifier = 0
+        if self.is_proficient:
+            modifier += self.entity.proficiency_bonus
+        if self.is_remarkable_athlete:
+            modifier += ceil(self.entity.proficiency_bonus / 2.0)
+        if self.is_jack_of_all_trades:
+            modifier += self.entity.proficiency_bonus // 2
         # Check for expertise
-        is_expert = self.skill_name in entity.skill_expertise
-        if is_expert:
-            modifier += entity.proficiency_bonus
-        log.info("'%s' modifier for '%s': %d", self.skill_name, entity.name, modifier)
+        if self.is_expertise:
+            modifier += self.entity.proficiency_bonus
+        return modifier
+
+    @property
+    def modifier(self):
+        ability = getattr(self.entity, self.ability_name)
+        modifier = ability.modifier + self.proficiency_modifier
+        log.info("%s modifier for '%s': %d", self, self.entity.name, modifier)
         return modifier
 
 

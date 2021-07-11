@@ -1,0 +1,119 @@
+<h1 class="character-sheet">Character Sheet</h1>
+
+<!-- Identity -->
+<dl class="character-details">
+  <dt>Character Name</dt>
+  <dd>[[ character.name ]]</dd>
+  <dt>Class &amp; Level</dt>
+  <dd>[[ character.classes_and_levels ]]</dd>
+  <dt>Background</dt>
+  <dd>[[ character.background ]]</dd>
+  <dt>Player Name</dt>
+  <dd>[[ character.player_name ]]</dd>
+  <dt>Race</dt>
+  <dd>[[ character.race ]]</dd>
+  <dt>Alignment</dt>
+  <dd>[[ character.alignment ]]</dd>
+  <dt>Experience Points</dt>
+  <dd>[[ character.xp ]]</dd>
+  <dt>Inspiration</dt>
+  <dd>[% if character.inspiration %]✓[% else %]&ndash;[% endif %]</dd>
+</dl>
+
+<dl class="combat-stats">
+  <dt>Armor Class</dt>
+  <dd>[[ character.armor_class ]]</dd>
+  <dt>Initiative</dt>
+  <dd>[[ character.initiative ]]</dd>
+  <dt>Speed</dt>
+  <dd>[[ character.speed ]]</dd>
+  <dt>Passive Wisdom (Perception)</dt>
+  <dd>[[ character.passive_wisdom ]]</dd>
+</dl>
+
+<dl class="hit-points">
+  <dt>Hit Point Maximum</dt>
+  <dd>[[ character.hp_max ]]</dd>
+  <dt>Current Hit Points</dt>
+  <dd>[[ character.hp_current ]]</dd>
+  <dt>Temporary Hit Points</dt>
+  <dd>[% if character.hp_temp > 0 %][[ character.hp_temp ]][% endif %]</dd>
+  <dt>Hit Dice Total</dt> 
+  <dd>[[ character.hit_dice ]]</dd>
+</dl>
+
+<!-- Character abilities, saving throws and skill modifiers -->
+<table class="character-abilities">
+  <tr>
+    <th>Ability</th>
+    <th>Mod</th>
+    <th colspan="2">Saving<br />Throw</th>
+  </tr>
+  [% for ability in character.abilities %]
+  <tr>
+    <td>[[ ability.name | capitalize ]]</td>
+    <td>[[ ability.modifier | mod_str ]] ([[ ability.value ]])</td>
+    <td>[% if ability.name in character.saving_throw_proficiencies %]✓[% endif %]</td>
+    <td>[[ character.strength.saving_throw | mod_str ]]</td>
+  </tr>
+  [% endfor %]
+</table>
+
+<table class"character-skills">
+  <tr>
+    <th>Skill</th>
+    <th>Mod</th>
+  </tr>
+  [% for skill in character.skills %]
+  <tr>
+    <td>[[ skill ]]</td>
+        <td>[[ skill.modifier | mod_str ]]</td>
+    <td>
+      [% if skill.is_expertise == 1 %]✓✓
+      [% elif skill.is_proficient %]✓
+      [% elif skill.is_remarkable_athlete %]◓
+      [% elif skill.is_jack_of_all_trades %]◒
+      [% endif %]
+    </td>
+  </tr>
+  [% endfor %]
+</table>
+
+<table class="attacks-and-spellcasting">
+  <tr>
+    <th>Name</th>
+    <th>Atk Bonus</th>
+    <th>Damage/Type</th>
+  </tr>
+  [% for weapon in character.weapons %]
+  <tr>
+    <td>[[ weapon.name ]]</td>
+    <td>[[ weapon.attack_modifier | mod_str ]]</td>
+    <td>[[ weapon.damage ]] / [[ weapon.damage_type ]]</td>
+  </tr>
+  [% endfor %]
+</table>
+
+<dl class="proficiences">
+  <dt>Proficiences</dt>
+  <dd>[[ character.proficiencies_text ]]</dd>
+  <dt>Languages</dt>
+  <dd>[[ character.languages ]]</dd>
+</dl>
+
+<h2 id="inventory">Inventory</h2>
+<ul class="inventory">
+  <li>[[ character.cp ]] CP</li>
+  <li>[[ character.sp ]] SP</li>
+  <li>[[ character.ep ]] EP</li>
+  <li>[[ character.gp ]] GP</li>
+  <li>[[ character.pp ]] PP</li>
+  [% set inventory_items = character.magic_items_text.split(',') %]
+  [% for item in inventory_items %]
+  <li>[[ item ]]</li>
+  [% endfor %]
+  [% set inventory_items = character.equipment.split(',') %]
+  [% for item in inventory_items %]
+  <li>[[ item ]]</li>
+  [% endfor %]
+</ul>

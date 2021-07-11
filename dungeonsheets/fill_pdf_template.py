@@ -57,7 +57,7 @@ def create_character_pdf_template(character, basename, flatten=False):
         "AC": str(character.armor_class),
         "Initiative": str(character.initiative),
         "Speed": str(character.speed),
-        "Passive": 10 + character.perception,
+        "Passive": character.passive_wisdom,
         # Saving throws (proficiencies handled later)
         "ST Strength": mod_str(character.strength.saving_throw),
         "ST Dexterity": mod_str(character.dexterity.saving_throw),
@@ -66,24 +66,24 @@ def create_character_pdf_template(character, basename, flatten=False):
         "ST Wisdom": mod_str(character.wisdom.saving_throw),
         "ST Charisma": mod_str(character.charisma.saving_throw),
         # Skills (proficiencies handled below)
-        "Acrobatics": mod_str(character.acrobatics),
-        "Animal": mod_str(character.animal_handling),
-        "Arcana": mod_str(character.arcana),
-        "Athletics": mod_str(character.athletics),
-        "Deception ": mod_str(character.deception),
-        "History ": mod_str(character.history),
-        "Insight": mod_str(character.insight),
-        "Intimidation": mod_str(character.intimidation),
-        "Investigation ": mod_str(character.investigation),
-        "Medicine": mod_str(character.medicine),
-        "Nature": mod_str(character.nature),
-        "Perception ": mod_str(character.perception),
-        "Performance": mod_str(character.performance),
-        "Persuasion": mod_str(character.persuasion),
-        "Religion": mod_str(character.religion),
-        "SleightofHand": mod_str(character.sleight_of_hand),
-        "Stealth ": mod_str(character.stealth),
-        "Survival": mod_str(character.survival),
+        "Acrobatics": mod_str(character.acrobatics.modifier),
+        "Animal": mod_str(character.animal_handling.modifier),
+        "Arcana": mod_str(character.arcana.modifier),
+        "Athletics": mod_str(character.athletics.modifier),
+        "Deception ": mod_str(character.deception.modifier),
+        "History ": mod_str(character.history.modifier),
+        "Insight": mod_str(character.insight.modifier),
+        "Intimidation": mod_str(character.intimidation.modifier),
+        "Investigation ": mod_str(character.investigation.modifier),
+        "Medicine": mod_str(character.medicine.modifier),
+        "Nature": mod_str(character.nature.modifier),
+        "Perception ": mod_str(character.perception.modifier),
+        "Performance": mod_str(character.performance.modifier),
+        "Persuasion": mod_str(character.persuasion.modifier),
+        "Religion": mod_str(character.religion.modifier),
+        "SleightofHand": mod_str(character.sleight_of_hand.modifier),
+        "Stealth ": mod_str(character.stealth.modifier),
+        "Survival": mod_str(character.survival.modifier),
         # Hit points
         "HDTotal": character.hit_dice,
         "HPMax": str(character.hp_max),
@@ -150,8 +150,6 @@ def create_character_pdf_template(character, basename, flatten=False):
         ("Wpn Name 2", "Wpn2 AtkBonus ", "Wpn2 Damage "),
         ("Wpn Name 3", "Wpn3 AtkBonus  ", "Wpn3 Damage "),
     ]
-    if len(character.weapons) == 0 or hasattr(character, "Monk"):
-        character.wield_weapon("unarmed")
     for _fields, weapon in zip(weapon_fields, character.weapons):
         name_field, atk_field, dmg_field = _fields
         fields[name_field] = weapon.name

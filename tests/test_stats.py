@@ -77,10 +77,14 @@ class TestStats(TestCase):
             proficiency_bonus = 2
 
         my_class = MyClass()
-        self.assertEqual(my_class.acrobatics, 2)
+        self.assertEqual(str(my_class.acrobatics), "Acrobatics")
+        self.assertEqual(my_class.acrobatics.modifier, 2)
+        self.assertEqual(str(my_class.sleight_of_hand), "Sleight Of Hand")
         # Check for a proficiency
         my_class.skill_proficiencies = ["acrobatics"]
-        self.assertEqual(my_class.acrobatics, 4)
+        self.assertTrue(my_class.acrobatics.is_proficient)
+        self.assertEqual(my_class.acrobatics.proficiency_modifier, 2)
+        self.assertEqual(my_class.acrobatics.modifier, 4)
         # Check for a proficiency with spaces in the name
         my_class.skill_proficiencies = ["sleight_of_hand"]
-        self.assertEqual(my_class.sleight_of_hand, 4)
+        self.assertEqual(my_class.sleight_of_hand.modifier, 4)

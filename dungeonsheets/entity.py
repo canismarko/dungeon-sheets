@@ -70,7 +70,7 @@ class Entity(ABC):
     gp = 0
     pp = 0
     equipment = ""
-    weapons = list()
+    _weapons = list()
     magic_items = list()
     armor = None
     shield = None
@@ -87,3 +87,26 @@ class Entity(ABC):
 
     def __init__(self):
         pass
+
+    @property
+    def weapons(self):
+        return self._weapons.copy()
+
+    @property
+    def passive_wisdom(self):
+        return self.perception.modifier + 10
+
+    @property
+    def abilities(self):
+        return [self.strength, self.dexterity, self.constitution,
+                self.intelligence, self.wisdom, self.charisma]
+
+    @property
+    def skills(self):
+        return [self.acrobatics, self.animal_handling, self.arcana,
+                self.athletics, self.deception, self.history,
+                self.insight, self.intimidation, self.investigation,
+                self.medicine, self.nature, self.perception,
+                self.performance, self.persuasion, self.religion,
+                self.sleight_of_hand, self.stealth, self.survival,]
+    

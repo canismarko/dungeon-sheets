@@ -56,10 +56,39 @@ class EpubOutputTestCase(unittest.TestCase):
     gm_epub = Path(f"{GMFILE.stem}.epub").resolve()
     char_epub = Path(f"{CHARFILE.stem}.epub").resolve()
 
+    def new_character(self):
+        char = character.Character(
+            name="Dr. Who",
+            classes=["Monk", "Druid", "Artificer"],
+            levels=[1, 1, 1],
+            subclasses=["way of the open hand", None, None],
+            magic_items=["cloak of protection"],
+            spells=["invisibility"],
+            wild_shapes=["crocodile"],
+            infusions=["boots of the winding path"]
+        )
+        return char
+
     def tearDown(self):
         for f in [self.gm_epub, self.char_epub]:
             if f.exists():
                 f.unlink()
+
+    def test_character_html_content(self):
+        my_char = self.new_character()
+        html = make_sheets.make_character_content(character=my_char,
+                                                  content_format="html")
+        html = "".join(html)
+        # Make sure the various sections get rendered
+        self.assertIn("Subclasses</h1>", html)
+        self.assertIn("Features</h1>", html)
+        self.assertIn("Magic Items</h1>", html)
+        self.assertIn("Spells</h1>", html)
+        self.assertIn("Infusions</h1>", html)
+        self.assertIn("Known Beasts</h1>", html)
+        # Check the character sheet
+        self.assertIn("Character Sheet</h1>", html)
+        self.assertIn("Dr. Who", html)
 
     def test_gm_file_created(self):
         # Check that a file is created once the function is run

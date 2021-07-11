@@ -267,6 +267,7 @@ def to_heading_id(inpt: str) -> str:
     return inpt.replace(" ", "-")
 
 
+
 # Prepare the jinja environment
 jinja_env = jinja_environment()
 jinja_env.filters["rst_to_html"] = rst_to_html

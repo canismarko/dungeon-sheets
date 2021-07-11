@@ -3,6 +3,29 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* End fancy decorations */
+
+/* Dictionary lists for showing stats, etc */
+dt {
+    float: left;
+    clear: left;
+    text-align: right;
+    font-weight: bold;
+}
+dt::after {
+    content: ":";
+}
+dd {
+    padding: 0 0 0.5em 0;
+}
+
+dl.character-details dt {
+    width: 200px;
+}
+dl.character-details dd {
+    width: 200px;
+    margin: 0 0 0 210px;
+}
+
 .known-beast-disabled {
     color: lightgrey;
 }

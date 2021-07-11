@@ -44,7 +44,7 @@
   <tr>
     <td>[[ member.name[:28] ]]</td>
     <td>[[ member.armor_class ]]</td>
-    <td>[[ member.perception + 10 ]]</td>
+    <td>[[ member.perception.modifier + 10 ]]</td>
     <td>[% for class in member.class_list %]
           [% if class.spellcasting_ability %] [[ member.spell_save_dc(class) ]], [% endif %]
         [% endfor %]

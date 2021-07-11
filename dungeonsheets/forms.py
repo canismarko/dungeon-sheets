@@ -3,7 +3,7 @@ import re
 from jinja2 import Environment, PackageLoader
 
 
-from dungeonsheets.stats import mod_str
+from dungeonsheets.stats import mod_str, ability_mod_str
 
 
 # A dice string, with optional backticks: ``1d6 + 3``
@@ -31,4 +31,5 @@ def jinja_environment():
         variable_end_string="]]",
     )
     jinja_env.filters["mod_str"] = mod_str
+    jinja_env.filters["ability_mod_str"] = ability_mod_str
     return jinja_env

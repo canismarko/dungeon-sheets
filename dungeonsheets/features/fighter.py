@@ -234,7 +234,7 @@ class ImprovedCritical(Feature):
     source = "Fighter (Champion)"
 
 
-class RemarkableAthelete(Feature):
+class RemarkableAthlete(Feature):
     """Starting at 7th level, you can add half your proficiency bonus (round up)
     to any Strength, Dexterity, or Constitution check you make that doesn't
     already use your proficiency bonus.
@@ -244,7 +244,7 @@ class RemarkableAthelete(Feature):
 
     """
 
-    name = "Remarkable Athelete"
+    name = "Remarkable Athlete"
     source = "Fighter (Champion)"
 
 

@@ -9,7 +9,7 @@ import re
 from pathlib import Path
 from multiprocessing import Pool, cpu_count
 from itertools import product
-from typing import Union, Sequence, Optional
+from typing import Union, Sequence, Optional, Literal, List
 
 from dungeonsheets import (
     character as _char,
@@ -70,6 +70,9 @@ class CharacterRenderer():
         return template.render(character=character,
                                use_dnd_decorations=use_dnd_decorations, ordinals=ORDINALS)
 
+create_character_sheet_content = CharacterRenderer("character_sheet_template.{suffix}")
+create_spell_list_content = CharacterRenderer("spell_list_template.{suffix}")
+create_background_content = CharacterRenderer("background_template.{suffix}")
 
 create_subclasses_content = CharacterRenderer("subclasses_template.{suffix}")
 create_features_content = CharacterRenderer("features_template.{suffix}")
@@ -192,7 +195,7 @@ def make_gm_sheet(
     gm_file = Path(gm_file)
     basename = gm_file.stem
     gm_props = readers.read_sheet_file(gm_file)
-    session_title = gm_props.get("session_title", f"GM Notes: {basename}")
+    session_title = gm_props.pop("session_title", f"GM Notes: {basename}")
     # Create the intro tex
     content_suffix = format_suffixes[output_format]
     content = [
@@ -295,6 +298,96 @@ def make_gm_sheet(
         )
 
 
+def make_character_content(
+        character: Character,
+        content_format: Literal["tex", "html"],
+        fancy_decorations: bool = False,) -> List[str]:
+    """Prepare the inner content for a character sheet.
+
+    This will produce a fully renderable document, suitable for
+    passing to routines in either the ``epub`` or ``latex``
+    modules. If *content_format* is ``"html"``, the returned content
+    is just the portion that would be found inside the
+    ``<body></body>`` tag.
+
+    If *content_format* is ``"tex"``, the content returned will not
+    include the character, spell list, or biography sheets, since
+    these are currently processed through fillable PDFs.
+
+    Parameters
+    ----------
+    character
+      The character to render content for.
+    content_format
+      Which markup syntax to use.
+    fancy_decorations
+      Use fancy page layout and decorations for extra sheets, namely
+      the dnd style file for *tex*, or extended CSS for *html*.
+    
+    Returns
+    -------
+    content
+      The list of rendered character sheet contents for *character* in
+      markup format *content_format*.
+
+    """
+    # Preamble, empty for HTML
+    content = [
+        jinja_env.get_template(f"preamble.{content_format}").render(
+            use_dnd_decorations=fancy_decorations,
+            title="Features, Magical Items and Spells",
+        )
+    ]
+    # Make the character sheet, and background pages if producing HTML
+    if content_format != "tex":
+        content.append(create_character_sheet_content(character,
+                                                      content_suffix=content_format,
+                                                      use_dnd_decorations=fancy_decorations))
+        content.append(create_spell_list_content(character,
+                                                 content_suffix=content_format,
+                                                 use_dnd_decorations=fancy_decorations)
+                       )
+        content.append(create_background_content(character,
+                                                 content_suffix=content_format,
+                                                 use_dnd_decorations=fancy_decorations)
+                       )
+    # Create a list of subcasses, features, spells, etc
+    if character.subclasses:
+        content.append(create_subclasses_content(character,
+                                                 content_suffix=content_format,
+                                                 use_dnd_decorations=fancy_decorations)
+                       )
+    if character.features:
+        content.append(
+            create_features_content(character, content_suffix=content_format, use_dnd_decorations=fancy_decorations)
+        )
+    if character.magic_items:
+        content.append(
+            create_magic_items_content(character, content_suffix=content_format, use_dnd_decorations=fancy_decorations)
+        )
+    if character.is_spellcaster:
+        content.append(
+            create_spellbook_content(character, content_suffix=content_format, use_dnd_decorations=fancy_decorations)
+        )
+    if len(getattr(character, "infusions", [])) > 0:
+        content.append(
+            create_infusions_content(character, content_suffix=content_format, use_dnd_decorations=fancy_decorations)
+        )
+
+    # Create a list of Druid wild_shapes
+    if len(getattr(character, "all_wild_shapes", [])) > 0:
+        content.append(
+            create_druid_shapes_content(character, content_suffix=content_format, use_dnd_decorations=fancy_decorations)
+        )
+    # Postamble, empty for HTML
+    content.append(
+        jinja_env.get_template(f"postamble.{content_format}").render(
+            use_dnd_decorations=fancy_decorations
+        )
+    )        
+    return content
+
+
 def make_character_sheet(
     char_file: Union[str, Path],
     character: Optional[Character] = None,
@@ -336,12 +429,6 @@ def make_character_sheet(
     pages = []
     # Prepare the tex/html content
     content_suffix = format_suffixes[output_format]
-    content = [
-        jinja_env.get_template(f"preamble.{content_suffix}").render(
-            use_dnd_decorations=fancy_decorations,
-            title="Features, Magical Items and Spells",
-        )
-    ]
     # Start of PDF gen
     char_pdf = create_character_pdf_template(
         character=character, basename=char_base, flatten=flatten
@@ -360,43 +447,10 @@ def make_character_sheet(
         sheets.append(spell_base + ".pdf")
     # end of PDF gen
     features_base = "{:s}_features".format(basename)
-    # Create a list of subcasses
-    if character.subclasses:
-        content.append( create_subclasses_content(character,
-                                                  content_suffix=content_suffix,
-                                                  use_dnd_decorations=fancy_decorations) )
     # Create a list of features and magic items
-    if character.features:
-        content.append(
-            create_features_content(character, content_suffix=content_suffix, use_dnd_decorations=fancy_decorations)
-        )
-    if character.magic_items:
-        content.append(
-            create_magic_items_content(character, content_suffix=content_suffix, use_dnd_decorations=fancy_decorations)
-        )
-    # Create a list of spells
-    if character.is_spellcaster:
-        content.append(
-            create_spellbook_content(character, content_suffix=content_suffix, use_dnd_decorations=fancy_decorations)
-        )
-
-    # Create a list of Artificer infusions
-    if getattr(character, "infusions", []):
-        content.append(
-            create_infusions_content(character, content_suffix=content_suffix, use_dnd_decorations=fancy_decorations)
-        )
-
-    # Create a list of Druid wild_shapes
-    if getattr(character, "wild_shapes", []):
-        content.append(
-            create_druid_shapes_content(character, content_suffix=content_suffix, use_dnd_decorations=fancy_decorations)
-        )
-
-    content.append(
-        jinja_env.get_template(f"postamble.{content_suffix}").render(
-            use_dnd_decorations=fancy_decorations
-        )
-    )
+    content = make_character_content(character=character,
+                                     content_format=content_suffix,
+                                     fancy_decorations=fancy_decorations)
     # Typeset combined LaTeX file
     if output_format == "pdf":
         try:

@@ -16,7 +16,7 @@ class Champion(SubClass):
     name = "Champion"
     features_by_level = defaultdict(list)
     features_by_level[3] = [features.ImprovedCritical]
-    features_by_level[7] = [features.RemarkableAthelete]
+    features_by_level[7] = [features.RemarkableAthlete]
     features_by_level[10] = [features.AdditionalFightingStyle]
     features_by_level[15] = [features.SuperiorCritical]
     features_by_level[18] = [features.Survivor]
