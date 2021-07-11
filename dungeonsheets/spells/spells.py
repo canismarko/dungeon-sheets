@@ -47,19 +47,17 @@ class Spell:
     classes = ()
 
     def __str__(self):
-        if len(self.components) == 0:
-            s = self.name
-        else:
-            s = self.name + " ({:s}) ".format(",".join(self.components))
+        s = self.name
+        requirements = list(self.components)
         # Indicate if this is a ritual or a concentration
         indicators = [
             ("R", self.ritual),
             ("C", self.concentration),
             ("$", self.special_material),
         ]
-        indicators = tuple(letter for letter, is_active in indicators if is_active)
-        if len(indicators):
-            s += f' ({", ".join(indicators)})'
+        requirements.extend([letter for letter, is_active in indicators if is_active])
+        if len(requirements):
+            s += f' ({"/".join(requirements)})'
         return s
 
     def __repr__(self):
@@ -88,4 +86,4 @@ class Spell:
 
     @property
     def special_material(self):
-        return "worth at least" in self.materials.lower()
+        return "worth" in self.materials.lower()
