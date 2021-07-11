@@ -1,5 +1,68 @@
 <h1 id="spells">Spells</h1>
 
+<dl class="spellcasting details">
+  <dt>Spellcasting Class</dt>
+  <dd>
+    [% for spell_class in character.spellcasting_classes %]
+    [% if not loop.first %] / [% endif %]
+    [[ spell_class.name ]] [[ spell_class.level ]]
+    [% endfor %]
+  </dd>
+  <dt>Spellcasting Abilitiy</dt>
+  <dd>
+    [% for spell_class in character.spellcasting_classes %]
+    [% if not loop.first %] / [% endif %]
+    [[ spell_class.spellcasting_ability | stat_abbreviation ]]
+    [% endfor %]
+  </dd>
+  <dt>Spell Save DC</dt>
+  <dd>
+    [% for spell_class in character.spellcasting_classes %]
+    [% if not loop.first %] / [% endif %]
+    [% set spell_save_dc = character.spell_save_dc(spell_class) %]
+    [[ spell_save_dc ]]
+    [% endfor %]
+  </dd>
+  <dt>Spell Attack Bonus</dt>
+  <dd>
+    [% for spell_class in character.spellcasting_classes %]
+    [% if not loop.first %] / [% endif %]
+    [% set spell_atk_bonus = character.spell_attack_bonus(spell_class) %]
+    [[ spell_atk_bonus | mod_str ]]
+    [% endfor %]
+  </dd>
+</dl>
+
+<!-- List of spells by level -->
+<h2 id="spell-list">List of Spells</h2>
+
+<p>(✓ = prepared)</p>
+
+[% for level, spells in character.spells | groupby("level") %]
+
+<h3 id="level-[[ level ]]-spells" class="spell-list-level">[% if level == 0 %]Cantrips[% else %]Level [[ level ]] Spells[% endif %]</h3>
+
+[% if level > 0 %]
+<!-- Number of spell slots (except for cantrips) -->
+[% set spell_slots = character.spell_slots(level) %]
+<dl class="spell-slots details">
+  <dt>Spell slots</dt>
+  <dd>[[ spell_slots ]]</dd>
+</dl>
+[% endif %]
+
+<ul class="spell-list">
+  [% for spell in spells %]
+  <li class="[% if spell in character.spells_prepared %]prepared[% else %]unprepared[% endif %]">
+    <a href="#spells-[[ spell.name | to_heading_id ]]">[[ spell ]]</a>
+  </li>
+  [% endfor %]
+</ul>
+
+[% endfor %]
+
+
+<!-- Spell descriptions -->
 [% for spl in character.spells %]
 
 <h2 id="spells-[[ spl.name | to_heading_id ]]">[[ spl.name ]]</h2>
@@ -22,14 +85,14 @@
   [% endif %]                    
 </p>
 
-<dl class="spell-details">
-  <dt>Casting Time:</dt>
+<dl class="spell-details details">
+  <dt>Casting Time</dt>
   <dd>[[ spl.casting_time ]]</dd>
-  <dt>Duration:</dt>
+  <dt>Duration</dt>
   <dd>[[ spl.duration ]]</dd>
-  <dt>Range:</dt>
+  <dt>Range</dt>
   <dd>[[ spl.casting_range ]]</dd>
-  <dt>Components:</dt>
+  <dt>Components</dt>
   <dd>[[ spl.component_string ]]</dd>
 </dl>
 

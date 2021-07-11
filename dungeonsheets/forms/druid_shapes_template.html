@@ -37,15 +37,17 @@
     </tr>
   </table>
   
-  <dl>  
-    <dt>Skills:</dt><dd>[[ shape.skills ]]</dd>
-    <dt>Senses:</dt><dd>[[ shape.senses ]]</dd>
-    <dt>Languages:</dt><dd>[[ shape.languages ]]</dd>
-    <dt>Resistance:</dt><dd>[[ shape.damage_resistance ]]</dd>
-    <dt>Immunities:</dt><dd>[[ shape.condition_immunities ]]</dd>
+  <dl class="beast-stats details">
+    <dt>Skills</dt><dd>[[ shape.skills ]]&nbsp;</dd>
+    <dt>Senses</dt><dd>[[ shape.senses ]]&nbsp;</dd>
+    <dt>Languages</dt><dd>[[ shape.languages ]]&nbsp;</dd>
+    <dt>Resistances</dt><dd>[[ shape.damage_resistance ]]&nbsp;</dd>
+    <dt>Immunities</dt><dd>[[ shape.condition_immunities ]]&nbsp;</dd>
   </dl>
 
-  <p>[[ shape.__doc__ | rst_to_html(top_heading_level=2) ]]</p>
+  <block>
+    [[ shape.__doc__ | rst_to_html(top_heading_level=2) ]]
+  </block>
 
   [% endfor %]
 

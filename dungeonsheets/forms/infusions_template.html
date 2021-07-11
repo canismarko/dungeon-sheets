@@ -3,13 +3,13 @@
 [% for inf in character.infusions %]
 <h2 id="infusions-[[ inf.name | to_heading_id ]]">[[ inf.name ]]</h2>
 
-<dl>
+<dl class="infusion-details details">
   [% if inf.prerequisite %]
-  <dt>Prerequisite:</dt>
+  <dt>Prerequisite</dt>
   <dd>[[ inf.prerequisite ]]</dd>
   [% endif %]
   [% if inf.item %]
-  <dt>Item:</dt>
+  <dt>Item</dt>
   <dd>[[ inf.item ]]</dd>
   [% endif %]
 </dl>

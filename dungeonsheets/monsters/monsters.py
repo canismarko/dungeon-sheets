@@ -16,7 +16,7 @@ class Monster(Entity):
     skills = "Perception +3, Stealth +4"
     damage_resistances = ""
     damage_immunities = ""
-    damane_vulnerabilities = ""
+    damage_vulnerabilities = ""
     condition_immunities = ""
     saving_throws = ""
     # TODO: Consider refactoring stats.Speed to consider all of these

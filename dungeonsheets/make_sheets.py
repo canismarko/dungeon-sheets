@@ -71,9 +71,6 @@ class CharacterRenderer():
                                use_dnd_decorations=use_dnd_decorations, ordinals=ORDINALS)
 
 create_character_sheet_content = CharacterRenderer("character_sheet_template.{suffix}")
-create_spell_list_content = CharacterRenderer("spell_list_template.{suffix}")
-create_background_content = CharacterRenderer("background_template.{suffix}")
-
 create_subclasses_content = CharacterRenderer("subclasses_template.{suffix}")
 create_features_content = CharacterRenderer("features_template.{suffix}")
 create_magic_items_content = CharacterRenderer("magic_items_template.{suffix}")
@@ -343,14 +340,6 @@ def make_character_content(
         content.append(create_character_sheet_content(character,
                                                       content_suffix=content_format,
                                                       use_dnd_decorations=fancy_decorations))
-        content.append(create_spell_list_content(character,
-                                                 content_suffix=content_format,
-                                                 use_dnd_decorations=fancy_decorations)
-                       )
-        content.append(create_background_content(character,
-                                                 content_suffix=content_format,
-                                                 use_dnd_decorations=fancy_decorations)
-                       )
     # Create a list of subcasses, features, spells, etc
     if character.subclasses:
         content.append(create_subclasses_content(character,
@@ -429,30 +418,30 @@ def make_character_sheet(
     pages = []
     # Prepare the tex/html content
     content_suffix = format_suffixes[output_format]
-    # Start of PDF gen
-    char_pdf = create_character_pdf_template(
-        character=character, basename=char_base, flatten=flatten
-    )
-    pages.append(char_pdf)
-    person_pdf = create_personality_pdf_template(
-        character=character, basename=person_base, flatten=flatten
-    )
-    pages.append(person_pdf)
-    if character.is_spellcaster:
-        # Create spell sheet
-        spell_base = "{:s}_spells".format(basename)
-        create_spells_pdf_template(
-            character=character, basename=spell_base, flatten=flatten
-        )
-        sheets.append(spell_base + ".pdf")
-    # end of PDF gen
-    features_base = "{:s}_features".format(basename)
     # Create a list of features and magic items
     content = make_character_content(character=character,
                                      content_format=content_suffix,
                                      fancy_decorations=fancy_decorations)
     # Typeset combined LaTeX file
     if output_format == "pdf":
+        # Fillable PDF forms
+        char_pdf = create_character_pdf_template(
+            character=character, basename=char_base, flatten=flatten
+        )
+        pages.append(char_pdf)
+        Person_pdf = create_personality_pdf_template(
+            character=character, basename=person_base, flatten=flatten
+        )
+        pages.append(person_pdf)
+        if character.is_spellcaster:
+            # Create spell sheet
+            spell_base = "{:s}_spells".format(basename)
+            create_spells_pdf_template(
+                character=character, basename=spell_base, flatten=flatten
+            )
+            sheets.append(spell_base + ".pdf")
+        # Combined with additional LaTeX pages with detailed character info
+        features_base = "{:s}_features".format(basename)
         try:
             if len(content) > 2:
                 latex.create_latex_pdf(

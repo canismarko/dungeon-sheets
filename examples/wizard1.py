@@ -90,7 +90,7 @@ spells_prepared = ('acid splash', 'animate_objects', 'ray of frost', 'light', 'f
                    'teleport', 'maze', 'wish')  # Todo: Learn some spells
 
 # Which spells have not been prepared
-__spells_unprepared = ()
+__spells_unprepared = ("fireball",)
 
 # all spells known
 spells = spells_prepared + __spells_unprepared

@@ -52,16 +52,16 @@
   </tr>
 </table>
 
-<dl>
-  [% if monster.skills != "" %]<dt>Skills:</dt><dd>[[ monster.skills ]]</dd>[% endif %]
-  <dt>Senses:</dt><dd>[% if monster.senses != "" %][[ monster.senses ]][% else %]--[% endif %]</dd>
-  <dt>Languages:</dt><dd>[% if monster.languages != "" %][[ monster.languages ]][% else %]--[% endif %]</dd>
-  [% if monster.damage_resistances != "" %]<dt>Damage Resistances:</dt><dd>[[ monster.damage_resistances ]]</dd>[% endif %]
-  [% if monster.damage_immunities != "" %]<dt>Damage Immunities:</dt><dd>[[ monster.damage_immunities ]]</dd>[% endif %]
-  [% if monster.damage_vulnerabilities != "" %]<dt>Damage Vulnerabilities:</dt><dd>[[ monster.damage_vulnerabilities ]]</dd>[% endif %]
-  [% if monster.condition_immunities != "" %]<dt>Condition Immunuties:</dt><dd>[[ monster.condition_immunities ]]</dd>[% endif %]
-  [% if monster.saving_throws != "" %]<dt>Saving Throws:</dt><dd>[[ monster.saving_throws ]]</dd>[% endif %]
-  <dt>Challenge:<dd>[[ monster.challenge_rating ]]</dd>
+<dl class="monster-details details">
+  [% if monster.skills != "" %]<dt>Skills</dt><dd>[[ monster.skills ]]</dd>[% endif %]
+  <dt>Senses</dt><dd>[% if monster.senses != "" %][[ monster.senses ]][% else %]--[% endif %]</dd>
+  <dt>Languages</dt><dd>[% if monster.languages != "" %][[ monster.languages ]][% else %]--[% endif %]</dd>
+  [% if monster.damage_resistances != "" %]<dt>Damage Resistances</dt><dd>[[ monster.damage_resistances ]]</dd>[% endif %]
+  [% if monster.damage_immunities != "" %]<dt>Damage Immunities</dt><dd>[[ monster.damage_immunities ]]</dd>[% endif %]
+  [% if monster.damage_vulnerabilities != "" %]<dt>Damage Vulnerabilities</dt><dd>[[ monster.damage_vulnerabilities ]]</dd>[% endif %]
+  [% if monster.condition_immunities != "" %]<dt>Condition Immunuties</dt><dd>[[ monster.condition_immunities ]]</dd>[% endif %]
+  [% if monster.saving_throws != "" %]<dt>Saving Throws</dt><dd>[[ monster.saving_throws ]]</dd>[% endif %]
+  <dt>Challenge<dd>[[ monster.challenge_rating ]]&nbsp;</dd>
 </dl>
 
 

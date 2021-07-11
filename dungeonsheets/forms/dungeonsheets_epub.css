@@ -4,41 +4,83 @@ h1, h2, h3, h4, h5, h6 {
 
 /* End fancy decorations */
 
+/* Spell lists */
+dl.spell-slots {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+h3.spell-list-level {
+    margin-bottom: 0.5em;
+}
+ul.spell-list {
+  list-style-type: none;
+  padding-left: 1em;
+  margin: 0;
+}
+ul.spell-list li {
+    overflow: visible;
+    padding-left: 17px;
+    position: relative;
+}
+ul.spell-list a {
+    /* Make spell list entries not look like links */
+    color: inherit;
+    text-decoration: inherit;
+}
+ul.spell-list li.prepared:before {
+    content: '\2713';
+    position: absolute;
+    left: 0;
+}
+
+/* Spell descriptions */
+.spell-school {
+    font-style: italic;
+}
+
 /* Dictionary lists for showing stats, etc */
-dt {
+dl.details dt {
     float: left;
     clear: left;
     text-align: right;
     font-weight: bold;
 }
-dt::after {
+dl.details dt::after {
     content: ":";
 }
-dd {
+dl.details dd {
     padding: 0 0 0.5em 0;
 }
-
-dl.character-details dt {
-    width: 200px;
+[% for class, width in dl_widths.items() %]
+dl.[[ class ]] dt {
+    width: [[ width ]]em;
 }
-dl.character-details dd {
-    width: 200px;
-    margin: 0 0 0 210px;
+dl.[[ class ]] dd {
+    width: auto;
+    margin: 0 0 0 [[ width + 0.5 ]]em;
 }
+[% endfor %]
 
+/* For showing beasts */
 .known-beast-disabled {
     color: lightgrey;
 }
+
+/* Errors in rst conversion or missing content */
 .not-implemented {
     font-weight: bold;
     color: darkred;
     background: pink;
 }
-
-.spell-school {
-    font-style: italic;
+div.system-message {
+  background: pink;
+  border-color: darkred;
+  border-style: solid;
+  border-width: 2px;
+  color: darkred;
 }
 
+/* General formatting */
 table {
   margin-bottom: 10px;
 }
@@ -66,13 +108,6 @@ dd > p {
   margin-top: 0px;
 }
 
-div.system-message {
-  background: pink;
-  border-color: darkred;
-  border-style: solid;
-  border-width: 2px;
-  color: darkred;
-}
 .literal {
     font-family: monospace;
 }

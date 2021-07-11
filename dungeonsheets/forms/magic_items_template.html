@@ -3,10 +3,10 @@
 [% for mitem in character.magic_items %]
 <h2 id="magic-items-[[ mitem.name | to_heading_id ]]">[[ mitem.name ]]</h2>
 
-<dl>
-  <dt>Requires Attunement:</dt>
+<dl class="magic-item-details details">
+  <dt>Requires Attunement</dt>
   <dd>[[ mitem.requires_attunement ]]</dd>
-  <dt>Rarity:</dt>
+  <dt>Rarity</dt>
   <dd>[[ mitem.rarity ]]</dd>
 </dl>
 

@@ -39,6 +39,11 @@ def ability_mod_str(character, ability):
     return mod_str(getattr(character, ability).modifier)
 
 
+def stat_abbreviation(stat_name):
+    """Abbreviate the name of an ability."""
+    return stat_name.upper()[:3]
+
+
 AbilityScore = namedtuple("AbilityScore", ("value", "modifier", "saving_throw", "name"))
 
 

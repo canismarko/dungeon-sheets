@@ -42,3 +42,7 @@ class TestSpells(TestCase):
         # Try with a ritual and a concentration
         spell.concentration = True
         self.assertEqual(str(spell), "My spell (R, C)")
+        # Try with ritual/concentration/verbal/somatic
+        # spell.
+        # self.assertEqual(str(spell), "My spell (R, C)")
+        # # Try with material components with a cost

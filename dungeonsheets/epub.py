@@ -36,7 +36,21 @@ def create_epub(
     book.set_language("en")
     # Add the css files
     css_template = jinja_env.get_template("dungeonsheets_epub.css")
-    style = css_template.render(use_dnd_decorations=use_dnd_decorations)
+    dl_widths = { # Width for dl lists, in 'em' units
+        "character-details": 11,
+        "combat-stats": 18,
+        "proficiencies": 8.5,
+        "faction": 6,
+        "spellcasting": 12.5,
+        "spell-slots": 8,
+        "spell-details": 10,
+        "beast-stats": 9,
+        "feature-details": 5.5,
+        "infusion-details": 8.5,
+        "magic-item-details": 13.5,
+        "monster-details": 15,
+    }
+    style = css_template.render(use_dnd_decorations=use_dnd_decorations, dl_widths=dl_widths)
     css = epub.EpubItem(
         uid="style_default",
         file_name="style/gm_sheet.css",
@@ -163,7 +177,7 @@ def toc_from_headings(
             # Add a leaf or branch depending on the heading structure
             if is_leaf:
                 parent_section[1].append(
-                    epub.Link(href=href, title=heading["title"], uid=href)
+                    epub.Link(href=href, title=heading["title"], uid=href.replace("#", ":"))
                 )
             else:
                 new_section = (epub.Section(href=href, title=heading["title"]), [])
@@ -264,7 +278,7 @@ def rst_to_html(rst, top_heading_level=0):
 
 def to_heading_id(inpt: str) -> str:
     """Take a string and make it suitable for use as an HTML header id."""
-    return inpt.replace(" ", "-")
+    return inpt.replace(" ", "-").replace("'", "")
 
 
 

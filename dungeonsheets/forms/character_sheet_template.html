@@ -1,7 +1,8 @@
-<h1 class="character-sheet">Character Sheet</h1>
+<h1 id="character-sheet">Character Sheet</h1>
 
+<h2 id="basic-stats">Basic Statistics</h2>
 <!-- Identity -->
-<dl class="character-details">
+<dl class="character-details details">
   <dt>Character Name</dt>
   <dd>[[ character.name ]]</dd>
   <dt>Class &amp; Level</dt>
@@ -18,7 +19,21 @@
   <dd>[[ character.xp ]]</dd>
   <dt>Inspiration</dt>
   <dd>[% if character.inspiration %]✓[% else %]&ndash;[% endif %]</dd>
+  <dt>Age</dt>
+  <dd>[[ character.age ]]&nbsp;</dd>
+  <dt>Height</dt>
+  <dd>[[ character.height ]]&nbsp;</dd>
+  <dt>Weight</dt>
+  <dd>[[ character.weight ]]&nbsp;</dd>
+  <dt>Eyes</dt>
+  <dd>[[ character.eyes ]]&nbsp;</dd>
+  <dt>Skin</dt>
+  <dd>[[ character.skin ]]&nbsp;</dd>
+  <dt>Hair</dt>
+  <dd>[[ character.hair ]]&nbsp;</dd>
 </dl>
+
+<h2 id="combat-stats details">Combat Statistics</h2>
 
 <dl class="combat-stats">
   <dt>Armor Class</dt>
@@ -26,23 +41,38 @@
   <dt>Initiative</dt>
   <dd>[[ character.initiative ]]</dd>
   <dt>Speed</dt>
-  <dd>[[ character.speed ]]</dd>
+  <dd>[[ character.speed ]] ft</dd>
   <dt>Passive Wisdom (Perception)</dt>
   <dd>[[ character.passive_wisdom ]]</dd>
-</dl>
-
-<dl class="hit-points">
   <dt>Hit Point Maximum</dt>
   <dd>[[ character.hp_max ]]</dd>
   <dt>Current Hit Points</dt>
-  <dd>[[ character.hp_current ]]</dd>
+  <dd>[[ character.hp_current ]]&nbsp;</dd>
   <dt>Temporary Hit Points</dt>
-  <dd>[% if character.hp_temp > 0 %][[ character.hp_temp ]][% endif %]</dd>
+  <dd>[% if character.hp_temp > 0 %][[ character.hp_temp ]][% endif %]&nbsp;</dd>
   <dt>Hit Dice Total</dt> 
   <dd>[[ character.hit_dice ]]</dd>
-</dl>
+
+<table class="attacks-and-spellcasting">
+  <tr>
+    <th>Name</th>
+    <th>Atk Bonus</th>
+    <th>Damage/Type</th>
+  </tr>
+  [% for weapon in character.weapons %]
+  <tr>
+    <td>[[ weapon.name ]]</td>
+    <td>[[ weapon.attack_modifier | mod_str ]]</td>
+    <td>[[ weapon.damage ]] / [[ weapon.damage_type ]]</td>
+  </tr>
+  [% endfor %]
+</table>
 
 <!-- Character abilities, saving throws and skill modifiers -->
+<h2 id="abilitities">Abilities, Savings Throws, and Skills</h2>
+
+<p>(✓ = proficient)</p>
+
 <table class="character-abilities">
   <tr>
     <th>Ability</th>
@@ -63,6 +93,7 @@
   <tr>
     <th>Skill</th>
     <th>Mod</th>
+    <th>&nbsp;</th>
   </tr>
   [% for skill in character.skills %]
   <tr>
@@ -79,27 +110,14 @@
   [% endfor %]
 </table>
 
-<table class="attacks-and-spellcasting">
-  <tr>
-    <th>Name</th>
-    <th>Atk Bonus</th>
-    <th>Damage/Type</th>
-  </tr>
-  [% for weapon in character.weapons %]
-  <tr>
-    <td>[[ weapon.name ]]</td>
-    <td>[[ weapon.attack_modifier | mod_str ]]</td>
-    <td>[[ weapon.damage ]] / [[ weapon.damage_type ]]</td>
-  </tr>
-  [% endfor %]
-</table>
-
-<dl class="proficiences">
-  <dt>Proficiences</dt>
+<h2 id="proficiencies">Proficiencies</h2>
+<dl class="proficiencies details">
+  <dt>Proficiencies</dt>
   <dd>[[ character.proficiencies_text ]]</dd>
   <dt>Languages</dt>
   <dd>[[ character.languages ]]</dd>
 </dl>
+
 
 <h2 id="inventory">Inventory</h2>
 <ul class="inventory">
@@ -117,3 +135,58 @@
   <li>[[ item ]]</li>
   [% endfor %]
 </ul>
+
+<h3 id="treasure">Additional Treasure</h3>
+
+<block>
+  [[ character.treasure ]]
+</block>
+
+<h2 id="personaility-traits">Personality Traits</h2>
+
+<block>
+  [[ character.personality_traits ]]
+</block>
+
+<h2 id="ideals">Ideals</h2>
+
+<block>
+  [[ character.ideals ]]
+</block>
+
+<h2 id="bonds">Bonds</h2>
+
+<block>
+  [[ character.bonds ]]
+</block>
+
+<h2 id="flaws">Flaws</h2>
+
+<block>
+  [[ character.flaws ]]
+</block>
+
+<h2 id="appearance">Appearance</h2>
+
+<h2 id="allies">Allies &amp; Organizations</h2>
+
+<dl class="faction details">
+  <dt>Faction</dt>
+  <dd>[[ character.faction_name ]]&nbsp;</dd>
+</dl>
+
+<block>
+  [[ character.allies ]]
+</block>
+
+<h2 id="other-traits">Additional Features &amp; Traits</h2>
+
+<block>
+  [[ character.other_feats_traits ]]
+</block>
+
+<h2 id="backstory">Backstory</h2>
+
+<block>
+  [[ character.backstory ]]
+</block>
