@@ -74,6 +74,7 @@ class BaseCharacterReader:
           The path to the file that will be imported.
 
         """
+        print(filename)
         self.filename = filename
 
     def __call__(self, filename):

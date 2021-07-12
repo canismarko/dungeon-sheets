@@ -9,7 +9,7 @@ import re
 from pathlib import Path
 from multiprocessing import Pool, cpu_count
 from itertools import product
-from typing import Union, Sequence, Optional, Literal, List
+from typing import Union, Sequence, Optional, List
 
 from dungeonsheets import (
     character as _char,
@@ -210,6 +210,7 @@ def make_gm_sheet(
             char_file = gm_file.parent / char_file
         char_file = char_file.resolve()
         # Load the character file
+        log.debug(f"Loading party member: {char_file}")
         character_props = readers.read_sheet_file(char_file)
         member = _char.Character.load(character_props)
         party.append(member)
@@ -304,7 +305,7 @@ def make_gm_sheet(
 
 def make_character_content(
         character: Character,
-        content_format: Literal["tex", "html"],
+        content_format: str,
         fancy_decorations: bool = False,) -> List[str]:
     """Prepare the inner content for a character sheet.
 
@@ -323,7 +324,7 @@ def make_character_content(
     character
       The character to render content for.
     content_format
-      Which markup syntax to use.
+      Which markup syntax to use, "tex" or "html".
     fancy_decorations
       Use fancy page layout and decorations for extra sheets, namely
       the dnd style file for *tex*, or extended CSS for *html*.
@@ -436,7 +437,7 @@ def make_character_sheet(
             character=character, basename=char_base, flatten=flatten
         )
         pages.append(char_pdf)
-        Person_pdf = create_personality_pdf_template(
+        person_pdf = create_personality_pdf_template(
             character=character, basename=person_base, flatten=flatten
         )
         pages.append(person_pdf)

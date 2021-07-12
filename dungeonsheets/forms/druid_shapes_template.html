@@ -2,11 +2,9 @@
 
 [% for shape in character.all_wild_shapes|sort(attribute='challenge_rating') %]
 
-
-<block class="[% if not character.can_assume_shape(shape) %]known-beast-disabled[% endif %]">
+<div class="[% if not character.can_assume_shape(shape) %]known-beast-disabled[% endif %]">
 
   <h2 id="known-beasts-[[ shape.name | to_heading_id ]]">[[ shape.name ]]</h2>
-
   [% if shape.description %]
   <p>[[ shape.description ]]</p>
   [% endif %]
@@ -45,10 +43,10 @@
     <dt>Immunities</dt><dd>[[ shape.condition_immunities ]]&nbsp;</dd>
   </dl>
 
-  <block>
+  <div>
     [[ shape.__doc__ | rst_to_html(top_heading_level=2) ]]
-  </block>
+  </div>
 
-  [% endfor %]
+</div>
 
-</block>
+[% endfor %]

@@ -36,9 +36,9 @@ def create_epub(
     book.set_language("en")
     # Add the css files
     css_template = jinja_env.get_template("dungeonsheets_epub.css")
-    dl_widths = { # Width for dl lists, in 'em' units
+    dl_widths = {  # Width for dl lists, in 'em' units
         "character-details": 11,
-        "combat-stats": 18,
+        "combat-stats": 15,
         "proficiencies": 8.5,
         "faction": 6,
         "spellcasting": 12.5,
@@ -118,13 +118,17 @@ class HeadingParser(HTMLParser):
 
     def handle_endtag(self, tag):
         this_level = self.heading_level(tag)
-        if this_level is not None and this_level == self._curr_level:
+        if this_level is not None and this_level == self._curr_level and self._curr_id is not None:
             heading = {
                 "level": this_level,
                 "id": self._curr_id,
                 "title": self._curr_title,
             }
             self.headings.append(heading)
+            # Reset the current values
+            self._curr_level = None
+            self._curr_id = None
+            self._curr_title = None
 
     def handle_data(self, data):
         # Save the title
@@ -151,10 +155,6 @@ def toc_from_headings(
       A sequence of table-of-contents links.
 
     """
-    # [(<ebooklib.epub.Section at 0x7fdf903595d0>,
-    #   [(<ebooklib.epub.Section at 0x7fdf90359310>,
-    #     [<ebooklib.epub.Link at 0x7fdf90359bd0>,
-    #      <ebooklib.epub.Link at 0x7fdf90359c50>])])]
     # Parse the HTML
     parser = HeadingParser()
     parser.feed(html)
@@ -278,7 +278,10 @@ def rst_to_html(rst, top_heading_level=0):
 
 def to_heading_id(inpt: str) -> str:
     """Take a string and make it suitable for use as an HTML header id."""
-    return inpt.replace(" ", "-").replace("'", "")
+    bad_characters = ["'", "(", ")", "&", "/", "+", ",", "=", ]
+    for c in bad_characters:
+        inpt = inpt.replace(c, "")
+    return inpt.replace(" ", "-")
 
 
 

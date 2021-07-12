@@ -1,7 +1,32 @@
+[% if use_dnd_decorations %]
+/* With fancy decorations */
 h1, h2, h3, h4, h5, h6 {
-  color: #58180d;
+    color: #58180d;
+    font-family: sans-serif;
+}
+body {
+  background: #ECDDB4;
+}
+table {
+  background: #ECEEE3;
+}
+tr:nth-child(even) {
+  background: #CDD290;
+}
+th {
+    font-family: sans-serif
 }
 
+
+[% else %]
+/* Without Fancy decorations */
+
+th {
+  border-style: solid;
+  border-width: 0px;
+  border-bottom-width: 1px;
+}
+[% endif %]
 /* End fancy decorations */
 
 /* Spell lists */
@@ -63,7 +88,7 @@ dl.[[ class ]] dd {
 
 /* For showing beasts */
 .known-beast-disabled {
-    color: lightgrey;
+    opacity: 0.33;
 }
 
 /* Errors in rst conversion or missing content */
@@ -85,10 +110,11 @@ table {
   margin-bottom: 10px;
 }
 
+table p {
+    margin: 0px;
+}
+
 th {
-  border-style: solid;
-  border-width: 0px;
-  border-bottom-width: 1px;
   padding-left: 5px;
   padding-right: 5px;
   text-align: center;
