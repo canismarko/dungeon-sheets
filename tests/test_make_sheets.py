@@ -135,6 +135,41 @@ class VashtaNerada(monsters.Monster):
     damage_resistances = "Lightning"
     damage_vulnerabilities = "Wood-based"
     challenge_rating = 93
+    spells = ["wish"]
+
+
+class HtmlCreatorTestCase(unittest.TestCase):
+    def test_create_monsters_html(self):
+        monsters_ = [monsters.Priest()]
+        html = make_sheets.create_monsters_content(monsters=monsters_, suffix="html")
+        self.assertIn(r"Priest", html)
+        # Check extended properties
+        monsters_ = [VashtaNerada()]
+        html = make_sheets.create_monsters_content(monsters=monsters_, suffix="html")
+        self.assertIn(r"Vashta Nerada", html)
+        self.assertIn(r"35", html)
+        self.assertIn(r"45 fly", html)
+        self.assertIn(r"55 swim", html)
+        self.assertIn(r"65 burrow", html)
+        self.assertIn(r"petrified", html)
+        self.assertIn(r"Saving Throws", html)
+        self.assertIn(r"Damage Immunities", html)
+        self.assertIn(r"Damage Resistances", html)
+        self.assertIn(r"Damage Vulnerabilities", html)
+        self.assertIn(r"Senses", html)
+        self.assertIn(r"Challenge", html)
+        self.assertIn(r"Languages", html)
+        self.assertIn(r"Skills", html)
+        self.assertIn(r"petrified", html)
+        self.assertIn(r"Dex +8", html)
+        # Check spells and spell descriptions
+        self.assertIn(r"<dt>Level 9</dt>", html)
+        self.assertIn(r"Wish", html)        
+        # Check fancy extended properties
+        html = make_sheets.create_monsters_content(monsters=monsters_,
+                                                  suffix="html",
+                                                  use_dnd_decorations=True)
+    
     
 
 

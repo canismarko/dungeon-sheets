@@ -403,6 +403,9 @@ class Priest(Monster):
     climb_speed = 0
     hp_max = 27
     hit_dice = "5d8"
+    spells = ["light", "sacred_flame", "thaumaturgy", "cure wounds",
+              "guiding bolt", "sanctuary", "lesser_restoration",
+              "spiritual weapon", "dispel magic", "spirit guardians"]
 
 
 class Pseudodragon(Monster):

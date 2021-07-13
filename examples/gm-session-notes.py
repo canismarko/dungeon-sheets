@@ -15,4 +15,4 @@ session_title = "Objects in Space - Session 1"
 
 parent_sheets = ["gm-campaign-notes.py"]
 
-monsters = ["aboleth", "wolf", "giant eagle", "Vashta Nerada"]
+monsters = ["aboleth", "wolf", "giant eagle", "Vashta Nerada", "priest"]
