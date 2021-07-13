@@ -28,3 +28,10 @@ class UnknownFileType(RuntimeError):
 
 class UnknownOutputFormat(RuntimeError):
     """The output format requested is not one of the known outputs."""
+
+
+class ContentNotFound(ValueError):
+    """The requested content could not be resolved."""
+
+class AmbiguousContent(ValueError):
+    """Multiple valid content entries were found."""

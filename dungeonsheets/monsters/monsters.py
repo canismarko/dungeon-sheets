@@ -3,11 +3,32 @@ shape forms.
 
 """
 
+from abc import ABCMeta
+
 
 from dungeonsheets.entity import Entity
+from dungeonsheets.spells import Spell
+from dungeonsheets.content_registry import find_content
 
 
-class Monster(Entity):
+class SpellFactory(ABCMeta):
+    """Meta class to resolve spell strings into the ``spells.Spell``.
+
+    For classes using this metaclass, the *spell* attribute, if
+    present, should be a list of spells that the entity knows. For
+    each entry on that list, anything that is not already a spell
+    class (so probably a string) will be resolved into the
+    corresponding ``spells.Spell`` class.
+    
+    """
+    def __init__(self, name, bases, attrs):
+        for idx, spell in enumerate(self.spells):
+            TheSpell = self._resolve_mechanic(spell, SuperClass=Spell)
+            self.spells[idx] = TheSpell
+
+
+class Monster(Entity, metaclass=SpellFactory):
+
     """A monster that may be encountered when adventuring."""
 
     name = "Generic Monster"
@@ -28,6 +49,7 @@ class Monster(Entity):
     burrow_speed = 0
     hp_max = 10
     hit_dice = "1d6"
+    spells = []
 
     def __init__(self):
         super(Monster, self).__init__()

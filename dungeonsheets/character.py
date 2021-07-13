@@ -69,83 +69,6 @@ multiclass_spellslots_by_level = {
 }
 
 
-def _resolve_mechanic(mechanic, SuperClass, warning_message=None):
-    """Take a raw entry in a character sheet and turn it into a usable object.
-
-    Eg: spells can be defined in many ways. This function accepts all
-    of those options and returns an actual *Spell* class that can be
-    used by a character::
-
-        >>> _resolve_mechanic("mage_hand", SuperClass=spells.Spell)
-
-        >>> _resolve_mechanic("mage_hand", SuperClass=None)
-
-        >>> from dungeonsheets import spells
-        >>> class MySpell(spells.Spell): pass
-        >>> _resolve_mechanic(MySpell, SuperClass=spells.Spell)
-
-        >>> _resolve_mechanic("hocus pocus", SuperClass=spells.Spell)
-
-    The acceptable entries for *mechanic*, in priority order, are:
-      1. A subclass of *SuperClass*
-      2. A string with the name of defined content
-      3. The name of an unknown spell (creates generic object using *factory*)
-
-    *SuperClass* can be ``None`` to match any class, however this will
-    raise an exception if more than one content type has this
-    name. For example, "shield" can refer to both the armor or the
-    spell, so ``_resolve_mechanic("shield")`` will raise an exception.
-
-    Parameters
-    ==========
-    mechanic : str, type
-      The thing to be resolved, either a string with the name of the
-      mechanic, or a subclass of *ParentClass* describing the
-      mechanic.
-    SuperClass : type
-      Class to determine whether *mechanic* should just be allowed
-      through as is.
-    error_message : str, optional
-      A string whose ``str.format()`` method (receiving one positional
-      argument *mechanic*) will be used for displaying a warning when an
-      unknown mechanic is resolved. If omitted, no warning will be
-      displayed.
-
-    Returns
-    =======
-    Mechanic
-      A class representing the resolved game mechanic. This will
-      likely be a subclass of *SuperClass* if the other parameters are
-      well behaved, but this is not enforced.
-
-    """
-    is_already_resolved = isinstance(mechanic, type) and issubclass(
-        mechanic, SuperClass
-    )
-    if is_already_resolved:
-        Mechanic = mechanic
-    else:
-        try:
-            # Retrieve pre-defined mechanic
-            valid_classes = [SuperClass] if SuperClass is not None else []
-            Mechanic = find_content(mechanic, valid_classes=valid_classes)
-        except AttributeError:
-            # No pre-defined mechanic available
-            if warning_message is not None:
-                # Emit the warning
-                msg = warning_message.format(mechanic)
-                warnings.warn(msg)
-            else:
-                # Create a generic message so we can make a docstring later.
-                msg = f'Mechanic "{mechanic}" not defined. Please add it.'
-            # Create generic mechanic from the factory
-            class_name = "".join([s.title() for s in mechanic.split("_")])
-            mechanic_name = mechanic.replace("_", " ").title()
-            attrs = {"name": mechanic_name, "__doc__": msg, "source": "Unknown"}
-            Mechanic = type(class_name, (SuperClass,), attrs)
-    return Mechanic
-
-
 class Character(Entity):
     """A generic player character."""
 
@@ -628,7 +551,7 @@ class Character(Entity):
                         f'Magic Item "{mitem}" not defined. '
                         "Please add it to ``magic_items.py``"
                     )
-                    ThisMagicItem = _resolve_mechanic(
+                    ThisMagicItem = self._resolve_mechanic(
                         mechanic=mitem,
                         SuperClass=magic_items.MagicItem,
                         warning_message=msg,
@@ -639,7 +562,7 @@ class Character(Entity):
                 msg = 'Magic Item "{}" not defined. Please add it to ``weapons.py``'
                 wps = set(
                     [
-                        _resolve_mechanic(
+                        self._resolve_mechanic(
                             w, SuperClass=weapons.Weapon, warning_message=msg
                         )
                         for w in val
@@ -660,7 +583,7 @@ class Character(Entity):
                 _features = []
                 for f in val:
                     msg = 'Feature "{}" not defined. Please add it to ``features.py``'
-                    ThisFeature = _resolve_mechanic(
+                    ThisFeature = self._resolve_mechanic(
                         mechanic=f,
                         SuperClass=features.Feature,
                         warning_message=msg,
@@ -672,7 +595,7 @@ class Character(Entity):
                 _spells = []
                 for spell_name in val:
                     msg = 'Spell "{}" not defined. Please add it to ``spells.py``'
-                    ThisSpell = _resolve_mechanic(
+                    ThisSpell = self._resolve_mechanic(
                         mechanic=spell_name,
                         SuperClass=spells.Spell,
                         warning_message=msg,
@@ -695,7 +618,7 @@ class Character(Entity):
                             "Infusion '{}' not defined. Please add it to"
                             " ``infusions.py``"
                         )
-                        ThisInfusion = _resolve_mechanic(
+                        ThisInfusion = self._resolve_mechanic(
                             mechanic=infusion_name,
                             SuperClass=infusions.Infusion,
                             warning_message=msg,
@@ -767,6 +690,14 @@ class Character(Entity):
         final_text += "."
         return final_text
 
+    @proficiencies_text.setter
+    def proficiencies_text(self, val):
+        try:
+            profs = profiencies_text.split(",")
+        except AttributeError:
+            profs = proficiencies_text
+        self._proficiencies_text = profs
+
     @property
     def features_text(self):
         s = "\n\n--".join(
@@ -804,7 +735,7 @@ class Character(Entity):
                 new_armor = new_armor
             else:
                 msg = 'Unnown armor "{}". Please add it to ``armor.py``.'
-                NewArmor = _resolve_mechanic(
+                NewArmor = self._resolve_mechanic(
                     mechanic=new_armor,
                     SuperClass=armor.Armor,
                     warning_message=msg,
@@ -823,11 +754,8 @@ class Character(Entity):
 
         """
         if shield not in ("", "None", None):
-            try:
-                NewShield = find_content(shield, valid_classes=[armor.Shield])
-            except AttributeError:
-                # Not a string, so just treat it as Armor
-                NewShield = shield
+            msg = 'Unknown shield "{}". Please ad it to ``shields.py``.'
+            NewShield = self._resolve_mechanic(shield, SuperClass=armor.Shield, warning_message=msg)
             self.shield = NewShield()
 
     def wield_weapon(self, weapon):
@@ -840,15 +768,12 @@ class Character(Entity):
 
         """
         # Retrieve the weapon class from the weapons module
-        if isinstance(weapon, weapons.Weapon):
-            ThisWeapon = type(weapon)
-        else:
-            msg = 'Unknown weapon "{}". Please add it to ``weapons.py``.'
-            ThisWeapon = _resolve_mechanic(
-                mechanic=weapon,
-                SuperClass=weapons.Weapon,
-                warning_message=msg,
-            )
+        msg = 'Unknown weapon "{}". Please add it to ``weapons.py``.'
+        ThisWeapon = self._resolve_mechanic(
+            mechanic=weapon,
+            SuperClass=weapons.Weapon,
+            warning_message=msg,
+        )
         # Save it to the array
         self._weapons.append(ThisWeapon(wielder=self))
 

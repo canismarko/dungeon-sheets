@@ -8,7 +8,6 @@ from dungeonsheets.character import (
     Character,
     Wizard,
     Druid,
-    _resolve_mechanic,
 )
 from dungeonsheets.weapons import Weapon, Shortsword
 from dungeonsheets.armor import Armor, LeatherArmor, Shield
@@ -81,21 +80,21 @@ class TestCharacter(TestCase):
 
     def test_resolve_mechanic(self):
         # Test a well defined mechanic
-        NewSpell = _resolve_mechanic("mage_hand", None)
+        NewSpell = Character._resolve_mechanic("mage_hand", None)
         self.assertTrue(issubclass(NewSpell, spells.Spell))
 
         # Test an unknown mechanic
         def new_spell(**params):
             return spells.Spell
 
-        NewSpell = _resolve_mechanic("hocus_pocus", spells.Spell)
+        NewSpell = Character._resolve_mechanic("hocus_pocus", spells.Spell)
         self.assertTrue(issubclass(NewSpell, spells.Spell))
 
         # Test direct resolution of a proper subclass
         class MySpell(spells.Spell):
             pass
 
-        NewSpell = _resolve_mechanic(MySpell, spells.Spell)
+        NewSpell = Character._resolve_mechanic(MySpell, spells.Spell)
 
     def test_wield_weapon(self):
         char = Character()
@@ -110,13 +109,13 @@ class TestCharacter(TestCase):
         self.assertEqual(sword.attack_modifier, 4)  # str + prof
         self.assertEqual(sword.damage, "1d6+2")  # str
         # Check if dexterity is used if it's higher (Finesse weapon)
-        char.weapons = []
+        char._weapons = []
         char.dexterity = 16
         char.wield_weapon("shortsword")
         sword = char.weapons[0]
         self.assertEqual(sword.attack_modifier, 5)  # dex + prof
         # Check if race weapon proficiencies are considered
-        char.weapons = []
+        char._weapons = []
         char.weapon_proficiencies = []
         char.race = race.HighElf()
         char.wield_weapon("shortsword")

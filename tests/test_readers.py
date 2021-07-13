@@ -93,7 +93,7 @@ class Roll20ReaderTests(unittest.TestCase):
                 "warhammer",
                 "unarmed strike",
             ],
-            _proficiencies_text=[
+            proficiencies_text=[
                 "Brewer's Supplies",
             ],
             languages="common, dwarvish",
@@ -204,7 +204,7 @@ class FoundryReaderTests(unittest.TestCase):
                 "crossbow",
                 "knives",
             ],
-            _proficiencies_text=[
+            proficiencies_text=[
                 "artisan's tools",
                 "disguise kit",
                 "forger's kit",

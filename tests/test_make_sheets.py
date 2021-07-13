@@ -133,6 +133,7 @@ class VashtaNerada(monsters.Monster):
     saving_throws = "Dex +8"
     damage_immunities = "Bludgeoning"
     damage_resistances = "Lightning"
+    damage_vulnerabilities = "Wood-based"
     challenge_rating = 93
     
 

@@ -74,7 +74,6 @@ class BaseCharacterReader:
           The path to the file that will be imported.
 
         """
-        print(filename)
         self.filename = filename
 
     def __call__(self, filename):
@@ -285,7 +284,7 @@ class Roll20CharacterReader(JSONCharacterReader):
             match = prof_re.match(obj["name"])
             if match:
                 tool_profs.append(self.get_attrib(match.group(0)))
-        char_props["_proficiencies_text"] = tool_profs
+        char_props["proficiencies_text"] = tool_profs
         # Combat stats
         char_props["hp_max"] = self.as_int(self.get_attrib("hp", which="max"))
         # Equipment
@@ -531,7 +530,7 @@ class FoundryCharacterReader(JSONCharacterReader):
         tool_profs = [tool_labels[prof] for prof in tool_profs]
         custom_tool_profs = json_data["data"]["traits"]["toolProf"]["custom"]
         tool_profs.extend([s.strip() for s in custom_tool_profs.split(";")])
-        char_props["_proficiencies_text"] = tool_profs
+        char_props["proficiencies_text"] = tool_profs
         # Combat stats
         char_props["hp_max"] = self.as_int(json_data["data"]["attributes"]["hp"]["max"])
         # Equipment

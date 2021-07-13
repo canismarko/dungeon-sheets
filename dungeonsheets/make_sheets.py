@@ -232,7 +232,7 @@ def make_gm_sheet(
         else:
             try:
                 MyMonster = find_content(monster, valid_classes=[monsters.Monster])
-            except AttributeError:
+            except exceptions.ContentNotFound:
                 msg = f"Monster '{monster}' not found. Please add it to ``monsters.py``"
                 warnings.warn(msg)
                 continue

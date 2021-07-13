@@ -274,7 +274,7 @@ class Druid(CharClass):
                 try:
                     NewMonster = find_content(shape, valid_classes=[monsters.Monster])
                     new_shape = NewMonster()
-                except AttributeError:
+                except exceptions.ContentNotFound:
                     msg = (
                         f"Wild shape '{shape}' not found. Please add it to"
                         " ``monsters.py``"

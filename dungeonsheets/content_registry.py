@@ -13,6 +13,7 @@ from dungeonsheets import (
     infusions,
     magic_items,
     features,
+    exceptions,
 )
 
 
@@ -38,7 +39,11 @@ class ContentRegistry:
 
         """
         # Come up with several options
-        name = name.strip()
+        try:
+            name = name.strip()
+        except AttributeError as e:
+            # Probably not a string
+            raise ValueError('content "%s" is not a valid identifier string.' % name)
         # check for +X weapons, armor, shields
         bonus = 0
         for i in range(1, 11):
@@ -72,9 +77,9 @@ class ContentRegistry:
             found_attrs = [attr for attr, v in zip(found_attrs, is_valid) if v]
         # Check that we found a valid, unique attribute
         if len(found_attrs) == 0:
-            raise AttributeError(f"Modules {self.modules} have no attribute {name}")
+            raise exceptions.ContentNotFound(f"Modules {self.modules} have no attribute {name}")
         elif len(found_attrs) > 1:
-            raise RuntimeError(f"Found multiple content entries for {name}")
+            raise exceptions.AmbiguousContent(f"Found multiple content entries for {name}")
         else:
             attr = found_attrs[0]
         # Apply weapon/etc. bonuses
@@ -100,7 +105,7 @@ default_content_registry.add_module(magic_items)
 default_content_registry.add_module(features)
 
 
-def find_content(name: str, valid_classes: Optional[List]):
+def find_content(name: str, valid_classes: Optional[List] = None):
     """Find content from a previously registered module.
 
     Parameters
