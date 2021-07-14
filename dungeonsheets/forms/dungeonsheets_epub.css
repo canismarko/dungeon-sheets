@@ -5,18 +5,33 @@ h1, h2, h3, h4, h5, h6 {
     font-family: sans-serif;
 }
 body {
-  background: #ECDDB4;
+    background: #f4ecdb;
 }
 table {
-  background: #ECEEE3;
+    /* background: #ECEEE3; */
+    border-spacing: 0px;
+    font-family: sans-serif;
 }
 tr:nth-child(even) {
-  background: #CDD290;
+  background: #E0E5C1;
 }
-th {
-    font-family: sans-serif
+.stat-block {
+    background: #FDF1DC;
+    border-color: #E69A28;
+    border-width: 8px 0px;
+    border-style: solid;
+    margin: 16px 0px;
+    padding: 8px;
 }
-
+.stat-block .details {
+    color: #58180d;
+}
+.stat-block h2 {
+    margin-bottom: 0px;
+}
+.stat-block .creature-description {
+    margin-top: 0px;
+}
 
 [% else %]
 /* Without Fancy decorations */
@@ -62,10 +77,17 @@ dl.monster-spell-list a {
     color: inherit;
     text-decoration: inherit;
 }
+.creature-description {
+    font-style: italic;
+}
 
 /* Spell descriptions */
 .spell-school {
+    margin-top: 0px;
     font-style: italic;
+}
+.spell-block h2 {
+    margin-block: 0px;
 }
 
 /* Dictionary lists for showing stats, etc */

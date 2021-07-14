@@ -2,11 +2,11 @@
 
 [% for shape in character.all_wild_shapes|sort(attribute='challenge_rating') %]
 
-<div class="[% if not character.can_assume_shape(shape) %]known-beast-disabled[% endif %]">
+<div class="stat-block[% if not character.can_assume_shape(shape) %] known-beast-disabled[% endif %]">
 
   <h2 id="known-beasts-[[ shape.name | to_heading_id ]]">[[ shape.name ]]</h2>
   [% if shape.description %]
-  <p>[[ shape.description ]]</p>
+  <p class="creature-description">[[ shape.description ]]</p>
   [% endif %]
 
   <table>

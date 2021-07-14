@@ -12,6 +12,7 @@ from dungeonsheets import (
     armor,
     background,
     classes,
+    exceptions,
     features,
     infusions,
     magic_items,
@@ -270,7 +271,7 @@ class Character(Entity):
                 self._race = find_content(newrace, valid_classes=[race.Race])(
                     owner=self
                 )
-            except AttributeError:
+            except exceptions.ContentNotFound:
                 msg = f'Race "{newrace}" not defined. Please add it to ``race.py``'
                 self._race = race.Race(owner=self)
                 warnings.warn(msg)
@@ -293,7 +294,7 @@ class Character(Entity):
                 self._background = find_content(
                     bg, valid_classes=[background.Background]
                 )(owner=self)
-            except AttributeError:
+            except exceptions.ContentNotFound:
                 msg = (
                     f'Background "{bg}" not defined. Please add it to ``background.py``'
                 )
@@ -693,9 +694,9 @@ class Character(Entity):
     @proficiencies_text.setter
     def proficiencies_text(self, val):
         try:
-            profs = profiencies_text.split(",")
+            profs = val.split(",")
         except AttributeError:
-            profs = proficiencies_text
+            profs = val
         self._proficiencies_text = profs
 
     @property

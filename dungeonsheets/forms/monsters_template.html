@@ -1,85 +1,85 @@
 <h1 id="gm-monsters">Monsters</h1>
 
 [% for monster in monsters|sort(attribute='name') %]
-<h2 id="gm-monsters-[[ monster.name|to_heading_id ]]">[[ monster.name ]]</h2>
+<div class="stat-block">
+  <h2 id="gm-monsters-[[ monster.name|to_heading_id ]]">[[ monster.name ]]</h2>
 
-[% if monster.description %]  
-<h3>[[ monster.description ]]</h3>
-[% endif %]
+  [% if monster.description %]  
+  <p class="creature-description">[[ monster.description ]]</p>
+  [% endif %]
 
-<!-- Basic properties -->
-<table>
-  <tr>
-    <th>Armor Class</th>
-    <th>Hit Points</th>
-    <th>Speed</th>
-  </tr>
-  <tr>
-    <td>[[ monster.armor_class ]]</td>
-    <td>[[ monster.hp_max ]] ([[ monster.hit_dice ]])</td>
-    <td>[[ monster.speed ]][% if monster.swim_speed %],
+  <!-- Basic properties -->
+  <table class="details">
+    <tr>
+      <th>Armor Class</th>
+      <th>Hit Points</th>
+      <th>Speed</th>
+    </tr>
+    <tr>
+      <td>[[ monster.armor_class ]]</td>
+      <td>[[ monster.hp_max ]] ([[ monster.hit_dice ]])</td>
+      <td>[[ monster.speed ]][% if monster.swim_speed %],
         [[ monster.swim_speed ]] swim[% endif %][% if monster.fly_speed %],
-      [[ monster.fly_speed ]] fly[% endif %][% if monster.burrow_speed %],
-      [[ monster.burrow_speed ]] burrow[% endif %]</td>
-  </tr>
-</table>
+	[[ monster.fly_speed ]] fly[% endif %][% if monster.burrow_speed %],
+	[[ monster.burrow_speed ]] burrow[% endif %]</td>
+    </tr>
+  </table>
 
-<!-- Attributes -->
-<table>
-  <tr>
-    <th>STR</th>
-    <th>DEX</th>
-    <th>CON</th>
-    <th>INT</th>
-    <th>WIS</th>
-    <th>CHA</th>
-  </tr>
-  <tr>
-    <td>[[ monster.strength.value ]]</td>
-    <td>[[ monster.dexterity.value ]]</td>
-    <td>[[ monster.constitution.value ]]</td>
-    <td>[[ monster.intelligence.value ]]</td>
-    <td>[[ monster.wisdom.value ]]</td>
-    <td>[[ monster.charisma.value ]]</td>
-  </tr>
-  <tr>
-    <td>([[ monster.strength.modifier|mod_str ]])</td>
-    <td>([[ monster.dexterity.modifier|mod_str ]])</td>
-    <td>([[ monster.constitution.modifier|mod_str ]])</td>
-    <td>([[ monster.intelligence.modifier|mod_str ]])</td>
-    <td>([[ monster.wisdom.modifier|mod_str ]])</td>
-    <td>([[ monster.charisma.modifier|mod_str ]])</td>
-  </tr>
-</table>
+  <!-- Attributes -->
+  <table class="details">
+    <tr>
+      <th>STR</th>
+      <th>DEX</th>
+      <th>CON</th>
+      <th>INT</th>
+      <th>WIS</th>
+      <th>CHA</th>
+    </tr>
+    <tr>
+      <td>[[ monster.strength.value ]]</td>
+      <td>[[ monster.dexterity.value ]]</td>
+      <td>[[ monster.constitution.value ]]</td>
+      <td>[[ monster.intelligence.value ]]</td>
+      <td>[[ monster.wisdom.value ]]</td>
+      <td>[[ monster.charisma.value ]]</td>
+    </tr>
+    <tr>
+      <td>([[ monster.strength.modifier|mod_str ]])</td>
+      <td>([[ monster.dexterity.modifier|mod_str ]])</td>
+      <td>([[ monster.constitution.modifier|mod_str ]])</td>
+      <td>([[ monster.intelligence.modifier|mod_str ]])</td>
+      <td>([[ monster.wisdom.modifier|mod_str ]])</td>
+      <td>([[ monster.charisma.modifier|mod_str ]])</td>
+    </tr>
+  </table>
 
-<dl class="monster-details details">
-  [% if monster.skills != "" %]<dt>Skills</dt><dd>[[ monster.skills ]]</dd>[% endif %]
-  <dt>Senses</dt><dd>[% if monster.senses != "" %][[ monster.senses ]][% else %]--[% endif %]</dd>
-  <dt>Languages</dt><dd>[% if monster.languages != "" %][[ monster.languages ]][% else %]--[% endif %]</dd>
-  [% if monster.damage_resistances != "" %]<dt>Damage Resistances</dt><dd>[[ monster.damage_resistances ]]</dd>[% endif %]
-  [% if monster.damage_immunities != "" %]<dt>Damage Immunities</dt><dd>[[ monster.damage_immunities ]]</dd>[% endif %]
-  [% if monster.damage_vulnerabilities != "" %]<dt>Damage Vulnerabilities</dt><dd>[[ monster.damage_vulnerabilities ]]</dd>[% endif %]
-  [% if monster.condition_immunities != "" %]<dt>Condition Immunuties</dt><dd>[[ monster.condition_immunities ]]</dd>[% endif %]
-  [% if monster.saving_throws != "" %]<dt>Saving Throws</dt><dd>[[ monster.saving_throws ]]</dd>[% endif %]
-  <dt>Challenge<dd>[[ monster.challenge_rating ]]&nbsp;</dd>
-</dl>
+  <dl class="monster-details details">
+    [% if monster.skills != "" %]<dt>Skills</dt><dd>[[ monster.skills ]]</dd>[% endif %]
+    <dt>Senses</dt><dd>[% if monster.senses != "" %][[ monster.senses ]][% else %]--[% endif %]</dd>
+    <dt>Languages</dt><dd>[% if monster.languages != "" %][[ monster.languages ]][% else %]--[% endif %]</dd>
+    [% if monster.damage_resistances != "" %]<dt>Damage Resistances</dt><dd>[[ monster.damage_resistances ]]</dd>[% endif %]
+    [% if monster.damage_immunities != "" %]<dt>Damage Immunities</dt><dd>[[ monster.damage_immunities ]]</dd>[% endif %]
+    [% if monster.damage_vulnerabilities != "" %]<dt>Damage Vulnerabilities</dt><dd>[[ monster.damage_vulnerabilities ]]</dd>[% endif %]
+    [% if monster.condition_immunities != "" %]<dt>Condition Immunuties</dt><dd>[[ monster.condition_immunities ]]</dd>[% endif %]
+    [% if monster.saving_throws != "" %]<dt>Saving Throws</dt><dd>[[ monster.saving_throws ]]</dd>[% endif %]
+    <dt>Challenge<dd>[[ monster.challenge_rating ]]&nbsp;</dd>
+  </dl>
 
-[% if monster.spells | length > 0 %]
-<dl class="monster-spell-list">
-  [% for level, spells in monster.spells | groupby('level') %]
-  <dt>[% if level == 0 %]Cantrips[% else %]Level [[ level ]][% endif %]</dt>
-  <dd>
-    [% for spell in spells %][% if not loop.first %], [% endif %]
-    <a href="#monster-spells-[[ spell.name | to_heading_id ]]">[[ spell.name ]]</a>[% endfor %]
-  </dd>
-  [% endfor %]
-</dl>
-[% endif %]
+  [% if monster.spells | length > 0 %]
+  <dl class="monster-spell-list">
+    [% for level, spells in monster.spells | groupby('level') %]
+    <dt>[% if level == 0 %]Cantrips[% else %]Level [[ level ]][% endif %]</dt>
+    <dd>
+      [% for spell in spells %][% if not loop.first %], [% endif %]
+      <a href="#monster-spells-[[ spell.name | to_heading_id ]]">[[ spell.name ]]</a>[% endfor %]
+    </dd>
+    [% endfor %]
+  </dl>
+  [% endif %]
 
-[[ monster.__doc__ | rst_to_html(top_heading_level=2) ]]
+  [[ monster.__doc__ | rst_to_html(top_heading_level=2) ]]
 
-
-
+</div>
 [% endfor %]
 
 <h1 id="monster-spells">Monster Spells</h1>
