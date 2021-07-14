@@ -1,0 +1,38 @@
+[% macro spellblock(spell, id_base="spells", heading_level=2) -%]
+
+<h[[ heading_level ]] id="[[ id_base ]]-[[ spell.name | to_heading_id ]]">[[ spell.name ]]</h[[ heading_level ]]>
+
+<p class="spell-school">
+  <!-- Spell school and level -->
+  [% if spell.level > 0 %]
+  [[ spell.magic_school ]] Level [[ spell.level ]]
+  [% else %]
+  [[ spell.magic_school ]] Cantrip
+  [% endif %]
+
+  <!-- Ritual and/or concentration -->
+  [% if spell.ritual and spell.concentration %]
+  (ritual, concentration)
+  [% elif spell.ritual %]
+  (ritual)
+  [% elif spell.concentration %]
+  (concentration)
+  [% endif %]                    
+</p>
+
+<dl class="spell-details details">
+  <dt>Casting Time</dt>
+  <dd>[[ spell.casting_time ]]</dd>
+  <dt>Duration</dt>
+  <dd>[[ spell.duration ]]</dd>
+  <dt>Range</dt>
+  <dd>[[ spell.casting_range ]]</dd>
+  <dt>Components</dt>
+  <dd>[[ spell.component_string ]]</dd>
+</dl>
+
+<div class="spell-description">
+  [[ spell.__doc__ | rst_to_html(top_heading_level=1) ]]
+</div>
+
+[%- endmacro %]

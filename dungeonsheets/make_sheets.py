@@ -86,7 +86,9 @@ def create_monsters_content(
 ) -> str:
     # Convert strings to Monster objects
     template = jinja_env.get_template(f"monsters_template.{suffix}")
-    return template.render(monsters=monsters, use_dnd_decorations=use_dnd_decorations)
+    spell_list = [spell for monster in monsters for spell in monster.spells]
+    return template.render(monsters=monsters,
+                           use_dnd_decorations=use_dnd_decorations, spell_list=spell_list)
 
 
 def create_party_summary_content(

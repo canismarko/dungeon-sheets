@@ -68,7 +68,10 @@
 <dl class="monster-spell-list">
   [% for level, spells in monster.spells | groupby('level') %]
   <dt>[% if level == 0 %]Cantrips[% else %]Level [[ level ]][% endif %]</dt>
-  <dd>[[ spells | map(attribute='name') | join(', ') ]]</dd>
+  <dd>
+    [% for spell in spells %][% if not loop.first %], [% endif %]
+    <a href="#monster-spells-[[ spell.name | to_heading_id ]]">[[ spell.name ]]</a>[% endfor %]
+  </dd>
   [% endfor %]
 </dl>
 [% endif %]
@@ -77,4 +80,12 @@
 
 
 
+[% endfor %]
+
+<h1 id="monster-spells">Monster Spells</h1>
+
+[% from "spellblock.html" import spellblock %]
+
+[% for spell in spell_list | sort(attribute="name") %]
+[[ spellblock(spell, id_base="monster-spells") ]]
 [% endfor %]

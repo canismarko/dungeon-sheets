@@ -47,15 +47,20 @@ ul.spell-list li {
     padding-left: 17px;
     position: relative;
 }
+ul.spell-list li.prepared:before {
+    content: '\2713';
+    position: absolute;
+    left: 0;
+}
 ul.spell-list a {
     /* Make spell list entries not look like links */
     color: inherit;
     text-decoration: inherit;
 }
-ul.spell-list li.prepared:before {
-    content: '\2713';
-    position: absolute;
-    left: 0;
+dl.monster-spell-list a {
+    /* Make spell list entries not look like links */
+    color: inherit;
+    text-decoration: inherit;
 }
 
 /* Spell descriptions */
