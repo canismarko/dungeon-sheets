@@ -1,6 +1,7 @@
 from typing import Mapping
 from html.parser import HTMLParser
 import re
+from pathlib import Path
 
 from ebooklib import epub, ITEM_STYLE
 from docutils import core
@@ -58,8 +59,17 @@ def create_epub(
         content=style,
     )
     book.add_item(css)
-    toc = ["nav"]
+    # Add paper background
+    with open(Path(__file__).parent / "forms/paper.jpg", mode="rb") as fp:
+        bg_img = fp.read()
+    paper = epub.EpubItem(
+        file_name="images/paper.jpg",
+        media_type="image/jpeg",
+        content=bg_img,
+    )
+    book.add_item(paper)
     # Create the separate chapters
+    toc = ["nav"]
     html_chapters = []
     for chap_title, content in chapters.items():
         chap_fname = chap_title.replace(" - ", "-").replace(" ", "_").lower()

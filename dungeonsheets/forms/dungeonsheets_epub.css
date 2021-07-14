@@ -5,7 +5,8 @@ h1, h2, h3, h4, h5, h6 {
     font-family: sans-serif;
 }
 body {
-    background: #f4ecdb;
+    /* background: #f4ecdb; */
+    background-image: url("../images/paper.jpg");
 }
 table {
     /* background: #ECEEE3; */
