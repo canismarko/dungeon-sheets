@@ -107,3 +107,5 @@ flaws = """TODO: Describe your characters interesting flaws.
 
 features_and_traits = """TODO: Describe other features and abilities your
 character has."""
+
+portrait = True

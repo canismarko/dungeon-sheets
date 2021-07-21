@@ -420,6 +420,10 @@ def make_character_sheet(
     if character is None:
         character_props = readers.read_sheet_file(char_file)
         character = _char.Character.load(character_props)
+    # Load image file if present
+    portrait_file=""
+    if character.portrait:
+        portrait_file=char_file.stem + ".jpeg"
     # Set the fields in the FDF
     basename = char_file.stem
     char_base = basename + "_char"
@@ -440,7 +444,7 @@ def make_character_sheet(
         )
         pages.append(char_pdf)
         person_pdf = create_personality_pdf_template(
-            character=character, basename=person_base, flatten=flatten
+            character=character, basename=person_base, portrait_file=portrait_file, flatten=flatten
         )
         pages.append(person_pdf)
         if character.is_spellcaster:
