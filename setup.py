@@ -26,7 +26,7 @@ setup(name='dungeonsheets',
       },
       install_requires=[
           'fdfgen', 'npyscreen', 'jinja2', 'pdfrw', 'sphinx',
-          'EbookLib',
+          'EbookLib', 'reportlab',
       ],
       entry_points={
           'console_scripts': [

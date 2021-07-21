@@ -51,6 +51,20 @@ standard 5e rules, and are case-insensitive. Refer to the D&D
   xp = 2190
   hp_max = 16
 
+Character Portrait
+==================
+
+.. code:: python
+
+   portrait = True
+
+If this is set to True and a corresponding portrait file exists,
+the portrait will be added to the character personality sheet.
+For now, the file must have a .jpeg extension and be named exactly
+the same as the character file. This might not work with every Image size.
+ca 550 * 700px seems to be the right format. Anything smaller should work, too.
+See the Bard1 example for a demonstration of this feature.
+
 Ability Scores
 ==============
 

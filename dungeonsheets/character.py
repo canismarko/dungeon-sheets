@@ -97,7 +97,7 @@ class Character(Entity):
     _proficiencies_text = list()
 
     # Appearance
-    # portrait = placeholder not sure how to implement
+    portrait = False
     age = 0
     height = ""
     weight = ""
