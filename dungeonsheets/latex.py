@@ -69,7 +69,8 @@ def create_latex_pdf(
 
     environment = os.environ
     tex_env = environment.get('TEXINPUTS', '')
-    environment['TEXINPUTS'] = ".:../modules//:" + tex_env
+    module_directory = str(Path(__file__).parent)
+    environment['TEXINPUTS'] = f".:{module_directory}/modules//:" + tex_env
 
     passes = 2 if use_dnd_decorations else 1
     try:
