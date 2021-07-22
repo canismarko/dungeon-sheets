@@ -1,4 +1,5 @@
 from pathlib import Path
+import os
 import re
 import subprocess
 import logging
@@ -65,11 +66,16 @@ def create_latex_pdf(
         "-interaction=nonstopmode",
         tex_file,
     ]
+
+    environment = os.environ
+    tex_env = environment.get('TEXINPUTS', '')
+    environment['TEXINPUTS'] = ".:../modules//:" + tex_env
+
     passes = 2 if use_dnd_decorations else 1
     try:
         for i in range(passes):
             result = subprocess.run(
-                tex_command_line, stdout=subprocess.DEVNULL, timeout=30
+                tex_command_line, stdout=subprocess.DEVNULL, env=environment, timeout=30
             )
     except FileNotFoundError:
         # Remove temporary files
