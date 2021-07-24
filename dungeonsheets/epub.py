@@ -60,7 +60,7 @@ def create_epub(
     )
     book.add_item(css)
     # Add paper background
-    with open(Path(__file__).parent / "forms/paper.jpg", mode="rb") as fp:
+    with open(Path(__file__).parent / "forms/paper-low-res.jpg", mode="rb") as fp:
         bg_img = fp.read()
     paper = epub.EpubItem(
         file_name="images/paper.jpg",
