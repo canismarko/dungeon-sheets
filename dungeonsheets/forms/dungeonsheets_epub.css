@@ -9,6 +9,10 @@ body {
     background-image: url("../images/paper.jpg");
     background-size: 100%;
 }
+p {
+    text-align: justify;
+    text-justify: inter-word;
+}
 table {
     /* background: #ECEEE3; */
     border-spacing: 0px;
@@ -24,9 +28,13 @@ tr:nth-child(even) {
     border-style: solid;
     margin: 16px 0px;
     padding: 8px;
+    max-width: 35em;
 }
 .stat-block .details {
     color: #58180d;
+}
+.stat-block p {
+    margin-right: 1em;
 }
 .stat-block h2 {
     margin-bottom: 0px;
@@ -37,7 +45,6 @@ tr:nth-child(even) {
 
 [% else %]
 /* Without Fancy decorations */
-
 th {
   border-style: solid;
   border-width: 0px;
@@ -45,7 +52,12 @@ th {
 }
 [% endif %]
 /* End fancy decorations */
-
+body {
+    margin: 1em;
+}
+p {
+    max-width: 35em;
+}
 /* Spell lists */
 dl.spell-slots {
     margin-top: 0.5em;

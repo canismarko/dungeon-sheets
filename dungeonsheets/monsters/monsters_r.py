@@ -11,26 +11,33 @@ from dungeonsheets.stats import Ability
 class Rakshasa(Monster):
     """
     Limited Magic Immunity.
-
-      The rakshasa can't be affected or detected by spells of 6th level or lower unless it wishes to be. It has advantage on saving throws against all other spells and magical effects.
-
+      The rakshasa can't be affected or detected by spells of 6th level or
+      lower unless it wishes to be. It has advantage on saving throws
+      against all other spells and magical effects.
     Innate Spellcasting.
-
-      The rakshasa's innate spellcasting ability is Charisma (spell save DC 18, +10 to hit with spell attacks). The rakshasa can innately cast the following spells, requiring no material components:
-
-    At will: detect thoughts, disguise self, mage hand, minor illusion
-    3/day each: charm person, detect magic, invisibility, major image, suggestion
-    1/day each: dominate person, fly, plane shift, true seeing
-
+      The rakshasa's innate spellcasting ability is Charisma (spell save DC
+      18, +10 to hit with spell attacks). The rakshasa can innately cast the
+      following spells, requiring no material components:
+      
+  
+      
+      At will: detect thoughts, disguise self, mage hand, minor illusion
+      
+      3/day each: charm person, detect magic, invisibility, major image,
+      suggestion
+      
+      1/day each: dominate person, fly, plane shift, true seeing
     Multiattack.
-
       The rakshasa makes two claw attacks
-
     Claw.
-
-      Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 9 (2d6 + 2) slashing damage, and the target is cursed if it is a creature. The magical curse takes effect whenever the target takes a short or long rest, filling the target's thoughts with horrible images and dreams. The cursed target gains no benefit from finishing a short or long rest. The curse lasts until it is lifted by a remove curse spell or similar magic.
+      Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 9 (2d6 +
+      2) slashing damage, and the target is cursed if it is a creature. The
+      magical curse takes effect whenever the target takes a short or long
+      rest, filling the target's thoughts with horrible images and dreams.
+      The cursed target gains no benefit from finishing a short or long
+      rest. The curse lasts until it is lifted by a remove curse spell or
+      similar magic.
     """
-
     name = "Rakshasa"
     description = "Medium fiend, lawful evil"
     challenge_rating = 13
@@ -50,19 +57,18 @@ class Rakshasa(Monster):
     climb_speed = 0
     hp_max = 110
     hit_dice = "13d8"
+    spells = []
 
 
 class Rat(Monster):
     """
     Keen Smell.
-
-      The rat has advantage on Wisdom (Perception) checks that rely on smell.
-
+      The rat has advantage on Wisdom (Perception) checks that rely on
+      smell.
     Bite.
-
-      Melee Weapon Attack: +0 to hit, reach 5 ft., one target. Hit: 1 piercing damage.
+      Melee Weapon Attack: +0 to hit, reach 5 ft., one target. Hit: 1
+      piercing damage.
     """
-
     name = "Rat"
     description = "Tiny beast, unaligned"
     challenge_rating = 0
@@ -82,19 +88,20 @@ class Rat(Monster):
     climb_speed = 0
     hp_max = 1
     hit_dice = "1d4"
+    spells = []
 
 
 class Raven(Monster):
     """
     Mimicry.
-
-      The raven can mimic simple sounds it has heard, such as a person whispering, a baby crying, or an animal chittering. A creature that hears the sounds can tell they are imitations with a successful DC 10 Wisdom (Insight) check.
-
+      The raven can mimic simple sounds it has heard, such as a person
+      whispering, a baby crying, or an animal chittering. A creature that
+      hears the sounds can tell they are imitations with a successful DC 10
+      Wisdom (Insight) check.
     Beak.
-
-      Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 1 piercing damage.
+      Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 1
+      piercing damage.
     """
-
     name = "Raven"
     description = "Tiny beast, unaligned"
     challenge_rating = 0
@@ -114,19 +121,19 @@ class Raven(Monster):
     climb_speed = 0
     hp_max = 1
     hit_dice = "1d4"
+    spells = []
 
 
 class RedDragonWyrmling(Monster):
     """
     Bite.
-
-      Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 9 (1d10 + 4) piercing damage plus 3 (1d6) fire damage.
-
+      Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 9 (1d10
+      + 4) piercing damage plus 3 (1d6) fire damage.
     Fire Breath.
-
-      The dragon exhales fire in a 15-foot cone. Each creature in that area must make a DC l3 Dexterity saving throw, taking 24 (7d6) fire damage on a failed save, or half as much damage on a successful one.
+      The dragon exhales fire in a 15-foot cone. Each creature in that area
+      must make a DC l3 Dexterity saving throw, taking 24 (7d6) fire damage
+      on a failed save, or half as much damage on a successful one.
     """
-
     name = "Red Dragon Wyrmling"
     description = "Medium dragon, chaotic evil"
     challenge_rating = 4
@@ -146,23 +153,21 @@ class RedDragonWyrmling(Monster):
     climb_speed = 30
     hp_max = 75
     hit_dice = "10d8"
+    spells = []
 
 
 class ReefShark(Monster):
     """
     Pack Tactics.
-
-      The shark has advantage on an attack roll against a creature if at least one of the shark's allies is within 5 ft. of the creature and the ally isn't incapacitated.
-
+      The shark has advantage on an attack roll against a creature if at
+      least one of the shark's allies is within 5 ft. of the creature and
+      the ally isn't incapacitated.
     Water Breathing.
-
       The shark can breathe only underwater.
-
     Bite.
-
-      Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 6 (1d8 + 2) piercing damage.
+      Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 6 (1d8 +
+      2) piercing damage.
     """
-
     name = "Reef Shark"
     description = "Medium beast, unaligned"
     challenge_rating = 0.5
@@ -182,24 +187,35 @@ class ReefShark(Monster):
     climb_speed = 0
     hp_max = 22
     hit_dice = "4d8"
+    spells = []
 
 
 class Remorhaz(Monster):
     """
     Heated Body.
-
-      A creature that touches the remorhaz or hits it with a melee attack while within 5 feet of it takes 10 (3d6) fire damage.
-
+      A creature that touches the remorhaz or hits it with a melee attack
+      while within 5 feet of it takes 10 (3d6) fire damage.
     Bite.
-
-      Melee Weapon Attack: +11 to hit, reach 10 ft., one target. Hit: 40 (6d10 + 7) piercing damage plus 10 (3d6) fire damage. If the target is a creature, it is grappled (escape DC 17). Until this grapple ends, the target is restrained, and the remorhaz can't bite another target.
-
+      Melee Weapon Attack: +11 to hit, reach 10 ft., one target. Hit: 40
+      (6d10 + 7) piercing damage plus 10 (3d6) fire damage. If the target is
+      a creature, it is grappled (escape DC 17). Until this grapple ends,
+      the target is restrained, and the remorhaz can't bite another target.
     Swallow.
-
-      The remorhaz makes one bite attack against a Medium or smaller creature it is grappling. If the attack hits, that creature takes the bite's damage and is swallowed, and the grapple ends. While swallowed, the creature is blinded and restrained, it has total cover against attacks and other effects outside the remorhaz, and it takes 21 (6d6) acid damage at the start of each of the remorhaz's turns.
-    If the remorhaz takes 30 damage or more on a single turn from a creature inside it, the remorhaz must succeed on a DC 15 Constitution saving throw at the end of that turn or regurgitate all swallowed creatures, which fall prone in a space within 10 feet oft he remorhaz. If the remorhaz dies, a swallowed creature is no longer restrained by it and can escape from the corpse using 15 feet of movement, exiting prone.
+      The remorhaz makes one bite attack against a Medium or smaller
+      creature it is grappling. If the attack hits, that creature takes the
+      bite's damage and is swallowed, and the grapple ends. While swallowed,
+      the creature is blinded and restrained, it has total cover against
+      attacks and other effects outside the remorhaz, and it takes 21 (6d6)
+      acid damage at the start of each of the remorhaz's turns.
+      
+      If the remorhaz takes 30 damage or more on a single turn from a
+      creature inside it, the remorhaz must succeed on a DC 15 Constitution
+      saving throw at the end of that turn or regurgitate all swallowed
+      creatures, which fall prone in a space within 10 feet oft he remorhaz.
+      If the remorhaz dies, a swallowed creature is no longer restrained by
+      it and can escape from the corpse using 15 feet of movement, exiting
+      prone.
     """
-
     name = "Remorhaz"
     description = "Huge monstrosity, unaligned"
     challenge_rating = 11
@@ -219,19 +235,20 @@ class Remorhaz(Monster):
     climb_speed = 0
     hp_max = 195
     hit_dice = "17d12"
+    spells = []
 
 
 class Rhinoceros(Monster):
     """
     Charge.
-
-      If the rhinoceros moves at least 20 ft. straight toward a target and then hits it with a gore attack on the same turn, the target takes an extra 9 (2d8) bludgeoning damage. If the target is a creature, it must succeed on a DC 15 Strength saving throw or be knocked prone.
-
+      If the rhinoceros moves at least 20 ft. straight toward a target and
+      then hits it with a gore attack on the same turn, the target takes an
+      extra 9 (2d8) bludgeoning damage. If the target is a creature, it must
+      succeed on a DC 15 Strength saving throw or be knocked prone.
     Gore.
-
-      Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 14 (2d8 + 5) bludgeoning damage.
+      Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 14 (2d8
+      + 5) bludgeoning damage.
     """
-
     name = "Rhinoceros"
     description = "Large beast, unaligned"
     challenge_rating = 2
@@ -251,15 +268,15 @@ class Rhinoceros(Monster):
     climb_speed = 0
     hp_max = 45
     hit_dice = "6d10"
+    spells = []
 
 
 class RidingHorse(Monster):
     """
     Hooves.
-
-      Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 8 (2d4 + 3) bludgeoning damage.
+      Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 8 (2d4 +
+      3) bludgeoning damage.
     """
-
     name = "Riding Horse"
     description = "Large beast, unaligned"
     challenge_rating = 0.25
@@ -279,27 +296,25 @@ class RidingHorse(Monster):
     climb_speed = 0
     hp_max = 13
     hit_dice = "2d10"
+    spells = []
 
 
 class Roc(Monster):
     """
     Keen Sight.
-
-      The roc has advantage on Wisdom (Perception) checks that rely on sight.
-
+      The roc has advantage on Wisdom (Perception) checks that rely on
+      sight.
     Multiattack.
-
       The roc makes two attacks: one with its beak and one with its talons.
-
     Beak.
-
-      Melee Weapon Attack: +13 to hit, reach 10 ft., one target. Hit: 27 (4d8 + 9) piercing damage.
-
+      Melee Weapon Attack: +13 to hit, reach 10 ft., one target. Hit: 27
+      (4d8 + 9) piercing damage.
     Talons.
-
-      Melee Weapon Attack: +13 to hit, reach 5 ft., one target. Hit: 23 (4d6 + 9) slashing damage, and the target is grappled (escape DC 19). Until this grapple ends, the target is restrained, and the roc can't use its talons on another target.
+      Melee Weapon Attack: +13 to hit, reach 5 ft., one target. Hit: 23 (4d6
+      + 9) slashing damage, and the target is grappled (escape DC 19). Until
+      this grapple ends, the target is restrained, and the roc can't use its
+      talons on another target.
     """
-
     name = "Roc"
     description = "Gargantuan monstrosity, unaligned"
     challenge_rating = 11
@@ -319,39 +334,40 @@ class Roc(Monster):
     climb_speed = 0
     hp_max = 248
     hit_dice = "16d20"
+    spells = []
 
 
 class Roper(Monster):
     """
     False Appearance.
-
-      While the roper remains motionless, it is indistinguishable from a normal cave formation, such as a stalagmite.
-
+      While the roper remains motionless, it is indistinguishable from a
+      normal cave formation, such as a stalagmite.
     Grasping Tendrils.
-
-      The roper can have up to six tendrils at a time. Each tendril can be attacked (AC 20; 10 hit points; immunity to poison and psychic damage). Destroying a tendril deals no damage to the roper, which can extrude a replacement tendril on its next turn. A tendril can also be broken if a creature takes an action and succeeds on a DC 15 Strength check against it.
-
+      The roper can have up to six tendrils at a time. Each tendril can be
+      attacked (AC 20; 10 hit points; immunity to poison and psychic
+      damage). Destroying a tendril deals no damage to the roper, which can
+      extrude a replacement tendril on its next turn. A tendril can also be
+      broken if a creature takes an action and succeeds on a DC 15 Strength
+      check against it.
     Spider Climb.
-
-      The roper can climb difficult surfaces, including upside down on ceilings, without needing to make an ability check.
-
+      The roper can climb difficult surfaces, including upside down on
+      ceilings, without needing to make an ability check.
     Multiattack.
-
-      The roper makes four attacks with its tendrils, uses Reel, and makes one attack with its bite.
-
+      The roper makes four attacks with its tendrils, uses Reel, and makes
+      one attack with its bite.
     Bite.
-
-      Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 22 (4d8 + 4) piercing damage.
-
+      Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 22 (4d8
+      + 4) piercing damage.
     Tendril.
-
-      Melee Weapon Attack: +7 to hit, reach 50 ft., one creature. Hit: The target is grappled (escape DC 15). Until the grapple ends, the target is restrained and has disadvantage on Strength checks and Strength saving throws, and the roper can't use the same tendril on another target.
-
+      Melee Weapon Attack: +7 to hit, reach 50 ft., one creature. Hit: The
+      target is grappled (escape DC 15). Until the grapple ends, the target
+      is restrained and has disadvantage on Strength checks and Strength
+      saving throws, and the roper can't use the same tendril on another
+      target.
     Reel.
-
-      The roper pulls each creature grappled by it up to 25 ft. straight toward it.
+      The roper pulls each creature grappled by it up to 25 ft. straight
+      toward it.
     """
-
     name = "Roper"
     description = "Large monstrosity, neutral evil"
     challenge_rating = 5
@@ -371,27 +387,31 @@ class Roper(Monster):
     climb_speed = 10
     hp_max = 93
     hit_dice = "11d10"
+    spells = []
 
 
 class RugofSmothering(Monster):
     """
     Antimagic Susceptibility.
-
-      The rug is incapacitated while in the area of an antimagic field. If targeted by dispel magic, the rug must succeed on a Constitution saving throw against the caster's spell save DC or fall unconscious for 1 minute.
-
+      The rug is incapacitated while in the area of an antimagic field. If
+      targeted by dispel magic, the rug must succeed on a Constitution
+      saving throw against the caster's spell save DC or fall unconscious
+      for 1 minute.
     Damage Transfer.
-
-      While it is grappling a creature, the rug takes only half the damage dealt to it, and the creature grappled by the rug takes the other half.
-
+      While it is grappling a creature, the rug takes only half the damage
+      dealt to it, and the creature grappled by the rug takes the other
+      half.
     False Appearance.
-
-      While the rug remains motionless, it is indistinguishable from a normal rug.
-
+      While the rug remains motionless, it is indistinguishable from a
+      normal rug.
     Smother.
-
-      Melee Weapon Attack: +5 to hit, reach 5 ft., one Medium or smaller creature. Hit: The creature is grappled (escape DC 13). Until this grapple ends, the target is restrained, blinded, and at risk of suffocating, and the rug can't smother another target. In addition, at the start of each of the target's turns, the target takes 10 (2d6 + 3) bludgeoning damage.
+      Melee Weapon Attack: +5 to hit, reach 5 ft., one Medium or smaller
+      creature. Hit: The creature is grappled (escape DC 13). Until this
+      grapple ends, the target is restrained, blinded, and at risk of
+      suffocating, and the rug can't smother another target. In addition, at
+      the start of each of the target's turns, the target takes 10 (2d6 + 3)
+      bludgeoning damage.
     """
-
     name = "Rug of Smothering"
     description = "Large construct, unaligned"
     challenge_rating = 2
@@ -411,28 +431,36 @@ class RugofSmothering(Monster):
     climb_speed = 0
     hp_max = 33
     hit_dice = "6d10"
+    spells = []
 
 
 class RustMonster(Monster):
     """
     Iron Scent.
-
-      The rust monster can pinpoint, by scent, the location of ferrous metal within 30 feet of it.
-
+      The rust monster can pinpoint, by scent, the location of ferrous metal
+      within 30 feet of it.
     Rust Metal.
-
-      Any nonmagical weapon made of metal that hits the rust monster corrodes. After dealing damage, the weapon takes a permanent and cumulative -1 penalty to damage rolls. If its penalty drops to -5, the weapon is destroyed. Non magical ammunition made of metal that hits the rust monster is destroyed after dealing damage.
-
+      Any nonmagical weapon made of metal that hits the rust monster
+      corrodes. After dealing damage, the weapon takes a permanent and
+      cumulative -1 penalty to damage rolls. If its penalty drops to -5, the
+      weapon is destroyed. Non magical ammunition made of metal that hits
+      the rust monster is destroyed after dealing damage.
     Bite.
-
-      Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: 5 (1d8 + 1) piercing damage.
-
+      Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: 5 (1d8 +
+      1) piercing damage.
     Antennae.
-
-      The rust monster corrodes a nonmagical ferrous metal object it can see within 5 feet of it. If the object isn't being worn or carried, the touch destroys a 1-foot cube of it. If the object is being worn or carried by a creature, the creature can make a DC 11 Dexterity saving throw to avoid the rust monster's touch.
-    If the object touched is either metal armor or a metal shield being worn or carried, its takes a permanent and cumulative -1 penalty to the AC it offers. Armor reduced to an AC of 10 or a shield that drops to a bonus is destroyed. If the object touched is a held metal weapon, it rusts as described in the Rust Metal trait.
+      The rust monster corrodes a nonmagical ferrous metal object it can see
+      within 5 feet of it. If the object isn't being worn or carried, the
+      touch destroys a 1-foot cube of it. If the object is being worn or
+      carried by a creature, the creature can make a DC 11 Dexterity saving
+      throw to avoid the rust monster's touch.
+      
+      If the object touched is either metal armor or a metal shield being
+      worn or carried, its takes a permanent and cumulative -1 penalty to
+      the AC it offers. Armor reduced to an AC of 10 or a shield that drops
+      to a bonus is destroyed. If the object touched is a held metal weapon,
+      it rusts as described in the Rust Metal trait.
     """
-
     name = "Rust Monster"
     description = "Medium monstrosity, unaligned"
     challenge_rating = 0.5
@@ -452,3 +480,4 @@ class RustMonster(Monster):
     climb_speed = 0
     hp_max = 27
     hit_dice = "5d8"
+    spells = []

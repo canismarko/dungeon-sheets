@@ -11,51 +11,63 @@ from dungeonsheets.stats import Ability
 class Tarrasque(Monster):
     """
     Legendary Resistance.
-
-      If the tarrasque fails a saving throw, it can choose to succeed instead.
-
+      If the tarrasque fails a saving throw, it can choose to succeed
+      instead.
     Magic Resistance.
-
-      The tarrasque has advantage on saving throws against spells and other magical effects.
-
+      The tarrasque has advantage on saving throws against spells and other
+      magical effects.
     Reflective Carapace.
-
-      Any time the tarrasque is targeted by a magic missile spell, a line spell, or a spell that requires a ranged attack roll, roll a d6. On a 1 to 5, the tarrasque is unaffected. On a 6, the tarrasque is unaffected, and the effect is reflected back at the caster as though it originated from the tarrasque, turning the caster into the target.
-
+      Any time the tarrasque is targeted by a magic missile spell, a line
+      spell, or a spell that requires a ranged attack roll, roll a d6. On a
+      1 to 5, the tarrasque is unaffected. On a 6, the tarrasque is
+      unaffected, and the effect is reflected back at the caster as though
+      it originated from the tarrasque, turning the caster into the target.
     Siege Monster.
-
       The tarrasque deals double damage to objects and structures.
-
     Multiattack.
-
-      The tarrasque can use its Frightful Presence. It then makes five attacks: one with its bite, two with its claws, one with its horns, and one with its tail. It can use its Swallow instead of its bite.
-
+      The tarrasque can use its Frightful Presence. It then makes five
+      attacks: one with its bite, two with its claws, one with its horns,
+      and one with its tail. It can use its Swallow instead of its bite.
     Bite.
-
-      Melee Weapon Attack: +19 to hit, reach 10 ft., one target. Hit: 36 (4d12 + 10) piercing damage. If the target is a creature, it is grappled (escape DC 20). Until this grapple ends, the target is restrained, and the tarrasque can't bite another target.
-
+      Melee Weapon Attack: +19 to hit, reach 10 ft., one target. Hit: 36
+      (4d12 + 10) piercing damage. If the target is a creature, it is
+      grappled (escape DC 20). Until this grapple ends, the target is
+      restrained, and the tarrasque can't bite another target.
     Claw.
-
-      Melee Weapon Attack: +19 to hit, reach 15 ft., one target. Hit: 28 (4d8 + 10) slashing damage.
-
+      Melee Weapon Attack: +19 to hit, reach 15 ft., one target. Hit: 28
+      (4d8 + 10) slashing damage.
     Horns.
-
-      Melee Weapon Attack: +19 to hit, reach 10 ft., one target. Hit: 32 (4d10 + 10) piercing damage.
-
+      Melee Weapon Attack: +19 to hit, reach 10 ft., one target. Hit: 32
+      (4d10 + 10) piercing damage.
     Tail.
-
-      Melee Weapon Attack: +19 to hit, reach 20 ft., one target. Hit: 24 (4d6 + 10) bludgeoning damage. If the target is a creature, it must succeed on a DC 20 Strength saving throw or be knocked prone.
-
+      Melee Weapon Attack: +19 to hit, reach 20 ft., one target. Hit: 24
+      (4d6 + 10) bludgeoning damage. If the target is a creature, it must
+      succeed on a DC 20 Strength saving throw or be knocked prone.
     Frightful Presence.
-
-      Each creature of the tarrasque's choice within 120 feet of it and aware of it must succeed on a DC 17 Wisdom saving throw or become frightened for 1 minute. A creature can repeat the saving throw at the end of each of its turns, with disadvantage if the tarrasque is within line of sight, ending the effect on itself on a success. If a creature's saving throw is successful or the effect ends for it, the creature is immune to the tarrasque's Frightful Presence for the next 24 hours.
-
+      Each creature of the tarrasque's choice within 120 feet of it and
+      aware of it must succeed on a DC 17 Wisdom saving throw or become
+      frightened for 1 minute. A creature can repeat the saving throw at the
+      end of each of its turns, with disadvantage if the tarrasque is within
+      line of sight, ending the effect on itself on a success. If a
+      creature's saving throw is successful or the effect ends for it, the
+      creature is immune to the tarrasque's Frightful Presence for the next
+      24 hours.
     Swallow.
-
-      The tarrasque makes one bite attack against a Large or smaller creature it is grappling. If the attack hits, the target takes the bite's damage, the target is swallowed, and the grapple ends. While swallowed, the creature is blinded and restrained, it has total cover against attacks and other effects outside the tarrasque, and it takes 56 (16d6) acid damage at the start of each of the tarrasque's turns.
-    If the tarrasque takes 60 damage or more on a single turn from a creature inside it, the tarrasque must succeed on a DC 20 Constitution saving throw at the end of that turn or regurgitate all swallowed creatures, which fall prone in a space within 10 feet of the tarrasque. If the tarrasque dies, a swallowed creature is no longer restrained by it and can escape from the corpse by using 30 feet of movement, exiting prone.
+      The tarrasque makes one bite attack against a Large or smaller
+      creature it is grappling. If the attack hits, the target takes the
+      bite's damage, the target is swallowed, and the grapple ends. While
+      swallowed, the creature is blinded and restrained, it has total cover
+      against attacks and other effects outside the tarrasque, and it takes
+      56 (16d6) acid damage at the start of each of the tarrasque's turns.
+      
+      If the tarrasque takes 60 damage or more on a single turn from a
+      creature inside it, the tarrasque must succeed on a DC 20 Constitution
+      saving throw at the end of that turn or regurgitate all swallowed
+      creatures, which fall prone in a space within 10 feet of the
+      tarrasque. If the tarrasque dies, a swallowed creature is no longer
+      restrained by it and can escape from the corpse by using 30 feet of
+      movement, exiting prone.
     """
-
     name = "Tarrasque"
     description = "Gargantuan monstrosity, unaligned"
     challenge_rating = 30
@@ -75,27 +87,24 @@ class Tarrasque(Monster):
     climb_speed = 0
     hp_max = 676
     hit_dice = "33d20"
+    spells = []
 
 
 class Thug(Monster):
     """
     Pack Tactics.
-
-      The thug has advantage on an attack roll against a creature if at least one of the thug's allies is within 5 ft. of the creature and the ally isn't incapacitated.
-
+      The thug has advantage on an attack roll against a creature if at
+      least one of the thug's allies is within 5 ft. of the creature and the
+      ally isn't incapacitated.
     Multiattack.
-
       The thug makes two melee attacks.
-
     Mace.
-
-      Melee Weapon Attack: +4 to hit, reach 5 ft., one creature. Hit: 5 (1d6 + 2) bludgeoning damage.
-
+      Melee Weapon Attack: +4 to hit, reach 5 ft., one creature. Hit: 5 (1d6
+      + 2) bludgeoning damage.
     Heavy Crossbow.
-
-      Ranged Weapon Attack: +2 to hit, range 100/400 ft., one target. Hit: 5 (1d10) piercing damage.
+      Ranged Weapon Attack: +2 to hit, range 100/400 ft., one target. Hit: 5
+      (1d10) piercing damage.
     """
-
     name = "Thug"
     description = "Medium humanoid, any non-good alignment"
     challenge_rating = 0.5
@@ -115,27 +124,27 @@ class Thug(Monster):
     climb_speed = 0
     hp_max = 32
     hit_dice = "5d8"
+    spells = []
 
 
 class Tiger(Monster):
     """
     Keen Smell.
-
-      The tiger has advantage on Wisdom (Perception) checks that rely on smell.
-
+      The tiger has advantage on Wisdom (Perception) checks that rely on
+      smell.
     Pounce.
-
-      If the tiger moves at least 20 ft. straight toward a creature and then hits it with a claw attack on the same turn, that target must succeed on a DC 13 Strength saving throw or be knocked prone. If the target is prone, the tiger can make one bite attack against it as a bonus action.
-
+      If the tiger moves at least 20 ft. straight toward a creature and then
+      hits it with a claw attack on the same turn, that target must succeed
+      on a DC 13 Strength saving throw or be knocked prone. If the target is
+      prone, the tiger can make one bite attack against it as a bonus
+      action.
     Bite.
-
-      Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 8 (1d10 + 3) piercing damage.
-
+      Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 8 (1d10
+      + 3) piercing damage.
     Claw.
-
-      Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 7 (1d8 + 3) slashing damage.
+      Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 7 (1d8 +
+      3) slashing damage.
     """
-
     name = "Tiger"
     description = "Large beast, unaligned"
     challenge_rating = 1
@@ -155,35 +164,34 @@ class Tiger(Monster):
     climb_speed = 0
     hp_max = 37
     hit_dice = "5d10"
+    spells = []
 
 
 class Treant(Monster):
     """
     False Appearance.
-
-      While the treant remains motionless, it is indistinguishable from a normal tree.
-
+      While the treant remains motionless, it is indistinguishable from a
+      normal tree.
     Siege Monster.
-
       The treant deals double damage to objects and structures.
-
     Multiattack.
-
       The treant makes two slam attacks.
-
     Slam.
-
-      Melee Weapon Attack: +10 to hit, reach 5 ft., one target. Hit: 16 (3d6 + 6) bludgeoning damage.
-
+      Melee Weapon Attack: +10 to hit, reach 5 ft., one target. Hit: 16 (3d6
+      + 6) bludgeoning damage.
     Rock.
-
-      Ranged Weapon Attack: +10 to hit, range 60/180 ft., one target. Hit: 28 (4d10 + 6) bludgeoning damage.
-
+      Ranged Weapon Attack: +10 to hit, range 60/180 ft., one target. Hit:
+      28 (4d10 + 6) bludgeoning damage.
     Animate Trees.
-
-      The treant magically animates one or two trees it can see within 60 feet of it. These trees have the same statistics as a treant, except they have Intelligence and Charisma scores of 1, they can't speak, and they have only the Slam action option. An animated tree acts as an ally of the treant. The tree remains animate for 1 day or until it dies; until the treant dies or is more than 120 feet from the tree; or until the treant takes a bonus action to turn it back into an inanimate tree. The tree then takes root if possible.
+      The treant magically animates one or two trees it can see within 60
+      feet of it. These trees have the same statistics as a treant, except
+      they have Intelligence and Charisma scores of 1, they can't speak, and
+      they have only the Slam action option. An animated tree acts as an
+      ally of the treant. The tree remains animate for 1 day or until it
+      dies; until the treant dies or is more than 120 feet from the tree; or
+      until the treant takes a bonus action to turn it back into an
+      inanimate tree. The tree then takes root if possible.
     """
-
     name = "Treant"
     description = "Huge plant, chaotic good"
     challenge_rating = 9
@@ -203,19 +211,20 @@ class Treant(Monster):
     climb_speed = 0
     hp_max = 138
     hit_dice = "12d12"
+    spells = []
 
 
 class TribalWarrior(Monster):
     """
     Pack Tactics.
-
-      The warrior has advantage on an attack roll against a creature if at least one of the warrior's allies is within 5 ft. of the creature and the ally isn't incapacitated.
-
+      The warrior has advantage on an attack roll against a creature if at
+      least one of the warrior's allies is within 5 ft. of the creature and
+      the ally isn't incapacitated.
     Spear.
-
-      Melee or Ranged Weapon Attack: +3 to hit, reach 5 ft. or range 20/60 ft., one target. Hit: 4 (1d6 + 1) piercing damage, or 5 (1d8 + 1) piercing damage if used with two hands to make a melee attack.
+      Melee or Ranged Weapon Attack: +3 to hit, reach 5 ft. or range 20/60
+      ft., one target. Hit: 4 (1d6 + 1) piercing damage, or 5 (1d8 + 1)
+      piercing damage if used with two hands to make a melee attack.
     """
-
     name = "Tribal Warrior"
     description = "Medium humanoid, any alignment"
     challenge_rating = 0.125
@@ -235,23 +244,24 @@ class TribalWarrior(Monster):
     climb_speed = 0
     hp_max = 11
     hit_dice = "2d8"
+    spells = []
 
 
 class Triceratops(Monster):
     """
     Trampling Charge.
-
-      If the triceratops moves at least 20 ft. straight toward a creature and then hits it with a gore attack on the same turn, that target must succeed on a DC 13 Strength saving throw or be knocked prone. If the target is prone, the triceratops can make one stomp attack against it as a bonus action.
-
+      If the triceratops moves at least 20 ft. straight toward a creature
+      and then hits it with a gore attack on the same turn, that target must
+      succeed on a DC 13 Strength saving throw or be knocked prone. If the
+      target is prone, the triceratops can make one stomp attack against it
+      as a bonus action.
     Gore.
-
-      Melee Weapon Attack: +9 to hit, reach 5 ft., one target. Hit: 24 (4d8 + 6) piercing damage.
-
+      Melee Weapon Attack: +9 to hit, reach 5 ft., one target. Hit: 24 (4d8
+      + 6) piercing damage.
     Stomp.
-
-      Melee Weapon Attack: +9 to hit, reach 5 ft., one prone creature. Hit: 22 (3d10 + 6) bludgeoning damage
+      Melee Weapon Attack: +9 to hit, reach 5 ft., one prone creature. Hit:
+      22 (3d10 + 6) bludgeoning damage
     """
-
     name = "Triceratops"
     description = "Huge beast, unaligned"
     challenge_rating = 5
@@ -271,42 +281,64 @@ class Triceratops(Monster):
     climb_speed = 0
     hp_max = 95
     hit_dice = "10d12"
+    spells = []
 
 
 class Troll(Monster):
     """
     Keen Smell.
-
-      The troll has advantage on Wisdom (Perception) checks that rely on smell.
-
+      The troll has advantage on Wisdom (Perception) checks that rely on
+      smell.
     Regeneration.
-
-      The troll regains 10 hit points at the start of its turn. If the troll takes acid or fire damage, this trait doesn't function at the start of the troll's next turn. The troll dies only if it starts its turn with 0 hit points and doesn't regenerate.
-
-    **Variant: Loathsome Limbs**: Whenever the troll takes at least 15 slashing damage at one time, roll a d20 to determine what else happens to it:
-    1-10: Nothing else happens.
-    11-14: One leg is severed from the troll if it has any legs left.
-    15- 18: One arm is severed from the troll if it has any arms left.
-    19-20: The troll is decapitated, but the troll dies only if it can't regenerate. If it dies, so does the severed head.
-    If the troll finishes a short or long rest without reattaching a severed limb or head, the part regrows. At that point, the severed part dies. Until then, a severed part acts on the troll's initiative and has its own action and movement. A severed part has AC 13, 10 hit points, and the troll's Regeneration trait.
-    A severed leg is unable to attack and has a speed of 5 feet.
-    A severed arm has a speed of 5 feet and can make one claw attack on its turn, with disadvantage on the attack roll unless the troll can see the arm and its target. Each time the troll loses an arm, it loses a claw attack.
-    If its head is severed, the troll loses its bite attack and its body is blinded unless the head can see it. The severed head has a speed of 0 feet and the troll's Keen Smell trait. It can make a bite attack but only against a target in its space.
-    The troll's speed is halved if it's missing a leg. If it loses both legs, it falls prone. If it has both arms, it can crawl. With only one arm, it can still crawl, but its speed is halved. With no arms or legs, its speed is 0, and it can't benefit from bonuses to speed.
-
+      The troll regains 10 hit points at the start of its turn. If the troll
+      takes acid or fire damage, this trait doesn't function at the start of
+      the troll's next turn. The troll dies only if it starts its turn with
+      0 hit points and doesn't regenerate.
+    Variant: Loathsome Limbs.
+      Whenever the troll takes at least 15 slashing damage at one time, roll
+      a d20 to determine what else happens to it:
+      
+      1-10: Nothing else happens.
+      
+      11-14: One leg is severed from the troll if it has any legs left.
+      
+      15- 18: One arm is severed from the troll if it has any arms left.
+      
+      19-20: The troll is decapitated, but the troll dies only if it can't
+      regenerate. If it dies, so does the severed head.
+      
+      If the troll finishes a short or long rest without reattaching a
+      severed limb or head, the part regrows. At that point, the severed
+      part dies. Until then, a severed part acts on the troll's initiative
+      and has its own action and movement. A severed part has AC 13, 10 hit
+      points, and the troll's Regeneration trait.
+      
+      A severed leg is unable to attack and has a speed of 5 feet.
+      
+      A severed arm has a speed of 5 feet and can make one claw attack on
+      its turn, with disadvantage on the attack roll unless the troll can
+      see the arm and its target. Each time the troll loses an arm, it loses
+      a claw attack.
+      
+      If its head is severed, the troll loses its bite attack and its body
+      is blinded unless the head can see it. The severed head has a speed of
+      0 feet and the troll's Keen Smell trait. It can make a bite attack but
+      only against a target in its space.
+      
+      The troll's speed is halved if it's missing a leg. If it loses both
+      legs, it falls prone. If it has both arms, it can crawl. With only one
+      arm, it can still crawl, but its speed is halved. With no arms or
+      legs, its speed is 0, and it can't benefit from bonuses to speed.
     Multiattack.
-
-      The troll makes three attacks: one with its bite and two with its claws.
-
+      The troll makes three attacks: one with its bite and two with its
+      claws.
     Bite.
-
-      Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 7 (1d6 + 4) piercing damage.
-
+      Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 7 (1d6 +
+      4) piercing damage.
     Claw.
-
-      Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 11 (2d6 + 4) slashing damage.
+      Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 11 (2d6
+      + 4) slashing damage.
     """
-
     name = "Troll"
     description = "Large giant, chaotic evil"
     challenge_rating = 5
@@ -326,23 +358,23 @@ class Troll(Monster):
     climb_speed = 0
     hp_max = 84
     hit_dice = "8d10"
+    spells = []
 
 
 class TyrannosaurusRex(Monster):
     """
     Multiattack.
-
-      The tyrannosaurus makes two attacks: one with its bite and one with its tail. It can't make both attacks against the same target.
-
+      The tyrannosaurus makes two attacks: one with its bite and one with
+      its tail. It can't make both attacks against the same target.
     Bite.
-
-      Melee Weapon Attack: +10 to hit, reach 10 ft., one target. Hit: 33 (4d12 + 7) piercing damage. If the target is a Medium or smaller creature, it is grappled (escape DC 17). Until this grapple ends, the target is restrained, and the tyrannosaurus can't bite another target.
-
+      Melee Weapon Attack: +10 to hit, reach 10 ft., one target. Hit: 33
+      (4d12 + 7) piercing damage. If the target is a Medium or smaller
+      creature, it is grappled (escape DC 17). Until this grapple ends, the
+      target is restrained, and the tyrannosaurus can't bite another target.
     Tail.
-
-      Melee Weapon Attack: +10 to hit, reach 10 ft., one target. Hit: 20 (3d8 + 7) bludgeoning damage.
+      Melee Weapon Attack: +10 to hit, reach 10 ft., one target. Hit: 20
+      (3d8 + 7) bludgeoning damage.
     """
-
     name = "Tyrannosaurus Rex"
     description = "Huge beast, unaligned"
     challenge_rating = 8
@@ -362,3 +394,4 @@ class TyrannosaurusRex(Monster):
     climb_speed = 0
     hp_max = 136
     hit_dice = "13d12"
+    spells = []

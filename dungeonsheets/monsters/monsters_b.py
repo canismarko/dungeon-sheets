@@ -9,15 +9,15 @@ from dungeonsheets.stats import Ability
 
 
 class Baboon(Monster):
-    """Pack Tactics.
-      The baboon has advantage on an attack roll against a creature if
-      at least one of the baboon's allies is within 5 ft. of the
-      creature and the ally isn't incapacitated.
-    Bite.
-      Melee Weapon Attack: +1 to hit, reach 5 ft., one target. Hit: 1
-      (1d4 - 1) piercing damage.
     """
-
+    Pack Tactics.
+      The baboon has advantage on an attack roll against a creature if at
+      least one of the baboon's allies is within 5 ft. of the creature and
+      the ally isn't incapacitated.
+    Bite.
+      Melee Weapon Attack: +1 to hit, reach 5 ft., one target. Hit: 1 (1d4 -
+      1) piercing damage.
+    """
     name = "Baboon"
     description = "Small beast, unaligned"
     challenge_rating = 0
@@ -37,18 +37,18 @@ class Baboon(Monster):
     climb_speed = 30
     hp_max = 3
     hit_dice = "1d6"
+    spells = []
 
 
 class Badger(Monster):
-    """Keen Smell.
-      The badger has advantage on Wisdom (Perception) checks that rely
-      on smell.
+    """
+    Keen Smell.
+      The badger has advantage on Wisdom (Perception) checks that rely on
+      smell.
     Bite.
       Melee Weapon Attack: +2 to hit, reach 5 ft., one target. Hit: 1
       piercing damage.
-
     """
-
     name = "Badger"
     description = "Tiny beast, unaligned"
     challenge_rating = 0
@@ -68,58 +68,55 @@ class Badger(Monster):
     climb_speed = 0
     hp_max = 3
     hit_dice = "1d4"
+    spells = []
 
 
 class Balor(Monster):
-    """Death Throes.
-      When the balor dies, it explodes, and each creature within 30
-      feet of it must make a DC 20 Dexterity saving throw, taking 70
-      (20d6) fire damage on a failed save, or half as much damage on a
-      successful one. The explosion ignites flammable objects in that
-      area that aren't being worn or carried, and it destroys the
-      balor's weapons.
+    """
+    Death Throes.
+      When the balor dies, it explodes, and each creature within 30 feet of
+      it must make a DC 20 Dexterity saving throw, taking 70 (20d6) fire
+      damage on a failed save, or half as much damage on a successful one.
+      The explosion ignites flammable objects in that area that aren't being
+      worn or carried, and it destroys the balor's weapons.
     Fire Aura.
-      At the start of each of the balor's turns, each creature within
-      5 feet of it takes 10 (3d6) fire damage, and flammable objects
-      in the aura that aren't being worn or carried ignite. A creature
-      that touches the balor or hits it with a melee attack while
-      within 5 feet of it takes 10 (3d6) fire damage.
+      At the start of each of the balor's turns, each creature within 5 feet
+      of it takes 10 (3d6) fire damage, and flammable objects in the aura
+      that aren't being worn or carried ignite. A creature that touches the
+      balor or hits it with a melee attack while within 5 feet of it takes
+      10 (3d6) fire damage.
     Magic Resistance.
-      The balor has advantage on saving throws against spells and
-      other magical effects.
+      The balor has advantage on saving throws against spells and other
+      magical effects.
     Magic Weapons.
       The balor's weapon attacks are magical.
     Multiattack.
-      The balor makes two attacks: one with its longsword and one with
-      its whip.
+      The balor makes two attacks: one with its longsword and one with its
+      whip.
     Longsword.
-      Melee Weapon Attack: +14 to hit, reach 10 ft., one target. Hit:
-      21 (3d8 + 8) slashing damage plus 13 (3d8) lightning damage. If
-      the balor scores a critical hit, it rolls damage dice three
-      times, instead of twice.
+      Melee Weapon Attack: +14 to hit, reach 10 ft., one target. Hit: 21
+      (3d8 + 8) slashing damage plus 13 (3d8) lightning damage. If the balor
+      scores a critical hit, it rolls damage dice three times, instead of
+      twice.
     Whip.
-      Melee Weapon Attack: +14 to hit, reach 30 ft., one target. Hit:
-      15 (2d6 + 8) slashing damage plus 10 (3d6) fire damage, and the
-      target must succeed on a DC 20 Strength saving throw or be
-      pulled up to 25 feet toward the balor.
+      Melee Weapon Attack: +14 to hit, reach 30 ft., one target. Hit: 15
+      (2d6 + 8) slashing damage plus 10 (3d6) fire damage, and the target
+      must succeed on a DC 20 Strength saving throw or be pulled up to 25
+      feet toward the balor.
     Teleport.
-      The balor magically teleports, along with any equipment it is
-      wearing or carrying, up to 120 feet to an unoccupied space it
-      can see.
+      The balor magically teleports, along with any equipment it is wearing
+      or carrying, up to 120 feet to an unoccupied space it can see.
     Variant: Summon Demon.
-      The demon chooses what to summon and attempts a magical
-      summoning.
-
-      A balor has a 50 percent chance of summoning 1d8 vrocks, 1d6
-      hezrous, 1d4 glabrezus, 1d3 nalfeshnees, 1d2 mariliths, or one
-      goristro.
-
-      A summoned demon appears in an unoccupied space within 60 feet
-      of its summoner, acts as an ally of its summoner, and can't
-      summon other demons. It remains for 1 minute, until it or its
-      summoner dies, or until its summoner dismisses it as an action.
+      The demon chooses what to summon and attempts a magical summoning.
+      
+      A balor has a 50 percent chance of summoning 1d8 vrocks, 1d6 hezrous,
+      1d4 glabrezus, 1d3 nalfeshnees, 1d2 mariliths, or one goristro.
+      
+      A summoned demon appears in an unoccupied space within 60 feet of its
+      summoner, acts as an ally of its summoner, and can't summon other
+      demons. It remains for 1 minute, until it or its summoner dies, or
+      until its summoner dismisses it as an action.
     """
-
     name = "Balor"
     description = "Huge fiend, chaotic evil"
     challenge_rating = 19
@@ -139,18 +136,18 @@ class Balor(Monster):
     climb_speed = 0
     hp_max = 262
     hit_dice = "21d12"
+    spells = []
 
 
 class Bandit(Monster):
-    """Scimitar.
-      Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: 4
-      (1d6 + 1) slashing damage.
-    Light Crossbow.
-      Ranged Weapon Attack: +3 to hit, range 80 ft./320 ft., one
-      target. Hit: 5 (1d8 + 1) piercing damage.
-
     """
-
+    Scimitar.
+      Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: 4 (1d6 +
+      1) slashing damage.
+    Light Crossbow.
+      Ranged Weapon Attack: +3 to hit, range 80 ft./320 ft., one target.
+      Hit: 5 (1d8 + 1) piercing damage.
+    """
     name = "Bandit"
     description = "Medium humanoid, any non-lawful alignment"
     challenge_rating = 0.125
@@ -170,21 +167,22 @@ class Bandit(Monster):
     climb_speed = 0
     hp_max = 11
     hit_dice = "2d8"
+    spells = []
 
 
 class BanditCaptain(Monster):
-    """Multiattack.
-      The captain makes three melee attacks: two with its scimitar and
-      one with its dagger. Or the captain makes two ranged attacks
-      with its daggers.
-    Scimitar.
-      Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 6
-      (1d6 + 3) slashing damage.
-    Dagger.
-      Melee or Ranged Weapon Attack: +5 to hit, reach 5 ft. or range
-      20/60 ft., one target. Hit: 5 (1d4 + 3) piercing damage.
     """
-
+    Multiattack.
+      The captain makes three melee attacks: two with its scimitar and one
+      with its dagger. Or the captain makes two ranged attacks with its
+      daggers.
+    Scimitar.
+      Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 6 (1d6 +
+      3) slashing damage.
+    Dagger.
+      Melee or Ranged Weapon Attack: +5 to hit, reach 5 ft. or range 20/60
+      ft., one target. Hit: 5 (1d4 + 3) piercing damage.
+    """
     name = "Bandit Captain"
     description = "Medium humanoid, any non-lawful alignment"
     challenge_rating = 2
@@ -204,32 +202,33 @@ class BanditCaptain(Monster):
     climb_speed = 0
     hp_max = 65
     hit_dice = "10d8"
+    spells = []
 
 
 class BarbedDevil(Monster):
-    """Barbed Hide.
-      At the start of each of its turns, the barbed devil deals 5
-      (1d10) piercing damage to any creature grappling it.
+    """
+    Barbed Hide.
+      At the start of each of its turns, the barbed devil deals 5 (1d10)
+      piercing damage to any creature grappling it.
     Devil's Sight.
       Magical darkness doesn't impede the devil's darkvision.
     Magic Resistance.
-      The devil has advantage on saving throws against spells and
-      other magical effects.
+      The devil has advantage on saving throws against spells and other
+      magical effects.
     Multiattack.
-      The devil makes three melee attacks: one with its tail and two
-      with its claws. Alternatively, it can use Hurl Flame twice.
+      The devil makes three melee attacks: one with its tail and two with
+      its claws. Alternatively, it can use Hurl Flame twice.
     Claw.
-      Melee Weapon Attack: +6 to hit, reach 5 ft ., one target. Hit: 6
-      (1d6 + 3) piercing damage.
+      Melee Weapon Attack: +6 to hit, reach 5 ft ., one target. Hit: 6 (1d6
+      + 3) piercing damage.
     Tail.
-      Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 10
-      (2d6 + 3) piercing damage.
+      Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 10 (2d6
+      + 3) piercing damage.
     Hurl Flame.
-      Ranged Spell Attack: +5 to hit, range 150 ft., one target. Hit:
-      10 (3d6) fire damage. If the target is a flammable object that
-      isn't being worn or carried, it also catches fire.
+      Ranged Spell Attack: +5 to hit, range 150 ft., one target. Hit: 10
+      (3d6) fire damage. If the target is a flammable object that isn't
+      being worn or carried, it also catches fire.
     """
-
     name = "Barbed Devil"
     description = "Medium fiend, lawful evil"
     challenge_rating = 5
@@ -249,35 +248,34 @@ class BarbedDevil(Monster):
     climb_speed = 0
     hp_max = 110
     hit_dice = "13d8"
+    spells = []
 
 
 class Basilisk(Monster):
-    """Petrifying Gaze.
-      If a creature starts its turn within 30 ft. of the basilisk and
-      the two of them can see each other, the basilisk can force the
-      creature to make a DC 12 Constitution saving throw if the
-      basilisk isn't incapacitated. On a failed save, the creature
-      magically begins to turn to stone and is restrained. It must
-      repeat the saving throw at the end of its next turn. On a
-      success, the effect ends. On a failure, the creature is
-      petrified until freed by the greater restoration spell or other
-      magic.
-
-      A creature that isn't surprised can avert its eyes to avoid the
-      saving throw at the start of its turn. If it does so, it can't
-      see the basilisk until the start of its next turn, when it can
-      avert its eyes again. If it looks at the basilisk in the
-      meantime, it must immediately make the save.
-
-      If the basilisk sees its reflection within 30 ft. of it in
-      bright light, it mistakes itself for a rival and targets itself
-      with its gaze.
-    Bite.
-      Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 10
-      (2d6 + 3) piercing damage plus 7 (2d6) poison damage.
-
     """
-
+    Petrifying Gaze.
+      If a creature starts its turn within 30 ft. of the basilisk and the
+      two of them can see each other, the basilisk can force the creature to
+      make a DC 12 Constitution saving throw if the basilisk isn't
+      incapacitated. On a failed save, the creature magically begins to turn
+      to stone and is restrained. It must repeat the saving throw at the end
+      of its next turn. On a success, the effect ends. On a failure, the
+      creature is petrified until freed by the greater restoration spell or
+      other magic.
+      
+      A creature that isn't surprised can avert its eyes to avoid the saving
+      throw at the start of its turn. If it does so, it can't see the
+      basilisk until the start of its next turn, when it can avert its eyes
+      again. If it looks at the basilisk in the meantime, it must
+      immediately make the save.
+      
+      If the basilisk sees its reflection within 30 ft. of it in bright
+      light, it mistakes itself for a rival and targets itself with its
+      gaze.
+    Bite.
+      Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 10 (2d6
+      + 3) piercing damage plus 7 (2d6) poison damage.
+    """
     name = "Basilisk"
     description = "Medium monstrosity, unaligned"
     challenge_rating = 3
@@ -297,19 +295,20 @@ class Basilisk(Monster):
     climb_speed = 0
     hp_max = 52
     hit_dice = "8d8"
+    spells = []
 
 
 class Bat(Monster):
-    """Echolocation.
+    """
+    Echolocation.
       The bat can't use its blindsight while deafened.
     Keen Hearing.
       The bat has advantage on Wisdom (Perception) checks that rely on
       hearing.
     Bite.
-      Melee Weapon Attack: +0 to hit, reach 5 ft., one creature. Hit:
-      1 piercing damage.
+      Melee Weapon Attack: +0 to hit, reach 5 ft., one creature. Hit: 1
+      piercing damage.
     """
-
     name = "Bat"
     description = "Tiny beast, unaligned"
     challenge_rating = 0
@@ -329,40 +328,40 @@ class Bat(Monster):
     climb_speed = 0
     hp_max = 1
     hit_dice = "1d4"
+    spells = []
 
 
 class BeardedDevil(Monster):
-    """Devil's Sight.
+    """
+    Devil's Sight.
       Magical darkness doesn't impede the devil's darkvision.
     Magic Resistance.
-      The devil has advantage on saving throws against spells and
-      other magical effects.
+      The devil has advantage on saving throws against spells and other
+      magical effects.
     Steadfast.
-      The devil can't be frightened while it can see an allied
-      creature within 30 feet of it.
+      The devil can't be frightened while it can see an allied creature
+      within 30 feet of it.
     Multiattack.
       The devil makes two attacks: one with its beard and one with its
       glaive.
     Beard.
-      Melee Weapon Attack: +5 to hit, reach 5 ft., one creature. Hit:
-      6 (1d8 + 2) piercing damage, and the target must succeed on a DC
-      12 Constitution saving throw or be poisoned for 1 minute. While
-      poisoned in this way, the target can't regain hit points. The
-      target can repeat the saving throw at the end of each of its
-      turns, ending the effect on itself on a success.
+      Melee Weapon Attack: +5 to hit, reach 5 ft., one creature. Hit: 6 (1d8
+      + 2) piercing damage, and the target must succeed on a DC 12
+      Constitution saving throw or be poisoned for 1 minute. While poisoned
+      in this way, the target can't regain hit points. The target can repeat
+      the saving throw at the end of each of its turns, ending the effect on
+      itself on a success.
     Glaive.
-      Melee Weapon Attack: +5 to hit, reach 10 ft., one target. Hit: 8
-      (1d10 + 3) slashing damage. If the target is a creature other
-      than an undead or a construct, it must succeed on a DC 12
-      Constitution saving throw or lose 5 (1d10) hit points at the
-      start of each of its turns due to an infernal wound. Each time
-      the devil hits the wounded target with this attack, the damage
-      dealt by the wound increases by 5 (1d10). Any creature can take
-      an action to stanch the wound with a successful DC 12 Wisdom
-      (Medicine) check. The wound also closes if the target receives
-      magical healing.
+      Melee Weapon Attack: +5 to hit, reach 10 ft., one target. Hit: 8 (1d10
+      + 3) slashing damage. If the target is a creature other than an undead
+      or a construct, it must succeed on a DC 12 Constitution saving throw
+      or lose 5 (1d10) hit points at the start of each of its turns due to
+      an infernal wound. Each time the devil hits the wounded target with
+      this attack, the damage dealt by the wound increases by 5 (1d10). Any
+      creature can take an action to stanch the wound with a successful DC
+      12 Wisdom (Medicine) check. The wound also closes if the target
+      receives magical healing.
     """
-
     name = "Bearded Devil"
     description = "Medium fiend, lawful evil"
     challenge_rating = 3
@@ -382,44 +381,43 @@ class BeardedDevil(Monster):
     climb_speed = 0
     hp_max = 52
     hit_dice = "8d8"
+    spells = []
 
 
 class Behir(Monster):
-    """Multiattack.
-      The behir makes two attacks: one with its bite and one to
-      constrict.
-    Bite.
-      Melee Weapon Attack: +10 to hit, reach 10 ft., one target. Hit:
-      22 (3d10 + 6) piercing damage.
-    Constrict.
-      Melee Weapon Attack: +10 to hit, reach 5 ft., one Large or
-      smaller creature. Hit: 17 (2d10 + 6) bludgeoning damage plus 17
-      (2d10 + 6) slashing damage. The target is grappled (escape DC
-      16) if the behir isn't already constricting a creature, and the
-      target is restrained until this grapple ends.
-    Lightning Breath.
-      The behir exhales a line of lightning that is 20 ft. long and 5
-      ft. wide. Each creature in that line must make a DC 16 Dexterity
-      saving throw, taking 66 (12d10) lightning damage on a failed
-      save, or half as much damage on a successful one.
-    Swallow.
-      The behir makes one bite attack against a Medium or smaller
-      target it is grappling. If the attack hits, the target is also
-      swallowed, and the grapple ends. While swallowed, the target is
-      blinded and restrained, it has total cover against attacks and
-      other effects outside the behir, and it takes 21 (6d6) acid
-      damage at the start of each of the behir's turns. A behir can
-      have only one creature swallowed at a time.
-
-      If the behir takes 30 damage or more on a single turn from the
-      swallowed creature, the behir must succeed on a DC 14
-      Constitution saving throw at the end of that turn or regurgitate
-      the creature, which falls prone in a space within 10 ft. of the
-      behir. If the behir dies, a swallowed creature is no longer
-      restrained by it and can escape from the corpse by using 15
-      ft. of movement, exiting prone.
     """
-
+    Multiattack.
+      The behir makes two attacks: one with its bite and one to constrict.
+    Bite.
+      Melee Weapon Attack: +10 to hit, reach 10 ft., one target. Hit: 22
+      (3d10 + 6) piercing damage.
+    Constrict.
+      Melee Weapon Attack: +10 to hit, reach 5 ft., one Large or smaller
+      creature. Hit: 17 (2d10 + 6) bludgeoning damage plus 17 (2d10 + 6)
+      slashing damage. The target is grappled (escape DC 16) if the behir
+      isn't already constricting a creature, and the target is restrained
+      until this grapple ends.
+    Lightning Breath.
+      The behir exhales a line of lightning that is 20 ft. long and 5 ft.
+      wide. Each creature in that line must make a DC 16 Dexterity saving
+      throw, taking 66 (12d10) lightning damage on a failed save, or half as
+      much damage on a successful one.
+    Swallow.
+      The behir makes one bite attack against a Medium or smaller target it
+      is grappling. If the attack hits, the target is also swallowed, and
+      the grapple ends. While swallowed, the target is blinded and
+      restrained, it has total cover against attacks and other effects
+      outside the behir, and it takes 21 (6d6) acid damage at the start of
+      each of the behir's turns. A behir can have only one creature
+      swallowed at a time.
+      
+      If the behir takes 30 damage or more on a single turn from the
+      swallowed creature, the behir must succeed on a DC 14 Constitution
+      saving throw at the end of that turn or regurgitate the creature,
+      which falls prone in a space within 10 ft. of the behir. If the behir
+      dies, a swallowed creature is no longer restrained by it and can
+      escape from the corpse by using 15 ft. of movement, exiting prone.
+    """
     name = "Behir"
     description = "Huge monstrosity, neutral evil"
     challenge_rating = 11
@@ -439,18 +437,19 @@ class Behir(Monster):
     climb_speed = 40
     hp_max = 168
     hit_dice = "16d12"
+    spells = []
 
 
 class Berserker(Monster):
-    """Reckless.
-      At the start of its turn, the berserker can gain advantage on
-      all melee weapon attack rolls during that turn, but attack rolls
-      against it have advantage until the start of its next turn.
-    Greataxe.
-      Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 9
-      (1d12 + 3) slashing damage.
     """
-
+    Reckless.
+      At the start of its turn, the berserker can gain advantage on all
+      melee weapon attack rolls during that turn, but attack rolls against
+      it have advantage until the start of its next turn.
+    Greataxe.
+      Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 9 (1d12
+      + 3) slashing damage.
+    """
     name = "Berserker"
     description = "Medium humanoid, any chaotic alignment"
     challenge_rating = 2
@@ -470,27 +469,23 @@ class Berserker(Monster):
     climb_speed = 0
     hp_max = 67
     hit_dice = "9d8"
+    spells = []
 
 
 class BlackBear(Monster):
     """
     Keen Smell.
-
-      The bear has advantage on Wisdom (Perception) checks that rely on smell.
-
+      The bear has advantage on Wisdom (Perception) checks that rely on
+      smell.
     Multiattack.
-
       The bear makes two attacks: one with its bite and one with its claws.
-
     Bite.
-
-      Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: 5 (1d6 + 2) piercing damage.
-
+      Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: 5 (1d6 +
+      2) piercing damage.
     Claws.
-
-      Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: 7 (2d4 + 2) slashing damage.
+      Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: 7 (2d4 +
+      2) slashing damage.
     """
-
     name = "Black Bear"
     description = "Medium beast, unaligned"
     challenge_rating = 0.5
@@ -510,23 +505,22 @@ class BlackBear(Monster):
     climb_speed = 30
     hp_max = 19
     hit_dice = "3d8"
+    spells = []
 
 
 class BlackDragonWyrmling(Monster):
     """
     Amphibious.
-
       The dragon can breathe air and water.
-
     Bite.
-
-      Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 7 (1d10 + 2) piercing damage plus 2 (1d4) acid damage.
-
+      Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 7 (1d10
+      + 2) piercing damage plus 2 (1d4) acid damage.
     Acid Breath.
-
-      The dragon exhales acid in a 15-foot line that is 5 feet wide. Each creature in that line must make a DC 11 Dexterity saving throw, taking 22 (Sd8) acid damage on a failed save, or half as much damage on a successful one.
+      The dragon exhales acid in a 15-foot line that is 5 feet wide. Each
+      creature in that line must make a DC 11 Dexterity saving throw, taking
+      22 (Sd8) acid damage on a failed save, or half as much damage on a
+      successful one.
     """
-
     name = "Black Dragon Wyrmling"
     description = "Medium dragon, chaotic evil"
     challenge_rating = 2
@@ -546,139 +540,33 @@ class BlackDragonWyrmling(Monster):
     climb_speed = 0
     hp_max = 33
     hit_dice = "6d8"
-
-
-# PotA
-class BlackEarthGuard(Monster):
-    """Multiattack.
-      The guard makes two melee attacks.
-    Morningstar.
-      *Melee Weapon Attack:* +5 to hit, reach 5 ft., one
-      target. *Hit:* 7 (1d8 + 3) piercing damage.
-    Unyielding.
-      When the guard is subjected to an effect that would move it,
-      knock it prone, or both, it can use its reaction to be neither
-      moved nor knocked prone.
-
-    Black Earth guards are the warriors of the earth cult. They are
-    brutal, heavily armored thugs devoted to Ogrémoch. That devotion
-    has granted them an uncanny ability to hold their ground against
-    the buffeting assaults. It has also earned them the right to wear
-    special plate armor of elemental stone, which breaks down when the
-    guard is slain.
-
-    These guards are fanatically loyal to the Black Earth priests and
-    the leaders of the cult. They fight to the death if commanded to
-    do so by their superiors. Those with more potential become
-    burrowsharks.
-
-    """
-
-    name = "Black Earth Guard"
-    description = "Medium humanoid (human), neutral evil"
-    challenge_rating = 2
-    armor_class = 18
-    skills = "Intimidation +1, Perception +2"
-    senses = "passive Perception 12"
-    languages = "Common"
-    strength = Ability(17)
-    dexterity = Ability(11)
-    constitution = Ability(14)
-    intelligence = Ability(10)
-    wisdom = Ability(10)
-    charisma = Ability(9)
-    speed = 30
-    swim_speed = 0
-    fly_speed = 0
-    climb_speed = 0
-    hp_max = 39
-    hit_dice = "6d8 + 12"
-
-
-# PotA
-class BlackEarthPriest(Monster):
-    """Spellcasting.
-      The priest is a 5th-level spellcaster. Its spellcasting ability
-      is Charisma (spell save DC 13, +5 to hit with spell attacks). It
-      knows the following sorcerer spells (an asterisked spell is from
-      *Princes of the Apocalypse* appendix B):
-    Cantrips (at will):
-      acid splash, blade ward, light, mending, mold earth*
-    1st level (4 slots):
-      earth tremor,* expeditious retreat, shield
-    2nd level (3 slots):
-      shatter, spider climb
-    3rd level (2 slots):
-      slow
-    Multiattack.
-      The priest makes two melee attacks.
-    Glaive.
-      *Melee Weapon Attack:* +4 to hit, reach 10 ft., one
-       target. *Hit:* 7 (1d10 + 2) slashing damage.
-    Unyielding.
-      When the priest is subjected to an effect that would move it,
-      knock it prone, or both, it can use its reaction to be neither
-      moved nor knocked prone.
-
-    The priests of the Black Earth are drivers and organizers of
-    Ogrémoch's cult. They are the true believers, seeing Ogrémoch as a
-    divine force, and they have developed a twisted dogma to explain
-    how the evil of elemental earth is destined to remake the world
-    and rule over all. The Black Earth priests form a cabal of leaders
-    whose fanaticism and magical power serve as the backbone of the
-    cult. Individuals ofunusual power hold higher rank in the cult,
-    but the priests provide the cult leader with his or her authority
-    over the rest of Ogrémoch's followers.
-
-    """
-
-    name = "Black Earth Priest"
-    description = "Medium humanoid (human), neutral evil"
-    challenge_rating = 3
-    armor_class = 17
-    skills = "Intimidation +5, Religion +3, Persuasion +5"
-    senses = "passive Perception 10"
-    languages = "Common, Terran"
-    strength = Ability(15)
-    dexterity = Ability(11)
-    constitution = Ability(14)
-    intelligence = Ability(12)
-    wisdom = Ability(10)
-    charisma = Ability(16)
-    speed = 30
-    swim_speed = 0
-    fly_speed = 0
-    climb_speed = 0
-    hp_max = 45
-    hit_dice = "7d8 + 14"
+    spells = []
 
 
 class BlackPudding(Monster):
-    """Amorphous.
-      The pudding can move through a space as narrow as 1 inch wide without squeezing.
-    Corrosive Form.
-      A creature that touches the pudding or hits it with a melee
-      attack while within 5 feet of it takes 4 (1d8) acid damage. Any
-      nonmagical weapon made of metal or wood that hits the pudding
-      corrodes. After dealing damage, the weapon takes a permanent and
-      cumulative -1 penalty to damage rolls. If its penalty drops to
-      -5, the weapon is destroyed. Nonmagical ammunition made of metal
-      or wood that hits the pudding is destroyed after dealing
-      damage. The pudding can eat through 2-inch-thick, nonmagical
-      wood or metal in 1 round.
-    Spider Climb.
-      The pudding can climb difficult surfaces, including upside down
-      on ceilings, without needing to make an ability check.
-    Pseudopod.
-      Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 6
-      (1d6 + 3) bludgeoning damage plus 18 (4d8) acid damage. In
-      addition, nonmagical armor worn by the target is partly
-      dissolved and takes a permanent and cumulative -1 penalty to the
-      AC it offers. The armor is destroyed if the penalty reduces its
-      AC to 10.
-
     """
-
+    Amorphous.
+      The pudding can move through a space as narrow as 1 inch wide without
+      squeezing.
+    Corrosive Form.
+      A creature that touches the pudding or hits it with a melee attack
+      while within 5 feet of it takes 4 (1d8) acid damage. Any nonmagical
+      weapon made of metal or wood that hits the pudding corrodes. After
+      dealing damage, the weapon takes a permanent and cumulative -1 penalty
+      to damage rolls. If its penalty drops to -5, the weapon is destroyed.
+      Nonmagical ammunition made of metal or wood that hits the pudding is
+      destroyed after dealing damage. The pudding can eat through 2-inch-
+      thick, nonmagical wood or metal in 1 round.
+    Spider Climb.
+      The pudding can climb difficult surfaces, including upside down on
+      ceilings, without needing to make an ability check.
+    Pseudopod.
+      Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 6 (1d6 +
+      3) bludgeoning damage plus 18 (4d8) acid damage. In addition,
+      nonmagical armor worn by the target is partly dissolved and takes a
+      permanent and cumulative -1 penalty to the AC it offers. The armor is
+      destroyed if the penalty reduces its AC to 10.
+    """
     name = "Black Pudding"
     description = "Large ooze, unaligned"
     challenge_rating = 4
@@ -698,23 +586,22 @@ class BlackPudding(Monster):
     climb_speed = 20
     hp_max = 85
     hit_dice = "10d10"
+    spells = []
 
 
 class BlinkDog(Monster):
     """
     Keen Hearing and Smell.
-
-      The dog has advantage on Wisdom (Perception) checks that rely on hearing or smell.
-
+      The dog has advantage on Wisdom (Perception) checks that rely on
+      hearing or smell.
     Bite.
-
-      Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: 4 (1d6 + 1) piercing damage.
-
+      Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: 4 (1d6 +
+      1) piercing damage.
     Teleport.
-
-      The dog magically teleports, along with any equipment it is wearing or carrying, up to 40 ft. to an unoccupied space it can see. Before or after teleporting, the dog can make one bite attack.
+      The dog magically teleports, along with any equipment it is wearing or
+      carrying, up to 40 ft. to an unoccupied space it can see. Before or
+      after teleporting, the dog can make one bite attack.
     """
-
     name = "Blink Dog"
     description = "Medium fey, lawful good"
     challenge_rating = 0.25
@@ -734,23 +621,22 @@ class BlinkDog(Monster):
     climb_speed = 0
     hp_max = 22
     hit_dice = "4d8"
+    spells = []
 
 
 class BloodHawk(Monster):
     """
     Keen Sight.
-
-      The hawk has advantage on Wisdom (Perception) checks that rely on sight.
-
+      The hawk has advantage on Wisdom (Perception) checks that rely on
+      sight.
     Pack Tactics.
-
-      The hawk has advantage on an attack roll against a creature if at least one of the hawk's allies is within 5 ft. of the creature and the ally isn't incapacitated.
-
+      The hawk has advantage on an attack roll against a creature if at
+      least one of the hawk's allies is within 5 ft. of the creature and the
+      ally isn't incapacitated.
     Beak.
-
-      Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 4 (1d4 + 2) piercing damage.
+      Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 4 (1d4 +
+      2) piercing damage.
     """
-
     name = "Blood Hawk"
     description = "Small beast, unaligned"
     challenge_rating = 0.125
@@ -770,19 +656,20 @@ class BloodHawk(Monster):
     climb_speed = 0
     hp_max = 7
     hit_dice = "2d6"
+    spells = []
 
 
 class BlueDragonWyrmling(Monster):
     """
     Bite.
-
-      Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 8 (1d10 + 3) piercing damage plus 3 (1d6) lightning damage.
-
+      Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 8 (1d10
+      + 3) piercing damage plus 3 (1d6) lightning damage.
     Lightning Breath.
-
-      The dragon exhales lightning in a 30-foot line that is 5 feet wide. Each creature in that line must make a DC 12 Dexterity saving throw, taking 22 (4d10) lightning damage on a failed save, or half as much damage on a successful one.
+      The dragon exhales lightning in a 30-foot line that is 5 feet wide.
+      Each creature in that line must make a DC 12 Dexterity saving throw,
+      taking 22 (4d10) lightning damage on a failed save, or half as much
+      damage on a successful one.
     """
-
     name = "Blue Dragon Wyrmling"
     description = "Medium dragon, lawful evil"
     challenge_rating = 3
@@ -802,23 +689,23 @@ class BlueDragonWyrmling(Monster):
     climb_speed = 0
     hp_max = 52
     hit_dice = "8d8"
+    spells = []
 
 
 class Boar(Monster):
     """
     Charge.
-
-      If the boar moves at least 20 ft. straight toward a target and then hits it with a tusk attack on the same turn, the target takes an extra 3 (1d6) slashing damage. If the target is a creature, it must succeed on a DC 11 Strength saving throw or be knocked prone.
-
+      If the boar moves at least 20 ft. straight toward a target and then
+      hits it with a tusk attack on the same turn, the target takes an extra
+      3 (1d6) slashing damage. If the target is a creature, it must succeed
+      on a DC 11 Strength saving throw or be knocked prone.
     Relentless.
-
-      If the boar takes 7 damage or less that would reduce it to 0 hit points, it is reduced to 1 hit point instead.
-
+      If the boar takes 7 damage or less that would reduce it to 0 hit
+      points, it is reduced to 1 hit point instead.
     Tusk.
-
-      Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: 4 (1d6 + 1) slashing damage.
+      Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: 4 (1d6 + 1)
+      slashing damage.
     """
-
     name = "Boar"
     description = "Medium beast, unaligned"
     challenge_rating = 0.25
@@ -838,29 +725,29 @@ class Boar(Monster):
     climb_speed = 0
     hp_max = 11
     hit_dice = "2d8"
+    spells = []
 
 
 class BoneDevil(Monster):
     """
-    **Devil's Sight**: Magical darkness doesn't impede the devil's darkvision.
-
+    Devil's Sight.
+      Magical darkness doesn't impede the devil's darkvision.
     Magic Resistance.
-
-      The devil has advantage on saving throws against spells and other magical effects.
-
+      The devil has advantage on saving throws against spells and other
+      magical effects.
     Multiattack.
-
-      The devil makes three attacks: two with its claws and one with its sting.
-
+      The devil makes three attacks: two with its claws and one with its
+      sting.
     Claw.
-
-      Melee Weapon Attack: +8 to hit, reach 10 ft., one target. Hit: 8 (1d8 + 4) slashing damage.
-
+      Melee Weapon Attack: +8 to hit, reach 10 ft., one target. Hit: 8 (1d8
+      + 4) slashing damage.
     Sting.
-
-      Melee Weapon Attack: +8 to hit, reach 10 ft., one target. Hit: 13 (2d8 + 4) piercing damage plus 17 (5d6) poison damage, and the target must succeed on a DC 14 Constitution saving throw or become poisoned for 1 minute. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success .
+      Melee Weapon Attack: +8 to hit, reach 10 ft., one target. Hit: 13 (2d8
+      + 4) piercing damage plus 17 (5d6) poison damage, and the target must
+      succeed on a DC 14 Constitution saving throw or become poisoned for 1
+      minute. The target can repeat the saving throw at the end of each of
+      its turns, ending the effect on itself on a success .
     """
-
     name = "Bone Devil"
     description = "Large fiend, lawful evil"
     challenge_rating = 12
@@ -880,21 +767,28 @@ class BoneDevil(Monster):
     climb_speed = 0
     hp_max = 142
     hit_dice = "15d10"
+    spells = []
 
 
 class BrassDragonWyrmling(Monster):
     """
     Bite.
-
-      Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 7 (1d10 + 2) piercing damage.
-
+      Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 7 (1d10
+      + 2) piercing damage.
     Breath Weapons.
-
       The dragon uses one of the following breath weapons.
-    Fire Breath. The dragon exhales fire in an 20-foot line that is 5 feet wide. Each creature in that line must make a DC 11 Dexterity saving throw, taking 14 (4d6) fire damage on a failed save, or half as much damage on a successful one.
-    Sleep Breath. The dragon exhales sleep gas in a 15-foot cone. Each creature in that area must succeed on a DC 11 Constitution saving throw or fall unconscious for 1 minute. This effect ends for a creature if the creature takes damage or someone uses an action to wake it.
+      
+      Fire Breath. The dragon exhales fire in an 20-foot line that is 5 feet
+      wide. Each creature in that line must make a DC 11 Dexterity saving
+      throw, taking 14 (4d6) fire damage on a failed save, or half as much
+      damage on a successful one.
+      
+      Sleep Breath. The dragon exhales sleep gas in a 15-foot cone. Each
+      creature in that area must succeed on a DC 11 Constitution saving
+      throw or fall unconscious for 1 minute. This effect ends for a
+      creature if the creature takes damage or someone uses an action to
+      wake it.
     """
-
     name = "Brass Dragon Wyrmling"
     description = "Medium dragon, chaotic good"
     challenge_rating = 1
@@ -914,25 +808,29 @@ class BrassDragonWyrmling(Monster):
     climb_speed = 0
     hp_max = 16
     hit_dice = "3d8"
+    spells = []
 
 
 class BronzeDragonWyrmling(Monster):
     """
     Amphibious.
-
       The dragon can breathe air and water.
-
     Bite.
-
-      Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 8 (1d10 + 3) piercing damage.
-
+      Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 8 (1d10
+      + 3) piercing damage.
     Breath Weapons.
-
       The dragon uses one of the following breath weapons.
-    Lightning Breath. The dragon exhales lightning in a 40-foot line that is 5 feet wide. Each creature in that line must make a DC 12 Dexterity saving throw, taking 16 (3d10) lightning damage on a failed save, or half as much damage on a successful one.
-    Repulsion Breath. The dragon exhales repulsion energy in a 30-foot cone. Each creature in that area must succeed on a DC 12 Strength saving throw. On a failed save, the creature is pushed 30 feet away from the dragon.
+      
+      Lightning Breath. The dragon exhales lightning in a 40-foot line that
+      is 5 feet wide. Each creature in that line must make a DC 12 Dexterity
+      saving throw, taking 16 (3d10) lightning damage on a failed save, or
+      half as much damage on a successful one.
+      
+      Repulsion Breath. The dragon exhales repulsion energy in a 30-foot
+      cone. Each creature in that area must succeed on a DC 12 Strength
+      saving throw. On a failed save, the creature is pushed 30 feet away
+      from the dragon.
     """
-
     name = "Bronze Dragon Wyrmling"
     description = "Medium dragon, lawful good"
     challenge_rating = 2
@@ -952,27 +850,23 @@ class BronzeDragonWyrmling(Monster):
     climb_speed = 0
     hp_max = 32
     hit_dice = "5d8"
+    spells = []
 
 
 class BrownBear(Monster):
     """
     Keen Smell.
-
-      The bear has advantage on Wisdom (Perception) checks that rely on smell.
-
+      The bear has advantage on Wisdom (Perception) checks that rely on
+      smell.
     Multiattack.
-
       The bear makes two attacks: one with its bite and one with its claws.
-
     Bite.
-
-      Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 8 (1d8 + 4) piercing damage.
-
+      Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 8 (1d8 + 4)
+      piercing damage.
     Claws.
-
-      Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 11 (2d6 + 4) slashing damage.
+      Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 11 (2d6
+      + 4) slashing damage.
     """
-
     name = "Brown Bear"
     description = "Large beast, unaligned"
     challenge_rating = 1
@@ -992,27 +886,26 @@ class BrownBear(Monster):
     climb_speed = 30
     hp_max = 34
     hit_dice = "4d10"
+    spells = []
 
 
 class Bugbear(Monster):
     """
     Brute.
-
-      A melee weapon deals one extra die of its damage when the bugbear hits with it (included in the attack).
-
+      A melee weapon deals one extra die of its damage when the bugbear hits
+      with it (included in the attack).
     Surprise Attack.
-
-      If the bugbear surprises a creature and hits it with an attack during the first round of combat, the target takes an extra 7 (2d6) damage from the attack.
-
+      If the bugbear surprises a creature and hits it with an attack during
+      the first round of combat, the target takes an extra 7 (2d6) damage
+      from the attack.
     Morningstar.
-
-      Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 11 (2d8 + 2) piercing damage.
-
+      Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 11 (2d8
+      + 2) piercing damage.
     Javelin.
-
-      Melee or Ranged Weapon Attack: +4 to hit, reach 5 ft. or range 30/120 ft., one target. Hit: 9 (2d6 + 2) piercing damage in melee or 5 (1d6 + 2) piercing damage at range.
+      Melee or Ranged Weapon Attack: +4 to hit, reach 5 ft. or range 30/120
+      ft., one target. Hit: 9 (2d6 + 2) piercing damage in melee or 5 (1d6 +
+      2) piercing damage at range.
     """
-
     name = "Bugbear"
     description = "Medium humanoid, chaotic evil"
     challenge_rating = 1
@@ -1032,6 +925,7 @@ class Bugbear(Monster):
     climb_speed = 0
     hp_max = 27
     hit_dice = "5d8"
+    spells = []
 
 
 # PotA
@@ -1040,13 +934,13 @@ class Burrowshark(Monster):
     who ride trained bulettes into battle. While their powerful mounts
     rend and tear foes to pieces, burrowsharks leap to the ground and
     cut down their foes without mercy.
-
+    
     Burrowsharks are much like Black Earth guards, since both have
     uncanny footing and special armor. For burrowsharks, an additional
     gift of Ogremoch's might establishes a magical bond between the
     burrowshark and a bulette, allowing the rider to burrow with its
     mount and sense what its mount senses.
-
+    
     Bond of the Black Earth
       The burrowshark is magically bound to a bulette trained to serve
       as its mount. While mounted on its bulette, the burrowshark
@@ -1065,9 +959,8 @@ class Burrowshark(Monster):
       When the burrowshark is subjected to an effect that would move
       it, knock it prone, or both, it can use its reaction to be
       neither moved nor knocked prone.
-
+    
     """
-
     name = "Burrowshark"
     description = "Medium humanoid (human), neutral evil"
     challenge_rating = 4
@@ -1090,27 +983,25 @@ class Burrowshark(Monster):
 
 
 class Bulette(Monster):
-    """Standing Leap
-      The bulette's long jump is up to 30 ft. and its high jump is up
-      to 15 ft., with or without a running start.
-    Bite
-      Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 30
-      (4d12 + 4) piercing damage.
-    Deadly Leap
-      If the bulette jumps at least 15 ft. as part of its movement, it
-      can then use this action to land on its ft. in a space that
-      contains one or more other creatures. Each of those creatures
-      must succeed on a DC 16 Strength or Dexterity saving throw
-      (target's choice) or be knocked prone and take 14 (3d6 + 4)
-      bludgeoning damage plus 14 (3d6 + 4) slashing damage. On a
-      successful save, the creature takes only half the damage, isn't
-      knocked prone, and is pushed 5 ft. out of the bulette's space
-      into an unoccupied space of the creature's choice. If no
-      unoccupied space is within range, the creature instead falls
-      prone in the bulette's space.
-
     """
-
+    Standing Leap.
+      The bulette's long jump is up to 30 ft. and its high jump is up to 15
+      ft., with or without a running start.
+    Bite.
+      Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 30 (4d12
+      + 4) piercing damage.
+    Deadly Leap.
+      If the bulette jumps at least 15 ft. as part of its movement, it can
+      then use this action to land on its ft. in a space that contains one
+      or more other creatures. Each of those creatures must succeed on a DC
+      16 Strength or Dexterity saving throw (target's choice) or be knocked
+      prone and take 14 (3d6 + 4) bludgeoning damage plus 14 (3d6 + 4)
+      slashing damage. On a successful save, the creature takes only half
+      the damage, isn't knocked prone, and is pushed 5 ft. out of the
+      bulette's space into an unoccupied space of the creature's choice. If
+      no unoccupied space is within range, the creature instead falls prone
+      in the bulette's space.
+    """
     name = "Bulette"
     description = "Large monstrosity, unaligned"
     challenge_rating = 5
@@ -1128,6 +1019,6 @@ class Bulette(Monster):
     swim_speed = 0
     fly_speed = 0
     climb_speed = 0
-    burrow_speed = 40
     hp_max = 94
-    hit_dice = "9d10+45"
+    hit_dice = "9d10"
+    spells = []

@@ -11,22 +11,16 @@ from dungeonsheets.stats import Ability
 class KillerWhale(Monster):
     """
     Echolocation.
-
       The whale can't use its blindsight while deafened.
-
     Hold Breath.
-
       The whale can hold its breath for 30 minutes
-
     Keen Hearing.
-
-      The whale has advantage on Wisdom (Perception) checks that rely on hearing.
-
+      The whale has advantage on Wisdom (Perception) checks that rely on
+      hearing.
     Bite.
-
-      Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 21 (5d6 + 4) piercing damage.
+      Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 21 (5d6
+      + 4) piercing damage.
     """
-
     name = "Killer Whale"
     description = "Huge beast, unaligned"
     challenge_rating = 3
@@ -46,31 +40,29 @@ class KillerWhale(Monster):
     climb_speed = 0
     hp_max = 90
     hit_dice = "12d12"
+    spells = []
 
 
 class Knight(Monster):
     """
     Brave.
-
       The knight has advantage on saving throws against being frightened.
-
     Multiattack.
-
       The knight makes two melee attacks.
-
     Greatsword.
-
-      Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 10 (2d6 + 3) slashing damage.
-
+      Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 10 (2d6
+      + 3) slashing damage.
     Heavy Crossbow.
-
-      Ranged Weapon Attack: +2 to hit, range 100/400 ft., one target. Hit: 5 (1d10) piercing damage.
-
+      Ranged Weapon Attack: +2 to hit, range 100/400 ft., one target. Hit: 5
+      (1d10) piercing damage.
     Leadership.
-
-      For 1 minute, the knight can utter a special command or warning whenever a nonhostile creature that it can see within 30 ft. of it makes an attack roll or a saving throw. The creature can add a d4 to its roll provided it can hear and understand the knight. A creature can benefit from only one Leadership die at a time. This effect ends if the knight is incapacitated.
+      For 1 minute, the knight can utter a special command or warning
+      whenever a nonhostile creature that it can see within 30 ft. of it
+      makes an attack roll or a saving throw. The creature can add a d4 to
+      its roll provided it can hear and understand the knight. A creature
+      can benefit from only one Leadership die at a time. This effect ends
+      if the knight is incapacitated.
     """
-
     name = "Knight"
     description = "Medium humanoid, any alignment"
     challenge_rating = 3
@@ -90,27 +82,25 @@ class Knight(Monster):
     climb_speed = 0
     hp_max = 52
     hit_dice = "8d8"
+    spells = []
 
 
 class Kobold(Monster):
     """
     Sunlight Sensitivity.
-
-      While in sunlight, the kobold has disadvantage on attack rolls, as well as on Wisdom (Perception) checks that rely on sight.
-
+      While in sunlight, the kobold has disadvantage on attack rolls, as
+      well as on Wisdom (Perception) checks that rely on sight.
     Pack Tactics.
-
-      The kobold has advantage on an attack roll against a creature if at least one of the kobold's allies is within 5 ft. of the creature and the ally isn't incapacitated.
-
+      The kobold has advantage on an attack roll against a creature if at
+      least one of the kobold's allies is within 5 ft. of the creature and
+      the ally isn't incapacitated.
     Dagger.
-
-      Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 4 (1d4 + 2) piercing damage.
-
+      Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 4 (1d4 +
+      2) piercing damage.
     Sling.
-
-      Ranged Weapon Attack: +4 to hit, range 30/120 ft., one target. Hit: 4 (1d4 + 2) bludgeoning damage.
+      Ranged Weapon Attack: +4 to hit, range 30/120 ft., one target. Hit: 4
+      (1d4 + 2) bludgeoning damage.
     """
-
     name = "Kobold"
     description = "Small humanoid, lawful evil"
     challenge_rating = 0.125
@@ -130,53 +120,61 @@ class Kobold(Monster):
     climb_speed = 0
     hp_max = 5
     hit_dice = "2d6"
+    spells = []
 
 
 class Kraken(Monster):
     """
     Amphibious.
-
       The kraken can breathe air and water.
-
     Freedom of Movement.
-
-      The kraken ignores difficult terrain, and magical effects can't reduce its speed or cause it to be restrained. It can spend 5 feet of movement to escape from nonmagical restraints or being grappled.
-
+      The kraken ignores difficult terrain, and magical effects can't reduce
+      its speed or cause it to be restrained. It can spend 5 feet of
+      movement to escape from nonmagical restraints or being grappled.
     Siege Monster.
-
       The kraken deals double damage to objects and structures.
-
     Multiattack.
-
-      The kraken makes three tentacle attacks, each of which it can replace with one use of Fling.
-
+      The kraken makes three tentacle attacks, each of which it can replace
+      with one use of Fling.
     Bite.
-
-      Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 23 (3d8 + 10) piercing damage. If the target is a Large or smaller creature grappled by the kraken, that creature is swallowed, and the grapple ends. While swallowed, the creature is blinded and restrained, it has total cover against attacks and other effects outside the kraken, and it takes 42 (12d6) acid damage at the start of each of the kraken's turns. If the kraken takes 50 damage or more on a single turn from a creature inside it, the kraken must succeed on a DC 25 Constitution saving throw at the end of that turn or regurgitate all swallowed creatures, which fall prone in a space within 10 feet of the kraken. If the kraken dies, a swallowed creature is no longer restrained by it and can escape from the corpse using 15 feet of movement, exiting prone.
-
+      Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 23 (3d8
+      + 10) piercing damage. If the target is a Large or smaller creature
+      grappled by the kraken, that creature is swallowed, and the grapple
+      ends. While swallowed, the creature is blinded and restrained, it has
+      total cover against attacks and other effects outside the kraken, and
+      it takes 42 (12d6) acid damage at the start of each of the kraken's
+      turns. If the kraken takes 50 damage or more on a single turn from a
+      creature inside it, the kraken must succeed on a DC 25 Constitution
+      saving throw at the end of that turn or regurgitate all swallowed
+      creatures, which fall prone in a space within 10 feet of the kraken.
+      If the kraken dies, a swallowed creature is no longer restrained by it
+      and can escape from the corpse using 15 feet of movement, exiting
+      prone.
     Tentacle.
-
-      Melee Weapon Attack: +7 to hit, reach 30 ft., one target. Hit: 20 (3d6 + 10) bludgeoning damage, and the target is grappled (escape DC 18). Until this grapple ends, the target is restrained. The kraken has ten tentacles, each of which can grapple one target.
-
+      Melee Weapon Attack: +7 to hit, reach 30 ft., one target. Hit: 20 (3d6
+      + 10) bludgeoning damage, and the target is grappled (escape DC 18).
+      Until this grapple ends, the target is restrained. The kraken has ten
+      tentacles, each of which can grapple one target.
     Fling.
-
-      One Large or smaller object held or creature grappled by the kraken is thrown up to 60 feet in a random direction and knocked prone. If a thrown target strikes a solid surface, the target takes 3 (1d6) bludgeoning damage for every 10 feet it was thrown. If the target is thrown at another creature, that creature must succeed on a DC 18 Dexterity saving throw or take the same damage and be knocked prone.
-
+      One Large or smaller object held or creature grappled by the kraken is
+      thrown up to 60 feet in a random direction and knocked prone. If a
+      thrown target strikes a solid surface, the target takes 3 (1d6)
+      bludgeoning damage for every 10 feet it was thrown. If the target is
+      thrown at another creature, that creature must succeed on a DC 18
+      Dexterity saving throw or take the same damage and be knocked prone.
     Lightning Storm.
-
-      The kraken magically creates three bolts of lightning, each of which can strike a target the kraken can see within 120 feet of it. A target must make a DC 23 Dexterity saving throw, taking 22 (4d10) lightning damage on a failed save, or half as much damage on a successful one.
+      The kraken magically creates three bolts of lightning, each of which
+      can strike a target the kraken can see within 120 feet of it. A target
+      must make a DC 23 Dexterity saving throw, taking 22 (4d10) lightning
+      damage on a failed save, or half as much damage on a successful one.
     """
-
     name = "Kraken"
     description = "Gargantuan monstrosity, chaotic evil"
     challenge_rating = 23
     armor_class = 18
     skills = ""
     senses = "Truesight 120 ft., Passive Perception 14"
-    languages = (
-        "understands Abyssal, Celestial, Infernal, and Primordial but can't speak,"
-        " telepathy 120 ft."
-    )
+    languages = "understands Abyssal, Celestial, Infernal, and Primordial but can't speak, telepathy 120 ft."
     strength = Ability(30)
     dexterity = Ability(11)
     constitution = Ability(25)
@@ -189,3 +187,4 @@ class Kraken(Monster):
     climb_speed = 0
     hp_max = 472
     hit_dice = "27d20"
+    spells = []

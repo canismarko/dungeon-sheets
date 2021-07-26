@@ -11,26 +11,22 @@ from dungeonsheets.stats import Ability
 class YoungBlackDragon(Monster):
     """
     Amphibious.
-
       The dragon can breathe air and water.
-
     Multiattack.
-
-      The dragon makes three attacks: one with its bite and two with its claws.
-
+      The dragon makes three attacks: one with its bite and two with its
+      claws.
     Bite.
-
-      Melee Weapon Attack: +7 to hit, reach 10 ft., one target. Hit: 15 (2d10 + 4) piercing damage plus 4 (1d8) acid damage.
-
+      Melee Weapon Attack: +7 to hit, reach 10 ft., one target. Hit: 15
+      (2d10 + 4) piercing damage plus 4 (1d8) acid damage.
     Claw.
-
-      Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 11 (2d6 + 4) slashing damage.
-
+      Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 11 (2d6
+      + 4) slashing damage.
     Acid Breath.
-
-      The dragon exhales acid in a 30-foot line that is 5 feet wide. Each creature in that line must make a DC 14 Dexterity saving throw, taking 49 (11d8) acid damage on a failed save, or half as much damage on a successful one.
+      The dragon exhales acid in a 30-foot line that is 5 feet wide. Each
+      creature in that line must make a DC 14 Dexterity saving throw, taking
+      49 (11d8) acid damage on a failed save, or half as much damage on a
+      successful one.
     """
-
     name = "Young Black Dragon"
     description = "Large dragon, chaotic evil"
     challenge_rating = 7
@@ -50,27 +46,26 @@ class YoungBlackDragon(Monster):
     climb_speed = 0
     hp_max = 127
     hit_dice = "15d10"
+    spells = []
 
 
 class YoungBlueDragon(Monster):
     """
     Multiattack.
-
-      The dragon makes three attacks: one with its bite and two with its claws.
-
+      The dragon makes three attacks: one with its bite and two with its
+      claws.
     Bite.
-
-      Melee Weapon Attack: +9 to hit, reach 10 ft., one target. Hit: 16 (2d10 + 5) piercing damage plus 5 (1d10) lightning damage.
-
+      Melee Weapon Attack: +9 to hit, reach 10 ft., one target. Hit: 16
+      (2d10 + 5) piercing damage plus 5 (1d10) lightning damage.
     Claw.
-
-      Melee Weapon Attack: +9 to hit, reach 5 ft., one target. Hit: 12 (2d6 + 5) slashing damage.
-
+      Melee Weapon Attack: +9 to hit, reach 5 ft., one target. Hit: 12 (2d6
+      + 5) slashing damage.
     Lightning Breath.
-
-      The dragon exhales lightning in an 60-foot line that is 5 feet wide. Each creature in that line must make a DC 16 Dexterity saving throw, taking 55 (10d10) lightning damage on a failed save, or half as much damage on a successful one.
+      The dragon exhales lightning in an 60-foot line that is 5 feet wide.
+      Each creature in that line must make a DC 16 Dexterity saving throw,
+      taking 55 (10d10) lightning damage on a failed save, or half as much
+      damage on a successful one.
     """
-
     name = "Young Blue Dragon"
     description = "Large dragon, lawful evil"
     challenge_rating = 9
@@ -90,29 +85,34 @@ class YoungBlueDragon(Monster):
     climb_speed = 0
     hp_max = 152
     hit_dice = "16d10"
+    spells = []
 
 
 class YoungBrassDragon(Monster):
     """
     Multiattack.
-
-      The dragon makes three attacks: one with its bite and two with its claws.
-
+      The dragon makes three attacks: one with its bite and two with its
+      claws.
     Bite.
-
-      Melee Weapon Attack: +7 to hit, reach 10 ft., one target. Hit: 15 (2d10 + 4) piercing damage.
-
+      Melee Weapon Attack: +7 to hit, reach 10 ft., one target. Hit: 15
+      (2d10 + 4) piercing damage.
     Claw.
-
-      Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 11 (2d6 + 4) slashing damage.
-
+      Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 11 (2d6
+      + 4) slashing damage.
     Breath Weapons.
-
       The dragon uses one of the following breath weapons.
-    Fire Breath. The dragon exhales fire in a 40-foot line that is 5 feet wide. Each creature in that line must make a DC 14 Dexterity saving throw, taking 42 (12d6) fire damage on a failed save, or half as much damage on a successful one.
-    Sleep Breath. The dragon exhales sleep gas in a 30-foot cone. Each creature in that area must succeed on a DC 14 Constitution saving throw or fall unconscious for 5 minutes. This effect ends for a creature if the creature takes damage or someone uses an action to wake it.
+      
+      Fire Breath. The dragon exhales fire in a 40-foot line that is 5 feet
+      wide. Each creature in that line must make a DC 14 Dexterity saving
+      throw, taking 42 (12d6) fire damage on a failed save, or half as much
+      damage on a successful one.
+      
+      Sleep Breath. The dragon exhales sleep gas in a 30-foot cone. Each
+      creature in that area must succeed on a DC 14 Constitution saving
+      throw or fall unconscious for 5 minutes. This effect ends for a
+      creature if the creature takes damage or someone uses an action to
+      wake it.
     """
-
     name = "Young Brass Dragon"
     description = "Large dragon, chaotic good"
     challenge_rating = 6
@@ -132,33 +132,35 @@ class YoungBrassDragon(Monster):
     climb_speed = 0
     hp_max = 110
     hit_dice = "13d10"
+    spells = []
 
 
 class YoungBronzeDragon(Monster):
     """
     Amphibious.
-
       The dragon can breathe air and water.
-
     Multiattack.
-
-      The dragon makes three attacks: one with its bite and two with its claws.
-
+      The dragon makes three attacks: one with its bite and two with its
+      claws.
     Bite.
-
-      Melee Weapon Attack: +8 to hit, reach 10 ft., one target. Hit: 16 (2d10 + 5) piercing damage.
-
+      Melee Weapon Attack: +8 to hit, reach 10 ft., one target. Hit: 16
+      (2d10 + 5) piercing damage.
     Claw.
-
-      Melee Weapon Attack: +8 to hit, reach 5 ft., one target. Hit: 12 (2d6 + 5) slashing damage.
-
+      Melee Weapon Attack: +8 to hit, reach 5 ft., one target. Hit: 12 (2d6
+      + 5) slashing damage.
     Breath Weapons.
-
       The dragon uses one of the following breath weapons.
-    Lightning Breath. The dragon exhales lightning in a 60-foot line that is 5 feet wide. Each creature in that line must make a DC 15 Dexterity saving throw, taking 55 (10d10) lightning damage on a failed save, or half as much damage on a successful one.
-    Repulsion Breath. The dragon exhales repulsion energy in a 30-foot cone. Each creature in that area must succeed on a DC 15 Strength saving throw. On a failed save, the creature is pushed 40 feet away from the dragon.
+      
+      Lightning Breath. The dragon exhales lightning in a 60-foot line that
+      is 5 feet wide. Each creature in that line must make a DC 15 Dexterity
+      saving throw, taking 55 (10d10) lightning damage on a failed save, or
+      half as much damage on a successful one.
+      
+      Repulsion Breath. The dragon exhales repulsion energy in a 30-foot
+      cone. Each creature in that area must succeed on a DC 15 Strength
+      saving throw. On a failed save, the creature is pushed 40 feet away
+      from the dragon.
     """
-
     name = "Young Bronze Dragon"
     description = "Large dragon, lawful good"
     challenge_rating = 8
@@ -178,29 +180,37 @@ class YoungBronzeDragon(Monster):
     climb_speed = 0
     hp_max = 142
     hit_dice = "15d10"
+    spells = []
 
 
 class YoungCopperDragon(Monster):
     """
     Multiattack.
-
-      The dragon makes three attacks: one with its bite and two with its claws.
-
+      The dragon makes three attacks: one with its bite and two with its
+      claws.
     Bite.
-
-      Melee Weapon Attack: +7 to hit, reach 10 ft., one target. Hit: 15 (2d10 + 4) piercing damage.
-
+      Melee Weapon Attack: +7 to hit, reach 10 ft., one target. Hit: 15
+      (2d10 + 4) piercing damage.
     Claw.
-
-      Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 11 (2d6 + 4) slashing damage.
-
+      Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 11 (2d6
+      + 4) slashing damage.
     Breath Weapons.
-
       The dragon uses one of the following breath weapons.
-    Acid Breath. The dragon exhales acid in an 40-foot line that is 5 feet wide. Each creature in that line must make a DC 14 Dexterity saving throw, taking 40 (9d8) acid damage on a failed save, or half as much damage on a successful one.
-    Slowing Breath. The dragon exhales gas in a 30-foot cone. Each creature in that area must succeed on a DC 14 Constitution saving throw. On a failed save, the creature can't use reactions, its speed is halved, and it can't make more than one attack on its turn. In addition, the creature can use either an action or a bonus action on its turn, but not both. These effects last for 1 minute. The creature can repeat the saving throw at the end of each of its turns, ending the effect on itself with a successful save.
+      
+      Acid Breath. The dragon exhales acid in an 40-foot line that is 5 feet
+      wide. Each creature in that line must make a DC 14 Dexterity saving
+      throw, taking 40 (9d8) acid damage on a failed save, or half as much
+      damage on a successful one.
+      
+      Slowing Breath. The dragon exhales gas in a 30-foot cone. Each
+      creature in that area must succeed on a DC 14 Constitution saving
+      throw. On a failed save, the creature can't use reactions, its speed
+      is halved, and it can't make more than one attack on its turn. In
+      addition, the creature can use either an action or a bonus action on
+      its turn, but not both. These effects last for 1 minute. The creature
+      can repeat the saving throw at the end of each of its turns, ending
+      the effect on itself with a successful save.
     """
-
     name = "Young Copper Dragon"
     description = "Large dragon, chaotic good"
     challenge_rating = 7
@@ -220,33 +230,37 @@ class YoungCopperDragon(Monster):
     climb_speed = 40
     hp_max = 119
     hit_dice = "14d10"
+    spells = []
 
 
 class YoungGoldDragon(Monster):
     """
     Amphibious.
-
       The dragon can breathe air and water.
-
     Multiattack.
-
-      The dragon makes three attacks: one with its bite and two with its claws.
-
+      The dragon makes three attacks: one with its bite and two with its
+      claws.
     Bite.
-
-      Melee Weapon Attack: +10 to hit, reach 10 ft., one target. Hit: 17 (2d10 + 6) piercing damage.
-
+      Melee Weapon Attack: +10 to hit, reach 10 ft., one target. Hit: 17
+      (2d10 + 6) piercing damage.
     Claw.
-
-      Melee Weapon Attack: +10 to hit, reach 5 ft., one target. Hit: 13 (2d6 + 6) slashing damage.
-
+      Melee Weapon Attack: +10 to hit, reach 5 ft., one target. Hit: 13 (2d6
+      + 6) slashing damage.
     Breath Weapons.
-
       The dragon uses one of the following breath weapons.
-    Fire Breath. The dragon exhales fire in a 30-foot cone. Each creature in that area must make a DC 17 Dexterity saving throw, taking 55 (10d10) fire damage on a failed save, or half as much damage on a successful one.
-    Weakening Breath. The dragon exhales gas in a 30-foot cone. Each creature in that area must succeed on a DC 17 Strength saving throw or have disadvantage on Strength-based attack rolls, Strength checks, and Strength saving throws for 1 minute. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.
+      
+      Fire Breath. The dragon exhales fire in a 30-foot cone. Each creature
+      in that area must make a DC 17 Dexterity saving throw, taking 55
+      (10d10) fire damage on a failed save, or half as much damage on a
+      successful one.
+      
+      Weakening Breath. The dragon exhales gas in a 30-foot cone. Each
+      creature in that area must succeed on a DC 17 Strength saving throw or
+      have disadvantage on Strength-based attack rolls, Strength checks, and
+      Strength saving throws for 1 minute. A creature can repeat the saving
+      throw at the end of each of its turns, ending the effect on itself on
+      a success.
     """
-
     name = "Young Gold Dragon"
     description = "Large dragon, lawful good"
     challenge_rating = 10
@@ -266,31 +280,28 @@ class YoungGoldDragon(Monster):
     climb_speed = 0
     hp_max = 178
     hit_dice = "17d10"
+    spells = []
 
 
 class YoungGreenDragon(Monster):
     """
     Amphibious.
-
       The dragon can breathe air and water.
-
     Multiattack.
-
-      The dragon makes three attacks: one with its bite and two with its claws.
-
+      The dragon makes three attacks: one with its bite and two with its
+      claws.
     Bite.
-
-      Melee Weapon Attack: +7 to hit, reach 10 ft., one target. Hit: 15 (2d10 + 4) piercing damage plus 7 (2d6) poison damage.
-
+      Melee Weapon Attack: +7 to hit, reach 10 ft., one target. Hit: 15
+      (2d10 + 4) piercing damage plus 7 (2d6) poison damage.
     Claw.
-
-      Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 11 (2d6 + 4) slashing damage.
-
+      Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 11 (2d6
+      + 4) slashing damage.
     Poison Breath.
-
-      The dragon exhales poisonous gas in a 30-foot cone. Each creature in that area must make a DC 14 Constitution saving throw, taking 42 (12d6) poison damage on a failed save, or half as much damage on a successful one.
+      The dragon exhales poisonous gas in a 30-foot cone. Each creature in
+      that area must make a DC 14 Constitution saving throw, taking 42
+      (12d6) poison damage on a failed save, or half as much damage on a
+      successful one.
     """
-
     name = "Young Green Dragon"
     description = "Large dragon, lawful evil"
     challenge_rating = 8
@@ -310,27 +321,25 @@ class YoungGreenDragon(Monster):
     climb_speed = 0
     hp_max = 136
     hit_dice = "16d10"
+    spells = []
 
 
 class YoungRedDragon(Monster):
     """
     Multiattack.
-
-      The dragon makes three attacks: one with its bite and two with its claws.
-
+      The dragon makes three attacks: one with its bite and two with its
+      claws.
     Bite.
-
-      Melee Weapon Attack: +10 to hit, reach 10 ft., one target. Hit: 17 (2d10 + 6) piercing damage plus 3 (1d6) fire damage.
-
+      Melee Weapon Attack: +10 to hit, reach 10 ft., one target. Hit: 17
+      (2d10 + 6) piercing damage plus 3 (1d6) fire damage.
     Claw.
-
-      Melee Weapon Attack: +10 to hit, reach 5 ft., one target. Hit: 13 (2d6 + 6) slashing damage.
-
+      Melee Weapon Attack: +10 to hit, reach 5 ft., one target. Hit: 13 (2d6
+      + 6) slashing damage.
     Fire Breath.
-
-      The dragon exhales fire in a 30-foot cone. Each creature in that area must make a DC 17 Dexterity saving throw, taking 56 (16d6) fire damage on a failed save, or half as much damage on a successful one.
+      The dragon exhales fire in a 30-foot cone. Each creature in that area
+      must make a DC 17 Dexterity saving throw, taking 56 (16d6) fire damage
+      on a failed save, or half as much damage on a successful one.
     """
-
     name = "Young Red Dragon"
     description = "Large dragon, chaotic evil"
     challenge_rating = 10
@@ -350,29 +359,34 @@ class YoungRedDragon(Monster):
     climb_speed = 40
     hp_max = 178
     hit_dice = "17d10"
+    spells = []
 
 
 class YoungSilverDragon(Monster):
     """
     Multiattack.
-
-      The dragon makes three attacks: one with its bite and two with its claws.
-
+      The dragon makes three attacks: one with its bite and two with its
+      claws.
     Bite.
-
-      Melee Weapon Attack: +10 to hit, reach 10 ft., one target. Hit: 17 (2d10 + 6) piercing damage.
-
+      Melee Weapon Attack: +10 to hit, reach 10 ft., one target. Hit: 17
+      (2d10 + 6) piercing damage.
     Claw.
-
-      Melee Weapon Attack: +10 to hit, reach 5 ft., one target. Hit: 13 (2d6 + 6) slashing damage.
-
+      Melee Weapon Attack: +10 to hit, reach 5 ft., one target. Hit: 13 (2d6
+      + 6) slashing damage.
     Breath Weapons.
-
       The dragon uses one of the following breath weapons.
-    Cold Breath. The dragon exhales an icy blast in a 30-foot cone. Each creature in that area must make a DC 17 Constitution saving throw, taking 54 (12d8) cold damage on a failed save, or half as much damage on a successful one.
-    Paralyzing Breath. The dragon exhales paralyzing gas in a 30-foot cone. Each creature in that area must succeed on a DC 17 Constitution saving throw or be paralyzed for 1 minute. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.
+      
+      Cold Breath. The dragon exhales an icy blast in a 30-foot cone. Each
+      creature in that area must make a DC 17 Constitution saving throw,
+      taking 54 (12d8) cold damage on a failed save, or half as much damage
+      on a successful one.
+      
+      Paralyzing Breath. The dragon exhales paralyzing gas in a 30-foot
+      cone. Each creature in that area must succeed on a DC 17 Constitution
+      saving throw or be paralyzed for 1 minute. A creature can repeat the
+      saving throw at the end of each of its turns, ending the effect on
+      itself on a success.
     """
-
     name = "Young Silver Dragon"
     description = "Large dragon, lawful good"
     challenge_rating = 9
@@ -392,31 +406,30 @@ class YoungSilverDragon(Monster):
     climb_speed = 0
     hp_max = 168
     hit_dice = "16d10"
+    spells = []
 
 
 class YoungWhiteDragon(Monster):
     """
     Ice Walk.
-
-      The dragon can move across and climb icy surfaces without needing to make an ability check. Additionally, difficult terrain composed of ice or snow doesn't cost it extra moment.
-
+      The dragon can move across and climb icy surfaces without needing to
+      make an ability check. Additionally, difficult terrain composed of ice
+      or snow doesn't cost it extra moment.
     Multiattack.
-
-      The dragon makes three attacks: one with its bite and two with its claws.
-
+      The dragon makes three attacks: one with its bite and two with its
+      claws.
     Bite.
-
-      Melee Weapon Attack: +7 to hit, reach 10 ft., one target. Hit: 15 (2d10 + 4) piercing damage plus 4 (1d8) cold damage.
-
+      Melee Weapon Attack: +7 to hit, reach 10 ft., one target. Hit: 15
+      (2d10 + 4) piercing damage plus 4 (1d8) cold damage.
     Claw.
-
-      Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 11 (2d6 + 4) slashing damage.
-
+      Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 11 (2d6
+      + 4) slashing damage.
     Cold Breath.
-
-      The dragon exhales an icy blast in a 30-foot cone. Each creature in that area must make a DC 15 Constitution saving throw, taking 45 (10d8) cold damage on a failed save, or half as much damage on a successful one.
+      The dragon exhales an icy blast in a 30-foot cone. Each creature in
+      that area must make a DC 15 Constitution saving throw, taking 45
+      (10d8) cold damage on a failed save, or half as much damage on a
+      successful one.
     """
-
     name = "Young White Dragon"
     description = "Large dragon, chaotic evil"
     challenge_rating = 6
@@ -436,3 +449,4 @@ class YoungWhiteDragon(Monster):
     climb_speed = 0
     hp_max = 133
     hit_dice = "14d10"
+    spells = []

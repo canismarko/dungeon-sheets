@@ -11,14 +11,15 @@ from dungeonsheets.stats import Ability
 class Warhorse(Monster):
     """
     Trampling Charge.
-
-      If the horse moves at least 20 ft. straight toward a creature and then hits it with a hooves attack on the same turn, that target must succeed on a DC 14 Strength saving throw or be knocked prone. If the target is prone, the horse can make another attack with its hooves against it as a bonus action.
-
+      If the horse moves at least 20 ft. straight toward a creature and then
+      hits it with a hooves attack on the same turn, that target must
+      succeed on a DC 14 Strength saving throw or be knocked prone. If the
+      target is prone, the horse can make another attack with its hooves
+      against it as a bonus action.
     Hooves.
-
-      Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 11 (2d6 + 4) bludgeoning damage.
+      Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 11 (2d6
+      + 4) bludgeoning damage.
     """
-
     name = "Warhorse"
     description = "Large beast, unaligned"
     challenge_rating = 0.5
@@ -38,15 +39,15 @@ class Warhorse(Monster):
     climb_speed = 0
     hp_max = 19
     hit_dice = "3d10"
+    spells = []
 
 
 class WarhorseSkeleton(Monster):
     """
     Hooves.
-
-      Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 11 (2d6 + 4) bludgeoning damage.
+      Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 11 (2d6
+      + 4) bludgeoning damage.
     """
-
     name = "Warhorse Skeleton"
     description = "Large undead, lawful evil"
     challenge_rating = 0.5
@@ -66,32 +67,37 @@ class WarhorseSkeleton(Monster):
     climb_speed = 0
     hp_max = 22
     hit_dice = "3d10"
+    spells = []
 
 
 class WaterElemental(Monster):
     """
     Water Form.
-
-      The elemental can enter a hostile creature's space and stop there. It can move through a space as narrow as 1 inch wide without squeezing.
-
+      The elemental can enter a hostile creature's space and stop there. It
+      can move through a space as narrow as 1 inch wide without squeezing.
     Freeze.
-
-      If the elemental takes cold damage, it partially freezes; its speed is reduced by 20 ft. until the end of its next turn.
-
+      If the elemental takes cold damage, it partially freezes; its speed is
+      reduced by 20 ft. until the end of its next turn.
     Multiattack.
-
       The elemental makes two slam attacks.
-
     Slam.
-
-      Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 13 (2d8 + 4) bludgeoning damage.
-
+      Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 13 (2d8
+      + 4) bludgeoning damage.
     Whelm.
-
-      Each creature in the elemental's space must make a DC 15 Strength saving throw. On a failure, a target takes 13 (2d8 + 4) bludgeoning damage. If it is Large or smaller, it is also grappled (escape DC 14). Until this grapple ends, the target is restrained and unable to breathe unless it can breathe water. If the saving throw is successful, the target is pushed out of the elemental's space.
-    The elemental can grapple one Large creature or up to two Medium or smaller creatures at one time. At the start of each of the elemental's turns, each target grappled by it takes 13 (2d8 + 4) bludgeoning damage. A creature within 5 feet of the elemental can pull a creature or object out of it by taking an action to make a DC 14 Strength and succeeding.
+      Each creature in the elemental's space must make a DC 15 Strength
+      saving throw. On a failure, a target takes 13 (2d8 + 4) bludgeoning
+      damage. If it is Large or smaller, it is also grappled (escape DC 14).
+      Until this grapple ends, the target is restrained and unable to
+      breathe unless it can breathe water. If the saving throw is
+      successful, the target is pushed out of the elemental's space.
+      
+      The elemental can grapple one Large creature or up to two Medium or
+      smaller creatures at one time. At the start of each of the elemental's
+      turns, each target grappled by it takes 13 (2d8 + 4) bludgeoning
+      damage. A creature within 5 feet of the elemental can pull a creature
+      or object out of it by taking an action to make a DC 14 Strength and
+      succeeding.
     """
-
     name = "Water Elemental"
     description = "Large elemental, neutral"
     challenge_rating = 5
@@ -111,19 +117,18 @@ class WaterElemental(Monster):
     climb_speed = 0
     hp_max = 114
     hit_dice = "12d10"
+    spells = []
 
 
 class Weasel(Monster):
     """
     Keen Hearing and Smell.
-
-      The weasel has advantage on Wisdom (Perception) checks that rely on hearing or smell.
-
+      The weasel has advantage on Wisdom (Perception) checks that rely on
+      hearing or smell.
     Bite.
-
-      Melee Weapon Attack: +5 to hit, reach 5 ft., one creature. Hit: 1 piercing damage.
+      Melee Weapon Attack: +5 to hit, reach 5 ft., one creature. Hit: 1
+      piercing damage.
     """
-
     name = "Weasel"
     description = "Tiny beast, unaligned"
     challenge_rating = 0
@@ -143,31 +148,33 @@ class Weasel(Monster):
     climb_speed = 0
     hp_max = 1
     hit_dice = "1d4"
+    spells = []
 
 
 class WerebearBearform(Monster):
     """
     Shapechanger.
-
-      The werebear can use its action to polymorph into a Large bear-humanoid hybrid or into a Large bear, or back into its true form, which is humanoid. Its statistics, other than its size and AC, are the same in each form. Any equipment it is wearing or carrying isn't transformed. It reverts to its true form if it dies.
-
+      The werebear can use its action to polymorph into a Large bear-
+      humanoid hybrid or into a Large bear, or back into its true form,
+      which is humanoid. Its statistics, other than its size and AC, are the
+      same in each form. Any equipment it is wearing or carrying isn't
+      transformed. It reverts to its true form if it dies.
     Keen Smell.
-
-      The werebear has advantage on Wisdom (Perception) checks that rely on smell.
-
+      The werebear has advantage on Wisdom (Perception) checks that rely on
+      smell.
     Multiattack.
-
-      In bear form, the werebear makes two claw attacks. In humanoid form, it makes two greataxe attacks. In hybrid form, it can attack like a bear or a humanoid.
-
+      In bear form, the werebear makes two claw attacks. In humanoid form,
+      it makes two greataxe attacks. In hybrid form, it can attack like a
+      bear or a humanoid.
     Bite.
-
-      Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 15 (2d10 + 4) piercing damage. If the target is a humanoid, it must succeed on a DC 14 Constitution saving throw or be cursed with werebear lycanthropy.
-
+      Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 15 (2d10
+      + 4) piercing damage. If the target is a humanoid, it must succeed on
+      a DC 14 Constitution saving throw or be cursed with werebear
+      lycanthropy.
     Claw.
-
-      Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 13 (2d8 + 4) slashing damage.
+      Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 13 (2d8
+      + 4) slashing damage.
     """
-
     name = "Werebear, Bear form"
     description = "Medium humanoid, neutral good"
     challenge_rating = 5
@@ -187,27 +194,28 @@ class WerebearBearform(Monster):
     climb_speed = 30
     hp_max = 135
     hit_dice = "18d8"
+    spells = []
 
 
 class WerebearHumanform(Monster):
     """
     Shapechanger.
-
-      The werebear can use its action to polymorph into a Large bear-humanoid hybrid or into a Large bear, or back into its true form, which is humanoid. Its statistics, other than its size and AC, are the same in each form. Any equipment it is wearing or carrying isn't transformed. It reverts to its true form if it dies.
-
+      The werebear can use its action to polymorph into a Large bear-
+      humanoid hybrid or into a Large bear, or back into its true form,
+      which is humanoid. Its statistics, other than its size and AC, are the
+      same in each form. Any equipment it is wearing or carrying isn't
+      transformed. It reverts to its true form if it dies.
     Keen Smell.
-
-      The werebear has advantage on Wisdom (Perception) checks that rely on smell.
-
+      The werebear has advantage on Wisdom (Perception) checks that rely on
+      smell.
     Multiattack.
-
-      In bear form, the werebear makes two claw attacks. In humanoid form, it makes two greataxe attacks. In hybrid form, it can attack like a bear or a humanoid.
-
+      In bear form, the werebear makes two claw attacks. In humanoid form,
+      it makes two greataxe attacks. In hybrid form, it can attack like a
+      bear or a humanoid.
     Greataxe.
-
-      Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 10 (1d12 + 4) slashing damage.
+      Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 10 (1d12
+      + 4) slashing damage.
     """
-
     name = "Werebear, Human form"
     description = "Medium humanoid, neutral good"
     challenge_rating = 5
@@ -227,35 +235,36 @@ class WerebearHumanform(Monster):
     climb_speed = 0
     hp_max = 135
     hit_dice = "18d8"
+    spells = []
 
 
 class WerebearHybridform(Monster):
     """
     Shapechanger.
-
-      The werebear can use its action to polymorph into a Large bear-humanoid hybrid or into a Large bear, or back into its true form, which is humanoid. Its statistics, other than its size and AC, are the same in each form. Any equipment it is wearing or carrying isn't transformed. It reverts to its true form if it dies.
-
+      The werebear can use its action to polymorph into a Large bear-
+      humanoid hybrid or into a Large bear, or back into its true form,
+      which is humanoid. Its statistics, other than its size and AC, are the
+      same in each form. Any equipment it is wearing or carrying isn't
+      transformed. It reverts to its true form if it dies.
     Keen Smell.
-
-      The werebear has advantage on Wisdom (Perception) checks that rely on smell.
-
+      The werebear has advantage on Wisdom (Perception) checks that rely on
+      smell.
     Multiattack.
-
-      In bear form, the werebear makes two claw attacks. In humanoid form, it makes two greataxe attacks. In hybrid form, it can attack like a bear or a humanoid.
-
+      In bear form, the werebear makes two claw attacks. In humanoid form,
+      it makes two greataxe attacks. In hybrid form, it can attack like a
+      bear or a humanoid.
     Bite.
-
-      Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 15 (2d10 + 4) piercing damage. If the target is a humanoid, it must succeed on a DC 14 Constitution saving throw or be cursed with werebear lycanthropy.
-
+      Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 15 (2d10
+      + 4) piercing damage. If the target is a humanoid, it must succeed on
+      a DC 14 Constitution saving throw or be cursed with werebear
+      lycanthropy.
     Claw.
-
-      Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 13 (2d8 + 4) slashing damage.
-
+      Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 13 (2d8
+      + 4) slashing damage.
     Greataxe.
-
-      Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 10 (1d12 + 4) slashing damage.
+      Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 10 (1d12
+      + 4) slashing damage.
     """
-
     name = "Werebear, Hybrid form"
     description = "Medium humanoid, neutral good"
     challenge_rating = 5
@@ -275,25 +284,31 @@ class WerebearHybridform(Monster):
     climb_speed = 30
     hp_max = 135
     hit_dice = "18d8"
+    spells = []
 
 
 class WereboarBoarform(Monster):
     """
     Shapechanger.
-
-      The wereboar can use its action to polymorph into a boar-humanoid hybrid or into a boar, or back into its true form, which is humanoid. Its statistics, other than its AC, are the same in each form. Any equipment it is wearing or carrying isn't transformed. It reverts to its true form if it dies.
-
-    **Charge (Boar or Hybrid Form Only)**: If the wereboar moves at least 15 feet straight toward a target and then hits it with its tusks on the same turn, the target takes an extra 7 (2d6) slashing damage. If the target is a creature, it must succeed on a DC 13 Strength saving throw or be knocked prone.
-
+      The wereboar can use its action to polymorph into a boar-humanoid
+      hybrid or into a boar, or back into its true form, which is humanoid.
+      Its statistics, other than its AC, are the same in each form. Any
+      equipment it is wearing or carrying isn't transformed. It reverts to
+      its true form if it dies.
+    Charge (Boar or Hybrid Form Only).
+      If the wereboar moves at least 15 feet straight toward a target and
+      then hits it with its tusks on the same turn, the target takes an
+      extra 7 (2d6) slashing damage. If the target is a creature, it must
+      succeed on a DC 13 Strength saving throw or be knocked prone.
     Relentless.
-
-      If the wereboar takes 14 damage or less that would reduce it to 0 hit points, it is reduced to 1 hit point instead.
-
+      If the wereboar takes 14 damage or less that would reduce it to 0 hit
+      points, it is reduced to 1 hit point instead.
     Tusks.
-
-      Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 10 (2d6 + 3) slashing damage. If the target is a humanoid, it must succeed on a DC 12 Constitution saving throw or be cursed with wereboar lycanthropy.
+      Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 10 (2d6
+      + 3) slashing damage. If the target is a humanoid, it must succeed on
+      a DC 12 Constitution saving throw or be cursed with wereboar
+      lycanthropy.
     """
-
     name = "Wereboar, Boar form"
     description = "Medium humanoid, neutral evil"
     challenge_rating = 4
@@ -313,27 +328,27 @@ class WereboarBoarform(Monster):
     climb_speed = 0
     hp_max = 78
     hit_dice = "12d8"
+    spells = []
 
 
 class WereboarHumanform(Monster):
     """
     Shapechanger.
-
-      The wereboar can use its action to polymorph into a boar-humanoid hybrid or into a boar, or back into its true form, which is humanoid. Its statistics, other than its AC, are the same in each form. Any equipment it is wearing or carrying isn't transformed. It reverts to its true form if it dies.
-
+      The wereboar can use its action to polymorph into a boar-humanoid
+      hybrid or into a boar, or back into its true form, which is humanoid.
+      Its statistics, other than its AC, are the same in each form. Any
+      equipment it is wearing or carrying isn't transformed. It reverts to
+      its true form if it dies.
     Relentless.
-
-      If the wereboar takes 14 damage or less that would reduce it to 0 hit points, it is reduced to 1 hit point instead.
-
+      If the wereboar takes 14 damage or less that would reduce it to 0 hit
+      points, it is reduced to 1 hit point instead.
     Multiattack.
-
-      The wereboar makes two attacks, only one of which can be with its tusks.
-
+      The wereboar makes two attacks, only one of which can be with its
+      tusks.
     Maul.
-
-      Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 10 (2d6 + 3) bludgeoning damage.
+      Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 10 (2d6
+      + 3) bludgeoning damage.
     """
-
     name = "Wereboar, Human form"
     description = "Medium humanoid, neutral evil"
     challenge_rating = 4
@@ -353,33 +368,37 @@ class WereboarHumanform(Monster):
     climb_speed = 0
     hp_max = 78
     hit_dice = "12d8"
+    spells = []
 
 
 class WereboarHybridform(Monster):
     """
     Shapechanger.
-
-      The wereboar can use its action to polymorph into a boar-humanoid hybrid or into a boar, or back into its true form, which is humanoid. Its statistics, other than its AC, are the same in each form. Any equipment it is wearing or carrying isn't transformed. It reverts to its true form if it dies.
-
-    **Charge (Boar or Hybrid Form Only)**: If the wereboar moves at least 15 feet straight toward a target and then hits it with its tusks on the same turn, the target takes an extra 7 (2d6) slashing damage. If the target is a creature, it must succeed on a DC 13 Strength saving throw or be knocked prone.
-
+      The wereboar can use its action to polymorph into a boar-humanoid
+      hybrid or into a boar, or back into its true form, which is humanoid.
+      Its statistics, other than its AC, are the same in each form. Any
+      equipment it is wearing or carrying isn't transformed. It reverts to
+      its true form if it dies.
+    Charge (Boar or Hybrid Form Only).
+      If the wereboar moves at least 15 feet straight toward a target and
+      then hits it with its tusks on the same turn, the target takes an
+      extra 7 (2d6) slashing damage. If the target is a creature, it must
+      succeed on a DC 13 Strength saving throw or be knocked prone.
     Relentless.
-
-      If the wereboar takes 14 damage or less that would reduce it to 0 hit points, it is reduced to 1 hit point instead.
-
+      If the wereboar takes 14 damage or less that would reduce it to 0 hit
+      points, it is reduced to 1 hit point instead.
     Multiattack.
-
-      The wereboar makes two attacks, only one of which can be with its tusks.
-
+      The wereboar makes two attacks, only one of which can be with its
+      tusks.
     Maul.
-
-      Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 10 (2d6 + 3) bludgeoning damage.
-
+      Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 10 (2d6
+      + 3) bludgeoning damage.
     Tusks.
-
-      Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 10 (2d6 + 3) slashing damage. If the target is a humanoid, it must succeed on a DC 12 Constitution saving throw or be cursed with wereboar lycanthropy.
+      Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 10 (2d6
+      + 3) slashing damage. If the target is a humanoid, it must succeed on
+      a DC 12 Constitution saving throw or be cursed with wereboar
+      lycanthropy.
     """
-
     name = "Wereboar, Hybrid form"
     description = "Medium humanoid, neutral evil"
     challenge_rating = 4
@@ -399,29 +418,29 @@ class WereboarHybridform(Monster):
     climb_speed = 0
     hp_max = 78
     hit_dice = "12d8"
+    spells = []
 
 
 class WereratHumanform(Monster):
     """
     Shapechanger.
-
-      The wererat can use its action to polymorph into a rat-humanoid hybrid or into a giant rat, or back into its true form, which is humanoid. Its statistics, other than its size, are the same in each form. Any equipment it is wearing or carrying isn't transformed. It reverts to its true form if it dies.
-
+      The wererat can use its action to polymorph into a rat-humanoid hybrid
+      or into a giant rat, or back into its true form, which is humanoid.
+      Its statistics, other than its size, are the same in each form. Any
+      equipment it is wearing or carrying isn't transformed. It reverts to
+      its true form if it dies.
     Keen Smell.
-
-      The wererat has advantage on Wisdom (Perception) checks that rely on smell.
-
-    **Multiattack (Humanoid or Hybrid Form Only)**: The wererat makes two attacks, only one of which can be a bite.
-
+      The wererat has advantage on Wisdom (Perception) checks that rely on
+      smell.
+    Multiattack (Humanoid or Hybrid Form Only).
+      The wererat makes two attacks, only one of which can be a bite.
     Shortsword.
-
-      Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 5 (1d6 + 2) piercing damage.
-
+      Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 5 (1d6 +
+      2) piercing damage.
     Hand Crossbow.
-
-      Ranged Weapon Attack: +4 to hit, range 30/120 ft., one target. Hit: 5 (1d6 + 2) piercing damage.
+      Ranged Weapon Attack: +4 to hit, range 30/120 ft., one target. Hit: 5
+      (1d6 + 2) piercing damage.
     """
-
     name = "Wererat, Human form"
     description = "Medium humanoid, lawful evil"
     challenge_rating = 2
@@ -441,35 +460,33 @@ class WereratHumanform(Monster):
     climb_speed = 0
     hp_max = 33
     hit_dice = "6d8"
+    spells = []
 
 
 class WereratHybridform(Monster):
     """
     Shapechanger.
-
-      The wererat can use its action to polymorph into a rat-humanoid hybrid or into a giant rat, or back into its true form, which is humanoid. Its statistics, other than its size, are the same in each form. Any equipment it is wearing or carrying isn't transformed. It reverts to its true form if it dies.
-
+      The wererat can use its action to polymorph into a rat-humanoid hybrid
+      or into a giant rat, or back into its true form, which is humanoid.
+      Its statistics, other than its size, are the same in each form. Any
+      equipment it is wearing or carrying isn't transformed. It reverts to
+      its true form if it dies.
     Keen Smell.
-
-      The wererat has advantage on Wisdom (Perception) checks that rely on smell.
-
+      The wererat has advantage on Wisdom (Perception) checks that rely on
+      smell.
     Multiattack.
-
       The wererat makes two attacks, only one of which can be a bite.
-
     Bite.
-
-      Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 4 (1d4 + 2) piercing damage. If the target is a humanoid, it must succeed on a DC 11 Constitution saving throw or be cursed with wererat lycanthropy.
-
+      Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 4 (1d4 +
+      2) piercing damage. If the target is a humanoid, it must succeed on a
+      DC 11 Constitution saving throw or be cursed with wererat lycanthropy.
     Shortsword.
-
-      Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 5 (1d6 + 2) piercing damage.
-
+      Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 5 (1d6 +
+      2) piercing damage.
     Hand Crossbow.
-
-      Ranged Weapon Attack: +4 to hit, range 30/120 ft., one target. Hit: 5 (1d6 + 2) piercing damage.
+      Ranged Weapon Attack: +4 to hit, range 30/120 ft., one target. Hit: 5
+      (1d6 + 2) piercing damage.
     """
-
     name = "Wererat, Hybrid form"
     description = "Medium humanoid, lawful evil"
     challenge_rating = 2
@@ -489,23 +506,25 @@ class WereratHybridform(Monster):
     climb_speed = 0
     hp_max = 33
     hit_dice = "6d8"
+    spells = []
 
 
 class WereratRatform(Monster):
     """
     Shapechanger.
-
-      The wererat can use its action to polymorph into a rat-humanoid hybrid or into a giant rat, or back into its true form, which is humanoid. Its statistics, other than its size, are the same in each form. Any equipment it is wearing or carrying isn't transformed. It reverts to its true form if it dies.
-
+      The wererat can use its action to polymorph into a rat-humanoid hybrid
+      or into a giant rat, or back into its true form, which is humanoid.
+      Its statistics, other than its size, are the same in each form. Any
+      equipment it is wearing or carrying isn't transformed. It reverts to
+      its true form if it dies.
     Keen Smell.
-
-      The wererat has advantage on Wisdom (Perception) checks that rely on smell.
-
+      The wererat has advantage on Wisdom (Perception) checks that rely on
+      smell.
     Bite.
-
-      Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 4 (1d4 + 2) piercing damage. If the target is a humanoid, it must succeed on a DC 11 Constitution saving throw or be cursed with wererat lycanthropy.
+      Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 4 (1d4 +
+      2) piercing damage. If the target is a humanoid, it must succeed on a
+      DC 11 Constitution saving throw or be cursed with wererat lycanthropy.
     """
-
     name = "Wererat, Rat form"
     description = "Medium humanoid, lawful evil"
     challenge_rating = 2
@@ -525,31 +544,31 @@ class WereratRatform(Monster):
     climb_speed = 0
     hp_max = 33
     hit_dice = "6d8"
+    spells = []
 
 
 class WeretigerHumanform(Monster):
     """
     Shapechanger.
-
-      The weretiger can use its action to polymorph into a tiger-humanoid hybrid or into a tiger, or back into its true form, which is humanoid. Its statistics, other than its size, are the same in each form. Any equipment it is wearing or carrying isn't transformed. It reverts to its true form if it dies.
-
+      The weretiger can use its action to polymorph into a tiger-humanoid
+      hybrid or into a tiger, or back into its true form, which is humanoid.
+      Its statistics, other than its size, are the same in each form. Any
+      equipment it is wearing or carrying isn't transformed. It reverts to
+      its true form if it dies.
     Keen Hearing and Smell.
-
-      The weretiger has advantage on Wisdom (Perception) checks that rely on hearing or smell.
-
+      The weretiger has advantage on Wisdom (Perception) checks that rely on
+      hearing or smell.
     Multiattack.
-
-      In humanoid form, the weretiger makes two scimitar attacks or two longbow attacks. In hybrid form, it can attack like a humanoid or make two claw attacks.
-
+      In humanoid form, the weretiger makes two scimitar attacks or two
+      longbow attacks. In hybrid form, it can attack like a humanoid or make
+      two claw attacks.
     Scimitar.
-
-      Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 6 (1d6 + 3) slashing damage.
-
+      Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 6 (1d6 +
+      3) slashing damage.
     Longbow.
-
-      Ranged Weapon Attack: +4 to hit, range 150/600 ft., one target. Hit: 6 (1d8 + 2) piercing damage.
+      Ranged Weapon Attack: +4 to hit, range 150/600 ft., one target. Hit: 6
+      (1d8 + 2) piercing damage.
     """
-
     name = "Weretiger, Human form"
     description = "Medium humanoid, neutral"
     challenge_rating = 4
@@ -569,43 +588,45 @@ class WeretigerHumanform(Monster):
     climb_speed = 0
     hp_max = 120
     hit_dice = "16d8"
+    spells = []
 
 
 class WeretigerHybridform(Monster):
     """
     Shapechanger.
-
-      The weretiger can use its action to polymorph into a tiger-humanoid hybrid or into a tiger, or back into its true form, which is humanoid. Its statistics, other than its size, are the same in each form. Any equipment it is wearing or carrying isn't transformed. It reverts to its true form if it dies.
-
+      The weretiger can use its action to polymorph into a tiger-humanoid
+      hybrid or into a tiger, or back into its true form, which is humanoid.
+      Its statistics, other than its size, are the same in each form. Any
+      equipment it is wearing or carrying isn't transformed. It reverts to
+      its true form if it dies.
     Keen Hearing and Smell.
-
-      The weretiger has advantage on Wisdom (Perception) checks that rely on hearing or smell.
-
+      The weretiger has advantage on Wisdom (Perception) checks that rely on
+      hearing or smell.
     Pounce.
-
-      If the weretiger moves at least 15 feet straight toward a creature and then hits it with a claw attack on the same turn, that target must succeed on a DC 14 Strength saving throw or be knocked prone. If the target is prone, the weretiger can make one bite attack against it as a bonus action.
-
+      If the weretiger moves at least 15 feet straight toward a creature and
+      then hits it with a claw attack on the same turn, that target must
+      succeed on a DC 14 Strength saving throw or be knocked prone. If the
+      target is prone, the weretiger can make one bite attack against it as
+      a bonus action.
     Multiattack.
-
-      In humanoid form, the weretiger makes two scimitar attacks or two longbow attacks. In hybrid form, it can attack like a humanoid or make two claw attacks.
-
+      In humanoid form, the weretiger makes two scimitar attacks or two
+      longbow attacks. In hybrid form, it can attack like a humanoid or make
+      two claw attacks.
     Bite.
-
-      Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 8 (1d10 + 3) piercing damage. If the target is a humanoid, it must succeed on a DC 13 Constitution saving throw or be cursed with weretiger lycanthropy.
-
+      Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 8 (1d10
+      + 3) piercing damage. If the target is a humanoid, it must succeed on
+      a DC 13 Constitution saving throw or be cursed with weretiger
+      lycanthropy.
     Claw.
-
-      Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 7 (1d8 + 3) slashing damage.
-
+      Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 7 (1d8 +
+      3) slashing damage.
     Scimitar.
-
-      Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 6 (1d6 + 3) slashing damage.
-
+      Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 6 (1d6 +
+      3) slashing damage.
     Longbow.
-
-      Ranged Weapon Attack: +4 to hit, range 150/600 ft., one target. Hit: 6 (1d8 + 2) piercing damage.
+      Ranged Weapon Attack: +4 to hit, range 150/600 ft., one target. Hit: 6
+      (1d8 + 2) piercing damage.
     """
-
     name = "Weretiger, Hybrid form"
     description = "Medium humanoid, neutral"
     challenge_rating = 4
@@ -625,31 +646,35 @@ class WeretigerHybridform(Monster):
     climb_speed = 0
     hp_max = 120
     hit_dice = "16d8"
+    spells = []
 
 
 class WeretigerTigerform(Monster):
     """
     Shapechanger.
-
-      The weretiger can use its action to polymorph into a tiger-humanoid hybrid or into a tiger, or back into its true form, which is humanoid. Its statistics, other than its size, are the same in each form. Any equipment it is wearing or carrying isn't transformed. It reverts to its true form if it dies.
-
+      The weretiger can use its action to polymorph into a tiger-humanoid
+      hybrid or into a tiger, or back into its true form, which is humanoid.
+      Its statistics, other than its size, are the same in each form. Any
+      equipment it is wearing or carrying isn't transformed. It reverts to
+      its true form if it dies.
     Keen Hearing and Smell.
-
-      The weretiger has advantage on Wisdom (Perception) checks that rely on hearing or smell.
-
+      The weretiger has advantage on Wisdom (Perception) checks that rely on
+      hearing or smell.
     Pounce.
-
-      If the weretiger moves at least 15 feet straight toward a creature and then hits it with a claw attack on the same turn, that target must succeed on a DC 14 Strength saving throw or be knocked prone. If the target is prone, the weretiger can make one bite attack against it as a bonus action.
-
+      If the weretiger moves at least 15 feet straight toward a creature and
+      then hits it with a claw attack on the same turn, that target must
+      succeed on a DC 14 Strength saving throw or be knocked prone. If the
+      target is prone, the weretiger can make one bite attack against it as
+      a bonus action.
     Bite.
-
-      Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 8 (1d10 + 3) piercing damage. If the target is a humanoid, it must succeed on a DC 13 Constitution saving throw or be cursed with weretiger lycanthropy.
-
+      Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 8 (1d10
+      + 3) piercing damage. If the target is a humanoid, it must succeed on
+      a DC 13 Constitution saving throw or be cursed with weretiger
+      lycanthropy.
     Claw.
-
-      Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 7 (1d8 + 3) slashing damage.
+      Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 7 (1d8 +
+      3) slashing damage.
     """
-
     name = "Weretiger, Tiger form"
     description = "Medium humanoid, neutral"
     challenge_rating = 4
@@ -669,27 +694,28 @@ class WeretigerTigerform(Monster):
     climb_speed = 0
     hp_max = 120
     hit_dice = "16d8"
+    spells = []
 
 
 class WerewolfHumanform(Monster):
     """
     Shapechanger.
-
-      The werewolf can use its action to polymorph into a wolf-humanoid hybrid or into a wolf, or back into its true form, which is humanoid. Its statistics, other than its AC, are the same in each form. Any equipment it is wearing or carrying isn't transformed. It reverts to its true form if it dies.
-
+      The werewolf can use its action to polymorph into a wolf-humanoid
+      hybrid or into a wolf, or back into its true form, which is humanoid.
+      Its statistics, other than its AC, are the same in each form. Any
+      equipment it is wearing or carrying isn't transformed. It reverts to
+      its true form if it dies.
     Keen Hearing and Smell.
-
-      The werewolf has advantage on Wisdom (Perception) checks that rely on hearing or smell.
-
+      The werewolf has advantage on Wisdom (Perception) checks that rely on
+      hearing or smell.
     Multiattack.
-
-      The werewolf makes two attacks: two with its spear (humanoid form) or one with its bite and one with its claws (hybrid form).
-
+      The werewolf makes two attacks: two with its spear (humanoid form) or
+      one with its bite and one with its claws (hybrid form).
     Spear.
-
-      Melee or Ranged Weapon Attack: +4 to hit, reach 5 ft. or range 20/60 ft., one creature. Hit: 5 (1d6 + 2) piercing damage, or 6 (1d8 + 2) piercing damage if used with two hands to make a melee attack.
+      Melee or Ranged Weapon Attack: +4 to hit, reach 5 ft. or range 20/60
+      ft., one creature. Hit: 5 (1d6 + 2) piercing damage, or 6 (1d8 + 2)
+      piercing damage if used with two hands to make a melee attack.
     """
-
     name = "Werewolf, Human form"
     description = "Medium humanoid, chaotic evil"
     challenge_rating = 3
@@ -709,31 +735,32 @@ class WerewolfHumanform(Monster):
     climb_speed = 0
     hp_max = 58
     hit_dice = "9d8"
+    spells = []
 
 
 class WerewolfHybridform(Monster):
     """
     Shapechanger.
-
-      The werewolf can use its action to polymorph into a wolf-humanoid hybrid or into a wolf, or back into its true form, which is humanoid. Its statistics, other than its AC, are the same in each form. Any equipment it is wearing or carrying isn't transformed. It reverts to its true form if it dies.
-
+      The werewolf can use its action to polymorph into a wolf-humanoid
+      hybrid or into a wolf, or back into its true form, which is humanoid.
+      Its statistics, other than its AC, are the same in each form. Any
+      equipment it is wearing or carrying isn't transformed. It reverts to
+      its true form if it dies.
     Keen Hearing and Smell.
-
-      The werewolf has advantage on Wisdom (Perception) checks that rely on hearing or smell.
-
+      The werewolf has advantage on Wisdom (Perception) checks that rely on
+      hearing or smell.
     Multiattack.
-
-      The werewolf makes two attacks: two with its spear (humanoid form) or one with its bite and one with its claws (hybrid form).
-
+      The werewolf makes two attacks: two with its spear (humanoid form) or
+      one with its bite and one with its claws (hybrid form).
     Bite.
-
-      Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 6 (1d8 + 2) piercing damage. If the target is a humanoid, it must succeed on a DC 12 Constitution saving throw or be cursed with werewolf lycanthropy.
-
+      Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 6 (1d8 +
+      2) piercing damage. If the target is a humanoid, it must succeed on a
+      DC 12 Constitution saving throw or be cursed with werewolf
+      lycanthropy.
     Claws.
-
-      Melee Weapon Attack: +4 to hit, reach 5 ft., one creature. Hit: 7 (2d4 + 2) slashing damage.
+      Melee Weapon Attack: +4 to hit, reach 5 ft., one creature. Hit: 7 (2d4
+      + 2) slashing damage.
     """
-
     name = "Werewolf, Hybrid form"
     description = "Medium humanoid, chaotic evil"
     challenge_rating = 3
@@ -753,23 +780,26 @@ class WerewolfHybridform(Monster):
     climb_speed = 0
     hp_max = 58
     hit_dice = "9d8"
+    spells = []
 
 
 class WerewolfWolfform(Monster):
     """
     Shapechanger.
-
-      The werewolf can use its action to polymorph into a wolf-humanoid hybrid or into a wolf, or back into its true form, which is humanoid. Its statistics, other than its AC, are the same in each form. Any equipment it is wearing or carrying isn't transformed. It reverts to its true form if it dies.
-
+      The werewolf can use its action to polymorph into a wolf-humanoid
+      hybrid or into a wolf, or back into its true form, which is humanoid.
+      Its statistics, other than its AC, are the same in each form. Any
+      equipment it is wearing or carrying isn't transformed. It reverts to
+      its true form if it dies.
     Keen Hearing and Smell.
-
-      The werewolf has advantage on Wisdom (Perception) checks that rely on hearing or smell.
-
+      The werewolf has advantage on Wisdom (Perception) checks that rely on
+      hearing or smell.
     Bite.
-
-      Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 6 (1d8 + 2) piercing damage. If the target is a humanoid, it must succeed on a DC 12 Constitution saving throw or be cursed with werewolf lycanthropy.
+      Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 6 (1d8 +
+      2) piercing damage. If the target is a humanoid, it must succeed on a
+      DC 12 Constitution saving throw or be cursed with werewolf
+      lycanthropy.
     """
-
     name = "Werewolf, Wolf form"
     description = "Medium humanoid, chaotic evil"
     challenge_rating = 3
@@ -789,19 +819,20 @@ class WerewolfWolfform(Monster):
     climb_speed = 0
     hp_max = 58
     hit_dice = "9d8"
+    spells = []
 
 
 class WhiteDragonWyrmling(Monster):
     """
     Bite.
-
-      Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 7 (1d10 + 2) piercing damage plus 2 (1d4) cold damage.
-
+      Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 7 (1d10
+      + 2) piercing damage plus 2 (1d4) cold damage.
     Cold Breath.
-
-      The dragon exhales an icy blast of hail in a 15-foot cone. Each creature in that area must make a DC 12 Constitution saving throw, taking 22 (5d8) cold damage on a failed save, or half as much damage on a successful one.
+      The dragon exhales an icy blast of hail in a 15-foot cone. Each
+      creature in that area must make a DC 12 Constitution saving throw,
+      taking 22 (5d8) cold damage on a failed save, or half as much damage
+      on a successful one.
     """
-
     name = "White Dragon Wyrmling"
     description = "Medium dragon, chaotic evil"
     challenge_rating = 2
@@ -821,32 +852,37 @@ class WhiteDragonWyrmling(Monster):
     climb_speed = 0
     hp_max = 32
     hit_dice = "5d8"
+    spells = []
 
 
 class Wight(Monster):
     """
     Sunlight Sensitivity.
-
-      While in sunlight, the wight has disadvantage on attack rolls, as well as on Wisdom (Perception) checks that rely on sight.
-
+      While in sunlight, the wight has disadvantage on attack rolls, as well
+      as on Wisdom (Perception) checks that rely on sight.
     Multiattack.
-
-      The wight makes two longsword attacks or two longbow attacks. It can use its Life Drain in place of one longsword attack.
-
+      The wight makes two longsword attacks or two longbow attacks. It can
+      use its Life Drain in place of one longsword attack.
     Life Drain.
-
-      Melee Weapon Attack: +4 to hit, reach 5 ft., one creature. Hit: 5 (1d6 + 2) necrotic damage. The target must succeed on a DC 13 Constitution saving throw or its hit point maximum is reduced by an amount equal to the damage taken. This reduction lasts until the target finishes a long rest. The target dies if this effect reduces its hit point maximum to 0.
-    A humanoid slain by this attack rises 24 hours later as a zombie under the wight's control, unless the humanoid is restored to life or its body is destroyed. The wight can have no more than twelve zombies under its control at one time.
-
+      Melee Weapon Attack: +4 to hit, reach 5 ft., one creature. Hit: 5 (1d6
+      + 2) necrotic damage. The target must succeed on a DC 13 Constitution
+      saving throw or its hit point maximum is reduced by an amount equal to
+      the damage taken. This reduction lasts until the target finishes a
+      long rest. The target dies if this effect reduces its hit point
+      maximum to 0.
+      
+      A humanoid slain by this attack rises 24 hours later as a zombie under
+      the wight's control, unless the humanoid is restored to life or its
+      body is destroyed. The wight can have no more than twelve zombies
+      under its control at one time.
     Longsword.
-
-      Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 6 (1d8 + 2) slashing damage, or 7 (1d10 + 2) slashing damage if used with two hands.
-
+      Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 6 (1d8 +
+      2) slashing damage, or 7 (1d10 + 2) slashing damage if used with two
+      hands.
     Longbow.
-
-      Ranged Weapon Attack: +4 to hit, range 150/600 ft., one target. Hit: 6 (1d8 + 2) piercing damage.
+      Ranged Weapon Attack: +4 to hit, range 150/600 ft., one target. Hit: 6
+      (1d8 + 2) piercing damage.
     """
-
     name = "Wight"
     description = "Medium undead, neutral evil"
     challenge_rating = 3
@@ -866,35 +902,35 @@ class Wight(Monster):
     climb_speed = 0
     hp_max = 45
     hit_dice = "6d8"
+    spells = []
 
 
 class WilloWisp(Monster):
     """
     Consume Life.
-
-      As a bonus action, the will-o'-wisp can target one creature it can see within 5 ft. of it that has 0 hit points and is still alive. The target must succeed on a DC 10 Constitution saving throw against this magic or die. If the target dies, the will-o'-wisp regains 10 (3d6) hit points.
-
+      As a bonus action, the will-o'-wisp can target one creature it can see
+      within 5 ft. of it that has 0 hit points and is still alive. The
+      target must succeed on a DC 10 Constitution saving throw against this
+      magic or die. If the target dies, the will-o'-wisp regains 10 (3d6)
+      hit points.
     Ephemeral.
-
       The will-o'-wisp can't wear or carry anything.
-
     Incorporeal Movement.
-
-      The will-o'-wisp can move through other creatures and objects as if they were difficult terrain. It takes 5 (1d10) force damage if it ends its turn inside an object.
-
+      The will-o'-wisp can move through other creatures and objects as if
+      they were difficult terrain. It takes 5 (1d10) force damage if it ends
+      its turn inside an object.
     Variable Illumination.
-
-      The will-o'-wisp sheds bright light in a 5- to 20-foot radius and dim light for an additional number of ft. equal to the chosen radius. The will-o'-wisp can alter the radius as a bonus action.
-
+      The will-o'-wisp sheds bright light in a 5- to 20-foot radius and dim
+      light for an additional number of ft. equal to the chosen radius. The
+      will-o'-wisp can alter the radius as a bonus action.
     Shock.
-
-      Melee Spell Attack: +4 to hit, reach 5 ft., one creature. Hit: 9 (2d8) lightning damage.
-
+      Melee Spell Attack: +4 to hit, reach 5 ft., one creature. Hit: 9 (2d8)
+      lightning damage.
     Invisibility.
-
-      The will-o'-wisp and its light magically become invisible until it attacks or uses its Consume Life, or until its concentration ends (as if concentrating on a spell).
+      The will-o'-wisp and its light magically become invisible until it
+      attacks or uses its Consume Life, or until its concentration ends (as
+      if concentrating on a spell).
     """
-
     name = "Will-o'-Wisp"
     description = "Tiny undead, chaotic evil"
     challenge_rating = 2
@@ -914,31 +950,31 @@ class WilloWisp(Monster):
     climb_speed = 0
     hp_max = 22
     hit_dice = "9d4"
+    spells = []
 
 
 class WinterWolf(Monster):
     """
     Keen Hearing and Smell.
-
-      The wolf has advantage on Wisdom (Perception) checks that rely on hearing or smell.
-
+      The wolf has advantage on Wisdom (Perception) checks that rely on
+      hearing or smell.
     Pack Tactics.
-
-      The wolf has advantage on an attack roll against a creature if at least one of the wolf's allies is within 5 ft. of the creature and the ally isn't incapacitated.
-
+      The wolf has advantage on an attack roll against a creature if at
+      least one of the wolf's allies is within 5 ft. of the creature and the
+      ally isn't incapacitated.
     Snow Camouflage.
-
-      The wolf has advantage on Dexterity (Stealth) checks made to hide in snowy terrain.
-
+      The wolf has advantage on Dexterity (Stealth) checks made to hide in
+      snowy terrain.
     Bite.
-
-      Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 11 (2d6 + 4) piercing damage. If the target is a creature, it must succeed on a DC 14 Strength saving throw or be knocked prone.
-
+      Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 11 (2d6
+      + 4) piercing damage. If the target is a creature, it must succeed on
+      a DC 14 Strength saving throw or be knocked prone.
     Cold Breath.
-
-      The wolf exhales a blast of freezing wind in a 15-foot cone. Each creature in that area must make a DC 12 Dexterity saving throw, taking 18 (4d8) cold damage on a failed save, or half as much damage on a successful one.
+      The wolf exhales a blast of freezing wind in a 15-foot cone. Each
+      creature in that area must make a DC 12 Dexterity saving throw, taking
+      18 (4d8) cold damage on a failed save, or half as much damage on a
+      successful one.
     """
-
     name = "Winter Wolf"
     description = "Large monstrosity, neutral evil"
     challenge_rating = 3
@@ -958,23 +994,23 @@ class WinterWolf(Monster):
     climb_speed = 0
     hp_max = 75
     hit_dice = "10d10"
+    spells = []
 
 
 class Wolf(Monster):
     """
     Keen Hearing and Smell.
-
-      The wolf has advantage on Wisdom (Perception) checks that rely on hearing or smell.
-
+      The wolf has advantage on Wisdom (Perception) checks that rely on
+      hearing or smell.
     Pack Tactics.
-
-      The wolf has advantage on an attack roll against a creature if at least one of the wolf's allies is within 5 ft. of the creature and the ally isn't incapacitated.
-
+      The wolf has advantage on an attack roll against a creature if at
+      least one of the wolf's allies is within 5 ft. of the creature and the
+      ally isn't incapacitated.
     Bite.
-
-      Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 7 (2d4 + 2) piercing damage. If the target is a creature, it must succeed on a DC 11 Strength saving throw or be knocked prone.
+      Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 7 (2d4 +
+      2) piercing damage. If the target is a creature, it must succeed on a
+      DC 11 Strength saving throw or be knocked prone.
     """
-
     name = "Wolf"
     description = "Medium beast, unaligned"
     challenge_rating = 0.25
@@ -994,19 +1030,19 @@ class Wolf(Monster):
     climb_speed = 0
     hp_max = 11
     hit_dice = "2d8"
+    spells = []
 
 
 class Worg(Monster):
     """
     Keen Hearing and Smell.
-
-      The worg has advantage on Wisdom (Perception) checks that rely on hearing or smell.
-
+      The worg has advantage on Wisdom (Perception) checks that rely on
+      hearing or smell.
     Bite.
-
-      Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 10 (2d6 + 3) piercing damage. If the target is a creature, it must succeed on a DC 13 Strength saving throw or be knocked prone.
+      Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 10 (2d6
+      + 3) piercing damage. If the target is a creature, it must succeed on
+      a DC 13 Strength saving throw or be knocked prone.
     """
-
     name = "Worg"
     description = "Large monstrosity, neutral evil"
     challenge_rating = 0.5
@@ -1026,27 +1062,33 @@ class Worg(Monster):
     climb_speed = 0
     hp_max = 26
     hit_dice = "4d10"
+    spells = []
 
 
 class Wraith(Monster):
     """
     Incorporeal Movement.
-
-      The wraith can move through other creatures and objects as if they were difficult terrain. It takes 5 (1d10) force damage if it ends its turn inside an object.
-
+      The wraith can move through other creatures and objects as if they
+      were difficult terrain. It takes 5 (1d10) force damage if it ends its
+      turn inside an object.
     Sunlight Sensitivity.
-
-      While in sunlight, the wraith has disadvantage on attack rolls, as well as on Wisdom (Perception) checks that rely on sight.
-
+      While in sunlight, the wraith has disadvantage on attack rolls, as
+      well as on Wisdom (Perception) checks that rely on sight.
     Life Drain.
-
-      Melee Weapon Attack: +6 to hit, reach 5 ft., one creature. Hit: 21 (4d8 + 3) necrotic damage. The target must succeed on a DC 14 Constitution saving throw or its hit point maximum is reduced by an amount equal to the damage taken. This reduction lasts until the target finishes a long rest. The target dies if this effect reduces its hit point maximum to 0.
-
+      Melee Weapon Attack: +6 to hit, reach 5 ft., one creature. Hit: 21
+      (4d8 + 3) necrotic damage. The target must succeed on a DC 14
+      Constitution saving throw or its hit point maximum is reduced by an
+      amount equal to the damage taken. This reduction lasts until the
+      target finishes a long rest. The target dies if this effect reduces
+      its hit point maximum to 0.
     Create Specter.
-
-      The wraith targets a humanoid within 10 feet of it that has been dead for no longer than 1 minute and died violently. The target's spirit rises as a specter in the space of its corpse or in the nearest unoccupied space. The specter is under the wraith's control. The wraith can have no more than seven specters under its control at one time.
+      The wraith targets a humanoid within 10 feet of it that has been dead
+      for no longer than 1 minute and died violently. The target's spirit
+      rises as a specter in the space of its corpse or in the nearest
+      unoccupied space. The specter is under the wraith's control. The
+      wraith can have no more than seven specters under its control at one
+      time.
     """
-
     name = "Wraith"
     description = "Medium undead, neutral evil"
     challenge_rating = 5
@@ -1066,27 +1108,27 @@ class Wraith(Monster):
     climb_speed = 0
     hp_max = 67
     hit_dice = "9d8"
+    spells = []
 
 
 class Wyvern(Monster):
     """
     Multiattack.
-
-      The wyvern makes two attacks: one with its bite and one with its stinger. While flying, it can use its claws in place of one other attack.
-
+      The wyvern makes two attacks: one with its bite and one with its
+      stinger. While flying, it can use its claws in place of one other
+      attack.
     Bite.
-
-      Melee Weapon Attack: +7 to hit, reach 10 ft., one creature. Hit: 11 (2d6 + 4) piercing damage.
-
+      Melee Weapon Attack: +7 to hit, reach 10 ft., one creature. Hit: 11
+      (2d6 + 4) piercing damage.
     Claws.
-
-      Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 13 (2d8 + 4) slashing damage.
-
+      Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 13 (2d8
+      + 4) slashing damage.
     Stinger.
-
-      Melee Weapon Attack: +7 to hit, reach 10 ft., one creature. Hit: 11 (2d6 + 4) piercing damage. The target must make a DC 15 Constitution saving throw, taking 24 (7d6) poison damage on a failed save, or half as much damage on a successful one.
+      Melee Weapon Attack: +7 to hit, reach 10 ft., one creature. Hit: 11
+      (2d6 + 4) piercing damage. The target must make a DC 15 Constitution
+      saving throw, taking 24 (7d6) poison damage on a failed save, or half
+      as much damage on a successful one.
     """
-
     name = "Wyvern"
     description = "Large dragon, unaligned"
     challenge_rating = 6
@@ -1106,3 +1148,4 @@ class Wyvern(Monster):
     climb_speed = 0
     hp_max = 110
     hit_dice = "13d10"
+    spells = []

@@ -11,26 +11,26 @@ from dungeonsheets.stats import Ability
 class Lamia(Monster):
     """
     Innate Spellcasting.
-
-      The lamia's innate spellcasting ability is Charisma (spell save DC 13). It can innately cast the following spells, requiring no material components. At will: disguise self (any humanoid form), major image 3/day each: charm person, mirror image, scrying, suggestion 1/day: geas
-
+      The lamia's innate spellcasting ability is Charisma (spell save DC
+      13). It can innately cast the following spells, requiring no material
+      components. At will: disguise self (any humanoid form), major image
+      3/day each: charm person, mirror image, scrying, suggestion 1/day:
+      geas
     Multiattack.
-
-      The lamia makes two attacks: one with its claws and one with its dagger or Intoxicating Touch.
-
+      The lamia makes two attacks: one with its claws and one with its
+      dagger or Intoxicating Touch.
     Claws.
-
-      Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 14 (2d10 + 3) slashing damage.
-
+      Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 14 (2d10
+      + 3) slashing damage.
     Dagger.
-
-      Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 5 (1d4 + 3) piercing damage.
-
+      Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 5 (1d4 +
+      3) piercing damage.
     Intoxicating Touch.
-
-      Melee Spell Attack: +5 to hit, reach 5 ft., one creature. Hit: The target is magically cursed for 1 hour. Until the curse ends, the target has disadvantage on Wisdom saving throws and all ability checks.
+      Melee Spell Attack: +5 to hit, reach 5 ft., one creature. Hit: The
+      target is magically cursed for 1 hour. Until the curse ends, the
+      target has disadvantage on Wisdom saving throws and all ability
+      checks.
     """
-
     name = "Lamia"
     description = "Large monstrosity, chaotic evil"
     challenge_rating = 4
@@ -50,21 +50,22 @@ class Lamia(Monster):
     climb_speed = 0
     hp_max = 97
     hit_dice = "13d10"
+    spells = []
 
 
 class Lemure(Monster):
     """
-    **Devil's Sight**: Magical darkness doesn't impede the lemure's darkvision.
-
+    Devil's Sight.
+      Magical darkness doesn't impede the lemure's darkvision.
     Hellish Rejuvenation.
-
-      A lemure that dies in the Nine Hells comes back to life with all its hit points in 1d10 days unless it is killed by a good-aligned creature with a bless spell cast on that creature or its remains are sprinkled with holy water.
-
+      A lemure that dies in the Nine Hells comes back to life with all its
+      hit points in 1d10 days unless it is killed by a good-aligned creature
+      with a bless spell cast on that creature or its remains are sprinkled
+      with holy water.
     Fist.
-
-      Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: 2 (1d4) bludgeoning damage.
+      Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: 2 (1d4)
+      bludgeoning damage.
     """
-
     name = "Lemure"
     description = "Medium fiend, lawful evil"
     challenge_rating = 0
@@ -84,42 +85,56 @@ class Lemure(Monster):
     climb_speed = 0
     hp_max = 13
     hit_dice = "3d8"
+    spells = []
 
 
 class Lich(Monster):
     """
     Legendary Resistance.
-
       If the lich fails a saving throw, it can choose to succeed instead.
-
     Rejuvenation.
-
-      If it has a phylactery, a destroyed lich gains a new body in 1d10 days, regaining all its hit points and becoming active again. The new body appears within 5 feet of the phylactery.
-
+      If it has a phylactery, a destroyed lich gains a new body in 1d10
+      days, regaining all its hit points and becoming active again. The new
+      body appears within 5 feet of the phylactery.
     Spellcasting.
-
-      The lich is an 18th-level spellcaster. Its spellcasting ability is Intelligence (spell save DC 20, +12 to hit with spell attacks). The lich has the following wizard spells prepared:
-
-    - Cantrips (at will): mage hand, prestidigitation, ray of frost
-    - 1st level (4 slots): detect magic, magic missile, shield, thunderwave
-    - 2nd level (3 slots): acid arrow, detect thoughts, invisibility, mirror image
-    - 3rd level (3 slots): animate dead, counterspell, dispel magic, fireball
-    - 4th level (3 slots): blight, dimension door
-    - 5th level (3 slots): cloudkill, scrying
-    - 6th level (1 slot): disintegrate, globe of invulnerability
-    - 7th level (1 slot): finger of death, plane shift
-    - 8th level (1 slot): dominate monster, power word stun
-    - 9th level (1 slot): power word kill
-
+      The lich is an 18th-level spellcaster. Its spellcasting ability is
+      Intelligence (spell save DC 20, +12 to hit with spell attacks). The
+      lich has the following wizard spells prepared:
+      
+  
+      
+      - Cantrips (at will): mage hand, prestidigitation, ray of frost
+      
+      - 1st level (4 slots): detect magic, magic missile, shield,
+      thunderwave
+      
+      - 2nd level (3 slots): acid arrow, detect thoughts, invisibility,
+      mirror image
+      
+      - 3rd level (3 slots): animate dead, counterspell, dispel magic,
+      fireball
+      
+      - 4th level (3 slots): blight, dimension door
+      
+      - 5th level (3 slots): cloudkill, scrying
+      
+      - 6th level (1 slot): disintegrate, globe of invulnerability
+      
+      - 7th level (1 slot): finger of death, plane shift
+      
+      - 8th level (1 slot): dominate monster, power word stun
+      
+      - 9th level (1 slot): power word kill
     Turn Resistance.
-
-      The lich has advantage on saving throws against any effect that turns undead.
-
+      The lich has advantage on saving throws against any effect that turns
+      undead.
     Paralyzing Touch.
-
-      Melee Spell Attack: +12 to hit, reach 5 ft., one creature. Hit: 10 (3d6) cold damage. The target must succeed on a DC 18 Constitution saving throw or be paralyzed for 1 minute. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.
+      Melee Spell Attack: +12 to hit, reach 5 ft., one creature. Hit: 10
+      (3d6) cold damage. The target must succeed on a DC 18 Constitution
+      saving throw or be paralyzed for 1 minute. The target can repeat the
+      saving throw at the end of each of its turns, ending the effect on
+      itself on a success.
     """
-
     name = "Lich"
     description = "Medium undead, any evil alignment"
     challenge_rating = 21
@@ -139,35 +154,32 @@ class Lich(Monster):
     climb_speed = 0
     hp_max = 135
     hit_dice = "18d8"
+    spells = ["mage hand", "prestidigitation", "ray of frost", "detect magic", "magic missile", "shield", "thunderwave", "acid arrow", "detect thoughts", "invisibility", "mirror image", "animate dead", "counterspell", "dispel magic", "fireball", "blight", "dimension door", "cloudkill", "scrying", "disintegrate", "globe of invulnerability", "finger of death", "plane shift", "dominate monster", "power word stun", "power word kill"]
 
 
 class Lion(Monster):
     """
     Keen Smell.
-
-      The lion has advantage on Wisdom (Perception) checks that rely on smell.
-
+      The lion has advantage on Wisdom (Perception) checks that rely on
+      smell.
     Pack Tactics.
-
-      The lion has advantage on an attack roll against a creature if at least one of the lion's allies is within 5 ft. of the creature and the ally isn't incapacitated.
-
+      The lion has advantage on an attack roll against a creature if at
+      least one of the lion's allies is within 5 ft. of the creature and the
+      ally isn't incapacitated.
     Pounce.
-
-      If the lion moves at least 20 ft. straight toward a creature and then hits it with a claw attack on the same turn, that target must succeed on a DC 13 Strength saving throw or be knocked prone. If the target is prone, the lion can make one bite attack against it as a bonus action.
-
+      If the lion moves at least 20 ft. straight toward a creature and then
+      hits it with a claw attack on the same turn, that target must succeed
+      on a DC 13 Strength saving throw or be knocked prone. If the target is
+      prone, the lion can make one bite attack against it as a bonus action.
     Running Leap.
-
       With a 10-foot running start, the lion can long jump up to 25 ft..
-
     Bite.
-
-      Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 7 (1d8 + 3) piercing damage.
-
+      Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 7 (1d8 +
+      3) piercing damage.
     Claw.
-
-      Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 6 (1d6 + 3) slashing damage.
+      Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 6 (1d6 +
+      3) slashing damage.
     """
-
     name = "Lion"
     description = "Large beast, unaligned"
     challenge_rating = 1
@@ -187,15 +199,15 @@ class Lion(Monster):
     climb_speed = 0
     hp_max = 26
     hit_dice = "4d10"
+    spells = []
 
 
 class Lizard(Monster):
     """
     Bite.
-
-      Melee Weapon Attack: +0 to hit, reach 5 ft., one target. Hit: 1 piercing damage.
+      Melee Weapon Attack: +0 to hit, reach 5 ft., one target. Hit: 1
+      piercing damage.
     """
-
     name = "Lizard"
     description = "Tiny beast, unaligned"
     challenge_rating = 0
@@ -215,35 +227,29 @@ class Lizard(Monster):
     climb_speed = 20
     hp_max = 2
     hit_dice = "1d4"
+    spells = []
 
 
 class Lizardfolk(Monster):
     """
     Hold Breath.
-
       The lizardfolk can hold its breath for 15 minutes.
-
     Multiattack.
-
-      The lizardfolk makes two melee attacks, each one with a different weapon.
-
+      The lizardfolk makes two melee attacks, each one with a different
+      weapon.
     Bite.
-
-      Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 5 (1d6 + 2) piercing damage.
-
+      Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 5 (1d6 +
+      2) piercing damage.
     Heavy Club.
-
-      Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 5 (1d6 + 2) bludgeoning damage.
-
+      Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 5 (1d6 +
+      2) bludgeoning damage.
     Javelin.
-
-      Melee or Ranged Weapon Attack: +4 to hit, reach 5 ft. or range 30/120 ft., one target. Hit: 5 (1d6 + 2) piercing damage.
-
+      Melee or Ranged Weapon Attack: +4 to hit, reach 5 ft. or range 30/120
+      ft., one target. Hit: 5 (1d6 + 2) piercing damage.
     Spiked Shield.
-
-      Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 5 (1d6 + 2) piercing damage.
+      Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 5 (1d6 +
+      2) piercing damage.
     """
-
     name = "Lizardfolk"
     description = "Medium humanoid, neutral"
     challenge_rating = 0.5
@@ -263,3 +269,4 @@ class Lizardfolk(Monster):
     climb_speed = 0
     hp_max = 22
     hit_dice = "4d8"
+    spells = []
