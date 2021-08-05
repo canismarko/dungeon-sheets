@@ -1,0 +1,3 @@
+[submodule "dungeonsheets/modules/DND-5e-LaTeX-Template"]
+	path = dungeonsheets/modules/DND-5e-LaTeX-Template
+	url = https://github.com/rpgtex/DND-5e-LaTeX-Template.git
