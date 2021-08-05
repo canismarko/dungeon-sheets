@@ -99,10 +99,9 @@ used, sub-folders will also be parsed.
 dungeon-sheets contains definitions for standard weapons and spells,
 so attack bonuses and damage can be calculated automatically.
 
-If you have the excellent *dndbook* LaTeX template, consider using the
-``-F`` option to include this template for rendering spellbooks, druid
-wild forms and features pages:
-https://github.com/rpgtex/DND-5e-LaTeX-Template
+Consider using the ``-F`` option to include the excellent D&D 5e
+template for rendering spellbooks, druid wild forms and features
+pages (https://github.com/rpgtex/DND-5e-LaTeX-Template).
 
 If you'd like a **step-by-step walkthrough** for creating a new
 character, just run ``create-character`` from a command line and a
@@ -115,7 +114,7 @@ Content Descriptions
 The descriptions of content elements (e.g. classes, spells, etc.) are
 included in docstrings. The descriptions should ideally conform to
 reStructured text. This allows certain formatting elements to be
-properly parsed and rendered into LaTeX::
+properly parsed and rendered into LaTeX or HTML::
 
   class Scrying(Spell):
     """You can see and hear a particular creature you choose that is on
