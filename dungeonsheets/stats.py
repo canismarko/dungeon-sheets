@@ -76,6 +76,9 @@ class Ability:
             is_proficient = self.ability_name in entity.saving_throw_proficiencies
             if is_proficient:
                 saving_throw += entity.proficiency_bonus
+        # Check for bonuses to saving throws from magic items
+        for mitem in entity.magic_items:
+            saving_throw += getattr(mitem, "st_bonus", 0)
         # Create the named tuple
         value = AbilityScore(modifier=modifier, value=score, saving_throw=saving_throw, name=self.ability_name)
         return value

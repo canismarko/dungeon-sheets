@@ -1,6 +1,6 @@
 from unittest import TestCase
 
-from dungeonsheets import stats, character
+from dungeonsheets import stats, character, magic_items
 
 
 class TestStats(TestCase):
@@ -18,6 +18,9 @@ class TestStats(TestCase):
 
         my_class = MyClass()
         self.assertEqual(my_class.strength.saving_throw, 4)
+        # Try it with a magic item
+        my_class.magic_items.append(magic_items.RingOfProtection)
+        self.assertEqual(my_class.strength.saving_throw, 5)
 
     def test_modifier(self):
         class MyCharacter(character.Character):

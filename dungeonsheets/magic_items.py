@@ -6,6 +6,7 @@ class MagicItem:
 
     name = ""
     ac_bonus = 0
+    st_bonus = 0
     requires_attunement = False
     needs_implementation = False
     rarity = ""
@@ -22,25 +23,25 @@ class MagicItem:
 
 
 class CloakOfProtection(MagicItem):
+    """You gain a +1 bonus to AC and Saving Throws while wearing this
+    cloak.
+    
     """
-    You gain a +1 bonus to AC and Saving Throws while wearing this cloak.
-
-    """
-
     name = "Cloak of Protection"
     ac_bonus = 1
+    st_bonus = 1
     requires_attunement = True
     rarity = "Uncommon"
 
 
 class RingOfProtection(MagicItem):
+    """You gain a +1 bonus to AC and Saving Throws while wearing this
+    ring.
+    
     """
-    You gain a +1 bonus to AC and Saving Throws while wearing this ring.
-
-    """
-
     name = "Ring of Protection"
     ac_bonus = 1
+    st_bonus = 1
     requires_attunement = True
     rarity = "Rare"
     item_type = "Ring"
