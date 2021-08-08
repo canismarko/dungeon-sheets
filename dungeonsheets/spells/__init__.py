@@ -26,3 +26,8 @@ from dungeonsheets.spells.spells_w import *
 from dungeonsheets.spells.spells_x import *
 from dungeonsheets.spells.spells_y import *
 from dungeonsheets.spells.spells_z import *
+
+from dungeonsheets.content_registry import default_content_registry
+
+
+default_content_registry.add_module(__name__)

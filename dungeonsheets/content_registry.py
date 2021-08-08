@@ -1,20 +1,51 @@
+"""Registries for looking up pre-defined game content.
+
+The function *find_content* will find the class for a piece of content
+when given the name of that content. For example:
+``find_content("leather armor")`` will return the
+*dungeonsheets.armor.LeatherArmor* class.
+
+The *find_content* function is a shortcut that makes use of the
+*default_content_registry*, which is a *ContentRegistry* instance that
+is aware of all the content included in *dungeonsheets*. **New modules
+should register themselves** with the *default_content_registry*, best
+achieved by::
+
+    from content_registry import default_content_registry
+    default_content_registry.add_module(__name__)
+
+In the case of **homebrew content**, the python file may not be in the
+python path and so cannot be imported directly. In this case, the
+*import_homebrew* function will import the python file-name given and
+then register it with the *default_content_registry*, most often
+within a character sheet file. For example, if the *PaperSword* weapon
+class is defined in a separate file "my_homebrew.py", then in the
+character file::
+
+    from content_registry import import_homebrew
+    import_homebrew("my_homebrew.py")
+    
+    weapons = ["paper sword"]
+
+If homebrew content shares a name with canonical content, then lookup
+by string will raise an exception. In those situations, the homebrew
+content can be used directly from *import_homebrew*::
+
+    from content_registry import import_homebrew
+    campaign = import_homebrew("my_homebrew.py")
+    
+    weapons = [campaign.PaperSword]
+
+"""
+
+
+import sys
 from pathlib import Path
 from functools import lru_cache
 import importlib.util
 from typing import Union, List, Optional
 
-from dungeonsheets import (
-    weapons,
-    monsters,
-    race,
-    background,
-    armor,
-    spells,
-    infusions,
-    magic_items,
-    features,
-    exceptions,
-)
+from dungeonsheets import exceptions
 
 
 class ContentRegistry:
@@ -24,6 +55,28 @@ class ContentRegistry:
         self.modules = []
 
     def add_module(self, new_module):
+        """Register a module with this registry.
+
+        Adding the same module multiple times has no effect.
+
+        *new_module* can also be a string, in which case, an attempt
+        will be made to load the module from *sys.modules*. This way,
+        a module can register itself::
+
+            # Define classes, etc
+            ...
+            # Register the module
+            registry = ContentRegistry()
+            registry.add_module(__name__)
+        
+        """
+        # Try and look up the module by name
+        try:
+            new_module = sys.modules[new_module]
+        except KeyError:
+            if isinstance(new_module, str):
+                raise exceptions.ContentNotFound(f"Module could not be resolved: {repr(new_module)}")
+        # Add the imported module to the list for later
         if new_module not in self.modules:
             self.modules.append(new_module)
 
@@ -94,15 +147,6 @@ class ContentRegistry:
 
 
 default_content_registry = ContentRegistry()
-default_content_registry.add_module(weapons)
-default_content_registry.add_module(monsters)
-default_content_registry.add_module(race)
-default_content_registry.add_module(background)
-default_content_registry.add_module(armor)
-default_content_registry.add_module(spells)
-default_content_registry.add_module(infusions)
-default_content_registry.add_module(magic_items)
-default_content_registry.add_module(features)
 
 
 def find_content(name: str, valid_classes: Optional[List] = None):

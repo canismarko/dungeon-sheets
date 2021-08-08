@@ -5,6 +5,9 @@ monsters, etc.
 
 """
 
+from dungeonsheets import mechanics
+
+
 # This line (or one like it) is required in order for dungeonsheets to
 # recognize the file.
 dungeonsheets_version = "0.15.0"
@@ -36,14 +39,15 @@ monsters = ["aboleth", "wolf", "giant eagle", "Vashta Nerada", "priest"]
 # make up the body
 
 
-class BBEGMotivation():
+class BBEGMotivation(mechanics.Content):
     """Hans Gruber is after the $640 in bearer bonds stored in *Nakatomi
     plaza*.
 
     """
     name = "Big-Bad-Evil-Guy Motivation"
 
-class BarFight():
+
+class BarFight(mechanics.Content):
     """If the characters decide to go to the *Alliance Friendly Bar*,
     they will probably have to fight their way out against 5 enemies
     (3 Veteran, 2 Soldier).

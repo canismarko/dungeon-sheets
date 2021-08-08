@@ -16,3 +16,8 @@ from dungeonsheets.features.rogue import *
 from dungeonsheets.features.sorceror import *
 from dungeonsheets.features.warlock import *
 from dungeonsheets.features.wizard import *
+
+from dungeonsheets.content_registry import default_content_registry
+
+
+default_content_registry.add_module(__name__)

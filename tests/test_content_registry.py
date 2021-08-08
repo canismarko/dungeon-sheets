@@ -14,6 +14,17 @@ class TestContentRegistry(TestCase):
         creg.add_module(monsters)
         self.assertEqual(len(creg.modules), 1)
 
+    def test_add_module_by_name(self):
+        # Check that a module gets converted to a module instance
+        creg = ContentRegistry()
+        creg.add_module("dungeonsheets.monsters")
+        self.assertEqual(len(creg.modules), 1)
+        self.assertFalse(isinstance(creg.modules[0], str),
+                         "String not converted to module.")
+        # Check if is indempotent
+        creg.add_module("dungeonsheets.monsters")
+        self.assertEqual(len(creg.modules), 1)
+
     def test_findattr(self):
         """Check if the function can find attributes."""
 

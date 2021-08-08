@@ -1,6 +1,7 @@
 """Convenience module holding base classes for the various kinds of
 game mechanics."""
 
+from dungeonsheets.content import Content
 from dungeonsheets.spells import Spell
 from dungeonsheets.features import Feature
 from dungeonsheets.infusions import Infusion

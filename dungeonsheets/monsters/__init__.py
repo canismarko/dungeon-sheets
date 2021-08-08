@@ -1,3 +1,5 @@
+from dungeonsheets.content_registry import default_content_registry
+
 from dungeonsheets.monsters.monsters import *
 from dungeonsheets.monsters.monsters_a import *
 from dungeonsheets.monsters.monsters_b import *
@@ -25,3 +27,6 @@ from dungeonsheets.monsters.monsters_w import *
 from dungeonsheets.monsters.monsters_x import *
 from dungeonsheets.monsters.monsters_y import *
 from dungeonsheets.monsters.monsters_z import *
+
+
+default_content_registry.add_module(__name__)

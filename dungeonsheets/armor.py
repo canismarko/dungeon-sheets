@@ -1,3 +1,9 @@
+from dungeonsheets.content_registry import default_content_registry
+
+
+default_content_registry.add_module(__name__)
+
+
 class Shield:
     """A shield that can be worn on one hand."""
 
