@@ -24,6 +24,7 @@ from dungeonsheets import (
 from dungeonsheets.content_registry import find_content
 from dungeonsheets.weapons import Weapon
 from dungeonsheets.content import Creature
+from dungeonsheets.dice import combine_dice
 
 
 dice_re = re.compile(r"(\d+)d(\d+)")
@@ -789,9 +790,11 @@ class Character(Creature):
     @property
     def hit_dice(self):
         """What type and how many dice to use for re-gaining hit points.
-
+        
         To change, set hit_dice_num and hit_dice_faces."""
-        return " + ".join([f"{c.level}d{c.hit_dice_faces}" for c in self.class_list])
+        dice_s = " + ".join([f"{c.level}d{c.hit_dice_faces}" for c in self.class_list])
+        dice_s = combine_dice(dice_s)
+        return dice_s
 
     @property
     def hit_dice_faces(self):

@@ -19,6 +19,11 @@ class TestDice(TestCase):
         with self.assertRaises(DiceError):
             dice.read_dice_str("Ed15")
 
+    def test_combine_dice(self):
+        self.assertEqual(dice.combine_dice("1d8 + 6 + 2d8 + 12"), "3d8 + 18")
+        self.assertEqual(dice.combine_dice("1d8 + 1d5 + 2d8 + 1d5"), "2d5 + 3d8")
+        
+
     def test_simple_rolling(self):
         num_tests = 100
         for _ in range(num_tests):
