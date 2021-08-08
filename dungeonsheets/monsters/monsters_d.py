@@ -66,7 +66,7 @@ class Dao(Monster):
     hit_dice = "15d10 + 105"
     spells = ["detect evil and good", "detect magic", "stone shape",
               "passwall", "move earth", "tongues",
-              "conjure elemental (earth elemental only)", "gaseous form",
+              "conjure elemental", "gaseous form",
               "invisibility", "phantasmal killer", "plane shift",
               "wall of stone"]
 
