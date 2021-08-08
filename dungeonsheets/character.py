@@ -23,7 +23,7 @@ from dungeonsheets import (
 )
 from dungeonsheets.content_registry import find_content
 from dungeonsheets.weapons import Weapon
-from dungeonsheets.entity import Entity
+from dungeonsheets.content import Creature
 
 
 dice_re = re.compile(r"(\d+)d(\d+)")
@@ -70,7 +70,7 @@ multiclass_spellslots_by_level = {
 }
 
 
-class Character(Entity):
+class Character(Creature):
     """A generic player character."""
 
     # Character-specific

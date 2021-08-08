@@ -28,7 +28,7 @@ from dungeonsheets.fill_pdf_template import (
     create_spells_pdf_template,
 )
 from dungeonsheets.character import Character
-from dungeonsheets.entity import Entity
+from dungeonsheets.content import Creature
 
 """Program to take character definitions and build a PDF of the
 character sheet."""
@@ -92,7 +92,7 @@ def create_monsters_content(
 
 
 def create_party_summary_content(
-    party: Sequence[Entity],
+    party: Sequence[Creature],
     summary_rst: str,
     suffix: str,
     use_dnd_decorations: bool = False,
@@ -102,8 +102,6 @@ def create_party_summary_content(
     return template.render(
         party=party, summary=summary_rst, use_dnd_decorations=use_dnd_decorations
     )
-
-
 
 
 def create_random_tables_content(
@@ -117,12 +115,19 @@ def create_random_tables_content(
     )
 
 
-def create_extra_gm_content(rst: str, title: str, suffix: str, use_dnd_decorations: bool=False):
-    """Create content for arbitrary additional text provided in a GM sheet."""
+def create_extra_gm_content(sections: Sequence, suffix: str, use_dnd_decorations: bool=False):
+    """Create content for arbitrary additional text provided in a GM sheet.
+
+    Parameters
+    ==========
+    sections
+      Subclasses of Content that will each be included as new sections
+      in the output document.
+    
+    """
     template = jinja_env.get_template(f"extra_gm_content.{suffix}")
-    full_title = title.replace("_", " ").title()
     return template.render(
-        rst=rst, title=full_title, use_dnd_decorations=use_dnd_decorations
+        sections=sections, use_dnd_decorations=use_dnd_decorations
     )
 
 
@@ -267,16 +272,12 @@ def make_gm_sheet(
             use_dnd_decorations=fancy_decorations,
         )
     )
-    # Parse any extra homebrew attributes, etc.
-    gm_props.pop("dungeonsheets_version")
-    gm_props.pop("sheet_type")
-    extra_gm_attrs = []
-    for attr, text in gm_props.items():
-        if isinstance(text, str):
-            extra_gm_attrs.append(attr)
-            content.append(create_extra_gm_content(rst=text, title=attr, suffix=content_suffix, use_dnd_decorations=fancy_decorations))
-    for attr in extra_gm_attrs:
-        gm_props.pop(attr)
+    # Parse any extra homebrew sections, etc.
+    content.append(
+        create_extra_gm_content(sections=gm_props.pop("extra_sections", []),
+                                suffix=content_suffix,
+                                use_dnd_decorations=fancy_decorations)
+    )
     # Add the closing TeX
     content.append(
         jinja_env.get_template(f"postamble.{format_suffixes[output_format]}").render(
@@ -284,6 +285,8 @@ def make_gm_sheet(
         )
     )
     # Warn about any unhandled sheet properties
+    gm_props.pop("dungeonsheets_version")
+    gm_props.pop("sheet_type")
     if len(gm_props.keys()) > 0:
         msg = f"Unhandled attributes in '{str(gm_file)}': {','.join(gm_props.keys())}"
         log.warning(msg)

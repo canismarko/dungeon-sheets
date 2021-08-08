@@ -64,28 +64,28 @@ class Ability:
             # ability score dictionary exists but doesn't have this ability
             obj._ability_scores[self.ability_name] = self.default_value
 
-    def __get__(self, entity, Entity):
-        self._check_dict(entity)
-        score = entity._ability_scores[self.ability_name]
+    def __get__(self, actor, Actor):
+        self._check_dict(actor)
+        score = actor._ability_scores[self.ability_name]
         modifier = math.floor((score - 10) / 2)
         # Check for proficiency
         saving_throw = modifier
         if self.ability_name is not None and hasattr(
-            entity, "saving_throw_proficiencies"
+            actor, "saving_throw_proficiencies"
         ):
-            is_proficient = self.ability_name in entity.saving_throw_proficiencies
+            is_proficient = self.ability_name in actor.saving_throw_proficiencies
             if is_proficient:
-                saving_throw += entity.proficiency_bonus
+                saving_throw += actor.proficiency_bonus
         # Check for bonuses to saving throws from magic items
-        for mitem in entity.magic_items:
+        for mitem in actor.magic_items:
             saving_throw += getattr(mitem, "st_bonus", 0)
         # Create the named tuple
         value = AbilityScore(modifier=modifier, value=score, saving_throw=saving_throw, name=self.ability_name)
         return value
 
-    def __set__(self, entity, val):
-        self._check_dict(entity)
-        entity._ability_scores[self.ability_name] = val
+    def __set__(self, actor, val):
+        self._check_dict(actor)
+        actor._ability_scores[self.ability_name] = val
         self.value = val
 
 
@@ -121,7 +121,7 @@ class Skill:
     
     ability_name = ""
     skill_name = ""
-    entity = None
+    actor = None
     
     def __init__(self, ability):
         self.ability_name = ability
@@ -129,8 +129,8 @@ class Skill:
     def __set_name__(self, owner, name):
         self.skill_name = name.lower().replace("_", " ")
 
-    def __get__(self, entity, owner):
-        self.entity = entity
+    def __get__(self, actor, owner):
+        self.actor = actor
         return self
 
     def __str__(self):
@@ -139,7 +139,7 @@ class Skill:
     @property
     def is_remarkable_athlete(self):
         already_proficient = (self.is_proficient or self.is_expertise)
-        if self.entity.has_feature(RemarkableAthlete) and not already_proficient:
+        if self.actor.has_feature(RemarkableAthlete) and not already_proficient:
             return True
         else:
             return False
@@ -147,7 +147,7 @@ class Skill:
     @property
     def is_jack_of_all_trades(self):
         already_proficient = (self.is_proficient or self.is_expertise or self.is_remarkable_athlete)
-        if self.entity.has_feature(JackOfAllTrades) and not already_proficient:
+        if self.actor.has_feature(JackOfAllTrades) and not already_proficient:
             return True
         else:
             return False
@@ -155,33 +155,33 @@ class Skill:
     @property
     def is_proficient(self):
         # Check for proficiency
-        proficiencies = [p.replace("_", " ") for p in self.entity.skill_proficiencies]
+        proficiencies = [p.replace("_", " ") for p in self.actor.skill_proficiencies]
         is_proficient = self.skill_name in proficiencies
         return is_proficient
 
     @property
     def is_expertise(self):
-        return self.skill_name in self.entity.skill_expertise
+        return self.skill_name in self.actor.skill_expertise
 
     @property
     def proficiency_modifier(self):
         modifier = 0
         if self.is_proficient:
-            modifier += self.entity.proficiency_bonus
+            modifier += self.actor.proficiency_bonus
         if self.is_remarkable_athlete:
-            modifier += ceil(self.entity.proficiency_bonus / 2.0)
+            modifier += ceil(self.actor.proficiency_bonus / 2.0)
         if self.is_jack_of_all_trades:
-            modifier += self.entity.proficiency_bonus // 2
+            modifier += self.actor.proficiency_bonus // 2
         # Check for expertise
         if self.is_expertise:
-            modifier += self.entity.proficiency_bonus
+            modifier += self.actor.proficiency_bonus
         return modifier
 
     @property
     def modifier(self):
-        ability = getattr(self.entity, self.ability_name)
+        ability = getattr(self.actor, self.ability_name)
         modifier = ability.modifier + self.proficiency_modifier
-        log.info("%s modifier for '%s': %d", self, self.entity.name, modifier)
+        log.info("%s modifier for '%s': %d", self, self.actor.name, modifier)
         return modifier
 
 
@@ -190,36 +190,36 @@ class ArmorClass:
     The Armor Class of a character
     """
 
-    def __get__(self, entity, Entity):
-        armor = entity.armor or NoArmor()
+    def __get__(self, actor, Actor):
+        armor = actor.armor or NoArmor()
         ac = armor.base_armor_class
         # calculate and apply modifiers
         if armor.dexterity_mod_max is None:
-            ac += entity.dexterity.modifier
+            ac += actor.dexterity.modifier
         else:
-            ac += min(entity.dexterity.modifier, armor.dexterity_mod_max)
-        if entity.has_feature(NaturalArmor):
-            ac = max(ac, 13 + entity.dexterity.modifier)
-        shield = entity.shield or NoShield()
+            ac += min(actor.dexterity.modifier, armor.dexterity_mod_max)
+        if actor.has_feature(NaturalArmor):
+            ac = max(ac, 13 + actor.dexterity.modifier)
+        shield = actor.shield or NoShield()
         ac += shield.base_armor_class
         # Compute feature-specific additions
-        if entity.has_feature(UnarmoredDefenseMonk):
+        if actor.has_feature(UnarmoredDefenseMonk):
             if isinstance(armor, NoArmor) and isinstance(shield, NoShield):
-                ac += entity.wisdom.modifier
-        if entity.has_feature(UnarmoredDefenseBarbarian):
+                ac += actor.wisdom.modifier
+        if actor.has_feature(UnarmoredDefenseBarbarian):
             if isinstance(armor, NoArmor):
-                ac += entity.constitution.modifier
-        if entity.has_feature(DraconicResilience):
+                ac += actor.constitution.modifier
+        if actor.has_feature(DraconicResilience):
             if isinstance(armor, NoArmor):
                 ac += 3
-        if entity.has_feature(Defense):
+        if actor.has_feature(Defense):
             if not isinstance(armor, NoArmor):
                 ac += 1
-        if entity.has_feature(SoulOfTheForge):
+        if actor.has_feature(SoulOfTheForge):
             if isinstance(armor, HeavyArmor):
                 ac += 1
         # Check if any magic items add to AC
-        for mitem in entity.magic_items:
+        for mitem in actor.magic_items:
             if hasattr(mitem, "ac_bonus"):
                 ac += mitem.ac_bonus
         return ac
@@ -230,25 +230,25 @@ class Speed:
     The speed of a character
     """
 
-    def __get__(self, entity, Entity):
-        speed = entity.race.speed
+    def __get__(self, actor, Actor):
+        speed = actor.race.speed
         other_speed = ""
         if isinstance(speed, str):
             other_speed = speed[2:]
             speed = int(speed[:2])  # ignore other speeds, like fly
-        if entity.has_feature(FastMovement):
-            if not isinstance(entity.armor, HeavyArmor):
+        if actor.has_feature(FastMovement):
+            if not isinstance(actor.armor, HeavyArmor):
                 speed += 10
-        if entity.has_feature(SuperiorMobility):
+        if actor.has_feature(SuperiorMobility):
             speed += 10
-        if isinstance(entity.armor, NoArmor) or (entity.armor is None):
-            for f in entity.features:
+        if isinstance(actor.armor, NoArmor) or (actor.armor is None):
+            for f in actor.features:
                 if isinstance(f, UnarmoredMovement):
                     speed += f.speed_bonus
-        if entity.has_feature(GiftOfTheDepths):
+        if actor.has_feature(GiftOfTheDepths):
             if "swim" not in other_speed:
                 other_speed += " ({:d} swim)".format(speed)
-        if entity.has_feature(SeaSoul):
+        if actor.has_feature(SeaSoul):
             if "swim" not in other_speed:
                 other_speed += " (30 swim)"
         return "{:d}{:s}".format(speed, other_speed)
@@ -257,19 +257,19 @@ class Speed:
 class NumericalInitiative:
     """A numerical representation of initiative"""
 
-    def __get__(self, entity, Entity):
-        ini = entity.dexterity.modifier
-        if entity.has_feature(QuickDraw):
-            ini += entity.proficiency_bonus
-        if entity.has_feature(DreadAmbusher):
-            ini += entity.wisdom.modifier
-        if entity.has_feature(RakishAudacity):
-            ini += entity.charisma.modifier
+    def __get__(self, actor, Actor):
+        ini = actor.dexterity.modifier
+        if actor.has_feature(QuickDraw):
+            ini += actor.proficiency_bonus
+        if actor.has_feature(DreadAmbusher):
+            ini += actor.wisdom.modifier
+        if actor.has_feature(RakishAudacity):
+            ini += actor.charisma.modifier
 
         has_advantage = (
-            entity.has_feature(NaturalExplorerRevised)
-            or entity.has_feature(FeralInstinct)
-            or entity.has_feature(AmbushMaster)
+            actor.has_feature(NaturalExplorerRevised)
+            or actor.has_feature(FeralInstinct)
+            or actor.has_feature(AmbushMaster)
         )
         return ini, has_advantage
 
@@ -277,8 +277,8 @@ class NumericalInitiative:
 class Initiative(NumericalInitiative):
     """A character's initiative"""
 
-    def __get__(self, entity, Entity):
-        ini, has_advantage = super(Initiative, self).__get__(entity, Entity)
+    def __get__(self, actor, Actor):
+        ini, has_advantage = super(Initiative, self).__get__(actor, Actor)
         ini = "{:+d}".format(ini)
         if has_advantage:
             ini += "(A)"

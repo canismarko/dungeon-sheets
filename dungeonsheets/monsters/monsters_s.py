@@ -1239,7 +1239,7 @@ class SuccubusIncubus(Monster):
     spells = []
 
 
-class SwarmofBats(Monster):
+class SwarmOfBats(Monster):
     """
     Echolocation.
       The swarm can't use its blindsight while deafened.
@@ -1314,7 +1314,7 @@ class SwarmOfBats(Monster):
     hit_dice = "5d8"
 
 
-class SwarmofBeetles(Monster):
+class SwarmOfBeetles(Monster):
     """
     Swarm.
       The swarm can occupy another creature's space and vice versa, and the
@@ -1347,7 +1347,7 @@ class SwarmofBeetles(Monster):
     spells = []
 
 
-class SwarmofCentipedes(Monster):
+class SwarmOfCentipedes(Monster):
     """
     Swarm.
       The swarm can occupy another creature's space and vice versa, and the
@@ -1384,7 +1384,7 @@ class SwarmofCentipedes(Monster):
     spells = []
 
 
-class SwarmofInsects(Monster):
+class SwarmOfInsects(Monster):
     """
     Swarm.
       The swarm can occupy another creature's space and vice versa, and the
@@ -1417,7 +1417,7 @@ class SwarmofInsects(Monster):
     spells = []
 
 
-class SwarmofPoisonousSnakes(Monster):
+class SwarmOfPoisonousSnakes(Monster):
     """
     Swarm.
       The swarm can occupy another creature's space and vice versa, and the
@@ -1452,7 +1452,7 @@ class SwarmofPoisonousSnakes(Monster):
     spells = []
 
 
-class SwarmofQuippers(Monster):
+class SwarmOfQuippers(Monster):
     """
     Blood Frenzy.
       The swarm has advantage on melee attack rolls against any creature
@@ -1490,7 +1490,7 @@ class SwarmofQuippers(Monster):
     spells = []
 
 
-class SwarmofRats(Monster):
+class SwarmOfRats(Monster):
     """
     Keen Smell.
       The swarm has advantage on Wisdom (Perception) checks that rely on
@@ -1526,7 +1526,7 @@ class SwarmofRats(Monster):
     spells = []
 
 
-class SwarmofRavens(Monster):
+class SwarmOfRavens(Monster):
     """
     Swarm.
       The swarm can occupy another creature's space and vice versa, and the
@@ -1559,7 +1559,7 @@ class SwarmofRavens(Monster):
     spells = []
 
 
-class SwarmofSpiders(Monster):
+class SwarmOfSpiders(Monster):
     """
     Swarm.
       The swarm can occupy another creature's space and vice versa, and the
@@ -1600,7 +1600,7 @@ class SwarmofSpiders(Monster):
     spells = []
 
 
-class SwarmofWasps(Monster):
+class SwarmOfWasps(Monster):
     """
     Swarm.
       The swarm can occupy another creature's space and vice versa, and the

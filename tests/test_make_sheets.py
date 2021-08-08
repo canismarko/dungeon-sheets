@@ -22,7 +22,7 @@ class MakeSheetsTestCase(unittest.TestCase):
 
     def test_main(self):
         make_sheets.main(args=[str(CHARFILE), "--debug"])
-    
+
     def test_make_sheets(self):
         # Character PDF
         make_sheets.make_sheet(sheet_file=CHARFILE)
@@ -167,10 +167,17 @@ class HtmlCreatorTestCase(unittest.TestCase):
         self.assertIn(r"Wish", html)        
         # Check fancy extended properties
         html = make_sheets.create_monsters_content(monsters=monsters_,
-                                                  suffix="html",
-                                                  use_dnd_decorations=True)
-    
-    
+                                                   suffix="html",
+                                                   use_dnd_decorations=True)
+
+    def test_create_extra_gm_content(self):
+        class MySection():
+            name = "My D&D Homebrew Content"
+
+        html = make_sheets.create_extra_gm_content(sections=[MySection], suffix="html")
+        self.assertIn('<h1 id="extra-My-DD-Homebrew-Content">', html)
+        tex = make_sheets.create_extra_gm_content(sections=[MySection], suffix="tex")
+        self.assertIn(r'\section*{My D&D Homebrew Content', tex)
 
 
 class TexCreatorTestCase(unittest.TestCase):

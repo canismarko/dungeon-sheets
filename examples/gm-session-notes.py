@@ -29,16 +29,27 @@ parent_sheets = ["gm-campaign-notes.py"]
 # the output
 monsters = ["aboleth", "wolf", "giant eagle", "Vashta Nerada", "priest"]
 
-# Arbitrary sections can be added to the GM notes. Any attribute that
-# is a string and whose name doesn't start with an underscore ("_")
-# will be included as a separate section
-BBEG_motivation = (
-    """Hans Gruber is after the $640 in bearer bonds stored in *Nakatomi
-    plaza*."""
-)
+# Arbitrary sections can be added to the GM notes. The
+# ``extra_sections`` attribute should be a sequence of subclasses of
+# the *Content* base class. For each entry in the sequence, the *name*
+# attribute will be used for the section title, and the docstring will
+# make up the body
 
-the_bar_fight = (
-    "If the characters decide to go to the *Alliance Friendly Bar*, "
-    "they will probably have to fight their way out against 5 enemies "
-    "(3 Veteran, 2 Soldier)."
-)
+
+class BBEGMotivation():
+    """Hans Gruber is after the $640 in bearer bonds stored in *Nakatomi
+    plaza*.
+
+    """
+    name = "Big-Bad-Evil-Guy Motivation"
+
+class BarFight():
+    """If the characters decide to go to the *Alliance Friendly Bar*,
+    they will probably have to fight their way out against 5 enemies
+    (3 Veteran, 2 Soldier).
+
+    """
+    name = "The Bar Fight"
+
+
+extra_sections = [BBEGMotivation, BarFight]

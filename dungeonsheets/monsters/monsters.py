@@ -6,9 +6,8 @@ shape forms.
 from abc import ABCMeta
 
 
-from dungeonsheets.entity import Entity
+from dungeonsheets.content import Creature
 from dungeonsheets.spells import Spell
-from dungeonsheets.content_registry import find_content
 
 
 class SpellFactory(ABCMeta):
@@ -19,7 +18,7 @@ class SpellFactory(ABCMeta):
     each entry on that list, anything that is not already a spell
     class (so probably a string) will be resolved into the
     corresponding ``spells.Spell`` class.
-    
+
     """
     def __init__(self, name, bases, attrs):
         for idx, spell in enumerate(self.spells):
@@ -27,7 +26,7 @@ class SpellFactory(ABCMeta):
             self.spells[idx] = TheSpell
 
 
-class Monster(Entity, metaclass=SpellFactory):
+class Monster(Creature, metaclass=SpellFactory):
 
     """A monster that may be encountered when adventuring."""
 
