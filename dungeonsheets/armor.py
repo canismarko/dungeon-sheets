@@ -77,6 +77,7 @@ class Armor:
     cost = "0 gp"
     base_armor_class = 10
     dexterity_mod_max = None
+    dexterity_applied = True
     strength_required = None
     stealth_disadvantage = False
     weight = 0  # In lbs
@@ -112,6 +113,7 @@ class MediumArmor(Armor):
 
 class HeavyArmor(Armor):
     name = "Heavy Armor"
+    dexterity_applied = False
 
 
 class PaddedArmor(LightArmor):
@@ -182,7 +184,6 @@ class RingMail(HeavyArmor):
     name = "Ring Mail"
     cost = "30 gp"
     base_armor_class = 14
-    dexterity_mod_max = 0
     stealth_disadvantage = True
     weight = 40
 
@@ -191,7 +192,6 @@ class ChainMail(HeavyArmor):
     name = "Chain Mail"
     cost = "75 gp"
     base_armor_class = 16
-    dexterity_mod_max = 0
     strength_required = 13
     stealth_disadvantage = True
     weight = 55
@@ -201,7 +201,6 @@ class SplintArmor(HeavyArmor):
     name = "Splint Armor"
     cost = "200 gp"
     base_armor_class = 17
-    dexterity_mod_max = 0
     strength_required = 15
     stealth_disadvantage = True
     weight = 60
@@ -211,7 +210,6 @@ class PlateMail(HeavyArmor):
     name = "Plate Mail"
     cost = "1,500 gp"
     base_armor_class = 18
-    dexterity_mod_max = 0
     strength_required = 15
     stealth_disadvantage = True
     weight = 65
