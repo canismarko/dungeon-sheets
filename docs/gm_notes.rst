@@ -65,20 +65,25 @@ Adding Arbitrary Content
 ========================
 
 Additional content can be included in arbitrary sections that get
-added to the end of the GM notes output. In addition to the attributes
-described above, suitable extra attributes in the notes (``.py``) file
-will be rendered as a new section, with a heading based on the name of
-the attribute and a body with the content parsed as restructured
-text. Attributes that begin with an underscore ("_") or those that are
-not a string will be ignored.
+added after the summary of the GM notes output. The ``extra_content``
+attribute can accept a list of content that will be rendered as
+sections in the output document. Any subclass of *mechanics.Content*
+can be used. The section heading will be the *name* attribute of each
+piece of content, and the body will be the docstring.
 
 For example, the following entry will be rendered as a new section
 with the heading "The Bar Fight":
 
 .. code-block:: python
 
-    the_bar_fight = (
-         "If the characters decide to go to the *Alliance Friendly Bar*, "
-	 "they will probably have to fight their way out against 5 enemies "
-	 "(3 Veteran, 2 Soldier)."
-    )
+    from dungeonsheets import mechanics
+
+    class BarFight(mechanics.Content):
+        """If the characters decide to go to the *Alliance Friendly Bar*,
+        they will probably have to fight their way out against 5 enemies
+	(3 Veteran, 2 Soldier).
+
+        """
+        name = "The Bar Fight"
+
+    extra_content = [BarFight, ]

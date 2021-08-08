@@ -56,4 +56,4 @@ class BarFight(mechanics.Content):
     name = "The Bar Fight"
 
 
-extra_sections = [BBEGMotivation, BarFight]
+extra_content = [BBEGMotivation, BarFight]

@@ -239,6 +239,12 @@ def make_gm_sheet(
             use_dnd_decorations=fancy_decorations,
         )
     )
+    # Parse any extra homebrew sections, etc.
+    content.append(
+        create_extra_gm_content(sections=gm_props.pop("extra_content", []),
+                                suffix=content_suffix,
+                                use_dnd_decorations=fancy_decorations)
+    )
     # Add the monsters
     monsters_ = []
     for monster in gm_props.pop("monsters", []):
@@ -271,12 +277,6 @@ def make_gm_sheet(
             suffix=content_suffix,
             use_dnd_decorations=fancy_decorations,
         )
-    )
-    # Parse any extra homebrew sections, etc.
-    content.append(
-        create_extra_gm_content(sections=gm_props.pop("extra_sections", []),
-                                suffix=content_suffix,
-                                use_dnd_decorations=fancy_decorations)
     )
     # Add the closing TeX
     content.append(
