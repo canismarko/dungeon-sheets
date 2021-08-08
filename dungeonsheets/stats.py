@@ -78,7 +78,8 @@ class Ability:
                 saving_throw += actor.proficiency_bonus
         # Check for bonuses to saving throws from magic items
         for mitem in actor.magic_items:
-            saving_throw += getattr(mitem, "st_bonus", 0)
+            saving_throw += mitem.st_bonus(ability=self.ability_name)
+            # saving_throw += getattr(mitem, "st_bonus", 0)
         # Create the named tuple
         value = AbilityScore(modifier=modifier, value=score, saving_throw=saving_throw, name=self.ability_name)
         return value

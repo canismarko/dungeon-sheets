@@ -76,6 +76,7 @@ class EpubOutputTestCase(unittest.TestCase):
 
     def test_character_html_content(self):
         my_char = self.new_character()
+        my_char.magic_items_text
         html = make_sheets.make_character_content(character=my_char,
                                                   content_format="html")
         html = "".join(html)

@@ -19,7 +19,7 @@ class TestStats(TestCase):
         my_class = MyClass()
         self.assertEqual(my_class.strength.saving_throw, 4)
         # Try it with a magic item
-        my_class.magic_items.append(magic_items.RingOfProtection)
+        my_class.magic_items.append(magic_items.RingOfProtection())
         self.assertEqual(my_class.strength.saving_throw, 5)
 
     def test_modifier(self):

@@ -73,8 +73,8 @@ multiclass_spellslots_by_level = {
 
 class Character(Creature):
     """A generic player character."""
-
     # Character-specific
+    name = "Unknown Hero"
     player_name = ""
     xp = 0
     # Extra hit points info, for characters only
@@ -713,10 +713,7 @@ class Character(Creature):
     @property
     def magic_items_text(self):
         s = ", ".join(
-            [
-                f.name + ("**" if f.needs_implementation else "")
-                for f in sorted(self.magic_items, key=(lambda x: x.name))
-            ]
+            [f.name for f in sorted(self.magic_items, key=(lambda x: x.name))]
         )
         if s:
             s += ", "

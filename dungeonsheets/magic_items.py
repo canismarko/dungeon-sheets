@@ -1,3 +1,5 @@
+from typing import Optional
+
 from dungeonsheets.content_registry import default_content_registry
 
 
@@ -5,18 +7,59 @@ default_content_registry.add_module(__name__)
 
 
 class MagicItem:
-    """
-    Generic Magic Item. Add description here.
+    """Generic Magic Item. Add description here.
+
+    Should be subclassed in order to create magic items.
+
+    Saving throw bonuses should be implemented using the various
+    *st_bonus_<ability>* attributes. *st_bonus_all* will be used if
+    the ST bonus for the ability in question is not specified on the
+    subclass.
+
+    Attributes
+    ==========
+    name
+      Human-readable name for this magic item.
+    requires_attunement
+      If true, this magic item requires attunement in order to achieve
+      the benefits.
+    rarity
+      The rarity of this magic item, as a human-readable string.
+    item_type
+      The type of item: "armor", "weapon", etc.
+    ac_bonus
+      Provides an armor class bonus to any creature equipping this item.
+    st_bonus_all
+      A bonus to all savings throws to any creature equipping this item.
+    st_bonus_strength
+      A bonus to strength saving throws to any creature equipping this item.
+    st_bonus_dexterity
+      A bonus to dexterity saving throws to any creature equipping this item.
+    st_bonus_constitution
+      A bonus to constitution saving throws to any creature equipping this item.
+    st_bonus_intelligence
+      A bonus to intelligence saving throws to any creature equipping this item.
+    st_bonus_wisdom
+      A bonus to wisdom saving throws to any creature equipping this item.
+    st_bonus_charisma
+      A bonus to charisma saving throws to any creature equipping this item.
 
     """
-
-    name = ""
-    ac_bonus = 0
-    st_bonus = 0
-    requires_attunement = False
-    needs_implementation = False
-    rarity = ""
-    item_type = ""
+    # Magic-item specific attributes
+    name: str = "Generic Magic Item"
+    requires_attunement: bool = False
+    # needs_implementation: bool = False
+    rarity: str = ""
+    item_type: str = ""
+    # Bonuses
+    ac_bonus: int = 0
+    st_bonus_all: int = 0
+    st_bonus_strength: Optional[int] = None
+    st_bonus_dexterity: Optional[int] = None
+    st_bonus_constitution: Optional[int] = None
+    st_bonus_intelligence: Optional[int] = None
+    st_bonus_wisdom: Optional[int] = None
+    st_bonus_charisma: Optional[int] = None
 
     def __init__(self, owner=None):
         self.owner = owner
@@ -25,17 +68,23 @@ class MagicItem:
         return self.name
 
     def __repr__(self):
-        return '"{:s}"'.format(str(self))
+        return '<MagicItem: "{:s}">'.format(str(self))
+
+    def st_bonus(self, ability: Optional[str] = "all"):
+        bonus = getattr(self, f"st_bonus_{ability}")
+        if bonus is None:
+            bonus = self.st_bonus_all
+        return bonus
 
 
 class CloakOfProtection(MagicItem):
     """You gain a +1 bonus to AC and Saving Throws while wearing this
     cloak.
-    
+
     """
     name = "Cloak of Protection"
     ac_bonus = 1
-    st_bonus = 1
+    st_bonus_all = 1
     requires_attunement = True
     rarity = "Uncommon"
 
@@ -47,7 +96,7 @@ class RingOfProtection(MagicItem):
     """
     name = "Ring of Protection"
     ac_bonus = 1
-    st_bonus = 1
+    st_bonus_all = 1
     requires_attunement = True
     rarity = "Rare"
     item_type = "Ring"
