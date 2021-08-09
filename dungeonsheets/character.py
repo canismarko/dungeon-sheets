@@ -709,6 +709,123 @@ class Character(Creature):
             s = "(See Features Page)\n\n--" + s
             s += "\n\n=================\n\n"
         return s
+    
+    @property
+    def features_summary(self):
+        # save space for informed features and traits
+        if hasattr(self, "features_and_traits"):
+            info_list = ["**Other Features**"]
+            info_list += [text.strip() for text in self.features_and_traits.split("\n")
+                     if not(text.isspace())]
+            N = len(info_list)
+            for text in info_list:
+                if len(text) > 26: # 26 is just a guess for expected size of lines
+                    N += 1
+            if N > 30:
+                return "\n".join(info_list[:30]) + "\n(...)"
+            N = 30 - N
+        else:
+            info_list = []
+            N = 30
+        if len(self.class_list) > 1:
+            featS = ["**Multiclass**:"]
+            for cl in self.class_list:
+                description = cl.name
+                if cl.subclass:
+                    description += f"/{cl.subclass}"
+                description += f" {cl.level}"
+                featS.append(description)
+        else:
+            featS = []
+        featS += ["**Features**"]
+        featS += [f.name for f in self.features]
+        if len(featS) > N:
+            featS = featS[:N] + ["(...)"]
+        featS += info_list
+        return "\n\n".join(featS)
+    
+    @property
+    def equipment_text(self):
+        eq_list = []
+        if hasattr(self, "magic_items"):
+            eq_list += ["**Magic Items**"]
+            eq_list += [item.name for item in self.magic_items]
+        if hasattr(self, "equipment"):
+            eq_list += ["**Other Equipment**"]
+            eq_list += [text.strip() for text in self.equipment.split("\n")
+                     if not(text.isspace())]
+        return "\n\n".join(eq_list)
+    
+    @property
+    def proficiencies_by_type(self):
+        prof_dict = {}
+        w_pro = set(self.weapon_proficiencies)
+        if weapons.MartialWeapon in w_pro:
+            prof_dict["Weapons"] = ["All weapons"]
+        elif weapons.SimpleWeapon in w_pro:
+            prof_dict["Weapons"] = ["Simple weapons"]
+            for w in w_pro:
+                if not(issubclass(w, weapons.SimpleWeapon)):
+                    prof_dict["Weapons"] += [w.name]
+        else:
+            prof_dict["Weapons"] = [w.name for w in w_pro]
+        if "Weapons" in prof_dict.keys():
+            prof_dict["Weapons"] = ", ".join(prof_dict["Weapons"]) + "."
+        armor_types = ["all armor", "light armor", "medium armor", 
+                       "heavy armor"]
+        prof_set = set([prof.lower().strip().strip('.') 
+                     for prof in self.proficiencies_text.split(',')])
+        prof_dict["Armor"] = [ar for ar in armor_types if ar in prof_set]
+        if len(prof_dict["Armor"]) > 2 or 'all armor' in prof_set:
+            prof_dict["Armor"] = ["All armor"]
+        if 'shields' in prof_set:
+            prof_dict["Armor"] += ["shields"]
+        prof_dict["Armor"] = ", ".join(prof_dict["Armor"]) + "."
+        if hasattr(self, 'chosen_tools'):
+            prof_dict["Other"] = self.chosen_tools
+        return prof_dict
+    
+    @property
+    def spell_casting_info(self):
+        """Returns a ready-to-use dictionary for spellsheets."""
+        level_names = ["Cantrip", 
+                       'FirstLevelSpell',
+                       'SecondLevelSpell',
+                       'ThirdLevelSpell',
+                       'FourthLevelSpell',
+                       'FifthLevelSpell',
+                       'SixthLevelSpell',
+                       'SeventhLevelSpell',
+                       'EighthLevelSpell',
+                       'NinthLevelSpell']
+        spell_info = {'head':{
+        "classes_and_levels": " / ".join(
+        [c.name + " " + str(c.level) for c in self.spellcasting_classes]
+        ),
+        "abilities": " / ".join(
+            [c.spellcasting_ability.upper()[:3] 
+             for c in self.spellcasting_classes]
+            ),
+        "DCs": " / ".join(
+            [str(self.spell_save_dc(c)) 
+             for c in self.spellcasting_classes]
+            ),
+        "bonuses": " / ".join(
+            ["{:+d}".format(self.spell_attack_bonus(c)) 
+             for c in self.spellcasting_classes]
+            ),
+        }}
+        slots = {level_names[k]:self.spell_slots(k) for k in range(1, 10)
+                 if self.spell_slots(k) > 0}
+        spell_info["slots"] = slots
+        spell_list = {}
+        for s in self.spells:
+            prepared = s in self.spells_prepared
+            level_info = level_names[s.level]
+            info_there = spell_list.get(level_info, [])
+            spell_list[level_info] = info_there + [(s.name, prepared)]
+        spell_info["list"] = spell_list
+        return spell_info
 
     @property
     def magic_items_text(self):
