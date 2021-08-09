@@ -135,7 +135,7 @@ class VashtaNerada(monsters.Monster):
     damage_immunities = "Bludgeoning"
     damage_resistances = "Lightning"
     damage_vulnerabilities = "Wood-based"
-    challenge_rating = 93
+    challenge_rating = 30
     spells = ["wish"]
 
 
@@ -159,6 +159,7 @@ class HtmlCreatorTestCase(unittest.TestCase):
         self.assertIn(r"Damage Vulnerabilities", html)
         self.assertIn(r"Senses", html)
         self.assertIn(r"Challenge", html)
+        self.assertIn(r"(155,000 XP)", html)
         self.assertIn(r"Languages", html)
         self.assertIn(r"Skills", html)
         self.assertIn(r"petrified", html)
@@ -252,6 +253,7 @@ class TexCreatorTestCase(unittest.TestCase):
         self.assertIn(r"Damage Vulnerabilities:", tex)
         self.assertIn(r"Senses:", tex)
         self.assertIn(r"Challenge:", tex)
+        self.assertIn(r"(155,000 XP)", tex)
         self.assertIn(r"Languages:", tex)
         self.assertIn(r"Skills:", tex)
         # Check fancy extended properties

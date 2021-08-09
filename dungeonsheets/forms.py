@@ -4,6 +4,7 @@ from jinja2 import Environment, PackageLoader
 
 
 from dungeonsheets.stats import mod_str, ability_mod_str, stat_abbreviation
+from dungeonsheets.monsters import challenge_rating_to_xp
 
 
 # A dice string, with optional backticks: ``1d6 + 3``
@@ -33,4 +34,5 @@ def jinja_environment():
     jinja_env.filters["mod_str"] = mod_str
     jinja_env.filters["ability_mod_str"] = ability_mod_str
     jinja_env.filters["stat_abbreviation"] = stat_abbreviation
+    jinja_env.filters["challenge_rating_to_xp"] = challenge_rating_to_xp
     return jinja_env

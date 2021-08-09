@@ -362,3 +362,8 @@ class MonsterSpellcastingTests(TestCase):
                               msg="Monster spell is not a class")
         self.assertTrue(issubclass(MyMonster.spells[0], spells.Spell))
         
+
+class ChallengeRatingTests(TestCase):
+    def test_challenge_rating_to_xp(self):
+        self.assertEqual(monsters.challenge_rating_to_xp(1 / 8), "25")
+        self.assertEqual(monsters.challenge_rating_to_xp(30), "155,000")

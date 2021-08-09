@@ -62,7 +62,7 @@
     [% if monster.damage_vulnerabilities != "" %]<dt>Damage Vulnerabilities</dt><dd>[[ monster.damage_vulnerabilities ]]</dd>[% endif %]
     [% if monster.condition_immunities != "" %]<dt>Condition Immunuties</dt><dd>[[ monster.condition_immunities ]]</dd>[% endif %]
     [% if monster.saving_throws != "" %]<dt>Saving Throws</dt><dd>[[ monster.saving_throws ]]</dd>[% endif %]
-    <dt>Challenge<dd>[[ monster.challenge_rating ]]&nbsp;</dd>
+    <dt>Challenge<dd>[[ monster.challenge_rating ]] ([[ monster.challenge_rating | challenge_rating_to_xp ]] XP)</dd>
   </dl>
 
   [% if monster.spells | length > 0 %]

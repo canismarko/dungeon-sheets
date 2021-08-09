@@ -32,7 +32,7 @@
           condition-immunities = {[[ monster.condition_immunities ]]},
           senses = {[[ monster.senses ]]},
           languages = {[% if monster.languages %][[ monster.languages ]][% else %] --- [% endif %]},
-          challenge = {[[ monster.challenge_rating ]]},
+          challenge = {[[ monster.challenge_rating ]] ([[ monster.challenge_rating | challenge_rating_to_xp ]] XP)},
         ]
         %\DndMonsterSection{Actions}
         [[ monster.__doc__ | rst_to_latex(top_heading_level=2) ]]
@@ -88,7 +88,7 @@
     [% if monster.damage_vulnerabilities != "" %]\item [Damage Vulnerabilities:] [[ monster.damage_vulnerabilities ]][% endif %]
     [% if monster.condition_immunities != "" %]\item [Condition Immunuties:] [[ monster.condition_immunities ]][% endif %]
     [% if monster.saving_throws != "" %]\item [Saving Throws:] [[ monster.saving_throws ]][% endif %]
-    \item [Challenge:] [[ monster.challenge_rating ]]
+    \item [Challenge:] [[ monster.challenge_rating ]] ([[ monster.challenge_rating | challenge_rating_to_xp ]] XP)
     \end{description}
 
     \vspace{0.2cm}
