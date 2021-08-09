@@ -55,7 +55,8 @@ jinja_env = forms.jinja_environment()
 jinja_env.filters["rst_to_latex"] = latex.rst_to_latex
 jinja_env.filters["rst_to_html"] = epub.rst_to_html
 jinja_env.filters["to_heading_id"] = epub.to_heading_id
-
+jinja_env.filters["boxed"] = latex.rst_to_boxlatex
+jinja_env.filters["spellsheetparser"] = latex.msavage_spell_info
 
 # Custom types
 File = Union[Path, str]
@@ -137,6 +138,7 @@ def make_sheet(
     output_format: str = "pdf",
     fancy_decorations: bool = False,
     debug: bool = False,
+    use_tex_template: bool = False,
 ):
     """Make a character or GM sheet into a PDF.
     Parameters
@@ -173,6 +175,7 @@ def make_sheet(
             output_format=output_format,
             fancy_decorations=fancy_decorations,
             debug=debug,
+            use_tex_template=use_tex_template
         )
     return ret
 
@@ -406,6 +409,27 @@ def make_character_content(
     )        
     return content
 
+def msavage_sheet(character, basename, portrait_file="", debug=False):
+    """Another adaption. All changes can be easily included as options
+    in the orignal functions, though."""
+    
+    # Load image file if present
+    portrait_command=""
+    if character.portrait and portrait_file:
+        portrait_command = r"\includegraphics[width=5.75cm]{"+ \
+                            portrait_file + "}"
+    
+    
+    tex = jinja_env.get_template("MSavage_template.tex").render(
+            char=character, portrait=portrait_command
+            )
+    latex.create_latex_pdf(
+                tex,
+                basename=basename,
+                keep_temp_files=debug,
+                use_dnd_decorations=True,
+                comm1="xelatex"
+            )
 
 def make_character_sheet(
     char_file: Union[str, Path],
@@ -414,6 +438,7 @@ def make_character_sheet(
     output_format: str = "pdf",
     fancy_decorations: bool = False,
     debug: bool = False,
+    use_tex_template: bool = False,
 ):
     """Prepare a PDF character sheet from the given character file.
 
@@ -448,7 +473,7 @@ def make_character_sheet(
     basename = char_file.stem
     char_base = basename + "_char"
     person_base = basename + "_person"
-    sheets = [char_base + ".pdf", person_base + ".pdf"]
+    sheets = [char_base + ".pdf"]
     pages = []
     # Prepare the tex/html content
     content_suffix = format_suffixes[output_format]
@@ -458,16 +483,24 @@ def make_character_sheet(
                                      fancy_decorations=fancy_decorations)
     # Typeset combined LaTeX file
     if output_format == "pdf":
+        if use_tex_template:
+            msavage_sheet(
+                character=character, basename=char_base,
+                portrait_file=portrait_file, debug=debug
+                )
         # Fillable PDF forms
-        char_pdf = create_character_pdf_template(
+        else:
+            sheets.append(person_base + ".pdf")
+            char_pdf = create_character_pdf_template(
             character=character, basename=char_base, flatten=flatten
-        )
-        pages.append(char_pdf)
-        person_pdf = create_personality_pdf_template(
-            character=character, basename=person_base, portrait_file=portrait_file, flatten=flatten
-        )
-        pages.append(person_pdf)
-        if character.is_spellcaster:
+            )
+            pages.append(char_pdf)
+            person_pdf = create_personality_pdf_template(
+                character=character, basename=person_base, 
+                portrait_file=portrait_file, flatten=flatten
+                )
+            pages.append(person_pdf)
+        if character.is_spellcaster and not(use_tex_template):
             # Create spell sheet
             spell_base = "{:s}_spells".format(basename)
             create_spells_pdf_template(
@@ -486,7 +519,7 @@ def make_character_sheet(
                 )
                 sheets.append(features_base + ".pdf")
                 final_pdf = f"{basename}.pdf"
-                merge_pdfs(sheets, final_pdf, clean_up=True)
+                merge_pdfs(sheets, final_pdf, clean_up=not(debug))
         except exceptions.LatexNotFoundError:
             log.warning(
                 f"``pdflatex`` not available. Skipping features for {character.name}"
