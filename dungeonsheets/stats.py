@@ -195,10 +195,11 @@ class ArmorClass:
         armor = actor.armor or NoArmor()
         ac = armor.base_armor_class
         # calculate and apply modifiers
-        if armor.dexterity_mod_max is None:
-            ac += actor.dexterity.modifier
-        else:
-            ac += min(actor.dexterity.modifier, armor.dexterity_mod_max)
+        if armor.dexterity_applied:
+            if armor.dexterity_mod_max is None:
+                ac += actor.dexterity.modifier
+            else:
+                ac += min(actor.dexterity.modifier, armor.dexterity_mod_max)
         if actor.has_feature(NaturalArmor):
             ac = max(ac, 13 + actor.dexterity.modifier)
         shield = actor.shield or NoShield()
