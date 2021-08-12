@@ -59,13 +59,13 @@ def challenge_rating_to_xp(cr):
 
 class SpellFactory(ABCMeta):
     """Meta class to resolve spell strings into the ``spells.Spell``.
-
+    
     For classes using this metaclass, the *spell* attribute, if
     present, should be a list of spells that the entity knows. For
     each entry on that list, anything that is not already a spell
     class (so probably a string) will be resolved into the
     corresponding ``spells.Spell`` class.
-
+    
     """
     def __init__(self, name, bases, attrs):
         for idx, spell in enumerate(self.spells):

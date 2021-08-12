@@ -1,5 +1,8 @@
 #!/usr/bin/env python
 
+"""Program to take character definitions and build a PDF of the
+character sheet."""
+
 import logging
 import argparse
 import os
@@ -19,8 +22,8 @@ from dungeonsheets import (
     epub,
     monsters,
     forms,
+    random_tables,
 )
-from dungeonsheets.forms import mod_str
 from dungeonsheets.content_registry import find_content
 from dungeonsheets.fill_pdf_template import (
     create_character_pdf_template,
@@ -30,8 +33,6 @@ from dungeonsheets.fill_pdf_template import (
 from dungeonsheets.character import Character
 from dungeonsheets.content import Creature
 
-"""Program to take character definitions and build a PDF of the
-character sheet."""
 
 log = logging.getLogger(__name__)
 
@@ -70,6 +71,7 @@ class CharacterRenderer():
         return template.render(character=character,
                                use_dnd_decorations=use_dnd_decorations, ordinals=ORDINALS)
 
+
 create_character_sheet_content = CharacterRenderer("character_sheet_template.{suffix}")
 create_subclasses_content = CharacterRenderer("subclasses_template.{suffix}")
 create_features_content = CharacterRenderer("features_template.{suffix}")
@@ -105,13 +107,15 @@ def create_party_summary_content(
 
 
 def create_random_tables_content(
-    conjure_animals: bool,
+    tables: Sequence[random_tables.RandomTable],
     suffix: str,
     use_dnd_decorations: bool = False,
 ) -> str:
     template = jinja_env.get_template(f"random_tables_template.{suffix}")
     return template.render(
-        conjure_animals=conjure_animals, use_dnd_decorations=use_dnd_decorations
+        conjure_animals=True,
+        tables=tables,
+        use_dnd_decorations=use_dnd_decorations,
     )
 
 
@@ -268,12 +272,13 @@ def make_gm_sheet(
             )
         )
     # Add the random tables
-    random_tables = [
-        s.replace(" ", "_").lower() for s in gm_props.pop("random_tables", [])
+    tables = [
+        find_content(s, valid_classes=[random_tables.RandomTable])
+        for s in gm_props.pop("random_tables", [])
     ]
     content.append(
         create_random_tables_content(
-            conjure_animals=("conjure_animals" in random_tables),
+            tables=tables,
             suffix=content_suffix,
             use_dnd_decorations=fancy_decorations,
         )

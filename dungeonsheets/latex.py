@@ -167,7 +167,7 @@ def latex_parts(
     return parts
 
 
-def rst_to_latex(rst, top_heading_level=0):
+def rst_to_latex(rst, top_heading_level: int=0, format_dice: bool = True, use_dnd_decorations=False):
     """Basic markup of reST to LaTeX code.
 
     The translation between reST headings and LaTeX headings is
@@ -184,7 +184,10 @@ def rst_to_latex(rst, top_heading_level=0):
     top_heading_level : optional
       The highest level heading that will be added to the LaTeX as
       described above.
-
+    format_dice
+      If true, dice strings (e.g. "1d4") will be formatted in
+      monospace font.
+    
     Returns
     =======
     tex : str
@@ -196,7 +199,13 @@ def rst_to_latex(rst, top_heading_level=0):
         tex = ""
     else:
         # Mark hit dice in monospace font
-        rst = dice_re.sub(r"``\1``", rst)
+        if format_dice:
+            rst = dice_re.sub(r"``\1``", rst)
         tex_parts = latex_parts(rst)
         tex = tex_parts["body"]
+    # Apply fancy D&D decorations
+    if use_dnd_decorations:
+        tex = re.sub(r"p{[0-9.]+\\DUtablewidth}", "l ", tex, flags=re.M)
+        tex = tex.replace(r"\begin{supertabular}[c]", r"\begin{DndTable}")
+        tex = tex.replace(r"\end{supertabular}", r"\end{DndTable}")
     return tex
