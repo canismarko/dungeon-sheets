@@ -55,6 +55,8 @@ the following random tables are available.
 
 - **"conjure animals"** - A list of options to choose from when a
   player casts the *Conjure Animals* spell.
+- **"treasure"** - Tables for rolling treasure dropped by individuals
+  or hoards.
 
 .. code-block:: python
    :caption: Example:	  

@@ -6,7 +6,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 body {
     /* background: #f4ecdb; */
-    background-image: url("../images/paper.jpg");
+    /* background-image: url("../images/paper.jpg"); */
     background-size: 100%;
 }
 p {
@@ -156,14 +156,14 @@ table p {
 }
 
 th {
-  padding-left: 5px;
-  padding-right: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
   text-align: center;
 }
 
 td {
-  padding-left: 5px;
-  padding-right: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
   text-align: center;
 }
 
