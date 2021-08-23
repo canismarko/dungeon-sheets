@@ -1,3 +1,5 @@
+import warnings
+
 from collections import defaultdict
 
 from dungeonsheets.features import Feature, FeatureSelector
@@ -67,6 +69,7 @@ class CharClass:
         for sc in self.subclasses_available:
             if subclass_str.lower() in sc.name.lower():
                 return sc(owner=self.owner)
+        warnings.warn(f"Could not find subclass {subclass_str}.")
         return None
 
     def apply_subclass(self, feature_choices=[]):

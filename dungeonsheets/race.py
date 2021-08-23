@@ -136,6 +136,9 @@ class DarkElf(_Elf):
     spells_known = (spells.DancingLights,)
 
 
+Drow = DarkElf
+
+
 # Halflings
 class _Halfling(Race):
     name = "Halfling"
