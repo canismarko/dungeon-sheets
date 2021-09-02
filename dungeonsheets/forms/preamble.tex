@@ -21,7 +21,19 @@
   \usepackage[dvipsnames]{color}
   \setlength{\zerosep}{-1em}
 [% endif %]
-\definecolor{mygrey}{gray}{0.7}
+  \definecolor{mygrey}{gray}{0.7}
+
+%% Unicode definitions for superscripts/subscripts
+\DeclareUnicodeCharacter{00B9}{\textsuperscript{1}}
+\DeclareUnicodeCharacter{00B2}{\textsuperscript{2}}
+\DeclareUnicodeCharacter{00B3}{\textsuperscript{3}}
+\DeclareUnicodeCharacter{2074}{\textsuperscript{4}}
+\DeclareUnicodeCharacter{2075}{\textsuperscript{5}}
+\DeclareUnicodeCharacter{2076}{\textsuperscript{6}}
+\DeclareUnicodeCharacter{2077}{\textsuperscript{7}}
+\DeclareUnicodeCharacter{2078}{\textsuperscript{8}}
+\DeclareUnicodeCharacter{2079}{\textsuperscript{9}}
+\DeclareUnicodeCharacter{2070}{\textsuperscript{0}}
 
 %%% Fallback definitions for Docutils-specific commands
 [% raw %]
@@ -39,6 +51,18 @@
     \end{center}
   \fi
 }
+\newenvironment{DUlineblock}[1]{%
+  \list{}{\setlength{\partopsep}{\parskip}
+    \addtolength{\partopsep}{\baselineskip}
+    \setlength{\topsep}{0pt}
+    \setlength{\itemsep}{0.15\baselineskip}
+    \setlength{\parsep}{0pt}
+    \setlength{\leftmargin}{#1}}
+  \raggedright
+}
+
+% titlereference standard role
+\providecommand*{\DUroletitlereference}[1]{\textsl{#1}}
 
 % title for topics, admonitions, unsupported section levels, and sidebar
 \providecommand*{\DUtitle}[2][class-arg]{%

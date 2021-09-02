@@ -251,7 +251,7 @@ def html_parts(
     return parts
 
 
-def rst_to_html(rst, top_heading_level=0):
+def rst_to_html(rst, top_heading_level: int = 0, format_dice: bool = True):
     """Basic markup of reST to HTML code.
 
     The translation between reST headings and LaTeX headings is
@@ -268,6 +268,9 @@ def rst_to_html(rst, top_heading_level=0):
     top_heading_level : optional
       The highest level heading that will be added to the HTML as
       described above.
+    format_dice
+      If true, dice strings (e.g. "1d4") will be formatted in
+      monospace font.
 
     Returns
     =======
@@ -280,7 +283,8 @@ def rst_to_html(rst, top_heading_level=0):
         html = ""
     else:
         # Mark hit dice in monospace font
-        rst = dice_re.sub(r"``\1``", rst)
+        if format_dice:
+            rst = dice_re.sub(r"``\1``", rst)
         _html_parts = html_parts(rst)
         html = _html_parts["body"]
     return html

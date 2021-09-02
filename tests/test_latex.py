@@ -103,6 +103,9 @@ class MarkdownTestCase(unittest.TestCase):
         self.assertNotIn("endfoot", tex)
         self.assertNotIn("endhead", tex)
         self.assertNotIn("endfirsthead", tex)
+        # Check that fancy decorations uses the DndTable environment
+        tex = latex.rst_to_latex(table_rst, use_dnd_decorations=True)
+        self.assertIn(r"\begin{DndTable}{l l l }", tex)
 
     def test_rst_all_spells(self):
         for spell in spells.all_spells():
