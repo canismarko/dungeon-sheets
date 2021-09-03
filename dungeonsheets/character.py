@@ -80,6 +80,7 @@ class Character(Creature):
     # Extra hit points info, for characters only
     hp_current = None
     hp_temp = 0
+    hit_dice_current = ""
     # Base stats (ability scores)
     inspiration = False
     attacks_and_spellcasting = ""
@@ -94,6 +95,7 @@ class Character(Creature):
     bonds = "TODO: Describe your character's commitments or ongoing quests."
     flaws = "TODO: Describe your character's interesting flaws."
     features_and_traits = "Describe any other features and abilities."
+    chosen_tools = ""
 
     _proficiencies_text = list()
 
@@ -110,8 +112,10 @@ class Character(Creature):
     faction_name = ""
     # faction_symbol = placeholder not sure how to implement
     backstory = ""
+    additional_description = ""
     other_feats_traits = ""
     treasure = ""
+    org_name = ""
 
     def __init__(
         self,

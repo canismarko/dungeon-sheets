@@ -225,17 +225,24 @@ def rst_to_boxlatex(rst):
 def msavage_spell_info(char):
     """Generates the spellsheet for msavage template."""
     headinfo = char.spell_casting_info["head"]
+    font_options = {1:"", 2:r"\Large ", 3:r"\large "}
+    selector = min(len(char.spellcasting_classes), 3)
+    fs_command = font_options[selector]
     sc_classes = r"\SpellcastingClass{" \
-                + headinfo["classes_and_levels"] \
+                + fs_command \
+                + headinfo["classes_and_levels"].replace(" / ", ", ") \
                 + "}"
     sc_abilities = r"\SpellcastingAbility{" \
-                + headinfo["abilities"] \
+                + fs_command \
+                + headinfo["abilities"].replace(" ", "") \
                 + "}"
     sc_savedc = r"\SpellSaveDC{" \
-                + headinfo["DCs"] \
+                + fs_command \
+                + headinfo["DCs"].replace(" ", "") \
                 + "}"
     sc_atk = r"\SpellAttackBonus{" \
-                + headinfo["bonuses"] \
+                + fs_command \
+                + headinfo["bonuses"].replace(" ", "") \
                 + "}"
     tex1 = "\n".join([sc_classes, sc_abilities, sc_savedc, sc_atk]) + "\n"
     spellslots = char.spell_casting_info["slots"]
