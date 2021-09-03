@@ -101,10 +101,10 @@
 \Initiative{[[ char.initiative ]]}
 \Speed{[[ char.speed ]]}
 \MaxHitPoints{[[ char.hp_max ]]}
-\CurrentHitPoints{}
-\TemporaryHitPoints{}
-\MaxHitDice{[[ char.hit_dice ]]}
-\CurrentHitDice{}
+\CurrentHitPoints{[[ char.hp_current ]]}
+\TemporaryHitPoints{[[ char.hp_temp ]]}
+\MaxHitDice{[[ char.hit_dice.replace(" ","") ]]}
+\CurrentHitDice{[[ char.hit_dice_current.replace(" ", "") ]]}
 
 \CP{[[ char.cp ]]}
 \SP{[[ char.sp ]]}
@@ -164,7 +164,7 @@
 % background
 
 \CharacterAppearance{[[ portrait ]]
-[[ char.appearece_text ]]
+[[ char.appearance_text ]]
 }
 \AdditionalFeaturesAndTraits{
 [[ char.additional_description ]]
