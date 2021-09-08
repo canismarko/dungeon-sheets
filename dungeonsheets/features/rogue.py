@@ -360,6 +360,18 @@ class InsightfulFighting(Feature):
     source = "Rogue (Inquisitive)"
 
 
+# Optional class feature from *Tasha's Guide to Everything*
+class SteadyAim(Feature):
+    """As a bonus action, you give yourself advantage on your next attack
+    roll on the current turn. You can use this bonus action only if
+    you haven't moved during this turn, and after you use the bonus
+    action, your speed is 0 until the end of the current turn.
+    
+    """
+    name = "Steady Aim"
+    source = "Rogue (3rd level, optional)"
+
+
 class SteadyEye(Feature):
     """Starting at 9th level, you have advantage on any Wisdom (Perception) or
     Intelligence (Investigation) check if you move no more than half your speed

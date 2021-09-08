@@ -72,11 +72,15 @@ def create_latex_pdf(
     module_root = Path(__file__).parent / "modules/"
     module_dirs = [module_root / mdir for mdir in ["DND-5e-LaTeX-Template"]]
     log.debug(f"Loading additional modules from {module_dirs}.")
-    environment['TEXINPUTS'] = f".:{':'.join(str(d) for d in module_dirs)}:" + tex_env
+    texinputs = f".:{':'.join(str(d) for d in module_dirs)}:{module_root}:{tex_env}"
+    environment['TEXINPUTS'] = texinputs
     passes = 2 if use_dnd_decorations else 1
     log.debug(tex_command_line)
     log.debug("LaTeX command: %s" % " ".join(tex_command_line))
-    log.debug("LaTeX environ: %s" % environment)
+    log.debug("LaTeX TEXINPUTS: %s" % texinputs)
+    log.debug("LaTeX environ:")
+    for key, val in environment.items():
+        log.debug("    %s: %s" % (key, val))
     try:
         for i in range(passes):
             result = subprocess.run(
@@ -99,6 +103,8 @@ def create_latex_pdf(
                 for line in tex_error_msg.split("\n"):
                     log.error(line)
             raise exceptions.LatexError(err_msg)
+    finally:
+        environment['TEXINPUTS'] = tex_env
 
 
 def tex_error(logfile: Path) -> str:
