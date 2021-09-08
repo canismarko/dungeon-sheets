@@ -114,7 +114,6 @@ def create_random_tables_content(
 ) -> str:
     template = jinja_env.get_template(f"random_tables_template.{suffix}")
     return template.render(
-        conjure_animals=True,
         tables=tables,
         use_dnd_decorations=use_dnd_decorations,
     )

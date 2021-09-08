@@ -2,7 +2,7 @@ from unittest import TestCase
 
 
 from dungeonsheets.content_registry import ContentRegistry
-from dungeonsheets import monsters
+from dungeonsheets import monsters, weapons
 
 
 class TestContentRegistry(TestCase):
@@ -62,3 +62,20 @@ class TestContentRegistry(TestCase):
         # Direct access
         self.assertEqual(creg.findattr("my_attr", valid_classes=[int]), test_module.my_attr)
         
+    def test_findattr_magic_weapon(self):
+        creg = ContentRegistry()
+        creg.add_module(weapons)
+        # First test with a non-magical weapon
+        shortsword = creg.findattr("shortsword")
+        self.assertIs(shortsword, weapons.Shortsword)
+        # Now test with a magical weapon
+        magic_shortsword = creg.findattr("shortsword + 1")
+        self.assertTrue(issubclass(magic_shortsword, weapons.Shortsword),
+                        "Improved version is not subclass of base.")
+        self.assertEqual(magic_shortsword.attack_bonus, 1)
+        self.assertEqual(magic_shortsword.damage_bonus, 1)
+        # Make sure some other item that can't be "improved" still works
+        creg = ContentRegistry()
+        creg.add_module(monsters)
+        lich = creg.findattr("lich+1")
+        self.assertIs(lich, monsters.Lich)

@@ -2,7 +2,7 @@ import unittest
 import os
 from pathlib import Path
 
-from dungeonsheets import make_sheets, character, monsters
+from dungeonsheets import make_sheets, character, monsters, random_tables
 
 
 EG_DIR = Path(__file__).parent.parent.resolve() / "examples"
@@ -283,7 +283,7 @@ class TexCreatorTestCase(unittest.TestCase):
 
     def test_random_tables_tex(self):
         tex = make_sheets.create_random_tables_content(
+            tables=[random_tables.ConjureAnimals],
             suffix="tex",
-            conjure_animals=True,
         )
         self.assertIn(r"\subsection*{Conjure Animals}", tex)

@@ -102,7 +102,29 @@ class RingOfProtection(MagicItem):
     item_type = "Ring"
 
 
+class CloakOfTheBat(MagicItem):
+    """While wearing this cloak, you have advantage on Dexterity (Stealth)
+    checks. In an area of dim light or darkness, you can grip the
+    edges of the cloak with both hands and use it to fly at a speed of
+    40 feet. If you ever fail to grip the cloak's edges while flying
+    in this way, or if you are no longer in dim light or darkness, you
+    lose this flying speed.
+    
+    While wearing the cloak in an area of dim light or darkness, you
+    can use your action to cast polymorph on yourself, transforming
+    into a bat. While you are in the form of the bat, you retain your
+    Intelligence, Wisdom, and Charisma scores. The cloak can't be used
+    this way again until the next dawn.
+    
+    """
+    requires_attunement = True
+    name = "Cloak of the Bat"
+    item_type = "Cloak"
+    
+
+
 class DecanterOfEndlessWater(MagicItem):
+
     """This stoppered flask sloshes when shaken, as if it contains water. The
     decanter weighs 2 pounds.
 
@@ -321,3 +343,104 @@ class PearlOfPower(MagicItem):
 
     requires_attunement = True
     name = "Pearl of Power"
+
+
+class PotionOfHealing(MagicItem):
+    """You regain hit points when you drink this potion. The number of hit
+    points depends on the potion’s rarity, as shown in the Potions of
+    Healing table. Whatever its potency, the potion’s red liquid
+    glimmers when agitated.
+
+    **Potions of Healing**
+
+    +-----------------+-----------+-------------+
+    | Potion of ...   | Rarity    | HP Regained |
+    +=================+===========+=============+
+    |Healing          | Common	  | 2d4 + 2     |
+    +-----------------+-----------+-------------+
+    |Greater healing  | Uncommon  | 4d4 + 4     |
+    +-----------------+-----------+-------------+
+    |Superior healing | Rare      | 8d4 + 8     |
+    +-----------------+-----------+-------------+
+    |Supreme healing  | Very rare | 10d4 + 20   |
+    +-----------------+-----------+-------------+
+
+    """
+    rarity = "common"
+    name = "Potion of Healing"
+    item_type = "Potion"
+
+
+class PotionOfGreaterHealing(PotionOfHealing):
+    """You regain hit points when you drink this potion. The number of hit
+    points depends on the potion’s rarity, as shown in the Potions of
+    Healing table. Whatever its potency, the potion’s red liquid
+    glimmers when agitated.
+
+    **Potions of Healing**
+
+    +-----------------+-----------+-----------------+
+    | Potion of ...   | Rarity    | HP Regained     |
+    +=================+===========+=================+
+    |Healing          | Common	  | ``2d4 + 2``     |
+    +-----------------+-----------+-----------------+
+    |Greater healing  | Uncommon  | ``4d4 + 4``     |
+    +-----------------+-----------+-----------------+
+    |Superior healing | Rare      | ``8d4 + 8``     |
+    +-----------------+-----------+-----------------+
+    |Supreme healing  | Very rare | ``10d4 + 20``   |
+    +-----------------+-----------+-----------------+
+
+    """
+    name = "Potion of Greater Healing"
+    rarity = "uncommon"
+
+
+class PotionOfSuperiorHealing(PotionOfHealing):
+    """You regain hit points when you drink this potion. The number of hit
+    points depends on the potion’s rarity, as shown in the Potions of
+    Healing table. Whatever its potency, the potion’s red liquid
+    glimmers when agitated.
+
+    **Potions of Healing**
+
+    +-----------------+-----------+-------------+
+    | Potion of ...   | Rarity    | HP Regained |
+    +=================+===========+=============+
+    |Healing          | Common	  | 2d4 + 2     |
+    +-----------------+-----------+-------------+
+    |Greater healing  | Uncommon  | 4d4 + 4     |
+    +-----------------+-----------+-------------+
+    |Superior healing | Rare      | 8d4 + 8     |
+    +-----------------+-----------+-------------+
+    |Supreme healing  | Very rare | 10d4 + 20   |
+    +-----------------+-----------+-------------+
+
+    """
+    name = "Potion of Superior Healing"
+    rarity = "rare"
+
+
+class PotionOfSupremeHealing(PotionOfHealing):
+    """You regain hit points when you drink this potion. The number of hit
+    points depends on the potion’s rarity, as shown in the Potions of
+    Healing table. Whatever its potency, the potion’s red liquid
+    glimmers when agitated.
+
+    **Potions of Healing**
+
+    +-----------------+-----------+-------------+
+    | Potion of ...   | Rarity    | HP Regained |
+    +=================+===========+=============+
+    |Healing          | Common	  | 2d4 + 2     |
+    +-----------------+-----------+-------------+
+    |Greater healing  | Uncommon  | 4d4 + 4     |
+    +-----------------+-----------+-------------+
+    |Superior healing | Rare      | 8d4 + 8     |
+    +-----------------+-----------+-------------+
+    |Supreme healing  | Very rare | 10d4 + 20   |
+    +-----------------+-----------+-------------+
+
+    """
+    name = "Potion of Supreme Healing"
+    rarity = "very rare"
