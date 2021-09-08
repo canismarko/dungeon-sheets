@@ -136,13 +136,8 @@ class ContentRegistry:
         else:
             attr = found_attrs[0]
         # Apply weapon/etc. bonuses
-        if bonus > 0:
-            if (
-                issubclass(attr, weapons.Weapon)
-                or issubclass(attr, armor.Shield)
-                or issubclass(attr, armor.Armor)
-            ):
-                attr = attr.improved_version(bonus)
+        if bonus > 0 and hasattr(attr, 'improved_version'):
+            attr = attr.improved_version(bonus)
         return attr
 
 
