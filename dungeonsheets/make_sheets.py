@@ -121,7 +121,7 @@ def create_random_tables_content(
 
 def create_extra_gm_content(sections: Sequence, suffix: str, use_dnd_decorations: bool=False):
     """Create content for arbitrary additional text provided in a GM sheet.
-
+    
     Parameters
     ==========
     sections
@@ -158,7 +158,9 @@ def make_sheet(
       the dnd style file: https://github.com/rpgtex/DND-5e-LaTeX-Template.
     debug : bool, optional
       Provide extra info and preserve temporary files.
-
+    use_tex_template : bool, optional
+      (experimental) Use the DnD LaTeX character sheet instead of the fillable PDF.
+    
     """
     # Parse the file
     sheet_file = Path(sheet_file)
@@ -586,6 +588,7 @@ def _build(filename, args) -> int:
             output_format=args.output_format,
             debug=args.debug,
             fancy_decorations=args.fancy_decorations,
+            use_tex_template=args.use_tex_template,
         )
     except exceptions.CharacterFileFormatError:
         # Only raise the failed exception if this file is explicitly given
@@ -632,6 +635,13 @@ def main(args=None):
             "Render extra pages using fancy decorations "
             "(experimental, requires https://github.com/rpgtex/DND-5e-LaTeX-Template)"
         ),
+    )
+    parser.add_argument(
+        "--tex-template",
+        "-T",
+        action="store_true",
+        help="(experimental) Build character sheets using the LaTeX template instead of the fillable PDF.",
+        dest="use_tex_template",
     )
     parser.add_argument(
         "--output-format",
