@@ -213,5 +213,6 @@ def rst_to_latex(rst, top_heading_level: int=0, format_dice: bool = True, use_dn
     if use_dnd_decorations:
         tex = re.sub(r"p{[0-9.]+\\DUtablewidth}", "l ", tex, flags=re.M)
         tex = tex.replace(r"\begin{supertabular}[c]", r"\begin{DndTable}")
+        tex = tex.replace(r"\begin{supertabular}", r"\begin{DndTable}")
         tex = tex.replace(r"\end{supertabular}", r"\end{DndTable}")
     return tex
