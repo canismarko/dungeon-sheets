@@ -1,0 +1,205 @@
+\documentclass[letterpaper,openany,oneside,twocolumn]{book}
+
+\usepackage{fontspec}
+\usepackage[justified]{dnd}
+\usepackage{ifthen}
+\usepackage{pstricks}
+
+\usepackage[UKenglish]{babel}
+
+\usepackage{dndtemplate}
+
+\setlength\oddsidemargin{\dimexpr(\paperwidth-\textwidth)/2 - 1in\relax}
+\setlength\evensidemargin{\oddsidemargin}
+
+% Headline
+\CharacterName{[[ char.name ]]}
+
+% adds only main class and total level to prevent overflow
+\Class{[[ char.primary_class.name ]] [[ char.level ]]} 
+\Background{[[ char.background ]]}
+\PlayerName{[[ char.player_name ]]}
+\Race{[[ char.race ]]}
+\Alignment{[[ char.alignment ]]}
+\XP{[[ char.xp ]]}
+
+% Ability scores
+\StrengthScore{[[ char.strength.value ]]}
+\DexterityScore{[[ char.dexterity.value ]]}
+\ConstitutionScore{[[ char.constitution.value ]]}
+\IntelligenceScore{[[ char.intelligence.value ]]}
+\WisdomScore{[[ char.wisdom.value ]]}
+\CharismaScore{[[ char.charisma.value ]]}
+
+% Ability modifiers
+\StrengthModifier{[[ "{:+d}".format(char.strength.modifier) ]]}
+\DexterityModifier{[[ "{:+d}".format(char.dexterity.modifier) ]]}
+\ConstitutionModifier{[[ "{:+d}".format(char.constitution.modifier) ]]}
+\IntelligenceModifier{[[ "{:+d}".format(char.intelligence.modifier) ]]}
+\WisdomModifier{[[ "{:+d}".format(char.wisdom.modifier) ]]}
+\CharismaModifier{[[ "{:+d}".format(char.charisma.modifier) ]]}
+
+% Saving Throws
+\StrengthSavingThrowModifier{[[ "{:+d}".format(char.strength.saving_throw) ]]}
+\DexteritySavingThrowModifier{[[ "{:+d}".format(char.dexterity.saving_throw) ]]}
+\ConstitutionSavingThrowModifier{[[ "{:+d}".format(char.constitution.saving_throw) ]]}
+\IntelligenceSavingThrowModifier{[[ "{:+d}".format(char.intelligence.saving_throw) ]]}
+\WisdomSavingThrowModifier{[[ "{:+d}".format(char.wisdom.saving_throw) ]]}
+\CharismaSavingThrowModifier{[[ "{:+d}".format(char.charisma.saving_throw) ]]}
+
+\AcrobaticsSkillModifier{[[ "{:+d}".format(char.acrobatics.modifier) ]]}
+\AnimalHandlingSkillModifier{[["{:+d}".format(char.animal_handling.modifier) ]]}
+\ArcanaSkillModifier{[[ "{:+d}".format(char.arcana.modifier) ]]}
+\AthleticsSkillModifier{[[ "{:+d}".format(char.athletics.modifier) ]]}
+\DeceptionSkillModifier{[[ "{:+d}".format(char.deception.modifier) ]]}
+\HistorySkillModifier{[[ "{:+d}".format(char.history.modifier) ]]}
+\InsightSkillModifier{[[ "{:+d}".format(char.insight.modifier) ]]}
+\IntimidationSkillModifier{[[ "{:+d}".format(char.intimidation.modifier) ]]}
+\InvestigationSkillModifier{[[ "{:+d}".format(char.investigation.modifier) ]]} 
+\MedicineSkillModifier{[[ "{:+d}".format(char.medicine.modifier) ]]}
+\NatureSkillModifier{[[ "{:+d}".format(char.nature.modifier) ]]}
+\PerceptionSkillModifier{[[ "{:+d}".format(char.perception.modifier) ]]} 
+\PerformanceSkillModifier{[[ "{:+d}".format(char.performance.modifier) ]]}
+\PersuasionSkillModifier{[[ "{:+d}".format(char.persuasion.modifier) ]]} 
+\ReligionSkillModifier{[[ "{:+d}".format(char.religion.modifier) ]]}
+\SleightOfHandSkillModifier{[[ "{:+d}".format(char.sleight_of_hand.modifier) ]]}
+\StealthSkillModifier{[[ "{:+d}".format(char.stealth.modifier) ]]}
+\SurvivalSkillModifier{[[ "{:+d}".format(char.survival.modifier) ]]}
+
+% Prociciencies
+\StrengthProficiency{[[ "strength" in char.saving_throw_proficiencies ]]}
+\DexterityProficiency{[[ "dexterity" in char.saving_throw_proficiencies ]]}
+\ConstitutionProficiency{[[ "constitution" in char.saving_throw_proficiencies ]]}
+\IntelligenceProficiency{[[ "intelligence" in char.saving_throw_proficiencies ]]}
+\WisdomProficiency{[[ "wisdom" in char.saving_throw_proficiencies ]]}
+\CharismaProficiency{[[ "charisma" in char.saving_throw_proficiencies ]]}
+
+\AcrobaticsProficiency{[[ "acrobatics" in char.skill_proficiencies ]]}
+\AnimalHandlingProficiency{[[ "animal_handling" in char.skill_proficiencies ]]}
+\ArcanaProficiency{[[ "arcana" in char.skill_proficiencies ]]}
+\AthleticsProficiency{[[ "athletics" in char.skill_proficiencies ]]}
+\DeceptionProficiency{[[ "deception" in char.skill_proficiencies ]]}
+\HistoryProficiency{[[ "history" in char.skill_proficiencies ]]}
+\InsightProficiency{[[ "insight" in char.skill_proficiencies ]]}
+\IntimidationProficiency{[[ "intimidation" in char.skill_proficiencies ]]}
+\InvestigationProficiency{[[ "investigation" in char.skill_proficiencies ]]}
+\MedicineProficiency{[[ "medicine" in char.skill_proficiencies ]]}
+\NatureProficiency{[[ "nature" in char.skill_proficiencies ]]}
+\PerceptionProficiency{[[ "perception" in char.skill_proficiencies ]]}
+\PerformanceProficiency{[[ "performance" in char.skill_proficiencies ]]}
+\PersuasionProficiency{[[ "persuasion" in char.skill_proficiencies ]]}
+\ReligionProficiency{[[ "religion" in char.skill_proficiencies ]]}
+\SleightOfHandProficiency{[[ "sleight_of_hand" in char.skill_proficiencies ]]}
+\StealthProficiency{[[ "stealth" in char.skill_proficiencies ]]}
+\SurvivalProficiency{[[ "survival" in char.skill_proficiencies ]]}
+
+\Inspiration{[% if char.inspiration %] $\star$ [% endif %]}
+\Proficiency{[[ "{:+d}".format(char.proficiency_bonus) ]]}
+\Perception{[[ 10 + char.perception.modifier ]]} 
+
+\ArmorClass{[[ char.armor_class ]]}
+\Initiative{[[ char.initiative ]]}
+\Speed{[[ char.speed ]]}
+\MaxHitPoints{[[ char.hp_max ]]}
+\CurrentHitPoints{[[ char.hp_current ]]}
+\TemporaryHitPoints{[[ char.hp_temp ]]}
+\MaxHitDice{[[ char.hit_dice.replace(" ","") ]]}
+\CurrentHitDice{[[ char.hit_dice_current.replace(" ", "") ]]}
+
+\CP{[[ char.cp ]]}
+\SP{[[ char.sp ]]}
+\GP{[[ char.gp ]]}
+\EP{[[ char.ep ]]}
+\PP{[[ char.pp ]]}
+
+[% for w in char.weapons %]
+\AddWeapon{[[ w.name ]]}{[[ "{:+d}".format(w.attack_modifier) ]]}{[[ "{}/{}".format(w.damage, w.damage_type) ]]}
+[% endfor %]
+
+\AttacksAdditional{
+[% if char.armor %]\textbf{Armor}: [[ char.armor ]] \\ [% endif %]
+[% if char.shield %]\textbf{Shield}: [[ char.shield ]] \\ [% endif %]
+[[- char.attacks_and_spellcasting| boxed -]]
+}
+
+\OtherProficienciesLanguages{
+\textbf{Languages:}  [[ char.languages ]] \\
+[%- for prof_type, values in char.proficiencies_by_type.items() %]
+\textbf{[[ prof_type ]]}: [[ values ]] \\
+[%- endfor -%]
+}
+
+\Equipment{[[ char.equipment_text| boxed ]]}
+
+\PersonalityTraits{
+[[ char.personality_traits ]]
+}
+
+\Ideals{
+[[ char.ideals ]]
+}
+
+\Bonds{
+[[ char.bonds ]]
+}
+
+\Flaws{
+[[ char.flaws ]]
+}
+
+\FeaturesTraits{
+[[ char.features_summary| boxed ]]
+}
+
+
+% Appearance
+
+\Age{[[ char.age ]]}
+\Height{[[ char.height ]]}
+\Weight{[[ char.weight ]]}
+\Eyes{[[ char.eyes ]]}
+\Skin{[[ char.skin ]]}
+\Hair{[[ char.hair ]]}
+
+% background
+
+\CharacterAppearance{[[ portrait ]]
+[[ char.appearance_text ]]
+}
+\AdditionalFeaturesAndTraits{
+[[ char.additional_description ]]
+}
+\Characterbackground{
+[[ char.backstory ]]
+}
+\Treasure{
+[[ char.treasure ]]
+}
+\AlliesAndOrganizations{
+[[ char.allies ]]
+}
+\OrganizationName{[[ char.org_name ]]}
+
+[% if char.is_spellcaster %]
+%Magic
+[[ char | spellsheetparser ]]
+[% endif %]
+
+
+\begin{document}
+\newgeometry{left=0cm,right=0cm,top=0cm,bottom=0cm}
+\onecolumn
+
+
+% CHARACTER PAGE
+\rendercharactersheet
+
+% BACKSTORY PAGE
+\renderbackgroundsheet
+
+[% if char.is_spellcaster %]
+% SPELLCASTING PAGE
+\renderspellsheet
+[% endif %]
+
+\end{document}
