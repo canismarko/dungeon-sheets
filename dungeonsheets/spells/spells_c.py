@@ -90,7 +90,7 @@ class Catapult(Spell):
     name = "Catapult"
     level = 1
     casting_time = "1 action"
-    casting_range = "150 feet"
+    casting_range = "60 feet"
     components = ("S",)
     materials = ""
     duration = "Instantaneous"
