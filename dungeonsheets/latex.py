@@ -49,6 +49,7 @@ def create_latex_pdf(
     basename: str,
     keep_temp_files: bool = False,
     use_dnd_decorations: bool = False,
+    comm1: str = "pdflatex"
 ):
     # Create tex document
     tex_file = f"{basename}.tex"
@@ -59,7 +60,7 @@ def create_latex_pdf(
     pdf_file = Path(f"{basename}.pdf")
     output_dir = pdf_file.resolve().parent
     tex_command_line = [
-        "pdflatex",
+        comm1,
         "--output-directory",
         str(output_dir),
         "-halt-on-error",
@@ -216,3 +217,75 @@ def rst_to_latex(rst, top_heading_level: int=0, format_dice: bool = True, use_dn
         tex = tex.replace(r"\begin{supertabular}", r"\begin{DndTable}")
         tex = tex.replace(r"\end{supertabular}", r"\end{DndTable}")
     return tex
+
+def rst_to_boxlatex(rst):
+    """Adapted rst translation from dungeonsheets latex module, removing
+    dice parsing and indentation."""
+
+    if rst is None:
+        return ""
+    tex_parts = latex_parts(rst)
+    tex = tex_parts["body"]
+    tex = tex.replace('\n\n', ' \\\\\n')
+    return tex
+
+def msavage_spell_info(char):
+    """Generates the spellsheet for msavage template."""
+    headinfo = char.spell_casting_info["head"]
+    font_options = {1:"", 2:r"\Large ", 3:r"\large "}
+    selector = min(len(char.spellcasting_classes), 3)
+    fs_command = font_options[selector]
+    sc_classes = r"\SpellcastingClass{" \
+                + fs_command \
+                + headinfo["classes_and_levels"].replace(" / ", ", ") \
+                + "}"
+    sc_abilities = r"\SpellcastingAbility{" \
+                + fs_command \
+                + headinfo["abilities"].replace(" ", "") \
+                + "}"
+    sc_savedc = r"\SpellSaveDC{" \
+                + fs_command \
+                + headinfo["DCs"].replace(" ", "") \
+                + "}"
+    sc_atk = r"\SpellAttackBonus{" \
+                + fs_command \
+                + headinfo["bonuses"].replace(" ", "") \
+                + "}"
+    tex1 = "\n".join([sc_classes, sc_abilities, sc_savedc, sc_atk]) + "\n"
+    spellslots = char.spell_casting_info["slots"]
+    texT = []
+    for k, v in spellslots.items():
+        texT.append("\\" + k + "SlotsTotal{" + str(v) + "}")
+    tex2 = "\n".join(texT) + "\n"
+    texT = []
+    level_names = level_names = ["Cantrip", 
+                       'FirstLevelSpell',
+                       'SecondLevelSpell',
+                       'ThirdLevelSpell',
+                       'FourthLevelSpell',
+                       'FifthLevelSpell',
+                       'SixthLevelSpell',
+                       'SeventhLevelSpell',
+                       'EighthLevelSpell',
+                       'NinthLevelSpell']
+    sheet_spaces = dict(zip(level_names,
+                    [8, 13, 13, 13, 13, 9, 9, 9, 7, 7]))
+    comp_letters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", 
+                  "L", "M"]
+    spellList = char.spell_casting_info["list"]
+    for k, v in spellList.items():
+        slots_max = sheet_spaces[k]
+        if len(v) > slots_max:
+            vsel = sorted(v, key=lambda x: x[1], reverse=True)
+        else:
+            vsel = v[:]
+        for spinfo, slot in zip(vsel[:slots_max], comp_letters):
+            slot_command = "\\"+k+'Slot'+slot
+            slot_command_name = slot_command+"{"+spinfo[0]+"}"
+            if k == "Cantrip":
+                texT = texT + [slot_command_name]
+                continue
+            slot_command_prep = slot_command+"Prepared"+"{"+str(spinfo[1])+"}"
+            texT = texT + [slot_command_name, slot_command_prep]
+    tex3 = "\n".join(texT) + '\n'
+    return "\n".join([tex1, tex2, tex3])
