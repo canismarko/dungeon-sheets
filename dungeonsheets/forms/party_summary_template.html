@@ -53,4 +53,28 @@
   [% endfor %]    
 </table>
 
+<!-- XP thresholds for the party -->
+<table>
+  <tr>
+    <th>&nbsp;</th>
+    <th>Easy</th>
+    <th>Medium</th>
+    <th>Hard</th>
+    <th>Deadly</th>
+  </tr>
+  <tr>
+    <th>XP Threshold</th>
+    [% for threshold in party | xp_thresholds %]
+    <td>[[ "{:,}".format(threshold) ]]</td>
+    [% endfor %]
+  </tr>
+</table>
+
+<dl>
+[% for member in party %]
+<dt>[[ member.name ]]</dt>
+<dd>[[ member.languages ]]</dd>
+[% endfor %]
+</dl>
+
 [% endif %]

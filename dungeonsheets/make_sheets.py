@@ -223,15 +223,22 @@ def make_gm_sheet(
     # Add the party stats table and session summary
     party = []
     for char_file in gm_props.pop("party", []):
-        # Resolve the file path
-        char_file = Path(char_file)
-        if not char_file.is_absolute():
-            char_file = gm_file.parent / char_file
-        char_file = char_file.resolve()
-        # Load the character file
-        log.debug(f"Loading party member: {char_file}")
-        character_props = readers.read_sheet_file(char_file)
-        member = _char.Character.load(character_props)
+        # Check if it's already resolved
+        if isinstance(char_file, Creature):
+            member = char_file
+        elif isinstance(char_file, type) and issubclass(char_file, Creature):
+            # Needs to be instantiated
+            member = char_file()
+        else:
+            # Resolve the file path
+            char_file = Path(char_file)
+            if not char_file.is_absolute():
+                char_file = gm_file.parent / char_file
+            char_file = char_file.resolve()
+            # Load the character file
+            log.debug(f"Loading party member: {char_file}")
+            character_props = readers.read_sheet_file(char_file)
+            member = _char.Character.load(character_props)
         party.append(member)
     summary = gm_props.pop("summary", "")
     content.append(

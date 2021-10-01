@@ -4,6 +4,7 @@ from jinja2 import Environment, PackageLoader
 
 
 from dungeonsheets.stats import mod_str, ability_mod_str, stat_abbreviation
+from dungeonsheets.encounter import xp_thresholds
 from dungeonsheets.monsters import challenge_rating_to_xp
 
 
@@ -35,4 +36,5 @@ def jinja_environment():
     jinja_env.filters["ability_mod_str"] = ability_mod_str
     jinja_env.filters["stat_abbreviation"] = stat_abbreviation
     jinja_env.filters["challenge_rating_to_xp"] = challenge_rating_to_xp
+    jinja_env.filters["xp_thresholds"] = xp_thresholds
     return jinja_env

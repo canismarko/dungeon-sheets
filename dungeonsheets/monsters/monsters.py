@@ -104,3 +104,6 @@ class Monster(Creature, metaclass=SpellFactory):
     def is_beast(self):
         is_beast = "beast" in self.description.lower()
         return is_beast
+
+    def has_feature(self, *args, **kwargs):
+        return False

@@ -10,7 +10,7 @@ from dungeonsheets import mechanics
 
 # This line (or one like it) is required in order for dungeonsheets to
 # recognize the file.
-dungeonsheets_version = "0.15.0"
+dungeonsheets_version = "0.17.0"
 
 # Specifying ``sheet_type = "gm"`` gives us GM notes instead of a
 # player character sheet.

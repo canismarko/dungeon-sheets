@@ -1080,7 +1080,7 @@ class Stonemelder(Monster):
       attacks. It knows the following sorcerer spells (an asterisked
       spell is from *Princes of the Apocalypse* appendix B):
       
-      - Cantrips (at will): acid splash, blade ward, light mending, mold earth*
+      - Cantrips (at will): acid splash, blade ward, light, mending, mold earth*
       - 1st level (4 slots): expeditious retreat, false life, shield
       - 2nd level (3 slots): Maximilian's earthen grasp,* shatter
       - 3rd level (3 slots): erupting earth,* meld into stone
@@ -1123,9 +1123,9 @@ class Stonemelder(Monster):
     climb_speed = 0
     hp_max = 75
     hit_dice = "10d8 + 30"
-    spells = ["acid splash", "blade ward", "light mending", "mold earth*",
+    spells = ["acid splash", "blade ward", "light", "mending", "mold earth",
               "expeditious retreat", "false life", "shield",
-              "Maximilian's earthen grasp*", "shatter" "erupting earth*",
+              "maximilian's earthen grasp", "shatter", "erupting earth",
               "meld into stone", "stoneskin"]
 
 

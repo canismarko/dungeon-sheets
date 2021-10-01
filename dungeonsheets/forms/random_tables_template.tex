@@ -1,5 +1,7 @@
+[% if tables|length > 0 %]
 \pdfbookmark[0]{Random Tables}{Random Tables}
 \section*{Random Tables}
+[% endif %]
 
 [% for table in tables %]
 \pdfbookmark[0]{[[ table.name ]]}{Random Table - [[ table.name ]]}

@@ -1,4 +1,6 @@
+[% if tables|length > 0 %]
 <h1 id="gm-random-tables">Random Tables</h1>
+[% endif %]
 
 [% for table in tables %]
 <h2 id="gm-random-tables-[[ table.name | to_heading_id ]]">[[ table.name ]]</h2>

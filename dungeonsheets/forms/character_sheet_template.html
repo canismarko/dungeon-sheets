@@ -84,7 +84,7 @@
     <td>[[ ability.name | capitalize ]]</td>
     <td>[[ ability.modifier | mod_str ]] ([[ ability.value ]])</td>
     <td>[% if ability.name in character.saving_throw_proficiencies %]✓[% endif %]</td>
-    <td>[[ character.strength.saving_throw | mod_str ]]</td>
+    <td>[[ ability.saving_throw | mod_str ]]</td>
   </tr>
   [% endfor %]
 </table>

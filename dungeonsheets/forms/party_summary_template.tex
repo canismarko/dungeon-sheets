@@ -24,17 +24,26 @@
       \\
     [% endfor %]    
   \end{DndTable}
-  \begin{DndTable}{r c c c}
-    & AC & Pas.\ Per. & Spl.\ DC \\
+  \begin{DndTable}{r c c c c}
+    & AC & Pas.\ Per. & Max HP & Spl.\ DC \\
     [% for member in party %]
       [[ member.name[:28] ]]
       & [[ member.armor_class ]]
       & [[ member.perception.modifier + 10 ]]
+      & [[ member.max_hp ]]
       & [% for class in member.class_list %]
           [% if class.spellcasting_ability %] [[ member.spell_save_dc(class) ]], [% endif %]
         [% endfor %]
       \\
-    [% endfor %]    
+    [% endfor %]
+  \end{DndTable}
+  %% XP thresholds for the party
+  \begin{DndTable}{r c c c c}
+    & Easy & Medium & Hard & Deadly \\
+    \textbf{XP Threshold} & 
+    [% for threshold in party | xp_thresholds %]
+        [[ "{:,}".format(threshold) ]] [% if not loop.last %]&[% endif %]
+    [% endfor %]
   \end{DndTable}
 [% else %]
   \begin{tabular}{r | c c c c c c}
@@ -64,6 +73,21 @@
       \\
     [% endfor %]
   \end{tabular}
+    %% XP thresholds for the party
+  \begin{tabular}{r c c c c}
+    & Easy & Medium & Hard & Deadly \\
+    \textbf{XP Threshold} & 
+    [% for threshold in party | xp_thresholds %]
+        [[ "{:,}".format(threshold) ]] [% if not loop.last %]&[% endif %]
+    [% endfor %]
+  \end{tabular}
 [% endif %]
 
+
+
+[% for member in party %]
+\textbf{[[ member.name ]]}: [[ member.languages ]]
+[% endfor %]
+
 [% endif %]
+
