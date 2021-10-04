@@ -2,6 +2,7 @@
 game mechanics."""
 
 from dungeonsheets.content import Content, Creature
+from dungeonsheets.encounter import Encounter
 from dungeonsheets.spells import Spell
 from dungeonsheets.features import Feature
 from dungeonsheets.infusions import Infusion

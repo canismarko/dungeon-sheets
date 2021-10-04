@@ -1,5 +1,7 @@
 from collections import namedtuple
 
+from dungeonsheets.content import Content
+
 XPThreshold = namedtuple("XPThreshold", ("easy", "medium", "hard", "deadly"))
 
 
@@ -40,3 +42,7 @@ def xp_thresholds(party):
         deadly=sum(th.deadly for th in thresholds),
     )
     return final_thresholds
+
+
+class Encounter(Content):
+    pass
