@@ -155,6 +155,7 @@ class OathOfVengeance(PaladinOath):
         17: [spells.HoldMonster, spells.Scrying],
     }
     features_by_level = defaultdict(list)
+    features_by_level[3] = [features.AbjureEnemy, features.VowOfEnmity]
     features_by_level[7] = [features.RelentlessAvenger]
     features_by_level[15] = [features.SoulOfVengeance]
     features_by_level[20] = [features.AvengingAngel]
