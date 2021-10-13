@@ -261,6 +261,72 @@ class HolyNimbus(Feature):
     source = "Paladin (Oath of Devotion)"
 
 
+# Oath of Vengeance
+
+class AbjureEnemy(Feature):
+    """As an action, you present your holy symbol and speak a prayer of denunciation,
+    using your Channel Divinity. Choose one creature within 60 feet of you that
+    you can see. That creature must make a Wisdom saving throw, unless it is immune
+    to being frightened. Fiends and undead have disadvantage on this saving throw.
+
+    On a failed save, the creature is frightened for 1 minute or until it takes
+    any damage. While frightened, the creature's speed is 0, and it can't benefit
+    from any bonus to its speed.
+
+    On a successful save, the creature's speed is halved for 1 minute or until the
+    creature takes any damage.
+    """
+
+    name = "Channel Divinity: Abjure Enemy"
+    source = "Paladin (Oath of Vengeance)"
+
+class VowOfEnmity(Feature):
+    """ As a bonus action, you can utter a vow of enmity against a creature you can
+    see within 10 feet of you, using your Channel Divinity. You gain advantage on
+    attack rolls against the creature for 1 minute or until it drops to 0 hit points
+    or falls unconscious.
+    """
+
+    name = "Channel Divinity: Vow of Enmity"
+    source = "Paladin (Oath of Vengeance)"
+
+class RelentlessAvenger(Feature):
+    """By 7th level, your supernatural focus helps you close off a foe's retreat.
+    When you hit a creature with an opportunity attack, you can move up to half
+    your speed immediately after the attack and as part of the same reaction.
+    This movement doesn't provoke opportunity attacks.
+
+    """
+
+    name = "Relentless Avenger"
+    source = "Paladin (Oath of Vengeance)"
+
+class SoulOfVengeance(Feature):
+    """Starting at 15th level, the authority with which you speak your Vow of Enmity
+    gives you greater power over your foe. When a creature under the effect of your
+    Vow of Enmity makes an attack, you can use your reaction to make a melee weapon
+    attack against that creature if it is within range.
+
+    """
+
+    name = "Soul of Vengeance"
+    source = "Paladin (Oath of Vengeance)"
+
+class AvengingAngel(Feature):
+    """ At 20th level, you can assume the form of an angelic avenger. Using your action,
+    you undergo a transformation. For 1 hour, you gain the following benefits:
+
+        * Wings sprout from your back and grant you a flying speed of 60 feet.
+        * You emanate an aura of menace in a 30-foot radius. The first time any enemy
+          creature enters the aura or starts its turn there during a battle, the creature
+          must succeed on a Wisdom saving throw or become frightened of you for 1 minute
+          or until it takes any damage. Attack rolls against the frightened creature have advantage.
+        * Once you use this feature, you can't use it again until you finish a long rest.e
+    """
+
+    name = "Avenging Angel"
+    source = "Paladin (Oath of Vengeance)"
+
 # Oath of the Ancients
 # Oath of Redemption
 class EmissaryOfPeace(Feature):
