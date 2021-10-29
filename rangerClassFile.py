@@ -351,7 +351,30 @@ class OrderOfTheGhostslayer(SubClass):
     features_by_level[11] = [features.BrandOfSundering]
     features_by_level[15] = [features.BloodCurseOfTheExorcist]
     features_by_level[18] = [features.RiteRevival]
-
+    spellcasting_ability = "intelligence"
+    spell_slots_by_level = {
+        # char_lvl: (cantrips, 1st, 2nd, 3rd, ...)
+        1: (0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+        2: (0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+        3: (0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+        4: (0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+        5: (0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+        6: (0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+        7: (0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+        8: (0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+        9: (0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+        10: (0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+        11: (0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+        12: (0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+        13: (0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+        14: (0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+        15: (0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+        16: (0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+        17: (0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+        18: (0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+        19: (0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+        20: (0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+    }
 
 class OrderOfTheLycan(SubClass):
     """Of the many terrible curses that plague the realm, few are as ancient or as feared as Lycanthropy. Passed through blood, this affliction seeds a host with the savage strength and hunger for violence of a wicked beast. The Order of the Lycan is a proud order of blood hunters who undergo “The Taming,” a ceremonial inflicting of lycanthropy from a senior member. These hunters then use their abilities to harness the power of the monster they harbor without losing themselves to it. Through intense honing of one’s own willpower, combined with the secrets of the order’s blood magic rituals, members learn to control and unleash their hybrid form for short periods of time. Enhanced physical prowess, unnatural resilience, and razor sharp claws make these warriors a terrible foe to any evil that crosses their path. Yet, no training is perfect, and without care and complete focus, even the greatest of blood hunters can temporarily lose themselves to the bloodlust.
@@ -365,6 +388,30 @@ class OrderOfTheLycan(SubClass):
     features_by_level[11] = [features.AdvancedTrasformation]
     features_by_level[15] = [features.BrandOfTheVoracious]
     features_by_level[18] = [features.HybridTrasformationMastery]
+    spellcasting_ability = "intelligence"
+    spell_slots_by_level = {
+        # char_lvl: (cantrips, 1st, 2nd, 3rd, ...)
+        1: (0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+        2: (0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+        3: (0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+        4: (0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+        5: (0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+        6: (0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+        7: (0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+        8: (0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+        9: (0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+        10: (0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+        11: (0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+        12: (0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+        13: (0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+        14: (0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+        15: (0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+        16: (0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+        17: (0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+        18: (0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+        19: (0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+        20: (0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+    }    
 
 
 class OrderOfTheMutant(SubClass):
@@ -379,6 +426,30 @@ class OrderOfTheMutant(SubClass):
     features_by_level[11] = [features.BrandOfAxiom]
     features_by_level[15] = [features.BloodCurseOfCorrosion]
     features_by_level[18] = [features.ExaltedMutation]
+    spellcasting_ability = "intelligence"
+    spell_slots_by_level = {
+        # char_lvl: (cantrips, 1st, 2nd, 3rd, ...)
+        1: (0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+        2: (0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+        3: (0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+        4: (0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+        5: (0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+        6: (0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+        7: (0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+        8: (0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+        9: (0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+        10: (0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+        11: (0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+        12: (0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+        13: (0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+        14: (0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+        15: (0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+        16: (0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+        17: (0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+        18: (0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+        19: (0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+        20: (0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+    }
 
 
 class OrderOfTheProfaneSoul(SubClass):
@@ -394,6 +465,30 @@ features.RevealedArcana]
     features_by_level[11] = [features.BrandOfTheSappingScar]
     features_by_level[15] = [features.UnsealedArcana]
     features_by_level[18] = [features.BloodCurseOfTheSouleater]
+    spellcasting_ability = "intelligence"
+    spell_slots_by_level = {
+        # char_lvl: (cantrips, 1st, 2nd, 3rd, ...)
+        1: (0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+        2: (0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+        3: (2, 1, 0, 0, 0, 0, 0, 0, 0, 0),
+        4: (2, 1, 0, 0, 0, 0, 0, 0, 0, 0),
+        5: (2, 1, 0, 0, 0, 0, 0, 0, 0, 0),
+        6: (2, 2, 0, 0, 0, 0, 0, 0, 0, 0),
+        7: (2, 0, 2, 0, 0, 0, 0, 0, 0, 0),
+        8: (2, 0, 2, 0, 0, 0, 0, 0, 0, 0),
+        9: (2, 0, 2, 0, 0, 0, 0, 0, 0, 0),
+        10: (3, 0, 2, 0, 0, 0, 0, 0, 0, 0),
+        11: (3, 0, 2, 0, 0, 0, 0, 0, 0, 0),
+        12: (3, 0, 2, 0, 0, 0, 0, 0, 0, 0),
+        13: (3, 0, 0, 2, 0, 0, 0, 0, 0, 0),
+        14: (3, 0, 0, 2, 0, 0, 0, 0, 0, 0),
+        15: (3, 0, 0, 2, 0, 0, 0, 0, 0, 0),
+        16: (3, 0, 0, 2, 0, 0, 0, 0, 0, 0),
+        17: (3, 0, 0, 2, 0, 0, 0, 0, 0, 0),
+        18: (3, 0, 0, 2, 0, 0, 0, 0, 0, 0),
+        19: (3, 0, 0, 0, 2, 0, 0, 0, 0, 0),
+        20: (3, 0, 0, 0, 2, 0, 0, 0, 0, 0),
+    }    
 
 
 class BloodHunter(Ranger):
@@ -440,24 +535,24 @@ class BloodHunter(Ranger):
     spellcasting_ability = "intelligence"
     spell_slots_by_level = {
         # char_lvl: (cantrips, 1st, 2nd, 3rd, ...)
-        1: (2, 1, 0, 0, 0, 0, 0, 0, 0, 0),
-        2: (2, 1, 0, 0, 0, 0, 0, 0, 0, 0),
-        3: (2, 1, 0, 0, 0, 0, 0, 0, 0, 0),
-        4: (2, 1, 0, 0, 0, 0, 0, 0, 0, 0),
-        5: (2, 1, 0, 0, 0, 0, 0, 0, 0, 0),
-        6: (2, 2, 0, 0, 0, 0, 0, 0, 0, 0),
-        7: (2, 0, 2, 0, 0, 0, 0, 0, 0, 0),
-        8: (2, 0, 2, 0, 0, 0, 0, 0, 0, 0),
-        9: (2, 0, 2, 0, 0, 0, 0, 0, 0, 0),
-        10: (3, 0, 2, 0, 0, 0, 0, 0, 0, 0),
-        11: (3, 0, 2, 0, 0, 0, 0, 0, 0, 0),
-        12: (3, 0, 2, 0, 0, 0, 0, 0, 0, 0),
-        13: (3, 0, 0, 2, 0, 0, 0, 0, 0, 0),
-        14: (3, 0, 0, 2, 0, 0, 0, 0, 0, 0),
-        15: (3, 0, 0, 2, 0, 0, 0, 0, 0, 0),
-        16: (3, 0, 0, 2, 0, 0, 0, 0, 0, 0),
-        17: (3, 0, 0, 2, 0, 0, 0, 0, 0, 0),
-        18: (3, 0, 0, 2, 0, 0, 0, 0, 0, 0),
-        19: (3, 0, 0, 0, 2, 0, 0, 0, 0, 0),
-        20: (3, 0, 0, 0, 2, 0, 0, 0, 0, 0),
-    }    
+        1: (0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+        2: (0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+        3: (0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+        4: (0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+        5: (0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+        6: (0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+        7: (0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+        8: (0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+        9: (0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+        10: (0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+        11: (0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+        12: (0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+        13: (0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+        14: (0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+        15: (0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+        16: (0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+        17: (0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+        18: (0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+        19: (0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+        20: (0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+    }
