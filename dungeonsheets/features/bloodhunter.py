@@ -1,5 +1,5 @@
 from dungeonsheets.features.features import Feature, FeatureSelector
-from dungeonsheets.features.ranger import Archery, Dueling, GreatWeaponFighting, TwoWeaponFighting
+from dungeonsheets.features.fighter import Archery, Dueling, GreatWeaponFighting, TwoWeaponFighting
 
 
 #Blood Hunter  
