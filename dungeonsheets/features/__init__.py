@@ -8,6 +8,7 @@ from dungeonsheets.features.cleric import *
 from dungeonsheets.features.druid import *
 from dungeonsheets.features.feats import *
 from dungeonsheets.features.fighter import *
+from dungeonsheets.features.bloodhunter import *
 from dungeonsheets.features.monk import *
 from dungeonsheets.features.paladin import *
 from dungeonsheets.features.races import *
