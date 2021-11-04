@@ -234,7 +234,7 @@ class AnimalFriendship(Spell):
     casting_range = "30 feet"
     components = ("V", "S", "M")
     materials = "A morsel of food"
-    duration = "Instantaneous"
+    duration = "24 hours"
     ritual = False
     magic_school = "Enchantment"
     classes = ("Bard", "Druid", "Ranger")

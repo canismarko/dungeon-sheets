@@ -89,7 +89,7 @@ def create_monsters_content(
 ) -> str:
     # Convert strings to Monster objects
     template = jinja_env.get_template(f"monsters_template.{suffix}")
-    spell_list = [spell for monster in monsters for spell in monster.spells]
+    spell_list = [Spell() for monster in monsters for Spell in monster.spells]
     return template.render(monsters=monsters,
                            use_dnd_decorations=use_dnd_decorations, spell_list=spell_list)
 
@@ -155,7 +155,7 @@ def make_sheet(
       Either "pdf" or "epub" to generate a PDF file or an EPUB file.
     fancy_decorations : bool, optional
       Use fancy page layout and decorations for extra sheets, namely
-      the dnd style file: https://github.com/rpgtex/DND-5e-LaTeX-Template.
+      the dnd style file: ://github.com/rpgtex/DND-5e-LaTeX-Template.
     debug : bool, optional
       Provide extra info and preserve temporary files.
     use_tex_template : bool, optional
