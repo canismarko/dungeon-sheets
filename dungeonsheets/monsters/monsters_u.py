@@ -10,6 +10,7 @@ from dungeonsheets.stats import Ability
 
 class Unicorn(Monster):
     """
+
     Charge.
       If the unicorn moves at least 20 ft. straight toward a target and then
       hits it with a horn attack on the same turn, the target takes an extra
@@ -30,6 +31,9 @@ class Unicorn(Monster):
       magical effects.
     Magic Weapons.
       The unicorn's weapon attacks are magical.
+
+    # Actions
+
     Multiattack.
       The unicorn makes two attacks: one with its hooves and one with its
       horn.
@@ -49,14 +53,25 @@ class Unicorn(Monster):
       creatures it can see within 5 ft. of it, along with any equipment they
       are wearing or carrying, to a location the unicorn is familiar with,
       up to 1 mile away.
+
+    # Legendary Actions
+
+    Hooves.
+      The unicorn makes one attack with its hooves.
+    Shimmering Shield (Costs 2 Actions).
+      The unicorn creates a shimmering, magical field around itself or
+      another creature it can see within 60 ft. of it. The target gains a +2
+      bonus to AC until the end of the unicorn's next turn.
+    Heal Self (Costs 3 Actions).
+      The unicorn magically regains 11 (2d8 + 2) hit points.
     """
-    name = "Unicorn"
-    description = "Large celestial, lawful good"
+    name = 'Unicorn'
+    description = 'Large celestial, lawful good'
     challenge_rating = 5
     armor_class = 12
-    skills = ""
-    senses = "Darkvision 60 ft., Passive Perception 13"
-    languages = "Celestial, Elvish, Sylvan, telepathy 60 ft."
+    skills = ''
+    senses = 'Darkvision 60 ft., Passive Perception 13'
+    languages = 'Celestial, Elvish, Sylvan, telepathy 60 ft.'
     strength = Ability(18)
     dexterity = Ability(14)
     constitution = Ability(15)
@@ -67,6 +82,11 @@ class Unicorn(Monster):
     swim_speed = 0
     fly_speed = 0
     climb_speed = 0
+    burrow_speed = 0
     hp_max = 67
-    hit_dice = "9d10"
+    hit_dice = '9d10 + 18'
+    condition_immunities = 'charmed, paralyzed, poisoned'
+    damage_immunities = 'poison'
+    damage_resistances = ''
+    damage_vulnerabilities = ''
     spells = []

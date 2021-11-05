@@ -10,35 +10,30 @@ from dungeonsheets.stats import Ability
 
 class Mage(Monster):
     """
+
     Spellcasting.
-      The mage is a 9th-level spellcaster. Its spellcasting ability is
-      Intelligence (spell save DC 14, +6 to hit with spell attacks). The
-      mage has the following wizard spells prepared:
-      
-  
-      
-      - Cantrips (at will): fire bolt, light, mage hand, prestidigitation
-      
-      - 1st level (4 slots): detect magic, mage armor, magic missile, shield
-      
-      - 2nd level (3 slots): misty step, suggestion
-      
-      - 3rd level (3 slots): counterspell, fireball, fly
-      
-      - 4th level (3 slots): greater invisibility, ice storm
-      
-      - 5th level (1 slot): cone of cold
+      The mage is a 9th-level spellcaster. Its spellcasting ability is Intelligence (spell save DC 14, +6 to hit with spell attacks). The mage has the following wizard spells prepared:
+
+    - Cantrips (at will): fire bolt, light, mage hand, prestidigitation
+    - 1st level (4 slots): detect magic, mage armor, magic missile, shield
+    - 2nd level (3 slots): misty step, suggestion
+    - 3rd level (3 slots): counterspell, fireball, fly
+    - 4th level (3 slots): greater invisibility, ice storm
+    - 5th level (1 slot): cone of cold
+
+    # Actions
+
     Dagger.
       Melee or Ranged Weapon Attack: +5 to hit, reach 5 ft. or range 20/60
       ft., one target. Hit: 4 (1d4 + 2) piercing damage.
     """
-    name = "Mage"
-    description = "Medium humanoid, any alignment"
+    name = 'Mage'
+    description = 'Medium humanoid, any alignment'
     challenge_rating = 6
     armor_class = 12
-    skills = "Arcana +6, History +6"
-    senses = "Passive Perception 11"
-    languages = "any four languages"
+    skills = 'Arcana +6, History +6'
+    senses = 'Passive Perception 11'
+    languages = 'any four languages'
     strength = Ability(9)
     dexterity = Ability(14)
     constitution = Ability(11)
@@ -49,13 +44,19 @@ class Mage(Monster):
     swim_speed = 0
     fly_speed = 0
     climb_speed = 0
+    burrow_speed = 0
     hp_max = 40
-    hit_dice = "9d8"
-    spells = ["fire bolt", "light", "mage hand", "prestidigitation", "detect magic", "mage armor", "magic missile", "shield", "misty step", "suggestion", "counterspell", "fireball", "fly", "greater invisibility", "ice storm", "cone of cold"]
+    hit_dice = '9d8 + 0'
+    condition_immunities = ''
+    damage_immunities = ''
+    damage_resistances = ''
+    damage_vulnerabilities = ''
+    spells = ['fire bolt', 'light', 'mage hand', 'prestidigitation', 'detect magic', 'mage armor', 'magic missile', 'shield', 'misty step', 'suggestion', 'counterspell', 'fireball', 'fly', 'greater invisibility', 'ice storm', 'cone of cold']
 
 
 class MagmaMephit(Monster):
     """
+
     Death Burst.
       When the mephit dies, it explodes in a burst of lava. Each creature
       within 5 ft. of it must make a DC 11 Dexterity saving throw, taking 7
@@ -67,6 +68,9 @@ class MagmaMephit(Monster):
     Innate Spellcasting.
       The mephit can innately cast heat metal (spell save DC 10), requiring
       no material components. Its innate spellcasting ability is Charisma.
+
+    # Actions
+
     Claws.
       Melee Weapon Attack: +3 to hit, reach 5 ft ., one creature. Hit: 3
       (1d4 + 1) slashing damage plus 2 (1d4) fire damage.
@@ -81,13 +85,13 @@ class MagmaMephit(Monster):
       other mephits. It remains for 1 minute, until it or its summoner dies,
       or until its summoner dismisses it as an action.
     """
-    name = "Magma Mephit"
-    description = "Small elemental, neutral evil"
+    name = 'Magma Mephit'
+    description = 'Small elemental, neutral evil'
     challenge_rating = 0.5
     armor_class = 11
-    skills = "Stealth +3"
-    senses = "Darkvision 60 ft., Passive Perception 10"
-    languages = "Ignan, Terran"
+    skills = 'Stealth +3'
+    senses = 'Darkvision 60 ft., Passive Perception 10'
+    languages = 'Ignan, Terran'
     strength = Ability(8)
     dexterity = Ability(12)
     constitution = Ability(12)
@@ -98,13 +102,19 @@ class MagmaMephit(Monster):
     swim_speed = 0
     fly_speed = 30
     climb_speed = 0
+    burrow_speed = 0
     hp_max = 22
-    hit_dice = "5d6"
+    hit_dice = '5d6 + 5'
+    condition_immunities = 'poisoned'
+    damage_immunities = 'fire, poison'
+    damage_resistances = ''
+    damage_vulnerabilities = 'cold'
     spells = []
 
 
 class Magmin(Monster):
     """
+
     Death Burst.
       When the magmin dies, it explodes in a burst of fire and magma. Each
       creature within 10 ft. of it must make a DC 11 Dexterity saving throw,
@@ -115,19 +125,22 @@ class Magmin(Monster):
       As a bonus action, the magmin can set itself ablaze or extinguish its
       flames. While ablaze, the magmin sheds bright light in a 10-foot
       radius and dim light for an additional 10 ft.
+
+    # Actions
+
     Touch.
       Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 7 (2d6)
       fire damage. If the target is a creature or a flammable object, it
       ignites. Until a target takes an action to douse the fire, the target
       takes 3 (1d6) fire damage at the end of each of its turns.
     """
-    name = "Magmin"
-    description = "Small elemental, chaotic neutral"
+    name = 'Magmin'
+    description = 'Small elemental, chaotic neutral'
     challenge_rating = 0.5
     armor_class = 14
-    skills = ""
-    senses = "Darkvision 60 ft., Passive Perception 10"
-    languages = "Ignan"
+    skills = ''
+    senses = 'Darkvision 60 ft., Passive Perception 10'
+    languages = 'Ignan'
     strength = Ability(7)
     dexterity = Ability(15)
     constitution = Ability(12)
@@ -138,19 +151,28 @@ class Magmin(Monster):
     swim_speed = 0
     fly_speed = 0
     climb_speed = 0
+    burrow_speed = 0
     hp_max = 9
-    hit_dice = "2d6"
+    hit_dice = '2d6 + 2'
+    condition_immunities = ''
+    damage_immunities = 'fire'
+    damage_resistances = 'bludgeoning, piercing, and slashing from nonmagical weapons'
+    damage_vulnerabilities = ''
     spells = []
 
 
 class Mammoth(Monster):
     """
+
     Trampling Charge.
       If the mammoth moves at least 20 ft. straight toward a creature and
       then hits it with a gore attack on the same turn, that target must
       succeed on a DC 18 Strength saving throw or be knocked prone. If the
       target is prone, the mammoth can make one stomp attack against it as a
       bonus action.
+
+    # Actions
+
     Gore.
       Melee Weapon Attack: +10 to hit, reach 10 ft., one target. Hit: 25
       (4d8 + 7) piercing damage.
@@ -158,13 +180,13 @@ class Mammoth(Monster):
       Melee Weapon Attack: +10 to hit, reach 5 ft., one prone creature. Hit:
       29 (4d10 + 7) bludgeoning damage.
     """
-    name = "Mammoth"
-    description = "Huge beast, unaligned"
+    name = 'Mammoth'
+    description = 'Huge beast, unaligned'
     challenge_rating = 6
     armor_class = 13
-    skills = ""
-    senses = "Passive Perception 10"
-    languages = ""
+    skills = ''
+    senses = 'Passive Perception 10'
+    languages = ''
     strength = Ability(24)
     dexterity = Ability(9)
     constitution = Ability(21)
@@ -175,16 +197,25 @@ class Mammoth(Monster):
     swim_speed = 0
     fly_speed = 0
     climb_speed = 0
+    burrow_speed = 0
     hp_max = 126
-    hit_dice = "11d12"
+    hit_dice = '11d12 + 55'
+    condition_immunities = ''
+    damage_immunities = ''
+    damage_resistances = ''
+    damage_vulnerabilities = ''
     spells = []
 
 
 class Manticore(Monster):
     """
+
     Tail Spike Regrowth.
       The manticore has twenty-four tail spikes. Used spikes regrow when the
       manticore finishes a long rest.
+
+    # Actions
+
     Multiattack.
       The manticore makes three attacks: one with its bite and two with its
       claws or three with its tail spikes.
@@ -198,13 +229,13 @@ class Manticore(Monster):
       Ranged Weapon Attack: +5 to hit, range 100/200 ft., one target. Hit: 7
       (1d8 + 3) piercing damage.
     """
-    name = "Manticore"
-    description = "Large monstrosity, lawful evil"
+    name = 'Manticore'
+    description = 'Large monstrosity, lawful evil'
     challenge_rating = 3
     armor_class = 14
-    skills = ""
-    senses = "Darkvision 60 ft., Passive Perception 11"
-    languages = ""
+    skills = ''
+    senses = 'Darkvision 60 ft., Passive Perception 11'
+    languages = ''
     strength = Ability(17)
     dexterity = Ability(16)
     constitution = Ability(17)
@@ -215,13 +246,19 @@ class Manticore(Monster):
     swim_speed = 0
     fly_speed = 50
     climb_speed = 0
+    burrow_speed = 0
     hp_max = 68
-    hit_dice = "8d10"
+    hit_dice = '8d10 + 24'
+    condition_immunities = ''
+    damage_immunities = ''
+    damage_resistances = ''
+    damage_vulnerabilities = ''
     spells = []
 
 
 class Marilith(Monster):
     """
+
     Magic Resistance.
       The marilith has advantage on saving throws against spells and other
       magical effects.
@@ -229,6 +266,9 @@ class Marilith(Monster):
       The marilith's weapon attacks are magical.
     Reactive.
       The marilith can take one reaction on every turn in combat.
+
+    # Actions
+
     Multiattack.
       The marilith can make seven attacks: six with its longswords and one
       with its tail.
@@ -254,14 +294,21 @@ class Marilith(Monster):
       summoner, acts as an ally of its summoner, and can't summon other
       demons. It remains for 1 minute, until it or its summoner dies, or
       until its summoner dismisses it as an action.
+
+    # Reactions
+
+    Parry.
+      The marilith adds 5 to its AC against one melee attack that would hit
+      it. To do so, the marilith must see the attacker and be wielding a
+      melee weapon.
     """
-    name = "Marilith"
-    description = "Large fiend, chaotic evil"
+    name = 'Marilith'
+    description = 'Large fiend, chaotic evil'
     challenge_rating = 16
     armor_class = 18
-    skills = ""
-    senses = "Truesight 120 ft., Passive Perception 13"
-    languages = "Abyssal, telepathy 120 ft."
+    skills = ''
+    senses = 'Truesight 120 ft., Passive Perception 13'
+    languages = 'Abyssal, telepathy 120 ft.'
     strength = Ability(18)
     dexterity = Ability(20)
     constitution = Ability(20)
@@ -272,28 +319,37 @@ class Marilith(Monster):
     swim_speed = 0
     fly_speed = 0
     climb_speed = 0
+    burrow_speed = 0
     hp_max = 189
-    hit_dice = "18d10"
+    hit_dice = '18d10 + 90'
+    condition_immunities = 'poisoned'
+    damage_immunities = 'poison'
+    damage_resistances = 'cold'
+    damage_vulnerabilities = ''
     spells = []
 
 
 class Mastiff(Monster):
     """
+
     Keen Hearing and Smell.
       The mastiff has advantage on Wisdom (Perception) checks that rely on
       hearing or smell.
+
+    # Actions
+
     Bite.
       Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: 4 (1d6 +
       1) piercing damage. If the target is a creature, it must succeed on a
       DC 11 Strength saving throw or be knocked prone.
     """
-    name = "Mastiff"
-    description = "Medium beast, unaligned"
+    name = 'Mastiff'
+    description = 'Medium beast, unaligned'
     challenge_rating = 0.125
     armor_class = 12
-    skills = "Perception +3"
-    senses = "Passive Perception 13"
-    languages = ""
+    skills = 'Perception +3'
+    senses = 'Passive Perception 13'
+    languages = ''
     strength = Ability(13)
     dexterity = Ability(14)
     constitution = Ability(12)
@@ -304,13 +360,19 @@ class Mastiff(Monster):
     swim_speed = 0
     fly_speed = 0
     climb_speed = 0
+    burrow_speed = 0
     hp_max = 5
-    hit_dice = "1d8"
+    hit_dice = '1d8 + 1'
+    condition_immunities = ''
+    damage_immunities = ''
+    damage_resistances = ''
+    damage_vulnerabilities = ''
     spells = []
 
 
 class Medusa(Monster):
     """
+
     Petrifying Gaze.
       When a creature that can see the medusa's eyes starts its turn within
       30 ft. of the medusa, the medusa can force it to make a DC 14
@@ -332,6 +394,9 @@ class Medusa(Monster):
       If the medusa sees itself reflected on a polished surface within 30
       ft. of it and in an area of bright light, the medusa is, due to its
       curse, affected by its own gaze.
+
+    # Actions
+
     Multiattack.
       The medusa makes either three melee attacks--one with its snake hair
       and two with its shortsword--or two ranged attacks with its longbow.
@@ -345,13 +410,13 @@ class Medusa(Monster):
       Ranged Weapon Attack: +5 to hit, range 150/600 ft., one target. Hit: 6
       (1d8 + 2) piercing damage plus 7 (2d6) poison damage.
     """
-    name = "Medusa"
-    description = "Medium monstrosity, lawful evil"
+    name = 'Medusa'
+    description = 'Medium monstrosity, lawful evil'
     challenge_rating = 6
     armor_class = 15
-    skills = "Deception +5, Insight +4, Perception +4, Stealth +5"
-    senses = "Darkvision 60 ft., Passive Perception 14"
-    languages = "Common"
+    skills = 'Deception +5, Insight +4, Perception +4, Stealth +5'
+    senses = 'Darkvision 60 ft., Passive Perception 14'
+    languages = 'Common'
     strength = Ability(10)
     dexterity = Ability(15)
     constitution = Ability(16)
@@ -362,27 +427,36 @@ class Medusa(Monster):
     swim_speed = 0
     fly_speed = 0
     climb_speed = 0
+    burrow_speed = 0
     hp_max = 127
-    hit_dice = "17d8"
+    hit_dice = '17d8 + 51'
+    condition_immunities = ''
+    damage_immunities = ''
+    damage_resistances = ''
+    damage_vulnerabilities = ''
     spells = []
 
 
 class Merfolk(Monster):
     """
+
     Amphibious.
       The merfolk can breathe air and water.
+
+    # Actions
+
     Spear.
       Melee or Ranged Weapon Attack: +2 to hit, reach 5 ft. or range 20/60
       ft., one target. Hit: 3 (1d6) piercing damage, or 4 (1d8) piercing
       damage if used with two hands to make a melee attack.
     """
-    name = "Merfolk"
-    description = "Medium humanoid, neutral"
+    name = 'Merfolk'
+    description = 'Medium humanoid, neutral'
     challenge_rating = 0.125
     armor_class = 11
-    skills = "Perception +2"
-    senses = "Passive Perception 12"
-    languages = "Aquan, Common"
+    skills = 'Perception +2'
+    senses = 'Passive Perception 12'
+    languages = 'Aquan, Common'
     strength = Ability(10)
     dexterity = Ability(13)
     constitution = Ability(12)
@@ -393,15 +467,24 @@ class Merfolk(Monster):
     swim_speed = 40
     fly_speed = 0
     climb_speed = 0
+    burrow_speed = 0
     hp_max = 11
-    hit_dice = "2d8"
+    hit_dice = '2d8 + 2'
+    condition_immunities = ''
+    damage_immunities = ''
+    damage_resistances = ''
+    damage_vulnerabilities = ''
     spells = []
 
 
 class Merrow(Monster):
     """
+
     Amphibious.
       The merrow can breathe air and water.
+
+    # Actions
+
     Multiattack.
       The merrow makes two attacks: one with its bite and one with its claws
       or harpoon.
@@ -417,13 +500,13 @@ class Merrow(Monster):
       Huge or smaller creature, it must succeed on a Strength contest
       against the merrow or be pulled up to 20 feet toward the merrow.
     """
-    name = "Merrow"
-    description = "Large monstrosity, chaotic evil"
+    name = 'Merrow'
+    description = 'Large monstrosity, chaotic evil'
     challenge_rating = 2
     armor_class = 13
-    skills = ""
-    senses = "Darkvision 60 ft., Passive Perception 10"
-    languages = "Abyssal, Aquan"
+    skills = ''
+    senses = 'Darkvision 60 ft., Passive Perception 10'
+    languages = 'Abyssal, Aquan'
     strength = Ability(18)
     dexterity = Ability(10)
     constitution = Ability(15)
@@ -434,13 +517,19 @@ class Merrow(Monster):
     swim_speed = 40
     fly_speed = 0
     climb_speed = 0
+    burrow_speed = 0
     hp_max = 45
-    hit_dice = "6d10"
+    hit_dice = '6d10 + 12'
+    condition_immunities = ''
+    damage_immunities = ''
+    damage_resistances = ''
+    damage_vulnerabilities = ''
     spells = []
 
 
 class Mimic(Monster):
     """
+
     Shapechanger.
       The mimic can use its action to polymorph into an object or back into
       its true, amorphous form. Its statistics are the same in each form.
@@ -456,6 +545,9 @@ class Mimic(Monster):
     Grappler.
       The mimic has advantage on attack rolls against any creature grappled
       by it.
+
+    # Actions
+
     Pseudopod.
       Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 7 (1d8 +
       3) bludgeoning damage. If the mimic is in object form, the target is
@@ -464,13 +556,13 @@ class Mimic(Monster):
       Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 7 (1d8 +
       3) piercing damage plus 4 (1d8) acid damage.
     """
-    name = "Mimic"
-    description = "Medium monstrosity, neutral"
+    name = 'Mimic'
+    description = 'Medium monstrosity, neutral'
     challenge_rating = 2
     armor_class = 12
-    skills = "Stealth +5"
-    senses = "Darkvision 60 ft., Passive Perception 11"
-    languages = ""
+    skills = 'Stealth +5'
+    senses = 'Darkvision 60 ft., Passive Perception 11'
+    languages = ''
     strength = Ability(17)
     dexterity = Ability(12)
     constitution = Ability(15)
@@ -481,13 +573,19 @@ class Mimic(Monster):
     swim_speed = 0
     fly_speed = 0
     climb_speed = 0
+    burrow_speed = 0
     hp_max = 58
-    hit_dice = "9d8"
+    hit_dice = '9d8 + 18'
+    condition_immunities = 'prone'
+    damage_immunities = 'acid'
+    damage_resistances = ''
+    damage_vulnerabilities = ''
     spells = []
 
 
 class Minotaur(Monster):
     """
+
     Charge.
       If the minotaur moves at least 10 ft. straight toward a target and
       then hits it with a gore attack on the same turn, the target takes an
@@ -500,6 +598,9 @@ class Minotaur(Monster):
       At the start of its turn, the minotaur can gain advantage on all melee
       weapon attack rolls it makes during that turn, but attack rolls
       against it have advantage until the start of its next turn.
+
+    # Actions
+
     Greataxe.
       Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 17 (2d12
       + 4) slashing damage.
@@ -507,13 +608,13 @@ class Minotaur(Monster):
       Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 13 (2d8
       + 4) piercing damage.
     """
-    name = "Minotaur"
-    description = "Large monstrosity, chaotic evil"
+    name = 'Minotaur'
+    description = 'Large monstrosity, chaotic evil'
     challenge_rating = 3
     armor_class = 14
-    skills = "Perception +7"
-    senses = "Darkvision 60 ft., Passive Perception 17"
-    languages = "Abyssal"
+    skills = 'Perception +7'
+    senses = 'Darkvision 60 ft., Passive Perception 17'
+    languages = 'Abyssal'
     strength = Ability(18)
     dexterity = Ability(11)
     constitution = Ability(16)
@@ -524,19 +625,28 @@ class Minotaur(Monster):
     swim_speed = 0
     fly_speed = 0
     climb_speed = 0
+    burrow_speed = 0
     hp_max = 76
-    hit_dice = "9d10"
+    hit_dice = '9d10 + 27'
+    condition_immunities = ''
+    damage_immunities = ''
+    damage_resistances = ''
+    damage_vulnerabilities = ''
     spells = []
 
 
 class MinotaurSkeleton(Monster):
     """
+
     Charge.
       If the skeleton moves at least 10 feet straight toward a target and
       then hits it with a gore attack on the same turn, the target takes an
       extra 9 (2d8) piercing damage. If the target is a creature, it must
       succeed on a DC 14 Strength saving throw or be pushed up to 10 feet
       away and knocked prone.
+
+    # Actions
+
     Greataxe.
       Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 17 (2d12
       + 4) slashing damage.
@@ -544,12 +654,12 @@ class MinotaurSkeleton(Monster):
       Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 13 (2d8
       + 4) piercing damage.
     """
-    name = "Minotaur Skeleton"
-    description = "Large undead, lawful evil"
+    name = 'Minotaur Skeleton'
+    description = 'Large undead, lawful evil'
     challenge_rating = 2
     armor_class = 12
-    skills = ""
-    senses = "Darkvision 60 ft., Passive Perception 9"
+    skills = ''
+    senses = 'Darkvision 60 ft., Passive Perception 9'
     languages = "understands Abyssal but can't speak"
     strength = Ability(18)
     dexterity = Ability(11)
@@ -561,30 +671,39 @@ class MinotaurSkeleton(Monster):
     swim_speed = 0
     fly_speed = 0
     climb_speed = 0
+    burrow_speed = 0
     hp_max = 67
-    hit_dice = "9d10"
+    hit_dice = '9d10 + 18'
+    condition_immunities = 'exhaustion, poisoned'
+    damage_immunities = 'poison'
+    damage_resistances = ''
+    damage_vulnerabilities = 'bludgeoning'
     spells = []
 
 
 class Mule(Monster):
     """
+
     Beast of Burden.
       The mule is considered to be a Large animal for the purpose of
       determining its carrying capacity.
     Sure-Footed.
       The mule has advantage on Strength and Dexterity saving throws made
       against effects that would knock it prone.
+
+    # Actions
+
     Hooves.
       Melee Weapon Attack: +2 to hit, reach 5 ft., one target. Hit: 4 (1d4 +
       2) bludgeoning damage.
     """
-    name = "Mule"
-    description = "Medium beast, unaligned"
+    name = 'Mule'
+    description = 'Medium beast, unaligned'
     challenge_rating = 0.125
     armor_class = 10
-    skills = ""
-    senses = "Passive Perception 10"
-    languages = ""
+    skills = ''
+    senses = 'Passive Perception 10'
+    languages = ''
     strength = Ability(14)
     dexterity = Ability(10)
     constitution = Ability(13)
@@ -595,13 +714,21 @@ class Mule(Monster):
     swim_speed = 0
     fly_speed = 0
     climb_speed = 0
+    burrow_speed = 0
     hp_max = 11
-    hit_dice = "2d8"
+    hit_dice = '2d8 + 2'
+    condition_immunities = ''
+    damage_immunities = ''
+    damage_resistances = ''
+    damage_vulnerabilities = ''
     spells = []
 
 
 class Mummy(Monster):
     """
+
+    # Actions
+
     Multiattack.
       The mummy can use its Dreadful Glare and makes one attack with its
       rotting fist.
@@ -623,13 +750,13 @@ class Mummy(Monster):
       the saving throw is immune to the Dreadful Glare of all mummies (but
       not mummy lords) for the next 24 hours.
     """
-    name = "Mummy"
-    description = "Medium undead, lawful evil"
+    name = 'Mummy'
+    description = 'Medium undead, lawful evil'
     challenge_rating = 3
     armor_class = 11
-    skills = ""
-    senses = "Darkvision 60 ft., Passive Perception 10"
-    languages = "the languages it knew in life"
+    skills = ''
+    senses = 'Darkvision 60 ft., Passive Perception 10'
+    languages = 'the languages it knew in life'
     strength = Ability(16)
     dexterity = Ability(8)
     constitution = Ability(15)
@@ -640,13 +767,19 @@ class Mummy(Monster):
     swim_speed = 0
     fly_speed = 0
     climb_speed = 0
+    burrow_speed = 0
     hp_max = 58
-    hit_dice = "9d8"
+    hit_dice = '9d8 + 18'
+    condition_immunities = 'charmed, exhaustion, frightened, paralyzed, poisoned'
+    damage_immunities = 'necrotic, poison'
+    damage_resistances = 'bludgeoning, piercing, and slashing from nonmagical weapons'
+    damage_vulnerabilities = 'fire'
     spells = []
 
 
 class MummyLord(Monster):
     """
+
     Magic Resistance.
       The mummy lord has advantage on saving throws against spells and other
       magical effects.
@@ -655,25 +788,18 @@ class MummyLord(Monster):
       intact, regaining all its hit points and becoming active again. The
       new body appears within 5 feet of the mummy lord's heart.
     Spellcasting.
-      The mummy lord is a 10th-level spellcaster. Its spellcasting ability
-      is Wisdom (spell save DC 17, +9 to hit with spell attacks). The mummy
-      lord has the following cleric spells prepared:
-      
-  
+      The mummy lord is a 10th-level spellcaster. Its spellcasting ability is Wisdom (spell save DC 17, +9 to hit with spell attacks). The mummy lord has the following cleric spells prepared:
       
       - Cantrips (at will): sacred flame, thaumaturgy
-      
       - 1st level (4 slots): command, guiding bolt, shield of faith
-      
       - 2nd level (3 slots): hold person, silence, spiritual weapon
-      
       - 3rd level (3 slots): animate dead, dispel magic
-      
       - 4th level (3 slots): divination, guardian of faith
-      
       - 5th level (2 slots): contagion, insect plague
-      
       - 6th level (1 slot): harm
+
+    # Actions
+
     Multiattack.
       The mummy can use its Dreadful Glare and makes one attack with its
       rotting fist.
@@ -694,14 +820,41 @@ class MummyLord(Monster):
       5 or more, it is also paralyzed for the same duration. A target that
       succeeds on the saving throw is immune to the Dreadful Glare of all
       mummies and mummy lords for the next 24 hours.
+
+    # Legendary Actions
+
+    Attack.
+      The mummy lord makes one attack with its rotting fist or uses its
+      Dreadful Glare.
+    Blinding Dust.
+      Blinding dust and sand swirls magically around the mummy lord. Each
+      creature within 5 feet of the mummy lord must succeed on a DC 16
+      Constitution saving throw or be blinded until the end of the
+      creature's next turn.
+    Blasphemous Word (Costs 2 Actions).
+      The mummy lord utters a blasphemous word. Each non-undead creature
+      within 10 feet of the mummy lord that can hear the magical utterance
+      must succeed on a DC 16 Constitution saving throw or be stunned until
+      the end of the mummy lord's next turn.
+    Channel Negative Energy (Costs 2 Actions).
+      The mummy lord magically unleashes negative energy. Creatures within
+      60 feet of the mummy lord, including ones behind barriers and around
+      corners, can't regain hit points until the end of the mummy lord's
+      next turn.
+    Whirlwind of Sand (Costs 2 Actions).
+      The mummy lord magically transforms into a whirlwind of sand, moves up
+      to 60 feet, and reverts to its normal form. While in whirlwind form,
+      the mummy lord is immune to all damage, and it can't be grappled,
+      petrified, knocked prone, restrained, or stunned. Equipment worn or
+      carried by the mummy lord remain in its possession.
     """
-    name = "Mummy Lord"
-    description = "Medium undead, lawful evil"
+    name = 'Mummy Lord'
+    description = 'Medium undead, lawful evil'
     challenge_rating = 15
     armor_class = 17
-    skills = "History +5, Religion +5"
-    senses = "Darkvision 60 ft., Passive Perception 14"
-    languages = "the languages it knew in life"
+    skills = 'History +5, Religion +5'
+    senses = 'Darkvision 60 ft., Passive Perception 14'
+    languages = 'the languages it knew in life'
     strength = Ability(18)
     dexterity = Ability(10)
     constitution = Ability(17)
@@ -712,6 +865,11 @@ class MummyLord(Monster):
     swim_speed = 0
     fly_speed = 0
     climb_speed = 0
+    burrow_speed = 0
     hp_max = 97
-    hit_dice = "13d8"
-    spells = ["sacred flame", "thaumaturgy", "command", "guiding bolt", "shield of faith", "hold person", "silence", "spiritual weapon", "animate dead", "dispel magic", "divination", "guardian of faith", "contagion", "insect plague", "harm"]
+    hit_dice = '13d8 + 39'
+    condition_immunities = 'charmed, exhaustion, frightened, paralyzed, poisoned'
+    damage_immunities = 'necrotic, poison, bludgeoning, piercing, and slashing from nonmagical weapons'
+    damage_resistances = ''
+    damage_vulnerabilities = 'fire'
+    spells = ['sacred flame', 'thaumaturgy', 'command', 'guiding bolt', 'shield of faith', 'hold person', 'silence', 'spiritual weapon', 'animate dead', 'dispel magic', 'divination', 'guardian of faith', 'contagion', 'insect plague', 'harm']

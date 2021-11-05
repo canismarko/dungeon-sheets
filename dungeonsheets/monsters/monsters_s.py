@@ -10,6 +10,7 @@ from dungeonsheets.stats import Ability
 
 class SaberToothedTiger(Monster):
     """
+
     Keen Smell.
       The tiger has advantage on Wisdom (Perception) checks that rely on
       smell.
@@ -19,6 +20,9 @@ class SaberToothedTiger(Monster):
       on a DC 14 Strength saving throw or be knocked prone. If the target is
       prone, the tiger can make one bite attack against it as a bonus
       action.
+
+    # Actions
+
     Bite.
       Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 10 (1d10
       + 5) piercing damage.
@@ -26,13 +30,13 @@ class SaberToothedTiger(Monster):
       Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 12 (2d6
       + 5) slashing damage.
     """
-    name = "Saber-Toothed Tiger"
-    description = "Large beast, unaligned"
+    name = 'Saber-Toothed Tiger'
+    description = 'Large beast, unaligned'
     challenge_rating = 2
     armor_class = 12
-    skills = "Perception +3, Stealth +6"
-    senses = "Passive Perception 13"
-    languages = ""
+    skills = 'Perception +3, Stealth +6'
+    senses = 'Passive Perception 13'
+    languages = ''
     strength = Ability(18)
     dexterity = Ability(14)
     constitution = Ability(15)
@@ -43,13 +47,19 @@ class SaberToothedTiger(Monster):
     swim_speed = 0
     fly_speed = 0
     climb_speed = 0
+    burrow_speed = 0
     hp_max = 52
-    hit_dice = "7d10"
+    hit_dice = '7d10 + 14'
+    condition_immunities = ''
+    damage_immunities = ''
+    damage_resistances = ''
+    damage_vulnerabilities = ''
     spells = []
 
 
 class Sahuagin(Monster):
     """
+
     Blood Frenzy.
       The sahuagin has advantage on melee attack rolls against any creature
       that doesn't have all its hit points.
@@ -59,6 +69,9 @@ class Sahuagin(Monster):
     Shark Telepathy.
       The sahuagin can magically command any shark within 120 feet of it,
       using a limited telepathy.
+
+    # Actions
+
     Multiattack.
       The sahuagin makes two melee attacks: one with its bite and one with
       its claws or spear.
@@ -73,13 +86,13 @@ class Sahuagin(Monster):
       ft., one target. Hit: 4 (1d6 + 1) piercing damage, or 5 (1d8 + 1)
       piercing damage if used with two hands to make a melee attack.
     """
-    name = "Sahuagin"
-    description = "Medium humanoid, lawful evil"
+    name = 'Sahuagin'
+    description = 'Medium humanoid, lawful evil'
     challenge_rating = 0.5
     armor_class = 12
-    skills = "Perception +5"
-    senses = "Darkvision 120 ft., Passive Perception 15"
-    languages = "Sahuagin"
+    skills = 'Perception +5'
+    senses = 'Darkvision 120 ft., Passive Perception 15'
+    languages = 'Sahuagin'
     strength = Ability(13)
     dexterity = Ability(11)
     constitution = Ability(12)
@@ -90,19 +103,28 @@ class Sahuagin(Monster):
     swim_speed = 40
     fly_speed = 0
     climb_speed = 0
+    burrow_speed = 0
     hp_max = 22
-    hit_dice = "4d8"
+    hit_dice = '4d8 + 4'
+    condition_immunities = ''
+    damage_immunities = ''
+    damage_resistances = ''
+    damage_vulnerabilities = ''
     spells = []
 
 
 class Salamander(Monster):
     """
+
     Heated Body.
       A creature that touches the salamander or hits it with a melee attack
       while within 5 ft. of it takes 7 (2d6) fire damage.
     Heated Weapons.
       Any metal melee weapon the salamander wields deals an extra 3 (1d6)
       fire damage on a hit (included in the attack).
+
+    # Actions
+
     Multiattack.
       The salamander makes two attacks: one with its spear and one with its
       tail.
@@ -119,13 +141,13 @@ class Salamander(Monster):
       tail, and the salamander can't make tail attacks against other
       targets.
     """
-    name = "Salamander"
-    description = "Large elemental, neutral evil"
+    name = 'Salamander'
+    description = 'Large elemental, neutral evil'
     challenge_rating = 5
     armor_class = 15
-    skills = ""
-    senses = "Darkvision 60 ft., Passive Perception 10"
-    languages = "Ignan"
+    skills = ''
+    senses = 'Darkvision 60 ft., Passive Perception 10'
+    languages = 'Ignan'
     strength = Ability(18)
     dexterity = Ability(14)
     constitution = Ability(15)
@@ -136,16 +158,25 @@ class Salamander(Monster):
     swim_speed = 0
     fly_speed = 0
     climb_speed = 0
+    burrow_speed = 0
     hp_max = 90
-    hit_dice = "12d10"
+    hit_dice = '12d10 + 24'
+    condition_immunities = ''
+    damage_immunities = 'fire'
+    damage_resistances = 'bludgeoning, piercing, and slashing from nonmagical weapons'
+    damage_vulnerabilities = 'cold'
     spells = []
 
 
 class Satyr(Monster):
     """
+
     Magic Resistance.
       The satyr has advantage on saving throws against spells and other
       magical effects.
+
+    # Actions
+
     Ram.
       Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: 6 (2d4 +
       1) bludgeoning damage.
@@ -160,13 +191,13 @@ class Satyr(Monster):
       minute. The effect ends if the creature takes damage or if someone
       takes an action to shake the creature awake.
     """
-    name = "Satyr"
-    description = "Medium fey, chaotic neutral"
+    name = 'Satyr'
+    description = 'Medium fey, chaotic neutral'
     challenge_rating = 0.5
     armor_class = 14
-    skills = "Perception +2, Performance +6, Stealth +5"
-    senses = "Passive Perception 12"
-    languages = "Common, Elvish, Sylvan"
+    skills = 'Perception +2, Performance +6, Stealth +5'
+    senses = 'Passive Perception 12'
+    languages = 'Common, Elvish, Sylvan'
     strength = Ability(12)
     dexterity = Ability(16)
     constitution = Ability(11)
@@ -177,26 +208,34 @@ class Satyr(Monster):
     swim_speed = 0
     fly_speed = 0
     climb_speed = 0
+    burrow_speed = 0
     hp_max = 31
-    hit_dice = "7d8"
+    hit_dice = '7d8 + 0'
+    condition_immunities = ''
+    damage_immunities = ''
+    damage_resistances = ''
+    damage_vulnerabilities = ''
     spells = []
 
 
 class Scorpion(Monster):
     """
+
+    # Actions
+
     Sting.
       Melee Weapon Attack: +2 to hit, reach 5 ft., one creature. Hit: 1
       piercing damage, and the target must make a DC 9 Constitution saving
       throw, taking 4 (1d8) poison damage on a failed save, or half as much
       damage on a successful one.
     """
-    name = "Scorpion"
-    description = "Tiny beast, unaligned"
+    name = 'Scorpion'
+    description = 'Tiny beast, unaligned'
     challenge_rating = 0
     armor_class = 11
-    skills = ""
-    senses = "Blindsight 10 ft., Passive Perception 9"
-    languages = ""
+    skills = ''
+    senses = 'Blindsight 10 ft., Passive Perception 9'
+    languages = ''
     strength = Ability(2)
     dexterity = Ability(11)
     constitution = Ability(8)
@@ -207,16 +246,25 @@ class Scorpion(Monster):
     swim_speed = 0
     fly_speed = 0
     climb_speed = 0
+    burrow_speed = 0
     hp_max = 1
-    hit_dice = "1d4"
+    hit_dice = '1d4 + -1'
+    condition_immunities = ''
+    damage_immunities = ''
+    damage_resistances = ''
+    damage_vulnerabilities = ''
     spells = []
 
 
 class Scout(Monster):
     """
+
     Keen Hearing and Sight.
       The scout has advantage on Wisdom (Perception) checks that rely on
       hearing or sight.
+
+    # Actions
+
     Multiattack.
       The scout makes two melee attacks or two ranged attacks.
     Shortsword.
@@ -226,13 +274,13 @@ class Scout(Monster):
       Ranged Weapon Attack: +4 to hit, ranged 150/600 ft., one target. Hit:
       6 (1d8 + 2) piercing damage.
     """
-    name = "Scout"
-    description = "Medium humanoid, any alignment"
+    name = 'Scout'
+    description = 'Medium humanoid, any alignment'
     challenge_rating = 0.5
     armor_class = 13
-    skills = "Nature +4, Perception +5, Stealth +6, Survival +5"
-    senses = "Passive Perception 15"
-    languages = "any one language (usually Common)"
+    skills = 'Nature +4, Perception +5, Stealth +6, Survival +5'
+    senses = 'Passive Perception 15'
+    languages = 'any one language (usually Common)'
     strength = Ability(11)
     dexterity = Ability(14)
     constitution = Ability(12)
@@ -243,13 +291,19 @@ class Scout(Monster):
     swim_speed = 0
     fly_speed = 0
     climb_speed = 0
+    burrow_speed = 0
     hp_max = 16
-    hit_dice = "3d8"
+    hit_dice = '3d8 + 3'
+    condition_immunities = ''
+    damage_immunities = ''
+    damage_resistances = ''
+    damage_vulnerabilities = ''
     spells = []
 
 
 class SeaHag(Monster):
     """
+
     Amphibious.
       The hag can breathe air and water.
     Horrific Appearance.
@@ -266,6 +320,9 @@ class SeaHag(Monster):
       form is sudden, the target can avert its eyes and avoid making the
       initial saving throw. Until the start of its next turn, a creature
       that averts its eyes has disadvantage on attack rolls against the hag.
+
+    # Actions
+
     Claws.
       Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 10 (2d6
       + 3) slashing damage.
@@ -286,13 +343,13 @@ class SeaHag(Monster):
       DC 16 Intelligence (Investigation) check to discern that the hag is
       disguised.
     """
-    name = "Sea Hag"
-    description = "Medium fey, chaotic evil"
+    name = 'Sea Hag'
+    description = 'Medium fey, chaotic evil'
     challenge_rating = 2
     armor_class = 14
-    skills = ""
-    senses = "Darkvision 60 ft., Passive Perception 11"
-    languages = "Aquan, Common, Giant"
+    skills = ''
+    senses = 'Darkvision 60 ft., Passive Perception 11'
+    languages = 'Aquan, Common, Giant'
     strength = Ability(16)
     dexterity = Ability(13)
     constitution = Ability(16)
@@ -303,23 +360,29 @@ class SeaHag(Monster):
     swim_speed = 40
     fly_speed = 0
     climb_speed = 0
+    burrow_speed = 0
     hp_max = 52
-    hit_dice = "7d8"
+    hit_dice = '7d8 + 21'
+    condition_immunities = ''
+    damage_immunities = ''
+    damage_resistances = ''
+    damage_vulnerabilities = ''
     spells = []
 
 
 class SeaHorse(Monster):
     """
+
     Water Breathing.
       The sea horse can breathe only underwater.
     """
-    name = "Sea Horse"
-    description = "Tiny beast, unaligned"
+    name = 'Sea Horse'
+    description = 'Tiny beast, unaligned'
     challenge_rating = 0
     armor_class = 11
-    skills = ""
-    senses = "Passive Perception 10"
-    languages = ""
+    skills = ''
+    senses = 'Passive Perception 10'
+    languages = ''
     strength = Ability(1)
     dexterity = Ability(12)
     constitution = Ability(8)
@@ -330,13 +393,19 @@ class SeaHorse(Monster):
     swim_speed = 20
     fly_speed = 0
     climb_speed = 0
+    burrow_speed = 0
     hp_max = 1
-    hit_dice = "1d4"
+    hit_dice = '1d4 + -1'
+    condition_immunities = ''
+    damage_immunities = ''
+    damage_resistances = ''
+    damage_vulnerabilities = ''
     spells = []
 
 
 class Shadow(Monster):
     """
+
     Amorphous.
       The shadow can move through a space as narrow as 1 inch wide without
       squeezing.
@@ -346,6 +415,9 @@ class Shadow(Monster):
     Sunlight Weakness.
       While in sunlight, the shadow has disadvantage on attack rolls,
       ability checks, and saving throws.
+
+    # Actions
+
     Strength Drain.
       Melee Weapon Attack: +4 to hit, reach 5 ft., one creature. Hit: 9 (2d6
       + 2) necrotic damage, and the target's Strength score is reduced by
@@ -355,13 +427,13 @@ class Shadow(Monster):
       If a non-evil humanoid dies from this attack, a new shadow rises from
       the corpse 1d4 hours later.
     """
-    name = "Shadow"
-    description = "Medium undead, chaotic evil"
+    name = 'Shadow'
+    description = 'Medium undead, chaotic evil'
     challenge_rating = 0.5
     armor_class = 12
-    skills = "Stealth +4"
-    senses = "Darkvision 60 ft., Passive Perception 10"
-    languages = ""
+    skills = 'Stealth +4'
+    senses = 'Darkvision 60 ft., Passive Perception 10'
+    languages = ''
     strength = Ability(6)
     dexterity = Ability(14)
     constitution = Ability(13)
@@ -372,8 +444,13 @@ class Shadow(Monster):
     swim_speed = 0
     fly_speed = 0
     climb_speed = 0
+    burrow_speed = 0
     hp_max = 16
-    hit_dice = "3d8"
+    hit_dice = '3d8 + 3'
+    condition_immunities = 'exhaustion, frightened, grappled, paralyzed, petrified, poisoned, prone, restrained'
+    damage_immunities = 'necrotic, poison'
+    damage_resistances = 'acid'
+    damage_vulnerabilities = 'radiant'
     spells = []
 
 
@@ -394,24 +471,18 @@ class ShadowDemon(Monster):
       creature. *Hit:* 10 (2d6+3) psychic damage or, if the demon
       had advantage on the attack roll, 17 (4d6+3) psychic damage.
     """
-
-    name = "Shadow Demon"
-    description = "Medium fiend (demon), chaotic evil"
+    name = 'Shadow Demon'
+    description = 'Medium fiend (demon), chaotic evil'
     challenge_rating = 4
     armor_class = 13
-    skills = "Stealth +7"
-    saving_throws = "Dex +5, Cha +4"
-    damage_vulnerabilities = "radiant"
-    damage_resistances = (
-        "acid, fire, necrotic, thunder; bludgeoning, piercing, and slashing from"
-        " nonmagical attacks"
-    )
-    damage_immunities = "cold, lightning, poison"
-    condition_immunities = (
-        "exhaustion, grappled, paralyzed, petrified, poisoned, prone, restrained"
-    )
-    senses = "Darkvision 120 ft., Passive Perception 11"
-    languages = "Abyssal, telepathy 120 ft."
+    skills = 'Stealth +7'
+    saving_throws = 'Dex +5, Cha +4'
+    damage_vulnerabilities = 'radiant'
+    damage_resistances = 'acid, fire, necrotic, thunder; bludgeoning, piercing, and slashing from nonmagical attacks'
+    damage_immunities = 'cold, lightning, poison'
+    condition_immunities = 'exhaustion, grappled, paralyzed, petrified, poisoned, prone, restrained'
+    senses = 'Darkvision 120 ft., Passive Perception 11'
+    languages = 'Abyssal, telepathy 120 ft.'
     strength = Ability(1)
     dexterity = Ability(17)
     constitution = Ability(12)
@@ -421,15 +492,19 @@ class ShadowDemon(Monster):
     speed = 30
     fly_speed = 30
     hp_max = 66
-    hit_dice = "12d8 + 12"
+    hit_dice = '12d8 + 12'
 
 
 class ShamblingMound(Monster):
     """
+
     Lightning Absorption.
       Whenever the shambling mound is subjected to lightning damage, it
       takes no damage and regains a number of hit points equal to the
       lightning damage dealt.
+
+    # Actions
+
     Multiattack.
       The shambling mound makes two slam attacks. If both attacks hit a
       Medium or smaller target, the target is grappled (escape DC 14), and
@@ -445,13 +520,13 @@ class ShamblingMound(Monster):
       If the mound moves, the engulfed target moves with it. The mound can
       have only one creature engulfed at a time.
     """
-    name = "Shambling Mound"
-    description = "Large plant, unaligned"
+    name = 'Shambling Mound'
+    description = 'Large plant, unaligned'
     challenge_rating = 5
     armor_class = 15
-    skills = "Stealth +2"
-    senses = "Blindsight 60 ft. (blind beyond this radius), Passive Perception 10"
-    languages = ""
+    skills = 'Stealth +2'
+    senses = 'Blindsight 60 ft. (blind beyond this radius), Passive Perception 10'
+    languages = ''
     strength = Ability(18)
     dexterity = Ability(8)
     constitution = Ability(16)
@@ -462,13 +537,19 @@ class ShamblingMound(Monster):
     swim_speed = 20
     fly_speed = 0
     climb_speed = 0
+    burrow_speed = 0
     hp_max = 136
-    hit_dice = "16d10"
+    hit_dice = '16d10 + 48'
+    condition_immunities = 'blinded, blinded, exhaustion'
+    damage_immunities = 'lightning'
+    damage_resistances = 'cold'
+    damage_vulnerabilities = ''
     spells = []
 
 
 class ShieldGuardian(Monster):
     """
+
     Bound.
       The shield guardian is magically bound to an amulet. As long as the
       guardian and its amulet are on the same plane of existence, the
@@ -488,18 +569,28 @@ class ShieldGuardian(Monster):
       spellcaster, the guardian casts the stored spell with any parameters
       set by the original caster, requiring no components. When the spell is
       cast or a new spell is stored, any previously stored spell is lost.
+
+    # Actions
+
     Multiattack.
       The guardian makes two fist attacks.
     Fist.
       Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 11 (2d6
       + 4) bludgeoning damage.
+
+    # Reactions
+
+    Shield.
+      When a creature makes an attack against the wearer of the guardian's
+      amulet, the guardian grants a +2 bonus to the wearer's AC if the
+      guardian is within 5 feet of the wearer.
     """
-    name = "Shield Guardian"
-    description = "Large construct, unaligned"
+    name = 'Shield Guardian'
+    description = 'Large construct, unaligned'
     challenge_rating = 7
     armor_class = 17
-    skills = ""
-    senses = "Blindsight 10 ft., Darkvision 60 ft., Passive Perception 10"
+    skills = ''
+    senses = 'Blindsight 10 ft., Darkvision 60 ft., Passive Perception 10'
     languages = "understands commands given in any language but can't speak"
     strength = Ability(18)
     dexterity = Ability(8)
@@ -511,29 +602,38 @@ class ShieldGuardian(Monster):
     swim_speed = 0
     fly_speed = 0
     climb_speed = 0
+    burrow_speed = 0
     hp_max = 142
-    hit_dice = "15d10"
+    hit_dice = '15d10 + 60'
+    condition_immunities = 'charmed, exhaustion, frightened, paralyzed, poisoned'
+    damage_immunities = 'poison'
+    damage_resistances = ''
+    damage_vulnerabilities = ''
     spells = []
 
 
 class Shrieker(Monster):
     """
+
     False Appearance.
       While the shrieker remains motionless, it is indistinguishable from an
       ordinary fungus.
+
+    # Actions
+
     Shriek.
       When bright light or a creature is within 30 feet of the shrieker, it
       emits a shriek audible within 300 feet of it. The shrieker continues
       to shriek until the disturbance moves out of range and for 1d4 of the
       shrieker's turns afterward
     """
-    name = "Shrieker"
-    description = "Medium plant, unaligned"
+    name = 'Shrieker'
+    description = 'Medium plant, unaligned'
     challenge_rating = 0
     armor_class = 5
-    skills = ""
-    senses = "Blindsight 30 ft. (blind beyond this radius), Passive Perception 6"
-    languages = ""
+    skills = ''
+    senses = 'Blindsight 30 ft. (blind beyond this radius), Passive Perception 6'
+    languages = ''
     strength = Ability(1)
     dexterity = Ability(1)
     constitution = Ability(10)
@@ -544,13 +644,21 @@ class Shrieker(Monster):
     swim_speed = 0
     fly_speed = 0
     climb_speed = 0
+    burrow_speed = 0
     hp_max = 13
-    hit_dice = "3d8"
+    hit_dice = '3d8 + 0'
+    condition_immunities = 'blinded, blinded, frightened'
+    damage_immunities = ''
+    damage_resistances = ''
+    damage_vulnerabilities = ''
     spells = []
 
 
 class SilverDragonWyrmling(Monster):
     """
+
+    # Actions
+
     Bite.
       Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 9 (1d10
       + 4) piercing damage.
@@ -568,13 +676,13 @@ class SilverDragonWyrmling(Monster):
       saving throw at the end of each of its turns, ending the effect on
       itself on a success.
     """
-    name = "Silver Dragon Wyrmling"
-    description = "Medium dragon, lawful good"
+    name = 'Silver Dragon Wyrmling'
+    description = 'Medium dragon, lawful good'
     challenge_rating = 2
     armor_class = 17
-    skills = "Perception +4, Stealth +2"
-    senses = "Blindsight 10 ft., Darkvision 60 ft., Passive Perception 14"
-    languages = "Draconic"
+    skills = 'Perception +4, Stealth +2'
+    senses = 'Blindsight 10 ft., Darkvision 60 ft., Passive Perception 14'
+    languages = 'Draconic'
     strength = Ability(19)
     dexterity = Ability(10)
     constitution = Ability(17)
@@ -585,13 +693,21 @@ class SilverDragonWyrmling(Monster):
     swim_speed = 0
     fly_speed = 60
     climb_speed = 0
+    burrow_speed = 0
     hp_max = 45
-    hit_dice = "6d8"
+    hit_dice = '6d8 + 18'
+    condition_immunities = ''
+    damage_immunities = 'cold'
+    damage_resistances = ''
+    damage_vulnerabilities = ''
     spells = []
 
 
 class Skeleton(Monster):
     """
+
+    # Actions
+
     Shortsword.
       Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 5 (1d6 +
       2) piercing damage.
@@ -599,12 +715,12 @@ class Skeleton(Monster):
       Ranged Weapon Attack: +4 to hit, range 80/320 ft., one target. Hit: 5
       (1d6 + 2) piercing damage.
     """
-    name = "Skeleton"
-    description = "Medium undead, lawful evil"
+    name = 'Skeleton'
+    description = 'Medium undead, lawful evil'
     challenge_rating = 0.25
     armor_class = 13
-    skills = ""
-    senses = "Darkvision 60 ft., Passive Perception 9"
+    skills = ''
+    senses = 'Darkvision 60 ft., Passive Perception 9'
     languages = "understands all languages it spoke in life but can't speak"
     strength = Ability(10)
     dexterity = Ability(14)
@@ -616,13 +732,19 @@ class Skeleton(Monster):
     swim_speed = 0
     fly_speed = 0
     climb_speed = 0
+    burrow_speed = 0
     hp_max = 13
-    hit_dice = "2d8"
+    hit_dice = '2d8 + 4'
+    condition_immunities = 'poisoned'
+    damage_immunities = ''
+    damage_resistances = ''
+    damage_vulnerabilities = 'bludgeoning'
     spells = []
 
 
 class Solar(Monster):
     """
+
     Angelic Weapons.
       The solar's weapon attacks are magical. When the solar hits with any
       weapon, the weapon deals an extra 6d8 radiant damage (included in the
@@ -642,6 +764,9 @@ class Solar(Monster):
     Magic Resistance.
       The solar has advantage on saving throws against spells and other
       magical effects.
+
+    # Actions
+
     Multiattack.
       The solar makes two greatsword attacks.
     Greatsword.
@@ -664,14 +789,30 @@ class Solar(Monster):
       The solar touches another creature. The target magically regains 40
       (8d8 + 4) hit points and is freed from any curse, disease, poison,
       blindness, or deafness.
+
+    # Legendary Actions
+
+    Teleport.
+      The solar magically teleports, along with any equipment it is wearing
+      or carrying, up to 120 ft. to an unoccupied space it can see.
+    Searing Burst (Costs 2 Actions).
+      The solar emits magical, divine energy. Each creature of its choice in
+      a 10 -foot radius must make a DC 23 Dexterity saving throw, taking 14
+      (4d6) fire damage plus 14 (4d6) radiant damage on a failed save, or
+      half as much damage on a successful one.
+    Blinding Gaze (Costs 3 Actions).
+      The solar targets one creature it can see within 30 ft. of it. If the
+      target can see it, the target must succeed on a DC 15 Constitution
+      saving throw or be blinded until magic such as the lesser restoration
+      spell removes the blindness.
     """
-    name = "Solar"
-    description = "Large celestial, lawful good"
+    name = 'Solar'
+    description = 'Large celestial, lawful good'
     challenge_rating = 21
     armor_class = 21
-    skills = "Perception +14"
-    senses = "Truesight 120 ft., Passive Perception 24"
-    languages = "all, telepathy 120 ft."
+    skills = 'Perception +14'
+    senses = 'Truesight 120 ft., Passive Perception 24'
+    languages = 'all, telepathy 120 ft.'
     strength = Ability(26)
     dexterity = Ability(22)
     constitution = Ability(26)
@@ -682,13 +823,19 @@ class Solar(Monster):
     swim_speed = 0
     fly_speed = 150
     climb_speed = 0
+    burrow_speed = 0
     hp_max = 243
-    hit_dice = "18d10"
+    hit_dice = '18d10 + 144'
+    condition_immunities = 'charmed, exhaustion, frightened, poisoned'
+    damage_immunities = 'necrotic, poison'
+    damage_resistances = 'radiant'
+    damage_vulnerabilities = ''
     spells = []
 
 
 class Specter(Monster):
     """
+
     Incorporeal Movement.
       The specter can move through other creatures and objects as if they
       were difficult terrain. It takes 5 (1d10) force damage if it ends its
@@ -696,6 +843,9 @@ class Specter(Monster):
     Sunlight Sensitivity.
       While in sunlight, the specter has disadvantage on attack rolls, as
       well as on Wisdom (Perception) checks that rely on sight.
+
+    # Actions
+
     Life Drain.
       Melee Spell Attack: +4 to hit, reach 5 ft., one creature. Hit: 10
       (3d6) necrotic damage. The target must succeed on a DC 10 Constitution
@@ -704,12 +854,12 @@ class Specter(Monster):
       long rest. The target dies if this effect reduces its hit point
       maximum to 0.
     """
-    name = "Specter"
-    description = "Medium undead, chaotic evil"
+    name = 'Specter'
+    description = 'Medium undead, chaotic evil'
     challenge_rating = 1
     armor_class = 12
-    skills = ""
-    senses = "Darkvision 60 ft., Passive Perception 10"
+    skills = ''
+    senses = 'Darkvision 60 ft., Passive Perception 10'
     languages = "understands all languages it knew in life but can't speak"
     strength = Ability(1)
     dexterity = Ability(14)
@@ -721,13 +871,19 @@ class Specter(Monster):
     swim_speed = 0
     fly_speed = 50
     climb_speed = 0
+    burrow_speed = 0
     hp_max = 22
-    hit_dice = "5d8"
+    hit_dice = '5d8 + 0'
+    condition_immunities = 'charmed, exhaustion, grappled, paralyzed, petrified, poisoned, prone, restrained, unconscious'
+    damage_immunities = 'necrotic, poison'
+    damage_resistances = 'acid'
+    damage_vulnerabilities = ''
     spells = []
 
 
 class Spider(Monster):
     """
+
     Spider Climb.
       The spider can climb difficult surfaces, including upside down on
       ceilings, without needing to make an ability check.
@@ -736,18 +892,21 @@ class Spider(Monster):
       any other creature in contact with the same web.
     Web Walker.
       The spider ignores movement restrictions caused by webbing.
+
+    # Actions
+
     Bite.
       Melee Weapon Attack: +4 to hit, reach 5 ft., one creature. Hit: 1
       piercing damage, and the target must succeed on a DC 9 Constitution
       saving throw or take 2 (1d4) poison damage.
     """
-    name = "Spider"
-    description = "Tiny beast, unaligned"
+    name = 'Spider'
+    description = 'Tiny beast, unaligned'
     challenge_rating = 0
     armor_class = 12
-    skills = "Stealth +4"
-    senses = "Darkvision 30 ft., Passive Perception 12"
-    languages = ""
+    skills = 'Stealth +4'
+    senses = 'Darkvision 30 ft., Passive Perception 12'
+    languages = ''
     strength = Ability(2)
     dexterity = Ability(14)
     constitution = Ability(8)
@@ -758,48 +917,47 @@ class Spider(Monster):
     swim_speed = 0
     fly_speed = 0
     climb_speed = 20
+    burrow_speed = 0
     hp_max = 1
-    hit_dice = "1d4"
+    hit_dice = '1d4 + -1'
+    condition_immunities = ''
+    damage_immunities = ''
+    damage_resistances = ''
+    damage_vulnerabilities = ''
     spells = []
 
 
 class SpiritNaga(Monster):
     """
+
     Rejuvenation.
       If it dies, the naga returns to life in 1d6 days and regains all its
       hit points. Only a wish spell can prevent this trait from functioning.
     Spellcasting.
-      The naga is a 10th-level spellcaster. Its spellcasting ability is
-      Intelligence (spell save DC 14, +6 to hit with spell attacks), and it
-      needs only verbal components to cast its spells. It has the following
-      wizard spells prepared:
-      
-  
-      
-      - Cantrips (at will): mage hand, minor illusion, ray of frost
-      
-      - 1st level (4 slots): charm person, detect magic, sleep
-      
-      - 2nd level (3 slots): detect thoughts, hold person
-      
-      - 3rd level (3 slots): lightning bolt, water breathing
-      
-      - 4th level (3 slots): blight, dimension door
-      
-      - 5th level (2 slots): dominate person
+      The naga is a 10th-level spellcaster. Its spellcasting ability is Intelligence (spell save DC 14, +6 to hit with spell attacks), and it needs only verbal components to cast its spells. It has the following wizard spells prepared:
+
+    - Cantrips (at will): mage hand, minor illusion, ray of frost
+    - 1st level (4 slots): charm person, detect magic, sleep
+    - 2nd level (3 slots): detect thoughts, hold person
+    - 3rd level (3 slots): lightning bolt, water breathing
+    - 4th level (3 slots): blight, dimension door
+    - 5th level (2 slots): dominate person
+
+    # Actions
+
     Bite.
       Melee Weapon Attack: +7 to hit, reach 10 ft., one creature. Hit: 7
       (1d6 + 4) piercing damage, and the target must make a DC 13
       Constitution saving throw, taking 31 (7d8) poison damage on a failed
       save, or half as much damage on a successful one.
     """
-    name = "Spirit Naga"
-    description = "Large monstrosity, chaotic evil"
+    name = 'Spirit Naga'
+    description = 'Large monstrosity, chaotic evil'
     challenge_rating = 8
     armor_class = 15
-    skills = ""
-    senses = "Darkvision 60 ft., Passive Perception 12"
-    languages = "Abyssal, Common"
+    skills = ''
+    senses = 'Darkvision 60 ft., Passive Perception 12'
+    languages = 'Abyssal, Common'
     strength = Ability(18)
     dexterity = Ability(17)
     constitution = Ability(14)
@@ -810,13 +968,21 @@ class SpiritNaga(Monster):
     swim_speed = 0
     fly_speed = 0
     climb_speed = 0
+    burrow_speed = 0
     hp_max = 75
-    hit_dice = "10d10"
-    spells = ["mage hand", "minor illusion", "ray of frost", "charm person", "detect magic", "sleep", "detect thoughts", "hold person", "lightning bolt", "water breathing", "blight", "dimension door", "dominate person"]
+    hit_dice = '10d10 + 20'
+    condition_immunities = 'charmed, poisoned'
+    damage_immunities = 'poison'
+    damage_resistances = ''
+    damage_vulnerabilities = ''
+    spells = ['mage hand', 'minor illusion', 'ray of frost', 'charm person', 'detect magic', 'sleep', 'detect thoughts', 'hold person', 'lightning bolt', 'water breathing', 'blight', 'dimension door', 'dominate person']
 
 
 class Sprite(Monster):
     """
+
+    # Actions
+
     Longsword.
       Melee Weapon Attack: +2 to hit, reach 5 ft., one target. Hit: 1
       slashing damage.
@@ -838,13 +1004,13 @@ class Sprite(Monster):
       spell). Any equipment the sprite wears or carries is invisible with
       it.
     """
-    name = "Sprite"
-    description = "Tiny fey, neutral good"
+    name = 'Sprite'
+    description = 'Tiny fey, neutral good'
     challenge_rating = 0.25
     armor_class = 15
-    skills = "Perception +3, Stealth +8"
-    senses = "Passive Perception 13"
-    languages = "Common, Elvish, Sylvan"
+    skills = 'Perception +3, Stealth +8'
+    senses = 'Passive Perception 13'
+    languages = 'Common, Elvish, Sylvan'
     strength = Ability(3)
     dexterity = Ability(18)
     constitution = Ability(10)
@@ -855,13 +1021,19 @@ class Sprite(Monster):
     swim_speed = 0
     fly_speed = 40
     climb_speed = 0
+    burrow_speed = 0
     hp_max = 2
-    hit_dice = "1d4"
+    hit_dice = '1d4 + 0'
+    condition_immunities = ''
+    damage_immunities = ''
+    damage_resistances = ''
+    damage_vulnerabilities = ''
     spells = []
 
 
 class Spy(Monster):
     """
+
     Cunning Action.
       On each of its turns, the spy can use a bonus action to take the Dash,
       Disengage, or Hide action.
@@ -870,6 +1042,9 @@ class Spy(Monster):
       weapon attack and has advantage on the attack roll, or when the target
       is within 5 ft. of an ally of the spy that isn't incapacitated and the
       spy doesn't have disadvantage on the attack roll.
+
+    # Actions
+
     Multiattack.
       The spy makes two melee attacks.
     Shortsword.
@@ -879,13 +1054,13 @@ class Spy(Monster):
       Ranged Weapon Attack: +4 to hit, range 30/120 ft., one target. Hit: 5
       (1d6 + 2) piercing damage.
     """
-    name = "Spy"
-    description = "Medium humanoid, any alignment"
+    name = 'Spy'
+    description = 'Medium humanoid, any alignment'
     challenge_rating = 1
     armor_class = 12
-    skills = "Deception +5, Insight +4, Investigation +5, Perception +6, Persuasion +5, Stealth +4"
-    senses = "Passive Perception 16"
-    languages = "any two languages"
+    skills = 'Deception +5, Insight +4, Investigation +5, Perception +6, Persuasion +5, Stealth +4'
+    senses = 'Passive Perception 16'
+    languages = 'any two languages'
     strength = Ability(10)
     dexterity = Ability(15)
     constitution = Ability(10)
@@ -896,13 +1071,19 @@ class Spy(Monster):
     swim_speed = 0
     fly_speed = 0
     climb_speed = 0
+    burrow_speed = 0
     hp_max = 27
-    hit_dice = "6d8"
+    hit_dice = '6d8 + 0'
+    condition_immunities = ''
+    damage_immunities = ''
+    damage_resistances = ''
+    damage_vulnerabilities = ''
     spells = []
 
 
 class SteamMephit(Monster):
     """
+
     Death Burst.
       When the mephit dies, it explodes in a cloud of steam. Each creature
       within 5 ft. of the mephit must succeed on a DC 10 Dexterity saving
@@ -910,6 +1091,9 @@ class SteamMephit(Monster):
     Innate Spellcasting.
       The mephit can innately cast blur, requiring no material components.
       Its innate spellcasting ability is Charisma.
+
+    # Actions
+
     Claws.
       Melee Weapon Attack: +2 to hit, reach 5 ft., one creature. Hit: 2
       (1d4) slashing damage plus 2 (1d4) fire damage.
@@ -925,13 +1109,13 @@ class SteamMephit(Monster):
       other mephits. It remains for 1 minute, until it or its summoner dies,
       or until its summoner dismisses it as an action.
     """
-    name = "Steam Mephit"
-    description = "Small elemental, neutral evil"
+    name = 'Steam Mephit'
+    description = 'Small elemental, neutral evil'
     challenge_rating = 0.25
     armor_class = 10
-    skills = ""
-    senses = "Darkvision 60 ft., Passive Perception 10"
-    languages = "Aquan, Ignan"
+    skills = ''
+    senses = 'Darkvision 60 ft., Passive Perception 10'
+    languages = 'Aquan, Ignan'
     strength = Ability(5)
     dexterity = Ability(11)
     constitution = Ability(10)
@@ -942,13 +1126,21 @@ class SteamMephit(Monster):
     swim_speed = 0
     fly_speed = 30
     climb_speed = 0
+    burrow_speed = 0
     hp_max = 21
-    hit_dice = "6d6"
+    hit_dice = '6d6 + 0'
+    condition_immunities = 'poisoned'
+    damage_immunities = 'fire, poison'
+    damage_resistances = ''
+    damage_vulnerabilities = ''
     spells = []
 
 
 class Stirge(Monster):
     """
+
+    # Actions
+
     Blood Drain.
       Melee Weapon Attack: +5 to hit, reach 5 ft., one creature. Hit: 5 (1d4
       + 3) piercing damage, and the stirge attaches to the target. While
@@ -961,13 +1153,13 @@ class Stirge(Monster):
       target dies. A creature, including the target, can use its action to
       detach the stirge.
     """
-    name = "Stirge"
-    description = "Tiny beast, unaligned"
+    name = 'Stirge'
+    description = 'Tiny beast, unaligned'
     challenge_rating = 0.125
     armor_class = 14
-    skills = ""
-    senses = "Darkvision 60 ft., Passive Perception 9"
-    languages = ""
+    skills = ''
+    senses = 'Darkvision 60 ft., Passive Perception 9'
+    languages = ''
     strength = Ability(4)
     dexterity = Ability(16)
     constitution = Ability(11)
@@ -978,16 +1170,25 @@ class Stirge(Monster):
     swim_speed = 0
     fly_speed = 40
     climb_speed = 0
+    burrow_speed = 0
     hp_max = 2
-    hit_dice = "1d4"
+    hit_dice = '1d4 + 0'
+    condition_immunities = ''
+    damage_immunities = ''
+    damage_resistances = ''
+    damage_vulnerabilities = ''
     spells = []
 
 
 class StoneGiant(Monster):
     """
+
     Stone Camouflage.
       The giant has advantage on Dexterity (Stealth) checks made to hide in
       rocky terrain.
+
+    # Actions
+
     Multiattack.
       The giant makes two greatclub attacks.
     Greatclub.
@@ -997,14 +1198,21 @@ class StoneGiant(Monster):
       Ranged Weapon Attack: +9 to hit, range 60/240 ft., one target. Hit: 28
       (4d10 + 6) bludgeoning damage. If the target is a creature, it must
       succeed on a DC 17 Strength saving throw or be knocked prone.
+
+    # Reactions
+
+    Rock Catching.
+      If a rock or similar object is hurled at the giant, the giant can,
+      with a successful DC 10 Dexterity saving throw, catch the missile and
+      take no bludgeoning damage from it.
     """
-    name = "Stone Giant"
-    description = "Huge giant, neutral"
+    name = 'Stone Giant'
+    description = 'Huge giant, neutral'
     challenge_rating = 7
     armor_class = 17
-    skills = "Athletics +12, Perception +4"
-    senses = "Darkvision 60 ft., Passive Perception 14"
-    languages = "Giant"
+    skills = 'Athletics +12, Perception +4'
+    senses = 'Darkvision 60 ft., Passive Perception 14'
+    languages = 'Giant'
     strength = Ability(23)
     dexterity = Ability(15)
     constitution = Ability(20)
@@ -1015,13 +1223,19 @@ class StoneGiant(Monster):
     swim_speed = 0
     fly_speed = 0
     climb_speed = 0
+    burrow_speed = 0
     hp_max = 126
-    hit_dice = "11d12"
+    hit_dice = '11d12 + 55'
+    condition_immunities = ''
+    damage_immunities = ''
+    damage_resistances = ''
+    damage_vulnerabilities = ''
     spells = []
 
 
 class StoneGolem(Monster):
     """
+
     Immutable Form.
       The golem is immune to any spell or effect that would alter its form.
     Magic Resistance.
@@ -1029,6 +1243,9 @@ class StoneGolem(Monster):
       magical effects.
     Magic Weapons.
       The golem's weapon attacks are magical.
+
+    # Actions
+
     Multiattack.
       The golem makes two slam attacks.
     Slam.
@@ -1044,12 +1261,12 @@ class StoneGolem(Monster):
       repeat the saving throw at the end of each of its turns, ending the
       effect on itself on a success.
     """
-    name = "Stone Golem"
-    description = "Large construct, unaligned"
+    name = 'Stone Golem'
+    description = 'Large construct, unaligned'
     challenge_rating = 10
     armor_class = 17
-    skills = ""
-    senses = "Darkvision 120 ft., Passive Perception 10"
+    skills = ''
+    senses = 'Darkvision 120 ft., Passive Perception 10'
     languages = "understands the languages of its creator but can't speak"
     strength = Ability(22)
     dexterity = Ability(9)
@@ -1061,8 +1278,13 @@ class StoneGolem(Monster):
     swim_speed = 0
     fly_speed = 0
     climb_speed = 0
+    burrow_speed = 0
     hp_max = 178
-    hit_dice = "17d10"
+    hit_dice = '17d10 + 85'
+    condition_immunities = 'charmed, exhaustion, frightened, paralyzed, petrified, poisoned'
+    damage_immunities = "poison, psychic, bludgeoning, piercing, and slashing from nonmagical weapons that aren't adamantine"
+    damage_resistances = ''
+    damage_vulnerabilities = ''
     spells = []
 
 
@@ -1104,13 +1326,13 @@ class Stonemelder(Monster):
     it serves as a conduit for Ogrémoch's wrath.
 
     """
-    name = "Stonemelder"
-    description = "Medium humanoid (human), neutral evil"
+    name = 'Stonemelder'
+    description = 'Medium humanoid (human), neutral evil'
     challenge_rating = 4
     armor_class = 17
-    skills = "Intimidation +5, Perception +2"
-    senses = "termorsense 30 ft., passive Perception 12"
-    languages = "Common, Terran"
+    skills = 'Intimidation +5, Perception +2'
+    senses = 'termorsense 30 ft., passive Perception 12'
+    languages = 'Common, Terran'
     strength = Ability(15)
     dexterity = Ability(10)
     constitution = Ability(16)
@@ -1122,15 +1344,13 @@ class Stonemelder(Monster):
     fly_speed = 0
     climb_speed = 0
     hp_max = 75
-    hit_dice = "10d8 + 30"
-    spells = ["acid splash", "blade ward", "light", "mending", "mold earth",
-              "expeditious retreat", "false life", "shield",
-              "maximilian's earthen grasp", "shatter", "erupting earth",
-              "meld into stone", "stoneskin"]
+    hit_dice = '10d8 + 30'
+    spells = ['acid splash', 'blade ward', 'light', 'mending', 'mold earth', 'expeditious retreat', 'false life', 'shield', "maximilian's earthen grasp", 'shatter', 'erupting earth', 'meld into stone', 'stoneskin']
 
 
 class StormGiant(Monster):
     """
+
     Amphibious.
       The giant can breathe air and water.
     Innate Spellcasting.
@@ -1143,6 +1363,9 @@ class StormGiant(Monster):
       At will: detect magic, feather fall, levitate, light
       
       3/day each: control weather, water breathing
+
+    # Actions
+
     Multiattack.
       The giant makes two greatsword attacks.
     Greatsword.
@@ -1157,13 +1380,13 @@ class StormGiant(Monster):
       DC 17 Dexterity saving throw, taking 54 (12d8) lightning damage on a
       failed save, or half as much damage on a successful one.
     """
-    name = "Storm Giant"
-    description = "Huge giant, chaotic good"
+    name = 'Storm Giant'
+    description = 'Huge giant, chaotic good'
     challenge_rating = 13
     armor_class = 16
-    skills = "Arcana +8, Athletics +14, History +8, Perception +9"
-    senses = "Passive Perception 19"
-    languages = "Common, Giant"
+    skills = 'Arcana +8, Athletics +14, History +8, Perception +9'
+    senses = 'Passive Perception 19'
+    languages = 'Common, Giant'
     strength = Ability(29)
     dexterity = Ability(14)
     constitution = Ability(20)
@@ -1174,13 +1397,19 @@ class StormGiant(Monster):
     swim_speed = 50
     fly_speed = 0
     climb_speed = 0
+    burrow_speed = 0
     hp_max = 230
-    hit_dice = "20d12"
+    hit_dice = '20d12 + 100'
+    condition_immunities = ''
+    damage_immunities = 'lightning, thunder'
+    damage_resistances = 'cold'
+    damage_vulnerabilities = ''
     spells = []
 
 
 class SuccubusIncubus(Monster):
     """
+
     Telepathic Bond.
       The fiend ignores the range restriction on its telepathy when
       communicating with a creature it has charmed. The two don't even need
@@ -1191,6 +1420,9 @@ class SuccubusIncubus(Monster):
       its flying speed. Other than its size and speed, its statistics are
       the same in each form. Any equipment it is wearing or carrying isn't
       transformed. It reverts to its true form if it dies.
+
+    # Actions
+
     Claw (Fiend Form Only).
       Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 6 (1d6 +
       3) slashing damage.
@@ -1217,13 +1449,13 @@ class SuccubusIncubus(Monster):
       The fiend magically enters the Ethereal Plane from the Material Plane,
       or vice versa.
     """
-    name = "Succubus/Incubus"
-    description = "Medium fiend, neutral evil"
+    name = 'Succubus/Incubus'
+    description = 'Medium fiend, neutral evil'
     challenge_rating = 4
     armor_class = 15
-    skills = "Deception +9, Insight +5, Perception +5, Persuasion +9, Stealth +7"
-    senses = "Darkvision 60 ft., Passive Perception 15"
-    languages = "Abyssal, Common, Infernal, telepathy 60 ft."
+    skills = 'Deception +9, Insight +5, Perception +5, Persuasion +9, Stealth +7'
+    senses = 'Darkvision 60 ft., Passive Perception 15'
+    languages = 'Abyssal, Common, Infernal, telepathy 60 ft.'
     strength = Ability(8)
     dexterity = Ability(17)
     constitution = Ability(13)
@@ -1234,46 +1466,13 @@ class SuccubusIncubus(Monster):
     swim_speed = 0
     fly_speed = 60
     climb_speed = 0
+    burrow_speed = 0
     hp_max = 66
-    hit_dice = "12d8"
-    spells = []
-
-
-class SwarmOfBats(Monster):
-    """
-    Echolocation.
-      The swarm can't use its blindsight while deafened.
-    Keen Hearing.
-      The swarm has advantage on Wisdom (Perception) checks that rely on
-      hearing.
-    Swarm.
-      The swarm can occupy another creature's space and vice versa, and the
-      swarm can move through any opening large enough for a Tiny bat. The
-      swarm can't regain hit points or gain temporary hit points.
-    Bites.
-      Melee Weapon Attack: +4 to hit, reach 0 ft., one creature in the
-      swarm's space. Hit: 5 (2d4) piercing damage, or 2 (1d4) piercing
-      damage if the swarm has half of its hit points or fewer.
-    """
-    name = "Swarm of Bats"
-    description = "Medium swarm of Tiny beasts, unaligned"
-    challenge_rating = 0.25
-    armor_class = 12
-    skills = ""
-    senses = "Blindsight 60 ft., Passive Perception 11"
-    languages = ""
-    strength = Ability(5)
-    dexterity = Ability(15)
-    constitution = Ability(10)
-    intelligence = Ability(2)
-    wisdom = Ability(12)
-    charisma = Ability(4)
-    speed = 0
-    swim_speed = 0
-    fly_speed = 30
-    climb_speed = 0
-    hp_max = 22
-    hit_dice = "5d8"
+    hit_dice = '12d8 + 12'
+    condition_immunities = ''
+    damage_immunities = ''
+    damage_resistances = 'cold'
+    damage_vulnerabilities = ''
     spells = []
 
 
@@ -1293,13 +1492,13 @@ class SwarmOfBats(Monster):
       damage if the swarm has half of its hit points or fewer.
     
     """
-    name = "Swarm of Bats"
-    description = "Medium swarm of Tiny beasts, unaligned"
+    name = 'Swarm of Bats'
+    description = 'Medium swarm of Tiny beasts, unaligned'
     challenge_rating = 0.25
     armor_class = 12
-    skills = ""
-    senses = "Blindsight 60 ft., Passive Perception 11"
-    languages = ""
+    skills = ''
+    senses = 'Blindsight 60 ft., Passive Perception 11'
+    languages = ''
     strength = Ability(5)
     dexterity = Ability(15)
     constitution = Ability(10)
@@ -1311,7 +1510,7 @@ class SwarmOfBats(Monster):
     fly_speed = 30
     climb_speed = 0
     hp_max = 22
-    hit_dice = "5d8"
+    hit_dice = '5d8'
 
 
 class SwarmOfBeetles(Monster):
@@ -1325,13 +1524,13 @@ class SwarmOfBeetles(Monster):
       space. Hit: 10 (4d4) piercing damage, or 5 (2d4) piercing damage if
       the swarm has half of its hit points or fewer.
     """
-    name = "Swarm of Beetles"
-    description = "Medium swarm of Tiny beasts, unaligned"
+    name = 'Swarm of Beetles'
+    description = 'Medium swarm of Tiny beasts, unaligned'
     challenge_rating = 0.5
     armor_class = 12
-    skills = ""
-    senses = "Blindsight 10 ft., Passive Perception 8"
-    languages = ""
+    skills = ''
+    senses = 'Blindsight 10 ft., Passive Perception 8'
+    languages = ''
     strength = Ability(3)
     dexterity = Ability(13)
     constitution = Ability(10)
@@ -1343,7 +1542,7 @@ class SwarmOfBeetles(Monster):
     fly_speed = 0
     climb_speed = 20
     hp_max = 22
-    hit_dice = "5d8"
+    hit_dice = '5d8'
     spells = []
 
 
@@ -1362,13 +1561,13 @@ class SwarmOfCentipedes(Monster):
       but poisoned for 1 hour, even after regaining hit points, and
       paralyzed while poisoned in this way.
     """
-    name = "Swarm of Centipedes"
-    description = "Medium swarm of Tiny beasts, unaligned"
+    name = 'Swarm of Centipedes'
+    description = 'Medium swarm of Tiny beasts, unaligned'
     challenge_rating = 0.5
     armor_class = 12
-    skills = ""
-    senses = "Blindsight 10 ft., Passive Perception 8"
-    languages = ""
+    skills = ''
+    senses = 'Blindsight 10 ft., Passive Perception 8'
+    languages = ''
     strength = Ability(3)
     dexterity = Ability(13)
     constitution = Ability(10)
@@ -1380,7 +1579,7 @@ class SwarmOfCentipedes(Monster):
     fly_speed = 0
     climb_speed = 20
     hp_max = 22
-    hit_dice = "5d8"
+    hit_dice = '5d8'
     spells = []
 
 
@@ -1395,13 +1594,13 @@ class SwarmOfInsects(Monster):
       space. Hit: 10 (4d4) piercing damage, or 5 (2d4) piercing damage if
       the swarm has half of its hit points or fewer.
     """
-    name = "Swarm of Insects"
-    description = "Medium swarm of Tiny beasts, unaligned"
+    name = 'Swarm of Insects'
+    description = 'Medium swarm of Tiny beasts, unaligned'
     challenge_rating = 0.5
     armor_class = 12
-    skills = ""
-    senses = "Blindsight 10 ft., Passive Perception 8"
-    languages = ""
+    skills = ''
+    senses = 'Blindsight 10 ft., Passive Perception 8'
+    languages = ''
     strength = Ability(3)
     dexterity = Ability(13)
     constitution = Ability(10)
@@ -1413,7 +1612,7 @@ class SwarmOfInsects(Monster):
     fly_speed = 0
     climb_speed = 20
     hp_max = 22
-    hit_dice = "5d8"
+    hit_dice = '5d8'
     spells = []
 
 
@@ -1430,13 +1629,13 @@ class SwarmOfPoisonousSnakes(Monster):
       must make a DC 10 Constitution saving throw, taking 14 (4d6) poison
       damage on a failed save, or half as much damage on a successful one.
     """
-    name = "Swarm of Poisonous Snakes"
-    description = "Medium swarm of Tiny beasts, unaligned"
+    name = 'Swarm of Poisonous Snakes'
+    description = 'Medium swarm of Tiny beasts, unaligned'
     challenge_rating = 2
     armor_class = 14
-    skills = ""
-    senses = "Blindsight 10 ft., Passive Perception 10"
-    languages = ""
+    skills = ''
+    senses = 'Blindsight 10 ft., Passive Perception 10'
+    languages = ''
     strength = Ability(8)
     dexterity = Ability(18)
     constitution = Ability(11)
@@ -1448,7 +1647,7 @@ class SwarmOfPoisonousSnakes(Monster):
     fly_speed = 0
     climb_speed = 0
     hp_max = 36
-    hit_dice = "8d8"
+    hit_dice = '8d8'
     spells = []
 
 
@@ -1468,13 +1667,13 @@ class SwarmOfQuippers(Monster):
       swarm's space. Hit: 14 (4d6) piercing damage, or 7 (2d6) piercing
       damage if the swarm has half of its hit points or fewer.
     """
-    name = "Swarm of Quippers"
-    description = "Medium swarm of Tiny beasts, unaligned"
+    name = 'Swarm of Quippers'
+    description = 'Medium swarm of Tiny beasts, unaligned'
     challenge_rating = 1
     armor_class = 13
-    skills = ""
-    senses = "Darkvision 60 ft., Passive Perception 8"
-    languages = ""
+    skills = ''
+    senses = 'Darkvision 60 ft., Passive Perception 8'
+    languages = ''
     strength = Ability(13)
     dexterity = Ability(16)
     constitution = Ability(9)
@@ -1486,7 +1685,7 @@ class SwarmOfQuippers(Monster):
     fly_speed = 0
     climb_speed = 0
     hp_max = 28
-    hit_dice = "8d8"
+    hit_dice = '8d8'
     spells = []
 
 
@@ -1504,13 +1703,13 @@ class SwarmOfRats(Monster):
       space. Hit: 7 (2d6) piercing damage, or 3 (1d6) piercing damage if the
       swarm has half of its hit points or fewer.
     """
-    name = "Swarm of Rats"
-    description = "Medium swarm of Tiny beasts, unaligned"
+    name = 'Swarm of Rats'
+    description = 'Medium swarm of Tiny beasts, unaligned'
     challenge_rating = 0.25
     armor_class = 10
-    skills = ""
-    senses = "Darkvision 30 ft., Passive Perception 10"
-    languages = ""
+    skills = ''
+    senses = 'Darkvision 30 ft., Passive Perception 10'
+    languages = ''
     strength = Ability(9)
     dexterity = Ability(11)
     constitution = Ability(9)
@@ -1522,7 +1721,7 @@ class SwarmOfRats(Monster):
     fly_speed = 0
     climb_speed = 0
     hp_max = 24
-    hit_dice = "7d8"
+    hit_dice = '7d8'
     spells = []
 
 
@@ -1537,13 +1736,13 @@ class SwarmOfRavens(Monster):
       space. Hit: 7 (2d6) piercing damage, or 3 (1d6) piercing damage if the
       swarm has half of its hit points or fewer.
     """
-    name = "Swarm of Ravens"
-    description = "Medium swarm of Tiny beasts, unaligned"
+    name = 'Swarm of Ravens'
+    description = 'Medium swarm of Tiny beasts, unaligned'
     challenge_rating = 0.25
     armor_class = 12
-    skills = ""
-    senses = "Passive Perception 15"
-    languages = ""
+    skills = ''
+    senses = 'Passive Perception 15'
+    languages = ''
     strength = Ability(6)
     dexterity = Ability(14)
     constitution = Ability(8)
@@ -1555,7 +1754,7 @@ class SwarmOfRavens(Monster):
     fly_speed = 50
     climb_speed = 0
     hp_max = 24
-    hit_dice = "7d8"
+    hit_dice = '7d8'
     spells = []
 
 
@@ -1578,13 +1777,13 @@ class SwarmOfSpiders(Monster):
       space. Hit: 10 (4d4) piercing damage, or 5 (2d4) piercing damage if
       the swarm has half of its hit points or fewer.
     """
-    name = "Swarm of Spiders"
-    description = "Medium swarm of Tiny beasts, unaligned"
+    name = 'Swarm of Spiders'
+    description = 'Medium swarm of Tiny beasts, unaligned'
     challenge_rating = 0.5
     armor_class = 12
-    skills = ""
-    senses = "Blindsight 10 ft., Passive Perception 8"
-    languages = ""
+    skills = ''
+    senses = 'Blindsight 10 ft., Passive Perception 8'
+    languages = ''
     strength = Ability(3)
     dexterity = Ability(13)
     constitution = Ability(10)
@@ -1596,7 +1795,7 @@ class SwarmOfSpiders(Monster):
     fly_speed = 0
     climb_speed = 20
     hp_max = 22
-    hit_dice = "5d8"
+    hit_dice = '5d8'
     spells = []
 
 
@@ -1611,13 +1810,13 @@ class SwarmOfWasps(Monster):
       space. Hit: 10 (4d4) piercing damage, or 5 (2d4) piercing damage if
       the swarm has half of its hit points or fewer.
     """
-    name = "Swarm of Wasps"
-    description = "Medium swarm of Tiny beasts, unaligned"
+    name = 'Swarm of Wasps'
+    description = 'Medium swarm of Tiny beasts, unaligned'
     challenge_rating = 0.5
     armor_class = 12
-    skills = ""
-    senses = "Blindsight 10 ft., Passive Perception 8"
-    languages = ""
+    skills = ''
+    senses = 'Blindsight 10 ft., Passive Perception 8'
+    languages = ''
     strength = Ability(3)
     dexterity = Ability(13)
     constitution = Ability(10)
@@ -1629,5 +1828,452 @@ class SwarmOfWasps(Monster):
     fly_speed = 30
     climb_speed = 0
     hp_max = 22
-    hit_dice = "5d8"
+    hit_dice = '5d8'
+    spells = []
+
+
+class SwarmofBats(Monster):
+    """
+
+    Echolocation.
+      The swarm can't use its blindsight while deafened.
+    Keen Hearing.
+      The swarm has advantage on Wisdom (Perception) checks that rely on
+      hearing.
+    Swarm.
+      The swarm can occupy another creature's space and vice versa, and the
+      swarm can move through any opening large enough for a Tiny bat. The
+      swarm can't regain hit points or gain temporary hit points.
+
+    # Actions
+
+    Bites.
+      Melee Weapon Attack: +4 to hit, reach 0 ft., one creature in the
+      swarm's space. Hit: 5 (2d4) piercing damage, or 2 (1d4) piercing
+      damage if the swarm has half of its hit points or fewer.
+    """
+    name = 'Swarm of Bats'
+    description = 'Medium swarm of Tiny beasts, unaligned'
+    challenge_rating = 0.25
+    armor_class = 12
+    skills = ''
+    senses = 'Blindsight 60 ft., Passive Perception 11'
+    languages = ''
+    strength = Ability(5)
+    dexterity = Ability(15)
+    constitution = Ability(10)
+    intelligence = Ability(2)
+    wisdom = Ability(12)
+    charisma = Ability(4)
+    speed = 0
+    swim_speed = 0
+    fly_speed = 30
+    climb_speed = 0
+    burrow_speed = 0
+    hp_max = 22
+    hit_dice = '5d8 + 0'
+    condition_immunities = 'charmed, frightened, grappled, paralyzed, petrified, prone, restrained, stunned'
+    damage_immunities = ''
+    damage_resistances = 'bludgeoning'
+    damage_vulnerabilities = ''
+    spells = []
+
+
+class SwarmofBeetles(Monster):
+    """
+
+    Swarm.
+      The swarm can occupy another creature's space and vice versa, and the
+      swarm can move through any opening large enough for a Tiny insect. The
+      swarm can't regain hit points or gain temporary hit points.
+
+    # Actions
+
+    Bites.
+      Melee Weapon Attack: +3 to hit, reach 0 ft., one target in the swarm's
+      space. Hit: 10 (4d4) piercing damage, or 5 (2d4) piercing damage if
+      the swarm has half of its hit points or fewer.
+    """
+    name = 'Swarm of Beetles'
+    description = 'Medium swarm of Tiny beasts, unaligned'
+    challenge_rating = 0.5
+    armor_class = 12
+    skills = ''
+    senses = 'Blindsight 10 ft., Passive Perception 8'
+    languages = ''
+    strength = Ability(3)
+    dexterity = Ability(13)
+    constitution = Ability(10)
+    intelligence = Ability(1)
+    wisdom = Ability(7)
+    charisma = Ability(1)
+    speed = 20
+    swim_speed = 0
+    fly_speed = 0
+    climb_speed = 20
+    burrow_speed = 5
+    hp_max = 22
+    hit_dice = '5d8 + 0'
+    condition_immunities = 'charmed, frightened, grappled, paralyzed, petrified, prone, restrained, stunned'
+    damage_immunities = ''
+    damage_resistances = 'bludgeoning'
+    damage_vulnerabilities = ''
+    spells = []
+
+
+class SwarmofCentipedes(Monster):
+    """
+
+    Swarm.
+      The swarm can occupy another creature's space and vice versa, and the
+      swarm can move through any opening large enough for a Tiny insect. The
+      swarm can't regain hit points or gain temporary hit points.
+
+    # Actions
+
+    Bites.
+      Melee Weapon Attack: +3 to hit, reach 0 ft., one target in the swarm's
+      space. Hit: 10 (4d4) piercing damage, or 5 (2d4) piercing damage if
+      the swarm has half of its hit points or fewer.
+      
+      A creature reduced to 0 hit points by a swarm of centipedes is stable
+      but poisoned for 1 hour, even after regaining hit points, and
+      paralyzed while poisoned in this way.
+    """
+    name = 'Swarm of Centipedes'
+    description = 'Medium swarm of Tiny beasts, unaligned'
+    challenge_rating = 0.5
+    armor_class = 12
+    skills = ''
+    senses = 'Blindsight 10 ft., Passive Perception 8'
+    languages = ''
+    strength = Ability(3)
+    dexterity = Ability(13)
+    constitution = Ability(10)
+    intelligence = Ability(1)
+    wisdom = Ability(7)
+    charisma = Ability(1)
+    speed = 20
+    swim_speed = 0
+    fly_speed = 0
+    climb_speed = 20
+    burrow_speed = 0
+    hp_max = 22
+    hit_dice = '5d8 + 0'
+    condition_immunities = 'charmed, frightened, grappled, paralyzed, petrified, prone, restrained, stunned'
+    damage_immunities = ''
+    damage_resistances = 'bludgeoning'
+    damage_vulnerabilities = ''
+    spells = []
+
+
+class SwarmofInsects(Monster):
+    """
+
+    Swarm.
+      The swarm can occupy another creature's space and vice versa, and the
+      swarm can move through any opening large enough for a Tiny insect. The
+      swarm can't regain hit points or gain temporary hit points.
+
+    # Actions
+
+    Bites.
+      Melee Weapon Attack: +3 to hit, reach 0 ft., one target in the swarm's
+      space. Hit: 10 (4d4) piercing damage, or 5 (2d4) piercing damage if
+      the swarm has half of its hit points or fewer.
+    """
+    name = 'Swarm of Insects'
+    description = 'Medium swarm of Tiny beasts, unaligned'
+    challenge_rating = 0.5
+    armor_class = 12
+    skills = ''
+    senses = 'Blindsight 10 ft., Passive Perception 8'
+    languages = ''
+    strength = Ability(3)
+    dexterity = Ability(13)
+    constitution = Ability(10)
+    intelligence = Ability(1)
+    wisdom = Ability(7)
+    charisma = Ability(1)
+    speed = 20
+    swim_speed = 0
+    fly_speed = 0
+    climb_speed = 20
+    burrow_speed = 0
+    hp_max = 22
+    hit_dice = '5d8 + 0'
+    condition_immunities = 'charmed, frightened, grappled, paralyzed, petrified, prone, restrained, stunned'
+    damage_immunities = ''
+    damage_resistances = 'bludgeoning'
+    damage_vulnerabilities = ''
+    spells = []
+
+
+class SwarmofPoisonousSnakes(Monster):
+    """
+
+    Swarm.
+      The swarm can occupy another creature's space and vice versa, and the
+      swarm can move through any opening large enough for a Tiny snake. The
+      swarm can't regain hit points or gain temporary hit points.
+
+    # Actions
+
+    Bites.
+      Melee Weapon Attack: +6 to hit, reach 0 ft., one creature in the
+      swarm's space. Hit: 7 (2d6) piercing damage, or 3 (1d6) piercing
+      damage if the swarm has half of its hit points or fewer. The target
+      must make a DC 10 Constitution saving throw, taking 14 (4d6) poison
+      damage on a failed save, or half as much damage on a successful one.
+    """
+    name = 'Swarm of Poisonous Snakes'
+    description = 'Medium swarm of Tiny beasts, unaligned'
+    challenge_rating = 2
+    armor_class = 14
+    skills = ''
+    senses = 'Blindsight 10 ft., Passive Perception 10'
+    languages = ''
+    strength = Ability(8)
+    dexterity = Ability(18)
+    constitution = Ability(11)
+    intelligence = Ability(1)
+    wisdom = Ability(10)
+    charisma = Ability(3)
+    speed = 30
+    swim_speed = 30
+    fly_speed = 0
+    climb_speed = 0
+    burrow_speed = 0
+    hp_max = 36
+    hit_dice = '8d8 + 0'
+    condition_immunities = 'charmed, frightened, grappled, paralyzed, petrified, prone, restrained, stunned'
+    damage_immunities = ''
+    damage_resistances = 'bludgeoning'
+    damage_vulnerabilities = ''
+    spells = []
+
+
+class SwarmofQuippers(Monster):
+    """
+
+    Blood Frenzy.
+      The swarm has advantage on melee attack rolls against any creature
+      that doesn't have all its hit points.
+    Swarm.
+      The swarm can occupy another creature's space and vice versa, and the
+      swarm can move through any opening large enough for a Tiny quipper.
+      The swarm can't regain hit points or gain temporary hit points.
+    Water Breathing.
+      The swarm can breathe only underwater.
+
+    # Actions
+
+    Bites.
+      Melee Weapon Attack: +5 to hit, reach 0 ft., one creature in the
+      swarm's space. Hit: 14 (4d6) piercing damage, or 7 (2d6) piercing
+      damage if the swarm has half of its hit points or fewer.
+    """
+    name = 'Swarm of Quippers'
+    description = 'Medium swarm of Tiny beasts, unaligned'
+    challenge_rating = 1
+    armor_class = 13
+    skills = ''
+    senses = 'Darkvision 60 ft., Passive Perception 8'
+    languages = ''
+    strength = Ability(13)
+    dexterity = Ability(16)
+    constitution = Ability(9)
+    intelligence = Ability(1)
+    wisdom = Ability(7)
+    charisma = Ability(2)
+    speed = 0
+    swim_speed = 40
+    fly_speed = 0
+    climb_speed = 0
+    burrow_speed = 0
+    hp_max = 28
+    hit_dice = '8d8 + -8'
+    condition_immunities = 'charmed, frightened, grappled, paralyzed, petrified, prone, restrained, stunned'
+    damage_immunities = ''
+    damage_resistances = 'bludgeoning'
+    damage_vulnerabilities = ''
+    spells = []
+
+
+class SwarmofRats(Monster):
+    """
+
+    Keen Smell.
+      The swarm has advantage on Wisdom (Perception) checks that rely on
+      smell.
+    Swarm.
+      The swarm can occupy another creature's space and vice versa, and the
+      swarm can move through any opening large enough for a Tiny rat. The
+      swarm can't regain hit points or gain temporary hit points.
+
+    # Actions
+
+    Bites.
+      Melee Weapon Attack: +2 to hit, reach 0 ft., one target in the swarm's
+      space. Hit: 7 (2d6) piercing damage, or 3 (1d6) piercing damage if the
+      swarm has half of its hit points or fewer.
+    """
+    name = 'Swarm of Rats'
+    description = 'Medium swarm of Tiny beasts, unaligned'
+    challenge_rating = 0.25
+    armor_class = 10
+    skills = ''
+    senses = 'Darkvision 30 ft., Passive Perception 10'
+    languages = ''
+    strength = Ability(9)
+    dexterity = Ability(11)
+    constitution = Ability(9)
+    intelligence = Ability(2)
+    wisdom = Ability(10)
+    charisma = Ability(3)
+    speed = 30
+    swim_speed = 0
+    fly_speed = 0
+    climb_speed = 0
+    burrow_speed = 0
+    hp_max = 24
+    hit_dice = '7d8 + -7'
+    condition_immunities = 'charmed, frightened, grappled, paralyzed, petrified, prone, restrained, stunned'
+    damage_immunities = ''
+    damage_resistances = 'bludgeoning'
+    damage_vulnerabilities = ''
+    spells = []
+
+
+class SwarmofRavens(Monster):
+    """
+
+    Swarm.
+      The swarm can occupy another creature's space and vice versa, and the
+      swarm can move through any opening large enough for a Tiny raven. The
+      swarm can't regain hit points or gain temporary hit points.
+
+    # Actions
+
+    Beaks.
+      Melee Weapon Attack: +4 to hit, reach 5 ft., one target in the swarm's
+      space. Hit: 7 (2d6) piercing damage, or 3 (1d6) piercing damage if the
+      swarm has half of its hit points or fewer.
+    """
+    name = 'Swarm of Ravens'
+    description = 'Medium swarm of Tiny beasts, unaligned'
+    challenge_rating = 0.25
+    armor_class = 12
+    skills = ''
+    senses = 'Passive Perception 15'
+    languages = ''
+    strength = Ability(6)
+    dexterity = Ability(14)
+    constitution = Ability(8)
+    intelligence = Ability(3)
+    wisdom = Ability(12)
+    charisma = Ability(6)
+    speed = 10
+    swim_speed = 0
+    fly_speed = 50
+    climb_speed = 0
+    burrow_speed = 0
+    hp_max = 24
+    hit_dice = '7d8 + -7'
+    condition_immunities = 'charmed, frightened, grappled, paralyzed, petrified, prone, restrained, stunned'
+    damage_immunities = ''
+    damage_resistances = 'bludgeoning'
+    damage_vulnerabilities = ''
+    spells = []
+
+
+class SwarmofSpiders(Monster):
+    """
+
+    Swarm.
+      The swarm can occupy another creature's space and vice versa, and the
+      swarm can move through any opening large enough for a Tiny insect. The
+      swarm can't regain hit points or gain temporary hit points.
+    Spider Climb.
+      The swarm can climb difficult surfaces, including upside down on
+      ceilings, without needing to make an ability check.
+    Web Sense.
+      While in contact with a web, the swarm knows the exact location of any
+      other creature in contact with the same web.
+    Web Walker.
+      The swarm ignores movement restrictions caused by webbing.
+
+    # Actions
+
+    Bites.
+      Melee Weapon Attack: +3 to hit, reach 0 ft., one target in the swarm's
+      space. Hit: 10 (4d4) piercing damage, or 5 (2d4) piercing damage if
+      the swarm has half of its hit points or fewer.
+    """
+    name = 'Swarm of Spiders'
+    description = 'Medium swarm of Tiny beasts, unaligned'
+    challenge_rating = 0.5
+    armor_class = 12
+    skills = ''
+    senses = 'Blindsight 10 ft., Passive Perception 8'
+    languages = ''
+    strength = Ability(3)
+    dexterity = Ability(13)
+    constitution = Ability(10)
+    intelligence = Ability(1)
+    wisdom = Ability(7)
+    charisma = Ability(1)
+    speed = 20
+    swim_speed = 0
+    fly_speed = 0
+    climb_speed = 20
+    burrow_speed = 0
+    hp_max = 22
+    hit_dice = '5d8 + 0'
+    condition_immunities = 'charmed, frightened, paralyzed, petrified, prone, restrained, stunned'
+    damage_immunities = ''
+    damage_resistances = 'bludgeoning'
+    damage_vulnerabilities = ''
+    spells = []
+
+
+class SwarmofWasps(Monster):
+    """
+
+    Swarm.
+      The swarm can occupy another creature's space and vice versa, and the
+      swarm can move through any opening large enough for a Tiny insect. The
+      swarm can't regain hit points or gain temporary hit points.
+
+    # Actions
+
+    Bites.
+      Melee Weapon Attack: +3 to hit, reach 0 ft., one target in the swarm's
+      space. Hit: 10 (4d4) piercing damage, or 5 (2d4) piercing damage if
+      the swarm has half of its hit points or fewer.
+    """
+    name = 'Swarm of Wasps'
+    description = 'Medium swarm of Tiny beasts, unaligned'
+    challenge_rating = 0.5
+    armor_class = 12
+    skills = ''
+    senses = 'Blindsight 10 ft., Passive Perception 8'
+    languages = ''
+    strength = Ability(3)
+    dexterity = Ability(13)
+    constitution = Ability(10)
+    intelligence = Ability(1)
+    wisdom = Ability(7)
+    charisma = Ability(1)
+    speed = 5
+    swim_speed = 0
+    fly_speed = 30
+    climb_speed = 0
+    burrow_speed = 0
+    hp_max = 22
+    hit_dice = '5d8 + 0'
+    condition_immunities = 'charmed, frightened, grappled, paralyzed, petrified, prone, restrained, stunned'
+    damage_immunities = ''
+    damage_resistances = 'bludgeoning'
+    damage_vulnerabilities = ''
     spells = []

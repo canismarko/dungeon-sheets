@@ -10,6 +10,7 @@ from dungeonsheets.stats import Ability
 
 class Vampire(Monster):
     """
+
     Shapechanger.
       If the vampire isn't in sun light or running water, it can use its
       action to polymorph into a Tiny bat or a Medium cloud of mist, or back
@@ -66,6 +67,9 @@ class Vampire(Monster):
       Sunlight Hypersensitivity. The vampire takes 20 radiant damage when it
       starts its turn in sunlight. While in sunlight, it has disadvantage on
       attack rolls and ability checks.
+
+    # Actions
+
     Multiattack (Vampire Form Only).
       The vampire makes two attacks, only one of which can be a bite attack.
     Unarmed Strike (Vampire Form Only).
@@ -104,14 +108,24 @@ class Vampire(Monster):
       of the vampire and obeying its spoken commands. The beasts remain for
       1 hour, until the vampire dies, or until the vampire dismisses them as
       a bonus action.
+
+    # Legendary Actions
+
+    Move.
+      The vampire moves up to its speed without provoking opportunity
+      attacks.
+    Unarmed Strike.
+      The vampire makes one unarmed strike.
+    Bite (Costs 2 Actions).
+      The vampire makes one bite attack.
     """
-    name = "Vampire"
-    description = "Medium undead, lawful evil"
+    name = 'Vampire'
+    description = 'Medium undead, lawful evil'
     challenge_rating = 13
     armor_class = 16
-    skills = "Perception +7, Stealth +9"
-    senses = "Darkvision 120 ft., Passive Perception 17"
-    languages = "the languages it knew in life"
+    skills = 'Perception +7, Stealth +9'
+    senses = 'Darkvision 120 ft., Passive Perception 17'
+    languages = 'the languages it knew in life'
     strength = Ability(18)
     dexterity = Ability(18)
     constitution = Ability(18)
@@ -122,13 +136,19 @@ class Vampire(Monster):
     swim_speed = 0
     fly_speed = 0
     climb_speed = 0
+    burrow_speed = 0
     hp_max = 144
-    hit_dice = "17d8"
+    hit_dice = '17d8 + 68'
+    condition_immunities = ''
+    damage_immunities = ''
+    damage_resistances = 'necrotic'
+    damage_vulnerabilities = ''
     spells = []
 
 
 class VampireSpawn(Monster):
     """
+
     Regeneration.
       The vampire regains 10 hit points at the start of its turn if it has
       at least 1 hit point and isn't in sunlight or running water. If the
@@ -153,6 +173,9 @@ class VampireSpawn(Monster):
       Sunlight Hypersensitivity. The vampire takes 20 radiant damage when it
       starts its turn in sunlight. While in sunlight, it has disadvantage on
       attack rolls and ability checks.
+
+    # Actions
+
     Multiattack.
       The vampire makes two attacks, only one of which can be a bite attack.
     Bite.
@@ -169,13 +192,13 @@ class VampireSpawn(Monster):
       + 3) slashing damage. Instead of dealing damage, the vampire can
       grapple the target (escape DC 13).
     """
-    name = "Vampire Spawn"
-    description = "Medium undead, neutral evil"
+    name = 'Vampire Spawn'
+    description = 'Medium undead, neutral evil'
     challenge_rating = 5
     armor_class = 15
-    skills = "Perception +3, Stealth +6"
-    senses = "Darkvision 60 ft., Passive Perception 13"
-    languages = "the languages it knew in life"
+    skills = 'Perception +3, Stealth +6'
+    senses = 'Darkvision 60 ft., Passive Perception 13'
+    languages = 'the languages it knew in life'
     strength = Ability(16)
     dexterity = Ability(16)
     constitution = Ability(16)
@@ -186,13 +209,21 @@ class VampireSpawn(Monster):
     swim_speed = 0
     fly_speed = 0
     climb_speed = 0
+    burrow_speed = 0
     hp_max = 82
-    hit_dice = "11d8"
+    hit_dice = '11d8 + 33'
+    condition_immunities = ''
+    damage_immunities = ''
+    damage_resistances = 'necrotic'
+    damage_vulnerabilities = ''
     spells = []
 
 
 class Veteran(Monster):
     """
+
+    # Actions
+
     Multiattack.
       The veteran makes two longsword attacks. If it has a shortsword drawn,
       it can also make a shortsword attack.
@@ -207,13 +238,13 @@ class Veteran(Monster):
       Ranged Weapon Attack: +3 to hit, range 100/400 ft., one target. Hit: 6
       (1d10 + 1) piercing damage.
     """
-    name = "Veteran"
-    description = "Medium humanoid, any alignment"
+    name = 'Veteran'
+    description = 'Medium humanoid, any alignment'
     challenge_rating = 3
     armor_class = 17
-    skills = "Athletics +5, Perception +2"
-    senses = "Passive Perception 12"
-    languages = "any one language (usually Common)"
+    skills = 'Athletics +5, Perception +2'
+    senses = 'Passive Perception 12'
+    languages = 'any one language (usually Common)'
     strength = Ability(16)
     dexterity = Ability(13)
     constitution = Ability(14)
@@ -224,29 +255,38 @@ class Veteran(Monster):
     swim_speed = 0
     fly_speed = 0
     climb_speed = 0
+    burrow_speed = 0
     hp_max = 58
-    hit_dice = "9d8"
+    hit_dice = '9d8 + 18'
+    condition_immunities = ''
+    damage_immunities = ''
+    damage_resistances = ''
+    damage_vulnerabilities = ''
     spells = []
 
 
 class VioletFungus(Monster):
     """
+
     False Appearance.
       While the violet fungus remains motionless, it is indistinguishable
       from an ordinary fungus.
+
+    # Actions
+
     Multiattack.
       The fungus makes 1d4 Rotting Touch attacks.
     Rotting Touch.
       Melee Weapon Attack: +2 to hit, reach 10 ft., one creature. Hit: 4
       (1d8) necrotic damage.
     """
-    name = "Violet Fungus"
-    description = "Medium plant, unaligned"
+    name = 'Violet Fungus'
+    description = 'Medium plant, unaligned'
     challenge_rating = 0.25
     armor_class = 5
-    skills = ""
-    senses = "Blindsight 30 ft. (blind beyond this radius), Passive Perception 6"
-    languages = ""
+    skills = ''
+    senses = 'Blindsight 30 ft. (blind beyond this radius), Passive Perception 6'
+    languages = ''
     strength = Ability(3)
     dexterity = Ability(1)
     constitution = Ability(10)
@@ -257,16 +297,25 @@ class VioletFungus(Monster):
     swim_speed = 0
     fly_speed = 0
     climb_speed = 0
+    burrow_speed = 0
     hp_max = 18
-    hit_dice = "4d8"
+    hit_dice = '4d8 + 0'
+    condition_immunities = 'blinded, blinded, frightened'
+    damage_immunities = ''
+    damage_resistances = ''
+    damage_vulnerabilities = ''
     spells = []
 
 
 class Vrock(Monster):
     """
+
     Magic Resistance.
       The vrock has advantage on saving throws against spells and other
       magical effects.
+
+    # Actions
+
     Multiattack.
       The vrock makes two attacks: one with its beak and one with its
       talons.
@@ -301,13 +350,13 @@ class Vrock(Monster):
       demons. It remains for 1 minute, until it or its summoner dies, or
       until its summoner dismisses it as an action.
     """
-    name = "Vrock"
-    description = "Large fiend, chaotic evil"
+    name = 'Vrock'
+    description = 'Large fiend, chaotic evil'
     challenge_rating = 6
     armor_class = 15
-    skills = ""
-    senses = "Darkvision 120 ft., Passive Perception 11"
-    languages = "Abyssal, telepathy 120 ft."
+    skills = ''
+    senses = 'Darkvision 120 ft., Passive Perception 11'
+    languages = 'Abyssal, telepathy 120 ft.'
     strength = Ability(17)
     dexterity = Ability(15)
     constitution = Ability(18)
@@ -318,13 +367,19 @@ class Vrock(Monster):
     swim_speed = 0
     fly_speed = 60
     climb_speed = 0
+    burrow_speed = 0
     hp_max = 104
-    hit_dice = "11d10"
+    hit_dice = '11d10 + 44'
+    condition_immunities = 'poisoned'
+    damage_immunities = 'poison'
+    damage_resistances = 'cold'
+    damage_vulnerabilities = ''
     spells = []
 
 
 class Vulture(Monster):
     """
+
     Keen Sight and Smell.
       The vulture has advantage on Wisdom (Perception) checks that rely on
       sight or smell.
@@ -332,17 +387,20 @@ class Vulture(Monster):
       The vulture has advantage on an attack roll against a creature if at
       least one of the vulture's allies is within 5 ft. of the creature and
       the ally isn't incapacitated.
+
+    # Actions
+
     Beak.
       Melee Weapon Attack: +2 to hit, reach 5 ft., one target. Hit: 2 (1d4)
       piercing damage.
     """
-    name = "Vulture"
-    description = "Medium beast, unaligned"
+    name = 'Vulture'
+    description = 'Medium beast, unaligned'
     challenge_rating = 0
     armor_class = 10
-    skills = "Perception +3"
-    senses = "Passive Perception 13"
-    languages = ""
+    skills = 'Perception +3'
+    senses = 'Passive Perception 13'
+    languages = ''
     strength = Ability(7)
     dexterity = Ability(10)
     constitution = Ability(13)
@@ -353,6 +411,11 @@ class Vulture(Monster):
     swim_speed = 0
     fly_speed = 50
     climb_speed = 0
+    burrow_speed = 0
     hp_max = 5
-    hit_dice = "1d8"
+    hit_dice = '1d8 + 1'
+    condition_immunities = ''
+    damage_immunities = ''
+    damage_resistances = ''
+    damage_vulnerabilities = ''
     spells = []

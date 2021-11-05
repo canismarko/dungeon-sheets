@@ -10,8 +10,12 @@ from dungeonsheets.stats import Ability
 
 class YoungBlackDragon(Monster):
     """
+
     Amphibious.
       The dragon can breathe air and water.
+
+    # Actions
+
     Multiattack.
       The dragon makes three attacks: one with its bite and two with its
       claws.
@@ -27,13 +31,13 @@ class YoungBlackDragon(Monster):
       49 (11d8) acid damage on a failed save, or half as much damage on a
       successful one.
     """
-    name = "Young Black Dragon"
-    description = "Large dragon, chaotic evil"
+    name = 'Young Black Dragon'
+    description = 'Large dragon, chaotic evil'
     challenge_rating = 7
     armor_class = 18
-    skills = "Perception +6, Stealth +5"
-    senses = "Blindsight 30 ft., Darkvision 120 ft., Passive Perception 16"
-    languages = "Common, Draconic"
+    skills = 'Perception +6, Stealth +5'
+    senses = 'Blindsight 30 ft., Darkvision 120 ft., Passive Perception 16'
+    languages = 'Common, Draconic'
     strength = Ability(19)
     dexterity = Ability(14)
     constitution = Ability(17)
@@ -44,13 +48,21 @@ class YoungBlackDragon(Monster):
     swim_speed = 40
     fly_speed = 80
     climb_speed = 0
+    burrow_speed = 0
     hp_max = 127
-    hit_dice = "15d10"
+    hit_dice = '15d10 + 45'
+    condition_immunities = ''
+    damage_immunities = 'acid'
+    damage_resistances = ''
+    damage_vulnerabilities = ''
     spells = []
 
 
 class YoungBlueDragon(Monster):
     """
+
+    # Actions
+
     Multiattack.
       The dragon makes three attacks: one with its bite and two with its
       claws.
@@ -66,13 +78,13 @@ class YoungBlueDragon(Monster):
       taking 55 (10d10) lightning damage on a failed save, or half as much
       damage on a successful one.
     """
-    name = "Young Blue Dragon"
-    description = "Large dragon, lawful evil"
+    name = 'Young Blue Dragon'
+    description = 'Large dragon, lawful evil'
     challenge_rating = 9
     armor_class = 18
-    skills = "Perception +9, Stealth +4"
-    senses = "Blindsight 30 ft., Darkvision 120 ft., Passive Perception 19"
-    languages = "Common, Draconic"
+    skills = 'Perception +9, Stealth +4'
+    senses = 'Blindsight 30 ft., Darkvision 120 ft., Passive Perception 19'
+    languages = 'Common, Draconic'
     strength = Ability(21)
     dexterity = Ability(10)
     constitution = Ability(19)
@@ -83,13 +95,21 @@ class YoungBlueDragon(Monster):
     swim_speed = 0
     fly_speed = 80
     climb_speed = 0
+    burrow_speed = 40
     hp_max = 152
-    hit_dice = "16d10"
+    hit_dice = '16d10 + 64'
+    condition_immunities = ''
+    damage_immunities = 'lightning'
+    damage_resistances = ''
+    damage_vulnerabilities = ''
     spells = []
 
 
 class YoungBrassDragon(Monster):
     """
+
+    # Actions
+
     Multiattack.
       The dragon makes three attacks: one with its bite and two with its
       claws.
@@ -113,13 +133,13 @@ class YoungBrassDragon(Monster):
       creature if the creature takes damage or someone uses an action to
       wake it.
     """
-    name = "Young Brass Dragon"
-    description = "Large dragon, chaotic good"
+    name = 'Young Brass Dragon'
+    description = 'Large dragon, chaotic good'
     challenge_rating = 6
     armor_class = 17
-    skills = "Perception +6, Persuasion +5, Stealth +3"
-    senses = "Blindsight 30 ft., Darkvision 120 ft., Passive Perception 16"
-    languages = "Common, Draconic"
+    skills = 'Perception +6, Persuasion +5, Stealth +3'
+    senses = 'Blindsight 30 ft., Darkvision 120 ft., Passive Perception 16'
+    languages = 'Common, Draconic'
     strength = Ability(19)
     dexterity = Ability(10)
     constitution = Ability(17)
@@ -130,15 +150,24 @@ class YoungBrassDragon(Monster):
     swim_speed = 0
     fly_speed = 80
     climb_speed = 0
+    burrow_speed = 20
     hp_max = 110
-    hit_dice = "13d10"
+    hit_dice = '13d10 + 39'
+    condition_immunities = ''
+    damage_immunities = 'fire'
+    damage_resistances = ''
+    damage_vulnerabilities = ''
     spells = []
 
 
 class YoungBronzeDragon(Monster):
     """
+
     Amphibious.
       The dragon can breathe air and water.
+
+    # Actions
+
     Multiattack.
       The dragon makes three attacks: one with its bite and two with its
       claws.
@@ -161,13 +190,13 @@ class YoungBronzeDragon(Monster):
       saving throw. On a failed save, the creature is pushed 40 feet away
       from the dragon.
     """
-    name = "Young Bronze Dragon"
-    description = "Large dragon, lawful good"
+    name = 'Young Bronze Dragon'
+    description = 'Large dragon, lawful good'
     challenge_rating = 8
     armor_class = 18
-    skills = "Insight +4, Perception +7, Stealth +3"
-    senses = "Blindsight 30 ft., Darkvision 120 ft., Passive Perception 17"
-    languages = "Common, Draconic"
+    skills = 'Insight +4, Perception +7, Stealth +3'
+    senses = 'Blindsight 30 ft., Darkvision 120 ft., Passive Perception 17'
+    languages = 'Common, Draconic'
     strength = Ability(21)
     dexterity = Ability(10)
     constitution = Ability(19)
@@ -178,13 +207,21 @@ class YoungBronzeDragon(Monster):
     swim_speed = 40
     fly_speed = 80
     climb_speed = 0
+    burrow_speed = 0
     hp_max = 142
-    hit_dice = "15d10"
+    hit_dice = '15d10 + 60'
+    condition_immunities = ''
+    damage_immunities = 'lightning'
+    damage_resistances = ''
+    damage_vulnerabilities = ''
     spells = []
 
 
 class YoungCopperDragon(Monster):
     """
+
+    # Actions
+
     Multiattack.
       The dragon makes three attacks: one with its bite and two with its
       claws.
@@ -211,13 +248,13 @@ class YoungCopperDragon(Monster):
       can repeat the saving throw at the end of each of its turns, ending
       the effect on itself with a successful save.
     """
-    name = "Young Copper Dragon"
-    description = "Large dragon, chaotic good"
+    name = 'Young Copper Dragon'
+    description = 'Large dragon, chaotic good'
     challenge_rating = 7
     armor_class = 17
-    skills = "Deception +5, Perception +7, Stealth +4"
-    senses = "Blindsight 30 ft., Darkvision 120 ft., Passive Perception 17"
-    languages = "Common, Draconic"
+    skills = 'Deception +5, Perception +7, Stealth +4'
+    senses = 'Blindsight 30 ft., Darkvision 120 ft., Passive Perception 17'
+    languages = 'Common, Draconic'
     strength = Ability(19)
     dexterity = Ability(12)
     constitution = Ability(17)
@@ -228,15 +265,24 @@ class YoungCopperDragon(Monster):
     swim_speed = 0
     fly_speed = 80
     climb_speed = 40
+    burrow_speed = 0
     hp_max = 119
-    hit_dice = "14d10"
+    hit_dice = '14d10 + 42'
+    condition_immunities = ''
+    damage_immunities = 'acid'
+    damage_resistances = ''
+    damage_vulnerabilities = ''
     spells = []
 
 
 class YoungGoldDragon(Monster):
     """
+
     Amphibious.
       The dragon can breathe air and water.
+
+    # Actions
+
     Multiattack.
       The dragon makes three attacks: one with its bite and two with its
       claws.
@@ -261,13 +307,13 @@ class YoungGoldDragon(Monster):
       throw at the end of each of its turns, ending the effect on itself on
       a success.
     """
-    name = "Young Gold Dragon"
-    description = "Large dragon, lawful good"
+    name = 'Young Gold Dragon'
+    description = 'Large dragon, lawful good'
     challenge_rating = 10
     armor_class = 18
-    skills = "Insight +5, Perception +9, Persuasion +9, Stealth +6"
-    senses = "Blindsight 30 ft., Darkvision 120 ft., Passive Perception 19"
-    languages = "Common, Draconic"
+    skills = 'Insight +5, Perception +9, Persuasion +9, Stealth +6'
+    senses = 'Blindsight 30 ft., Darkvision 120 ft., Passive Perception 19'
+    languages = 'Common, Draconic'
     strength = Ability(23)
     dexterity = Ability(14)
     constitution = Ability(21)
@@ -278,15 +324,24 @@ class YoungGoldDragon(Monster):
     swim_speed = 40
     fly_speed = 80
     climb_speed = 0
+    burrow_speed = 0
     hp_max = 178
-    hit_dice = "17d10"
+    hit_dice = '17d10 + 85'
+    condition_immunities = ''
+    damage_immunities = 'fire'
+    damage_resistances = ''
+    damage_vulnerabilities = ''
     spells = []
 
 
 class YoungGreenDragon(Monster):
     """
+
     Amphibious.
       The dragon can breathe air and water.
+
+    # Actions
+
     Multiattack.
       The dragon makes three attacks: one with its bite and two with its
       claws.
@@ -302,13 +357,13 @@ class YoungGreenDragon(Monster):
       (12d6) poison damage on a failed save, or half as much damage on a
       successful one.
     """
-    name = "Young Green Dragon"
-    description = "Large dragon, lawful evil"
+    name = 'Young Green Dragon'
+    description = 'Large dragon, lawful evil'
     challenge_rating = 8
     armor_class = 18
-    skills = "Deception +5, Perception +7, Stealth +4"
-    senses = "Blindsight 30 ft., Darkvision 120 ft., Passive Perception 17"
-    languages = "Common, Draconic"
+    skills = 'Deception +5, Perception +7, Stealth +4'
+    senses = 'Blindsight 30 ft., Darkvision 120 ft., Passive Perception 17'
+    languages = 'Common, Draconic'
     strength = Ability(19)
     dexterity = Ability(12)
     constitution = Ability(17)
@@ -319,13 +374,21 @@ class YoungGreenDragon(Monster):
     swim_speed = 40
     fly_speed = 80
     climb_speed = 0
+    burrow_speed = 0
     hp_max = 136
-    hit_dice = "16d10"
+    hit_dice = '16d10 + 48'
+    condition_immunities = 'poisoned'
+    damage_immunities = 'poison'
+    damage_resistances = ''
+    damage_vulnerabilities = ''
     spells = []
 
 
 class YoungRedDragon(Monster):
     """
+
+    # Actions
+
     Multiattack.
       The dragon makes three attacks: one with its bite and two with its
       claws.
@@ -340,13 +403,13 @@ class YoungRedDragon(Monster):
       must make a DC 17 Dexterity saving throw, taking 56 (16d6) fire damage
       on a failed save, or half as much damage on a successful one.
     """
-    name = "Young Red Dragon"
-    description = "Large dragon, chaotic evil"
+    name = 'Young Red Dragon'
+    description = 'Large dragon, chaotic evil'
     challenge_rating = 10
     armor_class = 18
-    skills = "Perception +8, Stealth +4"
-    senses = "Blindsight 30 ft., Darkvision 120 ft., Passive Perception 18"
-    languages = "Common, Draconic"
+    skills = 'Perception +8, Stealth +4'
+    senses = 'Blindsight 30 ft., Darkvision 120 ft., Passive Perception 18'
+    languages = 'Common, Draconic'
     strength = Ability(23)
     dexterity = Ability(10)
     constitution = Ability(21)
@@ -357,13 +420,21 @@ class YoungRedDragon(Monster):
     swim_speed = 0
     fly_speed = 80
     climb_speed = 40
+    burrow_speed = 0
     hp_max = 178
-    hit_dice = "17d10"
+    hit_dice = '17d10 + 85'
+    condition_immunities = ''
+    damage_immunities = 'fire'
+    damage_resistances = ''
+    damage_vulnerabilities = ''
     spells = []
 
 
 class YoungSilverDragon(Monster):
     """
+
+    # Actions
+
     Multiattack.
       The dragon makes three attacks: one with its bite and two with its
       claws.
@@ -387,13 +458,13 @@ class YoungSilverDragon(Monster):
       saving throw at the end of each of its turns, ending the effect on
       itself on a success.
     """
-    name = "Young Silver Dragon"
-    description = "Large dragon, lawful good"
+    name = 'Young Silver Dragon'
+    description = 'Large dragon, lawful good'
     challenge_rating = 9
     armor_class = 18
-    skills = "Arcana +6, History +6, Perception +8, Stealth +4"
-    senses = "Blindsight 30 ft., Darkvision 120 ft., Passive Perception 18"
-    languages = "Common, Draconic"
+    skills = 'Arcana +6, History +6, Perception +8, Stealth +4'
+    senses = 'Blindsight 30 ft., Darkvision 120 ft., Passive Perception 18'
+    languages = 'Common, Draconic'
     strength = Ability(23)
     dexterity = Ability(10)
     constitution = Ability(21)
@@ -404,17 +475,26 @@ class YoungSilverDragon(Monster):
     swim_speed = 0
     fly_speed = 80
     climb_speed = 0
+    burrow_speed = 0
     hp_max = 168
-    hit_dice = "16d10"
+    hit_dice = '16d10 + 80'
+    condition_immunities = ''
+    damage_immunities = 'cold'
+    damage_resistances = ''
+    damage_vulnerabilities = ''
     spells = []
 
 
 class YoungWhiteDragon(Monster):
     """
+
     Ice Walk.
       The dragon can move across and climb icy surfaces without needing to
       make an ability check. Additionally, difficult terrain composed of ice
       or snow doesn't cost it extra moment.
+
+    # Actions
+
     Multiattack.
       The dragon makes three attacks: one with its bite and two with its
       claws.
@@ -430,13 +510,13 @@ class YoungWhiteDragon(Monster):
       (10d8) cold damage on a failed save, or half as much damage on a
       successful one.
     """
-    name = "Young White Dragon"
-    description = "Large dragon, chaotic evil"
+    name = 'Young White Dragon'
+    description = 'Large dragon, chaotic evil'
     challenge_rating = 6
     armor_class = 17
-    skills = "Perception +6, Stealth +3"
-    senses = "Blindsight 30 ft., Darkvision 120 ft., Passive Perception 16"
-    languages = "Common, Draconic"
+    skills = 'Perception +6, Stealth +3'
+    senses = 'Blindsight 30 ft., Darkvision 120 ft., Passive Perception 16'
+    languages = 'Common, Draconic'
     strength = Ability(18)
     dexterity = Ability(10)
     constitution = Ability(18)
@@ -447,6 +527,11 @@ class YoungWhiteDragon(Monster):
     swim_speed = 40
     fly_speed = 80
     climb_speed = 0
+    burrow_speed = 20
     hp_max = 133
-    hit_dice = "14d10"
+    hit_dice = '14d10 + 56'
+    condition_immunities = ''
+    damage_immunities = 'cold'
+    damage_resistances = ''
+    damage_vulnerabilities = ''
     spells = []

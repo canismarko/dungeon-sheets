@@ -10,6 +10,7 @@ from dungeonsheets.stats import Ability
 
 class Aboleth(Monster):
     """
+
     Amphibious.
       The aboleth can breathe air and water.
     Mucous Cloud.
@@ -22,6 +23,9 @@ class Aboleth(Monster):
       If a creature communicates telepathically with the aboleth, the
       aboleth learns the creature's greatest desires if the aboleth can see
       the creature.
+
+    # Actions
+
     Multiattack.
       The aboleth makes three tentacle attacks.
     Tentacle.
@@ -52,14 +56,24 @@ class Aboleth(Monster):
       saving throw. On a success, the effect ends. No more than once every
       24 hours, the target can also repeat the saving throw when it is at
       least 1 mile away from the aboleth.
+
+    # Legendary Actions
+
+    Detect.
+      The aboleth makes a Wisdom (Perception) check.
+    Tail Swipe.
+      The aboleth makes one tail attack.
+    Psychic Drain (Costs 2 Actions).
+      One creature charmed by the aboleth takes 10 (3d6) psychic damage, and
+      the aboleth regains hit points equal to the damage the creature takes.
     """
-    name = "Aboleth"
-    description = "Large aberration, lawful evil"
+    name = 'Aboleth'
+    description = 'Large aberration, lawful evil'
     challenge_rating = 10
     armor_class = 17
-    skills = "History +12, Perception +10"
-    senses = "Darkvision 120 ft., Passive Perception 20"
-    languages = "Deep Speech, telepathy 120 ft."
+    skills = 'History +12, Perception +10'
+    senses = 'Darkvision 120 ft., Passive Perception 20'
+    languages = 'Deep Speech, telepathy 120 ft.'
     strength = Ability(21)
     dexterity = Ability(9)
     constitution = Ability(15)
@@ -70,34 +84,38 @@ class Aboleth(Monster):
     swim_speed = 40
     fly_speed = 0
     climb_speed = 0
+    burrow_speed = 0
     hp_max = 135
-    hit_dice = "18d10"
+    hit_dice = '18d10 + 36'
+    condition_immunities = ''
+    damage_immunities = ''
+    damage_resistances = ''
+    damage_vulnerabilities = ''
     spells = []
 
 
 class Acolyte(Monster):
     """
+
     Spellcasting.
-      The acolyte is a 1st-level spellcaster. Its spellcasting ability is
-      Wisdom (spell save DC 12, +4 to hit with spell attacks). The acolyte
-      has following cleric spells prepared:
-      
-  
-      
-      - Cantrips (at will): light, sacred flame, thaumaturgy
-      
-      - 1st level (3 slots): bless, cure wounds, sanctuary
+      The acolyte is a 1st-level spellcaster. Its spellcasting ability is Wisdom (spell save DC 12, +4 to hit with spell attacks). The acolyte has following cleric spells prepared:
+
+    - Cantrips (at will): light, sacred flame, thaumaturgy
+    - 1st level (3 slots): bless, cure wounds, sanctuary
+
+    # Actions
+
     Club.
       Melee Weapon Attack: +2 to hit, reach 5 ft., one target. Hit: 2 (1d4)
       bludgeoning damage.
     """
-    name = "Acolyte"
-    description = "Medium humanoid, any alignment"
+    name = 'Acolyte'
+    description = 'Medium humanoid, any alignment'
     challenge_rating = 0.25
     armor_class = 10
-    skills = "Medicine +4, Religion +2"
-    senses = "Passive Perception 12"
-    languages = "any one language (usually Common)"
+    skills = 'Medicine +4, Religion +2'
+    senses = 'Passive Perception 12'
+    languages = 'any one language (usually Common)'
     strength = Ability(10)
     dexterity = Ability(10)
     constitution = Ability(10)
@@ -108,17 +126,26 @@ class Acolyte(Monster):
     swim_speed = 0
     fly_speed = 0
     climb_speed = 0
+    burrow_speed = 0
     hp_max = 9
-    hit_dice = "2d8"
-    spells = ["light", "sacred flame", "thaumaturgy", "bless", "cure wounds", "sanctuary"]
+    hit_dice = '2d8 + 0'
+    condition_immunities = ''
+    damage_immunities = ''
+    damage_resistances = ''
+    damage_vulnerabilities = ''
+    spells = ['light', 'sacred flame', 'thaumaturgy', 'bless', 'cure wounds', 'sanctuary']
 
 
 class AdultBlackDragon(Monster):
     """
+
     Amphibious.
       The dragon can breathe air and water.
     Legendary Resistance.
       If the dragon fails a saving throw, it can choose to succeed instead.
+
+    # Actions
+
     Multiattack.
       The dragon can use its Frightful Presence. It then makes three
       attacks: one with its bite and two with its claws.
@@ -144,14 +171,26 @@ class AdultBlackDragon(Monster):
       creature in that line must make a DC 18 Dexterity saving throw, taking
       54 (12d8) acid damage on a failed save, or half as much damage on a
       successful one.
+
+    # Legendary Actions
+
+    Detect.
+      The dragon makes a Wisdom (Perception) check.
+    Tail Attack.
+      The dragon makes a tail attack.
+    Wing Attack (Costs 2 Actions).
+      The dragon beats its wings. Each creature within 10 ft. of the dragon
+      must succeed on a DC 19 Dexterity saving throw or take 13 (2d6 + 6)
+      bludgeoning damage and be knocked prone. The dragon can then fly up to
+      half its flying speed.
     """
-    name = "Adult Black Dragon"
-    description = "Huge dragon, chaotic evil"
+    name = 'Adult Black Dragon'
+    description = 'Huge dragon, chaotic evil'
     challenge_rating = 14
     armor_class = 19
-    skills = "Perception +11, Stealth +7"
-    senses = "Blindsight 60 ft., Darkvision 120 ft., Passive Perception 21"
-    languages = "Common, Draconic"
+    skills = 'Perception +11, Stealth +7'
+    senses = 'Blindsight 60 ft., Darkvision 120 ft., Passive Perception 21'
+    languages = 'Common, Draconic'
     strength = Ability(23)
     dexterity = Ability(14)
     constitution = Ability(21)
@@ -162,15 +201,24 @@ class AdultBlackDragon(Monster):
     swim_speed = 40
     fly_speed = 80
     climb_speed = 0
+    burrow_speed = 0
     hp_max = 195
-    hit_dice = "17d12"
+    hit_dice = '17d12 + 85'
+    condition_immunities = ''
+    damage_immunities = 'acid'
+    damage_resistances = ''
+    damage_vulnerabilities = ''
     spells = []
 
 
 class AdultBlueDragon(Monster):
     """
+
     Legendary Resistance.
       If the dragon fails a saving throw, it can choose to succeed instead.
+
+    # Actions
+
     Multiattack.
       The dragon can use its Frightful Presence. It then makes three
       attacks: one with its bite and two with its claws.
@@ -196,14 +244,26 @@ class AdultBlueDragon(Monster):
       Each creature in that line must make a DC 19 Dexterity saving throw,
       taking 66 (12d10) lightning damage on a failed save, or half as much
       damage on a successful one.
+
+    # Legendary Actions
+
+    Detect.
+      The dragon makes a Wisdom (Perception) check.
+    Tail Attack.
+      The dragon makes a tail attack.
+    Wing Attack (Costs 2 Actions).
+      The dragon beats its wings. Each creature within 10 ft. of the dragon
+      must succeed on a DC 20 Dexterity saving throw or take 14 (2d6 + 7)
+      bludgeoning damage and be knocked prone. The dragon can then fly up to
+      half its flying speed.
     """
-    name = "Adult Blue Dragon"
-    description = "Huge dragon, lawful evil"
+    name = 'Adult Blue Dragon'
+    description = 'Huge dragon, lawful evil'
     challenge_rating = 16
     armor_class = 19
-    skills = "Perception +12, Stealth +5"
-    senses = "Blindsight 60 ft., Darkvision 120 ft., Passive Perception 22"
-    languages = "Common, Draconic"
+    skills = 'Perception +12, Stealth +5'
+    senses = 'Blindsight 60 ft., Darkvision 120 ft., Passive Perception 22'
+    languages = 'Common, Draconic'
     strength = Ability(25)
     dexterity = Ability(10)
     constitution = Ability(23)
@@ -214,15 +274,24 @@ class AdultBlueDragon(Monster):
     swim_speed = 0
     fly_speed = 80
     climb_speed = 0
+    burrow_speed = 30
     hp_max = 225
-    hit_dice = "18d12"
+    hit_dice = '18d12 + 108'
+    condition_immunities = ''
+    damage_immunities = 'lightning'
+    damage_resistances = ''
+    damage_vulnerabilities = ''
     spells = []
 
 
 class AdultBrassDragon(Monster):
     """
+
     Legendary Resistance.
       If the dragon fails a saving throw, it can choose to succeed instead.
+
+    # Actions
+
     Multiattack.
       The dragon can use its Frightful Presence. It then makes three
       attacks: one with its bite and two with its claws.
@@ -256,14 +325,26 @@ class AdultBrassDragon(Monster):
       throw or fall unconscious for 10 minutes. This effect ends for a
       creature if the creature takes damage or someone uses an action to
       wake it.
+
+    # Legendary Actions
+
+    Detect.
+      The dragon makes a Wisdom (Perception) check.
+    Tail Attack.
+      The dragon makes a tail attack.
+    Wing Attack (Costs 2 Actions).
+      The dragon beats its wings. Each creature within 10 ft. of the dragon
+      must succeed on a DC 19 Dexterity saving throw or take 13 (2d6 + 6)
+      bludgeoning damage and be knocked prone. The dragon can then fly up to
+      half its flying speed.
     """
-    name = "Adult Brass Dragon"
-    description = "Huge dragon, chaotic good"
+    name = 'Adult Brass Dragon'
+    description = 'Huge dragon, chaotic good'
     challenge_rating = 13
     armor_class = 18
-    skills = "History +7, Perception +11, Persuasion +8, Stealth +5"
-    senses = "Blindsight 60 ft., Darkvision 120 ft., Passive Perception 21"
-    languages = "Common, Draconic"
+    skills = 'History +7, Perception +11, Persuasion +8, Stealth +5'
+    senses = 'Blindsight 60 ft., Darkvision 120 ft., Passive Perception 21'
+    languages = 'Common, Draconic'
     strength = Ability(23)
     dexterity = Ability(10)
     constitution = Ability(21)
@@ -274,17 +355,26 @@ class AdultBrassDragon(Monster):
     swim_speed = 0
     fly_speed = 80
     climb_speed = 0
+    burrow_speed = 40
     hp_max = 172
-    hit_dice = "15d12"
+    hit_dice = '15d12 + 75'
+    condition_immunities = ''
+    damage_immunities = 'fire'
+    damage_resistances = ''
+    damage_vulnerabilities = ''
     spells = []
 
 
 class AdultBronzeDragon(Monster):
     """
+
     Amphibious.
       The dragon can breathe air and water.
     Legendary Resistance.
       If the dragon fails a saving throw, it can choose to succeed instead.
+
+    # Actions
+
     Multiattack.
       The dragon can use its Frightful Presence. It then makes three
       attacks: one with its bite and two with its claws.
@@ -317,14 +407,26 @@ class AdultBronzeDragon(Monster):
       cone. Each creature in that area must succeed on a DC 19 Strength
       saving throw. On a failed save, the creature is pushed 60 feet away
       from the dragon.
+
+    # Legendary Actions
+
+    Detect.
+      The dragon makes a Wisdom (Perception) check.
+    Tail Attack.
+      The dragon makes a tail attack.
+    Wing Attack (Costs 2 Actions).
+      The dragon beats its wings. Each creature within 10 ft. of the dragon
+      must succeed on a DC 20 Dexterity saving throw or take 14 (2d6 + 7)
+      bludgeoning damage and be knocked prone. The dragon can then fly up to
+      half its flying speed.
     """
-    name = "Adult Bronze Dragon"
-    description = "Huge dragon, lawful good"
+    name = 'Adult Bronze Dragon'
+    description = 'Huge dragon, lawful good'
     challenge_rating = 15
     armor_class = 19
-    skills = "Insight +7, Perception +12, Stealth +5"
-    senses = "Blindsight 60 ft., Darkvision 120 ft., Passive Perception 22"
-    languages = "Common, Draconic"
+    skills = 'Insight +7, Perception +12, Stealth +5'
+    senses = 'Blindsight 60 ft., Darkvision 120 ft., Passive Perception 22'
+    languages = 'Common, Draconic'
     strength = Ability(25)
     dexterity = Ability(10)
     constitution = Ability(23)
@@ -335,15 +437,24 @@ class AdultBronzeDragon(Monster):
     swim_speed = 40
     fly_speed = 80
     climb_speed = 0
+    burrow_speed = 0
     hp_max = 212
-    hit_dice = "17d12"
+    hit_dice = '17d12 + 102'
+    condition_immunities = ''
+    damage_immunities = 'lightning'
+    damage_resistances = ''
+    damage_vulnerabilities = ''
     spells = []
 
 
 class AdultCopperDragon(Monster):
     """
+
     Legendary Resistance.
       If the dragon fails a saving throw, it can choose to succeed instead.
+
+    # Actions
+
     Multiattack.
       The dragon can use its Frightful Presence. It then makes three
       attacks: one with its bite and two with its claws.
@@ -380,14 +491,26 @@ class AdultCopperDragon(Monster):
       its turn, but not both. These effects last for 1 minute. The creature
       can repeat the saving throw at the end of each of its turns, ending
       the effect on itself with a successful save.
+
+    # Legendary Actions
+
+    Detect.
+      The dragon makes a Wisdom (Perception) check.
+    Tail Attack.
+      The dragon makes a tail attack.
+    Wing Attack (Costs 2 Actions).
+      The dragon beats its wings. Each creature within 10 ft. of the dragon
+      must succeed on a DC 19 Dexterity saving throw or take 13 (2d6 + 6)
+      bludgeoning damage and be knocked prone. The dragon can then fly up to
+      half its flying speed.
     """
-    name = "Adult Copper Dragon"
-    description = "Huge dragon, chaotic good"
+    name = 'Adult Copper Dragon'
+    description = 'Huge dragon, chaotic good'
     challenge_rating = 14
     armor_class = 18
-    skills = "Deception +8, Perception +12, Stealth +6"
-    senses = "Blindsight 60 ft., Darkvision 120 ft., Passive Perception 22"
-    languages = "Common, Draconic"
+    skills = 'Deception +8, Perception +12, Stealth +6'
+    senses = 'Blindsight 60 ft., Darkvision 120 ft., Passive Perception 22'
+    languages = 'Common, Draconic'
     strength = Ability(23)
     dexterity = Ability(12)
     constitution = Ability(21)
@@ -398,17 +521,26 @@ class AdultCopperDragon(Monster):
     swim_speed = 0
     fly_speed = 80
     climb_speed = 40
+    burrow_speed = 0
     hp_max = 184
-    hit_dice = "16d12"
+    hit_dice = '16d12 + 80'
+    condition_immunities = ''
+    damage_immunities = 'acid'
+    damage_resistances = ''
+    damage_vulnerabilities = ''
     spells = []
 
 
 class AdultGoldDragon(Monster):
     """
+
     Amphibious.
       The dragon can breathe air and water.
     Legendary Resistance.
       If the dragon fails a saving throw, it can choose to succeed instead.
+
+    # Actions
+
     Multiattack.
       The dragon can use its Frightful Presence. It then makes three
       attacks: one with its bite and two with its claws.
@@ -443,14 +575,26 @@ class AdultGoldDragon(Monster):
       Strength saving throws for 1 minute. A creature can repeat the saving
       throw at the end of each of its turns, ending the effect on itself on
       a success.
+
+    # Legendary Actions
+
+    Detect.
+      The dragon makes a Wisdom (Perception) check.
+    Tail Attack.
+      The dragon makes a tail attack.
+    Wing Attack (Costs 2 Actions).
+      The dragon beats its wings. Each creature within 10 ft. of the dragon
+      must succeed on a DC 22 Dexterity saving throw or take 15 (2d6 + 8)
+      bludgeoning damage and be knocked prone. The dragon can then fly up to
+      half its flying speed.
     """
-    name = "Adult Gold Dragon"
-    description = "Huge dragon, lawful good"
+    name = 'Adult Gold Dragon'
+    description = 'Huge dragon, lawful good'
     challenge_rating = 17
     armor_class = 19
-    skills = "Insight +8, Perception +14, Persuasion +13, Stealth +8"
-    senses = "Blindsight 60 ft., Darkvision 120 ft., Passive Perception 24"
-    languages = "Common, Draconic"
+    skills = 'Insight +8, Perception +14, Persuasion +13, Stealth +8'
+    senses = 'Blindsight 60 ft., Darkvision 120 ft., Passive Perception 24'
+    languages = 'Common, Draconic'
     strength = Ability(27)
     dexterity = Ability(14)
     constitution = Ability(25)
@@ -461,17 +605,26 @@ class AdultGoldDragon(Monster):
     swim_speed = 40
     fly_speed = 80
     climb_speed = 0
+    burrow_speed = 0
     hp_max = 256
-    hit_dice = "19d12"
+    hit_dice = '19d12 + 133'
+    condition_immunities = ''
+    damage_immunities = 'fire'
+    damage_resistances = ''
+    damage_vulnerabilities = ''
     spells = []
 
 
 class AdultGreenDragon(Monster):
     """
+
     Amphibious.
       The dragon can breathe air and water.
     Legendary Resistance.
       If the dragon fails a saving throw, it can choose to succeed instead.
+
+    # Actions
+
     Multiattack.
       The dragon can use its Frightful Presence. It then makes three
       attacks: one with its bite and two with its claws.
@@ -497,14 +650,26 @@ class AdultGreenDragon(Monster):
       that area must make a DC 18 Constitution saving throw, taking 56
       (16d6) poison damage on a failed save, or half as much damage on a
       successful one.
+
+    # Legendary Actions
+
+    Detect.
+      The dragon makes a Wisdom (Perception) check.
+    Tail Attack.
+      The dragon makes a tail attack.
+    Wing Attack (Costs 2 Actions).
+      The dragon beats its wings. Each creature within 10 ft. of the dragon
+      must succeed on a DC 19 Dexterity saving throw or take 13 (2d6 + 6)
+      bludgeoning damage and be knocked prone. The dragon can then fly up to
+      half its flying speed.
     """
-    name = "Adult Green Dragon"
-    description = "Huge dragon, lawful evil"
+    name = 'Adult Green Dragon'
+    description = 'Huge dragon, lawful evil'
     challenge_rating = 15
     armor_class = 19
-    skills = "Deception +8, Insight +7, Perception +12, Persuasion +8, Stealth +6"
-    senses = "Blindsight 60 ft., Darkvision 120 ft., Passive Perception 22"
-    languages = "Common, Draconic"
+    skills = 'Deception +8, Insight +7, Perception +12, Persuasion +8, Stealth +6'
+    senses = 'Blindsight 60 ft., Darkvision 120 ft., Passive Perception 22'
+    languages = 'Common, Draconic'
     strength = Ability(23)
     dexterity = Ability(12)
     constitution = Ability(21)
@@ -515,15 +680,24 @@ class AdultGreenDragon(Monster):
     swim_speed = 40
     fly_speed = 80
     climb_speed = 0
+    burrow_speed = 0
     hp_max = 207
-    hit_dice = "18d12"
+    hit_dice = '18d12 + 90'
+    condition_immunities = 'poisoned'
+    damage_immunities = 'poison'
+    damage_resistances = ''
+    damage_vulnerabilities = ''
     spells = []
 
 
 class AdultRedDragon(Monster):
     """
+
     Legendary Resistance.
       If the dragon fails a saving throw, it can choose to succeed instead.
+
+    # Actions
+
     Multiattack.
       The dragon can use its Frightful Presence. It then makes three
       attacks: one with its bite and two with its claws.
@@ -570,14 +744,26 @@ class AdultRedDragon(Monster):
       turn in the cloud must succeed on a DC 13 Constitution saving throw or
       be poisoned until the end of its turn. While poisoned in this way, a
       creature is incapacitated.
+
+    # Legendary Actions
+
+    Detect.
+      The dragon makes a Wisdom (Perception) check.
+    Tail Attack.
+      The dragon makes a tail attack.
+    Wing Attack (Costs 2 Actions).
+      The dragon beats its wings. Each creature within 10 ft. of the dragon
+      must succeed on a DC 22 Dexterity saving throw or take 15 (2d6 + 8)
+      bludgeoning damage and be knocked prone. The dragon can then fly up to
+      half its flying speed.
     """
-    name = "Adult Red Dragon"
-    description = "Huge dragon, chaotic evil"
+    name = 'Adult Red Dragon'
+    description = 'Huge dragon, chaotic evil'
     challenge_rating = 17
     armor_class = 19
-    skills = "Perception +13, Stealth +6"
-    senses = "Blindsight 60 ft., Darkvision 120 ft., Passive Perception 23"
-    languages = "Common, Draconic"
+    skills = 'Perception +13, Stealth +6'
+    senses = 'Blindsight 60 ft., Darkvision 120 ft., Passive Perception 23'
+    languages = 'Common, Draconic'
     strength = Ability(27)
     dexterity = Ability(10)
     constitution = Ability(25)
@@ -588,15 +774,24 @@ class AdultRedDragon(Monster):
     swim_speed = 0
     fly_speed = 80
     climb_speed = 40
+    burrow_speed = 0
     hp_max = 256
-    hit_dice = "19d12"
+    hit_dice = '19d12 + 133'
+    condition_immunities = ''
+    damage_immunities = 'fire'
+    damage_resistances = ''
+    damage_vulnerabilities = ''
     spells = []
 
 
 class AdultSilverDragon(Monster):
     """
+
     Legendary Resistance.
       If the dragon fails a saving throw, it can choose to succeed instead.
+
+    # Actions
+
     Multiattack.
       The dragon can use its Frightful Presence. It then makes three
       attacks: one with its bite and two with its claws.
@@ -630,14 +825,26 @@ class AdultSilverDragon(Monster):
       saving throw or be paralyzed for 1 minute. A creature can repeat the
       saving throw at the end of each of its turns, ending the effect on
       itself on a success.
+
+    # Legendary Actions
+
+    Detect.
+      The dragon makes a Wisdom (Perception) check.
+    Tail Attack.
+      The dragon makes a tail attack.
+    Wing Attack (Costs 2 Actions).
+      The dragon beats its wings. Each creature within 10 ft. of the dragon
+      must succeed on a DC 22 Dexterity saving throw or take 15 (2d6 + 8)
+      bludgeoning damage and be knocked prone. The dragon can then fly up to
+      half its flying speed.
     """
-    name = "Adult Silver Dragon"
-    description = "Huge dragon, lawful good"
+    name = 'Adult Silver Dragon'
+    description = 'Huge dragon, lawful good'
     challenge_rating = 16
     armor_class = 19
-    skills = "Arcana +8, History +8, Perception +11, Stealth +5"
-    senses = "Blindsight 60 ft., Darkvision 120 ft., Passive Perception 21"
-    languages = "Common, Draconic"
+    skills = 'Arcana +8, History +8, Perception +11, Stealth +5'
+    senses = 'Blindsight 60 ft., Darkvision 120 ft., Passive Perception 21'
+    languages = 'Common, Draconic'
     strength = Ability(27)
     dexterity = Ability(10)
     constitution = Ability(25)
@@ -648,19 +855,28 @@ class AdultSilverDragon(Monster):
     swim_speed = 0
     fly_speed = 80
     climb_speed = 0
+    burrow_speed = 0
     hp_max = 243
-    hit_dice = "18d12"
+    hit_dice = '18d12 + 126'
+    condition_immunities = ''
+    damage_immunities = 'cold'
+    damage_resistances = ''
+    damage_vulnerabilities = ''
     spells = []
 
 
 class AdultWhiteDragon(Monster):
     """
+
     Ice Walk.
       The dragon can move across and climb icy surfaces without needing to
       make an ability check. Additionally, difficult terrain composed of ice
       or snow doesn't cost it extra moment.
     Legendary Resistance.
       If the dragon fails a saving throw, it can choose to succeed instead.
+
+    # Actions
+
     Multiattack.
       The dragon can use its Frightful Presence. It then makes three
       attacks: one with its bite and two with its claws.
@@ -686,14 +902,26 @@ class AdultWhiteDragon(Monster):
       that area must make a DC 19 Constitution saving throw, taking 54
       (12d8) cold damage on a failed save, or half as much damage on a
       successful one.
+
+    # Legendary Actions
+
+    Detect.
+      The dragon makes a Wisdom (Perception) check.
+    Tail Attack.
+      The dragon makes a tail attack.
+    Wing Attack (Costs 2 Actions).
+      The dragon beats its wings. Each creature within 10 ft. of the dragon
+      must succeed on a DC 19 Dexterity saving throw or take 13 (2d6 + 6)
+      bludgeoning damage and be knocked prone. The dragon can then fly up to
+      half its flying speed.
     """
-    name = "Adult White Dragon"
-    description = "Huge dragon, chaotic evil"
+    name = 'Adult White Dragon'
+    description = 'Huge dragon, chaotic evil'
     challenge_rating = 13
     armor_class = 18
-    skills = "Perception +11, Stealth +5"
-    senses = "Blindsight 60 ft., Darkvision 120 ft., Passive Perception 21"
-    languages = "Common, Draconic"
+    skills = 'Perception +11, Stealth +5'
+    senses = 'Blindsight 60 ft., Darkvision 120 ft., Passive Perception 21'
+    languages = 'Common, Draconic'
     strength = Ability(22)
     dexterity = Ability(10)
     constitution = Ability(22)
@@ -704,16 +932,25 @@ class AdultWhiteDragon(Monster):
     swim_speed = 40
     fly_speed = 80
     climb_speed = 0
+    burrow_speed = 30
     hp_max = 200
-    hit_dice = "16d12"
+    hit_dice = '16d12 + 96'
+    condition_immunities = ''
+    damage_immunities = 'cold'
+    damage_resistances = ''
+    damage_vulnerabilities = ''
     spells = []
 
 
 class AirElemental(Monster):
     """
+
     Air Form.
       The elemental can enter a hostile creature's space and stop there. It
       can move through a space as narrow as 1 inch wide without squeezing.
+
+    # Actions
+
     Multiattack.
       The elemental makes two slam attacks.
     Slam.
@@ -732,13 +969,13 @@ class AirElemental(Monster):
       If the saving throw is successful, the target takes half the
       bludgeoning damage and isn't flung away or knocked prone.
     """
-    name = "Air Elemental"
-    description = "Large elemental, neutral"
+    name = 'Air Elemental'
+    description = 'Large elemental, neutral'
     challenge_rating = 5
     armor_class = 15
-    skills = ""
-    senses = "Darkvision 60 ft., Passive Perception 10"
-    languages = "Auran"
+    skills = ''
+    senses = 'Darkvision 60 ft., Passive Perception 10'
+    languages = 'Auran'
     strength = Ability(14)
     dexterity = Ability(20)
     constitution = Ability(14)
@@ -749,17 +986,26 @@ class AirElemental(Monster):
     swim_speed = 0
     fly_speed = 90
     climb_speed = 0
+    burrow_speed = 0
     hp_max = 90
-    hit_dice = "12d10"
+    hit_dice = '12d10 + 24'
+    condition_immunities = 'exhaustion, grappled, paralyzed, petrified, poisoned, prone, restrained, unconscious'
+    damage_immunities = 'poison'
+    damage_resistances = 'lightning'
+    damage_vulnerabilities = ''
     spells = []
 
 
 class AncientBlackDragon(Monster):
     """
+
     Amphibious.
       The dragon can breathe air and water.
     Legendary Resistance.
       If the dragon fails a saving throw, it can choose to succeed instead.
+
+    # Actions
+
     Multiattack.
       The dragon can use its Frightful Presence. It then makes three
       attacks: one with its bite and two with its claws.
@@ -785,14 +1031,26 @@ class AncientBlackDragon(Monster):
       creature in that line must make a DC 22 Dexterity saving throw, taking
       67 (15d8) acid damage on a failed save, or half as much damage on a
       successful one.
+
+    # Legendary Actions
+
+    Detect.
+      The dragon makes a Wisdom (Perception) check.
+    Tail Attack.
+      The dragon makes a tail attack.
+    Wing Attack (Costs 2 Actions).
+      The dragon beats its wings. Each creature within 15 ft. of the dragon
+      must succeed on a DC 23 Dexterity saving throw or take 15 (2d6 + 8)
+      bludgeoning damage and be knocked prone. The dragon can then fly up to
+      half its flying speed.
     """
-    name = "Ancient Black Dragon"
-    description = "Gargantuan dragon, chaotic evil"
+    name = 'Ancient Black Dragon'
+    description = 'Gargantuan dragon, chaotic evil'
     challenge_rating = 21
     armor_class = 22
-    skills = "Perception +16, Stealth +9"
-    senses = "Blindsight 60 ft., Darkvision 120 ft., Passive Perception 26"
-    languages = "Common, Draconic"
+    skills = 'Perception +16, Stealth +9'
+    senses = 'Blindsight 60 ft., Darkvision 120 ft., Passive Perception 26'
+    languages = 'Common, Draconic'
     strength = Ability(27)
     dexterity = Ability(14)
     constitution = Ability(25)
@@ -803,13 +1061,21 @@ class AncientBlackDragon(Monster):
     swim_speed = 40
     fly_speed = 80
     climb_speed = 0
+    burrow_speed = 0
     hp_max = 367
-    hit_dice = "21d20"
+    hit_dice = '21d20 + 147'
+    condition_immunities = ''
+    damage_immunities = 'acid'
+    damage_resistances = ''
+    damage_vulnerabilities = ''
     spells = []
 
 
 class AncientBlueDragon(Monster):
     """
+
+    # Actions
+
     Multiattack.
       The dragon can use its Frightful Presence. It then makes three
       attacks: one with its bite and two with its claws.
@@ -835,14 +1101,26 @@ class AncientBlueDragon(Monster):
       Each creature in that line must make a DC 23 Dexterity saving throw,
       taking 88 (16d10) lightning damage on a failed save, or half as much
       damage on a successful one.
+
+    # Legendary Actions
+
+    Detect.
+      The dragon makes a Wisdom (Perception) check.
+    Tail Attack.
+      The dragon makes a tail attack.
+    Wing Attack (Costs 2 Actions).
+      The dragon beats its wings. Each creature within 15 ft. of the dragon
+      must succeed on a DC 24 Dexterity saving throw or take 16 (2d6 + 9)
+      bludgeoning damage and be knocked prone. The dragon can then fly up to
+      half its flying speed.
     """
-    name = "Ancient Blue Dragon"
-    description = "Gargantuan dragon, lawful evil"
+    name = 'Ancient Blue Dragon'
+    description = 'Gargantuan dragon, lawful evil'
     challenge_rating = 23
     armor_class = 22
-    skills = "Perception +17, Stealth +7"
-    senses = "Blindsight 60 ft., Darkvision 120 ft., Passive Perception 27"
-    languages = "Common, Draconic"
+    skills = 'Perception +17, Stealth +7'
+    senses = 'Blindsight 60 ft., Darkvision 120 ft., Passive Perception 27'
+    languages = 'Common, Draconic'
     strength = Ability(29)
     dexterity = Ability(10)
     constitution = Ability(27)
@@ -853,15 +1131,24 @@ class AncientBlueDragon(Monster):
     swim_speed = 0
     fly_speed = 80
     climb_speed = 0
+    burrow_speed = 40
     hp_max = 481
-    hit_dice = "26d20"
+    hit_dice = '26d20 + 208'
+    condition_immunities = ''
+    damage_immunities = 'lightning'
+    damage_resistances = ''
+    damage_vulnerabilities = ''
     spells = []
 
 
 class AncientBrassDragon(Monster):
     """
+
     Legendary Resistance.
       If the dragon fails a saving throw, it can choose to succeed instead.
+
+    # Actions
+
     Multiattack.
       The dragon can use its Frightful Presence. It then makes three
       attacks: one with its bite and two with its claws.
@@ -906,14 +1193,26 @@ class AncientBrassDragon(Monster):
       and Intelligence, Wisdom, and Charisma scores, as well as this action.
       Its statistics and capabilities are otherwise replaced by those of the
       new form, except any class features or legendary actions of that form.
+
+    # Legendary Actions
+
+    Detect.
+      The dragon makes a Wisdom (Perception) check.
+    Tail Attack.
+      The dragon makes a tail attack.
+    Wing Attack (Costs 2 Actions).
+      The dragon beats its wings. Each creature within 15 ft. of the dragon
+      must succeed on a DC 22 Dexterity saving throw or take 15 (2d6 + 8)
+      bludgeoning damage and be knocked prone. The dragon can then fly up to
+      half its flying speed.
     """
-    name = "Ancient Brass Dragon"
-    description = "Gargantuan dragon, chaotic good"
+    name = 'Ancient Brass Dragon'
+    description = 'Gargantuan dragon, chaotic good'
     challenge_rating = 20
     armor_class = 20
-    skills = "History +9, Perception +14, Persuasion +10, Stealth +6"
-    senses = "Blindsight 60 ft., Darkvision 120 ft., Passive Perception 24"
-    languages = "Common, Draconic"
+    skills = 'History +9, Perception +14, Persuasion +10, Stealth +6'
+    senses = 'Blindsight 60 ft., Darkvision 120 ft., Passive Perception 24'
+    languages = 'Common, Draconic'
     strength = Ability(27)
     dexterity = Ability(10)
     constitution = Ability(25)
@@ -924,17 +1223,26 @@ class AncientBrassDragon(Monster):
     swim_speed = 0
     fly_speed = 80
     climb_speed = 0
+    burrow_speed = 40
     hp_max = 297
-    hit_dice = "17d20"
+    hit_dice = '17d20 + 119'
+    condition_immunities = ''
+    damage_immunities = 'fire'
+    damage_resistances = ''
+    damage_vulnerabilities = ''
     spells = []
 
 
 class AncientBronzeDragon(Monster):
     """
+
     Amphibious.
       The dragon can breathe air and water.
     Legendary Resistance.
       If the dragon fails a saving throw, it can choose to succeed instead.
+
+    # Actions
+
     Multiattack.
       The dragon can use its Frightful Presence. It then makes three
       attacks: one with its bite and two with its claws.
@@ -978,14 +1286,26 @@ class AncientBronzeDragon(Monster):
       and Intelligence, Wisdom, and Charisma scores, as well as this action.
       Its statistics and capabilities are otherwise replaced by those of the
       new form, except any class features or legendary actions of that form.
+
+    # Legendary Actions
+
+    Detect.
+      The dragon makes a Wisdom (Perception) check.
+    Tail Attack.
+      The dragon makes a tail attack.
+    Wing Attack (Costs 2 Actions).
+      The dragon beats its wings. Each creature within 15 ft. of the dragon
+      must succeed on a DC 24 Dexterity saving throw or take 16 (2d6 + 9)
+      bludgeoning damage and be knocked prone. The dragon can then fly up to
+      half its flying speed.
     """
-    name = "Ancient Bronze Dragon"
-    description = "Gargantuan dragon, lawful good"
+    name = 'Ancient Bronze Dragon'
+    description = 'Gargantuan dragon, lawful good'
     challenge_rating = 22
     armor_class = 22
-    skills = "Insight +10, Perception +17, Stealth +7"
-    senses = "Blindsight 60 ft., Darkvision 120 ft., Passive Perception 27"
-    languages = "Common, Draconic"
+    skills = 'Insight +10, Perception +17, Stealth +7'
+    senses = 'Blindsight 60 ft., Darkvision 120 ft., Passive Perception 27'
+    languages = 'Common, Draconic'
     strength = Ability(29)
     dexterity = Ability(10)
     constitution = Ability(27)
@@ -996,15 +1316,24 @@ class AncientBronzeDragon(Monster):
     swim_speed = 40
     fly_speed = 80
     climb_speed = 0
+    burrow_speed = 0
     hp_max = 444
-    hit_dice = "24d20"
+    hit_dice = '24d20 + 192'
+    condition_immunities = ''
+    damage_immunities = 'lightning'
+    damage_resistances = ''
+    damage_vulnerabilities = ''
     spells = []
 
 
 class AncientCopperDragon(Monster):
     """
+
     Legendary Resistance.
       If the dragon fails a saving throw, it can choose to succeed instead.
+
+    # Actions
+
     Multiattack.
       The dragon can use its Frightful Presence. It then makes three
       attacks: one with its bite and two with its claws.
@@ -1052,14 +1381,26 @@ class AncientCopperDragon(Monster):
       and Intelligence, Wisdom, and Charisma scores, as well as this action.
       Its statistics and capabilities are otherwise replaced by those of the
       new form, except any class features or legendary actions of that form.
+
+    # Legendary Actions
+
+    Detect.
+      The dragon makes a Wisdom (Perception) check.
+    Tail Attack.
+      The dragon makes a tail attack.
+    Wing Attack (Costs 2 Actions).
+      The dragon beats its wings. Each creature within 15 ft. of the dragon
+      must succeed on a DC 23 Dexterity saving throw or take 15 (2d6 + 8)
+      bludgeoning damage and be knocked prone. The dragon can then fly up to
+      half its flying speed.
     """
-    name = "Ancient Copper Dragon"
-    description = "Gargantuan dragon, chaotic good"
+    name = 'Ancient Copper Dragon'
+    description = 'Gargantuan dragon, chaotic good'
     challenge_rating = 21
     armor_class = 21
-    skills = "Deception +11, Perception +17, Stealth +8"
-    senses = "Blindsight 60 ft., Darkvision 120 ft., Passive Perception 27"
-    languages = "Common, Draconic"
+    skills = 'Deception +11, Perception +17, Stealth +8'
+    senses = 'Blindsight 60 ft., Darkvision 120 ft., Passive Perception 27'
+    languages = 'Common, Draconic'
     strength = Ability(27)
     dexterity = Ability(12)
     constitution = Ability(25)
@@ -1070,17 +1411,26 @@ class AncientCopperDragon(Monster):
     swim_speed = 0
     fly_speed = 80
     climb_speed = 40
+    burrow_speed = 0
     hp_max = 350
-    hit_dice = "20d20"
+    hit_dice = '20d20 + 140'
+    condition_immunities = ''
+    damage_immunities = 'acid'
+    damage_resistances = ''
+    damage_vulnerabilities = ''
     spells = []
 
 
 class AncientGoldDragon(Monster):
     """
+
     Amphibious.
       The dragon can breathe air and water.
     Legendary Resistance.
       If the dragon fails a saving throw, it can choose to succeed instead.
+
+    # Actions
+
     Multiattack.
       The dragon can use its Frightful Presence. It then makes three
       attacks: one with its bite and two with its claws.
@@ -1126,14 +1476,26 @@ class AncientGoldDragon(Monster):
       and Intelligence, Wisdom, and Charisma scores, as well as this action.
       Its statistics and capabilities are otherwise replaced by those of the
       new form, except any class features or legendary actions of that form.
+
+    # Legendary Actions
+
+    Detect.
+      The dragon makes a Wisdom (Perception) check.
+    Tail Attack.
+      The dragon makes a tail attack.
+    Wing Attack (Costs 2 Actions).
+      The dragon beats its wings. Each creature within 15 ft. of the dragon
+      must succeed on a DC 25 Dexterity saving throw or take 17 (2d6 + 10)
+      bludgeoning damage and be knocked prone. The dragon can then fly up to
+      half its flying speed.
     """
-    name = "Ancient Gold Dragon"
-    description = "Gargantuan dragon, lawful good"
+    name = 'Ancient Gold Dragon'
+    description = 'Gargantuan dragon, lawful good'
     challenge_rating = 24
     armor_class = 22
-    skills = "Insight +10, Perception +17, Persuasion +16, Stealth +9"
-    senses = "Blindsight 60 ft., Darkvision 120 ft., Passive Perception 27"
-    languages = "Common, Draconic"
+    skills = 'Insight +10, Perception +17, Persuasion +16, Stealth +9'
+    senses = 'Blindsight 60 ft., Darkvision 120 ft., Passive Perception 27'
+    languages = 'Common, Draconic'
     strength = Ability(30)
     dexterity = Ability(14)
     constitution = Ability(29)
@@ -1144,17 +1506,26 @@ class AncientGoldDragon(Monster):
     swim_speed = 40
     fly_speed = 80
     climb_speed = 0
+    burrow_speed = 0
     hp_max = 546
-    hit_dice = "28d20"
+    hit_dice = '28d20 + 252'
+    condition_immunities = ''
+    damage_immunities = 'fire'
+    damage_resistances = ''
+    damage_vulnerabilities = ''
     spells = []
 
 
 class AncientGreenDragon(Monster):
     """
+
     Amphibious.
       The dragon can breathe air and water.
     Legendary Resistance.
       If the dragon fails a saving throw, it can choose to succeed instead.
+
+    # Actions
+
     Multiattack.
       The dragon can use its Frightful Presence. It then makes three
       attacks: one with its bite and two with its claws.
@@ -1180,14 +1551,26 @@ class AncientGreenDragon(Monster):
       that area must make a DC 22 Constitution saving throw, taking 77
       (22d6) poison damage on a failed save, or half as much damage on a
       successful one.
+
+    # Legendary Actions
+
+    Detect.
+      The dragon makes a Wisdom (Perception) check.
+    Tail Attack.
+      The dragon makes a tail attack.
+    Wing Attack (Costs 2 Actions).
+      The dragon beats its wings. Each creature within 15 ft. of the dragon
+      must succeed on a DC 23 Dexterity saving throw or take 15 (2d6 + 8)
+      bludgeoning damage and be knocked prone. The dragon can then fly up to
+      half its flying speed.
     """
-    name = "Ancient Green Dragon"
-    description = "Gargantuan dragon, lawful evil"
+    name = 'Ancient Green Dragon'
+    description = 'Gargantuan dragon, lawful evil'
     challenge_rating = 22
     armor_class = 21
-    skills = "Deception +11, Insight +10, Perception +17, Persuasion +11, Stealth +8"
-    senses = "Blindsight 60 ft., Darkvision 120 ft., Passive Perception 27"
-    languages = "Common, Draconic"
+    skills = 'Deception +11, Insight +10, Perception +17, Persuasion +11, Stealth +8'
+    senses = 'Blindsight 60 ft., Darkvision 120 ft., Passive Perception 27'
+    languages = 'Common, Draconic'
     strength = Ability(27)
     dexterity = Ability(12)
     constitution = Ability(25)
@@ -1198,15 +1581,24 @@ class AncientGreenDragon(Monster):
     swim_speed = 40
     fly_speed = 80
     climb_speed = 0
+    burrow_speed = 0
     hp_max = 385
-    hit_dice = "22d20"
+    hit_dice = '22d20 + 154'
+    condition_immunities = 'poisoned'
+    damage_immunities = 'poison'
+    damage_resistances = ''
+    damage_vulnerabilities = ''
     spells = []
 
 
 class AncientRedDragon(Monster):
     """
+
     Legendary Resistance.
       If the dragon fails a saving throw, it can choose to succeed instead.
+
+    # Actions
+
     Multiattack.
       The dragon can use its Frightful Presence. It then makes three
       attacks: one with its bite and two with its claws.
@@ -1231,14 +1623,26 @@ class AncientRedDragon(Monster):
       The dragon exhales fire in a 90-foot cone. Each creature in that area
       must make a DC 24 Dexterity saving throw, taking 91 (26d6) fire damage
       on a failed save, or half as much damage on a successful one.
+
+    # Legendary Actions
+
+    Detect.
+      The dragon makes a Wisdom (Perception) check.
+    Tail Attack.
+      The dragon makes a tail attack.
+    Wing Attack (Costs 2 Actions).
+      The dragon beats its wings. Each creature within 15 ft. of the dragon
+      must succeed on a DC 25 Dexterity saving throw or take 17 (2d6 + 10)
+      bludgeoning damage and be knocked prone. The dragon can then fly up to
+      half its flying speed.
     """
-    name = "Ancient Red Dragon"
-    description = "Gargantuan dragon, chaotic evil"
+    name = 'Ancient Red Dragon'
+    description = 'Gargantuan dragon, chaotic evil'
     challenge_rating = 24
     armor_class = 22
-    skills = "Perception +16, Stealth +7"
-    senses = "Blindsight 60 ft., Darkvision 120 ft., Passive Perception 26"
-    languages = "Common, Draconic"
+    skills = 'Perception +16, Stealth +7'
+    senses = 'Blindsight 60 ft., Darkvision 120 ft., Passive Perception 26'
+    languages = 'Common, Draconic'
     strength = Ability(30)
     dexterity = Ability(10)
     constitution = Ability(29)
@@ -1249,15 +1653,24 @@ class AncientRedDragon(Monster):
     swim_speed = 0
     fly_speed = 80
     climb_speed = 40
+    burrow_speed = 0
     hp_max = 546
-    hit_dice = "28d20"
+    hit_dice = '28d20 + 252'
+    condition_immunities = ''
+    damage_immunities = 'fire'
+    damage_resistances = ''
+    damage_vulnerabilities = ''
     spells = []
 
 
 class AncientSilverDragon(Monster):
     """
+
     Legendary Resistance.
       If the dragon fails a saving throw, it can choose to succeed instead.
+
+    # Actions
+
     Multiattack.
       The dragon can use its Frightful Presence. It then makes three
       attacks: one with its bite and two with its claws.
@@ -1302,14 +1715,26 @@ class AncientSilverDragon(Monster):
       and Intelligence, Wisdom, and Charisma scores, as well as this action.
       Its statistics and capabilities are otherwise replaced by those of the
       new form, except any class features or legendary actions of that form.
+
+    # Legendary Actions
+
+    Detect.
+      The dragon makes a Wisdom (Perception) check.
+    Tail Attack.
+      The dragon makes a tail attack.
+    Wing Attack (Costs 2 Actions).
+      The dragon beats its wings. Each creature within 15 ft. of the dragon
+      must succeed on a DC 25 Dexterity saving throw or take 17 (2d6 + 10)
+      bludgeoning damage and be knocked prone. The dragon can then fly up to
+      half its flying speed.
     """
-    name = "Ancient Silver Dragon"
-    description = "Gargantuan dragon, lawful good"
+    name = 'Ancient Silver Dragon'
+    description = 'Gargantuan dragon, lawful good'
     challenge_rating = 23
     armor_class = 22
-    skills = "Arcana +11, History +11, Perception +16, Stealth +7"
-    senses = "Blindsight 60 ft., Darkvision 120 ft., Passive Perception 26"
-    languages = "Common, Draconic"
+    skills = 'Arcana +11, History +11, Perception +16, Stealth +7'
+    senses = 'Blindsight 60 ft., Darkvision 120 ft., Passive Perception 26'
+    languages = 'Common, Draconic'
     strength = Ability(30)
     dexterity = Ability(10)
     constitution = Ability(29)
@@ -1320,19 +1745,28 @@ class AncientSilverDragon(Monster):
     swim_speed = 0
     fly_speed = 80
     climb_speed = 0
+    burrow_speed = 0
     hp_max = 487
-    hit_dice = "25d20"
+    hit_dice = '25d20 + 225'
+    condition_immunities = ''
+    damage_immunities = 'cold'
+    damage_resistances = ''
+    damage_vulnerabilities = ''
     spells = []
 
 
 class AncientWhiteDragon(Monster):
     """
+
     Ice Walk.
       The dragon can move across and climb icy surfaces without needing to
       make an ability check. Additionally, difficult terrain composed of ice
       or snow doesn't cost it extra moment.
     Legendary Resistance.
       If the dragon fails a saving throw, it can choose to succeed instead.
+
+    # Actions
+
     Multiattack.
       The dragon can use its Frightful Presence. It then makes three
       attacks: one with its bite and two with its claws.
@@ -1358,14 +1792,26 @@ class AncientWhiteDragon(Monster):
       that area must make a DC 22 Constitution saving throw, taking 72
       (l6d8) cold damage on a failed save, or half as much damage on a
       successful one.
+
+    # Legendary Actions
+
+    Detect.
+      The dragon makes a Wisdom (Perception) check.
+    Tail Attack.
+      The dragon makes a tail attack.
+    Wing Attack (Costs 2 Actions).
+      The dragon beats its wings. Each creature within 15 ft. of the dragon
+      must succeed on a DC 22 Dexterity saving throw or take 15 (2d6 + 8)
+      bludgeoning damage and be knocked prone. The dragon can then fly up to
+      half its flying speed.
     """
-    name = "Ancient White Dragon"
-    description = "Gargantuan dragon, chaotic evil"
+    name = 'Ancient White Dragon'
+    description = 'Gargantuan dragon, chaotic evil'
     challenge_rating = 20
     armor_class = 20
-    skills = "Perception +13, Stealth +6"
-    senses = "Blindsight 60 ft., Darkvision 120 ft., Passive Perception 23"
-    languages = "Common, Draconic"
+    skills = 'Perception +13, Stealth +6'
+    senses = 'Blindsight 60 ft., Darkvision 120 ft., Passive Perception 23'
+    languages = 'Common, Draconic'
     strength = Ability(26)
     dexterity = Ability(10)
     constitution = Ability(26)
@@ -1376,13 +1822,19 @@ class AncientWhiteDragon(Monster):
     swim_speed = 40
     fly_speed = 80
     climb_speed = 0
+    burrow_speed = 40
     hp_max = 333
-    hit_dice = "18d20"
+    hit_dice = '18d20 + 144'
+    condition_immunities = ''
+    damage_immunities = 'cold'
+    damage_resistances = ''
+    damage_vulnerabilities = ''
     spells = []
 
 
 class Androsphinx(Monster):
     """
+
     Inscrutable.
       The sphinx is immune to any effect that would sense its emotions or
       read its thoughts, as well as any divination spell that it refuses.
@@ -1391,26 +1843,18 @@ class Androsphinx(Monster):
     Magic Weapons.
       The sphinx's weapon attacks are magical.
     Spellcasting.
-      The sphinx is a 12th-level spellcaster. Its spellcasting ability is
-      Wisdom (spell save DC 18, +10 to hit with spell attacks). It requires
-      no material components to cast its spells. The sphinx has the
-      following cleric spells prepared:
-      
-  
-      
-      - Cantrips (at will): sacred flame, spare the dying, thaumaturgy
-      
-      - 1st level (4 slots): command, detect evil and good, detect magic
-      
-      - 2nd level (3 slots): lesser restoration, zone of truth
-      
-      - 3rd level (3 slots): dispel magic, tongues
-      
-      - 4th level (3 slots): banishment, freedom of movement
-      
-      - 5th level (2 slots): flame strike, greater restoration
-      
-      - 6th level (1 slot): heroes' feast
+      The sphinx is a 12th-level spellcaster. Its spellcasting ability is Wisdom (spell save DC 18, +10 to hit with spell attacks). It requires no material components to cast its spells. The sphinx has the following cleric spells prepared:
+
+    - Cantrips (at will): sacred flame, spare the dying, thaumaturgy
+    - 1st level (4 slots): command, detect evil and good, detect magic
+    - 2nd level (3 slots): lesser restoration, zone of truth
+    - 3rd level (3 slots): dispel magic, tongues
+    - 4th level (3 slots): banishment, freedom of movement
+    - 5th level (2 slots): flame strike, greater restoration
+    - 6th level (1 slot): heroes' feast
+
+    # Actions
+
     Multiattack.
       The sphinx makes two claw attacks.
     Claw.
@@ -1442,14 +1886,25 @@ class Androsphinx(Monster):
       a failed save, a creature takes 44 (8d10) thunder damage and is
       knocked prone. On a successful save, the creature takes half as much
       damage and isn't knocked prone.
+
+    # Legendary Actions
+
+    Claw Attack.
+      The sphinx makes one claw attack.
+    Teleport (Costs 2 Actions).
+      The sphinx magically teleports, along with any equipment it is wearing
+      or carrying, up to 120 feet to an unoccupied space it can see.
+    Cast a Spell (Costs 3 Actions).
+      The sphinx casts a spell from its list of prepared spells, using a
+      spell slot as normal.
     """
-    name = "Androsphinx"
-    description = "Large monstrosity, lawful neutral"
+    name = 'Androsphinx'
+    description = 'Large monstrosity, lawful neutral'
     challenge_rating = 17
     armor_class = 17
-    skills = "Arcana +9, Perception +10, Religion +15"
-    senses = "Truesight 120 ft., Passive Perception 20"
-    languages = "Common, Sphinx"
+    skills = 'Arcana +9, Perception +10, Religion +15'
+    senses = 'Truesight 120 ft., Passive Perception 20'
+    languages = 'Common, Sphinx'
     strength = Ability(22)
     dexterity = Ability(10)
     constitution = Ability(20)
@@ -1460,13 +1915,19 @@ class Androsphinx(Monster):
     swim_speed = 0
     fly_speed = 60
     climb_speed = 0
+    burrow_speed = 0
     hp_max = 199
-    hit_dice = "19d10"
-    spells = ["sacred flame", "spare the dying", "thaumaturgy", "command", "detect evil and good", "detect magic", "lesser restoration", "zone of truth", "dispel magic", "tongues", "banishment", "freedom of movement", "flame strike", "greater restoration", "heroes' feast"]
+    hit_dice = '19d10 + 95'
+    condition_immunities = 'charmed, frightened'
+    damage_immunities = 'psychic, bludgeoning, piercing, and slashing from nonmagical weapons'
+    damage_resistances = ''
+    damage_vulnerabilities = ''
+    spells = ['sacred flame', 'spare the dying', 'thaumaturgy', 'command', 'detect evil and good', 'detect magic', 'lesser restoration', 'zone of truth', 'dispel magic', 'tongues', 'banishment', 'freedom of movement', 'flame strike', 'greater restoration', "heroes' feast"]
 
 
 class AnimatedArmor(Monster):
     """
+
     Antimagic Susceptibility.
       The armor is incapacitated while in the area of an antimagic field. If
       targeted by dispel magic, the armor must succeed on a Constitution
@@ -1475,19 +1936,22 @@ class AnimatedArmor(Monster):
     False Appearance.
       While the armor remains motionless, it is indistinguishable from a
       normal suit of armor.
+
+    # Actions
+
     Multiattack.
       The armor makes two melee attacks.
     Slam.
       Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 5 (1d6 +
       2) bludgeoning damage.
     """
-    name = "Animated Armor"
-    description = "Medium construct, unaligned"
+    name = 'Animated Armor'
+    description = 'Medium construct, unaligned'
     challenge_rating = 1
     armor_class = 18
-    skills = ""
-    senses = "Blindsight 60 ft. (blind beyond this radius), Passive Perception 6"
-    languages = ""
+    skills = ''
+    senses = 'Blindsight 60 ft. (blind beyond this radius), Passive Perception 6'
+    languages = ''
     strength = Ability(14)
     dexterity = Ability(11)
     constitution = Ability(13)
@@ -1498,13 +1962,21 @@ class AnimatedArmor(Monster):
     swim_speed = 0
     fly_speed = 0
     climb_speed = 0
+    burrow_speed = 0
     hp_max = 33
-    hit_dice = "6d8"
+    hit_dice = '6d8 + 6'
+    condition_immunities = 'blinded, charmed, deafened, exhaustion, frightened, paralyzed, petrified, poisoned'
+    damage_immunities = 'poison, psychic'
+    damage_resistances = ''
+    damage_vulnerabilities = ''
     spells = []
 
 
 class Ankheg(Monster):
     """
+
+    # Actions
+
     Bite.
       Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 10 (2d6
       + 3) slashing damage plus 3 (1d6) acid damage. If the target is a
@@ -1517,13 +1989,13 @@ class Ankheg(Monster):
       must make a DC 13 Dexterity saving throw, taking 10 (3d6) acid damage
       on a failed save, or half as much damage on a successful one.
     """
-    name = "Ankheg"
-    description = "Large monstrosity, unaligned"
+    name = 'Ankheg'
+    description = 'Large monstrosity, unaligned'
     challenge_rating = 2
     armor_class = 14
-    skills = ""
-    senses = "Darkvision 60 ft., Tremorsense 60 ft., Passive Perception 11"
-    languages = ""
+    skills = ''
+    senses = 'Darkvision 60 ft., Tremorsense 60 ft., Passive Perception 11'
+    languages = ''
     strength = Ability(17)
     dexterity = Ability(11)
     constitution = Ability(13)
@@ -1534,8 +2006,13 @@ class Ankheg(Monster):
     swim_speed = 0
     fly_speed = 0
     climb_speed = 0
+    burrow_speed = 10
     hp_max = 39
-    hit_dice = "6d10"
+    hit_dice = '6d10 + 6'
+    condition_immunities = ''
+    damage_immunities = ''
+    damage_resistances = ''
+    damage_vulnerabilities = ''
     spells = []
 
 
@@ -1551,13 +2028,12 @@ class Ankylosaurus(Monster):
       knocked prone.
 
     """
-    # TODO: This doesn't appear to be SRD
-    name = "Ankylosaurus"
-    description = "Huge beast, unaligned"
+    name = 'Ankylosaurus'
+    description = 'Huge beast, unaligned'
     challenge_rating = 3
     armor_class = 15
-    skills = ""
-    senses = "passive Perception 11"
+    skills = ''
+    senses = 'passive Perception 11'
     strength = Ability(19)
     dexterity = Ability(11)
     constitution = Ability(15)
@@ -1569,11 +2045,14 @@ class Ankylosaurus(Monster):
     fly_speed = 0
     climb_speed = 0
     hp_max = 68
-    hit_dice = "8d12+16"    
+    hit_dice = '8d12+16'
 
 
 class Ape(Monster):
     """
+
+    # Actions
+
     Multiattack.
       The ape makes two fist attacks.
     Fist.
@@ -1583,13 +2062,13 @@ class Ape(Monster):
       Ranged Weapon Attack: +5 to hit, range 25/50 ft., one target. Hit: 6
       (1d6 + 3) bludgeoning damage.
     """
-    name = "Ape"
-    description = "Medium beast, unaligned"
+    name = 'Ape'
+    description = 'Medium beast, unaligned'
     challenge_rating = 0.5
     armor_class = 12
-    skills = "Athletics +5, Perception +3"
-    senses = "Passive Perception 13"
-    languages = ""
+    skills = 'Athletics +5, Perception +3'
+    senses = 'Passive Perception 13'
+    languages = ''
     strength = Ability(16)
     dexterity = Ability(14)
     constitution = Ability(14)
@@ -1600,58 +2079,50 @@ class Ape(Monster):
     swim_speed = 0
     fly_speed = 0
     climb_speed = 30
+    burrow_speed = 0
     hp_max = 19
-    hit_dice = "3d8"
+    hit_dice = '3d8 + 6'
+    condition_immunities = ''
+    damage_immunities = ''
+    damage_resistances = ''
+    damage_vulnerabilities = ''
     spells = []
 
 
 class Archmage(Monster):
     """
+
     Magic Resistance.
       The archmage has advantage on saving throws against spells and other
       magical effects.
     Spellcasting.
-      The archmage is an 18th-level spellcaster. Its spellcasting ability is
-      Intelligence (spell save DC 17, +9 to hit with spell attacks). The
-      archmage can cast disguise self and invisibility at will and has the
-      following wizard spells prepared:
-      
-  
-      
-      - Cantrips (at will): fire bolt, light, mage hand, prestidigitation,
-      shocking grasp
-      
-      - 1st level (4 slots): detect magic, identify, mage armor*, magic
-      missile
-      
-      - 2nd level (3 slots): detect thoughts, mirror image, misty step
-      
-      - 3rd level (3 slots): counterspell, fly, lightning bolt
-      
-      - 4th level (3 slots): banishment, fire shield, stoneskin*
-      
-      - 5th level (3 slots): cone of cold, scrying, wall of force
-      
-      - 6th level (1 slot): globe of invulnerability
-      
-      - 7th level (1 slot): teleport
-      
-      - 8th level (1 slot): mind blank*
-      
-      - 9th level (1 slot): time stop
-      
-      * The archmage casts these spells on itself before combat.
+      The archmage is an 18th-level spellcaster. Its spellcasting ability is Intelligence (spell save DC 17, +9 to hit with spell attacks). The archmage can cast disguise self and invisibility at will and has the following wizard spells prepared:
+
+    - Cantrips (at will): fire bolt, light, mage hand, prestidigitation, shocking grasp
+    - 1st level (4 slots): detect magic, identify, mage armor*, magic missile
+    - 2nd level (3 slots): detect thoughts, mirror image, misty step
+    - 3rd level (3 slots): counterspell, fly, lightning bolt
+    - 4th level (3 slots): banishment, fire shield, stoneskin*
+    - 5th level (3 slots): cone of cold, scrying, wall of force
+    - 6th level (1 slot): globe of invulnerability
+    - 7th level (1 slot): teleport
+    - 8th level (1 slot): mind blank*
+    - 9th level (1 slot): time stop
+    * The archmage casts these spells on itself before combat.
+
+    # Actions
+
     Dagger.
       Melee or Ranged Weapon Attack: +6 to hit, reach 5 ft. or range 20/60
       ft., one target. Hit: 4 (1d4 + 2) piercing damage.
     """
-    name = "Archmage"
-    description = "Medium humanoid, any alignment"
+    name = 'Archmage'
+    description = 'Medium humanoid, any alignment'
     challenge_rating = 12
     armor_class = 12
-    skills = "Arcana +13, History +13"
-    senses = "Passive Perception 12"
-    languages = "any six languages"
+    skills = 'Arcana +13, History +13'
+    senses = 'Passive Perception 12'
+    languages = 'any six languages'
     strength = Ability(10)
     dexterity = Ability(14)
     constitution = Ability(12)
@@ -1662,13 +2133,19 @@ class Archmage(Monster):
     swim_speed = 0
     fly_speed = 0
     climb_speed = 0
+    burrow_speed = 0
     hp_max = 99
-    hit_dice = "18d8"
-    spells = ["disguise self", "invisibility", "fire bolt", "light", "mage hand", "prestidigitation", "shocking grasp", "detect magic", "identify", "mage armor", "magic missile", "detect thoughts", "mirror image", "misty step", "counterspell", "fly", "lightning bolt", "banishment", "fire shield", "stoneskin", "cone of cold", "scrying", "wall of force", "globe of invulnerability", "teleport", "mind blank", "time stop"]
+    hit_dice = '18d8 + 18'
+    condition_immunities = ''
+    damage_immunities = ''
+    damage_resistances = 'damage from spells'
+    damage_vulnerabilities = ''
+    spells = ['disguise self', 'invisibility', 'fire bolt', 'light', 'mage hand', 'prestidigitation', 'shocking grasp', 'detect magic', 'identify', 'mage armor', 'magic missile', 'detect thoughts', 'mirror image', 'misty step', 'counterspell', 'fly', 'lightning bolt', 'banishment', 'fire shield', 'stoneskin', 'cone of cold', 'scrying', 'wall of force', 'globe of invulnerability', 'teleport', 'mind blank', 'time stop']
 
 
 class Assassin(Monster):
     """
+
     Assassinate.
       During its first turn, the assassin has advantage on attack rolls
       against any creature that hasn't taken a turn. Any hit the assassin
@@ -1684,6 +2161,9 @@ class Assassin(Monster):
       target is within 5 ft. of an ally of the assassin that isn't
       incapacitated and the assassin doesn't have disadvantage on the attack
       roll.
+
+    # Actions
+
     Multiattack.
       The assassin makes two shortsword attacks.
     Shortsword.
@@ -1697,12 +2177,12 @@ class Assassin(Monster):
       Constitution saving throw, taking 24 (7d6) poison damage on a failed
       save, or half as much damage on a successful one.
     """
-    name = "Assassin"
-    description = "Medium humanoid, any non-good alignment"
+    name = 'Assassin'
+    description = 'Medium humanoid, any non-good alignment'
     challenge_rating = 8
     armor_class = 15
-    skills = "Acrobatics +6, Deception +3, Perception +3, Stealth +9"
-    senses = "Passive Perception 13"
+    skills = 'Acrobatics +6, Deception +3, Perception +3, Stealth +9'
+    senses = 'Passive Perception 13'
     languages = "Thieves' cant plus any two languages"
     strength = Ability(11)
     dexterity = Ability(16)
@@ -1714,27 +2194,36 @@ class Assassin(Monster):
     swim_speed = 0
     fly_speed = 0
     climb_speed = 0
+    burrow_speed = 0
     hp_max = 78
-    hit_dice = "12d8"
+    hit_dice = '12d8 + 24'
+    condition_immunities = ''
+    damage_immunities = ''
+    damage_resistances = 'poison'
+    damage_vulnerabilities = ''
     spells = []
 
 
 class AwakenedShrub(Monster):
     """
+
     False Appearance.
       While the shrub remains motionless, it is indistinguishable from a
       normal shrub.
+
+    # Actions
+
     Rake.
       Melee Weapon Attack: +1 to hit, reach 5 ft., one target. Hit: 1 (1d4 -
       1) slashing damage.
     """
-    name = "Awakened Shrub"
-    description = "Small plant, unaligned"
+    name = 'Awakened Shrub'
+    description = 'Small plant, unaligned'
     challenge_rating = 0
     armor_class = 9
-    skills = ""
-    senses = "Passive Perception 10"
-    languages = "one language known by its creator"
+    skills = ''
+    senses = 'Passive Perception 10'
+    languages = 'one language known by its creator'
     strength = Ability(3)
     dexterity = Ability(8)
     constitution = Ability(11)
@@ -1745,27 +2234,36 @@ class AwakenedShrub(Monster):
     swim_speed = 0
     fly_speed = 0
     climb_speed = 0
+    burrow_speed = 0
     hp_max = 10
-    hit_dice = "3d6"
+    hit_dice = '3d6 + 0'
+    condition_immunities = ''
+    damage_immunities = ''
+    damage_resistances = 'piercing'
+    damage_vulnerabilities = 'fire'
     spells = []
 
 
 class AwakenedTree(Monster):
     """
+
     False Appearance.
       While the tree remains motionless, it is indistinguishable from a
       normal tree.
+
+    # Actions
+
     Slam.
       Melee Weapon Attack: +6 to hit, reach 10 ft., one target. Hit: 14 (3d6
       + 4) bludgeoning damage.
     """
-    name = "Awakened Tree"
-    description = "Huge plant, unaligned"
+    name = 'Awakened Tree'
+    description = 'Huge plant, unaligned'
     challenge_rating = 2
     armor_class = 13
-    skills = ""
-    senses = "Passive Perception 10"
-    languages = "one language known by its creator"
+    skills = ''
+    senses = 'Passive Perception 10'
+    languages = 'one language known by its creator'
     strength = Ability(19)
     dexterity = Ability(6)
     constitution = Ability(15)
@@ -1776,24 +2274,32 @@ class AwakenedTree(Monster):
     swim_speed = 0
     fly_speed = 0
     climb_speed = 0
+    burrow_speed = 0
     hp_max = 59
-    hit_dice = "7d12"
+    hit_dice = '7d12 + 14'
+    condition_immunities = ''
+    damage_immunities = ''
+    damage_resistances = 'bludgeoning'
+    damage_vulnerabilities = 'fire'
     spells = []
 
 
 class AxeBeak(Monster):
     """
+
+    # Actions
+
     Beak.
       Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 6 (1d8 +
       2) slashing damage.
     """
-    name = "Axe Beak"
-    description = "Large beast, unaligned"
+    name = 'Axe Beak'
+    description = 'Large beast, unaligned'
     challenge_rating = 0.25
     armor_class = 11
-    skills = ""
-    senses = "Passive Perception 10"
-    languages = ""
+    skills = ''
+    senses = 'Passive Perception 10'
+    languages = ''
     strength = Ability(14)
     dexterity = Ability(12)
     constitution = Ability(12)
@@ -1804,13 +2310,19 @@ class AxeBeak(Monster):
     swim_speed = 0
     fly_speed = 0
     climb_speed = 0
+    burrow_speed = 0
     hp_max = 19
-    hit_dice = "3d10"
+    hit_dice = '3d10 + 3'
+    condition_immunities = ''
+    damage_immunities = ''
+    damage_resistances = ''
+    damage_vulnerabilities = ''
     spells = []
 
 
 class Azer(Monster):
     """
+
     Heated Body.
       A creature that touches the azer or hits it with a melee attack while
       within 5 ft. of it takes 5 (1d10) fire damage.
@@ -1820,18 +2332,21 @@ class Azer(Monster):
     Illumination.
       The azer sheds bright light in a 10-foot radius and dim light for an
       additional 10 ft..
+
+    # Actions
+
     Warhammer.
       Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 7 (1d8 +
       3) bludgeoning damage, or 8 (1d10 + 3) bludgeoning damage if used with
       two hands to make a melee attack, plus 3 (1d6) fire damage.
     """
-    name = "Azer"
-    description = "Medium elemental, lawful neutral"
+    name = 'Azer'
+    description = 'Medium elemental, lawful neutral'
     challenge_rating = 2
     armor_class = 17
-    skills = ""
-    senses = "Passive Perception 11"
-    languages = "Ignan"
+    skills = ''
+    senses = 'Passive Perception 11'
+    languages = 'Ignan'
     strength = Ability(17)
     dexterity = Ability(12)
     constitution = Ability(15)
@@ -1842,6 +2357,11 @@ class Azer(Monster):
     swim_speed = 0
     fly_speed = 0
     climb_speed = 0
+    burrow_speed = 0
     hp_max = 39
-    hit_dice = "6d8"
+    hit_dice = '6d8 + 12'
+    condition_immunities = 'poisoned'
+    damage_immunities = 'fire, poison'
+    damage_resistances = ''
+    damage_vulnerabilities = ''
     spells = []

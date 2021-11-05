@@ -10,11 +10,15 @@ from dungeonsheets.stats import Ability
 
 class IceDevil(Monster):
     """
+
     Devil's Sight.
       Magical darkness doesn't impede the devil's darkvision.
     Magic Resistance.
       The devil has advantage on saving throws against spells and other
       magical effects.
+
+    # Actions
+
     Multiattack.
       The devil makes three attacks: one with its bite, one with its claws,
       and one with its tail.
@@ -50,13 +54,13 @@ class IceDevil(Monster):
       save, or half as much damage on a successful one. The frigid air
       dissipates when the rest of the wall vanishes.
     """
-    name = "Ice Devil"
-    description = "Large fiend, lawful evil"
+    name = 'Ice Devil'
+    description = 'Large fiend, lawful evil'
     challenge_rating = 14
     armor_class = 18
-    skills = ""
-    senses = "Blindsight 60 ft., Darkvision 120 ft., Passive Perception 12"
-    languages = "Infernal, telepathy 120 ft."
+    skills = ''
+    senses = 'Blindsight 60 ft., Darkvision 120 ft., Passive Perception 12'
+    languages = 'Infernal, telepathy 120 ft.'
     strength = Ability(21)
     dexterity = Ability(14)
     constitution = Ability(18)
@@ -67,13 +71,19 @@ class IceDevil(Monster):
     swim_speed = 0
     fly_speed = 0
     climb_speed = 0
+    burrow_speed = 0
     hp_max = 180
-    hit_dice = "19d10"
+    hit_dice = '19d10 + 76'
+    condition_immunities = 'poisoned'
+    damage_immunities = 'fire, poison'
+    damage_resistances = "bludgeoning, piercing, and slashing from nonmagical weapons that aren't silvered"
+    damage_vulnerabilities = ''
     spells = []
 
 
 class IceMephit(Monster):
     """
+
     Death Burst.
       When the mephit dies, it explodes in a burst of jagged ice. Each
       creature within 5 ft. of it must make a DC 10 Dexterity saving throw,
@@ -85,6 +95,9 @@ class IceMephit(Monster):
     Innate Spellcasting.
       The mephit can innately cast fog cloud, requiring no material
       components. Its innate spellcasting ability is Charisma.
+
+    # Actions
+
     Claws.
       Melee Weapon Attack: +3 to hit, reach 5 ft., one creature. Hit: 3 (1d4
       + 1) slashing damage plus 2 (1d4) cold damage.
@@ -100,13 +113,13 @@ class IceMephit(Monster):
       other mephits. It remains for 1 minute, until it or its summoner dies,
       or until its summoner dismisses it as an action.
     """
-    name = "Ice Mephit"
-    description = "Small elemental, neutral evil"
+    name = 'Ice Mephit'
+    description = 'Small elemental, neutral evil'
     challenge_rating = 0.5
     armor_class = 11
-    skills = "Perception +2, Stealth +3"
-    senses = "Darkvision 60 ft., Passive Perception 12"
-    languages = "Aquan, Auran"
+    skills = 'Perception +2, Stealth +3'
+    senses = 'Darkvision 60 ft., Passive Perception 12'
+    languages = 'Aquan, Auran'
     strength = Ability(7)
     dexterity = Ability(13)
     constitution = Ability(10)
@@ -117,13 +130,19 @@ class IceMephit(Monster):
     swim_speed = 0
     fly_speed = 30
     climb_speed = 0
+    burrow_speed = 0
     hp_max = 21
-    hit_dice = "6d6"
+    hit_dice = '6d6 + 0'
+    condition_immunities = 'poisoned'
+    damage_immunities = 'cold, poison'
+    damage_resistances = ''
+    damage_vulnerabilities = 'bludgeoning, fire'
     spells = []
 
 
 class Imp(Monster):
     """
+
     Shapechanger.
       The imp can use its action to polymorph into a beast form that
       resembles a rat (speed 20 ft.), a raven (20 ft., fly 60 ft.), or a
@@ -144,6 +163,9 @@ class Imp(Monster):
       shares the quasit's Magic Resistance trait. At any time and for any
       reason, the imp can end its service as a familiar, ending the
       telepathic bond.
+
+    # Actions
+
     Sting (Bite in Beast Form).
       Melee Weapon Attack: +5 to hit, reach 5 ft ., one target. Hit: 5 (1d4
       + 3) piercing damage, and the target must make on a DC 11 Constitution
@@ -154,13 +176,13 @@ class Imp(Monster):
       concentration ends (as if concentrating on a spell). Any equipment the
       imp wears or carries is invisible with it.
     """
-    name = "Imp"
-    description = "Tiny fiend, lawful evil"
+    name = 'Imp'
+    description = 'Tiny fiend, lawful evil'
     challenge_rating = 1
     armor_class = 13
-    skills = "Deception +4, Insight +3, Persuasion +4, Stealth +5"
-    senses = "Darkvision 120 ft., Passive Perception 11"
-    languages = "Infernal, Common"
+    skills = 'Deception +4, Insight +3, Persuasion +4, Stealth +5'
+    senses = 'Darkvision 120 ft., Passive Perception 11'
+    languages = 'Infernal, Common'
     strength = Ability(6)
     dexterity = Ability(17)
     constitution = Ability(13)
@@ -171,13 +193,19 @@ class Imp(Monster):
     swim_speed = 0
     fly_speed = 40
     climb_speed = 0
+    burrow_speed = 0
     hp_max = 10
-    hit_dice = "3d4"
+    hit_dice = '3d4 + 3'
+    condition_immunities = 'poisoned'
+    damage_immunities = 'fire, poison'
+    damage_resistances = 'cold'
+    damage_vulnerabilities = ''
     spells = []
 
 
 class InvisibleStalker(Monster):
     """
+
     Invisibility.
       The stalker is invisible.
     Faultless Tracker.
@@ -185,18 +213,21 @@ class InvisibleStalker(Monster):
       direction and distance to its quarry as long as the two of them are on
       the same plane of existence. The stalker also knows the location of
       its summoner.
+
+    # Actions
+
     Multiattack.
       The stalker makes two slam attacks.
     Slam.
       Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 10 (2d6
       + 3) bludgeoning damage.
     """
-    name = "Invisible Stalker"
-    description = "Medium elemental, neutral"
+    name = 'Invisible Stalker'
+    description = 'Medium elemental, neutral'
     challenge_rating = 6
     armor_class = 14
-    skills = "Perception +8, Stealth +10"
-    senses = "Darkvision 60 ft., Passive Perception 18"
+    skills = 'Perception +8, Stealth +10'
+    senses = 'Darkvision 60 ft., Passive Perception 18'
     languages = "Auran, understands Common but doesn't speak it"
     strength = Ability(16)
     dexterity = Ability(19)
@@ -208,13 +239,19 @@ class InvisibleStalker(Monster):
     swim_speed = 0
     fly_speed = 50
     climb_speed = 0
+    burrow_speed = 0
     hp_max = 104
-    hit_dice = "16d8"
+    hit_dice = '16d8 + 32'
+    condition_immunities = 'exhaustion, grappled, paralyzed, petrified, poisoned, prone, restrained, unconscious'
+    damage_immunities = 'poison'
+    damage_resistances = 'bludgeoning, piercing, and slashing from nonmagical weapons'
+    damage_vulnerabilities = ''
     spells = []
 
 
 class IronGolem(Monster):
     """
+
     Fire Absorption.
       Whenever the golem is subjected to fire damage, it takes no damage and
       instead regains a number of hit points equal to the fire damage dealt.
@@ -225,6 +262,9 @@ class IronGolem(Monster):
       magical effects.
     Magic Weapons.
       The golem's weapon attacks are magical.
+
+    # Actions
+
     Multiattack.
       The golem makes two melee attacks.
     Slam.
@@ -239,12 +279,12 @@ class IronGolem(Monster):
       (l0d8) poison damage on a failed save, or half as much damage on a
       successful one.
     """
-    name = "Iron Golem"
-    description = "Large construct, unaligned"
+    name = 'Iron Golem'
+    description = 'Large construct, unaligned'
     challenge_rating = 16
     armor_class = 20
-    skills = ""
-    senses = "Darkvision 120 ft., Passive Perception 10"
+    skills = ''
+    senses = 'Darkvision 120 ft., Passive Perception 10'
     languages = "understands the languages of its creator but can't speak"
     strength = Ability(24)
     dexterity = Ability(9)
@@ -256,6 +296,11 @@ class IronGolem(Monster):
     swim_speed = 0
     fly_speed = 0
     climb_speed = 0
+    burrow_speed = 0
     hp_max = 210
-    hit_dice = "20d10"
+    hit_dice = '20d10 + 100'
+    condition_immunities = 'charmed, exhaustion, frightened, paralyzed, petrified, poisoned'
+    damage_immunities = "fire, poison, psychic, bludgeoning, piercing, and slashing from nonmagical weapons that aren't adamantine"
+    damage_resistances = ''
+    damage_vulnerabilities = ''
     spells = []

@@ -10,6 +10,7 @@ from dungeonsheets.stats import Ability
 
 class KillerWhale(Monster):
     """
+
     Echolocation.
       The whale can't use its blindsight while deafened.
     Hold Breath.
@@ -17,17 +18,20 @@ class KillerWhale(Monster):
     Keen Hearing.
       The whale has advantage on Wisdom (Perception) checks that rely on
       hearing.
+
+    # Actions
+
     Bite.
       Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 21 (5d6
       + 4) piercing damage.
     """
-    name = "Killer Whale"
-    description = "Huge beast, unaligned"
+    name = 'Killer Whale'
+    description = 'Huge beast, unaligned'
     challenge_rating = 3
     armor_class = 12
-    skills = "Perception +3"
-    senses = "Blindsight 120 ft., Passive Perception 13"
-    languages = ""
+    skills = 'Perception +3'
+    senses = 'Blindsight 120 ft., Passive Perception 13'
+    languages = ''
     strength = Ability(19)
     dexterity = Ability(10)
     constitution = Ability(13)
@@ -38,15 +42,24 @@ class KillerWhale(Monster):
     swim_speed = 60
     fly_speed = 0
     climb_speed = 0
+    burrow_speed = 0
     hp_max = 90
-    hit_dice = "12d12"
+    hit_dice = '12d12 + 12'
+    condition_immunities = ''
+    damage_immunities = ''
+    damage_resistances = ''
+    damage_vulnerabilities = ''
     spells = []
 
 
 class Knight(Monster):
     """
+
     Brave.
       The knight has advantage on saving throws against being frightened.
+
+    # Actions
+
     Multiattack.
       The knight makes two melee attacks.
     Greatsword.
@@ -62,14 +75,21 @@ class Knight(Monster):
       its roll provided it can hear and understand the knight. A creature
       can benefit from only one Leadership die at a time. This effect ends
       if the knight is incapacitated.
+
+    # Reactions
+
+    Parry.
+      The knight adds 2 to its AC against one melee attack that would hit
+      it. To do so, the knight must see the attacker and be wielding a melee
+      weapon.
     """
-    name = "Knight"
-    description = "Medium humanoid, any alignment"
+    name = 'Knight'
+    description = 'Medium humanoid, any alignment'
     challenge_rating = 3
     armor_class = 18
-    skills = ""
-    senses = "Passive Perception 10"
-    languages = "any one language (usually Common)"
+    skills = ''
+    senses = 'Passive Perception 10'
+    languages = 'any one language (usually Common)'
     strength = Ability(16)
     dexterity = Ability(11)
     constitution = Ability(14)
@@ -80,13 +100,19 @@ class Knight(Monster):
     swim_speed = 0
     fly_speed = 0
     climb_speed = 0
+    burrow_speed = 0
     hp_max = 52
-    hit_dice = "8d8"
+    hit_dice = '8d8 + 16'
+    condition_immunities = ''
+    damage_immunities = ''
+    damage_resistances = ''
+    damage_vulnerabilities = ''
     spells = []
 
 
 class Kobold(Monster):
     """
+
     Sunlight Sensitivity.
       While in sunlight, the kobold has disadvantage on attack rolls, as
       well as on Wisdom (Perception) checks that rely on sight.
@@ -94,6 +120,9 @@ class Kobold(Monster):
       The kobold has advantage on an attack roll against a creature if at
       least one of the kobold's allies is within 5 ft. of the creature and
       the ally isn't incapacitated.
+
+    # Actions
+
     Dagger.
       Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 4 (1d4 +
       2) piercing damage.
@@ -101,13 +130,13 @@ class Kobold(Monster):
       Ranged Weapon Attack: +4 to hit, range 30/120 ft., one target. Hit: 4
       (1d4 + 2) bludgeoning damage.
     """
-    name = "Kobold"
-    description = "Small humanoid, lawful evil"
+    name = 'Kobold'
+    description = 'Small humanoid, lawful evil'
     challenge_rating = 0.125
     armor_class = 12
-    skills = ""
-    senses = "Darkvision 60 ft., Passive Perception 8"
-    languages = "Common, Draconic"
+    skills = ''
+    senses = 'Darkvision 60 ft., Passive Perception 8'
+    languages = 'Common, Draconic'
     strength = Ability(7)
     dexterity = Ability(15)
     constitution = Ability(9)
@@ -118,13 +147,19 @@ class Kobold(Monster):
     swim_speed = 0
     fly_speed = 0
     climb_speed = 0
+    burrow_speed = 0
     hp_max = 5
-    hit_dice = "2d6"
+    hit_dice = '2d6 + -2'
+    condition_immunities = ''
+    damage_immunities = ''
+    damage_resistances = ''
+    damage_vulnerabilities = ''
     spells = []
 
 
 class Kraken(Monster):
     """
+
     Amphibious.
       The kraken can breathe air and water.
     Freedom of Movement.
@@ -133,6 +168,9 @@ class Kraken(Monster):
       movement to escape from nonmagical restraints or being grappled.
     Siege Monster.
       The kraken deals double damage to objects and structures.
+
+    # Actions
+
     Multiattack.
       The kraken makes three tentacle attacks, each of which it can replace
       with one use of Fling.
@@ -167,13 +205,28 @@ class Kraken(Monster):
       can strike a target the kraken can see within 120 feet of it. A target
       must make a DC 23 Dexterity saving throw, taking 22 (4d10) lightning
       damage on a failed save, or half as much damage on a successful one.
+
+    # Legendary Actions
+
+    Tentacle Attack or Fling.
+      The kraken makes one tentacle attack or uses its Fling.
+    Lightning Storm (Costs 2 Actions).
+      The kraken uses Lightning Storm.
+    Ink Cloud (Costs 3 Actions).
+      While underwater, the kraken expels an ink cloud in a 60-foot radius.
+      The cloud spreads around corners, and that area is heavily obscured to
+      creatures other than the kraken. Each creature other than the kraken
+      that ends its turn there must succeed on a DC 23 Constitution saving
+      throw, taking 16 (3d10) poison damage on a failed save, or half as
+      much damage on a successful one. A strong current disperses the cloud,
+      which otherwise disappears at the end of the kraken's next turn.
     """
-    name = "Kraken"
-    description = "Gargantuan monstrosity, chaotic evil"
+    name = 'Kraken'
+    description = 'Gargantuan monstrosity, chaotic evil'
     challenge_rating = 23
     armor_class = 18
-    skills = ""
-    senses = "Truesight 120 ft., Passive Perception 14"
+    skills = ''
+    senses = 'Truesight 120 ft., Passive Perception 14'
     languages = "understands Abyssal, Celestial, Infernal, and Primordial but can't speak, telepathy 120 ft."
     strength = Ability(30)
     dexterity = Ability(11)
@@ -185,6 +238,11 @@ class Kraken(Monster):
     swim_speed = 60
     fly_speed = 0
     climb_speed = 0
+    burrow_speed = 0
     hp_max = 472
-    hit_dice = "27d20"
+    hit_dice = '27d20 + 189'
+    condition_immunities = 'frightened, paralyzed'
+    damage_immunities = 'lightning, bludgeoning, piercing, and slashing from nonmagical weapons'
+    damage_resistances = ''
+    damage_vulnerabilities = ''
     spells = []

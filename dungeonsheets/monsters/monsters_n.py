@@ -10,9 +10,13 @@ from dungeonsheets.stats import Ability
 
 class Nalfeshnee(Monster):
     """
+
     Magic Resistance.
       The nalfeshnee has advantage on saving throws against spells and other
       magical effects.
+
+    # Actions
+
     Multiattack.
       The nalfeshnee uses Horror Nimbus if it can. It then makes three
       attacks: one with its bite and two with its claws.
@@ -44,13 +48,13 @@ class Nalfeshnee(Monster):
       demons. It remains for 1 minute, until it or its summoner dies, or
       until its summoner dismisses it as an action.
     """
-    name = "Nalfeshnee"
-    description = "Large fiend, chaotic evil"
+    name = 'Nalfeshnee'
+    description = 'Large fiend, chaotic evil'
     challenge_rating = 13
     armor_class = 18
-    skills = ""
-    senses = "Truesight 120 ft., Passive Perception 11"
-    languages = "Abyssal, telepathy 120 ft."
+    skills = ''
+    senses = 'Truesight 120 ft., Passive Perception 11'
+    languages = 'Abyssal, telepathy 120 ft.'
     strength = Ability(21)
     dexterity = Ability(10)
     constitution = Ability(22)
@@ -61,13 +65,19 @@ class Nalfeshnee(Monster):
     swim_speed = 0
     fly_speed = 30
     climb_speed = 0
+    burrow_speed = 0
     hp_max = 184
-    hit_dice = "16d10"
+    hit_dice = '16d10 + 96'
+    condition_immunities = 'poisoned'
+    damage_immunities = 'poison'
+    damage_resistances = 'cold'
+    damage_vulnerabilities = ''
     spells = []
 
 
 class NightHag(Monster):
     """
+
     Innate Spellcasting.
       The hag's innate spellcasting ability is Charisma (spell save DC 14,
       +6 to hit with spell attacks). She can innately cast the following
@@ -96,6 +106,9 @@ class NightHag(Monster):
       and only the night hag who crafted the bag can catch a soul with it.
       Crafting a soul bag takes 7 days and a humanoid sacrifice (whose flesh
       is used to make the bag).
+
+    # Actions
+
     Claws (Hag Form Only).
       Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 13 (2d8
       + 4) slashing damage.
@@ -120,13 +133,13 @@ class NightHag(Monster):
       soul bag. The reduction to the target's hit point maximum lasts until
       removed by the greater restoration spell or similar magic.
     """
-    name = "Night Hag"
-    description = "Medium fiend, neutral evil"
+    name = 'Night Hag'
+    description = 'Medium fiend, neutral evil'
     challenge_rating = 5
     armor_class = 17
-    skills = "Deception +7, Insight +6, Perception +6, Stealth +6"
-    senses = "Darkvision 120 ft., Passive Perception 16"
-    languages = "Abyssal, Common, Infernal, Primordial"
+    skills = 'Deception +7, Insight +6, Perception +6, Stealth +6'
+    senses = 'Darkvision 120 ft., Passive Perception 16'
+    languages = 'Abyssal, Common, Infernal, Primordial'
     strength = Ability(18)
     dexterity = Ability(15)
     constitution = Ability(16)
@@ -137,18 +150,27 @@ class NightHag(Monster):
     swim_speed = 0
     fly_speed = 0
     climb_speed = 0
+    burrow_speed = 0
     hp_max = 112
-    hit_dice = "15d8"
+    hit_dice = '15d8 + 45'
+    condition_immunities = 'charmed'
+    damage_immunities = ''
+    damage_resistances = 'cold'
+    damage_vulnerabilities = ''
     spells = []
 
 
 class Nightmare(Monster):
     """
+
     Confer Fire Resistance.
       The nightmare can grant resistance to fire damage to anyone riding it.
     Illumination.
       The nightmare sheds bright light in a 10-foot radius and dim light for
       an additional 10 feet.
+
+    # Actions
+
     Hooves.
       Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 13 (2d8
       + 4) bludgeoning damage plus 7 (2d6) fire damage.
@@ -157,12 +179,12 @@ class Nightmare(Monster):
       magically enter the Ethereal Plane from the Material Plane, or vice
       versa.
     """
-    name = "Nightmare"
-    description = "Large fiend, neutral evil"
+    name = 'Nightmare'
+    description = 'Large fiend, neutral evil'
     challenge_rating = 3
     armor_class = 13
-    skills = ""
-    senses = "Passive Perception 11"
+    skills = ''
+    senses = 'Passive Perception 11'
     languages = "understands Abyssal, Common, and Infernal but can't speak"
     strength = Ability(18)
     dexterity = Ability(15)
@@ -174,24 +196,39 @@ class Nightmare(Monster):
     swim_speed = 0
     fly_speed = 90
     climb_speed = 0
+    burrow_speed = 0
     hp_max = 68
-    hit_dice = "8d10"
+    hit_dice = '8d10 + 24'
+    condition_immunities = ''
+    damage_immunities = 'fire'
+    damage_resistances = ''
+    damage_vulnerabilities = ''
     spells = []
 
 
 class Noble(Monster):
     """
+
+    # Actions
+
     Rapier.
       Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: 5 (1d8 +
       1) piercing damage.
+
+    # Reactions
+
+    Parry.
+      The noble adds 2 to its AC against one melee attack that would hit it.
+      To do so, the noble must see the attacker and be wielding a melee
+      weapon.
     """
-    name = "Noble"
-    description = "Medium humanoid, any alignment"
+    name = 'Noble'
+    description = 'Medium humanoid, any alignment'
     challenge_rating = 0.125
     armor_class = 15
-    skills = "Deception +5, Insight +4, Persuasion +5"
-    senses = "Passive Perception 12"
-    languages = "any two languages"
+    skills = 'Deception +5, Insight +4, Persuasion +5'
+    senses = 'Passive Perception 12'
+    languages = 'any two languages'
     strength = Ability(11)
     dexterity = Ability(12)
     constitution = Ability(11)
@@ -202,8 +239,13 @@ class Noble(Monster):
     swim_speed = 0
     fly_speed = 0
     climb_speed = 0
+    burrow_speed = 0
     hp_max = 9
-    hit_dice = "2d8"
+    hit_dice = '2d8 + 0'
+    condition_immunities = ''
+    damage_immunities = ''
+    damage_resistances = ''
+    damage_vulnerabilities = ''
     spells = []
 
 
@@ -227,13 +269,13 @@ class Nothic(Monster):
       it magically learns one fact or secret about the target. The
       target automatically wins if it is immune to being charmed.
     """
-    name = "Nothic"
-    description = "Medium aberration, neutral evil"
+    name = 'Nothic'
+    description = 'Medium aberration, neutral evil'
     challenge_rating = 2.0
     armor_class = 15
-    skills = "Arcana +3, Insight +4, Perception +2, Stealth +5"
-    senses = "Truesight 120ft., Passive Perception 12"
-    languages = "Undercommon"
+    skills = 'Arcana +3, Insight +4, Perception +2, Stealth +5'
+    senses = 'Truesight 120ft., Passive Perception 12'
+    languages = 'Undercommon'
     strength = Ability(14)
     dexterity = Ability(16)
     constitution = Ability(16)
@@ -245,5 +287,5 @@ class Nothic(Monster):
     fly_speed = 0
     climb_speed = 0
     hp_max = 45
-    hit_dice = "6d8+18"
+    hit_dice = '6d8+18'
     spells = []

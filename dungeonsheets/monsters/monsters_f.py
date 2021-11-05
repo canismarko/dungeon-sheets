@@ -10,6 +10,7 @@ from dungeonsheets.stats import Ability
 
 class FireElemental(Monster):
     """
+
     Fire Form.
       The elemental can move through a space as narrow as 1 inch wide
       without squeezing. A creature that touches the elemental or hits it
@@ -25,6 +26,9 @@ class FireElemental(Monster):
     Water Susceptibility.
       For every 5 ft. the elemental moves in water, or for every gallon of
       water splashed on it, it takes 1 cold damage.
+
+    # Actions
+
     Multiattack.
       The elemental makes two touch attacks.
     Touch.
@@ -33,13 +37,13 @@ class FireElemental(Monster):
       it ignites. Until a creature takes an action to douse the fire, the
       target takes 5 (1d10) fire damage at the start of each of its turns.
     """
-    name = "Fire Elemental"
-    description = "Large elemental, neutral"
+    name = 'Fire Elemental'
+    description = 'Large elemental, neutral'
     challenge_rating = 5
     armor_class = 13
-    skills = ""
-    senses = "Darkvision 60 ft., Passive Perception 10"
-    languages = "Ignan"
+    skills = ''
+    senses = 'Darkvision 60 ft., Passive Perception 10'
+    languages = 'Ignan'
     strength = Ability(10)
     dexterity = Ability(17)
     constitution = Ability(16)
@@ -50,13 +54,21 @@ class FireElemental(Monster):
     swim_speed = 0
     fly_speed = 0
     climb_speed = 0
+    burrow_speed = 0
     hp_max = 102
-    hit_dice = "12d10"
+    hit_dice = '12d10 + 36'
+    condition_immunities = 'exhaustion, grappled, paralyzed, petrified, poisoned, prone, restrained, unconscious'
+    damage_immunities = 'fire, poison'
+    damage_resistances = 'bludgeoning, piercing, and slashing from nonmagical weapons'
+    damage_vulnerabilities = ''
     spells = []
 
 
 class FireGiant(Monster):
     """
+
+    # Actions
+
     Multiattack.
       The giant makes two greatsword attacks.
     Greatsword.
@@ -66,13 +78,13 @@ class FireGiant(Monster):
       Ranged Weapon Attack: +11 to hit, range 60/240 ft., one target. Hit:
       29 (4d10 + 7) bludgeoning damage.
     """
-    name = "Fire Giant"
-    description = "Huge giant, lawful evil"
+    name = 'Fire Giant'
+    description = 'Huge giant, lawful evil'
     challenge_rating = 9
     armor_class = 18
-    skills = "Athletics +11, Perception +6"
-    senses = "Passive Perception 16"
-    languages = "Giant"
+    skills = 'Athletics +11, Perception +6'
+    senses = 'Passive Perception 16'
+    languages = 'Giant'
     strength = Ability(25)
     dexterity = Ability(9)
     constitution = Ability(23)
@@ -83,13 +95,19 @@ class FireGiant(Monster):
     swim_speed = 0
     fly_speed = 0
     climb_speed = 0
+    burrow_speed = 0
     hp_max = 162
-    hit_dice = "13d12"
+    hit_dice = '13d12 + 78'
+    condition_immunities = ''
+    damage_immunities = 'fire'
+    damage_resistances = ''
+    damage_vulnerabilities = ''
     spells = []
 
 
 class FleshGolem(Monster):
     """
+
     Berserk.
       Whenever the golem starts its turn with 40 hit points or fewer, roll a
       d6. On a 6, the golem goes berserk. On each of its turns while
@@ -119,18 +137,21 @@ class FleshGolem(Monster):
       magical effects.
     Magic Weapons.
       The golem's weapon attacks are magical.
+
+    # Actions
+
     Multiattack.
       The golem makes two slam attacks.
     Slam.
       Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 13 (2d8
       + 4) bludgeoning damage.
     """
-    name = "Flesh Golem"
-    description = "Medium construct, neutral"
+    name = 'Flesh Golem'
+    description = 'Medium construct, neutral'
     challenge_rating = 5
     armor_class = 9
-    skills = ""
-    senses = "Darkvision 60 ft., Passive Perception 10"
+    skills = ''
+    senses = 'Darkvision 60 ft., Passive Perception 10'
     languages = "understands the languages of its creator but can't speak"
     strength = Ability(19)
     dexterity = Ability(9)
@@ -142,27 +163,36 @@ class FleshGolem(Monster):
     swim_speed = 0
     fly_speed = 0
     climb_speed = 0
+    burrow_speed = 0
     hp_max = 93
-    hit_dice = "11d8"
+    hit_dice = '11d8 + 44'
+    condition_immunities = 'charmed, exhaustion, frightened, paralyzed, petrified, poisoned'
+    damage_immunities = "lightning, poison, bludgeoning, piercing, and slashing from nonmagical weapons that aren't adamantine"
+    damage_resistances = ''
+    damage_vulnerabilities = ''
     spells = []
 
 
 class FlyingSnake(Monster):
     """
+
     Flyby.
       The snake doesn't provoke opportunity attacks when it flies out of an
       enemy's reach.
+
+    # Actions
+
     Bite.
       Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 1
       piercing damage plus 7 (3d4) poison damage.
     """
-    name = "Flying Snake"
-    description = "Tiny beast, unaligned"
+    name = 'Flying Snake'
+    description = 'Tiny beast, unaligned'
     challenge_rating = 0.125
     armor_class = 14
-    skills = ""
-    senses = "Blindsight 10 ft., Passive Perception 11"
-    languages = ""
+    skills = ''
+    senses = 'Blindsight 10 ft., Passive Perception 11'
+    languages = ''
     strength = Ability(4)
     dexterity = Ability(18)
     constitution = Ability(11)
@@ -173,13 +203,19 @@ class FlyingSnake(Monster):
     swim_speed = 30
     fly_speed = 60
     climb_speed = 0
+    burrow_speed = 0
     hp_max = 5
-    hit_dice = "2d4"
+    hit_dice = '2d4 + 0'
+    condition_immunities = ''
+    damage_immunities = ''
+    damage_resistances = ''
+    damage_vulnerabilities = ''
     spells = []
 
 
 class FlyingSword(Monster):
     """
+
     Antimagic Susceptibility.
       The sword is incapacitated while in the area of an antimagic field. If
       targeted by dispel magic, the sword must succeed on a Constitution
@@ -188,17 +224,20 @@ class FlyingSword(Monster):
     False Appearance.
       While the sword remains motionless and isn't flying, it is
       indistinguishable from a normal sword.
+
+    # Actions
+
     Longsword.
       Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: 5 (1d8 +
       1) slashing damage.
     """
-    name = "Flying Sword"
-    description = "Small construct, unaligned"
+    name = 'Flying Sword'
+    description = 'Small construct, unaligned'
     challenge_rating = 0.25
     armor_class = 17
-    skills = ""
-    senses = "Blindsight 60 ft. (blind beyond this radius), Passive Perception 7"
-    languages = ""
+    skills = ''
+    senses = 'Blindsight 60 ft. (blind beyond this radius), Passive Perception 7'
+    languages = ''
     strength = Ability(12)
     dexterity = Ability(15)
     constitution = Ability(11)
@@ -209,26 +248,32 @@ class FlyingSword(Monster):
     swim_speed = 0
     fly_speed = 50
     climb_speed = 0
+    burrow_speed = 0
     hp_max = 17
-    hit_dice = "5d6"
+    hit_dice = '5d6 + 0'
+    condition_immunities = 'blinded, charmed, blinded, frightened, paralyzed, petrified, poisoned'
+    damage_immunities = 'poison, psychic'
+    damage_resistances = ''
+    damage_vulnerabilities = ''
     spells = []
 
 
 class Frog(Monster):
     """
+
     Amphibious.
       The frog can breathe air and water
     Standing Leap.
       The frog's long jump is up to 10 ft. and its high jump is up to 5 ft.,
       with or without a running start.
     """
-    name = "Frog"
-    description = "Tiny beast, unaligned"
+    name = 'Frog'
+    description = 'Tiny beast, unaligned'
     challenge_rating = 0
     armor_class = 11
-    skills = "Perception +1, Stealth +3"
-    senses = "Darkvision 30 ft., Passive Perception 11"
-    languages = ""
+    skills = 'Perception +1, Stealth +3'
+    senses = 'Darkvision 30 ft., Passive Perception 11'
+    languages = ''
     strength = Ability(1)
     dexterity = Ability(13)
     constitution = Ability(8)
@@ -239,13 +284,21 @@ class Frog(Monster):
     swim_speed = 20
     fly_speed = 0
     climb_speed = 0
+    burrow_speed = 0
     hp_max = 1
-    hit_dice = "1d4"
+    hit_dice = '1d4 + -1'
+    condition_immunities = ''
+    damage_immunities = ''
+    damage_resistances = ''
+    damage_vulnerabilities = ''
     spells = []
 
 
 class FrostGiant(Monster):
     """
+
+    # Actions
+
     Multiattack.
       The giant makes two greataxe attacks.
     Greataxe.
@@ -255,13 +308,13 @@ class FrostGiant(Monster):
       Ranged Weapon Attack: +9 to hit, range 60/240 ft., one target. Hit: 28
       (4d10 + 6) bludgeoning damage.
     """
-    name = "Frost Giant"
-    description = "Huge giant, neutral evil"
+    name = 'Frost Giant'
+    description = 'Huge giant, neutral evil'
     challenge_rating = 8
     armor_class = 15
-    skills = "Athletics +9, Perception +3"
-    senses = "Passive Perception 13"
-    languages = "Giant"
+    skills = 'Athletics +9, Perception +3'
+    senses = 'Passive Perception 13'
+    languages = 'Giant'
     strength = Ability(23)
     dexterity = Ability(9)
     constitution = Ability(21)
@@ -272,6 +325,11 @@ class FrostGiant(Monster):
     swim_speed = 0
     fly_speed = 0
     climb_speed = 0
+    burrow_speed = 0
     hp_max = 138
-    hit_dice = "12d12"
+    hit_dice = '12d12 + 60'
+    condition_immunities = ''
+    damage_immunities = 'cold'
+    damage_resistances = ''
+    damage_vulnerabilities = ''
     spells = []

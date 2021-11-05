@@ -10,23 +10,27 @@ from dungeonsheets.stats import Ability
 
 class Warhorse(Monster):
     """
+
     Trampling Charge.
       If the horse moves at least 20 ft. straight toward a creature and then
       hits it with a hooves attack on the same turn, that target must
       succeed on a DC 14 Strength saving throw or be knocked prone. If the
       target is prone, the horse can make another attack with its hooves
       against it as a bonus action.
+
+    # Actions
+
     Hooves.
       Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 11 (2d6
       + 4) bludgeoning damage.
     """
-    name = "Warhorse"
-    description = "Large beast, unaligned"
+    name = 'Warhorse'
+    description = 'Large beast, unaligned'
     challenge_rating = 0.5
     armor_class = 11
-    skills = ""
-    senses = "Passive Perception 11"
-    languages = ""
+    skills = ''
+    senses = 'Passive Perception 11'
+    languages = ''
     strength = Ability(18)
     dexterity = Ability(12)
     constitution = Ability(13)
@@ -37,24 +41,32 @@ class Warhorse(Monster):
     swim_speed = 0
     fly_speed = 0
     climb_speed = 0
+    burrow_speed = 0
     hp_max = 19
-    hit_dice = "3d10"
+    hit_dice = '3d10 + 3'
+    condition_immunities = ''
+    damage_immunities = ''
+    damage_resistances = ''
+    damage_vulnerabilities = ''
     spells = []
 
 
 class WarhorseSkeleton(Monster):
     """
+
+    # Actions
+
     Hooves.
       Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 11 (2d6
       + 4) bludgeoning damage.
     """
-    name = "Warhorse Skeleton"
-    description = "Large undead, lawful evil"
+    name = 'Warhorse Skeleton'
+    description = 'Large undead, lawful evil'
     challenge_rating = 0.5
     armor_class = 13
-    skills = ""
-    senses = "Darkvision 60 ft., Passive Perception 9"
-    languages = ""
+    skills = ''
+    senses = 'Darkvision 60 ft., Passive Perception 9'
+    languages = ''
     strength = Ability(18)
     dexterity = Ability(12)
     constitution = Ability(15)
@@ -65,19 +77,28 @@ class WarhorseSkeleton(Monster):
     swim_speed = 0
     fly_speed = 0
     climb_speed = 0
+    burrow_speed = 0
     hp_max = 22
-    hit_dice = "3d10"
+    hit_dice = '3d10 + 6'
+    condition_immunities = 'exhaustion, poisoned'
+    damage_immunities = 'poison'
+    damage_resistances = ''
+    damage_vulnerabilities = 'bludgeoning'
     spells = []
 
 
 class WaterElemental(Monster):
     """
+
     Water Form.
       The elemental can enter a hostile creature's space and stop there. It
       can move through a space as narrow as 1 inch wide without squeezing.
     Freeze.
       If the elemental takes cold damage, it partially freezes; its speed is
       reduced by 20 ft. until the end of its next turn.
+
+    # Actions
+
     Multiattack.
       The elemental makes two slam attacks.
     Slam.
@@ -98,13 +119,13 @@ class WaterElemental(Monster):
       or object out of it by taking an action to make a DC 14 Strength and
       succeeding.
     """
-    name = "Water Elemental"
-    description = "Large elemental, neutral"
+    name = 'Water Elemental'
+    description = 'Large elemental, neutral'
     challenge_rating = 5
     armor_class = 14
-    skills = ""
-    senses = "Darkvision 60 ft., Passive Perception 10"
-    languages = "Aquan"
+    skills = ''
+    senses = 'Darkvision 60 ft., Passive Perception 10'
+    languages = 'Aquan'
     strength = Ability(18)
     dexterity = Ability(14)
     constitution = Ability(18)
@@ -115,27 +136,36 @@ class WaterElemental(Monster):
     swim_speed = 90
     fly_speed = 0
     climb_speed = 0
+    burrow_speed = 0
     hp_max = 114
-    hit_dice = "12d10"
+    hit_dice = '12d10 + 48'
+    condition_immunities = 'exhaustion, grappled, paralyzed, petrified, poisoned, prone, restrained, unconscious'
+    damage_immunities = 'poison'
+    damage_resistances = 'acid'
+    damage_vulnerabilities = ''
     spells = []
 
 
 class Weasel(Monster):
     """
+
     Keen Hearing and Smell.
       The weasel has advantage on Wisdom (Perception) checks that rely on
       hearing or smell.
+
+    # Actions
+
     Bite.
       Melee Weapon Attack: +5 to hit, reach 5 ft., one creature. Hit: 1
       piercing damage.
     """
-    name = "Weasel"
-    description = "Tiny beast, unaligned"
+    name = 'Weasel'
+    description = 'Tiny beast, unaligned'
     challenge_rating = 0
     armor_class = 13
-    skills = "Perception +3, Stealth +5"
-    senses = "Passive Perception 13"
-    languages = ""
+    skills = 'Perception +3, Stealth +5'
+    senses = 'Passive Perception 13'
+    languages = ''
     strength = Ability(3)
     dexterity = Ability(16)
     constitution = Ability(8)
@@ -146,8 +176,68 @@ class Weasel(Monster):
     swim_speed = 0
     fly_speed = 0
     climb_speed = 0
+    burrow_speed = 0
     hp_max = 1
-    hit_dice = "1d4"
+    hit_dice = '1d4 + -1'
+    condition_immunities = ''
+    damage_immunities = ''
+    damage_resistances = ''
+    damage_vulnerabilities = ''
+    spells = []
+
+
+class WerebearBearForm(Monster):
+    """
+
+    Shapechanger.
+      The werebear can use its action to polymorph into a Large bear-
+      humanoid hybrid or into a Large bear, or back into its true form,
+      which is humanoid. Its statistics, other than its size and AC, are the
+      same in each form. Any equipment it is wearing or carrying isn't
+      transformed. It reverts to its true form if it dies.
+    Keen Smell.
+      The werebear has advantage on Wisdom (Perception) checks that rely on
+      smell.
+
+    # Actions
+
+    Multiattack.
+      In bear form, the werebear makes two claw attacks. In humanoid form,
+      it makes two greataxe attacks. In hybrid form, it can attack like a
+      bear or a humanoid.
+    Bite.
+      Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 15 (2d10
+      + 4) piercing damage. If the target is a humanoid, it must succeed on
+      a DC 14 Constitution saving throw or be cursed with werebear
+      lycanthropy.
+    Claw.
+      Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 13 (2d8
+      + 4) slashing damage.
+    """
+    name = 'Werebear, Bear Form'
+    description = 'Medium humanoid, neutral good'
+    challenge_rating = 5
+    armor_class = 10
+    skills = 'Perception +7'
+    senses = 'Passive Perception 17'
+    languages = ''
+    strength = Ability(19)
+    dexterity = Ability(10)
+    constitution = Ability(17)
+    intelligence = Ability(11)
+    wisdom = Ability(12)
+    charisma = Ability(12)
+    speed = 40
+    swim_speed = 0
+    fly_speed = 0
+    climb_speed = 30
+    burrow_speed = 0
+    hp_max = 135
+    hit_dice = '18d8 + 54'
+    condition_immunities = ''
+    damage_immunities = 'bludgeoning, piercing, and slashing from nonmagical attacks not made with silvered weapons'
+    damage_resistances = ''
+    damage_vulnerabilities = ''
     spells = []
 
 
@@ -175,13 +265,13 @@ class WerebearBearform(Monster):
       Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 13 (2d8
       + 4) slashing damage.
     """
-    name = "Werebear, Bear form"
-    description = "Medium humanoid, neutral good"
+    name = 'Werebear, Bear form'
+    description = 'Medium humanoid, neutral good'
     challenge_rating = 5
     armor_class = 10
-    skills = "Perception +7"
-    senses = "Passive Perception 17"
-    languages = ""
+    skills = 'Perception +7'
+    senses = 'Passive Perception 17'
+    languages = ''
     strength = Ability(19)
     dexterity = Ability(10)
     constitution = Ability(17)
@@ -193,7 +283,57 @@ class WerebearBearform(Monster):
     fly_speed = 0
     climb_speed = 30
     hp_max = 135
-    hit_dice = "18d8"
+    hit_dice = '18d8'
+    spells = []
+
+
+class WerebearHumanForm(Monster):
+    """
+
+    Shapechanger.
+      The werebear can use its action to polymorph into a Large bear-
+      humanoid hybrid or into a Large bear, or back into its true form,
+      which is humanoid. Its statistics, other than its size and AC, are the
+      same in each form. Any equipment it is wearing or carrying isn't
+      transformed. It reverts to its true form if it dies.
+    Keen Smell.
+      The werebear has advantage on Wisdom (Perception) checks that rely on
+      smell.
+
+    # Actions
+
+    Multiattack.
+      In bear form, the werebear makes two claw attacks. In humanoid form,
+      it makes two greataxe attacks. In hybrid form, it can attack like a
+      bear or a humanoid.
+    Greataxe.
+      Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 10 (1d12
+      + 4) slashing damage.
+    """
+    name = 'Werebear, Human Form'
+    description = 'Medium humanoid, neutral good'
+    challenge_rating = 5
+    armor_class = 10
+    skills = 'Perception +7'
+    senses = 'Passive Perception 17'
+    languages = 'Common'
+    strength = Ability(19)
+    dexterity = Ability(10)
+    constitution = Ability(17)
+    intelligence = Ability(11)
+    wisdom = Ability(12)
+    charisma = Ability(12)
+    speed = 30
+    swim_speed = 0
+    fly_speed = 0
+    climb_speed = 0
+    burrow_speed = 0
+    hp_max = 135
+    hit_dice = '18d8 + 54'
+    condition_immunities = ''
+    damage_immunities = 'bludgeoning, piercing, and slashing from nonmagical attacks not made with silvered weapons'
+    damage_resistances = ''
+    damage_vulnerabilities = ''
     spells = []
 
 
@@ -216,13 +356,13 @@ class WerebearHumanform(Monster):
       Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 10 (1d12
       + 4) slashing damage.
     """
-    name = "Werebear, Human form"
-    description = "Medium humanoid, neutral good"
+    name = 'Werebear, Human form'
+    description = 'Medium humanoid, neutral good'
     challenge_rating = 5
     armor_class = 10
-    skills = "Perception +7"
-    senses = "Passive Perception 17"
-    languages = "Common"
+    skills = 'Perception +7'
+    senses = 'Passive Perception 17'
+    languages = 'Common'
     strength = Ability(19)
     dexterity = Ability(10)
     constitution = Ability(17)
@@ -234,7 +374,65 @@ class WerebearHumanform(Monster):
     fly_speed = 0
     climb_speed = 0
     hp_max = 135
-    hit_dice = "18d8"
+    hit_dice = '18d8'
+    spells = []
+
+
+class WerebearHybridForm(Monster):
+    """
+
+    Shapechanger.
+      The werebear can use its action to polymorph into a Large bear-
+      humanoid hybrid or into a Large bear, or back into its true form,
+      which is humanoid. Its statistics, other than its size and AC, are the
+      same in each form. Any equipment it is wearing or carrying isn't
+      transformed. It reverts to its true form if it dies.
+    Keen Smell.
+      The werebear has advantage on Wisdom (Perception) checks that rely on
+      smell.
+
+    # Actions
+
+    Multiattack.
+      In bear form, the werebear makes two claw attacks. In humanoid form,
+      it makes two greataxe attacks. In hybrid form, it can attack like a
+      bear or a humanoid.
+    Bite.
+      Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 15 (2d10
+      + 4) piercing damage. If the target is a humanoid, it must succeed on
+      a DC 14 Constitution saving throw or be cursed with werebear
+      lycanthropy.
+    Claw.
+      Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 13 (2d8
+      + 4) slashing damage.
+    Greataxe.
+      Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 10 (1d12
+      + 4) slashing damage.
+    """
+    name = 'Werebear, Hybrid Form'
+    description = 'Medium humanoid, neutral good'
+    challenge_rating = 5
+    armor_class = 10
+    skills = 'Perception +7'
+    senses = 'Passive Perception 17'
+    languages = 'Common'
+    strength = Ability(19)
+    dexterity = Ability(10)
+    constitution = Ability(17)
+    intelligence = Ability(11)
+    wisdom = Ability(12)
+    charisma = Ability(12)
+    speed = 40
+    swim_speed = 0
+    fly_speed = 0
+    climb_speed = 30
+    burrow_speed = 0
+    hp_max = 135
+    hit_dice = '18d8 + 54'
+    condition_immunities = ''
+    damage_immunities = 'bludgeoning, piercing, and slashing from nonmagical attacks not made with silvered weapons'
+    damage_resistances = ''
+    damage_vulnerabilities = ''
     spells = []
 
 
@@ -265,13 +463,13 @@ class WerebearHybridform(Monster):
       Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 10 (1d12
       + 4) slashing damage.
     """
-    name = "Werebear, Hybrid form"
-    description = "Medium humanoid, neutral good"
+    name = 'Werebear, Hybrid form'
+    description = 'Medium humanoid, neutral good'
     challenge_rating = 5
     armor_class = 10
-    skills = "Perception +7"
-    senses = "Passive Perception 17"
-    languages = "Common"
+    skills = 'Perception +7'
+    senses = 'Passive Perception 17'
+    languages = 'Common'
     strength = Ability(19)
     dexterity = Ability(10)
     constitution = Ability(17)
@@ -283,7 +481,60 @@ class WerebearHybridform(Monster):
     fly_speed = 0
     climb_speed = 30
     hp_max = 135
-    hit_dice = "18d8"
+    hit_dice = '18d8'
+    spells = []
+
+
+class WereboarBoarForm(Monster):
+    """
+
+    Shapechanger.
+      The wereboar can use its action to polymorph into a boar-humanoid
+      hybrid or into a boar, or back into its true form, which is humanoid.
+      Its statistics, other than its AC, are the same in each form. Any
+      equipment it is wearing or carrying isn't transformed. It reverts to
+      its true form if it dies.
+    Charge (Boar or Hybrid Form Only).
+      If the wereboar moves at least 15 feet straight toward a target and
+      then hits it with its tusks on the same turn, the target takes an
+      extra 7 (2d6) slashing damage. If the target is a creature, it must
+      succeed on a DC 13 Strength saving throw or be knocked prone.
+    Relentless.
+      If the wereboar takes 14 damage or less that would reduce it to 0 hit
+      points, it is reduced to 1 hit point instead.
+
+    # Actions
+
+    Tusks.
+      Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 10 (2d6
+      + 3) slashing damage. If the target is a humanoid, it must succeed on
+      a DC 12 Constitution saving throw or be cursed with wereboar
+      lycanthropy.
+    """
+    name = 'Wereboar, Boar Form'
+    description = 'Medium humanoid, neutral evil'
+    challenge_rating = 4
+    armor_class = 10
+    skills = 'Perception +2'
+    senses = 'Passive Perception 12'
+    languages = ''
+    strength = Ability(17)
+    dexterity = Ability(10)
+    constitution = Ability(15)
+    intelligence = Ability(10)
+    wisdom = Ability(11)
+    charisma = Ability(8)
+    speed = 40
+    swim_speed = 0
+    fly_speed = 0
+    climb_speed = 0
+    burrow_speed = 0
+    hp_max = 78
+    hit_dice = '12d8 + 24'
+    condition_immunities = ''
+    damage_immunities = "bludgeoning, piercing, and slashing damage from nonmagical weapons that aren't silvered"
+    damage_resistances = ''
+    damage_vulnerabilities = ''
     spells = []
 
 
@@ -309,13 +560,13 @@ class WereboarBoarform(Monster):
       a DC 12 Constitution saving throw or be cursed with wereboar
       lycanthropy.
     """
-    name = "Wereboar, Boar form"
-    description = "Medium humanoid, neutral evil"
+    name = 'Wereboar, Boar form'
+    description = 'Medium humanoid, neutral evil'
     challenge_rating = 4
     armor_class = 10
-    skills = "Perception +2"
-    senses = "Passive Perception 12"
-    languages = ""
+    skills = 'Perception +2'
+    senses = 'Passive Perception 12'
+    languages = ''
     strength = Ability(17)
     dexterity = Ability(10)
     constitution = Ability(15)
@@ -327,7 +578,56 @@ class WereboarBoarform(Monster):
     fly_speed = 0
     climb_speed = 0
     hp_max = 78
-    hit_dice = "12d8"
+    hit_dice = '12d8'
+    spells = []
+
+
+class WereboarHumanForm(Monster):
+    """
+
+    Shapechanger.
+      The wereboar can use its action to polymorph into a boar-humanoid
+      hybrid or into a boar, or back into its true form, which is humanoid.
+      Its statistics, other than its AC, are the same in each form. Any
+      equipment it is wearing or carrying isn't transformed. It reverts to
+      its true form if it dies.
+    Relentless.
+      If the wereboar takes 14 damage or less that would reduce it to 0 hit
+      points, it is reduced to 1 hit point instead.
+
+    # Actions
+
+    Multiattack.
+      The wereboar makes two attacks, only one of which can be with its
+      tusks.
+    Maul.
+      Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 10 (2d6
+      + 3) bludgeoning damage.
+    """
+    name = 'Wereboar, Human Form'
+    description = 'Medium humanoid, neutral evil'
+    challenge_rating = 4
+    armor_class = 10
+    skills = 'Perception +2'
+    senses = 'Passive Perception 12'
+    languages = "Common (can't speak in boar form)"
+    strength = Ability(17)
+    dexterity = Ability(10)
+    constitution = Ability(15)
+    intelligence = Ability(10)
+    wisdom = Ability(11)
+    charisma = Ability(8)
+    speed = 30
+    swim_speed = 0
+    fly_speed = 0
+    climb_speed = 0
+    burrow_speed = 0
+    hp_max = 78
+    hit_dice = '12d8 + 24'
+    condition_immunities = ''
+    damage_immunities = "bludgeoning, piercing, and slashing damage from nonmagical weapons that aren't silvered"
+    damage_resistances = ''
+    damage_vulnerabilities = ''
     spells = []
 
 
@@ -349,12 +649,12 @@ class WereboarHumanform(Monster):
       Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 10 (2d6
       + 3) bludgeoning damage.
     """
-    name = "Wereboar, Human form"
-    description = "Medium humanoid, neutral evil"
+    name = 'Wereboar, Human form'
+    description = 'Medium humanoid, neutral evil'
     challenge_rating = 4
     armor_class = 10
-    skills = "Perception +2"
-    senses = "Passive Perception 12"
+    skills = 'Perception +2'
+    senses = 'Passive Perception 12'
     languages = "Common (can't speak in boar form)"
     strength = Ability(17)
     dexterity = Ability(10)
@@ -367,7 +667,66 @@ class WereboarHumanform(Monster):
     fly_speed = 0
     climb_speed = 0
     hp_max = 78
-    hit_dice = "12d8"
+    hit_dice = '12d8'
+    spells = []
+
+
+class WereboarHybridForm(Monster):
+    """
+
+    Shapechanger.
+      The wereboar can use its action to polymorph into a boar-humanoid
+      hybrid or into a boar, or back into its true form, which is humanoid.
+      Its statistics, other than its AC, are the same in each form. Any
+      equipment it is wearing or carrying isn't transformed. It reverts to
+      its true form if it dies.
+    Charge (Boar or Hybrid Form Only).
+      If the wereboar moves at least 15 feet straight toward a target and
+      then hits it with its tusks on the same turn, the target takes an
+      extra 7 (2d6) slashing damage. If the target is a creature, it must
+      succeed on a DC 13 Strength saving throw or be knocked prone.
+    Relentless.
+      If the wereboar takes 14 damage or less that would reduce it to 0 hit
+      points, it is reduced to 1 hit point instead.
+
+    # Actions
+
+    Multiattack.
+      The wereboar makes two attacks, only one of which can be with its
+      tusks.
+    Maul.
+      Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 10 (2d6
+      + 3) bludgeoning damage.
+    Tusks.
+      Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 10 (2d6
+      + 3) slashing damage. If the target is a humanoid, it must succeed on
+      a DC 12 Constitution saving throw or be cursed with wereboar
+      lycanthropy.
+    """
+    name = 'Wereboar, Hybrid Form'
+    description = 'Medium humanoid, neutral evil'
+    challenge_rating = 4
+    armor_class = 10
+    skills = 'Perception +2'
+    senses = 'Passive Perception 12'
+    languages = 'Common'
+    strength = Ability(17)
+    dexterity = Ability(10)
+    constitution = Ability(15)
+    intelligence = Ability(10)
+    wisdom = Ability(11)
+    charisma = Ability(8)
+    speed = 30
+    swim_speed = 0
+    fly_speed = 0
+    climb_speed = 0
+    burrow_speed = 0
+    hp_max = 78
+    hit_dice = '12d8 + 24'
+    condition_immunities = ''
+    damage_immunities = "bludgeoning, piercing, and slashing damage from nonmagical weapons that aren't silvered"
+    damage_resistances = ''
+    damage_vulnerabilities = ''
     spells = []
 
 
@@ -399,13 +758,13 @@ class WereboarHybridform(Monster):
       a DC 12 Constitution saving throw or be cursed with wereboar
       lycanthropy.
     """
-    name = "Wereboar, Hybrid form"
-    description = "Medium humanoid, neutral evil"
+    name = 'Wereboar, Hybrid form'
+    description = 'Medium humanoid, neutral evil'
     challenge_rating = 4
     armor_class = 10
-    skills = "Perception +2"
-    senses = "Passive Perception 12"
-    languages = "Common"
+    skills = 'Perception +2'
+    senses = 'Passive Perception 12'
+    languages = 'Common'
     strength = Ability(17)
     dexterity = Ability(10)
     constitution = Ability(15)
@@ -417,7 +776,58 @@ class WereboarHybridform(Monster):
     fly_speed = 0
     climb_speed = 0
     hp_max = 78
-    hit_dice = "12d8"
+    hit_dice = '12d8'
+    spells = []
+
+
+class WereratHumanForm(Monster):
+    """
+
+    Shapechanger.
+      The wererat can use its action to polymorph into a rat-humanoid hybrid
+      or into a giant rat, or back into its true form, which is humanoid.
+      Its statistics, other than its size, are the same in each form. Any
+      equipment it is wearing or carrying isn't transformed. It reverts to
+      its true form if it dies.
+    Keen Smell.
+      The wererat has advantage on Wisdom (Perception) checks that rely on
+      smell.
+
+    # Actions
+
+    Multiattack (Humanoid or Hybrid Form Only).
+      The wererat makes two attacks, only one of which can be a bite.
+    Shortsword.
+      Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 5 (1d6 +
+      2) piercing damage.
+    Hand Crossbow.
+      Ranged Weapon Attack: +4 to hit, range 30/120 ft., one target. Hit: 5
+      (1d6 + 2) piercing damage.
+    """
+    name = 'Wererat, Human Form'
+    description = 'Medium humanoid, lawful evil'
+    challenge_rating = 2
+    armor_class = 12
+    skills = 'Perception +2, Stealth +4'
+    senses = 'Passive Perception 12'
+    languages = 'Common'
+    strength = Ability(10)
+    dexterity = Ability(15)
+    constitution = Ability(12)
+    intelligence = Ability(11)
+    wisdom = Ability(10)
+    charisma = Ability(8)
+    speed = 30
+    swim_speed = 0
+    fly_speed = 0
+    climb_speed = 0
+    burrow_speed = 0
+    hp_max = 33
+    hit_dice = '6d8 + 6'
+    condition_immunities = ''
+    damage_immunities = "bludgeoning, piercing, and slashing damage from nonmagical weapons that aren't silvered"
+    damage_resistances = ''
+    damage_vulnerabilities = ''
     spells = []
 
 
@@ -441,13 +851,13 @@ class WereratHumanform(Monster):
       Ranged Weapon Attack: +4 to hit, range 30/120 ft., one target. Hit: 5
       (1d6 + 2) piercing damage.
     """
-    name = "Wererat, Human form"
-    description = "Medium humanoid, lawful evil"
+    name = 'Wererat, Human form'
+    description = 'Medium humanoid, lawful evil'
     challenge_rating = 2
     armor_class = 12
-    skills = "Perception +2, Stealth +4"
-    senses = "Passive Perception 12"
-    languages = "Common"
+    skills = 'Perception +2, Stealth +4'
+    senses = 'Passive Perception 12'
+    languages = 'Common'
     strength = Ability(10)
     dexterity = Ability(15)
     constitution = Ability(12)
@@ -459,7 +869,62 @@ class WereratHumanform(Monster):
     fly_speed = 0
     climb_speed = 0
     hp_max = 33
-    hit_dice = "6d8"
+    hit_dice = '6d8'
+    spells = []
+
+
+class WereratHybridForm(Monster):
+    """
+
+    Shapechanger.
+      The wererat can use its action to polymorph into a rat-humanoid hybrid
+      or into a giant rat, or back into its true form, which is humanoid.
+      Its statistics, other than its size, are the same in each form. Any
+      equipment it is wearing or carrying isn't transformed. It reverts to
+      its true form if it dies.
+    Keen Smell.
+      The wererat has advantage on Wisdom (Perception) checks that rely on
+      smell.
+
+    # Actions
+
+    Multiattack.
+      The wererat makes two attacks, only one of which can be a bite.
+    Bite.
+      Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 4 (1d4 +
+      2) piercing damage. If the target is a humanoid, it must succeed on a
+      DC 11 Constitution saving throw or be cursed with wererat lycanthropy.
+    Shortsword.
+      Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 5 (1d6 +
+      2) piercing damage.
+    Hand Crossbow.
+      Ranged Weapon Attack: +4 to hit, range 30/120 ft., one target. Hit: 5
+      (1d6 + 2) piercing damage.
+    """
+    name = 'Wererat, Hybrid Form'
+    description = 'Medium humanoid, lawful evil'
+    challenge_rating = 2
+    armor_class = 12
+    skills = 'Perception +2, Stealth +4'
+    senses = 'Passive Perception 12'
+    languages = 'Common'
+    strength = Ability(10)
+    dexterity = Ability(15)
+    constitution = Ability(12)
+    intelligence = Ability(11)
+    wisdom = Ability(10)
+    charisma = Ability(8)
+    speed = 30
+    swim_speed = 0
+    fly_speed = 0
+    climb_speed = 0
+    burrow_speed = 0
+    hp_max = 33
+    hit_dice = '6d8 + 6'
+    condition_immunities = ''
+    damage_immunities = "bludgeoning, piercing, and slashing damage from nonmagical weapons that aren't silvered"
+    damage_resistances = ''
+    damage_vulnerabilities = ''
     spells = []
 
 
@@ -487,13 +952,13 @@ class WereratHybridform(Monster):
       Ranged Weapon Attack: +4 to hit, range 30/120 ft., one target. Hit: 5
       (1d6 + 2) piercing damage.
     """
-    name = "Wererat, Hybrid form"
-    description = "Medium humanoid, lawful evil"
+    name = 'Wererat, Hybrid form'
+    description = 'Medium humanoid, lawful evil'
     challenge_rating = 2
     armor_class = 12
-    skills = "Perception +2, Stealth +4"
-    senses = "Passive Perception 12"
-    languages = "Common"
+    skills = 'Perception +2, Stealth +4'
+    senses = 'Passive Perception 12'
+    languages = 'Common'
     strength = Ability(10)
     dexterity = Ability(15)
     constitution = Ability(12)
@@ -505,7 +970,54 @@ class WereratHybridform(Monster):
     fly_speed = 0
     climb_speed = 0
     hp_max = 33
-    hit_dice = "6d8"
+    hit_dice = '6d8'
+    spells = []
+
+
+class WereratRatForm(Monster):
+    """
+
+    Shapechanger.
+      The wererat can use its action to polymorph into a rat-humanoid hybrid
+      or into a giant rat, or back into its true form, which is humanoid.
+      Its statistics, other than its size, are the same in each form. Any
+      equipment it is wearing or carrying isn't transformed. It reverts to
+      its true form if it dies.
+    Keen Smell.
+      The wererat has advantage on Wisdom (Perception) checks that rely on
+      smell.
+
+    # Actions
+
+    Bite.
+      Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 4 (1d4 +
+      2) piercing damage. If the target is a humanoid, it must succeed on a
+      DC 11 Constitution saving throw or be cursed with wererat lycanthropy.
+    """
+    name = 'Wererat, Rat Form'
+    description = 'Medium humanoid, lawful evil'
+    challenge_rating = 2
+    armor_class = 12
+    skills = 'Perception +2, Stealth +4'
+    senses = 'Darkvision 60 ft., Passive Perception 12'
+    languages = ''
+    strength = Ability(10)
+    dexterity = Ability(15)
+    constitution = Ability(12)
+    intelligence = Ability(11)
+    wisdom = Ability(10)
+    charisma = Ability(8)
+    speed = 30
+    swim_speed = 0
+    fly_speed = 0
+    climb_speed = 0
+    burrow_speed = 0
+    hp_max = 33
+    hit_dice = '6d8 + 6'
+    condition_immunities = ''
+    damage_immunities = "bludgeoning, piercing, and slashing damage from nonmagical weapons that aren't silvered"
+    damage_resistances = ''
+    damage_vulnerabilities = ''
     spells = []
 
 
@@ -525,13 +1037,13 @@ class WereratRatform(Monster):
       2) piercing damage. If the target is a humanoid, it must succeed on a
       DC 11 Constitution saving throw or be cursed with wererat lycanthropy.
     """
-    name = "Wererat, Rat form"
-    description = "Medium humanoid, lawful evil"
+    name = 'Wererat, Rat form'
+    description = 'Medium humanoid, lawful evil'
     challenge_rating = 2
     armor_class = 12
-    skills = "Perception +2, Stealth +4"
-    senses = "Darkvision 60 ft., Passive Perception 12"
-    languages = ""
+    skills = 'Perception +2, Stealth +4'
+    senses = 'Darkvision 60 ft., Passive Perception 12'
+    languages = ''
     strength = Ability(10)
     dexterity = Ability(15)
     constitution = Ability(12)
@@ -543,7 +1055,60 @@ class WereratRatform(Monster):
     fly_speed = 0
     climb_speed = 0
     hp_max = 33
-    hit_dice = "6d8"
+    hit_dice = '6d8'
+    spells = []
+
+
+class WeretigerHumanForm(Monster):
+    """
+
+    Shapechanger.
+      The weretiger can use its action to polymorph into a tiger-humanoid
+      hybrid or into a tiger, or back into its true form, which is humanoid.
+      Its statistics, other than its size, are the same in each form. Any
+      equipment it is wearing or carrying isn't transformed. It reverts to
+      its true form if it dies.
+    Keen Hearing and Smell.
+      The weretiger has advantage on Wisdom (Perception) checks that rely on
+      hearing or smell.
+
+    # Actions
+
+    Multiattack.
+      In humanoid form, the weretiger makes two scimitar attacks or two
+      longbow attacks. In hybrid form, it can attack like a humanoid or make
+      two claw attacks.
+    Scimitar.
+      Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 6 (1d6 +
+      3) slashing damage.
+    Longbow.
+      Ranged Weapon Attack: +4 to hit, range 150/600 ft., one target. Hit: 6
+      (1d8 + 2) piercing damage.
+    """
+    name = 'Weretiger, Human Form'
+    description = 'Medium humanoid, neutral'
+    challenge_rating = 4
+    armor_class = 12
+    skills = 'Perception +5, Stealth +4'
+    senses = 'Darkvision 60 ft., Passive Perception 15'
+    languages = 'Common'
+    strength = Ability(17)
+    dexterity = Ability(15)
+    constitution = Ability(16)
+    intelligence = Ability(10)
+    wisdom = Ability(13)
+    charisma = Ability(11)
+    speed = 30
+    swim_speed = 0
+    fly_speed = 0
+    climb_speed = 0
+    burrow_speed = 0
+    hp_max = 120
+    hit_dice = '16d8 + 48'
+    condition_immunities = ''
+    damage_immunities = "bludgeoning, piercing, and slashing damage from nonmagical weapons that aren't silvered"
+    damage_resistances = ''
+    damage_vulnerabilities = ''
     spells = []
 
 
@@ -569,13 +1134,13 @@ class WeretigerHumanform(Monster):
       Ranged Weapon Attack: +4 to hit, range 150/600 ft., one target. Hit: 6
       (1d8 + 2) piercing damage.
     """
-    name = "Weretiger, Human form"
-    description = "Medium humanoid, neutral"
+    name = 'Weretiger, Human form'
+    description = 'Medium humanoid, neutral'
     challenge_rating = 4
     armor_class = 12
-    skills = "Perception +5, Stealth +4"
-    senses = "Darkvision 60 ft., Passive Perception 15"
-    languages = "Common"
+    skills = 'Perception +5, Stealth +4'
+    senses = 'Darkvision 60 ft., Passive Perception 15'
+    languages = 'Common'
     strength = Ability(17)
     dexterity = Ability(15)
     constitution = Ability(16)
@@ -587,7 +1152,74 @@ class WeretigerHumanform(Monster):
     fly_speed = 0
     climb_speed = 0
     hp_max = 120
-    hit_dice = "16d8"
+    hit_dice = '16d8'
+    spells = []
+
+
+class WeretigerHybridForm(Monster):
+    """
+
+    Shapechanger.
+      The weretiger can use its action to polymorph into a tiger-humanoid
+      hybrid or into a tiger, or back into its true form, which is humanoid.
+      Its statistics, other than its size, are the same in each form. Any
+      equipment it is wearing or carrying isn't transformed. It reverts to
+      its true form if it dies.
+    Keen Hearing and Smell.
+      The weretiger has advantage on Wisdom (Perception) checks that rely on
+      hearing or smell.
+    Pounce.
+      If the weretiger moves at least 15 feet straight toward a creature and
+      then hits it with a claw attack on the same turn, that target must
+      succeed on a DC 14 Strength saving throw or be knocked prone. If the
+      target is prone, the weretiger can make one bite attack against it as
+      a bonus action.
+
+    # Actions
+
+    Multiattack.
+      In humanoid form, the weretiger makes two scimitar attacks or two
+      longbow attacks. In hybrid form, it can attack like a humanoid or make
+      two claw attacks.
+    Bite.
+      Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 8 (1d10
+      + 3) piercing damage. If the target is a humanoid, it must succeed on
+      a DC 13 Constitution saving throw or be cursed with weretiger
+      lycanthropy.
+    Claw.
+      Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 7 (1d8 +
+      3) slashing damage.
+    Scimitar.
+      Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 6 (1d6 +
+      3) slashing damage.
+    Longbow.
+      Ranged Weapon Attack: +4 to hit, range 150/600 ft., one target. Hit: 6
+      (1d8 + 2) piercing damage.
+    """
+    name = 'Weretiger, Hybrid Form'
+    description = 'Medium humanoid, neutral'
+    challenge_rating = 4
+    armor_class = 12
+    skills = 'Perception +5, Stealth +4'
+    senses = 'Darkvision 60 ft., Passive Perception 15'
+    languages = 'Common'
+    strength = Ability(17)
+    dexterity = Ability(15)
+    constitution = Ability(16)
+    intelligence = Ability(10)
+    wisdom = Ability(13)
+    charisma = Ability(11)
+    speed = 30
+    swim_speed = 0
+    fly_speed = 0
+    climb_speed = 0
+    burrow_speed = 0
+    hp_max = 120
+    hit_dice = '16d8 + 48'
+    condition_immunities = ''
+    damage_immunities = "bludgeoning, piercing, and slashing damage from nonmagical weapons that aren't silvered"
+    damage_resistances = ''
+    damage_vulnerabilities = ''
     spells = []
 
 
@@ -627,13 +1259,13 @@ class WeretigerHybridform(Monster):
       Ranged Weapon Attack: +4 to hit, range 150/600 ft., one target. Hit: 6
       (1d8 + 2) piercing damage.
     """
-    name = "Weretiger, Hybrid form"
-    description = "Medium humanoid, neutral"
+    name = 'Weretiger, Hybrid form'
+    description = 'Medium humanoid, neutral'
     challenge_rating = 4
     armor_class = 12
-    skills = "Perception +5, Stealth +4"
-    senses = "Darkvision 60 ft., Passive Perception 15"
-    languages = "Common"
+    skills = 'Perception +5, Stealth +4'
+    senses = 'Darkvision 60 ft., Passive Perception 15'
+    languages = 'Common'
     strength = Ability(17)
     dexterity = Ability(15)
     constitution = Ability(16)
@@ -645,7 +1277,64 @@ class WeretigerHybridform(Monster):
     fly_speed = 0
     climb_speed = 0
     hp_max = 120
-    hit_dice = "16d8"
+    hit_dice = '16d8'
+    spells = []
+
+
+class WeretigerTigerForm(Monster):
+    """
+
+    Shapechanger.
+      The weretiger can use its action to polymorph into a tiger-humanoid
+      hybrid or into a tiger, or back into its true form, which is humanoid.
+      Its statistics, other than its size, are the same in each form. Any
+      equipment it is wearing or carrying isn't transformed. It reverts to
+      its true form if it dies.
+    Keen Hearing and Smell.
+      The weretiger has advantage on Wisdom (Perception) checks that rely on
+      hearing or smell.
+    Pounce.
+      If the weretiger moves at least 15 feet straight toward a creature and
+      then hits it with a claw attack on the same turn, that target must
+      succeed on a DC 14 Strength saving throw or be knocked prone. If the
+      target is prone, the weretiger can make one bite attack against it as
+      a bonus action.
+
+    # Actions
+
+    Bite.
+      Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 8 (1d10
+      + 3) piercing damage. If the target is a humanoid, it must succeed on
+      a DC 13 Constitution saving throw or be cursed with weretiger
+      lycanthropy.
+    Claw.
+      Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 7 (1d8 +
+      3) slashing damage.
+    """
+    name = 'Weretiger, Tiger Form'
+    description = 'Medium humanoid, neutral'
+    challenge_rating = 4
+    armor_class = 12
+    skills = 'Perception +5, Stealth +4'
+    senses = 'Darkvision 60 ft., Passive Perception 15'
+    languages = ''
+    strength = Ability(17)
+    dexterity = Ability(15)
+    constitution = Ability(16)
+    intelligence = Ability(10)
+    wisdom = Ability(13)
+    charisma = Ability(11)
+    speed = 40
+    swim_speed = 0
+    fly_speed = 0
+    climb_speed = 0
+    burrow_speed = 0
+    hp_max = 120
+    hit_dice = '16d8 + 48'
+    condition_immunities = ''
+    damage_immunities = "bludgeoning, piercing, and slashing damage from nonmagical weapons that aren't silvered"
+    damage_resistances = ''
+    damage_vulnerabilities = ''
     spells = []
 
 
@@ -675,13 +1364,13 @@ class WeretigerTigerform(Monster):
       Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 7 (1d8 +
       3) slashing damage.
     """
-    name = "Weretiger, Tiger form"
-    description = "Medium humanoid, neutral"
+    name = 'Weretiger, Tiger form'
+    description = 'Medium humanoid, neutral'
     challenge_rating = 4
     armor_class = 12
-    skills = "Perception +5, Stealth +4"
-    senses = "Darkvision 60 ft., Passive Perception 15"
-    languages = ""
+    skills = 'Perception +5, Stealth +4'
+    senses = 'Darkvision 60 ft., Passive Perception 15'
+    languages = ''
     strength = Ability(17)
     dexterity = Ability(15)
     constitution = Ability(16)
@@ -693,7 +1382,57 @@ class WeretigerTigerform(Monster):
     fly_speed = 0
     climb_speed = 0
     hp_max = 120
-    hit_dice = "16d8"
+    hit_dice = '16d8'
+    spells = []
+
+
+class WerewolfHumanForm(Monster):
+    """
+
+    Shapechanger.
+      The werewolf can use its action to polymorph into a wolf-humanoid
+      hybrid or into a wolf, or back into its true form, which is humanoid.
+      Its statistics, other than its AC, are the same in each form. Any
+      equipment it is wearing or carrying isn't transformed. It reverts to
+      its true form if it dies.
+    Keen Hearing and Smell.
+      The werewolf has advantage on Wisdom (Perception) checks that rely on
+      hearing or smell.
+
+    # Actions
+
+    Multiattack.
+      The werewolf makes two attacks: two with its spear (humanoid form) or
+      one with its bite and one with its claws (hybrid form).
+    Spear.
+      Melee or Ranged Weapon Attack: +4 to hit, reach 5 ft. or range 20/60
+      ft., one creature. Hit: 5 (1d6 + 2) piercing damage, or 6 (1d8 + 2)
+      piercing damage if used with two hands to make a melee attack.
+    """
+    name = 'Werewolf, Human Form'
+    description = 'Medium humanoid, chaotic evil'
+    challenge_rating = 3
+    armor_class = 11
+    skills = 'Perception +4'
+    senses = 'Passive Perception 14'
+    languages = 'Common'
+    strength = Ability(15)
+    dexterity = Ability(13)
+    constitution = Ability(14)
+    intelligence = Ability(10)
+    wisdom = Ability(11)
+    charisma = Ability(10)
+    speed = 30
+    swim_speed = 0
+    fly_speed = 0
+    climb_speed = 0
+    burrow_speed = 0
+    hp_max = 58
+    hit_dice = '9d8 + 18'
+    condition_immunities = ''
+    damage_immunities = "bludgeoning, piercing, and slashing damage from nonmagical weapons that aren't silvered"
+    damage_resistances = ''
+    damage_vulnerabilities = ''
     spells = []
 
 
@@ -716,13 +1455,13 @@ class WerewolfHumanform(Monster):
       ft., one creature. Hit: 5 (1d6 + 2) piercing damage, or 6 (1d8 + 2)
       piercing damage if used with two hands to make a melee attack.
     """
-    name = "Werewolf, Human form"
-    description = "Medium humanoid, chaotic evil"
+    name = 'Werewolf, Human form'
+    description = 'Medium humanoid, chaotic evil'
     challenge_rating = 3
     armor_class = 11
-    skills = "Perception +4"
-    senses = "Passive Perception 14"
-    languages = "Common"
+    skills = 'Perception +4'
+    senses = 'Passive Perception 14'
+    languages = 'Common'
     strength = Ability(15)
     dexterity = Ability(13)
     constitution = Ability(14)
@@ -734,7 +1473,61 @@ class WerewolfHumanform(Monster):
     fly_speed = 0
     climb_speed = 0
     hp_max = 58
-    hit_dice = "9d8"
+    hit_dice = '9d8'
+    spells = []
+
+
+class WerewolfHybridForm(Monster):
+    """
+
+    Shapechanger.
+      The werewolf can use its action to polymorph into a wolf-humanoid
+      hybrid or into a wolf, or back into its true form, which is humanoid.
+      Its statistics, other than its AC, are the same in each form. Any
+      equipment it is wearing or carrying isn't transformed. It reverts to
+      its true form if it dies.
+    Keen Hearing and Smell.
+      The werewolf has advantage on Wisdom (Perception) checks that rely on
+      hearing or smell.
+
+    # Actions
+
+    Multiattack.
+      The werewolf makes two attacks: two with its spear (humanoid form) or
+      one with its bite and one with its claws (hybrid form).
+    Bite.
+      Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 6 (1d8 +
+      2) piercing damage. If the target is a humanoid, it must succeed on a
+      DC 12 Constitution saving throw or be cursed with werewolf
+      lycanthropy.
+    Claws.
+      Melee Weapon Attack: +4 to hit, reach 5 ft., one creature. Hit: 7 (2d4
+      + 2) slashing damage.
+    """
+    name = 'Werewolf, Hybrid Form'
+    description = 'Medium humanoid, chaotic evil'
+    challenge_rating = 3
+    armor_class = 11
+    skills = 'Perception +4'
+    senses = 'Passive Perception 14'
+    languages = 'Common'
+    strength = Ability(15)
+    dexterity = Ability(13)
+    constitution = Ability(14)
+    intelligence = Ability(10)
+    wisdom = Ability(11)
+    charisma = Ability(10)
+    speed = 30
+    swim_speed = 0
+    fly_speed = 0
+    climb_speed = 0
+    burrow_speed = 0
+    hp_max = 58
+    hit_dice = '9d8 + 18'
+    condition_immunities = ''
+    damage_immunities = "bludgeoning, piercing, and slashing damage from nonmagical weapons that aren't silvered"
+    damage_resistances = ''
+    damage_vulnerabilities = ''
     spells = []
 
 
@@ -761,13 +1554,13 @@ class WerewolfHybridform(Monster):
       Melee Weapon Attack: +4 to hit, reach 5 ft., one creature. Hit: 7 (2d4
       + 2) slashing damage.
     """
-    name = "Werewolf, Hybrid form"
-    description = "Medium humanoid, chaotic evil"
+    name = 'Werewolf, Hybrid form'
+    description = 'Medium humanoid, chaotic evil'
     challenge_rating = 3
     armor_class = 11
-    skills = "Perception +4"
-    senses = "Passive Perception 14"
-    languages = "Common"
+    skills = 'Perception +4'
+    senses = 'Passive Perception 14'
+    languages = 'Common'
     strength = Ability(15)
     dexterity = Ability(13)
     constitution = Ability(14)
@@ -779,7 +1572,55 @@ class WerewolfHybridform(Monster):
     fly_speed = 0
     climb_speed = 0
     hp_max = 58
-    hit_dice = "9d8"
+    hit_dice = '9d8'
+    spells = []
+
+
+class WerewolfWolfForm(Monster):
+    """
+
+    Shapechanger.
+      The werewolf can use its action to polymorph into a wolf-humanoid
+      hybrid or into a wolf, or back into its true form, which is humanoid.
+      Its statistics, other than its AC, are the same in each form. Any
+      equipment it is wearing or carrying isn't transformed. It reverts to
+      its true form if it dies.
+    Keen Hearing and Smell.
+      The werewolf has advantage on Wisdom (Perception) checks that rely on
+      hearing or smell.
+
+    # Actions
+
+    Bite.
+      Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 6 (1d8 +
+      2) piercing damage. If the target is a humanoid, it must succeed on a
+      DC 12 Constitution saving throw or be cursed with werewolf
+      lycanthropy.
+    """
+    name = 'Werewolf, Wolf Form'
+    description = 'Medium humanoid, chaotic evil'
+    challenge_rating = 3
+    armor_class = 11
+    skills = 'Perception +4'
+    senses = 'Passive Perception 14'
+    languages = ''
+    strength = Ability(15)
+    dexterity = Ability(13)
+    constitution = Ability(14)
+    intelligence = Ability(10)
+    wisdom = Ability(11)
+    charisma = Ability(10)
+    speed = 40
+    swim_speed = 0
+    fly_speed = 0
+    climb_speed = 0
+    burrow_speed = 0
+    hp_max = 58
+    hit_dice = '9d8 + 18'
+    condition_immunities = ''
+    damage_immunities = "bludgeoning, piercing, and slashing damage from nonmagical weapons that aren't silvered"
+    damage_resistances = ''
+    damage_vulnerabilities = ''
     spells = []
 
 
@@ -800,13 +1641,13 @@ class WerewolfWolfform(Monster):
       DC 12 Constitution saving throw or be cursed with werewolf
       lycanthropy.
     """
-    name = "Werewolf, Wolf form"
-    description = "Medium humanoid, chaotic evil"
+    name = 'Werewolf, Wolf form'
+    description = 'Medium humanoid, chaotic evil'
     challenge_rating = 3
     armor_class = 11
-    skills = "Perception +4"
-    senses = "Passive Perception 14"
-    languages = ""
+    skills = 'Perception +4'
+    senses = 'Passive Perception 14'
+    languages = ''
     strength = Ability(15)
     dexterity = Ability(13)
     constitution = Ability(14)
@@ -818,12 +1659,15 @@ class WerewolfWolfform(Monster):
     fly_speed = 0
     climb_speed = 0
     hp_max = 58
-    hit_dice = "9d8"
+    hit_dice = '9d8'
     spells = []
 
 
 class WhiteDragonWyrmling(Monster):
     """
+
+    # Actions
+
     Bite.
       Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 7 (1d10
       + 2) piercing damage plus 2 (1d4) cold damage.
@@ -833,13 +1677,13 @@ class WhiteDragonWyrmling(Monster):
       taking 22 (5d8) cold damage on a failed save, or half as much damage
       on a successful one.
     """
-    name = "White Dragon Wyrmling"
-    description = "Medium dragon, chaotic evil"
+    name = 'White Dragon Wyrmling'
+    description = 'Medium dragon, chaotic evil'
     challenge_rating = 2
     armor_class = 16
-    skills = "Perception +4, Stealth +2"
-    senses = "Blindsight 10 ft., Darkvision 60 ft., Passive Perception 14"
-    languages = "Draconic"
+    skills = 'Perception +4, Stealth +2'
+    senses = 'Blindsight 10 ft., Darkvision 60 ft., Passive Perception 14'
+    languages = 'Draconic'
     strength = Ability(14)
     dexterity = Ability(10)
     constitution = Ability(14)
@@ -850,16 +1694,25 @@ class WhiteDragonWyrmling(Monster):
     swim_speed = 30
     fly_speed = 60
     climb_speed = 0
+    burrow_speed = 15
     hp_max = 32
-    hit_dice = "5d8"
+    hit_dice = '5d8 + 10'
+    condition_immunities = ''
+    damage_immunities = 'cold'
+    damage_resistances = ''
+    damage_vulnerabilities = ''
     spells = []
 
 
 class Wight(Monster):
     """
+
     Sunlight Sensitivity.
       While in sunlight, the wight has disadvantage on attack rolls, as well
       as on Wisdom (Perception) checks that rely on sight.
+
+    # Actions
+
     Multiattack.
       The wight makes two longsword attacks or two longbow attacks. It can
       use its Life Drain in place of one longsword attack.
@@ -883,13 +1736,13 @@ class Wight(Monster):
       Ranged Weapon Attack: +4 to hit, range 150/600 ft., one target. Hit: 6
       (1d8 + 2) piercing damage.
     """
-    name = "Wight"
-    description = "Medium undead, neutral evil"
+    name = 'Wight'
+    description = 'Medium undead, neutral evil'
     challenge_rating = 3
     armor_class = 14
-    skills = "Perception +3, Stealth +4"
-    senses = "Darkvision 60 ft., Passive Perception 13"
-    languages = "the languages it knew in life"
+    skills = 'Perception +3, Stealth +4'
+    senses = 'Darkvision 60 ft., Passive Perception 13'
+    languages = 'the languages it knew in life'
     strength = Ability(15)
     dexterity = Ability(14)
     constitution = Ability(16)
@@ -900,13 +1753,19 @@ class Wight(Monster):
     swim_speed = 0
     fly_speed = 0
     climb_speed = 0
+    burrow_speed = 0
     hp_max = 45
-    hit_dice = "6d8"
+    hit_dice = '6d8 + 18'
+    condition_immunities = 'exhaustion, poisoned'
+    damage_immunities = 'poison'
+    damage_resistances = 'necrotic'
+    damage_vulnerabilities = ''
     spells = []
 
 
 class WilloWisp(Monster):
     """
+
     Consume Life.
       As a bonus action, the will-o'-wisp can target one creature it can see
       within 5 ft. of it that has 0 hit points and is still alive. The
@@ -923,6 +1782,9 @@ class WilloWisp(Monster):
       The will-o'-wisp sheds bright light in a 5- to 20-foot radius and dim
       light for an additional number of ft. equal to the chosen radius. The
       will-o'-wisp can alter the radius as a bonus action.
+
+    # Actions
+
     Shock.
       Melee Spell Attack: +4 to hit, reach 5 ft., one creature. Hit: 9 (2d8)
       lightning damage.
@@ -932,12 +1794,12 @@ class WilloWisp(Monster):
       if concentrating on a spell).
     """
     name = "Will-o'-Wisp"
-    description = "Tiny undead, chaotic evil"
+    description = 'Tiny undead, chaotic evil'
     challenge_rating = 2
     armor_class = 19
-    skills = ""
-    senses = "Darkvision 120 ft., Passive Perception 12"
-    languages = "the languages it knew in life"
+    skills = ''
+    senses = 'Darkvision 120 ft., Passive Perception 12'
+    languages = 'the languages it knew in life'
     strength = Ability(1)
     dexterity = Ability(28)
     constitution = Ability(10)
@@ -948,13 +1810,19 @@ class WilloWisp(Monster):
     swim_speed = 0
     fly_speed = 50
     climb_speed = 0
+    burrow_speed = 0
     hp_max = 22
-    hit_dice = "9d4"
+    hit_dice = '9d4 + 0'
+    condition_immunities = 'exhaustion, grappled, paralyzed, poisoned, prone, restrained, unconscious'
+    damage_immunities = 'lightning, poison'
+    damage_resistances = 'acid'
+    damage_vulnerabilities = ''
     spells = []
 
 
 class WinterWolf(Monster):
     """
+
     Keen Hearing and Smell.
       The wolf has advantage on Wisdom (Perception) checks that rely on
       hearing or smell.
@@ -965,6 +1833,9 @@ class WinterWolf(Monster):
     Snow Camouflage.
       The wolf has advantage on Dexterity (Stealth) checks made to hide in
       snowy terrain.
+
+    # Actions
+
     Bite.
       Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 11 (2d6
       + 4) piercing damage. If the target is a creature, it must succeed on
@@ -975,13 +1846,13 @@ class WinterWolf(Monster):
       18 (4d8) cold damage on a failed save, or half as much damage on a
       successful one.
     """
-    name = "Winter Wolf"
-    description = "Large monstrosity, neutral evil"
+    name = 'Winter Wolf'
+    description = 'Large monstrosity, neutral evil'
     challenge_rating = 3
     armor_class = 13
-    skills = "Perception +5, Stealth +3"
-    senses = "Passive Perception 15"
-    languages = "Common, Giant, Winter Wolf"
+    skills = 'Perception +5, Stealth +3'
+    senses = 'Passive Perception 15'
+    languages = 'Common, Giant, Winter Wolf'
     strength = Ability(18)
     dexterity = Ability(13)
     constitution = Ability(14)
@@ -992,13 +1863,19 @@ class WinterWolf(Monster):
     swim_speed = 0
     fly_speed = 0
     climb_speed = 0
+    burrow_speed = 0
     hp_max = 75
-    hit_dice = "10d10"
+    hit_dice = '10d10 + 20'
+    condition_immunities = ''
+    damage_immunities = 'cold'
+    damage_resistances = ''
+    damage_vulnerabilities = ''
     spells = []
 
 
 class Wolf(Monster):
     """
+
     Keen Hearing and Smell.
       The wolf has advantage on Wisdom (Perception) checks that rely on
       hearing or smell.
@@ -1006,18 +1883,21 @@ class Wolf(Monster):
       The wolf has advantage on an attack roll against a creature if at
       least one of the wolf's allies is within 5 ft. of the creature and the
       ally isn't incapacitated.
+
+    # Actions
+
     Bite.
       Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 7 (2d4 +
       2) piercing damage. If the target is a creature, it must succeed on a
       DC 11 Strength saving throw or be knocked prone.
     """
-    name = "Wolf"
-    description = "Medium beast, unaligned"
+    name = 'Wolf'
+    description = 'Medium beast, unaligned'
     challenge_rating = 0.25
     armor_class = 13
-    skills = "Perception +3, Stealth +4"
-    senses = "Passive Perception 13"
-    languages = ""
+    skills = 'Perception +3, Stealth +4'
+    senses = 'Passive Perception 13'
+    languages = ''
     strength = Ability(12)
     dexterity = Ability(15)
     constitution = Ability(12)
@@ -1028,28 +1908,37 @@ class Wolf(Monster):
     swim_speed = 0
     fly_speed = 0
     climb_speed = 0
+    burrow_speed = 0
     hp_max = 11
-    hit_dice = "2d8"
+    hit_dice = '2d8 + 2'
+    condition_immunities = ''
+    damage_immunities = ''
+    damage_resistances = ''
+    damage_vulnerabilities = ''
     spells = []
 
 
 class Worg(Monster):
     """
+
     Keen Hearing and Smell.
       The worg has advantage on Wisdom (Perception) checks that rely on
       hearing or smell.
+
+    # Actions
+
     Bite.
       Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 10 (2d6
       + 3) piercing damage. If the target is a creature, it must succeed on
       a DC 13 Strength saving throw or be knocked prone.
     """
-    name = "Worg"
-    description = "Large monstrosity, neutral evil"
+    name = 'Worg'
+    description = 'Large monstrosity, neutral evil'
     challenge_rating = 0.5
     armor_class = 13
-    skills = "Perception +4"
-    senses = "Darkvision 60 ft., Passive Perception 14"
-    languages = "Goblin, Worg"
+    skills = 'Perception +4'
+    senses = 'Darkvision 60 ft., Passive Perception 14'
+    languages = 'Goblin, Worg'
     strength = Ability(16)
     dexterity = Ability(13)
     constitution = Ability(13)
@@ -1060,13 +1949,19 @@ class Worg(Monster):
     swim_speed = 0
     fly_speed = 0
     climb_speed = 0
+    burrow_speed = 0
     hp_max = 26
-    hit_dice = "4d10"
+    hit_dice = '4d10 + 4'
+    condition_immunities = ''
+    damage_immunities = ''
+    damage_resistances = ''
+    damage_vulnerabilities = ''
     spells = []
 
 
 class Wraith(Monster):
     """
+
     Incorporeal Movement.
       The wraith can move through other creatures and objects as if they
       were difficult terrain. It takes 5 (1d10) force damage if it ends its
@@ -1074,6 +1969,9 @@ class Wraith(Monster):
     Sunlight Sensitivity.
       While in sunlight, the wraith has disadvantage on attack rolls, as
       well as on Wisdom (Perception) checks that rely on sight.
+
+    # Actions
+
     Life Drain.
       Melee Weapon Attack: +6 to hit, reach 5 ft., one creature. Hit: 21
       (4d8 + 3) necrotic damage. The target must succeed on a DC 14
@@ -1089,13 +1987,13 @@ class Wraith(Monster):
       wraith can have no more than seven specters under its control at one
       time.
     """
-    name = "Wraith"
-    description = "Medium undead, neutral evil"
+    name = 'Wraith'
+    description = 'Medium undead, neutral evil'
     challenge_rating = 5
     armor_class = 13
-    skills = ""
-    senses = "Darkvision 60 ft., Passive Perception 12"
-    languages = "the languages it knew in life"
+    skills = ''
+    senses = 'Darkvision 60 ft., Passive Perception 12'
+    languages = 'the languages it knew in life'
     strength = Ability(6)
     dexterity = Ability(16)
     constitution = Ability(16)
@@ -1106,13 +2004,21 @@ class Wraith(Monster):
     swim_speed = 0
     fly_speed = 60
     climb_speed = 0
+    burrow_speed = 0
     hp_max = 67
-    hit_dice = "9d8"
+    hit_dice = '9d8 + 27'
+    condition_immunities = 'charmed, exhaustion, grappled, paralyzed, petrified, poisoned, prone, restrained'
+    damage_immunities = 'necrotic, poison'
+    damage_resistances = 'acid'
+    damage_vulnerabilities = ''
     spells = []
 
 
 class Wyvern(Monster):
     """
+
+    # Actions
+
     Multiattack.
       The wyvern makes two attacks: one with its bite and one with its
       stinger. While flying, it can use its claws in place of one other
@@ -1129,13 +2035,13 @@ class Wyvern(Monster):
       saving throw, taking 24 (7d6) poison damage on a failed save, or half
       as much damage on a successful one.
     """
-    name = "Wyvern"
-    description = "Large dragon, unaligned"
+    name = 'Wyvern'
+    description = 'Large dragon, unaligned'
     challenge_rating = 6
     armor_class = 13
-    skills = "Perception +4"
-    senses = "Darkvision 60 ft., Passive Perception 14"
-    languages = ""
+    skills = 'Perception +4'
+    senses = 'Darkvision 60 ft., Passive Perception 14'
+    languages = ''
     strength = Ability(19)
     dexterity = Ability(10)
     constitution = Ability(16)
@@ -1146,6 +2052,11 @@ class Wyvern(Monster):
     swim_speed = 0
     fly_speed = 80
     climb_speed = 0
+    burrow_speed = 0
     hp_max = 110
-    hit_dice = "13d10"
+    hit_dice = '13d10 + 39'
+    condition_immunities = ''
+    damage_immunities = ''
+    damage_resistances = ''
+    damage_vulnerabilities = ''
     spells = []

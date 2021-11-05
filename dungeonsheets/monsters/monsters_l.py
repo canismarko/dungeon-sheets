@@ -10,12 +10,16 @@ from dungeonsheets.stats import Ability
 
 class Lamia(Monster):
     """
+
     Innate Spellcasting.
       The lamia's innate spellcasting ability is Charisma (spell save DC
       13). It can innately cast the following spells, requiring no material
       components. At will: disguise self (any humanoid form), major image
       3/day each: charm person, mirror image, scrying, suggestion 1/day:
       geas
+
+    # Actions
+
     Multiattack.
       The lamia makes two attacks: one with its claws and one with its
       dagger or Intoxicating Touch.
@@ -31,13 +35,13 @@ class Lamia(Monster):
       target has disadvantage on Wisdom saving throws and all ability
       checks.
     """
-    name = "Lamia"
-    description = "Large monstrosity, chaotic evil"
+    name = 'Lamia'
+    description = 'Large monstrosity, chaotic evil'
     challenge_rating = 4
     armor_class = 13
-    skills = "Deception +7, Insight +4, Stealth +3"
-    senses = "Darkvision 60 ft., Passive Perception 12"
-    languages = "Abyssal, Common"
+    skills = 'Deception +7, Insight +4, Stealth +3'
+    senses = 'Darkvision 60 ft., Passive Perception 12'
+    languages = 'Abyssal, Common'
     strength = Ability(16)
     dexterity = Ability(13)
     constitution = Ability(15)
@@ -48,13 +52,19 @@ class Lamia(Monster):
     swim_speed = 0
     fly_speed = 0
     climb_speed = 0
+    burrow_speed = 0
     hp_max = 97
-    hit_dice = "13d10"
+    hit_dice = '13d10 + 26'
+    condition_immunities = ''
+    damage_immunities = ''
+    damage_resistances = ''
+    damage_vulnerabilities = ''
     spells = []
 
 
 class Lemure(Monster):
     """
+
     Devil's Sight.
       Magical darkness doesn't impede the lemure's darkvision.
     Hellish Rejuvenation.
@@ -62,16 +72,19 @@ class Lemure(Monster):
       hit points in 1d10 days unless it is killed by a good-aligned creature
       with a bless spell cast on that creature or its remains are sprinkled
       with holy water.
+
+    # Actions
+
     Fist.
       Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: 2 (1d4)
       bludgeoning damage.
     """
-    name = "Lemure"
-    description = "Medium fiend, lawful evil"
+    name = 'Lemure'
+    description = 'Medium fiend, lawful evil'
     challenge_rating = 0
     armor_class = 7
-    skills = ""
-    senses = "Darkvision 120 ft., Passive Perception 10"
+    skills = ''
+    senses = 'Darkvision 120 ft., Passive Perception 10'
     languages = "understands infernal but can't speak"
     strength = Ability(10)
     dexterity = Ability(5)
@@ -83,13 +96,19 @@ class Lemure(Monster):
     swim_speed = 0
     fly_speed = 0
     climb_speed = 0
+    burrow_speed = 0
     hp_max = 13
-    hit_dice = "3d8"
+    hit_dice = '3d8 + 0'
+    condition_immunities = 'charmed, frightened, poisoned'
+    damage_immunities = 'fire, poison'
+    damage_resistances = 'cold'
+    damage_vulnerabilities = ''
     spells = []
 
 
 class Lich(Monster):
     """
+
     Legendary Resistance.
       If the lich fails a saving throw, it can choose to succeed instead.
     Rejuvenation.
@@ -97,51 +116,57 @@ class Lich(Monster):
       days, regaining all its hit points and becoming active again. The new
       body appears within 5 feet of the phylactery.
     Spellcasting.
-      The lich is an 18th-level spellcaster. Its spellcasting ability is
-      Intelligence (spell save DC 20, +12 to hit with spell attacks). The
-      lich has the following wizard spells prepared:
-      
-  
-      
-      - Cantrips (at will): mage hand, prestidigitation, ray of frost
-      
-      - 1st level (4 slots): detect magic, magic missile, shield,
-      thunderwave
-      
-      - 2nd level (3 slots): acid arrow, detect thoughts, invisibility,
-      mirror image
-      
-      - 3rd level (3 slots): animate dead, counterspell, dispel magic,
-      fireball
-      
-      - 4th level (3 slots): blight, dimension door
-      
-      - 5th level (3 slots): cloudkill, scrying
-      
-      - 6th level (1 slot): disintegrate, globe of invulnerability
-      
-      - 7th level (1 slot): finger of death, plane shift
-      
-      - 8th level (1 slot): dominate monster, power word stun
-      
-      - 9th level (1 slot): power word kill
+      The lich is an 18th-level spellcaster. Its spellcasting ability is Intelligence (spell save DC 20, +12 to hit with spell attacks). The lich has the following wizard spells prepared:
+
+    - Cantrips (at will): mage hand, prestidigitation, ray of frost
+    - 1st level (4 slots): detect magic, magic missile, shield, thunderwave
+    - 2nd level (3 slots): acid arrow, detect thoughts, invisibility, mirror image
+    - 3rd level (3 slots): animate dead, counterspell, dispel magic, fireball
+    - 4th level (3 slots): blight, dimension door
+    - 5th level (3 slots): cloudkill, scrying
+    - 6th level (1 slot): disintegrate, globe of invulnerability
+    - 7th level (1 slot): finger of death, plane shift
+    - 8th level (1 slot): dominate monster, power word stun
+    - 9th level (1 slot): power word kill
     Turn Resistance.
       The lich has advantage on saving throws against any effect that turns
       undead.
+
+    # Actions
+
     Paralyzing Touch.
       Melee Spell Attack: +12 to hit, reach 5 ft., one creature. Hit: 10
       (3d6) cold damage. The target must succeed on a DC 18 Constitution
       saving throw or be paralyzed for 1 minute. The target can repeat the
       saving throw at the end of each of its turns, ending the effect on
       itself on a success.
+
+    # Legendary Actions
+
+    Cantrip.
+      The lich casts a cantrip.
+    Paralyzing Touch (Costs 2 Actions).
+      The lich uses its Paralyzing Touch.
+    Frightening Gaze (Costs 2 Actions).
+      The lich fixes its gaze on one creature it can see within 10 feet of
+      it. The target must succeed on a DC 18 Wisdom saving throw against
+      this magic or become frightened for 1 minute. The frightened target
+      can repeat the saving throw at the end of each of its turns, ending
+      the effect on itself on a success. If a target's saving throw is
+      successful or the effect ends for it, the target is immune to the
+      lich's gaze for the next 24 hours.
+    Disrupt Life (Costs 3 Actions).
+      Each living creature within 20 feet of the lich must make a DC 18
+      Constitution saving throw against this magic, taking 21 (6d6) necrotic
+      damage on a failed save, or half as much damage on a successful one.
     """
-    name = "Lich"
-    description = "Medium undead, any evil alignment"
+    name = 'Lich'
+    description = 'Medium undead, any evil alignment'
     challenge_rating = 21
     armor_class = 17
-    skills = "Arcana +18, History +12, Insight +9, Perception +9"
-    senses = "Truesight 120 ft., Passive Perception 19"
-    languages = "Common plus up to five other languages"
+    skills = 'Arcana +18, History +12, Insight +9, Perception +9'
+    senses = 'Truesight 120 ft., Passive Perception 19'
+    languages = 'Common plus up to five other languages'
     strength = Ability(11)
     dexterity = Ability(16)
     constitution = Ability(16)
@@ -152,13 +177,19 @@ class Lich(Monster):
     swim_speed = 0
     fly_speed = 0
     climb_speed = 0
+    burrow_speed = 0
     hp_max = 135
-    hit_dice = "18d8"
-    spells = ["mage hand", "prestidigitation", "ray of frost", "detect magic", "magic missile", "shield", "thunderwave", "acid arrow", "detect thoughts", "invisibility", "mirror image", "animate dead", "counterspell", "dispel magic", "fireball", "blight", "dimension door", "cloudkill", "scrying", "disintegrate", "globe of invulnerability", "finger of death", "plane shift", "dominate monster", "power word stun", "power word kill"]
+    hit_dice = '18d8 + 54'
+    condition_immunities = 'charmed, exhaustion, frightened, paralyzed, poisoned'
+    damage_immunities = 'poison, bludgeoning, piercing, and slashing from nonmagical weapons'
+    damage_resistances = 'cold'
+    damage_vulnerabilities = ''
+    spells = ['mage hand', 'prestidigitation', 'ray of frost', 'detect magic', 'magic missile', 'shield', 'thunderwave', 'acid arrow', 'detect thoughts', 'invisibility', 'mirror image', 'animate dead', 'counterspell', 'dispel magic', 'fireball', 'blight', 'dimension door', 'cloudkill', 'scrying', 'disintegrate', 'globe of invulnerability', 'finger of death', 'plane shift', 'dominate monster', 'power word stun', 'power word kill']
 
 
 class Lion(Monster):
     """
+
     Keen Smell.
       The lion has advantage on Wisdom (Perception) checks that rely on
       smell.
@@ -173,6 +204,9 @@ class Lion(Monster):
       prone, the lion can make one bite attack against it as a bonus action.
     Running Leap.
       With a 10-foot running start, the lion can long jump up to 25 ft..
+
+    # Actions
+
     Bite.
       Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 7 (1d8 +
       3) piercing damage.
@@ -180,13 +214,13 @@ class Lion(Monster):
       Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 6 (1d6 +
       3) slashing damage.
     """
-    name = "Lion"
-    description = "Large beast, unaligned"
+    name = 'Lion'
+    description = 'Large beast, unaligned'
     challenge_rating = 1
     armor_class = 12
-    skills = "Perception +3, Stealth +6"
-    senses = "Passive Perception 13"
-    languages = ""
+    skills = 'Perception +3, Stealth +6'
+    senses = 'Passive Perception 13'
+    languages = ''
     strength = Ability(17)
     dexterity = Ability(15)
     constitution = Ability(13)
@@ -197,24 +231,32 @@ class Lion(Monster):
     swim_speed = 0
     fly_speed = 0
     climb_speed = 0
+    burrow_speed = 0
     hp_max = 26
-    hit_dice = "4d10"
+    hit_dice = '4d10 + 4'
+    condition_immunities = ''
+    damage_immunities = ''
+    damage_resistances = ''
+    damage_vulnerabilities = ''
     spells = []
 
 
 class Lizard(Monster):
     """
+
+    # Actions
+
     Bite.
       Melee Weapon Attack: +0 to hit, reach 5 ft., one target. Hit: 1
       piercing damage.
     """
-    name = "Lizard"
-    description = "Tiny beast, unaligned"
+    name = 'Lizard'
+    description = 'Tiny beast, unaligned'
     challenge_rating = 0
     armor_class = 10
-    skills = ""
-    senses = "Darkvision 30 ft., Passive Perception 9"
-    languages = ""
+    skills = ''
+    senses = 'Darkvision 30 ft., Passive Perception 9'
+    languages = ''
     strength = Ability(2)
     dexterity = Ability(11)
     constitution = Ability(10)
@@ -225,15 +267,24 @@ class Lizard(Monster):
     swim_speed = 0
     fly_speed = 0
     climb_speed = 20
+    burrow_speed = 0
     hp_max = 2
-    hit_dice = "1d4"
+    hit_dice = '1d4 + 0'
+    condition_immunities = ''
+    damage_immunities = ''
+    damage_resistances = ''
+    damage_vulnerabilities = ''
     spells = []
 
 
 class Lizardfolk(Monster):
     """
+
     Hold Breath.
       The lizardfolk can hold its breath for 15 minutes.
+
+    # Actions
+
     Multiattack.
       The lizardfolk makes two melee attacks, each one with a different
       weapon.
@@ -250,13 +301,13 @@ class Lizardfolk(Monster):
       Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 5 (1d6 +
       2) piercing damage.
     """
-    name = "Lizardfolk"
-    description = "Medium humanoid, neutral"
+    name = 'Lizardfolk'
+    description = 'Medium humanoid, neutral'
     challenge_rating = 0.5
     armor_class = 15
-    skills = "Perception +3, Stealth +4, Survival +5"
-    senses = "Passive Perception 13"
-    languages = "Draconic"
+    skills = 'Perception +3, Stealth +4, Survival +5'
+    senses = 'Passive Perception 13'
+    languages = 'Draconic'
     strength = Ability(15)
     dexterity = Ability(10)
     constitution = Ability(13)
@@ -267,6 +318,11 @@ class Lizardfolk(Monster):
     swim_speed = 30
     fly_speed = 0
     climb_speed = 0
+    burrow_speed = 0
     hp_max = 22
-    hit_dice = "4d8"
+    hit_dice = '4d8 + 4'
+    condition_immunities = ''
+    damage_immunities = ''
+    damage_resistances = ''
+    damage_vulnerabilities = ''
     spells = []

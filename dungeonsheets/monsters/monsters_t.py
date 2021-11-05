@@ -10,6 +10,7 @@ from dungeonsheets.stats import Ability
 
 class Tarrasque(Monster):
     """
+
     Legendary Resistance.
       If the tarrasque fails a saving throw, it can choose to succeed
       instead.
@@ -24,6 +25,9 @@ class Tarrasque(Monster):
       it originated from the tarrasque, turning the caster into the target.
     Siege Monster.
       The tarrasque deals double damage to objects and structures.
+
+    # Actions
+
     Multiattack.
       The tarrasque can use its Frightful Presence. It then makes five
       attacks: one with its bite, two with its claws, one with its horns,
@@ -67,14 +71,23 @@ class Tarrasque(Monster):
       tarrasque. If the tarrasque dies, a swallowed creature is no longer
       restrained by it and can escape from the corpse by using 30 feet of
       movement, exiting prone.
+
+    # Legendary Actions
+
+    Attack.
+      The tarrasque makes one claw attack or tail attack.
+    Move.
+      The tarrasque moves up to half its speed.
+    Chomp (Costs 2 Actions).
+      The tarrasque makes one bite attack or uses its Swallow.
     """
-    name = "Tarrasque"
-    description = "Gargantuan monstrosity, unaligned"
+    name = 'Tarrasque'
+    description = 'Gargantuan monstrosity, unaligned'
     challenge_rating = 30
     armor_class = 25
-    skills = ""
-    senses = "Blindsight 120 ft., Passive Perception 10"
-    languages = ""
+    skills = ''
+    senses = 'Blindsight 120 ft., Passive Perception 10'
+    languages = ''
     strength = Ability(30)
     dexterity = Ability(11)
     constitution = Ability(30)
@@ -85,17 +98,26 @@ class Tarrasque(Monster):
     swim_speed = 0
     fly_speed = 0
     climb_speed = 0
+    burrow_speed = 0
     hp_max = 676
-    hit_dice = "33d20"
+    hit_dice = '33d20 + 330'
+    condition_immunities = 'charmed, frightened, paralyzed, poisoned'
+    damage_immunities = 'fire, poison, bludgeoning, piercing, and slashing from nonmagical weapons'
+    damage_resistances = ''
+    damage_vulnerabilities = ''
     spells = []
 
 
 class Thug(Monster):
     """
+
     Pack Tactics.
       The thug has advantage on an attack roll against a creature if at
       least one of the thug's allies is within 5 ft. of the creature and the
       ally isn't incapacitated.
+
+    # Actions
+
     Multiattack.
       The thug makes two melee attacks.
     Mace.
@@ -105,13 +127,13 @@ class Thug(Monster):
       Ranged Weapon Attack: +2 to hit, range 100/400 ft., one target. Hit: 5
       (1d10) piercing damage.
     """
-    name = "Thug"
-    description = "Medium humanoid, any non-good alignment"
+    name = 'Thug'
+    description = 'Medium humanoid, any non-good alignment'
     challenge_rating = 0.5
     armor_class = 11
-    skills = "Intimidation +2"
-    senses = "Passive Perception 10"
-    languages = "any one language (usually Common)"
+    skills = 'Intimidation +2'
+    senses = 'Passive Perception 10'
+    languages = 'any one language (usually Common)'
     strength = Ability(15)
     dexterity = Ability(11)
     constitution = Ability(14)
@@ -122,13 +144,19 @@ class Thug(Monster):
     swim_speed = 0
     fly_speed = 0
     climb_speed = 0
+    burrow_speed = 0
     hp_max = 32
-    hit_dice = "5d8"
+    hit_dice = '5d8 + 10'
+    condition_immunities = ''
+    damage_immunities = ''
+    damage_resistances = ''
+    damage_vulnerabilities = ''
     spells = []
 
 
 class Tiger(Monster):
     """
+
     Keen Smell.
       The tiger has advantage on Wisdom (Perception) checks that rely on
       smell.
@@ -138,6 +166,9 @@ class Tiger(Monster):
       on a DC 13 Strength saving throw or be knocked prone. If the target is
       prone, the tiger can make one bite attack against it as a bonus
       action.
+
+    # Actions
+
     Bite.
       Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 8 (1d10
       + 3) piercing damage.
@@ -145,13 +176,13 @@ class Tiger(Monster):
       Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 7 (1d8 +
       3) slashing damage.
     """
-    name = "Tiger"
-    description = "Large beast, unaligned"
+    name = 'Tiger'
+    description = 'Large beast, unaligned'
     challenge_rating = 1
     armor_class = 12
-    skills = "Perception +3, Stealth +6"
-    senses = "Darkvision 60 ft., Passive Perception 13"
-    languages = ""
+    skills = 'Perception +3, Stealth +6'
+    senses = 'Darkvision 60 ft., Passive Perception 13'
+    languages = ''
     strength = Ability(17)
     dexterity = Ability(15)
     constitution = Ability(14)
@@ -162,18 +193,27 @@ class Tiger(Monster):
     swim_speed = 0
     fly_speed = 0
     climb_speed = 0
+    burrow_speed = 0
     hp_max = 37
-    hit_dice = "5d10"
+    hit_dice = '5d10 + 10'
+    condition_immunities = ''
+    damage_immunities = ''
+    damage_resistances = ''
+    damage_vulnerabilities = ''
     spells = []
 
 
 class Treant(Monster):
     """
+
     False Appearance.
       While the treant remains motionless, it is indistinguishable from a
       normal tree.
     Siege Monster.
       The treant deals double damage to objects and structures.
+
+    # Actions
+
     Multiattack.
       The treant makes two slam attacks.
     Slam.
@@ -192,13 +232,13 @@ class Treant(Monster):
       until the treant takes a bonus action to turn it back into an
       inanimate tree. The tree then takes root if possible.
     """
-    name = "Treant"
-    description = "Huge plant, chaotic good"
+    name = 'Treant'
+    description = 'Huge plant, chaotic good'
     challenge_rating = 9
     armor_class = 16
-    skills = ""
-    senses = "Passive Perception 13"
-    languages = "Common, Druidic, Elvish, Sylvan"
+    skills = ''
+    senses = 'Passive Perception 13'
+    languages = 'Common, Druidic, Elvish, Sylvan'
     strength = Ability(23)
     dexterity = Ability(8)
     constitution = Ability(21)
@@ -209,29 +249,38 @@ class Treant(Monster):
     swim_speed = 0
     fly_speed = 0
     climb_speed = 0
+    burrow_speed = 0
     hp_max = 138
-    hit_dice = "12d12"
+    hit_dice = '12d12 + 60'
+    condition_immunities = ''
+    damage_immunities = ''
+    damage_resistances = 'bludgeoning'
+    damage_vulnerabilities = 'fire'
     spells = []
 
 
 class TribalWarrior(Monster):
     """
+
     Pack Tactics.
       The warrior has advantage on an attack roll against a creature if at
       least one of the warrior's allies is within 5 ft. of the creature and
       the ally isn't incapacitated.
+
+    # Actions
+
     Spear.
       Melee or Ranged Weapon Attack: +3 to hit, reach 5 ft. or range 20/60
       ft., one target. Hit: 4 (1d6 + 1) piercing damage, or 5 (1d8 + 1)
       piercing damage if used with two hands to make a melee attack.
     """
-    name = "Tribal Warrior"
-    description = "Medium humanoid, any alignment"
+    name = 'Tribal Warrior'
+    description = 'Medium humanoid, any alignment'
     challenge_rating = 0.125
     armor_class = 12
-    skills = ""
-    senses = "Passive Perception 10"
-    languages = "any one language"
+    skills = ''
+    senses = 'Passive Perception 10'
+    languages = 'any one language'
     strength = Ability(13)
     dexterity = Ability(11)
     constitution = Ability(12)
@@ -242,19 +291,28 @@ class TribalWarrior(Monster):
     swim_speed = 0
     fly_speed = 0
     climb_speed = 0
+    burrow_speed = 0
     hp_max = 11
-    hit_dice = "2d8"
+    hit_dice = '2d8 + 2'
+    condition_immunities = ''
+    damage_immunities = ''
+    damage_resistances = ''
+    damage_vulnerabilities = ''
     spells = []
 
 
 class Triceratops(Monster):
     """
+
     Trampling Charge.
       If the triceratops moves at least 20 ft. straight toward a creature
       and then hits it with a gore attack on the same turn, that target must
       succeed on a DC 13 Strength saving throw or be knocked prone. If the
       target is prone, the triceratops can make one stomp attack against it
       as a bonus action.
+
+    # Actions
+
     Gore.
       Melee Weapon Attack: +9 to hit, reach 5 ft., one target. Hit: 24 (4d8
       + 6) piercing damage.
@@ -262,13 +320,13 @@ class Triceratops(Monster):
       Melee Weapon Attack: +9 to hit, reach 5 ft., one prone creature. Hit:
       22 (3d10 + 6) bludgeoning damage
     """
-    name = "Triceratops"
-    description = "Huge beast, unaligned"
+    name = 'Triceratops'
+    description = 'Huge beast, unaligned'
     challenge_rating = 5
     armor_class = 13
-    skills = ""
-    senses = "Passive Perception 10"
-    languages = ""
+    skills = ''
+    senses = 'Passive Perception 10'
+    languages = ''
     strength = Ability(22)
     dexterity = Ability(9)
     constitution = Ability(17)
@@ -279,13 +337,19 @@ class Triceratops(Monster):
     swim_speed = 0
     fly_speed = 0
     climb_speed = 0
+    burrow_speed = 0
     hp_max = 95
-    hit_dice = "10d12"
+    hit_dice = '10d12 + 30'
+    condition_immunities = ''
+    damage_immunities = ''
+    damage_resistances = ''
+    damage_vulnerabilities = ''
     spells = []
 
 
 class Troll(Monster):
     """
+
     Keen Smell.
       The troll has advantage on Wisdom (Perception) checks that rely on
       smell.
@@ -329,6 +393,9 @@ class Troll(Monster):
       legs, it falls prone. If it has both arms, it can crawl. With only one
       arm, it can still crawl, but its speed is halved. With no arms or
       legs, its speed is 0, and it can't benefit from bonuses to speed.
+
+    # Actions
+
     Multiattack.
       The troll makes three attacks: one with its bite and two with its
       claws.
@@ -339,13 +406,13 @@ class Troll(Monster):
       Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 11 (2d6
       + 4) slashing damage.
     """
-    name = "Troll"
-    description = "Large giant, chaotic evil"
+    name = 'Troll'
+    description = 'Large giant, chaotic evil'
     challenge_rating = 5
     armor_class = 15
-    skills = "Perception +2"
-    senses = "Darkvision 60 ft., Passive Perception 12"
-    languages = "Giant"
+    skills = 'Perception +2'
+    senses = 'Darkvision 60 ft., Passive Perception 12'
+    languages = 'Giant'
     strength = Ability(18)
     dexterity = Ability(13)
     constitution = Ability(20)
@@ -356,13 +423,21 @@ class Troll(Monster):
     swim_speed = 0
     fly_speed = 0
     climb_speed = 0
+    burrow_speed = 0
     hp_max = 84
-    hit_dice = "8d10"
+    hit_dice = '8d10 + 40'
+    condition_immunities = ''
+    damage_immunities = ''
+    damage_resistances = ''
+    damage_vulnerabilities = ''
     spells = []
 
 
 class TyrannosaurusRex(Monster):
     """
+
+    # Actions
+
     Multiattack.
       The tyrannosaurus makes two attacks: one with its bite and one with
       its tail. It can't make both attacks against the same target.
@@ -375,13 +450,13 @@ class TyrannosaurusRex(Monster):
       Melee Weapon Attack: +10 to hit, reach 10 ft., one target. Hit: 20
       (3d8 + 7) bludgeoning damage.
     """
-    name = "Tyrannosaurus Rex"
-    description = "Huge beast, unaligned"
+    name = 'Tyrannosaurus Rex'
+    description = 'Huge beast, unaligned'
     challenge_rating = 8
     armor_class = 13
-    skills = "Perception +4"
-    senses = "Passive Perception 14"
-    languages = ""
+    skills = 'Perception +4'
+    senses = 'Passive Perception 14'
+    languages = ''
     strength = Ability(25)
     dexterity = Ability(10)
     constitution = Ability(19)
@@ -392,6 +467,11 @@ class TyrannosaurusRex(Monster):
     swim_speed = 0
     fly_speed = 0
     climb_speed = 0
+    burrow_speed = 0
     hp_max = 136
-    hit_dice = "13d12"
+    hit_dice = '13d12 + 52'
+    condition_immunities = ''
+    damage_immunities = ''
+    damage_resistances = ''
+    damage_vulnerabilities = ''
     spells = []

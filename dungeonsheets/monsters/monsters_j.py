@@ -10,6 +10,7 @@ from dungeonsheets.stats import Ability
 
 class Jackal(Monster):
     """
+
     Keen Hearing and Smell.
       The jackal has advantage on Wisdom (Perception) checks that rely on
       hearing or smell.
@@ -17,17 +18,20 @@ class Jackal(Monster):
       The jackal has advantage on an attack roll against a creature if at
       least one of the jackal's allies is within 5 ft. of the creature and
       the ally isn't incapacitated.
+
+    # Actions
+
     Bite.
       Melee Weapon Attack: +1 to hit, reach 5 ft., one target. Hit: 1 (1d4 -
       1) piercing damage.
     """
-    name = "Jackal"
-    description = "Small beast, unaligned"
+    name = 'Jackal'
+    description = 'Small beast, unaligned'
     challenge_rating = 0
     armor_class = 12
-    skills = "Perception +3"
-    senses = "Passive Perception 13"
-    languages = ""
+    skills = 'Perception +3'
+    senses = 'Passive Perception 13'
+    languages = ''
     strength = Ability(8)
     dexterity = Ability(15)
     constitution = Ability(11)
@@ -38,6 +42,11 @@ class Jackal(Monster):
     swim_speed = 0
     fly_speed = 0
     climb_speed = 0
+    burrow_speed = 0
     hp_max = 3
-    hit_dice = "1d6"
+    hit_dice = '1d6 + 0'
+    condition_immunities = ''
+    damage_immunities = ''
+    damage_resistances = ''
+    damage_vulnerabilities = ''
     spells = []

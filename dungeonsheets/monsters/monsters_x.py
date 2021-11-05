@@ -10,6 +10,7 @@ from dungeonsheets.stats import Ability
 
 class Xorn(Monster):
     """
+
     Earth Glide.
       The xorn can burrow through nonmagical, unworked earth and stone.
       While doing so, the xorn doesn't disturb the material it moves
@@ -20,6 +21,9 @@ class Xorn(Monster):
     Treasure Sense.
       The xorn can pinpoint, by scent, the location of precious metals and
       stones, such as coins and gems, within 60 ft. of it.
+
+    # Actions
+
     Multiattack.
       The xorn makes three claw attacks and one bite attack.
     Bite.
@@ -29,13 +33,13 @@ class Xorn(Monster):
       Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 6 (1d6 +
       3) slashing damage.
     """
-    name = "Xorn"
-    description = "Medium elemental, neutral"
+    name = 'Xorn'
+    description = 'Medium elemental, neutral'
     challenge_rating = 5
     armor_class = 19
-    skills = "Perception +6, Stealth +3"
-    senses = "Darkvision 60 ft., Tremorsense 60 ft., Passive Perception 16"
-    languages = "Terran"
+    skills = 'Perception +6, Stealth +3'
+    senses = 'Darkvision 60 ft., Tremorsense 60 ft., Passive Perception 16'
+    languages = 'Terran'
     strength = Ability(17)
     dexterity = Ability(10)
     constitution = Ability(22)
@@ -46,6 +50,11 @@ class Xorn(Monster):
     swim_speed = 0
     fly_speed = 0
     climb_speed = 0
+    burrow_speed = 20
     hp_max = 73
-    hit_dice = "7d8"
+    hit_dice = '7d8 + 42'
+    condition_immunities = ''
+    damage_immunities = ''
+    damage_resistances = "piercing and slashing from nonmagical weapons that aren't adamantine"
+    damage_vulnerabilities = ''
     spells = []
