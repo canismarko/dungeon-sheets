@@ -354,7 +354,61 @@ class Hippogriff(Monster):
     spells = []
 
 
+class HobgoblinCaptain(Monster):
+    """Martial Advantage.
+      Once per turn, the hobgoblin can deal an extra 10 (3d6) damage
+      to a creature it hits with a weapon attack if that creature is
+      within 5 feet of an ally of the hobgoblin that isn't
+      incapacitated.
+
+    # Actions
+    
+    Multiattack.
+      The hobgoblin makes two greatsword attacks.
+    Greatsword
+      *Melee Weapon Attack:* +4 to hit, reach 5 ft., one
+       target. *Hit*: 9 (2d6 + 2) piercing damage.
+    Javelin.
+      *Melee or Ranged Weapon Attach: +4 to hit, reach 5 ft. or range
+       30/120 ft., one target. *Hit:* 5 (1d6+2) piercing damage.
+    Leadership (Recharges after a Short or Long Rest).
+      For 1 minutes, the hobgoblin can utter a special command or
+      warning whenever a nonhostile creature that it can see within 30
+      feet of it makes an attack roll or a saving throw. The creature
+      can add a d4 to its roll provided it can hear and understand the
+      hobgoblin. A creature can benefit from only one Leadership die
+      at a time. This effect ends if the hobgoblin is incapacitated.
+
+    """
+    name = "Hobgoblin Captain"
+    description = "Medium humanoid (goblinoid), lawful evil"
+    challenge_rating = 3
+    armor_class = 17
+    skills = ''
+    senses = 'darkvision 60 ft., Passive Perception 10'
+    languages = 'Common, Goblin'
+    strength = Ability(15)
+    dexterity = Ability(14)
+    constitution = Ability(14)
+    intelligence = Ability(12)
+    wisdom = Ability(10)
+    charisma = Ability(13)
+    speed = 30
+    swim_speed = 0
+    fly_speed = 0
+    climb_speed = 0
+    burrow_speed = 0
+    hp_max = 39
+    hit_dice = '6d8 + 12'
+    condition_immunities = ''
+    damage_immunities = ''
+    damage_resistances = ''
+    damage_vulnerabilities = ''
+    spells = []
+
+
 class Hobgoblin(Monster):
+
     """
 
     Martial Advantage.
