@@ -24,16 +24,26 @@
       \\
     [% endfor %]    
   \end{DndTable}
-  \begin{DndTable}{r c c c c}
-    & AC & Pas.\ Per. & Max HP & Spl.\ DC \\
+  \begin{DndTable}{r c c c}
+    & AC & Max HP & Spl.\ DC \\
     [% for member in party %]
       [[ member.name[:28] ]]
       & [[ member.armor_class ]]
-      & [[ member.perception.modifier + 10 ]]
-      & [[ member.max_hp ]]
+      & [[ member.hp_max ]]
       & [% for class in member.class_list %]
           [% if class.spellcasting_ability %] [[ member.spell_save_dc(class) ]], [% endif %]
         [% endfor %]
+      \\
+    [% endfor %]
+  \end{DndTable}
+  % Passive stats
+  \begin{DndTable}{r c c c}
+    & Pas. Per.\ & Pas. Ins.\ & Pas. Inv.\ \\
+    [% for member in party %]
+      [[ member.name[:28] ]]
+      & [[ member.passive_perception ]] % Passive perception
+      & [[ member.passive_insight ]] % Passive insight
+      & [[ member.passive_investigation ]] % Passive investigation
       \\
     [% endfor %]
   \end{DndTable}
@@ -60,19 +70,32 @@
       \\
     [% endfor %]
   \end{tabular}
+  % Additional combat stats
   \begin{tabular}{r | c c c}
-    & AC & Pas.\ Per. & Spl.\ DC \\
+    & AC & Max HP & Spl.\ DC \\
     \hline\hline
     [% for member in party %]
       [[ member.name[:28] ]]
       & [[ member.armor_class ]]
-      & [[ member.perception.modifier + 10 ]]
+      & [[ member.hp_max ]] % Maximum HP
       & [% for class in member.class_list %]
           [% if class.spellcasting_ability %] [[ member.spell_save_dc(class) ]], [% endif %]
         [% endfor %]
       \\
     [% endfor %]
   \end{tabular}
+  % Passive stats
+  \begin{tabular}{r | c c c}
+    & Pas.\ Per. & Pas.\ Ins. & Pas.\ Inv.\ \\
+    \hline\hline
+    [% for member in party %]
+      [[ member.name[:28] ]]
+      & [[ member.passive_perception ]] % Passive perception
+      & [[ member.passive_insight ]] % Passive insight
+      & [[ member.passive_investigation ]] % Passive investigation
+      \\
+    [% endfor %]
+  \end{tabular}  
     %% XP thresholds for the party
   \begin{tabular}{r c c c c}
     & Easy & Medium & Hard & Deadly \\

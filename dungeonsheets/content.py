@@ -84,7 +84,7 @@ class Content(ABC):
             Mechanic = mechanic
         elif SuperClass is not None and isinstance(mechanic, SuperClass):
             # Has been instantiated for some reason
-            Mechanic = type(Mechanic)
+            Mechanic = type(mechanic)
         else:
             try:
                 # Retrieve pre-defined mechanic
@@ -186,6 +186,19 @@ class Creature(Content):
     @property
     def passive_wisdom(self):
         return self.perception.modifier + 10
+
+    @property
+    def passive_perception(self):
+        """Just a wrapper around passive wisdom."""
+        return self.passive_wisdom
+
+    @property
+    def passive_insight(self):
+        return self.insight.modifier + 10
+
+    @property
+    def passive_investigation(self):
+        return self.investigation.modifier + 10
 
     @property
     def abilities(self):

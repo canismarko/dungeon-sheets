@@ -140,6 +140,19 @@ class VashtaNerada(monsters.Monster):
 
 
 class HtmlCreatorTestCase(unittest.TestCase):
+    def new_character(self):
+        char = character.Character(
+            name="Dr. Who",
+            classes=["Monk", "Druid", "Artificer"],
+            levels=[1, 1, 1],
+            subclasses=["way of the open hand", None, None],
+            magic_items=["cloak of protection"],
+            spells=["invisibility"],
+            wild_shapes=["crocodile"],
+            infusions=["boots of the winding path"]
+        )
+        return char
+    
     def test_create_monsters_html(self):
         monsters_ = [monsters.Priest()]
         html = make_sheets.create_monsters_content(monsters=monsters_, suffix="html")
@@ -171,6 +184,19 @@ class HtmlCreatorTestCase(unittest.TestCase):
         html = make_sheets.create_monsters_content(monsters=monsters_,
                                                    suffix="html",
                                                    use_dnd_decorations=True)
+
+    def test_create_party_summary_html(self):
+        char = self.new_character()
+        html = make_sheets.create_party_summary_content(party=[char], suffix="html", summary_rst="")
+        self.assertIn('<h1 id="gm-party">Party</h1>', html)
+        self.assertIn(char.name, html)
+        # Check for passive perception/insight/investigation
+        self.assertIn('<th>Pass. Per.</th>', html)
+        self.assertIn(f'<td class="passive-perception">{10+char.perception.modifier}</td>', html)
+        self.assertIn('<th>Pass. Ins.</th>', html)
+        self.assertIn(f'<td class="passive-insight">{10+char.insight.modifier}</td>', html)        
+        self.assertIn('<th>Pass. Inv.</th>', html)
+        self.assertIn(f'<td class="passive-investigation">{10+char.investigation.modifier}</td>', html)
 
     def test_create_extra_gm_content(self):
         class MySection():
@@ -273,6 +299,24 @@ class TexCreatorTestCase(unittest.TestCase):
         tex = make_sheets.create_party_summary_content(party=[char], suffix="tex", summary_rst="")
         self.assertIn(r"\section*{Party}", tex)
         self.assertIn(char.name, tex)
+        # Check for passive perception/insight/investigation
+        print(char.passive_insight, char.passive_perception, char.passive_investigation)
+        self.assertIn(f'& {char.passive_insight} % Passive insight', tex)
+        self.assertIn(f'& {char.passive_perception} % Passive perception', tex)
+        self.assertIn(f'& {char.passive_investigation} % Passive investigation', tex)
+    
+    def test_create_party_summary_tex_fancy(self):
+        char = self.new_character()
+        tex = make_sheets.create_party_summary_content(party=[char],
+                                                       suffix="tex",
+                                                       summary_rst="",
+                                                       use_dnd_decorations=True)
+        self.assertIn(r"\section*{Party}", tex)
+        self.assertIn(char.name, tex)
+        # Check for passive perception/insight/investigation
+        self.assertIn(f'& {char.passive_insight} % Passive insight', tex)
+        self.assertIn(f'& {char.passive_perception} % Passive perception', tex)
+        self.assertIn(f'& {char.passive_investigation} % Passive investigation', tex)
     
     def test_create_summary_tex(self):
         rst = "The party's create *adventure*."
