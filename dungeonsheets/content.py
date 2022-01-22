@@ -105,7 +105,6 @@ class Content(ABC):
                 attrs = {"name": mechanic_name, "__doc__": msg, "source": "Unknown"}
                 Mechanic = type(class_name, (SuperClass,), attrs)
         return Mechanic
-    
 
 
 class Creature(Content):
@@ -213,3 +212,7 @@ class Creature(Content):
                 self.medicine, self.nature, self.perception,
                 self.performance, self.persuasion, self.religion,
                 self.sleight_of_hand, self.stealth, self.survival]
+    
+    @property
+    def is_spellcaster(self):
+        raise NotImplementedError

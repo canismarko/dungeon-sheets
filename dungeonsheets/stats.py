@@ -32,7 +32,43 @@ log = logging.getLogger(__name__)
 
 def mod_str(modifier):
     """Converts a modifier to a string, eg 2 -> '+2'."""
-    return "{:+d}".format(modifier)
+    try:
+        s = "{:+d}".format(modifier)
+    except TypeError:
+        s = "N/A"
+    return s
+
+
+def str_to_list(obj, attr: str, sep: str = ","):
+    """Find the string *obj.attr* if it exists, and returns it as a
+    list.
+
+    Parameters
+    ==========
+    obj
+      Any python object, presumably with an attribute *attr*.
+    attr
+      The name of the attribute to look up.
+    sep
+      The separator to use for splitting the string.
+    
+    Returns
+    =======
+    items
+      A sequence of the items retrieved from *obj.attr* string.  If
+      *obj.attr* does not exist, an empty list will be returned. If
+      *obj.attr* is not a string, then it will be presumed to be a
+      sequence already and returned as is.
+
+    """
+    string = getattr(obj, attr, [])
+    if hasattr(string, "split"):
+        # Convert the string to a list
+        lst = [s.strip() for s in string.split(sep)]
+    else:
+        # A non-string attribute was given, so just return it
+        lst = string
+    return lst
 
 
 def ability_mod_str(character, ability):

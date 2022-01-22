@@ -387,12 +387,12 @@ def make_character_content(
                                                       content_suffix=content_format,
                                                       use_dnd_decorations=fancy_decorations))
     # Create a list of subcasses, features, spells, etc
-    if character.subclasses:
+    if len(getattr(character, 'subclasses', [])) > 0:
         content.append(create_subclasses_content(character,
                                                  content_suffix=content_format,
                                                  use_dnd_decorations=fancy_decorations)
                        )
-    if character.features:
+    if len(getattr(character, 'features', [])) > 0:        
         content.append(
             create_features_content(character, content_suffix=content_format, use_dnd_decorations=fancy_decorations)
         )

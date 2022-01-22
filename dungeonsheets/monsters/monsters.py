@@ -106,3 +106,7 @@ class Monster(Creature, metaclass=SpellFactory):
 
     def has_feature(self, *args, **kwargs):
         return False
+    
+    @property
+    def is_spellcaster(self):
+        return len(self.spells) > 0

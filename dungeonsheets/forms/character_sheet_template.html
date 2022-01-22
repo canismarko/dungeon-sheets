@@ -49,7 +49,7 @@
   <dt>Current Hit Points</dt>
   <dd>[[ character.hp_current ]]&nbsp;</dd>
   <dt>Temporary Hit Points</dt>
-  <dd>[% if character.hp_temp > 0 %][[ character.hp_temp ]][% endif %]&nbsp;</dd>
+  <dd>[[ character | selectattr('hp_temp', 0) ]]&nbsp;</dd>
   <dt>Hit Dice Total</dt> 
   <dd>[[ character.hit_dice ]]</dd>
 
@@ -126,12 +126,10 @@
   <li>[[ character.ep ]] EP</li>
   <li>[[ character.gp ]] GP</li>
   <li>[[ character.pp ]] PP</li>
-  [% set inventory_items = character.magic_items_text.split(',') %]
-  [% for item in inventory_items %]
+  [% for item in character | str_to_list('magic_items_text') %]
   <li>[[ item ]]</li>
   [% endfor %]
-  [% set inventory_items = character.equipment.split(',') %]
-  [% for item in inventory_items %]
+  [% for item in character | str_to_list('equipment') %]
   <li>[[ item ]]</li>
   [% endfor %]
 </ul>

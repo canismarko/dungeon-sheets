@@ -467,11 +467,11 @@ class Character(Creature):
     @property
     def spellcasting_classes_excluding_warlock(self):
         return [c for c in self.spellcasting_classes if not type(c) == classes.Warlock]
-
+    
     @property
     def is_spellcaster(self):
         return len(self.spellcasting_classes) > 0
-
+    
     def spell_slots(self, spell_level):
         warlock_slots = 0
         for c in self.spellcasting_classes:
