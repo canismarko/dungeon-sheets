@@ -1,10 +1,16 @@
 __all__ = ("Ranger", "RevisedRanger")
 
+import re
+import warnings
 from collections import defaultdict
 
 from dungeonsheets import features, spells, weapons
 from dungeonsheets.classes.classes import CharClass, SubClass
-
+from dungeonsheets.stats import (
+    attack_text_locator,
+    att_dmg_modifier, 
+    skill_modifier,
+)
 
 # PHB
 class Hunter(SubClass):
@@ -173,6 +179,7 @@ class MonsterSlayer(SubClass):
 class Ranger(CharClass):
     name = "Ranger"
     hit_dice_faces = 10
+    _beast = None
     saving_throw_proficiencies = ("strength", "dexterity")
     primary_abilities = ("dexterity", "wisdom")
     _proficiencies_text = (
@@ -244,7 +251,45 @@ class Ranger(CharClass):
         19: (0, 4, 3, 3, 3, 2, 0, 0, 0, 0),
         20: (0, 4, 3, 3, 3, 2, 0, 0, 0, 0),
     }
-
+    
+    @property
+    def ranger_beast(self):
+        return self._beast
+    
+    @ranger_beast.setter
+    def ranger_beast(self, beast_tuple):
+        """Takes an instance from monsters.Monster and modify its stats,
+        converting it to a Ranger's Companion."""
+        beast, prof_bonus = beast_tuple
+        desc_split = beast.description.split()
+        size = desc_split[0]
+        size_condition = size.lower() in ['tiny', 'small', 'medium']
+        cr_condition = beast.challenge_rating <= .25
+        if beast.is_beast and size_condition and cr_condition:
+            companion = beast
+            description, actions = beast.__doc__.split("# Actions")
+            if actions:
+                attacks_list = re.findall(attack_text_locator, actions)
+                start = 0
+                new_actions = ""
+                for att_text in attacks_list:
+                    new_att_text = att_dmg_modifier(att_text, prof_bonus)
+                    position = actions.find(att_text, start)
+                    action_change = actions[start:position] + new_att_text
+                    start = position + len(att_text)
+                    new_actions = new_actions + action_change
+                companion.__doc__ = description + "# Actions" + new_actions
+            companion.armor_class = beast.armor_class + prof_bonus
+            companion.skills = skill_modifier(beast.skills, prof_bonus)
+            companion.saving_throws = skill_modifier(beast.saving_throws, 
+                                                     prof_bonus)
+            companion.hp_max = max(beast.hp_max, 4*self.level)
+            self._beast = companion
+        else:
+            msg = (
+                f"{beast.name} does not satisfy criteria to be Ranger's Companion."
+            )
+            warnings.warn(msg)
 
 # Revised Ranger
 class BeastConclave(SubClass):
