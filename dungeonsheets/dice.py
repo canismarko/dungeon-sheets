@@ -63,3 +63,13 @@ def roll(a, b=None):
         return random.randint(1, a)
     else:
         return sum([random.randint(1, b) for _ in range(a)])
+    
+def dice_roll_mean(dice_text):
+    """Takes a dice string like '3d6 +3' and returns its average roll.
+    Removes white spaces and uses re for a more flexible input."""
+    dice_text = dice_text.lower().replace(" ", "").replace("\n", "")
+    dice_match = re.search(r"(\d)d(\d)([+-]\d)", dice_text)
+    dice_num, dice_type, modifier = dice_match.groups()
+    dmg_min = max(int(dice_num) + int(modifier), 0)
+    dmg_max = int(dice_num)*int(dice_type) + int(modifier)
+    return round((dmg_max - dmg_min)/2.0 + dmg_min)
