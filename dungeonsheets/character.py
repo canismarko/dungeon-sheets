@@ -70,6 +70,21 @@ multiclass_spellslots_by_level = {
     20: (0, 4, 3, 3, 3, 3, 2, 2, 1, 1),
 }
 
+def companion_resolver(compa):
+    if isinstance(compa, monsters.Monster):
+        new_compa = compa
+    else:
+        # Not already a monster so see if we can find one
+        try:
+            NewMonster = find_content(compa, valid_classes=[monsters.Monster])
+            new_compa = NewMonster()
+        except exceptions.ContentNotFound:
+            msg = (
+                f"Companion '{compa}' not found. Please add it to"
+                " ``monsters.py``"
+            )
+            raise exceptions.MonsterError(msg)
+    return new_compa
 
 class Character(Creature):
     """A generic player character."""
@@ -79,13 +94,14 @@ class Character(Creature):
     xp = 0
     # Extra hit points info, for characters only
     hp_current = None
-    hp_temp = 0
+    hp_temp = None
     hit_dice_current = ""
     # Base stats (ability scores)
     inspiration = False
     attacks_and_spellcasting = ""
     class_list = list()
     _background = None
+    _companions = []
 
     # Characteristics
     personality_traits = (
@@ -960,6 +976,36 @@ class Character(Creature):
     def wild_shapes(self, new_shapes):
         if hasattr(self, "Druid"):
             self.Druid.wild_shapes = new_shapes
+            
+    @property
+    def ranger_beast(self):
+        if hasattr(self, "Ranger"):
+            return self.Ranger.ranger_beast
+        else:
+            return None
+    
+    @ranger_beast.setter
+    def ranger_beast(self, beast):
+        beast = companion_resolver(beast)
+        self.Ranger.ranger_beast = (beast, self.proficiency_bonus)
+        
+    @property
+    def companions(self):
+        """Return the list of companions and summonables"""
+        companions = [compa for compa in self._companions]
+        if self.ranger_beast:
+            companions.append(self.ranger_beast)
+        return companions
+
+    @companions.setter
+    def companions(self, compas):
+        companions_list = []
+        # Retrieve the actual monster classes if possible
+        for compa in compas:
+            new_compa = companion_resolver(compa)
+            companions_list.append(new_compa)
+        # Save the updated list for later
+        self._companions = companions_list
 
     @property
     def infusions_text(self):

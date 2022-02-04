@@ -1,9 +1,11 @@
+import re
 import math
 from collections import namedtuple
 from math import ceil
 import logging
 
 from dungeonsheets.armor import HeavyArmor, NoArmor, NoShield
+from dungeonsheets.dice import dice_roll_mean
 from dungeonsheets.features import (
     AmbushMaster,
     Defense,
@@ -26,9 +28,16 @@ from dungeonsheets.features import (
     UnarmoredMovement,
 )
 
-
 log = logging.getLogger(__name__)
 
+skill_text_locator = re.compile(r"\S+ [+-]\d+")
+attack_text_locator = re.compile(r"attack:.*?damage", re.IGNORECASE|re.DOTALL)
+attack = re.compile(r"attack:.*?to hit", re.IGNORECASE|re.DOTALL)
+damage = re.compile(r"hit:.*?(\d+)d(\d+).*?damage", re.IGNORECASE|re.DOTALL)
+damage_avg = re.compile(r"hit:.*?(\d+)", re.IGNORECASE|re.DOTALL)
+damage_nodice = re.compile(r"hit:.*?damage", re.IGNORECASE|re.DOTALL)
+modifier = re.compile(r"[+-].*?(\d+)", re.IGNORECASE|re.DOTALL)
+single_damage = re.compile(r"(\d+)")
 
 def mod_str(modifier):
     """Converts a modifier to a string, eg 2 -> '+2'."""
@@ -321,3 +330,52 @@ class Initiative(NumericalInitiative):
         if has_advantage:
             ini += "(A)"
         return ini
+    
+def _add_modifier(att_text, prof):
+    """Auxiliary function to add proficiency bonus prof
+    to att_text."""
+    _att_bonus_re = modifier.search(att_text)
+    att_bonus_text = _att_bonus_re.group()
+    att_bonus =  int(att_bonus_text.replace(" ", "").replace("\n", "")) + prof
+    return re.sub(modifier, "{:+d}".format(att_bonus), att_text)
+
+def skill_modifier(skills_text, prof):
+    """Modifies the skill text string adding the proficiency
+    bonus to its values."""
+    skills_updated = []
+    skill_list = re.findall(skill_text_locator, skills_text)
+    if not skill_list:
+        return ""
+    for sk in skill_list:
+        increased_skill = _add_modifier(sk, prof)
+        skills_updated.append(increased_skill)
+    return ", ".join(skills_updated)
+
+def att_dmg_modifier(text, prof):
+    """Modify the attack and damage rolls for a strip
+    of attack text description."""
+    _att_re = attack.search(text)
+    if not _att_re:
+        raise ValueError("No attack info detected.")
+    att_text = _att_re.group()
+    new_att_text = _add_modifier(att_text, prof)
+    text = re.sub(attack, new_att_text, text)
+    _dmg_re = damage.search(text)
+    if _dmg_re:
+        dmg_text = _dmg_re.group()
+        new_dmg_text = _add_modifier(dmg_text, prof)
+        dmg_avg_value = dice_roll_mean(new_dmg_text)
+        _dmg_avg_re = damage_avg.search(new_dmg_text)
+        dmg_avg_text = _dmg_avg_re.group()
+        new_dmg_avg_text = re.sub("(\d+)", "{:d}".format(dmg_avg_value),
+                                  dmg_avg_text, 1)
+        new_dmg_text = re.sub(damage_avg, new_dmg_avg_text, new_dmg_text)
+        text = re.sub(damage, new_dmg_text, text)
+    else:
+        _dmg_re = damage_nodice.search(text)
+        dmg_text = _dmg_re.group()
+        _sdamage_re = single_damage.search(dmg_text)
+        sdamage = int(_sdamage_re.group()) + prof
+        new_dmg_text = re.sub(single_damage, "{:d}".format(sdamage), dmg_text)
+        text = re.sub(single_damage, new_dmg_text, text)
+    return text

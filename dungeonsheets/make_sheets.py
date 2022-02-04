@@ -72,7 +72,7 @@ class CharacterRenderer():
         return template.render(character=character,
                                use_dnd_decorations=use_dnd_decorations, ordinals=ORDINALS)
 
-
+        
 create_character_sheet_content = CharacterRenderer("character_sheet_template.{suffix}")
 create_subclasses_content = CharacterRenderer("subclasses_template.{suffix}")
 create_features_content = CharacterRenderer("features_template.{suffix}")
@@ -86,9 +86,10 @@ def create_monsters_content(
     monsters: Sequence[Union[monsters.Monster, str]],
     suffix: str,
     use_dnd_decorations: bool = False,
+    base_template: str = "monsters_template"
 ) -> str:
     # Convert strings to Monster objects
-    template = jinja_env.get_template(f"monsters_template.{suffix}")
+    template = jinja_env.get_template(base_template+f".{suffix}")
     spell_list = [Spell() for monster in monsters for Spell in monster.spells]
     return template.render(monsters=monsters,
                            use_dnd_decorations=use_dnd_decorations, spell_list=spell_list)
@@ -414,6 +415,13 @@ def make_character_content(
         content.append(
             create_druid_shapes_content(character, content_suffix=content_format, use_dnd_decorations=fancy_decorations)
         )
+
+    # Create a list of companions
+    if len(getattr(character, "companions", [])) > 0:
+        content.append(
+            create_monsters_content(character.companions, suffix=content_format, 
+                                    use_dnd_decorations=fancy_decorations, base_template="companions_template")
+        )
     # Postamble, empty for HTML
     content.append(
         jinja_env.get_template(f"postamble.{content_format}").render(
@@ -479,8 +487,8 @@ def make_character_sheet(
         character_props = readers.read_sheet_file(char_file)
         character = _char.Character.load(character_props)
     # Load image file if present
-    portrait_file=""
-    if character.portrait:
+    portrait_file = character.portrait
+    if portrait_file is True:
         portrait_file=char_file.stem + ".jpeg"
     # Set the fields in the FDF
     basename = char_file.stem
