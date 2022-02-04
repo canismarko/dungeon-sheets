@@ -101,8 +101,8 @@
 \Initiative{[[ char.initiative ]]}
 \Speed{[[ char.speed ]]}
 \MaxHitPoints{[[ char.hp_max ]]}
-\CurrentHitPoints{[[ char.hp_current ]]}
-\TemporaryHitPoints{[[ char.hp_temp ]]}
+[% if char.hp_current %]\CurrentHitPoints{[[ char.hp_current ]]}[% endif %]
+[% if char.hp_temp %]\TemporaryHitPoints{[[ char.hp_temp ]]}[% endif %]
 \MaxHitDice{[[ char.hit_dice.replace(" ","") ]]}
 \CurrentHitDice{[[ char.hit_dice_current.replace(" ", "") ]]}
 
