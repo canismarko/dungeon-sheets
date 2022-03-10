@@ -88,20 +88,23 @@ class RobeOfBreadSummoning(mechanics.MagicItem):
     name = "Robe of Bread Summoning"
 
 
-class PlasticArmor(mechanics.Armor):
-    name = "Plastic armor"
+class PlotArmor(mechanics.Armor, mechanics.MagicItem):
+    """Ensures you never take too much damage that the story suffers."""
+    name = "Plot armor"
     base_armor_class = 23
 
 
-class LegoShield(mechanics.Shield):
-    name = "Lego shield"
+class MeatShield(mechanics.Shield, mechanics.MagicItem):
+    """An NPC that can block everything."""
+    name = "Meat shield"
     base_armor_class = 114
+    st_bonus_all = 15
 
 
 weapons = (DullSword, "rusty_shiv", _campaign.BrightSword)  # Example: ('shortsword', 'longsword')
-magic_items = (RobeOfBreadSummoning, "staff_of_the_arbor_abode", DullSword)
-armor = PlasticArmor # Eg "leather armor"
-shield = LegoShield # Eg "shield"
+magic_items = (RobeOfBreadSummoning, "staff_of_the_arbor_abode", DullSword, MeatShield, PlotArmor)
+armor = PlotArmor # Eg "leather armor"
+shield = MeatShield # Eg "shield"
 
 equipment = """TODO: list the equipment and magic items your character carries"""
 

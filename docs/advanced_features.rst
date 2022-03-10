@@ -68,12 +68,12 @@ the global content manager, so in the above example ``weapons =
 equivalent. See the :ref:`homebrew example` example for more examples.
 
 
-Magic Weapons
--------------
+Magic Weapons and Armor
+-----------------------
 
-A common situation is the creation of homebrew weapons. With multiple
-inheritance, it is possible to include such a magic weapon as both a
-weapon and magic item:
+A common situation is the creation of homebrew weapons, armor and
+shields. With multiple inheritance, it is possible to include such a
+magic weapon as both a weapon and magic item:
 
 .. code:: python
 
@@ -92,6 +92,8 @@ weapon and magic item:
     weapons = [DullSword]
     magic_items = [DullSword]
 
+The same can be done by subclassing either ``mechanics.Armor`` or
+``mechanics.Shield`` together with ``mechanics.MagicItem``.
 
 
 Strings
