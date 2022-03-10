@@ -67,6 +67,33 @@ the global content manager, so in the above example ``weapons =
 [my_homebrew.DullSword]`` and ``weapons = ["dull sword"]`` are
 equivalent. See the :ref:`homebrew example` example for more examples.
 
+
+Magic Weapons
+-------------
+
+A common situation is the creation of homebrew weapons. With multiple
+inheritance, it is possible to include such a magic weapon as both a
+weapon and magic item:
+
+.. code:: python
+
+    from dungeonsheets import mechanics
+
+    class DullSword(mechanics.Weapon, mechanics.MagicItem):
+        """This magical sword does remarkably little damage."""
+        name = "dull sword"
+	# Weapon attributes, e.g.
+	damage_bonus = -1
+	attack_bonus = -1
+	# Magical item attributes, e.g.
+	item_type = "weapon"
+	st_bonus_all = -1
+
+    weapons = [DullSword]
+    magic_items = [DullSword]
+
+
+
 Strings
 -------
 

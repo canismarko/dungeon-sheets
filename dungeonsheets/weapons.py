@@ -5,6 +5,17 @@ default_content_registry.add_module(__name__)
 
 
 class Weapon:
+    """A weapon that be used to deal damage.
+
+    Attributes
+    ==========
+
+    Parameters
+    ==========
+    wielder
+      The character (or NPC) that is using the weapon.
+    
+    """
     name = ""
     cost = "0 gp"
     base_damage = "1d4"

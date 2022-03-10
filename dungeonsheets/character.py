@@ -562,7 +562,7 @@ class Character(Creature):
                         SuperClass=magic_items.MagicItem,
                         warning_message=msg,
                     )
-                    self.magic_items.append(ThisMagicItem(owner=self))
+                    self.magic_items.append(ThisMagicItem(wielder=self))
             elif attr == "weapon_proficiencies":
                 self.other_weapon_proficiencies = ()
                 msg = 'Magic Item "{}" not defined. Please add it to ``weapons.py``'

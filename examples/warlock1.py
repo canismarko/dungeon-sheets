@@ -57,7 +57,7 @@ feature_choices = ('pact of the blade',)
 
 # Weapons/other proficiencies not given by class/race/background
 weapon_proficiencies = ()  # ex: ('shortsword', 'quarterstaff')
-_proficiencies_text = ()  # ex: ("thieves' tools",)
+proficiencies_text = ()  # ex: ("thieves' tools",)
 
 # Proficiencies and languages
 languages = """Elvish, Common, Auran"""

@@ -60,13 +60,15 @@ features = (Juggler, "master_of_ceremonies")
 feature_choices = ()
 
 
-class DullSword(mechanics.Weapon):
+class DullSword(mechanics.Weapon, mechanics.MagicItem):
     """Bonk things with it."""
     name = "Dullsword"
+    damage_bonus = -1
+
 
 # Weapons/other proficiencies not given by class/race/background
 weapon_proficiencies = (DullSword,)  # ex: ('shortsword', 'quarterstaff')
-_proficiencies_text = ()  # ex: ("thieves' tools",)
+proficiencies_text = ("dull sword",)  # ex: ("thieves' tools",)
 
 # Proficiencies and languages
 languages = """[choose one], Common, Primoridal"""
@@ -97,7 +99,7 @@ class LegoShield(mechanics.Shield):
 
 
 weapons = (DullSword, "rusty_shiv", _campaign.BrightSword)  # Example: ('shortsword', 'longsword')
-magic_items = (RobeOfBreadSummoning, "staff_of_the_arbor_abode")
+magic_items = (RobeOfBreadSummoning, "staff_of_the_arbor_abode", DullSword)
 armor = PlasticArmor # Eg "leather armor"
 shield = LegoShield # Eg "shield"
 

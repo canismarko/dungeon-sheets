@@ -13,7 +13,7 @@ class MyMagicItem(magic_items.MagicItem):
 class MagicItemTests(unittest.TestCase):
     def test_st_bonus_all(self):
         char = Character()
-        my_item = MyMagicItem(owner=char)
+        my_item = MyMagicItem(wielder=char)
         char.magic_items = [my_item]
         # Test an item that confers no saving throw bonus
         bonus = my_item.st_bonus()
@@ -25,7 +25,7 @@ class MagicItemTests(unittest.TestCase):
 
     def test_st_bonus_by_ability(self):
         char = Character(strength=10)
-        my_item = MyMagicItem(owner=char)
+        my_item = MyMagicItem(wielder=char)
         char.magic_items = [my_item]
         # Test an item with nonsense ability
         with self.assertRaises(AttributeError):

@@ -192,13 +192,15 @@ class Skill:
     @property
     def is_proficient(self):
         # Check for proficiency
-        proficiencies = [p.replace("_", " ") for p in self.actor.skill_proficiencies]
-        is_proficient = self.skill_name in proficiencies
+        proficiencies = [p.replace("_", " ").lower() for p in self.actor.skill_proficiencies]
+        is_proficient = self.skill_name.lower() in proficiencies
         return is_proficient
 
     @property
     def is_expertise(self):
-        return self.skill_name in self.actor.skill_expertise
+        expertises = [p.replace("_", " ").lower() for p in self.actor.skill_expertise]
+        is_expertise = self.skill_name.lower() in expertises
+        return is_expertise
 
     @property
     def proficiency_modifier(self):
@@ -218,6 +220,8 @@ class Skill:
     def modifier(self):
         ability = getattr(self.actor, self.ability_name)
         modifier = ability.modifier + self.proficiency_modifier
+        # if self.skill_name == "deception":
+        #     import pdb; pdb.set_trace()
         log.info("%s modifier for '%s': %d", self, self.actor.name, modifier)
         return modifier
 

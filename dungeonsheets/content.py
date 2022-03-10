@@ -5,6 +5,7 @@ import warnings
 from abc import ABC
 from pathlib import Path
 
+from dungeonsheets import exceptions
 from dungeonsheets.stats import Ability, ArmorClass, Initiative, Speed, Skill
 from dungeonsheets.content_registry import find_content
 
@@ -100,7 +101,13 @@ class Content(ABC):
                     # Create a generic message so we can make a docstring later.
                     msg = f'Mechanic "{mechanic}" not defined. Please add it.'
                 # Create generic mechanic from the factory
-                class_name = "".join([s.title() for s in mechanic.split("_")])
+                try:
+                    class_name = "".join([s.title() for s in mechanic.split("_")])
+                except AttributeError:
+                    raise exceptions.InvalidContentType(
+                        f"``{mechanic}`` must either be string-like, "
+                        f"or inherit from {SuperClass}. "
+                    )
                 mechanic_name = mechanic.replace("_", " ").title()
                 attrs = {"name": mechanic_name, "__doc__": msg, "source": "Unknown"}
                 Mechanic = type(class_name, (SuperClass,), attrs)

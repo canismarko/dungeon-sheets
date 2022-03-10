@@ -56,7 +56,7 @@ feature_choices = ('pact of the tome',)
 
 # Weapons/other proficiencies not given by class/race/background
 weapon_proficiencies = ()  # ex: ('shortsword', 'quarterstaff')
-_proficiencies_text = ()  # ex: ("thieves' tools",)
+proficiencies_text = ()  # ex: ("thieves' tools",)
 
 # Proficiencies and languages
 languages = """Celestial, Dwarvish, Common, Elvish, Giant"""

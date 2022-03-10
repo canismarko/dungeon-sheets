@@ -61,8 +61,8 @@ class MagicItem:
     st_bonus_wisdom: Optional[int] = None
     st_bonus_charisma: Optional[int] = None
 
-    def __init__(self, owner=None):
-        self.owner = owner
+    def __init__(self, wielder=None):
+        self.wielder = wielder
 
     def __str__(self):
         return self.name
@@ -430,7 +430,17 @@ class ShieldOfFaces(MagicItem):
     name = "Shield of Faces"
 
 
+class GlovesOfThievery(MagicItem):
+    """These gloves are invisible while worn. While wearing them, you gain
+    a +5 bonus to Dexterity (Sleight of Hand) checks and Dexterity
+    checks made to pick locks."""
+    name = "Gloves of Thievery"
+    rarity = "Uncommon"
+    item_type = "Wondrous item"
+
+
 class GlowingSword(MagicItem):
+
     """
     This strange longsword glows at odd times.
     """

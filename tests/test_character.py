@@ -10,6 +10,7 @@ from dungeonsheets.character import (
     Druid,
 )
 from dungeonsheets.weapons import Weapon, Shortsword
+from dungeonsheets.magic_items import MagicItem
 from dungeonsheets.armor import Armor, LeatherArmor, Shield
 
 
@@ -43,6 +44,11 @@ class TestCharacter(TestCase):
         char.set_attrs(armor="leather armor", shield="shield")
         self.assertFalse(isinstance(char.armor, str))
         self.assertFalse(isinstance(char.shield, str))
+        # Check that magic item gets set_attrs
+        MagicWeapon = type("MagicWeapon", (Weapon, MagicItem),
+                           dict(damage_bonus=2, attack_bonus=2,
+                                st_bonus_all=3))
+        char.set_attrs(magic_items=[MagicWeapon])        
         # Check that race gets set to an object
         char.set_attrs(race="high elf")
         self.assertIsInstance(char.race, race.HighElf)
@@ -51,6 +57,9 @@ class TestCharacter(TestCase):
         self.assertTrue(char.inspiration)
         char.set_attrs(inspiration=False)
         self.assertFalse(char.inspiration)
+        # Check that proficiencies text gets included
+        char.set_attrs(proficiencies_text=("dull sword",))
+        self.assertIn("dull sword", char.proficiencies_text.lower())
 
     def test_homebrew_spells(self):
         char = Character()

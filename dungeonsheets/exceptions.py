@@ -35,3 +35,7 @@ class ContentNotFound(ValueError):
 
 class AmbiguousContent(ValueError):
     """Multiple valid content entries were found."""
+
+class InvalidContentType(ValueError):
+    """Trying to resolve content that is either not a string, or not
+    related to the acceptable classes."""
