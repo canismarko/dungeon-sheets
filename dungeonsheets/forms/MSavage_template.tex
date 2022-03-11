@@ -101,16 +101,16 @@
 \Initiative{[[ char.initiative ]]}
 \Speed{[[ char.speed ]]}
 \MaxHitPoints{[[ char.hp_max ]]}
-\CurrentHitPoints{[[ char.hp_current ]]}
-\TemporaryHitPoints{[[ char.hp_temp ]]}
+[% if char.hp_current %]\CurrentHitPoints{[[ char.hp_current ]]}[% endif %]
+[% if char.hp_temp %]\TemporaryHitPoints{[[ char.hp_temp ]]}[% endif %]
 \MaxHitDice{[[ char.hit_dice.replace(" ","") ]]}
 \CurrentHitDice{[[ char.hit_dice_current.replace(" ", "") ]]}
 
-\CP{[[ char.cp ]]}
-\SP{[[ char.sp ]]}
-\GP{[[ char.gp ]]}
-\EP{[[ char.ep ]]}
-\PP{[[ char.pp ]]}
+\CP{[% if char.cp > 0 %][[ char.cp ]][% endif %]}
+\SP{[% if char.sp > 0 %][[ char.sp ]][% endif %]}
+\GP{[% if char.ep > 0 %][[ char.ep ]][% endif %]}
+\EP{[% if char.gp > 0 %][[ char.gp ]][% endif %]}
+\PP{[% if char.pp > 0 %][[ char.pp ]][% endif %]}
 
 [% for w in char.weapons %]
 \AddWeapon{[[ w.name ]]}{[[ "{:+d}".format(w.attack_modifier) ]]}{[[ "{}/{}".format(w.damage, w.damage_type) ]]}
