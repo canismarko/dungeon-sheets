@@ -1,3 +1,4 @@
+import pathlib
 from pathlib import Path
 import os
 import re
@@ -73,8 +74,9 @@ def create_latex_pdf(
     module_root = Path(__file__).parent / "modules/"
     module_dirs = [module_root / mdir for mdir in ["DND-5e-LaTeX-Template"]]
     log.debug(f"Loading additional modules from {module_dirs}.")
-    texinputs = f".:{':'.join(str(d) for d in module_dirs)}:{module_root}:{tex_env}"
-    environment['TEXINPUTS'] = texinputs
+    texinputs = ['.', *module_dirs, module_root, tex_env]
+    separator = ';' if isinstance(module_root, pathlib.WindowsPath) else ':'
+    environment['TEXINPUTS'] = separator.join(str(path) for path in texinputs)
     passes = 2 if use_dnd_decorations else 1
     log.debug(tex_command_line)
     log.debug("LaTeX command: %s" % " ".join(tex_command_line))
