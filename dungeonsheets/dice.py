@@ -21,7 +21,7 @@ def read_dice_str(dice_str):
 
     """
     dice_str = dice_str.replace(" ", "").replace("\n", "")
-    match = dice_re.match(dice_str)
+    match = dice_re.search(dice_str)
     if match is None:
         raise DiceError(f"Cannot interpret dice string {dice_str}")
     num, faces = int(match.group(1)), int(match.group(2))
@@ -79,8 +79,3 @@ def dice_roll_mean(dice_text):
     dice = read_dice_str(dice_text)
     return round(_dice_mean(dice))
 
-if __name__ == "__main__":
-    ds = "10d12+10"
-    v = read_dice_str(ds)
-    print(v)
-    print(_dice_mean(v))

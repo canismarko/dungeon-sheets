@@ -92,7 +92,7 @@ def create_monsters_content(
     template = jinja_env.get_template(base_template+f".{suffix}")
     spell_list = [Spell() for monster in monsters for Spell in monster.spells]
     return template.render(monsters=monsters,
-                           use_dnd_decorations=use_dnd_decorations, spell_list=spell_list)
+                use_dnd_decorations=use_dnd_decorations, spell_list=spell_list)
 
 
 def create_gm_spellbook(spell_list, suffix):

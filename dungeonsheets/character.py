@@ -1000,7 +1000,7 @@ class Character(Creature):
             f"Companion '{beast}' not found. Please add it to"
                         " ``monsters.py``" )
         beast = self._resolve_mechanic(beast, monsters.Monster, msg)
-        self.Ranger.ranger_beast = (beast, self.proficiency_bonus)
+        self.Ranger.ranger_beast = (beast(), self.proficiency_bonus)
         
     @property
     def companions(self):
@@ -1019,7 +1019,7 @@ class Character(Creature):
                 f"Companion '{compa}' not found. Please add it to"
                             " ``monsters.py``" )
             new_compa = self._resolve_mechanic(compa, monsters.Monster, msg)
-            companions_list.append(new_compa)
+            companions_list.append(new_compa())
         # Save the updated list for later
         self._companions = companions_list
 
