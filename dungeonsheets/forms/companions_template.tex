@@ -1,0 +1,100 @@
+\pdfbookmark[0]{Companions}{Companions}
+\section*{Companions}
+
+[% if use_dnd_decorations %]
+  [% for monster in monsters|sort(attribute='name') %]
+    \pdfbookmark[1]{[[ monster.name ]]}{Companions - [[ monster.name ]]}
+    \begin{DndMonster}{[[ monster.name ]]}
+        \DndMonsterType{[[ monster.description ]]}
+    
+        % If you want to use commas in the key values, enclose the values in braces.
+        \DndMonsterBasics[
+            armor-class = {[[ monster.armor_class ]]},
+            hit-points  = {[[ monster.hp_max ]] ([[ monster.hit_dice ]])},
+            speed       = {[[ monster.speed ]] ft.[% if monster.swim_speed %], [[ monster.swim_speed ]] ft. swim[% endif %][% if monster.fly_speed %], [[ monster.fly_speed ]] ft. fly[% endif %][% if monster.burrow_speed %], [[ monster.burrow_speed ]] ft. burrow[% endif %]},
+          ]
+    
+        \DndMonsterAbilityScores[
+            str = [[ monster.strength.value ]],
+            dex = [[ monster.dexterity.value ]],
+            con = [[ monster.constitution.value ]],
+            int = [[ monster.intelligence.value ]],
+            wis = [[ monster.wisdom.value ]],
+            cha = [[ monster.charisma.value ]],
+          ]
+
+        \DndMonsterDetails[
+          saving-throws = {[[ monster.saving_throws ]]},
+          skills = {[[ monster.skills ]]},
+          damage-vulnerabilities = {[[ monster.damage_vulnerabilities ]]},
+          damage-resistances = {[[ monster.damage_resistances ]]},
+          damage-immunities = {[[ monster.damage_immunities ]]},
+          condition-immunities = {[[ monster.condition_immunities ]]},
+          senses = {[[ monster.senses ]]},
+          languages = {[% if monster.languages %][[ monster.languages ]][% else %] --- [% endif %]},
+          challenge = {[[ monster.challenge_rating ]] ([[ monster.challenge_rating | challenge_rating_to_xp ]] XP)},
+        ]
+        %\DndMonsterSection{Actions}
+        [[ monster.__doc__ | rst_to_latex(top_heading_level=2) ]]
+    \end{DndMonster}
+  [% endfor %]
+  
+[% else %]
+  [% for monster in monsters|sort(attribute='name') %]
+    {
+    \pdfbookmark[1]{[[ monster.name ]]}{Companions - [[ monster.name ]]}
+    \section*{[[ monster.name ]]}
+    [% if monster.description %]  
+    \subsection*{[[ monster.description ]]}
+    [% endif %]
+
+    \begin{tabular}{c c c}
+      Armor Class & Hit Points & Speed \\
+      \hline
+      [[ monster.armor_class ]] &
+      [[ monster.hp_max ]] ([[ monster.hit_dice ]]) &
+      [[ monster.speed ]] \\
+      [% if monster.swim_speed %]
+        & & [[ monster.swim_speed ]] swim \\
+        [% endif %]
+      [% if monster.fly_speed %]
+        & & [[ monster.fly_speed ]] fly \\
+        [% endif %]
+      [% if monster.burrow_speed %]
+        & & [[ monster.burrow_speed ]] burrow \\
+        [% endif %]
+    \end{tabular}
+
+    \vspace{0.2cm}
+
+    \begin{tabular}{c c c c c c}
+      STR & DEX & CON & INT & WIS & CHA \\
+      \hline
+      [[ monster.strength.value ]] & [[ monster.dexterity.value ]] & [[ monster.constitution.value ]] &
+      [[ monster.intelligence.value ]] & [[ monster.wisdom.value ]] & [[ monster.charisma.value ]] \\
+      ([[ monster.strength.modifier|mod_str ]]) & ([[ monster.dexterity.modifier|mod_str ]]) &
+      ([[ monster.constitution.modifier|mod_str ]]) & ([[ monster.intelligence.modifier|mod_str ]]) &
+      ([[ monster.wisdom.modifier|mod_str ]]) & ([[ monster.charisma.modifier|mod_str ]]) \\
+    \end{tabular}
+
+    \vspace{0.2cm}
+
+    \begin{description}
+    [% if monster.skills != "" %]\item [Skills:] [[ monster.skills ]][% endif %]
+    \item [Senses:] [% if monster.senses != "" %][[ monster.senses ]][% else %]--[% endif %]
+    \item [Languages:] [% if monster.languages != "" %][[ monster.languages ]][% else %]--[% endif %]
+    [% if monster.damage_resistances != "" %]\item [Damage Resistances:] [[ monster.damage_resistances ]][% endif %]
+    [% if monster.damage_immunities != "" %]\item [Damage Immunities:] [[ monster.damage_immunities ]][% endif %]
+    [% if monster.damage_vulnerabilities != "" %]\item [Damage Vulnerabilities:] [[ monster.damage_vulnerabilities ]][% endif %]
+    [% if monster.condition_immunities != "" %]\item [Condition Immunuties:] [[ monster.condition_immunities ]][% endif %]
+    [% if monster.saving_throws != "" %]\item [Saving Throws:] [[ monster.saving_throws ]][% endif %]
+    \item [Challenge:] [[ monster.challenge_rating ]] ([[ monster.challenge_rating | challenge_rating_to_xp ]] XP)
+    \end{description}
+
+    \vspace{0.2cm}
+    
+    [[ monster.__doc__ | rst_to_latex(top_heading_level=2) ]]
+
+    } %\color
+  [% endfor %]
+[% endif %]
