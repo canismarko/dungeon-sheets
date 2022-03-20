@@ -14,6 +14,7 @@ Welcome to Dungeonsheets's documentation!
    gm_notes
    advanced_features
    examples
+   contributing
 
 Indices and tables
 ==================

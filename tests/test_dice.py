@@ -26,6 +26,7 @@ class TestDice(TestCase):
 
     def test_simple_rolling(self):
         num_tests = 100
+        # Do a bunch of rolls and make sure the numbers are within the requsted range
         for _ in range(num_tests):
             result = roll(6)
             self.assertGreaterEqual(result, 1)
