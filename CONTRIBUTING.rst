@@ -90,9 +90,12 @@ using *pytest*, run the following from a console:
 	  pip install -r requirements.txt -r requirements-tests.txt
 	  pytest
 
-Dungeonsheets defines tests using the *unittest* package in the
-standard library. **For example**, to test a new function in the
-``dungeonsheets/dice.py`` module, modify ``tests/test_dice.py``:
+You can also run a sub-set of the tests, which can be convenient for
+development. For example, to run just the tests related to dice
+mechanics, use ``pytest tests/test_dice.py``. Dungeonsheets defines
+tests using the *unittest* package in the standard library. **For
+example**, to test a new function in the ``dungeonsheets/dice.py``
+module, modify ``tests/test_dice.py``:
 
 .. code-block:: python
    :caption: dice.py
