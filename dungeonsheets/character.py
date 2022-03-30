@@ -765,7 +765,8 @@ class Character(Creature):
         weight = equipment_weight_parser(self.equipment, 
                                          self.equipment_weight_dict)
         weight += sum([w.weight for w in self.weapons])
-        weight += self.armor.weight
+        if self.armor:
+            weight += self.armor.weight
         if self.shield:
             weight += 6
         weight += sum([self.cp, self.sp, self.ep, self.gp, self.pp])/50

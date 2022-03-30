@@ -501,6 +501,8 @@ def make_character_sheet(
     portrait_file = character.portrait
     if portrait_file is True:
         portrait_file=char_file.stem + ".jpeg"
+    elif portrait_file is False:
+        portrait_file=""
     # Set the fields in the FDF
     basename = char_file.stem
     char_base = basename + "_char"
