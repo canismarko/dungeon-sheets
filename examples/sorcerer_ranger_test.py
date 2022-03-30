@@ -8,6 +8,7 @@ sheet by running ``makesheets`` from the command line.
 # To add your own content, write a .py file with your definitions.
 # Then, import here using the 'import_homebrew' function.
 from dungeonsheets import import_homebrew
+# from dungeonsheets.equipment_reader import explorers_pack
 HB_races = import_homebrew("HB_races.py")
 kits = import_homebrew("kits.py")
 
@@ -82,7 +83,7 @@ shield = ""  # Eg "shield"
 # calculated and added. 
 equipment = kits.explorers_pack.format(rations=9, torches=3, 
                                        pitons=10, rope=50) + \
-    ", human skin mask, sacrificial knife."
+    ", human skin mask, sacrificial knife, 10 arrows."
 
 # If the weight of an item is undetermined, you can include it
 # in the equipment_weight_dict
@@ -112,7 +113,7 @@ wild_shapes = ("Ape", "Wolf", "Mastiff", "Giant Spider", "Tiger",
                "Dire Wolf", "Brown Bear","Cat")  # Ex: ('ape', 'wolf', 'ankylosaurus')
 # List any monsters whose reference can come at hand 
 # for spells like Find Familiar
-companions = ["owl", "poisonous snake"]
+companions = ["owl", "poisonous snake", "panther"]
 
 # Rangers Beast for Beast Master
 ranger_beast = "Panther"
