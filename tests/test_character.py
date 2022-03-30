@@ -233,6 +233,27 @@ class TestCharacter(TestCase):
         # Try passing an Armor object directly
         char.wield_shield(Shield)
         self.assertEqual(char.armor_class, 15)
+        
+    def test_carrying_weight(self):
+        char = Character(race="lightfoot halfling", strength=12)
+        # Check carrying capacity
+        self.assertEqual(char.carrying_capacity, 180)
+        # Check the armor weight is included
+        char.wear_armor(LeatherArmor())
+        self.assertEqual(char.carrying_weight, 10)
+        # Check the shield weight is included
+        char = Character()
+        char.wield_shield("shield")
+        self.assertEqual(char.carrying_weight, 6)
+        # Check the weight weapons at hand are included
+        char = Character()
+        char.wield_weapon("shortsword")
+        char.wield_weapon("dagger")
+        self.assertEqual(char.carrying_weight, 3)
+        # Check the listed equipment is included
+        char = Character()
+        char.equipment = "blanket, crowbar"
+        self.assertEqual(char.carrying_weight, 8)
 
     def test_speed(self):
         # Check that the speed pulls from the character's race
