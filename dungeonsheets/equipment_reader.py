@@ -138,7 +138,10 @@ gear_weight = {"abacus":2,
                "vial":0,
                "vestments":3,
                "waterskin":5,
-               "wheatstone":1}
+               "wheatstone":1, 
+               "moonstone":1/20,
+               "quartz":1/20,
+               "gemstone":1/20}
 
 tools_weight = {"alchemist's supplies":8,
                 "brewer's supplies":9,
@@ -182,6 +185,28 @@ tools_weight = {"alchemist's supplies":8,
 gear_weight.update(tools_weight)
 gear_weight.update({armor.name.lower():armor.weight for armor in all_armors})
 gear_weight.update({w.name.lower():w.weight for w in all_weapons})
+
+burglars_pack = """backpack, {ball_bearings} ball bearings, 
+{string} feet of string, bell, {candles} candles, crowbar, hammer, 
+{pitons} pitons, hooded lantern, 
+{oil} flasks of oil, {rations} days of rations, tinderbox, waterskin, 
+{rope} feet of hempen rope."""
+diplomats_pack = """chest, {cases} cases for maps and scrolls, 
+fine clothes, bottle of ink, ink pen, lamp, {oil} flasks of oil, 
+{paper} paper sheet, vial of perfume, sealing wax, soap."""
+dungeoneers_pack = """backpack, crowbar, hammer, {pitons} pitons, 
+{torches} torches, tinderbox, {rations} days of rations, waterskin,
+{rope} feet of hempen rope"""
+entertainers_pack = """backpack, bedroll, {costumes} costumes, 
+{candles} candles, {rations} days of rations, waterskin, disguise kit"""
+explorers_pack = """backpack, bedroll, mess kit, tinderbox, {torches} torches,
+{rations} days of rations, waterskin, {rope} feet of hempen rope"""
+priests_pack = """backpack, blanket, {candles} candles, tinderbox, alms box, 
+{incense} blocks of incense, censer, vestments, {rations} days of rations, 
+waterskin"""
+scholars_pack = """backpack, book of lore, bottle of ink, ink pen, 
+{parchment} sheets of parchment, little bag of sand, small knife"""
+
 
 def equipment_weight_parser(equipment, gear_dict={}):
     if not equipment.strip():
