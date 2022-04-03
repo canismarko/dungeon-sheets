@@ -8,7 +8,9 @@ from dungeonsheets.character import (
     Character,
     Wizard,
     Druid,
+    Ranger
 )
+from dungeonsheets.monsters import Panther
 from dungeonsheets.weapons import Weapon, Shortsword
 from dungeonsheets.magic_items import MagicItem
 from dungeonsheets.armor import Armor, LeatherArmor, Shield
@@ -352,3 +354,26 @@ class DruidTestCase(TestCase):
         not_beast = monsters.Monster()
         not_beast.description = "monster"
         self.assertFalse(low_druid.can_assume_shape(not_beast))
+        
+class BeastMasterTestCase(TestCase):
+    
+    def test_ranger_beast(self):
+        char = Ranger(6, subclasses = ["Beast Master"])
+        char.ranger_beast = "Panther"
+        # Test added proficiency to AC and skills
+        self.assertEqual(char.ranger_beast.armor_class, 15)
+        _text = char.ranger_beast.skills.lower().replace(" ", "")
+        self.assertTrue(_text == 'perception+7,stealth+9')
+        # Check attack and attack damage changed
+        _text = char.ranger_beast.__doc__
+        _text = _text.lower().replace("\n", "").replace(" ", "")
+        self.assertTrue('hit:8(1d6+5)' in _text)
+        # Test HP changed
+        self.assertTrue(char.ranger_beast.hp_max == 24)
+        # Check HP gets the best option
+        char = Ranger(3, subclasses = ["Beast Master"])
+        char.ranger_beast = "Panther"
+        self.assertEqual(char.ranger_beast.hp_max, 13)
+        
+        
+        
