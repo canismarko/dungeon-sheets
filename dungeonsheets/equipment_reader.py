@@ -15,6 +15,7 @@ item_reader = re.compile(r"(\d*)(\s*)(.+)")
 gear_weight = {"abacus":2,
                "alms box":3,
                "vial of acid":1,
+               "acid vials":1,
                "flask of alchemist's fire":1,
                "flasks of alchemist's fire":1,
                "flask of oil":1,
@@ -190,10 +191,10 @@ burglars_pack = """backpack, {ball_bearings} ball bearings,
 {string} feet of string, bell, {candles} candles, crowbar, hammer, 
 {pitons} pitons, hooded lantern, 
 {oil} flasks of oil, {rations} days of rations, tinderbox, waterskin, 
-{rope} feet of hempen rope."""
+{rope} feet of hempen rope"""
 diplomats_pack = """chest, {cases} cases for maps and scrolls, 
 fine clothes, bottle of ink, ink pen, lamp, {oil} flasks of oil, 
-{paper} paper sheet, vial of perfume, sealing wax, soap."""
+{paper} paper sheet, vial of perfume, sealing wax, soap"""
 dungeoneers_pack = """backpack, crowbar, hammer, {pitons} pitons, 
 {torches} torches, tinderbox, {rations} days of rations, waterskin,
 {rope} feet of hempen rope"""

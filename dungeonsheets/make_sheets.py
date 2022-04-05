@@ -412,7 +412,7 @@ def make_character_content(
         content.append(
             create_magic_items_content(character, content_suffix=content_format, use_dnd_decorations=fancy_decorations)
         )
-    if character.is_spellcaster:
+    if len(getattr(character, 'spells', [])) > 0:
         content.append(
             create_spellbook_content(character, content_suffix=content_format, use_dnd_decorations=fancy_decorations)
         )
