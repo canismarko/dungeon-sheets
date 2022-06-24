@@ -34,10 +34,11 @@ jobs:
         echo "$(kpsewhich -var-value TEXMFHOME)/tex/latex/"
         mkdir -p "$(kpsewhich -var-value TEXMFHOME)/tex/latex/"
         git clone https://github.com/rpgtex/DND-5e-LaTeX-Template.git "$(kpsewhich -var-value TEXMFHOME)/tex/latex/dnd"
+    - name: Run flake
+      run: flake8 dungeonsheets/ --exit-zero
     - name: Run tests
       run: |
           pytest --cov=dungeonsheets tests/
-          flake8 dungeonsheets/ --exit-zero
           cd examples/
           makesheets --debug
           makesheets --debug --fancy
