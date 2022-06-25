@@ -37,10 +37,10 @@ jobs:
     - name: Run flake
       run: flake8 dungeonsheets/ --exit-zero
     - name: Run tests
-      run: |
+      run: >
+          cd examples/;
+          makesheets --debug;
+          makesheets --debug --fancy;
+          makesheets --debug --output-format=epub;
+          cd ../;
           pytest --cov=dungeonsheets tests/
-          cd examples/
-          makesheets --debug
-          makesheets --debug --fancy
-          makesheets --debug --output-format=epub
-      continue-on-error: true
