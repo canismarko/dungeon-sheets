@@ -15,7 +15,7 @@ class Race:
     owner = None
     languages = ("Common",)
     proficiencies_text = tuple()
-    weapon_proficiences = tuple()
+    weapon_proficiencies = tuple()
     skill_proficiencies = ()
     skill_choices = ()
     num_skill_choices = 0
@@ -61,7 +61,7 @@ class _Dwarf(Race):
     languages = ("Common", "Dwarvish")
     constitution_bonus = 2
     proficiencies_text = ("battleaxes", "handaxes", "throwing hammers", "warhammers")
-    weapon_proficiences = (
+    weapon_proficiencies = (
         weapons.Battleaxe,
         weapons.Handaxe,
         weapons.ThrowingHammer,
@@ -388,7 +388,7 @@ class Tabaxi(Race):
     speed = "30 (20 climb)"
     languages = ("Common", "[Choose One]")
     weapon_proficiencies = (weapons.Claws,)
-    proficiences_text = ("Claws",)
+    proficiencies_text = ("Claws",)
     skill_proficiencies = ("perception", "stealth")
     features = (
         feats.Darkvision,
@@ -427,7 +427,7 @@ class Aarakocra(Race):
     wisdom_bonus = 1
     languages = ("Common", "Aarakocra", "Auran")
     weapon_proficiencies = (weapons.Talons,)
-    proficiences_text = ("Talons",)
+    proficiencies_text = ("Talons",)
 
     def __init__(self, owner=None):
         super().__init__(owner=owner)
