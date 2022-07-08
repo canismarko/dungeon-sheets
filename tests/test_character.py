@@ -11,7 +11,7 @@ from dungeonsheets.character import (
     Ranger
 )
 from dungeonsheets.monsters import Panther
-from dungeonsheets.weapons import Weapon, Shortsword
+from dungeonsheets.weapons import Weapon, Shortsword, Battleaxe
 from dungeonsheets.magic_items import MagicItem
 from dungeonsheets.armor import Armor, LeatherArmor, Shield
 
@@ -151,6 +151,11 @@ class TestCharacter(TestCase):
         char.weapon_proficiencies = tuple()
         char.race = race.HighElf()
         self.assertTrue(char.is_proficient(sword))
+    
+    def test_racial_is_proficient(self):
+        char = Character(classes=["Wizard"], race="Mountain Dwarf")
+        battleaxe = Battleaxe()
+        self.assertTrue(char.is_proficient(battleaxe))
 
     def test_proficiencies_text(self):
         char = Character()

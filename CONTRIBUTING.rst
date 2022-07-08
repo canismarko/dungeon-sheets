@@ -78,6 +78,73 @@ IP violations.
 How to Contribute
 =================
 
+Running Tests
+-------------
+
+Dungeonsheets uses tests to verify the package works as
+intended. Tests are found in the ``tests/`` folder. To run the tests
+using *pytest*, run the following from a console:
+
+.. code:: bash
+
+	  pip install -r requirements.txt -r requirements-tests.txt
+	  pytest
+
+You can also run a sub-set of the tests, which can be convenient for
+development. For example, to run just the tests related to dice
+mechanics, use ``pytest tests/test_dice.py``. Dungeonsheets defines
+tests using the *unittest* package in the standard library. **For
+example**, to test a new function in the ``dungeonsheets/dice.py``
+module, modify ``tests/test_dice.py``:
+
+.. code-block:: python
+   :caption: dice.py
+
+   def roll(a, b=None):
+       """roll(20) means roll 1d20, roll(2, 6) means roll 2d6"""
+       if b is None:
+           return random.randint(1, a)
+       else:
+           return sum([random.randint(1, b) for _ in range(a)])
+
+.. code-block:: python
+   :caption: test_dice.py
+
+    from unittest import TestCase
+    from dungeonsheets.dice import roll
+
+    class TestDice(TestCase):
+        def test_simple_rolling(self):
+            num_tests = 100
+            # Do a bunch of rolls and make sure the numbers are within the requsted range
+            for _ in range(num_tests):
+                result = roll(6)
+                self.assertGreaterEqual(result, 1)
+                self.assertLessEqual(result, 6)
+
+        def test_multi_rolling(self):
+            num_tests = 100
+            for _ in range(num_tests):
+                result = roll(2, 4)  # Roll 2d4
+                self.assertGreaterEqual(result, 2)
+                self.assertLessEqual(result, 8)
+
+
+Building Documentation
+----------------------
+
+Dungeonsheets uses sphinx to build documentations. All files are in
+reStructuredText and are kept in the ``docs/`` folder. To build the
+HTML files, run:
+
+.. code:: bash
+
+	  pip install -r requirements.txt -r requirements-tests.txt
+	  cd docs/
+	  make html
+
+The results can be found in the ``_build/html/`` foler.
+
 Submitting Bugs
 ---------------
 
