@@ -8,7 +8,9 @@ from dungeonsheets.character import (
     Character,
     Wizard,
     Druid,
+    Ranger
 )
+from dungeonsheets.monsters import Panther
 from dungeonsheets.weapons import Weapon, Shortsword, Battleaxe
 from dungeonsheets.magic_items import MagicItem
 from dungeonsheets.armor import Armor, LeatherArmor, Shield
@@ -238,6 +240,27 @@ class TestCharacter(TestCase):
         # Try passing an Armor object directly
         char.wield_shield(Shield)
         self.assertEqual(char.armor_class, 15)
+        
+    def test_carrying_weight(self):
+        char = Character(race="lightfoot halfling", strength=12)
+        # Check carrying capacity
+        self.assertEqual(char.carrying_capacity, 180)
+        # Check the armor weight is included
+        char.wear_armor(LeatherArmor())
+        self.assertEqual(char.carrying_weight, 10)
+        # Check the shield weight is included
+        char = Character()
+        char.wield_shield("shield")
+        self.assertEqual(char.carrying_weight, 6)
+        # Check the weight weapons at hand are included
+        char = Character()
+        char.wield_weapon("shortsword")
+        char.wield_weapon("dagger")
+        self.assertEqual(char.carrying_weight, 3)
+        # Check the listed equipment is included
+        char = Character()
+        char.equipment = "blanket, crowbar"
+        self.assertEqual(char.carrying_weight, 8)
 
     def test_speed(self):
         # Check that the speed pulls from the character's race
@@ -336,3 +359,26 @@ class DruidTestCase(TestCase):
         not_beast = monsters.Monster()
         not_beast.description = "monster"
         self.assertFalse(low_druid.can_assume_shape(not_beast))
+        
+class BeastMasterTestCase(TestCase):
+    
+    def test_ranger_beast(self):
+        char = Ranger(6, subclasses = ["Beast Master"])
+        char.ranger_beast = "Panther"
+        # Test added proficiency to AC and skills
+        self.assertEqual(char.ranger_beast.armor_class, 15)
+        _text = char.ranger_beast.skills.lower().replace(" ", "")
+        self.assertTrue(_text == 'perception+7,stealth+9')
+        # Check attack and attack damage changed
+        _text = char.ranger_beast.__doc__
+        _text = _text.lower().replace("\n", "").replace(" ", "")
+        self.assertTrue('hit:8(1d6+5)' in _text)
+        # Test HP changed
+        self.assertTrue(char.ranger_beast.hp_max == 24)
+        # Check HP gets the best option
+        char = Ranger(3, subclasses = ["Beast Master"])
+        char.ranger_beast = "Panther"
+        self.assertEqual(char.ranger_beast.hp_max, 13)
+        
+        
+        

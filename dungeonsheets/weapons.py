@@ -385,7 +385,7 @@ class Shortsword(MartialWeapon, MeleeWeapon):
     cost = "10 gp"
     base_damage = "1d6"
     damage_type = "p"
-    weight = 0
+    weight = 2
     properties = "Finesse, light"
     is_finesse = True
     ability = "strength"

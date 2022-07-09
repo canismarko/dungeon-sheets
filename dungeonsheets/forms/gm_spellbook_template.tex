@@ -1,0 +1,41 @@
+\pdfbookmark[0]{Spells}{Spells}
+\section*{Spells}
+
+[% for spl in spells %]
+  \pdfbookmark[1]{[[ spl.name ]]}{Spells - [[ spl.name ]]}
+  [% if use_dnd_decorations %]  
+  \DndSpellHeader
+    {[[ spl.name ]]}
+    {[% if spl.level > 0 %][[ ordinals[spl.level] ]]-level [[ spl.magic_school ]][% else %][[ spl.magic_school ]] Cantrip[% endif %] [% if spl.ritual %](\textit{ritual})[% endif %]}
+    {[[ spl.casting_time ]]}
+    {[[ spl.casting_range ]]}
+    {[[ spl.component_string ]]}
+    {[[ spl.duration ]]}
+  [% else %]
+  \section*{[[ spl.name ]]}
+    [% if spl.level > 0 %] %
+      \textit{[[ spl.magic_school ]] Level [[ spl.level ]]} %
+    [% else %] %
+      \textit{[[ spl.magic_school ]] Cantrip} %
+    [% endif %] %
+    [% if spl.ritual and spl.concentration %]%
+      (\textit{ritual}, \textit{concentration})%
+    [% elif spl.ritual %]%
+      (\textit{ritual})%
+    [% elif spl.concentration %]%
+      (\textit{concentration})%
+    [% endif %]%                     
+    %% \noindent
+    \begin{description}
+      \setlength{\itemsep}{\zerosep}%
+      \setlength{\parskip}{0pt}%
+      \item [Casting Time:] [[ spl.casting_time ]] \\
+      \item [Duration:] [[ spl.duration ]] \\
+      \item [Range:] [[ spl.casting_range ]] \\
+      \item [Components:] [[ spl.component_string ]]
+    \end{description}
+    % \vspace{\zerosep}
+  [% endif %]
+  [[ spl.__doc__ | rst_to_latex(top_heading_level=1) ]]
+
+[% endfor %]

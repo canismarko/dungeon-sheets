@@ -75,7 +75,7 @@
 \CharismaProficiency{[[ "charisma" in char.saving_throw_proficiencies ]]}
 
 \AcrobaticsProficiency{[[ "acrobatics" in char.skill_proficiencies ]]}
-\AnimalHandlingProficiency{[[ "animal_handling" in char.skill_proficiencies ]]}
+\AnimalHandlingProficiency{[[ "animal handling" in char.skill_proficiencies ]]}
 \ArcanaProficiency{[[ "arcana" in char.skill_proficiencies ]]}
 \AthleticsProficiency{[[ "athletics" in char.skill_proficiencies ]]}
 \DeceptionProficiency{[[ "deception" in char.skill_proficiencies ]]}
@@ -89,7 +89,7 @@
 \PerformanceProficiency{[[ "performance" in char.skill_proficiencies ]]}
 \PersuasionProficiency{[[ "persuasion" in char.skill_proficiencies ]]}
 \ReligionProficiency{[[ "religion" in char.skill_proficiencies ]]}
-\SleightOfHandProficiency{[[ "sleight_of_hand" in char.skill_proficiencies ]]}
+\SleightOfHandProficiency{[[ "sleight of hand" in char.skill_proficiencies ]]}
 \StealthProficiency{[[ "stealth" in char.skill_proficiencies ]]}
 \SurvivalProficiency{[[ "survival" in char.skill_proficiencies ]]}
 
@@ -101,16 +101,16 @@
 \Initiative{[[ char.initiative ]]}
 \Speed{[[ char.speed ]]}
 \MaxHitPoints{[[ char.hp_max ]]}
-\CurrentHitPoints{[[ char.hp_current ]]}
-\TemporaryHitPoints{[[ char.hp_temp ]]}
+[% if char.hp_current %]\CurrentHitPoints{[[ char.hp_current ]]}[% endif %]
+[% if char.hp_temp %]\TemporaryHitPoints{[[ char.hp_temp ]]}[% endif %]
 \MaxHitDice{[[ char.hit_dice.replace(" ","") ]]}
 \CurrentHitDice{[[ char.hit_dice_current.replace(" ", "") ]]}
 
-\CP{[[ char.cp ]]}
-\SP{[[ char.sp ]]}
-\GP{[[ char.gp ]]}
-\EP{[[ char.ep ]]}
-\PP{[[ char.pp ]]}
+\CP{[% if char.cp > 0 %][[ char.cp ]][% endif %]}
+\SP{[% if char.sp > 0 %][[ char.sp ]][% endif %]}
+\GP{[% if char.gp > 0 %][[ char.gp ]][% endif %]}
+\EP{[% if char.ep > 0 %][[ char.ep ]][% endif %]}
+\PP{[% if char.pp > 0 %][[ char.pp ]][% endif %]}
 
 [% for w in char.weapons %]
 \AddWeapon{[[ w.name ]]}{[[ "{:+d}".format(w.attack_modifier) ]]}{[[ "{}/{}".format(w.damage, w.damage_type) ]]}

@@ -1,0 +1,9 @@
+<h1 id="spells">Spells</h1>
+
+<!-- Spell descriptions -->
+[% from "spellblock.html" import spellblock %]
+[% for spl in spells %]
+
+[[ spellblock(spl, id_base="spells") ]]
+
+[% endfor %]
