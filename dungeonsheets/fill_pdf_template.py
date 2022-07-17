@@ -512,7 +512,7 @@ def create_spells_pdf_template(character, basename, flatten=False):
                 # Number of spell slots
                 **{f"SlotsTotal {i}": '-' for i in range(19,28)}
             })
-        make_pdf({**fields, **page_fields}, src_pdf=src_pdf, basename=combined_basename, flatten=flatten, portrait="")
+        make_pdf(output_fields, src_pdf=src_pdf, basename=combined_basename, flatten=flatten, portrait="")
     return basenames
 
 
