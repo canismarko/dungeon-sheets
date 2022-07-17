@@ -69,6 +69,12 @@ class BardTests(TestCase):
         char = character.Character(classes=["bard"], levels=[17])
         sor = bard.SongOfRest(owner=char)
         self.assertEqual(sor.name, "Song of Rest (1d12)")
+    
+    def test_jack_of_all_trades(self):
+        # Test that half of proficiency is added to skill checks w/o the proficiency bonus
+        char = character.Character(classes=["bard"], levels=[2], dexterity=10)
+        self.assertEqual(char.initiative, "+1")
+        self.assertEqual(char.acrobatics.is_jack_of_all_trades, True)
 
     def test_mantle_of_inspiration(self):
         for lvl in range(1, 5):
