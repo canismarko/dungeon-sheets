@@ -462,31 +462,50 @@ def create_spells_pdf_template(character, basename, flatten=False):
             3083,
         ),
     }
+    fields_per_page = {}
+    def spell_paginator(spells, n_fields):
+        yield spells[:n_fields]
+        consumed = n_fields
+        while consumed < len(spells):
+            yield spells[consumed:consumed + (n_fields - 1)]
+            consumed += n_fields - 1
     # Prepare the lists of spells for each level
     for level in field_numbers.keys():
         spells = [spl for spl in character.spells if spl.level == level]
-        # Determine if we should omit un-prepared spells to save space
-        if len(spells) > len(field_numbers[level]):
-            spells = [s for s in spells if s in character.spells_prepared]
-            warnings.warn(
-                f"{character.name} knows more spells than the number of "
-                "lines available in spell sheet. Limited to prepared "
-                "spells only."
-            )
-        # Build the list of PDF controls to set/toggle
-        field_names = [f"Spells {i}" for i in field_numbers[level]]
-        prep_names = tuple(f"Check Box {i}" for i in prep_numbers[level])
-        for spell, field, chk_field in zip(spells, field_names, prep_names):
-            fields[field] = str(spell)
-            is_prepared = any([spell == Spl for Spl in character.spells_prepared])
-            fields[chk_field] = CHECKBOX_ON if is_prepared else CHECKBOX_OFF
-        # # Uncomment to post field names instead:
-        # for field in field_names:
-        #     fields.append((field, field))
-    # Make the actual pdf
+        # Split spells across multiple pages if we have too many listed
+        # (this may happen with clerics, paladins, etc)
+
+        # The first page has len(field_numbers) spells, the further pages have
+        # len(field_numbers - 1)
+        for page, page_spells in enumerate(spell_paginator(spells, len(field_numbers[level]))):
+            if page not in fields_per_page:
+                fields_per_page[page] = {}
+            # Build the list of PDF controls to set/toggle
+            if page == 0:
+                field_names = [f"Spells {i}" for i in field_numbers[level]]
+                prep_names = tuple(f"Check Box {i}" for i in prep_numbers[level])
+            else:
+                field_names = [f"Spells {i}" for i in field_numbers[level][1:]]
+                prep_names = tuple(f"Check Box {i}" for i in prep_numbers[level][1:])
+                fields_per_page[page][f"Spells {field_numbers[level][0]}"] = "--- Overflow ---"
+                fields_per_page[page][f"Check Box {prep_numbers[level][0]}"] = CHECKBOX_OFF
+            for spell, field, chk_field in zip(page_spells, field_names, prep_names):
+                fields_per_page[page][field] = str(spell)
+                is_prepared = any([spell == Spl for Spl in character.spells_prepared])
+                fields_per_page[page][chk_field] = CHECKBOX_ON if is_prepared else CHECKBOX_OFF
+            # # Uncomment to post field names instead:
+            # for field in field_names:
+            #     fields.append((field, field))
+        # Make the actual pdf
     dirname = os.path.join(os.path.dirname(os.path.abspath(__file__)), "forms/")
     src_pdf = os.path.join(dirname, "blank-spell-sheet-default.pdf")
-    make_pdf(fields, src_pdf=src_pdf, basename=basename, flatten=flatten, portrait="")
+
+    basenames = []
+    for page, page_fields in fields_per_page.items():
+        combined_basename = basename if page == 0 else f'{basename}-extra{page}'
+        basenames.append(combined_basename)
+        make_pdf({**fields, **page_fields}, src_pdf=src_pdf, basename=combined_basename, flatten=flatten, portrait="")
+    return basenames
 
 
 def make_pdf(fields: dict, src_pdf: str, basename: str, flatten: bool = False, portrait = ""):
