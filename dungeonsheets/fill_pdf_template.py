@@ -504,6 +504,14 @@ def create_spells_pdf_template(character, basename, flatten=False):
     for page, page_fields in fields_per_page.items():
         combined_basename = basename if page == 0 else f'{basename}-extra{page}'
         basenames.append(combined_basename)
+
+        output_fields = {**fields, **page_fields}
+        if page > 0:
+            output_fields.update({
+                "Spellcasting Class 2": f'{classes_and_levels} (Overflow)',
+                # Number of spell slots
+                **{f"SlotsTotal {i}": '-' for i in range(19,28)}
+            })
         make_pdf({**fields, **page_fields}, src_pdf=src_pdf, basename=combined_basename, flatten=flatten, portrait="")
     return basenames
 
