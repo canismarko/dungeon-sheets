@@ -310,12 +310,18 @@ class NumericalInitiative:
 
     def __get__(self, actor, Actor):
         ini = actor.dexterity.modifier
+
+        added_proficiency = False
         if actor.has_feature(QuickDraw):
             ini += actor.proficiency_bonus
+            added_proficiency = True
         if actor.has_feature(DreadAmbusher):
             ini += actor.wisdom.modifier
         if actor.has_feature(RakishAudacity):
             ini += actor.charisma.modifier
+        
+        if actor.has_feature(JackOfAllTrades) and not added_proficiency:
+            ini += actor.proficiency_bonus // 2
 
         has_advantage = (
             actor.has_feature(NaturalExplorerRevised)
