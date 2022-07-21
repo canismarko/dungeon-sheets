@@ -223,8 +223,10 @@ def create_spells_pdf_template(character, basename, flatten=False):
 
     def spell_level(x):
         return x or 0
-
-    fields = {
+    
+    # Record fields
+    caster_sheet_fields = {
+        'fields': {
         "Spellcasting Class 2": classes_and_levels,
         "SpellcastingAbility 2": abilities,
         "SpellSaveDC  2": DCs,
@@ -239,229 +241,277 @@ def create_spells_pdf_template(character, basename, flatten=False):
         "SlotsTotal 25": spell_level(character.spell_slots(7)),
         "SlotsTotal 26": spell_level(character.spell_slots(8)),
         "SlotsTotal 27": spell_level(character.spell_slots(9)),
+        },
+        'cantrip_fields': (f"Spells 10{i}" for i in (14, 16, 17, 18, 19, 20, 21, 22)),
+        'field_numbers': {
+            1: (
+                1015,
+                1023,
+                1024,
+                1025,
+                1026,
+                1027,
+                1028,
+                1029,
+                1030,
+                1031,
+                1032,
+                1033,
+            ),
+            2: (
+                1046,
+                1034,
+                1035,
+                1036,
+                1037,
+                1038,
+                1039,
+                1040,
+                1041,
+                1042,
+                1043,
+                1044,
+                1045,
+            ),
+            3: (
+                1048,
+                1047,
+                1049,
+                1050,
+                1051,
+                1052,
+                1053,
+                1054,
+                1055,
+                1056,
+                1057,
+                1058,
+                1059,
+            ),
+            4: (
+                1061,
+                1060,
+                1062,
+                1063,
+                1064,
+                1065,
+                1066,
+                1067,
+                1068,
+                1069,
+                1070,
+                1071,
+                1072,
+            ),
+            5: (
+                1074,
+                1073,
+                1075,
+                1076,
+                1077,
+                1078,
+                1079,
+                1080,
+                1081,
+            ),
+            6: (
+                1083,
+                1082,
+                1084,
+                1085,
+                1086,
+                1087,
+                1088,
+                1089,
+                1090,
+            ),
+            7: (
+                1092,
+                1091,
+                1093,
+                1094,
+                1095,
+                1096,
+                1097,
+                1098,
+                1099,
+            ),
+            8: (
+                10101,
+                10100,
+                10102,
+                10103,
+                10104,
+                10105,
+                10106,
+            ),
+            9: (10108, 10107, 10109, 101010, 101011, 101012, 101013),
+        },
+        'prep_numbers': {
+            1: (
+                251,
+                309,
+                3010,
+                3011,
+                3012,
+                3013,
+                3014,
+                3015,
+                3016,
+                3017,
+                3018,
+                3019,
+            ),
+            2: (
+                313,
+                310,
+                3020,
+                3021,
+                3022,
+                3023,
+                3024,
+                3025,
+                3026,
+                3027,
+                3028,
+                3029,
+                3030,
+            ),
+            3: (
+                315,
+                314,
+                3031,
+                3032,
+                3033,
+                3034,
+                3035,
+                3036,
+                3037,
+                3038,
+                3039,
+                3040,
+                3041,
+            ),
+            4: (
+                317,
+                316,
+                3042,
+                3043,
+                3044,
+                3045,
+                3046,
+                3047,
+                3048,
+                3049,
+                3050,
+                3051,
+                3052,
+            ),
+            5: (
+                319,
+                318,
+                3053,
+                3054,
+                3055,
+                3056,
+                3057,
+                3058,
+                3059,
+            ),
+            6: (
+                321,
+                320,
+                3060,
+                3061,
+                3062,
+                3063,
+                3064,
+                3065,
+                3066,
+            ),
+            7: (
+                323,
+                322,
+                3067,
+                3068,
+                3069,
+                3070,
+                3071,
+                3072,
+                3073,
+            ),
+            8: (
+                325,
+                324,
+                3074,
+                3075,
+                3076,
+                3077,
+                3078,
+            ),
+            9: (
+                327,
+                326,
+                3079,
+                3080,
+                3081,
+                3082,
+                3083,
+            ),
+        }
     }
-    # Cantrips
-    cantrip_fields = (f"Spells 10{i}" for i in (14, 16, 17, 18, 19, 20, 21, 22))
+
+    half_caster_sheet_fields = {
+        'fields': {
+        "Spellcasting Class 2": classes_and_levels,
+        "SpellcastingAbility 2": abilities,
+        "SpellSaveDC  2": DCs,
+        "SpellAtkBonus 2": bonuses,
+        # Number of spell slots
+        "SlotsTotal 1": spell_level(character.spell_slots(1)),
+        "SlotsTotal 2": spell_level(character.spell_slots(2)),
+        "SlotsTotal 3": spell_level(character.spell_slots(3)),
+        "SlotsTotal 4": spell_level(character.spell_slots(4)),
+        "SlotsTotal 5": spell_level(character.spell_slots(5)),
+        },
+        'cantrip_fields': (f"Spells 10{i:02}" for i in range(1,12)),
+        'field_numbers': {
+            level: (f'Spells 1{level}{i:02}' for i in range(1,n_spells+1))
+            for level, n_spells in [(1,25), (2,19), (3,19), (4,19), (5,19)]
+        },
+        'prep_numbers': {
+            level: (f'prepared {level}{i:02}' for i in range(1,n_spells+1))
+            for level, n_spells in [(1,25), (2,19), (3,19), (4,19), (5,19)]
+        }
+    }
+
+    # Determine which sheet to use (caster or half-caster).
+    # Prefer caster, unless we have no spells > 5th level and
+    # would overflow the caster sheet, then use half-caster.
+    only_low_level = all((character.spell_slots(level) == 0 for level in range(6,10)))
+    would_overflow_fullcaster = any((
+        len(
+            [spl for spl in character.spells if spl.level == level]
+        ) > len(
+            caster_sheet_fields['field_numbers'][level]
+        ) for level in range(1,6)
+    ))
+    if only_low_level and would_overflow_fullcaster:
+        selected_sheet_fields = half_caster_sheet_fields
+        src_pdf = os.path.join(dirname, "blank-halfcaster-spell-sheet-default.pdf")
+    else:
+        selected_sheet_fields = caster_sheet_fields
+        src_pdf = os.path.join(dirname, "blank-spell-sheet-default.pdf")
+
+    fields = selected_sheet_fields['fields']
+    cantrip_fields = selected_sheet_fields['cantrip_fields']
+    field_numbers = selected_sheet_fields['field_numbers']
+    prep_numbers = selected_sheet_fields['prep_numbers']
+
     cantrips = (spl for spl in character.spells if spl.level == 0)
     for spell, field_name in zip(cantrips, cantrip_fields):
         fields[field_name] = str(spell)
     # Spells for each level
-    field_numbers = {
-        1: (
-            1015,
-            1023,
-            1024,
-            1025,
-            1026,
-            1027,
-            1028,
-            1029,
-            1030,
-            1031,
-            1032,
-            1033,
-        ),
-        2: (
-            1046,
-            1034,
-            1035,
-            1036,
-            1037,
-            1038,
-            1039,
-            1040,
-            1041,
-            1042,
-            1043,
-            1044,
-            1045,
-        ),
-        3: (
-            1048,
-            1047,
-            1049,
-            1050,
-            1051,
-            1052,
-            1053,
-            1054,
-            1055,
-            1056,
-            1057,
-            1058,
-            1059,
-        ),
-        4: (
-            1061,
-            1060,
-            1062,
-            1063,
-            1064,
-            1065,
-            1066,
-            1067,
-            1068,
-            1069,
-            1070,
-            1071,
-            1072,
-        ),
-        5: (
-            1074,
-            1073,
-            1075,
-            1076,
-            1077,
-            1078,
-            1079,
-            1080,
-            1081,
-        ),
-        6: (
-            1083,
-            1082,
-            1084,
-            1085,
-            1086,
-            1087,
-            1088,
-            1089,
-            1090,
-        ),
-        7: (
-            1092,
-            1091,
-            1093,
-            1094,
-            1095,
-            1096,
-            1097,
-            1098,
-            1099,
-        ),
-        8: (
-            10101,
-            10100,
-            10102,
-            10103,
-            10104,
-            10105,
-            10106,
-        ),
-        9: (10108, 10107, 10109, 101010, 101011, 101012, 101013),
-    }
-    prep_numbers = {
-        1: (
-            251,
-            309,
-            3010,
-            3011,
-            3012,
-            3013,
-            3014,
-            3015,
-            3016,
-            3017,
-            3018,
-            3019,
-        ),
-        2: (
-            313,
-            310,
-            3020,
-            3021,
-            3022,
-            3023,
-            3024,
-            3025,
-            3026,
-            3027,
-            3028,
-            3029,
-            3030,
-        ),
-        3: (
-            315,
-            314,
-            3031,
-            3032,
-            3033,
-            3034,
-            3035,
-            3036,
-            3037,
-            3038,
-            3039,
-            3040,
-            3041,
-        ),
-        4: (
-            317,
-            316,
-            3042,
-            3043,
-            3044,
-            3045,
-            3046,
-            3047,
-            3048,
-            3049,
-            3050,
-            3051,
-            3052,
-        ),
-        5: (
-            319,
-            318,
-            3053,
-            3054,
-            3055,
-            3056,
-            3057,
-            3058,
-            3059,
-        ),
-        6: (
-            321,
-            320,
-            3060,
-            3061,
-            3062,
-            3063,
-            3064,
-            3065,
-            3066,
-        ),
-        7: (
-            323,
-            322,
-            3067,
-            3068,
-            3069,
-            3070,
-            3071,
-            3072,
-            3073,
-        ),
-        8: (
-            325,
-            324,
-            3074,
-            3075,
-            3076,
-            3077,
-            3078,
-        ),
-        9: (
-            327,
-            326,
-            3079,
-            3080,
-            3081,
-            3082,
-            3083,
-        ),
-    }
     fields_per_page = {}
     def spell_paginator(spells, n_fields):
         yield spells[:n_fields]
@@ -498,7 +548,6 @@ def create_spells_pdf_template(character, basename, flatten=False):
             #     fields.append((field, field))
         # Make the actual pdf
     dirname = os.path.join(os.path.dirname(os.path.abspath(__file__)), "forms/")
-    src_pdf = os.path.join(dirname, "blank-spell-sheet-default.pdf")
 
     basenames = []
     for page, page_fields in fields_per_page.items():
