@@ -474,15 +474,15 @@ def create_spells_pdf_template(character, basename, flatten=False):
         "SlotsTotal 4": spell_level(character.spell_slots(4)),
         "SlotsTotal 5": spell_level(character.spell_slots(5)),
         },
-        'cantrip_fields': tuple(f"Spells 10{i:02}" for i in range(1,12)),
-        'field_numbers': dict({
-            level: (f'Spells 1{level}{i:02}' for i in range(1,n_spells+1))
+        'cantrip_fields': [f"Spells 10{i:02}" for i in range(1,12)],
+        'field_numbers': {
+            level: [f'Spells 1{level}{i:02}' for i in range(1,n_spells+1)]
             for level, n_spells in [(1,25), (2,19), (3,19), (4,19), (5,19)]
-        }),
-        'prep_numbers': dict({
-            level: (f'prepared {level}{i:02}' for i in range(1,n_spells+1))
+        },
+        'prep_numbers': {
+            level: [f'prepared {level}{i:02}' for i in range(1,n_spells+1)]
             for level, n_spells in [(1,25), (2,19), (3,19), (4,19), (5,19)]
-        })
+        }
     }
 
     # Determine which sheet to use (caster or half-caster).
