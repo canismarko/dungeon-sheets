@@ -498,10 +498,10 @@ def create_spells_pdf_template(character, basename, flatten=False):
     ))
     if only_low_level and would_overflow_fullcaster:
         selected_sheet_fields = half_caster_sheet_fields
-        src_pdf = os.path.join(dirname, "blank-halfcaster-spell-sheet-default.pdf")
+        template_filename = "blank-halfcaster-spell-sheet-default.pdf"
     else:
         selected_sheet_fields = caster_sheet_fields
-        src_pdf = os.path.join(dirname, "blank-spell-sheet-default.pdf")
+        template_filename = "blank-spell-sheet-default.pdf"
 
     fields = selected_sheet_fields['fields']
     cantrip_fields = selected_sheet_fields['cantrip_fields']
@@ -548,6 +548,7 @@ def create_spells_pdf_template(character, basename, flatten=False):
             #     fields.append((field, field))
         # Make the actual pdf
     dirname = os.path.join(os.path.dirname(os.path.abspath(__file__)), "forms/")
+    src_pdf = os.path.join(dirname, template_filename)
 
     basenames = []
     for page, page_fields in fields_per_page.items():
