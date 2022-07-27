@@ -488,7 +488,9 @@ class Djinni(Monster):
     damage_immunities = 'lightning, thunder'
     damage_resistances = ''
     damage_vulnerabilities = ''
-    spells = []
+    spells = ["detect good and evil", "detect magic", "thunderwave",
+              "create food and water", "tongues", "wind walk",
+              "conjure elemental", "creation", "gaseous form", "invisibility", "major image", "plane shift"]
 
 
 class Doppelganger(Monster):
