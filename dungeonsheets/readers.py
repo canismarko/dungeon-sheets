@@ -449,6 +449,7 @@ class FoundryCharacterReader(JSONCharacterReader):
                 item = find_content(data['name'], valid_classes=[MagicItem])
             except exceptions.ContentNotFound:
                 # Make a generic version based on the JSON attributes
+                warnings.warn("Skipping unknown magic item: " + data['name'])
                 item_name = data['name'].replace(' ', '')
                 item = type(item_name, (MagicItem,), {})
             return item
@@ -476,6 +477,13 @@ class FoundryCharacterReader(JSONCharacterReader):
         spell_names = (d["name"] for d in spells)
         yield from spell_names
 
+    def features(self):
+        all_items = self.json_data()['items']
+        feat_names = (item['name'] for item in all_items if item['type'] == "feat")
+        # Clean up the names for consistency
+        feat_names = (name.lower() for name in feat_names)
+        yield from feat_names
+
     def __call__(self):
         """Create a character property dictionary from the JSON file."""
         # Parse the json tree to get character properties
@@ -490,6 +498,7 @@ class FoundryCharacterReader(JSONCharacterReader):
         classes, levels = zip(*self.class_levels())
         char_props["levels"] = list(levels)
         char_props["classes"] = list(classes)
+        char_props["features"] = list(self.features())
         # Attributes
         attribute_names = {
             "str": "strength",
