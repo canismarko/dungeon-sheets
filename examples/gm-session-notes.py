@@ -30,7 +30,7 @@ parent_sheets = ["gm-campaign-notes.py"]
 
 # Defining a *monsters* attribute will include their stat blocks in
 # the output
-monsters = ["aboleth", "wolf", "giant eagle", "Vashta Nerada", "priest"]
+monsters = ["aboleth", "wolf", "giant eagle", "Vashta Nerada", "priest", "priest"]
 
 # Arbitrary sections can be added to the GM notes. The
 # ``extra_sections`` attribute should be a sequence of subclasses of

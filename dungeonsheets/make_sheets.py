@@ -280,20 +280,29 @@ def make_gm_sheet(
                 warnings.warn(msg)
                 continue
             else:
+                # Make sure it's not already on the list
+                if MyMonster in [type(m) for m in monsters_]:
+                    break
                 new_monster = MyMonster()
         monsters_.append(new_monster)
     if len(monsters_) > 0:
         content.append(
             create_monsters_content(
-                monsters_, suffix=content_suffix, use_dnd_decorations=fancy_decorations
+                set(monsters_), suffix=content_suffix, use_dnd_decorations=fancy_decorations
             )
         )
         
     # Add the GM Spellbook
-    spells = [Spell() for monster in monsters_ for Spell in monster.spells]
-    spells = set(spells)
+    spells = []
+    for monster in monsters_:
+        for Spell in monster.spells:
+            # Make sure it's not already on the list
+            if Spell not in [type(spl) for spl in spells]:
+                spells.append(Spell())
+    # Alphabetical order
+    spells = sorted(spells, key=lambda x: x.name)
+    # Generate the content
     content.append(create_gm_spellbook(spells, content_suffix))
-    
     # Add the random tables
     tables = [
         find_content(s, valid_classes=[random_tables.RandomTable])
