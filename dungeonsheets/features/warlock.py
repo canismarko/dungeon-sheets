@@ -84,6 +84,22 @@ class PactOfTheTome(Feature):
     source = "Warlock"
 
 
+class PactOfTheTalisman(Feature):
+    """Your patron gives you an amulet, a talisman that can aid the wearer when
+    the need is great. When the wearer fails an ability check, they can add a d4
+    to the roll, potentially turning the roll into a success. This benefit can be
+    used a number of times equal to your proficiency bonus, and all expended uses
+    are restored when you finish a long rest. If you lose the talisman, you can
+    perform a 1-hour ceremony to receive a replacement from your patron.
+    This ceremony can be performed during a short or long rest, and it
+    destroys the previous amulet. The talisman turns to ash when you die.
+
+    """
+
+    name = "Pact of the Talisman"
+    source = "Warlock"
+
+
 class PactBoon(FeatureSelector):
     """Select a Pact Boon by choosing in feature_choices:
 
@@ -92,6 +108,8 @@ class PactBoon(FeatureSelector):
     pact of the blade
 
     pact of the tome
+
+    pact of the talisman
 
     """
 
@@ -102,6 +120,8 @@ class PactBoon(FeatureSelector):
         "pact of the blade": PactOfTheBlade,
         "tome": PactOfTheTome,
         "pact of the tome": PactOfTheTome,
+        "talisman": PactOfTheTalisman,
+        "pact of the talisman": PactOfTheTalisman,
     }
     name = "Pact Boon (Select One)"
     source = "Warlock"
@@ -1078,7 +1098,7 @@ class ShroudOfShadow(Invocation):
 
 class TombOfLevistus(Invocation):
     """As a reaction when you take damage, you can entomb yourself in ice, which
-    melts away at the end ofyour next turn. You gain 10 temporary hit points
+    melts away at the end of your next turn. You gain 10 temporary hit points
     per warlock level, which take as much of the triggering damage as
     possible. Immediately after you take the damage, you gain vulnerability to
     fire damage, your speed is reduced to 0, and you are incapacitated. These
@@ -1102,3 +1122,96 @@ class TrickstersEscape(Invocation):
     """
 
     name = "Tricksters Escape"
+
+
+# TCE
+class BondOfTheTalisman(Invocation):
+    """While someone else is wearing your talisman, you can use your action to teleport
+    to the unoccupied space closest to them, provided the two of you are on the same
+    plane of existence. The wearer of your talisman can do the same thing, using their action
+    to teleport to you. The teleportation can be used a number of times equal to
+    your proficiency bonus, and all expended uses are restored when you finish a long rest.
+
+    **Prerequisite**: 12th Level, Pact of the Talisman
+
+    """
+
+    name = "Bond of the Talisman"
+
+
+class EldritchMind(Invocation):
+    """You have advantage on Constitution saving throws that
+    you make to maintain your concentration on a spell.
+    
+    """
+
+    name = "Eldritch Mind"
+
+
+class FarScribe(Invocation):
+    """A new page appears in your Book of Shadows. With your permission, a creature can use its action to
+    write its name on that page, which can contain a number of names equal to your proficiency bonus.
+    You can cast the *sending* spell, targeting a creature whose name is on the page, without using a
+    spell slot and without using material components. To do so, you must write the message on the page.
+    The target hears the message in their mind, and if the target replies, their message appears on the
+    page, rather than in your mind. The writing disappears after 1 minute.
+    As an action, you can magically erase a name on the page by touching it.
+
+    **Prerequisite**: 5th Level, Pact of the Tome
+
+    """
+
+    name = "Far Scribe"
+
+
+class GiftOfTheProtectors(Invocation):
+    """A new page appears in your Book of Shadows. With your permission, a creature can use its action to
+    write its name on that page, which can contain a number of names equal to your proficiency bonus.
+    When any creature whose name is on the page is reduced to 0 hit points but not killed outright,
+    the creature magically drops to 1 hit point instead. Once this magic is triggered, no creature can benefit
+    from it until you finish a long rest. As an action, you can magically erase a name on the page by touching it.
+
+    **Prerequisite**: 9th Level, Pact ofthe Tome
+
+    """
+
+    name: "Gift of the Protectors"
+
+
+class InvestmentOfTheChainMaster(Invocation):
+    """When you cast find familiar, you infuse the summoned familiar with a measure of your eldritch
+    power, granting the creature the following benefits:
+    * The familiar gains either a flying speed or a swimming speed (your choice) of 40 feet.
+    * As a bonus action, you can command the familiar to take the Attack action.
+    * The familiar's weapon attacks are considered magical for the purpose of overcoming immunity and resistance to nonmagical attacks.
+    * If the familiar forces a creature to make a saving throw, it uses your spell save DC.
+    * When the familiar takes damage, you can use your reaction to grant it resistance against that damage.
+    
+    **Prerequisite**: Pact of the Chain 
+    """
+
+
+class ProtectionOfTheTalisman(Invocation):
+    """When the wearer of your talisman fails a saving throw, they can add a d4 to the roll,
+    potentially turning the save into a success. This benefit can be used a number of times
+    equal to your proficiency bonus, and all expended uses are restored when you finish a long rest.
+    
+    **Prerequisite**: 7th Level, Pact of the Talisman
+    """
+
+
+class RebukeOfTheTalisman(Invocation):
+    """When the wearer of your talisman is hit by an attacker you can see within 30 feet of you, you can use
+    your reaction to deal psychic damage to the attacker equal to your proficiency bonus and push it up to 10
+    feet away from the talisman's wearer.
+
+    **Prerequisite**: Pact of the Talisman
+    """
+
+
+class UndyingServitude(Invocation):
+    """You can cast animate dead without using a spell slot. Once you do so, you can't cast it
+    in this wayagain until you finish a long rest
+    
+    **Prerequisite**: 5th Level 
+    """
