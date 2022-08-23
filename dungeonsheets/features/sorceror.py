@@ -409,7 +409,7 @@ class UnearthlyRecovery(Feature):
 
 
 class EyesOfTheDark(Feature):
-    """Starting at lst level, you have darkvision with a range of 120 feet. When
+    """Starting at 1st level, you have darkvision with a range of 120 feet. When
     you reach 3rd level in this class, you learn the darkness spell, which
     doesn't count against your number of sorcerer spells known. In addition,
     you can cast it by spending 2 sorcery points or by expending a spell
@@ -425,7 +425,7 @@ class EyesOfTheDark(Feature):
 
 
 class StrengthOfTheGrave(Feature):
-    """Starting at lst level, your existence in a twilight state between life
+    """Starting at 1st level, your existence in a twilight state between life
     and death makes you difficult to defeat. When damage reduces you to 0 hit
     points, you can make a Charisma saving throw (DC 5 + the damage taken). On
     a success, you instead drop to 1 hit point. You can't use this feature if

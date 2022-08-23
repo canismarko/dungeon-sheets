@@ -513,7 +513,7 @@ class BattleragerArmor(Feature):
     armor (see the "Spiked Armor" sidebar in SCAG) as a weapon. While you are
     wearing spiked armor and are raging, you can use a bonus action to make one
     melee weapon attack with your armor spikes against a target within 5 feet
-    of you. If the attack hits , the spikes deal ld4 piercing damage. You use
+    of you. If the attack hits , the spikes deal 1d4 piercing damage. You use
     your Strength modifier for the attack and damage rolls. Additionally, when
     you use the Attack action to grapple a creature, the target takes 3
     piercing damage if your grapple check succeeds.

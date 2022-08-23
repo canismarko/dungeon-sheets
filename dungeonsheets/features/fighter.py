@@ -999,7 +999,7 @@ class UnwaveringMark(Feature):
 class WardingManeuver(Feature):
     """At 7th level, you learn to fend off strikes directed at you, your mount, or
     other creatures nearby. If you or a creature you can see within 5 feet
-    of you is hit by an attack, you can roll ld8 as a reaction if you're
+    of you is hit by an attack, you can roll 1d8 as a reaction if you're
     wielding a melee weapon or a shield. Roll the die, and add the number
     rolled to the target's AC against that attack. If the attack still hits,
     the target has resistance against the attack's damage.

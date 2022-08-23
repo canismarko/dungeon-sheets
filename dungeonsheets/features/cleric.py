@@ -762,7 +762,7 @@ class CircleOfMortality(Feature):
 
 
 class EyesOfTheGrave(Feature):
-    """At lst level, you gain the ability to occasionally sense the presence of the
+    """At 1st level, you gain the ability to occasionally sense the presence of the
     undead, whose existence is an insult to the natural cycle of life. As an
     action, you can open your awareness to magically detect undead. Until the
     end ofyour next turn, you know the location of any undead within 60 feet of
