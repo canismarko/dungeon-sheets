@@ -407,7 +407,7 @@ class HealingLight(Feature):
         return self._name + " ({:d}d6/LR)".format(num)
 
 
-class RadiantSoul(Feature):
+class WarlockRadiantSoul(Feature):
     """Starting at 6th level, your link to the Celestial allows you to serve as a
     conduit for radiant energy. You have resistance to radiant damage, and when
     you cast a spell that deals radiant or fire damage, you can add your
@@ -416,7 +416,7 @@ class RadiantSoul(Feature):
 
     """
 
-    name = "Radiant Soul"
+    name = "WarlockRadiant Soul"
     source = "Warlock (The Celestial Patron)"
 
 
