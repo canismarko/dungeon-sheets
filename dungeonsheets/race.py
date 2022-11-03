@@ -296,7 +296,7 @@ class ProtectorAasimar(_Aasimar):
     name = "Protector Aasimar"
     wisdom_bonus = 1
     features_by_level = defaultdict(list)
-    features_by_level[3] += [feats.RadiantSoul]
+    features_by_level[3] += [feats.AasimarRadiantSoul]
 
 
 # Fallen Aasimar
