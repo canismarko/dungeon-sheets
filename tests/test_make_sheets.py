@@ -157,9 +157,11 @@ class HtmlCreatorTestCase(unittest.TestCase):
         monsters_ = [monsters.Priest()]
         html = make_sheets.create_monsters_content(monsters=monsters_, suffix="html")
         self.assertIn(r"Priest", html)
-        # Check extended properties
         monsters_ = [VashtaNerada()]
         html = make_sheets.create_monsters_content(monsters=monsters_, suffix="html")
+        # Check summary table
+        self.assertIn("monster-table", html)
+        # Check extended properties
         self.assertIn(r"Vashta Nerada", html)
         self.assertIn(r"35", html)
         self.assertIn(r"45 fly", html)
@@ -264,9 +266,11 @@ class TexCreatorTestCase(unittest.TestCase):
         monsters_ = [monsters.GiantEagle()]
         tex = make_sheets.create_monsters_content(monsters=monsters_, suffix="tex")
         self.assertIn(r"Giant Eagle", tex)
-        # Check extended properties
         monsters_ = [VashtaNerada()]
         tex = make_sheets.create_monsters_content(monsters=monsters_, suffix="tex")
+        # Check that the monster summary table exists
+        self.assertIn(r"Vashta Nerada & 10 & 10 & +0", tex)
+        # Check extended properties
         self.assertIn(r"Vashta Nerada", tex)
         self.assertIn(r"35", tex)
         self.assertIn(r"45 fly", tex)

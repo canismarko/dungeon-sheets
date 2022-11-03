@@ -239,6 +239,7 @@ class FoundryReaderTests(unittest.TestCase):
             attacks_and_spellcasting="",
             spells_prepared=["Bane", "Faerie Fire", "Thunderwave", "Detect Thoughts"],
             spells=["Vicious Mockery", "Message", "Prestidigitation", "Bane", "Faerie Fire", "Thunderwave", "Healing Word", "Blindness/Deafness", "Detect Thoughts", "Hold Person", "Fear", "Heat Metal"],
+            features=["jack of all trades", "song of rest", "bard college", "expertise (bard)",  "font of inspiration", "bardic inspiration", "lucky", "jack of all trades", "countercharm"],
         )
         for key, val in expected_data.items():
             this_result = result[key]

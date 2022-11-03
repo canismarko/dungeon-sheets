@@ -2,6 +2,13 @@
 \section*{Monsters}
 
 [% if use_dnd_decorations %]
+  \begin{DndTable}{r c c c}
+   Name & HP & AC & Init. \\
+   [% for monster in monsters|sort(attribute='name') %]
+   [[ monster.name ]] & [[ monster.hp_max ]] & [[ monster.armor_class ]] & [[ monster.initiative ]] \\
+   [% endfor %]
+  \end{DndTable}
+
   [% for monster in monsters|sort(attribute='name') %]
     \pdfbookmark[1]{[[ monster.name ]]}{Monsters - [[ monster.name ]]}
     \begin{DndMonster}{[[ monster.name ]]}
@@ -40,6 +47,14 @@
   [% endfor %]
   
 [% else %]
+   \begin{tabular}{r | c c c}
+      Name & HP & AC & Init. \\
+      \hline\hline
+     [% for monster in monsters|sort(attribute='name') %]
+     [[ monster.name ]] & [[ monster.hp_max ]] & [[ monster.armor_class ]] & [[ monster.initiative ]] \\
+     [% endfor %]
+   \end{tabular}
+
   [% for monster in monsters|sort(attribute='name') %]
     {
     \pdfbookmark[1]{[[ monster.name ]]}{Monsters - [[ monster.name ]]}

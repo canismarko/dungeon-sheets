@@ -3,6 +3,7 @@ import os
 import re
 import warnings
 import math
+import logging
 from types import ModuleType
 from typing import Sequence, Union, MutableMapping
 
@@ -26,6 +27,9 @@ from dungeonsheets.weapons import Weapon
 from dungeonsheets.content import Creature
 from dungeonsheets.dice import combine_dice
 from dungeonsheets.equipment_reader import equipment_weight_parser
+
+
+log = logging.getLogger(__name__)
 
 
 dice_re = re.compile(r"(\d+)d(\d+)")
@@ -1060,6 +1064,9 @@ class Character(Creature):
             char_props["levels"] = [str(char_props.pop("level"))]
         # Create the character with loaded properties
         char = Cls(**char_props)
+        log.info(f"Imported character: {char}")
+        log.debug(f"New character classes: {char.class_list} ({char.levels})")
+        log.debug(f"New character subclasses: {char.subclasses}")
         return char
 
     def save(self, filename, template_file="character_template.txt"):

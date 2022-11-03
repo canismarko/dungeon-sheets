@@ -412,7 +412,7 @@ class LightBearer(Feature):
     source = "Race (Aasimar)"
 
 
-class RadiantSoul(Feature):
+class AasimarRadiantSoul(Feature):
     """Starting at 3rd level, you can use your action to unleash the divine
     energy within yourself, causing your eyes to glimmer and two luminous,
     incorporeal wings to sprout from your back.
@@ -428,7 +428,7 @@ class RadiantSoul(Feature):
 
     """
 
-    name = "Radiant Soul"
+    name = "Aasimar Radiant Soul"
     source = "Race (Protector Aasimar)"
 
 

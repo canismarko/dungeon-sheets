@@ -327,6 +327,7 @@ class CombatSuperiority(Feature):
     """
 
     _name = "Combat Superiority"
+    source = "Fighter (Battle Master)"
 
     @property
     def name(self):
@@ -391,6 +392,16 @@ class Maneuver(Feature):
     source = "Fighter Maneuver (Battle Master)"
 
 
+class BaitAndSwitch(Maneuver):
+    """When you're within 5 feet of a creature on your turn, you can expend one superiority die and switch places with that creature, provided you spend at least 5 feet of movement and the creature is willing and isn't incapacitated. This movement doesn't provoke opportunity attacks.
+
+    Roll the superiority die. Until the start of your next turn, you or the other creature (your choice) gains a bonus to AC equal to the number rolled.
+
+    """
+
+    name = "Bait and Switch"
+
+
 class CommandersStrike(Maneuver):
     """When you take the Attack action on your turn, you can forgo one of your
     attacks and use a bonus action to direct one of your companions to
@@ -407,7 +418,7 @@ class CommandersStrike(Maneuver):
 class DisarmingAttack(Maneuver):
     """When you hit a creature with a weapon attack, you can expend one
     superiority die to attempt to disarm the target, forcing it to drop one
-    item o f your choice that it's holding. You add the superiority die to the
+    item of your choice that it's holding. You add the superiority die to the
     attack's damage roll, and the target must make a Strength saving throw. On
     a failed save, it drops the object you choose. The object lands at its
     feet.
@@ -453,7 +464,7 @@ class GoadingAttack(Maneuver):
     """When you hit a creature with a weapon attack, you can expend one
     superiority die to attempt to goad the target into attacking you. You add
     the superiority die to the attack's damage roll, and the target must make a
-    W isdom saving throw. On a failed save, the target has disadvantage on all
+    Wisdom saving throw. On a failed save, the target has disadvantage on all
     attack rolls against targets other than you until the end of your next
     turn.
 
@@ -545,7 +556,7 @@ class Riposte(Maneuver):
     """When a creature misses you with a melee attack, you can use your reaction
     and expend one superiority die to make a melee weapon attack against the
     creature. If you hit, you add the superiority die to the attack's damage
-    roll
+    roll.
 
     """
 
@@ -558,7 +569,7 @@ class SweepingAttack(Maneuver):
     attack. Choose another creature within 5 feet of the original target and
     within your reach. If the original attack roll would hit the second
     creature, it takes damage equal to the number you roll on your superiority
-    die. The damage is of the same type dealt by the original attack. Trip
+    die. The damage is of the same type dealt by the original attack.
 
     """
 
@@ -570,11 +581,11 @@ class TripingAttack(Maneuver):
     superiority die to attempt to knock the target down. You add the
     superiority die to the attack's damage roll, and if the target is Large or
     smaller, it must make a Strength saving throw. On a failed save, you knock
-    the target prone
+    the target prone.
 
     """
 
-    name = "Triping Attack"
+    name = "Trip Attack"
 
 
 # Eldritch Knight
@@ -593,7 +604,7 @@ class EldritchKnightSpellcasting(Feature):
     of magic.
 
     Whenever you gain a level in this class, you can replace one of the wizard
-    spells you know with another spell o f your choice from the wizard spell
+    spells you know with another spell of your choice from the wizard spell
     list. The new spell must be of a level for which you have spell slots, and
     it must be an abjuration or evocation spell, unless you're replacing the
     spell you gained at 8th, 14th, or 20th level.
@@ -740,8 +751,8 @@ class Bulwark(Feature):
 class ArcaneArcherLore(Feature):
     """At 3rd level, you learn magical theory or some of the secrets of
     nature-typical for practitioners of this elven martial tradition. You
-    choose to gain proficiency in ei- ther the Arcana or the Nature skill, and
-    you choose to learn either the prestidigr'tation or the drufdcraft cantrip
+    choose to gain proficiency in either the Arcana or the Nature skill, and
+    you choose to learn either the prestidigitation or the druidcraft cantrip.
 
     """
 
@@ -832,9 +843,9 @@ class BanishingArrow(Feature):
 class BeguilingArrow(Feature):
     """Your enchantment magic causes this arrow to temporarily beguile its
     target. The creature hit by the arrow takes an extra 2d6 psychic damage,
-    and choose one ofyour allies within 30 feet of the target. The target must
+    and choose one of your allies within 30 feet of the target. The target must
     succeed on a Wisdom saving throw, or it is charmed by the chosen ally until
-    the start ofyour next turn. This effect ends early if the chosen ally
+    the start of your next turn. This effect ends early if the chosen ally
     attacks the charmed target, deals damage to it, or forces it to make
     a saving throw. The psychic damage increases to 4d6 when you reach 18th
     level in this class.
@@ -848,7 +859,7 @@ class BeguilingArrow(Feature):
 class BurstingArrow(Feature):
     """You imbue your arrow with force energy drawn from the school of
     evocation. The energy detonates after your attack. Immediately after the
-    ar- row hits the creature, the target and all other creatures within 10
+    arrow hits the creature, the target and all other creatures within 10
     feet of it take 2d6 force damage each. The force damage increases to 4d6
     when you reach 18th level in this class
 
@@ -930,7 +941,7 @@ class ShadowArrow(Feature):
     """You weave illusion magic into your arrow, causing it to occlude your fees
     vision with shadows. The creature hit by the arrow takes an extra 2d6
     psychic damage, and it must succeed on a Wisdom saving throw or be unable
-    to see anything farther than 5 feet away until the start ofyour next
+    to see anything farther than 5 feet away until the start of your next
     turn. The psychic damage increases to 4d6 when you reach 18th level in this
     class
 
@@ -955,7 +966,7 @@ class BonusProficiencyCavalier(Feature):
 
 class BornToTheSaddle(Feature):
     """Starting at 3rd level, your mastery as a rider becomes apparent. You have
-    advantage on saving throws made to avoid falling off your mount. Ifyou fall
+    advantage on saving throws made to avoid falling off your mount. If you fall
     off your mount and descend no more than 10 feet, you can land on your feet
     if you're not incapacitated. Finally, mounting or dismounting a creature
     costs you only 5 feet of movement, rather than half your speed.
@@ -970,7 +981,7 @@ class UnwaveringMark(Feature):
     """Starting at 3rd level, you can menace your foe-s, foiling their attacks and
     punishing them for harming others. When you hit a creature with a melee
     weapon attack, you can mark the creature until the end of your next
-    turn. This effect ends early ifyou are incapacitated or you die, or if
+    turn. This effect ends early if you are incapacitated or you die, or if
     someone else marks the creature.
 
     While it is within 5 feet of you, a creature marked by you has disadvantage
@@ -999,7 +1010,7 @@ class UnwaveringMark(Feature):
 class WardingManeuver(Feature):
     """At 7th level, you learn to fend off strikes directed at you, your mount, or
     other creatures nearby. If you or a creature you can see within 5 feet
-    of you is hit by an attack, you can roll ld8 as a reaction if you're
+    of you is hit by an attack, you can roll 1d8 as a reaction if you're
     wielding a melee weapon or a shield. Roll the die, and add the number
     rolled to the target's AC against that attack. If the attack still hits,
     the target has resistance against the attack's damage.
@@ -1061,8 +1072,8 @@ class VigilantDefender(Feature):
 # Samurai
 class BonusProficiencySamurai(Feature):
     """When you choose this archetype at 3rd level, you gain proficiency in one of
-    the following skills ofyour choice: History, Insight, Performance, or
-    Persuasion. Alterna- tively, you learn one language of your choice.
+    the following skills of your choice: History, Insight, Performance, or
+    Persuasion. Alternatively, you learn one language of your choice.
 
     """
 
@@ -1132,7 +1143,7 @@ class StrengthBeforeDeath(Feature):
     turn. While you have 0 hit points during that extra turn, taking damage
     causes death saving throw failures as normal, and three death saving throw
     failures can still kill you. When the extra turn ends, you fall unconscious
-    ifyou still have 0 hit points. Once you use this feature, you can't use it
+    if you still have 0 hit points. Once you use this feature, you can't use it
     again until you finish a long rest.
 
     """

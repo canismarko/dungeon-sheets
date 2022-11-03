@@ -74,7 +74,7 @@ class PaladinFightingStyle(FeatureSelector):
         "dueling": Dueling,
         "great": GreatWeaponFighting,
         "great-weapon fighting": GreatWeaponFighting,
-        "projection": Protection,
+        "protection": Protection,
     }
     name = "Fighting Style (Select One)"
     source = "Paladin"

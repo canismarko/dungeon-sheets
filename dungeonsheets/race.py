@@ -80,6 +80,7 @@ class HillDwarf(_Dwarf):
 class MountainDwarf(_Dwarf):
     name = "Mountain Dwarf"
     strength_bonus = 2
+    proficiencies_text = _Dwarf.proficiencies_text + ("Light armor", "Medium Armor")
 
 
 # Elves
