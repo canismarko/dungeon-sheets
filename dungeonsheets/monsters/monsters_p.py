@@ -143,6 +143,38 @@ class PhaseSpider(Monster):
     spells = []
 
 
+class Piercer(Monster):
+    """**False Appearance.** While the piercer remains motionless on
+    the ceiling, it is indistinguishable from a normal stalactite.
+
+    **Spider Climb.** The piercer can climb difficult surfaces,
+    including upside down on ceilings, without needing to make an
+    ability check.  Action
+
+    **Drop.** *Melee Weapon Attack:* +3 to hit, one creature directly
+    underneath the piercer. *Hit:* 3 (1d6) piercing damage per 10 feet
+    fallen, up to 21 (6d6). *Miss:* The piercer takes half the normal
+    falling damage for the distance fallen.
+
+    """
+    name = "Piercer"
+    description = "Medium monstrosity, unaligned"
+    armor_class = 15
+    hp_max = 22
+    hit_dice = "3d8 + 9"
+    speed = 5
+    speed_climb = 5
+    strength = Ability(10)
+    dexterity = Ability(13)
+    constitution = Ability(16)
+    intelligence = Ability(1)
+    wisdom = Ability(7)
+    charisma = Ability(3)
+    skills = "Stealth +5"
+    senses = "blindsight 30ft., darkvision 60ft., passive Perception 8"
+    challenge_rating = 1 / 2
+
+
 class PitFiend(Monster):
     """
 

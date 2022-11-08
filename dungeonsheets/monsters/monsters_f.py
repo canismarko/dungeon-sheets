@@ -105,6 +105,53 @@ class FireGiant(Monster):
     spells = []
 
 
+class FireSnake(Monster):
+    """**Heated Body.** A creature that touches the snake or hits it with
+    a melee attack while within 5 feet of it takes 3 (1d6) fire
+    damage.
+
+    # ACTIONS
+
+    **Multiattack.** The snake makes two attacks: one with its bite
+    and one with its tail.
+
+    **Bite.** *Melee Weapon Attack:* +3 to hit, reach 5 ft., one
+    target. *Hit:* 3 (1d4 + 1) piercing damage plus 3 (1d6) fire
+    damage.
+
+    **Tail.** *Melee Weapon Attack:* +3 to hit, reach 5 ft., one
+    target. *Hit:* 3 (1d4 + 1) bludgeoning damage plus 3 (1d6) fire
+    damage.
+
+    """
+    name = 'Fire Snake'
+    description = 'Medium elemental, neutral evil'
+    challenge_rating = 1
+    armor_class = 14
+    skills = ''
+    senses = 'darkvision 60 ft., passive Perception 10'
+    languages = "understands Ignan but can't speak"
+    strength = Ability(12)
+    dexterity = Ability(14)
+    constitution = Ability(11)
+    intelligence = Ability(7)
+    wisdom = Ability(10)
+    charisma = Ability(8)
+    speed = 30
+    swim_speed = 0
+    fly_speed = 0
+    climb_speed = 0
+    burrow_speed = 0
+    hp_max = 22
+    hit_dice = '5d8'
+    condition_immunities = ''
+    damage_immunities = 'fire'
+    damage_resistances = 'bludgeoning, piercing, and slashing from nonmagical attacks'
+    damage_vulnerabilities = 'cold'
+    spells = []
+
+    
+
 class FleshGolem(Monster):
     """
 

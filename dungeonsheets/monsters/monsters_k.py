@@ -292,3 +292,228 @@ class Kraken(Monster):
     damage_resistances = ''
     damage_vulnerabilities = ''
     spells = []
+
+
+class KuoToa(Monster):
+    """**Amphibious.** The kuo-toa can breathe air and water.
+
+    **Otherworldly Perception.** The kuo-toa can sense the presence of
+    any creature within 30 feet of it that is invisible or on the
+    Ethereal Plane. It can pinpoint such a creature that is moving.
+
+    **Slippery.** The kuo-toa has advantage on ability checks and
+    saving throws made to escape a grapple.
+
+    **Sunlight Sensitivity.** While in sunlight, the kuo-toa has
+    disadvantage on attack rolls, as well as on Wisdom (Perception)
+    checks that rely on sight.
+
+    # Actions
+
+    **Bite.** *Melee Weapon Attack:* +3 to hit, reach 5 ft., one
+    target. *Hit:* 3 (1d4 + 1) piercing damage.
+
+    **Spear.** *Melee or Ranged Weapon Attack:* +3 to hit, reach 5
+    ft. or range 20/60 ft., one target. *Hit:* 4 (1d6 + 1) piercing
+    damage, or 5 (1d8 + 1) piercing damage if used with two hands to
+    make a melee attack.
+
+    **Net.** *Ranged Weapon Attack:* +3 to hit, range 5/15 ft., one
+    Large or smaller creature. *Hit:* The target is restrained. A
+    creature can use its action to make a DC 10 Strength check to free
+    itself or another creature in a net, ending the effect on a
+    success. Dealing 5 slashing damage to the net (AC 10) frees the
+    target without harming it and destroys the net.  REACTIONS
+
+    **Sticky Shield.** When a creature misses the kuo-toa with a melee
+    weapon attack, the kuo-toa uses its sticky shield to catch the
+    weapon. The attacker must succeed on a DC 11 Strength saving
+    throw, or the weapon becomes stuck to the kuo-toa's shield. If the
+    weapon's wielder can't or won't let go of the weapon, the wielder
+    is grappled while the weapon is stuck. While stuck, the weapon
+    can't be used. A creature can pull the weapon free by taking an
+    action to make a DC 11 Strength check and succeeding.
+    """
+    name = "Kuo-Toa"
+    description = "Medium humanoid (kuo-toa), neutral evil"
+    armor_class = 13
+    hp_max = 18
+    hit_dice = "4d8"
+    speed = 30
+    speed_swim = 30
+    strength = Ability(13)
+    dexterity = Ability(10)
+    constitution = Ability(11)
+    intelligence = Ability(11)
+    wisdom = Ability(10)
+    charisma = Ability(8)
+    skills = "Perception +4"
+    senses = "darkvision 120 ft., passive Perception 14"
+    languages = "Undercommon"
+    challenge_rating = 1 / 4
+
+
+class KuoToaArchpriest(Monster):
+    """**Amphibious.** The kuo-toa can breathe air and water.
+
+    **Otherworldly Perception.** The kuo-toa can sense the presence of
+    any creature within 30 feet of it that is invisible or on the
+    Ethereal Plane. It can pinpoint such a creature that is moving.
+
+    **Slippery.** The kuo-toa has advantage on ability checks and saving throws made to escape a grapple.
+
+    **Sunlight Sensitivity.** While in sunlight, the kuo-toa has disadvantage on attack rolls, as well as on Wisdom (Perception) checks that rely on sight.
+
+    **Spellcasting.** The kuo-toa is a 10th-level spellcaster. Its
+    spellcasting ability is Wisdom (spell save DC 14, +6 to hit with
+    spell attacks). The kuo-toa has the following cleric spells
+    prepared:
+
+    - Cantrips (at will): guidance, sacred flame, thaumaturgy
+    - 1st level (4 slots): detect magic, sanctuary, shield of faith
+    - 2nd level (3 slots): hold person, spiritual weapon
+    - 3rd level (3 slots): spirit guardians, tongues
+    - 4th level (3 slots): control water, divination
+    - 5th level (2 slots): mass cure wounds, scrying
+
+    # ACTIONS
+
+    **Multiattack.** The kuo-toa makes two melee attacks.
+
+    **Scepter.** *Melee Weapon Attack:* +6 to hit, reach 5 ft., one
+    target. *Hit:* 6 (1d6 + 3) bludgeoning damage plus 14 (4d6)
+    lightning damage.
+
+    **Unarmed Strike.** *Melee Weapon Attack:* +6 to hit, reach 5 ft.,
+    one target. *Hit:* 5 (1d4 + 3) bludgeoning damage.
+
+    """
+    name = "Kuo-Toa Archpriest"
+    description = "Medium humanoid (kuo-toa), neutral evil"
+    armor_class = 13
+    hp_max = 97
+    hit_dice = "13d8 + 39"
+    speed = 30
+    swim = 30
+    strength = Ability(16)
+    dexterity = Ability(14)
+    constitution = Ability(16)
+    intelligence = Ability(13)
+    wisdom = Ability(16)
+    charisma = Ability(14)
+    skills = "Perception +9, Religion +6"
+    senses = "darkvision 120 ft., passive Perception 19"
+    languages = "Undercommon"
+    challenge_rating = 6
+    spells = [
+        "guidance", "sacred flame", "thaumaturgy",
+        "detect magic", "sanctuary", "shield of faith",
+        "hold person", "spiritual weapon",
+        "spirit guardians", "tongues",
+        "control water", "divination",
+        "mass cure wounds", "scrying",
+    ]
+
+
+class KuoToaMonitor(Monster):
+    """**Amphibious.** The kuo-toa can breathe air and water.
+
+    **Otherworldly Perception.** The kuo-toa can sense the presence of
+    any creature within 30 feet of it that is invisible or on the
+    Ethereal Plane. It can pinpoint such a creature that is moving.
+
+    **Slippery.** The kuo-toa has advantage on ability checks and
+    saving throws made to escape a grapple.
+
+    **Sunlight Sensitivity.** While in sunlight, the kuo-toa has
+    disadvantage on attack rolls, as well as on Wisdom (Perception)
+    checks that rely on sight.
+
+    **Unarmored Defense.** The kuo-toa adds its Wisdom modifier to its
+    armor class.
+
+    # Actions
+
+    **Multiattack.** The kuo-toa makes one bite attack and two unarmed
+    strikes.
+
+    **Bite.** *Melee Weapon Attack:* +6 to hit, reach 5 ft., one
+    target. *Hit:* 4 (1d4 + 2) piercing damage.
+
+    **Unarmed Strike.** *Melee Weapon Attack:* +6 to hit, reach 5 ft.,
+    one target. *Hit:* 5 (1d6 + 2) bludgeoning damage plus 3 (1d6)
+    lightning damage, and the target can't take reactions until the
+    end of the kuo-toa's next turn.
+    """
+    name = "Kuo-Toa Monitor"
+    description = "Medium humanoid (kuo-toa), neutral evil"
+    armor_class = 13
+    hp_max = 65
+    hit_dice = "10d8+20"
+    speed = 30
+    speed_swim = 30
+    strength = Ability(14)
+    dexterity = Ability(10)
+    constitution = Ability(14)
+    intelligence = Ability(14)
+    wisdom = Ability(12)
+    charisma = Ability(11)
+    skills = "Perception +6, Religion +4"
+    senses = "darkvision 120 ft., passive Perception 16"
+    languages = "Undercommon"
+    challenge_rating = 3
+
+
+class KuoToaWhip(Monster):
+    """**Amphibious.** The kuo-toa can breathe air and water.
+
+    **Otherworldly Perception.** The kuo-toa can sense the presence of
+    any creature within 30 feet of it that is invisible or on the
+    Ethereal Plane. It can pinpoint such a creature that is moving.
+
+    **Slippery.** The kuo-toa has advantage on ability checks and
+    saving throws made to escape a grapple.
+
+    **Sunlight Sensitivity.** While in sunlight, the kuo-toa has
+    disadvantage on attack rolls, as well as on Wisdom (Perception)
+    checks that rely on sight.
+
+    **Spellcasting.** The kuo-toa is a 2nd-level spellcaster. Its
+    spellcasting ability is Wisdom (spell save DC 12, +4 to hit with
+    spell attacks). The kuo-toa has the following cleric spells
+    prepared:
+
+    - Cantrips (at will): sacred flame, thaumaturgy
+    - 1st level (3 slots): bane, shield of faith
+
+    # Actions
+
+    **Multiattack.** The kuo-toa makes two attacks: one with its bite
+    and one with its pincer staff.
+
+    **Bite.** *Melee Weapon Attack:* +4 to hit, reach 5 ft., one
+    target. *Hit:* 4 (1d4 + 2) piercing damage.
+
+    **Pincer Staff.** *Melee Weapon Attack:* +4 to hit, reach 10 ft.,
+    one target. *Hit:* 5 (1d6 + 2) piercing damage. If the target is a
+    Medium or smaller creature, it is grappled (escape DC 14). Until
+    this grapple ends, the kuo-toa can't use its pincer staff on
+    another target.
+    """
+    name = "Kuo-Toa Whip"
+    description = "Medium humanoid (kuo-toa), neutral evil"
+    armor_class = 11
+    hp_max = 65
+    hit_dice = "10d8 + 20"
+    strength = Ability(14)
+    dexterity = Ability(10)
+    constitution = Ability(14)
+    intelligence = Ability(12)
+    wisdom = Ability(14)
+    charisma = Ability(11)
+    skills = "Perception +6, Religion +4"
+    senses = "darkvision 120 ft., passive Perception 16"
+    languages = "Undercommon"
+    challenge_rating = 1
+    spells = ["sacred flame", "thaumaturgy",
+              "bane", "shield of faith", ]
