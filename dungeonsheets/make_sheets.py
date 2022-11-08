@@ -268,7 +268,8 @@ def make_gm_sheet(
     )
     # Add the monsters
     monsters_ = []
-    for monster in gm_props.pop("monsters", []):
+    input_monsters = list(gm_props.pop("monsters", []))
+    for monster in input_monsters:
         if isinstance(monster, monsters.Monster):
             # It's already a monster, so just add it
             new_monster = monster
@@ -282,7 +283,7 @@ def make_gm_sheet(
             else:
                 # Make sure it's not already on the list
                 if MyMonster in [type(m) for m in monsters_]:
-                    break
+                    continue
                 new_monster = MyMonster()
         monsters_.append(new_monster)
     if len(monsters_) > 0:

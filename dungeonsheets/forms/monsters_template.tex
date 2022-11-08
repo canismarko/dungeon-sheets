@@ -3,9 +3,9 @@
 
 [% if use_dnd_decorations %]
   \begin{DndTable}{r c c c}
-   Name & HP & AC & Init. \\
+   Name & HP & Hit Dice & AC & Init. \\
    [% for monster in monsters|sort(attribute='name') %]
-   [[ monster.name ]] & [[ monster.hp_max ]] & [[ monster.armor_class ]] & [[ monster.initiative ]] \\
+   [[ monster.name ]] & [[ monster.hp_max ]] & [[ monster.hit_dice ]] & [[ monster.armor_class ]] & [[ monster.initiative ]] \\
    [% endfor %]
   \end{DndTable}
 
@@ -48,10 +48,10 @@
   
 [% else %]
    \begin{tabular}{r | c c c}
-      Name & HP & AC & Init. \\
+      Name & HP & Hit Dice & AC & Init. \\
       \hline\hline
      [% for monster in monsters|sort(attribute='name') %]
-     [[ monster.name ]] & [[ monster.hp_max ]] & [[ monster.armor_class ]] & [[ monster.initiative ]] \\
+     [[ monster.name ]] & [[ monster.hp_max ]] & [[ monster.hit_dice ]] & [[ monster.armor_class ]] & [[ monster.initiative ]] \\
      [% endfor %]
    \end{tabular}
 

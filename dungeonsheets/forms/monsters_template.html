@@ -5,13 +5,15 @@
   <tr>
     <th>Monster</th>
     <th>HP</th>
+    <th>Hit Dice</th>
     <th>AC</th>
     <th>Init.</th>
   </tr>
   [% for monster in monsters|sort(attribute='name') %]
   <tr>
-    <td>[[ monster.name ]]</td>
+    <td><a href="#gm-monsters-[[ monster.name|to_heading_id ]]">[[ monster.name ]]</a></td>
     <td>[[ monster.hp_max ]]</td>
+    <td>[[ monster.hit_dice ]]</td>
     <td>[[ monster.armor_class ]]</td>
     <td>[[ monster.initiative ]]</td>
   </tr>
