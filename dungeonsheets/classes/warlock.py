@@ -119,7 +119,7 @@ class Celestial(SubClass):
     spells_known = spells_prepared = (spells.Light, spells.SacredFlame)
     features_by_level = defaultdict(list)
     features_by_level[1] = [features.HealingLight]
-    features_by_level[6] = [features.RadiantSoul]
+    features_by_level[6] = [features.WarlockRadiantSoul]
     features_by_level[10] = [features.CelestialResilience]
     features_by_level[14] = [features.SearingVengeance]
 
