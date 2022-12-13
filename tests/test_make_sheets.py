@@ -269,7 +269,7 @@ class TexCreatorTestCase(unittest.TestCase):
         monsters_ = [VashtaNerada()]
         tex = make_sheets.create_monsters_content(monsters=monsters_, suffix="tex")
         # Check that the monster summary table exists
-        self.assertIn(r"Vashta Nerada & 10 & 10 & +0", tex)
+        self.assertIn(r"Vashta Nerada & 10 & 1d6 & 10 & +0", tex)
         # Check extended properties
         self.assertIn(r"Vashta Nerada", tex)
         self.assertIn(r"35", tex)
