@@ -9,9 +9,7 @@ from dungeonsheets.stats import Ability
 
 
 class Aboleth(Monster):
-    """
-
-    Amphibious.
+    """Amphibious.
       The aboleth can breathe air and water.
     Mucous Cloud.
       While underwater, the aboleth is surrounded by transformative mucus. A
@@ -66,6 +64,33 @@ class Aboleth(Monster):
     Psychic Drain (Costs 2 Actions).
       One creature charmed by the aboleth takes 10 (3d6) psychic damage, and
       the aboleth regains hit points equal to the damage the creature takes.
+
+    # Lair Actions
+
+    Finally, aboleths have lair actions they can take on initiative
+    count 20 when they are in their lair. These actions can take one
+    of three forms.
+
+    The aboleth can cast Phantasmal Force without components on any
+    number of creatures it can see within 60 feet. This is a powerful
+    ability but one that requires concentration; the aboleth can’t use
+    other lair actions while concentrating on it. Also, targets that
+    make their save against the aboleth’s spell are immune to it for
+    the next 24 hours.
+
+    The aboleth can also make pools of water within 90 feet flood
+    outwards, forcing a DC 14 Strength save on any creature within 20
+    feet of such pool. Failing the save means being pulled 20 feet
+    into the water and knocked prone.
+
+    Lastly, the aboleth can make water in its lair become a conduit
+    for 2d6 (7 avg) psychic damage. Creatures take this damage if the
+    aboleth can see them and if they fail a DC 14 Wisdom saving throw.
+
+    These are pretty rough, but at least the aboleth needs to mix it
+    up; it can’t use either of the last two lair actions twice in a
+    row.
+
     """
     name = 'Aboleth'
     description = 'Large aberration, lawful evil'
