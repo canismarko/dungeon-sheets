@@ -223,270 +223,139 @@ def create_spells_pdf_template(character, basename, flatten=False):
 
     def spell_level(x):
         return x or 0
-
-    fields = {
+    
+    # Record fields
+    caster_sheet_fields = {
+        'fields': {
         "Spellcasting Class 2": classes_and_levels,
         "SpellcastingAbility 2": abilities,
         "SpellSaveDC  2": DCs,
         "SpellAtkBonus 2": bonuses,
         # Number of spell slots
-        "SlotsTotal 19": spell_level(character.spell_slots(1)),
-        "SlotsTotal 20": spell_level(character.spell_slots(2)),
-        "SlotsTotal 21": spell_level(character.spell_slots(3)),
-        "SlotsTotal 22": spell_level(character.spell_slots(4)),
-        "SlotsTotal 23": spell_level(character.spell_slots(5)),
-        "SlotsTotal 24": spell_level(character.spell_slots(6)),
-        "SlotsTotal 25": spell_level(character.spell_slots(7)),
-        "SlotsTotal 26": spell_level(character.spell_slots(8)),
-        "SlotsTotal 27": spell_level(character.spell_slots(9)),
+        "SlotsTotal 1": spell_level(character.spell_slots(1)),
+        "SlotsTotal 2": spell_level(character.spell_slots(2)),
+        "SlotsTotal 3": spell_level(character.spell_slots(3)),
+        "SlotsTotal 4": spell_level(character.spell_slots(4)),
+        "SlotsTotal 5": spell_level(character.spell_slots(5)),
+        "SlotsTotal 6": spell_level(character.spell_slots(6)),
+        "SlotsTotal 7": spell_level(character.spell_slots(7)),
+        "SlotsTotal 8": spell_level(character.spell_slots(8)),
+        "SlotsTotal 9": spell_level(character.spell_slots(9)),
+        },
+        'cantrip_fields': [f"Spells 10{i:02}" for i in range(1,8)],
+        'spell_fields': {
+            level: [f'Spells 1{level}{i:02}' for i in range(1,n_spells+1)]
+            for level, n_spells in [(1,12), (2,13), (3,13), (4,13), (5,9), (6,9), (7,9), (8,7), (9,7)]
+        },
+        'prep_fields': {
+            level: [f'prepared {level}{i:02}' for i in range(1,n_spells+1)]
+            for level, n_spells in [(1,12), (2,13), (3,13), (4,13), (5,9), (6,9), (7,9), (8,7), (9,7)]
+        }
     }
-    # Cantrips
-    cantrip_fields = (f"Spells 10{i}" for i in (14, 16, 17, 18, 19, 20, 21, 22))
+
+    half_caster_sheet_fields = {
+        'fields': {
+        "Spellcasting Class 2": classes_and_levels,
+        "SpellcastingAbility 2": abilities,
+        "SpellSaveDC  2": DCs,
+        "SpellAtkBonus 2": bonuses,
+        # Number of spell slots
+        "SlotsTotal 1": spell_level(character.spell_slots(1)),
+        "SlotsTotal 2": spell_level(character.spell_slots(2)),
+        "SlotsTotal 3": spell_level(character.spell_slots(3)),
+        "SlotsTotal 4": spell_level(character.spell_slots(4)),
+        "SlotsTotal 5": spell_level(character.spell_slots(5)),
+        },
+        'cantrip_fields': [f"Spells 10{i:02}" for i in range(1,12)],
+        'spell_fields': {
+            level: [f'Spells 1{level}{i:02}' for i in range(1,n_spells+1)]
+            for level, n_spells in [(1,25), (2,19), (3,19), (4,19), (5,19)]
+        },
+        'prep_fields': {
+            level: [f'prepared {level}{i:02}' for i in range(1,n_spells+1)]
+            for level, n_spells in [(1,25), (2,19), (3,19), (4,19), (5,19)]
+        }
+    }
+
+    # Determine which sheet to use (caster or half-caster).
+    # Prefer caster, unless we have no spells > 5th level and
+    # would overflow the caster sheet, then use half-caster.
+    only_low_level = all((character.spell_slots(level) == 0 for level in range(6,10)))
+    would_overflow_fullcaster = any((
+        len(
+            [spl for spl in character.spells if spl.level == level]
+        ) > len(
+            caster_sheet_fields['spell_fields'][level]
+        ) for level in range(1,6)
+    ))
+    if only_low_level and would_overflow_fullcaster:
+        selected_sheet_fields = half_caster_sheet_fields
+        template_filename = "blank-halfcaster-spell-sheet-default.pdf"
+    else:
+        selected_sheet_fields = caster_sheet_fields
+        template_filename = "blank-spell-sheet-default.pdf"
+
+    fields = selected_sheet_fields['fields']
+    cantrip_fields = selected_sheet_fields['cantrip_fields']
+    spell_fields = selected_sheet_fields['spell_fields']
+    prep_fields = selected_sheet_fields['prep_fields']
+
     cantrips = (spl for spl in character.spells if spl.level == 0)
     for spell, field_name in zip(cantrips, cantrip_fields):
         fields[field_name] = str(spell)
     # Spells for each level
-    field_numbers = {
-        1: (
-            1015,
-            1023,
-            1024,
-            1025,
-            1026,
-            1027,
-            1028,
-            1029,
-            1030,
-            1031,
-            1032,
-            1033,
-        ),
-        2: (
-            1046,
-            1034,
-            1035,
-            1036,
-            1037,
-            1038,
-            1039,
-            1040,
-            1041,
-            1042,
-            1043,
-            1044,
-            1045,
-        ),
-        3: (
-            1048,
-            1047,
-            1049,
-            1050,
-            1051,
-            1052,
-            1053,
-            1054,
-            1055,
-            1056,
-            1057,
-            1058,
-            1059,
-        ),
-        4: (
-            1061,
-            1060,
-            1062,
-            1063,
-            1064,
-            1065,
-            1066,
-            1067,
-            1068,
-            1069,
-            1070,
-            1071,
-            1072,
-        ),
-        5: (
-            1074,
-            1073,
-            1075,
-            1076,
-            1077,
-            1078,
-            1079,
-            1080,
-            1081,
-        ),
-        6: (
-            1083,
-            1082,
-            1084,
-            1085,
-            1086,
-            1087,
-            1088,
-            1089,
-            1090,
-        ),
-        7: (
-            1092,
-            1091,
-            1093,
-            1094,
-            1095,
-            1096,
-            1097,
-            1098,
-            1099,
-        ),
-        8: (
-            10101,
-            10100,
-            10102,
-            10103,
-            10104,
-            10105,
-            10106,
-        ),
-        9: (10108, 10107, 10109, 101010, 101011, 101012, 101013),
-    }
-    prep_numbers = {
-        1: (
-            251,
-            309,
-            3010,
-            3011,
-            3012,
-            3013,
-            3014,
-            3015,
-            3016,
-            3017,
-            3018,
-            3019,
-        ),
-        2: (
-            313,
-            310,
-            3020,
-            3021,
-            3022,
-            3023,
-            3024,
-            3025,
-            3026,
-            3027,
-            3028,
-            3029,
-            3030,
-        ),
-        3: (
-            315,
-            314,
-            3031,
-            3032,
-            3033,
-            3034,
-            3035,
-            3036,
-            3037,
-            3038,
-            3039,
-            3040,
-            3041,
-        ),
-        4: (
-            317,
-            316,
-            3042,
-            3043,
-            3044,
-            3045,
-            3046,
-            3047,
-            3048,
-            3049,
-            3050,
-            3051,
-            3052,
-        ),
-        5: (
-            319,
-            318,
-            3053,
-            3054,
-            3055,
-            3056,
-            3057,
-            3058,
-            3059,
-        ),
-        6: (
-            321,
-            320,
-            3060,
-            3061,
-            3062,
-            3063,
-            3064,
-            3065,
-            3066,
-        ),
-        7: (
-            323,
-            322,
-            3067,
-            3068,
-            3069,
-            3070,
-            3071,
-            3072,
-            3073,
-        ),
-        8: (
-            325,
-            324,
-            3074,
-            3075,
-            3076,
-            3077,
-            3078,
-        ),
-        9: (
-            327,
-            326,
-            3079,
-            3080,
-            3081,
-            3082,
-            3083,
-        ),
-    }
+    fields_per_page = {}
+    def spell_paginator(spells, n_fields):
+        yield spells[:n_fields]
+        consumed = n_fields
+        while consumed < len(spells):
+            yield spells[consumed:consumed + (n_fields - 1)]
+            consumed += n_fields - 1
     # Prepare the lists of spells for each level
-    for level in field_numbers.keys():
+    for level in spell_fields.keys():
         spells = [spl for spl in character.spells if spl.level == level]
-        # Determine if we should omit un-prepared spells to save space
-        if len(spells) > len(field_numbers[level]):
-            spells = [s for s in spells if s in character.spells_prepared]
-            warnings.warn(
-                f"{character.name} knows more spells than the number of "
-                "lines available in spell sheet. Limited to prepared "
-                "spells only."
-            )
-        # Build the list of PDF controls to set/toggle
-        field_names = [f"Spells {i}" for i in field_numbers[level]]
-        prep_names = tuple(f"Check Box {i}" for i in prep_numbers[level])
-        for spell, field, chk_field in zip(spells, field_names, prep_names):
-            fields[field] = str(spell)
-            is_prepared = any([spell == Spl for Spl in character.spells_prepared])
-            fields[chk_field] = CHECKBOX_ON if is_prepared else CHECKBOX_OFF
-        # # Uncomment to post field names instead:
-        # for field in field_names:
-        #     fields.append((field, field))
-    # Make the actual pdf
+        # Split spells across multiple pages if we have too many listed
+        # (this may happen with clerics, paladins, etc)
+
+        # The first page has len(field_numbers) spells, the further pages have
+        # len(field_numbers - 1)
+        for page, page_spells in enumerate(spell_paginator(spells, len(spell_fields[level]))):
+            if page not in fields_per_page:
+                fields_per_page[page] = {}
+            # Build the list of PDF controls to set/toggle
+            if page == 0:
+                field_names = spell_fields[level]
+                prep_names = prep_fields[level]
+            else:
+                field_names = spell_fields[level][1:]
+                prep_names = prep_fields[level][1:]
+                fields_per_page[page][spell_fields[level][0]] = "--- Overflow ---"
+                fields_per_page[page][prep_fields[level][0]] = CHECKBOX_OFF
+            for spell, field, chk_field in zip(page_spells, field_names, prep_names):
+                fields_per_page[page][field] = str(spell)
+                is_prepared = any([spell == Spl for Spl in character.spells_prepared])
+                fields_per_page[page][chk_field] = CHECKBOX_ON if is_prepared else CHECKBOX_OFF
+            # # Uncomment to post field names instead:
+            # for field in field_names:
+            #     fields.append((field, field))
+        # Make the actual pdf
     dirname = os.path.join(os.path.dirname(os.path.abspath(__file__)), "forms/")
-    src_pdf = os.path.join(dirname, "blank-spell-sheet-default.pdf")
-    make_pdf(fields, src_pdf=src_pdf, basename=basename, flatten=flatten, portrait="")
+    src_pdf = os.path.join(dirname, template_filename)
+
+    basenames = []
+    for page, page_fields in fields_per_page.items():
+        combined_basename = basename if page == 0 else f'{basename}-extra{page}'
+        basenames.append(combined_basename)
+
+        output_fields = {**fields, **page_fields}
+        if page > 0:
+            output_fields.update({
+                "Spellcasting Class 2": f'{classes_and_levels} (Overflow)',
+                # Number of spell slots
+                **{f"SlotsTotal {i}": '-' for i in range(19,28)}
+            })
+        make_pdf(output_fields, src_pdf=src_pdf, basename=combined_basename, flatten=flatten, portrait="")
+    return basenames
 
 
 def make_pdf(fields: dict, src_pdf: str, basename: str, flatten: bool = False, portrait = ""):

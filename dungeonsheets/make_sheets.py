@@ -547,10 +547,11 @@ def make_character_sheet(
         if character.is_spellcaster and not(use_tex_template):
             # Create spell sheet
             spell_base = "{:s}_spells".format(basename)
-            create_spells_pdf_template(
+            created_basenames = create_spells_pdf_template(
                 character=character, basename=spell_base, flatten=flatten
             )
-            sheets.append(spell_base + ".pdf")
+            for spell_base in created_basenames:
+                sheets.append(spell_base + ".pdf")
         # Combined with additional LaTeX pages with detailed character info
         features_base = "{:s}_features".format(basename)
         try:
