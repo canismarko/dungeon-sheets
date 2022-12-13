@@ -389,6 +389,7 @@ class Character(Creature):
     @property
     def weapon_proficiencies(self):
         wp = set(self.other_weapon_proficiencies)
+        wp |= {weapons.Unarmed}  # Everyone is proficient in unarmed strikes
         if self.num_classes > 0:
             wp |= set(self.primary_class.weapon_proficiencies)
         if self.num_classes > 1:
