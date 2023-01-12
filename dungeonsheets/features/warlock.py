@@ -84,6 +84,22 @@ class PactOfTheTome(Feature):
     source = "Warlock"
 
 
+class PactOfTheTalisman(Feature):
+    """Your patron gives you an amulet, a talisman that can aid the wearer when
+    the need is great. When the wearer fails an ability check, they can add a d4
+    to the roll, potentially turning the roll into a success. This benefit can be
+    used a number of times equal to your proficiency bonus, and all expended uses
+    are restored when you finish a long rest. If you lose the talisman, you can
+    perform a 1-hour ceremony to receive a replacement from your patron.
+    This ceremony can be performed during a short or long rest, and it
+    destroys the previous amulet. The talisman turns to ash when you die.
+
+    """
+
+    name = "Pact of the Talisman"
+    source = "Warlock"
+
+
 class PactBoon(FeatureSelector):
     """Select a Pact Boon by choosing in feature_choices:
 
@@ -92,6 +108,8 @@ class PactBoon(FeatureSelector):
     pact of the blade
 
     pact of the tome
+
+    pact of the talisman
 
     """
 
@@ -102,6 +120,8 @@ class PactBoon(FeatureSelector):
         "pact of the blade": PactOfTheBlade,
         "tome": PactOfTheTome,
         "pact of the tome": PactOfTheTome,
+        "talisman": PactOfTheTalisman,
+        "pact of the talisman": PactOfTheTalisman,
     }
     name = "Pact Boon (Select One)"
     source = "Warlock"
@@ -138,6 +158,23 @@ class EldritchMaster(Feature):
     name = "Eldritch Master"
     source = "Warlock"
 
+
+class EldritchVersatility(Feature):
+    """Whenever you reach a level in this class that grants the Ability Score
+    Improvement feature, you can do one of the following, representing a change
+    of focus in your occult studies:
+
+    * Replace one cantrip you learned from this class's Pact Magic feature with another cantrip from the warlock spell list.
+    * Replace the option you chose for the Pact Boon feature with one of that feature's other options.
+    * If you're 12th level or higher, replace one spell from your Mystic Arcanum feature with another warlock spell of the same level.
+
+    If this change makes you ineligible for any of your Eldritch Invocations,
+    you must also replace them now, choosing invocations for which you qualify.
+
+    """
+
+    name = "Eldritch Versatility"
+    source = "Warlock"
 
 # The Archfey
 class FeyPresence(Feature):
@@ -346,7 +383,7 @@ class AmongTheDead(Feature):
 class DefyDeath(Feature):
     """Starting at 6th level, you can give yourself vitality when you cheat death
     or when you help someone else cheat it. You can regain hit points equal to
-    ld8 +your Constitution modifier (minimum of 1 hit point) when you succeed
+    1d8 + your Constitution modifier (minimum of 1 hit point) when you succeed
     on a death saving throw or when you stabilize a creature with spare the
     dying. Once you use this feature, you can't use it again until you finish a
     long rest
@@ -386,7 +423,7 @@ class IndestructibleLife(Feature):
 
 # The Celestial
 class HealingLight(Feature):
-    """At lst level, you gain the ability to channel celestial energy to heal
+    """At 1st level, you gain the ability to channel celestial energy to heal
     wounds. You have a pool of d6s that you spend to fuel this healing. The
     number of dice in the pool equals 1 + your warlock level. As a bonus
     action, you can heal one creature you can see within 60 feet of you,
@@ -451,7 +488,7 @@ class SearingVengeance(Feature):
 
 # Hexblade
 class HexbladesCurse(Feature):
-    """Starting at lst level, you gain the ability to place a bale- ful curse on
+    """Starting at 1st level, you gain the ability to place a baleful curse on
     someone. As a bonus action, choose one creature you can see within 30 feet
     of you. The target is cursed for 1 minute. The curse ends early if the
     target dies, you die, or you are incapacitated. Until the curse ends, you
@@ -473,7 +510,7 @@ class HexbladesCurse(Feature):
 
 
 class HexWarrior(Feature):
-    """At lst level, you acquire the training necessary to effectively arm
+    """At 1st level, you acquire the training necessary to effectively arm
     yourself for battle. You gain proficiency with medium armor, shields, and
     martial weapons.
 
@@ -556,6 +593,190 @@ class MasterOfHexes(Feature):
 
     name = "Master of Hexes"
     source = "Warlock (Hexblade)"
+
+
+# The Fathomless Patron
+class TentacleOfTheDeeps(Feature):
+    """You can magically summon a spectral tentacle that strikes at your foes.
+    As a bonus action, you create a 10-foot-long tentacle at a point you can
+    see within 60 feet of you. The tentacle lasts for 1 minute or until you
+    use this feature to create another tentacle.
+
+    When you create the tentacle, you can make a melee spell attack against one
+    creature within 10 feet of it. On a hit, the target takes 1d8 cold damage,
+    and its speed is reduced by 10 feet until the start of your next turn.
+    When you reach 10th level in this class, the damage increases to 2d8.
+
+    As a bonus action on your turn, you can move the tentacle up to 30 feet and
+    repeat the attack. You can summon the tentacle a number of times equal to your
+    proficiency bonus, and you regain all expended uses when you finish a long rest.
+
+    """
+
+    name = "Tentacle of the Deeps"
+    source = "Warlock (The Fathomless Patron)"
+
+
+class GiftOfTheSea(Feature):
+    """
+    You gain a swimming speed of 40 feet, and you can breathe underwater.
+    """
+
+    name = "Gift of the Sea"
+    source = "Warlock (The Fathomless Patron)"
+
+
+class OceanicSoul(Feature):
+    """You are now even more at home in the depths. You gain resistance to cold
+    damage. In addition, when you are fully submerged, any creature that is also
+    fully submerged can understand your speech, and you can understand theirs.
+
+    """
+
+    name = "Oceanic Soul"
+    source = "Warlock (The Fathomless Patron)"
+
+
+class GuardianCoil(Feature):
+    """Your Tentacle of the Deeps can defend you and others, interposing itself
+    between them and harm. When you or a creature you can see takes damage while
+    within 10 feet of the tentacle, you can use your reaction to choose one of
+    those creatures and reduce the damage to that creature by 1d8. When you reach
+    10th level in this class, the damage reduced by the tentacle increases to 2d8.
+
+    """
+
+    name = "Guardian Coil"
+    source = "Warlock (The Fathomless Patron)"
+
+
+class GraspingTentacles(Feature):
+    """You learn the spell Evard's black tentacles. It counts as a warlock spell
+    for you, but it doesn't count against the number of spells you know.
+    You can also cast it once without a spell slot, and you regain the ability
+    to do so when you finish a long rest.
+
+    Whenever you cast this spell, your patron's magic bolsters you, granting you a
+    number of temporary hit points equal to your warlock level. Moreover, damage
+    can't break your concentration on this spell.
+
+    """
+    _name = "Grasping Tentacles"
+    source = "Warlock (The Fathomless Patron)"
+    spells_known = spells_prepared = (spells.EvardsBlackTentacles,)
+
+    @property
+    def name(self):
+        num = self.owner.Warlock.level
+        return self._name + " ({:d} HP)".format(num)
+
+
+class FathomlessPlunge(Feature):
+    """You can magically open temporary conduits to watery destinations. As an
+    action, you can teleport yourself and up to five other willing creatures that
+    you can see within 30 feet of you. Amid a whirl of tentacles, you all vanish
+    and then reappear up to 1 mile away in a body of water you've seen
+    (pond size or larger) or within 30 feet of it, each of you appearing in an
+    unoccupied space within 30 feet of the others.
+
+    Once you use this feature, you can't use it again until you finish a
+    short or long rest.
+
+    """
+
+    name = "Fathomless Plunge"
+    source = "Warlock (The Fathomless Patron)"
+
+
+class GeniesVessel(Feature):
+    """Your patron gifts you a magical vessel that grants you a measure of the genie's power.
+    The vessel is a Tiny object, and you can use it as a spellcasting focus for your warlock spells.
+    You decide what the object is, or you can determine what it is randomly by rolling on the Genie's Vessel table.
+
+    ==  ========================
+    d6  Vessel
+    ==  ========================
+    1   Oil Lamp
+    2   Urn
+    3   Ring with a Compartment
+    4   Stoppered Bottle
+    5   Hollow Statuette
+    6   Ornate Lantern
+    ==  ========================
+
+    While you are touching the vessel, you can use it in the following ways:
+
+    **Bottled Respite**. As an action, you can magically vanish and enter your vessel, which remains
+    in the space you left. The interior of the vessel is an extradimensional space in the shape of a
+    20-foot-radius cylinder, 20 feet high, and resembles your vessel. The interior is appointed with
+    cushions and low tables and is a comfortable temperature. While inside, you can hear the area around
+    your vessel as if you were in its space. You can remain inside the vessel up to a number of hours
+    equal to twice your proficiency bonus. You exit the vessel early if you use a bonus action to leave,
+    if you die, or if the vessel is destroyed. When you exit the vessel, you appear in the unoccupied
+    space closest to it. Any objects left in the vessel remain there until carried out, and if the
+    vessel is destroyed, every object stored there harmlessly appears in the unoccupied spaces closest
+    to the vessel's former space. Once you enter the vessel, you can't enter again until you finish a long rest.
+
+    **Genie's Wrath**. Once during each of your turns when you hit with an attack roll, you can deal extra damage
+    to the target equal to your proficiency bonus. The type of this damage is determined by your patron:
+    bludgeoning (dao), thunder (djinni), fire (efreeti), or cold (marid).
+
+    The vessel's AC equals your spell save DC. Its hit points equal your warlock level plus your proficiency bonus, 
+    and it is immune to poison and psychic damage.
+    
+    If the vessel is destroyed or you lose it, you can perform a 1-hour ceremony to receive a replacement from your patron.
+    This ceremony can be performed during a short or long rest, and the previous vessel is destroyed if it still exists.
+    The vessel vanishes in a flare of elemental power when you die.
+
+    """
+
+    name = "Genie's Vessel"
+    source = "Warlock (The Genie Patron)"
+
+
+class ElementalGift(Feature):
+    """You begin to take on characteristics of your patron's kind. You now have resistance to a damage type
+    determined by your patron's kind: bludgeoning (dao), thunder (djinni), fire (efreeti), or cold (marid).
+
+    In addition, as a bonus action, you can give yourself a flying speed of 30 feet that lasts for 10 minutes,
+    during which you can hover. You can use this bonus action a number of times equal to your proficiency bonus,
+    and you regain all expended uses when you finish a long rest.
+
+    """
+
+    name = "Elemental Gift"
+    source = "Warlock (The Genie Patron)"
+
+
+class SanctuaryVessel(Feature):
+    """When you enter your Genie's Vessel via the Bottled Respite feature, you can now choose up to five willing
+    creatures that you can see within 30 feet of you, and the chosen creatures are drawn into the vessel with you.
+
+    As a bonus action, you can eject any number of creatures from the vessel, and everyone is ejected if you leave
+    or die or if the vessel is destroyed.
+
+    In addition, anyone (including you) who remains within the vessel for at least 10 minutes gains the benefit
+    of finishing a short rest, and anyone can add your proficiency bonus to the number of hit points they regain
+    if they spend any Hit Dice as part of a short rest there.
+
+    """
+
+    name = "Sanctuary Vessel"
+    source = "Warlock (The Genie Patron)"
+
+
+class LimitedWish(Feature):
+    """You entreat your patron to grant you a small wish. As an action, you can speak your desire to your
+    Genie's Vessel, requesting the effect of one spell that is 6th level or lower and has a casting time of 1 action.
+    The spell can be from any class's spell list, and you don't need to meet the requirements in that spell,
+    including costly components; the spell simply takes effect as part of this action.
+
+    Once you use this feature, you can't use it again until you finish 1d4 long rests.
+
+    """
+
+    name = "Limited Wish"
+    source = "Warlock (The Genie Patron)"
 
 
 # All Invocations
@@ -1078,7 +1299,7 @@ class ShroudOfShadow(Invocation):
 
 class TombOfLevistus(Invocation):
     """As a reaction when you take damage, you can entomb yourself in ice, which
-    melts away at the end ofyour next turn. You gain 10 temporary hit points
+    melts away at the end of your next turn. You gain 10 temporary hit points
     per warlock level, which take as much of the triggering damage as
     possible. Immediately after you take the damage, you gain vulnerability to
     fire damage, your speed is reduced to 0, and you are incapacitated. These
@@ -1102,3 +1323,105 @@ class TrickstersEscape(Invocation):
     """
 
     name = "Tricksters Escape"
+
+
+# TCE
+class BondOfTheTalisman(Invocation):
+    """While someone else is wearing your talisman, you can use your action to teleport
+    to the unoccupied space closest to them, provided the two of you are on the same
+    plane of existence. The wearer of your talisman can do the same thing, using their action
+    to teleport to you. The teleportation can be used a number of times equal to
+    your proficiency bonus, and all expended uses are restored when you finish a long rest.
+
+    **Prerequisite**: 12th Level, Pact of the Talisman
+
+    """
+
+    name = "Bond of the Talisman"
+
+
+class EldritchMind(Invocation):
+    """You have advantage on Constitution saving throws that
+    you make to maintain your concentration on a spell.
+
+    """
+
+    name = "Eldritch Mind"
+
+
+class FarScribe(Invocation):
+    """A new page appears in your Book of Shadows. With your permission, a creature can use its action to
+    write its name on that page, which can contain a number of names equal to your proficiency bonus.
+    You can cast the *sending* spell, targeting a creature whose name is on the page, without using a
+    spell slot and without using material components. To do so, you must write the message on the page.
+    The target hears the message in their mind, and if the target replies, their message appears on the
+    page, rather than in your mind. The writing disappears after 1 minute.
+    As an action, you can magically erase a name on the page by touching it.
+
+    **Prerequisite**: 5th Level, Pact of the Tome
+
+    """
+
+    name = "Far Scribe"
+
+
+class GiftOfTheProtectors(Invocation):
+    """A new page appears in your Book of Shadows. With your permission, a creature can use its action to
+    write its name on that page, which can contain a number of names equal to your proficiency bonus.
+    When any creature whose name is on the page is reduced to 0 hit points but not killed outright,
+    the creature magically drops to 1 hit point instead. Once this magic is triggered, no creature can benefit
+    from it until you finish a long rest. As an action, you can magically erase a name on the page by touching it.
+
+    **Prerequisite**: 9th Level, Pact ofthe Tome
+
+    """
+
+    name = "Gift of the Protectors"
+
+
+class InvestmentOfTheChainMaster(Invocation):
+    """When you cast find familiar, you infuse the summoned familiar with a measure of your eldritch
+    power, granting the creature the following benefits:
+
+    * The familiar gains either a flying speed or a swimming speed (your choice) of 40 feet.
+    * As a bonus action, you can command the familiar to take the Attack action.
+    * The familiar's weapon attacks are considered magical for the purpose of overcoming immunity and resistance to nonmagical attacks.
+    * If the familiar forces a creature to make a saving throw, it uses your spell save DC.
+    * When the familiar takes damage, you can use your reaction to grant it resistance against that damage.
+
+    **Prerequisite**: Pact of the Chain
+    """
+
+    name = "Investment of the Chain Master"
+
+
+class ProtectionOfTheTalisman(Invocation):
+    """When the wearer of your talisman fails a saving throw, they can add a d4 to the roll,
+    potentially turning the save into a success. This benefit can be used a number of times
+    equal to your proficiency bonus, and all expended uses are restored when you finish a long rest.
+
+    **Prerequisite**: 7th Level, Pact of the Talisman
+    """
+
+    name = "Protection of the Talisman"
+
+
+class RebukeOfTheTalisman(Invocation):
+    """When the wearer of your talisman is hit by an attacker you can see within 30 feet of you, you can use
+    your reaction to deal psychic damage to the attacker equal to your proficiency bonus and push it up to 10
+    feet away from the talisman's wearer.
+
+    **Prerequisite**: Pact of the Talisman
+    """
+
+    name = "Rebuke of the Talisman"
+
+
+class UndyingServitude(Invocation):
+    """You can cast animate dead without using a spell slot. Once you do so, you can't cast it
+    in this wayagain until you finish a long rest
+
+    **Prerequisite**: 5th Level
+    """
+
+    name = "Undying Servitude"

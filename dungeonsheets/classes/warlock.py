@@ -152,6 +152,52 @@ class Hexblade(SubClass):
     features_by_level[14] = [features.MasterOfHexes]
 
 
+# TCE
+class Fathomless(SubClass):
+    """You have plunged into a pact with the deeps. An entity of the ocean, the
+    Elemental Plane of Water, or another otherworldly sea now allows you to draw on
+    its thalassic power. Is it merely using you to learn about terrestrial realms,
+    or does it want you to open cosmic floodgates and drown the world?
+
+    Perhaps you were born into a generational cult that venerates the Fathomless
+    and its spawn. Or you might have been shipwrecked and on the brink of drowning
+    when your patron's grasp offered you a chance at life. Whatever the reason
+    for your pact, the sea and its unknown depths call to you.
+
+    Entities of the deep that might empower a warlock include krakens,
+    ancient water elementals, godlike hallucinations dreamed into being by
+    kuo-toa, merfolk demigods, and sea hag covens.
+
+    """
+
+    name = "The Fathomless Patron"
+    features_by_level = defaultdict(list)
+    features_by_level[1] = [features.TentacleOfTheDeeps, features.GiftOfTheSea]
+    features_by_level[6] = [features.OceanicSoul, features.GuardianCoil]
+    features_by_level[10] = [features.GraspingTentacles]
+    features_by_level[16] = [features.FathomlessPlunge]
+
+
+class Genie(SubClass):
+    """You have made a pact with one of the rarest kinds of genie, a noble genie.
+    Such entities rule vast fiefs on the Elemental Planes and have great influence over
+    lesser genies and elemental creatures. Noble genies are varied in their motivations,
+    but most are arrogant and wield power that rivals that of lesser deities.
+    They delight in turning the table on mortals, who often bind genies into servitude,
+    and readily enter into pacts that expand their reach.
+
+    You choose your patron's kind or determine it randomly, using the Genie Kind table.
+
+    """
+
+    name = "The Genie Patron"
+    features_by_level = defaultdict(list)
+    features_by_level[1] = [features.GeniesVessel]
+    features_by_level[6] = [features.ElementalGift]
+    features_by_level[10] = [features.SanctuaryVessel]
+    features_by_level[16] = [features.LimitedWish]
+
+
 class Warlock(CharClass):
     name = "Warlock"
     hit_dice_faces = 8
@@ -174,9 +220,10 @@ class Warlock(CharClass):
     features_by_level = defaultdict(list)
     features_by_level[2] = [features.EldritchInvocation]
     features_by_level[3] = [features.PactBoon]
+    features_by_level[4] = [features.EldritchVersatility]
     features_by_level[11] = [features.MysticArcanum]
     features_by_level[20] = [features.EldritchMaster]
-    subclasses_available = (Archfey, Fiend, GreatOldOne, Undying, Celestial, Hexblade)
+    subclasses_available = (Archfey, Fiend, GreatOldOne, Undying, Celestial, Hexblade, Fathomless, Genie)
     spellcasting_ability = "charisma"
     spell_slots_by_level = {
         1: (2, 1, 0, 0, 0, 0, 0, 0, 0, 0),

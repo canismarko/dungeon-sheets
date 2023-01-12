@@ -114,7 +114,7 @@ class RadiantWeapon(Infusion):
     attack, the wielder can expend 1 charge and cause the attacker to be
     blinded until the end of the attacker's next turn, unless the attacker
     succeeds on a Constitution saving throw against your spell save DC. The
-    weapon regains ld4 expended charges daily at dawn.
+    weapon regains 1d4 expended charges daily at dawn.
     """
 
     name = "Radiant Weapon"
@@ -161,7 +161,7 @@ class RepulsionShield(Infusion):
 
     The shield has 4 charges. While holding it, the wielder can use a reaction
     immediately after being hit by a melee attack to expend 1 of the shield's
-    charges and push the attacker up to 15 feet away. The shield regains ld4
+    charges and push the attacker up to 15 feet away. The shield regains 1d4
     expended charges daily at dawn.
     """
 
