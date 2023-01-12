@@ -147,7 +147,7 @@ class _Halfling(Race):
     speed = 25
     dexterity_bonus = 2
     languages = ("Common", "Halfling")
-    features = (feats.Lucky, feats.Brave, feats.HalflingNimbleness)
+    features = (feats.HalflingLuck, feats.Brave, feats.HalflingNimbleness)
 
 
 class LightfootHalfling(_Halfling):
