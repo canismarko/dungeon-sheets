@@ -72,6 +72,7 @@ class CharacterRenderer:
         character: Character,
         content_suffix: str = "tex",
         use_dnd_decorations: bool = False,
+        spell_order: bool = False
     ):
         template = jinja_env.get_template(
             self.template_name.format(suffix=content_suffix)
@@ -79,6 +80,7 @@ class CharacterRenderer:
         return template.render(
             character=character,
             use_dnd_decorations=use_dnd_decorations,
+            spell_order=spell_order,
             ordinals=ORDINALS,
         )
 
@@ -391,6 +393,7 @@ def make_character_content(
     character: Character,
     content_format: str,
     fancy_decorations: bool = False,
+    spell_order: bool = False,
 ) -> List[str]:
     """Prepare the inner content for a character sheet.
 
@@ -468,6 +471,7 @@ def make_character_content(
                 character,
                 content_suffix=content_format,
                 use_dnd_decorations=fancy_decorations,
+                spell_order=spell_order,
             )
         )
     if len(getattr(character, "infusions", [])) > 0:
@@ -590,6 +594,7 @@ def make_character_sheet(
         character=character,
         content_format=content_suffix,
         fancy_decorations=fancy_decorations,
+        spell_order=spell_order,
     )
     # Typeset combined LaTeX file
     if output_format == "pdf":
