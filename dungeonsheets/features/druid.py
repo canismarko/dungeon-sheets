@@ -595,7 +595,7 @@ class SpiritTotem(Feature):
     options below.
 
     **Bear Spirit**: The bear spirit grants you and your allies its
-    might and endurance. Each creature ofyour choice in the aura when
+    might and endurance. Each creature of your choice in the aura when
     the spirit appears gains temporary hit points equal to 5 + your
     druid level. In addition, you and your allies gain advantage on
     Strength checks and Strength saving throws while in the aura.

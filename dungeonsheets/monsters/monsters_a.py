@@ -337,7 +337,7 @@ class AdultBrassDragon(Monster):
       at the end of each of its turns, ending the effect on itself on a
       success. If a creature's saving throw is successful or the effect ends
       for it, the creature is immune to the dragon's Frightful Presence for
-      the next 24 hours .
+      the next 24 hours.
     Breath Weapons.
       The dragon uses one of the following breath weapons.
       

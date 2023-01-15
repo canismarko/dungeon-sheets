@@ -322,13 +322,13 @@ class EyesOfCharming(MagicItem):
     requires_attunement = True
 
 
-class CharlattansDie(MagicItem):
+class CharlatansDie(MagicItem):
     """Whenever you roll this six-sided die, you can control which number it
     rolls.
 
     """
 
-    name = "Charlattan's Die"
+    name = "Charlatan's Die"
     rarity = "Common"
 
 

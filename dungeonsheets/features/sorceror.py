@@ -47,7 +47,7 @@ class Metamagic(Feature):
     """At 3rd level, you gain the ability to twist your spells to suit your
     needs. You gain two of the following Metamagic options of your choice. You
     gain another one at 10th and 17th level. You can use only one Metamagic
-    option on a spell when you cast it, unless otherwise noted
+    option on a spell when you cast it, unless otherwise noted.
 
     """
 
@@ -69,7 +69,7 @@ class SorcerousRestoration(Feature):
 class CarefulSpell(Metamagic):
     """When you cast a spell that forces other creatures to make a saving throw,
     you can protect some of those creatures from the spell's full force. To do
-    so, you spend 1 sorcery point and choose a number o f those creatures up to
+    so, you spend 1 sorcery point and choose a number of those creatures up to
     your Charisma modifier (minimum of one creature). A chosen creature
     automatically succeeds on its saving throw against the spell.
 
@@ -144,7 +144,7 @@ class TwinnedSpell(Metamagic):
     """When you cast a spell that targets only one creature and doesn't have a
     range of self, you can spend a number of sorcery points equal to the
     spell's level to target a second creature in range with the same spell (1
-    sorcery point if the spell is a cantrip)
+    sorcery point if the spell is a cantrip).
 
     """
 
@@ -236,7 +236,7 @@ class DraconicResilience(Feature):
 
 class DragonAncestor(Feature):
     """At 1st level, you choose one type of dragon as your ancestor. The damage
-    type associated with each dragon is used by features you gain later
+    type associated with each dragon is used by features you gain later.
 
 
     ========================   ===========================
@@ -271,7 +271,7 @@ class ElementalAffinity(Feature):
     """Starting at 6th level, when you cast a spell that deals damage of the type
     associated with your draconic ancestry, add your Charisma modifier to that
     damage. At the same time, you can spend 1 sorcery point to gain resistance
-    to that damage type for 1 hour
+    to that damage type for 1 hour.
 
     """
 
@@ -339,7 +339,7 @@ class DivineMagic(Feature):
     that affinity, as shown below. It is a sorcerer spell for you, but it
     doesn't count against your number of sorcerer spells known. If you later
     replace this spell, you must replace it with a Spell from the cleric spell
-    list
+    list.
 
     ================ ===========================================
     Affinity         Spell
@@ -388,7 +388,7 @@ class OtherworldlyWings(Feature):
     die, or you dismiss them as a bonus action. The affinity you chose for your
     Divine Magic feature determines the appearance of the spectral wings: eagle
     wings for good or law, bat wings for evil or chaos, and dragonfly wings for
-    neutrality
+    neutrality.
 
     """
 
@@ -401,7 +401,7 @@ class UnearthlyRecovery(Feature):
     bonus action when you have fewer than half of your hit points remaining,
     you can regain a number of hit points equal to half your hit point
     maximum. Once you use this feature, you can't use it again until you finish
-    a long rest
+    a long rest.
 
     """
 
@@ -432,7 +432,7 @@ class StrengthOfTheGrave(Feature):
     a success, you instead drop to 1 hit point. You can't use this feature if
     you are reduced to 0 hit points by radiant damage or by a critical
     hit. After the saving throw succeeds, you can't use this feature again
-    until you finish a long rest
+    until you finish a long rest.
 
     """
 
@@ -479,7 +479,7 @@ class ShadowWalk(Feature):
     """At 14th level, you gain the ability to step from one shadow into
     another. When you are in dim light or darkness, as a bonus action, you
     can magically teleport up to 120 feet to an unoccupied space you can see
-    that is also in dim light or darkness
+    that is also in dim light or darkness.
 
     """
 
@@ -507,7 +507,7 @@ class TempestuousMagic(Feature):
     """Starting at 1st level, you can use a bonus action on your turn to cause
     whirling gusts of elemental air to briefly surround you, immediately before
     or after you cast a spell of 1st level or higher. Doing so allows you to
-    fly up to 10 feet without provoking opportunity attacks
+    fly up to 10 feet without provoking opportunity attacks.
 
     """
 
@@ -519,7 +519,7 @@ class HeartOfTheStorm(Feature):
     """At 6th level, you gain resistance to lightning and thunder damage. In
     addition, whenever you start casting a spell of 1st level or higher that
     deals lightning or thunder damage, stormy magic erupts from you. This
-    eruption causes creatures ofyour choice that you can see within 10 feet of
+    eruption causes creatures of your choice that you can see within 10 feet of
     you to take lightning or thunder damage (choose each time this ability
     activates) equal to half your sorcerer level.
 
@@ -535,7 +535,7 @@ class StormGuide(Feature):
     falling in a 20-foot-radius sphere centered on you. You can end this effect
     as a bonus action. If it is windy, you can use a bonus action each round to
     choose the direction that the wind blows in a IOO-foot-radius sphere
-    centered on you. The wind blows in that direction until the end ofyour next
+    centered on you. The wind blows in that direction until the end of your next
     turn. This feature doesn't alter the speed of the wind.
 
     """
@@ -564,7 +564,7 @@ class WindSoul(Feature):
     30 feet ofyou equal to 3 + your Charisma modifier. The chosen creatures
     gain a magical flying speed of 30 feet for 1 hour. Once you reduce your
     flying speed in this way, you can't do so again until you finish a short or
-    long rest
+    long rest.
 
     """
 

@@ -240,7 +240,7 @@ class WallOfThorns(Spell):
 
     At
     Higher Levels: When you cast this spell using a spell slot of 7th level or
-    higher, both types o f damage increase by 1d8 for each slot level above 6th.
+    higher, both types of damage increase by 1d8 for each slot level above 6th.
     """
 
     name = "Wall Of Thorns"
