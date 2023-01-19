@@ -160,6 +160,7 @@ def make_sheet(
     fancy_decorations: bool = False,
     debug: bool = False,
     use_tex_template: bool = False,
+    spell_order: bool = False,
 ):
     """Make a character or GM sheet into a PDF.
     Parameters
@@ -199,6 +200,7 @@ def make_sheet(
             fancy_decorations=fancy_decorations,
             debug=debug,
             use_tex_template=use_tex_template,
+            spell_order=spell_order,
         )
     return ret
 
@@ -546,6 +548,7 @@ def make_character_sheet(
     fancy_decorations: bool = False,
     debug: bool = False,
     use_tex_template: bool = False,
+    spell_order: bool = False,
 ):
     """Prepare a PDF character sheet from the given character file.
 
@@ -571,6 +574,7 @@ def make_character_sheet(
     # Load properties from file
     if character is None:
         character_props = readers.read_sheet_file(char_file)
+        character_props['spell_order'] = spell_order
         character = _char.Character.load(character_props)
     # Set the fields in the FDF
     basename = char_file.stem
@@ -686,6 +690,7 @@ def _build(filename, args) -> int:
             debug=args.debug,
             fancy_decorations=args.fancy_decorations,
             use_tex_template=args.use_tex_template,
+            spell_order=args.spell_order,
         )
     except exceptions.CharacterFileFormatError:
         # Only raise the failed exception if this file is explicitly given
@@ -722,6 +727,14 @@ def main(args=None):
         "-r",
         action="store_true",
         help="Descend into subfolders looking for character files",
+    )
+    parser.add_argument(
+        "--spells-by-level",
+        "-S",
+        default=False,
+        action="store_true",
+        help="Order spells by level in the feature pages.",
+        dest="spell_order",
     )
     parser.add_argument(
         "--fancy-decorations",
