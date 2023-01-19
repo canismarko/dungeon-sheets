@@ -118,6 +118,8 @@ class Character(Creature):
     # max_width, max_height)]
     images: list[tuple[Path, int, int, int, int, int]] = []
 
+    spell_order: bool = False
+
     source_file_location: Path | None
 
     age = 0
@@ -570,7 +572,10 @@ class Character(Creature):
             spells |= set(f.spells_known) | set(f.spells_prepared)
         for c in self.spellcasting_classes:
             spells |= set(c.spells_known) | set(c.spells_prepared)
-        return sorted(tuple(spells), key=(lambda x: x.name))
+        if self.spell_order:
+            return sorted(tuple(spells), key=(lambda x: (x.level, x.name)))
+        else:
+            return sorted(tuple(spells), key=(lambda x: x.name))
 
     @property
     def spells_prepared(self):
@@ -579,7 +584,7 @@ class Character(Creature):
             spells |= set(f.spells_prepared)
         for c in self.spellcasting_classes:
             spells |= set(c.spells_prepared)
-        return sorted(tuple(spells), key=(lambda x: x.name))
+        return tuple(spells)
 
     def set_attrs(self, **attrs):
         """
@@ -655,8 +660,6 @@ class Character(Creature):
                         warning_message=msg,
                     )
                     _spells.append(ThisSpell)
-                # Sort by name
-                _spells.sort(key=lambda spell: spell.name)
                 # Save list of spells to character atribute
                 if attr == "spells":
                     # Instantiate them all for the spells list
