@@ -1,6 +1,28 @@
 \pdfbookmark[0]{Spells}{Spells}
 \section*{Spells}
-[%- for spl in character.spells %]
+
+\pdfbookmark[1]{Spellcasting details}{Spells - Spellcasting details}
+\subsection*{Spellcasting details}
+\textbf{Spellcasting Class:}
+[%- for spell_class in character.spellcasting_classes -%]
+[% if not loop.first %] /[% endif %] [[ spell_class.name ]] [[ spell_class.level ]]
+[%- endfor %] \\
+\noindent\textbf{Spellcasting Abilitiy:}
+[%- for spell_class in character.spellcasting_classes -%]
+[%- if not loop.first %] /[% endif %] [[ spell_class.spellcasting_ability | stat_abbreviation ]]
+[%- endfor %] \\
+\noindent\textbf{Spell Save DC:}
+[%- for spell_class in character.spellcasting_classes -%]
+[%- set spell_save_dc = character.spell_save_dc(spell_class) -%]
+[%- if not loop.first %] /[% endif %] [[ spell_save_dc ]]
+[%- endfor %] \\
+\noindent\textbf{Spell Attack Bonus:}
+[%- for spell_class in character.spellcasting_classes -%]
+[%- set spell_atk_bonus = character.spell_attack_bonus(spell_class) -%]
+[%- if not loop.first %] /[% endif %] [[ spell_atk_bonus | mod_str ]]
+[%- endfor %]
+
+[% for spl in character.spells %]
   \pdfbookmark[1]{[[ spl.name ]]}{Spells - [[ spl.name ]]}
   [%- if use_dnd_decorations %]
   \DndSpellHeader
