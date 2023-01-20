@@ -134,7 +134,6 @@ class DarkElf(_Elf):
         feats.SunlightSensitivity,
         feats.DrowMagic,
     )
-    spells_known = (spells.DancingLights,)
 
 
 Drow = DarkElf
@@ -416,7 +415,6 @@ class Triton(Race):
         feats.GuardiansOfTheDepths,
     )
     languages = ("Common", "Primordial")
-    spells_known = (spells.FogCloud,)
 
 
 # Aarakocra
@@ -564,7 +562,6 @@ class PureBlood(Race):
         feats.MagicResistance,
         feats.PoisonImmunity,
     )
-    spells_known = (spells.PoisonSpray,)
     languages = ("Common", "Abyssal", "Draconic")
 
 
