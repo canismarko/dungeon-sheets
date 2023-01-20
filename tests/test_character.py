@@ -50,7 +50,7 @@ class TestCharacter(TestCase):
         MagicWeapon = type("MagicWeapon", (Weapon, MagicItem),
                            dict(damage_bonus=2, attack_bonus=2,
                                 st_bonus_all=3))
-        char.set_attrs(magic_items=[MagicWeapon])        
+        char.set_attrs(magic_items=[MagicWeapon])
         # Check that race gets set to an object
         char.set_attrs(race="high elf")
         self.assertIsInstance(char.race, race.HighElf)

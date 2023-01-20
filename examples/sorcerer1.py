@@ -16,7 +16,7 @@ player_name = "Ben"
 # Be sure to list Primary class first
 classes = ['Sorcerer']  # ex: ['Wizard'] or ['Rogue', 'Fighter']
 levels = [20]  # ex: [10] or [3, 2]
-subclasses = ["Wild Magic"]  # ex: ['Necromacy'] or ['Thief', None]
+subclasses = ["Wild Magic"]  # ex: ['Necromancy'] or ['Thief', None]
 background = "Waterdhavian Noble"
 race = "Triton"
 alignment = "Neutral evil"

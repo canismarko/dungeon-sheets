@@ -16,7 +16,7 @@ player_name = "Ben"
 # Be sure to list Primary class first
 classes = ['Barbarian']  # ex: ['Wizard'] or ['Rogue', 'Fighter']
 levels = [20]  # ex: [10] or [3, 2]
-subclasses = ["Path of the Totem Warrior"]  # ex: ['Necromacy'] or ['Thief', None]
+subclasses = ["Path of the Totem Warrior"]  # ex: ['Necromancy'] or ['Thief', None]
 background = "Charlatan"
 race = "Mountain Dwarf"
 alignment = "Lawful evil"

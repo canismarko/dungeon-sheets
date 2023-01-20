@@ -55,7 +55,7 @@ class GloomStalker(SubClass):
     dims. Most folk enter such places with trepidation, but a Gloom Stalker
     ventures boldly into the darkness, seeking to ambush threats before they
     can reach the broader world. Such rangers are often found in the Underdark,
-    but they will go any place Where evil lurks in the shadows
+    but they will go any place where evil lurks in the shadows.
 
     """
 
@@ -99,9 +99,9 @@ class HorizonWalker(SubClass):
     planes or that seek to ravage the mortal realm with otherworldly
     magic. They seek out planar portals and keep watch over them, venturing to
     the Inner Planes and the Outer Planes as needed to pursue their foes. These
-    rangers are also friends to any forces in the multiverse-especially
-    benevolent dragons, fey, and elementals-that work to preserve life and the
-    order of the planes
+    rangers are also friends to any forces in the multiverse - especially
+    benevolent dragons, fey, and elementals - that work to preserve life and the
+    order of the planes.
 
     """
 
@@ -255,7 +255,7 @@ class Ranger(CharClass):
     @property
     def ranger_beast(self):
         return self._beast
-    
+
     @ranger_beast.setter
     def ranger_beast(self, beast_tuple):
         """Takes a tuple (monster, proficiency) to setup a 
@@ -290,7 +290,7 @@ class Ranger(CharClass):
                 f"{beast.name} does not satisfy criteria to be Ranger's Companion."
             )
             warnings.warn(msg)
-            
+
 # Revised Ranger
 class BeastConclave(SubClass):
     """Many rangers are more at home in the wilds than in civilization, to the
@@ -313,7 +313,7 @@ class HunterConclave(SubClass):
     """Some rangers seek to master weapons to better protect civilization from the
     terrors of the wilderness. Members of the Hunter Conclave learn specialized
     fighting techniques for use against the most dire threats, from rampaging
-    ogres and hordes of orcs to towering giants and terrifying dragons
+    ogres and hordes of orcs to towering giants and terrifying dragons.
 
     """
 

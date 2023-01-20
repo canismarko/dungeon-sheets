@@ -27,8 +27,8 @@ class ClericDomain(SubClass):
 
 
 class KnowledgeDomain(ClericDomain):
-    """The gods of knowledge-including Oghma, Boccob, Gilean, Aureon, and
-    Thoth-value learning and understanding above all. Some teach that knowledge
+    """The gods of knowledge - including Oghma, Boccob, Gilean, Aureon, and
+    Thoth - value learning and understanding above all. Some teach that knowledge
     is to be gathered and shared in libraries and universities, or promote the
     practical knowledge of craft and invention. Some deities hoard knowledge
     and keep its secrets to themselves. And some promise their followers that
@@ -58,8 +58,8 @@ class KnowledgeDomain(ClericDomain):
 
 
 class LifeDomain(ClericDomain):
-    """The Life domain focuses on the vibrant positive energy-one of the
-    fundamental forces of the universe- that sustains all life. The gods of
+    """The Life domain focuses on the vibrant positive energy - one of the
+    fundamental forces of the universe - that sustains all life. The gods of
     life promote vitality and health through healing the sick and wounded,
     caring for those in need, and driving away the forces of death and
     undeath. Almost any non-evil deity can claim influence over this domain,
@@ -88,8 +88,8 @@ class LifeDomain(ClericDomain):
 
 
 class LightDomain(ClericDomain):
-    """Gods of light-including Helm, Lathander, Pholtus, Branchala, the Silver
-    Flame, Belenus, Apollo, and Re-Horakhty-promote the ideals of rebirth and
+    """Gods of light - including Helm, Lathander, Pholtus, Branchala, the Silver
+    Flame, Belenus, Apollo, and Re-Horakhty - promote the ideals of rebirth and
     renewal, truth, vigilance, and beauty, often using the symbol of the
     sun. Some of these gods are portrayed as the sun itself or as a charioteer
     who guides the sun across the sky. Others are tireless sentinels whose eyes
@@ -184,8 +184,8 @@ class TempestDomain(ClericDomain):
 
 
 class TrickeryDomain(ClericDomain):
-    """Gods of trickery-such as Tymora, Beshaba, Olidammara, the Traveler, Garl
-    Glittergold, and Loki-are mischief-makers and instigators who stand as a
+    """Gods of trickery - such as Tymora, Beshaba, Olidammara, the Traveler, Garl
+    Glittergold, and Loki - are mischief-makers and instigators who stand as a
     constant challenge to the accepted order among both gods and
     mortals. They're patrons of thieves, scoundrels, gamblers, rebels, and
     liberators. Their clerics are a disruptive force in the world, puncturing
@@ -258,8 +258,8 @@ class ArcanaDomain(ClericDomain):
     and arcane power tend to go hand-in-hand. In the Realms, deities of this
     domain include Azuth and Mystra, as well as Corellon Larethian of the
     elven pantheon. In other worlds, this domain includes Hecate, Math
-    Mathonwy, and Isis; the triple moon gods of Solinari , Lunitari, and
-    Nuitari of Krynn; and Boccob, Vecna, and WeeJas of Greyhawk.
+    Mathonwy, and Isis; the triple moon gods of Solinari, Lunitari, and
+    Nuitari of Krynn; and Boccob, Vecna, and Wee Jas of Greyhawk.
 
     """
 
@@ -317,7 +317,7 @@ class GraveDomain(ClericDomain):
     """Gods of the grave watch over the line between life and death. To these
     deities, death and the afterlife are a foundational part of the
     multiverse. To desecrate the peace of the dead is an abomination. Deities
-    of the grave include Kelemvor, Wee jas, the ancestral spirits of the
+    of the grave include Kelemvor, Wee Jas, the ancestral spirits of the
     Undying Court, Hades, Anubis, and Osiris. Followers of these deities seek
     to put wandering spirits to rest, destroy the undead, and ease the
     suffering of the dying. Their magic also allows them to stave off death for
@@ -350,7 +350,7 @@ class DeathDomain(ClericDomain):
     death knights, liches, mummy lords, and vampires. Gods of the Death
     domain also embody murder (Anubis, Bhaal, and Pyremius), pain
     (Iuz or Loviatar), disease or poison (Incabulos, Talona, or Morgion),
-    and the underworld (Hades and Hel)..
+    and the underworld (Hades and Hel).
 
     """
 
@@ -382,7 +382,7 @@ class Cleric(CharClass):
         "light armor",
         "medium armor",
         "shields",
-        "all simple weapons",
+        "simple weapons",
     )
     weapon_proficiencies = (weapons.SimpleWeapon,)
     multiclass_weapon_proficiencies = ()

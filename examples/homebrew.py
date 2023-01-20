@@ -19,7 +19,7 @@ player_name = "Clara"
 # Be sure to list Primary class first
 classes = ['Wizard']  # ex: ['Wizard'] or ['Rogue', 'Fighter']
 levels = [20]  # ex: [10] or [3, 2]
-subclasses = ["School of Transmutation"]  # ex: ['Necromacy'] or ['Thief', None]
+subclasses = ["School of Transmutation"]  # ex: ['Necromancy'] or ['Thief', None]
 background = "Hermit"
 race = "Air Genasi"
 alignment = "Chaotic neutral"

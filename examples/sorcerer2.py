@@ -16,7 +16,7 @@ player_name = "Ben"
 # Be sure to list Primary class first
 classes = ['Sorcerer']  # ex: ['Wizard'] or ['Rogue', 'Fighter']
 levels = [16]  # ex: [10] or [3, 2]
-subclasses = ["Shadow Magic"]  # ex: ['Necromacy'] or ['Thief', None]
+subclasses = ["Shadow Magic"]  # ex: ['Necromancy'] or ['Thief', None]
 background = "Cloistered Scholar"
 race = "Fallen Aasimar"
 alignment = "Lawful good"

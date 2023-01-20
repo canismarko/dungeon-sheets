@@ -16,7 +16,7 @@ player_name = "Ben"
 # Be sure to list Primary class first
 classes = ['Bard']  # ex: ['Wizard'] or ['Rogue', 'Fighter']
 levels = [20]  # ex: [10] or [3, 2]
-subclasses = ["College of Whispers"]  # ex: ['Necromacy'] or ['Thief', None]
+subclasses = ["College of Whispers"]  # ex: ['Necromancy'] or ['Thief', None]
 background = "Spy"
 race = "Wood Elf"
 alignment = "Neutral good"

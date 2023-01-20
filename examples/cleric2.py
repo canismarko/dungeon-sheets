@@ -16,7 +16,7 @@ player_name = "Ben"
 # Be sure to list Primary class first
 classes = ['Cleric']  # ex: ['Wizard'] or ['Rogue', 'Fighter']
 levels = [20]  # ex: [10] or [3, 2]
-subclasses = ["Death Domain"]  # ex: ['Necromacy'] or ['Thief', None]
+subclasses = ["Death Domain"]  # ex: ['Necromancy'] or ['Thief', None]
 background = "Gladiator"
 race = "Lightfoot Halfling"
 alignment = "Chaotic good"

@@ -16,7 +16,7 @@ player_name = "Ben"
 # Be sure to list Primary class first
 classes = ['Revised Ranger']  # ex: ['Wizard'] or ['Rogue', 'Fighter']
 levels = [8]  # ex: [10] or [3, 2]
-subclasses = ["Beast Conclave"]  # ex: ['Necromacy'] or ['Thief', None]
+subclasses = ["Beast Conclave"]  # ex: ['Necromancy'] or ['Thief', None]
 background = "Courtier"
 race = "Fire Genasi"
 alignment = "Lawful good"

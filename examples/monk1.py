@@ -16,7 +16,7 @@ player_name = "Ben"
 # Be sure to list Primary class first
 classes = ['Monk']  # ex: ['Wizard'] or ['Rogue', 'Fighter']
 levels = [20]  # ex: [10] or [3, 2]
-subclasses = ["Way of the Open Hand"]  # ex: ['Necromacy'] or ['Thief', None]
+subclasses = ["Way of the Open Hand"]  # ex: ['Necromancy'] or ['Thief', None]
 background = "Charlatan"
 race = "Forest Gnome"
 alignment = "Lawful good"

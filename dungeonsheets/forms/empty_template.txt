@@ -16,7 +16,7 @@ player_name = "{{ char.player_name }}"
 # Be sure to list Primary class first
 classes = {{ char.class_names }}  # ex: ['Wizard'] or ['Rogue', 'Fighter']
 levels = {{ char.levels }}  # ex: [10] or [3, 2]
-subclasses = {{ char.subclasses }}  # ex: ['Necromacy'] or ['Thief', None]
+subclasses = {{ char.subclasses }}  # ex: ['Necromancy'] or ['Thief', None]
 background = "{{ char.background.name }}"
 race = "{{ char.race.name }}"
 alignment = "{{ char.alignment }}"

@@ -16,7 +16,7 @@ player_name = "Ben"
 # Be sure to list Primary class first
 classes = ['Barbarian', 'Monk']  # ex: ['Wizard'] or ['Rogue', 'Fighter']
 levels = [8, 2]  # ex: [10] or [3, 2]
-subclasses = ["Path of the Ancestral Guardian", '']  # ex: ['Necromacy'] or ['Thief', None]
+subclasses = ["Path of the Ancestral Guardian", '']  # ex: ['Necromancy'] or ['Thief', None]
 background = "Spy"
 race = "Half-Orc"
 alignment = "Neutral good"

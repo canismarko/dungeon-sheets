@@ -16,7 +16,7 @@ player_name = "plsaddbloodhunter"
 # Be sure to list Primary class first
 classes = ['Blood hunter']  # ex: ['Wizard'] or ['Rogue', 'Fighter']
 levels = [15]  # ex: [10] or [3, 2]
-subclasses = ["Order of the Ghostslayer"]  # ex: ['Necromacy'] or ['Thief', None]
+subclasses = ["Order of the Ghostslayer"]  # ex: ['Necromancy'] or ['Thief', None]
 background = "Pirate"
 race = "Human"
 alignment = "Neutral good"

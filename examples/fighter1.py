@@ -16,7 +16,7 @@ player_name = "Ben"
 # Be sure to list Primary class first
 classes = ['Fighter']  # ex: ['Wizard'] or ['Rogue', 'Fighter']
 levels = [15]  # ex: [10] or [3, 2]
-subclasses = ["Battle Master"]  # ex: ['Necromacy'] or ['Thief', None]
+subclasses = ["Battle Master"]  # ex: ['Necromancy'] or ['Thief', None]
 background = "Noble"
 race = "Dragonborn"
 alignment = "Neutral good"

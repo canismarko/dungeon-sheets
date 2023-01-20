@@ -13,7 +13,7 @@ class Archfey(SubClass):
     grudges. Beings of this sort include the Prince of Frost; the Queen of Air
     and Darkness, ruler of the Gloaming Court; Titania of the Summer Court; her
     consort Oberon, the Green Lord; Hyrsam, the Prince of Fools; and ancient
-    hags
+    hags.
 
     """
 
@@ -33,7 +33,7 @@ class Fiend(SubClass):
     forge a pact include demon lords such as Demogorgon, Orcus,
     Fraz'Urb-luu, and Baphomet; archdevils such as Asmodeus, Dispater,
     Mephistopheles, and Belial; pit fiends and balors that are
-    especially mighty; and ultroloths and other lords of the yugoloths
+    especially mighty; and ultroloths and other lords of the yugoloths.
 
     """
 
@@ -84,7 +84,7 @@ class Undying(SubClass):
 
     In the Realms, Undying patrons include Larloch the Shadow King,
     legendary master of Warlock's Crypt, and Gilgeam, the God-King of
-    Unther
+    Unther.
 
     """
 
@@ -131,14 +131,14 @@ class Hexblade(SubClass):
     the most notable of these weapons, which have been spread across
     the multiverse over the ages. The shadowy force behind these
     weapons can offer power to warlocks who form pacts with it. Many
-    hexhlade warlocks create weapons that emulate those formed in the
+    hexblade warlocks create weapons that emulate those formed in the
     Shadowfell. Others forgo such arms, content to weave the dark
     magic of that plane into their spellcasting.
 
     Because the Raven Queen is known to have forged the first of these
     weapons, many sages speculate that she and the force are one and
     that the weapons, along with hexblade warlocks, are tools she uses
-    to manipulate events on the Material Plane to her inscrutable ends
+    to manipulate events on the Material Plane to her inscrutable ends.
 
     """
 

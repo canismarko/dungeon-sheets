@@ -16,7 +16,7 @@ player_name = "Ben"
 # Be sure to list Primary class first
 classes = ['Rogue']  # ex: ['Wizard'] or ['Rogue', 'Fighter']
 levels = [20]  # ex: [10] or [3, 2]
-subclasses = ["Thief"]  # ex: ['Necromacy'] or ['Thief', None]
+subclasses = ["Thief"]  # ex: ['Necromancy'] or ['Thief', None]
 background = "Inheritor"
 race = "Aarakocra"
 alignment = "Chaotic evil"

@@ -310,7 +310,7 @@ class AwakenedMind(Feature):
     the minds of other creatures. You can communicate telepathically with any
     creature you can see within 30 feet of you. You don't need to share a
     language with the creature for it to understand your telepathic utterances,
-    but the creature must be able to understand at least one language
+    but the creature must be able to understand at least one language.
 
     """
 
@@ -337,7 +337,7 @@ class ThoughtShield(Feature):
     """Starting at 10th level, your thoughts can't be read by telepathy or other
     means unless you allow it. You also have resistance to psychic damage, and
     whenever a creature deals psychic damage to you, that creature takes the
-    same amount of damage that you do
+    same amount of damage that you do.
 
     """
 
@@ -351,7 +351,7 @@ class CreateThrall(Feature):
     incapacitated humanoid. That creature is then charmed by you until a remove
     curse spell is cast on it, the charmed condition is removed from it, or you
     use this feature again. You can communicate telepathically with the charmed
-    creature as long as the two of you are on the same plane of existence
+    creature as long as the two of you are on the same plane of existence.
 
     """
 
@@ -386,7 +386,7 @@ class DefyDeath(Feature):
     1d8 + your Constitution modifier (minimum of 1 hit point) when you succeed
     on a death saving throw or when you stabilize a creature with spare the
     dying. Once you use this feature, you can't use it again until you finish a
-    long rest
+    long rest.
 
     """
 
@@ -399,7 +399,7 @@ class UndyingNature(Feature):
     don't require food, water, or sleep, although you still require rest to
     reduce exhaustion and still benefit from finishing short and long rests. In
     addition, you age at a slower rate. For every 10 years that pass, your body
-    ages only 1 year, and you are immune to being magically aged
+    ages only 1 year, and you are immune to being magically aged.
 
     """
 
@@ -431,7 +431,7 @@ class HealingLight(Feature):
     once equals your Charisma modifier (minimum of one die). Roll the
     dice you spend, add them together, and restore a number of hit points equal
     to the total. Your pool regains all expended dice when you finish a long
-    rest
+    rest.
 
     """
 
@@ -462,7 +462,7 @@ class CelestialResilience(Feature):
     short or long rest. These tempo- rary hit points equal your warlock level +
     your Charisma modifier. Additionally, choose up to five creatures you can
     see at the end of the rest. Those creatures each gain temporary hit points
-    equal to half your warlock level + your Charisma modifier
+    equal to half your warlock level + your Charisma modifier.
 
     """
 
@@ -521,7 +521,7 @@ class HexWarrior(Feature):
     modifier, instead of Strength or Dexterity, for the attack and damage
     rolls. This benefit lasts until you finish a long rest. If you later gain
     the Pact of the Blade feature, this benefit extends to every pact weapon
-    you conjure with that feature, no matter the weapon's type
+    you conjure with that feature, no matter the weapon's type.
 
     """
 
@@ -721,9 +721,9 @@ class GeniesVessel(Feature):
     to the target equal to your proficiency bonus. The type of this damage is determined by your patron:
     bludgeoning (dao), thunder (djinni), fire (efreeti), or cold (marid).
 
-    The vessel's AC equals your spell save DC. Its hit points equal your warlock level plus your proficiency bonus, 
+    The vessel's AC equals your spell save DC. Its hit points equal your warlock level plus your proficiency bonus,
     and it is immune to poison and psychic damage.
-    
+
     If the vessel is destroyed or you lose it, you can perform a 1-hour ceremony to receive a replacement from your patron.
     This ceremony can be performed during a short or long rest, and the previous vessel is destroyed if it still exists.
     The vessel vanishes in a flare of elemental power when you die.
@@ -817,7 +817,7 @@ class AgonizingBlast(Invocation):
 
 class ArmorOfShadows(Invocation):
     """You can cast mage armor on yourself at will, without expending a spell slot
-    or material components
+    or material components.
 
     """
 
@@ -853,7 +853,7 @@ class BeguilingInfluence(Invocation):
 
 class BewitchingWhispers(Invocation):
     """You can cast compulsion once using a warlock spell slot. You can't do so
-    again until you finish a long rest
+    again until you finish a long rest.
 
     **Prerequisite**: 7th Level
     """
@@ -875,7 +875,7 @@ class BookOfAncientSecrets(Invocation):
     spell's level is equal to or less than half your warlock level (rounded up)
     and if you can spare the time to transcribe the spell. For each level of
     the spell, the transcription process takes 2 hours and costs 50 gp for the
-    rare inks needed to inscribe it
+    rare inks needed to inscribe it.
 
     """
 
@@ -1089,7 +1089,7 @@ class ThirstingBlade(Invocation):
 
 class VisionsOfDistantRealms(Invocation):
     """
-    You can cast arcane eye at will, without expending a spell slot
+    You can cast arcane eye at will, without expending a spell slot.
 
     **Prerequisite**: 15th level
     """
@@ -1113,7 +1113,7 @@ class VoiceOfTheChainMaster(Invocation):
 
 
 class WhispersOfTheGrave(Invocation):
-    """You can cast speak with dead at will, without expending a spell slot
+    """You can cast speak with dead at will, without expending a spell slot.
 
     **Prerequsite**: 9th Level
 
@@ -1218,7 +1218,7 @@ class GiftOfTheEverLivingOnes(Invocation):
 
 class GraspOfHadar(Invocation):
     """Once on each of your turns when you hit a creature with your eldritcli
-    blast, you can move that creature in a straight line 10 feet closer to you
+    blast, you can move that creature in a straight line 10 feet closer to you.
 
     """
 
@@ -1266,7 +1266,7 @@ class MaddeningHex(Invocation):
     cursed target and each creature of your choice that you can see within 5
     feet of it. The psychic damage equals your Charisma modifier (minimum of 1
     damage). To use this invocation, you must be able to see the cursed
-    target, and it must be within 30 feet ofyou.
+    target, and it must be within 30 feet of you.
 
     **Prerequisite**: 5th level
     """
@@ -1318,7 +1318,7 @@ class TombOfLevistus(Invocation):
 
 class TrickstersEscape(Invocation):
     """You can cast freedom ofmovement once on yourself without expending a spell
-    slot. You regain the ability to do so when you finish a long rest
+    slot. You regain the ability to do so when you finish a long rest.
 
     """
 
@@ -1419,7 +1419,7 @@ class RebukeOfTheTalisman(Invocation):
 
 class UndyingServitude(Invocation):
     """You can cast animate dead without using a spell slot. Once you do so, you can't cast it
-    in this wayagain until you finish a long rest
+    in this way again until you finish a long rest.
 
     **Prerequisite**: 5th Level
     """

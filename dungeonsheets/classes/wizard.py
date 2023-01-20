@@ -31,7 +31,7 @@ class Conjuration(SubClass):
     thin air. You can conjure billowing clouds of killing fog or summon
     creatures from elsewhere to fight on your behalf. As your mastery grows,
     you learn spells of transportation and can teleport yourself across vast
-    distances, even to other planes of existence, in an instant
+    distances, even to other planes of existence, in an instant.
 
     """
 
@@ -114,7 +114,7 @@ class Illusion(SubClass):
 
 
 class Necromancy(SubClass):
-    """The School of Necromancy explores the cosm ic forces of life, death, and
+    """The School of Necromancy explores the cosmic forces of life, death, and
     undeath. As you focus your studies in this tradition, you learn to
     manipulate the energy that animates all living things. As you progress, you
     learn to sap the life force from a creature as your magic destroys its
@@ -122,7 +122,7 @@ class Necromancy(SubClass):
 
     Most people see necromancers as menacing, or even villainous, due to the
     close association with death. Not all necromancers are evil, but the forces
-    they manipulate are considered taboo by many societies
+    they manipulate are considered taboo by many societies.
 
     """
 
@@ -144,7 +144,7 @@ class Transmutation(SubClass):
     Some transmuters are tinkerers and pranksters, turning people into toads
     and transforming copper into silver for fun and occasional profit. Others
     pursue their magical studies with deadly seriousness, seeking the power of
-    the gods to make and destroy worlds
+    the gods to make and destroy worlds.
 
     """
 
@@ -164,7 +164,7 @@ class Bladesinging(SubClass):
     elf wizards who master a school of sword fighting grounded in a tradition
     of arcane magic. In combat, a bladesinger uses a series of intricate,
     elegant maneuvers that fend off harm and allow the bladesinger to channel
-    magic into devastating attacks and a cunning defense
+    magic into devastating attacks and a cunning defense.
 
     """
 
@@ -182,13 +182,13 @@ class Bladesinging(SubClass):
 
 # XGTE
 class WarMagic(SubClass):
-    """A variety of arcane colleges specialize in training wiz- ards for war. The
+    """A variety of arcane colleges specialize in training wizards for war. The
     tradition of War Magic blends principles of evocation and abjuration,
     rather than specializing in either of those schools. It teaches
     techniques that empower a caster's spells, while also providing methods for
     wizards to bolster their own defenses.
 
-    Followers of this tradition are known as war mages.  They see their magic
+    Followers of this tradition are known as war mages. They see their magic
     as both a weapon and armor, a resource superior to any piece of steel. War
     mages act fast in battle, using their spells to seize tactical control of a
     situation. Their spells strike hard, while their defensive skills foil

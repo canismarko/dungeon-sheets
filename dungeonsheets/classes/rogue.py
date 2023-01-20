@@ -11,7 +11,7 @@ class Thief(SubClass):
     prefer to think of themselves as professional treasure seekers, explorers,
     delvers, and investigators. In addition to improving your agility and
     stealth, you learn skills useful for delving into ancient ruins, reading
-    unfamiliar languages, and using magic items you normally couldn't employ
+    unfamiliar languages, and using magic items you normally couldn't employ.
 
     """
 
@@ -28,7 +28,7 @@ class Assassin(SubClass):
     archetype are diverse: hired killers, spies, bounty hunters, and even
     specially anointed priests trained to exterminate the enemies of their
     deity. Stealth, poison, and disguise help you eliminate your foes with
-    deadly efficiency
+    deadly efficiency.
 
     """
 
@@ -83,12 +83,12 @@ class ArcaneTrickster(SubClass):
 
 # XGTE
 class Inquisitive(SubClass):
-    """As an archetypal Inquisitive, you excel at rooting out se- crets and
+    """As an archetypal Inquisitive, you excel at rooting out secrets and
     unraveling mysteries. You rely on your sharp eye for detail, but also on
     your finely honed ability to read the words and deeds of other creatures to
-    deter- mine their true intent. You excel at defeating creatures that hide
+    determine their true intent. You excel at defeating creatures that hide
     among and prey upon ordinary folk, and your mastery of lore and your keen
-    deductions make you well equipped to expose and end hidden evils
+    deductions make you well equipped to expose and end hidden evils.
 
     """
 
@@ -125,8 +125,8 @@ class Scout(SubClass):
     allowing you to scout ahead of your companions during expeditions. Rogues
     who embrace this archetype are at home in the wilderness and among
     barbarians and rangers, and many Scouts serve as the eyes and ears of war
-    bands. Ambusher, spy, bounty hunter#these are just a few of the roles that
-    Scouts as- sume as they range the world.
+    bands. Ambusher, spy, bounty hunter - these are just a few of the roles that
+    Scouts assume as they range the world.
 
     """
 
@@ -178,7 +178,7 @@ class Swashbuckler(SubClass):
     heavy armor, your method of fighting looks almost like a performance.
     Duelists and pirates typically belong to this archetype. A Swashbuckler
     excels in single combat, and can fight with two weapons while safely
-    darting away from an opponent
+    darting away from an opponent.
 
     """
 

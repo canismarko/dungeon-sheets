@@ -16,7 +16,7 @@ player_name = "Ben"
 # Be sure to list Primary class first
 classes = ['Ranger']  # ex: ['Wizard'] or ['Rogue', 'Fighter']
 levels = [3]  # ex: [10] or [3, 2]
-subclasses = ["Horizon Walker"]  # ex: ['Necromacy'] or ['Thief', None]
+subclasses = ["Horizon Walker"]  # ex: ['Necromancy'] or ['Thief', None]
 background = "Uthgardt Tribe Member"
 race = "Lizardfolk"
 alignment = "Neutral good"

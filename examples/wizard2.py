@@ -16,7 +16,7 @@ player_name = "Ben"
 # Be sure to list Primary class first
 classes = ['Wizard']  # ex: ['Wizard'] or ['Rogue', 'Fighter']
 levels = [3]  # ex: [10] or [3, 2]
-subclasses = ["School of Conjuration"]  # ex: ['Necromacy'] or ['Thief', None]
+subclasses = ["School of Conjuration"]  # ex: ['Necromancy'] or ['Thief', None]
 background = "Urban Bounty Hunter"
 race = "Half-Orc"
 alignment = "Neutral good"

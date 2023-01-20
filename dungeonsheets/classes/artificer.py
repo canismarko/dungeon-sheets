@@ -87,7 +87,7 @@ class Artificer(CharClass):
         "Medium armor",
         "Shields",
         "Simple weapons",
-        "Thieve's tools",
+        "Thieves' tools",
         "Tinker's tools",
         "One type of artisan's tools of your choice",
     )
@@ -95,7 +95,7 @@ class Artificer(CharClass):
         "Light armor",
         "Medium armor",
         "Shields",
-        "Thieve's tools",
+        "Thieves' tools",
         "Tinker's tools",
     )
     weapon_proficiencies = (weapons.SimpleWeapon,)

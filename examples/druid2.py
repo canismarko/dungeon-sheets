@@ -16,7 +16,7 @@ player_name = "Ben"
 # Be sure to list Primary class first
 classes = ['Druid']  # ex: ['Wizard'] or ['Rogue', 'Fighter']
 levels = [10]  # ex: [10] or [3, 2]
-subclasses = ["Circle of Dreams"]  # ex: ['Necromacy'] or ['Thief', None]
+subclasses = ["Circle of Dreams"]  # ex: ['Necromancy'] or ['Thief', None]
 background = "Guild Artisan"
 race = "Human"
 alignment = "Chaotic good"

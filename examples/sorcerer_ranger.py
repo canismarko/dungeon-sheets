@@ -19,7 +19,7 @@ player_name = "George Martin"
 # Be sure to list Primary class first
 classes = ['Druid', 'Ranger', 'Sorcerer']  # ex: ['Wizard'] or ['Rogue', 'Fighter']
 levels = [5, 3, 1]  # ex: [10] or [3, 2]
-subclasses = ["Circle of the Moon", "Beast Master", None ]  # ex: ['Necromacy'] or ['Thief', None]
+subclasses = ["Circle of the Moon", "Beast Master", None ]  # ex: ['Necromancy'] or ['Thief', None]
 background = "Hermit"
 race = HB_races.WildhuntShifter
 alignment = "Lawful Neutral"

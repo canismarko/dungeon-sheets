@@ -488,7 +488,7 @@ class ThousandForms(Feature):
 class BalmOfTheSummerCourt(Feature):
     """At 2nd level, you become imbued with the blessings of the Summer Court. You
     are a font of energy that offers respite from injuries. You have a pool of
-    fey energy represented by a number of C168 equal to your druid level. As
+    fey energy represented by a number of d6s equal to your druid level. As
     a bonus action, you can choose one creature you can see within 120 feet
     ofyou and spend a number of those dice equal to halfyour druid level or
     less. Roll the spent dice and add them together. The target regains a

@@ -16,7 +16,7 @@ player_name = "Ben"
 # Be sure to list Primary class first
 classes = ['Cleric']  # ex: ['Wizard'] or ['Rogue', 'Fighter']
 levels = [20]  # ex: [10] or [3, 2]
-subclasses = ["Life Domain"]  # ex: ['Necromacy'] or ['Thief', None]
+subclasses = ["Life Domain"]  # ex: ['Necromancy'] or ['Thief', None]
 background = "Entertainer"
 race = "Dark Elf"
 alignment = "Lawful good"
