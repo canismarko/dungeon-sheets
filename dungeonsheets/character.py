@@ -850,16 +850,16 @@ class Character(Creature):
         prof_dict = {}
         w_pro = set(self.weapon_proficiencies)
         if weapons.MartialWeapon in w_pro:
-            prof_dict["Weapons"] = ["All weapons"]
+            prof_dict["Weapons"] = ["All Weapons"]
         elif weapons.SimpleWeapon in w_pro:
-            prof_dict["Weapons"] = ["Simple weapons"]
+            prof_dict["Weapons"] = ["Simple Weapons"]
             for w in w_pro:
                 if not (issubclass(w, weapons.SimpleWeapon)):
                     prof_dict["Weapons"] += [w.name]
         else:
             prof_dict["Weapons"] = [w.name for w in w_pro]
         if "Weapons" in prof_dict.keys():
-            prof_dict["Weapons"] = ", ".join(prof_dict["Weapons"]) + "."
+            prof_dict["Weapons"] = ", ".join(prof_dict["Weapons"])
         armor_types = ["all armor", "light armor", "medium armor", "heavy armor"]
         prof_set = set(
             [
@@ -867,13 +867,13 @@ class Character(Creature):
                 for prof in self.proficiencies_text.split(",")
             ]
         )
-        prof_dict["Armor"] = [ar for ar in armor_types if ar in prof_set]
-        if len(prof_dict["Armor"]) > 2 or "all armor" in prof_set:
-            prof_dict["Armor"] = ["All armor"]
-        if "shields" in prof_set:
-            prof_dict["Armor"] += ["shields"]
-        prof_dict["Armor"] = ", ".join(prof_dict["Armor"]) + "."
-        if hasattr(self, "chosen_tools"):
+        prof_dict["Armor"] = [ar.title() for ar in armor_types if ar in prof_set]
+        if len(prof_dict["Armor"]) > 2 or 'all armor' in prof_set:
+            prof_dict["Armor"] = ["All Armor"]
+        if 'shields' in prof_set:
+            prof_dict["Armor"] += ["Shields"]
+        prof_dict["Armor"] = ", ".join(prof_dict["Armor"])
+        if hasattr(self, 'chosen_tools'):
             prof_dict["Other"] = self.chosen_tools
         return prof_dict
 

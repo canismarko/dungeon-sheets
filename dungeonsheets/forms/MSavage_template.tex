@@ -66,7 +66,7 @@
 \StealthSkillModifier{[[ "{:+d}".format(char.stealth.modifier) ]]}
 \SurvivalSkillModifier{[[ "{:+d}".format(char.survival.modifier) ]]}
 
-% Prociciencies
+% Proficiencies
 \StrengthProficiency{[[ "strength" in char.saving_throw_proficiencies ]]}
 \DexterityProficiency{[[ "dexterity" in char.saving_throw_proficiencies ]]}
 \ConstitutionProficiency{[[ "constitution" in char.saving_throw_proficiencies ]]}
@@ -123,9 +123,9 @@
 }
 
 \OtherProficienciesLanguages{
-\textbf{Languages:}  [[ char.languages ]] \\
+\textbf{Languages:}  [[ char.languages ]]. \\
 [%- for prof_type, values in char.proficiencies_by_type.items() %]
-\textbf{[[ prof_type ]]}: [[ values ]] \\
+\textbf{[[ prof_type ]]}: [[ values ]]. \\
 [%- endfor -%]
 }
 
