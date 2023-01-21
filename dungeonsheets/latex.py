@@ -50,7 +50,7 @@ def create_latex_pdf(
     basename: str,
     keep_temp_files: bool = False,
     use_dnd_decorations: bool = False,
-    comm1: str = "pdflatex"
+    comm1: str = "pdflatex",
 ):
     # Create tex document
     tex_file = f"{basename}.tex"
