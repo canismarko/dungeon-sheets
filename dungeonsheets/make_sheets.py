@@ -399,6 +399,7 @@ def make_character_content(
     fancy_decorations: bool = False,
     spell_order: bool = False,
     feat_order: bool = False,
+    first_page: int = 1,
 ) -> List[str]:
     """Prepare the inner content for a character sheet.
 
@@ -433,6 +434,7 @@ def make_character_content(
     content = [
         jinja_env.get_template(f"preamble.{content_format}").render(
             use_dnd_decorations=fancy_decorations,
+            first_page=first_page,
             title="Features, Magical Items and Spells",
         )
     ]
@@ -593,17 +595,8 @@ def make_character_sheet(
     person_base = basename + "_person"
     sheets = [char_base + ".pdf"]
     pages = []
-    # Prepare the tex/html content
-    content_suffix = format_suffixes[output_format]
-    # Create a list of features and magic items
-    content = make_character_content(
-        character=character,
-        content_format=content_suffix,
-        fancy_decorations=fancy_decorations,
-        spell_order=spell_order,
-        feat_order=feat_order,
-    )
-    # Typeset combined LaTeX file
+    totalpages = 0
+    # Typeset LaTeX character, background and spell-sheet files
     if output_format == "pdf":
         if use_tex_template:
             msavage_sheet(
@@ -632,7 +625,24 @@ def make_character_sheet(
             )
             for spell_base in created_basenames:
                 sheets.append(spell_base + ".pdf")
-        # Combined with additional LaTeX pages with detailed character info
+        # Check how many pages we've written
+        for file in sheets:
+            with open(file, 'rb') as handle:
+                readpdf = PdfReader(handle)
+                totalpages = totalpages + len(readpdf.pages)
+    # Prepare the tex/html content
+    content_suffix = format_suffixes[output_format]
+    # Create a list of features and magic items
+    content = make_character_content(
+        character=character,
+        content_format=content_suffix,
+        fancy_decorations=fancy_decorations,
+        spell_order=spell_order,
+        feat_order=feat_order,
+        first_page=totalpages + 1,
+    )
+    if output_format == "pdf":
+        # Create and combine additional LaTeX pages with detailed character info
         features_base = "{:s}_features".format(basename)
         try:
             if len(content) > 2:
