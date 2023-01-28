@@ -314,3 +314,84 @@ def msavage_spell_info(char):
             texT = texT + [slot_command_name, slot_command_prep]
     tex3 = "\n".join(texT) + '\n'
     return "\n".join([tex1, tex2, tex3, tex4])
+
+def RPGtex_monster_info(char):
+    """Generates the headings for the monster block info in the DND latex style"""
+    tex = """"""
+    # Counting sections here:
+    # 0: Feats
+    # 1: Actions and reactions
+    # 2: Legendary Actions
+    # 3: Other types of actions.
+    # Challenges: Some monsters only have feats, some only have actions.
+    sectiontype = 0
+    sectionlist = char.split("    # ") # Four spaces, a hash, and another space
+    for section in sectionlist:
+        # First find out what type of section we're dealing with, and
+        # set sectiontype accordingly;
+        # The first section is either feats or actions. Set sectiontype to
+        # actions (and format accordingly) if the first line matches
+        # actions or reactions
+        if re.match (r"^[re]*actions\n", section, re.IGNORECASE):
+            sectiontype = 1
+        elif re.match (r"^legendary actions\n", section, re.IGNORECASE):
+            sectiontype = 2
+        elif sectionlist.index(section) > 0: # Not the first section, nor does
+            sectiontype = 3                  # it have any header we recognize
+
+        # Now we latex format each section according to type, applying
+        # rst_to_latex where it's convenient, and resorting to our own
+        # means where necessary. Goal is to make use of DND-5e-LaTeX-Template
+        # style as much as possible.
+        if sectiontype == 0 or sectiontype == 3:
+            # Use rst_to_latex first, because of easy itemization
+            section = rst_to_latex(section) # This somehow adds a newline at the start of the section
+            # Snip away begin and end description:
+            section = re.sub (r"\\[a-z]+{description}\n", "", section)
+            # Sub \item[{}] with \DndMonsterAction{} headers:
+            section = re.sub (r"\\item\[{(.+)\.}\]", r"\\DndMonsterAction{\1}", section)
+            if sectiontype == 3: # Add section header
+                section = re.sub(r"^\n(.*)\n", r"\\DndMonsterSection{\1}\n", section)
+            tex += section
+
+        if sectiontype == 1:
+            # Process the section line by line.
+            subsection = ""
+            lines = section.splitlines()
+            for line in lines:
+                if re.match (r"^\S", line):
+                    line = re.sub(r"(.+)$", r"\n\n\\DndMonsterSection{\1}", line)
+                    subsection += line
+                else:
+                    # Italicize weapon type and hit, and remove six leading spaces
+                    line = re.sub(r"^ {6}(.+)\:(.+)(Hit)\: (.+)", r"\\textit{\1:} \2\\textit{\3:} \4 ", line)
+                    # Remove leading spaces from other lines
+                    line = re.sub(r"^ {6}(.+)", r"\1 ", line)
+                    # Add DndMonsterAction header for each action, and remove four leading spaces
+                    line = re.sub(r"^ {4}(\S.+)\.$", r"\n\n\\DndMonsterAction{\1}\n", line)
+                    subsection += line
+                    subsection = re.sub(r" {6}", "\n\n", subsection)
+            # Dice
+            subsection = re.sub(r"\((\d+)d(\d+)\s*([+-]*)\s*(\d*)\)", r" (\\texttt{\1d\2\3\4}) ", subsection)
+            tex += subsection + "\n\n"
+
+        if sectiontype == 2:
+            # First process the section line by line to only get the legendary actions,
+            # then add section start, end and header.
+            subsection = ""
+            lines = section.splitlines()
+            for line in lines:
+                if re.match(r"^ {4}\S", line): # New subsubsection, remove leading spaces
+                    line = re.sub(r"^ {4}(.+)\.$", r"\n\\DndMonsterLegendaryAction{\1}{}", line)
+                    subsection += line
+                elif re.match(r"^ {6}\S", line):
+                    # Remove leading spaces from other lines
+                    line = re.sub(r"^ {6}(.+)", r"\1", line)
+                    subsection += line
+                subsection = re.sub(r"}{(.*?)}([a-zA-Z].+)$", r"}{\1 \2}", subsection)
+            # Dice
+            subsection = re.sub(r"\((\d+)d(\d+)\s*([+-]*)\s*(\d*)\)", r" (\\texttt{\1d\2\3\4})", subsection)
+            # Add section header and DndMonsterLegendaryActions environment
+            section = ("\\DndMonsterSection{Legendary Actions}\n\\begin{DndMonsterLegendaryActions}" + subsection + "\n\\end{DndMonsterLegendaryActions}\n")
+            tex += section
+    return tex
