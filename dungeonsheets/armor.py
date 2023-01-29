@@ -10,6 +10,7 @@ class Shield:
     name = "Shield"
     cost = "10 gp"
     base_armor_class = 2
+    weight = 6  # In lbs
 
     def __str__(self):
         return self.name
