@@ -125,7 +125,9 @@
 \OtherProficienciesLanguages{
 \textbf{Languages:}  [[ char.languages ]]. \\
 [%- for prof_type, values in char.proficiencies_by_type.items() %]
+  [%- if not values == "": %]
 \textbf{[[ prof_type ]]}: [[ values ]]. \\
+  [%- endif -%]
 [%- endfor -%]
 }
 
