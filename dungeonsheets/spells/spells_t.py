@@ -114,17 +114,17 @@ class Teleport(Spell):
     destination determines whether you arrive there successfully. The
     DM rolls d100 and consults the table.
 
-    ================= ====== ============ ========== =========
-    Familiarity       Mishap Similar Area Off Target On Target
-    ================= ====== ============ ========== =========
-    Permanent circle  --     --           --         01-100
-    Associated object --     --           --         01-100
-    Very familiar     01–05  06–13        14–24      25–100
-    Seen casually     01–33  34–43        44–53      54–100
-    Viewed once       01–43  44–53        54–73      74–100
-    Description       01–43  44–53        54–73      74–100
-    False destination 01–50  51–100       --         --
-    ================= ====== ============ ========== =========
+    ================== ========== ============ ========== ==========
+    Familiarity        Mishap     Similar Area Off Target On Target
+    ================== ========== ============ ========== ==========
+    Permanent circle   --         --           --         01-100
+    Associated object  --         --           --         01-100
+    Very familiar      01–05      06–13        14–24      25–100
+    Seen casually      01–33      34–43        44–53      54–100
+    Viewed once        01–43      44–53        54–73      74–100
+    Description        01–43      44–53        54–73      74–100
+    False destination  01–50      51–100       --         --
+    ================== ========== ============ ========== ==========
 
     Familiarity.
       "Permanent circle" means a permanent teleportation circle whose

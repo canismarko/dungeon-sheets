@@ -23,15 +23,19 @@ class FontOfMagic(Feature):
     one spell slot and gain a number of sorcery points equal to the slot's
     level.
 
-    1st Level Slot <--> 2 sorcery points
 
-    2nd Level Slot <--> 3 sorcery points
+    =========================   ================================
+              Creating Spell Slots
+    ------------------------------------------------------------
+    Spell Slot Level            Sorcery Point Cost
+    =========================   ================================
+    1st                         2
+    2nd                         3
+    3rd                         5
+    4th                         6
+    5th                         7
+    =========================   ================================
 
-    3rd Level Slot <--> 5 sorcery points
-
-    4th Level Slot <--> 6 sorcery points
-
-    5th Level Slot <--> 7 sorcery points
 
     """
 
@@ -234,27 +238,24 @@ class DragonAncestor(Feature):
     """At 1st level, you choose one type of dragon as your ancestor. The damage
     type associated with each dragon is used by features you gain later
 
-    Dragon : Damage
 
-    Black : Acid
+    ========================   ===========================
+                       Draconic Ancestry
+    ------------------------------------------------------
+    Dragon                     Damage Type
+    ========================   ===========================
+    Black                      Acid
+    Blue                       Lightning
+    Brass                      Fire
+    Bronze                     Lightning
+    Copper                     Acid
+    Gold                       Fire
+    Green                      Poison
+    Red                        Fire
+    Silver                     Cold
+    White                      Cold
+    ========================   ===========================
 
-    Blue : Lightning
-
-    Brass : Fire
-
-    Bronze : Lightning
-
-    Copper : Acid
-
-    Gold : Fire
-
-    Green : Poison
-
-    Red : Fire
-
-    Silver : Cold
-
-    White : Cold
 
     You can speak, read, and write Draconic. Additionally, whenever you make a
     Charisma check when interacting with dragons, your proficiency bonus is
@@ -340,15 +341,15 @@ class DivineMagic(Feature):
     replace this spell, you must replace it with a Spell from the cleric spell
     list
 
-    Good : Cure Wounds
-
-    Evil : Inflict Wounds
-
-    Law : Bless
-
-    Chaos : Bane
-
-    Neutrality : Protection from Evil and Good
+    ================ ===========================================
+    Affinity         Spell
+    ================ ===========================================
+    Good             Cure Wounds
+    Evil             Inflict Wounds
+    Law              Bless
+    Chaos            Bane
+    Neutrality       Protection from Evil and Good
+    ================ ===========================================
 
     """
 
