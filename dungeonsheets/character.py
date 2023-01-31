@@ -829,16 +829,17 @@ class Character(Creature):
     @property
     def equipment_text(self):
         eq_list = []
-        if hasattr(self, "magic_items") and len(self.magic_items) > 0:
-            eq_list += ["**Magic Items**"]
-            eq_list += [item.name for item in self.magic_items]
         if hasattr(self, "equipment") and len(self.equipment.strip()) > 0:
-            eq_list += ["**Other Equipment**"]
             eq_list += [
                 text.strip()
                 for text in self.equipment.split("\n")
                 if not (text.isspace())
             ]
+        if hasattr(self, "magic_items") and len(self.magic_items) > 0:
+            sub_list = "**Magic Items:** "
+            for item in self.magic_items:
+                sub_list += item.name + ", "
+            eq_list += [sub_list[:-2]]
         cw, cc = self.carrying_weight, self.carrying_capacity
         eq_list += [f"**Weight:** {cw} lb\n\n**Capacity:** {cc} lb"]
 
