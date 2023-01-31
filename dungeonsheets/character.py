@@ -769,22 +769,22 @@ class Character(Creature):
     def features_summary(self):
         # save space for informed features and traits
         if hasattr(self, "features_and_traits"):
-            info_list = ["**Other Features**"]
-            info_list += [
-                text.strip()
-                for text in self.features_and_traits.split("\n")
-                if not (text.isspace())
-            ]
-            N = len(info_list)
-            for text in info_list:
-                if len(text) > 26:  # 26 is just a guess for expected size of lines
-                    N += 1
-            if N > 30:
-                return "\n".join(info_list[:30]) + "\n(...)"
-            N = 30 - N
-        else:
             info_list = []
             N = 30
+            if re.search(r'\S',  self.features_and_traits):
+                info_list = ["**Other Features**"]
+                info_list += [
+                    text.strip()
+                    for text in self.features_and_traits.split("\n")
+                    if not (text.isspace())
+                ]
+                N = len(info_list)
+                for text in info_list:
+                    if len(text) > 26:  # 26 is just a guess for expected size of lines
+                        N += 1
+                if N > 30:
+                    return "\n".join(info_list[:30]) + "\n(...)"
+                N = 30 - N
         if len(self.class_list) > 1:
             featS = ["**Multiclass**:"]
             for cl in self.class_list:
