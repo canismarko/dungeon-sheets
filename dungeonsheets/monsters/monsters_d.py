@@ -9,7 +9,8 @@ from dungeonsheets.stats import Ability
 
 
 class Dao(Monster):
-    """Earth Glide.
+    """
+    Earth Glide.
       The dao can burrow through nonmagical unworked earth and
       stone. While doing so, the dao doesn't distrub the material it
       moves through.
@@ -30,14 +31,17 @@ class Dao(Monster):
     Sure-Footed.
       The dao has advantage on Strength and Dexterity saving throws
       made against effects that would knock it prone.
+
+    # Actions
+
     Multiattack.
       The dao makes two fist attacks or two maul attacks.
     Fist.
-      *Melee weapon attack:* +10 to hit, reach 5ft., one
-      target. *Hit:* 15 (2d8 + 6) bludgeoning damage.
+      Melee weapon attack: +10 to hit, reach 5ft., one
+      target. Hit: 15 (2d8 + 6) bludgeoning damage.
     Maul.
-      *Melee weapon attack:* +10 to hit, reach 5ft., one
-      target. *Hit:* 20 (4d6 + 6) bludgeoning damage. If the target is
+      Melee weapon attack: +10 to hit, reach 5ft., one
+      target. Hit: 20 (4d6 + 6) bludgeoning damage. If the target is
       a Huge or smaller creature, it must succeed on a DC 18 Strength
       check or be knocked prone.
 

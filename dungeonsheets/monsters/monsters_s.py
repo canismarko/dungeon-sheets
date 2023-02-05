@@ -455,7 +455,8 @@ class Shadow(Monster):
 
 
 class ShadowDemon(Monster):
-    """Incorporeal Movement.
+    """
+    Incorporeal Movement.
       The demon can move through other creatures and objects as if
       they were difficult terrain. It takes 5 (1d10) force damage if
       it ends its turn inside an object.
@@ -466,9 +467,12 @@ class ShadowDemon(Monster):
     Shadow Stealth.
       While in dim light or darkness, the demon can take the Hide
       action as a bonus action.
+
+    # Actions
+
     Claws.
-      *Melee Weapon Attack:* +5 to hit, reach 5ft., one
-      creature. *Hit:* 10 (2d6+3) psychic damage or, if the demon
+      Melee Weapon Attack: +5 to hit, reach 5ft., one
+      creature. Hit: 10 (2d6+3) psychic damage or, if the demon
       had advantage on the attack roll, 17 (4d6+3) psychic damage.
     """
     name = 'Shadow Demon'
@@ -1289,7 +1293,8 @@ class StoneGolem(Monster):
 
 
 class Stonemelder(Monster):
-    """Death Burst.
+    """
+    Death Burst.
       When the stonemelder dies, it turns to stone and explodes in a
       burst of rock shards, becoming a smoking pile of rubble. Each
       creature within 10 feet of the exploding stonemelder must make a
@@ -1307,23 +1312,25 @@ class Stonemelder(Monster):
       - 2nd level (3 slots): Maximilian's earthen grasp,* shatter
       - 3rd level (3 slots): erupting earth,* meld into stone
       - 4th level (1 slots): stoneskin
-      
+
+    # Actions
+
     Black Earth Rod.
-      *Melee Weapon Attack:* +5 to hit, reach 5 ft., one
-      target. *Hit:* 5 (1d6 + 2) bludgeoning damage. The stonemelder
+      Melee Weapon Attack: +5 to hit, reach 5 ft., one
+      target. Hit: 5 (1d6 + 2) bludgeoning damage. The stonemelder
       can also expend a spell slot to deal extra damage, dealing 2d8
       bludgeoning damage for a 1st level slot, plus an additional 1d8
       for each level of the slot above 1st.
     
-    Stonemelders are spellcasters who gain their power from Ogrémoch,
-    using elemental earth magic to sheathe their bodies in carapaces
-    of rock. They are elite champions of the cult and answer only to
-    the cult leaders. Not even the Black Earth priests tell
-    stonemelders what to do.
+      Stonemelders are spellcasters who gain their power from Ogrémoch,
+      using elemental earth magic to sheathe their bodies in carapaces
+      of rock. They are elite champions of the cult and answer only to
+      the cult leaders. Not even the Black Earth priests tell
+      stonemelders what to do.
     
-    Each stonemelder carries a weapon known as a Black Earth rod. Such
-    a rod is like an ordinary mace, but in the hands of a stonemelder,
-    it serves as a conduit for Ogrémoch's wrath.
+      Each stonemelder carries a weapon known as a Black Earth rod. Such
+      a rod is like an ordinary mace, but in the hands of a stonemelder,
+      it serves as a conduit for Ogrémoch's wrath.
 
     """
     name = 'Stonemelder'
@@ -1357,8 +1364,6 @@ class StormGiant(Monster):
       The giant's innate spellcasting ability is Charisma (spell save DC
       17). It can innately cast the following spells, requiring no material
       components:
-      
-  
       
       At will: detect magic, feather fall, levitate, light
       
@@ -1477,7 +1482,8 @@ class SuccubusIncubus(Monster):
 
 
 class SwarmOfBats(Monster):
-    """Echolocation.
+    """
+    Echolocation.
       The swarm can't use its blindsight while deafened.
     Keen Hearing.
       The swarm has advantage on Wisdom (Perception) checks that rely on hearing.
@@ -1486,6 +1492,9 @@ class SwarmOfBats(Monster):
       and the swarm can move through any opening large enough for a
       Tiny bat. The swarm can't regain hit points or gain temporary
       hit points.
+
+    # Actions
+
     Bites.
       Melee Weapon Attack: +4 to hit, reach 0 ft., one creature in the
       swarm's space. Hit: 5 (2d4) piercing damage, or 2 (1d4) piercing
@@ -1519,6 +1528,9 @@ class SwarmOfBeetles(Monster):
       The swarm can occupy another creature's space and vice versa, and the
       swarm can move through any opening large enough for a Tiny insect. The
       swarm can't regain hit points or gain temporary hit points.
+
+    # Actions
+
     Bites.
       Melee Weapon Attack: +3 to hit, reach 0 ft., one target in the swarm's
       space. Hit: 10 (4d4) piercing damage, or 5 (2d4) piercing damage if
@@ -1552,6 +1564,9 @@ class SwarmOfCentipedes(Monster):
       The swarm can occupy another creature's space and vice versa, and the
       swarm can move through any opening large enough for a Tiny insect. The
       swarm can't regain hit points or gain temporary hit points.
+
+    # Actions
+
     Bites.
       Melee Weapon Attack: +3 to hit, reach 0 ft., one target in the swarm's
       space. Hit: 10 (4d4) piercing damage, or 5 (2d4) piercing damage if
@@ -1589,6 +1604,9 @@ class SwarmOfInsects(Monster):
       The swarm can occupy another creature's space and vice versa, and the
       swarm can move through any opening large enough for a Tiny insect. The
       swarm can't regain hit points or gain temporary hit points.
+
+    # Actions
+
     Bites.
       Melee Weapon Attack: +3 to hit, reach 0 ft., one target in the swarm's
       space. Hit: 10 (4d4) piercing damage, or 5 (2d4) piercing damage if
@@ -1622,6 +1640,9 @@ class SwarmOfPoisonousSnakes(Monster):
       The swarm can occupy another creature's space and vice versa, and the
       swarm can move through any opening large enough for a Tiny snake. The
       swarm can't regain hit points or gain temporary hit points.
+
+    # Actions
+
     Bites.
       Melee Weapon Attack: +6 to hit, reach 0 ft., one creature in the
       swarm's space. Hit: 7 (2d6) piercing damage, or 3 (1d6) piercing
@@ -1662,6 +1683,9 @@ class SwarmOfQuippers(Monster):
       The swarm can't regain hit points or gain temporary hit points.
     Water Breathing.
       The swarm can breathe only underwater.
+
+    # Actions
+
     Bites.
       Melee Weapon Attack: +5 to hit, reach 0 ft., one creature in the
       swarm's space. Hit: 14 (4d6) piercing damage, or 7 (2d6) piercing
@@ -1698,6 +1722,9 @@ class SwarmOfRats(Monster):
       The swarm can occupy another creature's space and vice versa, and the
       swarm can move through any opening large enough for a Tiny rat. The
       swarm can't regain hit points or gain temporary hit points.
+
+    # Actions
+
     Bites.
       Melee Weapon Attack: +2 to hit, reach 0 ft., one target in the swarm's
       space. Hit: 7 (2d6) piercing damage, or 3 (1d6) piercing damage if the
@@ -1731,6 +1758,9 @@ class SwarmOfRavens(Monster):
       The swarm can occupy another creature's space and vice versa, and the
       swarm can move through any opening large enough for a Tiny raven. The
       swarm can't regain hit points or gain temporary hit points.
+
+    # Actions
+
     Beaks.
       Melee Weapon Attack: +4 to hit, reach 5 ft., one target in the swarm's
       space. Hit: 7 (2d6) piercing damage, or 3 (1d6) piercing damage if the
@@ -1772,6 +1802,9 @@ class SwarmOfSpiders(Monster):
       other creature in contact with the same web.
     Web Walker.
       The swarm ignores movement restrictions caused by webbing.
+
+    # Actions
+
     Bites.
       Melee Weapon Attack: +3 to hit, reach 0 ft., one target in the swarm's
       space. Hit: 10 (4d4) piercing damage, or 5 (2d4) piercing damage if
@@ -1805,6 +1838,9 @@ class SwarmOfWasps(Monster):
       The swarm can occupy another creature's space and vice versa, and the
       swarm can move through any opening large enough for a Tiny insect. The
       swarm can't regain hit points or gain temporary hit points.
+
+    # Actions
+
     Bites.
       Melee Weapon Attack: +3 to hit, reach 0 ft., one target in the swarm's
       space. Hit: 10 (4d4) piercing damage, or 5 (2d4) piercing damage if

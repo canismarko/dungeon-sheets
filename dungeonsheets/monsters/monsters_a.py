@@ -9,7 +9,8 @@ from dungeonsheets.stats import Ability
 
 
 class Aboleth(Monster):
-    """Amphibious.
+    """
+    Amphibious.
       The aboleth can breathe air and water.
     Mucous Cloud.
       While underwater, the aboleth is surrounded by transformative mucus. A
@@ -125,8 +126,8 @@ class Acolyte(Monster):
     Spellcasting.
       The acolyte is a 1st-level spellcaster. Its spellcasting ability is Wisdom (spell save DC 12, +4 to hit with spell attacks). The acolyte has following cleric spells prepared:
 
-    - Cantrips (at will): light, sacred flame, thaumaturgy
-    - 1st level (3 slots): bless, cure wounds, sanctuary
+      - Cantrips (at will): light, sacred flame, thaumaturgy
+      - 1st level (3 slots): bless, cure wounds, sanctuary
 
     # Actions
 
@@ -2042,13 +2043,16 @@ class Ankheg(Monster):
 
 
 class Ankylosaurus(Monster):
-    """Thick armor plating covers the body of the plant-eating dinosaur
-    ankylosaurus, which defends itself against predators with a
-    knobbed tail that delivers a devastating strike.
+    """
+      Thick armor plating covers the body of the plant-eating dinosaur
+      ankylosaurus, which defends itself against predators with a
+      knobbed tail that delivers a devastating strike.
     
-    Tail
-      *Melee Weapon Attack:* +7 to hit, reach 10 ft., one
-      target. *Hit:* 18 (4d6+4) bludgeoning damage. If the target is a
+    # Actions
+    
+    Tail.
+      Melee Weapon Attack: +7 to hit, reach 10 ft., one
+      target. Hit: 18 (4d6+4) bludgeoning damage. If the target is a
       creature, it must succeed on a DC 14 Strength saving throw or be
       knocked prone.
 
@@ -2123,17 +2127,18 @@ class Archmage(Monster):
     Spellcasting.
       The archmage is an 18th-level spellcaster. Its spellcasting ability is Intelligence (spell save DC 17, +9 to hit with spell attacks). The archmage can cast disguise self and invisibility at will and has the following wizard spells prepared:
 
-    - Cantrips (at will): fire bolt, light, mage hand, prestidigitation, shocking grasp
-    - 1st level (4 slots): detect magic, identify, mage armor*, magic missile
-    - 2nd level (3 slots): detect thoughts, mirror image, misty step
-    - 3rd level (3 slots): counterspell, fly, lightning bolt
-    - 4th level (3 slots): banishment, fire shield, stoneskin*
-    - 5th level (3 slots): cone of cold, scrying, wall of force
-    - 6th level (1 slot): globe of invulnerability
-    - 7th level (1 slot): teleport
-    - 8th level (1 slot): mind blank*
-    - 9th level (1 slot): time stop
-    * The archmage casts these spells on itself before combat.
+      - Cantrips (at will): fire bolt, light, mage hand, prestidigitation, shocking grasp
+      - 1st level (4 slots): detect magic, identify, mage armor*, magic missile
+      - 2nd level (3 slots): detect thoughts, mirror image, misty step
+      - 3rd level (3 slots): counterspell, fly, lightning bolt
+      - 4th level (3 slots): banishment, fire shield, stoneskin*
+      - 5th level (3 slots): cone of cold, scrying, wall of force
+      - 6th level (1 slot): globe of invulnerability
+      - 7th level (1 slot): teleport
+      - 8th level (1 slot): mind blank*
+      - 9th level (1 slot): time stop
+
+      * The archmage casts these spells on itself before combat.
 
     # Actions
 

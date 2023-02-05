@@ -355,7 +355,8 @@ class Hippogriff(Monster):
 
 
 class HobgoblinCaptain(Monster):
-    """Martial Advantage.
+    """
+    Martial Advantage.
       Once per turn, the hobgoblin can deal an extra 10 (3d6) damage
       to a creature it hits with a weapon attack if that creature is
       within 5 feet of an ally of the hobgoblin that isn't
@@ -366,11 +367,11 @@ class HobgoblinCaptain(Monster):
     Multiattack.
       The hobgoblin makes two greatsword attacks.
     Greatsword
-      *Melee Weapon Attack:* +4 to hit, reach 5 ft., one
-       target. *Hit*: 9 (2d6 + 2) piercing damage.
+      Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit:
+      9 (2d6 + 2) piercing damage.
     Javelin.
-      *Melee or Ranged Weapon Attach: +4 to hit, reach 5 ft. or range
-       30/120 ft., one target. *Hit:* 5 (1d6+2) piercing damage.
+      Melee or Ranged Weapon Attack: +4 to hit, reach 5 ft. or range
+      30/120 ft., one target. Hit: 5 (1d6+2) piercing damage.
     Leadership (Recharges after a Short or Long Rest).
       For 1 minutes, the hobgoblin can utter a special command or
       warning whenever a nonhostile creature that it can see within 30

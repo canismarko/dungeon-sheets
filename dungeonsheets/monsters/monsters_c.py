@@ -462,8 +462,6 @@ class CloudGiant(Monster):
       The giant's innate spellcasting ability is Charisma. It can innately
       cast the following spells, requiring no material components:
       
-  
-      
       At will: detect magic, fog cloud, light
       
       3/day each: feather fall, fly, misty step, telekinesis
@@ -482,7 +480,7 @@ class CloudGiant(Monster):
       30 (4d10 + 8) bludgeoning damage.
     """
     name = 'Cloud Giant'
-    description = 'Huge giant, neutral good (50%) or neutral evil (50%)'
+    description = 'Huge giant, neutral good (50\%) or neutral evil (50\%)'
     challenge_rating = 9
     armor_class = 14
     skills = 'Insight +7, Perception +7'
