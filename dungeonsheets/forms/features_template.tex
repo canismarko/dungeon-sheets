@@ -4,7 +4,7 @@
   [%- for feat in character.features %]
     \pdfbookmark[1]{[[ feat.name ]]}{Features - [[ feat.name ]]}
     \DndFeatHeader{[[ feat.name ]]}[Source: [[ feat.source ]]]
-    [[- feat.__doc__|rst_to_latex -]]
+    [[- feat.__doc__|rst_to_latex(use_dnd_decorations=use_dnd_decorations) -]]
   [%- endfor -%]
 [% else %]
   [%- for feat in character.features %]

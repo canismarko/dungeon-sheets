@@ -9,7 +9,7 @@
         [%- if mitem.needs_implementation %]
             \textbf{**Not included in stats on Character Sheet} \\
         [%- endif -%]
-        [[- mitem.__doc__|rst_to_latex -]]
+        [[- mitem.__doc__|rst_to_latex(use_dnd_decorations=use_dnd_decorations) -]]
     [% endfor %]
 [% else %]
     [% for mitem in character.magic_items %]

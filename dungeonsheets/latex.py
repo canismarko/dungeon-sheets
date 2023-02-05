@@ -196,7 +196,7 @@ def rst_to_latex(rst, top_heading_level: int=0, format_dice: bool = True, use_dn
     format_dice
       If true, dice strings (e.g. "1d4") will be formatted in
       monospace font.
-    
+
     Returns
     =======
     tex : str
@@ -214,10 +214,18 @@ def rst_to_latex(rst, top_heading_level: int=0, format_dice: bool = True, use_dn
         tex = tex_parts["body"]
     # Apply fancy D&D decorations
     if use_dnd_decorations:
-        tex = re.sub(r"p{[0-9.]+\\DUtablewidth}", "l ", tex, flags=re.M)
-        tex = tex.replace(r"\begin{supertabular}[c]", r"\begin{DndTable}")
-        tex = tex.replace(r"\begin{supertabular}", r"\begin{DndTable}")
-        tex = tex.replace(r"\end{supertabular}", r"\end{DndTable}")
+        tex = tex.replace(r"\begin{supertabular}[c]", r"\begin{DndLongTable}[header=]")
+        tex = tex.replace(r"\begin{supertabular}", r"\begin{DndLongTable}[header=]")
+        tex = tex.replace(r"\end{supertabular}", r"\end{DndLongTable}")
+
+        # Correct table header to the DndLongTable format.
+        # First deal with the table caption, if present:
+        tex = re.sub(r"(begin{DndLongTable}\[header=)\](.*?\n)\\multicolumn.*?\n(.*?)\n.*?\\\\\n",
+                     r"\1\3]\2", tex, flags=re.M|re.DOTALL)
+        # Next, take the first table row and define it as the first page table header:
+        tex = re.sub(r"(begin{DndLongTable}\[header=.*?)\](.*?)\n(.*?\\\\)\n\n",
+                     r"\1,firsthead={\3 }]\2\n", tex, flags=re.M|re.DOTALL)
+
     return tex
 
 def rst_to_boxlatex(rst):
