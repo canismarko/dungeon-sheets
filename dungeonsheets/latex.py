@@ -214,10 +214,18 @@ def rst_to_latex(rst, top_heading_level: int=0, format_dice: bool = True, use_dn
         tex = tex_parts["body"]
     # Apply fancy D&D decorations
     if use_dnd_decorations:
-        tex = re.sub(r"p{[0-9.]+\\DUtablewidth}", "l ", tex, flags=re.M)
         tex = tex.replace(r"\begin{supertabular}[c]", r"\begin{DndTable}")
         tex = tex.replace(r"\begin{supertabular}", r"\begin{DndTable}")
         tex = tex.replace(r"\end{supertabular}", r"\end{DndTable}")
+
+        # Translate column width and type from supertabular to dndtable / tabularx. For example:
+        # From: \begin{DndTable}{ p{0.214\DUtablewidth} p{0.086\DUtablewidth} p{0.156\DUtablewidth} p{0.133\DUtablewidth} p{0.121\DUtablewidth}}
+        # To:   \begin{DndTable}{ >{\hsize=0.214\hsize}X >{\hsize=0.086\hsize}X >{\hsize=0.156\hsize}X >{\hsize=0.133\hsize}X >{\hsize=0.121\hsize}X}
+        tex = re.sub(r"p{([0-9.]+)\\DUtablewidth}", r">{\\hsize=\1\\DUtablewidth}X", tex, flags=re.M)
+
+        # Correct table header to the dndtable format:
+        tex = re.sub(r"(begin{DndTable})(.*\n)\\multicolumn.*\n(.*)\n}} \\\\", r"\1[header=\3]\2", tex, flags=re.M)
+
     return tex
 
 def rst_to_boxlatex(rst):
