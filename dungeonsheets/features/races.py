@@ -947,11 +947,11 @@ class MagicResistance(Feature):
     """You have advantage on saving throws against spells and other magical effects."""
 
     name = "Magic Resistance"
-    source = "Race (Yuan_Ti Pureblood)"
+    source = "Race (Yuan-Ti Pureblood)"
 
 
 class PoisonImmunity(Feature):
     """You are immune to poison damage and the poi~oned condition."""
 
     name = "Poison Immunity"
-    source = "Race (Yuan_Ti Pureblood)"
+    source = "Race (Yuan-Ti Pureblood)"
