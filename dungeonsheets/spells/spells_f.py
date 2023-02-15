@@ -21,7 +21,7 @@ class Fabricate(Spell):
 	"""
 
 	name = "Fabricate"
-	level = "4"
+	level = 4
 	casting_time = "10 Min."
 	casting_range = "120 feet"
 	components = ("V", "S")
@@ -42,7 +42,7 @@ class FaerieFire(Spell):
 	"""
 
 	name = "Faerie Fire"
-	level = "1"
+	level = 1
 	casting_time = "Action"
 	casting_range = "60 feet"
 	components = ("V")
@@ -60,11 +60,11 @@ class FalseLife(Spell):
 	each slot level above 1st."""
 
 	name = "False Life"
-	level = "1"
+	level = 1
 	casting_time = "Action"
 	casting_range = "Self"
 	components = ("V", "S", "M")
-	materials = "a small amount of alcohol or distilled spirits"
+	materials = "a small amount of alcohol or distilled spirits;"
 	duration = "1 hour"
 	ritual = False
 	magic_school = "Necromancy"
@@ -77,7 +77,7 @@ class FarStep(Spell):
 	"""
 
 	name = "Far Step"
-	level = "5"
+	level = 5
 	casting_time = "Bonus"
 	casting_range = "Self"
 	components = ("V")
@@ -108,7 +108,7 @@ class FastFriends(Spell):
 	slot level above 3rd."""
 
 	name = "Fast Friends"
-	level = "3"
+	level = 3
 	casting_time = "Action"
 	casting_range = "30 feet"
 	components = ("V")
@@ -131,11 +131,11 @@ class Fear(Spell):
 	"""
 
 	name = "Fear"
-	level = "3"
+	level = 3
 	casting_time = "Action"
 	casting_range = "Self (30-foot cone)"
 	components = ("V", "S", "M")
-	materials = "a white feather or the heart of a hen"
+	materials = "a white feather or the heart of a hen;"
 	duration = "Concentration, up to 1 minute"
 	ritual = False
 	magic_school = "Illusion"
@@ -149,11 +149,11 @@ class FeatherFall(Spell):
 	"""
 
 	name = "Feather Fall"
-	level = "1"
+	level = 1
 	casting_time = "Reaction"
 	casting_range = "60 feet"
 	components = ("V", "M")
-	materials = "a small feather or a piece of down"
+	materials = "a small feather or a piece of down;"
 	duration = "1 minute"
 	ritual = False
 	magic_school = "Transmutation"
@@ -173,11 +173,11 @@ class Feeblemind(Spell):
 	"""
 
 	name = "Feeblemind"
-	level = "8"
+	level = 8
 	casting_time = "Action"
 	casting_range = "150 feet"
 	components = ("V", "S", "M")
-	materials = "a handful of clay, crystal, glass, or mineral spheres"
+	materials = "a handful of clay, crystal, glass, or mineral spheres;"
 	duration = "Instantaneous"
 	ritual = False
 	magic_school = "Enchantment"
@@ -196,11 +196,11 @@ class FeignDeath(Spell):
 	"""
 
 	name = "Feign Death"
-	level = "3"
+	level = 3
 	casting_time = "Action"
 	casting_range = "Touch"
 	components = ("V", "S", "M")
-	materials = "a pinch of graveyard dirt"
+	materials = "a pinch of graveyard dirt;"
 	duration = "1 hour"
 	ritual = True
 	magic_school = "Necromancy"
@@ -241,11 +241,11 @@ class FindFamiliar(Spell):
 	"""
 
 	name = "Find Familiar"
-	level = "1"
+	level = 1
 	casting_time = "1 Hr."
 	casting_range = "10 feet"
 	components = ("V", "S", "M")
-	materials = "10 gp worth of charcoal, incense, and herbs that must be consumed by fire in a brass brazier"
+	materials = "10 gp worth of charcoal, incense, and herbs that must be consumed by fire in a brass brazier;"
 	duration = "Instantaneous"
 	ritual = True
 	magic_school = "Conjuration"
@@ -277,7 +277,7 @@ class FindGreaterSteed(Spell):
 	"""
 
 	name = "Find Greater Steed"
-	level = "4"
+	level = 4
 	casting_time = "10 Min."
 	casting_range = "30 feet"
 	components = ("V", "S")
@@ -312,7 +312,7 @@ class FindSteed(Spell):
 	"""
 
 	name = "Find Steed"
-	level = "2"
+	level = 2
 	casting_time = "10 Min."
 	casting_range = "30 feet"
 	components = ("V", "S")
@@ -336,7 +336,7 @@ class FindTraps(Spell):
 	"""
 
 	name = "Find Traps"
-	level = "2"
+	level = 2
 	casting_time = "Action"
 	casting_range = "120 feet"
 	components = ("V", "S")
@@ -345,7 +345,7 @@ class FindTraps(Spell):
 	ritual = False
 	magic_school = "Divination"
 	classes = ("Cleric", "Druid", "Ranger")
-class FindVehicleUA(Spell):
+class FindVehicle(Spell):
 	"""You summon a spirit that assumes the form of a nonmilitary land 
 	vehicle of your choice, appearing in an unoccupied space within range. 
 	The vehicle has the statistics of a normal vehicle of its sort, though 
@@ -373,8 +373,8 @@ class FindVehicleUA(Spell):
 	spell using a spell slot of 7th level or higher, you can conjure any 
 	type of vehicle, subject to the DM's approval."""
 
-	name = "Find Vehicle (UA)"
-	level = "2"
+	name = "Find Vehicle"
+	level = 2
 	casting_time = "10 Min."
 	casting_range = "30 feet"
 	components = ("V", "S")
@@ -383,7 +383,7 @@ class FindVehicleUA(Spell):
 	ritual = False
 	magic_school = "Conjuration"
 	classes = ("Sorcerer", "Warlock", "Wizard")
-class FindthePath(Spell):
+class FindThePath(Spell):
 	"""This spell allows you to find the shortest, most direct physical 
 	route to a specific fixed location that you are familiar with on the 
 	same plane of existence. If you name a destination on another plane of 
@@ -399,16 +399,16 @@ class FindthePath(Spell):
 	"""
 
 	name = "Find the Path"
-	level = "6"
+	level = 6
 	casting_time = "1 Min."
 	casting_range = "Self"
 	components = ("V", "S", "M")
-	materials = "a set of divinatory tools—such as bones, ivory sticks, cards, teeth, or carved runes—worth 100 gp and an object from the location you wish to find"
+	materials = "a set of divinatory tools—such as bones, ivory sticks, cards, teeth, or carved runes—worth 100 gp and an object from the location you wish to find;"
 	duration = "Concentration, up to 1 day"
 	ritual = False
 	magic_school = "Divination"
 	classes = ("Bard", "Cleric", "Druid")
-class FingerofDeath(Spell):
+class FingerOfDeath(Spell):
 	"""You send negative energy coursing through a creature that you can 
 	see within range, causing it searing pain. The target must make a 
 	Constitution saving throw. It takes 7d8 + 30 necrotic damage on a 
@@ -420,7 +420,7 @@ class FingerofDeath(Spell):
 	"""
 
 	name = "Finger of Death"
-	level = "7"
+	level = 7
 	casting_time = "Action"
 	casting_range = "60 feet"
 	components = ("V", "S")
@@ -439,7 +439,7 @@ class FireBolt(Spell):
 	"""
 
 	name = "Fire Bolt"
-	level = "Cantrip"
+	level = 0
 	casting_time = "Action"
 	casting_range = "120 feet"
 	components = ("V", "S")
@@ -462,11 +462,11 @@ class FireShield(Spell):
 	"""
 
 	name = "Fire Shield"
-	level = "4"
+	level = 4
 	casting_time = "Action"
 	casting_range = "Self"
 	components = ("V", "S", "M")
-	materials = "a bit of phosphorus or a firefly"
+	materials = "a bit of phosphorus or a firefly;"
 	duration = "10 minutes"
 	ritual = False
 	magic_school = "Evocation"
@@ -485,7 +485,7 @@ class FireStorm(Spell):
 	"""
 
 	name = "Fire Storm"
-	level = "7"
+	level = 7
 	casting_time = "Action"
 	casting_range = "150 feet"
 	components = ("V", "S")
@@ -508,11 +508,11 @@ class Fireball(Spell):
 	above 3rd."""
 
 	name = "Fireball"
-	level = "3"
+	level = 3
 	casting_time = "Action"
 	casting_range = "150 feet"
 	components = ("V", "S", "M")
-	materials = "a tiny ball of bat guano and sulfur"
+	materials = "a tiny ball of bat guano and sulfur;"
 	duration = "Instantaneous"
 	ritual = False
 	magic_school = "Evocation"
@@ -533,11 +533,11 @@ class FizbansPlatinumShield(Spell):
 	"""
 
 	name = "Fizbans Platinum Shield"
-	level = "6"
+	level = 6
 	casting_time = "Bonus"
 	casting_range = "60 feet"
 	components = ("V", "S", "M")
-	materials = "a platinum-plated dragon scale, worth at least 500 gp"
+	materials = "a platinum-plated dragon scale, worth at least 500 gp;"
 	duration = "Concentration, up to 1 minute"
 	ritual = False
 	magic_school = "Abjuration"
@@ -557,11 +557,11 @@ class FizbansPlatinumShield(Spell):
 	"""
 
 	name = "Fizbans Platinum Shield"
-	level = "6"
+	level = 6
 	casting_time = "Action"
 	casting_range = "60 feet"
 	components = ("V", "S", "M")
-	materials = "a platinum-plated dragon scale, worth at least 500 gp"
+	materials = "a platinum-plated dragon scale, worth at least 500 gp;"
 	duration = "Concentration, up to 1 minute"
 	ritual = False
 	magic_school = "Abjuration"
@@ -578,7 +578,7 @@ class FlameArrows(Spell):
 	with this spell increases by two for each slot level above 3rd."""
 
 	name = "Flame Arrows"
-	level = "3"
+	level = 3
 	casting_time = "Action"
 	casting_range = "Touch"
 	components = ("V", "S")
@@ -601,11 +601,11 @@ class FlameBlade(Spell):
 	levels above 2nd."""
 
 	name = "Flame Blade"
-	level = "2"
+	level = 2
 	casting_time = "Bonus"
 	casting_range = "Self"
 	components = ("V", "S", "M")
-	materials = "leaf of sumac"
+	materials = "leaf of sumac;"
 	duration = "Concentration, up to 10 minutes"
 	ritual = False
 	magic_school = "Evocation"
@@ -624,7 +624,7 @@ class FlameStride(Spell):
 	damage for each slot level above 3rd."""
 
 	name = "Flame Stride"
-	level = "3"
+	level = 3
 	casting_time = "Bonus"
 	casting_range = "Self"
 	components = ("V", "S")
@@ -645,11 +645,11 @@ class FlameStrike(Spell):
 	choice) increases by 1d6 for each slot level above 5th."""
 
 	name = "Flame Strike"
-	level = "5"
+	level = 5
 	casting_time = "Action"
 	casting_range = "60 feet"
 	components = ("V", "S", "M")
-	materials = "pinch of sulfur"
+	materials = "pinch of sulfur;"
 	duration = "Instantaneous"
 	ritual = False
 	magic_school = "Evocation"
@@ -673,16 +673,16 @@ class FlamingSphere(Spell):
 	above 2nd."""
 
 	name = "Flaming Sphere"
-	level = "2"
+	level = 2
 	casting_time = "Action"
 	casting_range = "60 feet"
 	components = ("V", "S", "M")
-	materials = "a bit of tallow, a pinch of brimstone, and a dusting of powdered iron"
+	materials = "a bit of tallow, a pinch of brimstone, and a dusting of powdered iron;"
 	duration = "Concentration, up to 1 minute"
 	ritual = False
 	magic_school = "Conjuration"
 	classes = ("Druid", "Wizard","Sorcerer")
-class FleshtoStone(Spell):
+class FleshToStone(Spell):
 	"""You attempt to turn one creature that you can see within range into 
 	stone. If the target's body is made of flesh, the creature must make a 
 	Constitution saving throw. On a failed save, it is restrained as its 
@@ -702,16 +702,16 @@ class FleshtoStone(Spell):
 	"""
 
 	name = "Flesh to Stone"
-	level = "6"
+	level = 6
 	casting_time = "Action"
 	casting_range = "60 feet"
 	components = ("V", "S", "M")
-	materials = "a pinch of lime, water, and earth"
+	materials = "a pinch of lime, water, and earth;"
 	duration = "Concentration, up to 1 minute"
 	ritual = False
 	magic_school = "Transmutation"
 	classes = ("Warlock", "Wizard","Druid", "Sorcerer")
-class FlockofFamiliars(Spell):
+class FlockOfFamiliars(Spell):
 	"""You temporarily summon three familiars—spirits that take animal 
 	forms of your choice. Each familiar uses the same rules and options for 
 	a familiar conjured by the find familiar spell. All the familiars 
@@ -730,7 +730,7 @@ class FlockofFamiliars(Spell):
 	level above 2nd."""
 
 	name = "Flock of Familiars"
-	level = "2"
+	level = 2
 	casting_time = "1 Min."
 	casting_range = "Touch"
 	components = ("V", "S")
@@ -749,11 +749,11 @@ class Fly(Spell):
 	slot level above 3rd."""
 
 	name = "Fly"
-	level = "3"
+	level = 3
 	casting_time = "Action"
 	casting_range = "Touch"
 	components = ("V", "S", "M")
-	materials = "a wing feather from any bird"
+	materials = "a wing feather from any bird;"
 	duration = "Concentration, up to 10 minutes"
 	ritual = False
 	magic_school = "Transmutation"
@@ -769,7 +769,7 @@ class FogCloud(Spell):
 	each slot level above 1st."""
 
 	name = "Fog Cloud"
-	level = "1"
+	level = 1
 	casting_time = "Action"
 	casting_range = "120 feet"
 	components = ("V", "S")
@@ -801,11 +801,11 @@ class Forbiddance(Spell):
 	"""
 
 	name = "Forbiddance"
-	level = "6"
+	level = 6
 	casting_time = "10 Min."
 	casting_range = "Touch"
 	components = ("V", "S", "M")
-	materials = "a sprinkling of holy water, rare incense, and powdered ruby worth at least 1,000 gp"
+	materials = "a sprinkling of holy water, rare incense, and powdered ruby worth at least 1,000 gp;"
 	duration = "1 day"
 	ritual = True
 	magic_school = "Abjuration"
@@ -833,11 +833,11 @@ class Forcecage(Spell):
 	"""
 
 	name = "Forcecage"
-	level = "7"
+	level = 7
 	casting_time = "Action"
 	casting_range = "100 feet"
 	components = ("V", "S", "M")
-	materials = "ruby dust worth 1,500 gp"
+	materials = "ruby dust worth 1,500 gp;"
 	duration = "1 hour"
 	ritual = False
 	magic_school = "Evocation"
@@ -853,11 +853,11 @@ class Foresight(Spell):
 	"""
 
 	name = "Foresight"
-	level = "9"
+	level = 9
 	casting_time = "1 Min."
 	casting_range = "Touch"
 	components = ("V", "S", "M")
-	materials = "a hummingbird feather"
+	materials = "a hummingbird feather;"
 	duration = "8 hours"
 	ritual = False
 	magic_school = "Divination"
@@ -879,16 +879,16 @@ class FortunesFavor(Spell):
 	slot level above 2nd."""
 
 	name = "Fortunes Favor"
-	level = "2"
+	level = 2
 	casting_time = "1 Min."
 	casting_range = "60 feet"
 	components = ("V", "S", "M")
-	materials = "a white pearl worth at least 100 gp, which the spell consumes"
+	materials = "a white pearl worth at least 100 gp, which the spell consumes;"
 	duration = "1 hour"
 	ritual = False
 	magic_school = "Divination"
 	classes = ()
-class FreedomofMovement(Spell):
+class FreedomOfMovement(Spell):
 	"""You touch a willing creature. For the duration, the target's 
 	movement is unaffected by difficult terrain, and spells and other 
 	magical effects can neither reduce the target's speed nor cause the 
@@ -900,11 +900,11 @@ class FreedomofMovement(Spell):
 	"""
 
 	name = "Freedom of Movement"
-	level = "4"
+	level = 4
 	casting_time = "Action"
 	casting_range = "Touch"
 	components = ("V", "S", "M")
-	materials = "a leather strap, bound around the arm or a similar appendage"
+	materials = "a leather strap, bound around the arm or a similar appendage;"
 	duration = "1 hour"
 	ritual = False
 	magic_school = "Abjuration"
@@ -921,11 +921,11 @@ class Friends(Spell):
 	"""
 
 	name = "Friends"
-	level = "Cantrip"
+	level = 0
 	casting_time = "Action"
 	casting_range = "Self"
 	components = ("S", "M")
-	materials = "a small amount of makeup applied to the face as this spell is cast"
+	materials = "a small amount of makeup applied to the face as this spell is cast;"
 	duration = "Concentration, up to 1 minute"
 	ritual = False
 	magic_school = "Enchantment"
@@ -942,7 +942,7 @@ class FrostFingers(Spell):
 	above 1st."""
 
 	name = "Frost Fingers"
-	level = "1"
+	level = 1
 	casting_time = "Action"
 	casting_range = "Self (15-foot cone)"
 	components = ("V", "S")
@@ -962,7 +962,7 @@ class Frostbite(Spell):
 	"""
 
 	name = "Frostbite"
-	level = "Cantrip"
+	level = 0
 	casting_time = "Action"
 	casting_range = "60 feet"
 	components = ("V", "S")

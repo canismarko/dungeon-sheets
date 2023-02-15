@@ -14,7 +14,7 @@ class VampiricTouch(Spell):
 	above 3rd."""
 
 	name = "Vampiric Touch"
-	level = "3"
+	level = 3
 	casting_time = "Action"
 	casting_range = "Self"
 	components = ("V", "S")
@@ -35,7 +35,7 @@ class ViciousMockery(Spell):
 	"""
 
 	name = "Vicious Mockery"
-	level = "Cantrip"
+	level = 0
 	casting_time = "Action"
 	casting_range = "60 feet"
 	components = ("V")
@@ -44,7 +44,7 @@ class ViciousMockery(Spell):
 	ritual = False
 	magic_school = "Enchantment"
 	classes = ("Bard")
-class VirtueUA(Spell):
+class Virtue(Spell):
 	"""You touch one creature, imbuing it with vitality. If the target has 
 	at least 1 hit point, it gains a number of temporary hit points equal 
 	to 1d4 + your spellcasting ability modifier. The temporary hit points 
@@ -52,8 +52,8 @@ class VirtueUA(Spell):
 	
 	"""
 
-	name = "Virtue (UA)"
-	level = "Cantrip"
+	name = "Virtue"
+	level = 0
 	casting_time = "Action"
 	casting_range = "Touch"
 	components = ("V", "S")
@@ -76,11 +76,11 @@ class VitriolicSphere(Spell):
 	level above 4th."""
 
 	name = "Vitriolic Sphere"
-	level = "4"
+	level = 4
 	casting_time = "Action"
 	casting_range = "150 feet"
 	components = ("V", "S", "M")
-	materials = "a drop of giant slug bile"
+	materials = "a drop of giant slug bile;"
 	duration = "Instantaneous"
 	ritual = False
 	magic_school = "Evocation"
@@ -98,7 +98,7 @@ class VortexWarp(Spell):
 	each slot level above 2nd."""
 
 	name = "Vortex Warp"
-	level = "2"
+	level = 2
 	casting_time = "Action"
 	casting_range = "90 feet"
 	components = ("V", "S")

@@ -21,11 +21,11 @@ class RaiseDead(Spell):
 	"""
 
 	name = "Raise Dead"
-	level = "5"
+	level = 5
 	casting_time = "1 Hr."
 	casting_range = "Touch"
 	components = ("V", "S", "M")
-	materials = "a diamond worth at least 500 gp, which the spell consumes"
+	materials = "a diamond worth at least 500 gp, which the spell consumes;"
 	duration = "Instantaneous"
 	ritual = False
 	magic_school = "Necromancy"
@@ -42,11 +42,11 @@ class RarysTelepathicBond(Spell):
 	"""
 
 	name = "Rarys Telepathic Bond"
-	level = "5"
+	level = 5
 	casting_time = "Action"
 	casting_range = "30 feet"
 	components = ("V", "S", "M")
-	materials = "pieces of eggshell from two different kinds of creatures"
+	materials = "pieces of eggshell from two different kinds of creatures;"
 	duration = "1 hour"
 	ritual = True
 	magic_school = "Divination"
@@ -67,7 +67,7 @@ class RaulothimsPsychicLance(Spell):
 	above 4th."""
 
 	name = "Raulothims Psychic Lance"
-	level = "4"
+	level = 4
 	casting_time = "Action"
 	casting_range = "120 feet"
 	components = ("V")
@@ -91,7 +91,7 @@ class RaulothimsPsychicLance(Spell):
 	above 4th."""
 
 	name = "Raulothims Psychic Lance"
-	level = "4"
+	level = 4
 	casting_time = "Action"
 	casting_range = "120 feet"
 	components = ("V")
@@ -124,16 +124,16 @@ class RavenousVoid(Spell):
 	"""
 
 	name = "Ravenous Void"
-	level = "9"
+	level = 9
 	casting_time = "Action"
 	casting_range = "1000 feet"
 	components = ("V", "S", "M")
-	materials = "a small, nine-pointed star made of iron"
+	materials = "a small, nine-pointed star made of iron;"
 	duration = "Concentration, up to 1 minute"
 	ritual = False
 	magic_school = "Evocation"
 	classes = ()
-class RayofEnfeeblement(Spell):
+class RayOfEnfeeblement(Spell):
 	"""A black beam of enervating energy springs from your finger toward a 
 	creature within range. Make a ranged spell attack against the target. 
 	On a hit, the target deals only half damage with weapon attacks that 
@@ -144,7 +144,7 @@ class RayofEnfeeblement(Spell):
 	"""
 
 	name = "Ray of Enfeeblement"
-	level = "2"
+	level = 2
 	casting_time = "Action"
 	casting_range = "60 feet"
 	components = ("V", "S")
@@ -153,7 +153,7 @@ class RayofEnfeeblement(Spell):
 	ritual = False
 	magic_school = "Necromancy"
 	classes = ("Warlock", "Wizard")
-class RayofFrost(Spell):
+class RayOfFrost(Spell):
 	"""A frigid beam of blue-white light streaks toward a creature within 
 	range. Make a ranged spell attack against the target. On a hit, it 
 	takes 1d8 cold damage, and its speed is reduced by 10 feet until the 
@@ -163,7 +163,7 @@ class RayofFrost(Spell):
 	"""
 
 	name = "Ray of Frost"
-	level = "Cantrip"
+	level = 0
 	casting_time = "Action"
 	casting_range = "60 feet"
 	components = ("V", "S")
@@ -172,7 +172,7 @@ class RayofFrost(Spell):
 	ritual = False
 	magic_school = "Evocation"
 	classes = ("Artificer", "Sorcerer", "Wizard")
-class RayofSickness(Spell):
+class RayOfSickness(Spell):
 	"""A ray of sickening greenish energy lashes out toward a creature 
 	within range. Make a ranged spell attack against the target. On a hit, 
 	the target takes 2d8 poison damage and must make a Constitution saving 
@@ -184,7 +184,7 @@ class RayofSickness(Spell):
 	above 1st."""
 
 	name = "Ray of Sickness"
-	level = "1"
+	level = 1
 	casting_time = "Action"
 	casting_range = "60 feet"
 	components = ("V", "S")
@@ -215,11 +215,11 @@ class RealityBreak(Spell):
 	"""
 
 	name = "Reality Break"
-	level = "8"
+	level = 8
 	casting_time = "Action"
 	casting_range = "60 feet"
 	components = ("V", "S", "M")
-	materials = "a crystal prism"
+	materials = "a crystal prism;"
 	duration = "Concentration, up to 1 minute"
 	ritual = False
 	magic_school = "Conjuration"
@@ -236,11 +236,11 @@ class Regenerate(Spell):
 	"""
 
 	name = "Regenerate"
-	level = "7"
+	level = 7
 	casting_time = "1 Min."
 	casting_range = "Touch"
 	components = ("V", "S", "M")
-	materials = "a prayer wheel and holy water"
+	materials = "a prayer wheel and holy water;"
 	duration = "1 hour"
 	ritual = False
 	magic_school = "Transmutation"
@@ -265,16 +265,16 @@ class Reincarnate(Spell):
 	"""
 
 	name = "Reincarnate"
-	level = "5"
+	level = 5
 	casting_time = "1 Hr."
 	casting_range = "Touch"
 	components = ("V", "S", "M")
-	materials = "rare oils and unguents worth at least 1,000 gp, which the spell consumes"
+	materials = "rare oils and unguents worth at least 1,000 gp, which the spell consumes;"
 	duration = "Instantaneous"
 	ritual = False
 	magic_school = "Transmutation"
 	classes = ("Druid")
-class RemoteAccessUA(Spell):
+class RemoteAccess(Spell):
 	"""You can use any electronic device within range as if it were in your 
 	hands. This is not a telekinesis effect. Rather, this spell allows you 
 	to simulate a device's mechanical functions electronically. You are 
@@ -284,8 +284,8 @@ class RemoteAccessUA(Spell):
 	
 	"""
 
-	name = "Remote Access (UA)"
-	level = "1"
+	name = "Remote Access"
+	level = 1
 	casting_time = "Action"
 	casting_range = "120 feet"
 	components = ("V", "S")
@@ -303,7 +303,7 @@ class RemoveCurse(Spell):
 	"""
 
 	name = "Remove Curse"
-	level = "3"
+	level = 3
 	casting_time = "Action"
 	casting_range = "Touch"
 	components = ("V", "S")
@@ -321,11 +321,11 @@ class Resistance(Spell):
 	"""
 
 	name = "Resistance"
-	level = "Cantrip"
+	level = 0
 	casting_time = "Action"
 	casting_range = "Touch"
 	components = ("V", "S", "M")
-	materials = "a miniature cloak"
+	materials = "a miniature cloak;"
 	duration = "Concentration, up to 1 minute"
 	ritual = False
 	magic_school = "Abjuration"
@@ -350,11 +350,11 @@ class Resurrection(Spell):
 	"""
 
 	name = "Resurrection"
-	level = "7"
+	level = 7
 	casting_time = "1 Hr."
 	casting_range = "Touch"
 	components = ("V", "S", "M")
-	materials = "a diamond worth at least 1,000 gp, which the spell consumes"
+	materials = "a diamond worth at least 1,000 gp, which the spell consumes;"
 	duration = "Instantaneous"
 	ritual = False
 	magic_school = "Necromancy"
@@ -375,11 +375,11 @@ class ReverseGravity(Spell):
 	"""
 
 	name = "Reverse Gravity"
-	level = "7"
+	level = 7
 	casting_time = "Action"
 	casting_range = "100 feet"
 	components = ("V", "S", "M")
-	materials = "a lodestone and iron filings"
+	materials = "a lodestone and iron filings;"
 	duration = "Concentration, up to 1 minute"
 	ritual = False
 	magic_school = "Transmutation"
@@ -393,11 +393,11 @@ class Revivify(Spell):
 	"""
 
 	name = "Revivify"
-	level = "3"
+	level = 3
 	casting_time = "Action"
 	casting_range = "Touch"
 	components = ("V", "S", "M")
-	materials = "diamonds worth 300 gp, which the spell consumes"
+	materials = "diamonds worth 300 gp, which the spell consumes;"
 	duration = "Instantaneous"
 	ritual = False
 	magic_school = "Necromancy"
@@ -416,11 +416,11 @@ class RimesBindingIce(Spell):
 	level above 2nd."""
 
 	name = "Rimes Binding Ice"
-	level = "2"
+	level = 2
 	casting_time = "Action"
 	casting_range = "Self (30-foot cone)"
 	components = ("S", "M")
-	materials = "a vial of meltwater"
+	materials = "a vial of meltwater;"
 	duration = "Instantaneous"
 	ritual = False
 	magic_school = "Evocation"
@@ -442,11 +442,11 @@ class RopeTrick(Spell):
 	"""
 
 	name = "Rope Trick"
-	level = "2"
+	level = 2
 	casting_time = "Action"
 	casting_range = "Touch"
 	components = ("V", "S", "M")
-	materials = "powdered corn extract and a twisted loop of parchment"
+	materials = "powdered corn extract and a twisted loop of parchment;"
 	duration = "1 hour"
 	ritual = False
 	magic_school = "Transmutation"

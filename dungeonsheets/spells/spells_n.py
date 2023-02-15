@@ -21,11 +21,11 @@ class NathairsMischief(Spell):
 	"""
 
 	name = "Nathairs Mischief"
-	level = "2"
+	level = 2
 	casting_time = "Action"
 	casting_range = "60 feet"
 	components = ("S", "M")
-	materials = "a piece of crust from an apple pie"
+	materials = "a piece of crust from an apple pie;"
 	duration = "Concentration, up to 1 minute"
 	ritual = False
 	magic_school = "Illusion"
@@ -50,11 +50,11 @@ class NathairsMischief(Spell):
 	"""
 
 	name = "Nathairs Mischief"
-	level = "2"
+	level = 2
 	casting_time = "Action"
 	casting_range = "60 feet"
 	components = ("S", "M")
-	materials = "a piece of crust from an apple pie"
+	materials = "a piece of crust from an apple pie;"
 	duration = "Concentration, up to 1 minute"
 	ritual = False
 	magic_school = "Illusion"
@@ -73,11 +73,11 @@ class NegativeEnergyFlood(Spell):
 	"""
 
 	name = "Negative Energy Flood"
-	level = "5"
+	level = 5
 	casting_time = "Action"
 	casting_range = "60 feet"
 	components = ("V", "M")
-	materials = "a broken bone and a square of black silk"
+	materials = "a broken bone and a square of black silk;"
 	duration = "Instantaneous"
 	ritual = False
 	magic_school = "Necromancy"
@@ -91,11 +91,11 @@ class Nondetection(Spell):
 	"""
 
 	name = "Nondetection"
-	level = "3"
+	level = 3
 	casting_time = "Action"
 	casting_range = "Touch"
 	components = ("V", "S", "M")
-	materials = "a pinch of diamond dust worth 25 gp sprinkled over the target, which the spell consumes"
+	materials = "a pinch of diamond dust worth 25 gp sprinkled over the target, which the spell consumes;"
 	duration = "8 hours"
 	ritual = False
 	magic_school = "Abjuration"
@@ -123,11 +123,11 @@ class NystulsMagicAura(Spell):
 	"""
 
 	name = "Nystuls Magic Aura"
-	level = "2"
+	level = 2
 	casting_time = "Action"
 	casting_range = "Touch"
 	components = ("V", "S", "M")
-	materials = "a small square of silk"
+	materials = "a small square of silk;"
 	duration = "24 hours"
 	ritual = False
 	magic_school = "Illusion"

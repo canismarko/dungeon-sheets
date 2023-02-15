@@ -13,7 +13,7 @@ class KineticJaunt(Spell):
 	"""
 
 	name = "Kinetic Jaunt"
-	level = "2"
+	level = 2
 	casting_time = "Bonus"
 	casting_range = "Self"
 	components = ("S")
@@ -37,7 +37,7 @@ class Knock(Spell):
 	"""
 
 	name = "Knock"
-	level = "2"
+	level = 2
 	casting_time = "Action"
 	casting_range = "60 feet"
 	components = ("V")

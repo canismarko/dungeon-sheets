@@ -14,11 +14,11 @@ class TashasCausticBrew(Spell):
 	above 1st."""
 
 	name = "Tashas Caustic Brew"
-	level = "1"
+	level = 1
 	casting_time = "Action"
 	casting_range = "Self (30-foot line)"
 	components = ("V", "S", "M")
-	materials = "a bit of rotten food"
+	materials = "a bit of rotten food;"
 	duration = "Concentration, up to 1 minute"
 	ritual = False
 	magic_school = "Evocation"
@@ -37,11 +37,11 @@ class TashasHideousLaughter(Spell):
 	"""
 
 	name = "Tashas Hideous Laughter"
-	level = "1"
+	level = 1
 	casting_time = "Action"
 	casting_range = "30 feet"
 	components = ("V", "S", "M")
-	materials = "tiny tarts and a feather that is waved in the air"
+	materials = "tiny tarts and a feather that is waved in the air;"
 	duration = "Concentration, up to 1 minute"
 	ritual = False
 	magic_school = "Enchantment"
@@ -61,7 +61,7 @@ class TashasMindWhip(Spell):
 	other when you target them."""
 
 	name = "Tashas Mind Whip"
-	level = "2"
+	level = 2
 	casting_time = "Action"
 	casting_range = "90 feet"
 	components = ("V")
@@ -69,7 +69,7 @@ class TashasMindWhip(Spell):
 	duration = "1 round"
 	ritual = False
 	magic_school = "Enchantment"
-	classes = (,"Sorcerer", "Wizard")
+	classes = ("Sorcerer", "Wizard")
 class TashasOtherworldlyGuise(Spell):
 	"""Uttering an incantation, you draw on the magic of the Lower Planes 
 	or Upper Planes (your choice) to transform yourself. You gain the 
@@ -89,15 +89,15 @@ class TashasOtherworldlyGuise(Spell):
 	"""
 
 	name = "Tashas Otherworldly Guise"
-	level = "6"
+	level = 6
 	casting_time = "Bonus"
 	casting_range = "Self"
 	components = ("V", "S", "M")
-	materials = "an object engraved with a symbol of the Outer Planes, worth at least 500 gp"
+	materials = "an object engraved with a symbol of the Outer Planes, worth at least 500 gp;"
 	duration = "Concentration, up to 1 minute"
 	ritual = False
 	magic_school = "Transmutation"
-	classes = (,"Sorcerer", "Warlock", "Wizard")
+	classes = ("Sorcerer", "Warlock", "Wizard")
 class Telekinesis(Spell):
 	"""You gain the ability to move or manipulate creatures or objects by 
 	thought. When you cast the spell, and as your action each round for the 
@@ -128,7 +128,7 @@ class Telekinesis(Spell):
 	"""
 
 	name = "Telekinesis"
-	level = "5"
+	level = 5
 	casting_time = "Action"
 	casting_range = "60 feet"
 	components = ("V", "S")
@@ -151,11 +151,11 @@ class Telepathy(Spell):
 	"""
 
 	name = "Telepathy"
-	level = "8"
+	level = 8
 	casting_time = "Action"
 	casting_range = "Unlimited"
 	components = ("V", "S", "M")
-	materials = "a pair of linked silver rings"
+	materials = "a pair of linked silver rings;"
 	duration = "24 hours"
 	ritual = False
 	magic_school = "Evocation"
@@ -215,7 +215,7 @@ class Teleport(Spell):
 	"""
 
 	name = "Teleport"
-	level = "7"
+	level = 7
 	casting_time = "Action"
 	casting_range = "10 feet"
 	components = ("V")
@@ -247,16 +247,16 @@ class TeleportationCircle(Spell):
 	"""
 
 	name = "Teleportation Circle"
-	level = "5"
+	level = 5
 	casting_time = "1 Min."
 	casting_range = "10 feet"
 	components = ("V", "M")
-	materials = "rare chalks and inks infused with precious gems worth 50 gp, which the spell consumes"
+	materials = "rare chalks and inks infused with precious gems worth 50 gp, which the spell consumes;"
 	duration = "1 round"
 	ritual = False
 	magic_school = "Conjuration"
 	classes = ("Bard", "Sorcerer", "Wizard","Warlock")
-class TempleoftheGods(Spell):
+class TempleOfTheGods(Spell):
 	"""You cause a temple to shimmer into existence on ground you can see 
 	within range. The temple must fit within an unoccupied cube of space, 
 	up to 120 feet on each side. The temple remains until the spell ends. 
@@ -293,11 +293,11 @@ class TempleoftheGods(Spell):
 	"""
 
 	name = "Temple of the Gods"
-	level = "7"
+	level = 7
 	casting_time = "1 Hr."
 	casting_range = "120 feet"
 	components = ("V", "S", "M")
-	materials = "a holy symbol worth at least 5 gp"
+	materials = "a holy symbol worth at least 5 gp;"
 	duration = "24 hours"
 	ritual = False
 	magic_school = "Conjuration"
@@ -316,7 +316,7 @@ class TemporalShunt(Spell):
 	other."""
 
 	name = "Temporal Shunt"
-	level = "5"
+	level = 5
 	casting_time = "Reaction"
 	casting_range = "120 feet"
 	components = ("V", "S")
@@ -343,11 +343,11 @@ class TensersFloatingDisk(Spell):
 	"""
 
 	name = "Tensers Floating Disk"
-	level = "1"
+	level = 1
 	casting_time = "Action"
 	casting_range = "30 feet"
 	components = ("V", "S", "M")
-	materials = "a drop of mercury"
+	materials = "a drop of mercury;"
 	duration = "1 hour"
 	ritual = True
 	magic_school = "Conjuration"
@@ -370,11 +370,11 @@ class TensersTransformation(Spell):
 	"""
 
 	name = "Tensers Transformation"
-	level = "6"
+	level = 6
 	casting_time = "Action"
 	casting_range = "Self"
 	components = ("V", "S", "M")
-	materials = "a few hairs from a bull"
+	materials = "a few hairs from a bull;"
 	duration = "Concentration, up to 10 minutes"
 	ritual = False
 	magic_school = "Transmutation"
@@ -394,11 +394,11 @@ class TetherEssence(Spell):
 	"""
 
 	name = "Tether Essence"
-	level = "7"
+	level = 7
 	casting_time = "Action"
 	casting_range = "60 feet"
 	components = ("V", "S", "M")
-	materials = "a spool of platinum cord worth at least 250 gp, which the spell consumes"
+	materials = "a spool of platinum cord worth at least 250 gp, which the spell consumes;"
 	duration = "Concentration, up to 1 hour"
 	ritual = False
 	magic_school = "Necromancy"
@@ -420,7 +420,7 @@ class Thaumaturgy(Spell):
 	"""
 
 	name = "Thaumaturgy"
-	level = "Cantrip"
+	level = 0
 	casting_time = "Action"
 	casting_range = "30 feet"
 	components = ("V")
@@ -440,11 +440,11 @@ class ThornWhip(Spell):
 	"""
 
 	name = "Thorn Whip"
-	level = "Cantrip"
+	level = 0
 	casting_time = "Action"
 	casting_range = "30 feet"
 	components = ("V", "S", "M")
-	materials = "the stem of a plant with thorns"
+	materials = "the stem of a plant with thorns;"
 	duration = "Instantaneous"
 	ritual = False
 	magic_school = "Transmutation"
@@ -459,7 +459,7 @@ class ThoughtShield(Spell):
 	"""
 
 	name = "Thought Shield"
-	level = "2"
+	level = 2
 	casting_time = "Action"
 	casting_range = "Touch"
 	components = ("V", "S")
@@ -487,7 +487,7 @@ class ThunderStep(Spell):
 	above 3rd."""
 
 	name = "Thunder Step"
-	level = "3"
+	level = 3
 	casting_time = "Action"
 	casting_range = "90 feet"
 	components = ("V")
@@ -506,7 +506,7 @@ class Thunderclap(Spell):
 	"""
 
 	name = "Thunderclap"
-	level = "Cantrip"
+	level = 0
 	casting_time = "Action"
 	casting_range = "5 feet"
 	components = ("S")
@@ -526,7 +526,7 @@ class ThunderousSmite(Spell):
 	"""
 
 	name = "Thunderous Smite"
-	level = "1"
+	level = 1
 	casting_time = "Bonus"
 	casting_range = "Self"
 	components = ("V")
@@ -550,7 +550,7 @@ class Thunderwave(Spell):
 	above 1st."""
 
 	name = "Thunderwave"
-	level = "1"
+	level = 1
 	casting_time = "Action"
 	casting_range = "Self (15-foot cube)"
 	components = ("V", "S")
@@ -572,11 +572,11 @@ class TidalWave(Spell):
 	"""
 
 	name = "Tidal Wave"
-	level = "3"
+	level = 3
 	casting_time = "Action"
 	casting_range = "120 feet"
 	components = ("V", "S", "M")
-	materials = "a drop of water"
+	materials = "a drop of water;"
 	duration = "Instantaneous"
 	ritual = False
 	magic_school = "Conjuration"
@@ -596,11 +596,11 @@ class TimeRavage(Spell):
 	"""
 
 	name = "Time Ravage"
-	level = "9"
+	level = 9
 	casting_time = "Action"
 	casting_range = "90 feet"
 	components = ("V", "S", "M")
-	materials = "an hourglass filled with diamond dust worth at least 5,000 gp, which the spell consumes"
+	materials = "an hourglass filled with diamond dust worth at least 5,000 gp, which the spell consumes;"
 	duration = "Instantaneous"
 	ritual = False
 	magic_school = "Necromancy"
@@ -618,7 +618,7 @@ class TimeStop(Spell):
 	"""
 
 	name = "Time Stop"
-	level = "9"
+	level = 9
 	casting_time = "Action"
 	casting_range = "Self"
 	components = ("V")
@@ -650,7 +650,7 @@ class TinyServant(Spell):
 	slot level above 3rd."""
 
 	name = "Tiny Servant"
-	level = "3"
+	level = 3
 	casting_time = "1 Min."
 	casting_range = "Touch"
 	components = ("V", "S")
@@ -659,7 +659,7 @@ class TinyServant(Spell):
 	ritual = False
 	magic_school = "Transmutation"
 	classes = ("Artificer", "Wizard")
-class TolltheDead(Spell):
+class TollTheDead(Spell):
 	"""You point at one creature you can see within range, and the sound of 
 	a dolorous bell fills the air around it for a moment. The target must 
 	succeed on a Wisdom saving throw or take 1d8 necrotic damage. If the 
@@ -670,7 +670,7 @@ class TolltheDead(Spell):
 	"""
 
 	name = "Toll the Dead"
-	level = "Cantrip"
+	level = 0
 	casting_time = "Action"
 	casting_range = "60 feet"
 	components = ("V", "S")
@@ -679,7 +679,7 @@ class TolltheDead(Spell):
 	ritual = False
 	magic_school = "Necromancy"
 	classes = ("Cleric", "Warlock", "Wizard")
-class TolltheDeadUA(Spell):
+class TollTheDead(Spell):
 	"""You point at one creature you can see within range, and the sound of 
 	a dolorous bell fills the air around it for a moment. The target must 
 	succeed on a Wisdom saving throw or take 1d8 necrotic damage. If the 
@@ -689,8 +689,8 @@ class TolltheDeadUA(Spell):
 	
 	"""
 
-	name = "Toll the Dead (UA)"
-	level = "Cantrip"
+	name = "Toll the Dead"
+	level = 0
 	casting_time = "Action"
 	casting_range = "60 feet"
 	components = ("V", "S")
@@ -708,11 +708,11 @@ class Tongues(Spell):
 	"""
 
 	name = "Tongues"
-	level = "3"
+	level = 3
 	casting_time = "Action"
 	casting_range = "Touch"
 	components = ("V", "M")
-	materials = "a small clay model of a ziggurat"
+	materials = "a small clay model of a ziggurat;"
 	duration = "1 hour"
 	ritual = False
 	magic_school = "Divination"
@@ -747,16 +747,16 @@ class TransmuteRock(Spell):
 	"""
 
 	name = "Transmute Rock"
-	level = "5"
+	level = 5
 	casting_time = "Action"
 	casting_range = "120 feet"
 	components = ("V", "S", "M")
-	materials = "clay and water"
+	materials = "clay and water;"
 	duration = "Until dispelled"
 	ritual = False
 	magic_school = "Transmutation"
 	classes = ("Artificer", "Druid", "Wizard")
-class TransportviaPlants(Spell):
+class TransportViaPlants(Spell):
 	"""This spell creates a magical link between a Large or larger 
 	inanimate plant within range and another plant, at any distance, on the 
 	same plane of existence. You must have seen or touched the destination 
@@ -767,7 +767,7 @@ class TransportviaPlants(Spell):
 	"""
 
 	name = "Transport via Plants"
-	level = "6"
+	level = 6
 	casting_time = "Action"
 	casting_range = "10 feet"
 	components = ("V", "S")
@@ -792,7 +792,7 @@ class TreeStride(Spell):
 	"""
 
 	name = "Tree Stride"
-	level = "5"
+	level = 5
 	casting_time = "Action"
 	casting_range = "Self"
 	components = ("V", "S")
@@ -845,11 +845,11 @@ class TruePolymorph(Spell):
 	"""
 
 	name = "True Polymorph"
-	level = "9"
+	level = 9
 	casting_time = "Action"
 	casting_range = "30 feet"
 	components = ("V", "S", "M")
-	materials = "a drop of mercury, a dollop of gum arabic, and a wisp of smoke"
+	materials = "a drop of mercury, a dollop of gum arabic, and a wisp of smoke;"
 	duration = "Concentration, up to 1 hour"
 	ritual = False
 	magic_school = "Transmutation"
@@ -869,11 +869,11 @@ class TrueResurrection(Spell):
 	"""
 
 	name = "True Resurrection"
-	level = "9"
+	level = 9
 	casting_time = "1 Hr."
 	casting_range = "Touch"
 	components = ("V", "S", "M")
-	materials = "a sprinkle of holy water and diamonds worth at least 25,000 gp, which the spell consumes"
+	materials = "a sprinkle of holy water and diamonds worth at least 25,000 gp, which the spell consumes;"
 	duration = "Instantaneous"
 	ritual = False
 	magic_school = "Necromancy"
@@ -887,11 +887,11 @@ class TrueSeeing(Spell):
 	"""
 
 	name = "True Seeing"
-	level = "6"
+	level = 6
 	casting_time = "Action"
 	casting_range = "Touch"
 	components = ("V", "S", "M")
-	materials = "an ointment for the eyes that costs 25 gp; is made from mushroom powder, saffron, and fat; and is consumed by the spell"
+	materials = "an ointment for the eyes that costs 25 gp; is made from mushroom powder, saffron, and fat; and is consumed by the spell;"
 	duration = "1 hour"
 	ritual = False
 	magic_school = "Divination"
@@ -905,7 +905,7 @@ class TrueStrike(Spell):
 	"""
 
 	name = "True Strike"
-	level = "Cantrip"
+	level = 0
 	casting_time = "Action"
 	casting_range = "30 feet"
 	components = ("S")
@@ -937,7 +937,7 @@ class Tsunami(Spell):
 	"""
 
 	name = "Tsunami"
-	level = "8"
+	level = 8
 	casting_time = "1 Min."
 	casting_range = "Sight"
 	components = ("V", "S")

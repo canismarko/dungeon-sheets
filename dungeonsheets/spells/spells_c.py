@@ -23,7 +23,7 @@ class CallLightning(Spell):
 	above 3rd."""
 
 	name = "Call Lightning"
-	level = "3"
+	level = 3
 	casting_time = "Action"
 	casting_range = "120 feet"
 	components = ("V", "S")
@@ -49,7 +49,7 @@ class CalmEmotions(Spell):
 	"""
 
 	name = "Calm Emotions"
-	level = "2"
+	level = 2
 	casting_time = "Action"
 	casting_range = "60 feet"
 	components = ("V", "S")
@@ -74,7 +74,7 @@ class Catapult(Spell):
 	for each slot level above 1st."""
 
 	name = "Catapult"
-	level = "1"
+	level = 1
 	casting_time = "Action"
 	casting_range = "60 feet"
 	components = ("S")
@@ -97,11 +97,11 @@ class Catnap(Spell):
 	each slot level above 3rd."""
 
 	name = "Catnap"
-	level = "3"
+	level = 3
 	casting_time = "Action"
 	casting_range = "30 feet"
 	components = ("S", "M")
-	materials = "a pinch of sand"
+	materials = "a pinch of sand;"
 	duration = "10 minutes"
 	ritual = False
 	magic_school = "Enchantment"
@@ -119,7 +119,7 @@ class CauseFear(Spell):
 	other when you target them."""
 
 	name = "Cause Fear"
-	level = "1"
+	level = 1
 	casting_time = "Action"
 	casting_range = "60 feet"
 	components = ("V")
@@ -128,7 +128,7 @@ class CauseFear(Spell):
 	ritual = False
 	magic_school = "Necromancy"
 	classes = ("Warlock", "Wizard")
-class CauseFearUA(Spell):
+class CauseFear(Spell):
 	"""You awaken the sense of mortality in one creature you can see within 
 	range. The target must succeed on a Wisdom saving throw or become 
 	frightened for the duration. A target with 25 hit points or fewer makes 
@@ -137,8 +137,8 @@ class CauseFearUA(Spell):
 	
 	"""
 
-	name = "Cause Fear (UA)"
-	level = "1"
+	name = "Cause Fear"
+	level = 1
 	casting_time = "Action"
 	casting_range = "60 feet"
 	components = ("V", "S")
@@ -172,16 +172,16 @@ class Ceremony(Spell):
 	"""
 
 	name = "Ceremony"
-	level = "1"
+	level = 1
 	casting_time = "1 Hr."
 	casting_range = "Touch"
 	components = ("V", "S", "M")
-	materials = "25 gp worth of powdered silver, which the spell consumes"
+	materials = "25 gp worth of powdered silver, which the spell consumes;"
 	duration = "Instantaneous"
 	ritual = True
 	magic_school = "Abjuration"
 	classes = ("Cleric", "Paladin")
-class CeremonyUA(Spell):
+class Ceremony(Spell):
 	"""You perform one of several religious ceremonies. When you cast the 
 	spell, choose one of the following ceremonies, the target of which must 
 	be within 10 feet of you throughout the casting. Atonement. You touch 
@@ -211,12 +211,12 @@ class CeremonyUA(Spell):
 	
 	"""
 
-	name = "Ceremony (UA)"
-	level = "1"
+	name = "Ceremony"
+	level = 1
 	casting_time = "1 Hr."
 	casting_range = "Touch"
 	components = ("V", "S", "M")
-	materials = "25 gp worth of powdered silver"
+	materials = "25 gp worth of powdered silver;"
 	duration = "Instantaneous (see text)"
 	ritual = True
 	magic_school = "Evocation"
@@ -235,11 +235,11 @@ class ChainLightning(Spell):
 	another target for each slot level above 6th."""
 
 	name = "Chain Lightning"
-	level = "6"
+	level = 6
 	casting_time = "Action"
 	casting_range = "150 feet"
 	components = ("V", "S", "M")
-	materials = "a bit of fur; a piece of amber, glass, or a crystal rod; and three silver pins"
+	materials = "a bit of fur; a piece of amber, glass, or a crystal rod; and three silver pins;"
 	duration = "Instantaneous"
 	ritual = False
 	magic_school = "Evocation"
@@ -262,7 +262,7 @@ class ChaosBolt(Spell):
 	rolled for each slot level above 1st."""
 
 	name = "Chaos Bolt"
-	level = "1"
+	level = 1
 	casting_time = "Action"
 	casting_range = "120 feet"
 	components = ("V", "S")
@@ -271,7 +271,7 @@ class ChaosBolt(Spell):
 	ritual = False
 	magic_school = "Evocation"
 	classes = ("Sorcerer")
-class ChaosBoltUA(Spell):
+class ChaosBolt(Spell):
 	"""You hurl an undulating, warbling mass of chaotic energy at one 
 	creature in range. Make a ranged spell attack against the target. On a 
 	hit, the target takes 2d8 damage. Choose one of the d8s. The number it 
@@ -287,8 +287,8 @@ class ChaosBoltUA(Spell):
 	2nd level or higher, each target takes extra damage of the type rolled. 
 	The extra damage equals 1d6 for each slot level above 1st."""
 
-	name = "Chaos Bolt (UA)"
-	level = "1"
+	name = "Chaos Bolt"
+	level = 1
 	casting_time = "Action"
 	casting_range = "120 feet"
 	components = ("V", "S")
@@ -311,7 +311,7 @@ class CharmMonster(Spell):
 	other when you target them."""
 
 	name = "Charm Monster"
-	level = "4"
+	level = 4
 	casting_time = "Action"
 	casting_range = "30 feet"
 	components = ("V", "S")
@@ -335,7 +335,7 @@ class CharmPerson(Spell):
 	other when you target them."""
 
 	name = "Charm Person"
-	level = "1"
+	level = 1
 	casting_time = "Action"
 	casting_range = "30 feet"
 	components = ("V", "S")
@@ -357,7 +357,7 @@ class ChillTouch(Spell):
 	"""
 
 	name = "Chill Touch"
-	level = "Cantrip"
+	level = 0
 	casting_time = "Action"
 	casting_range = "120 feet"
 	components = ("V", "S")
@@ -378,16 +378,16 @@ class ChromaticOrb(Spell):
 	above 1st."""
 
 	name = "Chromatic Orb"
-	level = "1"
+	level = 1
 	casting_time = "Action"
 	casting_range = "90 feet"
 	components = ("V", "S", "M")
-	materials = "a diamond worth at least 50 gp"
+	materials = "a diamond worth at least 50 gp;"
 	duration = "Instantaneous"
 	ritual = False
 	magic_school = "Evocation"
 	classes = ("Sorcerer", "Wizard")
-class CircleofDeath(Spell):
+class CircleOfDeath(Spell):
 	"""A sphere of negative energy ripples out in a 60-foot-radius sphere 
 	from a point within range. Each creature in that area must make a 
 	Constitution saving throw. A target takes 8d6 necrotic damage on a 
@@ -398,16 +398,16 @@ class CircleofDeath(Spell):
 	above 6th."""
 
 	name = "Circle of Death"
-	level = "6"
+	level = 6
 	casting_time = "Action"
 	casting_range = "150 feet"
 	components = ("V", "S", "M")
-	materials = "the powder of a crushed black pearl worth at least 500 gp"
+	materials = "the powder of a crushed black pearl worth at least 500 gp;"
 	duration = "Instantaneous"
 	ritual = False
 	magic_school = "Necromancy"
 	classes = ("Sorcerer", "Warlock", "Wizard")
-class CircleofPower(Spell):
+class CircleOfPower(Spell):
 	"""Divine energy radiates from you, distorting and diffusing magical 
 	energy within 30 feet of you. Until the spell ends, the sphere moves 
 	with you, centered on you. For the duration, each friendly creature in 
@@ -420,7 +420,7 @@ class CircleofPower(Spell):
 	"""
 
 	name = "Circle of Power"
-	level = "5"
+	level = 5
 	casting_time = "Action"
 	casting_range = "Self (30-foot radius)"
 	components = ("V")
@@ -444,11 +444,11 @@ class Clairvoyance(Spell):
 	"""
 
 	name = "Clairvoyance"
-	level = "3"
+	level = 3
 	casting_time = "10 Min."
 	casting_range = "1 mile"
 	components = ("V", "S", "M")
-	materials = "a focus worth at least 100 gp, either a jeweled horn for hearing or a glass eye for seeing"
+	materials = "a focus worth at least 100 gp, either a jeweled horn for hearing or a glass eye for seeing;"
 	duration = "Concentration, up to 10 minutes"
 	ritual = False
 	magic_school = "Divination"
@@ -471,16 +471,16 @@ class Clone(Spell):
 	"""
 
 	name = "Clone"
-	level = "8"
+	level = 8
 	casting_time = "1 Hr."
 	casting_range = "Touch"
 	components = ("V", "S", "M")
-	materials = "a diamond worth at least 1,000 gp and at least 1 cubic inch of flesh of the creature that is to be cloned, which the spell consumes, and a vessel worth at least 2,000 gp that has a sealable lid and is large enough to hold the creature being cloned, such as a huge urn, coffin, mud-filled cyst in the ground, or crystal container filled with salt water"
+	materials = "a diamond worth at least 1,000 gp and at least 1 cubic inch of flesh of the creature that is to be cloned, which the spell consumes, and a vessel worth at least 2,000 gp that has a sealable lid and is large enough to hold the creature being cloned, such as a huge urn, coffin, mud-filled cyst in the ground, or crystal container filled with salt water;"
 	duration = "Instantaneous"
 	ritual = False
 	magic_school = "Necromancy"
 	classes = ("Wizard")
-class CloudofDaggers(Spell):
+class CloudOfDaggers(Spell):
 	"""You fill the air with spinning daggers in a cube 5 feet on each 
 	side, centered on a point you choose within range. A creature takes 4d4 
 	slashing damage when it enters the spell's area for the first time on a 
@@ -491,11 +491,11 @@ class CloudofDaggers(Spell):
 	above 2nd."""
 
 	name = "Cloud of Daggers"
-	level = "2"
+	level = 2
 	casting_time = "Action"
 	casting_range = "60 feet"
 	components = ("V", "S", "M")
-	materials = "a sliver of glass"
+	materials = "a sliver of glass;"
 	duration = "Concentration, up to 1 minute"
 	ritual = False
 	magic_school = "Conjuration"
@@ -519,7 +519,7 @@ class Cloudkill(Spell):
 	above 5th."""
 
 	name = "Cloudkill"
-	level = "5"
+	level = 5
 	casting_time = "Action"
 	casting_range = "120 feet"
 	components = ("V", "S")
@@ -545,11 +545,11 @@ class ColorSpray(Spell):
 	1st."""
 
 	name = "Color Spray"
-	level = "1"
+	level = 1
 	casting_time = "Action"
 	casting_range = "Self (15-foot cone)"
 	components = ("V", "S", "M")
-	materials = "a pinch of powder or sand that is colored red, yellow, and blue"
+	materials = "a pinch of powder or sand that is colored red, yellow, and blue;"
 	duration = "1 round"
 	ritual = False
 	magic_school = "Illusion"
@@ -578,7 +578,7 @@ class Command(Spell):
 	other when you target them."""
 
 	name = "Command"
-	level = "1"
+	level = 1
 	casting_time = "Action"
 	casting_range = "60 feet"
 	components = ("V")
@@ -603,16 +603,16 @@ class Commune(Spell):
 	"""
 
 	name = "Commune"
-	level = "5"
+	level = 5
 	casting_time = "1 Min."
 	casting_range = "Self"
 	components = ("V", "S", "M")
-	materials = "incense and a vial of holy or unholy water"
+	materials = "incense and a vial of holy or unholy water;"
 	duration = "1 minute"
 	ritual = True
 	magic_school = "Divination"
 	classes = ("Cleric")
-class CommunewithCityUA(Spell):
+class CommuneWithCity(Spell):
 	"""You briefly become one with the city and gain knowledge of the 
 	surrounding area. Aboveground, this spell gives you knowledge of the 
 	area within 1 mile of you. In sewers and other underground settings, 
@@ -629,8 +629,8 @@ class CommunewithCityUA(Spell):
 	
 	"""
 
-	name = "Commune with City (UA)"
-	level = "5"
+	name = "Commune with City"
+	level = 5
 	casting_time = "1 Min."
 	casting_range = "Self"
 	components = ("V", "S")
@@ -639,7 +639,7 @@ class CommunewithCityUA(Spell):
 	ritual = True
 	magic_school = "Divination"
 	classes = ("Sorcerer", "Warlock", "Wizard")
-class CommunewithNature(Spell):
+class CommuneWithNature(Spell):
 	"""You briefly become one with nature and gain knowledge of the 
 	surrounding territory. In the outdoors, the spell gives you knowledge 
 	of the land within 3 miles of you. In caves and other natural 
@@ -657,7 +657,7 @@ class CommunewithNature(Spell):
 	"""
 
 	name = "Commune with Nature"
-	level = "5"
+	level = 5
 	casting_time = "1 Min."
 	casting_range = "Self"
 	components = ("V", "S")
@@ -682,7 +682,7 @@ class CompelledDuel(Spell):
 	"""
 
 	name = "Compelled Duel"
-	level = "1"
+	level = 1
 	casting_time = "Bonus"
 	casting_range = "30 feet"
 	components = ("V")
@@ -702,11 +702,11 @@ class ComprehendLanguages(Spell):
 	"""
 
 	name = "Comprehend Languages"
-	level = "1"
+	level = 1
 	casting_time = "Action"
 	casting_range = "Self"
 	components = ("V", "S", "M")
-	materials = "a pinch of soot and salt"
+	materials = "a pinch of soot and salt;"
 	duration = "1 hour"
 	ritual = True
 	magic_school = "Divination"
@@ -728,7 +728,7 @@ class Compulsion(Spell):
 	"""
 
 	name = "Compulsion"
-	level = "4"
+	level = 4
 	casting_time = "Action"
 	casting_range = "30 feet"
 	components = ("V", "S")
@@ -737,7 +737,7 @@ class Compulsion(Spell):
 	ritual = False
 	magic_school = "Enchantment"
 	classes = ("Bard")
-class ConeofCold(Spell):
+class ConeOfCold(Spell):
 	"""A blast of cold air erupts from your hands. Each creature in a 
 	60-foot cone must make a Constitution saving throw. A creature takes 
 	8d8 cold damage on a failed save, or half as much damage on a 
@@ -749,11 +749,11 @@ class ConeofCold(Spell):
 	above 5th."""
 
 	name = "Cone of Cold"
-	level = "5"
+	level = 5
 	casting_time = "Action"
 	casting_range = "Self (60-foot cone)"
 	components = ("V", "S", "M")
-	materials = "a small crystal or glass cone"
+	materials = "a small crystal or glass cone;"
 	duration = "Instantaneous"
 	ritual = False
 	magic_school = "Evocation"
@@ -781,11 +781,11 @@ class Confusion(Spell):
 	each slot level above 4th."""
 
 	name = "Confusion"
-	level = "4"
+	level = 4
 	casting_time = "Action"
 	casting_range = "90 feet"
 	components = ("V", "S", "M")
-	materials = "three nut shells"
+	materials = "three nut shells;"
 	duration = "Concentration, up to 1 minute"
 	ritual = False
 	magic_school = "Enchantment"
@@ -811,7 +811,7 @@ class ConjureAnimals(Spell):
 	a 9th-level slot."""
 
 	name = "Conjure Animals"
-	level = "3"
+	level = 3
 	casting_time = "Action"
 	casting_range = "60 feet"
 	components = ("V", "S")
@@ -820,7 +820,7 @@ class ConjureAnimals(Spell):
 	ritual = False
 	magic_school = "Conjuration"
 	classes = ("Druid", "Ranger")
-class ConjureBarlguraUA(Spell):
+class ConjureBarlgura(Spell):
 	"""You summon a barlgura that appears in an unoccupied space you can 
 	see within range. The barlgura disappears when it drops to 0 hit points 
 	or when the spell ends.The barlgura is hostile to all non-demons. Roll 
@@ -836,8 +836,8 @@ class ConjureBarlguraUA(Spell):
 	
 	"""
 
-	name = "Conjure Barlgura (UA)"
-	level = "4"
+	name = "Conjure Barlgura"
+	level = 4
 	casting_time = "Action"
 	casting_range = "60 feet"
 	components = ("V", "S")
@@ -858,11 +858,11 @@ class ConjureBarrage(Spell):
 	"""
 
 	name = "Conjure Barrage"
-	level = "3"
+	level = 3
 	casting_time = "Action"
 	casting_range = "Self (60-foot cone)"
 	components = ("V", "S", "M")
-	materials = "one piece of ammunition or a thrown weapon"
+	materials = "one piece of ammunition or a thrown weapon;"
 	duration = "Instantaneous"
 	ritual = False
 	magic_school = "Conjuration"
@@ -882,7 +882,7 @@ class ConjureCelestial(Spell):
 	slot, you summon a celestial of challenge rating 5 or lower."""
 
 	name = "Conjure Celestial"
-	level = "7"
+	level = 7
 	casting_time = "1 Min."
 	casting_range = "90 feet"
 	components = ("V", "S")
@@ -914,11 +914,11 @@ class ConjureElemental(Spell):
 	level above 5th."""
 
 	name = "Conjure Elemental"
-	level = "5"
+	level = 5
 	casting_time = "1 Min."
 	casting_range = "90 feet"
 	components = ("V", "S", "M")
-	materials = "burning incense for air, soft clay for earth, sulfur and phosphorus for fire, or water and sand for water"
+	materials = "burning incense for air, soft clay for earth, sulfur and phosphorus for fire, or water and sand for water;"
 	duration = "Concentration, up to 1 hour"
 	ritual = False
 	magic_school = "Conjuration"
@@ -945,7 +945,7 @@ class ConjureFey(Spell):
 	level above 6th."""
 
 	name = "Conjure Fey"
-	level = "6"
+	level = 6
 	casting_time = "1 Min."
 	casting_range = "90 feet"
 	components = ("V", "S")
@@ -954,7 +954,7 @@ class ConjureFey(Spell):
 	ritual = False
 	magic_school = "Conjuration"
 	classes = ("Druid", "Warlock")
-class ConjureHezrouUA(Spell):
+class ConjureHezrou(Spell):
 	"""You summon a hezrou that appears in an unoccupied space you can see 
 	within range. The hezrou disappears when it drops to 0 hit points or 
 	when the spell ends.The hezrou's attitude depends on the value of the 
@@ -976,17 +976,17 @@ class ConjureHezrouUA(Spell):
 	
 	"""
 
-	name = "Conjure Hezrou (UA)"
-	level = "7"
+	name = "Conjure Hezrou"
+	level = 7
 	casting_time = "Action"
 	casting_range = "60 feet"
 	components = ("V", "S", "M")
-	materials = "food worth at least 100 gp, which the spell consumes"
+	materials = "food worth at least 100 gp, which the spell consumes;"
 	duration = "Concentration, up to 1 hour"
 	ritual = False
 	magic_school = "Conjuration"
 	classes = ("Sorcerer", "Wizard")
-class ConjureKnowbotUA(Spell):
+class ConjureKnowbot(Spell):
 	"""You touch a single computerized device or computer system to conjure 
 	a knowbot—a partially sentient piece of software imprinted with 
 	vestiges of your own skills and computer abilities. For the duration of 
@@ -1009,8 +1009,8 @@ class ConjureKnowbotUA(Spell):
 	knowbot continues performing its last directed task until the spell 
 	expires."""
 
-	name = "Conjure Knowbot (UA)"
-	level = "4"
+	name = "Conjure Knowbot"
+	level = 4
 	casting_time = "Action"
 	casting_range = "Touch"
 	components = ("V", "S")
@@ -1019,7 +1019,7 @@ class ConjureKnowbotUA(Spell):
 	ritual = False
 	magic_school = "Conjuration (technomagic)"
 	classes = ("Sorcerer", "Warlock", "Wizard")
-class ConjureLesserDemonUA(Spell):
+class ConjureLesserDemon(Spell):
 	"""You summon up to a total of eight manes or dretches that appear in 
 	unoccupied spaces you can see within range. A manes or dretch 
 	disappears when it drops to 0 hit points or when the spell ends.The 
@@ -1036,12 +1036,12 @@ class ConjureLesserDemonUA(Spell):
 	6th or 7th level, you summon sixteen demons. If you cast it using a 
 	spell slot of 8th or 9th level, you summon thirty-two demons."""
 
-	name = "Conjure Lesser Demon (UA)"
-	level = "3"
+	name = "Conjure Lesser Demon"
+	level = 3
 	casting_time = "Action"
 	casting_range = "60 feet"
 	components = ("V", "S", "M")
-	materials = "a vial of blood from an intelligent humanoid killed within the past 24 hours"
+	materials = "a vial of blood from an intelligent humanoid killed within the past 24 hours;"
 	duration = "Concentration, up to 1 hour"
 	ritual = False
 	magic_school = "Conjuration"
@@ -1066,7 +1066,7 @@ class ConjureMinorElementals(Spell):
 	and three times as many with an 8th-level slot."""
 
 	name = "Conjure Minor Elementals"
-	level = "4"
+	level = 4
 	casting_time = "1 Min."
 	casting_range = "90 feet"
 	components = ("V", "S")
@@ -1075,7 +1075,7 @@ class ConjureMinorElementals(Spell):
 	ritual = False
 	magic_school = "Conjuration"
 	classes = ("Druid", "Wizard")
-class ConjureShadowDemonUA(Spell):
+class ConjureShadowDemon(Spell):
 	"""You summon a shadow demon that appears in an unoccupied space you 
 	can see within range. The shadow demon disappears when it drops to 0 
 	hit points or when the spell ends.Roll initiative for the shadow demon, 
@@ -1094,12 +1094,12 @@ class ConjureShadowDemonUA(Spell):
 	
 	"""
 
-	name = "Conjure Shadow Demon (UA)"
-	level = "4"
+	name = "Conjure Shadow Demon"
+	level = 4
 	casting_time = "Action"
 	casting_range = "60 feet"
 	components = ("V", "S", "M")
-	materials = "a vial of blood from an intelligent humanoid killed within the past 24 hours"
+	materials = "a vial of blood from an intelligent humanoid killed within the past 24 hours;"
 	duration = "Concentration, up to 1 hour"
 	ritual = False
 	magic_school = "Conjuration"
@@ -1117,16 +1117,16 @@ class ConjureVolley(Spell):
 	"""
 
 	name = "Conjure Volley"
-	level = "5"
+	level = 5
 	casting_time = "Action"
 	casting_range = "150 feet"
 	components = ("V", "S", "M")
-	materials = "one piece of ammunition or one thrown weapon"
+	materials = "one piece of ammunition or one thrown weapon;"
 	duration = "Instantaneous"
 	ritual = False
 	magic_school = "Conjuration"
 	classes = ("Ranger")
-class ConjureVrockUA(Spell):
+class ConjureVrock(Spell):
 	"""You summon a vrock that appears in an unoccupied space you can see 
 	within range. The vrock disappears when it drops to 0 hit points or 
 	when the spell ends.The vrock's attitude depends on the value of the 
@@ -1151,12 +1151,12 @@ class ConjureVrockUA(Spell):
 	
 	"""
 
-	name = "Conjure Vrock (UA)"
-	level = "5"
+	name = "Conjure Vrock"
+	level = 5
 	casting_time = "Action"
 	casting_range = "60 feet"
 	components = ("V", "S", "M")
-	materials = "a gem worth at least 100 gp, which the spell consumes"
+	materials = "a gem worth at least 100 gp, which the spell consumes;"
 	duration = "Concentration, up to 1 hour"
 	ritual = False
 	magic_school = "Conjuration"
@@ -1181,11 +1181,11 @@ class ConjureWoodlandBeings(Spell):
 	and three times as many with an 8th-level slot."""
 
 	name = "Conjure Woodland Beings"
-	level = "4"
+	level = 4
 	casting_time = "Action"
 	casting_range = "60 feet"
 	components = ("V", "S", "M")
-	materials = "one holly berry per creature summoned"
+	materials = "one holly berry per creature summoned;"
 	duration = "Concentration, up to 1 hour"
 	ritual = False
 	magic_school = "Conjuration"
@@ -1209,7 +1209,7 @@ class ContactOtherPlane(Spell):
 	"""
 
 	name = "Contact Other Plane"
-	level = "5"
+	level = 5
 	casting_time = "1 Min."
 	casting_range = "Self"
 	components = ("V")
@@ -1249,7 +1249,7 @@ class Contagion(Spell):
 	"""
 
 	name = "Contagion"
-	level = "5"
+	level = 5
 	casting_time = "Action"
 	casting_range = "Touch"
 	components = ("V", "S")
@@ -1278,11 +1278,11 @@ class Contingency(Spell):
 	"""
 
 	name = "Contingency"
-	level = "6"
+	level = 6
 	casting_time = "10 Min."
 	casting_range = "Self"
 	components = ("V", "S", "M")
-	materials = "a statuette of yourself carved from ivory and decorated with gems worth at least 1,500 gp"
+	materials = "a statuette of yourself carved from ivory and decorated with gems worth at least 1,500 gp;"
 	duration = "10 days"
 	ritual = False
 	magic_school = "Evocation"
@@ -1296,11 +1296,11 @@ class ContinualFlame(Spell):
 	"""
 
 	name = "Continual Flame"
-	level = "2"
+	level = 2
 	casting_time = "Action"
 	casting_range = "Touch"
 	components = ("V", "S", "M")
-	materials = "ruby dust worth 50 gp, which the spell consumes"
+	materials = "ruby dust worth 50 gp, which the spell consumes;"
 	duration = "Until dispelled"
 	ritual = False
 	magic_school = "Evocation"
@@ -1322,7 +1322,7 @@ class ControlFlames(Spell):
 	"""
 
 	name = "Control Flames"
-	level = "Cantrip"
+	level = 0
 	casting_time = "Action"
 	casting_range = "60 feet"
 	components = ("S")
@@ -1378,11 +1378,11 @@ class ControlWater(Spell):
 	"""
 
 	name = "Control Water"
-	level = "4"
+	level = 4
 	casting_time = "Action"
 	casting_range = "300 feet"
 	components = ("V", "S", "M")
-	materials = "a drop of water and a pinch of dust"
+	materials = "a drop of water and a pinch of dust;"
 	duration = "Concentration, up to 10 minutes"
 	ritual = False
 	magic_school = "Transmutation"
@@ -1408,11 +1408,11 @@ class ControlWeather(Spell):
 	"""
 
 	name = "Control Weather"
-	level = "8"
+	level = 8
 	casting_time = "10 Min."
 	casting_range = "Self (5-mile radius)"
 	components = ("V", "S", "M")
-	materials = "burning incense and bits of earth and wood mixed in water"
+	materials = "burning incense and bits of earth and wood mixed in water;"
 	duration = "Concentration, up to 8 hours"
 	ritual = False
 	magic_school = "Transmutation"
@@ -1444,7 +1444,7 @@ class ControlWinds(Spell):
 	"""
 
 	name = "Control Winds"
-	level = "5"
+	level = 5
 	casting_time = "Action"
 	casting_range = "300 feet"
 	components = ("V", "S")
@@ -1453,7 +1453,7 @@ class ControlWinds(Spell):
 	ritual = False
 	magic_school = "Transmutation"
 	classes = ("Druid", "Sorcerer", "Wizard")
-class CordonofArrows(Spell):
+class CordonOfArrows(Spell):
 	"""You plant four pieces of nonmagical ammunition—arrows or crossbow 
 	bolts—in the ground within range and lay magic upon them to protect 
 	an area. Until the spell ends, whenever a creature other than you comes 
@@ -1469,11 +1469,11 @@ class CordonofArrows(Spell):
 	increases by two for each slot level above 2nd."""
 
 	name = "Cordon of Arrows"
-	level = "2"
+	level = 2
 	casting_time = "Action"
 	casting_range = "5 feet"
 	components = ("V", "S", "M")
-	materials = "four or more arrows or bolts"
+	materials = "four or more arrows or bolts;"
 	duration = "8 hours"
 	ritual = False
 	magic_school = "Transmutation"
@@ -1491,7 +1491,7 @@ class Counterspell(Spell):
 	is less than or equal to the level of the spell slot you used."""
 
 	name = "Counterspell"
-	level = "3"
+	level = 3
 	casting_time = "Reaction"
 	casting_range = "60 feet"
 	components = ("S")
@@ -1514,7 +1514,7 @@ class CreateBonfire(Spell):
 	"""
 
 	name = "Create Bonfire"
-	level = "Cantrip"
+	level = 0
 	casting_time = "Action"
 	casting_range = "60 feet"
 	components = ("V", "S")
@@ -1523,7 +1523,7 @@ class CreateBonfire(Spell):
 	ritual = False
 	magic_school = "Conjuration"
 	classes = ("Artificer", "Druid", "Sorcerer", "Warlock", "Wizard")
-class CreateFoodandWater(Spell):
+class CreateFoodAndWater(Spell):
 	"""You create 45 pounds of food and 30 gallons of water on the ground 
 	or in containers within range, enough to sustain up to fifteen 
 	humanoids or five steeds for 24 hours. The food is bland but 
@@ -1533,7 +1533,7 @@ class CreateFoodandWater(Spell):
 	"""
 
 	name = "Create Food and Water"
-	level = "3"
+	level = 3
 	casting_time = "Action"
 	casting_range = "30 feet"
 	components = ("V", "S")
@@ -1564,11 +1564,11 @@ class CreateHomunculus(Spell):
 	"""
 
 	name = "Create Homunculus"
-	level = "6"
+	level = 6
 	casting_time = "1 Hr."
 	casting_range = "Touch"
 	components = ("V", "S", "M")
-	materials = "clay, ash, and mandrake root, all of which the spell consumes, and a jewel-encrusted dagger worth at least 1,000 gp"
+	materials = "clay, ash, and mandrake root, all of which the spell consumes, and a jewel-encrusted dagger worth at least 1,000 gp;"
 	duration = "Instantaneous"
 	ritual = False
 	magic_school = "Transmutation"
@@ -1589,11 +1589,11 @@ class CreateMagen(Spell):
 	"""
 
 	name = "Create Magen"
-	level = "7"
+	level = 7
 	casting_time = "1 Hr."
 	casting_range = "Touch"
 	components = ("V", "S", "M")
-	materials = "a vial of quicksilver worth 500 gp and a life-sized human doll, both of which the spell consumes, and an intricate crystal rod worth at least 1,500 gp that is not consumed"
+	materials = "a vial of quicksilver worth 500 gp and a life-sized human doll, both of which the spell consumes, and an intricate crystal rod worth at least 1,500 gp that is not consumed;"
 	duration = "Instantaneous"
 	ritual = False
 	magic_school = "Transmutation"
@@ -1606,11 +1606,11 @@ class CreateSpelljammingHelm(Spell):
 	"""
 
 	name = "Create Spelljamming Helm"
-	level = "5"
+	level = 5
 	casting_time = "Action"
 	casting_range = "Touch"
 	components = ("V", "S", "M")
-	materials = "a crystal rod worth at least 5,000 gp, which the spell consumes"
+	materials = "a crystal rod worth at least 5,000 gp, which the spell consumes;"
 	duration = "Instantaneous"
 	ritual = False
 	magic_school = "Transmutation"
@@ -1644,16 +1644,16 @@ class CreateUndead(Spell):
 	mummies."""
 
 	name = "Create Undead"
-	level = "6"
+	level = 6
 	casting_time = "1 Min."
 	casting_range = "10 feet"
 	components = ("V", "S", "M")
-	materials = "one clay pot filled with grave dirt, one clay pot filled with brackish water, and one 150 gp black onyx stone for each corpse"
+	materials = "one clay pot filled with grave dirt, one clay pot filled with brackish water, and one 150 gp black onyx stone for each corpse;"
 	duration = "Instantaneous"
 	ritual = False
 	magic_school = "Necromancy"
 	classes = ("Cleric", "Warlock", "Wizard")
-class CreateorDestroyWater(Spell):
+class CreateOrDestroyWater(Spell):
 	"""You either create or destroy water. Create Water. You create up to 
 	10 gallons of clean water within range in an open container. 
 	Alternatively, the water falls as rain in a 30-foot cube within range, 
@@ -1667,11 +1667,11 @@ class CreateorDestroyWater(Spell):
 	above 1st."""
 
 	name = "Create or Destroy Water"
-	level = "1"
+	level = 1
 	casting_time = "Action"
 	casting_range = "30 feet"
 	components = ("V", "S", "M")
-	materials = "a drop of water if creating water or a few grains of sand if destroying it"
+	materials = "a drop of water if creating water or a few grains of sand if destroying it;"
 	duration = "Instantaneous"
 	ritual = False
 	magic_school = "Transmutation"
@@ -1694,16 +1694,16 @@ class Creation(Spell):
 	above 5th."""
 
 	name = "Creation"
-	level = "5"
+	level = 5
 	casting_time = "1 Min."
 	casting_range = "30 feet"
 	components = ("V", "S", "M")
-	materials = "a tiny piece of matter of the same type of the item you plan to create"
+	materials = "a tiny piece of matter of the same type of the item you plan to create;"
 	duration = "Special"
 	ritual = False
 	magic_school = "Illusion"
 	classes = ("Artificer", "Sorcerer", "Wizard")
-class CrownofMadness(Spell):
+class CrownOfMadness(Spell):
 	"""One humanoid of your choice that you can see within range must 
 	succeed on a Wisdom saving throw or become charmed by you for the 
 	duration. While the target is charmed in this way, a twisted crown of 
@@ -1719,7 +1719,7 @@ class CrownofMadness(Spell):
 	"""
 
 	name = "Crown of Madness"
-	level = "2"
+	level = 2
 	casting_time = "Action"
 	casting_range = "120 feet"
 	components = ("V", "S")
@@ -1728,7 +1728,7 @@ class CrownofMadness(Spell):
 	ritual = False
 	magic_school = "Enchantment"
 	classes = ("Bard", "Sorcerer", "Warlock", "Wizard")
-class CrownofStars(Spell):
+class CrownOfStars(Spell):
 	"""Seven star-like motes of light appear and orbit your head until the 
 	spell ends. You can use a bonus action to send one of the motes 
 	streaking toward one creature or object within 120 feet of you. When 
@@ -1744,7 +1744,7 @@ class CrownofStars(Spell):
 	each slot level above 7th."""
 
 	name = "Crown of Stars"
-	level = "7"
+	level = 7
 	casting_time = "Action"
 	casting_range = "Self"
 	components = ("V", "S")
@@ -1763,7 +1763,7 @@ class CrusadersMantle(Spell):
 	"""
 
 	name = "Crusaders Mantle"
-	level = "3"
+	level = 3
 	casting_time = "Action"
 	casting_range = "Self (30-foot radius)"
 	components = ("V")
@@ -1782,7 +1782,7 @@ class CureWounds(Spell):
 	above 1st."""
 
 	name = "Cure Wounds"
-	level = "1"
+	level = 1
 	casting_time = "Action"
 	casting_range = "Touch"
 	components = ("V", "S")

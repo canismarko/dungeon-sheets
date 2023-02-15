@@ -1,7 +1,7 @@
 from dungeonsheets.spells.spells import Spell
 
 
-class PasswithoutTrace(Spell):
+class PassWithoutTrace(Spell):
 	"""A veil of shadows and silence radiates from you, masking you and 
 	your companions from detection. For the duration, each creature you 
 	choose within 30 feet of you (including you) has a +10 bonus to 
@@ -12,11 +12,11 @@ class PasswithoutTrace(Spell):
 	"""
 
 	name = "Pass without Trace"
-	level = "2"
+	level = 2
 	casting_time = "Action"
 	casting_range = "Self"
 	components = ("V", "S", "M")
-	materials = "ashes from a burned leaf of mistletoe and a sprig of spruce"
+	materials = "ashes from a burned leaf of mistletoe and a sprig of spruce;"
 	duration = "Concentration, up to 1 hour"
 	ritual = False
 	magic_school = "Abjuration"
@@ -34,11 +34,11 @@ class Passwall(Spell):
 	"""
 
 	name = "Passwall"
-	level = "5"
+	level = 5
 	casting_time = "Action"
 	casting_range = "30 feet"
 	components = ("V", "S", "M")
-	materials = "a pinch of sesame seeds"
+	materials = "a pinch of sesame seeds;"
 	duration = "1 hour"
 	ritual = False
 	magic_school = "Transmutation"
@@ -75,11 +75,11 @@ class PhantasmalForce(Spell):
 	"""
 
 	name = "Phantasmal Force"
-	level = "2"
+	level = 2
 	casting_time = "Action"
 	casting_range = "60 feet"
 	components = ("V", "S", "M")
-	materials = "a bit of fleece"
+	materials = "a bit of fleece;"
 	duration = "Concentration, up to 1 minute"
 	ritual = False
 	magic_school = "Illusion"
@@ -98,7 +98,7 @@ class PhantasmalKiller(Spell):
 	above 4th."""
 
 	name = "Phantasmal Killer"
-	level = "4"
+	level = 4
 	casting_time = "Action"
 	casting_range = "120 feet"
 	components = ("V", "S")
@@ -123,7 +123,7 @@ class PhantomSteed(Spell):
 	"""
 
 	name = "Phantom Steed"
-	level = "3"
+	level = 3
 	casting_time = "1 Min."
 	casting_range = "30 feet"
 	components = ("V", "S")
@@ -169,7 +169,7 @@ class PlanarAlly(Spell):
 	"""
 
 	name = "Planar Ally"
-	level = "6"
+	level = 6
 	casting_time = "10 Min."
 	casting_range = "60 feet"
 	components = ("V", "S")
@@ -204,11 +204,11 @@ class PlanarBinding(Spell):
 	and to a year and a day with a 9th-level spell slot."""
 
 	name = "Planar Binding"
-	level = "5"
+	level = 5
 	casting_time = "1 Hr."
 	casting_range = "60 feet"
 	components = ("V", "S", "M")
-	materials = "a jewel worth at least 1,000 gp, which the spell consumes"
+	materials = "a jewel worth at least 1,000 gp, which the spell consumes;"
 	duration = "24 hours"
 	ritual = False
 	magic_school = "Abjuration"
@@ -237,11 +237,11 @@ class PlaneShift(Spell):
 	"""
 
 	name = "Plane Shift"
-	level = "7"
+	level = 7
 	casting_time = "Action"
 	casting_range = "Touch"
 	components = ("V", "S", "M")
-	materials = "a forked, metal rod worth at least 250 gp, attuned to a particular plane of existence"
+	materials = "a forked, metal rod worth at least 250 gp, attuned to a particular plane of existence;"
 	duration = "Instantaneous"
 	ritual = False
 	magic_school = "Conjuration"
@@ -262,7 +262,7 @@ class PlantGrowth(Spell):
 	"""
 
 	name = "Plant Growth"
-	level = "3"
+	level = 3
 	casting_time = "Action"
 	casting_range = "150 feet"
 	components = ("V", "S")
@@ -281,7 +281,7 @@ class PoisonSpray(Spell):
 	"""
 
 	name = "Poison Spray"
-	level = "Cantrip"
+	level = 0
 	casting_time = "Action"
 	casting_range = "10 feet"
 	components = ("V", "S")
@@ -315,11 +315,11 @@ class Polymorph(Spell):
 	"""
 
 	name = "Polymorph"
-	level = "4"
+	level = 4
 	casting_time = "Action"
 	casting_range = "60 feet"
 	components = ("V", "S", "M")
-	materials = "a caterpillar cocoon"
+	materials = "a caterpillar cocoon;"
 	duration = "Concentration, up to 1 hour"
 	ritual = False
 	magic_school = "Transmutation"
@@ -334,7 +334,7 @@ class PowerWordHeal(Spell):
 	"""
 
 	name = "Power Word Heal"
-	level = "9"
+	level = 9
 	casting_time = "Action"
 	casting_range = "Touch"
 	components = ("V", "S")
@@ -351,7 +351,7 @@ class PowerWordKill(Spell):
 	"""
 
 	name = "Power Word Kill"
-	level = "9"
+	level = 9
 	casting_time = "Action"
 	casting_range = "60 feet"
 	components = ("V")
@@ -377,7 +377,7 @@ class PowerWordPain(Spell):
 	"""
 
 	name = "Power Word Pain"
-	level = "7"
+	level = 7
 	casting_time = "Action"
 	casting_range = "60 feet"
 	components = ("V")
@@ -397,7 +397,7 @@ class PowerWordStun(Spell):
 	"""
 
 	name = "Power Word Stun"
-	level = "8"
+	level = 8
 	casting_time = "Action"
 	casting_range = "60 feet"
 	components = ("V")
@@ -406,7 +406,7 @@ class PowerWordStun(Spell):
 	ritual = False
 	magic_school = "Enchantment"
 	classes = ("Bard", "Sorcerer", "Warlock", "Wizard")
-class PrayerofHealing(Spell):
+class PrayerOfHealing(Spell):
 	"""Up to six creatures of your choice that you can see within range 
 	each regain hit points equal to 2d8 + your spellcasting ability 
 	modifier. This spell has no effect on undead or constructs.
@@ -416,7 +416,7 @@ class PrayerofHealing(Spell):
 	above 2nd."""
 
 	name = "Prayer of Healing"
-	level = "2"
+	level = 2
 	casting_time = "10 Min."
 	casting_range = "30 feet"
 	components = ("V")
@@ -444,7 +444,7 @@ class Prestidigitation(Spell):
 	"""
 
 	name = "Prestidigitation"
-	level = "Cantrip"
+	level = 0
 	casting_time = "Action"
 	casting_range = "10 feet"
 	components = ("V", "S")
@@ -464,7 +464,7 @@ class PrimalSavagery(Spell):
 	"""
 
 	name = "Primal Savagery"
-	level = "Cantrip"
+	level = 0
 	casting_time = "Action"
 	casting_range = "Self"
 	components = ("S")
@@ -473,7 +473,7 @@ class PrimalSavagery(Spell):
 	ritual = False
 	magic_school = "Transmutation"
 	classes = ("Druid")
-class PrimalSavageryUA(Spell):
+class PrimalSavagery(Spell):
 	"""Your teeth or fingernails lengthen and sharpen. You choose which. 
 	Make a melee spell attack against one creature within 5 feet of you. On 
 	a hit, the target takes 1d10 piercing or slashing damage (your choice). 
@@ -483,8 +483,8 @@ class PrimalSavageryUA(Spell):
 	
 	"""
 
-	name = "Primal Savagery (UA)"
-	level = "Cantrip"
+	name = "Primal Savagery"
+	level = 0
 	casting_time = "Action"
 	casting_range = "Self"
 	components = ("S")
@@ -504,7 +504,7 @@ class PrimordialWard(Spell):
 	"""
 
 	name = "Primordial Ward"
-	level = "6"
+	level = 6
 	casting_time = "Action"
 	casting_range = "Self"
 	components = ("V", "S")
@@ -543,7 +543,7 @@ class PrismaticSpray(Spell):
 	"""
 
 	name = "Prismatic Spray"
-	level = "7"
+	level = 7
 	casting_time = "Action"
 	casting_range = "Self (60-foot cone)"
 	components = ("V", "S")
@@ -611,7 +611,7 @@ class PrismaticWall(Spell):
 	"""
 
 	name = "Prismatic Wall"
-	level = "9"
+	level = 9
 	casting_time = "Action"
 	casting_range = "60 feet"
 	components = ("V", "S")
@@ -635,7 +635,7 @@ class ProduceFlame(Spell):
 	"""
 
 	name = "Produce Flame"
-	level = "Cantrip"
+	level = 0
 	casting_time = "Action"
 	casting_range = "Self"
 	components = ("V", "S")
@@ -670,11 +670,11 @@ class ProgrammedIllusion(Spell):
 	"""
 
 	name = "Programmed Illusion"
-	level = "6"
+	level = 6
 	casting_time = "Action"
 	casting_range = "120 feet"
 	components = ("V", "S", "M")
-	materials = "a bit of fleece and jade dust worth at least 25 gp"
+	materials = "a bit of fleece and jade dust worth at least 25 gp;"
 	duration = "Until dispelled"
 	ritual = False
 	magic_school = "Illusion"
@@ -702,40 +702,40 @@ class ProjectImage(Spell):
 	"""
 
 	name = "Project Image"
-	level = "7"
+	level = 7
 	casting_time = "Action"
 	casting_range = "500 miles"
 	components = ("V", "S", "M")
-	materials = "a small replica of you made from materials worth at least 5 gp"
+	materials = "a small replica of you made from materials worth at least 5 gp;"
 	duration = "Concentration, up to 1 day"
 	ritual = False
 	magic_school = "Illusion"
 	classes = ("Bard", "Wizard")
-class ProtectionfromBallisticsUA(Spell):
+class ProtectionFromBallistics(Spell):
 	"""This spell enchants the flesh of the target against the impact of 
 	bullets. Until the spell ends, the target has resistance to nonmagical 
 	ballistic damage.
 	
 	"""
 
-	name = "Protection from Ballistics (UA)"
-	level = "3"
+	name = "Protection from Ballistics"
+	level = 3
 	casting_time = "Action"
 	casting_range = "Touch"
 	components = ("V", "S", "M")
-	materials = "a shell casing"
+	materials = "a shell casing;"
 	duration = "Concentration, up to 10 minutes"
 	ritual = False
 	magic_school = "Abjuration"
 	classes = ("Sorcerer", "Warlock", "Wizard")
-class ProtectionfromEnergy(Spell):
+class ProtectionFromEnergy(Spell):
 	"""For the duration, the willing creature you touch has resistance to 
 	one damage type of your choice: acid, cold, fire, lightning, or thunder.
 	
 	"""
 
 	name = "Protection from Energy"
-	level = "3"
+	level = 3
 	casting_time = "Action"
 	casting_range = "Touch"
 	components = ("V", "S")
@@ -744,7 +744,7 @@ class ProtectionfromEnergy(Spell):
 	ritual = False
 	magic_school = "Abjuration"
 	classes = ("Artificer", "Cleric", "Druid", "Ranger", "Sorcerer", "Wizard")
-class ProtectionfromEvilandGood(Spell):
+class ProtectionFromEvilAndGood(Spell):
 	"""Until the spell ends, one willing creature you touch is protected 
 	against certain types of creatures: aberrations, celestials, 
 	elementals, fey, fiends, and undead.The protection grants several 
@@ -757,16 +757,16 @@ class ProtectionfromEvilandGood(Spell):
 	"""
 
 	name = "Protection from Evil and Good"
-	level = "1"
+	level = 1
 	casting_time = "Action"
 	casting_range = "Touch"
 	components = ("V", "S", "M")
-	materials = "holy water or powdered silver and iron, which the spell consumes"
+	materials = "holy water or powdered silver and iron, which the spell consumes;"
 	duration = "Concentration, up to 10 minutes"
 	ritual = False
 	magic_school = "Abjuration"
 	classes = ("Cleric", "Paladin", "Warlock", "Wizard","Druid")
-class ProtectionfromPoison(Spell):
+class ProtectionFromPoison(Spell):
 	"""You touch a creature. If it is poisoned, you neutralize the poison. 
 	If more than one poison afflicts the target, you neutralize one poison 
 	that you know is present, or you neutralize one at random.For the 
@@ -776,7 +776,7 @@ class ProtectionfromPoison(Spell):
 	"""
 
 	name = "Protection from Poison"
-	level = "2"
+	level = 2
 	casting_time = "Action"
 	casting_range = "Touch"
 	components = ("V", "S")
@@ -797,7 +797,7 @@ class PsionicBlast(Spell):
 	above 3rd."""
 
 	name = "Psionic Blast"
-	level = "3"
+	level = 3
 	casting_time = "Action"
 	casting_range = "Self (30-foot cone)"
 	components = ("V")
@@ -818,7 +818,7 @@ class PsychicCrush(Spell):
 	"""
 
 	name = "Psychic Crush"
-	level = "6"
+	level = 6
 	casting_time = "Action"
 	casting_range = "60 feet"
 	components = ("V", "S")
@@ -841,7 +841,7 @@ class PsychicScream(Spell):
 	"""
 
 	name = "Psychic Scream"
-	level = "9"
+	level = 9
 	casting_time = "Action"
 	casting_range = "90 feet"
 	components = ("S")
@@ -865,7 +865,7 @@ class PulseWave(Spell):
 	pulled or pushed increases by 5 feet for each slot level above 3rd."""
 
 	name = "Pulse Wave"
-	level = "3"
+	level = 3
 	casting_time = "Action"
 	casting_range = "Self (30-foot cone)"
 	components = ("V", "S")
@@ -874,7 +874,7 @@ class PulseWave(Spell):
 	ritual = False
 	magic_school = "Evocation"
 	classes = ()
-class PuppetUA(Spell):
+class Puppet(Spell):
 	"""Your gesture forces one humanoid you can see within range to make a 
 	Constitution saving throw. On a failed save, the target must move up to 
 	its speed in a direction you choose. In addition, you can cause the 
@@ -883,8 +883,8 @@ class PuppetUA(Spell):
 	
 	"""
 
-	name = "Puppet (UA)"
-	level = "1"
+	name = "Puppet"
+	level = 1
 	casting_time = "Action"
 	casting_range = "120 feet"
 	components = ("S")
@@ -893,7 +893,7 @@ class PuppetUA(Spell):
 	ritual = False
 	magic_school = "Enchantment"
 	classes = ("Bard", "Warlock", "Wizard")
-class PurifyFoodandDrink(Spell):
+class PurifyFoodAndDrink(Spell):
 	"""All nonmagical food and drink within a 5-foot-radius sphere centered 
 	on a point of your choice within range is purified and rendered free of 
 	poison and disease.
@@ -901,7 +901,7 @@ class PurifyFoodandDrink(Spell):
 	"""
 
 	name = "Purify Food and Drink"
-	level = "1"
+	level = 1
 	casting_time = "Action"
 	casting_range = "10 feet"
 	components = ("V", "S")
@@ -924,7 +924,7 @@ class Pyrotechnics(Spell):
 	"""
 
 	name = "Pyrotechnics"
-	level = "2"
+	level = 2
 	casting_time = "Action"
 	casting_range = "60 feet"
 	components = ("V", "S")

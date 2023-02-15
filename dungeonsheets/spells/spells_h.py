@@ -1,7 +1,7 @@
 from dungeonsheets.spells.spells import Spell
 
 
-class HailofThorns(Spell):
+class HailOfThorns(Spell):
 	"""The next time you hit a creature with a ranged weapon attack before 
 	the spell ends, this spell creates a rain of thorns that sprouts from 
 	your ranged weapon or ammunition. In addition to the normal effect of 
@@ -14,7 +14,7 @@ class HailofThorns(Spell):
 	1st (to a maximum of 6d10)."""
 
 	name = "Hail of Thorns"
-	level = "1"
+	level = 1
 	casting_time = "Bonus"
 	casting_range = "Self"
 	components = ("V")
@@ -63,11 +63,11 @@ class Hallow(Spell):
 	"""
 
 	name = "Hallow"
-	level = "5"
+	level = 5
 	casting_time = "24 Hr."
 	casting_range = "Touch"
 	components = ("V", "S", "M")
-	materials = "herbs, oils, and incense worth at least 1,000 gp, which the spell consumes"
+	materials = "herbs, oils, and incense worth at least 1,000 gp, which the spell consumes;"
 	duration = "Until dispelled"
 	ritual = False
 	magic_school = "Evocation"
@@ -90,16 +90,16 @@ class HallucinatoryTerrain(Spell):
 	"""
 
 	name = "Hallucinatory Terrain"
-	level = "4"
+	level = 4
 	casting_time = "10 Min."
 	casting_range = "300 feet"
 	components = ("V", "S", "M")
-	materials = "a stone, a twig, and a bit of green plant"
+	materials = "a stone, a twig, and a bit of green plant;"
 	duration = "24 hours"
 	ritual = False
 	magic_school = "Illusion"
 	classes = ("Bard", "Druid", "Warlock", "Wizard")
-class HandofRadianceUA(Spell):
+class HandOfRadiance(Spell):
 	"""You raise your hand, and burning radiance erupts from it. Each 
 	creature of your choice that you can see within 5 feet of you must 
 	succeed on a Constitution saving throw or take 1d6 radiant damage.The 
@@ -108,8 +108,8 @@ class HandofRadianceUA(Spell):
 	
 	"""
 
-	name = "Hand of Radiance (UA)"
-	level = "Cantrip"
+	name = "Hand of Radiance"
+	level = 0
 	casting_time = "Action"
 	casting_range = "Self (5-foot radius)"
 	components = ("V", "S")
@@ -131,7 +131,7 @@ class Harm(Spell):
 	"""
 
 	name = "Harm"
-	level = "6"
+	level = 6
 	casting_time = "Action"
 	casting_range = "60 feet"
 	components = ("V", "S")
@@ -152,16 +152,16 @@ class Haste(Spell):
 	"""
 
 	name = "Haste"
-	level = "3"
+	level = 3
 	casting_time = "Action"
 	casting_range = "30 feet"
 	components = ("V", "S", "M")
-	materials = "a shaving of licorice root"
+	materials = "a shaving of licorice root;"
 	duration = "Concentration, up to 1 minute"
 	ritual = False
 	magic_school = "Transmutation"
 	classes = ("Artificer", "Sorcerer", "Wizard")
-class HaywireUA(Spell):
+class Haywire(Spell):
 	"""This spell plays havoc with electronic devices, making the use of 
 	such devices all but impossible. Each electronic device in a 
 	10-foot-radius sphere centered on a point you choose within range is 
@@ -184,8 +184,8 @@ class HaywireUA(Spell):
 	4th level or higher, the radius of the sphere affected by the spell 
 	increases by 5 feet for each slot level above 3rd."""
 
-	name = "Haywire (UA)"
-	level = "3"
+	name = "Haywire"
+	level = 3
 	casting_time = "Action"
 	casting_range = "90 feet"
 	components = ("V", "S")
@@ -205,7 +205,7 @@ class Heal(Spell):
 	slot level above 6th."""
 
 	name = "Heal"
-	level = "6"
+	level = 6
 	casting_time = "Action"
 	casting_range = "60 feet"
 	components = ("V", "S")
@@ -214,7 +214,7 @@ class Heal(Spell):
 	ritual = False
 	magic_school = "Evocation"
 	classes = ("Cleric", "Druid")
-class HealingElixirUA(Spell):
+class HealingElixir(Spell):
 	"""You create a healing elixir in a simple vial that appears in your 
 	hand. The elixir retains its potency for the duration or until it's 
 	consumed, at which point the vial vanishes.As an action, a creature can 
@@ -223,12 +223,12 @@ class HealingElixirUA(Spell):
 	
 	"""
 
-	name = "Healing Elixir (UA)"
-	level = "1"
+	name = "Healing Elixir"
+	level = 1
 	casting_time = "1 Min."
 	casting_range = "Self"
 	components = ("V", "S", "M")
-	materials = "alchemist's supplies"
+	materials = "alchemist's supplies;"
 	duration = "24 hours"
 	ritual = False
 	magic_school = "Conjuration"
@@ -251,7 +251,7 @@ class HealingSpirit(Spell):
 	above 2nd."""
 
 	name = "Healing Spirit"
-	level = "2"
+	level = 2
 	casting_time = "Bonus"
 	casting_range = "60 feet"
 	components = ("V", "S")
@@ -270,7 +270,7 @@ class HealingWord(Spell):
 	above 1st."""
 
 	name = "Healing Word"
-	level = "1"
+	level = 1
 	casting_time = "Bonus"
 	casting_range = "60 feet"
 	components = ("V")
@@ -296,11 +296,11 @@ class HeatMetal(Spell):
 	above 2nd."""
 
 	name = "Heat Metal"
-	level = "2"
+	level = 2
 	casting_time = "Action"
 	casting_range = "60 feet"
 	components = ("V", "S", "M")
-	materials = "a piece of iron and a flame"
+	materials = "a piece of iron and a flame;"
 	duration = "Concentration, up to 1 minute"
 	ritual = False
 	magic_school = "Transmutation"
@@ -316,7 +316,7 @@ class HellishRebuke(Spell):
 	above 1st."""
 
 	name = "Hellish Rebuke"
-	level = "1"
+	level = 1
 	casting_time = "Reaction"
 	casting_range = "60 feet"
 	components = ("V", "S")
@@ -339,11 +339,11 @@ class HeroesFeast(Spell):
 	"""
 
 	name = "Heroes Feast"
-	level = "6"
+	level = 6
 	casting_time = "10 Min."
 	casting_range = "30 feet"
 	components = ("V", "S", "M")
-	materials = "a gem-encrusted bowl worth at least 1,000 gp, which the spell consumes"
+	materials = "a gem-encrusted bowl worth at least 1,000 gp, which the spell consumes;"
 	duration = "Instantaneous"
 	ritual = False
 	magic_school = "Conjuration"
@@ -360,7 +360,7 @@ class Heroism(Spell):
 	slot level above 1st."""
 
 	name = "Heroism"
-	level = "1"
+	level = 1
 	casting_time = "Action"
 	casting_range = "Touch"
 	components = ("V", "S")
@@ -385,11 +385,11 @@ class Hex(Spell):
 	can maintain your concentration on the spell for up to 24 hours."""
 
 	name = "Hex"
-	level = "1"
+	level = 1
 	casting_time = "Bonus"
 	casting_range = "90 feet"
 	components = ("V", "S", "M")
-	materials = "the petrified eye of a newt"
+	materials = "the petrified eye of a newt;"
 	duration = "Concentration, up to 1 hour"
 	ritual = False
 	magic_school = "Enchantment"
@@ -407,11 +407,11 @@ class HoldMonster(Spell):
 	other when you target them."""
 
 	name = "Hold Monster"
-	level = "5"
+	level = 5
 	casting_time = "Action"
 	casting_range = "90 feet"
 	components = ("V", "S", "M")
-	materials = "a small, straight piece of iron"
+	materials = "a small, straight piece of iron;"
 	duration = "Concentration, up to 1 minute"
 	ritual = False
 	magic_school = "Enchantment"
@@ -428,11 +428,11 @@ class HoldPerson(Spell):
 	other when you target them."""
 
 	name = "Hold Person"
-	level = "2"
+	level = 2
 	casting_time = "Action"
 	casting_range = "60 feet"
 	components = ("V", "S", "M")
-	materials = "a small, straight piece of iron"
+	materials = "a small, straight piece of iron;"
 	duration = "Concentration, up to 1 minute"
 	ritual = False
 	magic_school = "Enchantment"
@@ -450,11 +450,11 @@ class HolyAura(Spell):
 	"""
 
 	name = "Holy Aura"
-	level = "8"
+	level = 8
 	casting_time = "Action"
 	casting_range = "Self"
 	components = ("V", "S", "M")
-	materials = "a tiny reliquary worth at least 1,000 gp containing a sacred relic, such as a scrap of cloth from a saint's robe or a piece of parchment from a religious text"
+	materials = "a tiny reliquary worth at least 1,000 gp containing a sacred relic, such as a scrap of cloth from a saint's robe or a piece of parchment from a religious text;"
 	duration = "Concentration, up to 1 minute"
 	ritual = False
 	magic_school = "Abjuration"
@@ -476,7 +476,7 @@ class HolyWeapon(Spell):
 	"""
 
 	name = "Holy Weapon"
-	level = "5"
+	level = 5
 	casting_time = "Bonus"
 	casting_range = "Touch"
 	components = ("V", "S")
@@ -485,7 +485,7 @@ class HolyWeapon(Spell):
 	ritual = False
 	magic_school = "Evocation"
 	classes = ("Cleric", "Paladin")
-class HouseofCards(Spell):
+class HouseOfCards(Spell):
 	"""You touch the ground and conjure forth a defensive structure made of 
 	enormous playing cards. The structure rises with you at its center, 
 	harmlessly lifting you and any creatures in the area. The house of 
@@ -505,16 +505,16 @@ class HouseofCards(Spell):
 	"""
 
 	name = "House of Cards"
-	level = "3"
+	level = 3
 	casting_time = "1 Min."
 	casting_range = "Touch"
 	components = ("V", "S", "M")
-	materials = "a deck of cards"
+	materials = "a deck of cards;"
 	duration = "24 hours"
 	ritual = False
 	magic_school = "Conjuration"
 	classes = ("Artificer", "Bard", "Sorcerer", "Wizard")
-class HungerofHadar(Spell):
+class HungerOfHadar(Spell):
 	"""You open a gateway to the dark between the stars, a region infested 
 	with unknown horrors. A 20-foot-radius sphere of blackness and bitter 
 	cold appears, centered on a point within range and lasting for the 
@@ -530,11 +530,11 @@ class HungerofHadar(Spell):
 	"""
 
 	name = "Hunger of Hadar"
-	level = "3"
+	level = 3
 	casting_time = "Action"
 	casting_range = "150 feet"
 	components = ("V", "S", "M")
-	materials = "a pickled octopus tentacle"
+	materials = "a pickled octopus tentacle;"
 	duration = "Concentration, up to 1 minute"
 	ritual = False
 	magic_school = "Conjuration"
@@ -554,7 +554,7 @@ class HuntersMark(Spell):
 	can maintain your concentration on the spell for up to 24 hours."""
 
 	name = "Hunters Mark"
-	level = "1"
+	level = 1
 	casting_time = "Bonus"
 	casting_range = "90 feet"
 	components = ("V")
@@ -576,11 +576,11 @@ class HypnoticPattern(Spell):
 	"""
 
 	name = "Hypnotic Pattern"
-	level = "3"
+	level = 3
 	casting_time = "Action"
 	casting_range = "120 feet"
 	components = ("S", "M")
-	materials = "a glowing stick of incense or a crystal vial filled with phosphorescent material"
+	materials = "a glowing stick of incense or a crystal vial filled with phosphorescent material;"
 	duration = "Concentration, up to 1 minute"
 	ritual = False
 	magic_school = "Illusion"

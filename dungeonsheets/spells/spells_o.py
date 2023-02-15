@@ -1,7 +1,7 @@
 from dungeonsheets.spells.spells import Spell
 
 
-class OnOffUA(Spell):
+class OnOff(Spell):
 	"""This cantrip allows you to activate or deactivate any electronic 
 	device within range, as long as the device has a clearly defined on or 
 	off function that can be easily accessed from the outside of the 
@@ -10,8 +10,8 @@ class OnOffUA(Spell):
 	
 	"""
 
-	name = "On/Off (UA)"
-	level = "Cantrip"
+	name = "On/Off"
+	level = 0
 	casting_time = "Action"
 	casting_range = "60 feet"
 	components = ("V", "S")
@@ -38,11 +38,11 @@ class OtherworldlyForm(Spell):
 	"""
 
 	name = "Otherworldly Form"
-	level = "6"
+	level = 6
 	casting_time = "Action"
 	casting_range = "Self"
 	components = ("V", "S", "M")
-	materials = "an object engraved with a symbol of the Outer Planes, worth at least 500 gp"
+	materials = "an object engraved with a symbol of the Outer Planes, worth at least 500 gp;"
 	duration = "Concentration, up to 1 minute"
 	ritual = False
 	magic_school = "Transmutation"
@@ -73,11 +73,11 @@ class OtilukesFreezingSphere(Spell):
 	above 6th."""
 
 	name = "Otilukes Freezing Sphere"
-	level = "6"
+	level = 6
 	casting_time = "Action"
 	casting_range = "300 feet"
 	components = ("V", "S", "M")
-	materials = "a small crystal sphere"
+	materials = "a small crystal sphere;"
 	duration = "Instantaneous"
 	ritual = False
 	magic_school = "Evocation"
@@ -101,11 +101,11 @@ class OtilukesResilientSphere(Spell):
 	"""
 
 	name = "Otilukes Resilient Sphere"
-	level = "4"
+	level = 4
 	casting_time = "Action"
 	casting_range = "30 feet"
 	components = ("V", "S", "M")
-	materials = "a hemispherical piece of clear crystal and a matching hemispherical piece of gum arabic"
+	materials = "a hemispherical piece of clear crystal and a matching hemispherical piece of gum arabic;"
 	duration = "Concentration, up to 1 minute"
 	ritual = False
 	magic_school = "Evocation"
@@ -124,7 +124,7 @@ class OttosIrresistibleDance(Spell):
 	"""
 
 	name = "Ottos Irresistible Dance"
-	level = "6"
+	level = 6
 	casting_time = "Action"
 	casting_range = "30 feet"
 	components = ("V")

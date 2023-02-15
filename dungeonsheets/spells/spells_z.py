@@ -11,7 +11,7 @@ class ZephyrStrike(Spell):
 	"""
 
 	name = "Zephyr Strike"
-	level = "1"
+	level = 1
 	casting_time = "Bonus"
 	casting_range = "Self"
 	components = ("V")
@@ -20,7 +20,7 @@ class ZephyrStrike(Spell):
 	ritual = False
 	magic_school = "Transmutation"
 	classes = ("Ranger")
-class ZephyrStrikeUA(Spell):
+class ZephyrStrike(Spell):
 	"""You move like the wind. For the duration, your movement doesn't 
 	provoke opportunity attacks.In addition, the first time you make a 
 	weapon attack on your turn before the spell ends, you make the attack 
@@ -29,8 +29,8 @@ class ZephyrStrikeUA(Spell):
 	
 	"""
 
-	name = "Zephyr Strike (UA)"
-	level = "1"
+	name = "Zephyr Strike"
+	level = 1
 	casting_time = "Bonus"
 	casting_range = "Self"
 	components = ("V")
@@ -39,7 +39,7 @@ class ZephyrStrikeUA(Spell):
 	ritual = False
 	magic_school = "Transmutation"
 	classes = ("Ranger")
-class ZoneofTruth(Spell):
+class ZoneOfTruth(Spell):
 	"""You create a magical zone that guards against deception in a 
 	15-foot-radius sphere centered on a point of your choice within range. 
 	Until the spell ends, a creature that enters the spell's area for the 
@@ -54,7 +54,7 @@ class ZoneofTruth(Spell):
 	"""
 
 	name = "Zone of Truth"
-	level = "2"
+	level = 2
 	casting_time = "Action"
 	casting_range = "60 feet"
 	components = ("V", "S")

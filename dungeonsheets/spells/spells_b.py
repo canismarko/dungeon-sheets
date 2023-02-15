@@ -13,11 +13,11 @@ class Bane(Spell):
 	slot level above 1st."""
 
 	name = "Bane"
-	level = "1"
+	level = 1
 	casting_time = "Action"
 	casting_range = "30 feet"
 	components = ("V", "S", "M")
-	materials = "a drop of blood"
+	materials = "a drop of blood;"
 	duration = "Concentration, up to 1 minute"
 	ritual = False
 	magic_school = "Enchantment"
@@ -37,7 +37,7 @@ class BanishingSmite(Spell):
 	"""
 
 	name = "Banishing Smite"
-	level = "5"
+	level = 5
 	casting_time = "Bonus"
 	casting_range = "Self"
 	components = ("V")
@@ -65,11 +65,11 @@ class Banishment(Spell):
 	slot level above 4th."""
 
 	name = "Banishment"
-	level = "4"
+	level = 4
 	casting_time = "Action"
 	casting_range = "60 feet"
 	components = ("V", "S", "M")
-	materials = "an item distasteful to the target"
+	materials = "an item distasteful to the target;"
 	duration = "Concentration, up to 1 minute"
 	ritual = False
 	magic_school = "Abjuration"
@@ -82,16 +82,16 @@ class Barkskin(Spell):
 	"""
 
 	name = "Barkskin"
-	level = "2"
+	level = 2
 	casting_time = "Action"
 	casting_range = "Touch"
 	components = ("V", "S", "M")
-	materials = "a handful of oak bark"
+	materials = "a handful of oak bark;"
 	duration = "Concentration, up to 1 hour"
 	ritual = False
 	magic_school = "Transmutation"
 	classes = ("Druid", "Ranger")
-class BeaconofHope(Spell):
+class BeaconOfHope(Spell):
 	"""This spell bestows hope and vitality. Choose any number of creatures 
 	within range. For the duration, each target has advantage on Wisdom 
 	saving throws and death saving throws, and regains the maximum number 
@@ -100,7 +100,7 @@ class BeaconofHope(Spell):
 	"""
 
 	name = "Beacon of Hope"
-	level = "3"
+	level = 3
 	casting_time = "Action"
 	casting_range = "30 feet"
 	components = ("V", "S")
@@ -122,11 +122,11 @@ class BeastBond(Spell):
 	"""
 
 	name = "Beast Bond"
-	level = "1"
+	level = 1
 	casting_time = "Action"
 	casting_range = "Touch"
 	components = ("V", "S", "M")
-	materials = "a bit of fur wrapped in a cloth"
+	materials = "a bit of fur wrapped in a cloth;"
 	duration = "Concentration, up to 10 minutes"
 	ritual = False
 	magic_school = "Divination"
@@ -142,7 +142,7 @@ class BeastSense(Spell):
 	"""
 
 	name = "Beast Sense"
-	level = "2"
+	level = 2
 	casting_time = "Action"
 	casting_range = "Touch"
 	components = ("S")
@@ -175,7 +175,7 @@ class BestowCurse(Spell):
 	that doesn't require concentration."""
 
 	name = "Bestow Curse"
-	level = "3"
+	level = 3
 	casting_time = "Action"
 	casting_range = "Touch"
 	components = ("V", "S")
@@ -224,11 +224,11 @@ class BigbysHand(Spell):
 	slot level above 5th."""
 
 	name = "Bigbys Hand"
-	level = "5"
+	level = 5
 	casting_time = "Action"
 	casting_range = "120 feet"
 	components = ("V", "S", "M")
-	materials = "an eggshell and a snakeskin glove"
+	materials = "an eggshell and a snakeskin glove;"
 	duration = "Concentration, up to 1 minute"
 	ritual = False
 	magic_school = "Evocation"
@@ -248,7 +248,7 @@ class BladeBarrier(Spell):
 	"""
 
 	name = "Blade Barrier"
-	level = "6"
+	level = 6
 	casting_time = "Action"
 	casting_range = "90 feet"
 	components = ("V", "S")
@@ -265,7 +265,7 @@ class BladeWard(Spell):
 	"""
 
 	name = "Blade Ward"
-	level = "Cantrip"
+	level = 0
 	casting_time = "Action"
 	casting_range = "Self"
 	components = ("V", "S")
@@ -274,7 +274,7 @@ class BladeWard(Spell):
 	ritual = False
 	magic_school = "Abjuration"
 	classes = ("Bard", "Sorcerer", "Warlock", "Wizard")
-class BladeofDisaster(Spell):
+class BladeOfDisaster(Spell):
 	"""You create a blade-shaped planar rift about 3 feet long in an 
 	unoccupied space you can see within range. The blade lasts for the 
 	duration. When you cast this spell, you can make up to two melee spell 
@@ -291,7 +291,7 @@ class BladeofDisaster(Spell):
 	"""
 
 	name = "Blade of Disaster"
-	level = "9"
+	level = 9
 	casting_time = "Bonus"
 	casting_range = "60 feet"
 	components = ("V", "S")
@@ -299,7 +299,7 @@ class BladeofDisaster(Spell):
 	duration = "Concentration, up to 1 minute"
 	ritual = False
 	magic_school = "Conjuration"
-	classes = (,"Sorcerer", "Warlock", "Wizard")
+	classes = ("Sorcerer", "Warlock", "Wizard")
 class Bless(Spell):
 	"""You bless up to three creatures of your choice within range. 
 	Whenever a target makes an attack roll or a saving throw before the 
@@ -311,11 +311,11 @@ class Bless(Spell):
 	slot level above 1st."""
 
 	name = "Bless"
-	level = "1"
+	level = 1
 	casting_time = "Action"
 	casting_range = "30 feet"
 	components = ("V", "S", "M")
-	materials = "a sprinkling of holy water"
+	materials = "a sprinkling of holy water;"
 	duration = "Concentration, up to 1 minute"
 	ritual = False
 	magic_school = "Enchantment"
@@ -336,7 +336,7 @@ class Blight(Spell):
 	above 4th."""
 
 	name = "Blight"
-	level = "4"
+	level = 4
 	casting_time = "Action"
 	casting_range = "30 feet"
 	components = ("V", "S")
@@ -357,7 +357,7 @@ class BlindingSmite(Spell):
 	"""
 
 	name = "Blinding Smite"
-	level = "3"
+	level = 3
 	casting_time = "Bonus"
 	casting_range = "Self"
 	components = ("V")
@@ -378,7 +378,7 @@ class BlindnessDeafness(Spell):
 	slot level above 2nd."""
 
 	name = "Blindness/Deafness"
-	level = "2"
+	level = 2
 	casting_time = "Action"
 	casting_range = "30 feet"
 	components = ("V")
@@ -407,7 +407,7 @@ class Blink(Spell):
 	"""
 
 	name = "Blink"
-	level = "3"
+	level = 3
 	casting_time = "Action"
 	casting_range = "Self"
 	components = ("V", "S")
@@ -426,7 +426,7 @@ class Blur(Spell):
 	"""
 
 	name = "Blur"
-	level = "2"
+	level = 2
 	casting_time = "Action"
 	casting_range = "Self"
 	components = ("V")
@@ -435,7 +435,7 @@ class Blur(Spell):
 	ritual = False
 	magic_school = "Illusion"
 	classes = ("Artificer", "Sorcerer", "Wizard")
-class BonesoftheEarth(Spell):
+class BonesOfTheEarth(Spell):
 	"""You cause up to six pillars of stone to burst from places on the 
 	ground that you can see within range. Each pillar is a cylinder that 
 	has a diameter of 5 feet and a height of up to 30 feet. The ground 
@@ -460,7 +460,7 @@ class BonesoftheEarth(Spell):
 	slot level above 6th."""
 
 	name = "Bones of the Earth"
-	level = "6"
+	level = 6
 	casting_time = "Action"
 	casting_range = "120 feet"
 	components = ("V", "S")
@@ -484,11 +484,11 @@ class BoomingBlade(Spell):
 	"""
 
 	name = "Booming Blade"
-	level = "Cantrip"
+	level = 0
 	casting_time = "Action"
 	casting_range = "Self (5-foot radius)"
 	components = ("S", "M")
-	materials = "a melee weapon worth at least 1 sp"
+	materials = "a melee weapon worth at least 1 sp;"
 	duration = "1 round"
 	ritual = False
 	magic_school = "Evocation"
@@ -502,11 +502,11 @@ class BorrowedKnowledge(Spell):
 	"""
 
 	name = "Borrowed Knowledge"
-	level = "2"
+	level = 2
 	casting_time = "Action"
 	casting_range = "Self"
 	components = ("V", "S", "M")
-	materials = "a book worth at least 25 gp"
+	materials = "a book worth at least 25 gp;"
 	duration = "1 hour"
 	ritual = False
 	magic_school = "Divination"
@@ -523,7 +523,7 @@ class BrandingSmite(Spell):
 	level above 2nd."""
 
 	name = "Branding Smite"
-	level = "2"
+	level = 2
 	casting_time = "Bonus"
 	casting_range = "Self"
 	components = ("V")
@@ -545,7 +545,7 @@ class BurningHands(Spell):
 	above 1st."""
 
 	name = "Burning Hands"
-	level = "1"
+	level = 1
 	casting_time = "Action"
 	casting_range = "Self (15-foot cone)"
 	components = ("V", "S")

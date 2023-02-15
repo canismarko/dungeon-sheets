@@ -14,11 +14,11 @@ class DancingLights(Spell):
 	"""
 
 	name = "Dancing Lights"
-	level = "Cantrip"
+	level = 0
 	casting_time = "Action"
 	casting_range = "120 feet"
 	components = ("V", "S", "M")
-	materials = "a bit of phosphorus or wychwood, or a glowworm"
+	materials = "a bit of phosphorus or wychwood, or a glowworm;"
 	duration = "Concentration, up to 1 minute"
 	ritual = False
 	magic_school = "Evocation"
@@ -46,7 +46,7 @@ class DanseMacabre(Spell):
 	slot level above 5th."""
 
 	name = "Danse Macabre"
-	level = "5"
+	level = 5
 	casting_time = "Action"
 	casting_range = "60 feet"
 	components = ("V", "S")
@@ -76,11 +76,11 @@ class DarkStar(Spell):
 	"""
 
 	name = "Dark Star"
-	level = "8"
+	level = 8
 	casting_time = "Action"
 	casting_range = "150 feet"
 	components = ("V", "S", "M")
-	materials = "a shard of onyx and a drop of the caster's blood, both of which the spell consumes"
+	materials = "a shard of onyx and a drop of the caster's blood, both of which the spell consumes;"
 	duration = "Concentration, up to 1 minute"
 	ritual = False
 	magic_school = "Evocation"
@@ -100,11 +100,11 @@ class Darkness(Spell):
 	"""
 
 	name = "Darkness"
-	level = "2"
+	level = 2
 	casting_time = "Action"
 	casting_range = "60 feet"
 	components = ("V", "M")
-	materials = "bat fur and a drop of pitch or piece of coal"
+	materials = "bat fur and a drop of pitch or piece of coal;"
 	duration = "Concentration, up to 10 minutes"
 	ritual = False
 	magic_school = "Evocation"
@@ -117,11 +117,11 @@ class Darkvision(Spell):
 	"""
 
 	name = "Darkvision"
-	level = "2"
+	level = 2
 	casting_time = "Action"
 	casting_range = "Touch"
 	components = ("V", "S", "M")
-	materials = "either a pinch of dried carrot or an agate"
+	materials = "either a pinch of dried carrot or an agate;"
 	duration = "8 hours"
 	ritual = False
 	magic_school = "Transmutation"
@@ -139,11 +139,11 @@ class Dawn(Spell):
 	"""
 
 	name = "Dawn"
-	level = "5"
+	level = 5
 	casting_time = "Action"
 	casting_range = "60 feet"
 	components = ("V", "S", "M")
-	materials = "a sunburst pendant worth at least 100 gp"
+	materials = "a sunburst pendant worth at least 100 gp;"
 	duration = "Concentration, up to 1 minute"
 	ritual = False
 	magic_school = "Evocation"
@@ -161,7 +161,7 @@ class Daylight(Spell):
 	"""
 
 	name = "Daylight"
-	level = "3"
+	level = 3
 	casting_time = "Action"
 	casting_range = "60 feet"
 	components = ("V", "S")
@@ -181,7 +181,7 @@ class DeathWard(Spell):
 	"""
 
 	name = "Death Ward"
-	level = "4"
+	level = 4
 	casting_time = "Action"
 	casting_range = "Touch"
 	components = ("V", "S")
@@ -214,11 +214,11 @@ class DelayedBlastFireball(Spell):
 	level above 7th."""
 
 	name = "Delayed Blast Fireball"
-	level = "7"
+	level = 7
 	casting_time = "Action"
 	casting_range = "150 feet"
 	components = ("V", "S", "M")
-	materials = "a tiny ball of bat guano and sulfur"
+	materials = "a tiny ball of bat guano and sulfur;"
 	duration = "Concentration, up to 1 minute"
 	ritual = False
 	magic_school = "Evocation"
@@ -240,7 +240,7 @@ class Demiplane(Spell):
 	"""
 
 	name = "Demiplane"
-	level = "8"
+	level = 8
 	casting_time = "Action"
 	casting_range = "60 feet"
 	components = ("S")
@@ -260,7 +260,7 @@ class DestructiveWave(Spell):
 	"""
 
 	name = "Destructive Wave"
-	level = "5"
+	level = 5
 	casting_time = "Action"
 	casting_range = "Self (30-foot radius)"
 	components = ("V")
@@ -269,7 +269,7 @@ class DestructiveWave(Spell):
 	ritual = False
 	magic_school = "Evocation"
 	classes = ("Paladin")
-class DetectEvilandGood(Spell):
+class DetectEvilAndGood(Spell):
 	"""For the duration, you know if there is an aberration, celestial, 
 	elemental, fey, fiend, or undead within 30 feet of you, as well as 
 	where the creature is located. Similarly, you know if there is a place 
@@ -281,7 +281,7 @@ class DetectEvilandGood(Spell):
 	"""
 
 	name = "Detect Evil and Good"
-	level = "1"
+	level = 1
 	casting_time = "Action"
 	casting_range = "Self"
 	components = ("V", "S")
@@ -301,7 +301,7 @@ class DetectMagic(Spell):
 	"""
 
 	name = "Detect Magic"
-	level = "1"
+	level = 1
 	casting_time = "Action"
 	casting_range = "Self"
 	components = ("V", "S")
@@ -310,7 +310,7 @@ class DetectMagic(Spell):
 	ritual = True
 	magic_school = "Divination"
 	classes = ("Artificer", "Bard", "Cleric", "Druid", "Paladin", "Ranger", "Sorcerer", "Wizard")
-class DetectPoisonandDisease(Spell):
+class DetectPoisonAndDisease(Spell):
 	"""For the duration, you can sense the presence and location of 
 	poisons, poisonous creatures, and diseases within 30 feet of you. You 
 	also identify the kind of poison, poisonous creature, or disease in 
@@ -321,11 +321,11 @@ class DetectPoisonandDisease(Spell):
 	"""
 
 	name = "Detect Poison and Disease"
-	level = "1"
+	level = 1
 	casting_time = "Action"
 	casting_range = "Self"
 	components = ("V", "S", "M")
-	materials = "a yew leaf"
+	materials = "a yew leaf;"
 	duration = "Concentration, up to 10 minutes"
 	ritual = True
 	magic_school = "Divination"
@@ -364,16 +364,16 @@ class DetectThoughts(Spell):
 	"""
 
 	name = "Detect Thoughts"
-	level = "2"
+	level = 2
 	casting_time = "Action"
 	casting_range = "Self"
 	components = ("V", "S", "M")
-	materials = "a copper piece"
+	materials = "a copper piece;"
 	duration = "Concentration, up to 1 minute"
 	ritual = False
 	magic_school = "Divination"
 	classes = ("Bard", "Sorcerer", "Wizard")
-class DigitalPhantomUA(Spell):
+class DigitalPhantom(Spell):
 	"""This spell works to actively hide your presence within a computer 
 	system. For the spell's duration, you and any other users you choose on 
 	your local network gain a +10 bonus to Intelligence checks to avoid 
@@ -384,12 +384,12 @@ class DigitalPhantomUA(Spell):
 	
 	"""
 
-	name = "Digital Phantom (UA)"
-	level = "2"
+	name = "Digital Phantom"
+	level = 2
 	casting_time = "Action"
 	casting_range = "Self"
 	components = ("V", "S", "M")
-	materials = "a small piece of copper wire"
+	materials = "a small piece of copper wire;"
 	duration = "Concentration, up to 1 hour"
 	ritual = False
 	magic_school = "Abjuration (technomagic)"
@@ -411,7 +411,7 @@ class DimensionDoor(Spell):
 	"""
 
 	name = "Dimension Door"
-	level = "4"
+	level = 4
 	casting_time = "Action"
 	casting_range = "500 feet"
 	components = ("V")
@@ -440,7 +440,7 @@ class DisguiseSelf(Spell):
 	"""
 
 	name = "Disguise Self"
-	level = "1"
+	level = 1
 	casting_time = "Action"
 	casting_range = "Self"
 	components = ("V", "S")
@@ -470,16 +470,16 @@ class Disintegrate(Spell):
 	above 6th."""
 
 	name = "Disintegrate"
-	level = "6"
+	level = 6
 	casting_time = "Action"
 	casting_range = "60 feet"
 	components = ("V", "S", "M")
-	materials = "a lodestone and a pinch of dust"
+	materials = "a lodestone and a pinch of dust;"
 	duration = "Instantaneous"
 	ritual = False
 	magic_school = "Transmutation"
 	classes = ("Sorcerer", "Wizard")
-class DispelEvilandGood(Spell):
+class DispelEvilAndGood(Spell):
 	"""Shimmering energy surrounds and protects you from fey, undead, and 
 	creatures originating from beyond the Material Plane. For the duration, 
 	celestials, elementals, fey, fiends, and undead have disadvantage on 
@@ -499,11 +499,11 @@ class DispelEvilandGood(Spell):
 	"""
 
 	name = "Dispel Evil and Good"
-	level = "5"
+	level = 5
 	casting_time = "Action"
 	casting_range = "Self"
 	components = ("V", "S", "M")
-	materials = "holy water or powdered silver and iron"
+	materials = "holy water or powdered silver and iron;"
 	duration = "Concentration, up to 1 minute"
 	ritual = False
 	magic_school = "Abjuration"
@@ -521,7 +521,7 @@ class DispelMagic(Spell):
 	the spell slot you used."""
 
 	name = "Dispel Magic"
-	level = "3"
+	level = 3
 	casting_time = "Action"
 	casting_range = "120 feet"
 	components = ("V", "S")
@@ -545,7 +545,7 @@ class DissonantWhispers(Spell):
 	above 1st."""
 
 	name = "Dissonant Whispers"
-	level = "1"
+	level = 1
 	casting_time = "Action"
 	casting_range = "60 feet"
 	components = ("V")
@@ -571,7 +571,7 @@ class DistortValue(Spell):
 	for each slot level above 1st."""
 
 	name = "Distort Value"
-	level = "1"
+	level = 1
 	casting_time = "1 Min."
 	casting_range = "Touch"
 	components = ("V")
@@ -595,11 +595,11 @@ class Divination(Spell):
 	"""
 
 	name = "Divination"
-	level = "4"
+	level = 4
 	casting_time = "Action"
 	casting_range = "Self"
 	components = ("V", "S", "M")
-	materials = "incense and a sacrificial offering appropriate to your religion, together worth at least 25 gp, which the spell consumes"
+	materials = "incense and a sacrificial offering appropriate to your religion, together worth at least 25 gp, which the spell consumes;"
 	duration = "Instantaneous"
 	ritual = True
 	magic_school = "Divination"
@@ -611,7 +611,7 @@ class DivineFavor(Spell):
 	"""
 
 	name = "Divine Favor"
-	level = "1"
+	level = 1
 	casting_time = "Bonus"
 	casting_range = "Self"
 	components = ("V", "S")
@@ -637,7 +637,7 @@ class DivineWord(Spell):
 	"""
 
 	name = "Divine Word"
-	level = "7"
+	level = 7
 	casting_time = "Bonus"
 	casting_range = "30 feet"
 	components = ("V")
@@ -674,7 +674,7 @@ class DominateBeast(Spell):
 	concentration, up to 8 hours."""
 
 	name = "Dominate Beast"
-	level = "4"
+	level = 4
 	casting_time = "Action"
 	casting_range = "60 feet"
 	components = ("V", "S")
@@ -708,7 +708,7 @@ class DominateMonster(Spell):
 	slot, the duration is concentration, up to 8 hours."""
 
 	name = "Dominate Monster"
-	level = "8"
+	level = 8
 	casting_time = "Action"
 	casting_range = "60 feet"
 	components = ("V", "S")
@@ -745,7 +745,7 @@ class DominatePerson(Spell):
 	concentration, up to 8 hours."""
 
 	name = "Dominate Person"
-	level = "5"
+	level = 5
 	casting_time = "Action"
 	casting_range = "60 feet"
 	components = ("V", "S")
@@ -771,11 +771,11 @@ class DraconicTransformation(Spell):
 	"""
 
 	name = "Draconic Transformation"
-	level = "7"
+	level = 7
 	casting_time = "Bonus"
 	casting_range = "Self"
 	components = ("V", "S", "M")
-	materials = "a statuette of a dragon, worth at least 500 gp"
+	materials = "a statuette of a dragon, worth at least 500 gp;"
 	duration = "Concentration, up to 1 minute"
 	ritual = False
 	magic_school = "Transmutation"
@@ -797,11 +797,11 @@ class DraconicTransformation(Spell):
 	"""
 
 	name = "Draconic Transformation"
-	level = "7"
+	level = 7
 	casting_time = "Bonus"
 	casting_range = "Self"
 	components = ("V", "S", "M")
-	materials = "a statuette of a dragon, worth at least 500 gp"
+	materials = "a statuette of a dragon, worth at least 500 gp;"
 	duration = "Concentration, up to 1 minute"
 	ritual = False
 	magic_school = "Transmutation"
@@ -820,11 +820,11 @@ class DragonsBreath(Spell):
 	above 2nd."""
 
 	name = "Dragons Breath"
-	level = "2"
+	level = 2
 	casting_time = "Bonus"
 	casting_range = "Touch"
 	components = ("V", "S", "M")
-	materials = "a hot pepper"
+	materials = "a hot pepper;"
 	duration = "Concentration, up to 1 minute"
 	ritual = False
 	magic_school = "Transmutation"
@@ -847,11 +847,11 @@ class DrawmijsInstantSummons(Spell):
 	"""
 
 	name = "Drawmijs Instant Summons"
-	level = "6"
+	level = 6
 	casting_time = "1 Min."
 	casting_range = "Touch"
 	components = ("V", "S", "M")
-	materials = "a sapphire worth 1,000 gp"
+	materials = "a sapphire worth 1,000 gp;"
 	duration = "Until dispelled"
 	ritual = True
 	magic_school = "Conjuration"
@@ -886,16 +886,16 @@ class Dream(Spell):
 	"""
 
 	name = "Dream"
-	level = "5"
+	level = 5
 	casting_time = "1 Min."
 	casting_range = "Special"
 	components = ("V", "S", "M")
-	materials = "a handful of sand, a dab of ink, and a writing quill plucked from a sleeping bird"
+	materials = "a handful of sand, a dab of ink, and a writing quill plucked from a sleeping bird;"
 	duration = "8 hours"
 	ritual = False
 	magic_school = "Illusion"
 	classes = ("Bard", "Warlock", "Wizard")
-class DreamoftheBlueVeil(Spell):
+class DreamOfTheBlueVeil(Spell):
 	"""You and up to eight willing creatures within range fall unconscious 
 	for the spell's duration and experience visions of another world on the 
 	Material Plane, such as Oerth, Toril, Krynn, or Eberron. If the spell 
@@ -917,15 +917,15 @@ class DreamoftheBlueVeil(Spell):
 	"""
 
 	name = "Dream of the Blue Veil"
-	level = "7"
+	level = 7
 	casting_time = "10 Min."
 	casting_range = "20 feet"
 	components = ("V", "S", "M")
-	materials = "a magic item or a willing creature from the destination world"
+	materials = "a magic item or a willing creature from the destination world;"
 	duration = "6 hours"
 	ritual = False
 	magic_school = "Conjuration"
-	classes = (,"Bard", "Sorcerer", "Warlock", "Wizard")
+	classes = ("Bard", "Sorcerer", "Warlock", "Wizard")
 class DruidGrove(Spell):
 	"""You invoke the spirits of nature to protect an area outdoors or 
 	underground. The area can be as small as a 30-foot cube or as large as 
@@ -969,11 +969,11 @@ class DruidGrove(Spell):
 	"""
 
 	name = "Druid Grove"
-	level = "6"
+	level = 6
 	casting_time = "10 Min."
 	casting_range = "Touch"
 	components = ("V", "S", "M")
-	materials = "mistletoe, which the spell consumes, that was harvested with a golden sickle under the light of a full moon"
+	materials = "mistletoe, which the spell consumes, that was harvested with a golden sickle under the light of a full moon;"
 	duration = "24 hours"
 	ritual = False
 	magic_school = "Abjuration"
@@ -994,7 +994,7 @@ class Druidcraft(Spell):
 	"""
 
 	name = "Druidcraft"
-	level = "Cantrip"
+	level = 0
 	casting_time = "Action"
 	casting_range = "30 feet"
 	components = ("V", "S")
@@ -1021,11 +1021,11 @@ class DustDevil(Spell):
 	above 2nd."""
 
 	name = "Dust Devil"
-	level = "2"
+	level = 2
 	casting_time = "Action"
 	casting_range = "60 feet"
 	components = ("V", "S", "M")
-	materials = "a pinch of dust"
+	materials = "a pinch of dust;"
 	duration = "Concentration, up to 1 minute"
 	ritual = False
 	magic_school = "Conjuration"

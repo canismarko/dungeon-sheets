@@ -29,11 +29,11 @@ class GaldersSpeedyCourier(Spell):
 	existence from you."""
 
 	name = "Galders Speedy Courier"
-	level = "4"
+	level = 4
 	casting_time = "Action"
 	casting_range = "10 feet"
 	components = ("V", "S", "M")
-	materials = "25 gold pieces, or mineral goods of equivalent value, which the spell consumes"
+	materials = "25 gold pieces, or mineral goods of equivalent value, which the spell consumes;"
 	duration = "10 minutes"
 	ritual = False
 	magic_school = "Conjuration"
@@ -66,11 +66,11 @@ class GaldersTower(Spell):
 	slot level beyond 3rd."""
 
 	name = "Galders Tower"
-	level = "3"
+	level = 3
 	casting_time = "10 Min."
 	casting_range = "30 feet"
 	components = ("V", "S", "M")
-	materials = "a fragment of stone, wood, or other building material"
+	materials = "a fragment of stone, wood, or other building material;"
 	duration = "24 hours"
 	ritual = False
 	magic_school = "Conjuration"
@@ -94,11 +94,11 @@ class GaseousForm(Spell):
 	"""
 
 	name = "Gaseous Form"
-	level = "3"
+	level = 3
 	casting_time = "Action"
 	casting_range = "Touch"
 	components = ("V", "S", "M")
-	materials = "a bit of gauze and a wisp of smoke"
+	materials = "a bit of gauze and a wisp of smoke;"
 	duration = "Concentration, up to 1 hour"
 	ritual = False
 	magic_school = "Transmutation"
@@ -126,11 +126,11 @@ class Gate(Spell):
 	"""
 
 	name = "Gate"
-	level = "9"
+	level = 9
 	casting_time = "Action"
 	casting_range = "60 feet"
 	components = ("V", "S", "M")
-	materials = "a diamond worth at least 5,000 gp"
+	materials = "a diamond worth at least 5,000 gp;"
 	duration = "Concentration, up to 1 minute"
 	ritual = False
 	magic_school = "Conjuration"
@@ -155,7 +155,7 @@ class Geas(Spell):
 	one of the spells mentioned above."""
 
 	name = "Geas"
-	level = "5"
+	level = 5
 	casting_time = "1 Min."
 	casting_range = "60 feet"
 	components = ("V")
@@ -174,11 +174,11 @@ class GentleRepose(Spell):
 	"""
 
 	name = "Gentle Repose"
-	level = "2"
+	level = 2
 	casting_time = "Action"
 	casting_range = "Touch"
 	components = ("V", "S", "M")
-	materials = "a pinch of salt and one copper piece placed on each of the corpse's eyes, which must remain there for the duration"
+	materials = "a pinch of salt and one copper piece placed on each of the corpse's eyes, which must remain there for the duration;"
 	duration = "10 days"
 	ritual = True
 	magic_school = "Necromancy"
@@ -200,7 +200,7 @@ class GiantInsect(Spell):
 	"""
 
 	name = "Giant Insect"
-	level = "4"
+	level = 4
 	casting_time = "Action"
 	casting_range = "30 feet"
 	components = ("V", "S")
@@ -209,14 +209,14 @@ class GiantInsect(Spell):
 	ritual = False
 	magic_school = "Transmutation"
 	classes = ("Druid")
-class GiftofAlacrity(Spell):
+class GiftOfAlacrity(Spell):
 	"""You touch a willing creature. For the duration, the target can add 
 	1d8 to its initiative rolls.
 	
 	"""
 
 	name = "Gift of Alacrity"
-	level = "1"
+	level = 1
 	casting_time = "1 Min."
 	casting_range = "Touch"
 	components = ("V", "S")
@@ -225,7 +225,7 @@ class GiftofAlacrity(Spell):
 	ritual = False
 	magic_school = "Divination"
 	classes = ()
-class GiftofGab(Spell):
+class GiftOfGab(Spell):
 	"""“When I met Jim Darkmagic, I wondered how he got anything done in 
 	that outfit. I have since learned that most of his talents involve 
 	standing and talking. His outfit is perfect for that.”— MôrgænJim 
@@ -244,11 +244,11 @@ class GiftofGab(Spell):
 	"""
 
 	name = "Gift of Gab"
-	level = "2"
+	level = 2
 	casting_time = "Reaction"
 	casting_range = "Self"
 	components = ("V", "S", "R")
-	materials = "2 gp"
+	materials = "2 gp;"
 	duration = "Instantaneous"
 	ritual = False
 	magic_school = "Enchantment"
@@ -262,7 +262,7 @@ class Glibness(Spell):
 	"""
 
 	name = "Glibness"
-	level = "8"
+	level = 8
 	casting_time = "Action"
 	casting_range = "Self"
 	components = ("V")
@@ -271,7 +271,7 @@ class Glibness(Spell):
 	ritual = False
 	magic_school = "Transmutation"
 	classes = ("Bard", "Warlock")
-class GlobeofInvulnerability(Spell):
+class GlobeOfInvulnerability(Spell):
 	"""An immobile, faintly shimmering barrier springs into existence in a 
 	10-foot radius around you and remains for the duration.Any spell of 5th 
 	level or lower cast from outside the barrier can't affect creatures or 
@@ -285,16 +285,16 @@ class GlobeofInvulnerability(Spell):
 	each slot level above 6th."""
 
 	name = "Globe of Invulnerability"
-	level = "6"
+	level = 6
 	casting_time = "Action"
 	casting_range = "Self (10-foot radius)"
 	components = ("V", "S", "M")
-	materials = "a glass or crystal bead that shatters when the spell ends"
+	materials = "a glass or crystal bead that shatters when the spell ends;"
 	duration = "Concentration, up to 1 minute"
 	ritual = False
 	magic_school = "Abjuration"
 	classes = ("Sorcerer", "Wizard")
-class GlyphofWarding(Spell):
+class GlyphOfWarding(Spell):
 	"""When you cast this spell, you inscribe a glyph that later unleashes 
 	a magical effect. You inscribe it either on a surface (such as a table 
 	or a section of floor or wall) or within an object that can be closed 
@@ -342,11 +342,11 @@ class GlyphofWarding(Spell):
 	glyph of warding."""
 
 	name = "Glyph of Warding"
-	level = "3"
+	level = 3
 	casting_time = "1 Hr."
 	casting_range = "Touch"
 	components = ("V", "S", "M")
-	materials = "incense and powdered diamond worth at least 200 gp, which the spell consumes"
+	materials = "incense and powdered diamond worth at least 200 gp, which the spell consumes;"
 	duration = "Until dispelled or triggered"
 	ritual = False
 	magic_school = "Abjuration"
@@ -362,11 +362,11 @@ class Goodberry(Spell):
 	"""
 
 	name = "Goodberry"
-	level = "1"
+	level = 1
 	casting_time = "Action"
 	casting_range = "Touch"
 	components = ("V", "S", "M")
-	materials = "a sprig of mistletoe"
+	materials = "a sprig of mistletoe;"
 	duration = "Instantaneous"
 	ritual = False
 	magic_school = "Transmutation"
@@ -383,7 +383,7 @@ class GraspingVine(Spell):
 	"""
 
 	name = "Grasping Vine"
-	level = "4"
+	level = 4
 	casting_time = "Bonus"
 	casting_range = "30 feet"
 	components = ("V", "S")
@@ -406,11 +406,11 @@ class GravityFissure(Spell):
 	above 6th."""
 
 	name = "Gravity Fissure"
-	level = "6"
+	level = 6
 	casting_time = "Action"
 	casting_range = "Self (100-foot line)"
 	components = ("V", "S", "M")
-	materials = "a fistful of iron filings"
+	materials = "a fistful of iron filings;"
 	duration = "Instantaneous"
 	ritual = False
 	magic_school = "Evocation"
@@ -430,11 +430,11 @@ class GravitySinkhole(Spell):
 	above 4th."""
 
 	name = "Gravity Sinkhole"
-	level = "4"
+	level = 4
 	casting_time = "Action"
 	casting_range = "120 feet"
 	components = ("V", "S", "M")
-	materials = "a black marble"
+	materials = "a black marble;"
 	duration = "Instantaneous"
 	ritual = False
 	magic_school = "Evocation"
@@ -450,11 +450,11 @@ class Grease(Spell):
 	"""
 
 	name = "Grease"
-	level = "1"
+	level = 1
 	casting_time = "Action"
 	casting_range = "60 feet"
 	components = ("V", "S", "M")
-	materials = "a bit of pork rind or butter"
+	materials = "a bit of pork rind or butter;"
 	duration = "1 minute"
 	ritual = False
 	magic_school = "Conjuration"
@@ -467,7 +467,7 @@ class GreaterInvisibility(Spell):
 	"""
 
 	name = "Greater Invisibility"
-	level = "4"
+	level = 4
 	casting_time = "Action"
 	casting_range = "Touch"
 	components = ("V", "S")
@@ -487,11 +487,11 @@ class GreaterRestoration(Spell):
 	"""
 
 	name = "Greater Restoration"
-	level = "5"
+	level = 5
 	casting_time = "Action"
 	casting_range = "Touch"
 	components = ("V", "S", "M")
-	materials = "diamond dust worth at least 100 gp, which the spell consumes"
+	materials = "diamond dust worth at least 100 gp, which the spell consumes;"
 	duration = "Instantaneous"
 	ritual = False
 	magic_school = "Abjuration"
@@ -512,16 +512,16 @@ class GreenFlameBlade(Spell):
 	"""
 
 	name = "Green-Flame Blade"
-	level = "Cantrip"
+	level = 0
 	casting_time = "Action"
 	casting_range = "Self (5-foot radius)"
 	components = ("S", "M")
-	materials = "a melee weapon worth at least 1 sp"
+	materials = "a melee weapon worth at least 1 sp;"
 	duration = "Instantaneous"
 	ritual = False
 	magic_school = "Evocation"
 	classes = ("Artificer", "Sorcerer", "Warlock", "Wizard","Sorcerer", "Warlock", "Wizard")
-class GuardianofFaith(Spell):
+class GuardianOfFaith(Spell):
 	"""A Large spectral guardian appears and hovers for the duration in an 
 	unoccupied space of your choice that you can see within range. The 
 	guardian occupies that space and is indistinct except for a gleaming 
@@ -535,7 +535,7 @@ class GuardianofFaith(Spell):
 	"""
 
 	name = "Guardian of Faith"
-	level = "4"
+	level = 4
 	casting_time = "Action"
 	casting_range = "30 feet"
 	components = ("V")
@@ -544,7 +544,7 @@ class GuardianofFaith(Spell):
 	ritual = False
 	magic_school = "Conjuration"
 	classes = ("Cleric")
-class GuardianofNature(Spell):
+class GuardianOfNature(Spell):
 	"""A nature spirit answers your call and transforms you into a powerful 
 	guardian. The transformation lasts until the spell ends. You choose one 
 	of the following forms to assume: Primal Beast or Great Tree. Primal 
@@ -562,7 +562,7 @@ class GuardianofNature(Spell):
 	"""
 
 	name = "Guardian of Nature"
-	level = "4"
+	level = 4
 	casting_time = "Bonus"
 	casting_range = "Self"
 	components = ("V")
@@ -571,7 +571,7 @@ class GuardianofNature(Spell):
 	ritual = False
 	magic_school = "Transmutation"
 	classes = ("Druid", "Ranger")
-class GuardsandWards(Spell):
+class GuardsAndWards(Spell):
 	"""You create a ward that protects up to 2,500 square feet of floor 
 	space (an area 50 feet square, or one hundred 5-foot squares or 
 	twenty-five 10-foot squares). The warded area can be up to 20 feet 
@@ -611,11 +611,11 @@ class GuardsandWards(Spell):
 	"""
 
 	name = "Guards and Wards"
-	level = "6"
+	level = 6
 	casting_time = "10 Min."
 	casting_range = "Touch"
 	components = ("V", "S", "M")
-	materials = "burning incense, a small measure of brimstone and oil, a knotted string, a small amount of umber hulk blood, and a small silver rod worth at least 10 gp"
+	materials = "burning incense, a small measure of brimstone and oil, a knotted string, a small amount of umber hulk blood, and a small silver rod worth at least 10 gp;"
 	duration = "24 hours"
 	ritual = False
 	magic_school = "Abjuration"
@@ -629,7 +629,7 @@ class Guidance(Spell):
 	"""
 
 	name = "Guidance"
-	level = "Cantrip"
+	level = 0
 	casting_time = "Action"
 	casting_range = "Touch"
 	components = ("V", "S")
@@ -650,7 +650,7 @@ class GuidingBolt(Spell):
 	above 1st."""
 
 	name = "Guiding Bolt"
-	level = "1"
+	level = 1
 	casting_time = "Action"
 	casting_range = "120 feet"
 	components = ("V", "S")
@@ -659,7 +659,7 @@ class GuidingBolt(Spell):
 	ritual = False
 	magic_school = "Evocation"
 	classes = ("Cleric")
-class GuidingHandUA(Spell):
+class GuidingHand(Spell):
 	"""You create a Tiny incorporeal hand of shimmering light in an 
 	unoccupied space you can see within range. The hand exists for the 
 	duration, but it disappears if you teleport or you travel to a 
@@ -675,8 +675,8 @@ class GuidingHandUA(Spell):
 	
 	"""
 
-	name = "Guiding Hand (UA)"
-	level = "1"
+	name = "Guiding Hand"
+	level = 1
 	casting_time = "1 Min."
 	casting_range = "5 feet"
 	components = ("V", "S")
@@ -699,7 +699,7 @@ class Gust(Spell):
 	"""
 
 	name = "Gust"
-	level = "Cantrip"
+	level = 0
 	casting_time = "Action"
 	casting_range = "30 feet"
 	components = ("V", "S")
@@ -708,7 +708,7 @@ class Gust(Spell):
 	ritual = False
 	magic_school = "Transmutation"
 	classes = ("Druid", "Sorcerer", "Wizard")
-class GustofWind(Spell):
+class GustOfWind(Spell):
 	"""A line of strong wind 60 feet long and 10 feet wide blasts from you 
 	in a direction you choose for the spell's duration. Each creature that 
 	starts its turn in the line must succeed on a Strength saving throw or 
@@ -724,11 +724,11 @@ class GustofWind(Spell):
 	"""
 
 	name = "Gust of Wind"
-	level = "2"
+	level = 2
 	casting_time = "Action"
 	casting_range = "Self (60-foot line)"
 	components = ("V", "S", "M")
-	materials = "a legume seed"
+	materials = "a legume seed;"
 	duration = "Concentration, up to 1 minute"
 	ritual = False
 	magic_school = "Evocation"

@@ -1,7 +1,7 @@
 from dungeonsheets.spells.spells import Spell
 
 
-class UnearthlyChorusUA(Spell):
+class UnearthlyChorus(Spell):
 	"""Music of a style you choose fills the air around you in a 30-foot 
 	radius. The music spreads around corners and can be heard from up to 
 	100 feet away. The music moves with you, centered on you for the 
@@ -18,8 +18,8 @@ class UnearthlyChorusUA(Spell):
 	
 	"""
 
-	name = "Unearthly Chorus (UA)"
-	level = "1"
+	name = "Unearthly Chorus"
+	level = 1
 	casting_time = "Action"
 	casting_range = "Self (30-foot radius)"
 	components = ("V")
@@ -46,11 +46,11 @@ class UnseenServant(Spell):
 	"""
 
 	name = "Unseen Servant"
-	level = "1"
+	level = 1
 	casting_time = "Action"
 	casting_range = "60 feet"
 	components = ("V", "S", "M")
-	materials = "a piece of string and a bit of wood"
+	materials = "a piece of string and a bit of wood;"
 	duration = "1 hour"
 	ritual = True
 	magic_school = "Conjuration"

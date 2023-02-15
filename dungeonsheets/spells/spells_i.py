@@ -13,11 +13,11 @@ class IceKnife(Spell):
 	level above 1st."""
 
 	name = "Ice Knife"
-	level = "1"
+	level = 1
 	casting_time = "Action"
 	casting_range = "60 feet"
 	components = ("S", "M")
-	materials = "a drop of water or piece of ice"
+	materials = "a drop of water or piece of ice;"
 	duration = "Instantaneous"
 	ritual = False
 	magic_school = "Conjuration"
@@ -35,11 +35,11 @@ class IceStorm(Spell):
 	slot level above 4th."""
 
 	name = "Ice Storm"
-	level = "4"
+	level = 4
 	casting_time = "Action"
 	casting_range = "300 feet"
 	components = ("V", "S", "M")
-	materials = "a pinch of dust and a few drops of water"
+	materials = "a pinch of dust and a few drops of water;"
 	duration = "Instantaneous"
 	ritual = False
 	magic_school = "Evocation"
@@ -58,11 +58,11 @@ class IcingdeathsFrost(Spell):
 	level above 2nd."""
 
 	name = "Icingdeaths Frost"
-	level = "2"
+	level = 2
 	casting_time = "Action"
 	casting_range = "Self (15-foot cone)"
 	components = ("S", "M")
-	materials = "a vial of meltwater"
+	materials = "a vial of meltwater;"
 	duration = "Instantaneous"
 	ritual = False
 	magic_school = "Evocation"
@@ -78,7 +78,7 @@ class IdInsinuation(Spell):
 	"""
 
 	name = "Id Insinuation"
-	level = "1"
+	level = 1
 	casting_time = "Action"
 	casting_range = "60 feet"
 	components = ("V", "S")
@@ -100,11 +100,11 @@ class Identify(Spell):
 	"""
 
 	name = "Identify"
-	level = "1"
+	level = 1
 	casting_time = "1 Min."
 	casting_range = "Touch"
 	components = ("V", "S", "M")
-	materials = "a pearl worth at least 100 gp and an owl feather"
+	materials = "a pearl worth at least 100 gp and an owl feather;"
 	duration = "Instantaneous"
 	ritual = True
 	magic_school = "Divination"
@@ -137,7 +137,7 @@ class IllusoryDragon(Spell):
 	"""
 
 	name = "Illusory Dragon"
-	level = "8"
+	level = 8
 	casting_time = "Action"
 	casting_range = "120 feet"
 	components = ("S")
@@ -162,11 +162,11 @@ class IllusoryScript(Spell):
 	"""
 
 	name = "Illusory Script"
-	level = "1"
+	level = 1
 	casting_time = "1 Min."
 	casting_range = "Touch"
 	components = ("S", "M")
-	materials = "a lead-based ink worth at least 10 gp, which the spell consumes"
+	materials = "a lead-based ink worth at least 10 gp, which the spell consumes;"
 	duration = "10 days"
 	ritual = True
 	magic_school = "Illusion"
@@ -186,7 +186,7 @@ class Immolation(Spell):
 	"""
 
 	name = "Immolation"
-	level = "5"
+	level = 5
 	casting_time = "Action"
 	casting_range = "90 feet"
 	components = ("V")
@@ -214,11 +214,11 @@ class ImmovableObject(Spell):
 	weight, and the effect is permanent until dispelled."""
 
 	name = "Immovable Object"
-	level = "2"
+	level = 2
 	casting_time = "Action"
 	casting_range = "Touch"
 	components = ("V", "S", "M")
-	materials = "gold dust worth at least 25 gp, which the spell consumes"
+	materials = "gold dust worth at least 25 gp, which the spell consumes;"
 	duration = "1 hour"
 	ritual = False
 	magic_school = "Transmutation"
@@ -270,11 +270,11 @@ class Imprisonment(Spell):
 	"""
 
 	name = "Imprisonment"
-	level = "9"
+	level = 9
 	casting_time = "1 Min."
 	casting_range = "30 feet"
 	components = ("V", "S", "M")
-	materials = "a vellum depiction or a carved statuette in the likeness of the target, and a special component that varies according to the version of the spell you choose, worth at least 500 gp per Hit Die of the target"
+	materials = "a vellum depiction or a carved statuette in the likeness of the target, and a special component that varies according to the version of the spell you choose, worth at least 500 gp per Hit Die of the target;"
 	duration = "Until dispelled"
 	ritual = False
 	magic_school = "Abjuration"
@@ -295,7 +295,7 @@ class IncendiaryCloud(Spell):
 	"""
 
 	name = "Incendiary Cloud"
-	level = "8"
+	level = 8
 	casting_time = "Action"
 	casting_range = "150 feet"
 	components = ("V", "S")
@@ -319,16 +319,16 @@ class InciteGreed(Spell):
 	"""
 
 	name = "Incite Greed"
-	level = "3"
+	level = 3
 	casting_time = "Action"
 	casting_range = "30 feet"
 	components = ("V", "S", "M")
-	materials = "a gem worth at least 50 gp"
+	materials = "a gem worth at least 50 gp;"
 	duration = "Concentration, up to 1 minute"
 	ritual = False
 	magic_school = "Enchantment"
 	classes = ("Cleric", "Warlock", "Wizard")
-class InfallibleRelayUA(Spell):
+class InfallibleRelay(Spell):
 	"""With this spell, you can target any creature with whom you have 
 	spoken previously, as long as the two of you are on the same plane of 
 	existence. When you cast the spell, the nearest functioning telephone 
@@ -343,12 +343,12 @@ class InfallibleRelayUA(Spell):
 	
 	"""
 
-	name = "Infallible Relay (UA)"
-	level = "1"
+	name = "Infallible Relay"
+	level = 1
 	casting_time = "1 Min."
 	casting_range = "Self"
 	components = ("V", "S", "M")
-	materials = "a mobile phone"
+	materials = "a mobile phone;"
 	duration = "Concentration, up to 10 minutes"
 	ritual = False
 	magic_school = "Divination (technomagic)"
@@ -390,11 +390,11 @@ class InfernalCalling(Spell):
 	level above 5th."""
 
 	name = "Infernal Calling"
-	level = "5"
+	level = 5
 	casting_time = "1 Min."
 	casting_range = "90 feet"
 	components = ("V", "S", "M")
-	materials = "a ruby worth at least 999 gp"
+	materials = "a ruby worth at least 999 gp;"
 	duration = "Concentration, up to 1 hour"
 	ritual = False
 	magic_school = "Conjuration"
@@ -413,16 +413,16 @@ class Infestation(Spell):
 	"""
 
 	name = "Infestation"
-	level = "Cantrip"
+	level = 0
 	casting_time = "Action"
 	casting_range = "30 feet"
 	components = ("V", "S", "M")
-	materials = "a living flea"
+	materials = "a living flea;"
 	duration = "Instantaneous"
 	ritual = False
 	magic_school = "Conjuration"
 	classes = ("Druid", "Sorcerer", "Warlock", "Wizard")
-class InfestationUA(Spell):
+class Infestation(Spell):
 	"""You cause mites, fleas, and other parasites to appear momentarily on 
 	one creature you can see within range. The target must succeed on a 
 	Constitution saving throw or take 1d6 piercing damage. If the target 
@@ -434,12 +434,12 @@ class InfestationUA(Spell):
 	
 	"""
 
-	name = "Infestation (UA)"
-	level = "Cantrip"
+	name = "Infestation"
+	level = 0
 	casting_time = "Action"
 	casting_range = "30 feet"
 	components = ("V", "S", "M")
-	materials = "a living flea"
+	materials = "a living flea;"
 	duration = "Instantaneous"
 	ritual = False
 	magic_school = "Conjuration"
@@ -453,7 +453,7 @@ class InflictWounds(Spell):
 	above 1st."""
 
 	name = "Inflict Wounds"
-	level = "1"
+	level = 1
 	casting_time = "Action"
 	casting_range = "Touch"
 	components = ("V", "S")
@@ -478,11 +478,11 @@ class InsectPlague(Spell):
 	above 5th."""
 
 	name = "Insect Plague"
-	level = "5"
+	level = 5
 	casting_time = "Action"
 	casting_range = "300 feet"
 	components = ("V", "S", "M")
-	materials = "a few grains of sugar, some kernels of grain, and a smear of fat"
+	materials = "a few grains of sugar, some kernels of grain, and a smear of fat;"
 	duration = "Concentration, up to 10 minutes"
 	ritual = False
 	magic_school = "Conjuration"
@@ -498,7 +498,7 @@ class IntellectFortress(Spell):
 	other when you target them."""
 
 	name = "Intellect Fortress"
-	level = "3"
+	level = 3
 	casting_time = "Action"
 	casting_range = "30 feet"
 	components = ("V")
@@ -518,7 +518,7 @@ class IntellectFortress(Spell):
 	other when you target them."""
 
 	name = "Intellect Fortress"
-	level = "4"
+	level = 4
 	casting_time = "Action"
 	casting_range = "30 feet"
 	components = ("V")
@@ -537,7 +537,7 @@ class IntellectFortress(Spell):
 	"""
 
 	name = "Intellect Fortress"
-	level = "5"
+	level = 5
 	casting_time = "Action"
 	casting_range = "Self"
 	components = ("V", "S")
@@ -546,7 +546,7 @@ class IntellectFortress(Spell):
 	ritual = False
 	magic_school = "Abjuration"
 	classes = ("Bard", "Sorcerer", "Warlock", "Wizard")
-class InvestitureofFlame(Spell):
+class InvestitureOfFlame(Spell):
 	"""Flames race across your body, shedding bright light in a 30-foot 
 	radius and dim light for an additional 30 feet for the spell's 
 	duration. The flames don't harm you. Until the spell ends, you gain the 
@@ -561,7 +561,7 @@ class InvestitureofFlame(Spell):
 	"""
 
 	name = "Investiture of Flame"
-	level = "6"
+	level = 6
 	casting_time = "Action"
 	casting_range = "Self"
 	components = ("V", "S")
@@ -570,7 +570,7 @@ class InvestitureofFlame(Spell):
 	ritual = False
 	magic_school = "Transmutation"
 	classes = ("Druid", "Sorcerer", "Warlock", "Wizard")
-class InvestitureofIce(Spell):
+class InvestitureOfIce(Spell):
 	"""Until the spell ends, ice rimes your body, and you gain the 
 	following benefits:You are immune to cold damage and have resistance to 
 	fire damage.You can move across difficult terrain created by ice or 
@@ -587,7 +587,7 @@ class InvestitureofIce(Spell):
 	"""
 
 	name = "Investiture of Ice"
-	level = "6"
+	level = 6
 	casting_time = "Action"
 	casting_range = "Self"
 	components = ("V", "S")
@@ -596,7 +596,7 @@ class InvestitureofIce(Spell):
 	ritual = False
 	magic_school = "Transmutation"
 	classes = ("Druid", "Sorcerer", "Warlock", "Wizard")
-class InvestitureofStone(Spell):
+class InvestitureOfStone(Spell):
 	"""Until the spell ends, bits of rock spread across your body, and you 
 	gain the following benefits:You have resistance to bludgeoning, 
 	piercing, and slashing damage from nonmagical attacks.You can use your 
@@ -612,7 +612,7 @@ class InvestitureofStone(Spell):
 	"""
 
 	name = "Investiture of Stone"
-	level = "6"
+	level = 6
 	casting_time = "Action"
 	casting_range = "Self"
 	components = ("V", "S")
@@ -621,7 +621,7 @@ class InvestitureofStone(Spell):
 	ritual = False
 	magic_school = "Transmutation"
 	classes = ("Druid", "Sorcerer", "Warlock", "Wizard")
-class InvestitureofWind(Spell):
+class InvestitureOfWind(Spell):
 	"""Until the spell ends, wind whirls around you, and you gain the 
 	following benefits:Ranged weapon attacks made against you have 
 	disadvantage on the attack roll.You gain a flying speed of 60 feet. If 
@@ -637,7 +637,7 @@ class InvestitureofWind(Spell):
 	"""
 
 	name = "Investiture of Wind"
-	level = "6"
+	level = 6
 	casting_time = "Action"
 	casting_range = "Self"
 	components = ("V", "S")
@@ -657,16 +657,16 @@ class Invisibility(Spell):
 	slot level above 2nd."""
 
 	name = "Invisibility"
-	level = "2"
+	level = 2
 	casting_time = "Action"
 	casting_range = "Touch"
 	components = ("V", "S", "M")
-	materials = "an eyelash encased in gum arabic"
+	materials = "an eyelash encased in gum arabic;"
 	duration = "Concentration, up to 1 hour"
 	ritual = False
 	magic_school = "Illusion"
 	classes = ("Artificer", "Bard", "Sorcerer", "Warlock", "Wizard")
-class InvisibilitytoCamerasUA(Spell):
+class InvisibilityToCameras(Spell):
 	"""Four creatures of your choice within range become undetectable to 
 	electronic sensors and cameras for the duration of the spell. Anything 
 	a target is wearing or carrying is likewise undetectable as long as it 
@@ -674,12 +674,12 @@ class InvisibilitytoCamerasUA(Spell):
 	
 	"""
 
-	name = "Invisibility to Cameras (UA)"
-	level = "3"
+	name = "Invisibility to Cameras"
+	level = 3
 	casting_time = "Action"
 	casting_range = "10 feet"
 	components = ("V", "S", "M")
-	materials = "a scrap of black paper"
+	materials = "a scrap of black paper;"
 	duration = "Concentration, up to 1 minute"
 	ritual = False
 	magic_school = "Illusion (technomagic)"
@@ -690,11 +690,11 @@ class Invulnerability(Spell):
 	"""
 
 	name = "Invulnerability"
-	level = "9"
+	level = 9
 	casting_time = "Action"
 	casting_range = "Self"
 	components = ("V", "S", "M")
-	materials = "a small piece of adamantine worth at least 500 gp, which the spell consumes"
+	materials = "a small piece of adamantine worth at least 500 gp, which the spell consumes;"
 	duration = "Concentration, up to 10 minutes"
 	ritual = False
 	magic_school = "Abjuration"

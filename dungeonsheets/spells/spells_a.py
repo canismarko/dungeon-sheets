@@ -14,11 +14,11 @@ class AbiDalzimsHorridWilting(Spell):
 	"""
 
 	name = "Abi-Dalzims Horrid Wilting"
-	level = "8"
+	level = 8
 	casting_time = "Action"
 	casting_range = "150 feet"
 	components = ("V", "S", "M")
-	materials = "a bit of sponge"
+	materials = "a bit of sponge;"
 	duration = "Instantaneous"
 	ritual = False
 	magic_school = "Necromancy"
@@ -36,7 +36,7 @@ class AbsorbElements(Spell):
 	level above 1st."""
 
 	name = "Absorb Elements"
-	level = "1"
+	level = 1
 	casting_time = "Reaction"
 	casting_range = "Self"
 	components = ("S")
@@ -55,7 +55,7 @@ class AcidSplash(Spell):
 	"""
 
 	name = "Acid Splash"
-	level = "Cantrip"
+	level = 0
 	casting_time = "Action"
 	casting_range = "60 feet"
 	components = ("V", "S")
@@ -77,11 +77,11 @@ class AcidStream(Spell):
 	above 1st."""
 
 	name = "Acid Stream"
-	level = "1"
+	level = 1
 	casting_time = "Action"
 	casting_range = "Self (30-foot line)"
 	components = ("V", "S", "M")
-	materials = "a bit of rotten food"
+	materials = "a bit of rotten food;"
 	duration = "Concentration, up to 1 minute"
 	ritual = False
 	magic_school = "Evocation"
@@ -97,11 +97,11 @@ class AganazzarsScorcher(Spell):
 	above 2nd."""
 
 	name = "Aganazzars Scorcher"
-	level = "2"
+	level = 2
 	casting_time = "Action"
 	casting_range = "30 feet"
 	components = ("V", "S", "M")
-	materials = "a red dragon's scale"
+	materials = "a red dragon's scale;"
 	duration = "Instantaneous"
 	ritual = False
 	magic_school = "Evocation"
@@ -116,11 +116,11 @@ class Aid(Spell):
 	for each slot level above 2nd."""
 
 	name = "Aid"
-	level = "2"
+	level = 2
 	casting_time = "Action"
 	casting_range = "30 feet"
 	components = ("V", "S", "M")
-	materials = "a tiny strip of white cloth"
+	materials = "a tiny strip of white cloth;"
 	duration = "8 hours"
 	ritual = False
 	magic_school = "Abjuration"
@@ -138,7 +138,7 @@ class AirBubble(Spell):
 	for each slot level above 2nd."""
 
 	name = "Air Bubble"
-	level = "2"
+	level = 2
 	casting_time = "Action"
 	casting_range = "60 feet"
 	components = ("S")
@@ -161,11 +161,11 @@ class Alarm(Spell):
 	"""
 
 	name = "Alarm"
-	level = "1"
+	level = 1
 	casting_time = "1 Min."
 	casting_range = "30 feet"
 	components = ("V", "S", "M")
-	materials = "a tiny bell and a piece of fine silver wire"
+	materials = "a tiny bell and a piece of fine silver wire;"
 	duration = "8 hours"
 	ritual = True
 	magic_school = "Abjuration"
@@ -197,7 +197,7 @@ class AlterSelf(Spell):
 	"""
 
 	name = "Alter Self"
-	level = "2"
+	level = 2
 	casting_time = "Action"
 	casting_range = "Self"
 	components = ("V", "S")
@@ -219,11 +219,11 @@ class AnimalFriendship(Spell):
 	level above 1st."""
 
 	name = "Animal Friendship"
-	level = "1"
+	level = 1
 	casting_time = "Action"
 	casting_range = "30 feet"
 	components = ("V", "S", "M")
-	materials = "a morsel of food"
+	materials = "a morsel of food;"
 	duration = "24 hours"
 	ritual = False
 	magic_school = "Enchantment"
@@ -249,11 +249,11 @@ class AnimalMessenger(Spell):
 	each slot level above 2nd."""
 
 	name = "Animal Messenger"
-	level = "2"
+	level = 2
 	casting_time = "Action"
 	casting_range = "30 feet"
 	components = ("V", "S", "M")
-	materials = "a morsel of food"
+	materials = "a morsel of food;"
 	duration = "24 hours"
 	ritual = True
 	magic_school = "Enchantment"
@@ -282,7 +282,7 @@ class AnimalShapes(Spell):
 	"""
 
 	name = "Animal Shapes"
-	level = "8"
+	level = 8
 	casting_time = "Action"
 	casting_range = "30 feet"
 	components = ("V", "S")
@@ -319,11 +319,11 @@ class AnimateDead(Spell):
 	creatures must come from a different corpse or pile of bones."""
 
 	name = "Animate Dead"
-	level = "3"
+	level = 3
 	casting_time = "1 Min."
 	casting_range = "10 feet"
 	components = ("V", "S", "M")
-	materials = "a drop of blood, a piece of flesh, and a pinch of bone dust"
+	materials = "a drop of blood, a piece of flesh, and a pinch of bone dust;"
 	duration = "Instantaneous"
 	ritual = False
 	magic_school = "Necromancy"
@@ -368,7 +368,7 @@ class AnimateObjects(Spell):
 	level above 5th."""
 
 	name = "Animate Objects"
-	level = "5"
+	level = 5
 	casting_time = "Action"
 	casting_range = "120 feet"
 	components = ("V", "S")
@@ -391,11 +391,11 @@ class Antagonize(Spell):
 	above 4th."""
 
 	name = "Antagonize"
-	level = "3"
+	level = 3
 	casting_time = "Action"
 	casting_range = "30 feet"
 	components = ("V", "S", "M")
-	materials = "a playing card depicting a rogue"
+	materials = "a playing card depicting a rogue;"
 	duration = "Instantaneous"
 	ritual = False
 	magic_school = "Enchantment"
@@ -412,7 +412,7 @@ class AntilifeShell(Spell):
 	"""
 
 	name = "Antilife Shell"
-	level = "5"
+	level = 5
 	casting_time = "Action"
 	casting_range = "Self (10-foot radius)"
 	components = ("V", "S")
@@ -464,11 +464,11 @@ class AntimagicField(Spell):
 	"""
 
 	name = "Antimagic Field"
-	level = "8"
+	level = 8
 	casting_time = "Action"
 	casting_range = "Self (10-foot radius)"
 	components = ("V", "S", "M")
-	materials = "a pinch of powdered iron or iron filings"
+	materials = "a pinch of powdered iron or iron filings;"
 	duration = "Concentration, up to 1 hour"
 	ritual = False
 	magic_school = "Abjuration"
@@ -511,11 +511,11 @@ class AntipathySympathy(Spell):
 	"""
 
 	name = "Antipathy/Sympathy"
-	level = "8"
+	level = 8
 	casting_time = "1 Hr."
 	casting_range = "60 feet"
 	components = ("V", "S", "M")
-	materials = "either a lump of alum soaked in vinegar for the antipathy effect or a drop of honey for the sympathy effect"
+	materials = "either a lump of alum soaked in vinegar for the antipathy effect or a drop of honey for the sympathy effect;"
 	duration = "10 days"
 	ritual = False
 	magic_school = "Enchantment"
@@ -533,11 +533,11 @@ class ArcaneEye(Spell):
 	"""
 
 	name = "Arcane Eye"
-	level = "4"
+	level = 4
 	casting_time = "Action"
 	casting_range = "30 feet"
 	components = ("V", "S", "M")
-	materials = "a bit of bat fur"
+	materials = "a bit of bat fur;"
 	duration = "Concentration, up to 1 hour"
 	ritual = False
 	magic_school = "Divination"
@@ -561,7 +561,7 @@ class ArcaneGate(Spell):
 	"""
 
 	name = "Arcane Gate"
-	level = "6"
+	level = 6
 	casting_time = "Action"
 	casting_range = "500 feet"
 	components = ("V", "S")
@@ -570,7 +570,7 @@ class ArcaneGate(Spell):
 	ritual = False
 	magic_school = "Conjuration"
 	classes = ("Sorcerer", "Warlock", "Wizard")
-class ArcaneHackingUA(Spell):
+class ArcaneHacking(Spell):
 	"""You gain advantage on all Intelligence checks using hacking tools to 
 	break software encryption or online security when using a foreign 
 	system. This spell also allows you to break 2nd-level and lower 
@@ -583,12 +583,12 @@ class ArcaneHackingUA(Spell):
 	secure the foreign system if the spell's level is equal to or less than 
 	the level of the spell slot you used."""
 
-	name = "Arcane Hacking (UA)"
-	level = "2"
+	name = "Arcane Hacking"
+	level = 2
 	casting_time = "Action"
 	casting_range = "Self"
 	components = ("V", "S", "M")
-	materials = "hacking tools"
+	materials = "hacking tools;"
 	duration = "Concentration, up to 1 hour"
 	ritual = False
 	magic_school = "Transmutation (technomagic)"
@@ -607,11 +607,11 @@ class ArcaneLock(Spell):
 	"""
 
 	name = "Arcane Lock"
-	level = "2"
+	level = 2
 	casting_time = "Action"
 	casting_range = "Touch"
 	components = ("V", "S", "M")
-	materials = "gold dust worth at least 25 gp, which the spell consumes"
+	materials = "gold dust worth at least 25 gp, which the spell consumes;"
 	duration = "Until dispelled"
 	ritual = False
 	magic_school = "Abjuration"
@@ -630,7 +630,7 @@ class ArcaneWeapon(Spell):
 	for up to 8 hours."""
 
 	name = "Arcane Weapon"
-	level = "1"
+	level = 1
 	casting_time = "Bonus"
 	casting_range = "Self"
 	components = ("V", "S")
@@ -639,7 +639,7 @@ class ArcaneWeapon(Spell):
 	ritual = False
 	magic_school = "Transmutation"
 	classes = ()
-class ArmorofAgathys(Spell):
+class ArmorOfAgathys(Spell):
 	"""A protective magical force surrounds you, manifesting as a spectral 
 	frost that covers you and your gear. You gain 5 temporary hit points 
 	for the duration. If a creature hits you with a melee attack while you 
@@ -650,16 +650,16 @@ class ArmorofAgathys(Spell):
 	increase by 5 for each slot level above 1st."""
 
 	name = "Armor of Agathys"
-	level = "1"
+	level = 1
 	casting_time = "Action"
 	casting_range = "Self"
 	components = ("V", "S", "M")
-	materials = "a cup of water"
+	materials = "a cup of water;"
 	duration = "1 hour"
 	ritual = False
 	magic_school = "Abjuration"
 	classes = ("Warlock")
-class ArmsofHadar(Spell):
+class ArmsOfHadar(Spell):
 	"""You invoke the power of Hadar, the Dark Hunger. Tendrils of dark 
 	energy erupt from you and batter all creatures within 10 feet of you. 
 	Each creature in that area must make a Strength saving throw. On a 
@@ -672,7 +672,7 @@ class ArmsofHadar(Spell):
 	above 1st."""
 
 	name = "Arms of Hadar"
-	level = "1"
+	level = 1
 	casting_time = "Action"
 	casting_range = "Self (10-foot radius)"
 	components = ("V", "S")
@@ -695,7 +695,7 @@ class AshardalonsStride(Spell):
 	slot level above 3rd."""
 
 	name = "Ashardalons Stride"
-	level = "3"
+	level = 3
 	casting_time = "Bonus"
 	casting_range = "Self"
 	components = ("V", "S")
@@ -740,11 +740,11 @@ class AstralProjection(Spell):
 	"""
 
 	name = "Astral Projection"
-	level = "9"
+	level = 9
 	casting_time = "1 Hr."
 	casting_range = "10 feet"
 	components = ("V", "S", "M")
-	materials = "for each creature you affect with this spell, you must provide one jacinth worth at least 1,000 gp and one ornately carved bar of silver worth at least 100 gp, all of which the spell consumes"
+	materials = "for each creature you affect with this spell, you must provide one jacinth worth at least 1,000 gp and one ornately carved bar of silver worth at least 100 gp, all of which the spell consumes;"
 	duration = "Special"
 	ritual = False
 	magic_school = "Necromancy"
@@ -767,16 +767,16 @@ class Augury(Spell):
 	"""
 
 	name = "Augury"
-	level = "2"
+	level = 2
 	casting_time = "1 Min."
 	casting_range = "Self"
 	components = ("V", "S", "M")
-	materials = "specially marked sticks, bones, or similar tokens worth at least 25 gp"
+	materials = "specially marked sticks, bones, or similar tokens worth at least 25 gp;"
 	duration = "Instantaneous"
 	ritual = True
 	magic_school = "Divination"
 	classes = ("Cleric","Druid", "Wizard")
-class AuraofLife(Spell):
+class AuraOfLife(Spell):
 	"""Life-preserving energy radiates from you in an aura with a 30-foot 
 	radius. Until the spell ends, the aura moves with you, centered on you. 
 	Each nonhostile creature in the aura (including you) has resistance to 
@@ -787,7 +787,7 @@ class AuraofLife(Spell):
 	"""
 
 	name = "Aura of Life"
-	level = "4"
+	level = 4
 	casting_time = "Action"
 	casting_range = "Self (30-foot radius)"
 	components = ("V")
@@ -796,7 +796,7 @@ class AuraofLife(Spell):
 	ritual = False
 	magic_school = "Abjuration"
 	classes = ("Paladin","Cleric")
-class AuraofPurity(Spell):
+class AuraOfPurity(Spell):
 	"""Purifying energy radiates from you in an aura with a 30-foot radius. 
 	Until the spell ends, the aura moves with you, centered on you. Each 
 	nonhostile creature in the aura (including you) can't become diseased, 
@@ -807,7 +807,7 @@ class AuraofPurity(Spell):
 	"""
 
 	name = "Aura of Purity"
-	level = "4"
+	level = 4
 	casting_time = "Action"
 	casting_range = "Self (30-foot radius)"
 	components = ("V")
@@ -816,7 +816,7 @@ class AuraofPurity(Spell):
 	ritual = False
 	magic_school = "Abjuration"
 	classes = ("Paladin","Cleric")
-class AuraofVitality(Spell):
+class AuraOfVitality(Spell):
 	"""Healing energy radiates from you in an aura with a 30-foot radius. 
 	Until the spell ends, the aura moves with you, centered on you. You can 
 	use a bonus action to cause one creature in the aura (including you) to 
@@ -825,7 +825,7 @@ class AuraofVitality(Spell):
 	"""
 
 	name = "Aura of Vitality"
-	level = "3"
+	level = 3
 	casting_time = "Action"
 	casting_range = "Self (30-foot radius)"
 	components = ("V")
@@ -852,11 +852,11 @@ class Awaken(Spell):
 	"""
 
 	name = "Awaken"
-	level = "5"
+	level = 5
 	casting_time = "8 Hr."
 	casting_range = "Touch"
 	components = ("V", "S", "M")
-	materials = "an agate worth at least 1,000 gp, which the spell consumes"
+	materials = "an agate worth at least 1,000 gp, which the spell consumes;"
 	duration = "Instantaneous"
 	ritual = False
 	magic_school = "Transmutation"

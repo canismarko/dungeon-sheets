@@ -19,11 +19,11 @@ class LegendLore(Spell):
 	"""
 
 	name = "Legend Lore"
-	level = "5"
+	level = 5
 	casting_time = "10 Min."
 	casting_range = "Self"
 	components = ("V", "S", "M")
-	materials = "incense worth at least 250 gp, which the spell consumes, and four ivory strips worth at least 50 gp each"
+	materials = "incense worth at least 250 gp, which the spell consumes, and four ivory strips worth at least 50 gp each;"
 	duration = "Instantaneous"
 	ritual = False
 	magic_school = "Divination"
@@ -46,11 +46,11 @@ class LeomundsSecretChest(Spell):
 	"""
 
 	name = "Leomunds Secret Chest"
-	level = "4"
+	level = 4
 	casting_time = "Action"
 	casting_range = "Touch"
 	components = ("V", "S", "M")
-	materials = "an exquisite chest, 3 feet by 2 feet by 2 feet, constructed from rare materials worth at least 5,000 gp, and a Tiny replica made from the same materials worth at least 50 gp"
+	materials = "an exquisite chest, 3 feet by 2 feet by 2 feet, constructed from rare materials worth at least 5,000 gp, and a Tiny replica made from the same materials worth at least 50 gp;"
 	duration = "Instantaneous"
 	ritual = False
 	magic_school = "Conjuration"
@@ -73,11 +73,11 @@ class LeomundsTinyHut(Spell):
 	"""
 
 	name = "Leomunds Tiny Hut"
-	level = "3"
+	level = 3
 	casting_time = "1 Min."
 	casting_range = "Self (10-foot-radius hemisphere)"
 	components = ("V", "S", "M")
-	materials = "a small crystal bead"
+	materials = "a small crystal bead;"
 	duration = "8 hours"
 	ritual = True
 	magic_school = "Evocation"
@@ -90,7 +90,7 @@ class LesserRestoration(Spell):
 	"""
 
 	name = "Lesser Restoration"
-	level = "2"
+	level = 2
 	casting_time = "Action"
 	casting_range = "Touch"
 	components = ("V", "S")
@@ -116,11 +116,11 @@ class Levitate(Spell):
 	"""
 
 	name = "Levitate"
-	level = "2"
+	level = 2
 	casting_time = "Action"
 	casting_range = "60 feet"
 	components = ("V", "S", "M")
-	materials = "either a small leather loop or a piece of golden wire bent into a cup shape with a long shank on one end"
+	materials = "either a small leather loop or a piece of golden wire bent into a cup shape with a long shank on one end;"
 	duration = "Concentration, up to 10 minutes"
 	ritual = False
 	magic_school = "Transmutation"
@@ -137,7 +137,7 @@ class LifeTransference(Spell):
 	above 3rd."""
 
 	name = "Life Transference"
-	level = "3"
+	level = 3
 	casting_time = "Action"
 	casting_range = "30 feet"
 	components = ("V", "S")
@@ -159,11 +159,11 @@ class Light(Spell):
 	"""
 
 	name = "Light"
-	level = "Cantrip"
+	level = 0
 	casting_time = "Action"
 	casting_range = "Touch"
 	components = ("V", "M")
-	materials = "a firefly or phosphorescent moss"
+	materials = "a firefly or phosphorescent moss;"
 	duration = "1 hour"
 	ritual = False
 	magic_school = "Evocation"
@@ -184,7 +184,7 @@ class LightningArrow(Spell):
 	by 1d8 for each slot level above 3rd."""
 
 	name = "Lightning Arrow"
-	level = "3"
+	level = 3
 	casting_time = "Bonus"
 	casting_range = "Self"
 	components = ("V", "S")
@@ -206,11 +206,11 @@ class LightningBolt(Spell):
 	above 3rd."""
 
 	name = "Lightning Bolt"
-	level = "3"
+	level = 3
 	casting_time = "Action"
 	casting_range = "Self (100-foot line)"
 	components = ("V", "S", "M")
-	materials = "a bit of fur and a rod of amber, crystal, or glass"
+	materials = "a bit of fur and a rod of amber, crystal, or glass;"
 	duration = "Instantaneous"
 	ritual = False
 	magic_school = "Evocation"
@@ -226,7 +226,7 @@ class LightningLure(Spell):
 	"""
 
 	name = "Lightning Lure"
-	level = "Cantrip"
+	level = 0
 	casting_time = "Action"
 	casting_range = "Self (15-foot radius)"
 	components = ("V")
@@ -285,16 +285,16 @@ class LinkedGlyphs(Spell):
 	up to the same level as the slot you use."""
 
 	name = "Linked Glyphs"
-	level = "3"
+	level = 3
 	casting_time = "1 Hr."
 	casting_range = "Touch"
 	components = ("V", "S", "M")
-	materials = "incense and powdered diamond worth at least 300 gp, which the spell consumes"
+	materials = "incense and powdered diamond worth at least 300 gp, which the spell consumes;"
 	duration = "Until dispelled or triggered"
 	ritual = False
 	magic_school = "Abjuration"
 	classes = ("Artificer", "Bard", "Cleric", "Wizard")
-class LocateAnimalsorPlants(Spell):
+class LocateAnimalsOrPlants(Spell):
 	"""Describe or name a specific kind of beast or plant. Concentrating on 
 	the voice of nature in your surroundings, you learn the direction and 
 	distance to the closest creature or plant of that kind within 5 miles, 
@@ -303,11 +303,11 @@ class LocateAnimalsorPlants(Spell):
 	"""
 
 	name = "Locate Animals or Plants"
-	level = "2"
+	level = 2
 	casting_time = "Action"
 	casting_range = "Self"
 	components = ("V", "S", "M")
-	materials = "a bit of fur from a bloodhound"
+	materials = "a bit of fur from a bloodhound;"
 	duration = "Instantaneous"
 	ritual = True
 	magic_school = "Divination"
@@ -328,11 +328,11 @@ class LocateCreature(Spell):
 	"""
 
 	name = "Locate Creature"
-	level = "4"
+	level = 4
 	casting_time = "Action"
 	casting_range = "Self"
 	components = ("V", "S", "M")
-	materials = "a bit of fur from a bloodhound"
+	materials = "a bit of fur from a bloodhound;"
 	duration = "Concentration, up to 1 hour"
 	ritual = False
 	magic_school = "Divination"
@@ -351,11 +351,11 @@ class LocateObject(Spell):
 	"""
 
 	name = "Locate Object"
-	level = "2"
+	level = 2
 	casting_time = "Action"
 	casting_range = "Self"
 	components = ("V", "S", "M")
-	materials = "a forked twig"
+	materials = "a forked twig;"
 	duration = "Concentration, up to 10 minutes"
 	ritual = False
 	magic_school = "Divination"
@@ -369,11 +369,11 @@ class Longstrider(Spell):
 	slot level above 1st."""
 
 	name = "Longstrider"
-	level = "1"
+	level = 1
 	casting_time = "Action"
 	casting_range = "Touch"
 	components = ("V", "S", "M")
-	materials = "a pinch of dirt"
+	materials = "a pinch of dirt;"
 	duration = "1 hour"
 	ritual = False
 	magic_school = "Transmutation"

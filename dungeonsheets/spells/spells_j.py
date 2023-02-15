@@ -14,12 +14,11 @@ class JimsGlowingCoin(Spell):
 	"""
 
 	name = "Jims Glowing Coin"
-	level = "2"
+	level = 2
 	casting_time = "Action"
 	casting_range = "60 feet"
 	components = ("S", "M", "R")
-	materials = "a coin
-2 gp"
+	materials = "a coin;2 gp;"
 	duration = "1 minute"
 	ritual = False
 	magic_school = "Enchantment"
@@ -45,11 +44,11 @@ class JimsMagicMissile(Spell):
 	component increases by 1 gp, for each slot level above 1st."""
 
 	name = "Jims Magic Missile"
-	level = "1"
+	level = 1
 	casting_time = "Action"
 	casting_range = "120 feet"
 	components = ("V", "S", "R")
-	materials = "1 gp"
+	materials = "1 gp;"
 	duration = "Instantaneous"
 	ritual = False
 	magic_school = "Evocation"
@@ -61,11 +60,11 @@ class Jump(Spell):
 	"""
 
 	name = "Jump"
-	level = "1"
+	level = 1
 	casting_time = "Action"
 	casting_range = "Touch"
 	components = ("V", "S", "M")
-	materials = "a grasshopper's hind leg"
+	materials = "a grasshopper's hind leg;"
 	duration = "1 minute"
 	ritual = False
 	magic_school = "Transmutation"
