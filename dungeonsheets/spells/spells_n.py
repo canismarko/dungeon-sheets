@@ -1,21 +1,6 @@
 from dungeonsheets.spells.spells import Spell
 
 
-class Name(Spell):
-	"""Text
-	
-	At Higher Levels"""
-
-	name = "Name"
-	level = "Level"
-	casting_time = "Casting Time"
-	casting_range = "Range"
-	components = "Components"
-	materials = ""
-	duration = "Duration"
-	ritual = False
-	magic_school = "School"
-	classes = ("Classes","Optional/Variant Classes")
 class NathairsMischief(Spell):
 	"""You fill a 20-foot cube you can see within range with fey and 
 	draconic magic. Roll on the Mischievous Surge table to determine the 
