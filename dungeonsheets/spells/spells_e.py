@@ -280,7 +280,7 @@ class EnhanceAbility(Spell):
 	ritual = False
 	magic_school = "Transmutation"
 	classes = ("Artificer", "Bard", "Cleric", "Druid", "Sorcerer","Ranger", "Wizard")
-class Enlarge/Reduce(Spell):
+class EnlargeReduce(Spell):
 	"""You cause a creature or an object you can see within range to grow 
 	larger or smaller for the duration. Choose either a creature or an 
 	object that is neither worn nor carried. If the target is unwilling, it 

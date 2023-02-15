@@ -1,7 +1,7 @@
 from dungeonsheets.spells.spells import Spell
 
 
-class On/OffUA(Spell):
+class OnOffUA(Spell):
 	"""This cantrip allows you to activate or deactivate any electronic 
 	device within range, as long as the device has a clearly defined on or 
 	off function that can be easily accessed from the outside of the 

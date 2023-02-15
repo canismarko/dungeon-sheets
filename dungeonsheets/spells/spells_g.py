@@ -496,7 +496,7 @@ class GreaterRestoration(Spell):
 	ritual = False
 	magic_school = "Abjuration"
 	classes = ("Artificer", "Bard", "Cleric", "Druid","Ranger")
-class Green-FlameBlade(Spell):
+class GreenFlameBlade(Spell):
 	"""You brandish the weapon used in the spell's casting and make a melee 
 	attack with it against one creature within 5 feet of you. On a hit, the 
 	target suffers the weapon attack's normal effects, and you can cause 

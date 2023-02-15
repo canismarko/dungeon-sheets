@@ -1,7 +1,7 @@
 from dungeonsheets.spells.spells import Spell
 
 
-class Abi-DalzimsHorridWilting(Spell):
+class AbiDalzimsHorridWilting(Spell):
 	"""You draw the moisture from every creature in a 30-foot cube centered 
 	on a point you choose within range. Each creature in that area must 
 	make a Constitution saving throw. Constructs and undead aren't 
@@ -473,7 +473,7 @@ class AntimagicField(Spell):
 	ritual = False
 	magic_school = "Abjuration"
 	classes = ("Cleric", "Wizard")
-class Antipathy/Sympathy(Spell):
+class AntipathySympathy(Spell):
 	"""This spell attracts or repels creatures of your choice. You target 
 	something within range, either a Huge or smaller object or creature or 
 	an area that is no larger than a 200-foot cube. Then specify a kind of 

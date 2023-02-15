@@ -366,7 +366,7 @@ class BlindingSmite(Spell):
 	ritual = False
 	magic_school = "Evocation"
 	classes = ("Paladin")
-class Blindness/Deafness(Spell):
+class BlindnessDeafness(Spell):
 	"""You can blind or deafen a foe. Choose one creature that you can see 
 	within range to make a Constitution saving throw. If it fails, the 
 	target is either blinded or deafened (your choice) for the duration. At 
