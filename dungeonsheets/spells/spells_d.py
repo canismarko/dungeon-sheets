@@ -373,6 +373,27 @@ class DetectThoughts(Spell):
 	ritual = False
 	magic_school = "Divination"
 	classes = ("Bard", "Sorcerer", "Wizard")
+class DigitalPhantom(UA)(Spell):
+	"""This spell works to actively hide your presence within a computer 
+	system. For the spell's duration, you and any other users you choose on 
+	your local network gain a +10 bonus to Intelligence checks to avoid 
+	detection by administrators, knowbots, tracking software, and the like. 
+	Whenever you and your chosen users leave any computer system you are 
+	working in while this spell is in effect, all trace of your previous 
+	presence in that system is erased.
+	
+	"""
+
+	name = "Digital Phantom (UA)"
+	level = "2"
+	casting_time = "Action"
+	casting_range = "Self"
+	components = "V, S, M"
+	materials = "a small piece of copper wire"
+	duration = "Concentration, up to 1 hour"
+	ritual = False
+	magic_school = "Abjuration (technomagic)"
+	classes = ("Sorcerer", "Warlock", "Wizard")
 class DimensionDoor(Spell):
 	"""You teleport yourself from your current location to any other spot 
 	within range. You arrive at exactly the spot desired. It can be a place 
@@ -746,6 +767,32 @@ class DraconicTransformation(Spell):
 	throw, taking 6d8 force damage on a failed save, or half as much damage 
 	on a successful one.Wings. Incorporeal wings sprout from your back, 
 	giving you a flying speed of 60 feet.
+	
+	"""
+
+	name = "Draconic Transformation"
+	level = "7"
+	casting_time = "Bonus"
+	casting_range = "Self"
+	components = "V, S, M"
+	materials = "a statuette of a dragon, worth at least 500 gp"
+	duration = "Concentration, up to 1 minute"
+	ritual = False
+	magic_school = "Transmutation"
+	classes = ("Druid", "Sorcerer", "Wizard")
+class DraconicTransformation(Spell):
+	"""With a roar, you draw on the magic of dragons to transform yourself, 
+	taking on various draconic features. You gain the following benefits 
+	until the spell ends:You have blindsight with a range of 30 feet. 
+	Within that range, you can effectively see anything that isn't behind 
+	total cover, even if you're blinded or in darkness. Moreover, you can 
+	see an invisible creature, unless the creature successfully hides from 
+	you.Incorporeal wings sprout from your back, giving you a flying speed 
+	of 40 feet.When you cast this spell, and as a bonus action on 
+	subsequent turns for the duration, you can exhale a breath of 
+	shimmering energy in a 30- foot cone. Each creature in the area must 
+	make a Dexterity saving throw, taking 3d8 force damage on a failed save 
+	or half as much damage on a successful one.
 	
 	"""
 

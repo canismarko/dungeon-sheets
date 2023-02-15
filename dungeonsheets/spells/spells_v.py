@@ -44,6 +44,24 @@ class ViciousMockery(Spell):
 	ritual = False
 	magic_school = "Enchantment"
 	classes = ("Bard")
+class Virtue(UA)(Spell):
+	"""You touch one creature, imbuing it with vitality. If the target has 
+	at least 1 hit point, it gains a number of temporary hit points equal 
+	to 1d4 + your spellcasting ability modifier. The temporary hit points 
+	are lost when the spell ends.
+	
+	"""
+
+	name = "Virtue (UA)"
+	level = "Cantrip"
+	casting_time = "Action"
+	casting_range = "Touch"
+	components = "V, S"
+	materials = ""
+	duration = "1 round"
+	ritual = False
+	magic_school = "Abjuration"
+	classes = ("Cleric")
 class VitriolicSphere(Spell):
 	"""You point at a location within range, and a glowing 1-foot-diameter 
 	ball of emerald acid streaks there and explodes in a 20-foot-radius 
@@ -67,3 +85,25 @@ class VitriolicSphere(Spell):
 	ritual = False
 	magic_school = "Evocation"
 	classes = ("Sorcerer", "Wizard")
+class VortexWarp(Spell):
+	"""You magically twist space around another creature you can see within 
+	range. The target must succeed on a Constitution saving throw (the 
+	target can choose to fail), or the target is teleported to an 
+	unoccupied space of your choice that you can see within range. The 
+	chosen space must be on a surface or in a liquid that can support the 
+	target without the target having to squeeze.
+	
+	**At Higher Levels:** When you cast this spell using a spell slot of 
+	3rd level or higher, the range of the spell increases by 30 feet for 
+	each slot level above 2nd."""
+
+	name = "Vortex Warp"
+	level = "2"
+	casting_time = "Action"
+	casting_range = "90 feet"
+	components = "V, S"
+	materials = ""
+	duration = "Instantaneous"
+	ritual = False
+	magic_school = "Conjuration"
+	classes = ("Artificer", "Sorcerer", "Wizard")

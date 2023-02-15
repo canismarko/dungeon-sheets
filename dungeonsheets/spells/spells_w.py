@@ -445,6 +445,34 @@ class Whirlwind(Spell):
 	ritual = False
 	magic_school = "Evocation"
 	classes = ("Druid", "Sorcerer", "Wizard")
+class WildCunning(UA)(Spell):
+	"""You call out to the spirits of nature to aid you. When you cast this 
+	spell, choose one of the following effects:If there are any tracks on 
+	the ground within range, you know where they are, and you make Wisdom 
+	(Survival) checks to follow these tracks with advantage for 1 hour or 
+	until you cast this spell again.If there is edible forage within range, 
+	you know it and where to find it.If there is clean drinking water 
+	within range, you know it and where to find it.If there is suitable 
+	shelter for you and your companions with range, you know it and where 
+	to find.Send the spirits to bring back wood for a fire and to set up a 
+	campsite in the area using your supplies. The spirits build the fire in 
+	a circle of stones, put up tents, unroll bedrolls, and put out any 
+	rations and water for consumption.Have the spirits instantly break down 
+	a campsite, which includes putting out a fire, taking down tents, 
+	packing up bags, and burying any rubbish.
+	
+	"""
+
+	name = "Wild Cunning (UA)"
+	level = "1"
+	casting_time = "Action"
+	casting_range = "120 feet"
+	components = "V, S"
+	materials = ""
+	duration = "Instantaneous"
+	ritual = True
+	magic_school = "Transmutation"
+	classes = ("Druid", "Ranger")
 class WindWalk(Spell):
 	"""You and up to ten willing creatures you can see within range assume 
 	a gaseous form for the duration, appearing as wisps of cloud. While in 
@@ -579,6 +607,31 @@ class WitchBolt(Spell):
 	ritual = False
 	magic_school = "Evocation"
 	classes = ("Sorcerer", "Warlock", "Wizard")
+class WitherandBloom(Spell):
+	"""You invoke both death and life upon a 10-foot-radius sphere centered 
+	on a point within range. Each creature of your choice in that area must 
+	make a Constitution saving throw, taking 2d6 necrotic damage on a 
+	failed save, or half as much damage on a successful one. Nonmagical 
+	vegetation in that area withers.In addition, one creature of your 
+	choice in that area can spend and roll one of its unspent Hit Dice and 
+	regain a number of hit points equal to the roll plus your spellcasting 
+	ability modifier.
+	
+	**At Higher Levels:** When you cast this spell using a spell slot of 
+	3rd level or higher, the damage increases by 1d6 for each slot above 
+	the 2nd, and the number of Hit Dice that can be spent and added to the 
+	healing roll increases by one for each slot above 2nd."""
+
+	name = "Wither and Bloom"
+	level = "2"
+	casting_time = "Action"
+	casting_range = "60 feet"
+	components = "V, S, M"
+	materials = "a withered vine twisted into a loop"
+	duration = "Instantaneous"
+	ritual = False
+	magic_school = "Necromancy"
+	classes = ("Druid", "Sorcerer", "Wizard")
 class WordofRadiance(Spell):
 	"""You utter a divine word, and burning radiance erupts from you. Each 
 	creature of your choice that you can see within range must succeed on a 

@@ -229,6 +229,27 @@ class Sending(Spell):
 	ritual = False
 	magic_school = "Evocation"
 	classes = ("Bard", "Cleric", "Wizard")
+class SenseEmotion(UA)(Spell):
+	"""You attune your senses to pick up the emotions of others for the 
+	duration. When you cast the spell, and as your action on each turn 
+	until the spell ends, you can focus your senses on one humanoid you can 
+	see within 30 feet of you. You instantly learn the target's prevailing 
+	emotion, whether it's love, anger, pain, fear, calm, or something else. 
+	If the target isn't actually humanoid or it is immune to being charmed, 
+	you sense that it is calm.
+	
+	"""
+
+	name = "Sense Emotion (UA)"
+	level = "1"
+	casting_time = "Action"
+	casting_range = "Self"
+	components = "V, S"
+	materials = ""
+	duration = "Concentration, up to 10 minutes"
+	ritual = False
+	magic_school = "Divination"
+	classes = ("Warlock", "Wizard")
 class Sequester(Spell):
 	"""By means of this spell, a willing creature or an object can be 
 	hidden away, safe from detection for the duration. When you cast the 
@@ -475,6 +496,26 @@ class ShockingGrasp(Spell):
 	ritual = False
 	magic_school = "Evocation"
 	classes = ("Artificer", "Sorcerer", "Wizard")
+class Shutdown(UA)(Spell):
+	"""This spell shuts down all electronic devices within range that are 
+	not wielded by or under the direct control of a creature. If an 
+	electronic device within range is used by a creature, that creature 
+	must succeed on a Constitution saving throw to prevent the device from 
+	being shut down. While the spell remains active, no electronic device 
+	within range can be started or restarted.
+	
+	"""
+
+	name = "Shutdown (UA)"
+	level = "5"
+	casting_time = "Action"
+	casting_range = "120 feet"
+	components = "V, S"
+	materials = ""
+	duration = "Concentration, up to 1 minute"
+	ritual = False
+	magic_school = "Transmutation (technomagic)"
+	classes = ("Sorcerer", "Warlock", "Wizard")
 class SickeningRadiance(Spell):
 	"""Dim, greenish light spreads within a 30-foot-radius sphere centered 
 	on a point you choose within range. The light spreads around corners, 
@@ -545,6 +586,27 @@ class SilentImage(Spell):
 	duration = "Concentration, up to 10 minutes"
 	ritual = False
 	magic_school = "Illusion"
+	classes = ("Bard", "Sorcerer", "Wizard")
+class SilveryBarbs(Spell):
+	"""You magically distract the triggering creature and turn its 
+	momentary uncertainty into encouragement for another creature. The 
+	triggering creature must reroll the d20 and use the lower roll.You can 
+	then choose a different creature you can see within range (you can 
+	choose yourself). The chosen creature has advantage on the next attack 
+	roll, ability check, or saving throw it makes within 1 minute. A 
+	creature can be empowered by only one use of this spell at a time.
+	
+	"""
+
+	name = "Silvery Barbs"
+	level = "1"
+	casting_time = "Reaction"
+	casting_range = "60 feet"
+	components = "V"
+	materials = ""
+	duration = "Instantaneous"
+	ritual = False
+	magic_school = "Enchantment"
 	classes = ("Bard", "Sorcerer", "Wizard")
 class Simulacrum(Spell):
 	"""You shape an illusory duplicate of one beast or humanoid that is 
@@ -728,6 +790,35 @@ class Snare(Spell):
 	ritual = False
 	magic_school = "Abjuration"
 	classes = ("Artificer", "Druid", "Ranger", "Wizard")
+class Snare(UA)(Spell):
+	"""While you cast this spell, you use the cord or rope to create a 
+	circle with a 5-foot radius on a flat surface within your reach. When 
+	you finish casting, the cord or rope disappears to become a magical 
+	trap.The trap is nearly invisible and requires a successful 
+	Intelligence (Investigation) check against your spell save DC to be 
+	found. The trap triggers when a Small creature or larger moves into the 
+	area protected by the spell.The triggering creature must succeed on a 
+	Dexterity saving throw or fall prone and be hoisted into the air until 
+	it hangs upside down 3 feet above the protected surface, where it is 
+	restrained.The restrained creature can make a Dexterity saving throw 
+	with disadvantage at the end of each of its turns and ends the 
+	restrained effect on a success. Alternatively, another creature that 
+	can reach the restrained creature can use an action to make an 
+	Intelligence (Arcana) check against your spell save DC. On a success, 
+	the restrained effect also ends.
+	
+	"""
+
+	name = "Snare (UA)"
+	level = "1"
+	casting_time = "1 Min."
+	casting_range = "Touch"
+	components = "V, S, M"
+	materials = "30 feet of cord or rope, which is consumed by the spell"
+	duration = "Until dispelled or triggered"
+	ritual = False
+	magic_school = "Abjuration"
+	classes = ("Druid", "Ranger", "Wizard")
 class SnillocsSnowballSwarm(Spell):
 	"""A flurry of magic snowballs erupts from a point you choose within 
 	range. Each creature in a 5-foot-radius sphere centered on that point 
@@ -973,6 +1064,58 @@ class SpiritShroud(Spell):
 	ritual = False
 	magic_school = "Necromancy"
 	classes = (,"Cleric", "Paladin", "Warlock", "Wizard")
+class SpiritShroud(Spell):
+	"""You call forth spirits of the dead, which flit around you for the 
+	spell's duration. The spirits are intangible and invulnerable, and they 
+	are good or evil (your choice).Until the spell ends, any attack you 
+	make deals 1d8 extra damage when you hit a creature within 10 feet of 
+	you. This damage is radiant if the spirits are good and necrotic if 
+	they are evil. Any creature that takes this damage can't regain hit 
+	points until the start of your next turn.In addition, any creature of 
+	your choice that you can see that starts its turn within 10 feet of you 
+	has its speed reduced by 10 feet until the start of your next turn.
+	
+	**At Higher Levels:** When you cast this spell using a spell slot of 
+	4th level or higher, the extra damage increases by 1d8 for each slot 
+	level above 3rd."""
+
+	name = "Spirit Shroud"
+	level = "3"
+	casting_time = "Bonus"
+	casting_range = "Self"
+	components = "V, S"
+	materials = ""
+	duration = "Concentration, up to 1 minute"
+	ritual = False
+	magic_school = "Necromancy"
+	classes = ("Cleric", "Paladin", "Warlock", "Wizard")
+class SpiritofDeath(Spell):
+	"""You call forth a spirit that embodies death itself. Choose a 
+	creature you can see within range. The spirit manifests in an 
+	unoccupied space that you can see within 10 feet of the target, and the 
+	target becomes haunted by the spirit. The spirit uses the Reaper Spirit 
+	stat block. The spirit disappears when it or the haunted creature is 
+	reduced to 0 hit points, or when the spell ends.The reaper spirit is an 
+	ally to you and your companions. In combat, the spirit shares your 
+	initiative count, but it takes its turn immediately after yours. It 
+	obeys your verbal commands (no action required by you), but it will 
+	only attack the haunted creature. If you don't issue the spirit any 
+	commands, it takes the Dodge action and uses its move to avoid danger.
+	
+	**At Higher Levels:** When you cast this spell using a spell slot of 
+	5th level or higher, use the higher level wherever the spell's level 
+	appears in the stat block."""
+
+	name = "Spirit of Death"
+	level = "4"
+	casting_time = "Action"
+	casting_range = "60 feet"
+	components = "V, S, M"
+	materials = "a gilded playing card depicting an avatar of death worth at least 400 gp"
+	duration = "Concentration, up to 1 minute"
+	ritual = False
+	magic_school = "Necromancy"
+	classes = ("Sorcerer", "Warlock", "Wizard")
 class SpiritualWeapon(Spell):
 	"""You create a floating, spectral weapon within range that lasts for 
 	the duration or until you cast this spell again. When you cast the 
@@ -999,6 +1142,29 @@ class SpiritualWeapon(Spell):
 	ritual = False
 	magic_school = "Evocation"
 	classes = ("Cleric")
+class SprayofCards(Spell):
+	"""You spray spectral cards from your hands or sleeve; the cards blind 
+	or slash at your enemies, and then vanish. Choose one of the following 
+	effects for the cards. Blinding Cards. Each creature in a 15-foot cone 
+	must succeed on a Wisdom saving throw or be blinded until the end of 
+	their next turn. Cutting Cards. Each creature in a 15-foot cone must 
+	make a Dexterity saving throw. A creature takes 2d10 force damage on a 
+	failed save or half as much damage on a successful one.
+	
+	**At Higher Levels:** When you cast this spell using a spell slot of 
+	4th level or higher, the damage of cutting cards increases by 1d10 for 
+	every two slot levels above 2nd."""
+
+	name = "Spray of Cards"
+	level = "2"
+	casting_time = "Action"
+	casting_range = "Self (15-foot cone)"
+	components = "V, S, M"
+	materials = "a deck of cards"
+	duration = "Instantaneous"
+	ritual = False
+	magic_school = "Conjuration"
+	classes = ("Bard", "Sorcerer", "Warlock", "Wizard")
 class StaggeringSmite(Spell):
 	"""The next time you hit a creature with a melee weapon attack during 
 	this spell's duration, your weapon pierces both body and mind, and the 
@@ -1166,6 +1332,23 @@ class StormofVengeance(Spell):
 	ritual = False
 	magic_school = "Conjuration"
 	classes = ("Druid")
+class SuddenAwakening(UA)(Spell):
+	"""Each sleeping creature you choose within range awakens, and then 
+	each prone creature within range can stand up without expending any 
+	movement.
+	
+	"""
+
+	name = "Sudden Awakening (UA)"
+	level = "1"
+	casting_time = "Bonus"
+	casting_range = "10 feet"
+	components = "V"
+	materials = ""
+	duration = "Instantaneous"
+	ritual = False
+	magic_school = "Enchantment"
+	classes = ("Bard", "Ranger", "Sorcerer", "Wizard")
 class Suggestion(Spell):
 	"""You suggest a course of activity (limited to a sentence or two) and 
 	magically influence a creature you can see within range that can hear 
@@ -1197,6 +1380,34 @@ class Suggestion(Spell):
 	ritual = False
 	magic_school = "Enchantment"
 	classes = ("Bard", "Sorcerer", "Warlock", "Wizard")
+class SummonAberrantSpirit(Spell):
+	"""You call forth a spirit from the Far Realm or another alien realm of 
+	madness. The spirit manifests physically in an unoccupied space that 
+	you can see within range. This corporeal form uses the Aberrant Spirit 
+	stat block. When you cast the spell, choose Beholderkin, Slaadi, or 
+	Star Spawn. The creature physically resembles your choice, which also 
+	determines some of the traits in its stat block. The creature 
+	disappears when it drops to 0 hit points or when the spell ends.The 
+	creature is friendly to you and your companions for the spell's 
+	duration. In combat, the creature shares your initiative count, but it 
+	takes its turn immediately after yours. It obeys verbal commands that 
+	you issue to it (no action required by you). If you don't issue any, it 
+	defends itself but otherwise takes no action.
+	
+	**At Higher Levels:** When you cast this spell using a spell slot of 
+	5th level or higher, the creature assumes the higher level for that 
+	casting wherever it uses the spell's level in its stat block."""
+
+	name = "Summon Aberrant Spirit"
+	level = "4"
+	casting_time = "Action"
+	casting_range = "90 feet"
+	components = "V, S, M"
+	materials = "a pickled tentacle and an eyeball in a crystal vial worth at least 400 gp"
+	duration = "Concentration, up to 1 hour"
+	ritual = False
+	magic_school = "Conjuration"
+	classes = ("Sorcerer", "Warlock", "Wizard")
 class SummonAberration(Spell):
 	"""You call forth an aberrant spirit. It manifests in an unoccupied 
 	space that you can see within range. This corporeal form uses the 
@@ -1251,6 +1462,35 @@ class SummonBeast(Spell):
 	ritual = False
 	magic_school = "Conjuration"
 	classes = (,"Druid", "Ranger")
+class SummonBestialSpirit(Spell):
+	"""You call forth the spirit of a beast. The spirit manifests 
+	physically in an unoccupied space that you can see within range. This 
+	corporeal form uses the Bestial Spirit stat block. When you cast the 
+	spell, choose an environment: Air, Land, or Water. The creature 
+	physically resembles an animal of your choice that is native to the 
+	chosen environment, which also determines one of the movement modes in 
+	the creature's stat block. The creature disappears when it drops to 0 
+	hit points or when the spell ends.The creature is friendly to you and 
+	your companions for the spell's duration. In combat, the creature 
+	shares your initiative count, but it takes its turn immediately after 
+	yours. It obeys verbal commands that you issue to it (no action 
+	required by you). If you don't issue any, it defends itself but 
+	otherwise takes no action.
+	
+	**At Higher Levels:** When you cast this spell using a spell slot of 
+	3rd level or higher, the creature assumes the higher level for that 
+	casting wherever it uses the spell's level in its stat block."""
+
+	name = "Summon Bestial Spirit"
+	level = "2"
+	casting_time = "Action"
+	casting_range = "90 feet"
+	components = "V, S, M"
+	materials = "a feather, tuft of fur, and fish tail inside a gilded acorn worth at least 200 gp"
+	duration = "Concentration, up to 1 hour"
+	ritual = False
+	magic_school = "Conjuration"
+	classes = ("Druid", "Ranger")
 class SummonCelestial(Spell):
 	"""You call forth a celestial spirit. It manifests in an angelic form 
 	in an unoccupied space that you can see within range. This corporeal 
@@ -1277,6 +1517,33 @@ class SummonCelestial(Spell):
 	ritual = False
 	magic_school = "Conjuration"
 	classes = (,"Cleric", "Paladin")
+class SummonCelestialSpirit(Spell):
+	"""You call forth a spirit from the Upper Planes. The spirit manifests 
+	physically in an angelic form in an unoccupied space that you can see 
+	within range. This corporeal form uses the Celestial Spirit stat block. 
+	When you cast the spell, choose Avenger or Defender. Your choice 
+	determines the creature's attack in its stat block. The creature 
+	disappears when it drops to 0 hit points or when the spell ends.The 
+	creature is friendly to you and your companions for the spell's 
+	duration. In combat, the creature shares your initiative count, but it 
+	takes its turn immediately after yours. It obeys verbal commands that 
+	you issue to it (no action required by you). If you don't issue any, it 
+	defends itself but otherwise takes no action.
+	
+	**At Higher Levels:** When you cast this spell using a spell slot of 
+	6th level or higher, the creature assumes the higher level for that 
+	casting wherever it uses the spell's level in its stat block."""
+
+	name = "Summon Celestial Spirit"
+	level = "5"
+	casting_time = "Action"
+	casting_range = "90 feet"
+	components = "V, S, M"
+	materials = "a golden reliquary worth at least 500 gp"
+	duration = "Concentration, up to 1 hour"
+	ritual = False
+	magic_school = "Conjuration"
+	classes = ("Cleric", "Paladin")
 class SummonConstruct(Spell):
 	"""You call forth the spirit of a construct. It manifests in an 
 	unoccupied space that you can see within range. This corporeal form 
@@ -1331,6 +1598,33 @@ class SummonDraconicSpirit(Spell):
 	ritual = False
 	magic_school = "Conjuration"
 	classes = ("Druid", "Sorcerer", "Wizard")
+class SummonDraconicSpirit(Spell):
+	"""You call forth a draconic spirit. It manifests in an unoccupied 
+	space that you can see within range.This corporeal form uses the 
+	Draconic Spirit stat block. When you cast this spell, choose a family 
+	of dragon: Chromatic, Gem, or Metallic. The creature resembles a dragon 
+	of the chosen family, which determines certain traits in its stat 
+	block. The creature disappears when it drops to 0 hit points or when 
+	the spell ends.The creature is an ally to you and your companions. In 
+	combat, the creature shares your initiative count, but it takes its 
+	turn immediately after yours. It obeys your verbal commands (no action 
+	required by you). If you don't issue any, it takes the Dodge action and 
+	uses its move to avoid danger.
+	
+	**At Higher Levels:** When you cast this spell using a spell slot of 
+	6th level or higher, use the higher level wherever the spell's level 
+	appears in the stat block."""
+
+	name = "Summon Draconic Spirit"
+	level = "5"
+	casting_time = "Action"
+	casting_range = "60 feet"
+	components = "V, S, M"
+	materials = "an art object from a dragon's hoard, worth at least 500 gp"
+	duration = "Concentration, up to 1 hour"
+	ritual = False
+	magic_school = "Conjuration"
+	classes = ("Druid", "Sorcerer", "Wizard")
 class SummonElemental(Spell):
 	"""You call forth an elemental spirit. It manifests in an unoccupied 
 	space that you can see within range. This corporeal form uses the 
@@ -1358,6 +1652,34 @@ class SummonElemental(Spell):
 	ritual = False
 	magic_school = "Conjuration"
 	classes = (,"Druid", "Ranger", "Wizard")
+class SummonElementalSpirit(Spell):
+	"""You call forth a spirit from the Elemental Planes. The spirit 
+	manifests physically in an unoccupied space that you can see within 
+	range. This corporeal form uses the Elemental Spirit stat block. When 
+	you cast the spell, choose an element: Air, Earth, Fire, or Water. The 
+	creature physically resembles a vaguely humanoid form wreathed in the 
+	chosen element, which also determines some of the traits in its stat 
+	block. The creature disappears when it drops to 0 hit points or when 
+	the spell ends.The creature is friendly to you and your companions for 
+	the spell's duration. In combat, the creature shares your initiative 
+	count, but it takes its turn immediately after yours. It obeys verbal 
+	commands that you issue to it (no action required by you). If you don't 
+	issue any, it defends itself but otherwise takes no action.
+	
+	**At Higher Levels:** When you cast this spell using a spell slot of 
+	5th level or higher, the creature assumes the higher level for that 
+	casting wherever it uses the spell's level in its stat block."""
+
+	name = "Summon Elemental Spirit"
+	level = "4"
+	casting_time = "Action"
+	casting_range = "90 feet"
+	components = "V, S, M"
+	materials = "air, a pebble, ash, and water inside a crystal vial worth at least 400 gp"
+	duration = "Concentration, up to 1 hour"
+	ritual = False
+	magic_school = "Conjuration"
+	classes = ("Druid", "Sorcerer", "Wizard")
 class SummonFey(Spell):
 	"""You call forth a fey spirit. It manifests in an unoccupied space 
 	that you can see within range. This corporeal form uses the Fey Spirit 
@@ -1385,6 +1707,34 @@ class SummonFey(Spell):
 	ritual = False
 	magic_school = "Conjuration"
 	classes = (,"Druid", "Ranger", "Warlock", "Wizard")
+class SummonFeySpirit(Spell):
+	"""You call forth a spirit from the Feywild. The spirit manifests 
+	physically in an unoccupied space that you can see within range. This 
+	corporeal form uses the Fey Spirit stat block. When you cast the spell, 
+	choose a mood: Deceitful, Furious, or Joyful. The creature physically 
+	resembles a satyr, a dryad, or an elf (your choice) marked by the 
+	chosen mood, which also determines one of the traits in its stat block. 
+	The creature disappears when it drops to 0 hit points or when the spell 
+	ends.The creature is friendly to you and your companions for the 
+	spell's duration. In combat, the creature shares your initiative count, 
+	but it takes its turn immediately after yours. It obeys verbal commands 
+	that you issue to it (no action required by you). If you don't issue 
+	any, it defends itself but otherwise takes no action.
+	
+	**At Higher Levels:** When you cast this spell using a spell slot of 
+	4th level or higher, the creature assumes the higher level for that 
+	casting wherever it uses the spell's level in its stat block."""
+
+	name = "Summon Fey Spirit"
+	level = "3"
+	casting_time = "Action"
+	casting_range = "90 feet"
+	components = "V, S, M"
+	materials = "a gilded flower worth at least 300 gp"
+	duration = "Concentration, up to 1 hour"
+	ritual = False
+	magic_school = "Conjuration"
+	classes = ("Bard", "Druid", "Sorcerer", "Warlock", "Wizard")
 class SummonFiend(Spell):
 	"""You call forth a fiendish spirit. It manifests in an unoccupied 
 	space that you can see within range. This corporeal form uses the 
@@ -1412,6 +1762,34 @@ class SummonFiend(Spell):
 	ritual = False
 	magic_school = "Conjuration"
 	classes = (,"Warlock", "Wizard")
+class SummonFiendishSpirit(Spell):
+	"""You call forth a fiendish spirit from the Lower Planes. The spirit 
+	manifests physically in an unoccupied space that you can see within 
+	range. This corporeal form uses the Fiendish Spirit stat block. When 
+	you cast the spell, choose Demon, Devil, or Yugoloth. The creature 
+	physically resembles a fiend of the chosen type, which also determines 
+	some of the traits in its stat block. The creature disappears when it 
+	drops to 0 hit points or when the spell ends.The creature is friendly 
+	to you and your companions for the spell's duration. In combat, the 
+	creature shares your initiative count, but it takes its turn 
+	immediately after yours. It obeys verbal commands that you issue to it 
+	(no action required by you). If you don't issue any, it defends itself 
+	but otherwise takes no action.
+	
+	**At Higher Levels:** When you cast this spell using a spell slot of 
+	7th level or higher, the creature assumes the higher level for that 
+	casting wherever it uses the spell's level in its stat block."""
+
+	name = "Summon Fiendish Spirit"
+	level = "6"
+	casting_time = "Action"
+	casting_range = "90 feet"
+	components = "V, S, M"
+	materials = "humanoid blood inside a ruby vial worth at least 600 gp"
+	duration = "Concentration, up to 1 hour"
+	ritual = False
+	magic_school = "Conjuration"
+	classes = ("Warlock", "Wizard")
 class SummonGreaterDemon(Spell):
 	"""You utter foul words, summoning one demon from the chaos of the 
 	Abyss. You choose the demon's type, which must be one of challenge 
@@ -1484,6 +1862,34 @@ class SummonLesserDemons(Spell):
 	ritual = False
 	magic_school = "Conjuration"
 	classes = ("Warlock", "Wizard")
+class SummonShadowSpirit(Spell):
+	"""You call forth a shadowy spirit from the Shadowfell. The spirit 
+	manifests physically in an unoccupied space that you can see within 
+	range. This corporeal form uses the Shadow Spirit stat block. When you 
+	cast the spell, choose an emotion: Fury, Despair, or Fear. The creature 
+	physically resembles a misshapen humanoid marked by the chosen emotion, 
+	which also determines some of the traits in its stat block. The 
+	creature disappears when it drops to 0 hit points or when the spell 
+	ends.The creature is friendly to you and your companions for the 
+	spell's duration. In combat, the creature shares your initiative count, 
+	but it takes its turn immediately after yours. It obeys verbal commands 
+	that you issue to it (no action required by you). If you don't issue 
+	any, it defends itself but otherwise takes no action.
+	
+	**At Higher Levels:** When you cast this spell using a spell slot of 
+	4th level or higher, the creature assumes the higher level for that 
+	casting wherever it uses the spell's level in its stat block."""
+
+	name = "Summon Shadow Spirit"
+	level = "3"
+	casting_time = "Action"
+	casting_range = "90 feet"
+	components = "V, S, M"
+	materials = "tears inside a crystal vial worth at least 300 gp"
+	duration = "Concentration, up to 1 hour"
+	ritual = False
+	magic_school = "Conjuration"
+	classes = ("Sorcerer", "Warlock", "Wizard")
 class SummonShadowspawn(Spell):
 	"""You call forth a shadowy spirit. It manifests in an unoccupied space 
 	that you can see within range. This corporeal form uses the Shadow 
@@ -1538,6 +1944,62 @@ class SummonUndead(Spell):
 	ritual = False
 	magic_school = "Necromancy"
 	classes = (,"Warlock", "Wizard")
+class SummonUndeadSpirit(Spell):
+	"""You call forth a restless spirit from beyond the grave. The spirit 
+	manifests physically in an unoccupied space that you can see within 
+	range. This corporeal form uses the Undead Spirit stat block. When you 
+	cast the spell, choose the creature's form: Ghostly, Putrid, or 
+	Skeletal. The creature physically resembles a humanoid with the chosen 
+	form, which also determines some of the traits in its stat block. The 
+	creature disappears when it drops to 0 hit points or when the spell 
+	ends.The creature is friendly to you and your companions for the 
+	spell's duration. In combat, the creature shares your initiative count, 
+	but it takes its turn immediately after yours. It obeys verbal commands 
+	that you issue to it (no action required by you). If you don't issue 
+	any, it defends itself but otherwise takes no action.
+	
+	**At Higher Levels:** When you cast this spell using a spell slot of 
+	4th level or higher, the creature assumes the higher level for that 
+	casting wherever it uses the spell's level in its stat block."""
+
+	name = "Summon Undead Spirit"
+	level = "3"
+	casting_time = "Action"
+	casting_range = "90 feet"
+	components = "V, S, M"
+	materials = "a gilded humanoid skull worth at least 300 gp"
+	duration = "Concentration, up to 1 hour"
+	ritual = False
+	magic_school = "Necromancy"
+	classes = ("Warlock", "Wizard")
+class SummonWarriorSpirit(Spell):
+	"""You call forth a warrior spirit from the legendary Deck of Many 
+	Things. It manifests in an unoccupied space that you can see within 
+	range. This corporeal form uses the Warrior Spirit stat block. When you 
+	cast the spell, choose a type of warrior: barbarian, fighter, or monk. 
+	The warrior resembles a humanoid armed appropriately to the chosen 
+	class, which determines certain traits in its stat block. The warrior 
+	disappears when it drops to 0 hit points or when the spell ends.The 
+	warrior is an ally to you and your companions. In combat, the warrior 
+	shares your initiative count, but it takes its turn immediately after 
+	yours. It obeys your verbal commands (no action required by you). If 
+	you don't issue any, it takes the Dodge action and uses its move to 
+	avoid danger.
+	
+	**At Higher Levels:** When you cast this spell using a spell slot of 
+	4th level or higher, the creature assumes the higher level for that 
+	casting wherever it uses the spell's level in its stat block."""
+
+	name = "Summon Warrior Spirit"
+	level = "3"
+	casting_time = "Action"
+	casting_range = "90 feet"
+	components = "V, S, M"
+	materials = "a gilded playing card depicting a knight worth at least 300 gp"
+	duration = "Concentration, up to 1 hour"
+	ritual = False
+	magic_school = "Conjuration"
+	classes = ("Sorcerer", "Warlock", "Wizard")
 class Sunbeam(Spell):
 	"""A beam of brilliant light flashes out from your hand in a 
 	5-foot-wide, 60-foot-long line. Each creature in the line must make a 
@@ -1717,3 +2179,55 @@ class SynapticStatic(Spell):
 	ritual = False
 	magic_school = "Enchantment"
 	classes = ("Bard", "Sorcerer", "Warlock", "Wizard")
+class Synchronicity(UA)(Spell):
+	"""The creature you touch feels reality subtly shifted to its favor 
+	while this spell is in effect. The target isn't inconvenienced by 
+	mundane delays of any sort. Traffic lights are always green, there's 
+	always a waiting elevator, and a taxi is always around the corner. The 
+	target can run at full speed through dense crowds, and attacks of 
+	opportunity provoked by the target's movement are made with 
+	disadvantage.Synchronicity grants advantage to Dexterity (Stealth) 
+	checks, since the target always finds a handy piece of cover available. 
+	Additionally, the target has advantage on all ability checks made to 
+	drive a vehicle.In the event that two or more creatures under the 
+	effect of synchronicity are attempting to avoid being inconvenienced by 
+	each other, the creatures engage in a contest of Charisma each time the 
+	effects of the spells would oppose each other.
+	
+	"""
+
+	name = "Synchronicity (UA)"
+	level = "4"
+	casting_time = "Action"
+	casting_range = "Touch"
+	components = "V, S"
+	materials = ""
+	duration = "Concentration, up to 1 hour"
+	ritual = False
+	magic_school = "Enchantment"
+	classes = ("Sorcerer", "Warlock", "Wizard")
+class SystemBackdoor(UA)(Spell):
+	"""This spell allows you to bypass system security in order to create a 
+	secure login on a foreign system. The login you create allows you 
+	administrator-level privileges in any computer system not enhanced 
+	through technomagic. The login defeats any technomagic spells of 3rd 
+	level or lower.Once the duration of the spell expires, the login and 
+	all privileges are wiped from the system. System logs still show the 
+	activity of the user, but the user identification cannot be found or 
+	traced.
+	
+	**At Higher Levels:** When you cast this spell using a spell slot of 
+	5th level or higher, you are able to bypass technomagic spells if the 
+	spell's level is equal to or less than the level of the spell slot you 
+	used."""
+
+	name = "System Backdoor (UA)"
+	level = "4"
+	casting_time = "1 Min."
+	casting_range = "Self"
+	components = "V, S, M"
+	materials = "hacking tools"
+	duration = "Concentration, up to 1 hour"
+	ritual = False
+	magic_school = "Transmutation (technomagic)"
+	classes = ("Sorcerer", "Warlock", "Wizard")

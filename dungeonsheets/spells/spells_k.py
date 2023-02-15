@@ -1,6 +1,27 @@
 from dungeonsheets.spells.spells import Spell
 
 
+class KineticJaunt(Spell):
+	"""You magically empower your movement with dance-like steps, giving 
+	yourself the following benefits for the duration.Your walking speed 
+	increases by 10 feet.You don't provoke opportunity attacks.You can move 
+	through the space of another creature, and it doesn't count as 
+	difficult terrain. If you end your turn in another creature's space, 
+	you are shunted to the last unoccupied space you occupied, and you take 
+	1d8 force damage.
+	
+	"""
+
+	name = "Kinetic Jaunt"
+	level = "2"
+	casting_time = "Bonus"
+	casting_range = "Self"
+	components = "S"
+	materials = ""
+	duration = "Concentration, up to 1 minute"
+	ritual = False
+	magic_school = "Transmutation"
+	classes = ("Artificer", "Bard", "Sorcerer", "Wizard")
 class Knock(Spell):
 	"""Choose an object that you can see within range. The object can be a 
 	door, a box, a chest, a set of manacles, a padlock, or another object 

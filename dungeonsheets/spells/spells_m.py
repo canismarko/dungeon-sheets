@@ -597,6 +597,24 @@ class Mending(Spell):
 	ritual = False
 	magic_school = "Transmutation"
 	classes = ("Artificer", "Bard", "Cleric", "Druid", "Sorcerer", "Wizard")
+class MentalBarrier(Spell):
+	"""You protect your mind with a wall of looping, repetitive thought. 
+	Until the start of your next turn, you have advantage on Intelligence, 
+	Wisdom, and Charisma saving throws, and you have resistance to psychic 
+	damage.
+	
+	"""
+
+	name = "Mental Barrier"
+	level = "2"
+	casting_time = "Reaction"
+	casting_range = "Self"
+	components = "V"
+	materials = ""
+	duration = "1 round"
+	ritual = False
+	magic_school = "Abjuration"
+	classes = ("Bard", "Sorcerer", "Warlock", "Wizard")
 class MentalPrison(Spell):
 	"""You attempt to bind a creature within an illusory cell that only it 
 	perceives. One creature you can see within range must make an 
@@ -755,6 +773,72 @@ class MindSliver(Spell):
 	ritual = False
 	magic_school = "Enchantment"
 	classes = (,"Sorcerer", "Warlock", "Wizard")
+class MindSliver(Spell):
+	"""You drive a disorienting spike of psychic energy into the mind of 
+	one creature you can see within range. The target must make an 
+	Intelligence saving throw. Unless the saving throw is successful, the 
+	target takes 1d6 psychic damage, and the first time it makes a saving 
+	throw before the end of your next turn, it must roll a d4 and subtract 
+	the number rolled from the save.This spell's damage increases by 1d6 
+	when you reach certain levels: 5th level (2d6), 11th level (3d6), and 
+	17th level (4d6).
+	
+	"""
+
+	name = "Mind Sliver"
+	level = "Cantrip"
+	casting_time = "Action"
+	casting_range = "60 feet"
+	components = "V"
+	materials = ""
+	duration = "1 round"
+	ritual = False
+	magic_school = "Enchantment"
+	classes = ("Sorcerer", "Warlock", "Wizard")
+class MindSliver(Spell):
+	"""You drive a disorienting spike of psychic energy into the mind of 
+	one creature you can see within range. The target must make an 
+	Intelligence saving throw. Unless the saving throw is successful, the 
+	target takes 1d6 psychic damage, and the first time it makes a saving 
+	throw before the end of your next turn, it must roll a d4 and subtract 
+	the number rolled from the save.This spell's damage increases by 1d6 
+	when you reach certain levels: 5th level (2d6), 11th level (3d6), and 
+	17th level (4d6).
+	
+	"""
+
+	name = "Mind Sliver"
+	level = "Cantrip"
+	casting_time = "Action"
+	casting_range = "60 feet"
+	components = "V"
+	materials = ""
+	duration = "1 round"
+	ritual = False
+	magic_school = "Enchantment"
+	classes = ("Bard", "Sorcerer", "Warlock", "Wizard")
+class MindSliver(Spell):
+	"""You drive a disorienting spike of psychic energy into the mind of 
+	one creature you can see within range. The target must make an 
+	Intelligence saving throw. Unless the saving throw is successful, the 
+	target takes 1d6 psychic damage, and the first time it makes a saving 
+	throw before the end of your next turn, it must roll a d4 and subtract 
+	the number rolled from the save.This spell's damage increases by 1d6 
+	when you reach certain levels: 5th level (2d6), 11th level (3d6), and 
+	17th level (4d6).
+	
+	"""
+
+	name = "Mind Sliver"
+	level = "Cantrip"
+	casting_time = "Action"
+	casting_range = "60 feet"
+	components = "V"
+	materials = ""
+	duration = "1 round"
+	ritual = False
+	magic_school = "Enchantment"
+	classes = ("Sorcerer", "Warlock", "Wizard")
 class MindSpike(Spell):
 	"""You reach into the mind of one creature you can see within range. 
 	The target must make a Wisdom saving throw, taking 3d8 psychic damage 
@@ -779,6 +863,54 @@ class MindSpike(Spell):
 	ritual = False
 	magic_school = "Divination"
 	classes = ("Sorcerer", "Warlock", "Wizard")
+class MindThrust(Spell):
+	"""You thrust a lance of psychic disruption into the mind of one 
+	creature you can see within range. The target must make an Intelligence 
+	saving throw. On a failed save, the target takes 3d6 psychic damage, 
+	and it can't take a reaction until the end of its next turn. Moreover, 
+	on its next turn, it must choose whether it gets a move, an action, or 
+	a bonus action; it gets only one of the three. On a successful save, 
+	the target takes half as much damage and suffers none of the spell's 
+	other effects.
+	
+	**At Higher Levels:** When you cast this spell using a spell slot of 
+	3rd level or higher, you can target one additional creature for each 
+	slot level above 2nd. The creatures must be within 30 feet of each 
+	other when you target them."""
+
+	name = "Mind Thrust"
+	level = "2"
+	casting_time = "Action"
+	casting_range = "90 feet"
+	components = "V"
+	materials = ""
+	duration = "1 round"
+	ritual = False
+	magic_school = "Enchantment"
+	classes = ("Sorcerer", "Wizard")
+class MindThrust(Spell):
+	"""You propel a lance of psionic disruption into the mind of one 
+	creature you can see within range. The target must make an Intelligence 
+	saving throw. On a failed save, the target takes 3d6 psychic damage, 
+	and it can use its action only to Dash or Disengage on its next turn. 
+	On a successful save, the target takes half as much damage, and this 
+	spell doesn't limit its action options.
+	
+	**At Higher Levels:** When you cast this spell using a spell slot of 
+	3rd level or higher, you can target one additional creature for each 
+	slot level above 2nd. The creatures must be within 30 feet of each 
+	other when you target them."""
+
+	name = "Mind Thrust"
+	level = "2"
+	casting_time = "Bonus"
+	casting_range = "60 feet"
+	components = "V, S"
+	materials = ""
+	duration = "1 round"
+	ritual = False
+	magic_school = "Enchantment"
+	classes = ("Bard", "Sorcerer", "Warlock", "Wizard")
 class MinorIllusion(Spell):
 	"""You create a sound or an image of an object within range that lasts 
 	for the duration. The illusion also ends if you dismiss it as an action 

@@ -88,6 +88,26 @@ class Earthquake(Spell):
 	ritual = False
 	magic_school = "Evocation"
 	classes = ("Cleric", "Druid", "Sorcerer")
+class EgoWhip(Spell):
+	"""You lash the mind of one creature you can see within range, filling 
+	it with despair. The target must succeed on an Intelligence saving 
+	throw or suffer disadvantage on attack rolls, ability checks, and 
+	saving throws, and it can't cast spells. At the end of each of its 
+	turns, the target can make another Intelligence saving throw. On a 
+	success, the spell ends on the target.
+	
+	"""
+
+	name = "Ego Whip"
+	level = "4"
+	casting_time = "Action"
+	casting_range = "30 feet"
+	components = "V"
+	materials = ""
+	duration = "Concentration, up to 1 minute"
+	ritual = False
+	magic_school = "Enchantment"
+	classes = ("Bard", "Sorcerer", "Warlock", "Wizard")
 class EldritchBlast(Spell):
 	"""A beam of crackling energy streaks toward a creature within range. 
 	Make a ranged spell attack against the target. On a hit, the target 

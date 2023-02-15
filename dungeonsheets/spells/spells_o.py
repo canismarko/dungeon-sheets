@@ -1,6 +1,52 @@
 from dungeonsheets.spells.spells import Spell
 
 
+class On/Off(UA)(Spell):
+	"""This cantrip allows you to activate or deactivate any electronic 
+	device within range, as long as the device has a clearly defined on or 
+	off function that can be easily accessed from the outside of the 
+	device. Any device that requires a software-based shutdown sequence to 
+	activate or deactivate cannot be affected by on/off.
+	
+	"""
+
+	name = "On/Off (UA)"
+	level = "Cantrip"
+	casting_time = "Action"
+	casting_range = "60 feet"
+	components = "V, S"
+	materials = ""
+	duration = "Instantaneous"
+	ritual = False
+	magic_school = "Transmutation (technomagic)"
+	classes = ("Sorcerer", "Warlock", "Wizard")
+class OtherworldlyForm(Spell):
+	"""Uttering an incantation, you draw on the magic of the Lower Planes 
+	or Upper Planes (your choice) to transform yourself. You gain the 
+	following benefits until the spell ends:You are immune to fire and 
+	poison damage (Lower Planes) or radiant and necrotic damage (Upper 
+	Planes).You are immune to the poisoned condition (Lower Planes) or the 
+	charmed condition (Upper Planes).Spectral wings appear on your back, 
+	giving you a flying speed of 40 feet.You have a +2 bonus to AC.All your 
+	weapon attacks are magical, and when you make a weapon attack, you can 
+	use your spellcasting ability modifier, instead of Strength or 
+	Dexterity, for the attack and damage rolls.You can attack twice, 
+	instead of once, when you take the Attack action on your turn. You 
+	ignore this benefit if you already have a feature, like Extra Attack, 
+	that gives you extra attacks.
+	
+	"""
+
+	name = "Otherworldly Form"
+	level = "6"
+	casting_time = "Action"
+	casting_range = "Self"
+	components = "V, S, M"
+	materials = "an object engraved with a symbol of the Outer Planes, worth at least 500 gp"
+	duration = "Concentration, up to 1 minute"
+	ritual = False
+	magic_school = "Transmutation"
+	classes = ("Cleric", "Sorcerer", "Warlock", "Wizard")
 class OtilukesFreezingSphere(Spell):
 	"""A frigid globe of cold energy streaks from your fingertips to a 
 	point of your choice within range, where it explodes in a 

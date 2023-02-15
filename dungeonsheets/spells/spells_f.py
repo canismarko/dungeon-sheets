@@ -345,6 +345,44 @@ class FindTraps(Spell):
 	ritual = False
 	magic_school = "Divination"
 	classes = ("Cleric", "Druid", "Ranger")
+class FindVehicle(UA)(Spell):
+	"""You summon a spirit that assumes the form of a nonmilitary land 
+	vehicle of your choice, appearing in an unoccupied space within range. 
+	The vehicle has the statistics of a normal vehicle of its sort, though 
+	it is celestial, fey, or fiendish (your choice in origin). The physical 
+	characteristics of the vehicle reflect its origin to some degree. For 
+	example, a fiendish SUV might be jet black in color, with tinted 
+	windows and a sinister-looking front grille.You have a supernatural 
+	bond with the conjured vehicle that allows you to drive beyond your 
+	normal ability. While driving the conjured vehicle, you are considered 
+	proficient with vehicles of its type, and you add double your 
+	proficiency bonus to ability checks related to driving the vehicle. 
+	While driving the vehicle, you can make any spell you cast that targets 
+	only you also target the vehicle.If the vehicle drops to 0 hit points, 
+	it disappears, leaving behind no physical form. You can also dismiss 
+	the vehicle at any time as an action, causing it to disappear.You can't 
+	have more than one vehicle bonded by this spell at a time. As an 
+	action, you can release the vehicle from its bond at any time, causing 
+	it to disappear.
+	
+	**At Higher Levels:** When you cast this spell using a spell slot of 
+	3rd level or higher, you can conjure a nonmilitary water vehicle large 
+	enough to carry six Medium creatures. When you cast this spell using a 
+	spell slot of 5th level or higher, you can conjure a nonmilitary air 
+	vehicle large enough to carry ten Medium creatures. When you cast this 
+	spell using a spell slot of 7th level or higher, you can conjure any 
+	type of vehicle, subject to the DM's approval."""
+
+	name = "Find Vehicle (UA)"
+	level = "2"
+	casting_time = "10 Min."
+	casting_range = "30 feet"
+	components = "V, S"
+	materials = ""
+	duration = "8 hours"
+	ritual = False
+	magic_school = "Conjuration"
+	classes = ("Sorcerer", "Warlock", "Wizard")
 class FindthePath(Spell):
 	"""This spell allows you to find the shortest, most direct physical 
 	route to a specific fixed location that you are familiar with on the 
@@ -504,6 +542,30 @@ class FizbansPlatinumShield(Spell):
 	ritual = False
 	magic_school = "Abjuration"
 	classes = ("Sorcerer", "Wizard")
+class FizbansPlatinumShield(Spell):
+	"""You create a field of silvery light that surrounds a creature of 
+	your choice within range (you can choose yourself). The field sheds dim 
+	light out to 5 feet.As a bonus action on subsequent turns, you can move 
+	the field to another creature within 60 feet of the field.The creature 
+	protected by the field gains the following benefits:The creature has 
+	half cover.The creature has resistance to acid, cold, fire, lightning, 
+	and poison damage.If the creature is subjected to an effect that allows 
+	it to make a Dexterity saving throw to take only half damage, the 
+	creature instead takes no damage if it succeeds on the saving throw, 
+	and only half damage if it fails.
+	
+	"""
+
+	name = "Fizbans Platinum Shield"
+	level = "6"
+	casting_time = "Action"
+	casting_range = "60 feet"
+	components = "V, S, M"
+	materials = "a platinum-plated dragon scale, worth at least 500 gp"
+	duration = "Concentration, up to 1 minute"
+	ritual = False
+	magic_school = "Abjuration"
+	classes = ("Sorcerer", "Wizard")
 class FlameArrows(Spell):
 	"""You touch a quiver containing arrows or bolts. When a target is hit 
 	by a ranged weapon attack using a piece of ammunition drawn from the 
@@ -548,6 +610,29 @@ class FlameBlade(Spell):
 	ritual = False
 	magic_school = "Evocation"
 	classes = ("Druid","Sorcerer")
+class FlameStride(Spell):
+	"""The billowing flames of a dragon cover your feet, granting you 
+	explosive speed. For the duration, your speed increases by 20 feet and 
+	moving doesn't provoke opportunity attacks.When you move within 5 feet 
+	of a creature or object that isn't being worn or carried, it takes 1d6 
+	fire damage from your trail of heat. A creature or object can take this 
+	damage only once during a turn.
+	
+	**At Higher Levels:** When you cast this spell using a spell slot of 
+	4th level or higher, increase your speed by 5 feet for each spell slot 
+	level above 3rd. Additionally, the spell deals an additional 1d6 fire 
+	damage for each slot level above 3rd."""
+
+	name = "Flame Stride"
+	level = "3"
+	casting_time = "Bonus"
+	casting_range = "Self"
+	components = "V, S"
+	materials = ""
+	duration = "Concentration, up to 1 minute"
+	ritual = False
+	magic_school = "Transmutation"
+	classes = ("Artificer", "Ranger", "Sorcerer", "Wizard")
 class FlameStrike(Spell):
 	"""A vertical column of divine fire roars down from the heavens in a 
 	location you specify. Each creature in a 10-foot-radius, 40-foot-high 
@@ -626,6 +711,34 @@ class FleshtoStone(Spell):
 	ritual = False
 	magic_school = "Transmutation"
 	classes = ("Warlock", "Wizard","Druid", "Sorcerer")
+class FlockofFamiliars(Spell):
+	"""You temporarily summon three familiars—spirits that take animal 
+	forms of your choice. Each familiar uses the same rules and options for 
+	a familiar conjured by the find familiar spell. All the familiars 
+	conjured by this spell must be the same type of creature (celestials, 
+	fey, or fiends; your choice). If you already have a familiar conjured 
+	by the find familiar spell or similar means, then one fewer familiars 
+	are conjured by this spell.Familiars summoned by this spell can 
+	telepathically communicate with you and share their visual or auditory 
+	senses while they are within 1 mile of you.When you cast a spell with a 
+	range of touch, one of the familiars conjured by this spell can deliver 
+	the spell, as normal. However, you can cast a touch spell through only 
+	one familiar per turn.
+	
+	**At Higher Levels:** When you cast this spell using a spell slot of 
+	3rd level or higher, you conjure an additional familiar for each slot 
+	level above 2nd."""
+
+	name = "Flock of Familiars"
+	level = "2"
+	casting_time = "1 Min."
+	casting_range = "Touch"
+	components = "V, S"
+	materials = ""
+	duration = "Concentration, up to 1 hour"
+	ritual = False
+	magic_school = "Conjuration"
+	classes = ("Warlock", "Wizard")
 class Fly(Spell):
 	"""You touch a willing creature. The target gains a flying speed of 60 
 	feet for the duration. When the spell ends, the target falls if it is 
@@ -817,6 +930,27 @@ class Friends(Spell):
 	ritual = False
 	magic_school = "Enchantment"
 	classes = ("Bard", "Sorcerer", "Warlock", "Wizard")
+class FrostFingers(Spell):
+	"""Freezing cold blasts from your fingertips in a 15-foot cone. Each 
+	creature in that area must make a Constitution saving throw, taking 2d8 
+	cold damage on a failed save, or half as much damage on a successful 
+	one.The cold freezes nonmagical liquids in the area that aren't being 
+	worn or carried.
+	
+	**At Higher Levels:** When you cast this spell using a spell slot of 
+	2nd level or higher, the damage increases by 1d8 for each slot level 
+	above 1st."""
+
+	name = "Frost Fingers"
+	level = "1"
+	casting_time = "Action"
+	casting_range = "Self (15-foot cone)"
+	components = "V, S"
+	materials = ""
+	duration = "Instantaneous"
+	ritual = False
+	magic_school = "Evocation"
+	classes = ("Wizard")
 class Frostbite(Spell):
 	"""You cause numbing frost to form on one creature that you can see 
 	within range. The target must make a Constitution saving throw. On a 

@@ -473,6 +473,26 @@ class PrimalSavagery(Spell):
 	ritual = False
 	magic_school = "Transmutation"
 	classes = ("Druid")
+class PrimalSavagery(UA)(Spell):
+	"""Your teeth or fingernails lengthen and sharpen. You choose which. 
+	Make a melee spell attack against one creature within 5 feet of you. On 
+	a hit, the target takes 1d10 piercing or slashing damage (your choice). 
+	After you make the attack, your teeth or fingernails return to 
+	normal.The spell's damage increases by 1d10 when you reach 5th level 
+	(2d10), 11th level (3d10), and 17th level (4d10).
+	
+	"""
+
+	name = "Primal Savagery (UA)"
+	level = "Cantrip"
+	casting_time = "Action"
+	casting_range = "Self"
+	components = "S"
+	materials = ""
+	duration = "Instantaneous"
+	ritual = False
+	magic_school = "Transmutation"
+	classes = ("Druid")
 class PrimordialWard(Spell):
 	"""You have resistance to acid, cold, fire, lightning, and thunder 
 	damage for the spell's duration.When you take damage of one of those 
@@ -691,6 +711,23 @@ class ProjectImage(Spell):
 	ritual = False
 	magic_school = "Illusion"
 	classes = ("Bard", "Wizard")
+class ProtectionfromBallistics(UA)(Spell):
+	"""This spell enchants the flesh of the target against the impact of 
+	bullets. Until the spell ends, the target has resistance to nonmagical 
+	ballistic damage.
+	
+	"""
+
+	name = "Protection from Ballistics (UA)"
+	level = "3"
+	casting_time = "Action"
+	casting_range = "Touch"
+	components = "V, S, M"
+	materials = "a shell casing"
+	duration = "Concentration, up to 10 minutes"
+	ritual = False
+	magic_school = "Abjuration"
+	classes = ("Sorcerer", "Warlock", "Wizard")
 class ProtectionfromEnergy(Spell):
 	"""For the duration, the willing creature you touch has resistance to 
 	one damage type of your choice: acid, cold, fire, lightning, or thunder.
@@ -748,6 +785,48 @@ class ProtectionfromPoison(Spell):
 	ritual = False
 	magic_school = "Abjuration"
 	classes = ("Artificer", "Cleric", "Druid", "Paladin", "Ranger")
+class PsionicBlast(Spell):
+	"""You unleash a destructive wave of mental power in a 30-foot cone. 
+	Each creature in the area must make a Dexterity saving throw. On a 
+	failed save, a target takes 5d8 force damage, is pushed 20 feet 
+	directly away from you, and is knocked prone. On a successful save, a 
+	target takes half as much damage and isn't pushed or knocked prone.
+	
+	**At Higher Levels:** When you cast this spell using a spell slot of 
+	4th level or higher, the damage increases by 1d8 for each slot level 
+	above 3rd."""
+
+	name = "Psionic Blast"
+	level = "3"
+	casting_time = "Action"
+	casting_range = "Self (30-foot cone)"
+	components = "V"
+	materials = ""
+	duration = "Instantaneous"
+	ritual = False
+	magic_school = "Evocation"
+	classes = ("Bard", "Sorcerer", "Warlock", "Wizard")
+class PsychicCrush(Spell):
+	"""You overload the mind of one creature you can see within range, 
+	filling its psyche with discordant emotions. The target must make an 
+	Intelligence saving throw. On a failed save, the target takes 12d6 
+	psychic damage and is stunned for 1 minute. On a successful save, the 
+	target takes half as much damage and isn't stunned.The stunned target 
+	can make an Intelligence saving throw at the end of each of its turns. 
+	On a successful save, the spell ends on the target.
+	
+	"""
+
+	name = "Psychic Crush"
+	level = "6"
+	casting_time = "Action"
+	casting_range = "60 feet"
+	components = "V, S"
+	materials = ""
+	duration = "1 minute"
+	ritual = False
+	magic_school = "Enchantment"
+	classes = ("Bard", "Sorcerer", "Warlock", "Wizard")
 class PsychicScream(Spell):
 	"""You unleash the power of your mind to blast the intellect of up to 
 	ten creatures of your choice that you can see within range. Creatures 
@@ -795,6 +874,25 @@ class PulseWave(Spell):
 	ritual = False
 	magic_school = "Evocation"
 	classes = ()
+class Puppet(UA)(Spell):
+	"""Your gesture forces one humanoid you can see within range to make a 
+	Constitution saving throw. On a failed save, the target must move up to 
+	its speed in a direction you choose. In addition, you can cause the 
+	target to drop whatever it is holding. This spell has no effect on a 
+	humanoid that is immune to being charmed.
+	
+	"""
+
+	name = "Puppet (UA)"
+	level = "1"
+	casting_time = "Action"
+	casting_range = "120 feet"
+	components = "S"
+	materials = ""
+	duration = "Instantaneous"
+	ritual = False
+	magic_school = "Enchantment"
+	classes = ("Bard", "Warlock", "Wizard")
 class PurifyFoodandDrink(Spell):
 	"""All nonmagical food and drink within a 5-foot-radius sphere centered 
 	on a point of your choice within range is purified and rendered free of 

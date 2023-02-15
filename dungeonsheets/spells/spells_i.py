@@ -44,6 +44,49 @@ class IceStorm(Spell):
 	ritual = False
 	magic_school = "Evocation"
 	classes = ("Druid", "Sorcerer", "Wizard")
+class IcingdeathsFrost(Spell):
+	"""A burst of icy cold energy emanates from you in a 30-foot cone. Each 
+	creature in that area must make a Constitution saving throw. On a 
+	failed save, a creature takes 3d8 cold damage and is covered in ice for 
+	1 minute or until a creature uses its action to break the ice off 
+	itself or another creature. A creature covered in ice has its speed 
+	reduced to 0. On a successful save, a creature takes half as much 
+	damage with no additional effects.
+	
+	**At Higher Levels:** When you cast this spell using a spell slot of 
+	3rd level or higher, increase the cold damage by 1d8 for each slot 
+	level above 2nd."""
+
+	name = "Icingdeaths Frost"
+	level = "2"
+	casting_time = "Action"
+	casting_range = "Self (15-foot cone)"
+	components = "S, M"
+	materials = "a vial of meltwater"
+	duration = "Instantaneous"
+	ritual = False
+	magic_school = "Evocation"
+	classes = ("Sorcerer", "Wizard")
+class IdInsinuation(Spell):
+	"""You unleash a torrent of conflicting desires in the mind of one 
+	creature you can see within range, impairing its ability to make 
+	decisions. The target must succeed on a Wisdom saving throw or be 
+	incapacitated. At the end of each of its turns, it takes 1d12 psychic 
+	damage, and it can then make another Wisdom saving throw. On a success, 
+	the spell ends on the target.
+	
+	"""
+
+	name = "Id Insinuation"
+	level = "1"
+	casting_time = "Action"
+	casting_range = "60 feet"
+	components = "V, S"
+	materials = ""
+	duration = "Concentration, up to 1 minute"
+	ritual = False
+	magic_school = "Enchantment"
+	classes = ("Bard", "Sorcerer", "Warlock", "Wizard")
 class Identify(Spell):
 	"""You choose one object that you must touch throughout the casting of 
 	the spell. If it is a magic item or some other magic-imbued object, you 
@@ -285,6 +328,31 @@ class InciteGreed(Spell):
 	ritual = False
 	magic_school = "Enchantment"
 	classes = ("Cleric", "Warlock", "Wizard")
+class InfallibleRelay(UA)(Spell):
+	"""With this spell, you can target any creature with whom you have 
+	spoken previously, as long as the two of you are on the same plane of 
+	existence. When you cast the spell, the nearest functioning telephone 
+	or similar communications device within 100 feet of the target begins 
+	to ring. If there is no suitable device close enough to the target, the 
+	spell fails.The target must make a successful Charisma saving throw or 
+	be compelled to answer your call. Once the connection is established, 
+	the call is crystal clear and cannot be dropped until the conversation 
+	has ended or the spell's duration ends. You can end the conversation at 
+	any time, but a target must succeed on a Charisma saving throw to end 
+	the conversation.
+	
+	"""
+
+	name = "Infallible Relay (UA)"
+	level = "1"
+	casting_time = "1 Min."
+	casting_range = "Self"
+	components = "V, S, M"
+	materials = "a mobile phone"
+	duration = "Concentration, up to 10 minutes"
+	ritual = False
+	magic_school = "Divination (technomagic)"
+	classes = ("Sorcerer", "Warlock", "Wizard")
 class InfernalCalling(Spell):
 	"""Uttering a dark incantation, you summon a devil from the Nine Hells. 
 	You choose the devil's type, which must be one of challenge rating 6 or 
@@ -345,6 +413,28 @@ class Infestation(Spell):
 	"""
 
 	name = "Infestation"
+	level = "Cantrip"
+	casting_time = "Action"
+	casting_range = "30 feet"
+	components = "V, S, M"
+	materials = "a living flea"
+	duration = "Instantaneous"
+	ritual = False
+	magic_school = "Conjuration"
+	classes = ("Druid", "Sorcerer", "Warlock", "Wizard")
+class Infestation(UA)(Spell):
+	"""You cause mites, fleas, and other parasites to appear momentarily on 
+	one creature you can see within range. The target must succeed on a 
+	Constitution saving throw or take 1d6 piercing damage. If the target 
+	takes any of that damage, the target moves 5 feet in a random 
+	direction. Roll a d8 for the direction: 1, north; 2, northeast; 3, 
+	east; 4, southeast; 5, south; 6, southwest; 7, west; or 8, 
+	northwest.The spell's damage increases by 1d6 when you reach 5th level 
+	(2d6), 11th level (3d6), and 17th level (4d6).
+	
+	"""
+
+	name = "Infestation (UA)"
 	level = "Cantrip"
 	casting_time = "Action"
 	casting_range = "30 feet"
@@ -417,6 +507,45 @@ class IntellectFortress(Spell):
 	ritual = False
 	magic_school = "Abjuration"
 	classes = ("Artificer","Bard", "Sorcerer", "Warlock", "Wizard")
+class IntellectFortress(Spell):
+	"""For the duration, you or one willing creature you can see within 
+	range has resistance to psychic damage, as well as advantage on 
+	Intelligence, Wisdom, and Charisma saving throws.
+	
+	**At Higher Levels:** When you cast this spell using a spell slot of 
+	5th level or higher, you can target one additional creature for each 
+	slot level above 4th. The creatures must be within 30 feet of each 
+	other when you target them."""
+
+	name = "Intellect Fortress"
+	level = "4"
+	casting_time = "Action"
+	casting_range = "30 feet"
+	components = "V"
+	materials = ""
+	duration = "Concentration, up to 1 hour"
+	ritual = False
+	magic_school = "Abjuration"
+	classes = ("Bard", "Sorcerer", "Wizard")
+class IntellectFortress(Spell):
+	"""You create a faintly shimmering barrier of protective psychic power 
+	around you. For the duration, you have advantage on all saving 
+	throws.When another creature that you can see within 30 feet of you 
+	fails a saving throw, you can use your reaction to allow them to reroll 
+	the save. They must use the new roll.
+	
+	"""
+
+	name = "Intellect Fortress"
+	level = "5"
+	casting_time = "Action"
+	casting_range = "Self"
+	components = "V, S"
+	materials = ""
+	duration = "Concentration, up to 10 minutes"
+	ritual = False
+	magic_school = "Abjuration"
+	classes = ("Bard", "Sorcerer", "Warlock", "Wizard")
 class InvestitureofFlame(Spell):
 	"""Flames race across your body, shedding bright light in a 30-foot 
 	radius and dim light for an additional 30 feet for the spell's 
@@ -537,6 +666,24 @@ class Invisibility(Spell):
 	ritual = False
 	magic_school = "Illusion"
 	classes = ("Artificer", "Bard", "Sorcerer", "Warlock", "Wizard")
+class InvisibilitytoCameras(UA)(Spell):
+	"""Four creatures of your choice within range become undetectable to 
+	electronic sensors and cameras for the duration of the spell. Anything 
+	a target is wearing or carrying is likewise undetectable as long as it 
+	is on the target's person. The targets remain visible to vision.
+	
+	"""
+
+	name = "Invisibility to Cameras (UA)"
+	level = "3"
+	casting_time = "Action"
+	casting_range = "10 feet"
+	components = "V, S, M"
+	materials = "a scrap of black paper"
+	duration = "Concentration, up to 1 minute"
+	ritual = False
+	magic_school = "Illusion (technomagic)"
+	classes = ("Sorcerer", "Warlock", "Wizard")
 class Invulnerability(Spell):
 	"""You are immune to all damage until the spell ends.
 	

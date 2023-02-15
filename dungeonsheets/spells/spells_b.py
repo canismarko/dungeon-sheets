@@ -493,6 +493,24 @@ class BoomingBlade(Spell):
 	ritual = False
 	magic_school = "Evocation"
 	classes = ("Artificer", "Sorcerer", "Warlock", "Wizard","Sorcerer", "Warlock", "Wizard")
+class BorrowedKnowledge(Spell):
+	"""You draw on knowledge from spirits of the past. Choose one skill in 
+	which you lack proficiency. For the spell's duration, you have 
+	proficiency in the chosen skill. The spell ends early if you cast it 
+	again.
+	
+	"""
+
+	name = "Borrowed Knowledge"
+	level = "2"
+	casting_time = "Action"
+	casting_range = "Self"
+	components = "V, S, M"
+	materials = "a book worth at least 25 gp"
+	duration = "1 hour"
+	ritual = False
+	magic_school = "Divination"
+	classes = ("Bard", "Cleric", "Warlock", "Wizard")
 class BrandingSmite(Spell):
 	"""The next time you hit a creature with a weapon attack before this 
 	spell ends, the weapon gleams with astral radiance as you strike. The 

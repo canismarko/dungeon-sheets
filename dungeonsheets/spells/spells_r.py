@@ -76,6 +76,30 @@ class RaulothimsPsychicLance(Spell):
 	ritual = False
 	magic_school = "Enchantment"
 	classes = ("Bard", "Sorcerer", "Warlock", "Wizard")
+class RaulothimsPsychicLance(Spell):
+	"""You unleash a shimmering lance of psychic power from your forehead 
+	at a creature that you can see within range. Alternatively, you can 
+	utter the creature's name. If the named target is within range, it 
+	gains no benefit from cover or invisibility as the lance homes in on 
+	it. If the named target isn't within range, the lance dissipates, and 
+	the spell slot is not expended.The target must succeed on an 
+	Intelligence saving throw or take 10d6 psychic damage and be 
+	incapacitated until the start of your next turn.
+	
+	**At Higher Levels:** When you cast this spell using a spell slot of 
+	5th level or higher, the damage increases by 1d6 for each slot level 
+	above 4th."""
+
+	name = "Raulothims Psychic Lance"
+	level = "4"
+	casting_time = "Action"
+	casting_range = "120 feet"
+	components = "V"
+	materials = ""
+	duration = "Instantaneous"
+	ritual = False
+	magic_school = "Enchantment"
+	classes = ("Bard", "Sorcerer", "Warlock", "Wizard")
 class RavenousVoid(Spell):
 	"""You create a 20-foot-radius sphere of destructive gravitational 
 	force centered on a point you can see within range. For the spell's 
@@ -250,6 +274,26 @@ class Reincarnate(Spell):
 	ritual = False
 	magic_school = "Transmutation"
 	classes = ("Druid")
+class RemoteAccess(UA)(Spell):
+	"""You can use any electronic device within range as if it were in your 
+	hands. This is not a telekinesis effect. Rather, this spell allows you 
+	to simulate a device's mechanical functions electronically. You are 
+	able to access only functions that a person using the device manually 
+	would be able to access. You can use remote access with only one device 
+	at a time.
+	
+	"""
+
+	name = "Remote Access (UA)"
+	level = "1"
+	casting_time = "Action"
+	casting_range = "120 feet"
+	components = "V, S"
+	materials = ""
+	duration = "10 minutes"
+	ritual = False
+	magic_school = "Transmutation (technomagic)"
+	classes = ("Sorcerer", "Warlock", "Wizard")
 class RemoveCurse(Spell):
 	"""At your touch, all curses affecting one creature or object end. If 
 	the object is a cursed magic item, its curse remains, but the spell 

@@ -128,6 +128,25 @@ class CauseFear(Spell):
 	ritual = False
 	magic_school = "Necromancy"
 	classes = ("Warlock", "Wizard")
+class CauseFear(UA)(Spell):
+	"""You awaken the sense of mortality in one creature you can see within 
+	range. The target must succeed on a Wisdom saving throw or become 
+	frightened for the duration. A target with 25 hit points or fewer makes 
+	the saving throw with disadvantage. The spell has no effect on 
+	constructs or undead.
+	
+	"""
+
+	name = "Cause Fear (UA)"
+	level = "1"
+	casting_time = "Action"
+	casting_range = "60 feet"
+	components = "V, S"
+	materials = ""
+	duration = "Concentration, up to 1 minute"
+	ritual = False
+	magic_school = "Necromancy"
+	classes = ("Warlock", "Wizard")
 class Ceremony(Spell):
 	"""You perform a special religious ceremony that is infused with magic. 
 	When you cast the spell, choose one of the following rites, the target 
@@ -161,6 +180,46 @@ class Ceremony(Spell):
 	duration = "Instantaneous"
 	ritual = True
 	magic_school = "Abjuration"
+	classes = ("Cleric", "Paladin")
+class Ceremony(UA)(Spell):
+	"""You perform one of several religious ceremonies. When you cast the 
+	spell, choose one of the following ceremonies, the target of which must 
+	be within 10 feet of you throughout the casting. Atonement. You touch 
+	one willing creature whose alignment has changed, and you make a DC 20 
+	Wisdom (Insight) check. On a success, you restore the target to its 
+	original alignment. Bless Water. You touch one vial of water and cause 
+	it to become holy water. Coming of Age. You touch one humanoid old 
+	enough to be a young adult. For the next 24 hours, whenever the target 
+	makes an ability check, it can roll a d4 and add the number rolled to 
+	the ability check. A creature can benefit from this ceremony just once. 
+	Dedication. You touch one humanoid who would willingly convert to your 
+	religion or who wishes to be dedicated to your god's service. For the 
+	next 24 hours, whenever the target makes a saving throw, it can roll a 
+	d4 and add the number rolled to the save. A creature can benefit from 
+	this ceremony just once. Funeral Rite. You bless one corpse within 5 
+	feet of you. For the next 24 hours, the target can't become undead by 
+	any means short of a wish spell. Investiture. You touch one willing 
+	humanoid. Choose one 1st-level spell you have prepared and expend a 
+	spell slot and any material components as if you were casting that 
+	spell. The spell has no effect. Instead, the target can cast this spell 
+	once without having to expend a spell slot or use material components. 
+	If the target doesn't cast the spell within 1 hour, the invested spell 
+	is lost. Marriage. You touch adult humanoids willing to be bonded 
+	together in marriage. For the next 24 hours, each target gains a +2 
+	bonus to AC and saving throws while they are within 30 feet of each 
+	other. A creature can benefit from this ceremony just once.
+	
+	"""
+
+	name = "Ceremony (UA)"
+	level = "1"
+	casting_time = "1 Hr."
+	casting_range = "Touch"
+	components = "V, S, M"
+	materials = "25 gp worth of powdered silver"
+	duration = "Instantaneous (see text)"
+	ritual = True
+	magic_school = "Evocation"
 	classes = ("Cleric", "Paladin")
 class ChainLightning(Spell):
 	"""You create a bolt of lightning that arcs toward a target of your 
@@ -203,6 +262,32 @@ class ChaosBolt(Spell):
 	rolled for each slot level above 1st."""
 
 	name = "Chaos Bolt"
+	level = "1"
+	casting_time = "Action"
+	casting_range = "120 feet"
+	components = "V, S"
+	materials = ""
+	duration = "Instantaneous"
+	ritual = False
+	magic_school = "Evocation"
+	classes = ("Sorcerer")
+class ChaosBolt(UA)(Spell):
+	"""You hurl an undulating, warbling mass of chaotic energy at one 
+	creature in range. Make a ranged spell attack against the target. On a 
+	hit, the target takes 2d8 damage. Choose one of the d8s. The number it 
+	rolled determines the type of damage, as shown below.Chaos Boltd8Damage 
+	Type1Acid2Cold3Fire4Force5Lightning6Poison7Psychic8ThunderIf you roll 
+	the same number on both d8s, the chaotic energy leaps from the target 
+	to a different creature of your choice within 30 feet of it. Make a new 
+	attack roll against the new target, and make a new damage roll, which 
+	could cause the chaotic energy to leap again. A creature can be 
+	targeted only once by this mass of chaotic energy.
+	
+	**At Higher Levels:** When you cast this spell using a spell slot of 
+	2nd level or higher, each target takes extra damage of the type rolled. 
+	The extra damage equals 1d6 for each slot level above 1st."""
+
+	name = "Chaos Bolt (UA)"
 	level = "1"
 	casting_time = "Action"
 	casting_range = "120 feet"
@@ -527,6 +612,33 @@ class Commune(Spell):
 	ritual = True
 	magic_school = "Divination"
 	classes = ("Cleric")
+class CommunewithCity(UA)(Spell):
+	"""You briefly become one with the city and gain knowledge of the 
+	surrounding area. Aboveground, this spell gives you knowledge of the 
+	area within 1 mile of you. In sewers and other underground settings, 
+	you gain knowledge of the area within 600 feet of you.You instantly 
+	gain knowledge of up to three facts of your choice about any of the 
+	following subjects as they relate to the area:Terrain and bodies of 
+	waterPrevalent buildings, plants, animals, or intelligent 
+	creaturesPowerful (CR 1 or higher) celestials, fey, fiends, elementals, 
+	or undeadInfluences from other planes of existenceElectrical currents, 
+	wireless signals, and active transit lines and tracksFor example, you 
+	could determine the location of powerful undead in the area, the 
+	location of major sources of electrical power or interference, and the 
+	location of any nearby parks. 
+	
+	"""
+
+	name = "Commune with City (UA)"
+	level = "5"
+	casting_time = "1 Min."
+	casting_range = "Self"
+	components = "V, S"
+	materials = ""
+	duration = "Instantaneous"
+	ritual = True
+	magic_school = "Divination"
+	classes = ("Sorcerer", "Warlock", "Wizard")
 class CommunewithNature(Spell):
 	"""You briefly become one with nature and gain knowledge of the 
 	surrounding territory. In the outdoors, the spell gives you knowledge 
@@ -708,6 +820,32 @@ class ConjureAnimals(Spell):
 	ritual = False
 	magic_school = "Conjuration"
 	classes = ("Druid", "Ranger")
+class ConjureBarlgura(UA)(Spell):
+	"""You summon a barlgura that appears in an unoccupied space you can 
+	see within range. The barlgura disappears when it drops to 0 hit points 
+	or when the spell ends.The barlgura is hostile to all non-demons. Roll 
+	initiative for the barlgura, which has its own turns. At the start of 
+	its turn, it moves toward and attacks the nearest non-demon it can 
+	perceive. If two or more creatures are equally near, it picks one at 
+	random. If it cannot see any potential enemies, the barlgura moves in a 
+	random direction in search of foes.As part of casting the spell, you 
+	can scribe a circle on the ground using the blood of an intelligent 
+	humanoid slain within the past 24 hours. The circle is large enough to 
+	encompass your space. The summoned barlgura cannot cross the circle or 
+	target anyone in it while the spell lasts.
+	
+	"""
+
+	name = "Conjure Barlgura (UA)"
+	level = "4"
+	casting_time = "Action"
+	casting_range = "60 feet"
+	components = "V, S"
+	materials = ""
+	duration = "Up to 10 minutes"
+	ritual = False
+	magic_school = "Conjuration"
+	classes = ("Sorcerer", "Wizard")
 class ConjureBarrage(Spell):
 	"""You throw a nonmagical weapon or fire a piece of nonmagical 
 	ammunition into the air to create a cone of identical weapons that 
@@ -816,6 +954,98 @@ class ConjureFey(Spell):
 	ritual = False
 	magic_school = "Conjuration"
 	classes = ("Druid", "Warlock")
+class ConjureHezrou(UA)(Spell):
+	"""You summon a hezrou that appears in an unoccupied space you can see 
+	within range. The hezrou disappears when it drops to 0 hit points or 
+	when the spell ends.The hezrou's attitude depends on the value of the 
+	food used as a material component for this spell. Roll initiative for 
+	the hezrou, which has its own turns. At the start of the hezrou's turn, 
+	the DM makes a secret Charisma check on your behalf, with a bonus equal 
+	to the food's value divided by 20. The check DC starts at 10 and 
+	increases by 2 each round. You can issue orders to the hezrou and have 
+	it obey you as long as you succeed on the Charisma check.If the check 
+	fails, the spell no longer requires concentration and the demon is no 
+	longer under your control. The hezrou then focuses on devouring any 
+	corpses it can see. If there are no such meals at hand, it attacks the 
+	nearest creatures and eats anything it kills. If its hit points are 
+	reduced to below half its hit point maximum, it returns to the Abyss.As 
+	part of casting the spell, you can scribe a circle on the ground using 
+	the blood of an intelligent humanoid slain within the past 24 hours. 
+	The circle is large enough to encompass your space. The summoned hezrou 
+	cannot cross the circle or target anyone in it while the spell lasts.
+	
+	"""
+
+	name = "Conjure Hezrou (UA)"
+	level = "7"
+	casting_time = "Action"
+	casting_range = "60 feet"
+	components = "V, S, M"
+	materials = "food worth at least 100 gp, which the spell consumes"
+	duration = "Concentration, up to 1 hour"
+	ritual = False
+	magic_school = "Conjuration"
+	classes = ("Sorcerer", "Wizard")
+class ConjureKnowbot(UA)(Spell):
+	"""You touch a single computerized device or computer system to conjure 
+	a knowbot—a partially sentient piece of software imprinted with 
+	vestiges of your own skills and computer abilities. For the duration of 
+	the spell, you can use a bonus action to have the knowbot execute a 
+	computer-related task that would normally require an action. The 
+	knowbot makes Intelligence ability checks using your ability score and 
+	proficiency bonuses (including your proficiency with hacking tools, if 
+	applicable).You have a limited telepathic bond with the knowbot, out to 
+	a range of 500 feet from the device or system where the knowbot was 
+	conjured. If you move beyond this range, the knowbot disappears in 2d4 
+	rounds, as if the duration of the spell had expired. Moving within 
+	range again immediately reestablishes the bond.The knowbot is bound to 
+	the system in which it was created, and it stays there until it is 
+	dismissed or the spell's duration expires.
+	
+	**At Higher Levels:** When you cast this spell using a spell slot of 
+	5th level or higher, the spell's duration increases to 1 hour. 
+	Additionally, your telepathic bond with the knowbot is effective out to 
+	a range of 1,000 feet, and if you leave the range of the bond, the 
+	knowbot continues performing its last directed task until the spell 
+	expires."""
+
+	name = "Conjure Knowbot (UA)"
+	level = "4"
+	casting_time = "Action"
+	casting_range = "Touch"
+	components = "V, S"
+	materials = ""
+	duration = "10 minutes"
+	ritual = False
+	magic_school = "Conjuration (technomagic)"
+	classes = ("Sorcerer", "Warlock", "Wizard")
+class ConjureLesserDemon(UA)(Spell):
+	"""You summon up to a total of eight manes or dretches that appear in 
+	unoccupied spaces you can see within range. A manes or dretch 
+	disappears when it drops to 0 hit points or when the spell ends.The 
+	demons are hostile to all creatures. Roll initiative for the summoned 
+	demons as a group, which has its own turns. The demons attack the 
+	nearest non-demons to the best of their ability.As part of casting the 
+	spell, you can scribe a circle on the ground with the blood used as a 
+	material component. The circle is large enough to encompass your space. 
+	The summoned demons cannot cross the circle or target anyone in it 
+	while the spell lasts. Using the material component in this manner 
+	consumes it.
+	
+	**At Higher Levels:** When you cast this spell using a spell slot of 
+	6th or 7th level, you summon sixteen demons. If you cast it using a 
+	spell slot of 8th or 9th level, you summon thirty-two demons."""
+
+	name = "Conjure Lesser Demon (UA)"
+	level = "3"
+	casting_time = "Action"
+	casting_range = "60 feet"
+	components = "V, S, M"
+	materials = "a vial of blood from an intelligent humanoid killed within the past 24 hours"
+	duration = "Concentration, up to 1 hour"
+	ritual = False
+	magic_school = "Conjuration"
+	classes = ("Sorcerer", "Wizard")
 class ConjureMinorElementals(Spell):
 	"""You summon elementals that appear in unoccupied spaces that you can 
 	see within range. You choose one the following options for what 
@@ -845,6 +1075,35 @@ class ConjureMinorElementals(Spell):
 	ritual = False
 	magic_school = "Conjuration"
 	classes = ("Druid", "Wizard")
+class ConjureShadowDemon(UA)(Spell):
+	"""You summon a shadow demon that appears in an unoccupied space you 
+	can see within range. The shadow demon disappears when it drops to 0 
+	hit points or when the spell ends.Roll initiative for the shadow demon, 
+	which has its own turns. You can issue orders to the shadow demon, and 
+	it obeys you as long as it can attack a creature on each of its turns 
+	and does not start its turn in an area of bright light. If either of 
+	these conditions is not met, the shadow demon immediately makes a 
+	Charisma check contested by your Charisma check. If you fail the check, 
+	the spell no longer requires concentration and the demon is no longer 
+	under your control. The demon automatically succeeds on the check if it 
+	is more than 100 feet away from you.As part of casting the spell, you 
+	can scribe a circle on the ground using the blood of an intelligent 
+	humanoid slain within the past 24 hours. The circle is large enough to 
+	encompass your space. The summoned shadow demon cannot cross the circle 
+	or target anyone in it while the spell lasts.
+	
+	"""
+
+	name = "Conjure Shadow Demon (UA)"
+	level = "4"
+	casting_time = "Action"
+	casting_range = "60 feet"
+	components = "V, S, M"
+	materials = "a vial of blood from an intelligent humanoid killed within the past 24 hours"
+	duration = "Concentration, up to 1 hour"
+	ritual = False
+	magic_school = "Conjuration"
+	classes = ("Sorcerer", "Wizard")
 class ConjureVolley(Spell):
 	"""You fire a piece of nonmagical ammunition from a ranged weapon or 
 	throw a nonmagical weapon into the air and choose a point within range. 
@@ -867,6 +1126,41 @@ class ConjureVolley(Spell):
 	ritual = False
 	magic_school = "Conjuration"
 	classes = ("Ranger")
+class ConjureVrock(UA)(Spell):
+	"""You summon a vrock that appears in an unoccupied space you can see 
+	within range. The vrock disappears when it drops to 0 hit points or 
+	when the spell ends.The vrock's attitude depends on the value of the 
+	gem used as a material component for this spell. Roll initiative for 
+	the vrock, which has its own turns. At the start of the vrock's turn, 
+	the DM makes a secret Charisma check on your behalf, with a bonus equal 
+	to the gem's value divided by 20. The check DC starts at 10 and 
+	increases by 2 each round. You can issue orders to the vrock and have 
+	it obey you as long as you succeed on the Charisma check.If the check 
+	fails, the spell no longer requires concentration and the vrock is no 
+	longer under your control. The vrock takes no actions on its next turn 
+	and uses its telepathy to tell any creature it can see that it will 
+	fight in exchange for treasure. The creature that gives the vrock the 
+	most expensive gem can command it for the next 1d6 rounds. At the end 
+	of that time, it offers the bargain again. If no one offers the vrock 
+	treasure before its next turn begins, it attacks the nearest creatures 
+	for 1d6 rounds before returning to the Abyss.As part of casting the 
+	spell, you can scribe a circle on the ground using the blood of an 
+	intelligent humanoid slain within the past 24 hours. The circle is 
+	large enough to encompass your space. The summoned vrock cannot cross 
+	the circle or target anyone in it while the spell lasts.
+	
+	"""
+
+	name = "Conjure Vrock (UA)"
+	level = "5"
+	casting_time = "Action"
+	casting_range = "60 feet"
+	components = "V, S, M"
+	materials = "a gem worth at least 100 gp, which the spell consumes"
+	duration = "Concentration, up to 1 hour"
+	ritual = False
+	magic_school = "Conjuration"
+	classes = ("Sorcerer", "Wizard")
 class ConjureWoodlandBeings(Spell):
 	"""You summon fey creatures that appear in unoccupied spaces that you 
 	can see within range. Choose one of the following options for what 
@@ -1275,6 +1569,31 @@ class CreateHomunculus(Spell):
 	casting_range = "Touch"
 	components = "V, S, M"
 	materials = "clay, ash, and mandrake root, all of which the spell consumes, and a jewel-encrusted dagger worth at least 1,000 gp"
+	duration = "Instantaneous"
+	ritual = False
+	magic_school = "Transmutation"
+	classes = ("Wizard")
+class CreateMagen(Spell):
+	"""While casting the spell, you place a vial of quicksilver in the 
+	chest of a life-sized human doll stuffed with ash or dust. You then 
+	stitch up the doll and drip your blood on it. At the end of the 
+	casting, you tap the doll with a crystal rod, transforming it into a 
+	magen clothed in whatever the doll was wearing. The type of magen is 
+	chosen by you during the casting of the spell. See appendix C for 
+	different kinds of magen and their statistics.When the magen appears, 
+	your hit point maximum decreases by an amount equal to the magen's 
+	challenge rating (minimum reduction of 1). Only a wish spell can undo 
+	this reduction to your hit point maximum.Any magen you create with this 
+	spell obeys your commands without question.
+	
+	"""
+
+	name = "Create Magen"
+	level = "7"
+	casting_time = "1 Hr."
+	casting_range = "Touch"
+	components = "V, S, M"
+	materials = "a vial of quicksilver worth 500 gp and a life-sized human doll, both of which the spell consumes, and an intricate crystal rod worth at least 1,500 gp that is not consumed"
 	duration = "Instantaneous"
 	ritual = False
 	magic_school = "Transmutation"

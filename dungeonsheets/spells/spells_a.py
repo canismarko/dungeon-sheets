@@ -64,6 +64,28 @@ class AcidSplash(Spell):
 	ritual = False
 	magic_school = "Conjuration"
 	classes = ("Artificer", "Sorcerer", "Wizard")
+class AcidStream(Spell):
+	"""A stream of acid emanates from you in a line 30 feet long and 5 feet 
+	wide in a direction you choose. Each creature in the line must succeed 
+	on a Dexterity saving throw or be covered in acid for the spell's 
+	duration or until a creature uses its action to scrape or wash the acid 
+	off itself or another creature. A creature covered in the acid takes 
+	3d4 acid damage at start of each of its turns.
+	
+	**At Higher Levels:** When you cast this spell using a spell slot of 
+	2nd level or higher, the damage increases by 1d4 for each slot level 
+	above 1st."""
+
+	name = "Acid Stream"
+	level = "1"
+	casting_time = "Action"
+	casting_range = "Self (30-foot line)"
+	components = "V, S, M"
+	materials = "a bit of rotten food"
+	duration = "Concentration, up to 1 minute"
+	ritual = False
+	magic_school = "Evocation"
+	classes = ("Sorcerer", "Wizard")
 class AganazzarsScorcher(Spell):
 	"""A line of roaring flame 30 feet long and 5 feet wide emanates from 
 	you in a direction you choose. Each creature in the line must make a 
@@ -355,6 +377,29 @@ class AnimateObjects(Spell):
 	ritual = False
 	magic_school = "Transmutation"
 	classes = ("Artificer", "Bard", "Sorcerer", "Wizard")
+class Antagonize(Spell):
+	"""You whisper magical words that antagonize one creature of your 
+	choice within range. The target must make a Wisdom saving throw. On a 
+	failed save, it takes 4d4 psychic damage and must immediately use its 
+	reaction, if available, to make a melee attack against another creature 
+	of your choice that you can see. If no other creature is within range, 
+	the target has disadvantage on the next attack roll it makes before the 
+	start of your next turn.
+	
+	**At Higher Levels:** When you cast this spell using a spell slot of 
+	4th level or higher, the damage increases by 1d4 for each slot level 
+	above 4th."""
+
+	name = "Antagonize"
+	level = "3"
+	casting_time = "Action"
+	casting_range = "30 feet"
+	components = "V, S, M"
+	materials = "a playing card depicting a rogue"
+	duration = "Instantaneous"
+	ritual = False
+	magic_school = "Enchantment"
+	classes = ("Bard", "Sorcerer", "Warlock", "Wizard")
 class AntilifeShell(Spell):
 	"""A shimmering barrier extends out from you in a 10-foot radius and 
 	moves with you, remaining centered on you and hedging out creatures 
@@ -525,6 +570,29 @@ class ArcaneGate(Spell):
 	ritual = False
 	magic_school = "Conjuration"
 	classes = ("Sorcerer", "Warlock", "Wizard")
+class ArcaneHacking(UA)(Spell):
+	"""You gain advantage on all Intelligence checks using hacking tools to 
+	break software encryption or online security when using a foreign 
+	system. This spell also allows you to break 2nd-level and lower 
+	protective spells such as arcane lock or glyph of warding by making an 
+	Intelligence check using hacking tools against the spell save DC of the 
+	spell's caster.
+	
+	**At Higher Levels:** When you cast this spell using a spell slot of 
+	3rd level or higher, you can attempt to counteract a spell set to 
+	secure the foreign system if the spell's level is equal to or less than 
+	the level of the spell slot you used."""
+
+	name = "Arcane Hacking (UA)"
+	level = "2"
+	casting_time = "Action"
+	casting_range = "Self"
+	components = "V, S, M"
+	materials = "hacking tools"
+	duration = "Concentration, up to 1 hour"
+	ritual = False
+	magic_school = "Transmutation (technomagic)"
+	classes = ("Sorcerer", "Warlock", "Wizard")
 class ArcaneLock(Spell):
 	"""You touch a closed door, window, gate, chest, or other entryway, and 
 	it becomes locked for the duration. You and the creatures you designate 
@@ -548,6 +616,29 @@ class ArcaneLock(Spell):
 	ritual = False
 	magic_school = "Abjuration"
 	classes = ("Artificer", "Wizard")
+class ArcaneWeapon(Spell):
+	"""You channel arcane energy into one simple or martial weapon you're 
+	holding, and choose one damage type: acid, cold, fire, lightning, 
+	poison, or thunder. Until the spell ends, you deal an extra 1d6 damage 
+	of the chosen type to any target you hit with the weapon. If the weapon 
+	isn't magical, it becomes a magic weapon for the spell's duration.As a 
+	bonus action, you can change the damage type, choosing from the options 
+	above.
+	
+	**At Higher Levels:** When you cast this spell using a spell slot of 
+	3rd level or higher, you can maintain your concentration on the spell 
+	for up to 8 hours."""
+
+	name = "Arcane Weapon"
+	level = "1"
+	casting_time = "Bonus"
+	casting_range = "Self"
+	components = "V, S"
+	materials = ""
+	duration = "Concentration, up to 1 hour"
+	ritual = False
+	magic_school = "Transmutation"
+	classes = ()
 class ArmorofAgathys(Spell):
 	"""A protective magical force surrounds you, manifesting as a spectral 
 	frost that covers you and your gear. You gain 5 temporary hit points 

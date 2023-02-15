@@ -99,6 +99,25 @@ class HallucinatoryTerrain(Spell):
 	ritual = False
 	magic_school = "Illusion"
 	classes = ("Bard", "Druid", "Warlock", "Wizard")
+class HandofRadiance(UA)(Spell):
+	"""You raise your hand, and burning radiance erupts from it. Each 
+	creature of your choice that you can see within 5 feet of you must 
+	succeed on a Constitution saving throw or take 1d6 radiant damage.The 
+	spell's damage increases by 1d6 when you reach 5th level (2d6), 11th 
+	level (3d6), and 17th level (4d6).
+	
+	"""
+
+	name = "Hand of Radiance (UA)"
+	level = "Cantrip"
+	casting_time = "Action"
+	casting_range = "Self (5-foot radius)"
+	components = "V, S"
+	materials = ""
+	duration = "Instantaneous"
+	ritual = False
+	magic_school = "Evocation"
+	classes = ("Cleric")
 class Harm(Spell):
 	"""You unleash a virulent disease on a creature that you can see within 
 	range. The target must make a Constitution saving throw. On a failed 
@@ -142,6 +161,39 @@ class Haste(Spell):
 	ritual = False
 	magic_school = "Transmutation"
 	classes = ("Artificer", "Sorcerer", "Wizard")
+class Haywire(UA)(Spell):
+	"""This spell plays havoc with electronic devices, making the use of 
+	such devices all but impossible. Each electronic device in a 
+	10-foot-radius sphere centered on a point you choose within range is 
+	subject to random behavior while it remains within the area. A device 
+	not held by a creature is automatically affected. If an electronic 
+	device is held by a creature, that creature must succeed on a Wisdom 
+	saving throw or have the device affected by the spell.At the start of 
+	each of your turns, roll a d6 for each affected device to determine its 
+	behavior. Except where otherwise indicated, that behavior lasts until 
+	the start of your next turn while this spell is in effect.d6Effect1The 
+	device shuts down and must be restarted. Do not roll again for this 
+	device until it is restarted.2-4The device does not function.5The 
+	device experiences a power surge, causing an electric shock to the 
+	wielder (if any) and one random creature within 5 feet of the device. 
+	Each affected creature must make a Dexterity saving throw against your 
+	spell save DC, taking 6d6 lightning damage on a failed save, or half as 
+	much damage on a successful one.6The device is usable as normal.
+	
+	**At Higher Levels:** When you cast this spell using a spell slot of 
+	4th level or higher, the radius of the sphere affected by the spell 
+	increases by 5 feet for each slot level above 3rd."""
+
+	name = "Haywire (UA)"
+	level = "3"
+	casting_time = "Action"
+	casting_range = "90 feet"
+	components = "V, S"
+	materials = ""
+	duration = "Concentration, up to 1 minute"
+	ritual = False
+	magic_school = "Enchantment (technomagic)"
+	classes = ("Sorcerer", "Warlock", "Wizard")
 class Heal(Spell):
 	"""Choose a creature that you can see within range. A surge of positive 
 	energy washes through the creature, causing it to regain 70 hit points. 
@@ -162,6 +214,25 @@ class Heal(Spell):
 	ritual = False
 	magic_school = "Evocation"
 	classes = ("Cleric", "Druid")
+class HealingElixir(UA)(Spell):
+	"""You create a healing elixir in a simple vial that appears in your 
+	hand. The elixir retains its potency for the duration or until it's 
+	consumed, at which point the vial vanishes.As an action, a creature can 
+	drink the elixir or administer it to another creature. The drinker 
+	regains 2d4 + 2 hit points.
+	
+	"""
+
+	name = "Healing Elixir (UA)"
+	level = "1"
+	casting_time = "1 Min."
+	casting_range = "Self"
+	components = "V, S, M"
+	materials = "alchemist's supplies"
+	duration = "24 hours"
+	ritual = False
+	magic_school = "Conjuration"
+	classes = ("Warlock", "Wizard")
 class HealingSpirit(Spell):
 	"""You call forth a nature spirit to soothe the wounded. The intangible 
 	spirit appears in a space that is a 5-foot cube you can see within 
@@ -414,6 +485,35 @@ class HolyWeapon(Spell):
 	ritual = False
 	magic_school = "Evocation"
 	classes = ("Cleric", "Paladin")
+class HouseofCards(Spell):
+	"""You touch the ground and conjure forth a defensive structure made of 
+	enormous playing cards. The structure rises with you at its center, 
+	harmlessly lifting you and any creatures in the area. The house of 
+	cards has a square base that is 30 feet on each side, and it has three 
+	floors with 10- foot-high ceilings. The second floor is 20 feet on each 
+	side, and the top floor is 10 feet on each side—both centered above 
+	the bottom floor. Ramps connect the interior of each floor, and empty 
+	doorframes connect the interior and exterior of each level. Creatures 
+	inside or on top of the structure have half cover.Each card that 
+	comprises the house is 5 feet wide and 10 feet tall and is very 
+	fragile. A card has AC 10 and 1 hit point. The cards are immune to 
+	poison and psychic damage. Reducing a card to 0 hit points destroys it. 
+	Every time a card is destroyed, roll 1d6. If you roll a 5 or a 6, the 
+	house collapses, ending the spell.The house and all its cards vanish 
+	when the spell ends.
+	
+	"""
+
+	name = "House of Cards"
+	level = "3"
+	casting_time = "1 Min."
+	casting_range = "Touch"
+	components = "V, S, M"
+	materials = "a deck of cards"
+	duration = "24 hours"
+	ritual = False
+	magic_school = "Conjuration"
+	classes = ("Artificer", "Bard", "Sorcerer", "Wizard")
 class HungerofHadar(Spell):
 	"""You open a gateway to the dark between the stars, a region infested 
 	with unknown horrors. A 20-foot-radius sphere of blackness and bitter 

@@ -449,6 +449,25 @@ class ThornWhip(Spell):
 	ritual = False
 	magic_school = "Transmutation"
 	classes = ("Artificer", "Druid")
+class ThoughtShield(Spell):
+	"""You weave a clouding veil over the mind of one creature you touch. 
+	For the duration, the target's mind can't be read or detected, 
+	creatures can't telepathically communicate with the target unless the 
+	target allows it, and the target has advantage on saving throws against 
+	any effect that would determine whether it is telling the truth.
+	
+	"""
+
+	name = "Thought Shield"
+	level = "2"
+	casting_time = "Action"
+	casting_range = "Touch"
+	components = "V, S"
+	materials = ""
+	duration = "8 hours"
+	ritual = False
+	magic_school = "Abjuration"
+	classes = ("Bard", "Sorcerer", "Warlock", "Wizard")
 class ThunderStep(Spell):
 	"""You teleport yourself to an unoccupied space you can see within 
 	range. Immediately after you disappear, a thunderous boom sounds, and 
@@ -660,6 +679,26 @@ class TolltheDead(Spell):
 	ritual = False
 	magic_school = "Necromancy"
 	classes = ("Cleric", "Warlock", "Wizard")
+class TolltheDead(UA)(Spell):
+	"""You point at one creature you can see within range, and the sound of 
+	a dolorous bell fills the air around it for a moment. The target must 
+	succeed on a Wisdom saving throw or take 1d8 necrotic damage. If the 
+	target is missing any of its hit points, it instead takes 1d12 necrotic 
+	damage.The spell's damage increases by one die when you reach 5th level 
+	(2d8 or 2d12), 11th level (3d8 or 3d12), and 17th level (4d8 or 4d12).
+	
+	"""
+
+	name = "Toll the Dead (UA)"
+	level = "Cantrip"
+	casting_time = "Action"
+	casting_range = "60 feet"
+	components = "V, S"
+	materials = ""
+	duration = "Instantaneous"
+	ritual = False
+	magic_school = "Necromancy"
+	classes = ("Cleric", "Warlock")
 class Tongues(Spell):
 	"""This spell grants the creature you touch the ability to understand 
 	any spoken language it hears. Moreover, when the target speaks, any 
