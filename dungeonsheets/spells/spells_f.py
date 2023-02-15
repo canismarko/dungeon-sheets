@@ -345,7 +345,7 @@ class FindTraps(Spell):
 	ritual = False
 	magic_school = "Divination"
 	classes = ("Cleric", "Druid", "Ranger")
-class FindVehicle(UA)(Spell):
+class FindVehicleUA(Spell):
 	"""You summon a spirit that assumes the form of a nonmilitary land 
 	vehicle of your choice, appearing in an unoccupied space within range. 
 	The vehicle has the statistics of a normal vehicle of its sort, though 

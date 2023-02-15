@@ -679,7 +679,7 @@ class TolltheDead(Spell):
 	ritual = False
 	magic_school = "Necromancy"
 	classes = ("Cleric", "Warlock", "Wizard")
-class TolltheDead(UA)(Spell):
+class TolltheDeadUA(Spell):
 	"""You point at one creature you can see within range, and the sound of 
 	a dolorous bell fills the air around it for a moment. The target must 
 	succeed on a Wisdom saving throw or take 1d8 necrotic damage. If the 

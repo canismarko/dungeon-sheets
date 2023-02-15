@@ -1,7 +1,7 @@
 from dungeonsheets.spells.spells import Spell
 
 
-class AbiDalzimsHorridWilting(Spell):
+class Abi-DalzimsHorridWilting(Spell):
 	"""You draw the moisture from every creature in a 30-foot cube centered 
 	on a point you choose within range. Each creature in that area must 
 	make a Constitution saving throw. Constructs and undead aren't 
@@ -570,7 +570,7 @@ class ArcaneGate(Spell):
 	ritual = False
 	magic_school = "Conjuration"
 	classes = ("Sorcerer", "Warlock", "Wizard")
-class ArcaneHacking(UA)(Spell):
+class ArcaneHackingUA(Spell):
 	"""You gain advantage on all Intelligence checks using hacking tools to 
 	break software encryption or online security when using a foreign 
 	system. This spell also allows you to break 2nd-level and lower 

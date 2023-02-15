@@ -445,7 +445,7 @@ class Whirlwind(Spell):
 	ritual = False
 	magic_school = "Evocation"
 	classes = ("Druid", "Sorcerer", "Wizard")
-class WildCunning(UA)(Spell):
+class WildCunningUA(Spell):
 	"""You call out to the spirits of nature to aid you. When you cast this 
 	spell, choose one of the following effects:If there are any tracks on 
 	the ground within range, you know where they are, and you make Wisdom 

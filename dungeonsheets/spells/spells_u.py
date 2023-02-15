@@ -1,7 +1,7 @@
 from dungeonsheets.spells.spells import Spell
 
 
-class UnearthlyChorus(UA)(Spell):
+class UnearthlyChorusUA(Spell):
 	"""Music of a style you choose fills the air around you in a 30-foot 
 	radius. The music spreads around corners and can be heard from up to 
 	100 feet away. The music moves with you, centered on you for the 

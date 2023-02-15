@@ -229,7 +229,7 @@ class Sending(Spell):
 	ritual = False
 	magic_school = "Evocation"
 	classes = ("Bard", "Cleric", "Wizard")
-class SenseEmotion(UA)(Spell):
+class SenseEmotionUA(Spell):
 	"""You attune your senses to pick up the emotions of others for the 
 	duration. When you cast the spell, and as your action on each turn 
 	until the spell ends, you can focus your senses on one humanoid you can 
@@ -496,7 +496,7 @@ class ShockingGrasp(Spell):
 	ritual = False
 	magic_school = "Evocation"
 	classes = ("Artificer", "Sorcerer", "Wizard")
-class Shutdown(UA)(Spell):
+class ShutdownUA(Spell):
 	"""This spell shuts down all electronic devices within range that are 
 	not wielded by or under the direct control of a creature. If an 
 	electronic device within range is used by a creature, that creature 
@@ -790,7 +790,7 @@ class Snare(Spell):
 	ritual = False
 	magic_school = "Abjuration"
 	classes = ("Artificer", "Druid", "Ranger", "Wizard")
-class Snare(UA)(Spell):
+class SnareUA(Spell):
 	"""While you cast this spell, you use the cord or rope to create a 
 	circle with a 5-foot radius on a flat surface within your reach. When 
 	you finish casting, the cord or rope disappears to become a magical 
@@ -1332,7 +1332,7 @@ class StormofVengeance(Spell):
 	ritual = False
 	magic_school = "Conjuration"
 	classes = ("Druid")
-class SuddenAwakening(UA)(Spell):
+class SuddenAwakeningUA(Spell):
 	"""Each sleeping creature you choose within range awakens, and then 
 	each prone creature within range can stand up without expending any 
 	movement.
@@ -2179,7 +2179,7 @@ class SynapticStatic(Spell):
 	ritual = False
 	magic_school = "Enchantment"
 	classes = ("Bard", "Sorcerer", "Warlock", "Wizard")
-class Synchronicity(UA)(Spell):
+class SynchronicityUA(Spell):
 	"""The creature you touch feels reality subtly shifted to its favor 
 	while this spell is in effect. The target isn't inconvenienced by 
 	mundane delays of any sort. Traffic lights are always green, there's 
@@ -2206,7 +2206,7 @@ class Synchronicity(UA)(Spell):
 	ritual = False
 	magic_school = "Enchantment"
 	classes = ("Sorcerer", "Warlock", "Wizard")
-class SystemBackdoor(UA)(Spell):
+class SystemBackdoorUA(Spell):
 	"""This spell allows you to bypass system security in order to create a 
 	secure login on a foreign system. The login you create allows you 
 	administrator-level privileges in any computer system not enhanced 

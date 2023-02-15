@@ -373,7 +373,7 @@ class DetectThoughts(Spell):
 	ritual = False
 	magic_school = "Divination"
 	classes = ("Bard", "Sorcerer", "Wizard")
-class DigitalPhantom(UA)(Spell):
+class DigitalPhantomUA(Spell):
 	"""This spell works to actively hide your presence within a computer 
 	system. For the spell's duration, you and any other users you choose on 
 	your local network gain a +10 bonus to Intelligence checks to avoid 

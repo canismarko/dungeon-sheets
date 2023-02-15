@@ -99,7 +99,7 @@ class HallucinatoryTerrain(Spell):
 	ritual = False
 	magic_school = "Illusion"
 	classes = ("Bard", "Druid", "Warlock", "Wizard")
-class HandofRadiance(UA)(Spell):
+class HandofRadianceUA(Spell):
 	"""You raise your hand, and burning radiance erupts from it. Each 
 	creature of your choice that you can see within 5 feet of you must 
 	succeed on a Constitution saving throw or take 1d6 radiant damage.The 
@@ -161,7 +161,7 @@ class Haste(Spell):
 	ritual = False
 	magic_school = "Transmutation"
 	classes = ("Artificer", "Sorcerer", "Wizard")
-class Haywire(UA)(Spell):
+class HaywireUA(Spell):
 	"""This spell plays havoc with electronic devices, making the use of 
 	such devices all but impossible. Each electronic device in a 
 	10-foot-radius sphere centered on a point you choose within range is 
@@ -214,7 +214,7 @@ class Heal(Spell):
 	ritual = False
 	magic_school = "Evocation"
 	classes = ("Cleric", "Druid")
-class HealingElixir(UA)(Spell):
+class HealingElixirUA(Spell):
 	"""You create a healing elixir in a simple vial that appears in your 
 	hand. The elixir retains its potency for the duration or until it's 
 	consumed, at which point the vial vanishes.As an action, a creature can 

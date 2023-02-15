@@ -274,7 +274,7 @@ class Reincarnate(Spell):
 	ritual = False
 	magic_school = "Transmutation"
 	classes = ("Druid")
-class RemoteAccess(UA)(Spell):
+class RemoteAccessUA(Spell):
 	"""You can use any electronic device within range as if it were in your 
 	hands. This is not a telekinesis effect. Rather, this spell allows you 
 	to simulate a device's mechanical functions electronically. You are 

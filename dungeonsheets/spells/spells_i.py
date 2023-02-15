@@ -328,7 +328,7 @@ class InciteGreed(Spell):
 	ritual = False
 	magic_school = "Enchantment"
 	classes = ("Cleric", "Warlock", "Wizard")
-class InfallibleRelay(UA)(Spell):
+class InfallibleRelayUA(Spell):
 	"""With this spell, you can target any creature with whom you have 
 	spoken previously, as long as the two of you are on the same plane of 
 	existence. When you cast the spell, the nearest functioning telephone 
@@ -422,7 +422,7 @@ class Infestation(Spell):
 	ritual = False
 	magic_school = "Conjuration"
 	classes = ("Druid", "Sorcerer", "Warlock", "Wizard")
-class Infestation(UA)(Spell):
+class InfestationUA(Spell):
 	"""You cause mites, fleas, and other parasites to appear momentarily on 
 	one creature you can see within range. The target must succeed on a 
 	Constitution saving throw or take 1d6 piercing damage. If the target 
@@ -666,7 +666,7 @@ class Invisibility(Spell):
 	ritual = False
 	magic_school = "Illusion"
 	classes = ("Artificer", "Bard", "Sorcerer", "Warlock", "Wizard")
-class InvisibilitytoCameras(UA)(Spell):
+class InvisibilitytoCamerasUA(Spell):
 	"""Four creatures of your choice within range become undetectable to 
 	electronic sensors and cameras for the duration of the spell. Anything 
 	a target is wearing or carrying is likewise undetectable as long as it 

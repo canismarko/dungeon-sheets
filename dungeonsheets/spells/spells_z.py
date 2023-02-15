@@ -20,7 +20,7 @@ class ZephyrStrike(Spell):
 	ritual = False
 	magic_school = "Transmutation"
 	classes = ("Ranger")
-class ZephyrStrike(UA)(Spell):
+class ZephyrStrikeUA(Spell):
 	"""You move like the wind. For the duration, your movement doesn't 
 	provoke opportunity attacks.In addition, the first time you make a 
 	weapon attack on your turn before the spell ends, you make the attack 

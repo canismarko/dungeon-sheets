@@ -473,7 +473,7 @@ class PrimalSavagery(Spell):
 	ritual = False
 	magic_school = "Transmutation"
 	classes = ("Druid")
-class PrimalSavagery(UA)(Spell):
+class PrimalSavageryUA(Spell):
 	"""Your teeth or fingernails lengthen and sharpen. You choose which. 
 	Make a melee spell attack against one creature within 5 feet of you. On 
 	a hit, the target takes 1d10 piercing or slashing damage (your choice). 
@@ -711,7 +711,7 @@ class ProjectImage(Spell):
 	ritual = False
 	magic_school = "Illusion"
 	classes = ("Bard", "Wizard")
-class ProtectionfromBallistics(UA)(Spell):
+class ProtectionfromBallisticsUA(Spell):
 	"""This spell enchants the flesh of the target against the impact of 
 	bullets. Until the spell ends, the target has resistance to nonmagical 
 	ballistic damage.
@@ -874,7 +874,7 @@ class PulseWave(Spell):
 	ritual = False
 	magic_school = "Evocation"
 	classes = ()
-class Puppet(UA)(Spell):
+class PuppetUA(Spell):
 	"""Your gesture forces one humanoid you can see within range to make a 
 	Constitution saving throw. On a failed save, the target must move up to 
 	its speed in a direction you choose. In addition, you can cause the 

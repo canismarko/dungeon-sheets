@@ -496,7 +496,7 @@ class GreaterRestoration(Spell):
 	ritual = False
 	magic_school = "Abjuration"
 	classes = ("Artificer", "Bard", "Cleric", "Druid","Ranger")
-class GreenFlameBlade(Spell):
+class Green-FlameBlade(Spell):
 	"""You brandish the weapon used in the spell's casting and make a melee 
 	attack with it against one creature within 5 feet of you. On a hit, the 
 	target suffers the weapon attack's normal effects, and you can cause 
@@ -659,7 +659,7 @@ class GuidingBolt(Spell):
 	ritual = False
 	magic_school = "Evocation"
 	classes = ("Cleric")
-class GuidingHand(UA)(Spell):
+class GuidingHandUA(Spell):
 	"""You create a Tiny incorporeal hand of shimmering light in an 
 	unoccupied space you can see within range. The hand exists for the 
 	duration, but it disappears if you teleport or you travel to a 

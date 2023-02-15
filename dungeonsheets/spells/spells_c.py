@@ -128,7 +128,7 @@ class CauseFear(Spell):
 	ritual = False
 	magic_school = "Necromancy"
 	classes = ("Warlock", "Wizard")
-class CauseFear(UA)(Spell):
+class CauseFearUA(Spell):
 	"""You awaken the sense of mortality in one creature you can see within 
 	range. The target must succeed on a Wisdom saving throw or become 
 	frightened for the duration. A target with 25 hit points or fewer makes 
@@ -181,7 +181,7 @@ class Ceremony(Spell):
 	ritual = True
 	magic_school = "Abjuration"
 	classes = ("Cleric", "Paladin")
-class Ceremony(UA)(Spell):
+class CeremonyUA(Spell):
 	"""You perform one of several religious ceremonies. When you cast the 
 	spell, choose one of the following ceremonies, the target of which must 
 	be within 10 feet of you throughout the casting. Atonement. You touch 
@@ -271,7 +271,7 @@ class ChaosBolt(Spell):
 	ritual = False
 	magic_school = "Evocation"
 	classes = ("Sorcerer")
-class ChaosBolt(UA)(Spell):
+class ChaosBoltUA(Spell):
 	"""You hurl an undulating, warbling mass of chaotic energy at one 
 	creature in range. Make a ranged spell attack against the target. On a 
 	hit, the target takes 2d8 damage. Choose one of the d8s. The number it 
@@ -612,7 +612,7 @@ class Commune(Spell):
 	ritual = True
 	magic_school = "Divination"
 	classes = ("Cleric")
-class CommunewithCity(UA)(Spell):
+class CommunewithCityUA(Spell):
 	"""You briefly become one with the city and gain knowledge of the 
 	surrounding area. Aboveground, this spell gives you knowledge of the 
 	area within 1 mile of you. In sewers and other underground settings, 
@@ -820,7 +820,7 @@ class ConjureAnimals(Spell):
 	ritual = False
 	magic_school = "Conjuration"
 	classes = ("Druid", "Ranger")
-class ConjureBarlgura(UA)(Spell):
+class ConjureBarlguraUA(Spell):
 	"""You summon a barlgura that appears in an unoccupied space you can 
 	see within range. The barlgura disappears when it drops to 0 hit points 
 	or when the spell ends.The barlgura is hostile to all non-demons. Roll 
@@ -954,7 +954,7 @@ class ConjureFey(Spell):
 	ritual = False
 	magic_school = "Conjuration"
 	classes = ("Druid", "Warlock")
-class ConjureHezrou(UA)(Spell):
+class ConjureHezrouUA(Spell):
 	"""You summon a hezrou that appears in an unoccupied space you can see 
 	within range. The hezrou disappears when it drops to 0 hit points or 
 	when the spell ends.The hezrou's attitude depends on the value of the 
@@ -986,7 +986,7 @@ class ConjureHezrou(UA)(Spell):
 	ritual = False
 	magic_school = "Conjuration"
 	classes = ("Sorcerer", "Wizard")
-class ConjureKnowbot(UA)(Spell):
+class ConjureKnowbotUA(Spell):
 	"""You touch a single computerized device or computer system to conjure 
 	a knowbot—a partially sentient piece of software imprinted with 
 	vestiges of your own skills and computer abilities. For the duration of 
@@ -1019,7 +1019,7 @@ class ConjureKnowbot(UA)(Spell):
 	ritual = False
 	magic_school = "Conjuration (technomagic)"
 	classes = ("Sorcerer", "Warlock", "Wizard")
-class ConjureLesserDemon(UA)(Spell):
+class ConjureLesserDemonUA(Spell):
 	"""You summon up to a total of eight manes or dretches that appear in 
 	unoccupied spaces you can see within range. A manes or dretch 
 	disappears when it drops to 0 hit points or when the spell ends.The 
@@ -1075,7 +1075,7 @@ class ConjureMinorElementals(Spell):
 	ritual = False
 	magic_school = "Conjuration"
 	classes = ("Druid", "Wizard")
-class ConjureShadowDemon(UA)(Spell):
+class ConjureShadowDemonUA(Spell):
 	"""You summon a shadow demon that appears in an unoccupied space you 
 	can see within range. The shadow demon disappears when it drops to 0 
 	hit points or when the spell ends.Roll initiative for the shadow demon, 
@@ -1126,7 +1126,7 @@ class ConjureVolley(Spell):
 	ritual = False
 	magic_school = "Conjuration"
 	classes = ("Ranger")
-class ConjureVrock(UA)(Spell):
+class ConjureVrockUA(Spell):
 	"""You summon a vrock that appears in an unoccupied space you can see 
 	within range. The vrock disappears when it drops to 0 hit points or 
 	when the spell ends.The vrock's attitude depends on the value of the 
