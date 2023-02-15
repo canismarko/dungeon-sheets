@@ -34,7 +34,7 @@ class BanishingSmite(Spell):
 	until the spell ends, at which point the target reappears in the space 
 	it left or in the nearest unoccupied space if that space is occupied.
 	
-	""""
+	"""
 
 	name = "Banishing Smite"
 	level = "5"
@@ -79,7 +79,7 @@ class Barkskin(Spell):
 	skin has a rough, bark-like appearance, and the target's AC can't be 
 	less than 16, regardless of what kind of armor it is wearing.
 	
-	""""
+	"""
 
 	name = "Barkskin"
 	level = "2"
@@ -97,7 +97,7 @@ class BeaconofHope(Spell):
 	saving throws and death saving throws, and regains the maximum number 
 	of hit points possible from any healing.
 	
-	""""
+	"""
 
 	name = "Beacon of Hope"
 	level = "3"
@@ -119,7 +119,7 @@ class BeastBond(Spell):
 	back to you. While the link is active, the beast gains advantage on 
 	attack rolls against any creature within 5 feet of you that you can see.
 	
-	""""
+	"""
 
 	name = "Beast Bond"
 	level = "1"
@@ -139,7 +139,7 @@ class BeastSense(Spell):
 	the benefits of any special senses possessed by that creature, though 
 	you are blinded and deafened to your own surroundings.
 	
-	""""
+	"""
 
 	name = "Beast Sense"
 	level = "2"
@@ -245,7 +245,7 @@ class BladeBarrier(Spell):
 	save, the creature takes 6d10 slashing damage. On a successful save, 
 	the creature takes half as much damage.
 	
-	""""
+	"""
 
 	name = "Blade Barrier"
 	level = "6"
@@ -262,7 +262,7 @@ class BladeWard(Spell):
 	the end of your next turn, you have resistance against bludgeoning, 
 	piercing, and slashing damage dealt by weapon attacks.
 	
-	""""
+	"""
 
 	name = "Blade Ward"
 	level = "Cantrip"
@@ -288,7 +288,7 @@ class BladeofDisaster(Spell):
 	again.The blade can harmlessly pass through any barrier, including a 
 	wall of force.
 	
-	""""
+	"""
 
 	name = "Blade of Disaster"
 	level = "9"
@@ -354,7 +354,7 @@ class BlindingSmite(Spell):
 	Constitution saving throw at the end of each of its turns. On a 
 	successful save, it is no longer blinded.
 	
-	""""
+	"""
 
 	name = "Blinding Smite"
 	level = "3"
@@ -404,7 +404,7 @@ class Blink(Spell):
 	the Ethereal Plane. Creatures that aren't there can't perceive you or 
 	interact with you, unless they have the ability to do so.
 	
-	""""
+	"""
 
 	name = "Blink"
 	level = "3"
@@ -423,7 +423,7 @@ class Blur(Spell):
 	sight, as with blindsight, or can see through illusions, as with 
 	truesight.
 	
-	""""
+	"""
 
 	name = "Blur"
 	level = "2"
@@ -481,7 +481,7 @@ class BoomingBlade(Spell):
 	takes for moving increases to 2d8. Both damage rolls increase by 1d8 at 
 	11th level (2d8 and 3d8) and again at 17th level (3d8 and 4d8).
 	
-	""""
+	"""
 
 	name = "Booming Blade"
 	level = "Cantrip"

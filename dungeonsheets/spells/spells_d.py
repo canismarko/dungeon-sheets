@@ -11,7 +11,7 @@ class DancingLights(Spell):
 	A light must be within 20 feet of another light created by this spell, 
 	and a light winks out if it exceeds the spell's range.
 	
-	""""
+	"""
 
 	name = "Dancing Lights"
 	level = "Cantrip"
@@ -73,7 +73,7 @@ class DarkStar(Spell):
 	everything it is wearing and carrying, except magic items, are reduced 
 	to a pile of fine gray dust.
 	
-	""""
+	"""
 
 	name = "Dark Star"
 	level = "8"
@@ -97,7 +97,7 @@ class Darkness(Spell):
 	area overlaps with an area of light created by a spell of 2nd level or 
 	lower, the spell that created the light is dispelled.
 	
-	""""
+	"""
 
 	name = "Darkness"
 	level = "2"
@@ -114,7 +114,7 @@ class Darkvision(Spell):
 	dark. For the duration, that creature has darkvision out to a range of 
 	60 feet.
 	
-	""""
+	"""
 
 	name = "Darkvision"
 	level = "2"
@@ -136,7 +136,7 @@ class Dawn(Spell):
 	it ends its turn in the cylinder.If you're within 60 feet of the 
 	cylinder, you can move it up to 60 feet as a bonus action on your turn.
 	
-	""""
+	"""
 
 	name = "Dawn"
 	level = "5"
@@ -158,7 +158,7 @@ class Daylight(Spell):
 	this spell's area overlaps with an area of darkness created by a spell 
 	of 3rd level or lower, the spell that created the darkness is dispelled.
 	
-	""""
+	"""
 
 	name = "Daylight"
 	level = "3"
@@ -178,7 +178,7 @@ class DeathWard(Spell):
 	to an effect that would kill it instantaneously without dealing damage, 
 	that effect is instead negated against the target, and the spell ends.
 	
-	""""
+	"""
 
 	name = "Death Ward"
 	level = "4"
@@ -237,7 +237,7 @@ class Demiplane(Spell):
 	created by a casting of this spell by another creature, you can have 
 	the shadowy door connect to its demiplane instead.
 	
-	""""
+	"""
 
 	name = "Demiplane"
 	level = "8"
@@ -257,7 +257,7 @@ class DestructiveWave(Spell):
 	knocked prone. A creature that succeeds on its saving throw takes half 
 	as much damage and isn't knocked prone.
 	
-	""""
+	"""
 
 	name = "Destructive Wave"
 	level = "5"
@@ -278,7 +278,7 @@ class DetectEvilandGood(Spell):
 	1 foot of stone, 1 inch of common metal, a thin sheet of lead, or 3 
 	feet of wood or dirt.
 	
-	""""
+	"""
 
 	name = "Detect Evil and Good"
 	level = "1"
@@ -298,7 +298,7 @@ class DetectMagic(Spell):
 	penetrate most barriers, but it is blocked by 1 foot of stone, 1 inch 
 	of common metal, a thin sheet of lead, or 3 feet of wood or dirt.
 	
-	""""
+	"""
 
 	name = "Detect Magic"
 	level = "1"
@@ -318,7 +318,7 @@ class DetectPoisonandDisease(Spell):
 	foot of stone, 1 inch of common metal, a thin sheet of lead, or 3 feet 
 	of wood or dirt.
 	
-	""""
+	"""
 
 	name = "Detect Poison and Disease"
 	level = "1"
@@ -361,7 +361,7 @@ class DetectThoughts(Spell):
 	described above, even if you can't see it, but it must still be within 
 	range.
 	
-	""""
+	"""
 
 	name = "Detect Thoughts"
 	level = "2"
@@ -387,7 +387,7 @@ class DimensionDoor(Spell):
 	traveling with you each take 4d6 force damage, and the spell fails to 
 	teleport you.
 	
-	""""
+	"""
 
 	name = "Dimension Door"
 	level = "4"
@@ -416,7 +416,7 @@ class DisguiseSelf(Spell):
 	inspect your appearance and must succeed on an Intelligence 
 	(Investigation) check against your spell save DC.
 	
-	""""
+	"""
 
 	name = "Disguise Self"
 	level = "1"
@@ -475,7 +475,7 @@ class DispelEvilandGood(Spell):
 	their home plane, undead are sent to the Shadowfell, and fey are sent 
 	to the Feywild.
 	
-	""""
+	"""
 
 	name = "Dispel Evil and Good"
 	level = "5"
@@ -571,7 +571,7 @@ class Divination(Spell):
 	for each casting after the first that you get a random reading. The DM 
 	makes this roll in secret.
 	
-	""""
+	"""
 
 	name = "Divination"
 	level = "4"
@@ -587,7 +587,7 @@ class DivineFavor(Spell):
 	"""Your prayer empowers you with divine radiance. Until the spell ends, 
 	your weapon attacks deal an extra 1d4 radiant damage on a hit.
 	
-	""""
+	"""
 
 	name = "Divine Favor"
 	level = "1"
@@ -613,7 +613,7 @@ class DivineWord(Spell):
 	can't return to your current plane for 24 hours by any means short of a 
 	wish spell.
 	
-	""""
+	"""
 
 	name = "Divine Word"
 	level = "7"
@@ -747,7 +747,7 @@ class DraconicTransformation(Spell):
 	on a successful one.Wings. Incorporeal wings sprout from your back, 
 	giving you a flying speed of 60 feet.
 	
-	""""
+	"""
 
 	name = "Draconic Transformation"
 	level = "7"
@@ -797,7 +797,7 @@ class DrawmijsInstantSummons(Spell):
 	or a similar effect successfully applied to the sapphire ends this 
 	spell's effect.
 	
-	""""
+	"""
 
 	name = "Drawmijs Instant Summons"
 	level = "6"
@@ -836,7 +836,7 @@ class Dream(Spell):
 	portion of the target's body, the target makes its saving throw with 
 	disadvantage.
 	
-	""""
+	"""
 
 	name = "Dream"
 	level = "5"
@@ -867,7 +867,7 @@ class DreamoftheBlueVeil(Spell):
 	take any damage, the spell ends for you and all the other creatures, 
 	with none of you being transported.
 	
-	""""
+	"""
 
 	name = "Dream of the Blue Veil"
 	level = "7"
@@ -919,7 +919,7 @@ class DruidGrove(Spell):
 	locations of your choiceTo a creature immune to this effect, the winds 
 	are a fragrant, gentle breeze, and the area of spike growth is harmless.
 	
-	""""
+	"""
 
 	name = "Druid Grove"
 	level = "6"
@@ -944,7 +944,7 @@ class Druidcraft(Spell):
 	cube.You instantly light or snuff out a candle, a torch, or a small 
 	campfire.
 	
-	""""
+	"""
 
 	name = "Druidcraft"
 	level = "Cantrip"

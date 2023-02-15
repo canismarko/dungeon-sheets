@@ -46,7 +46,7 @@ class CalmEmotions(Spell):
 	or if it witnesses any of its friends being harmed. When the spell 
 	ends, the creature becomes hostile again, unless the DM rules otherwise.
 	
-	""""
+	"""
 
 	name = "Calm Emotions"
 	level = "2"
@@ -150,7 +150,7 @@ class Ceremony(Spell):
 	feet of each other. A creature can benefit from this rite again only if 
 	widowed.
 	
-	""""
+	"""
 
 	name = "Ceremony"
 	level = "1"
@@ -269,7 +269,7 @@ class ChillTouch(Spell):
 	end of your next turn.This spell's damage increases by 1d8 when you 
 	reach 5th level (2d8), 11th level (3d8), and 17th level (4d8).
 	
-	""""
+	"""
 
 	name = "Chill Touch"
 	level = "Cantrip"
@@ -332,7 +332,7 @@ class CircleofPower(Spell):
 	allows it to make a saving throw to take only half damage, it instead 
 	takes no damage if it succeeds on the saving throw.
 	
-	""""
+	"""
 
 	name = "Circle of Power"
 	level = "5"
@@ -356,7 +356,7 @@ class Clairvoyance(Spell):
 	see the sensor (such as a creature benefiting from see invisibility or 
 	truesight) sees a luminous, intangible orb about the size of your fist.
 	
-	""""
+	"""
 
 	name = "Clairvoyance"
 	level = "3"
@@ -383,7 +383,7 @@ class Clone(Spell):
 	can't thereafter be restored to life, since the creature's soul is 
 	elsewhere.
 	
-	""""
+	"""
 
 	name = "Clone"
 	level = "8"
@@ -515,7 +515,7 @@ class Commune(Spell):
 	cumulative 25 percent chance for each casting after the first that you 
 	get no answer. The DM makes this roll in secret.
 	
-	""""
+	"""
 
 	name = "Commune"
 	level = "5"
@@ -542,7 +542,7 @@ class CommunewithNature(Spell):
 	location of major sources of safe drinking water, and the location of 
 	any nearby towns.
 	
-	""""
+	"""
 
 	name = "Commune with Nature"
 	level = "5"
@@ -567,7 +567,7 @@ class CompelledDuel(Spell):
 	a creature friendly to you damages the target or casts a harmful spell 
 	on it, or if you end your turn more than 30 feet away from the target.
 	
-	""""
+	"""
 
 	name = "Compelled Duel"
 	level = "1"
@@ -587,7 +587,7 @@ class ComprehendLanguages(Spell):
 	doesn't decode secret messages in a text or a glyph, such as an arcane 
 	sigil, that isn't part of a written language.
 	
-	""""
+	"""
 
 	name = "Comprehend Languages"
 	level = "1"
@@ -613,7 +613,7 @@ class Compulsion(Spell):
 	pit, but it will provoke opportunity attacks to move in the designated 
 	direction.
 	
-	""""
+	"""
 
 	name = "Compulsion"
 	level = "4"
@@ -717,7 +717,7 @@ class ConjureBarrage(Spell):
 	type is the same as that of the weapon or ammunition used as a 
 	component.
 	
-	""""
+	"""
 
 	name = "Conjure Barrage"
 	level = "3"
@@ -855,7 +855,7 @@ class ConjureVolley(Spell):
 	much damage on a successful one. The damage type is the same as that of 
 	the ammunition or weapon.
 	
-	""""
+	"""
 
 	name = "Conjure Volley"
 	level = "5"
@@ -912,7 +912,7 @@ class ContactOtherPlane(Spell):
 	a one-word answer would be misleading, the DM might instead offer a 
 	short phrase as an answer.
 	
-	""""
+	"""
 
 	name = "Contact Other Plane"
 	level = "5"
@@ -952,7 +952,7 @@ class Contagion(Spell):
 	In addition, whenever the creature takes damage, it is stunned until 
 	the end of its next turn.
 	
-	""""
+	"""
 
 	name = "Contagion"
 	level = "5"
@@ -981,7 +981,7 @@ class Contingency(Spell):
 	of another contingency spell on you ends. Also, contingency ends on you 
 	if its material component is ever not on your person.
 	
-	""""
+	"""
 
 	name = "Contingency"
 	level = "6"
@@ -999,7 +999,7 @@ class ContinualFlame(Spell):
 	creates no heat and doesn't use oxygen. A continual flame can be 
 	covered or hidden but not smothered or quenched.
 	
-	""""
+	"""
 
 	name = "Continual Flame"
 	level = "2"
@@ -1025,7 +1025,7 @@ class ControlFlames(Spell):
 	have up to three non-instantaneous effects created by it active at a 
 	time, and you can dismiss such an effect as an action.
 	
-	""""
+	"""
 
 	name = "Control Flames"
 	level = "Cantrip"
@@ -1081,7 +1081,7 @@ class ControlWater(Spell):
 	enters the vortex, the object takes 2d8 bludgeoning damage; this damage 
 	occurs each round it remains in the vortex.
 	
-	""""
+	"""
 
 	name = "Control Water"
 	level = "4"
@@ -1111,7 +1111,7 @@ class ControlWeather(Spell):
 	heat2Hot3Warm4Cool5Cold6Arctic coldWindStageCondition1Calm2Moderate 
 	wind3Strong wind4Gale5Storm
 	
-	""""
+	"""
 
 	name = "Control Weather"
 	level = "8"
@@ -1147,7 +1147,7 @@ class ControlWinds(Spell):
 	When a creature in the cube makes a vertical jump, the creature can 
 	jump up to 10 feet higher than normal.
 	
-	""""
+	"""
 
 	name = "Control Winds"
 	level = "5"
@@ -1217,7 +1217,7 @@ class CreateBonfire(Spell):
 	increases by 1d8 when you reach 5th level (2d8), 11th level (3d8), and 
 	17th level (4d8).
 	
-	""""
+	"""
 
 	name = "Create Bonfire"
 	level = "Cantrip"
@@ -1236,7 +1236,7 @@ class CreateFoodandWater(Spell):
 	nourishing, and spoils if uneaten after 24 hours. The water is clean 
 	and doesn't go bad.
 	
-	""""
+	"""
 
 	name = "Create Food and Water"
 	level = "3"
@@ -1267,7 +1267,7 @@ class CreateHomunculus(Spell):
 	homunculus at a time. If you cast this spell while your homunculus 
 	lives, the spell fails.
 	
-	""""
+	"""
 
 	name = "Create Homunculus"
 	level = "6"
@@ -1284,7 +1284,7 @@ class CreateSpelljammingHelm(Spell):
 	or smaller chair that is unoccupied. The rod disappears, and the chair 
 	is transformed into a spelljamming helm.
 	
-	""""
+	"""
 
 	name = "Create Spelljamming Helm"
 	level = "5"
@@ -1397,7 +1397,7 @@ class CrownofMadness(Spell):
 	spell ends. Also, the target can make a Wisdom saving throw at the end 
 	of each of its turns. On a success, the spell ends.
 	
-	""""
+	"""
 
 	name = "Crown of Madness"
 	level = "2"
@@ -1441,7 +1441,7 @@ class CrusadersMantle(Spell):
 	nonhostile creature in the aura (including you) deals an extra 1d4 
 	radiant damage when it hits with a weapon attack.
 	
-	""""
+	"""
 
 	name = "Crusaders Mantle"
 	level = "3"

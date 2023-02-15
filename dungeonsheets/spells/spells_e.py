@@ -31,7 +31,7 @@ class Earthbind(Spell):
 	spell safely descends at 60 feet per round until it reaches the ground 
 	or the spell ends.
 	
-	""""
+	"""
 
 	name = "Earthbind"
 	level = "2"
@@ -76,7 +76,7 @@ class Earthquake(Spell):
 	save, the creature takes half as much damage and doesn't fall prone or 
 	become buried.
 	
-	""""
+	"""
 
 	name = "Earthquake"
 	level = "8"
@@ -96,7 +96,7 @@ class EldritchBlast(Spell):
 	and four beams at 17th level. You can direct the beams at the same 
 	target or at different ones. Make a separate attack roll for each beam.
 	
-	""""
+	"""
 
 	name = "Eldritch Blast"
 	level = "Cantrip"
@@ -169,7 +169,7 @@ class EncodeThoughts(Spell):
 	instantly receive whatever memory, idea, or message the thought strand 
 	contains. (Casting detect thoughts on the strand has the same effect.)
 	
-	""""
+	"""
 
 	name = "Encode Thoughts"
 	level = "Cantrip"
@@ -194,7 +194,7 @@ class EnemiesAbound(Spell):
 	If an enemy provokes an opportunity attack from the affected creature, 
 	the creature must make that attack if it is able to.
 	
-	""""
+	"""
 
 	name = "Enemies Abound"
 	level = "3"
@@ -284,7 +284,7 @@ class Enlarge/Reduce(Spell):
 	these weapons are reduced, the target's attacks with them deal 1d4 less 
 	damage (this can't reduce the damage below 1).
 	
-	""""
+	"""
 
 	name = "Enlarge/Reduce"
 	level = "2"
@@ -332,7 +332,7 @@ class Entangle(Spell):
 	against your spell save DC. On a success, it frees itself.When the 
 	spell ends, the conjured plants wilt away.
 	
-	""""
+	"""
 
 	name = "Entangle"
 	level = "1"
@@ -355,7 +355,7 @@ class Enthrall(Spell):
 	target can no longer hear you. The spell ends if you are incapacitated 
 	or can no longer speak.
 	
-	""""
+	"""
 
 	name = "Enthrall"
 	level = "2"
@@ -440,7 +440,7 @@ class EvardsBlackTentacles(Spell):
 	Dexterity check (its choice) against your spell save DC. On a success, 
 	it frees itself.
 	
-	""""
+	"""
 
 	name = "Evards Black Tentacles"
 	level = "4"
@@ -457,7 +457,7 @@ class ExpeditiousRetreat(Spell):
 	this spell, and then as a bonus action on each of your turns until the 
 	spell ends, you can take the Dash action.
 	
-	""""
+	"""
 
 	name = "Expeditious Retreat"
 	level = "1"
@@ -487,7 +487,7 @@ class Eyebite(Spell):
 	rolls and ability checks. At the end of each of its turns, it can make 
 	another Wisdom saving throw. If it succeeds, the effect ends.
 	
-	""""
+	"""
 
 	name = "Eyebite"
 	level = "6"

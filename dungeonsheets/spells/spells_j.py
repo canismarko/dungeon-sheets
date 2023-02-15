@@ -11,7 +11,7 @@ class JimsGlowingCoin(Spell):
 	throw or be distracted for the duration. While distracted, a creature 
 	has disadvantage on Wisdom (Perception) checks and initiative rolls.
 	
-	""""
+	"""
 
 	name = "Jims Glowing Coin"
 	level = "2"
@@ -58,7 +58,7 @@ class Jump(Spell):
 	"""You touch a creature. The creature's jump distance is tripled until 
 	the spell ends.
 	
-	""""
+	"""
 
 	name = "Jump"
 	level = "1"

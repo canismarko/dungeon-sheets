@@ -60,7 +60,7 @@ class Hallow(Spell):
 	Tongues. Affected creatures can communicate with any other creature in 
 	the area, even if they don't share a common language.
 	
-	""""
+	"""
 
 	name = "Hallow"
 	level = "5"
@@ -87,7 +87,7 @@ class HallucinatoryTerrain(Spell):
 	DC to disbelieve it. A creature who discerns the illusion for what it 
 	is, sees it as a vague image superimposed on the terrain.
 	
-	""""
+	"""
 
 	name = "Hallucinatory Terrain"
 	level = "4"
@@ -109,7 +109,7 @@ class Harm(Spell):
 	Any effect that removes a disease allows a creature's hit point maximum 
 	to return to normal before that time passes.
 	
-	""""
+	"""
 
 	name = "Harm"
 	level = "6"
@@ -130,7 +130,7 @@ class Haste(Spell):
 	Object action.When the spell ends, the target can't move or take 
 	actions until after its next turn, as a wave of lethargy sweeps over it.
 	
-	""""
+	"""
 
 	name = "Haste"
 	level = "3"
@@ -265,7 +265,7 @@ class HeroesFeast(Spell):
 	maximum also increases by 2d10, and it gains the same number of hit 
 	points. These benefits last for 24 hours.
 	
-	""""
+	"""
 
 	name = "Heroes Feast"
 	level = "6"
@@ -376,7 +376,7 @@ class HolyAura(Spell):
 	aura flashes with brilliant light. The attacker must succeed on a 
 	Constitution saving throw or be blinded until the spell ends.
 	
-	""""
+	"""
 
 	name = "Holy Aura"
 	level = "8"
@@ -402,7 +402,7 @@ class HolyWeapon(Spell):
 	blinded. At the end of each of its turns, a blinded creature can make a 
 	Constitution saving throw, ending the effect on itself on a success.
 	
-	""""
+	"""
 
 	name = "Holy Weapon"
 	level = "5"
@@ -427,7 +427,7 @@ class HungerofHadar(Spell):
 	must succeed on a Dexterity saving throw or take 2d6 acid damage as 
 	milky, otherworldly tentacles rub against it.
 	
-	""""
+	"""
 
 	name = "Hunger of Hadar"
 	level = "3"
@@ -473,7 +473,7 @@ class HypnoticPattern(Spell):
 	creature if it takes any damage or if someone else uses an action to 
 	shake the creature out of its stupor.
 	
-	""""
+	"""
 
 	name = "Hypnotic Pattern"
 	level = "3"

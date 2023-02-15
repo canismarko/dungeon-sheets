@@ -16,7 +16,7 @@ class UnseenServant(Spell):
 	waits for your next command.If you command the servant to perform a 
 	task that would move it more than 60 feet away from you, the spell ends.
 	
-	""""
+	"""
 
 	name = "Unseen Servant"
 	level = "1"

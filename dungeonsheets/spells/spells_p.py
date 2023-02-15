@@ -9,7 +9,7 @@ class PasswithoutTrace(Spell):
 	means. A creature that receives this bonus leaves behind no tracks or 
 	other traces of its passage.
 	
-	""""
+	"""
 
 	name = "Pass without Trace"
 	level = "2"
@@ -31,7 +31,7 @@ class Passwall(Spell):
 	created by the spell are safely ejected to an unoccupied space nearest 
 	to the surface on which you cast the spell.
 	
-	""""
+	"""
 
 	name = "Passwall"
 	level = "5"
@@ -72,7 +72,7 @@ class PhantasmalForce(Spell):
 	such as by attacking. The target perceives the damage as a type 
 	appropriate to the illusion.
 	
-	""""
+	"""
 
 	name = "Phantasmal Force"
 	level = "2"
@@ -120,7 +120,7 @@ class PhantomSteed(Spell):
 	dismount. The spell ends if you use an action to dismiss it or if the 
 	steed takes any damage.
 	
-	""""
+	"""
 
 	name = "Phantom Steed"
 	level = "3"
@@ -166,7 +166,7 @@ class PlanarAlly(Spell):
 	returns to its home plane.A creature enlisted to join your group counts 
 	as a member of it, receiving a full share of experience points awarded.
 	
-	""""
+	"""
 
 	name = "Planar Ally"
 	level = "6"
@@ -234,7 +234,7 @@ class PlaneShift(Spell):
 	transported must find its own way back to your current plane of 
 	existence.
 	
-	""""
+	"""
 
 	name = "Plane Shift"
 	level = "7"
@@ -259,7 +259,7 @@ class PlantGrowth(Spell):
 	become enriched for 1 year. The plants yield twice the normal amount of 
 	food when harvested.
 	
-	""""
+	"""
 
 	name = "Plant Growth"
 	level = "3"
@@ -278,7 +278,7 @@ class PoisonSpray(Spell):
 	damage increases by 1d12 when you reach 5th level (2d12), 11th level 
 	(3d12), and 17th level (4d12).
 	
-	""""
+	"""
 
 	name = "Poison Spray"
 	level = "Cantrip"
@@ -312,7 +312,7 @@ class Polymorph(Spell):
 	can't activate, use, wield, or otherwise benefit from any of its 
 	equipment.
 	
-	""""
+	"""
 
 	name = "Polymorph"
 	level = "4"
@@ -331,7 +331,7 @@ class PowerWordHeal(Spell):
 	is prone, it can use its reaction to stand up. This spell has no effect 
 	on undead or constructs.
 	
-	""""
+	"""
 
 	name = "Power Word Heal"
 	level = "9"
@@ -348,7 +348,7 @@ class PowerWordKill(Spell):
 	within range to die instantly. If the creature you choose has 100 hit 
 	points or fewer, it dies. Otherwise, the spell has no effect.
 	
-	""""
+	"""
 
 	name = "Power Word Kill"
 	level = "9"
@@ -374,7 +374,7 @@ class PowerWordPain(Spell):
 	make a Constitution saving throw at the end of each of its turns. On a 
 	successful save, the pain ends.
 	
-	""""
+	"""
 
 	name = "Power Word Pain"
 	level = "7"
@@ -394,7 +394,7 @@ class PowerWordStun(Spell):
 	at the end of each of its turns. On a successful save, this stunning 
 	effect ends.
 	
-	""""
+	"""
 
 	name = "Power Word Stun"
 	level = "8"
@@ -441,7 +441,7 @@ class Prestidigitation(Spell):
 	effects active at a time, and you can dismiss such an effect as an 
 	action.
 	
-	""""
+	"""
 
 	name = "Prestidigitation"
 	level = "Cantrip"
@@ -461,7 +461,7 @@ class PrimalSavagery(Spell):
 	return to normal.The spell's damage increases by 1d10 when you reach 
 	5th level (2d10), 11th level (3d10), and 17th level (4d10).
 	
-	""""
+	"""
 
 	name = "Primal Savagery"
 	level = "Cantrip"
@@ -481,7 +481,7 @@ class PrimordialWard(Spell):
 	resistances end, and you have the immunity until the end of your next 
 	turn, at which time the spell ends.
 	
-	""""
+	"""
 
 	name = "Primordial Ward"
 	level = "6"
@@ -520,7 +520,7 @@ class PrismaticSpray(Spell):
 	are usually cast into the Astral or Ethereal planes.) 8-Special. The 
 	target is struck by two rays. Roll twice more, rerolling any 8.
 	
-	""""
+	"""
 
 	name = "Prismatic Spray"
 	level = "7"
@@ -588,7 +588,7 @@ class PrismaticWall(Spell):
 	layer is destroyed by a dispel magic spell or a similar spell of equal 
 	or higher level that can end spells and magical effects.
 	
-	""""
+	"""
 
 	name = "Prismatic Wall"
 	level = "9"
@@ -612,7 +612,7 @@ class ProduceFlame(Spell):
 	damage increases by 1d8 when you reach 5th level (2d8), 11th level 
 	(3d8), and 17th level (4d8).
 	
-	""""
+	"""
 
 	name = "Produce Flame"
 	level = "Cantrip"
@@ -647,7 +647,7 @@ class ProgrammedIllusion(Spell):
 	creature discerns the illusion for what it is, the creature can see 
 	through the image, and any noise it makes sounds hollow to the creature.
 	
-	""""
+	"""
 
 	name = "Programmed Illusion"
 	level = "6"
@@ -679,7 +679,7 @@ class ProjectImage(Spell):
 	can see through the image, and any noise it makes sounds hollow to the 
 	creature.
 	
-	""""
+	"""
 
 	name = "Project Image"
 	level = "7"
@@ -695,7 +695,7 @@ class ProtectionfromEnergy(Spell):
 	"""For the duration, the willing creature you touch has resistance to 
 	one damage type of your choice: acid, cold, fire, lightning, or thunder.
 	
-	""""
+	"""
 
 	name = "Protection from Energy"
 	level = "3"
@@ -717,7 +717,7 @@ class ProtectionfromEvilandGood(Spell):
 	possessed by such a creature, the target has advantage on any new 
 	saving throw against the relevant effect.
 	
-	""""
+	"""
 
 	name = "Protection from Evil and Good"
 	level = "1"
@@ -736,7 +736,7 @@ class ProtectionfromPoison(Spell):
 	duration, the target has advantage on saving throws against being 
 	poisoned, and it has resistance to poison damage.
 	
-	""""
+	"""
 
 	name = "Protection from Poison"
 	level = "2"
@@ -759,7 +759,7 @@ class PsychicScream(Spell):
 	target can make an Intelligence saving throw at the end of each of its 
 	turns. On a successful save, the stunning effect ends.
 	
-	""""
+	"""
 
 	name = "Psychic Scream"
 	level = "9"
@@ -800,7 +800,7 @@ class PurifyFoodandDrink(Spell):
 	on a point of your choice within range is purified and rendered free of 
 	poison and disease.
 	
-	""""
+	"""
 
 	name = "Purify Food and Drink"
 	level = "1"
@@ -823,7 +823,7 @@ class Pyrotechnics(Spell):
 	moving around corners. The area of the smoke is heavily obscured. The 
 	smoke persists for 1 minute or until a strong wind disperses it.
 	
-	""""
+	"""
 
 	name = "Pyrotechnics"
 	level = "2"

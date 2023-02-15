@@ -16,7 +16,7 @@ class LegendLore(Spell):
 	lover and beloved of Moradin, may awaken the true powers of the axe, 
 	and only with the sacred word Rudnogg on the lips.""
 	
-	""""
+	"""
 
 	name = "Legend Lore"
 	level = "5"
@@ -43,7 +43,7 @@ class LeomundsSecretChest(Spell):
 	end the spell as an action. If the spell ends and the larger chest is 
 	on the Ethereal Plane, it is irretrievably lost.
 	
-	""""
+	"""
 
 	name = "Leomunds Secret Chest"
 	level = "4"
@@ -70,7 +70,7 @@ class LeomundsTinyHut(Spell):
 	from the outside, of any color you choose, but it is transparent from 
 	the inside.
 	
-	""""
+	"""
 
 	name = "Leomunds Tiny Hut"
 	level = "3"
@@ -87,7 +87,7 @@ class LesserRestoration(Spell):
 	afflicting it. The condition can be blinded, deafened, paralyzed, or 
 	poisoned.
 	
-	""""
+	"""
 
 	name = "Lesser Restoration"
 	level = "2"
@@ -113,7 +113,7 @@ class Levitate(Spell):
 	must remain within the spell's range.When the spell ends, the target 
 	floats gently to the ground if it is still aloft.
 	
-	""""
+	"""
 
 	name = "Levitate"
 	level = "2"
@@ -156,7 +156,7 @@ class Light(Spell):
 	creature, that creature must succeed on a Dexterity saving throw to 
 	avoid the spell.
 	
-	""""
+	"""
 
 	name = "Light"
 	level = "Cantrip"
@@ -223,7 +223,7 @@ class LightningLure(Spell):
 	within 5 feet of you.This spell's damage increases by 1d8 when you 
 	reach 5th level (2d8), 11th level (3d8), and 17th level (4d8).
 	
-	""""
+	"""
 
 	name = "Lightning Lure"
 	level = "Cantrip"
@@ -241,7 +241,7 @@ class LocateAnimalsorPlants(Spell):
 	distance to the closest creature or plant of that kind within 5 miles, 
 	if any are present.
 	
-	""""
+	"""
 
 	name = "Locate Animals or Plants"
 	level = "2"
@@ -266,7 +266,7 @@ class LocateCreature(Spell):
 	can't locate a creature if running water at least 10 feet wide blocks a 
 	direct path between you and the creature.
 	
-	""""
+	"""
 
 	name = "Locate Creature"
 	level = "4"
@@ -289,7 +289,7 @@ class LocateObject(Spell):
 	weapon.This spell can't locate an object if any thickness of lead, even 
 	a thin sheet, blocks a direct path between you and the object.
 	
-	""""
+	"""
 
 	name = "Locate Object"
 	level = "2"

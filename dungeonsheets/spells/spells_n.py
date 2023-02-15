@@ -18,7 +18,7 @@ class NathairsMischief(Spell):
 	direction.4Drops of molasses hover in the cube, making it difficult 
 	terrain until the start of your next turn.
 	
-	""""
+	"""
 
 	name = "Nathairs Mischief"
 	level = "2"
@@ -41,7 +41,7 @@ class NegativeEnergyFlood(Spell):
 	spell, the target doesn't make a saving throw. Instead, roll 5d12. The 
 	target gains half the total as temporary hit points.
 	
-	""""
+	"""
 
 	name = "Negative Energy Flood"
 	level = "5"
@@ -59,7 +59,7 @@ class Nondetection(Spell):
 	larger than 10 feet in any dimension. The target can't be targeted by 
 	any divination magic or perceived through magical scrying sensors.
 	
-	""""
+	"""
 
 	name = "Nondetection"
 	level = "3"
@@ -91,7 +91,7 @@ class NystulsMagicAura(Spell):
 	type and other spells and magical effects treat the target as if it 
 	were a creature of that type or of that alignment.
 	
-	""""
+	"""
 
 	name = "Nystuls Magic Aura"
 	level = "2"

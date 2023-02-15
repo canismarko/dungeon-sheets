@@ -44,7 +44,7 @@ class WallofForce(Spell):
 	wall also extends into the Ethereal Plane, blocking ethereal travel 
 	through the wall.
 	
-	""""
+	"""
 
 	name = "Wall of Force"
 	level = "5"
@@ -132,7 +132,7 @@ class WallofSand(Spell):
 	wall's space and must spend 3 feet of movement for every 1 foot it 
 	moves there.
 	
-	""""
+	"""
 
 	name = "Wall of Sand"
 	level = "3"
@@ -170,7 +170,7 @@ class WallofStone(Spell):
 	wall becomes permanent and can't be dispelled. Otherwise, the wall 
 	disappears when the spell ends.
 	
-	""""
+	"""
 
 	name = "Wall of Stone"
 	level = "5"
@@ -227,7 +227,7 @@ class WallofWater(Spell):
 	0 hit points destroys it. When a section is destroyed, the wall's water 
 	doesn't fill it.
 	
-	""""
+	"""
 
 	name = "Wall of Water"
 	level = "3"
@@ -249,7 +249,7 @@ class WardingBond(Spell):
 	60 feet. It also ends if the spell is cast again on either of the 
 	connected creatures. You can also dismiss the spell as an action.
 	
-	""""
+	"""
 
 	name = "Warding Bond"
 	level = "2"
@@ -271,7 +271,7 @@ class WardingWind(Spell):
 	terrain for creatures other than you.The attack rolls of ranged weapon 
 	attacks have disadvantage if the attacks pass in or out of the wind.
 	
-	""""
+	"""
 
 	name = "Warding Wind"
 	level = "2"
@@ -288,7 +288,7 @@ class WaterBreathing(Spell):
 	range the ability to breathe underwater until the spell ends. Affected 
 	creatures also retain their normal mode of respiration.
 	
-	""""
+	"""
 
 	name = "Water Breathing"
 	level = "3"
@@ -309,7 +309,7 @@ class WaterWalk(Spell):
 	creature submerged in a liquid, the spell carries the target to the 
 	surface of the liquid at a rate of 60 feet per round.
 	
-	""""
+	"""
 
 	name = "Water Walk"
 	level = "3"
@@ -346,7 +346,7 @@ class WaterySphere(Spell):
 	creature restrained by the sphere is knocked prone in the space where 
 	it falls. The water then vanishes.
 	
-	""""
+	"""
 
 	name = "Watery Sphere"
 	level = "4"
@@ -375,7 +375,7 @@ class Web(Spell):
 	exposed to fire burns away in 1 round, dealing 2d4 fire damage to any 
 	creature that starts its turn in the fire.
 	
-	""""
+	"""
 
 	name = "Web"
 	level = "2"
@@ -398,7 +398,7 @@ class Weird(Spell):
 	turns, it must succeed on a Wisdom saving throw or take 4d10 psychic 
 	damage. On a successful save, the spell ends for that creature.
 	
-	""""
+	"""
 
 	name = "Weird"
 	level = "9"
@@ -433,7 +433,7 @@ class Whirlwind(Spell):
 	whirlwind and is hurled 3d6 × 10 feet away from it in a random 
 	direction.
 	
-	""""
+	"""
 
 	name = "Whirlwind"
 	level = "7"
@@ -459,7 +459,7 @@ class WindWalk(Spell):
 	it lands, which it does safely. If it can't land after 1 minute, the 
 	creature falls the remaining distance.
 	
-	""""
+	"""
 
 	name = "Wind Walk"
 	level = "6"
@@ -487,7 +487,7 @@ class WindWall(Spell):
 	engines, and similar projectiles, are unaffected.) Creatures in gaseous 
 	form can't pass through it.
 	
-	""""
+	"""
 
 	name = "Wind Wall"
 	level = "3"
@@ -543,7 +543,7 @@ class Wish(Spell):
 	there is a 33 percent chance that you are unable to cast wish ever 
 	again if you suffer this stress.
 	
-	""""
+	"""
 
 	name = "Wish"
 	level = "9"
@@ -586,7 +586,7 @@ class WordofRadiance(Spell):
 	increases by 1d6 when you reach 5th level (2d6), 11th level (3d6), and 
 	17th level (4d6).
 	
-	""""
+	"""
 
 	name = "Word of Radiance"
 	level = "Cantrip"
@@ -609,7 +609,7 @@ class WordofRecall(Spell):
 	deity. If you attempt to cast the spell in this manner in an area that 
 	isn't dedicated to your deity, the spell has no effect.
 	
-	""""
+	"""
 
 	name = "Word of Recall"
 	level = "6"
@@ -641,7 +641,7 @@ class WrathofNature(Spell):
 	target takes 3d8 nonmagical bludgeoning damage, and it must succeed on 
 	a Strength saving throw or fall prone.
 	
-	""""
+	"""
 
 	name = "Wrath of Nature"
 	level = "5"
@@ -661,7 +661,7 @@ class WrathfulSmite(Spell):
 	make a Wisdom check against your spell save DC to steel its resolve and 
 	end this spell.
 	
-	""""
+	"""
 
 	name = "Wrathful Smite"
 	level = "1"
@@ -682,7 +682,7 @@ class Wristpocket(Spell):
 	return the object to the extradimensional space. An object still in the 
 	pocket plane when the spell ends appears in your space, at your feet.
 	
-	""""
+	"""
 
 	name = "Wristpocket"
 	level = "2"

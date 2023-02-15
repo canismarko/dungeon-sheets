@@ -17,7 +17,7 @@ class GaseousForm(Spell):
 	objects it was carrying or holding can't be dropped, used, or otherwise 
 	interacted with. The target can't attack or cast spells.
 	
-	""""
+	"""
 
 	name = "Gaseous Form"
 	level = "3"
@@ -49,7 +49,7 @@ class Gate(Spell):
 	is free to act as the DM deems appropriate. It might leave, attack you, 
 	or help you.
 	
-	""""
+	"""
 
 	name = "Gate"
 	level = "9"
@@ -97,7 +97,7 @@ class GentleRepose(Spell):
 	spent under the influence of this spell don't count against the time 
 	limit of spells such as raise dead.
 	
-	""""
+	"""
 
 	name = "Gentle Repose"
 	level = "2"
@@ -123,7 +123,7 @@ class GiantInsect(Spell):
 	transform a bee, its giant version might have the same statistics as a 
 	giant wasp.
 	
-	""""
+	"""
 
 	name = "Giant Insect"
 	level = "4"
@@ -139,7 +139,7 @@ class GiftofAlacrity(Spell):
 	"""You touch a willing creature. For the duration, the target can add 
 	1d8 to its initiative rolls.
 	
-	""""
+	"""
 
 	name = "Gift of Alacrity"
 	level = "1"
@@ -167,7 +167,7 @@ class GiftofGab(Spell):
 	6 seconds. Those creatures then remember that you actually said the 
 	words you speak as the verbal component of the spell.
 	
-	""""
+	"""
 
 	name = "Gift of Gab"
 	level = "2"
@@ -185,7 +185,7 @@ class Glibness(Spell):
 	say, magic that would determine if you are telling the truth indicates 
 	that you are being truthful.
 	
-	""""
+	"""
 
 	name = "Glibness"
 	level = "8"
@@ -285,7 +285,7 @@ class Goodberry(Spell):
 	they have not been consumed within 24 hours of the casting of this 
 	spell.
 	
-	""""
+	"""
 
 	name = "Goodberry"
 	level = "1"
@@ -306,7 +306,7 @@ class GraspingVine(Spell):
 	spell ends, you can direct the vine to lash out at the same creature or 
 	another one as a bonus action on each of your turns.
 	
-	""""
+	"""
 
 	name = "Grasping Vine"
 	level = "4"
@@ -373,7 +373,7 @@ class Grease(Spell):
 	enters the area or ends its turn there must also succeed on a Dexterity 
 	saving throw or fall prone.
 	
-	""""
+	"""
 
 	name = "Grease"
 	level = "1"
@@ -390,7 +390,7 @@ class GreaterInvisibility(Spell):
 	Anything the target is wearing or carrying is invisible as long as it 
 	is on the target's person.
 	
-	""""
+	"""
 
 	name = "Greater Invisibility"
 	level = "4"
@@ -410,7 +410,7 @@ class GreaterRestoration(Spell):
 	attunement to a cursed magic itemAny reduction to one of the target's 
 	ability scoresOne effect reducing the target's hit point maximum
 	
-	""""
+	"""
 
 	name = "Greater Restoration"
 	level = "5"
@@ -435,7 +435,7 @@ class GreenFlameBlade(Spell):
 	ability modifier. Both damage rolls increase by 1d8 at 11th level (2d8 
 	and 2d8) and 17th level (3d8 and 3d8).
 	
-	""""
+	"""
 
 	name = "Green-Flame Blade"
 	level = "Cantrip"
@@ -458,7 +458,7 @@ class GuardianofFaith(Spell):
 	damage on a successful one. The guardian vanishes when it has dealt a 
 	total of 60 damage.
 	
-	""""
+	"""
 
 	name = "Guardian of Faith"
 	level = "4"
@@ -485,7 +485,7 @@ class GuardianofNature(Spell):
 	with advantage.While you are on the ground, the ground within 15 feet 
 	of you is difficult terrain for your enemies.
 	
-	""""
+	"""
 
 	name = "Guardian of Nature"
 	level = "4"
@@ -534,7 +534,7 @@ class GuardsandWards(Spell):
 	effect.You can create a permanently guarded and warded structure by 
 	casting this spell there every day for one year.
 	
-	""""
+	"""
 
 	name = "Guards and Wards"
 	level = "6"
@@ -552,7 +552,7 @@ class Guidance(Spell):
 	its choice. It can roll the die before or after making the ability 
 	check. The spell then ends.
 	
-	""""
+	"""
 
 	name = "Guidance"
 	level = "Cantrip"
@@ -596,7 +596,7 @@ class Gust(Spell):
 	a harmless sensory effect using air, such as causing leaves to rustle, 
 	wind to slam shutters closed, or your clothing to ripple in a breeze.
 	
-	""""
+	"""
 
 	name = "Gust"
 	level = "Cantrip"
@@ -621,7 +621,7 @@ class GustofWind(Spell):
 	on each of your turns before the spell ends, you can change the 
 	direction in which the line blasts from you.
 	
-	""""
+	"""
 
 	name = "Gust of Wind"
 	level = "2"

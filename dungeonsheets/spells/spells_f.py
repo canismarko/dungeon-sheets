@@ -18,7 +18,7 @@ class Fabricate(Spell):
 	have proficiency with the type of artisan's tools used to craft such 
 	objects.
 	
-	""""
+	"""
 
 	name = "Fabricate"
 	level = "4"
@@ -39,7 +39,7 @@ class FaerieFire(Spell):
 	object has advantage if the attacker can see it, and the affected 
 	creature or object can't benefit from being invisible.
 	
-	""""
+	"""
 
 	name = "Faerie Fire"
 	level = "1"
@@ -74,7 +74,7 @@ class FarStep(Spell):
 	each of your turns before the spell ends, you can use a bonus action to 
 	teleport in this way again.
 	
-	""""
+	"""
 
 	name = "Far Step"
 	level = "5"
@@ -128,7 +128,7 @@ class Fear(Spell):
 	creature can make a Wisdom saving throw. On a successful save, the 
 	spell ends for that creature.
 	
-	""""
+	"""
 
 	name = "Fear"
 	level = "3"
@@ -146,7 +146,7 @@ class FeatherFall(Spell):
 	ends. If the creature lands before the spell ends, it takes no falling 
 	damage and can land on its feet, and the spell ends for that creature.
 	
-	""""
+	"""
 
 	name = "Feather Fall"
 	level = "1"
@@ -170,7 +170,7 @@ class Feeblemind(Spell):
 	against this spell. If it succeeds on its saving throw, the spell 
 	ends.The spell can also be ended by greater restoration, heal, or wish.
 	
-	""""
+	"""
 
 	name = "Feeblemind"
 	level = "8"
@@ -193,7 +193,7 @@ class FeignDeath(Spell):
 	spell, or becomes diseased or poisoned while under the spell's effect, 
 	the disease and poison have no effect until the spell ends.
 	
-	""""
+	"""
 
 	name = "Feign Death"
 	level = "3"
@@ -238,7 +238,7 @@ class FindFamiliar(Spell):
 	to deliver the spell when you cast it. If the spell requires an attack 
 	roll, you use your attack modifier for the roll.
 	
-	""""
+	"""
 
 	name = "Find Familiar"
 	level = "1"
@@ -274,7 +274,7 @@ class FindGreaterSteed(Spell):
 	the form of a dragonnel using the find greater steed spell, which 
 	appears in Xanathar's Guide to Everything.
 	
-	""""
+	"""
 
 	name = "Find Greater Steed"
 	level = "4"
@@ -309,7 +309,7 @@ class FindSteed(Spell):
 	bonded by this spell at a time. As an action, you can release the steed 
 	from its bond at any time, causing it to disappear.
 	
-	""""
+	"""
 
 	name = "Find Steed"
 	level = "2"
@@ -333,7 +333,7 @@ class FindTraps(Spell):
 	learn the location of each trap, but you do learn the general nature of 
 	the danger posed by a trap you sense.
 	
-	""""
+	"""
 
 	name = "Find Traps"
 	level = "2"
@@ -358,7 +358,7 @@ class FindthePath(Spell):
 	determine which path is the shortest and most direct route (but not 
 	necessarily the safest route) to the destination.
 	
-	""""
+	"""
 
 	name = "Find the Path"
 	level = "6"
@@ -379,7 +379,7 @@ class FingerofDeath(Spell):
 	that is permanently under your command, following your verbal orders to 
 	the best of its ability.
 	
-	""""
+	"""
 
 	name = "Finger of Death"
 	level = "7"
@@ -398,7 +398,7 @@ class FireBolt(Spell):
 	being worn or carried.This spell's damage increases by 1d10 when you 
 	reach 5th level (2d10), 11th level (3d10), and 17th level (4d10).
 	
-	""""
+	"""
 
 	name = "Fire Bolt"
 	level = "Cantrip"
@@ -421,7 +421,7 @@ class FireShield(Spell):
 	erupts with flame. The attacker takes 2d8 fire damage from a warm 
 	shield, or 2d8 cold damage from a cold shield.
 	
-	""""
+	"""
 
 	name = "Fire Shield"
 	level = "4"
@@ -444,7 +444,7 @@ class FireStorm(Spell):
 	aren't being worn or carried. If you choose, plant life in the area is 
 	unaffected by this spell.
 	
-	""""
+	"""
 
 	name = "Fire Storm"
 	level = "7"
@@ -492,7 +492,7 @@ class FizbansPlatinumShield(Spell):
 	subsequent turns, you can move the field to another creature within 60 
 	feet of the field.
 	
-	""""
+	"""
 
 	name = "Fizbans Platinum Shield"
 	level = "6"
@@ -614,7 +614,7 @@ class FleshtoStone(Spell):
 	entire possible duration, the creature is turned to stone until the 
 	effect is removed.
 	
-	""""
+	"""
 
 	name = "Flesh to Stone"
 	level = "6"
@@ -685,7 +685,7 @@ class Forbiddance(Spell):
 	same location, the spell lasts until it is dispelled, and the material 
 	components are consumed on the last casting.
 	
-	""""
+	"""
 
 	name = "Forbiddance"
 	level = "6"
@@ -717,7 +717,7 @@ class Forcecage(Spell):
 	The cage also extends into the Ethereal Plane, blocking ethereal 
 	travel.This spell can't be dispelled by dispel magic.
 	
-	""""
+	"""
 
 	name = "Forcecage"
 	level = "7"
@@ -737,7 +737,7 @@ class Foresight(Spell):
 	against the target for the duration.This spell immediately ends if you 
 	cast it again before its duration ends.
 	
-	""""
+	"""
 
 	name = "Foresight"
 	level = "9"
@@ -784,7 +784,7 @@ class FreedomofMovement(Spell):
 	manacles or a creature that has it grappled. Finally, being underwater 
 	imposes no penalties on the target's movement or attacks.
 	
-	""""
+	"""
 
 	name = "Freedom of Movement"
 	level = "4"
@@ -805,7 +805,7 @@ class Friends(Spell):
 	the DM's discretion), depending on the nature of your interaction with 
 	it.
 	
-	""""
+	"""
 
 	name = "Friends"
 	level = "Cantrip"
@@ -825,7 +825,7 @@ class Frostbite(Spell):
 	turn.The spell's damage increases by 1d6 when you reach 5th level 
 	(2d6), 11th level (3d6), and 17th level (4d6).
 	
-	""""
+	"""
 
 	name = "Frostbite"
 	level = "Cantrip"

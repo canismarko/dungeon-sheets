@@ -8,7 +8,7 @@ class ZephyrStrike(Spell):
 	deals an extra 1d8 force damage on a hit. Whether you hit or miss, your 
 	walking speed increases by 30 feet until the end of that turn.
 	
-	""""
+	"""
 
 	name = "Zephyr Strike"
 	level = "1"
@@ -32,7 +32,7 @@ class ZoneofTruth(Spell):
 	a lie. Such creatures can be evasive in its answers as long as it 
 	remains within the boundaries of the truth.
 	
-	""""
+	"""
 
 	name = "Zone of Truth"
 	level = "2"

@@ -8,7 +8,7 @@ class SacredFlame(Spell):
 	throw.The spell's damage increases by 1d8 when you reach 5th level 
 	(2d8), 11th level (3d8), and 17th level (4d8).
 	
-	""""
+	"""
 
 	name = "Sacred Flame"
 	level = "Cantrip"
@@ -30,7 +30,7 @@ class Sanctuary(Spell):
 	casts a spell that affects an enemy, or deals damage to another 
 	creature, this spell ends.
 	
-	""""
+	"""
 
 	name = "Sanctuary"
 	level = "1"
@@ -48,7 +48,7 @@ class SappingSting(Spell):
 	damage and fall prone.This spell's damage increases by 1d4 when you 
 	reach 5th level (2d4), 11th level (3d4), and 17th level (4d4).
 	
-	""""
+	"""
 
 	name = "Sapping Sting"
 	level = "Cantrip"
@@ -67,7 +67,7 @@ class Scatter(Spell):
 	an unoccupied space that you can see within 120 feet of you. That space 
 	must be on the ground or on a floor.
 	
-	""""
+	"""
 
 	name = "Scatter"
 	level = "6"
@@ -119,7 +119,7 @@ class Scrying(Spell):
 	the target of this spell. When you do, the sensor appears at that 
 	location and doesn't move.
 	
-	""""
+	"""
 
 	name = "Scrying"
 	level = "5"
@@ -161,7 +161,7 @@ class SeeInvisibility(Spell):
 	were visible, and you can see into the Ethereal Plane. Ethereal 
 	creatures and objects appear ghostly and translucent.
 	
-	""""
+	"""
 
 	name = "See Invisibility"
 	level = "2"
@@ -195,7 +195,7 @@ class Seeming(Spell):
 	spell save DC. If it succeeds, it becomes aware that the target is 
 	disguised.
 	
-	""""
+	"""
 
 	name = "Seeming"
 	level = "5"
@@ -217,7 +217,7 @@ class Sending(Spell):
 	existence, but if the target is on a different plane than you, there is 
 	a 5 percent chance that the message doesn't arrive.
 	
-	""""
+	"""
 
 	name = "Sending"
 	level = "3"
@@ -242,7 +242,7 @@ class Sequester(Spell):
 	the tarrasque awakens."" This spell also ends if the target takes any 
 	damage.
 	
-	""""
+	"""
 
 	name = "Sequester"
 	level = "7"
@@ -290,7 +290,7 @@ class ShadowofMoil(Spell):
 	with an attack, the shadows lash out at that creature, dealing it 2d8 
 	necrotic damage.
 	
-	""""
+	"""
 
 	name = "Shadow of Moil"
 	level = "4"
@@ -316,7 +316,7 @@ class ShapeWater(Spell):
 	than two of its non-instantaneous effects active at a time, and you can 
 	dismiss such an effect as an action.
 	
-	""""
+	"""
 
 	name = "Shape Water"
 	level = "Cantrip"
@@ -364,7 +364,7 @@ class Shapechange(Spell):
 	your new form has more hit points than your current one, your hit 
 	points remain at their current value.
 	
-	""""
+	"""
 
 	name = "Shapechange"
 	level = "9"
@@ -406,7 +406,7 @@ class Shield(Spell):
 	against the triggering attack, and you take no damage from magic 
 	missile.
 	
-	""""
+	"""
 
 	name = "Shield"
 	level = "1"
@@ -422,7 +422,7 @@ class ShieldofFaith(Spell):
 	"""A shimmering field appears and surrounds a creature of your choice 
 	within range, granting it a +2 bonus to AC for the duration.
 	
-	""""
+	"""
 
 	name = "Shield of Faith"
 	level = "1"
@@ -442,7 +442,7 @@ class Shillelagh(Spell):
 	also becomes magical, if it isn't already. The spell ends if you cast 
 	it again or if you let go of the weapon.
 	
-	""""
+	"""
 
 	name = "Shillelagh"
 	level = "Cantrip"
@@ -463,7 +463,7 @@ class ShockingGrasp(Spell):
 	increases by 1d8 when you reach 5th level (2d8), 11th level (3d8), and 
 	17th level (4d8).
 	
-	""""
+	"""
 
 	name = "Shocking Grasp"
 	level = "Cantrip"
@@ -486,7 +486,7 @@ class SickeningRadiance(Spell):
 	the creature to benefit from being invisible. The light and any levels 
 	of exhaustion caused by this spell go away when the spell ends.
 	
-	""""
+	"""
 
 	name = "Sickening Radiance"
 	level = "4"
@@ -505,7 +505,7 @@ class Silence(Spell):
 	damage, and creatures are deafened while entirely inside it. Casting a 
 	spell that includes a verbal component is impossible there.
 	
-	""""
+	"""
 
 	name = "Silence"
 	level = "2"
@@ -534,7 +534,7 @@ class SilentImage(Spell):
 	discerns the illusion for what it is, the creature can see through the 
 	image.
 	
-	""""
+	"""
 
 	name = "Silent Image"
 	level = "1"
@@ -566,7 +566,7 @@ class Simulacrum(Spell):
 	cast this spell again, any currently active duplicates you created with 
 	this spell are instantly destroyed.
 	
-	""""
+	"""
 
 	name = "Simulacrum"
 	level = "7"
@@ -587,7 +587,7 @@ class SkillEmpowerment(Spell):
 	benefiting from an effect, such as Expertise, that doubles its 
 	proficiency bonus.
 	
-	""""
+	"""
 
 	name = "Skill Empowerment"
 	level = "5"
@@ -605,7 +605,7 @@ class Skywrite(Spell):
 	spell's duration. The words dissipate when the spell ends. A strong 
 	wind can disperse the clouds and end the spell early.
 	
-	""""
+	"""
 
 	name = "Skywrite"
 	level = "2"
@@ -658,7 +658,7 @@ class SleetStorm(Spell):
 	must make a successful Constitution saving throw against your spell 
 	save DC or lose concentration.
 	
-	""""
+	"""
 
 	name = "Sleet Storm"
 	level = "3"
@@ -686,7 +686,7 @@ class Slow(Spell):
 	another Wisdom saving throw at the end of each of its turns. On a 
 	successful save, the effect ends for it.
 	
-	""""
+	"""
 
 	name = "Slow"
 	level = "3"
@@ -716,7 +716,7 @@ class Snare(Spell):
 	ends.After the trap is triggered, the spell ends when no creature is 
 	restrained by it.
 	
-	""""
+	"""
 
 	name = "Snare"
 	level = "1"
@@ -776,7 +776,7 @@ class SoulCage(Spell):
 	sensor (such as one using see invisibility or truesight) sees a 
 	translucent image of the tormented humanoid whose soul you caged.
 	
-	""""
+	"""
 
 	name = "Soul Cage"
 	level = "6"
@@ -792,7 +792,7 @@ class SparetheDying(Spell):
 	"""You touch a living creature that has 0 hit points. The creature 
 	becomes stable. This spell has no effect on undead or constructs.
 	
-	""""
+	"""
 
 	name = "Spare the Dying"
 	level = "Cantrip"
@@ -813,7 +813,7 @@ class SpeakwithAnimals(Spell):
 	able to persuade a beast to perform a small favor for you, at the DM's 
 	discretion.
 	
-	""""
+	"""
 
 	name = "Speak with Animals"
 	level = "1"
@@ -839,7 +839,7 @@ class SpeakwithDead(Spell):
 	corpse can't learn new information, doesn't comprehend anything that 
 	has happened since it died, and can't speculate about future events.
 	
-	""""
+	"""
 
 	name = "Speak with Dead"
 	level = "3"
@@ -869,7 +869,7 @@ class SpeakwithPlants(Spell):
 	gain no magical ability to influence it.This spell can cause the plants 
 	created by the entangle spell to release a restrained creature.
 	
-	""""
+	"""
 
 	name = "Speak with Plants"
 	level = "3"
@@ -887,7 +887,7 @@ class SpiderClimb(Spell):
 	along ceilings, while leaving its hands free. The target also gains a 
 	climbing speed equal to its walking speed.
 	
-	""""
+	"""
 
 	name = "Spider Climb"
 	level = "2"
@@ -909,7 +909,7 @@ class SpikeGrowth(Spell):
 	make a Wisdom (Perception) check against your spell save DC to 
 	recognize the terrain as hazardous before entering it.
 	
-	""""
+	"""
 
 	name = "Spike Growth"
 	level = "2"
@@ -1007,7 +1007,7 @@ class StaggeringSmite(Spell):
 	attack rolls and ability checks, and can't take reactions, until the 
 	end of its next turn.
 	
-	""""
+	"""
 
 	name = "Staggering Smite"
 	level = "4"
@@ -1026,7 +1026,7 @@ class SteelWindStrike(Spell):
 	target takes 6d10 force damage.You can then teleport to an unoccupied 
 	space you can see within 5 feet of one of the targets you hit or missed.
 	
-	""""
+	"""
 
 	name = "Steel Wind Strike"
 	level = "5"
@@ -1050,7 +1050,7 @@ class StinkingCloud(Spell):
 	miles per hour) disperses the cloud after 4 rounds. A strong wind (at 
 	least 20 miles per hour) disperses it after 1 round.
 	
-	""""
+	"""
 
 	name = "Stinking Cloud"
 	level = "3"
@@ -1072,7 +1072,7 @@ class StoneShape(Spell):
 	can have up to two hinges and a latch, but finer mechanical detail 
 	isn't possible.
 	
-	""""
+	"""
 
 	name = "Stone Shape"
 	level = "4"
@@ -1089,7 +1089,7 @@ class Stoneskin(Spell):
 	as stone. Until the spell ends, the target has resistance to nonmagical 
 	bludgeoning, piercing, and slashing damage.
 	
-	""""
+	"""
 
 	name = "Stoneskin"
 	level = "4"
@@ -1154,7 +1154,7 @@ class StormofVengeance(Spell):
 	hour) automatically disperse fog, mists, and similar phenomena in the 
 	area, whether mundane or magical.
 	
-	""""
+	"""
 
 	name = "Storm of Vengeance"
 	level = "9"
@@ -1185,7 +1185,7 @@ class Suggestion(Spell):
 	performed.If you or any of your companions damage the target, the spell 
 	ends.
 	
-	""""
+	"""
 
 	name = "Suggestion"
 	level = "2"
@@ -1550,7 +1550,7 @@ class Sunbeam(Spell):
 	hand. It sheds bright light in a 30-foot radius and dim light for an 
 	additional 30 feet. This light is sunlight.
 	
-	""""
+	"""
 
 	name = "Sunbeam"
 	level = "6"
@@ -1573,7 +1573,7 @@ class Sunburst(Spell):
 	turns. On a successful save, it is no longer blinded.This spell dispels 
 	any darkness in its area that was created by a spell.
 	
-	""""
+	"""
 
 	name = "Sunburst"
 	level = "8"
@@ -1596,7 +1596,7 @@ class SwiftQuiver(Spell):
 	this spell disintegrate when the spell ends. If the quiver leaves your 
 	possession, the spell ends.
 	
-	""""
+	"""
 
 	name = "Swift Quiver"
 	level = "5"
@@ -1615,7 +1615,7 @@ class SwordBurst(Spell):
 	increases by 1d6 when you reach 5th level (2d6), 11th level (3d6), and 
 	17th level (4d6).
 	
-	""""
+	"""
 
 	name = "Sword Burst"
 	level = "Cantrip"
@@ -1680,7 +1680,7 @@ class Symbol(Spell):
 	Stunning. Each target must make a Wisdom saving throw and becomes 
 	stunned for 1 minute on a failed save.
 	
-	""""
+	"""
 
 	name = "Symbol"
 	level = "7"
@@ -1705,7 +1705,7 @@ class SynapticStatic(Spell):
 	Intelligence saving throw at the end of each of its turns, ending the 
 	effect on itself on a success.
 	
-	""""
+	"""
 
 	name = "Synaptic Static"
 	level = "5"

@@ -52,7 +52,7 @@ class OtilukesResilientSphere(Spell):
 	and moved by other creatures.A disintegrate spell targeting the globe 
 	destroys it without harming anything inside it.
 	
-	""""
+	"""
 
 	name = "Otilukes Resilient Sphere"
 	level = "4"
@@ -75,7 +75,7 @@ class OttosIrresistibleDance(Spell):
 	dancing creature makes a Wisdom saving throw to regain control of 
 	itself. On a successful save, the spell ends.
 	
-	""""
+	"""
 
 	name = "Ottos Irresistible Dance"
 	level = "6"

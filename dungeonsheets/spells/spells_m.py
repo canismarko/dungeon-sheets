@@ -12,7 +12,7 @@ class MaddeningDarkness(Spell):
 	psychic damage on a failed save, or half as much damage on a successful 
 	one.
 	
-	""""
+	"""
 
 	name = "Maddening Darkness"
 	level = "8"
@@ -32,7 +32,7 @@ class Maelstrom(Spell):
 	succeed on a Strength saving throw or take 6d6 bludgeoning damage and 
 	be pulled 10 feet toward the center.
 	
-	""""
+	"""
 
 	name = "Maelstrom"
 	level = "5"
@@ -50,7 +50,7 @@ class MageArmor(Spell):
 	target's base AC becomes 13 + its Dexterity modifier. The spell ends if 
 	the target dons armor or if you dismiss the spell as an action.
 	
-	""""
+	"""
 
 	name = "Mage Armor"
 	level = "1"
@@ -73,7 +73,7 @@ class MageHand(Spell):
 	each time you use it.The hand can't attack, activate magic items, or 
 	carry more than 10 pounds.
 	
-	""""
+	"""
 
 	name = "Mage Hand"
 	level = "Cantrip"
@@ -151,7 +151,7 @@ class MagicJar(Spell):
 	feet. Otherwise, that creature dies.When the spell ends, the container 
 	is destroyed.
 	
-	""""
+	"""
 
 	name = "Magic Jar"
 	level = "6"
@@ -203,7 +203,7 @@ class MagicMouth(Spell):
 	to speak when any creature moves within 30 feet of the object or when a 
 	silver bell rings within 30 feet of it.
 	
-	""""
+	"""
 
 	name = "Magic Mouth"
 	level = "2"
@@ -226,7 +226,7 @@ class MagicStone(Spell):
 	spell then ends on the stone.If you cast this spell again, the spell 
 	ends on any pebbles still affected by your previous casting.
 	
-	""""
+	"""
 
 	name = "Magic Stone"
 	level = "Cantrip"
@@ -347,7 +347,7 @@ class MassHeal(Spell):
 	making them blinded or deafened. This spell has no effect on undead or 
 	constructs.
 	
-	""""
+	"""
 
 	name = "Mass Heal"
 	level = "9"
@@ -401,7 +401,7 @@ class MassPolymorph(Spell):
 	target's gear melds into the new form. The target can't activate, use, 
 	wield, or otherwise benefit from any of its equipment.
 	
-	""""
+	"""
 
 	name = "Mass Polymorph"
 	level = "9"
@@ -465,7 +465,7 @@ class MaximiliansEarthenGrasp(Spell):
 	a different unoccupied space within range. The hand releases a 
 	restrained target if you do either.
 	
-	""""
+	"""
 
 	name = "Maximilians Earthen Grasp"
 	level = "2"
@@ -487,7 +487,7 @@ class Maze(Spell):
 	the space it left or, if that space is occupied, in the nearest 
 	unoccupied space.
 	
-	""""
+	"""
 
 	name = "Maze"
 	level = "8"
@@ -518,7 +518,7 @@ class MeldintoStone(Spell):
 	bludgeoning damage to you. If expelled, you fall prone in an unoccupied 
 	space closest to where you first entered.
 	
-	""""
+	"""
 
 	name = "Meld into Stone"
 	level = "3"
@@ -585,7 +585,7 @@ class Mending(Spell):
 	damage.This spell can physically repair a magic item or construct, but 
 	the spell can't restore magic to such an object.
 	
-	""""
+	"""
 
 	name = "Mending"
 	level = "Cantrip"
@@ -613,7 +613,7 @@ class MentalPrison(Spell):
 	body through it, the target takes 10d10 psychic damage, and the spell 
 	ends.
 	
-	""""
+	"""
 
 	name = "Mental Prison"
 	level = "6"
@@ -635,7 +635,7 @@ class Message(Spell):
 	The spell doesn't have to follow a straight line and can travel freely 
 	around corners or through openings.
 	
-	""""
+	"""
 
 	name = "Message"
 	level = "Cantrip"
@@ -657,7 +657,7 @@ class MeteorSwarm(Spell):
 	is affected only once.The spell damages objects in the area and ignites 
 	flammable objects that aren't being worn or carried.
 	
-	""""
+	"""
 
 	name = "Meteor Swarm"
 	level = "9"
@@ -704,7 +704,7 @@ class MightyFortress(Spell):
 	ground.Casting this spell on the same spot once every 7 days for a year 
 	makes the fortress permanent.
 	
-	""""
+	"""
 
 	name = "Mighty Fortress"
 	level = "8"
@@ -723,7 +723,7 @@ class MindBlank(Spell):
 	foils wish spells and spells or effects of similar power used to affect 
 	the target's mind or to gain information about the target.
 	
-	""""
+	"""
 
 	name = "Mind Blank"
 	level = "8"
@@ -743,7 +743,7 @@ class MindSliver(Spell):
 	turn.This spell's damage increases by 1d6 when you reach certain 
 	levels: 5th level (2d6), 11th level (3d6), and 17th level (4d6).
 	
-	""""
+	"""
 
 	name = "Mind Sliver"
 	level = "Cantrip"
@@ -797,7 +797,7 @@ class MinorIllusion(Spell):
 	creature discerns the illusion for what it is, the illusion becomes 
 	faint to the creature.
 	
-	""""
+	"""
 
 	name = "Minor Illusion"
 	level = "Cantrip"
@@ -828,7 +828,7 @@ class MirageArcane(Spell):
 	illusion's presence, the creature can still physically interact with 
 	the illusion.
 	
-	""""
+	"""
 
 	name = "Mirage Arcane"
 	level = "7"
@@ -858,7 +858,7 @@ class MirrorImage(Spell):
 	senses other than sight, such as blindsight, or if it can perceive 
 	illusions as false, as with truesight.
 	
-	""""
+	"""
 
 	name = "Mirror Image"
 	level = "2"
@@ -882,7 +882,7 @@ class Mislead(Spell):
 	its senses, you are blinded and deafened in regard to your own 
 	surroundings.
 	
-	""""
+	"""
 
 	name = "Mislead"
 	level = "5"
@@ -898,7 +898,7 @@ class MistyStep(Spell):
 	"""Briefly surrounded by silvery mist, you teleport up to 30 feet to an 
 	unoccupied space that you can see.
 	
-	""""
+	"""
 
 	name = "Misty Step"
 	level = "2"
@@ -969,7 +969,7 @@ class MoldEarth(Spell):
 	effects active at a time, and you can dismiss such an effect as an 
 	action.
 	
-	""""
+	"""
 
 	name = "Mold Earth"
 	level = "Cantrip"
@@ -1023,7 +1023,7 @@ class MordenkainensFaithfulHound(Spell):
 	your spellcasting ability modifier + your proficiency bonus. On a hit, 
 	it deals 4d8 piercing damage.
 	
-	""""
+	"""
 
 	name = "Mordenkainens Faithful Hound"
 	level = "4"
@@ -1060,7 +1060,7 @@ class MordenkainensMagnificentMansion(Spell):
 	inside the extradimensional space are expelled into the open spaces 
 	nearest to the entrance.
 	
-	""""
+	"""
 
 	name = "Mordenkainens Magnificent Mansion"
 	level = "7"
@@ -1111,7 +1111,7 @@ class MordenkainensSword(Spell):
 	sword up to 20 feet to a spot you can see and repeat this attack 
 	against the same target or a different one.
 	
-	""""
+	"""
 
 	name = "Mordenkainens Sword"
 	level = "7"
@@ -1168,7 +1168,7 @@ class MoveEarth(Spell):
 	unstable, it might collapse.Similarly, this spell doesn't directly 
 	affect plant growth. The moved earth carries any plants along with it.
 	
-	""""
+	"""
 
 	name = "Move Earth"
 	level = "6"

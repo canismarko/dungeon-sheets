@@ -34,7 +34,7 @@ class TashasHideousLaughter(Spell):
 	advantage on the saving throw if it's triggered by damage. On a 
 	success, the spell ends.
 	
-	""""
+	"""
 
 	name = "Tashas Hideous Laughter"
 	level = "1"
@@ -86,7 +86,7 @@ class TashasOtherworldlyGuise(Spell):
 	that lets you attack more than once when you take the Attack action on 
 	your turn.
 	
-	""""
+	"""
 
 	name = "Tashas Otherworldly Guise"
 	level = "6"
@@ -125,7 +125,7 @@ class Telekinesis(Spell):
 	simple tool, opening a door or a container, stowing or retrieving an 
 	item from an open container, or pouring the contents from a vial.
 	
-	""""
+	"""
 
 	name = "Telekinesis"
 	level = "5"
@@ -148,7 +148,7 @@ class Telepathy(Spell):
 	Intelligence score of at least 1 to understand the meaning of your 
 	words and take in the scope of any sensory messages you send to it.
 	
-	""""
+	"""
 
 	name = "Telepathy"
 	level = "8"
@@ -212,7 +212,7 @@ class Teleport(Spell):
 	rerolls on the table to see where you wind up (multiple mishaps can 
 	occur, dealing damage each time).
 	
-	""""
+	"""
 
 	name = "Teleport"
 	level = "7"
@@ -244,7 +244,7 @@ class TeleportationCircle(Spell):
 	spell in the same location every day for one year. You need not use the 
 	circle to teleport when you cast the spell in this way.
 	
-	""""
+	"""
 
 	name = "Teleportation Circle"
 	level = "5"
@@ -290,7 +290,7 @@ class TempleoftheGods(Spell):
 	instantly.Casting this spell on the same spot every day for a year 
 	makes this effect permanent.
 	
-	""""
+	"""
 
 	name = "Temple of the Gods"
 	level = "7"
@@ -340,7 +340,7 @@ class TensersFloatingDisk(Spell):
 	the bottom.If you move more than 100 feet from the disk (typically 
 	because it can't move around an obstacle to follow you), the spell ends.
 	
-	""""
+	"""
 
 	name = "Tensers Floating Disk"
 	level = "1"
@@ -367,7 +367,7 @@ class TensersTransformation(Spell):
 	after the spell ends, you must succeed on a DC 15 Constitution saving 
 	throw or suffer one level of exhaustion.
 	
-	""""
+	"""
 
 	name = "Tensers Transformation"
 	level = "6"
@@ -391,7 +391,7 @@ class TetherEssence(Spell):
 	the tethered creatures is reduced to 0 hit points, the spell ends on 
 	both. If the spell ends on one creature, it ends on both.
 	
-	""""
+	"""
 
 	name = "Tether Essence"
 	level = "7"
@@ -417,7 +417,7 @@ class Thaumaturgy(Spell):
 	three of its 1-minute effects active at a time, and you can dismiss 
 	such an effect as an action.
 	
-	""""
+	"""
 
 	name = "Thaumaturgy"
 	level = "Cantrip"
@@ -437,7 +437,7 @@ class ThornWhip(Spell):
 	up to 10 feet closer to you.This spell's damage increases by 1d6 when 
 	you reach 5th level (2d6), 11th level (3d6), and 17th level (4d6).
 	
-	""""
+	"""
 
 	name = "Thorn Whip"
 	level = "Cantrip"
@@ -484,7 +484,7 @@ class Thunderclap(Spell):
 	increases by 1d6 when you reach 5th level (2d6), 11th level (3d6), and 
 	17th level (4d6).
 	
-	""""
+	"""
 
 	name = "Thunderclap"
 	level = "Cantrip"
@@ -504,7 +504,7 @@ class ThunderousSmite(Spell):
 	on a Strength saving throw or be pushed 10 feet away from you and 
 	knocked prone.
 	
-	""""
+	"""
 
 	name = "Thunderous Smite"
 	level = "1"
@@ -550,7 +550,7 @@ class TidalWave(Spell):
 	the ground in all directions, extinguishing unprotected flames in its 
 	area and within 30 feet of it, and then it vanishes.
 	
-	""""
+	"""
 
 	name = "Tidal Wave"
 	level = "3"
@@ -574,7 +574,7 @@ class TimeRavage(Spell):
 	9th-level spell slot can end these effects and restore the target to 
 	its previous age.
 	
-	""""
+	"""
 
 	name = "Time Ravage"
 	level = "9"
@@ -596,7 +596,7 @@ class TimeStop(Spell):
 	the spell ends if you move to a place more than 1,000 feet from the 
 	location where you cast it.
 	
-	""""
+	"""
 
 	name = "Time Stop"
 	level = "9"
@@ -648,7 +648,7 @@ class TolltheDead(Spell):
 	damage.The spell's damage increases by one die when you reach 5th level 
 	(2d8 or 2d12), 11th level (3d8 or 3d12), and 17th level (4d8 or 4d12).
 	
-	""""
+	"""
 
 	name = "Toll the Dead"
 	level = "Cantrip"
@@ -666,7 +666,7 @@ class Tongues(Spell):
 	creature that knows at least one language and can hear the target 
 	understands what it says.
 	
-	""""
+	"""
 
 	name = "Tongues"
 	level = "3"
@@ -705,7 +705,7 @@ class TransmuteRock(Spell):
 	Strength check or by dealing damage to it. The rock has AC 15 and 25 
 	hit points, and it is immune to poison and psychic damage.
 	
-	""""
+	"""
 
 	name = "Transmute Rock"
 	level = "5"
@@ -725,7 +725,7 @@ class TransportviaPlants(Spell):
 	into the target plant and exit from the destination plant by using 5 
 	feet of movement.
 	
-	""""
+	"""
 
 	name = "Transport via Plants"
 	level = "6"
@@ -750,7 +750,7 @@ class TreeStride(Spell):
 	can use this transportation ability once per round for the duration. 
 	You must end each turn outside a tree.
 	
-	""""
+	"""
 
 	name = "Tree Stride"
 	level = "5"
@@ -803,7 +803,7 @@ class TruePolymorph(Spell):
 	those of the object, and the creature has no memory of time spent in 
 	this form, after the spell ends and it returns to its normal form.
 	
-	""""
+	"""
 
 	name = "True Polymorph"
 	level = "9"
@@ -827,7 +827,7 @@ class TrueResurrection(Spell):
 	must speak the creature's name. The creature then appears in an 
 	unoccupied space you choose within 10 feet of you.
 	
-	""""
+	"""
 
 	name = "True Resurrection"
 	level = "9"
@@ -845,7 +845,7 @@ class TrueSeeing(Spell):
 	truesight, notices secret doors hidden by magic, and can see into the 
 	Ethereal Plane, all out to a range of 120 feet.
 	
-	""""
+	"""
 
 	name = "True Seeing"
 	level = "6"
@@ -863,7 +863,7 @@ class TrueStrike(Spell):
 	next turn, you gain advantage on your first attack roll against the 
 	target, provided that this spell hasn't ended.
 	
-	""""
+	"""
 
 	name = "True Strike"
 	level = "Cantrip"
@@ -895,7 +895,7 @@ class Tsunami(Spell):
 	at all. If it fails the check, it can't move. A creature that moves out 
 	of the area falls to the ground.
 	
-	""""
+	"""
 
 	name = "Tsunami"
 	level = "8"

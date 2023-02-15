@@ -11,7 +11,7 @@ class AbiDalzimsHorridWilting(Spell):
 	area that aren't creatures, such as trees and shrubs, wither and die 
 	instantly.
 	
-	""""
+	"""
 
 	name = "Abi-Dalzims Horrid Wilting"
 	level = "8"
@@ -52,7 +52,7 @@ class AcidSplash(Spell):
 	or take 1d6 acid damage.This spell's damage increases by 1d6 when you 
 	reach 5th level (2d6), 11th level (3d6), and 17th level (4d6).
 	
-	""""
+	"""
 
 	name = "Acid Splash"
 	level = "Cantrip"
@@ -136,7 +136,7 @@ class Alarm(Spell):
 	This ping awakens you if you are sleeping.An audible alarm produces the 
 	sound of a hand bell for 10 seconds within 60 feet.
 	
-	""""
+	"""
 
 	name = "Alarm"
 	level = "1"
@@ -172,7 +172,7 @@ class AlterSelf(Spell):
 	magic and you have a +1 bonus to the attack and damage rolls you make 
 	using it.
 	
-	""""
+	"""
 
 	name = "Alter Self"
 	level = "2"
@@ -257,7 +257,7 @@ class AnimalShapes(Spell):
 	target can't activate, wield, or otherwise benefit from any of its 
 	equipment.
 	
-	""""
+	"""
 
 	name = "Animal Shapes"
 	level = "8"
@@ -364,7 +364,7 @@ class AntilifeShell(Spell):
 	with ranged or reach weapons through the barrier.If you move so that an 
 	affected creature is forced to pass through the barrier, the spell ends.
 	
-	""""
+	"""
 
 	name = "Antilife Shell"
 	level = "5"
@@ -416,7 +416,7 @@ class AntimagicField(Spell):
 	spheres created by different antimagic field spells don't nullify each 
 	other.
 	
-	""""
+	"""
 
 	name = "Antimagic Field"
 	level = "8"
@@ -463,7 +463,7 @@ class Antipathy/Sympathy(Spell):
 	persists.A creature that successfully saves against this effect is 
 	immune to it for 1 minute, after which time it can be affected again.
 	
-	""""
+	"""
 
 	name = "Antipathy/Sympathy"
 	level = "8"
@@ -485,7 +485,7 @@ class ArcaneEye(Spell):
 	barrier blocks the eye's movement, but the eye can pass through an 
 	opening as small as 1 inch in diameter.
 	
-	""""
+	"""
 
 	name = "Arcane Eye"
 	level = "4"
@@ -513,7 +513,7 @@ class ArcaneGate(Spell):
 	and blocks vision through it. On your turn, you can rotate the rings as 
 	a bonus action so that the active side faces in a different direction.
 	
-	""""
+	"""
 
 	name = "Arcane Gate"
 	level = "6"
@@ -536,7 +536,7 @@ class ArcaneLock(Spell):
 	object is more difficult to break or force open; the DC to break it or 
 	pick any locks on it increases by 10.
 	
-	""""
+	"""
 
 	name = "Arcane Lock"
 	level = "2"
@@ -646,7 +646,7 @@ class AstralProjection(Spell):
 	prematurely, your companions remain in their astral forms and must find 
 	their own way back to their bodies, usually by dropping to 0 hit points.
 	
-	""""
+	"""
 
 	name = "Astral Projection"
 	level = "9"
@@ -673,7 +673,7 @@ class Augury(Spell):
 	casting after the first that you get a random reading. The DM makes 
 	this roll in secret.
 	
-	""""
+	"""
 
 	name = "Augury"
 	level = "2"
@@ -693,7 +693,7 @@ class AuraofLife(Spell):
 	addition, a nonhostile, living creature regains 1 hit point when it 
 	starts its turn in the aura with 0 hit points.
 	
-	""""
+	"""
 
 	name = "Aura of Life"
 	level = "4"
@@ -713,7 +713,7 @@ class AuraofPurity(Spell):
 	against effects that cause any of the following conditions: blinded, 
 	charmed, deafened, frightened, paralyzed, poisoned, and stunned.
 	
-	""""
+	"""
 
 	name = "Aura of Purity"
 	level = "4"
@@ -731,7 +731,7 @@ class AuraofVitality(Spell):
 	use a bonus action to cause one creature in the aura (including you) to 
 	regain 2d6 hit points.
 	
-	""""
+	"""
 
 	name = "Aura of Vitality"
 	level = "3"
@@ -758,7 +758,7 @@ class Awaken(Spell):
 	creature chooses whether to remain friendly to you, based on how you 
 	treated it while it was charmed.
 	
-	""""
+	"""
 
 	name = "Awaken"
 	level = "5"

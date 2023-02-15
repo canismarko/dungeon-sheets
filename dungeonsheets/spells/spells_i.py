@@ -54,7 +54,7 @@ class Identify(Spell):
 	instead touch a creature throughout the casting, you learn what spells, 
 	if any, are currently affecting it.
 	
-	""""
+	"""
 
 	name = "Identify"
 	level = "1"
@@ -91,7 +91,7 @@ class IllusoryDragon(Spell):
 	creature can see through it and has advantage on saving throws against 
 	its breath.
 	
-	""""
+	"""
 
 	name = "Illusory Dragon"
 	level = "8"
@@ -116,7 +116,7 @@ class IllusoryScript(Spell):
 	spell be dispelled, the original script and the illusion both 
 	disappear.A creature with truesight can read the hidden message.
 	
-	""""
+	"""
 
 	name = "Illusory Script"
 	level = "1"
@@ -140,7 +140,7 @@ class Immolation(Spell):
 	extinguished by nonmagical means.If damage from this spell kills a 
 	target, the target is turned to ash.
 	
-	""""
+	"""
 
 	name = "Immolation"
 	level = "5"
@@ -224,7 +224,7 @@ class Imprisonment(Spell):
 	at a time. If you cast the spell again using the same component, the 
 	target of the first casting is immediately freed from its binding.
 	
-	""""
+	"""
 
 	name = "Imprisonment"
 	level = "9"
@@ -249,7 +249,7 @@ class IncendiaryCloud(Spell):
 	moves 10 feet directly away from you in a direction that you choose at 
 	the start of each of your turns.
 	
-	""""
+	"""
 
 	name = "Incendiary Cloud"
 	level = "8"
@@ -273,7 +273,7 @@ class InciteGreed(Spell):
 	affected target can make a Wisdom saving throw. If it succeeds, this 
 	effect ends for that target.
 	
-	""""
+	"""
 
 	name = "Incite Greed"
 	level = "3"
@@ -342,7 +342,7 @@ class Infestation(Spell):
 	spell's damage increases by 1d6 when you reach 5th level (2d6), 11th 
 	level (3d6), and 17th level (4d6).
 	
-	""""
+	"""
 
 	name = "Infestation"
 	level = "Cantrip"
@@ -429,7 +429,7 @@ class InvestitureofFlame(Spell):
 	must make a Dexterity saving throw. A creature takes 4d8 fire damage on 
 	a failed save, or half as much damage on a successful one.
 	
-	""""
+	"""
 
 	name = "Investiture of Flame"
 	level = "6"
@@ -455,7 +455,7 @@ class InvestitureofIce(Spell):
 	its save against this effect has its speed halved until the start of 
 	your next turn.
 	
-	""""
+	"""
 
 	name = "Investiture of Ice"
 	level = "6"
@@ -480,7 +480,7 @@ class InvestitureofStone(Spell):
 	you do so, you are ejected to the nearest unoccupied space, this spell 
 	ends, and you are stunned until the end of your next turn.
 	
-	""""
+	"""
 
 	name = "Investiture of Stone"
 	level = "6"
@@ -505,7 +505,7 @@ class InvestitureofWind(Spell):
 	the save, that creature is also pushed up to 10 feet away from the 
 	center of the cube.
 	
-	""""
+	"""
 
 	name = "Investiture of Wind"
 	level = "6"
@@ -540,7 +540,7 @@ class Invisibility(Spell):
 class Invulnerability(Spell):
 	"""You are immune to all damage until the spell ends.
 	
-	""""
+	"""
 
 	name = "Invulnerability"
 	level = "9"

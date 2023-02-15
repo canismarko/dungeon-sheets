@@ -18,7 +18,7 @@ class RaiseDead(Spell):
 	throws, and ability checks. Every time the target finishes a long rest, 
 	the penalty is reduced by 1 until it disappears.
 	
-	""""
+	"""
 
 	name = "Raise Dead"
 	level = "5"
@@ -39,7 +39,7 @@ class RarysTelepathicBond(Spell):
 	have a common language. The communication is possible over any 
 	distance, though it can't extend to other planes of existence.
 	
-	""""
+	"""
 
 	name = "Rarys Telepathic Bond"
 	level = "5"
@@ -97,7 +97,7 @@ class RavenousVoid(Spell):
 	it can reach. A creature reduced to 0 hit points by this spell is 
 	annihilated, along with any nonmagical items it is wearing or carrying.
 	
-	""""
+	"""
 
 	name = "Ravenous Void"
 	level = "9"
@@ -117,7 +117,7 @@ class RayofEnfeeblement(Spell):
 	turns, it can make a Constitution saving throw against the spell. On a 
 	success, the spell ends.
 	
-	""""
+	"""
 
 	name = "Ray of Enfeeblement"
 	level = "2"
@@ -136,7 +136,7 @@ class RayofFrost(Spell):
 	start of your next turn.The spell's damage increases by 1d8 when you 
 	reach 5th level (2d8), 11th level (3d8), and 17th level (4d8).
 	
-	""""
+	"""
 
 	name = "Ray of Frost"
 	level = "Cantrip"
@@ -188,7 +188,7 @@ class RealityBreak(Spell):
 	is knocked prone.9-10Chill of the Dark Void. The target takes 10d12 
 	cold damage, and it is blinded until the end of the turn.
 	
-	""""
+	"""
 
 	name = "Reality Break"
 	level = "8"
@@ -209,7 +209,7 @@ class Regenerate(Spell):
 	the severed part and hold it to the stump, the spell instantaneously 
 	causes the limb to knit to the stump.
 	
-	""""
+	"""
 
 	name = "Regenerate"
 	level = "7"
@@ -238,7 +238,7 @@ class Reincarnate(Spell):
 	capabilities it had in its original form, except it exchanges its 
 	original race for the new one and changes its racial traits accordingly.
 	
-	""""
+	"""
 
 	name = "Reincarnate"
 	level = "5"
@@ -256,7 +256,7 @@ class RemoveCurse(Spell):
 	breaks its owner's attunement to the object so it can be removed or 
 	discarded.
 	
-	""""
+	"""
 
 	name = "Remove Curse"
 	level = "3"
@@ -274,7 +274,7 @@ class Resistance(Spell):
 	its choice. It can roll the die before or after making the saving 
 	throw. The spell then ends.
 	
-	""""
+	"""
 
 	name = "Resistance"
 	level = "Cantrip"
@@ -303,7 +303,7 @@ class Resurrection(Spell):
 	long rest, you can't cast spells again, and you have disadvantage on 
 	all attack rolls, ability checks, and saving throws.
 	
-	""""
+	"""
 
 	name = "Resurrection"
 	level = "7"
@@ -328,7 +328,7 @@ class ReverseGravity(Spell):
 	there, oscillating slightly, for the duration.At the end of the 
 	duration, affected objects and creatures fall back down.
 	
-	""""
+	"""
 
 	name = "Reverse Gravity"
 	level = "7"
@@ -346,7 +346,7 @@ class Revivify(Spell):
 	life a creature that has died of old age, nor can it restore any 
 	missing body parts.
 	
-	""""
+	"""
 
 	name = "Revivify"
 	level = "3"
@@ -395,7 +395,7 @@ class RopeTrick(Spell):
 	centered on the rope.Anything inside the extradimensional space drops 
 	out when the spell ends.
 	
-	""""
+	"""
 
 	name = "Rope Trick"
 	level = "2"
