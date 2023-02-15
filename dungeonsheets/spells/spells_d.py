@@ -17,7 +17,7 @@ class DancingLights(Spell):
 	level = "Cantrip"
 	casting_time = "Action"
 	casting_range = "120 feet"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a bit of phosphorus or wychwood, or a glowworm"
 	duration = "Concentration, up to 1 minute"
 	ritual = False
@@ -49,7 +49,7 @@ class DanseMacabre(Spell):
 	level = "5"
 	casting_time = "Action"
 	casting_range = "60 feet"
-	components = "V, S"
+	components = ("V", "S")
 	materials = ""
 	duration = "Concentration, up to 1 hour"
 	ritual = False
@@ -79,7 +79,7 @@ class DarkStar(Spell):
 	level = "8"
 	casting_time = "Action"
 	casting_range = "150 feet"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a shard of onyx and a drop of the caster's blood, both of which the spell consumes"
 	duration = "Concentration, up to 1 minute"
 	ritual = False
@@ -103,7 +103,7 @@ class Darkness(Spell):
 	level = "2"
 	casting_time = "Action"
 	casting_range = "60 feet"
-	components = "V, M"
+	components = ("V", "M")
 	materials = "bat fur and a drop of pitch or piece of coal"
 	duration = "Concentration, up to 10 minutes"
 	ritual = False
@@ -120,7 +120,7 @@ class Darkvision(Spell):
 	level = "2"
 	casting_time = "Action"
 	casting_range = "Touch"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "either a pinch of dried carrot or an agate"
 	duration = "8 hours"
 	ritual = False
@@ -142,7 +142,7 @@ class Dawn(Spell):
 	level = "5"
 	casting_time = "Action"
 	casting_range = "60 feet"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a sunburst pendant worth at least 100 gp"
 	duration = "Concentration, up to 1 minute"
 	ritual = False
@@ -164,7 +164,7 @@ class Daylight(Spell):
 	level = "3"
 	casting_time = "Action"
 	casting_range = "60 feet"
-	components = "V, S"
+	components = ("V", "S")
 	materials = ""
 	duration = "1 hour"
 	ritual = False
@@ -184,7 +184,7 @@ class DeathWard(Spell):
 	level = "4"
 	casting_time = "Action"
 	casting_range = "Touch"
-	components = "V, S"
+	components = ("V", "S")
 	materials = ""
 	duration = "8 hours"
 	ritual = False
@@ -217,7 +217,7 @@ class DelayedBlastFireball(Spell):
 	level = "7"
 	casting_time = "Action"
 	casting_range = "150 feet"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a tiny ball of bat guano and sulfur"
 	duration = "Concentration, up to 1 minute"
 	ritual = False
@@ -243,7 +243,7 @@ class Demiplane(Spell):
 	level = "8"
 	casting_time = "Action"
 	casting_range = "60 feet"
-	components = "S"
+	components = ("S")
 	materials = ""
 	duration = "1 hour"
 	ritual = False
@@ -263,7 +263,7 @@ class DestructiveWave(Spell):
 	level = "5"
 	casting_time = "Action"
 	casting_range = "Self (30-foot radius)"
-	components = "V"
+	components = ("V")
 	materials = ""
 	duration = "Instantaneous"
 	ritual = False
@@ -284,7 +284,7 @@ class DetectEvilandGood(Spell):
 	level = "1"
 	casting_time = "Action"
 	casting_range = "Self"
-	components = "V, S"
+	components = ("V", "S")
 	materials = ""
 	duration = "Concentration, up to 10 minutes"
 	ritual = False
@@ -304,7 +304,7 @@ class DetectMagic(Spell):
 	level = "1"
 	casting_time = "Action"
 	casting_range = "Self"
-	components = "V, S"
+	components = ("V", "S")
 	materials = ""
 	duration = "Concentration, up to 10 minutes"
 	ritual = True
@@ -324,7 +324,7 @@ class DetectPoisonandDisease(Spell):
 	level = "1"
 	casting_time = "Action"
 	casting_range = "Self"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a yew leaf"
 	duration = "Concentration, up to 10 minutes"
 	ritual = True
@@ -367,7 +367,7 @@ class DetectThoughts(Spell):
 	level = "2"
 	casting_time = "Action"
 	casting_range = "Self"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a copper piece"
 	duration = "Concentration, up to 1 minute"
 	ritual = False
@@ -388,7 +388,7 @@ class DigitalPhantom(UA)(Spell):
 	level = "2"
 	casting_time = "Action"
 	casting_range = "Self"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a small piece of copper wire"
 	duration = "Concentration, up to 1 hour"
 	ritual = False
@@ -414,7 +414,7 @@ class DimensionDoor(Spell):
 	level = "4"
 	casting_time = "Action"
 	casting_range = "500 feet"
-	components = "V"
+	components = ("V")
 	materials = ""
 	duration = "Instantaneous"
 	ritual = False
@@ -443,7 +443,7 @@ class DisguiseSelf(Spell):
 	level = "1"
 	casting_time = "Action"
 	casting_range = "Self"
-	components = "V, S"
+	components = ("V", "S")
 	materials = ""
 	duration = "1 hour"
 	ritual = False
@@ -473,7 +473,7 @@ class Disintegrate(Spell):
 	level = "6"
 	casting_time = "Action"
 	casting_range = "60 feet"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a lodestone and a pinch of dust"
 	duration = "Instantaneous"
 	ritual = False
@@ -502,7 +502,7 @@ class DispelEvilandGood(Spell):
 	level = "5"
 	casting_time = "Action"
 	casting_range = "Self"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "holy water or powdered silver and iron"
 	duration = "Concentration, up to 1 minute"
 	ritual = False
@@ -524,7 +524,7 @@ class DispelMagic(Spell):
 	level = "3"
 	casting_time = "Action"
 	casting_range = "120 feet"
-	components = "V, S"
+	components = ("V", "S")
 	materials = ""
 	duration = "Instantaneous"
 	ritual = False
@@ -548,7 +548,7 @@ class DissonantWhispers(Spell):
 	level = "1"
 	casting_time = "Action"
 	casting_range = "60 feet"
-	components = "V"
+	components = ("V")
 	materials = ""
 	duration = "Instantaneous"
 	ritual = False
@@ -574,7 +574,7 @@ class DistortValue(Spell):
 	level = "1"
 	casting_time = "1 Min."
 	casting_range = "Touch"
-	components = "V"
+	components = ("V")
 	materials = ""
 	duration = "8 hours"
 	ritual = False
@@ -598,7 +598,7 @@ class Divination(Spell):
 	level = "4"
 	casting_time = "Action"
 	casting_range = "Self"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "incense and a sacrificial offering appropriate to your religion, together worth at least 25 gp, which the spell consumes"
 	duration = "Instantaneous"
 	ritual = True
@@ -614,7 +614,7 @@ class DivineFavor(Spell):
 	level = "1"
 	casting_time = "Bonus"
 	casting_range = "Self"
-	components = "V, S"
+	components = ("V", "S")
 	materials = ""
 	duration = "Concentration, up to 1 minute"
 	ritual = False
@@ -640,7 +640,7 @@ class DivineWord(Spell):
 	level = "7"
 	casting_time = "Bonus"
 	casting_range = "30 feet"
-	components = "V"
+	components = ("V")
 	materials = ""
 	duration = "Instantaneous"
 	ritual = False
@@ -677,7 +677,7 @@ class DominateBeast(Spell):
 	level = "4"
 	casting_time = "Action"
 	casting_range = "60 feet"
-	components = "V, S"
+	components = ("V", "S")
 	materials = ""
 	duration = "Concentration, up to 1 minute"
 	ritual = False
@@ -711,7 +711,7 @@ class DominateMonster(Spell):
 	level = "8"
 	casting_time = "Action"
 	casting_range = "60 feet"
-	components = "V, S"
+	components = ("V", "S")
 	materials = ""
 	duration = "Concentration, up to 1 hour"
 	ritual = False
@@ -748,7 +748,7 @@ class DominatePerson(Spell):
 	level = "5"
 	casting_time = "Action"
 	casting_range = "60 feet"
-	components = "V, S"
+	components = ("V", "S")
 	materials = ""
 	duration = "Concentration, up to 1 minute"
 	ritual = False
@@ -774,7 +774,7 @@ class DraconicTransformation(Spell):
 	level = "7"
 	casting_time = "Bonus"
 	casting_range = "Self"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a statuette of a dragon, worth at least 500 gp"
 	duration = "Concentration, up to 1 minute"
 	ritual = False
@@ -800,7 +800,7 @@ class DraconicTransformation(Spell):
 	level = "7"
 	casting_time = "Bonus"
 	casting_range = "Self"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a statuette of a dragon, worth at least 500 gp"
 	duration = "Concentration, up to 1 minute"
 	ritual = False
@@ -823,7 +823,7 @@ class DragonsBreath(Spell):
 	level = "2"
 	casting_time = "Bonus"
 	casting_range = "Touch"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a hot pepper"
 	duration = "Concentration, up to 1 minute"
 	ritual = False
@@ -850,7 +850,7 @@ class DrawmijsInstantSummons(Spell):
 	level = "6"
 	casting_time = "1 Min."
 	casting_range = "Touch"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a sapphire worth 1,000 gp"
 	duration = "Until dispelled"
 	ritual = True
@@ -889,7 +889,7 @@ class Dream(Spell):
 	level = "5"
 	casting_time = "1 Min."
 	casting_range = "Special"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a handful of sand, a dab of ink, and a writing quill plucked from a sleeping bird"
 	duration = "8 hours"
 	ritual = False
@@ -920,7 +920,7 @@ class DreamoftheBlueVeil(Spell):
 	level = "7"
 	casting_time = "10 Min."
 	casting_range = "20 feet"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a magic item or a willing creature from the destination world"
 	duration = "6 hours"
 	ritual = False
@@ -972,7 +972,7 @@ class DruidGrove(Spell):
 	level = "6"
 	casting_time = "10 Min."
 	casting_range = "Touch"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "mistletoe, which the spell consumes, that was harvested with a golden sickle under the light of a full moon"
 	duration = "24 hours"
 	ritual = False
@@ -997,7 +997,7 @@ class Druidcraft(Spell):
 	level = "Cantrip"
 	casting_time = "Action"
 	casting_range = "30 feet"
-	components = "V, S"
+	components = ("V", "S")
 	materials = ""
 	duration = "Instantaneous"
 	ritual = False
@@ -1024,7 +1024,7 @@ class DustDevil(Spell):
 	level = "2"
 	casting_time = "Action"
 	casting_range = "60 feet"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a pinch of dust"
 	duration = "Concentration, up to 1 minute"
 	ritual = False

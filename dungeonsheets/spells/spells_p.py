@@ -15,7 +15,7 @@ class PasswithoutTrace(Spell):
 	level = "2"
 	casting_time = "Action"
 	casting_range = "Self"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "ashes from a burned leaf of mistletoe and a sprig of spruce"
 	duration = "Concentration, up to 1 hour"
 	ritual = False
@@ -37,7 +37,7 @@ class Passwall(Spell):
 	level = "5"
 	casting_time = "Action"
 	casting_range = "30 feet"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a pinch of sesame seeds"
 	duration = "1 hour"
 	ritual = False
@@ -78,7 +78,7 @@ class PhantasmalForce(Spell):
 	level = "2"
 	casting_time = "Action"
 	casting_range = "60 feet"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a bit of fleece"
 	duration = "Concentration, up to 1 minute"
 	ritual = False
@@ -101,7 +101,7 @@ class PhantasmalKiller(Spell):
 	level = "4"
 	casting_time = "Action"
 	casting_range = "120 feet"
-	components = "V, S"
+	components = ("V", "S")
 	materials = ""
 	duration = "Concentration, up to 1 minute"
 	ritual = False
@@ -126,7 +126,7 @@ class PhantomSteed(Spell):
 	level = "3"
 	casting_time = "1 Min."
 	casting_range = "30 feet"
-	components = "V, S"
+	components = ("V", "S")
 	materials = ""
 	duration = "1 hour"
 	ritual = True
@@ -172,7 +172,7 @@ class PlanarAlly(Spell):
 	level = "6"
 	casting_time = "10 Min."
 	casting_range = "60 feet"
-	components = "V, S"
+	components = ("V", "S")
 	materials = ""
 	duration = "Instantaneous"
 	ritual = False
@@ -207,7 +207,7 @@ class PlanarBinding(Spell):
 	level = "5"
 	casting_time = "1 Hr."
 	casting_range = "60 feet"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a jewel worth at least 1,000 gp, which the spell consumes"
 	duration = "24 hours"
 	ritual = False
@@ -240,7 +240,7 @@ class PlaneShift(Spell):
 	level = "7"
 	casting_time = "Action"
 	casting_range = "Touch"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a forked, metal rod worth at least 250 gp, attuned to a particular plane of existence"
 	duration = "Instantaneous"
 	ritual = False
@@ -265,7 +265,7 @@ class PlantGrowth(Spell):
 	level = "3"
 	casting_time = "Action"
 	casting_range = "150 feet"
-	components = "V, S"
+	components = ("V", "S")
 	materials = ""
 	duration = "Instantaneous"
 	ritual = False
@@ -284,7 +284,7 @@ class PoisonSpray(Spell):
 	level = "Cantrip"
 	casting_time = "Action"
 	casting_range = "10 feet"
-	components = "V, S"
+	components = ("V", "S")
 	materials = ""
 	duration = "Instantaneous"
 	ritual = False
@@ -318,7 +318,7 @@ class Polymorph(Spell):
 	level = "4"
 	casting_time = "Action"
 	casting_range = "60 feet"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a caterpillar cocoon"
 	duration = "Concentration, up to 1 hour"
 	ritual = False
@@ -337,7 +337,7 @@ class PowerWordHeal(Spell):
 	level = "9"
 	casting_time = "Action"
 	casting_range = "Touch"
-	components = "V, S"
+	components = ("V", "S")
 	materials = ""
 	duration = "Instantaneous"
 	ritual = False
@@ -354,7 +354,7 @@ class PowerWordKill(Spell):
 	level = "9"
 	casting_time = "Action"
 	casting_range = "60 feet"
-	components = "V"
+	components = ("V")
 	materials = ""
 	duration = "Instantaneous"
 	ritual = False
@@ -380,7 +380,7 @@ class PowerWordPain(Spell):
 	level = "7"
 	casting_time = "Action"
 	casting_range = "60 feet"
-	components = "V"
+	components = ("V")
 	materials = ""
 	duration = "Instantaneous"
 	ritual = False
@@ -400,7 +400,7 @@ class PowerWordStun(Spell):
 	level = "8"
 	casting_time = "Action"
 	casting_range = "60 feet"
-	components = "V"
+	components = ("V")
 	materials = ""
 	duration = "Instantaneous"
 	ritual = False
@@ -419,7 +419,7 @@ class PrayerofHealing(Spell):
 	level = "2"
 	casting_time = "10 Min."
 	casting_range = "30 feet"
-	components = "V"
+	components = ("V")
 	materials = ""
 	duration = "Instantaneous"
 	ritual = False
@@ -447,7 +447,7 @@ class Prestidigitation(Spell):
 	level = "Cantrip"
 	casting_time = "Action"
 	casting_range = "10 feet"
-	components = "V, S"
+	components = ("V", "S")
 	materials = ""
 	duration = "Up to 1 hour"
 	ritual = False
@@ -467,7 +467,7 @@ class PrimalSavagery(Spell):
 	level = "Cantrip"
 	casting_time = "Action"
 	casting_range = "Self"
-	components = "S"
+	components = ("S")
 	materials = ""
 	duration = "Instantaneous"
 	ritual = False
@@ -487,7 +487,7 @@ class PrimalSavagery(UA)(Spell):
 	level = "Cantrip"
 	casting_time = "Action"
 	casting_range = "Self"
-	components = "S"
+	components = ("S")
 	materials = ""
 	duration = "Instantaneous"
 	ritual = False
@@ -507,7 +507,7 @@ class PrimordialWard(Spell):
 	level = "6"
 	casting_time = "Action"
 	casting_range = "Self"
-	components = "V, S"
+	components = ("V", "S")
 	materials = ""
 	duration = "Concentration, up to 1 minute"
 	ritual = False
@@ -546,7 +546,7 @@ class PrismaticSpray(Spell):
 	level = "7"
 	casting_time = "Action"
 	casting_range = "Self (60-foot cone)"
-	components = "V, S"
+	components = ("V", "S")
 	materials = ""
 	duration = "Instantaneous"
 	ritual = False
@@ -614,7 +614,7 @@ class PrismaticWall(Spell):
 	level = "9"
 	casting_time = "Action"
 	casting_range = "60 feet"
-	components = "V, S"
+	components = ("V", "S")
 	materials = ""
 	duration = "10 minutes"
 	ritual = False
@@ -638,7 +638,7 @@ class ProduceFlame(Spell):
 	level = "Cantrip"
 	casting_time = "Action"
 	casting_range = "Self"
-	components = "V, S"
+	components = ("V", "S")
 	materials = ""
 	duration = "10 minutes"
 	ritual = False
@@ -673,7 +673,7 @@ class ProgrammedIllusion(Spell):
 	level = "6"
 	casting_time = "Action"
 	casting_range = "120 feet"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a bit of fleece and jade dust worth at least 25 gp"
 	duration = "Until dispelled"
 	ritual = False
@@ -705,7 +705,7 @@ class ProjectImage(Spell):
 	level = "7"
 	casting_time = "Action"
 	casting_range = "500 miles"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a small replica of you made from materials worth at least 5 gp"
 	duration = "Concentration, up to 1 day"
 	ritual = False
@@ -722,7 +722,7 @@ class ProtectionfromBallistics(UA)(Spell):
 	level = "3"
 	casting_time = "Action"
 	casting_range = "Touch"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a shell casing"
 	duration = "Concentration, up to 10 minutes"
 	ritual = False
@@ -738,7 +738,7 @@ class ProtectionfromEnergy(Spell):
 	level = "3"
 	casting_time = "Action"
 	casting_range = "Touch"
-	components = "V, S"
+	components = ("V", "S")
 	materials = ""
 	duration = "Concentration, up to 1 hour"
 	ritual = False
@@ -760,7 +760,7 @@ class ProtectionfromEvilandGood(Spell):
 	level = "1"
 	casting_time = "Action"
 	casting_range = "Touch"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "holy water or powdered silver and iron, which the spell consumes"
 	duration = "Concentration, up to 10 minutes"
 	ritual = False
@@ -779,7 +779,7 @@ class ProtectionfromPoison(Spell):
 	level = "2"
 	casting_time = "Action"
 	casting_range = "Touch"
-	components = "V, S"
+	components = ("V", "S")
 	materials = ""
 	duration = "1 hour"
 	ritual = False
@@ -800,7 +800,7 @@ class PsionicBlast(Spell):
 	level = "3"
 	casting_time = "Action"
 	casting_range = "Self (30-foot cone)"
-	components = "V"
+	components = ("V")
 	materials = ""
 	duration = "Instantaneous"
 	ritual = False
@@ -821,7 +821,7 @@ class PsychicCrush(Spell):
 	level = "6"
 	casting_time = "Action"
 	casting_range = "60 feet"
-	components = "V, S"
+	components = ("V", "S")
 	materials = ""
 	duration = "1 minute"
 	ritual = False
@@ -844,7 +844,7 @@ class PsychicScream(Spell):
 	level = "9"
 	casting_time = "Action"
 	casting_range = "90 feet"
-	components = "S"
+	components = ("S")
 	materials = ""
 	duration = "Instantaneous"
 	ritual = False
@@ -868,7 +868,7 @@ class PulseWave(Spell):
 	level = "3"
 	casting_time = "Action"
 	casting_range = "Self (30-foot cone)"
-	components = "V, S"
+	components = ("V", "S")
 	materials = ""
 	duration = "Instantaneous"
 	ritual = False
@@ -887,7 +887,7 @@ class Puppet(UA)(Spell):
 	level = "1"
 	casting_time = "Action"
 	casting_range = "120 feet"
-	components = "S"
+	components = ("S")
 	materials = ""
 	duration = "Instantaneous"
 	ritual = False
@@ -904,7 +904,7 @@ class PurifyFoodandDrink(Spell):
 	level = "1"
 	casting_time = "Action"
 	casting_range = "10 feet"
-	components = "V, S"
+	components = ("V", "S")
 	materials = ""
 	duration = "Instantaneous"
 	ritual = True
@@ -927,7 +927,7 @@ class Pyrotechnics(Spell):
 	level = "2"
 	casting_time = "Action"
 	casting_range = "60 feet"
-	components = "V, S"
+	components = ("V", "S")
 	materials = ""
 	duration = "Instantaneous"
 	ritual = False

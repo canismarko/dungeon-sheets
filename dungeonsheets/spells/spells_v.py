@@ -17,7 +17,7 @@ class VampiricTouch(Spell):
 	level = "3"
 	casting_time = "Action"
 	casting_range = "Self"
-	components = "V, S"
+	components = ("V", "S")
 	materials = ""
 	duration = "Concentration, up to 1 minute"
 	ritual = False
@@ -38,7 +38,7 @@ class ViciousMockery(Spell):
 	level = "Cantrip"
 	casting_time = "Action"
 	casting_range = "60 feet"
-	components = "V"
+	components = ("V")
 	materials = ""
 	duration = "Instantaneous"
 	ritual = False
@@ -56,7 +56,7 @@ class Virtue(UA)(Spell):
 	level = "Cantrip"
 	casting_time = "Action"
 	casting_range = "Touch"
-	components = "V, S"
+	components = ("V", "S")
 	materials = ""
 	duration = "1 round"
 	ritual = False
@@ -79,7 +79,7 @@ class VitriolicSphere(Spell):
 	level = "4"
 	casting_time = "Action"
 	casting_range = "150 feet"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a drop of giant slug bile"
 	duration = "Instantaneous"
 	ritual = False
@@ -101,7 +101,7 @@ class VortexWarp(Spell):
 	level = "2"
 	casting_time = "Action"
 	casting_range = "90 feet"
-	components = "V, S"
+	components = ("V", "S")
 	materials = ""
 	duration = "Instantaneous"
 	ritual = False

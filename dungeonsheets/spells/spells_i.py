@@ -16,7 +16,7 @@ class IceKnife(Spell):
 	level = "1"
 	casting_time = "Action"
 	casting_range = "60 feet"
-	components = "S, M"
+	components = ("S", "M")
 	materials = "a drop of water or piece of ice"
 	duration = "Instantaneous"
 	ritual = False
@@ -38,7 +38,7 @@ class IceStorm(Spell):
 	level = "4"
 	casting_time = "Action"
 	casting_range = "300 feet"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a pinch of dust and a few drops of water"
 	duration = "Instantaneous"
 	ritual = False
@@ -61,7 +61,7 @@ class IcingdeathsFrost(Spell):
 	level = "2"
 	casting_time = "Action"
 	casting_range = "Self (15-foot cone)"
-	components = "S, M"
+	components = ("S", "M")
 	materials = "a vial of meltwater"
 	duration = "Instantaneous"
 	ritual = False
@@ -81,7 +81,7 @@ class IdInsinuation(Spell):
 	level = "1"
 	casting_time = "Action"
 	casting_range = "60 feet"
-	components = "V, S"
+	components = ("V", "S")
 	materials = ""
 	duration = "Concentration, up to 1 minute"
 	ritual = False
@@ -103,7 +103,7 @@ class Identify(Spell):
 	level = "1"
 	casting_time = "1 Min."
 	casting_range = "Touch"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a pearl worth at least 100 gp and an owl feather"
 	duration = "Instantaneous"
 	ritual = True
@@ -140,7 +140,7 @@ class IllusoryDragon(Spell):
 	level = "8"
 	casting_time = "Action"
 	casting_range = "120 feet"
-	components = "S"
+	components = ("S")
 	materials = ""
 	duration = "Concentration, up to 1 minute"
 	ritual = False
@@ -165,7 +165,7 @@ class IllusoryScript(Spell):
 	level = "1"
 	casting_time = "1 Min."
 	casting_range = "Touch"
-	components = "S, M"
+	components = ("S", "M")
 	materials = "a lead-based ink worth at least 10 gp, which the spell consumes"
 	duration = "10 days"
 	ritual = True
@@ -189,7 +189,7 @@ class Immolation(Spell):
 	level = "5"
 	casting_time = "Action"
 	casting_range = "90 feet"
-	components = "V"
+	components = ("V")
 	materials = ""
 	duration = "Concentration, up to 1 minute"
 	ritual = False
@@ -217,7 +217,7 @@ class ImmovableObject(Spell):
 	level = "2"
 	casting_time = "Action"
 	casting_range = "Touch"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "gold dust worth at least 25 gp, which the spell consumes"
 	duration = "1 hour"
 	ritual = False
@@ -273,7 +273,7 @@ class Imprisonment(Spell):
 	level = "9"
 	casting_time = "1 Min."
 	casting_range = "30 feet"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a vellum depiction or a carved statuette in the likeness of the target, and a special component that varies according to the version of the spell you choose, worth at least 500 gp per Hit Die of the target"
 	duration = "Until dispelled"
 	ritual = False
@@ -298,7 +298,7 @@ class IncendiaryCloud(Spell):
 	level = "8"
 	casting_time = "Action"
 	casting_range = "150 feet"
-	components = "V, S"
+	components = ("V", "S")
 	materials = ""
 	duration = "Concentration, up to 1 minute"
 	ritual = False
@@ -322,7 +322,7 @@ class InciteGreed(Spell):
 	level = "3"
 	casting_time = "Action"
 	casting_range = "30 feet"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a gem worth at least 50 gp"
 	duration = "Concentration, up to 1 minute"
 	ritual = False
@@ -347,7 +347,7 @@ class InfallibleRelay(UA)(Spell):
 	level = "1"
 	casting_time = "1 Min."
 	casting_range = "Self"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a mobile phone"
 	duration = "Concentration, up to 10 minutes"
 	ritual = False
@@ -393,7 +393,7 @@ class InfernalCalling(Spell):
 	level = "5"
 	casting_time = "1 Min."
 	casting_range = "90 feet"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a ruby worth at least 999 gp"
 	duration = "Concentration, up to 1 hour"
 	ritual = False
@@ -416,7 +416,7 @@ class Infestation(Spell):
 	level = "Cantrip"
 	casting_time = "Action"
 	casting_range = "30 feet"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a living flea"
 	duration = "Instantaneous"
 	ritual = False
@@ -438,7 +438,7 @@ class Infestation(UA)(Spell):
 	level = "Cantrip"
 	casting_time = "Action"
 	casting_range = "30 feet"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a living flea"
 	duration = "Instantaneous"
 	ritual = False
@@ -456,7 +456,7 @@ class InflictWounds(Spell):
 	level = "1"
 	casting_time = "Action"
 	casting_range = "Touch"
-	components = "V, S"
+	components = ("V", "S")
 	materials = ""
 	duration = "Instantaneous"
 	ritual = False
@@ -481,7 +481,7 @@ class InsectPlague(Spell):
 	level = "5"
 	casting_time = "Action"
 	casting_range = "300 feet"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a few grains of sugar, some kernels of grain, and a smear of fat"
 	duration = "Concentration, up to 10 minutes"
 	ritual = False
@@ -501,7 +501,7 @@ class IntellectFortress(Spell):
 	level = "3"
 	casting_time = "Action"
 	casting_range = "30 feet"
-	components = "V"
+	components = ("V")
 	materials = ""
 	duration = "Concentration, up to 1 hour"
 	ritual = False
@@ -521,7 +521,7 @@ class IntellectFortress(Spell):
 	level = "4"
 	casting_time = "Action"
 	casting_range = "30 feet"
-	components = "V"
+	components = ("V")
 	materials = ""
 	duration = "Concentration, up to 1 hour"
 	ritual = False
@@ -540,7 +540,7 @@ class IntellectFortress(Spell):
 	level = "5"
 	casting_time = "Action"
 	casting_range = "Self"
-	components = "V, S"
+	components = ("V", "S")
 	materials = ""
 	duration = "Concentration, up to 10 minutes"
 	ritual = False
@@ -564,7 +564,7 @@ class InvestitureofFlame(Spell):
 	level = "6"
 	casting_time = "Action"
 	casting_range = "Self"
-	components = "V, S"
+	components = ("V", "S")
 	materials = ""
 	duration = "Concentration, up to 10 minutes"
 	ritual = False
@@ -590,7 +590,7 @@ class InvestitureofIce(Spell):
 	level = "6"
 	casting_time = "Action"
 	casting_range = "Self"
-	components = "V, S"
+	components = ("V", "S")
 	materials = ""
 	duration = "Concentration, up to 10 minutes"
 	ritual = False
@@ -615,7 +615,7 @@ class InvestitureofStone(Spell):
 	level = "6"
 	casting_time = "Action"
 	casting_range = "Self"
-	components = "V, S"
+	components = ("V", "S")
 	materials = ""
 	duration = "Concentration, up to 10 minutes"
 	ritual = False
@@ -640,7 +640,7 @@ class InvestitureofWind(Spell):
 	level = "6"
 	casting_time = "Action"
 	casting_range = "Self"
-	components = "V, S"
+	components = ("V", "S")
 	materials = ""
 	duration = "Concentration, up to 10 minutes"
 	ritual = False
@@ -660,7 +660,7 @@ class Invisibility(Spell):
 	level = "2"
 	casting_time = "Action"
 	casting_range = "Touch"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "an eyelash encased in gum arabic"
 	duration = "Concentration, up to 1 hour"
 	ritual = False
@@ -678,7 +678,7 @@ class InvisibilitytoCameras(UA)(Spell):
 	level = "3"
 	casting_time = "Action"
 	casting_range = "10 feet"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a scrap of black paper"
 	duration = "Concentration, up to 1 minute"
 	ritual = False
@@ -693,7 +693,7 @@ class Invulnerability(Spell):
 	level = "9"
 	casting_time = "Action"
 	casting_range = "Self"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a small piece of adamantine worth at least 500 gp, which the spell consumes"
 	duration = "Concentration, up to 10 minutes"
 	ritual = False

@@ -14,7 +14,7 @@ class ZephyrStrike(Spell):
 	level = "1"
 	casting_time = "Bonus"
 	casting_range = "Self"
-	components = "V"
+	components = ("V")
 	materials = ""
 	duration = "Concentration, up to 1 minute"
 	ritual = False
@@ -33,9 +33,33 @@ class ZephyrStrike(UA)(Spell):
 	level = "1"
 	casting_time = "Bonus"
 	casting_range = "Self"
-	components = "V"
+	components = ("V")
 	materials = ""
 	duration = "Concentration, up to 1 minute"
 	ritual = False
 	magic_school = "Transmutation"
 	classes = ("Ranger")
+class ZoneofTruth(Spell):
+	"""You create a magical zone that guards against deception in a 
+	15-foot-radius sphere centered on a point of your choice within range. 
+	Until the spell ends, a creature that enters the spell's area for the 
+	first time on a turn or starts its turn there must make a Charisma 
+	saving throw. On a failed save, a creature can't speak a deliberate lie 
+	while in the radius. You know whether each creature succeeds or fails 
+	on its saving throw.An affected creature is aware of the spell and can 
+	thus avoid answering questions to which it would normally respond with 
+	a lie. Such creatures can be evasive in its answers as long as it 
+	remains within the boundaries of the truth.
+	
+	"""
+
+	name = "Zone of Truth"
+	level = "2"
+	casting_time = "Action"
+	casting_range = "60 feet"
+	components = ("V", "S")
+	materials = ""
+	duration = "10 minutes"
+	ritual = False
+	magic_school = "Enchantment"
+	classes = ("Bard", "Cleric", "Paladin")

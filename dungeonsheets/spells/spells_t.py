@@ -17,7 +17,7 @@ class TashasCausticBrew(Spell):
 	level = "1"
 	casting_time = "Action"
 	casting_range = "Self (30-foot line)"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a bit of rotten food"
 	duration = "Concentration, up to 1 minute"
 	ritual = False
@@ -40,7 +40,7 @@ class TashasHideousLaughter(Spell):
 	level = "1"
 	casting_time = "Action"
 	casting_range = "30 feet"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "tiny tarts and a feather that is waved in the air"
 	duration = "Concentration, up to 1 minute"
 	ritual = False
@@ -64,7 +64,7 @@ class TashasMindWhip(Spell):
 	level = "2"
 	casting_time = "Action"
 	casting_range = "90 feet"
-	components = "V"
+	components = ("V")
 	materials = ""
 	duration = "1 round"
 	ritual = False
@@ -92,7 +92,7 @@ class TashasOtherworldlyGuise(Spell):
 	level = "6"
 	casting_time = "Bonus"
 	casting_range = "Self"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "an object engraved with a symbol of the Outer Planes, worth at least 500 gp"
 	duration = "Concentration, up to 1 minute"
 	ritual = False
@@ -131,7 +131,7 @@ class Telekinesis(Spell):
 	level = "5"
 	casting_time = "Action"
 	casting_range = "60 feet"
-	components = "V, S"
+	components = ("V", "S")
 	materials = ""
 	duration = "Concentration, up to 10 minutes"
 	ritual = False
@@ -154,7 +154,7 @@ class Telepathy(Spell):
 	level = "8"
 	casting_time = "Action"
 	casting_range = "Unlimited"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a pair of linked silver rings"
 	duration = "24 hours"
 	ritual = False
@@ -218,7 +218,7 @@ class Teleport(Spell):
 	level = "7"
 	casting_time = "Action"
 	casting_range = "10 feet"
-	components = "V"
+	components = ("V")
 	materials = ""
 	duration = "Instantaneous"
 	ritual = False
@@ -250,7 +250,7 @@ class TeleportationCircle(Spell):
 	level = "5"
 	casting_time = "1 Min."
 	casting_range = "10 feet"
-	components = "V, M"
+	components = ("V", "M")
 	materials = "rare chalks and inks infused with precious gems worth 50 gp, which the spell consumes"
 	duration = "1 round"
 	ritual = False
@@ -296,7 +296,7 @@ class TempleoftheGods(Spell):
 	level = "7"
 	casting_time = "1 Hr."
 	casting_range = "120 feet"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a holy symbol worth at least 5 gp"
 	duration = "24 hours"
 	ritual = False
@@ -319,7 +319,7 @@ class TemporalShunt(Spell):
 	level = "5"
 	casting_time = "Reaction"
 	casting_range = "120 feet"
-	components = "V, S"
+	components = ("V", "S")
 	materials = ""
 	duration = "1 round"
 	ritual = False
@@ -346,7 +346,7 @@ class TensersFloatingDisk(Spell):
 	level = "1"
 	casting_time = "Action"
 	casting_range = "30 feet"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a drop of mercury"
 	duration = "1 hour"
 	ritual = True
@@ -373,7 +373,7 @@ class TensersTransformation(Spell):
 	level = "6"
 	casting_time = "Action"
 	casting_range = "Self"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a few hairs from a bull"
 	duration = "Concentration, up to 10 minutes"
 	ritual = False
@@ -397,7 +397,7 @@ class TetherEssence(Spell):
 	level = "7"
 	casting_time = "Action"
 	casting_range = "60 feet"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a spool of platinum cord worth at least 250 gp, which the spell consumes"
 	duration = "Concentration, up to 1 hour"
 	ritual = False
@@ -423,7 +423,7 @@ class Thaumaturgy(Spell):
 	level = "Cantrip"
 	casting_time = "Action"
 	casting_range = "30 feet"
-	components = "V"
+	components = ("V")
 	materials = ""
 	duration = "Up to 1 minute"
 	ritual = False
@@ -443,7 +443,7 @@ class ThornWhip(Spell):
 	level = "Cantrip"
 	casting_time = "Action"
 	casting_range = "30 feet"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "the stem of a plant with thorns"
 	duration = "Instantaneous"
 	ritual = False
@@ -462,7 +462,7 @@ class ThoughtShield(Spell):
 	level = "2"
 	casting_time = "Action"
 	casting_range = "Touch"
-	components = "V, S"
+	components = ("V", "S")
 	materials = ""
 	duration = "8 hours"
 	ritual = False
@@ -490,7 +490,7 @@ class ThunderStep(Spell):
 	level = "3"
 	casting_time = "Action"
 	casting_range = "90 feet"
-	components = "V"
+	components = ("V")
 	materials = ""
 	duration = "Instantaneous"
 	ritual = False
@@ -509,7 +509,7 @@ class Thunderclap(Spell):
 	level = "Cantrip"
 	casting_time = "Action"
 	casting_range = "5 feet"
-	components = "S"
+	components = ("S")
 	materials = ""
 	duration = "Instantaneous"
 	ritual = False
@@ -529,7 +529,7 @@ class ThunderousSmite(Spell):
 	level = "1"
 	casting_time = "Bonus"
 	casting_range = "Self"
-	components = "V"
+	components = ("V")
 	materials = ""
 	duration = "Concentration, up to 1 minute"
 	ritual = False
@@ -553,7 +553,7 @@ class Thunderwave(Spell):
 	level = "1"
 	casting_time = "Action"
 	casting_range = "Self (15-foot cube)"
-	components = "V, S"
+	components = ("V", "S")
 	materials = ""
 	duration = "Instantaneous"
 	ritual = False
@@ -575,7 +575,7 @@ class TidalWave(Spell):
 	level = "3"
 	casting_time = "Action"
 	casting_range = "120 feet"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a drop of water"
 	duration = "Instantaneous"
 	ritual = False
@@ -599,7 +599,7 @@ class TimeRavage(Spell):
 	level = "9"
 	casting_time = "Action"
 	casting_range = "90 feet"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "an hourglass filled with diamond dust worth at least 5,000 gp, which the spell consumes"
 	duration = "Instantaneous"
 	ritual = False
@@ -621,7 +621,7 @@ class TimeStop(Spell):
 	level = "9"
 	casting_time = "Action"
 	casting_range = "Self"
-	components = "V"
+	components = ("V")
 	materials = ""
 	duration = "Instantaneous"
 	ritual = False
@@ -653,7 +653,7 @@ class TinyServant(Spell):
 	level = "3"
 	casting_time = "1 Min."
 	casting_range = "Touch"
-	components = "V, S"
+	components = ("V", "S")
 	materials = ""
 	duration = "8 hours"
 	ritual = False
@@ -673,7 +673,7 @@ class TolltheDead(Spell):
 	level = "Cantrip"
 	casting_time = "Action"
 	casting_range = "60 feet"
-	components = "V, S"
+	components = ("V", "S")
 	materials = ""
 	duration = "Instantaneous"
 	ritual = False
@@ -693,7 +693,7 @@ class TolltheDead(UA)(Spell):
 	level = "Cantrip"
 	casting_time = "Action"
 	casting_range = "60 feet"
-	components = "V, S"
+	components = ("V", "S")
 	materials = ""
 	duration = "Instantaneous"
 	ritual = False
@@ -711,7 +711,7 @@ class Tongues(Spell):
 	level = "3"
 	casting_time = "Action"
 	casting_range = "Touch"
-	components = "V, M"
+	components = ("V", "M")
 	materials = "a small clay model of a ziggurat"
 	duration = "1 hour"
 	ritual = False
@@ -750,7 +750,7 @@ class TransmuteRock(Spell):
 	level = "5"
 	casting_time = "Action"
 	casting_range = "120 feet"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "clay and water"
 	duration = "Until dispelled"
 	ritual = False
@@ -770,7 +770,7 @@ class TransportviaPlants(Spell):
 	level = "6"
 	casting_time = "Action"
 	casting_range = "10 feet"
-	components = "V, S"
+	components = ("V", "S")
 	materials = ""
 	duration = "1 round"
 	ritual = False
@@ -795,7 +795,7 @@ class TreeStride(Spell):
 	level = "5"
 	casting_time = "Action"
 	casting_range = "Self"
-	components = "V, S"
+	components = ("V", "S")
 	materials = ""
 	duration = "Concentration, up to 1 minute"
 	ritual = False
@@ -848,7 +848,7 @@ class TruePolymorph(Spell):
 	level = "9"
 	casting_time = "Action"
 	casting_range = "30 feet"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a drop of mercury, a dollop of gum arabic, and a wisp of smoke"
 	duration = "Concentration, up to 1 hour"
 	ritual = False
@@ -872,7 +872,7 @@ class TrueResurrection(Spell):
 	level = "9"
 	casting_time = "1 Hr."
 	casting_range = "Touch"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a sprinkle of holy water and diamonds worth at least 25,000 gp, which the spell consumes"
 	duration = "Instantaneous"
 	ritual = False
@@ -890,7 +890,7 @@ class TrueSeeing(Spell):
 	level = "6"
 	casting_time = "Action"
 	casting_range = "Touch"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "an ointment for the eyes that costs 25 gp; is made from mushroom powder, saffron, and fat; and is consumed by the spell"
 	duration = "1 hour"
 	ritual = False
@@ -908,7 +908,7 @@ class TrueStrike(Spell):
 	level = "Cantrip"
 	casting_time = "Action"
 	casting_range = "30 feet"
-	components = "S"
+	components = ("S")
 	materials = ""
 	duration = "Concentration, up to 1 round"
 	ritual = False
@@ -940,7 +940,7 @@ class Tsunami(Spell):
 	level = "8"
 	casting_time = "1 Min."
 	casting_range = "Sight"
-	components = "V, S"
+	components = ("V", "S")
 	materials = ""
 	duration = "Concentration, up to 6 rounds"
 	ritual = False

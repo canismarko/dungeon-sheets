@@ -16,7 +16,7 @@ class KineticJaunt(Spell):
 	level = "2"
 	casting_time = "Bonus"
 	casting_range = "Self"
-	components = "S"
+	components = ("S")
 	materials = ""
 	duration = "Concentration, up to 1 minute"
 	ritual = False
@@ -40,7 +40,7 @@ class Knock(Spell):
 	level = "2"
 	casting_time = "Action"
 	casting_range = "60 feet"
-	components = "V"
+	components = ("V")
 	materials = ""
 	duration = "Instantaneous"
 	ritual = False

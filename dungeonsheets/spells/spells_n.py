@@ -24,7 +24,7 @@ class NathairsMischief(Spell):
 	level = "2"
 	casting_time = "Action"
 	casting_range = "60 feet"
-	components = "S, M"
+	components = ("S", "M")
 	materials = "a piece of crust from an apple pie"
 	duration = "Concentration, up to 1 minute"
 	ritual = False
@@ -53,7 +53,7 @@ class NathairsMischief(Spell):
 	level = "2"
 	casting_time = "Action"
 	casting_range = "60 feet"
-	components = "S, M"
+	components = ("S", "M")
 	materials = "a piece of crust from an apple pie"
 	duration = "Concentration, up to 1 minute"
 	ritual = False
@@ -76,7 +76,7 @@ class NegativeEnergyFlood(Spell):
 	level = "5"
 	casting_time = "Action"
 	casting_range = "60 feet"
-	components = "V, M"
+	components = ("V", "M")
 	materials = "a broken bone and a square of black silk"
 	duration = "Instantaneous"
 	ritual = False
@@ -94,7 +94,7 @@ class Nondetection(Spell):
 	level = "3"
 	casting_time = "Action"
 	casting_range = "Touch"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a pinch of diamond dust worth 25 gp sprinkled over the target, which the spell consumes"
 	duration = "8 hours"
 	ritual = False
@@ -126,7 +126,7 @@ class NystulsMagicAura(Spell):
 	level = "2"
 	casting_time = "Action"
 	casting_range = "Touch"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a small square of silk"
 	duration = "24 hours"
 	ritual = False

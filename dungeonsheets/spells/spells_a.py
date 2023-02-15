@@ -17,7 +17,7 @@ class AbiDalzimsHorridWilting(Spell):
 	level = "8"
 	casting_time = "Action"
 	casting_range = "150 feet"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a bit of sponge"
 	duration = "Instantaneous"
 	ritual = False
@@ -39,7 +39,7 @@ class AbsorbElements(Spell):
 	level = "1"
 	casting_time = "Reaction"
 	casting_range = "Self"
-	components = "S"
+	components = ("S")
 	materials = ""
 	duration = "1 round"
 	ritual = False
@@ -58,7 +58,7 @@ class AcidSplash(Spell):
 	level = "Cantrip"
 	casting_time = "Action"
 	casting_range = "60 feet"
-	components = "V, S"
+	components = ("V", "S")
 	materials = ""
 	duration = "Instantaneous"
 	ritual = False
@@ -80,7 +80,7 @@ class AcidStream(Spell):
 	level = "1"
 	casting_time = "Action"
 	casting_range = "Self (30-foot line)"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a bit of rotten food"
 	duration = "Concentration, up to 1 minute"
 	ritual = False
@@ -100,7 +100,7 @@ class AganazzarsScorcher(Spell):
 	level = "2"
 	casting_time = "Action"
 	casting_range = "30 feet"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a red dragon's scale"
 	duration = "Instantaneous"
 	ritual = False
@@ -119,7 +119,7 @@ class Aid(Spell):
 	level = "2"
 	casting_time = "Action"
 	casting_range = "30 feet"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a tiny strip of white cloth"
 	duration = "8 hours"
 	ritual = False
@@ -141,7 +141,7 @@ class AirBubble(Spell):
 	level = "2"
 	casting_time = "Action"
 	casting_range = "60 feet"
-	components = "S"
+	components = ("S")
 	materials = ""
 	duration = "24 hours"
 	ritual = False
@@ -164,7 +164,7 @@ class Alarm(Spell):
 	level = "1"
 	casting_time = "1 Min."
 	casting_range = "30 feet"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a tiny bell and a piece of fine silver wire"
 	duration = "8 hours"
 	ritual = True
@@ -200,7 +200,7 @@ class AlterSelf(Spell):
 	level = "2"
 	casting_time = "Action"
 	casting_range = "Self"
-	components = "V, S"
+	components = ("V", "S")
 	materials = ""
 	duration = "Concentration, up to 1 hour"
 	ritual = False
@@ -222,7 +222,7 @@ class AnimalFriendship(Spell):
 	level = "1"
 	casting_time = "Action"
 	casting_range = "30 feet"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a morsel of food"
 	duration = "24 hours"
 	ritual = False
@@ -252,7 +252,7 @@ class AnimalMessenger(Spell):
 	level = "2"
 	casting_time = "Action"
 	casting_range = "30 feet"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a morsel of food"
 	duration = "24 hours"
 	ritual = True
@@ -285,7 +285,7 @@ class AnimalShapes(Spell):
 	level = "8"
 	casting_time = "Action"
 	casting_range = "30 feet"
-	components = "V, S"
+	components = ("V", "S")
 	materials = ""
 	duration = "Concentration, up to 24 hours"
 	ritual = False
@@ -322,7 +322,7 @@ class AnimateDead(Spell):
 	level = "3"
 	casting_time = "1 Min."
 	casting_range = "10 feet"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a drop of blood, a piece of flesh, and a pinch of bone dust"
 	duration = "Instantaneous"
 	ritual = False
@@ -371,7 +371,7 @@ class AnimateObjects(Spell):
 	level = "5"
 	casting_time = "Action"
 	casting_range = "120 feet"
-	components = "V, S"
+	components = ("V", "S")
 	materials = ""
 	duration = "Concentration, up to 1 minute"
 	ritual = False
@@ -394,7 +394,7 @@ class Antagonize(Spell):
 	level = "3"
 	casting_time = "Action"
 	casting_range = "30 feet"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a playing card depicting a rogue"
 	duration = "Instantaneous"
 	ritual = False
@@ -415,7 +415,7 @@ class AntilifeShell(Spell):
 	level = "5"
 	casting_time = "Action"
 	casting_range = "Self (10-foot radius)"
-	components = "V, S"
+	components = ("V", "S")
 	materials = ""
 	duration = "Concentration, up to 1 hour"
 	ritual = False
@@ -467,7 +467,7 @@ class AntimagicField(Spell):
 	level = "8"
 	casting_time = "Action"
 	casting_range = "Self (10-foot radius)"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a pinch of powdered iron or iron filings"
 	duration = "Concentration, up to 1 hour"
 	ritual = False
@@ -514,7 +514,7 @@ class Antipathy/Sympathy(Spell):
 	level = "8"
 	casting_time = "1 Hr."
 	casting_range = "60 feet"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "either a lump of alum soaked in vinegar for the antipathy effect or a drop of honey for the sympathy effect"
 	duration = "10 days"
 	ritual = False
@@ -536,7 +536,7 @@ class ArcaneEye(Spell):
 	level = "4"
 	casting_time = "Action"
 	casting_range = "30 feet"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a bit of bat fur"
 	duration = "Concentration, up to 1 hour"
 	ritual = False
@@ -564,7 +564,7 @@ class ArcaneGate(Spell):
 	level = "6"
 	casting_time = "Action"
 	casting_range = "500 feet"
-	components = "V, S"
+	components = ("V", "S")
 	materials = ""
 	duration = "Concentration, up to 10 minutes"
 	ritual = False
@@ -587,7 +587,7 @@ class ArcaneHacking(UA)(Spell):
 	level = "2"
 	casting_time = "Action"
 	casting_range = "Self"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "hacking tools"
 	duration = "Concentration, up to 1 hour"
 	ritual = False
@@ -610,7 +610,7 @@ class ArcaneLock(Spell):
 	level = "2"
 	casting_time = "Action"
 	casting_range = "Touch"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "gold dust worth at least 25 gp, which the spell consumes"
 	duration = "Until dispelled"
 	ritual = False
@@ -633,7 +633,7 @@ class ArcaneWeapon(Spell):
 	level = "1"
 	casting_time = "Bonus"
 	casting_range = "Self"
-	components = "V, S"
+	components = ("V", "S")
 	materials = ""
 	duration = "Concentration, up to 1 hour"
 	ritual = False
@@ -653,7 +653,7 @@ class ArmorofAgathys(Spell):
 	level = "1"
 	casting_time = "Action"
 	casting_range = "Self"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a cup of water"
 	duration = "1 hour"
 	ritual = False
@@ -675,7 +675,7 @@ class ArmsofHadar(Spell):
 	level = "1"
 	casting_time = "Action"
 	casting_range = "Self (10-foot radius)"
-	components = "V, S"
+	components = ("V", "S")
 	materials = ""
 	duration = "Instantaneous"
 	ritual = False
@@ -698,7 +698,7 @@ class AshardalonsStride(Spell):
 	level = "3"
 	casting_time = "Bonus"
 	casting_range = "Self"
-	components = "V, S"
+	components = ("V", "S")
 	materials = ""
 	duration = "Concentration, up to 1 minute"
 	ritual = False
@@ -743,7 +743,7 @@ class AstralProjection(Spell):
 	level = "9"
 	casting_time = "1 Hr."
 	casting_range = "10 feet"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "for each creature you affect with this spell, you must provide one jacinth worth at least 1,000 gp and one ornately carved bar of silver worth at least 100 gp, all of which the spell consumes"
 	duration = "Special"
 	ritual = False
@@ -770,7 +770,7 @@ class Augury(Spell):
 	level = "2"
 	casting_time = "1 Min."
 	casting_range = "Self"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "specially marked sticks, bones, or similar tokens worth at least 25 gp"
 	duration = "Instantaneous"
 	ritual = True
@@ -790,7 +790,7 @@ class AuraofLife(Spell):
 	level = "4"
 	casting_time = "Action"
 	casting_range = "Self (30-foot radius)"
-	components = "V"
+	components = ("V")
 	materials = ""
 	duration = "Concentration, up to 10 minutes"
 	ritual = False
@@ -810,7 +810,7 @@ class AuraofPurity(Spell):
 	level = "4"
 	casting_time = "Action"
 	casting_range = "Self (30-foot radius)"
-	components = "V"
+	components = ("V")
 	materials = ""
 	duration = "Concentration, up to 10 minutes"
 	ritual = False
@@ -828,7 +828,7 @@ class AuraofVitality(Spell):
 	level = "3"
 	casting_time = "Action"
 	casting_range = "Self (30-foot radius)"
-	components = "V"
+	components = ("V")
 	materials = ""
 	duration = "Concentration, up to 1 minute"
 	ritual = False
@@ -855,7 +855,7 @@ class Awaken(Spell):
 	level = "5"
 	casting_time = "8 Hr."
 	casting_range = "Touch"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "an agate worth at least 1,000 gp, which the spell consumes"
 	duration = "Instantaneous"
 	ritual = False

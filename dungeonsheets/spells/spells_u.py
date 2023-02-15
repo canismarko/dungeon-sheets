@@ -22,7 +22,7 @@ class UnearthlyChorus(UA)(Spell):
 	level = "1"
 	casting_time = "Action"
 	casting_range = "Self (30-foot radius)"
-	components = "V"
+	components = ("V")
 	materials = ""
 	duration = "Concentration, up to 10 minutes"
 	ritual = False
@@ -49,7 +49,7 @@ class UnseenServant(Spell):
 	level = "1"
 	casting_time = "Action"
 	casting_range = "60 feet"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a piece of string and a bit of wood"
 	duration = "1 hour"
 	ritual = True

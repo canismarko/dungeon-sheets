@@ -17,7 +17,7 @@ class EarthTremor(Spell):
 	level = "1"
 	casting_time = "Action"
 	casting_range = "10 feet"
-	components = "V, S"
+	components = ("V", "S")
 	materials = ""
 	duration = "Instantaneous"
 	ritual = False
@@ -37,7 +37,7 @@ class Earthbind(Spell):
 	level = "2"
 	casting_time = "Action"
 	casting_range = "300 feet"
-	components = "V"
+	components = ("V")
 	materials = ""
 	duration = "Concentration, up to 1 minute"
 	ritual = False
@@ -82,7 +82,7 @@ class Earthquake(Spell):
 	level = "8"
 	casting_time = "Action"
 	casting_range = "500 feet"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a pinch of dirt, a piece of rock, and a lump of clay"
 	duration = "Concentration, up to 1 minute"
 	ritual = False
@@ -102,7 +102,7 @@ class EgoWhip(Spell):
 	level = "4"
 	casting_time = "Action"
 	casting_range = "30 feet"
-	components = "V"
+	components = ("V")
 	materials = ""
 	duration = "Concentration, up to 1 minute"
 	ritual = False
@@ -122,7 +122,7 @@ class EldritchBlast(Spell):
 	level = "Cantrip"
 	casting_time = "Action"
 	casting_range = "120 feet"
-	components = "V, S"
+	components = ("V", "S")
 	materials = ""
 	duration = "Instantaneous"
 	ritual = False
@@ -146,7 +146,7 @@ class ElementalBane(Spell):
 	level = "4"
 	casting_time = "Action"
 	casting_range = "90 feet"
-	components = "V, S"
+	components = ("V", "S")
 	materials = ""
 	duration = "Concentration, up to 1 minute"
 	ritual = False
@@ -168,7 +168,7 @@ class ElementalWeapon(Spell):
 	level = "3"
 	casting_time = "Action"
 	casting_range = "Touch"
-	components = "V, S"
+	components = ("V", "S")
 	materials = ""
 	duration = "Concentration, up to 1 hour"
 	ritual = False
@@ -195,7 +195,7 @@ class EncodeThoughts(Spell):
 	level = "Cantrip"
 	casting_time = "Action"
 	casting_range = "Self"
-	components = "S"
+	components = ("S")
 	materials = ""
 	duration = "8 hours"
 	ritual = False
@@ -220,7 +220,7 @@ class EnemiesAbound(Spell):
 	level = "3"
 	casting_time = "Action"
 	casting_range = "120 feet"
-	components = "V, S"
+	components = ("V", "S")
 	materials = ""
 	duration = "Concentration, up to 1 minute"
 	ritual = False
@@ -247,7 +247,7 @@ class Enervation(Spell):
 	level = "5"
 	casting_time = "Action"
 	casting_range = "60 feet"
-	components = "V, S"
+	components = ("V", "S")
 	materials = ""
 	duration = "Concentration, up to 1 minute"
 	ritual = False
@@ -274,7 +274,7 @@ class EnhanceAbility(Spell):
 	level = "2"
 	casting_time = "Action"
 	casting_range = "Touch"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "fur or a feather from a beast"
 	duration = "Concentration, up to 1 hour"
 	ritual = False
@@ -310,7 +310,7 @@ class Enlarge/Reduce(Spell):
 	level = "2"
 	casting_time = "Action"
 	casting_range = "30 feet"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a pinch of powdered iron"
 	duration = "Concentration, up to 1 minute"
 	ritual = False
@@ -336,7 +336,7 @@ class EnsnaringStrike(Spell):
 	level = "1"
 	casting_time = "Bonus"
 	casting_range = "Self"
-	components = "V"
+	components = ("V")
 	materials = ""
 	duration = "Concentration, up to 1 minute"
 	ritual = False
@@ -358,7 +358,7 @@ class Entangle(Spell):
 	level = "1"
 	casting_time = "Action"
 	casting_range = "90 feet"
-	components = "V, S"
+	components = ("V", "S")
 	materials = ""
 	duration = "Concentration, up to 1 minute"
 	ritual = False
@@ -381,7 +381,7 @@ class Enthrall(Spell):
 	level = "2"
 	casting_time = "Action"
 	casting_range = "60 feet"
-	components = "V, S"
+	components = ("V", "S")
 	materials = ""
 	duration = "1 minute"
 	ritual = False
@@ -404,7 +404,7 @@ class EruptingEarth(Spell):
 	level = "3"
 	casting_time = "Action"
 	casting_range = "120 feet"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a piece of obsidian"
 	duration = "Instantaneous"
 	ritual = False
@@ -441,7 +441,7 @@ class Etherealness(Spell):
 	level = "7"
 	casting_time = "Action"
 	casting_range = "Self"
-	components = "V, S"
+	components = ("V", "S")
 	materials = ""
 	duration = "Up to 8 hours"
 	ritual = False
@@ -466,7 +466,7 @@ class EvardsBlackTentacles(Spell):
 	level = "4"
 	casting_time = "Action"
 	casting_range = "90 feet"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a piece of tentacle from a giant octopus or a giant squid"
 	duration = "Concentration, up to 1 minute"
 	ritual = False
@@ -483,7 +483,7 @@ class ExpeditiousRetreat(Spell):
 	level = "1"
 	casting_time = "Bonus"
 	casting_range = "Self"
-	components = "V, S"
+	components = ("V", "S")
 	materials = ""
 	duration = "Concentration, up to 10 minutes"
 	ritual = False
@@ -513,7 +513,7 @@ class Eyebite(Spell):
 	level = "6"
 	casting_time = "Action"
 	casting_range = "Self"
-	components = "V, S"
+	components = ("V", "S")
 	materials = ""
 	duration = "Concentration, up to 1 minute"
 	ritual = False

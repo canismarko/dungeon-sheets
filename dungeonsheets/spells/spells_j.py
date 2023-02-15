@@ -17,7 +17,7 @@ class JimsGlowingCoin(Spell):
 	level = "2"
 	casting_time = "Action"
 	casting_range = "60 feet"
-	components = "S, M, R"
+	components = ("S", "M", "R")
 	materials = "a coin
 2 gp"
 	duration = "1 minute"
@@ -48,7 +48,7 @@ class JimsMagicMissile(Spell):
 	level = "1"
 	casting_time = "Action"
 	casting_range = "120 feet"
-	components = "V, S, R"
+	components = ("V", "S", "R")
 	materials = "1 gp"
 	duration = "Instantaneous"
 	ritual = False
@@ -64,7 +64,7 @@ class Jump(Spell):
 	level = "1"
 	casting_time = "Action"
 	casting_range = "Touch"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a grasshopper's hind leg"
 	duration = "1 minute"
 	ritual = False

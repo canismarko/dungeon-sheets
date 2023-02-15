@@ -14,7 +14,7 @@ class On/Off(UA)(Spell):
 	level = "Cantrip"
 	casting_time = "Action"
 	casting_range = "60 feet"
-	components = "V, S"
+	components = ("V", "S")
 	materials = ""
 	duration = "Instantaneous"
 	ritual = False
@@ -41,7 +41,7 @@ class OtherworldlyForm(Spell):
 	level = "6"
 	casting_time = "Action"
 	casting_range = "Self"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "an object engraved with a symbol of the Outer Planes, worth at least 500 gp"
 	duration = "Concentration, up to 1 minute"
 	ritual = False
@@ -76,7 +76,7 @@ class OtilukesFreezingSphere(Spell):
 	level = "6"
 	casting_time = "Action"
 	casting_range = "300 feet"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a small crystal sphere"
 	duration = "Instantaneous"
 	ritual = False
@@ -104,7 +104,7 @@ class OtilukesResilientSphere(Spell):
 	level = "4"
 	casting_time = "Action"
 	casting_range = "30 feet"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a hemispherical piece of clear crystal and a matching hemispherical piece of gum arabic"
 	duration = "Concentration, up to 1 minute"
 	ritual = False
@@ -127,7 +127,7 @@ class OttosIrresistibleDance(Spell):
 	level = "6"
 	casting_time = "Action"
 	casting_range = "30 feet"
-	components = "V"
+	components = ("V")
 	materials = ""
 	duration = "Concentration, up to 1 minute"
 	ritual = False

@@ -14,7 +14,7 @@ class SacredFlame(Spell):
 	level = "Cantrip"
 	casting_time = "Action"
 	casting_range = "60 feet"
-	components = "V, S"
+	components = ("V", "S")
 	materials = ""
 	duration = "Instantaneous"
 	ritual = False
@@ -36,7 +36,7 @@ class Sanctuary(Spell):
 	level = "1"
 	casting_time = "Bonus"
 	casting_range = "30 feet"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a small silver mirror"
 	duration = "1 minute"
 	ritual = False
@@ -54,7 +54,7 @@ class SappingSting(Spell):
 	level = "Cantrip"
 	casting_time = "Action"
 	casting_range = "30 feet"
-	components = "V, S"
+	components = ("V", "S")
 	materials = ""
 	duration = "Instantaneous"
 	ritual = False
@@ -73,7 +73,7 @@ class Scatter(Spell):
 	level = "6"
 	casting_time = "Action"
 	casting_range = "30 feet"
-	components = "V"
+	components = ("V")
 	materials = ""
 	duration = "Instantaneous"
 	ritual = False
@@ -92,7 +92,7 @@ class ScorchingRay(Spell):
 	level = "2"
 	casting_time = "Action"
 	casting_range = "120 feet"
-	components = "V, S"
+	components = ("V", "S")
 	materials = ""
 	duration = "Instantaneous"
 	ritual = False
@@ -125,7 +125,7 @@ class Scrying(Spell):
 	level = "5"
 	casting_time = "10 Min."
 	casting_range = "Self"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a focus worth at least 1,000 gp, such as a crystal ball, a silver mirror, or a font filled with holy water"
 	duration = "Concentration, up to 10 minutes"
 	ritual = False
@@ -150,7 +150,7 @@ class SearingSmite(Spell):
 	level = "1"
 	casting_time = "Bonus"
 	casting_range = "Self"
-	components = "V"
+	components = ("V")
 	materials = ""
 	duration = "Concentration, up to 1 minute"
 	ritual = False
@@ -167,7 +167,7 @@ class SeeInvisibility(Spell):
 	level = "2"
 	casting_time = "Action"
 	casting_range = "Self"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a pinch of talc and a small sprinkling of powdered silver"
 	duration = "1 hour"
 	ritual = False
@@ -201,7 +201,7 @@ class Seeming(Spell):
 	level = "5"
 	casting_time = "Action"
 	casting_range = "30 feet"
-	components = "V, S"
+	components = ("V", "S")
 	materials = ""
 	duration = "8 hours"
 	ritual = False
@@ -223,7 +223,7 @@ class Sending(Spell):
 	level = "3"
 	casting_time = "Action"
 	casting_range = "Unlimited"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a short piece of fine copper wire"
 	duration = "1 round"
 	ritual = False
@@ -244,7 +244,7 @@ class SenseEmotion(UA)(Spell):
 	level = "1"
 	casting_time = "Action"
 	casting_range = "Self"
-	components = "V, S"
+	components = ("V", "S")
 	materials = ""
 	duration = "Concentration, up to 10 minutes"
 	ritual = False
@@ -269,7 +269,7 @@ class Sequester(Spell):
 	level = "7"
 	casting_time = "Action"
 	casting_range = "Touch"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a powder composed of diamond, emerald, ruby, and sapphire dust worth at least 5,000 gp, which the spell consumes"
 	duration = "Until dispelled"
 	ritual = False
@@ -296,7 +296,7 @@ class ShadowBlade(Spell):
 	level = "2"
 	casting_time = "Bonus"
 	casting_range = "Self"
-	components = "V, S"
+	components = ("V", "S")
 	materials = ""
 	duration = "Concentration, up to 1 minute"
 	ritual = False
@@ -317,7 +317,7 @@ class ShadowofMoil(Spell):
 	level = "4"
 	casting_time = "Action"
 	casting_range = "Self"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "an undead eyeball encased in a gem worth at least 150 gp"
 	duration = "Concentration, up to 1 minute"
 	ritual = False
@@ -343,7 +343,7 @@ class ShapeWater(Spell):
 	level = "Cantrip"
 	casting_time = "Action"
 	casting_range = "30 feet"
-	components = "S"
+	components = ("S")
 	materials = ""
 	duration = "Instantaneous or 1 hour (see below)"
 	ritual = False
@@ -391,7 +391,7 @@ class Shapechange(Spell):
 	level = "9"
 	casting_time = "Action"
 	casting_range = "Self"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a jade circlet worth at least 1,500 gp, which you must place on your head before you cast the spell"
 	duration = "Concentration, up to 1 hour"
 	ritual = False
@@ -415,7 +415,7 @@ class Shatter(Spell):
 	level = "2"
 	casting_time = "Action"
 	casting_range = "60 feet"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a chip of mica"
 	duration = "Instantaneous"
 	ritual = False
@@ -433,7 +433,7 @@ class Shield(Spell):
 	level = "1"
 	casting_time = "Reaction"
 	casting_range = "Self"
-	components = "V, S"
+	components = ("V", "S")
 	materials = ""
 	duration = "1 round"
 	ritual = False
@@ -449,7 +449,7 @@ class ShieldofFaith(Spell):
 	level = "1"
 	casting_time = "Bonus"
 	casting_range = "60 feet"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a small parchment with a bit of holy text written on it"
 	duration = "Concentration, up to 10 minutes"
 	ritual = False
@@ -469,7 +469,7 @@ class Shillelagh(Spell):
 	level = "Cantrip"
 	casting_time = "Bonus"
 	casting_range = "Touch"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "mistletoe, a shamrock leaf, and a club or quarterstaff"
 	duration = "1 minute"
 	ritual = False
@@ -490,7 +490,7 @@ class ShockingGrasp(Spell):
 	level = "Cantrip"
 	casting_time = "Action"
 	casting_range = "Touch"
-	components = "V, S"
+	components = ("V", "S")
 	materials = ""
 	duration = "Instantaneous"
 	ritual = False
@@ -510,7 +510,7 @@ class Shutdown(UA)(Spell):
 	level = "5"
 	casting_time = "Action"
 	casting_range = "120 feet"
-	components = "V, S"
+	components = ("V", "S")
 	materials = ""
 	duration = "Concentration, up to 1 minute"
 	ritual = False
@@ -533,7 +533,7 @@ class SickeningRadiance(Spell):
 	level = "4"
 	casting_time = "Action"
 	casting_range = "120 feet"
-	components = "V, S"
+	components = ("V", "S")
 	materials = ""
 	duration = "Concentration, up to 10 minutes"
 	ritual = False
@@ -552,7 +552,7 @@ class Silence(Spell):
 	level = "2"
 	casting_time = "Action"
 	casting_range = "120 feet"
-	components = "V, S"
+	components = ("V", "S")
 	materials = ""
 	duration = "Concentration, up to 10 minutes"
 	ritual = True
@@ -581,7 +581,7 @@ class SilentImage(Spell):
 	level = "1"
 	casting_time = "Action"
 	casting_range = "60 feet"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a bit of fleece"
 	duration = "Concentration, up to 10 minutes"
 	ritual = False
@@ -602,7 +602,7 @@ class SilveryBarbs(Spell):
 	level = "1"
 	casting_time = "Reaction"
 	casting_range = "60 feet"
-	components = "V"
+	components = ("V")
 	materials = ""
 	duration = "Instantaneous"
 	ritual = False
@@ -634,7 +634,7 @@ class Simulacrum(Spell):
 	level = "7"
 	casting_time = "12 Hr."
 	casting_range = "Touch"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "snow or ice in quantities sufficient to made a life-size copy of the duplicated creature; some hair, fingernail clippings, or other piece of that creature's body placed inside the snow or ice; and powdered ruby worth 1,500 gp, sprinkled over the duplicate and consumed by the spell"
 	duration = "Until dispelled"
 	ritual = False
@@ -655,7 +655,7 @@ class SkillEmpowerment(Spell):
 	level = "5"
 	casting_time = "Action"
 	casting_range = "Touch"
-	components = "V, S"
+	components = ("V", "S")
 	materials = ""
 	duration = "Concentration, up to 1 hour"
 	ritual = False
@@ -673,7 +673,7 @@ class Skywrite(Spell):
 	level = "2"
 	casting_time = "Action"
 	casting_range = "Sight"
-	components = "V, S"
+	components = ("V", "S")
 	materials = ""
 	duration = "Concentration, up to 1 hour"
 	ritual = True
@@ -702,7 +702,7 @@ class Sleep(Spell):
 	level = "1"
 	casting_time = "Action"
 	casting_range = "90 feet"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a pinch of fine sand, rose petals, or a cricket"
 	duration = "1 minute"
 	ritual = False
@@ -726,7 +726,7 @@ class SleetStorm(Spell):
 	level = "3"
 	casting_time = "Action"
 	casting_range = "150 feet"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a pinch of dust and a few drops of water"
 	duration = "Concentration, up to 1 minute"
 	ritual = False
@@ -754,7 +754,7 @@ class Slow(Spell):
 	level = "3"
 	casting_time = "Action"
 	casting_range = "120 feet"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a drop of molasses"
 	duration = "Concentration, up to 1 minute"
 	ritual = False
@@ -784,7 +784,7 @@ class Snare(Spell):
 	level = "1"
 	casting_time = "1 Min."
 	casting_range = "Touch"
-	components = "S, M"
+	components = ("S", "M")
 	materials = "25 feet of rope, which the spell consumes"
 	duration = "8 hours"
 	ritual = False
@@ -813,7 +813,7 @@ class Snare(UA)(Spell):
 	level = "1"
 	casting_time = "1 Min."
 	casting_range = "Touch"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "30 feet of cord or rope, which is consumed by the spell"
 	duration = "Until dispelled or triggered"
 	ritual = False
@@ -833,7 +833,7 @@ class SnillocsSnowballSwarm(Spell):
 	level = "2"
 	casting_time = "Action"
 	casting_range = "90 feet"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a piece of ice or a small white rock chip"
 	duration = "Instantaneous"
 	ritual = False
@@ -873,7 +873,7 @@ class SoulCage(Spell):
 	level = "6"
 	casting_time = "Reaction"
 	casting_range = "60 feet"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a tiny silver cage worth 100 gp"
 	duration = "8 hours"
 	ritual = False
@@ -889,7 +889,7 @@ class SparetheDying(Spell):
 	level = "Cantrip"
 	casting_time = "Action"
 	casting_range = "Touch"
-	components = "V, S"
+	components = ("V", "S")
 	materials = ""
 	duration = "Instantaneous"
 	ritual = False
@@ -910,7 +910,7 @@ class SpeakwithAnimals(Spell):
 	level = "1"
 	casting_time = "Action"
 	casting_range = "Self"
-	components = "V, S"
+	components = ("V", "S")
 	materials = ""
 	duration = "10 minutes"
 	ritual = True
@@ -936,7 +936,7 @@ class SpeakwithDead(Spell):
 	level = "3"
 	casting_time = "Action"
 	casting_range = "10 feet"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "burning incense"
 	duration = "10 minutes"
 	ritual = False
@@ -966,7 +966,7 @@ class SpeakwithPlants(Spell):
 	level = "3"
 	casting_time = "Action"
 	casting_range = "Self (30-foot radius)"
-	components = "V, S"
+	components = ("V", "S")
 	materials = ""
 	duration = "10 minutes"
 	ritual = False
@@ -984,7 +984,7 @@ class SpiderClimb(Spell):
 	level = "2"
 	casting_time = "Action"
 	casting_range = "Touch"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a drop of bitumen and a spider"
 	duration = "Concentration, up to 1 hour"
 	ritual = False
@@ -1006,7 +1006,7 @@ class SpikeGrowth(Spell):
 	level = "2"
 	casting_time = "Action"
 	casting_range = "150 feet"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "seven sharp thorns or seven small twigs, each sharpened to a point"
 	duration = "Concentration, up to 10 minutes"
 	ritual = False
@@ -1033,7 +1033,7 @@ class SpiritGuardians(Spell):
 	level = "3"
 	casting_time = "Action"
 	casting_range = "Self (15-foot radius)"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a holy symbol"
 	duration = "Concentration, up to 10 minutes"
 	ritual = False
@@ -1058,7 +1058,7 @@ class SpiritShroud(Spell):
 	level = "3"
 	casting_time = "Bonus"
 	casting_range = "Self"
-	components = "V, S"
+	components = ("V", "S")
 	materials = ""
 	duration = "Concentration, up to 1 minute"
 	ritual = False
@@ -1083,7 +1083,7 @@ class SpiritShroud(Spell):
 	level = "3"
 	casting_time = "Bonus"
 	casting_range = "Self"
-	components = "V, S"
+	components = ("V", "S")
 	materials = ""
 	duration = "Concentration, up to 1 minute"
 	ritual = False
@@ -1110,7 +1110,7 @@ class SpiritofDeath(Spell):
 	level = "4"
 	casting_time = "Action"
 	casting_range = "60 feet"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a gilded playing card depicting an avatar of death worth at least 400 gp"
 	duration = "Concentration, up to 1 minute"
 	ritual = False
@@ -1136,7 +1136,7 @@ class SpiritualWeapon(Spell):
 	level = "2"
 	casting_time = "Bonus"
 	casting_range = "60 feet"
-	components = "V, S"
+	components = ("V", "S")
 	materials = ""
 	duration = "1 minute"
 	ritual = False
@@ -1159,7 +1159,7 @@ class SprayofCards(Spell):
 	level = "2"
 	casting_time = "Action"
 	casting_range = "Self (15-foot cone)"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a deck of cards"
 	duration = "Instantaneous"
 	ritual = False
@@ -1179,7 +1179,7 @@ class StaggeringSmite(Spell):
 	level = "4"
 	casting_time = "Bonus"
 	casting_range = "Self"
-	components = "V"
+	components = ("V")
 	materials = ""
 	duration = "Concentration, up to 1 minute"
 	ritual = False
@@ -1198,7 +1198,7 @@ class SteelWindStrike(Spell):
 	level = "5"
 	casting_time = "Action"
 	casting_range = "30 feet"
-	components = "S, M"
+	components = ("S", "M")
 	materials = "a melee weapon worth at least 1 sp"
 	duration = "Instantaneous"
 	ritual = False
@@ -1222,7 +1222,7 @@ class StinkingCloud(Spell):
 	level = "3"
 	casting_time = "Action"
 	casting_range = "90 feet"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a rotten egg or several skunk cabbage leaves"
 	duration = "Concentration, up to 1 minute"
 	ritual = False
@@ -1244,7 +1244,7 @@ class StoneShape(Spell):
 	level = "4"
 	casting_time = "Action"
 	casting_range = "Touch"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "soft clay, which must be worked into roughly the desired shape of the stone object"
 	duration = "Instantaneous"
 	ritual = False
@@ -1261,7 +1261,7 @@ class Stoneskin(Spell):
 	level = "4"
 	casting_time = "Action"
 	casting_range = "Touch"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "diamond dust worth 100 gp, which the spell consumes"
 	duration = "Concentration, up to 1 hour"
 	ritual = False
@@ -1289,7 +1289,7 @@ class StormSphere(Spell):
 	level = "4"
 	casting_time = "Action"
 	casting_range = "150 feet"
-	components = "V, S"
+	components = ("V", "S")
 	materials = ""
 	duration = "Concentration, up to 1 minute"
 	ritual = False
@@ -1326,7 +1326,7 @@ class StormofVengeance(Spell):
 	level = "9"
 	casting_time = "Action"
 	casting_range = "Sight"
-	components = "V, S"
+	components = ("V", "S")
 	materials = ""
 	duration = "Concentration, up to 1 minute"
 	ritual = False
@@ -1343,7 +1343,7 @@ class SuddenAwakening(UA)(Spell):
 	level = "1"
 	casting_time = "Bonus"
 	casting_range = "10 feet"
-	components = "V"
+	components = ("V")
 	materials = ""
 	duration = "Instantaneous"
 	ritual = False
@@ -1374,7 +1374,7 @@ class Suggestion(Spell):
 	level = "2"
 	casting_time = "Action"
 	casting_range = "30 feet"
-	components = "V, M"
+	components = ("V", "M")
 	materials = "a snake's tongue and either a bit of honeycomb or a drop of sweet oil"
 	duration = "Concentration, up to 8 hours"
 	ritual = False
@@ -1402,7 +1402,7 @@ class SummonAberrantSpirit(Spell):
 	level = "4"
 	casting_time = "Action"
 	casting_range = "90 feet"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a pickled tentacle and an eyeball in a crystal vial worth at least 400 gp"
 	duration = "Concentration, up to 1 hour"
 	ritual = False
@@ -1429,7 +1429,7 @@ class SummonAberration(Spell):
 	level = "4"
 	casting_time = "Action"
 	casting_range = "90 feet"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a pickled tentacle and an eyeball in a platinum-inlaid vial worth at least 400 gp"
 	duration = "Concentration, up to 1 hour"
 	ritual = False
@@ -1456,7 +1456,7 @@ class SummonBeast(Spell):
 	level = "2"
 	casting_time = "Action"
 	casting_range = "90 feet"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a feather, tuft of fur, and fish tail inside a gilded acorn worth at least 200 gp"
 	duration = "Concentration, up to 1 hour"
 	ritual = False
@@ -1485,7 +1485,7 @@ class SummonBestialSpirit(Spell):
 	level = "2"
 	casting_time = "Action"
 	casting_range = "90 feet"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a feather, tuft of fur, and fish tail inside a gilded acorn worth at least 200 gp"
 	duration = "Concentration, up to 1 hour"
 	ritual = False
@@ -1511,7 +1511,7 @@ class SummonCelestial(Spell):
 	level = "5"
 	casting_time = "Action"
 	casting_range = "90 feet"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a golden reliquary worth at least 500 gp"
 	duration = "Concentration, up to 1 hour"
 	ritual = False
@@ -1538,7 +1538,7 @@ class SummonCelestialSpirit(Spell):
 	level = "5"
 	casting_time = "Action"
 	casting_range = "90 feet"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a golden reliquary worth at least 500 gp"
 	duration = "Concentration, up to 1 hour"
 	ritual = False
@@ -1565,7 +1565,7 @@ class SummonConstruct(Spell):
 	level = "4"
 	casting_time = "Action"
 	casting_range = "90 feet"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "an ornate stone and metal lockbox worth at least 400 gp"
 	duration = "Concentration, up to 1 hour"
 	ritual = False
@@ -1592,7 +1592,7 @@ class SummonDraconicSpirit(Spell):
 	level = "5"
 	casting_time = "Action"
 	casting_range = "60 feet"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "an object with the image of a dragon engraved on it, worth at least 500 gp"
 	duration = "Concentration, up to 1 hour"
 	ritual = False
@@ -1619,7 +1619,7 @@ class SummonDraconicSpirit(Spell):
 	level = "5"
 	casting_time = "Action"
 	casting_range = "60 feet"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "an art object from a dragon's hoard, worth at least 500 gp"
 	duration = "Concentration, up to 1 hour"
 	ritual = False
@@ -1646,7 +1646,7 @@ class SummonElemental(Spell):
 	level = "4"
 	casting_time = "Action"
 	casting_range = "90 feet"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "air, a pebble, ash, and water inside a gold-inlaid vial worth at least 400 gp"
 	duration = "Concentration, up to 1 hour"
 	ritual = False
@@ -1674,7 +1674,7 @@ class SummonElementalSpirit(Spell):
 	level = "4"
 	casting_time = "Action"
 	casting_range = "90 feet"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "air, a pebble, ash, and water inside a crystal vial worth at least 400 gp"
 	duration = "Concentration, up to 1 hour"
 	ritual = False
@@ -1701,7 +1701,7 @@ class SummonFey(Spell):
 	level = "3"
 	casting_time = "Action"
 	casting_range = "90 feet"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a gilded flower worth at least 300 gp"
 	duration = "Concentration, up to 1 hour"
 	ritual = False
@@ -1729,7 +1729,7 @@ class SummonFeySpirit(Spell):
 	level = "3"
 	casting_time = "Action"
 	casting_range = "90 feet"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a gilded flower worth at least 300 gp"
 	duration = "Concentration, up to 1 hour"
 	ritual = False
@@ -1756,7 +1756,7 @@ class SummonFiend(Spell):
 	level = "6"
 	casting_time = "Action"
 	casting_range = "90 feet"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "humanoid blood inside a ruby vial worth at least 600 gp"
 	duration = "Concentration, up to 1 hour"
 	ritual = False
@@ -1784,7 +1784,7 @@ class SummonFiendishSpirit(Spell):
 	level = "6"
 	casting_time = "Action"
 	casting_range = "90 feet"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "humanoid blood inside a ruby vial worth at least 600 gp"
 	duration = "Concentration, up to 1 hour"
 	ritual = False
@@ -1823,7 +1823,7 @@ class SummonGreaterDemon(Spell):
 	level = "4"
 	casting_time = "Action"
 	casting_range = "60 feet"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a vial of blood from a humanoid killed within the past 24 hours"
 	duration = "Concentration, up to 1 hour"
 	ritual = False
@@ -1856,7 +1856,7 @@ class SummonLesserDemons(Spell):
 	level = "3"
 	casting_time = "Action"
 	casting_range = "60 feet"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a vial of blood from a humanoid killed within the past 24 hours"
 	duration = "Concentration, up to 1 hour"
 	ritual = False
@@ -1884,7 +1884,7 @@ class SummonShadowSpirit(Spell):
 	level = "3"
 	casting_time = "Action"
 	casting_range = "90 feet"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "tears inside a crystal vial worth at least 300 gp"
 	duration = "Concentration, up to 1 hour"
 	ritual = False
@@ -1911,7 +1911,7 @@ class SummonShadowspawn(Spell):
 	level = "3"
 	casting_time = "Action"
 	casting_range = "90 feet"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "tears inside a gem worth at least 300 gp"
 	duration = "Concentration, up to 1 hour"
 	ritual = False
@@ -1938,7 +1938,7 @@ class SummonUndead(Spell):
 	level = "3"
 	casting_time = "Action"
 	casting_range = "90 feet"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a gilded skull worth at least 300 gp"
 	duration = "Concentration, up to 1 hour"
 	ritual = False
@@ -1966,7 +1966,7 @@ class SummonUndeadSpirit(Spell):
 	level = "3"
 	casting_time = "Action"
 	casting_range = "90 feet"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a gilded humanoid skull worth at least 300 gp"
 	duration = "Concentration, up to 1 hour"
 	ritual = False
@@ -1994,7 +1994,7 @@ class SummonWarriorSpirit(Spell):
 	level = "3"
 	casting_time = "Action"
 	casting_range = "90 feet"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a gilded playing card depicting a knight worth at least 300 gp"
 	duration = "Concentration, up to 1 hour"
 	ritual = False
@@ -2018,7 +2018,7 @@ class Sunbeam(Spell):
 	level = "6"
 	casting_time = "Action"
 	casting_range = "Self (60-foot line)"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a magnifying glass"
 	duration = "Concentration, up to 1 minute"
 	ritual = False
@@ -2041,7 +2041,7 @@ class Sunburst(Spell):
 	level = "8"
 	casting_time = "Action"
 	casting_range = "150 feet"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "fire and a piece of sunstone"
 	duration = "Instantaneous"
 	ritual = False
@@ -2064,7 +2064,7 @@ class SwiftQuiver(Spell):
 	level = "5"
 	casting_time = "Bonus"
 	casting_range = "Touch"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a quiver containing at least one piece of ammunition"
 	duration = "Concentration, up to 1 minute"
 	ritual = False
@@ -2083,7 +2083,7 @@ class SwordBurst(Spell):
 	level = "Cantrip"
 	casting_time = "Action"
 	casting_range = "Self (5-foot radius)"
-	components = "V"
+	components = ("V")
 	materials = ""
 	duration = "Instantaneous"
 	ritual = False
@@ -2148,7 +2148,7 @@ class Symbol(Spell):
 	level = "7"
 	casting_time = "1 Min."
 	casting_range = "Touch"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "mercury, phosphorus, and powdered diamond and opal with a total value of at least 1,000 gp, which the spell consumes"
 	duration = "Until dispelled or triggered"
 	ritual = False
@@ -2173,7 +2173,7 @@ class SynapticStatic(Spell):
 	level = "5"
 	casting_time = "Action"
 	casting_range = "120 feet"
-	components = "V, S"
+	components = ("V", "S")
 	materials = ""
 	duration = "Instantaneous"
 	ritual = False
@@ -2200,7 +2200,7 @@ class Synchronicity(UA)(Spell):
 	level = "4"
 	casting_time = "Action"
 	casting_range = "Touch"
-	components = "V, S"
+	components = ("V", "S")
 	materials = ""
 	duration = "Concentration, up to 1 hour"
 	ritual = False
@@ -2225,7 +2225,7 @@ class SystemBackdoor(UA)(Spell):
 	level = "4"
 	casting_time = "1 Min."
 	casting_range = "Self"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "hacking tools"
 	duration = "Concentration, up to 1 hour"
 	ritual = False

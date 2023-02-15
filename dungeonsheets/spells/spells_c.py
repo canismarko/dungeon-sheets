@@ -26,7 +26,7 @@ class CallLightning(Spell):
 	level = "3"
 	casting_time = "Action"
 	casting_range = "120 feet"
-	components = "V, S"
+	components = ("V", "S")
 	materials = ""
 	duration = "Concentration, up to 10 minutes"
 	ritual = False
@@ -52,7 +52,7 @@ class CalmEmotions(Spell):
 	level = "2"
 	casting_time = "Action"
 	casting_range = "60 feet"
-	components = "V, S"
+	components = ("V", "S")
 	materials = ""
 	duration = "Concentration, up to 1 minute"
 	ritual = False
@@ -77,7 +77,7 @@ class Catapult(Spell):
 	level = "1"
 	casting_time = "Action"
 	casting_range = "60 feet"
-	components = "S"
+	components = ("S")
 	materials = ""
 	duration = "Instantaneous"
 	ritual = False
@@ -100,7 +100,7 @@ class Catnap(Spell):
 	level = "3"
 	casting_time = "Action"
 	casting_range = "30 feet"
-	components = "S, M"
+	components = ("S", "M")
 	materials = "a pinch of sand"
 	duration = "10 minutes"
 	ritual = False
@@ -122,7 +122,7 @@ class CauseFear(Spell):
 	level = "1"
 	casting_time = "Action"
 	casting_range = "60 feet"
-	components = "V"
+	components = ("V")
 	materials = ""
 	duration = "Concentration, up to 1 minute"
 	ritual = False
@@ -141,7 +141,7 @@ class CauseFear(UA)(Spell):
 	level = "1"
 	casting_time = "Action"
 	casting_range = "60 feet"
-	components = "V, S"
+	components = ("V", "S")
 	materials = ""
 	duration = "Concentration, up to 1 minute"
 	ritual = False
@@ -175,7 +175,7 @@ class Ceremony(Spell):
 	level = "1"
 	casting_time = "1 Hr."
 	casting_range = "Touch"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "25 gp worth of powdered silver, which the spell consumes"
 	duration = "Instantaneous"
 	ritual = True
@@ -215,7 +215,7 @@ class Ceremony(UA)(Spell):
 	level = "1"
 	casting_time = "1 Hr."
 	casting_range = "Touch"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "25 gp worth of powdered silver"
 	duration = "Instantaneous (see text)"
 	ritual = True
@@ -238,7 +238,7 @@ class ChainLightning(Spell):
 	level = "6"
 	casting_time = "Action"
 	casting_range = "150 feet"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a bit of fur; a piece of amber, glass, or a crystal rod; and three silver pins"
 	duration = "Instantaneous"
 	ritual = False
@@ -265,7 +265,7 @@ class ChaosBolt(Spell):
 	level = "1"
 	casting_time = "Action"
 	casting_range = "120 feet"
-	components = "V, S"
+	components = ("V", "S")
 	materials = ""
 	duration = "Instantaneous"
 	ritual = False
@@ -291,7 +291,7 @@ class ChaosBolt(UA)(Spell):
 	level = "1"
 	casting_time = "Action"
 	casting_range = "120 feet"
-	components = "V, S"
+	components = ("V", "S")
 	materials = ""
 	duration = "Instantaneous"
 	ritual = False
@@ -314,7 +314,7 @@ class CharmMonster(Spell):
 	level = "4"
 	casting_time = "Action"
 	casting_range = "30 feet"
-	components = "V, S"
+	components = ("V", "S")
 	materials = ""
 	duration = "1 hour"
 	ritual = False
@@ -338,7 +338,7 @@ class CharmPerson(Spell):
 	level = "1"
 	casting_time = "Action"
 	casting_range = "30 feet"
-	components = "V, S"
+	components = ("V", "S")
 	materials = ""
 	duration = "1 hour"
 	ritual = False
@@ -360,7 +360,7 @@ class ChillTouch(Spell):
 	level = "Cantrip"
 	casting_time = "Action"
 	casting_range = "120 feet"
-	components = "V, S"
+	components = ("V", "S")
 	materials = ""
 	duration = "1 round"
 	ritual = False
@@ -381,7 +381,7 @@ class ChromaticOrb(Spell):
 	level = "1"
 	casting_time = "Action"
 	casting_range = "90 feet"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a diamond worth at least 50 gp"
 	duration = "Instantaneous"
 	ritual = False
@@ -401,7 +401,7 @@ class CircleofDeath(Spell):
 	level = "6"
 	casting_time = "Action"
 	casting_range = "150 feet"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "the powder of a crushed black pearl worth at least 500 gp"
 	duration = "Instantaneous"
 	ritual = False
@@ -423,7 +423,7 @@ class CircleofPower(Spell):
 	level = "5"
 	casting_time = "Action"
 	casting_range = "Self (30-foot radius)"
-	components = "V"
+	components = ("V")
 	materials = ""
 	duration = "Concentration, up to 10 minutes"
 	ritual = False
@@ -447,7 +447,7 @@ class Clairvoyance(Spell):
 	level = "3"
 	casting_time = "10 Min."
 	casting_range = "1 mile"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a focus worth at least 100 gp, either a jeweled horn for hearing or a glass eye for seeing"
 	duration = "Concentration, up to 10 minutes"
 	ritual = False
@@ -474,7 +474,7 @@ class Clone(Spell):
 	level = "8"
 	casting_time = "1 Hr."
 	casting_range = "Touch"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a diamond worth at least 1,000 gp and at least 1 cubic inch of flesh of the creature that is to be cloned, which the spell consumes, and a vessel worth at least 2,000 gp that has a sealable lid and is large enough to hold the creature being cloned, such as a huge urn, coffin, mud-filled cyst in the ground, or crystal container filled with salt water"
 	duration = "Instantaneous"
 	ritual = False
@@ -494,7 +494,7 @@ class CloudofDaggers(Spell):
 	level = "2"
 	casting_time = "Action"
 	casting_range = "60 feet"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a sliver of glass"
 	duration = "Concentration, up to 1 minute"
 	ritual = False
@@ -522,7 +522,7 @@ class Cloudkill(Spell):
 	level = "5"
 	casting_time = "Action"
 	casting_range = "120 feet"
-	components = "V, S"
+	components = ("V", "S")
 	materials = ""
 	duration = "Concentration, up to 10 minutes"
 	ritual = False
@@ -548,7 +548,7 @@ class ColorSpray(Spell):
 	level = "1"
 	casting_time = "Action"
 	casting_range = "Self (15-foot cone)"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a pinch of powder or sand that is colored red, yellow, and blue"
 	duration = "1 round"
 	ritual = False
@@ -581,7 +581,7 @@ class Command(Spell):
 	level = "1"
 	casting_time = "Action"
 	casting_range = "60 feet"
-	components = "V"
+	components = ("V")
 	materials = ""
 	duration = "1 round"
 	ritual = False
@@ -606,7 +606,7 @@ class Commune(Spell):
 	level = "5"
 	casting_time = "1 Min."
 	casting_range = "Self"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "incense and a vial of holy or unholy water"
 	duration = "1 minute"
 	ritual = True
@@ -633,7 +633,7 @@ class CommunewithCity(UA)(Spell):
 	level = "5"
 	casting_time = "1 Min."
 	casting_range = "Self"
-	components = "V, S"
+	components = ("V", "S")
 	materials = ""
 	duration = "Instantaneous"
 	ritual = True
@@ -660,7 +660,7 @@ class CommunewithNature(Spell):
 	level = "5"
 	casting_time = "1 Min."
 	casting_range = "Self"
-	components = "V, S"
+	components = ("V", "S")
 	materials = ""
 	duration = "Instantaneous"
 	ritual = True
@@ -685,7 +685,7 @@ class CompelledDuel(Spell):
 	level = "1"
 	casting_time = "Bonus"
 	casting_range = "30 feet"
-	components = "V"
+	components = ("V")
 	materials = ""
 	duration = "Concentration, up to 1 minute"
 	ritual = False
@@ -705,7 +705,7 @@ class ComprehendLanguages(Spell):
 	level = "1"
 	casting_time = "Action"
 	casting_range = "Self"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a pinch of soot and salt"
 	duration = "1 hour"
 	ritual = True
@@ -731,7 +731,7 @@ class Compulsion(Spell):
 	level = "4"
 	casting_time = "Action"
 	casting_range = "30 feet"
-	components = "V, S"
+	components = ("V", "S")
 	materials = ""
 	duration = "Concentration, up to 1 minute"
 	ritual = False
@@ -752,7 +752,7 @@ class ConeofCold(Spell):
 	level = "5"
 	casting_time = "Action"
 	casting_range = "Self (60-foot cone)"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a small crystal or glass cone"
 	duration = "Instantaneous"
 	ritual = False
@@ -784,7 +784,7 @@ class Confusion(Spell):
 	level = "4"
 	casting_time = "Action"
 	casting_range = "90 feet"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "three nut shells"
 	duration = "Concentration, up to 1 minute"
 	ritual = False
@@ -814,7 +814,7 @@ class ConjureAnimals(Spell):
 	level = "3"
 	casting_time = "Action"
 	casting_range = "60 feet"
-	components = "V, S"
+	components = ("V", "S")
 	materials = ""
 	duration = "Concentration, up to 1 hour"
 	ritual = False
@@ -840,7 +840,7 @@ class ConjureBarlgura(UA)(Spell):
 	level = "4"
 	casting_time = "Action"
 	casting_range = "60 feet"
-	components = "V, S"
+	components = ("V", "S")
 	materials = ""
 	duration = "Up to 10 minutes"
 	ritual = False
@@ -861,7 +861,7 @@ class ConjureBarrage(Spell):
 	level = "3"
 	casting_time = "Action"
 	casting_range = "Self (60-foot cone)"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "one piece of ammunition or a thrown weapon"
 	duration = "Instantaneous"
 	ritual = False
@@ -885,7 +885,7 @@ class ConjureCelestial(Spell):
 	level = "7"
 	casting_time = "1 Min."
 	casting_range = "90 feet"
-	components = "V, S"
+	components = ("V", "S")
 	materials = ""
 	duration = "Concentration, up to 1 hour"
 	ritual = False
@@ -917,7 +917,7 @@ class ConjureElemental(Spell):
 	level = "5"
 	casting_time = "1 Min."
 	casting_range = "90 feet"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "burning incense for air, soft clay for earth, sulfur and phosphorus for fire, or water and sand for water"
 	duration = "Concentration, up to 1 hour"
 	ritual = False
@@ -948,7 +948,7 @@ class ConjureFey(Spell):
 	level = "6"
 	casting_time = "1 Min."
 	casting_range = "90 feet"
-	components = "V, S"
+	components = ("V", "S")
 	materials = ""
 	duration = "Concentration, up to 1 hour"
 	ritual = False
@@ -980,7 +980,7 @@ class ConjureHezrou(UA)(Spell):
 	level = "7"
 	casting_time = "Action"
 	casting_range = "60 feet"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "food worth at least 100 gp, which the spell consumes"
 	duration = "Concentration, up to 1 hour"
 	ritual = False
@@ -1013,7 +1013,7 @@ class ConjureKnowbot(UA)(Spell):
 	level = "4"
 	casting_time = "Action"
 	casting_range = "Touch"
-	components = "V, S"
+	components = ("V", "S")
 	materials = ""
 	duration = "10 minutes"
 	ritual = False
@@ -1040,7 +1040,7 @@ class ConjureLesserDemon(UA)(Spell):
 	level = "3"
 	casting_time = "Action"
 	casting_range = "60 feet"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a vial of blood from an intelligent humanoid killed within the past 24 hours"
 	duration = "Concentration, up to 1 hour"
 	ritual = False
@@ -1069,7 +1069,7 @@ class ConjureMinorElementals(Spell):
 	level = "4"
 	casting_time = "1 Min."
 	casting_range = "90 feet"
-	components = "V, S"
+	components = ("V", "S")
 	materials = ""
 	duration = "Concentration, up to 1 hour"
 	ritual = False
@@ -1098,7 +1098,7 @@ class ConjureShadowDemon(UA)(Spell):
 	level = "4"
 	casting_time = "Action"
 	casting_range = "60 feet"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a vial of blood from an intelligent humanoid killed within the past 24 hours"
 	duration = "Concentration, up to 1 hour"
 	ritual = False
@@ -1120,7 +1120,7 @@ class ConjureVolley(Spell):
 	level = "5"
 	casting_time = "Action"
 	casting_range = "150 feet"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "one piece of ammunition or one thrown weapon"
 	duration = "Instantaneous"
 	ritual = False
@@ -1155,7 +1155,7 @@ class ConjureVrock(UA)(Spell):
 	level = "5"
 	casting_time = "Action"
 	casting_range = "60 feet"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a gem worth at least 100 gp, which the spell consumes"
 	duration = "Concentration, up to 1 hour"
 	ritual = False
@@ -1184,7 +1184,7 @@ class ConjureWoodlandBeings(Spell):
 	level = "4"
 	casting_time = "Action"
 	casting_range = "60 feet"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "one holly berry per creature summoned"
 	duration = "Concentration, up to 1 hour"
 	ritual = False
@@ -1212,7 +1212,7 @@ class ContactOtherPlane(Spell):
 	level = "5"
 	casting_time = "1 Min."
 	casting_range = "Self"
-	components = "V"
+	components = ("V")
 	materials = ""
 	duration = "1 minute"
 	ritual = True
@@ -1252,7 +1252,7 @@ class Contagion(Spell):
 	level = "5"
 	casting_time = "Action"
 	casting_range = "Touch"
-	components = "V, S"
+	components = ("V", "S")
 	materials = ""
 	duration = "7 days"
 	ritual = False
@@ -1281,7 +1281,7 @@ class Contingency(Spell):
 	level = "6"
 	casting_time = "10 Min."
 	casting_range = "Self"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a statuette of yourself carved from ivory and decorated with gems worth at least 1,500 gp"
 	duration = "10 days"
 	ritual = False
@@ -1299,7 +1299,7 @@ class ContinualFlame(Spell):
 	level = "2"
 	casting_time = "Action"
 	casting_range = "Touch"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "ruby dust worth 50 gp, which the spell consumes"
 	duration = "Until dispelled"
 	ritual = False
@@ -1325,7 +1325,7 @@ class ControlFlames(Spell):
 	level = "Cantrip"
 	casting_time = "Action"
 	casting_range = "60 feet"
-	components = "S"
+	components = ("S")
 	materials = ""
 	duration = "Instantaneous or 1 hour (see below)"
 	ritual = False
@@ -1381,7 +1381,7 @@ class ControlWater(Spell):
 	level = "4"
 	casting_time = "Action"
 	casting_range = "300 feet"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a drop of water and a pinch of dust"
 	duration = "Concentration, up to 10 minutes"
 	ritual = False
@@ -1411,7 +1411,7 @@ class ControlWeather(Spell):
 	level = "8"
 	casting_time = "10 Min."
 	casting_range = "Self (5-mile radius)"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "burning incense and bits of earth and wood mixed in water"
 	duration = "Concentration, up to 8 hours"
 	ritual = False
@@ -1447,7 +1447,7 @@ class ControlWinds(Spell):
 	level = "5"
 	casting_time = "Action"
 	casting_range = "300 feet"
-	components = "V, S"
+	components = ("V", "S")
 	materials = ""
 	duration = "Concentration, up to 1 hour"
 	ritual = False
@@ -1472,7 +1472,7 @@ class CordonofArrows(Spell):
 	level = "2"
 	casting_time = "Action"
 	casting_range = "5 feet"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "four or more arrows or bolts"
 	duration = "8 hours"
 	ritual = False
@@ -1494,7 +1494,7 @@ class Counterspell(Spell):
 	level = "3"
 	casting_time = "Reaction"
 	casting_range = "60 feet"
-	components = "S"
+	components = ("S")
 	materials = ""
 	duration = "Instantaneous"
 	ritual = False
@@ -1517,7 +1517,7 @@ class CreateBonfire(Spell):
 	level = "Cantrip"
 	casting_time = "Action"
 	casting_range = "60 feet"
-	components = "V, S"
+	components = ("V", "S")
 	materials = ""
 	duration = "Concentration, up to 1 minute"
 	ritual = False
@@ -1536,7 +1536,7 @@ class CreateFoodandWater(Spell):
 	level = "3"
 	casting_time = "Action"
 	casting_range = "30 feet"
-	components = "V, S"
+	components = ("V", "S")
 	materials = ""
 	duration = "Instantaneous"
 	ritual = False
@@ -1567,7 +1567,7 @@ class CreateHomunculus(Spell):
 	level = "6"
 	casting_time = "1 Hr."
 	casting_range = "Touch"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "clay, ash, and mandrake root, all of which the spell consumes, and a jewel-encrusted dagger worth at least 1,000 gp"
 	duration = "Instantaneous"
 	ritual = False
@@ -1592,7 +1592,7 @@ class CreateMagen(Spell):
 	level = "7"
 	casting_time = "1 Hr."
 	casting_range = "Touch"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a vial of quicksilver worth 500 gp and a life-sized human doll, both of which the spell consumes, and an intricate crystal rod worth at least 1,500 gp that is not consumed"
 	duration = "Instantaneous"
 	ritual = False
@@ -1609,7 +1609,7 @@ class CreateSpelljammingHelm(Spell):
 	level = "5"
 	casting_time = "Action"
 	casting_range = "Touch"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a crystal rod worth at least 5,000 gp, which the spell consumes"
 	duration = "Instantaneous"
 	ritual = False
@@ -1647,7 +1647,7 @@ class CreateUndead(Spell):
 	level = "6"
 	casting_time = "1 Min."
 	casting_range = "10 feet"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "one clay pot filled with grave dirt, one clay pot filled with brackish water, and one 150 gp black onyx stone for each corpse"
 	duration = "Instantaneous"
 	ritual = False
@@ -1670,7 +1670,7 @@ class CreateorDestroyWater(Spell):
 	level = "1"
 	casting_time = "Action"
 	casting_range = "30 feet"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a drop of water if creating water or a few grains of sand if destroying it"
 	duration = "Instantaneous"
 	ritual = False
@@ -1697,7 +1697,7 @@ class Creation(Spell):
 	level = "5"
 	casting_time = "1 Min."
 	casting_range = "30 feet"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a tiny piece of matter of the same type of the item you plan to create"
 	duration = "Special"
 	ritual = False
@@ -1722,7 +1722,7 @@ class CrownofMadness(Spell):
 	level = "2"
 	casting_time = "Action"
 	casting_range = "120 feet"
-	components = "V, S"
+	components = ("V", "S")
 	materials = ""
 	duration = "Concentration, up to 1 minute"
 	ritual = False
@@ -1747,7 +1747,7 @@ class CrownofStars(Spell):
 	level = "7"
 	casting_time = "Action"
 	casting_range = "Self"
-	components = "V, S"
+	components = ("V", "S")
 	materials = ""
 	duration = "1 hour"
 	ritual = False
@@ -1766,7 +1766,7 @@ class CrusadersMantle(Spell):
 	level = "3"
 	casting_time = "Action"
 	casting_range = "Self (30-foot radius)"
-	components = "V"
+	components = ("V")
 	materials = ""
 	duration = "Concentration, up to 1 minute"
 	ritual = False
@@ -1785,7 +1785,7 @@ class CureWounds(Spell):
 	level = "1"
 	casting_time = "Action"
 	casting_range = "Touch"
-	components = "V, S"
+	components = ("V", "S")
 	materials = ""
 	duration = "Instantaneous"
 	ritual = False

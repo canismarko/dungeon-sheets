@@ -22,7 +22,7 @@ class WallofFire(Spell):
 	level = "4"
 	casting_time = "Action"
 	casting_range = "120 feet"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a small piece of phosphorus"
 	duration = "Concentration, up to 1 minute"
 	ritual = False
@@ -50,7 +50,7 @@ class WallofForce(Spell):
 	level = "5"
 	casting_time = "Action"
 	casting_range = "120 feet"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a pinch of powder made by crushing a clear gemstone"
 	duration = "Concentration, up to 10 minutes"
 	ritual = False
@@ -83,7 +83,7 @@ class WallofIce(Spell):
 	level = "6"
 	casting_time = "Action"
 	casting_range = "120 feet"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a small piece of quartz"
 	duration = "Concentration, up to 10 minutes"
 	ritual = False
@@ -118,7 +118,7 @@ class WallofLight(Spell):
 	level = "5"
 	casting_time = "Action"
 	casting_range = "120 feet"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a hand mirror"
 	duration = "Concentration, up to 10 minutes"
 	ritual = False
@@ -138,7 +138,7 @@ class WallofSand(Spell):
 	level = "3"
 	casting_time = "Action"
 	casting_range = "90 feet"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a handful of sand"
 	duration = "Concentration, up to 10 minutes"
 	ritual = False
@@ -176,7 +176,7 @@ class WallofStone(Spell):
 	level = "5"
 	casting_time = "Action"
 	casting_range = "120 feet"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a small block of granite"
 	duration = "Concentration, up to 10 minutes"
 	ritual = False
@@ -206,7 +206,7 @@ class WallofThorns(Spell):
 	level = "6"
 	casting_time = "Action"
 	casting_range = "120 feet"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a handful of thorns"
 	duration = "Concentration, up to 10 minutes"
 	ritual = False
@@ -233,7 +233,7 @@ class WallofWater(Spell):
 	level = "3"
 	casting_time = "Action"
 	casting_range = "60 feet"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a drop of water"
 	duration = "Concentration, up to 10 minutes"
 	ritual = False
@@ -255,7 +255,7 @@ class WardingBond(Spell):
 	level = "2"
 	casting_time = "Action"
 	casting_range = "Touch"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a pair of platinum rings worth at least 50 gp each, which you and the target must wear for the duration"
 	duration = "1 hour"
 	ritual = False
@@ -277,7 +277,7 @@ class WardingWind(Spell):
 	level = "2"
 	casting_time = "Action"
 	casting_range = "Self"
-	components = "V"
+	components = ("V")
 	materials = ""
 	duration = "Concentration, up to 10 minutes"
 	ritual = False
@@ -294,7 +294,7 @@ class WaterBreathing(Spell):
 	level = "3"
 	casting_time = "Action"
 	casting_range = "30 feet"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a short reed or piece of straw"
 	duration = "24 hours"
 	ritual = True
@@ -315,7 +315,7 @@ class WaterWalk(Spell):
 	level = "3"
 	casting_time = "Action"
 	casting_range = "30 feet"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a piece of cork"
 	duration = "1 hour"
 	ritual = True
@@ -352,7 +352,7 @@ class WaterySphere(Spell):
 	level = "4"
 	casting_time = "Action"
 	casting_range = "90 feet"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a droplet of water"
 	duration = "Concentration, up to 1 minute"
 	ritual = False
@@ -381,7 +381,7 @@ class Web(Spell):
 	level = "2"
 	casting_time = "Action"
 	casting_range = "60 feet"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a bit of spiderweb"
 	duration = "Concentration, up to 1 hour"
 	ritual = False
@@ -404,7 +404,7 @@ class Weird(Spell):
 	level = "9"
 	casting_time = "Action"
 	casting_range = "120 feet"
-	components = "V, S"
+	components = ("V", "S")
 	materials = ""
 	duration = "Concentration, up to 1 minute"
 	ritual = False
@@ -439,7 +439,7 @@ class Whirlwind(Spell):
 	level = "7"
 	casting_time = "Action"
 	casting_range = "300 feet"
-	components = "V, M"
+	components = ("V", "M")
 	materials = "a piece of straw"
 	duration = "Concentration, up to 1 minute"
 	ritual = False
@@ -467,7 +467,7 @@ class WildCunning(UA)(Spell):
 	level = "1"
 	casting_time = "Action"
 	casting_range = "120 feet"
-	components = "V, S"
+	components = ("V", "S")
 	materials = ""
 	duration = "Instantaneous"
 	ritual = True
@@ -493,7 +493,7 @@ class WindWalk(Spell):
 	level = "6"
 	casting_time = "1 Min."
 	casting_range = "30 feet"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "fire and holy water"
 	duration = "8 hours"
 	ritual = False
@@ -521,7 +521,7 @@ class WindWall(Spell):
 	level = "3"
 	casting_time = "Action"
 	casting_range = "120 feet"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a tiny fan and a feather of exotic origin"
 	duration = "Concentration, up to 1 minute"
 	ritual = False
@@ -577,7 +577,7 @@ class Wish(Spell):
 	level = "9"
 	casting_time = "Action"
 	casting_range = "Self"
-	components = "V"
+	components = ("V")
 	materials = ""
 	duration = "Instantaneous"
 	ritual = False
@@ -601,7 +601,7 @@ class WitchBolt(Spell):
 	level = "1"
 	casting_time = "Action"
 	casting_range = "30 feet"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a twig from a tree that has been struck by lightning"
 	duration = "Concentration, up to 1 minute"
 	ritual = False
@@ -626,7 +626,7 @@ class WitherandBloom(Spell):
 	level = "2"
 	casting_time = "Action"
 	casting_range = "60 feet"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a withered vine twisted into a loop"
 	duration = "Instantaneous"
 	ritual = False
@@ -645,7 +645,7 @@ class WordofRadiance(Spell):
 	level = "Cantrip"
 	casting_time = "Action"
 	casting_range = "5 feet"
-	components = "V, M"
+	components = ("V", "M")
 	materials = "a holy symbol"
 	duration = "Instantaneous"
 	ritual = False
@@ -668,7 +668,7 @@ class WordofRecall(Spell):
 	level = "6"
 	casting_time = "Action"
 	casting_range = "5 feet"
-	components = "V"
+	components = ("V")
 	materials = ""
 	duration = "Instantaneous"
 	ritual = False
@@ -700,7 +700,7 @@ class WrathofNature(Spell):
 	level = "5"
 	casting_time = "Action"
 	casting_range = "120 feet"
-	components = "V, S"
+	components = ("V", "S")
 	materials = ""
 	duration = "Concentration, up to 1 minute"
 	ritual = False
@@ -720,7 +720,7 @@ class WrathfulSmite(Spell):
 	level = "1"
 	casting_time = "Bonus"
 	casting_range = "Self"
-	components = "V"
+	components = ("V")
 	materials = ""
 	duration = "Concentration, up to 1 minute"
 	ritual = False
@@ -741,7 +741,7 @@ class Wristpocket(Spell):
 	level = "2"
 	casting_time = "Action"
 	casting_range = "Self"
-	components = "S"
+	components = ("S")
 	materials = ""
 	duration = "Concentration, up to 1 hour"
 	ritual = True

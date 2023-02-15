@@ -24,7 +24,7 @@ class RaiseDead(Spell):
 	level = "5"
 	casting_time = "1 Hr."
 	casting_range = "Touch"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a diamond worth at least 500 gp, which the spell consumes"
 	duration = "Instantaneous"
 	ritual = False
@@ -45,7 +45,7 @@ class RarysTelepathicBond(Spell):
 	level = "5"
 	casting_time = "Action"
 	casting_range = "30 feet"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "pieces of eggshell from two different kinds of creatures"
 	duration = "1 hour"
 	ritual = True
@@ -70,7 +70,7 @@ class RaulothimsPsychicLance(Spell):
 	level = "4"
 	casting_time = "Action"
 	casting_range = "120 feet"
-	components = "V"
+	components = ("V")
 	materials = ""
 	duration = "Instantaneous"
 	ritual = False
@@ -94,7 +94,7 @@ class RaulothimsPsychicLance(Spell):
 	level = "4"
 	casting_time = "Action"
 	casting_range = "120 feet"
-	components = "V"
+	components = ("V")
 	materials = ""
 	duration = "Instantaneous"
 	ritual = False
@@ -127,7 +127,7 @@ class RavenousVoid(Spell):
 	level = "9"
 	casting_time = "Action"
 	casting_range = "1000 feet"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a small, nine-pointed star made of iron"
 	duration = "Concentration, up to 1 minute"
 	ritual = False
@@ -147,7 +147,7 @@ class RayofEnfeeblement(Spell):
 	level = "2"
 	casting_time = "Action"
 	casting_range = "60 feet"
-	components = "V, S"
+	components = ("V", "S")
 	materials = ""
 	duration = "Concentration, up to 1 minute"
 	ritual = False
@@ -166,7 +166,7 @@ class RayofFrost(Spell):
 	level = "Cantrip"
 	casting_time = "Action"
 	casting_range = "60 feet"
-	components = "V, S"
+	components = ("V", "S")
 	materials = ""
 	duration = "Instantaneous"
 	ritual = False
@@ -187,7 +187,7 @@ class RayofSickness(Spell):
 	level = "1"
 	casting_time = "Action"
 	casting_range = "60 feet"
-	components = "V, S"
+	components = ("V", "S")
 	materials = ""
 	duration = "Instantaneous"
 	ritual = False
@@ -218,7 +218,7 @@ class RealityBreak(Spell):
 	level = "8"
 	casting_time = "Action"
 	casting_range = "60 feet"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a crystal prism"
 	duration = "Concentration, up to 1 minute"
 	ritual = False
@@ -239,7 +239,7 @@ class Regenerate(Spell):
 	level = "7"
 	casting_time = "1 Min."
 	casting_range = "Touch"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a prayer wheel and holy water"
 	duration = "1 hour"
 	ritual = False
@@ -268,7 +268,7 @@ class Reincarnate(Spell):
 	level = "5"
 	casting_time = "1 Hr."
 	casting_range = "Touch"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "rare oils and unguents worth at least 1,000 gp, which the spell consumes"
 	duration = "Instantaneous"
 	ritual = False
@@ -288,7 +288,7 @@ class RemoteAccess(UA)(Spell):
 	level = "1"
 	casting_time = "Action"
 	casting_range = "120 feet"
-	components = "V, S"
+	components = ("V", "S")
 	materials = ""
 	duration = "10 minutes"
 	ritual = False
@@ -306,7 +306,7 @@ class RemoveCurse(Spell):
 	level = "3"
 	casting_time = "Action"
 	casting_range = "Touch"
-	components = "V, S"
+	components = ("V", "S")
 	materials = ""
 	duration = "Instantaneous"
 	ritual = False
@@ -324,7 +324,7 @@ class Resistance(Spell):
 	level = "Cantrip"
 	casting_time = "Action"
 	casting_range = "Touch"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a miniature cloak"
 	duration = "Concentration, up to 1 minute"
 	ritual = False
@@ -353,7 +353,7 @@ class Resurrection(Spell):
 	level = "7"
 	casting_time = "1 Hr."
 	casting_range = "Touch"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a diamond worth at least 1,000 gp, which the spell consumes"
 	duration = "Instantaneous"
 	ritual = False
@@ -378,7 +378,7 @@ class ReverseGravity(Spell):
 	level = "7"
 	casting_time = "Action"
 	casting_range = "100 feet"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a lodestone and iron filings"
 	duration = "Concentration, up to 1 minute"
 	ritual = False
@@ -396,7 +396,7 @@ class Revivify(Spell):
 	level = "3"
 	casting_time = "Action"
 	casting_range = "Touch"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "diamonds worth 300 gp, which the spell consumes"
 	duration = "Instantaneous"
 	ritual = False
@@ -419,7 +419,7 @@ class RimesBindingIce(Spell):
 	level = "2"
 	casting_time = "Action"
 	casting_range = "Self (30-foot cone)"
-	components = "S, M"
+	components = ("S", "M")
 	materials = "a vial of meltwater"
 	duration = "Instantaneous"
 	ritual = False
@@ -445,7 +445,7 @@ class RopeTrick(Spell):
 	level = "2"
 	casting_time = "Action"
 	casting_range = "Touch"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "powdered corn extract and a twisted loop of parchment"
 	duration = "1 hour"
 	ritual = False

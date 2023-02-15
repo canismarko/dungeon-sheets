@@ -17,7 +17,7 @@ class HailofThorns(Spell):
 	level = "1"
 	casting_time = "Bonus"
 	casting_range = "Self"
-	components = "V"
+	components = ("V")
 	materials = ""
 	duration = "Concentration, up to 1 minute"
 	ritual = False
@@ -66,7 +66,7 @@ class Hallow(Spell):
 	level = "5"
 	casting_time = "24 Hr."
 	casting_range = "Touch"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "herbs, oils, and incense worth at least 1,000 gp, which the spell consumes"
 	duration = "Until dispelled"
 	ritual = False
@@ -93,7 +93,7 @@ class HallucinatoryTerrain(Spell):
 	level = "4"
 	casting_time = "10 Min."
 	casting_range = "300 feet"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a stone, a twig, and a bit of green plant"
 	duration = "24 hours"
 	ritual = False
@@ -112,7 +112,7 @@ class HandofRadiance(UA)(Spell):
 	level = "Cantrip"
 	casting_time = "Action"
 	casting_range = "Self (5-foot radius)"
-	components = "V, S"
+	components = ("V", "S")
 	materials = ""
 	duration = "Instantaneous"
 	ritual = False
@@ -134,7 +134,7 @@ class Harm(Spell):
 	level = "6"
 	casting_time = "Action"
 	casting_range = "60 feet"
-	components = "V, S"
+	components = ("V", "S")
 	materials = ""
 	duration = "Instantaneous"
 	ritual = False
@@ -155,7 +155,7 @@ class Haste(Spell):
 	level = "3"
 	casting_time = "Action"
 	casting_range = "30 feet"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a shaving of licorice root"
 	duration = "Concentration, up to 1 minute"
 	ritual = False
@@ -188,7 +188,7 @@ class Haywire(UA)(Spell):
 	level = "3"
 	casting_time = "Action"
 	casting_range = "90 feet"
-	components = "V, S"
+	components = ("V", "S")
 	materials = ""
 	duration = "Concentration, up to 1 minute"
 	ritual = False
@@ -208,7 +208,7 @@ class Heal(Spell):
 	level = "6"
 	casting_time = "Action"
 	casting_range = "60 feet"
-	components = "V, S"
+	components = ("V", "S")
 	materials = ""
 	duration = "Instantaneous"
 	ritual = False
@@ -227,7 +227,7 @@ class HealingElixir(UA)(Spell):
 	level = "1"
 	casting_time = "1 Min."
 	casting_range = "Self"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "alchemist's supplies"
 	duration = "24 hours"
 	ritual = False
@@ -254,7 +254,7 @@ class HealingSpirit(Spell):
 	level = "2"
 	casting_time = "Bonus"
 	casting_range = "60 feet"
-	components = "V, S"
+	components = ("V", "S")
 	materials = ""
 	duration = "Concentration, up to 1 minute"
 	ritual = False
@@ -273,7 +273,7 @@ class HealingWord(Spell):
 	level = "1"
 	casting_time = "Bonus"
 	casting_range = "60 feet"
-	components = "V"
+	components = ("V")
 	materials = ""
 	duration = "Instantaneous"
 	ritual = False
@@ -299,7 +299,7 @@ class HeatMetal(Spell):
 	level = "2"
 	casting_time = "Action"
 	casting_range = "60 feet"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a piece of iron and a flame"
 	duration = "Concentration, up to 1 minute"
 	ritual = False
@@ -319,7 +319,7 @@ class HellishRebuke(Spell):
 	level = "1"
 	casting_time = "Reaction"
 	casting_range = "60 feet"
-	components = "V, S"
+	components = ("V", "S")
 	materials = ""
 	duration = "Instantaneous"
 	ritual = False
@@ -342,7 +342,7 @@ class HeroesFeast(Spell):
 	level = "6"
 	casting_time = "10 Min."
 	casting_range = "30 feet"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a gem-encrusted bowl worth at least 1,000 gp, which the spell consumes"
 	duration = "Instantaneous"
 	ritual = False
@@ -363,7 +363,7 @@ class Heroism(Spell):
 	level = "1"
 	casting_time = "Action"
 	casting_range = "Touch"
-	components = "V, S"
+	components = ("V", "S")
 	materials = ""
 	duration = "Concentration, up to 1 minute"
 	ritual = False
@@ -388,7 +388,7 @@ class Hex(Spell):
 	level = "1"
 	casting_time = "Bonus"
 	casting_range = "90 feet"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "the petrified eye of a newt"
 	duration = "Concentration, up to 1 hour"
 	ritual = False
@@ -410,7 +410,7 @@ class HoldMonster(Spell):
 	level = "5"
 	casting_time = "Action"
 	casting_range = "90 feet"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a small, straight piece of iron"
 	duration = "Concentration, up to 1 minute"
 	ritual = False
@@ -431,7 +431,7 @@ class HoldPerson(Spell):
 	level = "2"
 	casting_time = "Action"
 	casting_range = "60 feet"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a small, straight piece of iron"
 	duration = "Concentration, up to 1 minute"
 	ritual = False
@@ -453,7 +453,7 @@ class HolyAura(Spell):
 	level = "8"
 	casting_time = "Action"
 	casting_range = "Self"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a tiny reliquary worth at least 1,000 gp containing a sacred relic, such as a scrap of cloth from a saint's robe or a piece of parchment from a religious text"
 	duration = "Concentration, up to 1 minute"
 	ritual = False
@@ -479,7 +479,7 @@ class HolyWeapon(Spell):
 	level = "5"
 	casting_time = "Bonus"
 	casting_range = "Touch"
-	components = "V, S"
+	components = ("V", "S")
 	materials = ""
 	duration = "Concentration, up to 1 hour"
 	ritual = False
@@ -508,7 +508,7 @@ class HouseofCards(Spell):
 	level = "3"
 	casting_time = "1 Min."
 	casting_range = "Touch"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a deck of cards"
 	duration = "24 hours"
 	ritual = False
@@ -533,7 +533,7 @@ class HungerofHadar(Spell):
 	level = "3"
 	casting_time = "Action"
 	casting_range = "150 feet"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a pickled octopus tentacle"
 	duration = "Concentration, up to 1 minute"
 	ritual = False
@@ -557,7 +557,7 @@ class HuntersMark(Spell):
 	level = "1"
 	casting_time = "Bonus"
 	casting_range = "90 feet"
-	components = "V"
+	components = ("V")
 	materials = ""
 	duration = "Concentration, up to 1 hour"
 	ritual = False
@@ -579,7 +579,7 @@ class HypnoticPattern(Spell):
 	level = "3"
 	casting_time = "Action"
 	casting_range = "120 feet"
-	components = "S, M"
+	components = ("S", "M")
 	materials = "a glowing stick of incense or a crystal vial filled with phosphorescent material"
 	duration = "Concentration, up to 1 minute"
 	ritual = False

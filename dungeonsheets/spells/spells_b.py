@@ -16,7 +16,7 @@ class Bane(Spell):
 	level = "1"
 	casting_time = "Action"
 	casting_range = "30 feet"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a drop of blood"
 	duration = "Concentration, up to 1 minute"
 	ritual = False
@@ -40,7 +40,7 @@ class BanishingSmite(Spell):
 	level = "5"
 	casting_time = "Bonus"
 	casting_range = "Self"
-	components = "V"
+	components = ("V")
 	materials = ""
 	duration = "Concentration, up to 1 minute"
 	ritual = False
@@ -68,7 +68,7 @@ class Banishment(Spell):
 	level = "4"
 	casting_time = "Action"
 	casting_range = "60 feet"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "an item distasteful to the target"
 	duration = "Concentration, up to 1 minute"
 	ritual = False
@@ -85,7 +85,7 @@ class Barkskin(Spell):
 	level = "2"
 	casting_time = "Action"
 	casting_range = "Touch"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a handful of oak bark"
 	duration = "Concentration, up to 1 hour"
 	ritual = False
@@ -103,7 +103,7 @@ class BeaconofHope(Spell):
 	level = "3"
 	casting_time = "Action"
 	casting_range = "30 feet"
-	components = "V, S"
+	components = ("V", "S")
 	materials = ""
 	duration = "Concentration, up to 1 minute"
 	ritual = False
@@ -125,7 +125,7 @@ class BeastBond(Spell):
 	level = "1"
 	casting_time = "Action"
 	casting_range = "Touch"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a bit of fur wrapped in a cloth"
 	duration = "Concentration, up to 10 minutes"
 	ritual = False
@@ -145,7 +145,7 @@ class BeastSense(Spell):
 	level = "2"
 	casting_time = "Action"
 	casting_range = "Touch"
-	components = "S"
+	components = ("S")
 	materials = ""
 	duration = "Concentration, up to 1 hour"
 	ritual = True
@@ -178,7 +178,7 @@ class BestowCurse(Spell):
 	level = "3"
 	casting_time = "Action"
 	casting_range = "Touch"
-	components = "V, S"
+	components = ("V", "S")
 	materials = ""
 	duration = "Concentration, up to 1 minute"
 	ritual = False
@@ -227,7 +227,7 @@ class BigbysHand(Spell):
 	level = "5"
 	casting_time = "Action"
 	casting_range = "120 feet"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "an eggshell and a snakeskin glove"
 	duration = "Concentration, up to 1 minute"
 	ritual = False
@@ -251,7 +251,7 @@ class BladeBarrier(Spell):
 	level = "6"
 	casting_time = "Action"
 	casting_range = "90 feet"
-	components = "V, S"
+	components = ("V", "S")
 	materials = ""
 	duration = "Concentration, up to 10 minutes"
 	ritual = False
@@ -268,7 +268,7 @@ class BladeWard(Spell):
 	level = "Cantrip"
 	casting_time = "Action"
 	casting_range = "Self"
-	components = "V, S"
+	components = ("V", "S")
 	materials = ""
 	duration = "1 round"
 	ritual = False
@@ -294,7 +294,7 @@ class BladeofDisaster(Spell):
 	level = "9"
 	casting_time = "Bonus"
 	casting_range = "60 feet"
-	components = "V, S"
+	components = ("V", "S")
 	materials = ""
 	duration = "Concentration, up to 1 minute"
 	ritual = False
@@ -314,7 +314,7 @@ class Bless(Spell):
 	level = "1"
 	casting_time = "Action"
 	casting_range = "30 feet"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a sprinkling of holy water"
 	duration = "Concentration, up to 1 minute"
 	ritual = False
@@ -339,7 +339,7 @@ class Blight(Spell):
 	level = "4"
 	casting_time = "Action"
 	casting_range = "30 feet"
-	components = "V, S"
+	components = ("V", "S")
 	materials = ""
 	duration = "Instantaneous"
 	ritual = False
@@ -360,7 +360,7 @@ class BlindingSmite(Spell):
 	level = "3"
 	casting_time = "Bonus"
 	casting_range = "Self"
-	components = "V"
+	components = ("V")
 	materials = ""
 	duration = "Concentration, up to 1 minute"
 	ritual = False
@@ -381,7 +381,7 @@ class Blindness/Deafness(Spell):
 	level = "2"
 	casting_time = "Action"
 	casting_range = "30 feet"
-	components = "V"
+	components = ("V")
 	materials = ""
 	duration = "1 minute"
 	ritual = False
@@ -410,7 +410,7 @@ class Blink(Spell):
 	level = "3"
 	casting_time = "Action"
 	casting_range = "Self"
-	components = "V, S"
+	components = ("V", "S")
 	materials = ""
 	duration = "1 minute"
 	ritual = False
@@ -429,7 +429,7 @@ class Blur(Spell):
 	level = "2"
 	casting_time = "Action"
 	casting_range = "Self"
-	components = "V"
+	components = ("V")
 	materials = ""
 	duration = "Concentration, up to 1 minute"
 	ritual = False
@@ -463,7 +463,7 @@ class BonesoftheEarth(Spell):
 	level = "6"
 	casting_time = "Action"
 	casting_range = "120 feet"
-	components = "V, S"
+	components = ("V", "S")
 	materials = ""
 	duration = "Instantaneous"
 	ritual = False
@@ -487,7 +487,7 @@ class BoomingBlade(Spell):
 	level = "Cantrip"
 	casting_time = "Action"
 	casting_range = "Self (5-foot radius)"
-	components = "S, M"
+	components = ("S", "M")
 	materials = "a melee weapon worth at least 1 sp"
 	duration = "1 round"
 	ritual = False
@@ -505,7 +505,7 @@ class BorrowedKnowledge(Spell):
 	level = "2"
 	casting_time = "Action"
 	casting_range = "Self"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a book worth at least 25 gp"
 	duration = "1 hour"
 	ritual = False
@@ -526,7 +526,7 @@ class BrandingSmite(Spell):
 	level = "2"
 	casting_time = "Bonus"
 	casting_range = "Self"
-	components = "V"
+	components = ("V")
 	materials = ""
 	duration = "Concentration, up to 1 minute"
 	ritual = False
@@ -548,7 +548,7 @@ class BurningHands(Spell):
 	level = "1"
 	casting_time = "Action"
 	casting_range = "Self (15-foot cone)"
-	components = "V, S"
+	components = ("V", "S")
 	materials = ""
 	duration = "Instantaneous"
 	ritual = False

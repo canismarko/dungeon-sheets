@@ -32,7 +32,7 @@ class GaldersSpeedyCourier(Spell):
 	level = "4"
 	casting_time = "Action"
 	casting_range = "10 feet"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "25 gold pieces, or mineral goods of equivalent value, which the spell consumes"
 	duration = "10 minutes"
 	ritual = False
@@ -69,7 +69,7 @@ class GaldersTower(Spell):
 	level = "3"
 	casting_time = "10 Min."
 	casting_range = "30 feet"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a fragment of stone, wood, or other building material"
 	duration = "24 hours"
 	ritual = False
@@ -97,7 +97,7 @@ class GaseousForm(Spell):
 	level = "3"
 	casting_time = "Action"
 	casting_range = "Touch"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a bit of gauze and a wisp of smoke"
 	duration = "Concentration, up to 1 hour"
 	ritual = False
@@ -129,7 +129,7 @@ class Gate(Spell):
 	level = "9"
 	casting_time = "Action"
 	casting_range = "60 feet"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a diamond worth at least 5,000 gp"
 	duration = "Concentration, up to 1 minute"
 	ritual = False
@@ -158,7 +158,7 @@ class Geas(Spell):
 	level = "5"
 	casting_time = "1 Min."
 	casting_range = "60 feet"
-	components = "V"
+	components = ("V")
 	materials = ""
 	duration = "30 days"
 	ritual = False
@@ -177,7 +177,7 @@ class GentleRepose(Spell):
 	level = "2"
 	casting_time = "Action"
 	casting_range = "Touch"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a pinch of salt and one copper piece placed on each of the corpse's eyes, which must remain there for the duration"
 	duration = "10 days"
 	ritual = True
@@ -203,7 +203,7 @@ class GiantInsect(Spell):
 	level = "4"
 	casting_time = "Action"
 	casting_range = "30 feet"
-	components = "V, S"
+	components = ("V", "S")
 	materials = ""
 	duration = "Concentration, up to 10 minutes"
 	ritual = False
@@ -219,7 +219,7 @@ class GiftofAlacrity(Spell):
 	level = "1"
 	casting_time = "1 Min."
 	casting_range = "Touch"
-	components = "V, S"
+	components = ("V", "S")
 	materials = ""
 	duration = "8 hours"
 	ritual = False
@@ -247,7 +247,7 @@ class GiftofGab(Spell):
 	level = "2"
 	casting_time = "Reaction"
 	casting_range = "Self"
-	components = "V, S, R"
+	components = ("V", "S", "R")
 	materials = "2 gp"
 	duration = "Instantaneous"
 	ritual = False
@@ -265,7 +265,7 @@ class Glibness(Spell):
 	level = "8"
 	casting_time = "Action"
 	casting_range = "Self"
-	components = "V"
+	components = ("V")
 	materials = ""
 	duration = "1 hour"
 	ritual = False
@@ -288,7 +288,7 @@ class GlobeofInvulnerability(Spell):
 	level = "6"
 	casting_time = "Action"
 	casting_range = "Self (10-foot radius)"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a glass or crystal bead that shatters when the spell ends"
 	duration = "Concentration, up to 1 minute"
 	ritual = False
@@ -345,7 +345,7 @@ class GlyphofWarding(Spell):
 	level = "3"
 	casting_time = "1 Hr."
 	casting_range = "Touch"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "incense and powdered diamond worth at least 200 gp, which the spell consumes"
 	duration = "Until dispelled or triggered"
 	ritual = False
@@ -365,7 +365,7 @@ class Goodberry(Spell):
 	level = "1"
 	casting_time = "Action"
 	casting_range = "Touch"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a sprig of mistletoe"
 	duration = "Instantaneous"
 	ritual = False
@@ -386,7 +386,7 @@ class GraspingVine(Spell):
 	level = "4"
 	casting_time = "Bonus"
 	casting_range = "30 feet"
-	components = "V, S"
+	components = ("V", "S")
 	materials = ""
 	duration = "Concentration, up to 1 minute"
 	ritual = False
@@ -409,7 +409,7 @@ class GravityFissure(Spell):
 	level = "6"
 	casting_time = "Action"
 	casting_range = "Self (100-foot line)"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a fistful of iron filings"
 	duration = "Instantaneous"
 	ritual = False
@@ -433,7 +433,7 @@ class GravitySinkhole(Spell):
 	level = "4"
 	casting_time = "Action"
 	casting_range = "120 feet"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a black marble"
 	duration = "Instantaneous"
 	ritual = False
@@ -453,7 +453,7 @@ class Grease(Spell):
 	level = "1"
 	casting_time = "Action"
 	casting_range = "60 feet"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a bit of pork rind or butter"
 	duration = "1 minute"
 	ritual = False
@@ -470,7 +470,7 @@ class GreaterInvisibility(Spell):
 	level = "4"
 	casting_time = "Action"
 	casting_range = "Touch"
-	components = "V, S"
+	components = ("V", "S")
 	materials = ""
 	duration = "Concentration, up to 1 minute"
 	ritual = False
@@ -490,7 +490,7 @@ class GreaterRestoration(Spell):
 	level = "5"
 	casting_time = "Action"
 	casting_range = "Touch"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "diamond dust worth at least 100 gp, which the spell consumes"
 	duration = "Instantaneous"
 	ritual = False
@@ -515,7 +515,7 @@ class GreenFlameBlade(Spell):
 	level = "Cantrip"
 	casting_time = "Action"
 	casting_range = "Self (5-foot radius)"
-	components = "S, M"
+	components = ("S", "M")
 	materials = "a melee weapon worth at least 1 sp"
 	duration = "Instantaneous"
 	ritual = False
@@ -538,7 +538,7 @@ class GuardianofFaith(Spell):
 	level = "4"
 	casting_time = "Action"
 	casting_range = "30 feet"
-	components = "V"
+	components = ("V")
 	materials = ""
 	duration = "8 hours"
 	ritual = False
@@ -565,7 +565,7 @@ class GuardianofNature(Spell):
 	level = "4"
 	casting_time = "Bonus"
 	casting_range = "Self"
-	components = "V"
+	components = ("V")
 	materials = ""
 	duration = "Concentration, up to 1 minute"
 	ritual = False
@@ -614,7 +614,7 @@ class GuardsandWards(Spell):
 	level = "6"
 	casting_time = "10 Min."
 	casting_range = "Touch"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "burning incense, a small measure of brimstone and oil, a knotted string, a small amount of umber hulk blood, and a small silver rod worth at least 10 gp"
 	duration = "24 hours"
 	ritual = False
@@ -632,7 +632,7 @@ class Guidance(Spell):
 	level = "Cantrip"
 	casting_time = "Action"
 	casting_range = "Touch"
-	components = "V, S"
+	components = ("V", "S")
 	materials = ""
 	duration = "Concentration, up to 1 minute"
 	ritual = False
@@ -653,7 +653,7 @@ class GuidingBolt(Spell):
 	level = "1"
 	casting_time = "Action"
 	casting_range = "120 feet"
-	components = "V, S"
+	components = ("V", "S")
 	materials = ""
 	duration = "1 round"
 	ritual = False
@@ -679,7 +679,7 @@ class GuidingHand(UA)(Spell):
 	level = "1"
 	casting_time = "1 Min."
 	casting_range = "5 feet"
-	components = "V, S"
+	components = ("V", "S")
 	materials = ""
 	duration = "Concentration, up to 8 hours"
 	ritual = True
@@ -702,7 +702,7 @@ class Gust(Spell):
 	level = "Cantrip"
 	casting_time = "Action"
 	casting_range = "30 feet"
-	components = "V, S"
+	components = ("V", "S")
 	materials = ""
 	duration = "Instantaneous"
 	ritual = False
@@ -727,7 +727,7 @@ class GustofWind(Spell):
 	level = "2"
 	casting_time = "Action"
 	casting_range = "Self (60-foot line)"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a legume seed"
 	duration = "Concentration, up to 1 minute"
 	ritual = False

@@ -18,7 +18,7 @@ class MaddeningDarkness(Spell):
 	level = "8"
 	casting_time = "Action"
 	casting_range = "150 feet"
-	components = "V, M"
+	components = ("V", "M")
 	materials = "a drop of pitch mixed with a drop of mercury"
 	duration = "Concentration, up to 10 minutes"
 	ritual = False
@@ -38,7 +38,7 @@ class Maelstrom(Spell):
 	level = "5"
 	casting_time = "Action"
 	casting_range = "120 feet"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "paper or leaf in the shape of a funnel"
 	duration = "Concentration, up to 1 minute"
 	ritual = False
@@ -56,7 +56,7 @@ class MageArmor(Spell):
 	level = "1"
 	casting_time = "Action"
 	casting_range = "Touch"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a piece of cured leather"
 	duration = "8 hours"
 	ritual = False
@@ -79,7 +79,7 @@ class MageHand(Spell):
 	level = "Cantrip"
 	casting_time = "Action"
 	casting_range = "30 feet"
-	components = "V, S"
+	components = ("V", "S")
 	materials = ""
 	duration = "1 minute"
 	ritual = False
@@ -110,7 +110,7 @@ class MagicCircle(Spell):
 	level = "3"
 	casting_time = "1 Min."
 	casting_range = "10 feet"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "holy water or powdered silver and iron worth at least 100 gp, which the spell consumes"
 	duration = "1 hour"
 	ritual = False
@@ -157,7 +157,7 @@ class MagicJar(Spell):
 	level = "6"
 	casting_time = "1 Min."
 	casting_range = "Self"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a gem, crystal, reliquary, or some other ornamental container worth at least 500 gp"
 	duration = "Until dispelled"
 	ritual = False
@@ -177,7 +177,7 @@ class MagicMissile(Spell):
 	level = "1"
 	casting_time = "Action"
 	casting_range = "120 feet"
-	components = "V, S"
+	components = ("V", "S")
 	materials = ""
 	duration = "Instantaneous"
 	ritual = False
@@ -209,7 +209,7 @@ class MagicMouth(Spell):
 	level = "2"
 	casting_time = "1 Min."
 	casting_range = "30 feet"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a small bit of honeycomb and jade dust worth at least 10 gp, which the spell consumes"
 	duration = "Until dispelled"
 	ritual = True
@@ -232,7 +232,7 @@ class MagicStone(Spell):
 	level = "Cantrip"
 	casting_time = "Bonus"
 	casting_range = "Touch"
-	components = "V, S"
+	components = ("V", "S")
 	materials = ""
 	duration = "1 minute"
 	ritual = False
@@ -250,7 +250,7 @@ class MagicWeapon(Spell):
 	level = "2"
 	casting_time = "Bonus"
 	casting_range = "Touch"
-	components = "V, S"
+	components = ("V", "S")
 	materials = ""
 	duration = "Concentration, up to 1 hour"
 	ritual = False
@@ -275,7 +275,7 @@ class MagnifyGravity(Spell):
 	level = "1"
 	casting_time = "Action"
 	casting_range = "60 feet"
-	components = "V, S"
+	components = ("V", "S")
 	materials = ""
 	duration = "1 round"
 	ritual = False
@@ -312,7 +312,7 @@ class MajorImage(Spell):
 	level = "3"
 	casting_time = "Action"
 	casting_range = "120 feet"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a bit of fleece"
 	duration = "Concentration, up to 10 minutes"
 	ritual = False
@@ -333,7 +333,7 @@ class MassCureWounds(Spell):
 	level = "5"
 	casting_time = "Action"
 	casting_range = "60 feet"
-	components = "V, S"
+	components = ("V", "S")
 	materials = ""
 	duration = "Instantaneous"
 	ritual = False
@@ -353,7 +353,7 @@ class MassHeal(Spell):
 	level = "9"
 	casting_time = "Action"
 	casting_range = "60 feet"
-	components = "V, S"
+	components = ("V", "S")
 	materials = ""
 	duration = "Instantaneous"
 	ritual = False
@@ -373,7 +373,7 @@ class MassHealingWord(Spell):
 	level = "3"
 	casting_time = "Bonus"
 	casting_range = "60 feet"
-	components = "V"
+	components = ("V")
 	materials = ""
 	duration = "Instantaneous"
 	ritual = False
@@ -407,7 +407,7 @@ class MassPolymorph(Spell):
 	level = "9"
 	casting_time = "Action"
 	casting_range = "120 feet"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a caterpillar cocoon"
 	duration = "Concentration, up to 1 hour"
 	ritual = False
@@ -443,7 +443,7 @@ class MassSuggestion(Spell):
 	level = "6"
 	casting_time = "Action"
 	casting_range = "60 feet"
-	components = "V, M"
+	components = ("V", "M")
 	materials = "a snake's tongue and either a bit of honeycomb or a drop of sweet oil"
 	duration = "24 hours"
 	ritual = False
@@ -471,7 +471,7 @@ class MaximiliansEarthenGrasp(Spell):
 	level = "2"
 	casting_time = "Action"
 	casting_range = "30 feet"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a miniature hand sculpted from clay"
 	duration = "Concentration, up to 1 minute"
 	ritual = False
@@ -493,7 +493,7 @@ class Maze(Spell):
 	level = "8"
 	casting_time = "Action"
 	casting_range = "60 feet"
-	components = "V, S"
+	components = ("V", "S")
 	materials = ""
 	duration = "Concentration, up to 10 minutes"
 	ritual = False
@@ -524,7 +524,7 @@ class MeldintoStone(Spell):
 	level = "3"
 	casting_time = "Action"
 	casting_range = "Touch"
-	components = "V, S"
+	components = ("V", "S")
 	materials = ""
 	duration = "8 hours"
 	ritual = True
@@ -546,7 +546,7 @@ class MelfsAcidArrow(Spell):
 	level = "2"
 	casting_time = "Action"
 	casting_range = "90 feet"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "powdered rhubarb leaf and an adder's stomach"
 	duration = "Instantaneous"
 	ritual = False
@@ -571,7 +571,7 @@ class MelfsMinuteMeteors(Spell):
 	level = "3"
 	casting_time = "Action"
 	casting_range = "Self"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "niter, sulfur, and pine tar formed into a bead"
 	duration = "Concentration, up to 10 minutes"
 	ritual = False
@@ -591,7 +591,7 @@ class Mending(Spell):
 	level = "Cantrip"
 	casting_time = "1 Min."
 	casting_range = "Touch"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "two lodestones"
 	duration = "Instantaneous"
 	ritual = False
@@ -609,7 +609,7 @@ class MentalBarrier(Spell):
 	level = "2"
 	casting_time = "Reaction"
 	casting_range = "Self"
-	components = "V"
+	components = ("V")
 	materials = ""
 	duration = "1 round"
 	ritual = False
@@ -637,7 +637,7 @@ class MentalPrison(Spell):
 	level = "6"
 	casting_time = "Action"
 	casting_range = "60 feet"
-	components = "S"
+	components = ("S")
 	materials = ""
 	duration = "Concentration, up to 1 minute"
 	ritual = False
@@ -659,7 +659,7 @@ class Message(Spell):
 	level = "Cantrip"
 	casting_time = "Action"
 	casting_range = "120 feet"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a short piece of copper wire"
 	duration = "1 round"
 	ritual = False
@@ -681,7 +681,7 @@ class MeteorSwarm(Spell):
 	level = "9"
 	casting_time = "Action"
 	casting_range = "1 mile"
-	components = "V, S"
+	components = ("V", "S")
 	materials = ""
 	duration = "Instantaneous"
 	ritual = False
@@ -728,7 +728,7 @@ class MightyFortress(Spell):
 	level = "8"
 	casting_time = "1 Min."
 	casting_range = "1 mile"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a diamond worth at least 500 gp, which the spell consumes"
 	duration = "Instantaneous"
 	ritual = False
@@ -747,7 +747,7 @@ class MindBlank(Spell):
 	level = "8"
 	casting_time = "Action"
 	casting_range = "Touch"
-	components = "V, S"
+	components = ("V", "S")
 	materials = ""
 	duration = "24 hours"
 	ritual = False
@@ -767,7 +767,7 @@ class MindSliver(Spell):
 	level = "Cantrip"
 	casting_time = "Action"
 	casting_range = "60 feet"
-	components = "V"
+	components = ("V")
 	materials = ""
 	duration = "1 round"
 	ritual = False
@@ -789,7 +789,7 @@ class MindSliver(Spell):
 	level = "Cantrip"
 	casting_time = "Action"
 	casting_range = "60 feet"
-	components = "V"
+	components = ("V")
 	materials = ""
 	duration = "1 round"
 	ritual = False
@@ -811,7 +811,7 @@ class MindSliver(Spell):
 	level = "Cantrip"
 	casting_time = "Action"
 	casting_range = "60 feet"
-	components = "V"
+	components = ("V")
 	materials = ""
 	duration = "1 round"
 	ritual = False
@@ -833,7 +833,7 @@ class MindSliver(Spell):
 	level = "Cantrip"
 	casting_time = "Action"
 	casting_range = "60 feet"
-	components = "V"
+	components = ("V")
 	materials = ""
 	duration = "1 round"
 	ritual = False
@@ -857,7 +857,7 @@ class MindSpike(Spell):
 	level = "2"
 	casting_time = "Action"
 	casting_range = "60 feet"
-	components = "S"
+	components = ("S")
 	materials = ""
 	duration = "Concentration, up to 1 hour"
 	ritual = False
@@ -882,7 +882,7 @@ class MindThrust(Spell):
 	level = "2"
 	casting_time = "Action"
 	casting_range = "90 feet"
-	components = "V"
+	components = ("V")
 	materials = ""
 	duration = "1 round"
 	ritual = False
@@ -905,7 +905,7 @@ class MindThrust(Spell):
 	level = "2"
 	casting_time = "Bonus"
 	casting_range = "60 feet"
-	components = "V, S"
+	components = ("V", "S")
 	materials = ""
 	duration = "1 round"
 	ritual = False
@@ -935,7 +935,7 @@ class MinorIllusion(Spell):
 	level = "Cantrip"
 	casting_time = "Action"
 	casting_range = "30 feet"
-	components = "S, M"
+	components = ("S", "M")
 	materials = "a bit of fleece"
 	duration = "1 minute"
 	ritual = False
@@ -966,7 +966,7 @@ class MirageArcane(Spell):
 	level = "7"
 	casting_time = "10 Min."
 	casting_range = "Sight"
-	components = "V, S"
+	components = ("V", "S")
 	materials = ""
 	duration = "10 days"
 	ritual = False
@@ -996,7 +996,7 @@ class MirrorImage(Spell):
 	level = "2"
 	casting_time = "Action"
 	casting_range = "Self"
-	components = "V, S"
+	components = ("V", "S")
 	materials = ""
 	duration = "1 minute"
 	ritual = False
@@ -1020,7 +1020,7 @@ class Mislead(Spell):
 	level = "5"
 	casting_time = "Action"
 	casting_range = "Self"
-	components = "S"
+	components = ("S")
 	materials = ""
 	duration = "Concentration, up to 1 hour"
 	ritual = False
@@ -1036,7 +1036,7 @@ class MistyStep(Spell):
 	level = "2"
 	casting_time = "Bonus"
 	casting_range = "Self"
-	components = "V"
+	components = ("V")
 	materials = ""
 	duration = "Instantaneous"
 	ritual = False
@@ -1079,7 +1079,7 @@ class ModifyMemory(Spell):
 	level = "5"
 	casting_time = "Action"
 	casting_range = "30 feet"
-	components = "V, S"
+	components = ("V", "S")
 	materials = ""
 	duration = "Concentration, up to 1 minute"
 	ritual = False
@@ -1107,7 +1107,7 @@ class MoldEarth(Spell):
 	level = "Cantrip"
 	casting_time = "Action"
 	casting_range = "30 feet"
-	components = "S"
+	components = ("S")
 	materials = ""
 	duration = "Instantaneous or 1 hour (see below)"
 	ritual = False
@@ -1135,7 +1135,7 @@ class Moonbeam(Spell):
 	level = "2"
 	casting_time = "Action"
 	casting_range = "120 feet"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "several seeds of any moonseed plant and a piece of opalescent feldspar"
 	duration = "Concentration, up to 1 minute"
 	ritual = False
@@ -1161,7 +1161,7 @@ class MordenkainensFaithfulHound(Spell):
 	level = "4"
 	casting_time = "Action"
 	casting_range = "30 feet"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a tiny silver whistle, a piece of bone, and a thread"
 	duration = "8 hours"
 	ritual = False
@@ -1198,7 +1198,7 @@ class MordenkainensMagnificentMansion(Spell):
 	level = "7"
 	casting_time = "1 Min."
 	casting_range = "300 feet"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a miniature portal carved from ivory, a small piece of polished marble, and a tiny silver spoon, each item worth at least 5 gp"
 	duration = "24 hours"
 	ritual = False
@@ -1228,7 +1228,7 @@ class MordenkainensPrivateSanctum(Spell):
 	level = "4"
 	casting_time = "10 Min."
 	casting_range = "120 feet"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a thin sheet of lead, a piece of opaque glass, a wad of cotton or cloth, and powdered chrysolite"
 	duration = "24 hours"
 	ritual = False
@@ -1249,7 +1249,7 @@ class MordenkainensSword(Spell):
 	level = "7"
 	casting_time = "Action"
 	casting_range = "60 feet"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a miniature platinum sword with a grip and pommel of copper and zinc, worth 250 gp"
 	duration = "Concentration, up to 1 minute"
 	ritual = False
@@ -1275,7 +1275,7 @@ class MotivationalSpeech(Spell):
 	level = "3"
 	casting_time = "1 Min."
 	casting_range = "60 feet"
-	components = "V"
+	components = ("V")
 	materials = ""
 	duration = "1 hour"
 	ritual = False
@@ -1306,7 +1306,7 @@ class MoveEarth(Spell):
 	level = "6"
 	casting_time = "Action"
 	casting_range = "120 feet"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "an iron blade and a small bag containing a mixture of soils—clay, loam, and sand"
 	duration = "Concentration, up to 2 hours"
 	ritual = False

@@ -22,7 +22,7 @@ class LegendLore(Spell):
 	level = "5"
 	casting_time = "10 Min."
 	casting_range = "Self"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "incense worth at least 250 gp, which the spell consumes, and four ivory strips worth at least 50 gp each"
 	duration = "Instantaneous"
 	ritual = False
@@ -49,7 +49,7 @@ class LeomundsSecretChest(Spell):
 	level = "4"
 	casting_time = "Action"
 	casting_range = "Touch"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "an exquisite chest, 3 feet by 2 feet by 2 feet, constructed from rare materials worth at least 5,000 gp, and a Tiny replica made from the same materials worth at least 50 gp"
 	duration = "Instantaneous"
 	ritual = False
@@ -76,7 +76,7 @@ class LeomundsTinyHut(Spell):
 	level = "3"
 	casting_time = "1 Min."
 	casting_range = "Self (10-foot-radius hemisphere)"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a small crystal bead"
 	duration = "8 hours"
 	ritual = True
@@ -93,7 +93,7 @@ class LesserRestoration(Spell):
 	level = "2"
 	casting_time = "Action"
 	casting_range = "Touch"
-	components = "V, S"
+	components = ("V", "S")
 	materials = ""
 	duration = "Instantaneous"
 	ritual = False
@@ -119,7 +119,7 @@ class Levitate(Spell):
 	level = "2"
 	casting_time = "Action"
 	casting_range = "60 feet"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "either a small leather loop or a piece of golden wire bent into a cup shape with a long shank on one end"
 	duration = "Concentration, up to 10 minutes"
 	ritual = False
@@ -140,7 +140,7 @@ class LifeTransference(Spell):
 	level = "3"
 	casting_time = "Action"
 	casting_range = "30 feet"
-	components = "V, S"
+	components = ("V", "S")
 	materials = ""
 	duration = "Instantaneous"
 	ritual = False
@@ -162,7 +162,7 @@ class Light(Spell):
 	level = "Cantrip"
 	casting_time = "Action"
 	casting_range = "Touch"
-	components = "V, M"
+	components = ("V", "M")
 	materials = "a firefly or phosphorescent moss"
 	duration = "1 hour"
 	ritual = False
@@ -187,7 +187,7 @@ class LightningArrow(Spell):
 	level = "3"
 	casting_time = "Bonus"
 	casting_range = "Self"
-	components = "V, S"
+	components = ("V", "S")
 	materials = ""
 	duration = "Concentration, up to 1 minute"
 	ritual = False
@@ -209,7 +209,7 @@ class LightningBolt(Spell):
 	level = "3"
 	casting_time = "Action"
 	casting_range = "Self (100-foot line)"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a bit of fur and a rod of amber, crystal, or glass"
 	duration = "Instantaneous"
 	ritual = False
@@ -229,7 +229,7 @@ class LightningLure(Spell):
 	level = "Cantrip"
 	casting_time = "Action"
 	casting_range = "Self (15-foot radius)"
-	components = "V"
+	components = ("V")
 	materials = ""
 	duration = "Instantaneous"
 	ritual = False
@@ -288,7 +288,7 @@ class LinkedGlyphs(Spell):
 	level = "3"
 	casting_time = "1 Hr."
 	casting_range = "Touch"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "incense and powdered diamond worth at least 300 gp, which the spell consumes"
 	duration = "Until dispelled or triggered"
 	ritual = False
@@ -306,7 +306,7 @@ class LocateAnimalsorPlants(Spell):
 	level = "2"
 	casting_time = "Action"
 	casting_range = "Self"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a bit of fur from a bloodhound"
 	duration = "Instantaneous"
 	ritual = True
@@ -331,7 +331,7 @@ class LocateCreature(Spell):
 	level = "4"
 	casting_time = "Action"
 	casting_range = "Self"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a bit of fur from a bloodhound"
 	duration = "Concentration, up to 1 hour"
 	ritual = False
@@ -354,7 +354,7 @@ class LocateObject(Spell):
 	level = "2"
 	casting_time = "Action"
 	casting_range = "Self"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a forked twig"
 	duration = "Concentration, up to 10 minutes"
 	ritual = False
@@ -372,7 +372,7 @@ class Longstrider(Spell):
 	level = "1"
 	casting_time = "Action"
 	casting_range = "Touch"
-	components = "V, S, M"
+	components = ("V", "S", "M")
 	materials = "a pinch of dirt"
 	duration = "1 hour"
 	ritual = False
