@@ -140,3 +140,9 @@ properly parsed and rendered into LaTeX or HTML::
     name = "Scrying"
     level = 5
     ...
+
+For content that is not part of the SRD, consider using other
+sources. As an example, parse5e_ can be used to retrieve spells.
+
+
+.. _parse5e: https://github.com/user18130814200115-2/parse5e
