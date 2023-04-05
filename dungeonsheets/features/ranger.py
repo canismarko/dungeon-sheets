@@ -615,7 +615,7 @@ class HuntersSense(Feature):
     @property
     def name(self):
         num = max(1, self.owner.wisdom.modifier)
-        return self._num + " ({:d}x/LR)".format(num)
+        return self._name + " ({:d}x/LR)".format(num)
 
 
 class SlayersPrey(Feature):
