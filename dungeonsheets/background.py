@@ -257,6 +257,22 @@ class WaterdhavianNoble(Background):
     languages = ("[choose one]",)
     features = (feats.KeptInStyle,)
 
+class Faceless(Background):
+    """Being who you are, you could never be a hero.
+    Wether due to your class, your people, your family, or your sins, something
+    about you prevents you from effectively pursuing the path you've chosen.
+    Even so, that doesn't stop you. You've left your old face behind, taking on
+    a new persona, becoming something more.
+    Characters with the faceless background don a disguise (literally or
+    otherwise) as they adventuree. This persona might be dramatic or subtle. In
+    a way, though, many characters have such larger than life personalities.
+    Therefore, this background largely focuses on detailing the hero behind the
+    mask.
+    """
+
+    name = "Faceless"
+    skill_proficiencies = ("Deception", "Intimidation")
+    features = (feats.FacelessPersona, feats.DualPersonalities)
 
 PHB_backgrounds = [
     Acolyte,
