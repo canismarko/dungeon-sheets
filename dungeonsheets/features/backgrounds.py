@@ -429,16 +429,16 @@ class FacelessPersona(Feature):
     your persona, or work with the DM to create a persona that's unique to your
     character and suits the tone of your game.
 
-    d10|FacelessPersona
-    1|A flamboyant spy or brigand
-    2|The incarnation of a nation or people
-    3|A scoudnrell with a masked guise
-    4|A vengeful spirit
-    5|The manifestation of a deity or your faith
-    6|One whose beauty is gratly accented using makeup
-    7|An impersonation of another hero
-    8|The embodiment of a schoool of magic
-    9|A warrior with distinctive armor
+    **d10|FacelessPersona:**\n
+    1|A flamboyant spy or brigand\n
+    2|The incarnation of a nation or people\n
+    3|A scoudnrell with a masked guise\n
+    4|A vengeful spirit\n
+    5|The manifestation of a deity or your faith\n
+    6|One whose beauty is gratly accented using makeup\n
+    7|An impersonation of another hero\n
+    8|The embodiment of a schoool of magic\n
+    9|A warrior with distinctive armor\n
     10|A disguise with animalistic or monstrous characteristics, meant to inspire fear
     """
 
