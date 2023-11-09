@@ -421,3 +421,43 @@ class KeptInStyle(Feature):
 
     name = "Kept in Style"
     source = "Background (Waterdhavian Noble)"
+
+class FacelessPersona(Feature):
+    """A faceless character adventures behind the mask of a public persona.
+    This persona is as natural to them as their hidden, true face, but it
+    disguises their identity. Roll on the Faceless Persona table to determine
+    your persona, or work with the DM to create a persona that's unique to your
+    character and suits the tone of your game.
+
+    **d10|FacelessPersona:**\n
+    1|A flamboyant spy or brigand\n
+    2|The incarnation of a nation or people\n
+    3|A scoudnrell with a masked guise\n
+    4|A vengeful spirit\n
+    5|The manifestation of a deity or your faith\n
+    6|One whose beauty is gratly accented using makeup\n
+    7|An impersonation of another hero\n
+    8|The embodiment of a schoool of magic\n
+    9|A warrior with distinctive armor\n
+    10|A disguise with animalistic or monstrous characteristics, meant to inspire fear
+    """
+
+    name = "Faceless Persona"
+    source = "Background (Faceless)"
+
+
+class DualPersonalities(Feature):
+    """Most of your fellow adventurers and the world know you as your persona.
+    Those who seek to learn more about you (your weaknesses, your origins, your
+    purpose) find themselves stymied by your disguise. Upon donning a disguise
+    and behaving as your persona, you are unidentifiable as your true self. By
+    removing your disguise and revealing your true face, you are no longer
+    identifiable as your persona. This Allows you to change appearances between
+    your two personalities as often as you wish, using one to hide the other or
+    seve as convenient camouflage. However, should someone realize the
+    connection between your persona and your true self, your deception might
+    lose its effectiveness
+    """
+
+    name = "Dual Personalities"
+    source = "Background (Faceless)"
