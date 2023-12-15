@@ -14,7 +14,7 @@ name = "Bard1"
 player_name = "Ben"
 
 # Be sure to list Primary class first
-classes = ['Bard']  # ex: ['Wizard'] or ['Rogue', 'Fighter']
+classes = ["Bard"]  # ex: ['Wizard'] or ['Rogue', 'Fighter']
 levels = [20]  # ex: [10] or [3, 2]
 subclasses = ["College of Valor"]  # ex: ['Necromacy'] or ['Thief', None]
 background = "Criminal"
@@ -35,10 +35,17 @@ charisma = 15
 
 # Select what skills you're proficient with
 # ex: skill_proficiencies = ('athletics', 'acrobatics', 'arcana')
-skill_proficiencies = ('animal handling', 'athletics', 'history', 'deception', 'stealth', 'perception')
+skill_proficiencies = (
+    "animal handling",
+    "athletics",
+    "history",
+    "deception",
+    "stealth",
+    "perception",
+)
 
 # Any skills you have "expertise" (Bard/Rogue) in
-skill_expertise = ('history', 'deception')
+skill_expertise = ("history", "deception")
 
 # Named features / feats that aren't part of your classes, race, or background.
 # Also include Eldritch Invocations and features you make multiple selection of
@@ -69,7 +76,7 @@ gp = 0
 pp = 0
 
 # TODO: Put your equipped weapons and armor here
-weapons = ('shortsword',)  # Example: ('shortsword', 'longsword')
+weapons = ("shortsword",)  # Example: ('shortsword', 'longsword')
 magic_items = ()  # Example: ('ring of protection',)
 armor = "studded leather armor"  # Eg "leather armor"
 shield = ""  # Eg "shield"
@@ -81,13 +88,24 @@ or uses spells."""
 
 # List of known spells
 # Example: spells_prepared = ('magic missile', 'mage armor')
-spells_prepared = ('blade ward', 'light', 'minor illusion',
-                   'bane', 'charm person', 'identify', 'sleep',
-                   'invisibility', 'fear', 'confusion', 'dream', 'eyebite',
-                   'teleport')  # Todo: Learn some spells
+spells_prepared = (
+    "blade ward",
+    "light",
+    "minor illusion",
+    "bane",
+    "charm person",
+    "identify",
+    "sleep",
+    "invisibility",
+    "fear",
+    "confusion",
+    "dream",
+    "eyebite",
+    "teleport",
+)  # Todo: Learn some spells
 
 # Which spells have not been prepared
-__spells_unprepared = ('silent image', 'bestow curse')
+__spells_unprepared = ("silent image", "bestow curse")
 
 # all spells known
 spells = spells_prepared + __spells_unprepared
