@@ -15,7 +15,7 @@ jobs:
         python-version: ['3.7', '3.8', '3.9', '3.10', '3.11']
 
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v4
     - name: Set up required system dependencies
       run: sudo apt-get -y install pdftk texlive-latex-base texlive-latex-extra texlive-fonts-recommended texlive-fonts-extra
     - name: Set up Python ${{ matrix.python-version }}
