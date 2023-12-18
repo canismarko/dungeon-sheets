@@ -17,7 +17,9 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - name: Set up required system dependencies
-      run: sudo apt-get -y install pdftk texlive-latex-base texlive-latex-extra texlive-fonts-recommended texlive-fonts-extra
+      run: |
+        sudo apt-get update
+        sudo apt-get -y install pdftk texlive-latex-base texlive-latex-extra texlive-fonts-recommended texlive-fonts-extra
     - name: Set up Python ${{ matrix.python-version }}
       uses: actions/setup-python@v4
       with:
