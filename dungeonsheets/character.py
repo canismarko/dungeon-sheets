@@ -1,9 +1,10 @@
 """Tools for describing a player character."""
+import logging
+import math
 import os
 import re
 import warnings
-import math
-import logging
+from pathlib import Path
 from types import ModuleType
 from typing import Sequence, Union, MutableMapping
 
@@ -22,15 +23,13 @@ from dungeonsheets import (
     spells,
     weapons,
 )
-from dungeonsheets.content_registry import find_content
-from dungeonsheets.weapons import Weapon
 from dungeonsheets.content import Creature
+from dungeonsheets.content_registry import find_content
 from dungeonsheets.dice import combine_dice
 from dungeonsheets.equipment_reader import equipment_weight_parser
-
+from dungeonsheets.weapons import Weapon
 
 log = logging.getLogger(__name__)
-
 
 dice_re = re.compile(r"(\d+)d(\d+)")
 
@@ -110,7 +109,16 @@ class Character(Creature):
     _proficiencies_text = list()
 
     # Appearance
-    portrait = False
+    portrait: Path | None = None  # Path to image file
+    symbol: Path | None = None  # Path to image file
+    # List of custom images:
+    # [(path_to_image_file, page_index,
+    # x_center_coordinate, y_center_coordinate,
+    # max_width, max_height)]
+    images: list[tuple[Path, int, int, int, int, int]] = []
+
+    source_file_location: Path | None
+
     age = 0
     height = ""
     weight = ""
@@ -180,6 +188,35 @@ class Character(Creature):
         # parse race and background
         self.race = attrs.pop("race", None)
         self.background = attrs.pop("background", None)
+        # parse images
+        self.symbol = attrs.pop("symbol", None)
+        self.images = attrs.pop("images", [])
+        if self.symbol:
+            self.images = [(self.symbol, 1, 492, 564, 145, 113)] + self.images
+        self.portrait = attrs.pop("portrait", None)
+        if self.portrait:
+            self.images = [(self.portrait, 1, 117, 551, 170, 220)] + self.images
+        self.source_file_location = attrs.pop("source_file_location", None)
+        self.images = [
+            (
+                Path(path),
+                page_index,
+                x_center_coordinate,
+                y_center_coordinate,
+                max_width,
+                max_height,
+            )
+            if Path(path).is_absolute()
+            else (
+                Path(self.source_file_location) / path,
+                page_index,
+                x_center_coordinate,
+                y_center_coordinate,
+                max_width,
+                max_height,
+            )
+            for path, page_index, x_center_coordinate, y_center_coordinate, max_width, max_height in self.images
+        ]
         # parse all other attributes
         self.set_attrs(**attrs)
         self.__set_max_hp(attrs.get("hp_max", None))
@@ -477,7 +514,7 @@ class Character(Creature):
 
     @property
     def spellcasting_classes_excluding_warlock(self):
-        return [c for c in self.spellcasting_classes if not type(c) == classes.Warlock]
+        return [c for c in self.spellcasting_classes if c is not classes.Warlock]
 
     @property
     def is_spellcaster(self):
@@ -554,6 +591,8 @@ class Character(Creature):
         for attr, val in attrs.items():
             if attr == "dungeonsheets_version":
                 pass  # Maybe we'll verify this later?
+            elif attr == "character_file_location":
+                pass
             elif attr == "weapons":
                 if isinstance(val, str):
                     val = [val]

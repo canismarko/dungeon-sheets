@@ -1,10 +1,10 @@
 # Generated output PDFs (and intermediate files)
-examples/*.pdf
-examples/*.aux
-examples/*.tex
+*.pdf
+*.aux
+*.tex
 
 # Generated epub files
-examples/*.epub
+*.epub
 
 # Emacs temp files
 *~

@@ -3,15 +3,15 @@
 """Program to take character definitions and build a PDF of the
 character sheet."""
 
-import logging
 import argparse
+import logging
 import os
+import re
 import subprocess
 import warnings
-import re
-from pathlib import Path
-from multiprocessing import Pool, cpu_count
 from itertools import product
+from multiprocessing import Pool, cpu_count
+from pathlib import Path
 from typing import Union, Sequence, Optional, List
 
 from dungeonsheets import (
@@ -24,15 +24,15 @@ from dungeonsheets import (
     forms,
     random_tables,
 )
+from dungeonsheets.character import Character
+from dungeonsheets.content import Creature
 from dungeonsheets.content_registry import find_content
 from dungeonsheets.fill_pdf_template import (
     create_character_pdf_template,
     create_personality_pdf_template,
     create_spells_pdf_template,
 )
-from dungeonsheets.character import Character
-from dungeonsheets.content import Creature
-
+from dungeonsheets.pdf_image_insert import insert_image_into_pdf
 
 log = logging.getLogger(__name__)
 
@@ -48,9 +48,7 @@ ORDINALS = {
     9: "9th",
 }
 
-
 PDFTK_CMD = "pdftk"
-
 
 jinja_env = forms.jinja_environment()
 jinja_env.filters["rst_to_latex"] = latex.rst_to_latex
@@ -342,6 +340,7 @@ def make_gm_sheet(
     # Warn about any unhandled sheet properties
     gm_props.pop("dungeonsheets_version")
     gm_props.pop("sheet_type")
+    gm_props.pop("source_file_location")
     if len(gm_props.keys()) > 0:
         msg = f"Unhandled attributes in '{str(gm_file)}': {','.join(gm_props.keys())}"
         log.warning(msg)
@@ -502,17 +501,12 @@ def make_character_content(
     return content
 
 
-def msavage_sheet(character, basename, portrait_file="", debug=False):
+def msavage_sheet(character, basename, debug=False):
     """Another adaption. All changes can be easily included as options
     in the orignal functions, though."""
 
-    # Load image file if present
-    portrait_command = ""
-    if character.portrait and portrait_file:
-        portrait_command = r"\includegraphics[width=5.75cm]{" + portrait_file + "}"
-
     tex = jinja_env.get_template("MSavage_template.tex").render(
-        char=character, portrait=portrait_command
+        char=character, portrait=""
     )
     latex.create_latex_pdf(
         tex,
@@ -557,12 +551,6 @@ def make_character_sheet(
     if character is None:
         character_props = readers.read_sheet_file(char_file)
         character = _char.Character.load(character_props)
-    # Load image file if present
-    portrait_file = character.portrait
-    if portrait_file is True:
-        portrait_file = char_file.stem + ".jpeg"
-    elif portrait_file is False:
-        portrait_file = ""
     # Set the fields in the FDF
     basename = char_file.stem
     char_base = basename + "_char"
@@ -583,7 +571,6 @@ def make_character_sheet(
             msavage_sheet(
                 character=character,
                 basename=char_base,
-                portrait_file=portrait_file,
                 debug=debug,
             )
         # Fillable PDF forms
@@ -596,7 +583,6 @@ def make_character_sheet(
             person_pdf = create_personality_pdf_template(
                 character=character,
                 basename=person_base,
-                portrait_file=portrait_file,
                 flatten=flatten,
             )
             pages.append(person_pdf)
@@ -621,6 +607,8 @@ def make_character_sheet(
                 sheets.append(features_base + ".pdf")
                 final_pdf = f"{basename}.pdf"
                 merge_pdfs(sheets, final_pdf, clean_up=not (debug))
+                for image in character.images:
+                    insert_image_into_pdf(final_pdf, *image)
         except exceptions.LatexNotFoundError:
             log.warning(
                 f"``pdflatex`` not available. Skipping features for {character.name}"

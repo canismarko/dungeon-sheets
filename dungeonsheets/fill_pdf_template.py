@@ -1,12 +1,10 @@
+import logging
 import os
 import subprocess
-import logging
 import warnings
-import io
 
 import pdfrw
 from fdfgen import forge_fdf
-from reportlab.pdfgen import canvas
 
 from dungeonsheets.forms import mod_str
 
@@ -177,14 +175,10 @@ def create_character_pdf_template(character, basename, flatten=False):
     # Prepare the actual PDF
     dirname = os.path.join(os.path.dirname(os.path.abspath(__file__)), "forms/")
     src_pdf = os.path.join(dirname, "blank-character-sheet-default.pdf")
-    return make_pdf(
-        fields, src_pdf=src_pdf, basename=basename, flatten=flatten, portrait=""
-    )
+    return make_pdf(fields, src_pdf=src_pdf, basename=basename, flatten=flatten)
 
 
-def create_personality_pdf_template(
-    character, basename, portrait_file="", flatten=False
-):
+def create_personality_pdf_template(character, basename, flatten=False):
     # Prepare the list of fields
     fields = {
         "CharacterName 2": character.name,
@@ -210,7 +204,6 @@ def create_personality_pdf_template(
         src_pdf=src_pdf,
         basename=basename,
         flatten=flatten,
-        portrait=portrait_file,
     )
 
 
@@ -397,14 +390,11 @@ def create_spells_pdf_template(character, basename, flatten=False):
             src_pdf=src_pdf,
             basename=combined_basename,
             flatten=flatten,
-            portrait="",
         )
     return basenames
 
 
-def make_pdf(
-    fields: dict, src_pdf: str, basename: str, flatten: bool = False, portrait=""
-):
+def make_pdf(fields: dict, src_pdf: str, basename: str, flatten: bool = False):
     """Create a new PDF by applying fields to a src PDF document.
 
     Parameters
@@ -423,19 +413,17 @@ def make_pdf(
 
     """
     try:
-        _make_pdf_pdftk(fields, src_pdf, basename, flatten, portrait)
+        _make_pdf_pdftk(fields, src_pdf, basename, flatten)
     except FileNotFoundError:
         # pdftk could not run, so alert the user and use pdfrw
         warnings.warn(
             f"Could not run `{PDFTK_CMD}`, using fallback; forcing `--editable`.",
             RuntimeWarning,
         )
-        _make_pdf_pdfrw(fields, src_pdf, basename, flatten, portrait)
+        _make_pdf_pdfrw(fields, src_pdf, basename, flatten)
 
 
-def _make_pdf_pdfrw(
-    fields: dict, src_pdf: str, basename: str, flatten: bool = False, portrait=""
-):
+def _make_pdf_pdfrw(fields: dict, src_pdf: str, basename: str, flatten: bool = False):
     """Backup make_pdf function in case pdftk is not available."""
     template = pdfrw.PdfReader(src_pdf)
     # Different types of PDF fields
@@ -494,7 +482,7 @@ def _make_pdf_pdfrw(
     pdfrw.PdfWriter().write(f"{basename}.pdf", template)
 
 
-def _make_pdf_pdftk(fields, src_pdf, basename, flatten=False, portrait=""):
+def _make_pdf_pdftk(fields, src_pdf, basename, flatten=False):
     """More robust way to make a PDF, but has a hard dependency."""
     # Create the actual FDF file
     fdfname = basename + ".fdf"
@@ -504,12 +492,7 @@ def _make_pdf_pdftk(fields, src_pdf, basename, flatten=False, portrait=""):
     fdf_file.write(fdf)
     fdf_file.close()
     # Build the final flattened PDF documents
-    if portrait != "":
-        dest_pdf = basename + "-temp.pdf"
-        image_pdf = basename + "_image_tmp.pdf"
-        make_image_pdf(portrait, image_pdf)
-    else:
-        dest_pdf = basename + ".pdf"
+    dest_pdf = basename + ".pdf"
     popenargs = [
         PDFTK_CMD,
         src_pdf,
@@ -521,40 +504,5 @@ def _make_pdf_pdftk(fields, src_pdf, basename, flatten=False, portrait=""):
     if flatten:
         popenargs.append("flatten")
     subprocess.call(popenargs)
-    # stamp with image
-    if portrait != "":
-        src_pdf = dest_pdf
-        stamped_pdf = basename + ".pdf"
-        popenargs = [
-            PDFTK_CMD,
-            src_pdf,
-            "stamp",
-            image_pdf,
-            "output",
-            stamped_pdf,
-        ]
-        popenargs.append("flatten")
-        subprocess.call(popenargs)
-        # Clean up
-        os.remove(image_pdf)
-        os.remove(dest_pdf)
     # Clean up temporary files
     os.remove(fdfname)
-
-
-def make_image_pdf(src_img: str, dest_pdf: str):
-    packet = io.BytesIO()
-    can = canvas.Canvas(packet)
-    x_start = 10
-    y_start = 240
-    can.drawImage(
-        src_img, x_start, y_start, width=175, preserveAspectRatio=True, mask="auto"
-    )
-    can.showPage()
-    can.save()
-
-    # move to the beginning of the StringIO buffer
-    packet.seek(0)
-
-    new_pdf = pdfrw.PdfReader(packet)
-    pdfrw.PdfWriter().write(dest_pdf, new_pdf)

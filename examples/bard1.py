@@ -126,4 +126,6 @@ flaws = """TODO: Describe your characters interesting flaws.
 features_and_traits = """TODO: Describe other features and abilities your
 character has."""
 
-portrait = True
+images = [("bard1.jpeg", 0, 320, 110, 100, 100)]
+portrait = "shifter_2.png"
+symbol = "bard1.jpeg"
