@@ -54,16 +54,29 @@ standard 5e rules, and are case-insensitive. Refer to the D&D
 Character Portrait
 ==================
 
-.. code:: python
+The *portrait* and *symbol* variables in the user character python
+file can be set to a filepath (str) of a corresponding image file.
 
-   portrait = True
+The images generated are centered around an anchor-point where they
+are allowed to expand up to a maximum value while keeping their aspect
+ratio.
 
-If this is set to True and a corresponding portrait file exists,
-the portrait will be added to the character personality sheet.
-For now, the file must have a .jpeg extension and be named exactly
-the same as the character file. This might not work with every Image size.
-ca 550 * 700px seems to be the right format. Anything smaller should work, too.
-See the Bard1 example for a demonstration of this feature.
+**Custom images** can be inserted with arbitrary location and
+dimensions at an arbitrary page. For this, set the *images* list to a
+list of **(path_to_image_file, page_index, x_center_coordinate,
+y_center_coordinate, max_width, max_height)**
+
+Image paths can be absolute, or relative to the variable
+*source_file_location* (defaults to the same folder as the character
+sheet file).
+
+.. code-block:: python
+   :caption: bard1.py
+
+   images = [("bard1.jpeg", 0, 320, 110, 100, 100)]
+   portrait = "shifter_2.png"
+   symbol = "bard1.jpeg"
+   
 
 Ability Scores
 ==============
