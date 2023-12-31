@@ -94,13 +94,17 @@ class EarthElemental(Monster):
 
 
 class EarthElementalMyrmidon(Monster):
-    """Magic Weapons.
+    """
+    Magic Weapons.
       The myrmidon's weapon attacks are magical.
+
+    # Actions
+
     Multiattack.
       The myrmidon makes two maul attacks.
     Maul.
-      *Melee Weapon Attack:* +7 to hit, reach 5 ft., one
-      target. *Hit:* 11 (2d6 + 4) bludgeoning damage.
+      Melee Weapon Attack: +7 to hit, reach 5 ft., one
+      target. Hit: 11 (2d6 + 4) bludgeoning damage.
     Thunderous Strike (Recharge 6).
       The myrmidon makes one maul attack. On a hit, the target takes
       an extra 16 (3d10) thunder damage, and the target must succeed
@@ -149,8 +153,6 @@ class Efreeti(Monster):
       15, +7 to hit with spell attacks). It can innately cast the following
       spells, requiring no material components:
       
-  
-      
       At will: detect magic
       
       3/day: enlarge/reduce, tongues
@@ -161,8 +163,6 @@ class Efreeti(Monster):
       Genies have a variety of magical capabilities, including spells. A few
       have even greater powers that allow them to alter their appearance or
       the nature of reality.
-      
-  
       
       Disguises.
       

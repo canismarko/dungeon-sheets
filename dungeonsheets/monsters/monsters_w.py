@@ -1821,7 +1821,8 @@ class WilloWisp(Monster):
 
 
 class WingedKobold(Monster):
-    """Sunlight Sensitivity.
+    """
+    Sunlight Sensitivity.
       While in sunlight, the kobold has disadvantage on attack rolls,
       as well as on Wisdom (Perception) checks that rely on sight.
     Pack Tactics.

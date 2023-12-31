@@ -13,13 +13,13 @@ class WildShape(Feature):
     rating of 1/4 or lower that doesn't have a flying or swimming
     speed.
 
-    ===== ====== ================== ===========
-    Level Max CR Limitations        Example
-    ===== ====== ================== ===========
-    2nd   1/4    No Flying/Swimming Wolf
-    4th   1/2    No flying          Crocodile
-    8th   1      --                 Giant eagle
-    ===== ====== ================== ===========
+    ===== ========== ====================== ================
+    Level Max CR     Limitations            Example
+    ===== ========== ====================== ================
+    2nd   1/4        No Flying / Swimming   Wolf
+    4th   1/2        No flying              Crocodile
+    8th   1          --                     Giant eagle
+    ===== ========== ====================== ================
 
     You can stay in a beast shape for a number of hours equal to half
     your druid level (rounded down). You then revert to your normal
