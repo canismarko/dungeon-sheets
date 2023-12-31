@@ -1,12 +1,10 @@
+import logging
 import os
 import subprocess
-import logging
 import warnings
-import io
 
 import pdfrw
 from fdfgen import forge_fdf
-from reportlab.pdfgen import canvas
 
 from dungeonsheets.forms import mod_str
 
@@ -177,10 +175,10 @@ def create_character_pdf_template(character, basename, flatten=False):
     # Prepare the actual PDF
     dirname = os.path.join(os.path.dirname(os.path.abspath(__file__)), "forms/")
     src_pdf = os.path.join(dirname, "blank-character-sheet-default.pdf")
-    return make_pdf(fields, src_pdf=src_pdf, basename=basename, flatten=flatten, portrait="")
+    return make_pdf(fields, src_pdf=src_pdf, basename=basename, flatten=flatten)
 
 
-def create_personality_pdf_template(character, basename, portrait_file="", flatten=False):
+def create_personality_pdf_template(character, basename, flatten=False):
     # Prepare the list of fields
     fields = {
         "CharacterName 2": character.name,
@@ -201,7 +199,12 @@ def create_personality_pdf_template(character, basename, portrait_file="", flatt
     # Prepare the actual PDF
     dirname = os.path.join(os.path.dirname(os.path.abspath(__file__)), "forms/")
     src_pdf = os.path.join(dirname, "blank-personality-sheet-default.pdf")
-    return make_pdf(fields, src_pdf=src_pdf, basename=basename, flatten=flatten, portrait=portrait_file)
+    return make_pdf(
+        fields,
+        src_pdf=src_pdf,
+        basename=basename,
+        flatten=flatten,
+    )
 
 
 def create_spells_pdf_template(character, basename, flatten=False):
@@ -223,71 +226,91 @@ def create_spells_pdf_template(character, basename, flatten=False):
 
     def spell_level(x):
         return x or 0
-    
+
     # Record fields
     caster_sheet_fields = {
-        'fields': {
-        "Spellcasting Class 2": classes_and_levels,
-        "SpellcastingAbility 2": abilities,
-        "SpellSaveDC  2": DCs,
-        "SpellAtkBonus 2": bonuses,
-        # Number of spell slots
-        "SlotsTotal 1": spell_level(character.spell_slots(1)),
-        "SlotsTotal 2": spell_level(character.spell_slots(2)),
-        "SlotsTotal 3": spell_level(character.spell_slots(3)),
-        "SlotsTotal 4": spell_level(character.spell_slots(4)),
-        "SlotsTotal 5": spell_level(character.spell_slots(5)),
-        "SlotsTotal 6": spell_level(character.spell_slots(6)),
-        "SlotsTotal 7": spell_level(character.spell_slots(7)),
-        "SlotsTotal 8": spell_level(character.spell_slots(8)),
-        "SlotsTotal 9": spell_level(character.spell_slots(9)),
+        "fields": {
+            "Spellcasting Class 2": classes_and_levels,
+            "SpellcastingAbility 2": abilities,
+            "SpellSaveDC  2": DCs,
+            "SpellAtkBonus 2": bonuses,
+            # Number of spell slots
+            "SlotsTotal 1": spell_level(character.spell_slots(1)),
+            "SlotsTotal 2": spell_level(character.spell_slots(2)),
+            "SlotsTotal 3": spell_level(character.spell_slots(3)),
+            "SlotsTotal 4": spell_level(character.spell_slots(4)),
+            "SlotsTotal 5": spell_level(character.spell_slots(5)),
+            "SlotsTotal 6": spell_level(character.spell_slots(6)),
+            "SlotsTotal 7": spell_level(character.spell_slots(7)),
+            "SlotsTotal 8": spell_level(character.spell_slots(8)),
+            "SlotsTotal 9": spell_level(character.spell_slots(9)),
         },
-        'cantrip_fields': [f"Spells 10{i:02}" for i in range(1,8)],
-        'spell_fields': {
-            level: [f'Spells 1{level}{i:02}' for i in range(1,n_spells+1)]
-            for level, n_spells in [(1,12), (2,13), (3,13), (4,13), (5,9), (6,9), (7,9), (8,7), (9,7)]
+        "cantrip_fields": [f"Spells 10{i:02}" for i in range(1, 8)],
+        "spell_fields": {
+            level: [f"Spells 1{level}{i:02}" for i in range(1, n_spells + 1)]
+            for level, n_spells in [
+                (1, 12),
+                (2, 13),
+                (3, 13),
+                (4, 13),
+                (5, 9),
+                (6, 9),
+                (7, 9),
+                (8, 7),
+                (9, 7),
+            ]
         },
-        'prep_fields': {
-            level: [f'prepared {level}{i:02}' for i in range(1,n_spells+1)]
-            for level, n_spells in [(1,12), (2,13), (3,13), (4,13), (5,9), (6,9), (7,9), (8,7), (9,7)]
-        }
+        "prep_fields": {
+            level: [f"prepared {level}{i:02}" for i in range(1, n_spells + 1)]
+            for level, n_spells in [
+                (1, 12),
+                (2, 13),
+                (3, 13),
+                (4, 13),
+                (5, 9),
+                (6, 9),
+                (7, 9),
+                (8, 7),
+                (9, 7),
+            ]
+        },
     }
 
     half_caster_sheet_fields = {
-        'fields': {
-        "Spellcasting Class 2": classes_and_levels,
-        "SpellcastingAbility 2": abilities,
-        "SpellSaveDC  2": DCs,
-        "SpellAtkBonus 2": bonuses,
-        # Number of spell slots
-        "SlotsTotal 1": spell_level(character.spell_slots(1)),
-        "SlotsTotal 2": spell_level(character.spell_slots(2)),
-        "SlotsTotal 3": spell_level(character.spell_slots(3)),
-        "SlotsTotal 4": spell_level(character.spell_slots(4)),
-        "SlotsTotal 5": spell_level(character.spell_slots(5)),
+        "fields": {
+            "Spellcasting Class 2": classes_and_levels,
+            "SpellcastingAbility 2": abilities,
+            "SpellSaveDC  2": DCs,
+            "SpellAtkBonus 2": bonuses,
+            # Number of spell slots
+            "SlotsTotal 1": spell_level(character.spell_slots(1)),
+            "SlotsTotal 2": spell_level(character.spell_slots(2)),
+            "SlotsTotal 3": spell_level(character.spell_slots(3)),
+            "SlotsTotal 4": spell_level(character.spell_slots(4)),
+            "SlotsTotal 5": spell_level(character.spell_slots(5)),
         },
-        'cantrip_fields': [f"Spells 10{i:02}" for i in range(1,12)],
-        'spell_fields': {
-            level: [f'Spells 1{level}{i:02}' for i in range(1,n_spells+1)]
-            for level, n_spells in [(1,25), (2,19), (3,19), (4,19), (5,19)]
+        "cantrip_fields": [f"Spells 10{i:02}" for i in range(1, 12)],
+        "spell_fields": {
+            level: [f"Spells 1{level}{i:02}" for i in range(1, n_spells + 1)]
+            for level, n_spells in [(1, 25), (2, 19), (3, 19), (4, 19), (5, 19)]
         },
-        'prep_fields': {
-            level: [f'prepared {level}{i:02}' for i in range(1,n_spells+1)]
-            for level, n_spells in [(1,25), (2,19), (3,19), (4,19), (5,19)]
-        }
+        "prep_fields": {
+            level: [f"prepared {level}{i:02}" for i in range(1, n_spells + 1)]
+            for level, n_spells in [(1, 25), (2, 19), (3, 19), (4, 19), (5, 19)]
+        },
     }
 
     # Determine which sheet to use (caster or half-caster).
     # Prefer caster, unless we have no spells > 5th level and
     # would overflow the caster sheet, then use half-caster.
-    only_low_level = all((character.spell_slots(level) == 0 for level in range(6,10)))
-    would_overflow_fullcaster = any((
-        len(
-            [spl for spl in character.spells if spl.level == level]
-        ) > len(
-            caster_sheet_fields['spell_fields'][level]
-        ) for level in range(1,6)
-    ))
+    only_low_level = all((character.spell_slots(level) == 0 for level in range(6, 10)))
+    would_overflow_fullcaster = any(
+        (
+            len([spl for spl in character.spells if spl.level == level])
+            > len(caster_sheet_fields["spell_fields"][level])
+            for level in range(1, 6)
+        )
+    )
     if only_low_level and would_overflow_fullcaster:
         selected_sheet_fields = half_caster_sheet_fields
         template_filename = "blank-halfcaster-spell-sheet-default.pdf"
@@ -295,22 +318,24 @@ def create_spells_pdf_template(character, basename, flatten=False):
         selected_sheet_fields = caster_sheet_fields
         template_filename = "blank-spell-sheet-default.pdf"
 
-    fields = selected_sheet_fields['fields']
-    cantrip_fields = selected_sheet_fields['cantrip_fields']
-    spell_fields = selected_sheet_fields['spell_fields']
-    prep_fields = selected_sheet_fields['prep_fields']
+    fields = selected_sheet_fields["fields"]
+    cantrip_fields = selected_sheet_fields["cantrip_fields"]
+    spell_fields = selected_sheet_fields["spell_fields"]
+    prep_fields = selected_sheet_fields["prep_fields"]
 
     cantrips = (spl for spl in character.spells if spl.level == 0)
     for spell, field_name in zip(cantrips, cantrip_fields):
         fields[field_name] = str(spell)
     # Spells for each level
     fields_per_page = {}
+
     def spell_paginator(spells, n_fields):
         yield spells[:n_fields]
         consumed = n_fields
         while consumed < len(spells):
-            yield spells[consumed:consumed + (n_fields - 1)]
+            yield spells[consumed : consumed + (n_fields - 1)]
             consumed += n_fields - 1
+
     # Prepare the lists of spells for each level
     for level in spell_fields.keys():
         spells = [spl for spl in character.spells if spl.level == level]
@@ -319,7 +344,9 @@ def create_spells_pdf_template(character, basename, flatten=False):
 
         # The first page has len(field_numbers) spells, the further pages have
         # len(field_numbers - 1)
-        for page, page_spells in enumerate(spell_paginator(spells, len(spell_fields[level]))):
+        for page, page_spells in enumerate(
+            spell_paginator(spells, len(spell_fields[level]))
+        ):
             if page not in fields_per_page:
                 fields_per_page[page] = {}
             # Build the list of PDF controls to set/toggle
@@ -334,7 +361,9 @@ def create_spells_pdf_template(character, basename, flatten=False):
             for spell, field, chk_field in zip(page_spells, field_names, prep_names):
                 fields_per_page[page][field] = str(spell)
                 is_prepared = any([spell == Spl for Spl in character.spells_prepared])
-                fields_per_page[page][chk_field] = CHECKBOX_ON if is_prepared else CHECKBOX_OFF
+                fields_per_page[page][chk_field] = (
+                    CHECKBOX_ON if is_prepared else CHECKBOX_OFF
+                )
             # # Uncomment to post field names instead:
             # for field in field_names:
             #     fields.append((field, field))
@@ -344,21 +373,28 @@ def create_spells_pdf_template(character, basename, flatten=False):
 
     basenames = []
     for page, page_fields in fields_per_page.items():
-        combined_basename = basename if page == 0 else f'{basename}-extra{page}'
+        combined_basename = basename if page == 0 else f"{basename}-extra{page}"
         basenames.append(combined_basename)
 
         output_fields = {**fields, **page_fields}
         if page > 0:
-            output_fields.update({
-                "Spellcasting Class 2": f'{classes_and_levels} (Overflow)',
-                # Number of spell slots
-                **{f"SlotsTotal {i}": '-' for i in range(19,28)}
-            })
-        make_pdf(output_fields, src_pdf=src_pdf, basename=combined_basename, flatten=flatten, portrait="")
+            output_fields.update(
+                {
+                    "Spellcasting Class 2": f"{classes_and_levels} (Overflow)",
+                    # Number of spell slots
+                    **{f"SlotsTotal {i}": "-" for i in range(19, 28)},
+                }
+            )
+        make_pdf(
+            output_fields,
+            src_pdf=src_pdf,
+            basename=combined_basename,
+            flatten=flatten,
+        )
     return basenames
 
 
-def make_pdf(fields: dict, src_pdf: str, basename: str, flatten: bool = False, portrait = ""):
+def make_pdf(fields: dict, src_pdf: str, basename: str, flatten: bool = False):
     """Create a new PDF by applying fields to a src PDF document.
 
     Parameters
@@ -377,17 +413,17 @@ def make_pdf(fields: dict, src_pdf: str, basename: str, flatten: bool = False, p
 
     """
     try:
-        _make_pdf_pdftk(fields, src_pdf, basename, flatten, portrait)
+        _make_pdf_pdftk(fields, src_pdf, basename, flatten)
     except FileNotFoundError:
         # pdftk could not run, so alert the user and use pdfrw
         warnings.warn(
             f"Could not run `{PDFTK_CMD}`, using fallback; forcing `--editable`.",
             RuntimeWarning,
         )
-        _make_pdf_pdfrw(fields, src_pdf, basename, flatten, portrait)
+        _make_pdf_pdfrw(fields, src_pdf, basename, flatten)
 
 
-def _make_pdf_pdfrw(fields: dict, src_pdf: str, basename: str, flatten: bool = False, portrait = ""):
+def _make_pdf_pdfrw(fields: dict, src_pdf: str, basename: str, flatten: bool = False):
     """Backup make_pdf function in case pdftk is not available."""
     template = pdfrw.PdfReader(src_pdf)
     # Different types of PDF fields
@@ -446,7 +482,7 @@ def _make_pdf_pdfrw(fields: dict, src_pdf: str, basename: str, flatten: bool = F
     pdfrw.PdfWriter().write(f"{basename}.pdf", template)
 
 
-def _make_pdf_pdftk(fields, src_pdf, basename, flatten=False, portrait=""):
+def _make_pdf_pdftk(fields, src_pdf, basename, flatten=False):
     """More robust way to make a PDF, but has a hard dependency."""
     # Create the actual FDF file
     fdfname = basename + ".fdf"
@@ -456,12 +492,7 @@ def _make_pdf_pdftk(fields, src_pdf, basename, flatten=False, portrait=""):
     fdf_file.write(fdf)
     fdf_file.close()
     # Build the final flattened PDF documents
-    if portrait != "":
-        dest_pdf = basename + "-temp.pdf"
-        image_pdf = basename + "_image_tmp.pdf"
-        make_image_pdf(portrait, image_pdf)
-    else:
-        dest_pdf = basename + ".pdf"
+    dest_pdf = basename + ".pdf"
     popenargs = [
         PDFTK_CMD,
         src_pdf,
@@ -473,37 +504,5 @@ def _make_pdf_pdftk(fields, src_pdf, basename, flatten=False, portrait=""):
     if flatten:
         popenargs.append("flatten")
     subprocess.call(popenargs)
-    # stamp with image
-    if portrait != "":
-        src_pdf = dest_pdf
-        stamped_pdf = basename + ".pdf"
-        popenargs = [
-            PDFTK_CMD,
-            src_pdf,
-            "stamp",
-            image_pdf,
-            "output",
-            stamped_pdf,
-        ]
-        popenargs.append("flatten")
-        subprocess.call(popenargs)
-        # Clean up
-        os.remove(image_pdf)
-        os.remove(dest_pdf)
     # Clean up temporary files
     os.remove(fdfname)
-
-def make_image_pdf(src_img:str, dest_pdf:str):
-    packet = io.BytesIO()
-    can = canvas.Canvas(packet)
-    x_start = 10
-    y_start = 240
-    can.drawImage(src_img, x_start, y_start, width=175, preserveAspectRatio=True, mask='auto')
-    can.showPage()
-    can.save()
- 
-    #move to the beginning of the StringIO buffer
-    packet.seek(0)
- 
-    new_pdf = pdfrw.PdfReader(packet)
-    pdfrw.PdfWriter().write(dest_pdf, new_pdf)

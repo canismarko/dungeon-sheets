@@ -3,15 +3,15 @@
 """Program to take character definitions and build a PDF of the
 character sheet."""
 
-import logging
 import argparse
+import logging
 import os
+import re
 import subprocess
 import warnings
-import re
-from pathlib import Path
-from multiprocessing import Pool, cpu_count
 from itertools import product
+from multiprocessing import Pool, cpu_count
+from pathlib import Path
 from typing import Union, Sequence, Optional, List
 
 from dungeonsheets import (
@@ -24,15 +24,15 @@ from dungeonsheets import (
     forms,
     random_tables,
 )
+from dungeonsheets.character import Character
+from dungeonsheets.content import Creature
 from dungeonsheets.content_registry import find_content
 from dungeonsheets.fill_pdf_template import (
     create_character_pdf_template,
     create_personality_pdf_template,
     create_spells_pdf_template,
 )
-from dungeonsheets.character import Character
-from dungeonsheets.content import Creature
-
+from dungeonsheets.pdf_image_insert import insert_image_into_pdf
 
 log = logging.getLogger(__name__)
 
@@ -48,9 +48,7 @@ ORDINALS = {
     9: "9th",
 }
 
-
 PDFTK_CMD = "pdftk"
-
 
 jinja_env = forms.jinja_environment()
 jinja_env.filters["rst_to_latex"] = latex.rst_to_latex
@@ -63,14 +61,24 @@ jinja_env.filters["spellsheetparser"] = latex.msavage_spell_info
 File = Union[Path, str]
 
 
-class CharacterRenderer():
+class CharacterRenderer:
     def __init__(self, template_name: str):
         self.template_name = template_name
-        
-    def __call__(self, character: Character, content_suffix: str = "tex", use_dnd_decorations: bool = False):
-        template = jinja_env.get_template(self.template_name.format(suffix=content_suffix))
-        return template.render(character=character,
-                               use_dnd_decorations=use_dnd_decorations, ordinals=ORDINALS)
+
+    def __call__(
+        self,
+        character: Character,
+        content_suffix: str = "tex",
+        use_dnd_decorations: bool = False,
+    ):
+        template = jinja_env.get_template(
+            self.template_name.format(suffix=content_suffix)
+        )
+        return template.render(
+            character=character,
+            use_dnd_decorations=use_dnd_decorations,
+            ordinals=ORDINALS,
+        )
 
 
 create_character_sheet_content = CharacterRenderer("character_sheet_template.{suffix}")
@@ -86,13 +94,16 @@ def create_monsters_content(
     monsters: Sequence[Union[monsters.Monster, str]],
     suffix: str,
     use_dnd_decorations: bool = False,
-    base_template: str = "monsters_template"
+    base_template: str = "monsters_template",
 ) -> str:
     # Convert strings to Monster objects
-    template = jinja_env.get_template(base_template+f".{suffix}")
+    template = jinja_env.get_template(base_template + f".{suffix}")
     spell_list = [Spell() for monster in monsters for Spell in monster.spells]
-    return template.render(monsters=monsters,
-                use_dnd_decorations=use_dnd_decorations, spell_list=spell_list)
+    return template.render(
+        monsters=monsters,
+        use_dnd_decorations=use_dnd_decorations,
+        spell_list=spell_list,
+    )
 
 
 def create_gm_spellbook(spell_list, suffix):
@@ -125,20 +136,20 @@ def create_random_tables_content(
     )
 
 
-def create_extra_gm_content(sections: Sequence, suffix: str, use_dnd_decorations: bool=False):
+def create_extra_gm_content(
+    sections: Sequence, suffix: str, use_dnd_decorations: bool = False
+):
     """Create content for arbitrary additional text provided in a GM sheet.
-    
+
     Parameters
     ==========
     sections
       Subclasses of Content that will each be included as new sections
       in the output document.
-    
+
     """
     template = jinja_env.get_template(f"extra_gm_content.{suffix}")
-    return template.render(
-        sections=sections, use_dnd_decorations=use_dnd_decorations
-    )
+    return template.render(sections=sections, use_dnd_decorations=use_dnd_decorations)
 
 
 def make_sheet(
@@ -166,7 +177,7 @@ def make_sheet(
       Provide extra info and preserve temporary files.
     use_tex_template : bool, optional
       (experimental) Use the DnD LaTeX character sheet instead of the fillable PDF.
-    
+
     """
     # Parse the file
     sheet_file = Path(sheet_file)
@@ -186,7 +197,7 @@ def make_sheet(
             output_format=output_format,
             fancy_decorations=fancy_decorations,
             debug=debug,
-            use_tex_template=use_tex_template
+            use_tex_template=use_tex_template,
         )
     return ret
 
@@ -262,9 +273,11 @@ def make_gm_sheet(
     )
     # Parse any extra homebrew sections, etc.
     content.append(
-        create_extra_gm_content(sections=gm_props.pop("extra_content", []),
-                                suffix=content_suffix,
-                                use_dnd_decorations=fancy_decorations)
+        create_extra_gm_content(
+            sections=gm_props.pop("extra_content", []),
+            suffix=content_suffix,
+            use_dnd_decorations=fancy_decorations,
+        )
     )
     # Add the monsters
     monsters_ = []
@@ -289,10 +302,12 @@ def make_gm_sheet(
     if len(monsters_) > 0:
         content.append(
             create_monsters_content(
-                set(monsters_), suffix=content_suffix, use_dnd_decorations=fancy_decorations
+                set(monsters_),
+                suffix=content_suffix,
+                use_dnd_decorations=fancy_decorations,
             )
         )
-        
+
     # Add the GM Spellbook
     spells = []
     for monster in monsters_:
@@ -325,6 +340,7 @@ def make_gm_sheet(
     # Warn about any unhandled sheet properties
     gm_props.pop("dungeonsheets_version")
     gm_props.pop("sheet_type")
+    gm_props.pop("source_file_location")
     if len(gm_props.keys()) > 0:
         msg = f"Unhandled attributes in '{str(gm_file)}': {','.join(gm_props.keys())}"
         log.warning(msg)
@@ -346,8 +362,9 @@ def make_gm_sheet(
         chapters = {session_title: "".join(content)}
         # Make sheets in the epub for each party member
         for char in party:
-            char_html = make_character_content(char, "html",
-                                               fancy_decorations=fancy_decorations)
+            char_html = make_character_content(
+                char, "html", fancy_decorations=fancy_decorations
+            )
             chapters[char.name] = "".join(char_html)
         # Create the combined HTML file
         epub.create_epub(
@@ -364,9 +381,10 @@ def make_gm_sheet(
 
 
 def make_character_content(
-        character: Character,
-        content_format: str,
-        fancy_decorations: bool = False,) -> List[str]:
+    character: Character,
+    content_format: str,
+    fancy_decorations: bool = False,
+) -> List[str]:
     """Prepare the inner content for a character sheet.
 
     This will produce a fully renderable document, suitable for
@@ -388,7 +406,7 @@ def make_character_content(
     fancy_decorations
       Use fancy page layout and decorations for extra sheets, namely
       the dnd style file for *tex*, or extended CSS for *html*.
-    
+
     Returns
     -------
     content
@@ -405,73 +423,99 @@ def make_character_content(
     ]
     # Make the character sheet, and background pages if producing HTML
     if content_format != "tex":
-        content.append(create_character_sheet_content(character,
-                                                      content_suffix=content_format,
-                                                      use_dnd_decorations=fancy_decorations))
-    # Create a list of subcasses, features, spells, etc
-    if len(getattr(character, 'subclasses', [])) > 0:
-        content.append(create_subclasses_content(character,
-                                                 content_suffix=content_format,
-                                                 use_dnd_decorations=fancy_decorations)
-                       )
-    if len(getattr(character, 'features', [])) > 0:        
         content.append(
-            create_features_content(character, content_suffix=content_format, use_dnd_decorations=fancy_decorations)
+            create_character_sheet_content(
+                character,
+                content_suffix=content_format,
+                use_dnd_decorations=fancy_decorations,
+            )
+        )
+    # Create a list of subcasses, features, spells, etc
+    if len(getattr(character, "subclasses", [])) > 0:
+        content.append(
+            create_subclasses_content(
+                character,
+                content_suffix=content_format,
+                use_dnd_decorations=fancy_decorations,
+            )
+        )
+    if len(getattr(character, "features", [])) > 0:
+        content.append(
+            create_features_content(
+                character,
+                content_suffix=content_format,
+                use_dnd_decorations=fancy_decorations,
+            )
         )
     if character.magic_items:
         content.append(
-            create_magic_items_content(character, content_suffix=content_format, use_dnd_decorations=fancy_decorations)
+            create_magic_items_content(
+                character,
+                content_suffix=content_format,
+                use_dnd_decorations=fancy_decorations,
+            )
         )
-    if len(getattr(character, 'spells', [])) > 0:
+    if len(getattr(character, "spells", [])) > 0:
         content.append(
-            create_spellbook_content(character, content_suffix=content_format, use_dnd_decorations=fancy_decorations)
+            create_spellbook_content(
+                character,
+                content_suffix=content_format,
+                use_dnd_decorations=fancy_decorations,
+            )
         )
     if len(getattr(character, "infusions", [])) > 0:
         content.append(
-            create_infusions_content(character, content_suffix=content_format, use_dnd_decorations=fancy_decorations)
+            create_infusions_content(
+                character,
+                content_suffix=content_format,
+                use_dnd_decorations=fancy_decorations,
+            )
         )
 
     # Create a list of Druid wild_shapes
     if len(getattr(character, "all_wild_shapes", [])) > 0:
         content.append(
-            create_druid_shapes_content(character, content_suffix=content_format, use_dnd_decorations=fancy_decorations)
+            create_druid_shapes_content(
+                character,
+                content_suffix=content_format,
+                use_dnd_decorations=fancy_decorations,
+            )
         )
-        
+
     # Create a list of companions
     if len(getattr(character, "companions", [])) > 0:
         content.append(
-            create_monsters_content(character.companions, suffix=content_format, 
-                                    use_dnd_decorations=fancy_decorations, base_template="companions_template")
+            create_monsters_content(
+                character.companions,
+                suffix=content_format,
+                use_dnd_decorations=fancy_decorations,
+                base_template="companions_template",
+            )
         )
     # Postamble, empty for HTML
     content.append(
         jinja_env.get_template(f"postamble.{content_format}").render(
             use_dnd_decorations=fancy_decorations
         )
-    )        
+    )
     return content
 
-def msavage_sheet(character, basename, portrait_file="", debug=False):
+
+def msavage_sheet(character, basename, debug=False):
     """Another adaption. All changes can be easily included as options
     in the orignal functions, though."""
-    
-    # Load image file if present
-    portrait_command=""
-    if character.portrait and portrait_file:
-        portrait_command = r"\includegraphics[width=5.75cm]{"+ \
-                            portrait_file + "}"
-    
-    
+
     tex = jinja_env.get_template("MSavage_template.tex").render(
-            char=character, portrait=portrait_command
-            )
+        char=character, portrait=""
+    )
     latex.create_latex_pdf(
-                tex,
-                basename=basename,
-                keep_temp_files=debug,
-                use_dnd_decorations=True,
-                comm1="xelatex"
-            )
+        tex,
+        basename=basename,
+        keep_temp_files=debug,
+        use_dnd_decorations=True,
+        comm1="xelatex",
+    )
+
 
 def make_character_sheet(
     char_file: Union[str, Path],
@@ -507,12 +551,6 @@ def make_character_sheet(
     if character is None:
         character_props = readers.read_sheet_file(char_file)
         character = _char.Character.load(character_props)
-    # Load image file if present
-    portrait_file = character.portrait
-    if portrait_file is True:
-        portrait_file=char_file.stem + ".jpeg"
-    elif portrait_file is False:
-        portrait_file=""
     # Set the fields in the FDF
     basename = char_file.stem
     char_base = basename + "_char"
@@ -522,29 +560,33 @@ def make_character_sheet(
     # Prepare the tex/html content
     content_suffix = format_suffixes[output_format]
     # Create a list of features and magic items
-    content = make_character_content(character=character,
-                                     content_format=content_suffix,
-                                     fancy_decorations=fancy_decorations)
+    content = make_character_content(
+        character=character,
+        content_format=content_suffix,
+        fancy_decorations=fancy_decorations,
+    )
     # Typeset combined LaTeX file
     if output_format == "pdf":
         if use_tex_template:
             msavage_sheet(
-                character=character, basename=char_base,
-                portrait_file=portrait_file, debug=debug
-                )
+                character=character,
+                basename=char_base,
+                debug=debug,
+            )
         # Fillable PDF forms
         else:
             sheets.append(person_base + ".pdf")
             char_pdf = create_character_pdf_template(
-            character=character, basename=char_base, flatten=flatten
+                character=character, basename=char_base, flatten=flatten
             )
             pages.append(char_pdf)
             person_pdf = create_personality_pdf_template(
-                character=character, basename=person_base, 
-                portrait_file=portrait_file, flatten=flatten
-                )
+                character=character,
+                basename=person_base,
+                flatten=flatten,
+            )
             pages.append(person_pdf)
-        if character.is_spellcaster and not(use_tex_template):
+        if character.is_spellcaster and not (use_tex_template):
             # Create spell sheet
             spell_base = "{:s}_spells".format(basename)
             created_basenames = create_spells_pdf_template(
@@ -564,7 +606,9 @@ def make_character_sheet(
                 )
                 sheets.append(features_base + ".pdf")
                 final_pdf = f"{basename}.pdf"
-                merge_pdfs(sheets, final_pdf, clean_up=not(debug))
+                merge_pdfs(sheets, final_pdf, clean_up=not (debug))
+                for image in character.images:
+                    insert_image_into_pdf(final_pdf, *image)
         except exceptions.LatexNotFoundError:
             log.warning(
                 f"``pdflatex`` not available. Skipping features for {character.name}"
@@ -575,7 +619,7 @@ def make_character_sheet(
             basename=basename,
             title=character.name,
             use_dnd_decorations=fancy_decorations,
-        )            
+        )
     else:
         raise exceptions.UnknownOutputFormat(
             f"Unknown output format requested: {output_format}. Valid options are:"

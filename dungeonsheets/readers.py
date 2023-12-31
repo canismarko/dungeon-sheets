@@ -1,4 +1,5 @@
 import importlib
+import os.path
 import warnings
 import json
 import re
@@ -439,24 +440,29 @@ class FoundryCharacterReader(JSONCharacterReader):
 
         """
         item_types = ["weapon", "armor", "equipment"]
-        items = [item for item in self.json_data()['items']
-                 if item['type'] in item_types]
+        items = [
+            item for item in self.json_data()["items"] if item["type"] in item_types
+        ]
         from pprint import pprint
-        magic_items = [item for item in items if item['data']['rarity'] not in ["Common", ""]]
+
+        magic_items = [
+            item for item in items if item["data"]["rarity"] not in ["Common", ""]
+        ]
+
         # Convert magic items into classes
         def make_magic_item(data):
             try:
-                item = find_content(data['name'], valid_classes=[MagicItem])
+                item = find_content(data["name"], valid_classes=[MagicItem])
             except exceptions.ContentNotFound:
                 # Make a generic version based on the JSON attributes
-                warnings.warn("Skipping unknown magic item: " + data['name'])
-                item_name = data['name'].replace(' ', '')
+                warnings.warn("Skipping unknown magic item: " + data["name"])
+                item_name = data["name"].replace(" ", "")
                 item = type(item_name, (MagicItem,), {})
             return item
-        
+
         magic_items = [make_magic_item(item) for item in magic_items]
         return magic_items
-    
+
     def class_levels(self):
         for item in self.json_data()["items"]:
             if item["type"] == "class":
@@ -478,8 +484,8 @@ class FoundryCharacterReader(JSONCharacterReader):
         yield from spell_names
 
     def features(self):
-        all_items = self.json_data()['items']
-        feat_names = (item['name'] for item in all_items if item['type'] == "feat")
+        all_items = self.json_data()["items"]
+        feat_names = (item["name"] for item in all_items if item["type"] == "feat")
         # Clean up the names for consistency
         feat_names = (name.lower() for name in feat_names)
         yield from feat_names
@@ -638,6 +644,7 @@ class PythonCharacterReader(BaseCharacterReader):
         for prop_name in dir(module):
             if prop_name[0:2] != "__":
                 char_props[prop_name] = getattr(module, prop_name)
+        char_props["source_file_location"] = os.path.dirname(filename)
         return char_props
 
 
