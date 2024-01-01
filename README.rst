@@ -27,6 +27,18 @@ Documentation can be found on readthedocs_.
 
 .. _readthedocs: https://dungeon-sheets.readthedocs.io/en/latest/?badge=latest
 
+
+Docker
+======
+You can run this repository directly from a container.
+
+Run the following in a directory with valid character files (such as the examples_ directory):
+
+.. code:: bash
+
+    $ docker run -it -v $(pwd):/build ghcr.io/canismarko/dungeon-sheets:master
+
+
 Installation
 ============
 
