@@ -16,6 +16,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
+      with:
+        submodules: recursive
     - name: Set up required system dependencies
       run: |
         sudo apt-get update
@@ -31,11 +33,6 @@ jobs:
         pip install -r requirements.txt
         pip install -r requirements-tests.txt
         pip install -e .
-    - name: Install DnD LaTeX styles
-      run: |
-        echo "$(kpsewhich -var-value TEXMFHOME)/tex/latex/"
-        mkdir -p "$(kpsewhich -var-value TEXMFHOME)/tex/latex/"
-        git clone https://github.com/rpgtex/DND-5e-LaTeX-Template.git "$(kpsewhich -var-value TEXMFHOME)/tex/latex/dnd"
     - name: Run flake
       run: flake8 dungeonsheets/ --exit-zero
     - name: Run tests
