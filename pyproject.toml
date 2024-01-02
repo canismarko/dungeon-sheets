@@ -37,9 +37,6 @@ Homepage = "https://github.com/canismarko/dungeon-sheets"
 "makesheets" = "dungeonsheets.make_sheets:main"
 "create-character" = "dungeonsheets.create_character:main"
 
-[tool.setuptools.packages.find]
-where = ["dungeonsheets"]
-
 [tool.setuptools.package-data]
 dungeonsheets = [
   "forms/*pdf",
