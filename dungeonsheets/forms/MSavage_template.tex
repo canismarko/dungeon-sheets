@@ -116,14 +116,11 @@
 \AddWeapon{[[ w.name ]]}{[[ "{:+d}".format(w.attack_modifier) ]]}{[[ "{}/{}".format(w.damage, w.damage_type) ]]}
 [% endfor %]
 
-\AttacksAdditional{
-[% if char.armor %]\textbf{Armor}: [[ char.armor ]] \\ [% endif %]
-[% if char.shield %]\textbf{Shield}: [[ char.shield ]] \\ [% endif %]
-[[- char.attacks_and_spellcasting| boxed -]]
-}
+\AttacksAdditional{[%- if char.armor -%]\textbf{Armor}: [[ char.armor ]] \\ [%endif %]
+                   [%- if char.shield -%]\textbf{Shield}: [[ char.shield ]] \\ [%endif %]
+                   [[- char.attacks_and_spellcasting| boxed -]]}
 
-\OtherProficienciesLanguages{
-\textbf{Languages:}  [[ char.languages ]]. \\
+\OtherProficienciesLanguages{\textbf{Languages:} [[ char.languages ]]. \\
 [%- for prof_type, values in char.proficiencies_by_type.items() %]
   [%- if not values == "": %]
 \textbf{[[ prof_type ]]}: [[ values ]]. \\
@@ -133,25 +130,15 @@
 
 \Equipment{[[ char.equipment_text| boxed ]]}
 
-\PersonalityTraits{
-[[ char.personality_traits ]]
-}
+\PersonalityTraits{[[ char.personality_traits ]]}
 
-\Ideals{
-[[ char.ideals ]]
-}
+\Ideals{[[ char.ideals ]]}
 
-\Bonds{
-[[ char.bonds ]]
-}
+\Bonds{[[ char.bonds ]]}
 
-\Flaws{
-[[ char.flaws ]]
-}
+\Flaws{[[ char.flaws ]]}
 
-\FeaturesTraits{
-[[ char.features_summary| boxed ]]
-}
+\FeaturesTraits{[[ char.features_summary| boxed ]]}
 
 
 % Appearance
@@ -168,18 +155,14 @@
 \CharacterAppearance{[[ portrait ]]
 [[ char.appearance_text ]]
 }
-\AdditionalFeaturesAndTraits{
-[[ char.additional_description ]]
-}
-\Characterbackground{
-[[ char.backstory ]]
-}
-\Treasure{
-[[ char.treasure ]]
-}
-\AlliesAndOrganizations{
-[[ char.allies ]]
-}
+\AdditionalFeaturesAndTraits{[[ char.additional_description ]]}
+
+\Characterbackground{[[ char.backstory ]] }
+
+\Treasure{[[ char.treasure ]]}
+
+\AlliesAndOrganizations{[[ char.allies ]]}
+
 \OrganizationName{[[ char.org_name ]]}
 
 [% if char.is_spellcaster %]
