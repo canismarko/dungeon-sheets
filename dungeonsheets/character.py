@@ -1,4 +1,5 @@
 """Tools for describing a player character."""
+from __future__ import annotations  # To support python 3.10 annotation in older version
 import logging
 import math
 import os
@@ -6,7 +7,6 @@ import re
 import warnings
 from pathlib import Path
 from types import ModuleType
-from __future__ import annotations  # To support python 3.10 annotation in older version
 from typing import Sequence, Union, MutableMapping
 
 import jinja2
