@@ -1,0 +1,55 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dungeosheets"
+version = "0.19.0"
+authors = [
+  {name="Mark Wolfman", email="mark@magicacid.com"},
+]
+description = "Dungeons and Dragons 5e Character Tools"
+readme = "README.rst"
+license = {"file"= "LICENSE"}
+requires-python = ">=3.9"
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Environment :: Console",
+  "License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)",
+  "Natural Language :: English",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Topic :: Games/Entertainment :: Role-Playing",
+]
+keywords = ["D&D", "character", "sheets"]
+dependencies = ["certifi", "fdfgen", "npyscreen", "jinja2", "sphinx", "pdfrw", "EbookLib", "reportlab", "docutils", "pypdf"]
+
+[project.optional-dependencies]
+dev = ["pytest", "pytest-cov", "coverall", "flake8", "black"]
+
+[project.urls]
+Homepage = "https://github.com/canismarko/dungeon-sheets"
+"Bug Tracker" = "https://github.com/canismarko/dungeon-sheets/issues"
+
+[project.scripts]
+"makesheets" = "dungeonsheets.make_sheets:main"
+"create-character" = "dungeonsheets.create_character:main"
+
+[tool.setuptools.packages.find]
+where = ["dungeonsheets"]
+
+[tool.setuptools.package-data]
+dungeonsheets = [
+  "forms/*pdf",
+  "forms/*.tex",
+  "forms/*.txt",
+  "modules/DND-5e-LaTeX-Template/*",
+  "modules/DND-5e-LaTeX-Template/lib/*",
+  "modules/DND-5e-LaTeX-Template/img/*",
+]
+
+# [project.urls]
+# "Homepage" = "https://github.com/pypa/sampleproject"
+# "Bug Tracker" = "https://github.com/pypa/sampleproject/issues"

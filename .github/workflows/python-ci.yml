@@ -28,9 +28,7 @@ jobs:
     - name: Install dependencies and do a local pip install
       run: |
         python -m pip install --upgrade pip
-        pip install -r requirements.txt
-        pip install -r requirements-tests.txt
-        pip install -e .
+        pip install -e ".[dev]"
     - name: Install DnD LaTeX styles
       run: |
         echo "$(kpsewhich -var-value TEXMFHOME)/tex/latex/"
