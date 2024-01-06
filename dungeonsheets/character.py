@@ -1156,7 +1156,7 @@ class Character(Creature):
 
         if filename.endswith(".pdf"):
             filename = filename.replace("pdf", "py")
-        make_sheet(filename, character=self, flatten=kwargs.get("flatten", True))
+        make_sheet(filename, flatten=kwargs.get("flatten", True))
 
 
 # Add backwards compatibility for tests
