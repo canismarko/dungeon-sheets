@@ -67,31 +67,31 @@
 \SurvivalSkillModifier{[[ char.survival.modifier ]]}
 
 % Proficiencies
-\StrengthProficiency{[[ "strength" in char.saving_throw_proficiencies ]]}
-\DexterityProficiency{[[ "dexterity" in char.saving_throw_proficiencies ]]}
-\ConstitutionProficiency{[[ "constitution" in char.saving_throw_proficiencies ]]}
-\IntelligenceProficiency{[[ "intelligence" in char.saving_throw_proficiencies ]]}
-\WisdomProficiency{[[ "wisdom" in char.saving_throw_proficiencies ]]}
-\CharismaProficiency{[[ "charisma" in char.saving_throw_proficiencies ]]}
+\SetStrengthProficiency{[% if "strength" in char.saving_throw_proficiencies %]1[% else %]0[% endif %]}
+\SetDexterityProficiency{[% if "dexterity" in char.saving_throw_proficiencies %]1[% else %]0[% endif %]}
+\SetConstitutionProficiency{[% if "constitution" in char.saving_throw_proficiencies %]1[% else %]0[% endif %]}
+\SetIntelligenceProficiency{[% if "intelligence" in char.saving_throw_proficiencies %]1[% else %]0[% endif %]}
+\SetWisdomProficiency{[% if "wisdom" in char.saving_throw_proficiencies %]1[% else %]0[% endif %]}
+\SetCharismaProficiency{[% if "charisma" in char.saving_throw_proficiencies %]1[% else %]0[% endif %]}
 
-\AcrobaticsProficiency{[[ "acrobatics" in char.skill_proficiencies ]]}
-\AnimalHandlingProficiency{[[ "animal handling" in char.skill_proficiencies ]]}
-\ArcanaProficiency{[[ "arcana" in char.skill_proficiencies ]]}
-\AthleticsProficiency{[[ "athletics" in char.skill_proficiencies ]]}
-\DeceptionProficiency{[[ "deception" in char.skill_proficiencies ]]}
-\HistoryProficiency{[[ "history" in char.skill_proficiencies ]]}
-\InsightProficiency{[[ "insight" in char.skill_proficiencies ]]}
-\IntimidationProficiency{[[ "intimidation" in char.skill_proficiencies ]]}
-\InvestigationProficiency{[[ "investigation" in char.skill_proficiencies ]]}
-\MedicineProficiency{[[ "medicine" in char.skill_proficiencies ]]}
-\NatureProficiency{[[ "nature" in char.skill_proficiencies ]]}
-\PerceptionProficiency{[[ "perception" in char.skill_proficiencies ]]}
-\PerformanceProficiency{[[ "performance" in char.skill_proficiencies ]]}
-\PersuasionProficiency{[[ "persuasion" in char.skill_proficiencies ]]}
-\ReligionProficiency{[[ "religion" in char.skill_proficiencies ]]}
-\SleightOfHandProficiency{[[ "sleight of hand" in char.skill_proficiencies ]]}
-\StealthProficiency{[[ "stealth" in char.skill_proficiencies ]]}
-\SurvivalProficiency{[[ "survival" in char.skill_proficiencies ]]}
+\SetAcrobaticsProficiency{[% if "acrobatics" in char.skill_proficiencies %]1[% else %]0[% endif %]}
+\SetAnimalHandlingProficiency{[% if "animal handling" in char.skill_proficiencies %]1[% else %]0[% endif %]}
+\SetArcanaProficiency{[% if "arcana" in char.skill_proficiencies %]1[% else %]0[% endif %]}
+\SetAthleticsProficiency{[% if "athletics" in char.skill_proficiencies %]1[% else %]0[% endif %]}
+\SetDeceptionProficiency{[% if "deception" in char.skill_proficiencies %]1[% else %]0[% endif %]}
+\SetHistoryProficiency{[% if "history" in char.skill_proficiencies %]1[% else %]0[% endif %]}
+\SetInsightProficiency{[% if "insight" in char.skill_proficiencies %]1[% else %]0[% endif %]}
+\SetIntimidationProficiency{[% if "intimidation" in char.skill_proficiencies %]1[% else %]0[% endif %]}
+\SetInvestigationProficiency{[% if "investigation" in char.skill_proficiencies %]1[% else %]0[% endif %]}
+\SetMedicineProficiency{[% if "medicine" in char.skill_proficiencies %]1[% else %]0[% endif %]}
+\SetNatureProficiency{[% if "nature" in char.skill_proficiencies %]1[% else %]0[% endif %]}
+\SetPerceptionProficiency{[% if "perception" in char.skill_proficiencies %]1[% else %]0[% endif %]}
+\SetPerformanceProficiency{[% if "performance" in char.skill_proficiencies %]1[% else %]0[% endif %]}
+\SetPersuasionProficiency{[% if "persuasion" in char.skill_proficiencies %]1[% else %]0[% endif %]}
+\SetReligionProficiency{[% if "religion" in char.skill_proficiencies %]1[% else %]0[% endif %]}
+\SetSleightOfHandProficiency{[% if "sleight of hand" in char.skill_proficiencies %]1[% else %]0[% endif %]}
+\SetStealthProficiency{[% if "stealth" in char.skill_proficiencies %]1[% else %]0[% endif %]}
+\SetSurvivalProficiency{[% if "survival" in char.skill_proficiencies %]1[% else %]0[% endif %]}
 
 \Inspiration{[% if char.inspiration %] $\star$ [% endif %]}
 \Proficiency{[[ char.proficiency_bonus ]]}
