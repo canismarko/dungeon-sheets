@@ -74,24 +74,82 @@
 \SetWisdomProficiency{[% if "wisdom" in char.saving_throw_proficiencies %]1[% else %]0[% endif %]}
 \SetCharismaProficiency{[% if "charisma" in char.saving_throw_proficiencies %]1[% else %]0[% endif %]}
 
-\SetAcrobaticsProficiency{[% if "acrobatics" in char.skill_proficiencies %]1[% else %]0[% endif %]}
-\SetAnimalHandlingProficiency{[% if "animal handling" in char.skill_proficiencies %]1[% else %]0[% endif %]}
-\SetArcanaProficiency{[% if "arcana" in char.skill_proficiencies %]1[% else %]0[% endif %]}
-\SetAthleticsProficiency{[% if "athletics" in char.skill_proficiencies %]1[% else %]0[% endif %]}
-\SetDeceptionProficiency{[% if "deception" in char.skill_proficiencies %]1[% else %]0[% endif %]}
-\SetHistoryProficiency{[% if "history" in char.skill_proficiencies %]1[% else %]0[% endif %]}
-\SetInsightProficiency{[% if "insight" in char.skill_proficiencies %]1[% else %]0[% endif %]}
-\SetIntimidationProficiency{[% if "intimidation" in char.skill_proficiencies %]1[% else %]0[% endif %]}
-\SetInvestigationProficiency{[% if "investigation" in char.skill_proficiencies %]1[% else %]0[% endif %]}
-\SetMedicineProficiency{[% if "medicine" in char.skill_proficiencies %]1[% else %]0[% endif %]}
-\SetNatureProficiency{[% if "nature" in char.skill_proficiencies %]1[% else %]0[% endif %]}
-\SetPerceptionProficiency{[% if "perception" in char.skill_proficiencies %]1[% else %]0[% endif %]}
-\SetPerformanceProficiency{[% if "performance" in char.skill_proficiencies %]1[% else %]0[% endif %]}
-\SetPersuasionProficiency{[% if "persuasion" in char.skill_proficiencies %]1[% else %]0[% endif %]}
-\SetReligionProficiency{[% if "religion" in char.skill_proficiencies %]1[% else %]0[% endif %]}
-\SetSleightOfHandProficiency{[% if "sleight of hand" in char.skill_proficiencies %]1[% else %]0[% endif %]}
-\SetStealthProficiency{[% if "stealth" in char.skill_proficiencies %]1[% else %]0[% endif %]}
-\SetSurvivalProficiency{[% if "survival" in char.skill_proficiencies %]1[% else %]0[% endif %]}
+\SetAcrobaticsProficiency{[%- if char.acrobatics.is_expertise -%]2
+                          [%- elif char.acrobatics.is_proficient -%]1
+                          [%- elif char.acrobatics.is_jack_of_all_trades -%]0.5
+                          [%- elif char.acrobatics.is_remarkable_athlete -%]0.5
+                          [% else %]0[% endif %]}
+\SetAnimalHandlingProficiency{[%- if char.animal_handling.is_expertise -%]2
+                              [%- elif char.animal_handling.is_proficient -%]1
+                              [%- elif char.animal_handling.is_jack_of_all_trades -%]0.5
+                              [% else %]0[% endif %]}
+\SetArcanaProficiency{[%- if char.arcana.is_expertise -%]2
+                      [%- elif char.arcana.is_proficient -%]1
+                      [%- elif char.arcana.is_jack_of_all_trades -%]0.5
+                      [% else %]0[% endif %]}
+\SetAthleticsProficiency{[%- if char.athletics.is_expertise -%]2
+                         [%- elif char.athletics.is_proficient -%]1
+                         [%- elif char.athletics.is_jack_of_all_trades -%]0.5
+                         [%- elif char.athletics.is_remarkable_athlete -%]0.5
+                         [% else %]0[% endif %]}
+\SetDeceptionProficiency{[%- if char.deception.is_expertise -%]2
+                         [%- elif char.deception.is_proficient -%]1
+                         [%- elif char.deception.is_jack_of_all_trades -%]0.5
+                         [% else %]0[% endif %]}
+\SetHistoryProficiency{[%- if char.history.is_expertise -%]2
+                       [%- elif char.history.is_proficient -%]1
+                       [%- elif char.history.is_jack_of_all_trades -%]0.5
+                       [% else %]0[% endif %]}
+\SetInsightProficiency{[%- if char.insight.is_expertise -%]2
+                       [%- elif char.insight.is_proficient -%]1
+                       [%- elif char.insight.is_jack_of_all_trades -%]0.5
+                       [% else %]0[% endif %]}
+\SetIntimidationProficiency{[%- if char.intimidation.is_expertise -%]2
+                            [%- elif char.intimidation.is_proficient -%]1
+                            [%- elif char.intimidation.is_jack_of_all_trades -%]0.5
+                            [%- else %]0[% endif %]}
+\SetInvestigationProficiency{[%- if char.investigation.is_expertise -%]2
+                             [%- elif char.investigation.is_proficient -%]1
+                             [%- elif char.investigation.is_jack_of_all_trades -%]0.5
+                             [% else %]0[% endif %]}
+\SetMedicineProficiency{[%- if char.medicine.is_expertise -%]
+                        [%- elif char.medicine.is_proficient -%]1
+                        [%- elif char.medicine.is_jack_of_all_trades -%]0.5
+                        [% else %]0[% endif %]}
+\SetNatureProficiency{[%- if char.nature.is_expertise -%]2
+                      [%- elif char.nature.is_proficient -%]1
+                      [%- elif char.nature.is_jack_of_all_trades -%]0.5
+                      [% else %]0[% endif %]}
+\SetPerceptionProficiency{[%- if char.perception.is_expertise -%]2
+                          [%- elif char.perception.is_proficient -%]1
+                          [%-elif char.perception.is_jack_of_all_trades -%]0.5
+                          [% else %]0[% endif %]}
+\SetPerformanceProficiency{[%- if char.performance.is_expertise -%]2
+                           [%- elif char.performance.is_proficient -%]1
+                           [%- elif char.performance.is_jack_of_all_trades -%]0.5
+                           [% else %]0[% endif %]}
+\SetPersuasionProficiency{[%- if char.persuasion.is_expertise -%]2
+                          [%- elif char.persuasion.is_proficient -%]1
+                          [%- elif char.persuasion.is_jack_of_all_trades -%]0.5
+                          [% else %]0[% endif %]}
+\SetReligionProficiency{[%- if char.religion.is_expertise -%]2
+                        [%- elif char.religion.is_proficient -%]1
+                        [%- elif char.religion.is_jack_of_all_trades -%]0.5
+                        [% else %]0[% endif %]}
+\SetSleightOfHandProficiency{[%- if char.sleight_of_hand.is_expertise -%]2
+                             [%- elif char.sleight_of_hand.is_proficient -%]1
+                             [%- elif char.sleight_of_hand.is_jack_of_all_trades -%]0.5
+                             [%- elif char.sleight_of_hand.is_remarkable_athlete -%]0.5
+                             [% else %]0[% endif %]}
+\SetStealthProficiency{[%- if char.stealth.is_expertise -%]2
+                       [%- elif char.stealth.is_proficient -%]1
+                       [%- elif char.stealth.is_jack_of_all_trades -%]0.5
+                       [%- elif char.stealth.is_remarkable_athlete -%]0.5
+                       [% else %]0[% endif %]}
+\SetSurvivalProficiency{[%- if char.survival.is_expertise -%]2
+                        [%- elif char.survival.is_proficient -%]1
+                        [%- elif char.survival.is_jack_of_all_trades -%]0.5
+                        [% else %]0[% endif %]}
 
 \Inspiration{[% if char.inspiration %] $\star$ [% endif %]}
 \Proficiency{[[ char.proficiency_bonus ]]}
