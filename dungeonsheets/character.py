@@ -775,7 +775,7 @@ class Character(Creature):
                 info_list = ["**Other Features**"]
                 info_list += [
                     text.strip()
-                    for text in self.features_and_traits.split("\n")
+                    for text in self.features_and_traits.split("\n\n")
                     if not (text.isspace())
                 ]
                 N = len(info_list)
@@ -832,7 +832,7 @@ class Character(Creature):
         if hasattr(self, "equipment") and len(self.equipment.strip()) > 0:
             eq_list += [
                 text.strip()
-                for text in self.equipment.split("\n")
+                for text in self.equipment.split("\n\n")
                 if not (text.isspace())
             ]
         if hasattr(self, "magic_items") and len(self.magic_items) > 0:
