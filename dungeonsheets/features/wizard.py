@@ -10,7 +10,7 @@ class ArcaneRecovery(Feature):
     combined level that is equal to or less than half your wizard
     level (rounded up), and none of the slots can be 6th level or
     higher. For example, if you're a 4th-level wizard, you can recover
-    up to two levels worth o f spell slots. You can recover either a
+    up to two levels worth of spell slots. You can recover either a
     2nd-level spell slot or two 1st-level spell slots
 
     """
@@ -26,7 +26,7 @@ class SpellMastery(Feature):
     lowest level without expending a spell slot when you have them prepared. If
     you want to cast either spell at a higher level, you must expend a spell
     slot as normal. By spending 8 hours in study, you can exchange one or both
-    o f the spells you chose for different spells of the same levels.
+    of the spells you chose for different spells of the same levels.
 
     """
 
@@ -216,13 +216,13 @@ class ExpertDivination(Feature):
 
 
 class TheThirdEye(Feature):
-    """Starting at 10th level, you can use your action to increase your powers o f
+    """Starting at 10th level, you can use your action to increase your powers of
     perception. When you do so, choose one of the following benefits, which
     lasts until you are incapacitated or you take a short or long rest. You
     can't use the feature again until you finish a rest.
 
     **Darkvision**: You gain darkvision out to a range of 60 feet, as described
-    in chapter 8.
+    in Chapter 8.
 
     **Ethereal Sight**: You can see into the Ethereal Plane within 60
     feet of you.
@@ -414,7 +414,7 @@ class ImprovedMinorIllusion(Feature):
     cantrip. If you already know this cantrip, you learn a different wizard
     cantrip of your choice. The cantrip doesn't count against your number of
     cantrips known. When you cast minor illusion, you can create both a sound
-    and an image with a single casting o f the spell.
+    and an image with a single casting of the spell.
 
     """
 
@@ -759,7 +759,7 @@ class DurableMagic(Feature):
 class DeflectingShroud(Feature):
     """At 14th level, your Arcane Deflection becomes infused with deadly
     magic. When you use your Arcane Deflec- tion feature, you can cause magical
-    energy to are from you. Up to three creatures ofyour choice that you can
+    energy to are from you. Up to three creatures of your choice that you can
     see within 60 feet of you each take force damage equal to half your wizard
     level.
 

@@ -90,7 +90,7 @@ class Earthquake(Spell):
     casting_time = "1 action"
     casting_range = "500 feet"
     components = ("V", "S", "M")
-    materials = "A pinch o f dirt, a piece o f rock, and a lump of clay"
+    materials = "A pinch of dirt, a piece of rock, and a lump of clay"
     duration = "Concentration, up to 1 minute"
     ritual = False
     magic_school = "Evocation"

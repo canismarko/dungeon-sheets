@@ -485,7 +485,7 @@ class LungingAttack(Maneuver):
 
 class ManeuveringAttack(Maneuver):
     """When you hit a creature with a weapon attack, you can expend one
-    superiority die to maneuver one o f your comrades into a more advantageous
+    superiority die to maneuver one of your comrades into a more advantageous
     position. You add the superiority die to the attack's damage roll, and you
     choose a friendly creature who can see or hear you. That creature can use
     its reaction to move up to half its speed without provoking opportunity
@@ -500,7 +500,7 @@ class MenacingAttack(Maneuver):
     """When you hit a creature with a weapon attack, you can expend one
     superiority die to attempt to frighten the target. You add the superiority
     die to the attack's damage roll, and the target must make a Wisdom saving
-    throw. On a failed save, it is frightened of you until the end o f your
+    throw. On a failed save, it is frightened of you until the end of your
     next turn.
 
     """

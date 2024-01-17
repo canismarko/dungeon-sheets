@@ -122,7 +122,7 @@ class DivineStrike(Feature):
 # Knowledge Domain
 class BlessingsOfKnowledge(Feature):
     """At 1st level, you learn two languages of your choice. You also become
-    proficient in your choice o f two of the following skills: Arcana, History,
+    proficient in your choice of two of the following skills: Arcana, History,
     Nature, or Religion. Your proficiency bonus is doubled for any ability
     check you make that uses either of those skills.
 
@@ -134,7 +134,7 @@ class BlessingsOfKnowledge(Feature):
 
 class KnowledgeOfTheAncients(DivineIntervention):
     """Starting at 2nd level, you can use your Channel Divinity to tap into a
-    divine well o f knowledge. As an action, you choose one skill or tool. For
+    divine well of knowledge. As an action, you choose one skill or tool. For
     10 minutes, you have proficiency with the chosen skill or tool.
 
     """
@@ -249,7 +249,7 @@ class BlessedHealer(Feature):
 
 class DivineStrikeLife(DivineStrike):
     """At 8th level, you gain the ability to infuse your weapon strikes with
-    divine energy. Once on each o f your turns when you hit a creature with a
+    divine energy. Once on each of your turns when you hit a creature with a
     weapon attack, you can cause the attack to deal an extra 1d8 radiant damage
     to the target. When you reach 14th level, the extra damage increases to
     2d8.
@@ -311,7 +311,7 @@ class RadianceOfTheDawn(ChannelDivinity):
 
 class ImprovedFlare(Feature):
     """Starting at 6th level, you can also use your Warding Flare feature when a
-    creature that you can see within 30 feet o f you attacks a creature other
+    creature that you can see within 30 feet of you attacks a creature other
     than you.
 
     """
@@ -478,7 +478,7 @@ class BlessingOfTheTrickster(Feature):
 
 class InvokeDuplicity(ChannelDivinity):
     """Starting at 2nd level, you can use your Channel Divinity to create an
-    illusory duplicate o f yourself. As an action, you create a perfect
+    illusory duplicate of yourself. As an action, you create a perfect
     illusion of yourself that lasts for 1 minute, or until you lose your
     concentration (as if you were concentrating on a spell). The illusion
     appears in an unoccupied space that you can see within 30 feet of you. As a
@@ -719,7 +719,7 @@ class SoulOfTheForge(Feature):
 
 class DivineStrikeForge(DivineStrike):
     """At 8th level, you gain the ability to infuse your weapon strikes
-    with the fiery power of the forge. Once on each ofyour turns when
+    with the fiery power of the forge. Once on each of your turns when
     you hit a creature with a weapon attack, you can cause the attack
     to deal an extra 1d8 fire damage to the target. When you reach
     14th level, the extra damage increases to 2d8
@@ -765,7 +765,7 @@ class EyesOfTheGrave(Feature):
     """At 1st level, you gain the ability to occasionally sense the presence of the
     undead, whose existence is an insult to the natural cycle of life. As an
     action, you can open your awareness to magically detect undead. Until the
-    end ofyour next turn, you know the location of any undead within 60 feet of
+    end of your next turn, you know the location of any undead within 60 feet of
     you that isn't behind total cover and that isn't protected from divination
     magic.
 
@@ -824,7 +824,7 @@ class KeeperOfSouls(Feature):
     60 feet of you, you or one creature of your choice that is within 60 feet
     of you regains hit points equal to the enemy's number of Hit Dice. You can
     use this feature only if you aren't incapacitated. Once you use it, you
-    can't do so again until the start ofyour next turn.
+    can't do so again until the start of your next turn.
 
     """
 

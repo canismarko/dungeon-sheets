@@ -158,7 +158,7 @@ class Javelin(SimpleWeapon, MeleeWeapon):
 
 
 class LightHammer(SimpleWeapon, MeleeWeapon):
-    name = "Light hammer"
+    name = "Light Hammer"
     cost = "2 gp"
     base_damage = "1d4"
     damage_type = "b"
@@ -208,7 +208,7 @@ class Spear(SimpleWeapon, MeleeWeapon):
 
 
 class LightCrossbow(SimpleWeapon, RangedWeapon):
-    name = "Light crossbow"
+    name = "Light Crossbow"
     cost = "25 gp"
     base_damage = "1d8"
     damage_type = "p"
@@ -412,7 +412,7 @@ class Trident(MartialWeapon, MeleeWeapon):
 
 
 class WarPick(MartialWeapon, MeleeWeapon):
-    name = "War pick"
+    name = "War Pick"
     cost = "5 gp"
     base_damage = "1d8"
     damage_type = "p"

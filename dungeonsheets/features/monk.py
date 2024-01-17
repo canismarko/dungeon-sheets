@@ -443,7 +443,7 @@ class DiscipleOfTheElements(Feature):
 
     **Casting Elemental Spells:** Some elemental disciplines allow you
     to cast spells. See chapter 10 for the general rules of
-    spellcasting. To cast one o f these spells, you use its casting
+    spellcasting. To cast one of these spells, you use its casting
     time and other rules, but you don't need to provide material
     components for it. Once you reach 5th level in this class, you can
     spend additional ki points to increase the level of an elemental
@@ -480,7 +480,7 @@ class ElementalAttunement(Feature):
 
     - Create a harmless, instantaneous sensory effect related to air,
       earth, fire, or water, such as a shower of sparks, a puff of
-      wind, a spray o f light mist, or a gentle rumbling of stone.
+      wind, a spray of light mist, or a gentle rumbling of stone.
     - Instantaneously light or snuff out a candle, a torch, or a small
       campfire.
     - Chill or warm up to 1 pound of nonliving material for up to 1
@@ -535,7 +535,7 @@ class FangsOfTheFireSnake(Feature):
     """When you use the Attack action on your turn, you can spend 1 ki
     point to cause tendrils of flame to stretch out from your fists
     and feet. Your reach with your unarmed strikes increases by 10
-    feet for that action, as well as the rest o f the turn. A hit with
+    feet for that action, as well as the rest of the turn. A hit with
     such an attack deals fire damage instead of bludgeoning damage,
     and if you spend 1 ki point when the attack hits, it also deals an
     extra 1d10 fire damage
@@ -641,7 +641,7 @@ class RushOfTheGaleSpirits(Feature):
 
 class ShapeTheFlowingRiver(Feature):
     """As an action, you can spend 1 ki point to choose an area of ice or
-    water no larger than 30 feet on a side within 120 feet o f
+    water no larger than 30 feet on a side within 120 feet of
     you. You can change water to ice within the area and vice versa,
     and you can reshape ice in the area in any manner you choose. You
     can raise or lower the ice's elevation, create or fill in a
