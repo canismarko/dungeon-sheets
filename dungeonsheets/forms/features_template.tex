@@ -1,25 +1,19 @@
 \pdfbookmark[0]{Features}{Features}
 \section*{Features}
 [% if use_dnd_decorations %]
-  [% for feat in character.features %]
+  [%- for feat in character.features %]
     \pdfbookmark[1]{[[ feat.name ]]}{Features - [[ feat.name ]]}
     \DndFeatHeader{[[ feat.name ]]}[Source: [[ feat.source ]]]
-
-    [[ feat.__doc__|rst_to_latex ]]
-  [% endfor %]
+    [[- feat.__doc__|rst_to_latex -]]
+  [%- endfor -%]
 [% else %]
-  [% for feat in character.features %]
+  [%- for feat in character.features %]
     \pdfbookmark[1]{[[ feat.name ]]}{Features - [[ feat.name ]]}
     \subsection*{[[ feat.name ]]}
-
-    \noindent
     \textbf{Source:} [[ feat.source ]] \\
-
-    [% if feat.needs_implementation %] %
-      \textbf{**Not included in stats on Character Sheet} %
-    [% endif %] %
-              
-    [[ feat.__doc__|rst_to_latex ]]
-
-  [% endfor %]
+    [%- if feat.needs_implementation %]
+      \textbf{**Not included in stats on Character Sheet}
+    [%- endif -%]
+    [[- feat.__doc__|rst_to_latex -]]
+  [%- endfor -%]
 [% endif %]
