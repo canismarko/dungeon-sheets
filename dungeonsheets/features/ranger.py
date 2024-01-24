@@ -213,7 +213,7 @@ class FeralSenses(Feature):
 class FoeSlayer(Feature):
     """At 20th level, you become an unparalleled hunter of your enemies. Once on
     each of your turns, you can add your Wisdom modifier to the attack roll or
-    the damage roll of an attack you make against one o f your favored
+    the damage roll of an attack you make against one of your favored
     enemies. You can choose to use this feature before or after the roll, but
     before any effects of the roll are applied.
 
@@ -247,7 +247,7 @@ class GiantKiller(Feature):
 
 
 class HordeBreaker(Feature):
-    """Once on each o f your turns when you make a weapon attack, you can make
+    """Once on each of your turns when you make a weapon attack, you can make
     another attack with the same weapon against a different creature that is
     within 5 feet of the original target and within range of your weapon.
 
@@ -325,7 +325,7 @@ class DefensiveTactics(FeatureSelector):
 
 class Volley(Feature):
     """You can use your action to make a ranged attack against any number of
-    creatures within 10 feet o f a point you can see within your weapon's
+    creatures within 10 feet of a point you can see within your weapon's
     range. You must have ammunition for each target, as normal, and you make a
     separate attack roll for each target
 
@@ -336,7 +336,7 @@ class Volley(Feature):
 
 
 class WhirlwindAttack(Feature):
-    """You can use your action to make a melee attack against any number o f
+    """You can use your action to make a melee attack against any number of
     creatures within 5 feet of you, with a separate attack roll for each target
 
     """
@@ -615,7 +615,7 @@ class HuntersSense(Feature):
     @property
     def name(self):
         num = max(1, self.owner.wisdom.modifier)
-        return self._num + " ({:d}x/LR)".format(num)
+        return self._name + " ({:d}x/LR)".format(num)
 
 
 class SlayersPrey(Feature):

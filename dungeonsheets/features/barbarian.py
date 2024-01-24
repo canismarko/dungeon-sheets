@@ -183,7 +183,7 @@ class Frenzy(Feature):
     """Starting when you choose this path at 3rd level, you can go into a frenzy
     when you rage. If you do so, for the duration of your rage you can make a
     single melee weapon attack as a bonus action on each of your turns after
-    this one. When your rage ends, you suffer one level o f exhaustion (as
+    this one. When your rage ends, you suffer one level of exhaustion (as
     described in appendix A)
 
     """
@@ -423,7 +423,7 @@ class SpiritWalker(Feature):
 
 
 class BearAttunement(Feature):
-    """While you're raging, any creature within 5 feet o f you that's hostile to
+    """While you're raging, any creature within 5 feet of you that's hostile to
     you has disadvantage on attack rolls against targets other than you or
     another character with this feature. An enemy is immune to this effect if
     it can't see or hear you or if it can't be frightened.
@@ -561,7 +561,7 @@ class AncestralProtectors(Feature):
     """Starting when you choose this path at 3rd level, spectral warriors appear
     when you enter your rage. While you're raging, the first creature you hit
     with an attack on your turn becomes the target of the warriors, which
-    hinder its attacks. Until the start ofyour next turn, that target has
+    hinder its attacks. Until the start of your next turn, that target has
     disadvantage on any attack roll that isn't against you, and when the target
     hits a creature other than you with an attack, that creature has resistance
     to the damage dealt by the attack. The effect on the target ends early

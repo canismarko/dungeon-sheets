@@ -69,7 +69,7 @@ class UncannyDodge(Feature):
 
 
 class Evasion(Feature):
-    """Beginning at 7th level, you can nimbly dodge out o f the way of certain
+    """Beginning at 7th level, you can nimbly dodge out of the way of certain
     area effects, such as a red dragon's fiery breath or an ice storm
     spell. When you are subjected to an effect that allows you to make a
     Dexterity saving throw to take only half damage, you instead take no damage
@@ -530,7 +530,7 @@ class AmbushMaster(Feature):
     fight. You have advantage on initiative rolls. In addition, the first
     creature you hit during the first round of a combat becomes easier for you
     and others to strike; attack rolls against that target have advantage until
-    the start ofyour next turn
+    the start of your next turn
 
     """
 
@@ -556,7 +556,7 @@ class FancyFootwork(Feature):
     """When you choose this archetype at 3rd level, you learn how to land a strike
     and then slip away without reprisal. During your turn, if you make a melee
     attack against a creature, that creature can't make opportunity attacks
-    against you for the rest ofyour turn
+    against you for the rest of your turn
 
     """
 

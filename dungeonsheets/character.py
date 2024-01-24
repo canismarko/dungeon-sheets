@@ -1,4 +1,5 @@
 """Tools for describing a player character."""
+from __future__ import annotations  # To support python 3.10 annotation in older version
 import logging
 import math
 import os

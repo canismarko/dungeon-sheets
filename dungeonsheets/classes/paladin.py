@@ -30,11 +30,11 @@ class OathOfDevotion(PaladinOath):
     """The Oath of Devotion binds a paladin to the loftiest ideals of justice,
     virtue, and order. Sometim es called cavaliers, white knights, or holy
     warriors, these paladins meet the ideal of the knight in shining armor,
-    acting with honor in pursuit o f justice and the greater good. They hold
+    acting with honor in pursuit of justice and the greater good. They hold
     themselves to the highest standards of conduct, and some, for better or
     worse, hold the rest of the world to the same standards. Many who swear
     this oath are devoted to gods of law and good and use their gods' tenets as
-    the measure o f their devotion. They hold angels-the perfect servants o f
+    the measure of their devotion. They hold angels-the perfect servants of
     good-as their ideals, and incorporate images of angelic wings into their
     helmets or coats of arms.
 

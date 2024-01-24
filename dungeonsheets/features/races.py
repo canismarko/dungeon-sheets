@@ -521,7 +521,7 @@ class SpeechOfBeastAndLeaf(Feature):
 # Goliath
 class StonesEndurance(Feature):
     """You can focus yourself to occasionally shrug off injury. When you take
-    damage, you can use your reaction to roll a dl2. Add your Constitution
+    damage, you can use your reaction to roll a d12. Add your Constitution
     modifier to the number rolled, and reduce the damage by that total. After
     you use this trait, you can't use it again until you finish a short or long
     rest.

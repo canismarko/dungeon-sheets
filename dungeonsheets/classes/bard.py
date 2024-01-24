@@ -6,7 +6,7 @@ from dungeonsheets.classes.classes import CharClass, SubClass
 
 # PHB
 class CollegeOfLore(SubClass):
-    """Bards of the College o f Lore know something about most things, collecting
+    """Bards of the College of Lore know something about most things, collecting
     bits of knowledge from sources as diverse as scholarly tomes and peasant
     tales. Whether singing folk ballads in taverns or elaborate compositions in
     royal courts, these bards use their gifts to hold audiences

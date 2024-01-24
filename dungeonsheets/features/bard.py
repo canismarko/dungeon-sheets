@@ -151,7 +151,7 @@ class SuperiorInspiration(Feature):
 # College of Lore
 class LoreProficiencies(Feature):
     """When you join the College of Lore at 3rd level, you gain proficiency with
-    three skills o f your choice.
+    three skills of your choice.
 
     """
 
@@ -371,14 +371,14 @@ class BladeFlourish(Feature):
     **Defensive Flourish**: You can expend one use of your Bardic Inspiration
     to cause the weapon to deal extra damage to the target you hit. The damage
     equals the number you roll on the Bardic Inspiration die. You also add the
-    number rolled to your AC until the start ofyour next turn.
+    number rolled to your AC until the start of your next turn.
 
-    **Slashing Flourish**: You can expend one use ofyour Bardic Inspiration to
+    **Slashing Flourish**: You can expend one use of your Bardic Inspiration to
     cause the weapon to deal extra damage to the target you hit and to any
-    other creature ofyour choice that you can see within 5 feet ofyou. The
+    other creature of your choice that you can see within 5 feet ofyou. The
     damage equalsthe number you roll on the Bardic Inspi- ration die.
 
-    **Mobile Flourish**: You can expend one use ofyour Bar- dic InSpiration to
+    **Mobile Flourish**: You can expend one use of your Bar- dic InSpiration to
     cause the weapon to deal extra dam- age to the target you hit. The damage
     equals the number you roll on the Bardic Inspiration die. You can also push
     the target up to 5 feet away from you, plus a number of feet equal to the
@@ -406,7 +406,7 @@ class PsychicBlades(Feature):
     """When you join the College of Whispers at 3rd level, you gain the
     ability to make your weapon attacks magically toxic to a
     creature's mind. When you hit a creature with a weapon attack, you
-    can expend one use ofyour Bardic Inspiration to deal an extra 2d6
+    can expend one use of your Bardic Inspiration to deal an extra 2d6
     psychic damage to that target. You can do so only once per round
     on your turn. The psychic damage increases when you reach certain
     levels in this class, increasing to 3d6 at 5th level, 5d6 at 10th
@@ -478,7 +478,7 @@ class MantleOfWhispers(Feature):
 class ShadowLore(Feature):
     """At 14th level, you gain the ability to weave dark magic into your words and
     tap into a creature's deepest fears. As an action, you magically whisper a
-    phrase that only one creature ofyour choice within 30 feet of you can
+    phrase that only one creature of your choice within 30 feet of you can
     hear. The target must make a Wisdom saving throw against your spell save
     DC. It automatically succeeds if it doesn't share a language with you or if
     it can't hear you. On a successful saving throw, your whisper sounds like

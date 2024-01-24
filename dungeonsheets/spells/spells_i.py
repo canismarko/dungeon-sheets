@@ -2,8 +2,7 @@ from dungeonsheets.spells.spells import Spell
 
 
 class IceKnife(Spell):
-    """(a drop of water or piece of ice)
-    You create a shard of ice and fling it at one
+    """You create a shard of ice and fling it at one
     creature within range. Make a ranged spell attack against the target. On a hit,
     the target takes 1d10 piercing damage. Hit or miss, the shard then explodes. The
     target and each creature within 5 feet of the point where the ice exploded must
@@ -18,7 +17,7 @@ class IceKnife(Spell):
     casting_time = "1 action"
     casting_range = "60 feet"
     components = ("S", "M")
-    materials = ""
+    materials = "A drop of water or piece of ice"
     duration = "Instantaneous"
     ritual = False
     magic_school = "Conjuration"

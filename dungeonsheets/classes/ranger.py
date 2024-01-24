@@ -8,7 +8,7 @@ from dungeonsheets import features, spells, weapons
 from dungeonsheets.classes.classes import CharClass, SubClass
 from dungeonsheets.stats import (
     attack_text_locator,
-    att_dmg_modifier, 
+    att_dmg_modifier,
     skill_modifier,
 )
 

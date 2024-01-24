@@ -433,7 +433,7 @@ class Mobile(Feature):
     - When you use the Dash action, difficult terrain doesn’t cost you
       extra movement on that turn.
     - When you make a melee attack against a creature, you don’t
-      provoke opportunity attacks from that creature for the rest o f
+      provoke opportunity attacks from that creature for the rest of
       the turn, whether you hit or not.
 
     """
@@ -995,7 +995,7 @@ class DragonHide(Feature):
     source = "Feats"
 
 
-class DrowHideMagic(Feature):
+class DrowHighMagic(Feature):
     """You learn more of the magic typical of dark elves. You learn the
     detect magic spell and can cast it at will, without expending a
     spell slot. You also learn levitate and dispel magic, each of
@@ -1009,7 +1009,7 @@ class DrowHideMagic(Feature):
 
     """
 
-    name = "Drow Hide Magic"
+    name = "Drow High Magic"
     source = "Feats"
 
 

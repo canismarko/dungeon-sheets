@@ -32,7 +32,7 @@ class FalseIdentity(Feature):
     """
 
     name = "False Identity"
-    source = "Background (Charlattan)"
+    source = "Background (Charlatan)"
 
 
 class CriminalContact(Feature):

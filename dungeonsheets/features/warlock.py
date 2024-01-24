@@ -43,7 +43,7 @@ class PactOfTheBlade(Feature):
     """You can use your action to create a pact weapon in your empty hand. You can
     choose the form that this melee weapon takes each time you create it (see
     chapter 5 for weapon options). You are proficient with it while you wield
-    it. This weapon counts as magical for the purpose o f overcoming resistance
+    it. This weapon counts as magical for the purpose of overcoming resistance
     and immunity to nonmagical attacks and damage.
 
     Your pact weapon disappears if it is more than 5 feet away from you for 1
@@ -263,7 +263,7 @@ class DarkOnesOwnLuck(Feature):
     """Starting at 6th level, you can call on your patron to alter fate in your
     favor. When you make an ability check or a saving throw, you can use this
     feature to add a d10 to your roll. You can do so after seeing the initial
-    roll but before any o f the roll's effects occur.
+    roll but before any of the roll's effects occur.
 
     Once you use this feature, you can't use it again until you finish a short
     or long rest.
@@ -870,7 +870,7 @@ class BookOfAncientSecrets(Invocation):
     them by some other means. You can also cast a warlock spell you know as a
     ritual if it has the ritual tag.
 
-    On your adventures, you can add other ritual spells to your Book o f
+    On your adventures, you can add other ritual spells to your Book of
     Shadows. When you find such a spell, you can add it to the book if the
     spell's level is equal to or less than half your warlock level (rounded up)
     and if you can spare the time to transcribe the spell. For each level of
@@ -1217,7 +1217,7 @@ class GiftOfTheEverLivingOnes(Invocation):
 
 
 class GraspOfHadar(Invocation):
-    """Once on each ofyour turns when you hit a creature with your eldritcli
+    """Once on each of your turns when you hit a creature with your eldritcli
     blast, you can move that creature in a straight line 10 feet closer to you
 
     """
@@ -1251,7 +1251,7 @@ class ImprovedPactWeapon(Invocation):
 
 class LanceOfLethargy(Invocation):
     """Once on each of your turns when you hit a creature with your eldritch
-    blast, you can reduce that creature's speed by 10 feet until the end ofyour
+    blast, you can reduce that creature's speed by 10 feet until the end of your
     next turn.
 
     """
@@ -1278,7 +1278,7 @@ class RelentlessHex(Invocation):
     """Your curse creates a temporary bond between you and your target. As a bonus
     action, you can magically telerport up to 30 feet to an unoccupied space
     you can see within 5 feet of the target cursed by your hex spell or by a
-    warlock feature ofyours, such as Hexblade's Curse or Sign of 111 Omen. To
+    warlock feature of yours, such as Hexblade's Curse or Sign of 111 Omen. To
     teleport in this way, you must be able to see the cursed target.
 
     """

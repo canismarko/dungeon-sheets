@@ -51,7 +51,7 @@ features = ()
 # If selecting among multiple feature options: ex Fighting Style
 # Example (Fighting Style):
 # feature_choices = ('Archery',)
-feature_choices = ('great-weapon master', )
+feature_choices = ('great-weapon fighting', )
 
 # Weapons/other proficiencies not given by class/race/background
 weapon_proficiencies = ()  # ex: ('shortsword', 'quarterstaff')
