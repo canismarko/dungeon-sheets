@@ -21,7 +21,7 @@ background = "Charlatan"
 race = "Forest Gnome"
 alignment = "Lawful good"
 
-xp = 0
+xp = "Milestone"
 hp_max = 105
 hp_current = 92
 hp_temp = 0

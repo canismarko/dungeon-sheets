@@ -21,7 +21,7 @@ background = "Acolyte"
 race = "Hill Dwarf"
 alignment = "Lawful good"
 
-xp = 0
+xp = "Milestone"
 hp_max = 168
 inspiration = 0  # integer inspiration value
 

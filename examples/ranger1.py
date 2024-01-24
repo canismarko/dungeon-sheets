@@ -21,7 +21,7 @@ background = "Mercenary Veteran"
 race = "Tabaxi"
 alignment = "Neutral good"
 
-xp = 0
+xp = "Milestone"
 hp_max = 147
 inspiration = 0  # integer inspiration value
 

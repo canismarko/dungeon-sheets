@@ -21,7 +21,7 @@ background = "Entertainer"
 race = "Dark Elf"
 alignment = "Lawful good"
 
-xp = 0
+xp = "Milestone"
 hp_max = 105
 inspiration = 0  # integer inspiration value
 

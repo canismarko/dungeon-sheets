@@ -21,7 +21,7 @@ background = "Uthgardt Tribe Member"
 race = "Kenku"
 alignment = "Neutral good"
 
-xp = 0
+xp = "Milestone"
 hp_max = 105
 inspiration = 0  # integer inspiration value
 

@@ -21,7 +21,7 @@ background = "Noble"
 race = "Dragonborn"
 alignment = "Neutral good"
 
-xp = 0
+xp = "Milestone"
 hp_max = 96
 inspiration = 0  # integer inspiration value
 

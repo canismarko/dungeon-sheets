@@ -21,7 +21,7 @@ background = "{{ char.background.name }}"
 race = "{{ char.race.name }}"
 alignment = "{{ char.alignment }}"
 
-xp = {{ char.xp }}
+xp = {{ char.xp }}  # ex: [36079] or ["Milestone"]
 hp_max = {{ char.hp_max }}
 inspiration = {{ char.inspiration }}  # boolean inspiration value
 

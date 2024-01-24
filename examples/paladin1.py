@@ -21,7 +21,7 @@ background = "Clan Crafter"
 race = "Tiefling"
 alignment = "Neutral evil"
 
-xp = 0
+xp = "Milestone"
 hp_max = 126
 inspiration = 0  # integer inspiration value
 
