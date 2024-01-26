@@ -758,7 +758,7 @@ def main(args=None):
     temp_filenames = []
     for fpath in input_filenames:
         temp_filenames.extend(get_char_files(fpath, parse_dirs=True))
-    # IMPORANT:
+    # IMPORTANT:
     # Check that the files are valid dungeonsheets files without importing them
     filenames = []
     version_re = re.compile(

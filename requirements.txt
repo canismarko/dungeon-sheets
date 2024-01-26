@@ -6,8 +6,6 @@ sphinx~=7.2.6
 pdfrw~=0.4
 EbookLib~=0.18
 reportlab~=4.0.8
-
-dungeonsheets~=0.19.0
-setuptools==69.0.2
+setuptools~=69.0.3
 docutils~=0.20.1
-pypdf==3.17.3
+pypdf~=3.17.4
