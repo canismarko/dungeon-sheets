@@ -72,7 +72,8 @@ class CharacterRenderer:
         character: Character,
         content_suffix: str = "tex",
         use_dnd_decorations: bool = False,
-        spell_order: bool = False
+        spell_order: bool = False,
+        feat_order: bool = False,
     ):
         template = jinja_env.get_template(
             self.template_name.format(suffix=content_suffix)
@@ -81,6 +82,7 @@ class CharacterRenderer:
             character=character,
             use_dnd_decorations=use_dnd_decorations,
             spell_order=spell_order,
+            feat_order=feat_order,
             ordinals=ORDINALS,
         )
 
@@ -164,6 +166,7 @@ def make_sheet(
     debug: bool = False,
     use_tex_template: bool = False,
     spell_order: bool = False,
+    feat_order: bool = False,
 ):
     """Make a character or GM sheet into a PDF.
     Parameters
@@ -204,6 +207,7 @@ def make_sheet(
             debug=debug,
             use_tex_template=use_tex_template,
             spell_order=spell_order,
+            feat_order=feat_order,
         )
     return ret
 
@@ -394,6 +398,7 @@ def make_character_content(
     content_format: str,
     fancy_decorations: bool = False,
     spell_order: bool = False,
+    feat_order: bool = False,
 ) -> List[str]:
     """Prepare the inner content for a character sheet.
 
@@ -455,6 +460,7 @@ def make_character_content(
                 character,
                 content_suffix=content_format,
                 use_dnd_decorations=fancy_decorations,
+                feat_order=feat_order,
             )
         )
     if character.magic_items:
@@ -554,6 +560,7 @@ def make_character_sheet(
     debug: bool = False,
     use_tex_template: bool = False,
     spell_order: bool = False,
+    feat_order: bool = False,
 ):
     """Prepare a PDF character sheet from the given character file.
 
@@ -594,6 +601,7 @@ def make_character_sheet(
         content_format=content_suffix,
         fancy_decorations=fancy_decorations,
         spell_order=spell_order,
+        feat_order=feat_order,
     )
     # Typeset combined LaTeX file
     if output_format == "pdf":
@@ -703,6 +711,7 @@ def _build(filename, args) -> int:
             fancy_decorations=args.fancy_decorations,
             use_tex_template=args.use_tex_template,
             spell_order=args.spell_order,
+            feat_order=args.feat_order,
         )
     except exceptions.CharacterFileFormatError:
         # Only raise the failed exception if this file is explicitly given
@@ -747,6 +756,14 @@ def main(args=None):
         action="store_true",
         help="Order spells by level in the feature pages.",
         dest="spell_order",
+    )
+    parser.add_argument(
+        "--feats-by-type",
+        "-N",
+        default=False,
+        action="store_true",
+        help="Order feats by type in the feature pages.",
+        dest="feat_order",
     )
     parser.add_argument(
         "--fancy-decorations",

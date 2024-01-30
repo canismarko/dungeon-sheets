@@ -1,7 +1,8 @@
 \pdfbookmark[0]{Features}{Features}
 \section*{Features}
+[%- if feat_order -%][% set feat_list = character.features_by_type %][% else %][% set feat_list = character.features %][% endif %]
 [% if use_dnd_decorations %]
-  [%- for feat in character.features %]
+  [%- for feat in feat_list %]
     \pdfbookmark[1]{[[ feat.name ]]}{Features - [[ feat.name ]]}
     \DndFeatHeader{[[ feat.name ]]}[Source: [[ feat.source ]]]
     [[- feat.__doc__|rst_to_latex(use_dnd_decorations=use_dnd_decorations) -]]
