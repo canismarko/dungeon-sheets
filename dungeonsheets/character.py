@@ -119,6 +119,7 @@ class Character(Creature):
     images: list[tuple[Path, int, int, int, int, int]] = []
 
     spell_order: bool = False
+    feat_order: bool = False
 
     source_file_location: Path | None
 
@@ -452,43 +453,56 @@ class Character(Creature):
 
     @property
     def features(self):
-        fts = set(self.custom_features)
-        fighting_style_defined = False
-        set_of_fighting_styles = {
-            "Fighting Style (Archery)",
-            "Fighting Style (Defense)",
-            "Fighting Style (Dueling)",
-            "Fighting Style (Great Weapon Fighting)",
-            "Fighting Style (Protection)",
-            "Fighting Style (Two-Weapon Fighting)",
-        }
-        for temp_feature in fts:
-            fighting_style_defined = temp_feature.name in set_of_fighting_styles
-            if fighting_style_defined:
-                break
-
-        if not self.has_class:
-            return fts
-        for c in self.class_list:
-            fts |= set(c.features)
-            for feature in fts:
-                if (
-                    fighting_style_defined
-                    and feature.name == "Fighting Style (Select One)"
-                ):
-                    temp_feature = feature
-                    fts.remove(temp_feature)
-                    break
-        if self.race is not None:
-            fts |= set(getattr(self.race, "features", ()))
-            # some races have level-based features (Ex: Aasimar)
-            if hasattr(self.race, "features_by_level"):
-                for lvl in range(1, self.level + 1):
-                    fts |= set(self.race.features_by_level[lvl])
-        if self.background is not None:
-            fts |= set(getattr(self.background, "features", ()))
-
-        return sorted(tuple(fts), key=(lambda x: x.name))
+        if self.feat_order:
+            fts = list()
+            general_feat_choices = list()
+            class_feat_choices = list()
+            if not self.has_class:
+                for item in self.custom_features:
+                    if item.source == "Feats":
+                        fts.append(item)
+                    else:
+                        choices.append(item)
+                fts = fts + choices
+                return fts
+            for c in self.class_list:
+                for item in list(c.features):
+                    fts.append(item)
+            if self.race is not None:
+                for item in getattr(self.race, "features", ()):
+                    fts.append(item)
+                # some races have level-based features (Ex: Aasimar)
+                if hasattr(self.race, "features_by_level"):
+                    for lvl in range(1, self.level + 1):
+                        for item in list(self.race.features_by_level[lvl]):
+                            fts.append(item)
+            if self.background is not None:
+                for item in getattr(self.background, "features", ()):
+                    fts.append(item)
+            # Add player choices, but only if they're not automically given already:
+            for item in self.custom_features:
+                if item.source == "Feats":
+                    if not item in fts:
+                        general_feat_choices.append(item)
+                else:
+                    if not item in fts:
+                        class_feat_choices.append(item)
+            return tuple(general_feat_choices + class_feat_choices + fts)
+        else:
+            fts = set(self.custom_features)
+            if not self.has_class:
+                return fts
+            for c in self.class_list:
+                fts |= set(c.features)
+            if self.race is not None:
+                fts |= set(getattr(self.race, "features", ()))
+                # some races have level-based features (Ex: Aasimar)
+                if hasattr(self.race, "features_by_level"):
+                    for lvl in range(1, self.level + 1):
+                        fts |= set(self.race.features_by_level[lvl])
+            if self.background is not None:
+                fts |= set(getattr(self.background, "features", ()))
+            return sorted(tuple(fts), key=(lambda x: x.name))
 
     @property
     def custom_features_text(self):
