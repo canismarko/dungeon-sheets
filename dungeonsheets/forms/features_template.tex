@@ -1,20 +1,49 @@
+[%- if feat_order -%][% set headercounter_ns = namespace(counter = 0) %]
+[%- else -%]
 \pdfbookmark[0]{Features}{Features}
 \section*{Features}
+[% endif %]
 [%- if feat_order -%][% set feat_list = character.features_by_type %][% else %][% set feat_list = character.features %][% endif %]
-[% if use_dnd_decorations %]
-  [%- for feat in feat_list %]
+[%- for feat in feat_list %]
+  [%- if feat_order -%]
+    [%- if headercounter_ns.counter == 0 -%]
+      [%- if "Feats" in feat.source -%]
+        \pdfbookmark[0]{Character Features}{Character Features}
+        \section*{Character Features}
+        [% set headercounter_ns.counter = 1 %]
+      [%- else -%]
+        \pdfbookmark[0]{Class Features}{Class Features}
+        \section*{Class Features}
+        [% set headercounter_ns.counter = 2 %]
+      [%- endif %]
+    [%- elif headercounter_ns.counter == 1 and not "Feats" in feat.source -%]
+      \pdfbookmark[0]{Class Features}{Class Features}
+      \section*{Class Features}
+      [% set headercounter_ns.counter = 2 %]
+    [%- elif "Race" in feat.source and headercounter_ns.counter == 2 -%]
+      \pdfbookmark[0]{Racial Features}{Features - Racial Feats}
+      \section*{Racial Features}
+      [% set headercounter_ns.counter = 3 %]
+    [%- elif "Background" in feat.source and headercounter_ns.counter == 3 -%]
+      \pdfbookmark[0]{Background Features}{Features - Background Feats}
+      \section*{Background Features}
+      [% set headercounter_ns.counter = 4 %]
+    [%- endif %]
+    \pdfbookmark[1]{[[ feat.name ]]}{[%- if headercounter_ns.counter == 1 %]Character
+                                     [%- elif headercounter_ns.counter == 2 %]Class
+                                     [%- elif headercounter_ns.counter == 3 %]Racial
+                                     [%- else %]Background[% endif %] Features - [[ feat.name ]]}
+  [%- else -%]
     \pdfbookmark[1]{[[ feat.name ]]}{Features - [[ feat.name ]]}
+  [%- endif %]
+  [%- if use_dnd_decorations %]
     \DndFeatHeader{[[ feat.name ]]}[Source: [[ feat.source ]]]
-    [[- feat.__doc__|rst_to_latex(use_dnd_decorations=use_dnd_decorations) -]]
-  [%- endfor -%]
-[% else %]
-  [%- for feat in character.features %]
-    \pdfbookmark[1]{[[ feat.name ]]}{Features - [[ feat.name ]]}
+  [%- else %]
     \subsection*{[[ feat.name ]]}
     \textbf{Source:} [[ feat.source ]] \\
-    [%- if feat.needs_implementation %]
-      \textbf{**Not included in stats on Character Sheet}
-    [%- endif -%]
-    [[- feat.__doc__|rst_to_latex -]]
-  [%- endfor -%]
-[% endif %]
+  [%- endif %]
+  [%- if feat.needs_implementation %]
+    \textbf{**Not included in stats on Character Sheet} \\
+  [%- endif %]
+      [[- feat.__doc__|rst_to_latex(use_dnd_decorations=use_dnd_decorations) ]]
+[% endfor %]
