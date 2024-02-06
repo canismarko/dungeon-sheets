@@ -849,6 +849,7 @@ class Character(Creature):
     def proficiencies_by_type(self):
         prof_dict = {}
         w_pro = set(self.weapon_proficiencies)
+        w_pro.remove(weapons.Unarmed)
         if weapons.MartialWeapon in w_pro:
             prof_dict["Weapons"] = ["All Weapons"]
         elif weapons.SimpleWeapon in w_pro:
