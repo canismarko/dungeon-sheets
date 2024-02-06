@@ -8,6 +8,7 @@
 \usepackage[UKenglish]{babel}
 
 \usepackage{dndtemplate}
+\usepackage{bookmark}
 
 \setlength\oddsidemargin{\dimexpr(\paperwidth-\textwidth)/2 - 1in\relax}
 \setlength\evensidemargin{\oddsidemargin}
@@ -235,13 +236,16 @@
 
 
 % CHARACTER PAGE
+\pdfbookmark[0]{Character Sheet}{Character Sheet}
 \rendercharactersheet
 
 % BACKSTORY PAGE
+\pdfbookmark[0]{Background Sheet}{Background Sheet}
 \renderbackgroundsheet
 
 [% if char.is_spellcaster %]
 % SPELLCASTING PAGE
+\pdfbookmark[0]{Spellcasting Sheet}{Spellcasting Sheet}
 \spellsheetchoice
 [% endif %]
 
