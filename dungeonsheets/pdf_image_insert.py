@@ -35,8 +35,8 @@ def insert_image_into_pdf(
     stamp = PdfReader(packet)
     writer = PdfWriter()
 
-    for i, page in enumerate(reader.pages):
+    writer.clone_document_from_reader(reader)
+    for i, page in enumerate(writer.pages):
         if i == page_target_index:
             page.merge_page(stamp.pages[0])
-        writer.add_page(page)
     writer.write(destination_pdf)
