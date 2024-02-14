@@ -1,4 +1,4 @@
-"""This file describes the heroic adventurer Sorceror2.
+"""This file describes the heroic adventurer Sorcerer1.
 
 It's used primarily for saving characters from create-character,
 where there will be many missing sections.
@@ -10,39 +10,39 @@ sheet by running ``makesheets`` from the command line.
 
 dungeonsheets_version = "0.9.4"
 
-name = "Sorceror2"
+name = "Sorcerer1"
 player_name = "Ben"
 
 # Be sure to list Primary class first
-classes = ['Sorceror']  # ex: ['Wizard'] or ['Rogue', 'Fighter']
-levels = [16]  # ex: [10] or [3, 2]
-subclasses = ["Shadow Magic"]  # ex: ['Necromacy'] or ['Thief', None]
-background = "Cloistered Scholar"
-race = "Fallen Aasimar"
-alignment = "Lawful good"
+classes = ['Sorcerer']  # ex: ['Wizard'] or ['Rogue', 'Fighter']
+levels = [20]  # ex: [10] or [3, 2]
+subclasses = ["Wild Magic"]  # ex: ['Necromacy'] or ['Thief', None]
+background = "Waterdhavian Noble"
+race = "Triton"
+alignment = "Neutral evil"
 
-xp = 0
-hp_max = 68
+xp = "Milestone"
+hp_max = 105
 inspiration = 0  # integer inspiration value
 
 # Ability Scores
-strength = 9
-dexterity = 10
-constitution = 12
-intelligence = 13
-wisdom = 14
-charisma = 17
+strength = 11
+dexterity = 8
+constitution = 14
+intelligence = 14
+wisdom = 12
+charisma = 16
 
 # Select what skills you're proficient with
 # ex: skill_proficiencies = ('athletics', 'acrobatics', 'arcana')
-skill_proficiencies = ('arcana', 'deception', 'insight', 'history')
+skill_proficiencies = ('deception', 'insight', 'history', 'persuasion')
 
 # Any skills you have "expertise" (Bard/Rogue) in
 skill_expertise = ()
 
 # Named features / feats that aren't part of your classes, race, or background.
 # Also include Eldritch Invocations and features you make multiple selection of
-# (like Maneuvers for Fighter, Metamagic for Sorcerors, Trick Shots for
+# (like Maneuvers for Fighter, Metamagic for Sorcerers, Trick Shots for
 # Gunslinger, etc.)
 # Example:
 # features = ('Tavern Brawler',) # take the optional Feat from PHB
@@ -58,7 +58,7 @@ weapon_proficiencies = ()  # ex: ('shortsword', 'quarterstaff')
 proficiencies_text = ()  # ex: ("thieves' tools",)
 
 # Proficiencies and languages
-languages = """[choose one], [choose one], Common, Celestial"""
+languages = """[choose one], Common, Primordial"""
 
 # Inventory
 # TODO: Get yourself some money
@@ -69,7 +69,7 @@ gp = 0
 pp = 0
 
 # TODO: Put your equipped weapons and armor here
-weapons = ('dagger',)  # Example: ('shortsword', 'longsword')
+weapons = ('spear',)  # Example: ('shortsword', 'longsword')
 magic_items = ()  # Example: ('ring of protection',)
 armor = ""  # Eg "leather armor"
 shield = ""  # Eg "shield"
@@ -84,7 +84,8 @@ or uses spells."""
 spells_prepared = ('acid_splash', 'blade ward', 'friends', 'light',
                    'burning hands', 'disguise self', 'jump',
                    'blur', 'invisibility', 'knock',
-                   'fly', 'fireball',)  # Todo: Learn some
+                   'fly', 'fireball',
+                   'banishment', 'cloudkill', 'teleport', 'wish')  # Todo: Learn some spells
 
 # Which spells have not been prepared
 __spells_unprepared = ()

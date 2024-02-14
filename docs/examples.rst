@@ -95,12 +95,12 @@ Rogue
 
 .. literalinclude:: ../examples/rogue2.py
 
-Sorceror
+Sorcerer
 =========
 
-.. literalinclude:: ../examples/sorceror1.py
+.. literalinclude:: ../examples/sorcerer1.py
 
-.. literalinclude:: ../examples/sorceror2.py
+.. literalinclude:: ../examples/sorcerer2.py
 
 Warlock
 =======

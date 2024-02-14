@@ -46,7 +46,7 @@ __all__ = (
     "Paladin",
     "Ranger",
     "Rogue",
-    "Sorceror",
+    "Sorcerer",
     "Warlock",
     "Wizard",
 )
@@ -544,7 +544,7 @@ class Character(Creature):
                         classes.Bard,
                         classes.Cleric,
                         classes.Druid,
-                        classes.Sorceror,
+                        classes.Sorcerer,
                         classes.Wizard,
                     ]:
                         eff_level += c.level
@@ -1132,6 +1132,9 @@ class Character(Creature):
                 char_props.pop("character_class").lower().capitalize()
             ]
             char_props["levels"] = [str(char_props.pop("level"))]
+        if 'Sorceror' in classes:
+            classes.remove('Sorceror')
+            classes.append('Sorcerer')
         # Create the character with loaded properties
         char = Cls(**char_props)
         log.info(f"Imported character: {char}")
@@ -1234,9 +1237,9 @@ class Rogue(Character):
         super().__init__(**attrs)
 
 
-class Sorceror(Character):
+class Sorcerer(Character):
     def __init__(self, level=1, **attrs):
-        attrs["classes"] = ["Sorceror"]
+        attrs["classes"] = ["Sorcerer"]
         attrs["levels"] = [level]
         super().__init__(**attrs)
 

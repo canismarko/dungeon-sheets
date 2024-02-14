@@ -8,7 +8,7 @@ class FontOfMagic(Feature):
     wellspring is represented by sorcery points, which allow you to create a
     variety of magical effects.
 
-    **Sorcery Points**: You have sorcery points equal to your Sorceror
+    **Sorcery Points**: You have sorcery points equal to your Sorcerer
     Level. You can never have more sorcery points than shown on the table for
     your level. You regain all spent sorcery points when you finish a long
     rest.
@@ -40,7 +40,7 @@ class FontOfMagic(Feature):
     """
 
     name = "Font of Magic"
-    source = "Sorceror"
+    source = "Sorcerer"
 
 
 class Metamagic(Feature):
@@ -52,7 +52,7 @@ class Metamagic(Feature):
     """
 
     name = "Metamagic"
-    source = "Sorceror (Metamagic)"
+    source = "Sorcerer (Metamagic)"
 
 
 class SorcerousRestoration(Feature):
@@ -62,7 +62,7 @@ class SorcerousRestoration(Feature):
     """
 
     name = "Sorcerous Restoration"
-    source = "Sorceror"
+    source = "Sorcerer"
 
 
 # Metamagic
@@ -161,7 +161,7 @@ class WildMagicSurge(Feature):
     """
 
     name = "Wild Magic Surge"
-    source = "Sorceror (Wild Magic)"
+    source = "Sorcerer (Wild Magic)"
 
 
 class TidesOfChaos(Feature):
@@ -176,7 +176,7 @@ class TidesOfChaos(Feature):
     """
 
     name = "Tides of Chaos"
-    source = "Sorceror (Wild Magic)"
+    source = "Sorcerer (Wild Magic)"
 
 
 class BendLuck(Feature):
@@ -190,7 +190,7 @@ class BendLuck(Feature):
     """
 
     name = "Bend Luck"
-    source = "Sorceror (Wild Magic)"
+    source = "Sorcerer (Wild Magic)"
 
 
 class ControlledChaos(Feature):
@@ -201,7 +201,7 @@ class ControlledChaos(Feature):
     """
 
     name = "Controlled Chaos"
-    source = "Sorceror (Wild Magic)"
+    source = "Sorcerer (Wild Magic)"
 
 
 class SpellBombardment(Feature):
@@ -213,7 +213,7 @@ class SpellBombardment(Feature):
     """
 
     name = "Spell Bombardment"
-    source = "Sorceror (Wild Magic)"
+    source = "Sorcerer (Wild Magic)"
 
 
 # Draconic Ancestry
@@ -231,7 +231,7 @@ class DraconicResilience(Feature):
     """
 
     name = "Draconic Resilience"
-    source = "Sorceror (Draconic Bloodline)"
+    source = "Sorcerer (Draconic Bloodline)"
 
 
 class DragonAncestor(Feature):
@@ -264,7 +264,7 @@ class DragonAncestor(Feature):
     """
 
     name = "Dragon Ancestor"
-    source = "Sorceror (Draconic Bloodline)"
+    source = "Sorcerer (Draconic Bloodline)"
 
 
 class ElementalAffinity(Feature):
@@ -276,7 +276,7 @@ class ElementalAffinity(Feature):
     """
 
     name = "Elemental Affinity"
-    source = "Sorceror (Draconic Bloodline)"
+    source = "Sorcerer (Draconic Bloodline)"
 
 
 class ElementalAdept(Feature):
@@ -290,7 +290,7 @@ class ElementalAdept(Feature):
     """
 
     name = "Elemental Adept"
-    source = "Sorceror (Feats)"
+    source = "Sorcerer (Feats)"
 
 
 class DragonWings(Feature):
@@ -305,7 +305,7 @@ class DragonWings(Feature):
     """
 
     name = "Dragon Wings"
-    source = "Sorceror (Draconic Bloodline)"
+    source = "Sorcerer (Draconic Bloodline)"
 
 
 class DraconicPresence(Feature):
@@ -322,7 +322,7 @@ class DraconicPresence(Feature):
     """
 
     name = "Draconic Presence"
-    source = "Sorceror (Draconic Bloodline)"
+    source = "Sorcerer (Draconic Bloodline)"
 
 
 # Divine Soul
@@ -354,7 +354,7 @@ class DivineMagic(Feature):
     """
 
     name = "Divine Magic"
-    source = "Sorceror (Divine Soul)"
+    source = "Sorcerer (Divine Soul)"
 
 
 class FavoredByTheGods(Feature):
@@ -367,7 +367,7 @@ class FavoredByTheGods(Feature):
     """
 
     name = "Favored by the Gods"
-    source = "Sorceror (Divine Soul)"
+    source = "Sorcerer (Divine Soul)"
 
 
 class EmpoweredHealing(Feature):
@@ -380,7 +380,7 @@ class EmpoweredHealing(Feature):
     """
 
     name = "Empowered Healing"
-    source = "Sorceror (Divine Soul)"
+    source = "Sorcerer (Divine Soul)"
 
 
 class OtherworldlyWings(Feature):
@@ -395,7 +395,7 @@ class OtherworldlyWings(Feature):
     """
 
     name = "Otherworldly Wings"
-    source = "Sorceror (Divine Soul)"
+    source = "Sorcerer (Divine Soul)"
 
 
 class UnearthlyRecovery(Feature):
@@ -408,7 +408,7 @@ class UnearthlyRecovery(Feature):
     """
 
     name = "Unearthly Recovery"
-    source = "Sorceror (Divine Soul)"
+    source = "Sorcerer (Divine Soul)"
 
 
 class EyesOfTheDark(Feature):
@@ -422,7 +422,7 @@ class EyesOfTheDark(Feature):
     """
 
     name = "Eyes of the Dark"
-    source = "Sorceror (Shadow Magic)"
+    source = "Sorcerer (Shadow Magic)"
     spells_known = (spells.Darkness,)
     spells_prepared = (spells.Darkness,)
 
@@ -439,7 +439,7 @@ class StrengthOfTheGrave(Feature):
     """
 
     name = "Strength of the Grave"
-    source = "Sorceror (Shadow Magic)"
+    source = "Sorcerer (Shadow Magic)"
 
 
 class HoundOfIllOmen(Feature):
@@ -474,7 +474,7 @@ class HoundOfIllOmen(Feature):
     """
 
     name = "Hound of Ill Omen"
-    source = "Sorceror (Shadow Magic)"
+    source = "Sorcerer (Shadow Magic)"
 
 
 class ShadowWalk(Feature):
@@ -486,7 +486,7 @@ class ShadowWalk(Feature):
     """
 
     name = "Shadow Walk"
-    source = "Sorceror (Shadow Magic)"
+    source = "Sorcerer (Shadow Magic)"
 
 
 class UmbralForm(Feature):
@@ -501,7 +501,7 @@ class UmbralForm(Feature):
     """
 
     name = "Umbral Form"
-    source = "Sorceror (Shadow Magic)"
+    source = "Sorcerer (Shadow Magic)"
 
 
 # Storm Sorcery
@@ -514,7 +514,7 @@ class TempestuousMagic(Feature):
     """
 
     name = "Tempestuous Magic"
-    source = "Sorceror (Storm Sorcery)"
+    source = "Sorcerer (Storm Sorcery)"
 
 
 class HeartOfTheStorm(Feature):
@@ -528,7 +528,7 @@ class HeartOfTheStorm(Feature):
     """
 
     name = "Heart of the Storm"
-    source = "Sorceror (Storm Sorcery)"
+    source = "Sorcerer (Storm Sorcery)"
 
 
 class StormGuide(Feature):
@@ -543,7 +543,7 @@ class StormGuide(Feature):
     """
 
     name = "Storm Guide"
-    source = "Sorceror (Storm Sorcery)"
+    source = "Sorcerer (Storm Sorcery)"
 
 
 class StormsFury(Feature):
@@ -556,7 +556,7 @@ class StormsFury(Feature):
     """
 
     name = "Storm's Fury"
-    source = "Sorceror (Storm Sorcery)"
+    source = "Sorcerer (Storm Sorcery)"
 
 
 class WindSoul(Feature):
@@ -571,4 +571,4 @@ class WindSoul(Feature):
     """
 
     name = "Wind Soul"
-    source = "Sorceror (Storm Sorcery)"
+    source = "Sorcerer (Storm Sorcery)"
