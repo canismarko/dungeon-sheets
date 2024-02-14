@@ -3,20 +3,7 @@
 [% for inf in character.infusions %]
   \pdfbookmark[1]{[[ inf.name ]]}{Infusions - [[ inf.name ]]}
   \subsection*{[[ inf.name ]]}
-
-  [% if inf.prerequisite %]%
-
-		\noindent
-    \textit{Prerequisite: [[ inf.prerequisite ]]}%
-
-  [% endif %]%
-  [% if inf.item %]%
-
-    \noindent
-    \textit{Item: [[ inf.item ]]}%
-
-  [% endif %]%
-
-  [[ inf.__doc__ | rst_to_latex(top_heading_level=2) ]]
-
+  [%- if inf.prerequisite -%]\textit{Prerequisite: [[ inf.prerequisite ]]} \\ [% endif %]
+  [%- if inf.item -%]\textit{Item: [[ inf.item ]]} \\ [% endif %]
+  [[- inf.__doc__ | rst_to_latex(top_heading_level=2) -]]
 [% endfor %]

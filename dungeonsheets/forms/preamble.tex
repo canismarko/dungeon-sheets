@@ -12,6 +12,22 @@
 \usepackage{enumitem}
 \setlist{noitemsep}
 
+% No indentation after lists
+\usepackage{etoolbox}
+\makeatletter
+\newcommand*\@NoIndentAfter{%
+    \@ifnextchar\par{%
+        \def\par{%
+            \everypar{\setbox\z@\lastbox\everypar{}}%
+            \@restorepar%
+        }%
+    }{}%
+}
+\newrobustcmd*{\NoIndentAfterThis}{\@NoIndentAfter\par\par}
+\makeatother
+\AfterEndEnvironment{enumerate}{\NoIndentAfterThis}
+\AfterEndEnvironment{itemize}{\NoIndentAfterThis}
+
 \newlength{\zerosep}
 [% if use_dnd_decorations %]
   \usepackage[layout=true]{dnd}
