@@ -270,13 +270,30 @@ def msavage_spell_info(char):
                        'SeventhLevelSpell',
                        'EighthLevelSpell',
                        'NinthLevelSpell']
-    sheet_spaces = dict(zip(level_names,
+
+    fullcaster_sheet_spaces = dict(zip(level_names,
                     [8, 13, 13, 13, 13, 9, 9, 9, 7, 7]))
+    halfcaster_sheet_spaces = dict(zip(level_names,
+                    [11, 26, 19, 19, 19, 0, 0, 0, 0, 0]))
     comp_letters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", 
-                  "L", "M"]
+                  "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", 
+                  "W", "X", "Y", "Z"]
+
     spellList = char.spell_casting_info["list"]
     for k, v in spellList.items():
-        slots_max = sheet_spaces[k]
+        # Determine which sheet to use (caster or half-caster).
+        # Prefer caster, unless we have no spells > 5th level and
+        # would overflow the caster sheet, then use half-caster.
+        fullcaster_slots_max = fullcaster_sheet_spaces[k]
+        halfcaster_slots_max = halfcaster_sheet_spaces[k]
+        only_low_level = all((char.spell_slots(level) == 0 for level in range(6, 10)))
+        if len(v) > fullcaster_slots_max and only_low_level:
+            slots_max=halfcaster_slots_max
+            tex4="\\newcommand{\spellsheetchoice}{\\renderhalfspellsheet}"
+        else:
+            slots_max=fullcaster_slots_max
+            tex4="\\newcommand{\spellsheetchoice}{\\renderspellsheet}"
+
         if len(v) > slots_max:
             vsel = sorted(v, key=lambda x: x[1], reverse=True)
         else:
@@ -290,4 +307,4 @@ def msavage_spell_info(char):
             slot_command_prep = slot_command+"Prepared"+"{"+str(spinfo[1])+"}"
             texT = texT + [slot_command_name, slot_command_prep]
     tex3 = "\n".join(texT) + '\n'
-    return "\n".join([tex1, tex2, tex3])
+    return "\n".join([tex1, tex2, tex3, tex4])

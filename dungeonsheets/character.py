@@ -769,22 +769,22 @@ class Character(Creature):
     def features_summary(self):
         # save space for informed features and traits
         if hasattr(self, "features_and_traits"):
-            info_list = ["**Other Features**"]
-            info_list += [
-                text.strip()
-                for text in self.features_and_traits.split("\n")
-                if not (text.isspace())
-            ]
-            N = len(info_list)
-            for text in info_list:
-                if len(text) > 26:  # 26 is just a guess for expected size of lines
-                    N += 1
-            if N > 30:
-                return "\n".join(info_list[:30]) + "\n(...)"
-            N = 30 - N
-        else:
             info_list = []
             N = 30
+            if re.search(r'\S',  self.features_and_traits):
+                info_list = ["**Other Features**"]
+                info_list += [
+                    text.strip()
+                    for text in self.features_and_traits.split("\n\n")
+                    if not (text.isspace())
+                ]
+                N = len(info_list)
+                for text in info_list:
+                    if len(text) > 26:  # 26 is just a guess for expected size of lines
+                        N += 1
+                if N > 30:
+                    return "\n".join(info_list[:30]) + "\n(...)"
+                N = 30 - N
         if len(self.class_list) > 1:
             featS = ["**Multiclass**:"]
             for cl in self.class_list:
@@ -829,16 +829,17 @@ class Character(Creature):
     @property
     def equipment_text(self):
         eq_list = []
-        if hasattr(self, "magic_items") and len(self.magic_items) > 0:
-            eq_list += ["**Magic Items**"]
-            eq_list += [item.name for item in self.magic_items]
         if hasattr(self, "equipment") and len(self.equipment.strip()) > 0:
-            eq_list += ["**Other Equipment**"]
             eq_list += [
                 text.strip()
-                for text in self.equipment.split("\n")
+                for text in self.equipment.split("\n\n")
                 if not (text.isspace())
             ]
+        if hasattr(self, "magic_items") and len(self.magic_items) > 0:
+            sub_list = "**Magic Items:** "
+            for item in self.magic_items:
+                sub_list += item.name + ", "
+            eq_list += [sub_list[:-2]]
         cw, cc = self.carrying_weight, self.carrying_capacity
         eq_list += [f"**Weight:** {cw} lb\n\n**Capacity:** {cc} lb"]
 
@@ -848,17 +849,18 @@ class Character(Creature):
     def proficiencies_by_type(self):
         prof_dict = {}
         w_pro = set(self.weapon_proficiencies)
+        w_pro.remove(weapons.Unarmed)
         if weapons.MartialWeapon in w_pro:
-            prof_dict["Weapons"] = ["All weapons"]
+            prof_dict["Weapons"] = ["All Weapons"]
         elif weapons.SimpleWeapon in w_pro:
-            prof_dict["Weapons"] = ["Simple weapons"]
+            prof_dict["Weapons"] = ["Simple Weapons"]
             for w in w_pro:
                 if not (issubclass(w, weapons.SimpleWeapon)):
                     prof_dict["Weapons"] += [w.name]
         else:
             prof_dict["Weapons"] = [w.name for w in w_pro]
         if "Weapons" in prof_dict.keys():
-            prof_dict["Weapons"] = ", ".join(prof_dict["Weapons"]) + "."
+            prof_dict["Weapons"] = ", ".join(prof_dict["Weapons"])
         armor_types = ["all armor", "light armor", "medium armor", "heavy armor"]
         prof_set = set(
             [
@@ -866,13 +868,13 @@ class Character(Creature):
                 for prof in self.proficiencies_text.split(",")
             ]
         )
-        prof_dict["Armor"] = [ar for ar in armor_types if ar in prof_set]
-        if len(prof_dict["Armor"]) > 2 or "all armor" in prof_set:
-            prof_dict["Armor"] = ["All armor"]
-        if "shields" in prof_set:
-            prof_dict["Armor"] += ["shields"]
-        prof_dict["Armor"] = ", ".join(prof_dict["Armor"]) + "."
-        if hasattr(self, "chosen_tools"):
+        prof_dict["Armor"] = [ar.title() for ar in armor_types if ar in prof_set]
+        if len(prof_dict["Armor"]) > 2 or 'all armor' in prof_set:
+            prof_dict["Armor"] = ["All Armor"]
+        if 'shields' in prof_set:
+            prof_dict["Armor"] += ["Shields"]
+        prof_dict["Armor"] = ", ".join(prof_dict["Armor"])
+        if hasattr(self, 'chosen_tools'):
             prof_dict["Other"] = self.chosen_tools
         return prof_dict
 
