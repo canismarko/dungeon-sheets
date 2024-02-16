@@ -872,7 +872,7 @@ class Character(Creature):
         if self.shield:
             weight += 6
         weight += sum([self.cp, self.sp, self.ep, self.gp, self.pp]) / 50
-        return round(weight, 2)
+        return round(weight)
 
     @property
     def equipment_text(self):
@@ -888,10 +888,12 @@ class Character(Creature):
             for item in self.magic_items:
                 sub_list += item.name + ", "
             eq_list += [sub_list[:-2]]
-        cw, cc = self.carrying_weight, self.carrying_capacity
-        eq_list += [f"**Weight:** {cw} lb\n\n**Capacity:** {cc} lb"]
-
         return "\n\n".join(eq_list)
+
+    @property
+    def weight_and_capacity_text(self):
+        cw, cc = self.carrying_weight, self.carrying_capacity
+        return f"**Weight:** {cw} lb **Capacity:** {cc} lb"
 
     @property
     def proficiencies_by_type(self):
