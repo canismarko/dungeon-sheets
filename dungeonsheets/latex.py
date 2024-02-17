@@ -50,7 +50,8 @@ def create_latex_pdf(
     basename: str,
     keep_temp_files: bool = False,
     use_dnd_decorations: bool = False,
-    comm1: str = "pdflatex"
+    use_tex_template: bool = False,
+    comm1: str = "pdflatex",
 ):
     # Create tex document
     tex_file = f"{basename}.tex"
@@ -69,14 +70,20 @@ def create_latex_pdf(
         str(tex_file),
     ]
 
+    # Deal with TEXINPUTS and add paths to latex modules
     environment = os.environ
     tex_env = environment.get('TEXINPUTS', '')
     module_root = Path(__file__).parent / "modules/"
-    module_dirs = [module_root / mdir for mdir in ["DND-5e-LaTeX-Template"]]
+    module_dirs = [module_root / mdir for mdir in ["DND-5e-LaTeX-Template", "DND-5e-LaTeX-Character-Sheet-Template"]]
     log.debug(f"Loading additional modules from {module_dirs}.")
     texinputs = ['.', *module_dirs, module_root, tex_env]
-    separator = ';' if isinstance(module_root, pathlib.WindowsPath) else ':'
+    # Two (back-)slashes at the end of each path to recursively add all subdirectories
+    separator = '\\;' if isinstance(module_root, pathlib.WindowsPath) else '//:'
     environment['TEXINPUTS'] = separator.join(str(path) for path in texinputs)
+    if use_tex_template:
+        environment['TTFONTS'] = environment['TEXINPUTS']
+
+    # Prepare the latex subprocess
     passes = 2 if use_dnd_decorations else 1
     log.debug(tex_command_line)
     log.debug("LaTeX command: %s" % " ".join(tex_command_line))

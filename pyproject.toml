@@ -45,6 +45,13 @@ dungeonsheets = [
   "modules/DND-5e-LaTeX-Template/*",
   "modules/DND-5e-LaTeX-Template/lib/*",
   "modules/DND-5e-LaTeX-Template/img/*",
+  "modules/DND-5e-LaTeX-Character-Sheet-Template/*",
+  "modules/DND-5e-LaTeX-Character-Sheet-Template/template/*",
+  "modules/DND-5e-LaTeX-Character-Sheet-Template/template/fonts/*",
+  "modules/DND-5e-LaTeX-Character-Sheet-Template/template/character-sheet/*",
+  "modules/DND-5e-LaTeX-Character-Sheet-Template/template/background-sheet/*",
+  "modules/DND-5e-LaTeX-Character-Sheet-Template/template/half-spell-sheet/*",
+  "modules/DND-5e-LaTeX-Character-Sheet-Template/template/spell-sheet/*",
 ]
 
 [tool.setuptools_scm]
