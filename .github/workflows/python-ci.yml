@@ -21,7 +21,7 @@ jobs:
     - name: Set up required system dependencies
       run: |
         sudo apt-get update
-        sudo apt-get -y install pdftk texlive-latex-base texlive-latex-extra texlive-fonts-recommended texlive-fonts-extra
+        sudo apt-get -y install pdftk texlive-latex-base texlive-latex-extra texlive-fonts-recommended texlive-fonts-extra texlive-pstricks
     - name: Set up Python ${{ matrix.python-version }}
       uses: actions/setup-python@v4
       with:
@@ -37,7 +37,7 @@ jobs:
       run: >
           cd examples/;
           makesheets --debug;
-          makesheets --debug --fancy;
+          makesheets --debug --fancy --tex-template;
           makesheets --debug --output-format=epub;
           cd ../;
           pytest --cov=dungeonsheets tests/

@@ -72,11 +72,12 @@ def create_latex_pdf(
     environment = os.environ
     tex_env = environment.get('TEXINPUTS', '')
     module_root = Path(__file__).parent / "modules/"
-    module_dirs = [module_root / mdir for mdir in ["DND-5e-LaTeX-Template"]]
+    module_dirs = [module_root / mdir for mdir in ["DND-5e-LaTeX-Template", "DND-5e-LaTeX-Character-Sheet-Template"]]
     log.debug(f"Loading additional modules from {module_dirs}.")
     texinputs = ['.', *module_dirs, module_root, tex_env]
     separator = ';' if isinstance(module_root, pathlib.WindowsPath) else ':'
     environment['TEXINPUTS'] = separator.join(str(path) for path in texinputs)
+    environment['TTFONTS'] = environment['TEXINPUTS']
     passes = 2 if use_dnd_decorations else 1
     log.debug(tex_command_line)
     log.debug("LaTeX command: %s" % " ".join(tex_command_line))
