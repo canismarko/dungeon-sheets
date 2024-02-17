@@ -550,6 +550,7 @@ def msavage_sheet(character, basename, debug=False):
         keep_temp_files=debug,
         use_dnd_decorations=True,
         comm1="xelatex",
+        use_tex_template=True,
     )
 
 
