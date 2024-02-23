@@ -505,8 +505,25 @@ def msavage_sheet(character, basename, debug=False):
     """Another adaption. All changes can be easily included as options
     in the orignal functions, though."""
 
+    # Load portrait image file if present
+    portrait_command = ""
+    if character.portrait:
+        for image in character.images:
+            if re.search(r"" + character.portrait, str(image[0])):
+                character.images.remove(image)
+                break
+        portrait_command = r"\includegraphics[width=5.75cm]{" + character.portrait + "}"
+
+    # Move symbol image a bit left, if applicable
+    if character.symbol:
+        for image in character.images:
+            if re.search(r"" + character.symbol, str(image[0])):
+                character.images.remove(image)
+                character.images = [(character.symbol, 1, 488, 564, 145, 112)] + character.images
+                break
+
     tex = jinja_env.get_template("MSavage_template.tex").render(
-        char=character, portrait=""
+        char=character, portrait=portrait_command
     )
     latex.create_latex_pdf(
         tex,

@@ -280,20 +280,18 @@ def msavage_spell_info(char):
                   "W", "X", "Y", "Z"]
 
     spellList = char.spell_casting_info["list"]
+    # As default, assume fullcaster character and set spellsheet accordingly
+    tex4="\\newcommand{\spellsheetchoice}{\\renderspellsheet}"
     for k, v in spellList.items():
+        slots_max = fullcaster_sheet_spaces[k]
+        halfcaster_slots_max = halfcaster_sheet_spaces[k]
+        only_low_level = all((char.spell_slots(level) == 0 for level in range(6, 10)))
         # Determine which sheet to use (caster or half-caster).
         # Prefer caster, unless we have no spells > 5th level and
         # would overflow the caster sheet, then use half-caster.
-        fullcaster_slots_max = fullcaster_sheet_spaces[k]
-        halfcaster_slots_max = halfcaster_sheet_spaces[k]
-        only_low_level = all((char.spell_slots(level) == 0 for level in range(6, 10)))
-        if len(v) > fullcaster_slots_max and only_low_level:
+        if len(v) > slots_max and only_low_level:
             slots_max=halfcaster_slots_max
             tex4="\\newcommand{\spellsheetchoice}{\\renderhalfspellsheet}"
-        else:
-            slots_max=fullcaster_slots_max
-            tex4="\\newcommand{\spellsheetchoice}{\\renderspellsheet}"
-
         if len(v) > slots_max:
             vsel = sorted(v, key=lambda x: x[1], reverse=True)
         else:
