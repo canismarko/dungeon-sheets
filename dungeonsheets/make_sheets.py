@@ -283,9 +283,9 @@ def make_gm_sheet(
     monsters_ = []
     input_monsters = list(gm_props.pop("monsters", []))
     for monster in input_monsters:
-        if isinstance(monster, monsters.Monster):
+        if isinstance(monster, type) and issubclass(monster, monsters.Monster):
             # It's already a monster, so just add it
-            new_monster = monster
+            new_monster = monster()
         else:
             try:
                 MyMonster = find_content(monster, valid_classes=[monsters.Monster])
