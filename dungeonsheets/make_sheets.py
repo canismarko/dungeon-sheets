@@ -283,8 +283,11 @@ def make_gm_sheet(
     monsters_ = []
     input_monsters = list(gm_props.pop("monsters", []))
     for monster in input_monsters:
-        if isinstance(monster, type) and issubclass(monster, monsters.Monster):
+        if isinstance(monster, monsters.Monster):
             # It's already a monster, so just add it
+            new_monster = monster
+        elif isinstance(monster, type) and issubclass(monster, monsters.Monster):
+            # Needs to be instantiated
             new_monster = monster()
         else:
             try:
