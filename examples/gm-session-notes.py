@@ -28,9 +28,41 @@ session_title = "Objects in Space - Session 1"
 # *parent_sheets* attribute.
 parent_sheets = ["gm-campaign-notes.py"]
 
+
+class Pting(monsters.Monster):
+    """
+    A tiny beast with an insatiable hunger for metal.
+    """
+    name = 'Pting'
+    description = 'Small beast, unaligned'
+    challenge_rating = 0
+    armor_class = 14
+    skills = ''
+    senses = ''
+    languages = ''
+    strength = Ability(12)
+    dexterity = Ability(16)
+    constitution = Ability(15)
+    intelligence = Ability(4)
+    wisdom = Ability(10)
+    charisma = Ability(9)
+    speed = 30
+    swim_speed = 0
+    fly_speed = 40
+    climb_speed = 0
+    burrow_speed = 0
+    hp_max = 30
+    hit_dice = ''
+    condition_immunities = 'exhaustion, frightened, paralyzed, poisoned'
+    damage_immunities = 'necrotic, poison'
+    damage_resistances = ''
+    damage_vulnerabilities = ''
+    spells = []
+
+
 # Defining a *monsters* attribute will include their stat blocks in
 # the output
-monsters = ["aboleth", "wolf", "giant eagle", "Vashta Nerada", "priest", "priest"]
+monsters = ["aboleth", "wolf", "giant eagle", "Vashta Nerada", Pting]
 
 # Arbitrary sections can be added to the GM notes. The
 # ``extra_sections`` attribute should be a sequence of subclasses of
