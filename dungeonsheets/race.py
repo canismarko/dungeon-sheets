@@ -204,7 +204,6 @@ class ForestGnome(_Gnome):
     name = "Forest Gnome"
     dexterity_bonus = 1
     features = _Gnome.features + (feats.NaturalIllusionist, feats.SpeakWithSmallBeasts)
-    spells_known = (spells.MinorIllusion,)
 
 
 class RockGnome(_Gnome):
@@ -287,7 +286,6 @@ class _Aasimar(Race):
         feats.HealingHands,
         feats.LightBearer,
     )
-    spells_known = (spells.Light,)
 
 
 # Protector Aasimar

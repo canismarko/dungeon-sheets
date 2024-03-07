@@ -288,6 +288,7 @@ class NaturalIllusionist(Feature):
 
     name = "Natural Illusionist"
     source = "Race (Forest Gnome)"
+    spells_known = spells_prepared = (spells.MinorIllusion,)
 
 
 class SpeakWithSmallBeasts(Feature):
@@ -435,6 +436,7 @@ class LightBearer(Feature):
 
     name = "Light Bearer"
     source = "Race (Aasimar)"
+    spells_known = spells_prepared = (spells.Light,)
 
 
 class AasimarRadiantSoul(Feature):
