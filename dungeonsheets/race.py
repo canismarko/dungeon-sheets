@@ -1,7 +1,7 @@
 from collections import defaultdict
 
 from dungeonsheets import features as feats
-from dungeonsheets import spells, weapons
+from dungeonsheets import weapons
 from dungeonsheets.content_registry import default_content_registry
 
 
@@ -28,7 +28,6 @@ class Race:
     wisdom_bonus = 0
     charisma_bonus = 0
     hit_point_bonus = 0
-    spells_known = ()
 
     def __init__(self, owner=None):
         self.owner = owner
@@ -40,11 +39,6 @@ class Race:
             self.features_by_level[i] = [
                 f(owner=self.owner) for f in cls.features_by_level[i]
             ]
-        self.spells_known = [S() for S in cls.spells_known]
-
-    @property
-    def spells_prepared(self):
-        return self.spells_known
 
     def __str__(self):
         return self.name
