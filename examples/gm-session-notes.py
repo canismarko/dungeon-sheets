@@ -6,6 +6,7 @@ monsters, etc.
 """
 
 from dungeonsheets import mechanics, monsters
+from dungeonsheets.stats import Ability
 
 
 # This line (or one like it) is required in order for dungeonsheets to
