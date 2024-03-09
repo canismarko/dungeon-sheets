@@ -5,7 +5,7 @@ monsters, etc.
 
 """
 
-from dungeonsheets import mechanics
+from dungeonsheets import mechanics, monsters
 
 
 # This line (or one like it) is required in order for dungeonsheets to
