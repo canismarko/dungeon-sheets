@@ -60,7 +60,7 @@ feature_choices = ("Archery",)
 
 # Weapons/other proficiencies not given by class/race/background
 weapon_proficiencies = ()  # ex: ('shortsword', 'quarterstaff')
-_proficiencies_text = ("Cartographer's tools", )  # ex: ("thieves' tools",)
+proficiencies_text = ("Cartographer's tools", )  # ex: ("thieves' tools",)
 
 # Proficiencies and languages
 languages = """Common, Druidic, Elven, Draconic"""

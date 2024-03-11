@@ -21,7 +21,7 @@ background = "Folk Hero"
 race = "Stout Halfling"
 alignment = "True neutral"
 
-xp = 0
+xp = "Milestone"
 hp_max = 63
 inspiration = 0  # integer inspiration value
 

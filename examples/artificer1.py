@@ -21,7 +21,7 @@ background = "Sailor"
 race = "Rock Gnome"
 alignment = "Neutral good"
 
-xp = 0
+xp = "Milestone"
 hp_max = 149
 inspiration = 0  # integer inspiration value
 

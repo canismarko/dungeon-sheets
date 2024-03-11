@@ -754,6 +754,8 @@ class Character(Creature):
         except AttributeError:
             profs = val
         self._proficiencies_text = profs
+        if self.chosen_tools == "":
+            self.chosen_tools = ", ".join(item for item in profs)
 
     @property
     def features_text(self):
@@ -875,7 +877,9 @@ class Character(Creature):
             prof_dict["Armor"] += ["Shields"]
         prof_dict["Armor"] = ", ".join(prof_dict["Armor"])
         if hasattr(self, 'chosen_tools'):
-            prof_dict["Other"] = self.chosen_tools
+            prof_dict["Other"] = re.sub(r"[A-Za-z]+('[A-Za-z]+)?",
+                                       lambda word: word.group(0).capitalize(),
+                                       self.chosen_tools)
         return prof_dict
 
     @property

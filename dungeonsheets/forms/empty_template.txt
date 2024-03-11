@@ -21,7 +21,7 @@ background = "{{ char.background.name }}"
 race = "{{ char.race.name }}"
 alignment = "{{ char.alignment }}"
 
-xp = {{ char.xp }}
+xp = {{ char.xp }}  # ex: [36079] or ["Milestone"]
 hp_max = {{ char.hp_max }}
 inspiration = {{ char.inspiration }}  # boolean inspiration value
 
@@ -55,7 +55,7 @@ feature_choices = ()
 
 # Weapons/other proficiencies not given by class/race/background
 weapon_proficiencies = ()  # ex: ('shortsword', 'quarterstaff')
-_proficiencies_text = ()  # ex: ("thieves' tools",)
+proficiencies_text = ()  # ex: ("thieves' tools",)
 
 # Proficiencies and languages
 languages = """{{ char.languages }}"""

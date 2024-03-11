@@ -21,7 +21,7 @@ background = "Charlatan"
 race = "Wood Elf"
 alignment = "Chaotic good"
 
-xp = 0
+xp = "Milestone"
 hp_max = 34
 inspiration = 0  # integer inspiration value
 

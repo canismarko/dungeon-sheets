@@ -21,7 +21,7 @@ background = "Pirate"
 race = "Human"
 alignment = "Neutral good"
 
-xp = 0
+xp = "Milestone"
 hp_max = 96
 inspiration = 0  # integer inspiration value
 

@@ -21,7 +21,7 @@ background = "Waterdhavian Noble"
 race = "Triton"
 alignment = "Neutral evil"
 
-xp = 0
+xp = "Milestone"
 hp_max = 105
 inspiration = 0  # integer inspiration value
 
