@@ -71,7 +71,7 @@ class GloomStalker(SubClass):
     features_by_level[3] = [
         features.DreadAmbusher,
         features.UmbralSight,
-        features.Darkvision,
+        features.DarkvisionClass,
     ]
     features_by_level[7] = [features.IronMind]
     features_by_level[11] = [features.StalkersFlurry]

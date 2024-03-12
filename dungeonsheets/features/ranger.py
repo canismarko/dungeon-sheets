@@ -483,6 +483,18 @@ class UmbralSight(Feature):
     source = "Ranger (Gloom Stalker)"
 
 
+class DarkvisionClass(Feature):
+    """Accustomed to life underground, you have superior vision in dark and dim
+    conditions. You can see in dim light within 60 feet of you as if it were
+    bright light, and in darkness as if it were dim light. You can't discern
+    color in darkness, only shades of gray.
+
+    """
+
+    name = "Darkvision (60')"
+    source = "Class (Gloom Stalker)"
+
+
 class IronMind(Feature):
     """By 7th level, you have honed your ability to resist the mind-altering
     powers of your prey. You gain proficiency in Wisdom saving throws. Ifyou

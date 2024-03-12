@@ -8,6 +8,7 @@ from dungeonsheets.armor import HeavyArmor, NoArmor, NoShield
 from dungeonsheets.dice import dice_roll_mean
 from dungeonsheets.features import (
     AmbushMaster,
+    Alert,
     Defense,
     DraconicResilience,
     DreadAmbusher,
@@ -319,9 +320,13 @@ class NumericalInitiative:
             ini += actor.wisdom.modifier
         if actor.has_feature(RakishAudacity):
             ini += actor.charisma.modifier
+        if actor.has_feature(Alert):
+            ini += 5
         
         if actor.has_feature(JackOfAllTrades) and not added_proficiency:
             ini += actor.proficiency_bonus // 2
+        if actor.has_feature(RemarkableAthlete) and not added_proficiency:
+            ini += ceil(actor.proficiency_bonus / 2.0)
 
         has_advantage = (
             actor.has_feature(NaturalExplorerRevised)
