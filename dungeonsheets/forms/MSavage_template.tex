@@ -1,11 +1,11 @@
+\RequirePackage{pdfmanagement-testphase}
+\DocumentMetadata{}
 \documentclass[letterpaper,openany,oneside,twocolumn]{book}
 
 \usepackage{fontspec}
 \usepackage[justified]{dnd}
 \usepackage{ifthen}
 \usepackage{pstricks}
-
-\usepackage[UKenglish]{babel}
 
 \usepackage{dndtemplate}
 \usepackage{bookmark}
@@ -187,7 +187,7 @@
 [%- endfor -%]
 }
 
-\Equipment{[[ char.equipment_text| boxed ]]}
+\Equipment{[[ char.equipment_text| boxed -]] \\ \footnotesize{[[ char.weight_and_capacity_text| boxed ]]}}
 
 \PersonalityTraits{[[ char.personality_traits ]]}
 

@@ -50,7 +50,7 @@ def create_latex_pdf(
     basename: str,
     keep_temp_files: bool = False,
     use_dnd_decorations: bool = False,
-    comm1: str = "pdflatex"
+    comm1: str = "pdflatex",
 ):
     # Create tex document
     tex_file = f"{basename}.tex"
@@ -72,11 +72,12 @@ def create_latex_pdf(
     environment = os.environ
     tex_env = environment.get('TEXINPUTS', '')
     module_root = Path(__file__).parent / "modules/"
-    module_dirs = [module_root / mdir for mdir in ["DND-5e-LaTeX-Template"]]
+    module_dirs = [module_root / mdir for mdir in ["DND-5e-LaTeX-Template", "DND-5e-LaTeX-Character-Sheet-Template"]]
     log.debug(f"Loading additional modules from {module_dirs}.")
     texinputs = ['.', *module_dirs, module_root, tex_env]
     separator = ';' if isinstance(module_root, pathlib.WindowsPath) else ':'
     environment['TEXINPUTS'] = separator.join(str(path) for path in texinputs)
+    environment['TTFONTS'] = environment['TEXINPUTS']
     passes = 2 if use_dnd_decorations else 1
     log.debug(tex_command_line)
     log.debug("LaTeX command: %s" % " ".join(tex_command_line))
@@ -214,10 +215,18 @@ def rst_to_latex(rst, top_heading_level: int=0, format_dice: bool = True, use_dn
         tex = tex_parts["body"]
     # Apply fancy D&D decorations
     if use_dnd_decorations:
-        tex = re.sub(r"p{[0-9.]+\\DUtablewidth}", "l ", tex, flags=re.M)
         tex = tex.replace(r"\begin{supertabular}[c]", r"\begin{DndTable}")
         tex = tex.replace(r"\begin{supertabular}", r"\begin{DndTable}")
         tex = tex.replace(r"\end{supertabular}", r"\end{DndTable}")
+
+        # Translate column width and type from supertabular to dndtable / tabularx. For example:
+        # From: \begin{DndTable}{ p{0.214\DUtablewidth} p{0.086\DUtablewidth} p{0.156\DUtablewidth} p{0.133\DUtablewidth} p{0.121\DUtablewidth}}
+        # To:   \begin{DndTable}{ >{\hsize=0.214\hsize}X >{\hsize=0.086\hsize}X >{\hsize=0.156\hsize}X >{\hsize=0.133\hsize}X >{\hsize=0.121\hsize}X}
+        tex = re.sub(r"p{([0-9.]+)\\DUtablewidth}", r">{\\hsize=\1\\DUtablewidth}X", tex, flags=re.M)
+
+        # Correct table header to the dndtable format:
+        tex = re.sub(r"(begin{DndTable})(.*\n)\\multicolumn.*\n(.*)\n}} \\\\", r"\1[header=\3]\2", tex, flags=re.M)
+
     return tex
 
 def rst_to_boxlatex(rst):
@@ -306,3 +315,84 @@ def msavage_spell_info(char):
             texT = texT + [slot_command_name, slot_command_prep]
     tex3 = "\n".join(texT) + '\n'
     return "\n".join([tex1, tex2, tex3, tex4])
+
+def RPGtex_monster_info(char):
+    """Generates the headings for the monster block info in the DND latex style"""
+    tex = """"""
+    # Counting sections here:
+    # 0: Feats
+    # 1: Actions and reactions
+    # 2: Legendary Actions
+    # 3: Other types of actions.
+    # Challenges: Some monsters only have feats, some only have actions.
+    sectiontype = 0
+    sectionlist = char.split("    # ") # Four spaces, a hash, and another space
+    for section in sectionlist:
+        # First find out what type of section we're dealing with, and
+        # set sectiontype accordingly;
+        # The first section is either feats or actions. Set sectiontype to
+        # actions (and format accordingly) if the first line matches
+        # actions or reactions
+        if re.match (r"^[re]*actions\n", section, re.IGNORECASE):
+            sectiontype = 1
+        elif re.match (r"^legendary actions\n", section, re.IGNORECASE):
+            sectiontype = 2
+        elif sectionlist.index(section) > 0: # Not the first section, nor does
+            sectiontype = 3                  # it have any header we recognize
+
+        # Now we latex format each section according to type, applying
+        # rst_to_latex where it's convenient, and resorting to our own
+        # means where necessary. Goal is to make use of DND-5e-LaTeX-Template
+        # style as much as possible.
+        if sectiontype == 0 or sectiontype == 3:
+            # Use rst_to_latex first, because of easy itemization
+            section = rst_to_latex(section) # This somehow adds a newline at the start of the section
+            # Snip away begin and end description:
+            section = re.sub (r"\\[a-z]+{description}\n", "", section)
+            # Sub \item[{}] with \DndMonsterAction{} headers:
+            section = re.sub (r"\\item\[{(.+)\.}\]", r"\\DndMonsterAction{\1}", section)
+            if sectiontype == 3: # Add section header
+                section = re.sub(r"^\n(.*)\n", r"\\DndMonsterSection{\1}\n", section)
+            tex += section
+
+        if sectiontype == 1:
+            # Process the section line by line.
+            subsection = ""
+            lines = section.splitlines()
+            for line in lines:
+                if re.match (r"^\S", line):
+                    line = re.sub(r"(.+)$", r"\n\n\\DndMonsterSection{\1}", line)
+                    subsection += line
+                else:
+                    # Italicize weapon type and hit, and remove six leading spaces
+                    line = re.sub(r"^ {6}(.+)\:(.+)(Hit)\: (.+)", r"\\textit{\1:} \2\\textit{\3:} \4 ", line)
+                    # Remove leading spaces from other lines
+                    line = re.sub(r"^ {6}(.+)", r"\1 ", line)
+                    # Add DndMonsterAction header for each action, and remove four leading spaces
+                    line = re.sub(r"^ {4}(\S.+)\.$", r"\n\n\\DndMonsterAction{\1}\n", line)
+                    subsection += line
+                    subsection = re.sub(r" {6}", "\n\n", subsection)
+            # Dice
+            subsection = re.sub(r"\((\d+)d(\d+)\s*([+-]*)\s*(\d*)\)", r" (\\texttt{\1d\2\3\4}) ", subsection)
+            tex += subsection + "\n\n"
+
+        if sectiontype == 2:
+            # First process the section line by line to only get the legendary actions,
+            # then add section start, end and header.
+            subsection = ""
+            lines = section.splitlines()
+            for line in lines:
+                if re.match(r"^ {4}\S", line): # New subsubsection, remove leading spaces
+                    line = re.sub(r"^ {4}(.+)\.$", r"\n\\DndMonsterLegendaryAction{\1}{}", line)
+                    subsection += line
+                elif re.match(r"^ {6}\S", line):
+                    # Remove leading spaces from other lines
+                    line = re.sub(r"^ {6}(.+)", r"\1", line)
+                    subsection += line
+                subsection = re.sub(r"}{(.*?)}([a-zA-Z].+)$", r"}{\1 \2}", subsection)
+            # Dice
+            subsection = re.sub(r"\((\d+)d(\d+)\s*([+-]*)\s*(\d*)\)", r" (\\texttt{\1d\2\3\4})", subsection)
+            # Add section header and DndMonsterLegendaryActions environment
+            section = ("\\DndMonsterSection{Legendary Actions}\n\\begin{DndMonsterLegendaryActions}" + subsection + "\n\\end{DndMonsterLegendaryActions}\n")
+            tex += section
+    return tex

@@ -14,7 +14,7 @@ from dungeonsheets.features.paladin import *
 from dungeonsheets.features.races import *
 from dungeonsheets.features.ranger import *
 from dungeonsheets.features.rogue import *
-from dungeonsheets.features.sorceror import *
+from dungeonsheets.features.sorcerer import *
 from dungeonsheets.features.warlock import *
 from dungeonsheets.features.wizard import *
 

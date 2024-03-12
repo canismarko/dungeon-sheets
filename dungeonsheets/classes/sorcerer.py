@@ -91,7 +91,7 @@ class ShadowMagic(SubClass):
     features_by_level = defaultdict(list)
     features_by_level[1] = [
         features.EyesOfTheDark,
-        features.SuperiorDarkvision,
+        features.SuperiorDarkvisionClass,
         features.StrengthOfTheGrave,
     ]
     features_by_level[6] = [features.HoundOfIllOmen]
@@ -123,8 +123,8 @@ class StormSorcery(SubClass):
     features_by_level[18] = [features.WindSoul]
 
 
-class Sorceror(CharClass):
-    name = "Sorceror"
+class Sorcerer(CharClass):
+    name = "Sorcerer"
     hit_dice_faces = 6
     subclass_select_level = 1
     saving_throw_proficiencies = ("constitution", "charisma")
