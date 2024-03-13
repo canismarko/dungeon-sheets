@@ -2,6 +2,8 @@
 
 
 import warnings
+import importlib.metadata
+
 from abc import ABC
 from pathlib import Path
 
@@ -9,13 +11,7 @@ from dungeonsheets import exceptions
 from dungeonsheets.stats import Ability, ArmorClass, Initiative, Speed, Skill
 from dungeonsheets.content_registry import find_content
 
-
-def read(fname):
-    return open((Path(__file__).parent / fname).resolve()).read()
-
-
-__version__ = read("../VERSION").strip()
-
+__version__ = importlib.metadata.version(__package__)
 
 class Content(ABC):
     """A base class for all D&D 5e content types.
