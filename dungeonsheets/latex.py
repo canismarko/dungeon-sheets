@@ -45,6 +45,14 @@ def _remove_temp_files(basename_):
             filename.unlink()
 
 
+def subprocess_stdout(command, environment):
+    command = command
+    output = subprocess.run(command, capture_output=True, env=environment)
+    if isinstance(output.stdout, bytes):
+         output.stdout = output.stdout.decode()
+    return output.stdout
+
+
 def create_latex_pdf(
     tex: str,
     basename: str,
@@ -74,7 +82,20 @@ def create_latex_pdf(
     environment = os.environ
     tex_env = environment.get('TEXINPUTS', '')
     module_root = Path(__file__).parent / "modules/"
-    module_dirs = [module_root / mdir for mdir in ["DND-5e-LaTeX-Template", "DND-5e-LaTeX-Character-Sheet-Template"]]
+    module_dirs = []
+
+    # Load locally installed latex packages if they exist, to allow for
+    # local latex customisation
+    for module in ["dnd.sty", "dndtemplate.sty"]:
+        kpsewhich_command = [
+            "kpsewhich",
+            module,
+        ]
+        module_check = subprocess_stdout(kpsewhich_command, environment)
+        if module in module_check:
+            module_dirs.append(Path(module_check).parent)
+
+    module_dirs = module_dirs + [module_root / mdir for mdir in ["DND-5e-LaTeX-Template", "DND-5e-LaTeX-Character-Sheet-Template"]]
     log.debug(f"Loading additional modules from {module_dirs}.")
     texinputs = ['.', *module_dirs, module_root, tex_env]
     separator = ';' if isinstance(module_root, pathlib.WindowsPath) else ':'
@@ -83,15 +104,13 @@ def create_latex_pdf(
     if use_tex_template:
         environment['TTFONTS'] = ""
         # Find the Kalam font from the DND-5e-LaTeX-Character-Sheet-Template
-        fontpath_command = [
+        kpsewhich_command = [
             "kpsewhich",
             "--expand-path",
             "'$TTFONTS'",
         ]
-        fontpath_proc = subprocess.run(fontpath_command, capture_output=True, env=environment)
-        if isinstance(fontpath_proc.stdout, bytes):
-             fontpath_proc.stdout = fontpath_proc.stdout.decode()
-        environment['TTFONTS'] = separator.join(str(path) for path in [*module_dirs, fontpath_proc.stdout])
+        ttfontpath = subprocess_stdout(kpsewhich_command, environment)
+        environment['TTFONTS'] = separator.join(str(path) for path in [*module_dirs, ttfontpath])
 
     # Prepare the latex subprocess
     passes = 2 if use_dnd_decorations else 1
