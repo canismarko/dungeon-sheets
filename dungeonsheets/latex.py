@@ -4,6 +4,7 @@ import os
 import re
 import subprocess
 import logging
+import warnings
 
 from docutils import core
 from docutils.writers.latex2e import Writer, Table, LaTeXTranslator
@@ -74,11 +75,30 @@ def create_latex_pdf(
     environment = os.environ
     tex_env = environment.get('TEXINPUTS', '')
     module_root = Path(__file__).parent / "modules/"
-    module_dirs = [module_root / mdir for mdir in ["DND-5e-LaTeX-Template", "DND-5e-LaTeX-Character-Sheet-Template"]]
+    module_dirs = []
+
+    # Load locally installed latex packages if they exist, to allow for
+    # local latex customisation
+    for module in ["dnd.sty", "dndtemplate.sty"]:
+        kpsewhich_command = [
+            "kpsewhich",
+            module,
+        ]
+        try:
+            module_check = subprocess.run(kpsewhich_command, capture_output=True, env=environment)
+            if isinstance(module_check.stdout, bytes):
+                 module_check.stdout = module_check.stdout.decode()
+            if module in module_check.stdout:
+                module_dirs.append(Path(module_check.stdout).parent)
+        except:
+            msg = ('Could not run kpsewhich. Something seems strange with your latex installation.')
+            warnings.warn(msg)
+
+    module_dirs = module_dirs + [module_root / mdir for mdir in ["DND-5e-LaTeX-Template", "DND-5e-LaTeX-Character-Sheet-Template"]]
     log.debug(f"Loading additional modules from {module_dirs}.")
     texinputs = ['.', *module_dirs, module_root, tex_env]
     # Two (back-)slashes at the end of each path to recursively add all subdirectories
-    separator = '\\;' if isinstance(module_root, pathlib.WindowsPath) else '//:'
+    separator = '\\\\;' if isinstance(module_root, pathlib.WindowsPath) else '//:'
     environment['TEXINPUTS'] = separator.join(str(path) for path in texinputs)
     if use_tex_template:
         environment['TTFONTS'] = environment['TEXINPUTS']

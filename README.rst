@@ -110,13 +110,16 @@ so attack bonuses and damage can be calculated automatically.
 
 Consider using the ``-F`` option to include the excellent D&D 5e
 template for rendering spellbooks, druid wild forms and features
-pages (https://github.com/rpgtex/DND-5e-LaTeX-Template).
+pages (https://github.com/rpgtex/DND-5e-LaTeX-Template). dungeon-
+sheets includes its own version of the template, but will use a
+local one if it is installed.
 
 Consider using the ``-T`` option to use the beautiful latex character
 sheet
 (https://github.com/matsavage/DND-5e-LaTeX-Character-Sheet-Template).
 This does require lualatex as well as a fairly recent version of
-texlive.
+texlive. dungeon-sheets includes its own version of the latex character
+template, but will use a local one if it is installed.
 
 By default, your character's spells are ordered alphabetically. If you
 would like your spellbook to be ordered by level, you can use the ``-S``
