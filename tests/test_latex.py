@@ -105,7 +105,7 @@ class MarkdownTestCase(unittest.TestCase):
         self.assertNotIn("endfirsthead", tex)
         # Check that fancy decorations uses the DndTable environment
         tex = latex.rst_to_latex(table_rst, use_dnd_decorations=True)
-        self.assertIn(r"\begin{DndTable}{l l l }", tex)
+        self.assertIn(r"\begin{DndTable}{>{\hsize=0.075\DUtablewidth}X", tex)
 
     def test_rst_all_spells(self):
         for spell in spells.all_spells():

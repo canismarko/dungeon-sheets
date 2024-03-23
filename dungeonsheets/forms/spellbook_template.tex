@@ -33,5 +33,5 @@
       \item [Components:] [[ spl.component_string ]]
     \end{description}
   [%- endif -%]
-  [[- spl.__doc__ | rst_to_latex(top_heading_level=1) -]]
+  [[- spl.__doc__ | rst_to_latex(top_heading_level=1, use_dnd_decorations=use_dnd_decorations) -]]
 [% endfor %]

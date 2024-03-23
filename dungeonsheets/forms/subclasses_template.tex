@@ -5,7 +5,7 @@
   [%- for sc in character.subclasses if sc not in ['', None, 'None', 'none'] %]
     \pdfbookmark[1]{[[ sc.name ]]}{Subclasses - [[ sc.name ]]}
     \DndFeatHeader{[[ sc.name ]]} % Would like to add source here
-    [[- sc.__doc__ | rst_to_latex(top_heading_level=2) ]]
+    [[- sc.__doc__ | rst_to_latex(top_heading_level=2, use_dnd_decorations=use_dnd_decorations) ]]
     [%- endfor %]
 [% else %]
     [%- for sc in character.subclasses if sc not in ['', None, 'None', 'none'] %]
