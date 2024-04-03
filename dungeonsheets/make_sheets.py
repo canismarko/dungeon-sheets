@@ -531,7 +531,7 @@ def msavage_sheet(character, basename, debug=False):
             if re.search(r"" + character.portrait, str(image[0])):
                 character.images.remove(image)
                 break
-        portrait_command = r"\includegraphics[width=5.75cm]{" + character.portrait + "}"
+        portrait_command = r"{\centering \includegraphics[width=5.75cm,height=7.85cm,keepaspectratio]{" + character.portrait + "} \\\\ \\noindent}"
 
     # Move symbol image a bit left, if applicable
     if character.symbol:
