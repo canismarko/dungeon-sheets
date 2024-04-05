@@ -271,8 +271,8 @@ def rst_to_boxlatex(rst):
     return tex
 
 
-def msavage_spell_info(char):
-    """Generates the spellsheet for msavage template."""
+def latex_character_spell_info(char):
+    """Generates the spellsheet for the latex character template."""
     headinfo = char.spell_casting_info["head"]
     font_options = {1:"", 2:r"\Large ", 3:r"\large "}
     selector = min(len(char.spellcasting_classes), 3)

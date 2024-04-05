@@ -56,7 +56,7 @@ jinja_env.filters["rst_to_latex"] = latex.rst_to_latex
 jinja_env.filters["rst_to_html"] = epub.rst_to_html
 jinja_env.filters["to_heading_id"] = epub.to_heading_id
 jinja_env.filters["boxed"] = latex.rst_to_boxlatex
-jinja_env.filters["spellsheetparser"] = latex.msavage_spell_info
+jinja_env.filters["spellsheetparser"] = latex.latex_character_spell_info
 jinja_env.filters["monsterdoc"] = latex.RPGtex_monster_info
 
 # Custom types
@@ -520,7 +520,7 @@ def make_character_content(
     return content
 
 
-def msavage_sheet(character, basename, debug=False):
+def latex_character_sheet(character, basename, debug=False):
     """Another adaption. All changes can be easily included as options
     in the orignal functions, though."""
 
@@ -541,7 +541,7 @@ def msavage_sheet(character, basename, debug=False):
                 character.images = [(character.symbol, 1, 488, 564, 145, 112)] + character.images
                 break
 
-    tex = jinja_env.get_template("MSavage_template.tex").render(
+    tex = jinja_env.get_template("latex_character_sheet_template.tex").render(
         char=character, portrait=portrait_command
     )
     latex.create_latex_pdf(
@@ -600,7 +600,7 @@ def make_character_sheet(
     # Typeset LaTeX character, background and spell-sheet files
     if output_format == "pdf":
         if use_tex_template:
-            msavage_sheet(
+            latex_character_sheet(
                 character=character,
                 basename=char_base,
                 debug=debug,
