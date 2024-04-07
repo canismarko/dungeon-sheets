@@ -36,7 +36,7 @@ Run the following in a directory with valid character files (such as the example
 
 .. code:: bash
 
-    $ docker run -it -v $(pwd):/build ghcr.io/canismarko/dungeon-sheets:master
+    $ docker run -it -v $(pwd):/build ghcr.io/canismarko/dungeon-sheets:latest
 
 
 Installation
