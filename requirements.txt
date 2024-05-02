@@ -3,7 +3,6 @@ fdfgen>=0.16
 npyscreen~=4.10.5
 jinja2~=3.1.2
 sphinx~=7.2.6
-pdfrw~=0.4
 EbookLib~=0.18
 reportlab~=4.0.8
 setuptools~=69.0.3
