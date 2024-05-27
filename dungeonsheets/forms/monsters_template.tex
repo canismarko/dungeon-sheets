@@ -2,12 +2,15 @@
 \section*{Monsters}
 
 [% if use_dnd_decorations %]
-  \begin{DndTable}{r c c c c}
-   Name & HP & Hit Dice & AC & Init. \\
+  \begin{DndLongTable}[firsthead={\textbf{Name}
+                      & \textbf{HP}
+                      & \textbf{Hit Dice}
+                      & \textbf{AC}
+                      & \textbf{Init.} \\ }]{r c c c c}
    [% for monster in monsters|sort(attribute='name') %]
    [[ monster.name ]] & [[ monster.hp_max ]] & [[ monster.hit_dice ]] & [[ monster.armor_class ]] & [[ monster.initiative ]] \\
    [% endfor %]
-  \end{DndTable}
+  \end{DndLongTable}
 
   [% for monster in monsters|sort(attribute='name') %]
     \pdfbookmark[1]{[[ monster.name ]]}{Monsters - [[ monster.name ]]}
