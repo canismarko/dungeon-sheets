@@ -69,7 +69,6 @@ limitations:
 
 - Produces v1.3 PDF files
 - Not able to flatten PDF forms
-- Will produce separate character-sheets, spell-lists and spell-books.
   
 Different linux distributions have different names for packages. While
 pdftk is available in Debian and derivatives as **pdftk**, the package
