@@ -218,6 +218,29 @@ def rst_to_latex(rst, top_heading_level: int=0, format_dice: bool = True, use_dn
         tex = tex.replace(r"\begin{supertabular}", r"\begin{DndLongTable}[header=]")
         tex = tex.replace(r"\end{supertabular}", r"\end{DndLongTable}")
 
+        # Stretch table to the entire width of the text column.
+        # First, get all table headers in tex and put them in a list. Each header
+        # is a string.
+        tableheader = re.findall(r"\\begin{DndLongTable}.*", tex)
+        for header in tableheader:
+            # Get all collumn widths, compute initial table width
+            colwidths = [width for width in re.findall(r"0\.[0-9]+", str(header))]
+            tablewidth = 0
+            for width in colwidths:
+                tablewidth += float(width)
+            # Prepare the transformed header
+            transformed_header = header
+            for width in colwidths:
+                # Transform the column width by dividing it by the initial table width
+                transformed_width = round( float(width) / tablewidth, 3)
+                # Subtract the table column separation spaces from the transformed column width
+                transformed_width = r"\\dimexpr " + str(transformed_width) + r"\\DUtablewidth -2\\tabcolsep"
+                # Replace the original width with the transformed width
+                transformed_header = re.sub(width + r"\\DUtablewidth",
+                                            transformed_width,
+                                            transformed_header)
+            # Replace the original table header with the transformed one
+            tex = tex.replace(header, transformed_header)
         # Correct table header to the DndLongTable format.
         # First deal with the table caption, if present:
         tex = re.sub(r"(begin{DndLongTable}\[header=)\](.*?\n)\\multicolumn.*?\n(.*?)\n.*?\\\\\n",
