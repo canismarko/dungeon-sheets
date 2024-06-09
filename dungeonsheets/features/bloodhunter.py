@@ -27,6 +27,22 @@ You can use this feature once. Beginning at 6th level, you can use your Blood Ma
 
     name = "Blood Maledict"
     source = "Blood Hunter"
+    at_will_spells = ()
+
+    def cast_spell_at_will(self, spell):
+        s = spell()
+        s.level = 0
+        if "M" in s.components:
+            c = list(s.components)
+            c.remove("M")
+            s.components = tuple(c)
+        self.spells_known += (s,)
+        self.spells_prepared += (s,)
+
+    def __init__(self, owner):
+        super().__init__(owner)
+        for s in self.at_will_spells:
+            self.cast_spell_at_will(s)
 
 
 class BloodHunterFightingStyle(FeatureSelector):
@@ -75,6 +91,22 @@ You learn an additional Primal Rite at 7th level, and access to an Esoteric Rite
     
     name = "Crimson Rites"
     source = "Blood Hunter"
+    at_will_spells = ()
+
+    def cast_spell_at_will(self, spell):
+        s = spell()
+        s.level = 0
+        if "M" in s.components:
+            c = list(s.components)
+            c.remove("M")
+            s.components = tuple(c)
+        self.spells_known += (s,)
+        self.spells_prepared += (s,)
+
+    def __init__(self, owner):
+        super().__init__(owner)
+        for s in self.at_will_spells:
+            self.cast_spell_at_will(s)
 
 
 class ExtraAttackBloodHunter(Feature):
@@ -147,29 +179,7 @@ In addition, whenever you score a critical hit with a weapon attack empowered by
     
     
 # All Rites
-class Rites(Feature):
-    """
-    A generic Rite. Add details in features/bloodhunter.py
-    """
-
-    name = "Unnamed rite"
-    source = "BloodHunter (Crimson Rites)"
-    at_will_spells = ()
-
-    def cast_spell_at_will(self, spell):
-        s = spell()
-        s.level = 0
-        if "M" in s.components:
-            c = list(s.components)
-            c.remove("M")
-            s.components = tuple(c)
-        self.spells_known += (s,)
-        self.spells_prepared += (s,)
-
-    def __init__(self, owner):
-        super().__init__(owner)
-        for s in self.at_will_spells:
-            self.cast_spell_at_will(s)
+Rites = CrimsonRites
 
 
 class RiteOfTheFlame(Rites):
@@ -226,29 +236,7 @@ class RiteOfTheRoar(Rites):
     
 
 #Blood Curses
-class BloodCurses(Feature):
-    """
-    A generic BloodCurse. Add details in features/bloodhunter.py
-    """
-
-    name = "Unnamed Curse"
-    source = "BloodHunter (Blood Maledict)"
-    at_will_spells = ()
-
-    def cast_spell_at_will(self, spell):
-        s = spell()
-        s.level = 0
-        if "M" in s.components:
-            c = list(s.components)
-            c.remove("M")
-            s.components = tuple(c)
-        self.spells_known += (s,)
-        self.spells_prepared += (s,)
-
-    def __init__(self, owner):
-        super().__init__(owner)
-        for s in self.at_will_spells:
-            self.cast_spell_at_will(s)
+BloodCurses = BloodMaledict
 
 
 class BloodCurseoftheAnxious(BloodCurses):
@@ -535,8 +523,24 @@ Additionally, when you gain a new mutagen formula, you can choose one of the for
     
     name = "Formulas"
     source = "Blood Hunter (Order of the Mutant)"
-    
-    
+    at_will_spells = ()
+
+    def cast_spell_at_will(self, spell):
+        s = spell()
+        s.level = 0
+        if "M" in s.components:
+            c = list(s.components)
+            c.remove("M")
+            s.components = tuple(c)
+        self.spells_known += (s,)
+        self.spells_prepared += (s,)
+
+    def __init__(self, owner):
+        super().__init__(owner)
+        for s in self.at_will_spells:
+            self.cast_spell_at_will(s)
+
+
 class Mutagencraft(Feature):
     """At 3rd level, you can concoct a single mutagen when you finish a short or long rest. Starting at 7th level, the number of mutagens you can create when you finish a rest increases to two, and at 15th level, you can now create three mutagens.
 
@@ -593,31 +597,6 @@ You can use this feature a number of times equal to your Intelligence modifier (
     
     
 #Formulas
-class Formulas(Feature):
-    """
-    A generic Formula. Add details in features/bloodhunter.py
-    """
-
-    name = "Unnamed rite"
-    source = "BloodHunter (Crimson Rites)"
-    at_will_spells = ()
-
-    def cast_spell_at_will(self, spell):
-        s = spell()
-        s.level = 0
-        if "M" in s.components:
-            c = list(s.components)
-            c.remove("M")
-            s.components = tuple(c)
-        self.spells_known += (s,)
-        self.spells_prepared += (s,)
-
-    def __init__(self, owner):
-        super().__init__(owner)
-        for s in self.at_will_spells:
-            self.cast_spell_at_will(s)
-            
-            
 class Aether(Formulas):
     """**Prerequisite: 11th level.**
 You gain a flying speed of 20 feet for 1 hour.
