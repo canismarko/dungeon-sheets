@@ -383,13 +383,7 @@ class Relentless(Feature):
 
 
 # Maneuvers
-class Maneuver(Feature):
-    """
-    A generic Maneuver
-    """
-
-    name = "Maneuver"
-    source = "Fighter Maneuver (Battle Master)"
+Maneuver = CombatSuperiority
 
 
 class BaitAndSwitch(Maneuver):
