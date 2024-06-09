@@ -496,9 +496,35 @@ class Character(Creature):
         fts = list()
         character_feat_choices = list()
         other_feat_choices = list()
+        # Add player choices; distinguish between general feats and
+        # feat choices such as fighting styles and metamagic options.
+        for item in self.custom_features:
+            if item.source == "Feats":
+                character_feat_choices.append(item)
+            else:
+                other_feat_choices.append(item)
         for c in self.class_list:
             for item in list(c.features):
-                fts.append(item)
+                # Treat features that are instances of other features the
+                # same as feature choices, so that we can sort them later.
+                # Example: Blood Curse of Corrosion.
+                # Parent class:             cls.__class__.__bases__[0]
+                if (not (item.__class__.__bases__[0] == features.Feature
+                        or type(item) == features.Feature)
+                        and item.__class__.__bases__[0] in c.features):
+                    other_feat_choices.append(item)
+            for item in list(c.features):
+                if not item in other_feat_choices:
+                    fts.append(item)
+                # Now check whether any items in class_feat_choices
+                # is a subclass of current item.
+                for choice in other_feat_choices:
+                    if choice.__class__.__bases__[0] == item.__class__:
+                        fts.append(choice)
+            # Make sure we didn't miss any feat choices:
+            for choice in other_feat_choices:
+                if not choice in fts:
+                    fts.insert(0, choice)
         if self.race is not None:
             for item in getattr(self.race, "features", ()):
                 fts.append(item)
@@ -510,14 +536,7 @@ class Character(Creature):
         if self.background is not None:
             for item in getattr(self.background, "features", ()):
                 fts.append(item)
-        # Add player choices, but only if they're not automically given already:
-        for item in self.custom_features:
-            if not item in fts:
-                if item.source == "Feats":
-                    character_feat_choices.append(item)
-                else:
-                    other_feat_choices.append(item)
-        return tuple(character_feat_choices + other_feat_choices + fts)
+        return tuple(character_feat_choices + fts)
 
     @property
     def custom_features_text(self):
