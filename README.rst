@@ -48,7 +48,7 @@ Installation
 
 .. note::
 
-   Dungeon sheets requires **at least python 3.6**. This is mostly due
+   dungeon-sheets requires **at least python 3.6**. This is mostly due
    to the liberal use of f-strings_. If you want to use it with
    previous versions of python 3, you'll probably have to replace all
    the f-strings with the older ``.format()`` method or string
@@ -72,8 +72,9 @@ pdftk is available in Debian and derivatives as **pdftk**, the package
 is not available in some RPM distributions, such as Fedora and CentOS.
 One alternative would be to build your PC sheets using docker.
 
-If the ``pdflatex`` command is available on your system, spellcasters
-will include a spellbook with descriptions of each spell known. If
+If the ``pdflatex`` command is available on your system, dungeon-sheets
+will include a description of a character's features. For spellcasters,
+it will include a spellbook with descriptions of each spell known. If
 not, then this feature will be skipped.
 
 In order to properly format descriptions for spells/features/etc.,
@@ -114,6 +115,14 @@ pages (https://github.com/rpgtex/DND-5e-LaTeX-Template).
 By default, your character's spells are ordered alphabetically. If you
 would like your spellbook to be ordered by level, you can use the ``-S``
 option to do so.
+
+Furthermore, your character's features are ordered alphabetically by
+default as well. Pass the ``-N`` option to order feats by type
+(character feats, class feats, racial feats and background feat) and,
+if applicable, by sub-type (e.g., for Sorcerers, metamagic feature
+choices are collected under the Metamagic feature; for the Battle
+Master subclass, Maneuver feature choices are collected under
+the Combat Superiority feature.)
 
 If you'd like a **step-by-step walkthrough** for creating a new
 character, just run ``create-character`` from a command line and a
