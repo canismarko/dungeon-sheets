@@ -1225,6 +1225,9 @@ class AdeptMarksman(Feature):
     source = "Fighter (Gunslinger"
 
 
+TrickShot = AdeptMarksman
+
+
 class QuickDraw(Feature):
     """When you reach 7th level, you add your proficiency bonus to your
     initiative. You can also stow a firearm, then draw another firearm as a
@@ -1275,7 +1278,7 @@ class HemorrhagingCritical(Feature):
     source = "Fighter (Gunslinger)"
 
 
-class BullyingShot(Feature):
+class BullyingShot(TrickShot):
     """You can use the powerful blast and thundering sound of your firearm to shake
     the resolve of a creature. You can expend one grit point while making a
     Charisma (Intimidation) check to gain advantage on the roll.
@@ -1286,7 +1289,7 @@ class BullyingShot(Feature):
     source = "Gunslinger (Trick Shot)"
 
 
-class DazingShot(Feature):
+class DazingShot(TrickShot):
     """When you make a firearm attack against a creature, you can expend one grit
     point to attempt to dizzy your opponent. On a hit, the creature suffers
     normal damage and must make a Constitution saving throw or suffer
@@ -1298,7 +1301,7 @@ class DazingShot(Feature):
     source = "Gunslinger (Trick Shot)"
 
 
-class DeadeyeShot(Feature):
+class DeadeyeShot(TrickShot):
     """When you make a firearm attack against a creature, you can expend one grit
     point to gain advantage on the attack roll.
 
@@ -1308,7 +1311,7 @@ class DeadeyeShot(Feature):
     source = "Gunslinger (Trick Shot)"
 
 
-class DisarmingShot(Feature):
+class DisarmingShot(TrickShot):
     """When you make a firearm attack against a creature, you can expend one grit
     point to attempt to shoot an object from their hands. On a hit, the
     creature suffers normal damage and must succeed on a Strength saving throw
@@ -1321,7 +1324,7 @@ class DisarmingShot(Feature):
     source = "Gunslinger (Trick Shot)"
 
 
-class ForcefulShot(Feature):
+class ForcefulShot(TrickShot):
     """When you make a firearm attack against a creature, you can expend one grit
     point to attempt to trip them up and force them back. On a hit, the
     creature suffers normal damage and must succeed on a Strength saving throw
@@ -1333,7 +1336,7 @@ class ForcefulShot(Feature):
     source = "Gunslinger (Trick Shot)"
 
 
-class PiercingShot(Feature):
+class PiercingShot(TrickShot):
     """When you make a firearm attack against a creature, you can expend one grit
     point to attempt to fire through multiple opponents. The initial attack
     gains a +1 to the firearm's misfire score. On a hit, the creature suffers
@@ -1347,7 +1350,7 @@ class PiercingShot(Feature):
     source = "Gunslinger (Trick Shot)"
 
 
-class WingingShot(Feature):
+class WingingShot(TrickShot):
     """When you make a firearm attack against a creature, you can expend one grit
     point to attempt to topple a moving target. On a hit, the creature suffers
     normal damage and must make a Strength saving throw or be knocked prone.
@@ -1358,7 +1361,7 @@ class WingingShot(Feature):
     source = "Gunslinger (Trick Shot)"
 
 
-class ViolentShot(Feature):
+class ViolentShot(TrickShot):
     """When you make a firearm attack against a creature, you can expend one or
     more grit points to enhance the volatility of the attack. For each grit
     point expended, the attack gains a +2 to the firearm's misfire score. If
