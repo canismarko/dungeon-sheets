@@ -175,6 +175,8 @@ class BrandOfCastigation(Feature):
     or long rest.
 
     """
+    name = "Brand of Castigation"
+    source = "Blood Hunter"
 
 
 class GrimPsychometry(Feature):
@@ -309,7 +311,7 @@ class RiteOfTheRoar(Rites):
 BloodCurses = BloodMaledict
 
 
-class BloodCurseoftheAnxious(BloodCurses):
+class BloodCurseOfTheAnxious(BloodCurses):
     """As a bonus action, you magnify the adrenaline in the body of a
     creature within 30 feet of you, making them susceptible to forceful
     influence. Until the end of your next turn, all creatures have advantage on
@@ -324,7 +326,7 @@ class BloodCurseoftheAnxious(BloodCurses):
     name = "Blood Curse of the Anxious"
 
 
-class BloodCurseofBinding(BloodCurses):
+class BloodCurseOfBinding(BloodCurses):
     """As a bonus action, you can attempt to bind a creature you can see
     within 30 feet of you that is no more than one size larger than you. The
     target must succeed on a Strength saving throw or have their speed be
@@ -414,7 +416,7 @@ class BloodCurseOfTheEyeless(BloodCurses):
 
     """
 
-    name = "Blood Curse of Exposure"
+    name = "Blood Curse of the Eyeless"
 
 
 class BloodCurseOfTheFallenPuppet(BloodCurses):
@@ -432,7 +434,7 @@ class BloodCurseOfTheFallenPuppet(BloodCurses):
     name = "Blood Curse of the Fallen Puppet"
 
 
-class VloodCurseOfTheHowl(BloodCurses):
+class BloodCurseOfTheHowl(BloodCurses):
     """**Prerequisite: 18th level, Order of the Lycan**
 
     As an action, you unleash a blood-curdling howl. Each creature within 30
@@ -560,7 +562,7 @@ class BrandOfSundering(Feature):
     """
 
     name = "Brand of Sundering"
-    source = "Blood HUnter (Order of the Ghostslayer)"
+    source = "Blood Hunter (Order of the Ghostslayer)"
 
 
 class BloodCurseOfTheExorcist(Feature):
@@ -619,7 +621,7 @@ class HybridTransformation(Feature):
     Strength saving throws.
 
     Resilient Hide. You have resistance to bludgeoning, piercing, and slashing
-    damage from nonmagical attacks not made with silver weapons. While you are
+    damage from non-magical attacks not made with silver weapons. While you are
     not wearing heavy armor, you gain a +1 bonus to your AC.
 
     Predatory Strikes. You can apply your Crimson Rite feature to your unarmed
@@ -657,7 +659,7 @@ class StalkerProwess(Feature):
     your unarmed strikes. This bonus increases by 1 at 11th level (+2) and 18th
     level (+3). In addition, when you have an active Crimson Rite while in your
     hybrid form, your unarmed strikes are considered magical for the purpose of
-    overcoming resistance and immunity to nonmagical attacks and damage.
+    overcoming resistance and immunity to non-magical attacks and damage.
 
     """
 
