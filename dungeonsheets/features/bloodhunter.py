@@ -360,6 +360,11 @@ class BloodCurseOfBloatedAgony(BloodCurses):
 class BloodCurseOfCorrosion(BloodCurses):
     """**Prerequisite: 15th level, Order of the Mutant**
 
+    Starting at 15th level, your blood curse can wrack a creature’s
+    body with terrible toxins. You gain the Blood Curse of Corrosion for your
+    Blood Maledict feature. This does not count against your number of blood
+    curses known.
+
     As a bonus action, a creature within 30 feet of you becomes poisoned. At the
     end of each of its turns, the target can make another Constitution saving
     throw. On a success, the curse ends.
@@ -371,10 +376,16 @@ class BloodCurseOfCorrosion(BloodCurses):
     """
 
     name = "Blood Curse of Corrosion"
+    source = "Blood Hunter (Order of the Mutant)"
 
 
 class BloodCurseOfTheExorcist(BloodCurses):
     """**Prerequisite: 15th level, Order of the Ghostslayer**
+
+    At 15th level, you’ve honed your hemocraft to tear wicked influence
+    from your allies, punishing those who would infiltrate their body and mind.
+    You gain the Blood Curse of the Exorcist for your Blood Maledict feature.
+    This doesn’t count against your number of blood curses known.
 
     As a bonus action, you can choose one creature you can see within 30 feet of
     you that is charmed, frightened, or possessed. The target creature is no
@@ -387,6 +398,8 @@ class BloodCurseOfTheExorcist(BloodCurses):
     """
 
     name = "Blood Curse of the Exorcist"
+    source = "Blood Hunter (Order of the Ghostslayer)"
+
 
 
 class BloodCurseOfExposure(BloodCurses):
@@ -485,6 +498,11 @@ class BloodCurseOfTheMuddledMind(BloodCurses):
 class BloodCurseOfTheSouleater(BloodCurses):
     """**Prerequisite: 18th level, Order of the Profane Soul**
 
+    Starting at 18th level, you’ve learned to siphon the soul from your
+    fallen prey. You gain the Blood Curse of the Souleater for your Blood
+    Maledict feature. This does not count against your number of blood curses
+    known.
+
     When a creature that isn’t a construct or undead is reduced to 0 hit points
     within 30 feet of you, you can use your reaction to usher their soul to your
     patron in exchange for power. Until the end of your next turn, your weapon
@@ -497,6 +515,7 @@ class BloodCurseOfTheSouleater(BloodCurses):
     """
 
     name = "Blood Curse of the Souleater"
+    source = "Blood Hunter (Order of the Profane Soul)"
 
 
 #Order of the Ghostslayer
@@ -563,18 +582,6 @@ class BrandOfSundering(Feature):
 
     name = "Brand of Sundering"
     source = "Blood Hunter (Order of the Ghostslayer)"
-
-
-class BloodCurseOfTheExorcist(Feature):
-    """At 15th level, you’ve honed your hemocraft to tear wicked influence
-    from your allies, punishing those who would infiltrate their body and mind.
-    You gain the Blood Curse of the Exorcist for your Blood Maledict feature.
-    This doesn’t count against your number of blood curses known.
-
-    """
-
-    name = "Blood Curse of the Exorcist"
-    source = "Blood Hunter (Order of the Ghostslayer"
 
 
 class RiteRevival(Feature):
@@ -801,18 +808,6 @@ class BrandOfAxiom(Feature):
     """
 
     name = "Brand of Axiom"
-    source = "Blood Hunter (Order of the Mutant)"
-
-
-class BloodCurseOfCorrosion(Feature):
-    """Starting at 15th level, your blood curse can wrack a creature’s
-    body with terrible toxins. You gain the Blood Curse of Corrosion for your
-    Blood Maledict feature. This does not count against your number of blood
-    curses known.
-
-    """
-
-    name = "Blood Curse of Corrosion"
     source = "Blood Hunter (Order of the Mutant)"
 
 
@@ -1316,16 +1311,4 @@ class UnsealedArcana(Feature):
     """
 
     name = "Unsealed Arcana"
-    source = "Blood Hunter (Order of the Profane Soul)"
-
-
-class BloodCurseOfTheSouleater(Feature):
-    """Starting at 18th level, you’ve learned to siphon the soul from your
-    fallen prey. You gain the Blood Curse of the Souleater for your Blood
-    Maledict feature. This does not count against your number of blood curses
-    known.
-
-    """
-
-    name = "Blood Curse of the Souleater"
     source = "Blood Hunter (Order of the Profane Soul)"
