@@ -115,6 +115,10 @@ Consider using the ``-F`` option to include the excellent D&D 5e
 template for rendering spellbooks, druid wild forms and features
 pages (https://github.com/rpgtex/DND-5e-LaTeX-Template).
 
+By default, your character's spells are ordered alphabetically. If you
+would like your spellbook to be ordered by level, you can use the ``-S``
+option to do so.
+
 If you'd like a **step-by-step walkthrough** for creating a new
 character, just run ``create-character`` from a command line and a
 helpful menu system will take care of the basics for you.
