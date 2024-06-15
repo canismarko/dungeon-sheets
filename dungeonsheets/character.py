@@ -929,7 +929,7 @@ class Character(Creature):
             prepared = s in self.spells_prepared
             level_info = level_names[s.level]
             info_there = spell_list.get(level_info, [])
-            spell_list[level_info] = info_there + [(s.name, prepared)]
+            spell_list[level_info] = info_there + [(re.sub(r"\$", r"\$", str(s)), prepared)]
         spell_info["list"] = spell_list
         return spell_info
 
