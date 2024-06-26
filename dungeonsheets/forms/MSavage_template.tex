@@ -223,12 +223,6 @@
 
 \OrganizationName{[[ char.org_name ]]}
 
-[% if char.is_spellcaster %]
-%Magic
-[[ char | spellsheetparser ]]
-[% endif %]
-
-
 \begin{document}
 \newgeometry{left=0cm,right=0cm,top=0cm,bottom=0cm}
 \onecolumn
@@ -242,10 +236,10 @@
 \pdfbookmark[0]{Background Sheet}{Background Sheet}
 \renderbackgroundsheet
 
-[% if char.is_spellcaster %]
+[% if char.is_spellcaster -%]
 % SPELLCASTING PAGE
 \pdfbookmark[0]{Spellcasting Sheet}{Spellcasting Sheet}
-\spellsheetchoice
-[% endif %]
+[[ char | spellsheetparser ]]
+[%- endif -%]
 
 \end{document}
