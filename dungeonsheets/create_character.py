@@ -610,9 +610,9 @@ class SkillForm(LinkedListForm):
     def while_editing(self):
         # Update the static skills for race and background
         bg_skills = self.parentApp.character.background.skill_proficiencies
-        self.bg_skills.value = str(bg_skills)[1:-1].replace("'", "")
+        self.bg_skills.value = str(bg_skills)[1:-1].replace("'", "").title()
         race_skills = self.parentApp.character.race.skill_proficiencies
-        self.race_skills.value = str(race_skills)[1:-1].replace("'", "")
+        self.race_skills.value = str(race_skills)[1:-1].replace("'", "").title()
         # Now set the available discretionary choices
         choices = (
             self.parentApp.character.primary_class.class_skill_choices
@@ -620,7 +620,8 @@ class SkillForm(LinkedListForm):
             + self.parentApp.character.background.skill_choices
         )
         static_skills = bg_skills + race_skills
-        choices = set([c for c in choices if c.lower() not in static_skills])
+        choices = set([c.title() for c in choices
+                if c.lower() not in static_skills])
         self.skill_proficiencies.set_values(sorted(tuple(choices)))
         self.update_remaining()
 
