@@ -731,9 +731,10 @@ class ArmorForm(LinkedListForm):
         )
 
     def on_ok(self):
-        my_armor = self.armor.get_selected_objects()[0]
-        if my_armor.lower() != "no armor":
-            self.parentApp.character.wear_armor(my_armor)
+        if not self.armor.get_selected_objects() == []:
+            my_armor = self.armor.get_selected_objects()[0]
+            if my_armor.lower() != "no armor":
+                self.parentApp.character.wear_armor(my_armor)
         if self.shield.value:
             self.parentApp.character.wield_shield("shield")
         super().to_next()
