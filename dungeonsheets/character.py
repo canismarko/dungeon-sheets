@@ -751,8 +751,6 @@ class Character(Creature):
         except AttributeError:
             profs = val
         self._proficiencies_text = profs
-        if self.chosen_tools == "":
-            self.chosen_tools = ", ".join(item for item in profs)
 
     @property
     def features_text(self):
@@ -876,10 +874,24 @@ class Character(Creature):
         elif 'shields' in prof_set:
             prof_dict["Armor"] += ["Shields"]
         prof_dict["Armor"] = ", ".join(prof_dict["Armor"])
-        if hasattr(self, 'chosen_tools'):
-            prof_dict["Other"] = re.sub(r"[A-Za-z]+('[A-Za-z]+)?",
-                                       lambda word: word.group(0).capitalize(),
-                                       self.chosen_tools)
+        # Backward compatibility with chosen_tools
+        if not self.chosen_tools == "" :
+            prof_set.update(self.chosen_tools.split(","))
+        # Extract "Other" proficiencies (artisan's tools, musical instruments, ... )
+        prof_dict["Other"] = []
+        for prof in prof_set:
+            if not (
+                # Anything other than weapons, armor, shields or options
+                any (re.search(w.name.lower(), prof) for w in w_pro)
+                or any (ar in prof for ar in armor_types)
+                or "shields" in prof
+            ):
+                prof_dict["Other"].append(prof)
+        prof_dict["Other"] = ", ".join(prof_dict["Other"])
+        # Nice capitalization
+        prof_dict["Other"] = re.sub(r"[A-Za-z]+('[A-Za-z]+)?",
+                                   lambda word: word.group(0).capitalize(),
+                                   prof_dict["Other"])
         return prof_dict
 
     @property
