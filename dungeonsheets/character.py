@@ -870,7 +870,10 @@ class Character(Creature):
         prof_dict["Armor"] = [ar.title() for ar in armor_types if ar in prof_set]
         if len(prof_dict["Armor"]) > 2 or 'all armor' in prof_set:
             prof_dict["Armor"] = ["All Armor"]
-        if 'shields' in prof_set:
+        if 'shields (druids will not wear armor or use shields made of metal)' in prof_set:
+            prof_dict["Armor"] += [
+                    "Shields (druids will not wear armor or use shields made of metal)"]
+        elif 'shields' in prof_set:
             prof_dict["Armor"] += ["Shields"]
         prof_dict["Armor"] = ", ".join(prof_dict["Armor"])
         if hasattr(self, 'chosen_tools'):
