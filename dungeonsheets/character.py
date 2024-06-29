@@ -107,7 +107,7 @@ class Character(Creature):
     features_and_traits = "Describe any other features and abilities."
     chosen_tools = ""
 
-    _proficiencies_text = list()
+    proficiencies_text = list()
 
     # Appearance
     portrait: Path | None = None  # Path to image file
@@ -231,7 +231,6 @@ class Character(Creature):
         self.other_weapon_proficiencies = tuple()
         self.skill_proficiencies = list()
         self.skill_expertise = list()
-        self._proficiencies_text = list()
         self._spells = list()
         self._spells_prepared = list()
         self.infusions = list()
@@ -718,41 +717,6 @@ class Character(Creature):
         return is_proficient
 
     @property
-    def proficiencies_text(self):
-        final_text = ""
-        all_proficiencies = tuple(self._proficiencies_text)
-        if self.has_class:
-            all_proficiencies += tuple(self.primary_class._proficiencies_text)
-        if self.num_classes > 1:
-            for c in self.class_list[1:]:
-                all_proficiencies += tuple(c._multiclass_proficiencies_text)
-        if self.race is not None:
-            all_proficiencies += tuple(self.race.proficiencies_text)
-        if self.background is not None:
-            all_proficiencies += tuple(self.background.proficiencies_text)
-        # Create a single string out of all the proficiencies
-        for txt in all_proficiencies:
-            if not final_text:
-                # Capitalize the first entry
-                txt = txt.capitalize()
-            else:
-                # Put a comma first
-                txt = ", " + txt
-                # Add this item to the list text
-            final_text += txt
-        # Add a period at the end
-        final_text += "."
-        return final_text
-
-    @proficiencies_text.setter
-    def proficiencies_text(self, val):
-        try:
-            profs = val.split(",")
-        except AttributeError:
-            profs = val
-        self._proficiencies_text = profs
-
-    @property
     def features_text(self):
         s = "\n\n--".join(
             [f.name + ("**" if f.needs_implementation else "") for f in self.features]
@@ -846,7 +810,7 @@ class Character(Creature):
     def proficiencies_by_type(self):
         prof_dict = {}
         # First collect all proficiencies
-        prof_set = set(self._proficiencies_text)
+        prof_set = set(self.proficiencies_text)
         if self.has_class:
             prof_set.update(self.primary_class._proficiencies_text)
         if self.num_classes > 1:
