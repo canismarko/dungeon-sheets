@@ -291,8 +291,9 @@ class Character(Creature):
             levels = [1] * len(classes_list)
         if isinstance(subclasses, str):
             subclasses = [subclasses]
-        if len(subclasses) == 0:
-            subclasses = [None] * len(classes_list)
+        if len(subclasses) < len(classes_list):
+            for count in range(0, (len(classes_list) - len(subclasses))):
+                subclasses.append(None)
         assert len(classes_list) == len(
             levels
         ), "the length of classes {:d} does not match length of levels {:d}".format(
