@@ -517,7 +517,7 @@ class SunBolt(RangedWeapon):
 
 
 # Custom weapons
-class HeavyPunch(MeleeWeapon):
+class HeavyPunch(Unarmed):
     base_damage = "1d4"
     name = "Heavy Punch"
     damage_type = "b"
@@ -525,7 +525,7 @@ class HeavyPunch(MeleeWeapon):
     attack_bonus = -5  # Heavy weapon master
 
 
-class Bite(MeleeWeapon):
+class Bite(Unarmed):
     name = "Bite"
     base_damage = "1d4"
     damage_type = "p"
@@ -535,7 +535,7 @@ class Bite(MeleeWeapon):
     ability = "strength"
 
 
-class Talons(MeleeWeapon):
+class Talons(Unarmed):
     name = "Talons"
     base_damage = "1d4"
     damage_type = "s"
@@ -545,7 +545,7 @@ class Talons(MeleeWeapon):
     ability = "strength"
 
 
-class Claws(MeleeWeapon):
+class Claws(Unarmed):
     name = "Claws"
     base_damage = "1d4"
     damage_type = "s"
