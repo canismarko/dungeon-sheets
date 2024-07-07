@@ -693,9 +693,8 @@ class WeaponForm(LinkedListForm):
             new_weapons = tuple(s.lower() for s in new_weapons)
         else:
             new_weapons = ()
-        for wpn in new_weapons:
-            self.parentApp.character.wield_weapon(wpn)
-        log.debug(f"Weapons wielded: {new_weapons}")
+        self.parentApp.character.new_weapons = new_weapons
+        log.debug(f"Weapons added: {new_weapons}")
         super().to_next()
 
     def update_remaining(self, widget=None):

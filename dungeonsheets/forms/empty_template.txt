@@ -69,7 +69,7 @@ gp = 0
 pp = 0
 
 # TODO: Put your equipped weapons and armor here
-weapons = {{ char.weapons }}  # Example: ('shortsword', 'longsword')
+weapons = {{ char.new_weapons }}  # Example: ('shortsword', 'longsword')
 magic_items = ()  # Example: ('ring of protection',)
 armor = "{{ char.armor }}"  # Eg "leather armor"
 shield = "{{ char.shield }}"  # Eg "shield"
