@@ -56,7 +56,7 @@ class ArcaneTrickster(SubClass):
     features_by_level[13] = [features.VersatileTrickster]
     features_by_level[17] = [features.SpellThief]
     spellcasting_ability = "intelligence"
-    multiclass_spellslots_by_level = {
+    spell_slots_by_level = {
         # char_lvl: (cantrips, 1st, 2nd, 3rd, ...)
         1: (0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
         2: (0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
