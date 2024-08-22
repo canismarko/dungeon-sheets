@@ -146,10 +146,21 @@ class DrowMagic(Feature):
     ability for these spells.
 
     """
+    _spells = {1: [spells.DancingLights,], 3: [spells.FaerieFire,], 5: [spells.Darkness,]}
+    spells_known = []
+    spells_prepared = []
+
+    def __init__(self, owner):
+        if owner is not None:
+            level = owner.level
+            for lvl, spl in self._spells.items():
+                if level >= lvl:
+                    self.spells_known.extend(spl)
+                    self.spells_prepared.extend(spl)
+        super().__init__(owner=owner)
 
     name = "Drow Magic"
     source = "Race (Dark Elf)"
-    spells_known = spells_prepared = (spells.DancingLights,)
 
 
 # Halflings
@@ -277,6 +288,7 @@ class NaturalIllusionist(Feature):
 
     name = "Natural Illusionist"
     source = "Race (Forest Gnome)"
+    spells_known = spells_prepared = (spells.MinorIllusion,)
 
 
 class SpeakWithSmallBeasts(Feature):
@@ -373,16 +385,28 @@ class HellishResistance(Feature):
 
 
 class InfernalLegacy(Feature):
-    """You know the thaumaturgy cantrip.  Once you reach 3rd level, you can cast
+    """You know the thaumaturgy cantrip. Once you reach 3rd level, you can cast
     the hellish rebuke spell once per day as a 2nd-level spell. Once you reach
     5th level, you can also cast the darkness spell once per day. Charisma is
     your spellcasting ability for these spells.
 
     """
 
+    _spells = {1: [spells.Thaumaturgy,], 3: [spells.HellishRebuke,]}
+    spells_known = []
+    spells_prepared = []
+
+    def __init__(self, owner):
+        if owner is not None:
+            level = owner.level
+            for lvl, spl in self._spells.items():
+                if level >= lvl:
+                    self.spells_known.extend(spl)
+                    self.spells_prepared.extend(spl)
+        super().__init__(owner=owner)
+
     name = "Infernal Legacy"
     source = "Race (Tiefling)"
-    spells_known = spells_prepared = (spells.Thaumaturgy,)
 
 
 # Aasimar
@@ -412,6 +436,7 @@ class LightBearer(Feature):
 
     name = "Light Bearer"
     source = "Race (Aasimar)"
+    spells_known = spells_prepared = (spells.Light,)
 
 
 class AasimarRadiantSoul(Feature):
@@ -492,6 +517,7 @@ class FirbolgMagic(Feature):
 
     name = "Firbolg Magic"
     source = "Race (Firbolg)"
+    spells_known = spells_prepared = (spells.DetectMagic, spells.DisguiseSelf,)
 
 
 class HiddenStep(Feature):
@@ -647,6 +673,18 @@ class ControlAirAndWater(Feature):
     rest. Charisma is your spellcasting ability for these spells.
 
     """
+    _spells = {1: [spells.FogCloud,], 3: [spells.GustOfWind,], 5: [spells.WallOfWater,]}
+    spells_known = []
+    spells_prepared = []
+
+    def __init__(self, owner):
+        if owner is not None:
+            level = owner.level
+            for lvl, spl in self._spells.items():
+                if level >= lvl:
+                    self.spells_known.extend(spl)
+                    self.spells_prepared.extend(spl)
+        super().__init__(owner=owner)
 
     name = "Control Air and Water"
     source = "Race (Triton)"
@@ -694,6 +732,7 @@ class MingleWithTheWind(Feature):
 
     name = "Mingle with the Wind"
     source = "Race (Air Genasi)"
+    spells_known = spells_prepared = (spells.Levitate,)
 
 
 class EarthWalk(Feature):
@@ -734,6 +773,18 @@ class ReachToTheBlaze(Feature):
     rest. Constitution is your spellcasting ability for these spells.
 
     """
+    _spells = {1: [spells.ProduceFlame,], 3: [spells.BurningHands,]}
+    spells_known = []
+    spells_prepared = []
+
+    def __init__(self, owner):
+        if owner is not None:
+            level = owner.level
+            for lvl, spl in self._spells.items():
+                if level >= lvl:
+                    self.spells_known.extend(spl)
+                    self.spells_prepared.extend(spl)
+        super().__init__(owner=owner)
 
     name = "Reach to the Blaze"
     source = "Race (Fire Genasi)"
@@ -757,14 +808,24 @@ class CallToTheWave(Feature):
     spells.
 
     """
+    _spells = {1: [spells.ShapeWater,], 3: [spells.CreateOrDestroyWater]}
+    spells_known = []
+    spells_prepared = []
+
+    def __init__(self, owner):
+        if owner is not None:
+            level = owner.level
+            for lvl, spl in self._spells.items():
+                if level >= lvl:
+                    self.spells_known.extend(spl)
+                    self.spells_prepared.extend(spl)
+        super().__init__(owner=owner)
 
     name = "Call to the Wave"
     source = "Race (Water Genasi)"
 
 
 # RFTLW Races
-
-
 class DualMind(Feature):
     """
     You have advantage on all Wisdom saving throws.
@@ -938,6 +999,18 @@ class InnateSpellcasting(Feature):
     your spellcasting ability for these spells.
 
     """
+    _spells = {1: [spells.PoisonSpray, spells.AnimalFriendship,], 3: [spells.Suggestion,]}
+    spells_known = []
+    spells_prepared = []
+
+    def __init__(self, owner):
+        if owner is not None:
+            level = owner.level
+            for lvl, spl in self._spells.items():
+                if level >= lvl:
+                    self.spells_known.extend(spl)
+                    self.spells_prepared.extend(spl)
+        super().__init__(owner=owner)
 
     name = "Innate Spellcasting"
     source = "Race (Yuan-Ti Pureblood)"

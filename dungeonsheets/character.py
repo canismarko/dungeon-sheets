@@ -570,8 +570,6 @@ class Character(Creature):
             spells |= set(f.spells_known) | set(f.spells_prepared)
         for c in self.spellcasting_classes:
             spells |= set(c.spells_known) | set(c.spells_prepared)
-        if self.race is not None:
-            spells |= set(self.race.spells_known) | set(self.race.spells_prepared)
         return sorted(tuple(spells), key=(lambda x: x.name))
 
     @property
@@ -581,8 +579,6 @@ class Character(Creature):
             spells |= set(f.spells_prepared)
         for c in self.spellcasting_classes:
             spells |= set(c.spells_prepared)
-        if self.race is not None:
-            spells |= set(self.race.spells_prepared)
         return sorted(tuple(spells), key=(lambda x: x.name))
 
     def set_attrs(self, **attrs):
