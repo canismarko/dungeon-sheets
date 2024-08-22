@@ -2,7 +2,7 @@
   \pdfbookmark[1]{Summary}{Summary}
   \section*{Summary}
 
-  [[ summary | rst_to_latex ]]
+  [[ summary | rst_to_latex(use_dnd_decorations=use_dnd_decorations) ]]
 
 [% endif %]
 
@@ -11,8 +11,13 @@
 \section*{Party}
 
 [% if use_dnd_decorations %]
-  \begin{DndTable}{r c c c c c c c}
-    & Str & Dex & Con & Int & Wis & Cha \\
+  \begin{DndLongTable}[firsthead={
+                      & \textbf{Str}
+                      & \textbf{Dex}
+                      & \textbf{Con}
+                      & \textbf{Int}
+                      & \textbf{Wis}
+                      & \textbf{Cha} \\ }]{r c c c c c c c}
     [% for member in party %]
       [[ member.name[:18] ]]
       & [[ member.strength.modifier | mod_str ]]
@@ -23,9 +28,11 @@
       & [[ member.charisma.modifier | mod_str ]]
       \\
     [% endfor %]    
-  \end{DndTable}
-  \begin{DndTable}{r c c c}
-    & AC & Max HP & Spl.\ DC \\
+  \end{DndLongTable}
+  \begin{DndLongTable}[firsthead={
+                      & \textbf{AC}
+                      & \textbf{Max HP}
+                      & \textbf{Spl.\ DC} \\ }]{r c c c}
     [% for member in party %]
       [[ member.name[:28] ]]
       & [[ member.armor_class ]]
@@ -35,10 +42,12 @@
         [% endfor %]
       \\
     [% endfor %]
-  \end{DndTable}
+  \end{DndLongTable}
   % Passive stats
-  \begin{DndTable}{r c c c}
-    & Pas. Per.\ & Pas. Ins.\ & Pas. Inv.\ \\
+  \begin{DndLongTable}[firsthead={
+                      & \textbf{Pas. Per.\ }
+                      & \textbf{Pas. Ins.\ }
+                      & \textbf{Pas. Inv.\ } \\ }]{r c c c}
     [% for member in party %]
       [[ member.name[:28] ]]
       & [[ member.passive_perception ]] % Passive perception
@@ -46,15 +55,19 @@
       & [[ member.passive_investigation ]] % Passive investigation
       \\
     [% endfor %]
-  \end{DndTable}
+  \end{DndLongTable}
   %% XP thresholds for the party
-  \begin{DndTable}{r c c c c}
-    & Easy & Medium & Hard & Deadly \\
+  \begin{DndLongTable}[firsthead={
+                      & \textbf{Easy}
+                      & \textbf{Medium}
+                      & \textbf{Hard}
+                      & \textbf{Deadly} \\ }]{r c c c c}
     \textbf{XP Threshold} & 
     [% for threshold in party | xp_thresholds %]
         [[ "{:,}".format(threshold) ]] [% if not loop.last %]&[% endif %]
     [% endfor %]
-  \end{DndTable}
+      \\
+  \end{DndLongTable}
 [% else %]
   \begin{tabular}{r | c c c c c c}
     & Str & Dex & Con & Int & Wis & Cha \\

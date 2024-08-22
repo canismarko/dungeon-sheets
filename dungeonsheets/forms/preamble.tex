@@ -6,6 +6,7 @@
 \usepackage{alltt}
 \usepackage[bookmarks=true,bookmarksopen=true]{hyperref}
 \usepackage{bookmark}
+\usepackage{needspace}
 \usepackage{supertabular}
 
 % Make lists more compact
@@ -32,6 +33,59 @@
 [% if use_dnd_decorations %]
   \usepackage[layout=true]{dnd}
   \setlength{\zerosep}{0em}
+
+  [% raw %]
+  % dndlongtable environment
+  \ExplSyntaxOn
+
+  % Table options
+  \keys_define:nn { dnd / longtable }
+    {
+      color .tl_set:N            = \l__dnd_table_color_tl,
+      color .initial:n           = tablecolor,
+      color .value_required:n    = true,
+      header .tl_set:N           = \l__dnd_table_header_tl,
+      header .value_required:n   = true,
+      width .dim_set:N           = \l__dnd_table_width_dim,
+      width .value_required:n    = true,
+      firsthead .tl_set:N        = \l__table_firsthead_tl,
+      firsthead .value_required:n   = true,
+    }
+
+  \NewDocumentEnvironment {DndLongTable} { o m }
+  {
+    \group_begin:
+
+    \tablefirsthead{\l__table_firsthead_tl}
+
+    \dim_set:Nn \l__dnd_table_width_dim { \linewidth }
+    \tl_if_novalue:nF {#1}
+      { \keys_set:nn { dnd / longtable } {#1} }
+
+    \par \vspace { 9pt plus 3pt minus 3pt}
+
+    \tl_if_empty:NF \l__dnd_table_header_tl
+      {
+        \group_begin:
+          \needspace{5\baselineskip}
+          \noindent \DndFontTableTitle{ \l__dnd_table_header_tl}
+          \par \vspace{ 5pt plus 2pt minus 2pt }
+        \group_end:
+      }
+
+    \DndFontTableBody
+
+    \rowcolors {1} {} {\l__dnd_table_color_tl}
+
+    \begin{supertabular*} {\l__dnd_table_width_dim} {#2}
+  }
+  {
+    \end{supertabular*} \vspace { 9pt plus 3pt minus 3pt }
+    \group_end:
+  }
+  \ExplSyntaxOff
+  [% endraw %]
+
 [% else %]
   \usepackage[margin=1.5cm]{geometry}
   \usepackage[dvipsnames]{color}
