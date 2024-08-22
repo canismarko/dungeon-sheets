@@ -49,7 +49,7 @@ class DivineSoul(SubClass):
     """Sometimes the spark of magic that fuels a sorcerer comes from a divine
     source that glimmers within the soul. Having such a blessed soul is a sign
     that your innate magic might come from a distant but powerful familial
-    connection to a divine being. Perhaps your ances- tor was an angel,
+    connection to a divine being. Perhaps your ancestor was an angel,
     transformed into a mortal and sent to fight in a god's name. Or your birth
     might align with an ancient prophecy, marking you as a servant of the gods
     or a chosen vessel of divine magic.
@@ -61,7 +61,7 @@ class DivineSoul(SubClass):
 
     In some cultures, only those who can claim the power of a Divine Soul may
     command religious power. In these lands, ecclesiastical positions are
-    dominated by a few bloodlines and preserved over generations
+    dominated by a few bloodlines and preserved over generations.
 
     """
 
@@ -83,7 +83,7 @@ class ShadowMagic(SubClass):
     presence. The spark of life that sustains you is muffled, as if it
     struggles to remain viable against the dark energy that imbues your
     soul. At your option, you can pick from or roll on the Shadow Sorcerer
-    Quirks table to create a quirk for your character
+    Quirks table to create a quirk for your character.
 
     """
 
@@ -123,8 +123,8 @@ class StormSorcery(SubClass):
     features_by_level[18] = [features.WindSoul]
 
 
-class Sorceror(CharClass):
-    name = "Sorceror"
+class Sorcerer(CharClass):
+    name = "Sorcerer"
     hit_dice_faces = 6
     subclass_select_level = 1
     saving_throw_proficiencies = ("constitution", "charisma")

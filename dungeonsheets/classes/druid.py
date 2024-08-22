@@ -108,7 +108,7 @@ class ShepherdCircle(SubClass):
 class SporesCircle(SubClass):
     """Druids of the Circle of Spores find beauty in decay. They see within
     mold and other fungi the ability to transform lifeless material into
-    abundant, ableit somewhat strange, life.
+    abundant, albeit somewhat strange, life.
 
     These druids believe that life and death are parts of a grand cycle, with
     one leading to the other and then back again. Death isn't the end of life,
@@ -117,7 +117,7 @@ class SporesCircle(SubClass):
     Druids of this circle have a complex relationship with the undead. Unlike
     most other druids, they see nothing inherently wrong with undeath, which
     they consider to be a companion to life and death. But these druids believe
-    that the natural cycle is heathiest when each segment of it is vibrant and
+    that the natural cycle is healthiest when each segment of it is vibrant and
     changing. Undead that seek to replace all life with undeath, or that try to
     avoid passing to a final rest, violate the cycle and must be thwarted.
     """

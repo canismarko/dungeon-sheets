@@ -39,7 +39,7 @@ class PowerfulBuild(Feature):
 
 class Amphibious(Feature):
     """
-    You can breath air and water
+    You can breathe air and water.
 
     """
 
@@ -50,7 +50,7 @@ class Amphibious(Feature):
 # Dwarves
 class DwarvenResilience(Feature):
     """You have advantage on saving throws against poison, and you have resistance
-    against poison damage
+    against poison damage.
 
     """
 
@@ -240,7 +240,7 @@ class BreathWeapon(Feature):
     save, and half as much damage on a successful one. The damage increases to
     3d6 at 6th level, 4d6 at 11th level, and 5d6 at 16th level. After you use
     your breath weapon, you can't use it again until you complete a short or
-    long rest. Damage
+    long rest.
 
     """
 
@@ -250,7 +250,7 @@ class BreathWeapon(Feature):
 
 class DraconicResistance(Feature):
     """You have resistance to the damage type associated with your draconic
-    ancestry. Languages.
+    ancestry.
 
     """
 
@@ -284,7 +284,6 @@ class SpeakWithSmallBeasts(Feature):
     smaller beasts. Forest gnomes love animals and often keep squirrels,
     badgers, rabbits, moles, woodpeckers, and other creatures as beloved pets.
 
-
     """
 
     name = "Speak with Small Beasts"
@@ -295,7 +294,7 @@ class ArtificersLore(Feature):
     """Whenever you make an Intelligence (History) check related to magic items,
     alchemical objects, or technological devices, you can add twice your
     proficiency bonus, instead of any proficiency bonus you normally
-    apply. Tinker.
+    apply.
 
     """
 
@@ -322,7 +321,8 @@ class Tinker(Feature):
     light a candle, torch, or campfire. Using the device requires your action.
 
     *Music Box*: When opened, this music box plays a single song at a moderate
-    volume. The box stops playing when it reaches the song's end or when
+    volume. The box stops playing when it reaches the song's end or when it's
+    closed.
 
     """
 
@@ -638,8 +638,6 @@ class FelineAgility(Feature):
 
 
 # Triton
-
-
 class ControlAirAndWater(Feature):
     """A child of the sea, you can call on the magic of elemental air and
     water. You can cast fog cloud with this trait. Starting at 3rd level, you
@@ -824,8 +822,8 @@ class SeveredFromDreams(Feature):
     source = "Race (Kalashtar)"
 
 
-# monsterous races
-# bugbear
+# Monstrous races
+# Bugbear
 class LongLimbed(Feature):
     """When you make a melee attack on your turn, your reach for it is 5
     feet greater than normal.
@@ -847,7 +845,7 @@ class SupriseAttack(Feature):
     source = "Race (BugBear)"
 
 
-# Goblins
+# Goblin
 class FuryOfTheSmall(Feature):
     """
     When you damage a creature with an attack or a spell and the creature's
@@ -894,7 +892,7 @@ class MartialTraining(Feature):  # you have to add the weapons of choice to your
     source = "Race (HobGoblin)"
 
 
-# kobold
+# Kobold
 class GrovelCowerAndBeg(Feature):
     """As an action on your turn, you can cower pathetically to
     distract nearby foes. Until the end of your next turn, your
@@ -930,7 +928,7 @@ class Aggressive(Feature):
     source = "Race (Orc)"
 
 
-# yuan-ti pureblood
+# Yuan-ti Pureblood
 class InnateSpellcasting(Feature):
     """You know the poison spray cantrip. You can cast animal
     friendship an unlimited number of times with this trait,

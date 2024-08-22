@@ -1,4 +1,4 @@
-"""This file describes the heroic adventurer Sorceror2.
+"""This file describes the heroic adventurer Sorcerer2.
 
 It's used primarily for saving characters from create-character,
 where there will be many missing sections.
@@ -10,13 +10,13 @@ sheet by running ``makesheets`` from the command line.
 
 dungeonsheets_version = "0.9.4"
 
-name = "Sorceror2"
+name = "Sorcerer2"
 player_name = "Ben"
 
 # Be sure to list Primary class first
-classes = ['Sorceror']  # ex: ['Wizard'] or ['Rogue', 'Fighter']
+classes = ['Sorcerer']  # ex: ['Wizard'] or ['Rogue', 'Fighter']
 levels = [16]  # ex: [10] or [3, 2]
-subclasses = ["Shadow Magic"]  # ex: ['Necromacy'] or ['Thief', None]
+subclasses = ["Shadow Magic"]  # ex: ['Necromancy'] or ['Thief', None]
 background = "Cloistered Scholar"
 race = "Fallen Aasimar"
 alignment = "Lawful good"
@@ -42,7 +42,7 @@ skill_expertise = ()
 
 # Named features / feats that aren't part of your classes, race, or background.
 # Also include Eldritch Invocations and features you make multiple selection of
-# (like Maneuvers for Fighter, Metamagic for Sorcerors, Trick Shots for
+# (like Maneuvers for Fighter, Metamagic for Sorcerers, Trick Shots for
 # Gunslinger, etc.)
 # Example:
 # features = ('Tavern Brawler',) # take the optional Feat from PHB

@@ -19,7 +19,7 @@ player_name = "Clara"
 # Be sure to list Primary class first
 classes = ['Wizard']  # ex: ['Wizard'] or ['Rogue', 'Fighter']
 levels = [20]  # ex: [10] or [3, 2]
-subclasses = ["School of Transmutation"]  # ex: ['Necromacy'] or ['Thief', None]
+subclasses = ["School of Transmutation"]  # ex: ['Necromancy'] or ['Thief', None]
 background = "Hermit"
 race = "Air Genasi"
 alignment = "Chaotic neutral"
@@ -45,7 +45,7 @@ skill_expertise = ()
 
 # Named features / feats that aren't part of your classes, race, or background.
 # Also include Eldritch Invocations and features you make multiple selection of
-# (like Maneuvers for Fighter, Metamagic for Sorcerors, Trick Shots for
+# (like Maneuvers for Fighter, Metamagic for Sorcerers, Trick Shots for
 # Gunslinger, etc.)
 # Example:
 # features = ('Tavern Brawler',) # take the optional Feat from PHB

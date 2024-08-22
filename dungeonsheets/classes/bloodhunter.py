@@ -94,7 +94,7 @@ class BloodHunter(CharClass):
     saving_throw_proficiencies = ("intelligence", "dexterity")
     primary_abilities = (
     	"dexterity",
-    	"strenght",
+    	"strength",
     )
     _proficiencies_text = (
         "Light armor",

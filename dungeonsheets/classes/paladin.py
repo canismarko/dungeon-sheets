@@ -28,33 +28,34 @@ class PaladinOath(SubClass):
 
 class OathOfDevotion(PaladinOath):
     """The Oath of Devotion binds a paladin to the loftiest ideals of justice,
-    virtue, and order. Sometim es called cavaliers, white knights, or holy
+    virtue, and order. Sometimes called cavaliers, white knights, or holy
     warriors, these paladins meet the ideal of the knight in shining armor,
     acting with honor in pursuit of justice and the greater good. They hold
     themselves to the highest standards of conduct, and some, for better or
     worse, hold the rest of the world to the same standards. Many who swear
     this oath are devoted to gods of law and good and use their gods' tenets as
-    the measure of their devotion. They hold angels-the perfect servants of
-    good-as their ideals, and incorporate images of angelic wings into their
+    the measure of their devotion. They hold angels - the perfect servants of
+    good - as their ideals, and incorporate images of angelic wings into their
     helmets or coats of arms.
 
     **Tenets of Devotion**: Though the exact words and strictures of the Oath
     of Devotion vary, paladins of this oath share these tenets.
 
-    --Honesty. Don't lie or cheat. Let your word be your promise.
-
-    --Courage. Never fear to act, though caution is wise.
-
-    --Compassion. Aid others, protect the weak, and punish those who threaten
-    them. Show mercy to your foes, but temper it with wisdom.
-
-    --Honor. Treat others with fairness, and let your honorable deeds be an
-    example to them. Do as much good as possible while causing the least amount
-    of harm.
-
-    --Duty. Be responsible for your actions and their consequences, protect
-    those entrusted to your care, and obey those who have just authority over
-    you.
+    Honesty.
+      Don't lie or cheat. Let your word be your promise.
+    Courage.
+      Never fear to act, though caution is wise.
+    Compassion.
+      Aid others, protect the weak, and punish those who threaten
+      them. Show mercy to your foes, but temper it with wisdom.
+    Honor.
+      Treat others with fairness, and let your honorable deeds be an
+      example to them. Do as much good as possible while causing the least amount
+      of harm.
+    Duty.
+      Be responsible for your actions and their consequences, protect
+      those entrusted to your care, and obey those who have just authority over
+      you.
 
     """
 
@@ -77,10 +78,10 @@ class OathOfAncients(PaladinOath):
     """The Oath of the Ancients is as old as the race of elves and the rituals of
     the druids. Sometimes called fey knights, green knights, or horned knights,
     paladins who swear this oath cast their lot with the side of the light in
-    the cosm ic struggle against darkness because they love the beautiful and
+    the cosmic struggle against darkness because they love the beautiful and
     life-giving things of the world, not necessarily because they believe in
     principles of honor, courage, and justice. They adorn their armor and
-    clothing with images of growing things-leaves, antlers, or flowers-to
+    clothing with images of growing things - leaves, antlers, or flowers - to
     reflect their commitment to preserving life and light in the world.
 
     **Tenets of the Ancients**: The tenets of the Oath of the Ancients have
@@ -88,19 +89,20 @@ class OathOfAncients(PaladinOath):
       principles of good above any concerns of law or chaos. Its four central
       principles are simple.
 
-    --Kindle the Light. Through your acts of mercy, kindness, and forgiveness,
-    kindle the light of hope in the world, beating back despair.
-
-    --Shelter the Light. Where there is good, beauty, love, and laughter in the
-    world, stand against the w ickedness that would swallow it. Where life
-    flourishes, stand against the forces that would render it barren.
-
-    --Preserve Your Own Light. Delight in song and laughter, in beauty and
-    art. If you allow the light to die in your own heart, you can't preserve it
-    in the world.
-
-    --Be the Light. Be a glorious beacon for all who live in despair. Let the
-    light of your joy and courage shine forth in all your deeds.
+    Kindle the Light.
+      Through your acts of mercy, kindness, and forgiveness,
+      kindle the light of hope in the world, beating back despair.
+    Shelter the Light.
+      Where there is good, beauty, love, and laughter in the
+      world, stand against the wickedness that would swallow it. Where life
+      flourishes, stand against the forces that would render it barren.
+    Preserve Your Own Light.
+      Delight in song and laughter, in beauty and
+      art. If you allow the light to die in your own heart, you can't preserve it
+      in the world.
+    Be the Light.
+      Be a glorious beacon for all who live in despair. Let the
+      light of your joy and courage shine forth in all your deeds.
 
     """
 
@@ -132,17 +134,18 @@ class OathOfVengeance(PaladinOath):
     the paladins are often neutral or lawful neutral in alignment. The core
     principles of the tenets are brutally simple.
 
-    --Fight the Greater Evil. Faced with a choice of fighting my sworn foes or
-    combating a lesser evil. I choose the greater evil.
-
-    --No Mercy for the Wicked. Ordinary foes might win my mercy, but my sworn
-    enemies do not.
-
-    --By Any Means Necessary. My qualms can't get in the way of exterminating
-    my foes.
-
-    --Restitution. If my foes wreak ruin on the world, it is because I failed
-    to stop them. I must help those harmed by their misdeeds.
+    Fight the Greater Evil.
+      Faced with a choice of fighting my sworn foes or
+      combating a lesser evil. I choose the greater evil.
+    No Mercy for the Wicked.
+      Ordinary foes might win my mercy, but my sworn
+      enemies do not.
+    By Any Means Necessary.
+      My qualms can't get in the way of exterminating
+      my foes.
+    Restitution.
+      If my foes wreak ruin on the world, it is because I failed
+      to stop them. I must help those harmed by their misdeeds.
 
     """
 
@@ -177,18 +180,19 @@ class OathOfCrown(PaladinOath):
     by the sovereign to which their oath is sworn, but generally emphasize
     the following tenets.
 
-    --Law. The law is paramount. It is the mortar that holds the stones of
-    civilization together, and it must be respected.
-
-    --Loyalty. Your word is your bond. Without loyalty, oaths and laws are
-    meaningless.
-
-    --Courage. You must be willing to do what needs to be done for the sake of
-    order, even in the face of overwhelming odds. If you don't act, then who
-    will?
-
-    --Responsibility. You must deal with the consequences of your actions, and
-    you are responsible for fulfilling your duties and obligations.
+    Law.
+      The law is paramount. It is the mortar that holds the stones of
+      civilization together, and it must be respected.
+    Loyalty.
+      Your word is your bond. Without loyalty, oaths and laws are
+      meaningless.
+    Courage.
+      You must be willing to do what needs to be done for the sake of
+      order, even in the face of overwhelming odds. If you don't act, then who
+      will?
+    Responsibility.
+      You must deal with the consequences of your actions, and
+      you are responsible for fulfilling your duties and obligations.
 
     """
 
@@ -214,9 +218,9 @@ class OathOfConquest(PaladinOath):
     Some of these paladins go so far as to consort with the powers of
     the Nine Hells, valuing the rule of law over the balm of
     mercy. The archdevil Bel, warlord of Avernus, counts many of these
-    paladins--called hell knights--as his most ardent supporters. Hell
-    knights cover their armor with trophies taken from fallen en-
-    emies, a grim warning to any who dare oppose them and the decrees
+    paladins - called hell knights - as his most ardent supporters. Hell
+    knights cover their armor with trophies taken from fallen enemies,
+    a grim warning to any who dare oppose them and the decrees
     of their lords. These knights are often most fiercely resisted by
     other paladins of this oath, who believe that the hell knights
     have wandered too far into darkness.
@@ -259,34 +263,35 @@ class OathOfRedemption(PaladinOath):
     light, and they slay their enemies only when such a deed will clearly save
     other lives. Paladins who follow this path are known as redeemers.
 
-    While redeemers are idealists, they are no fools. Re- deemers know that
+    While redeemers are idealists, they are no fools. Redeemers know that
     undead, demons, devils, and other supernatural threats can be inherently
     evil. Against such fees, paladins who swear this oath bring the full wrath
-    of their weapons and spells to bear. Yet the re- deemers still pray that,
-    one day, even creatures of wick- edness will invite their own redemption.
+    of their weapons and spells to bear. Yet the redeemers still pray that,
+    one day, even creatures of wickedness will invite their own redemption.
 
     **Tenets of Redemption**: The tenets of the Oath of Redemption hold a
     paladin to a high standard of peace and justice.
 
-    --Peace. Violence is a weapon of last resort. Diplomacy and understanding
-    are the paths to long-lasting peace.
-
-    --Innocence. All people begin life in an innocent state, and it is their
-    environment or the influence of dark forces that drives them to evil. By
-    setting the proper example, and working to heal the wounds of a deeply
-    flawed world, you can set anyone on a righteous path.
-
-    --Patience. Change takes time. Those who have walked the path of the wicked
-    must be given reminders to keep them honest and true. Once you have planted
-    the seed of righteousness in a creature, you must work day after day to
-    allow that seed to survive and flourish.
-
-    --Wisdom. Your heart and mind must stay clear, for eventually you will be
-    forced to admit defeat. While ev- ery creature can be redeemed, some are so
-    far along the path of evil that you have no choice but to end their lives
-    for the greater good. Any such action must be carefully weighed and the
-    consequences fully understood, but once you have made the decision, follow
-    through with it knowing your path is just.
+    Peace.
+      Violence is a weapon of last resort. Diplomacy and understanding
+      are the paths to long-lasting peace.
+    Innocence.
+      All people begin life in an innocent state, and it is their
+      environment or the influence of dark forces that drives them to evil. By
+      setting the proper example, and working to heal the wounds of a deeply
+      flawed world, you can set anyone on a righteous path.
+    Patience.
+      Change takes time. Those who have walked the path of the wicked
+      must be given reminders to keep them honest and true. Once you have planted
+      the seed of righteousness in a creature, you must work day after day to
+      allow that seed to survive and flourish.
+    Wisdom.
+      Your heart and mind must stay clear, for eventually you will be
+      forced to admit defeat. While every creature can be redeemed, some are so
+      far along the path of evil that you have no choice but to end their lives
+      for the greater good. Any such action must be carefully weighed and the
+      consequences fully understood, but once you have made the decision, follow
+      through with it knowing your path is just.
 
     """
 
@@ -311,23 +316,23 @@ class OathOfZor(PaladinOath):
 
     **Tenets of Zor**:
 
-    --Courage. Never fear to act, though caution is wise.
-
-    --Honesty. Don't lie or cheat. Let your word be your promise.
-
-    --Innocence. All people begin life in an innocent state, and it is their
-    environment or the influence of dark forces that drives them to evil. By
-    setting the proper example, and working to heal the wounds of a deeply
-    flawed world, you can set anyone on a righteous path.
-
-    --Restitution. If my foes wreak ruin on the world, it is because I failed
-    to stop them. I must help those harmed by their misdeeds.
-
-    --Patience. Change takes time. Those who have walked the path of the wicked
-    must be given reminders to keep them honest and true. Once you have planted
-    the seed of righteousness in a creature, you must work day after day to
-    allow that seed to survive and flourish.
-
+    Courage.
+      Never fear to act, though caution is wise.
+    Honesty.
+      Don't lie or cheat. Let your word be your promise.
+    Innocence.
+      All people begin life in an innocent state, and it is their
+      environment or the influence of dark forces that drives them to evil. By
+      setting the proper example, and working to heal the wounds of a deeply
+      flawed world, you can set anyone on a righteous path.
+    Restitution.
+      If my foes wreak ruin on the world, it is because I failed
+      to stop them. I must help those harmed by their misdeeds.
+    Patience.
+      Change takes time. Those who have walked the path of the wicked
+      must be given reminders to keep them honest and true. Once you have planted
+      the seed of righteousness in a creature, you must work day after day to
+      allow that seed to survive and flourish.
 
     """
 

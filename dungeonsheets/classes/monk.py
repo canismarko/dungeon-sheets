@@ -115,7 +115,7 @@ class DrunkenMasterWay(SubClass):
     """
 
     name = "Way of the Drunken Master"
-    _proficiencies_text = ("brewer's suplies",)
+    _proficiencies_text = ("brewer's supplies",)
     skill_proficiencies = ("performance",)
     features_by_level = defaultdict(list)
     features_by_level[3] = [features.DrunkenTechnique]

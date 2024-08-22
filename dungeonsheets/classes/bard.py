@@ -57,17 +57,17 @@ class CollegeOfValor(SubClass):
 
 # XGTE
 class CollegeOfGlamour(SubClass):
-    """The College of Glamour is the home Of bards who mas- tered their craft in
-    the vibrant realm of the Feywild or under the tutelage Of someone who
+    """The College of Glamour is the home of bards who mastered their craft in
+    the vibrant realm of the Feywild or under the tutelage of someone who
     dwelled there. Tutored by satyrs, eladrin, and other fey, these bards
     learn to use their magic to delight and captivate others.
 
     The bards of this college are regarded with a mixture of awe and
     fear. Their performances are the stuff of legend. These bards are so
     eloquent that a speech or song that one of them performs can cause captors
-    tO release the bard unharmed and can lull a furious dragon into
+    to release the bard unharmed and can lull a furious dragon into
     complacency. The same magic that allows them to quell beasts can also bend
-    minds. Villainous bards Of this college can leech Off a community for
+    minds. Villainous bards of this college can leech off a community for
     weeks, misusing their magic to turn their hosts into thralls. Heroic bards
     of this college instead use this power to gladden the downtrodden and
     undermine oppressors.
@@ -94,7 +94,7 @@ class CollegeOfSwords(SubClass):
     Their talent with weapons inspires many blades to lead double lives. One
     blade might use a circus troupe as cover for nefarious deeds such as
     assassination, robbery, and blackmail. Other blades strike at the wicked,
-    bringingjustice to bear against the cruel and powerful. Most troupes are
+    bringing justice to bear against the cruel and powerful. Most troupes are
     happy to accept a blade's talent for the excitement it adds to a
     performance, but few entertainers fully trust a blade in their ranks.
 
@@ -109,7 +109,7 @@ class CollegeOfSwords(SubClass):
 
     name = "College of Swords"
     features_by_level = defaultdict(list)
-    weapon_prociciencies = (weapons.Scimitar,)
+    weapon_proficiencies = (weapons.Scimitar,)
     _proficiencies_text = ("medium armor", "scimitar")
     features_by_level[3] = [
         features.SwordsProficiency,

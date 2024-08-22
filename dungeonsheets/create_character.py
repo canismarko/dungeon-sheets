@@ -610,9 +610,9 @@ class SkillForm(LinkedListForm):
     def while_editing(self):
         # Update the static skills for race and background
         bg_skills = self.parentApp.character.background.skill_proficiencies
-        self.bg_skills.value = str(bg_skills)[1:-1].replace("'", "")
+        self.bg_skills.value = str(bg_skills)[1:-1].replace("'", "").title()
         race_skills = self.parentApp.character.race.skill_proficiencies
-        self.race_skills.value = str(race_skills)[1:-1].replace("'", "")
+        self.race_skills.value = str(race_skills)[1:-1].replace("'", "").title()
         # Now set the available discretionary choices
         choices = (
             self.parentApp.character.primary_class.class_skill_choices
@@ -620,7 +620,8 @@ class SkillForm(LinkedListForm):
             + self.parentApp.character.background.skill_choices
         )
         static_skills = bg_skills + race_skills
-        choices = set([c for c in choices if c.lower() not in static_skills])
+        choices = set([c.title() for c in choices
+                if c.lower() not in static_skills])
         self.skill_proficiencies.set_values(sorted(tuple(choices)))
         self.update_remaining()
 
@@ -692,9 +693,8 @@ class WeaponForm(LinkedListForm):
             new_weapons = tuple(s.lower() for s in new_weapons)
         else:
             new_weapons = ()
-        for wpn in new_weapons:
-            self.parentApp.character.wield_weapon(wpn)
-        log.debug(f"Weapons wielded: {new_weapons}")
+        self.parentApp.character.new_weapons = new_weapons
+        log.debug(f"Weapons added: {new_weapons}")
         super().to_next()
 
     def update_remaining(self, widget=None):
@@ -731,9 +731,10 @@ class ArmorForm(LinkedListForm):
         )
 
     def on_ok(self):
-        my_armor = self.armor.get_selected_objects()[0]
-        if my_armor.lower() != "no armor":
-            self.parentApp.character.wear_armor(my_armor)
+        if not self.armor.get_selected_objects() == []:
+            my_armor = self.armor.get_selected_objects()[0]
+            if my_armor.lower() != "no armor":
+                self.parentApp.character.wear_armor(my_armor)
         if self.shield.value:
             self.parentApp.character.wield_shield("shield")
         super().to_next()

@@ -94,7 +94,7 @@ class PurpleDragonKnight(SubClass):
 
     A Purple Dragon knight inspires greatness in others by committing brave
     deeds in battle. The mere presence of a knight in a hamlet is enough to
-    cause some ores and bandits to seek easier prey. A lone knight is a skilled
+    cause some orcs and bandits to seek easier prey. A lone knight is a skilled
     warrior, but a knight leading a band of allies can transform even the most
     poorly equipped militia into a ferocious war band.
 
@@ -119,7 +119,7 @@ class ArcaneArcher(SubClass):
     the most elite warriors among the elves. They stand watch over the fringes
     of elven domains, keeping a keen eye out for trespassers and using
     magic-infused arrows to defeat monsters and invaders before they can reach
-    elven set- tlements. Over the centuries, the methods of these elf archers
+    elven settlements. Over the centuries, the methods of these elf archers
     have been learned by members of other races who can also balance arcane
     aptitude with archery.
 
@@ -189,7 +189,7 @@ class Gunslinger(SubClass):
     powerful, yet dangerous ranged weapons. Through creative innovation and
     immaculate aim, you become a distance force of death on the
     battlefield. However, not being a perfect science, firearms carry an
-    inherent instability that can occastionally leave you without a functional
+    inherent instability that can occasionally leave you without a functional
     means of attack. This is the danger of new, untested technologies in a
     world where arcane energies that rule the elements are ever present.
 

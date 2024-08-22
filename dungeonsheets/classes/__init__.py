@@ -10,7 +10,7 @@ __all__ = (
     "Paladin",
     "Ranger",
     "Rogue",
-    "Sorceror",
+    "Sorcerer",
     "Warlock",
     "Wizard",
     "RevisedRanger",
@@ -30,7 +30,7 @@ from dungeonsheets.classes.monk import Monk
 from dungeonsheets.classes.paladin import Paladin
 from dungeonsheets.classes.ranger import Ranger, RevisedRanger
 from dungeonsheets.classes.rogue import Rogue
-from dungeonsheets.classes.sorceror import Sorceror
+from dungeonsheets.classes.sorcerer import Sorcerer
 from dungeonsheets.classes.warlock import Warlock
 from dungeonsheets.classes.wizard import Wizard
 
@@ -45,7 +45,7 @@ available_classes = [
     Paladin,
     Ranger,
     Rogue,
-    Sorceror,
+    Sorcerer,
     Warlock,
     Wizard,
     RevisedRanger,

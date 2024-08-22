@@ -70,7 +70,7 @@ class AncestralGuardianPath(SubClass):
     Barbarians who draw on their ancestral guardians can better fight to
     protect their tribes and their allies. In order to cement ties to their
     ancestral guardians, barbarians who follow this path cover themselves in
-    elabo- rate tattoos that celebrate their ancestors' deeds. These tattoos
+    elaborate tattoos that celebrate their ancestors' deeds. These tattoos
     tell sagas of victories against terrible monsters and other fearsome
     rivals.
 
@@ -88,7 +88,7 @@ class StormHeraldPath(SubClass):
     """All barbarians harbor a fury within. Their rage grants them superior
     strength, durability, and speed. Barbarians who follow the Path of the
     Storm Herald learn to transform that rage into a mantle of primal magic,
-    which swirls around them. When in a fury, a barbarian ofthis path taps into
+    which swirls around them. When in a fury, a barbarian of this path taps into
     the forces of nature to create powerful magical effects.
 
     Storm heralds are typically elite champions who train alongside druids,
@@ -109,13 +109,13 @@ class StormHeraldPath(SubClass):
 class ZealotPath(SubClass):
     """Some deities inspire their followers to pitch themselves into a ferocious
     battle fury. These barbarians are zealots-warriors who channel their rage
-    into powerful disn plays of divine power.
+    into powerful displays of divine power.
 
     A variety of gods across the worlds of D&D inspire their followers to
     embrace this path. Tempus from the Forgotten Realms and Hextor and Erythnul
     of Greyhawk are all prime examples. In general, the gods who inspire
     zealots are deities of combat, destruction, and violence. Not all are evil,
-    but few are good
+    but few are good.
 
     """
 

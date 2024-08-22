@@ -16,7 +16,7 @@ player_name = "Ben"
 # Be sure to list Primary class first
 classes = ['Rogue']  # ex: ['Wizard'] or ['Rogue', 'Fighter']
 levels = [10]  # ex: [10] or [3, 2]
-subclasses = ["Swashbuckler"]  # ex: ['Necromacy'] or ['Thief', None]
+subclasses = ["Swashbuckler"]  # ex: ['Necromancy'] or ['Thief', None]
 background = "Outlander"
 race = "Deep Gnome"
 alignment = "Chaotic good"
@@ -42,7 +42,7 @@ skill_expertise = ('investigation', 'survival', 'athletics', 'insight')
 
 # Named features / feats that aren't part of your classes, race, or background.
 # Also include Eldritch Invocations and features you make multiple selection of
-# (like Maneuvers for Fighter, Metamagic for Sorcerors, Trick Shots for
+# (like Maneuvers for Fighter, Metamagic for Sorcerers, Trick Shots for
 # Gunslinger, etc.)
 # Example:
 # features = ('Tavern Brawler',) # take the optional Feat from PHB
