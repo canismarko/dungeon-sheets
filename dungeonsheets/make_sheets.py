@@ -12,6 +12,7 @@ import warnings
 from itertools import product
 from multiprocessing import Pool, cpu_count
 from pathlib import Path
+from pypdf import PdfReader, PdfWriter
 from typing import Union, Sequence, Optional, List
 
 from dungeonsheets import (
@@ -666,9 +667,16 @@ def merge_pdfs(src_filenames, dest_filename, clean_up=False):
         subprocess.call(popenargs)
     except FileNotFoundError:
         warnings.warn(
-            f"Could not run `{PDFTK_CMD}`; skipping file concatenation.", RuntimeWarning
+            f"Could not run `{PDFTK_CMD}`, using fallback.", RuntimeWarning
         )
-    else:
+
+        merger = PdfWriter()
+        for pdf in src_filenames:
+            merger.append(pdf)
+        merger.set_need_appearances_writer(True)
+        merger.write(dest_filename)
+        merger.close()
+    finally:
         # Remove temporary files
         if clean_up:
             for sheet in src_filenames:
