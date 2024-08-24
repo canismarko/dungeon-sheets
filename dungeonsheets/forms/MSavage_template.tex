@@ -16,8 +16,7 @@
 % Headline
 \CharacterName{[[ char.name ]]}
 
-% adds only main class and total level to prevent overflow
-\Class{[[ char.primary_class.name ]] [[ char.level ]]}
+\Class{[[ char.classes_and_levels ]]}
 \Background{[[ char.background ]]}
 \PlayerName{[[ char.player_name ]]}
 \Race{[[ char.race ]]}
@@ -187,7 +186,7 @@
 [%- endfor -%]
 }
 
-\Equipment{[[ char.equipment_text| boxed ]]}
+\Equipment{[[ char.equipment_text| boxed -]] \\ \footnotesize{[[ char.weight_and_capacity_text| boxed ]]}}
 
 \PersonalityTraits{[[ char.personality_traits ]]}
 
@@ -212,7 +211,7 @@
 % background
 
 \CharacterAppearance{[[ portrait ]]
-[[ char.appearance_text ]]
+[[- char.appearance_text -]]
 }
 \AdditionalFeaturesAndTraits{[[ char.additional_description ]]}
 
@@ -223,12 +222,6 @@
 \AlliesAndOrganizations{[[ char.allies ]]}
 
 \OrganizationName{[[ char.org_name ]]}
-
-[% if char.is_spellcaster %]
-%Magic
-[[ char | spellsheetparser ]]
-[% endif %]
-
 
 \begin{document}
 \newgeometry{left=0cm,right=0cm,top=0cm,bottom=0cm}
@@ -243,10 +236,10 @@
 \pdfbookmark[0]{Background Sheet}{Background Sheet}
 \renderbackgroundsheet
 
-[% if char.is_spellcaster %]
+[% if char.is_spellcaster -%]
 % SPELLCASTING PAGE
 \pdfbookmark[0]{Spellcasting Sheet}{Spellcasting Sheet}
-\spellsheetchoice
-[% endif %]
+[[ char | spellsheetparser ]]
+[%- endif -%]
 
 \end{document}
