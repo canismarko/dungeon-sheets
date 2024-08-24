@@ -24,7 +24,7 @@ classifiers = [
   "Topic :: Games/Entertainment :: Role-Playing",
 ]
 keywords = ["D&D", "character", "sheets"]
-dependencies = ["certifi", "fdfgen", "npyscreen", "jinja2", "sphinx", "pdfrw", "EbookLib", "reportlab", "docutils", "pypdf"]
+dependencies = ["certifi", "fdfgen", "npyscreen", "jinja2", "sphinx", "EbookLib", "reportlab", "docutils", "pypdf"]
 
 [project.optional-dependencies]
 dev = ["pytest", "pytest-cov", "coverall", "flake8", "black"]
@@ -45,6 +45,13 @@ dungeonsheets = [
   "modules/DND-5e-LaTeX-Template/*",
   "modules/DND-5e-LaTeX-Template/lib/*",
   "modules/DND-5e-LaTeX-Template/img/*",
+  "modules/DND-5e-LaTeX-Character-Sheet-Template/*",
+  "modules/DND-5e-LaTeX-Character-Sheet-Template/template/*",
+  "modules/DND-5e-LaTeX-Character-Sheet-Template/template/fonts/*",
+  "modules/DND-5e-LaTeX-Character-Sheet-Template/template/character-sheet/*",
+  "modules/DND-5e-LaTeX-Character-Sheet-Template/template/background-sheet/*",
+  "modules/DND-5e-LaTeX-Character-Sheet-Template/template/half-spell-sheet/*",
+  "modules/DND-5e-LaTeX-Character-Sheet-Template/template/spell-sheet/*",
 ]
 
 [tool.setuptools_scm]

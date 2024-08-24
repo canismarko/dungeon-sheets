@@ -16,7 +16,7 @@ player_name = "plsaddbloodhunter"
 # Be sure to list Primary class first
 classes = ['Blood hunter']  # ex: ['Wizard'] or ['Rogue', 'Fighter']
 levels = [15]  # ex: [10] or [3, 2]
-subclasses = ["Order of the Ghostslayer"]  # ex: ['Necromancy'] or ['Thief', None]
+subclasses = ["Order of the Profane Soul"]  # ex: ['Necromancy'] or ['Thief', None]
 background = "Pirate"
 race = "Human"
 alignment = "Neutral good"
@@ -46,14 +46,15 @@ skill_expertise = ()
 # Gunslinger, etc.)
 # Example:
 # features = ('Tavern Brawler',) # take the optional Feat from PHB
-features = ('commanders strike', 'disarming attack', 'distracting strike',
-            'evasive footwork', 'rally', 'parry', 'sweeping attack',
-            'lunging attack')
+features = ('rite of the frozen', 'rite of the storm', 'rite of the oracle',
+            'alluring', 'celerity', 'embers', 'impermeable', 'reconstruction',
+            'cruelty', 'precision', 'blood curse of the anxious', 'blood curse of binding',
+            'blood curse of the fallen puppet', 'blood curse of the muddled mind',)
 
 # If selecting among multiple feature options: ex Fighting Style
 # Example (Fighting Style):
 # feature_choices = ('Archery',)
-feature_choices = ()
+feature_choices = ('great-weapon fighting', 'undying',)
 
 # Weapons/other proficiencies not given by class/race/background
 weapon_proficiencies = ()  # ex: ('shortsword', 'quarterstaff')

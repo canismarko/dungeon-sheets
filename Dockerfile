@@ -1,6 +1,6 @@
 FROM python:latest
 
-RUN apt-get update && apt-get install -y pdftk texlive-latex-base texlive-latex-extra texlive-fonts-recommended texlive-fonts-extra
+RUN apt-get update && apt-get install -y pdftk texlive-latex-base texlive-latex-extra texlive-fonts-recommended texlive-fonts-extra texlive-luatex texlive-pstricks
 
 WORKDIR /app
 
