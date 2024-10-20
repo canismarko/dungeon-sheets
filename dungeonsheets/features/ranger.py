@@ -954,3 +954,87 @@ class StalkersDodge(Feature):
 
     name = "Stalker's Dodge"
     source = "Revised Ranger (Deep Stalker Conclave)"
+
+
+# Tasha's Cauldron of Everything
+class PrimalAwareness(Feature):
+    """This 3rd-level feature replaces the Primeval Awareness
+    feature. You gain no benefit from the replaced feature and don't
+    qualify for anything in the game that requires it.
+
+    You can focus your awareness through the interconnections of
+    nature: you learn additional spells when you reach certain levels
+    in this class if you don't already know them, as shown in the
+    Primal Awareness Spells table. These spells don't count against
+    the number of ranger spells you know.
+
+    - 3rd Speak with Animals
+    - 5th Beast Sense
+    - 9th Speak with Plants
+    - 13th Locate Creature
+    - 17th Commune with Nature
+
+    You can cast each of these spells once without expending a spell
+    slot. Once you cast a spell in this way, you can't do so again
+    until you finish a long rest.
+
+    """
+    name = "Primal Awareness"
+    source = "Tasha's Cauldron of Everything"
+
+class NaturesVeil(Feature):
+    """This 10th-level feature replaces the Hide in Plain Sight
+    feature. You gain no benefit from the replaced feature and don't
+    qualify for anything in the game that requires it.
+
+    You draw on the powers of nature to hide yourself from view
+    briefly. As a bonus action, you can magically become invisible,
+    along with any equipment you are wearing or carrying, until the
+    start of your next turn.
+
+    You can use this feature a number of times equal to your
+    proficiency bonus, and you regain all expended uses when you
+    finish a long rest.
+
+    """
+    name = "Nature's Veil"
+    source = "Tasha's Cauldron of Everything"
+
+
+class PrimalCompanion(Feature):
+    """3rd-level Beast Master feature, which
+    replaces the Ranger's Companion feature.
+
+    You magically summon a
+    primal beast, which draws strength from your bond with nature. The
+    beast is friendly to you and your companions and obeys your
+    commands. Choose its stat block-Beast of the Land, Beast of the
+    Sea, or Beast of the Sky-which uses your proficiency bonus (PB) in
+    several places.  You also determine the kind of animal the beast
+    is, choosing a kind appropriate for the stat block.  Whatever kind
+    you choose, the beast bears primal markings, indicating its
+    mystical origin.
+
+    In combat, the beast acts during your turn. It
+    can move and use its reaction on its own, but the only action it
+    takes is the Dodge action, unless you take a bonus action on your
+    turn to command it to take another action. That action can be one
+    in its stat block or some other action. You can also sacrifice one
+    of your attacks when you take the Attack action to command the
+    beast to take the Attack action. If you are incapacitated, the
+    beast can take any action of its choice, not just Dodge.
+
+    If the beast has died within the last hour, you can use your
+    action to touch it and expend a spell slot of 1st level or
+    higher. The beast returns to life after 1 minute with all its hit
+    points restored.
+
+    When you finish a long rest, you can summon a different primal
+    beast. The new beast appears in an unoccupied space within 5 feet
+    of you, and you choose its stat block and appearance. If you
+    already have a beast from this feature, it vanishes when the new
+    beast appears. The beast also vanishes if you die.
+
+    """
+    name = "Primal Companion"
+    source = "Beast Master (Tashas's Cauldron of Everything, Pg 61)"

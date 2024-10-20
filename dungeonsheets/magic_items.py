@@ -224,8 +224,67 @@ class CloakOfTheBat(MagicItem):
     requires_attunement = True
     name = "Cloak of the Bat"
     item_type = "Cloak"
-    
 
+
+class DustOfSneezingAndChoking(MagicItem):
+    """Found in a small container, this powder resembles very fine
+    sand. It appears to be dust of disappearance, and an identify
+    spell reveals it to be such. There is enough of it for one use.
+
+    When you use an action to throw a handful of the dust into the
+    air, you and each creature that needs to breathe within 30 feet of
+    you must succeed on a DC 15 Constitution saving throw or become
+    unable to breathe, while sneezing uncontrollably. A creature
+    affected in this way is incapacitated and suffocating. As long as
+    it is conscious, a creature can repeat the saving throw at the end
+    of each of its turns, ending the effect on it on a success. The
+    lesser restoration spell can also end the effect on a creature.
+
+    """
+    requires_attunement = False
+    name = "Dust of Sneezing and Choking"
+    item_type = "Consumable"
+    rarity = "uncommon"
+
+
+class BracersOfArchery(MagicItem):
+    """While wearing these bracers, you have proficiency with the
+    longbow and shortbow, and you gain a +2 bonus to damage rolls on
+    ranged attacks made with such weapons.
+
+    """
+    name = "Bracers of Archery"
+    rarity = "uncommon"
+    requires_attunement = True
+
+
+class NaturesMantle(MagicItem):
+    """This cloak shifts color and texture to blend with the terrain
+    surrounding you. While wearing the cloak, you can use it as a
+    spellcasting focus for your druid and ranger spells.
+
+    While you are in an area that is lightly obscured, you can Hide as
+    a bonus action even if you are being directly observed.
+
+    """
+    requires_attunement = True
+    name = "Nature's Mantle"
+    rarity = "uncommon"
+
+
+class EagleWhistle(MagicItem):
+    """While you blow an Eagle Whistle continuously, you can fly twice
+    as fast as your walking speed. You can blow the whistle
+    continuously for a number of rounds equal to 5 + five times your
+    Constitution modifier (minimum of 1 round) or until you talk, hold
+    your breath, or start suffocating. A use of the whistle also ends
+    if you land. If you are aloft when you stop blowing the whistle,
+    you fall. The whistle has three uses. It regains expended uses
+    daily at dawn."""
+    name = "Eagle Whistle"
+    requires_attunement = False
+    rarity = "rare"
+    
 
 class DecanterOfEndlessWater(MagicItem):
 
