@@ -442,7 +442,9 @@ def _make_pdf_pypdf(fields: dict, src_pdf: str, basename: str, flatten: bool = F
             if fields[key] == "Off":
                 fields[key] = r"/Off"
             writer.update_page_form_field_values(
-                writer.pages[0], {key: fields[key]},
+                # As of recently, update_page_form_field_values seems to expect
+                # strings as values.
+                writer.pages[0], {key: str(fields[key])},
                 auto_regenerate=False,
             )
 
