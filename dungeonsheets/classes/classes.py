@@ -66,6 +66,8 @@ class CharClass:
         """
         if subclass_str in ["", "None", "none", None]:
             return None
+        if issubclass(subclass_str, SubClass):
+            return subclass_str(owner=self.owner)
         for sc in self.subclasses_available:
             if subclass_str.lower() in sc.name.lower():
                 return sc(owner=self.owner)
