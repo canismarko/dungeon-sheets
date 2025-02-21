@@ -22,7 +22,8 @@
 [%- if not loop.first %] /[% endif %] [[ spell_atk_bonus | mod_str ]]
 [%- endfor %]
 
-[% for spl in character.spells %]
+[% if spell_order %][% set spell_list = character.spells|sort(attribute='level') %][% else %][% set spell_list = character.spells %][% endif %]
+[% for spl in spell_list %]
   \pdfbookmark[1]{[[ spl.name ]]}{Spells - [[ spl.name ]]}
   [%- if use_dnd_decorations %]
   \DndSpellHeader
