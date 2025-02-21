@@ -20,12 +20,27 @@
 [%- for spell_class in character.spellcasting_classes -%]
 [%- set spell_atk_bonus = character.spell_attack_bonus(spell_class) -%]
 [%- if not loop.first %] /[% endif %] [[ spell_atk_bonus | mod_str ]]
-[%- endfor %]
+[%- endfor -%]
 
+[% if spell_order %][% set headercounter_ns = namespace(counter = -1) %][% endif %]
 [% if spell_order %][% set spell_list = character.spells|sort(attribute='level') %][% else %][% set spell_list = character.spells %][% endif %]
 [% for spl in spell_list %]
-  \pdfbookmark[1]{[[ spl.name ]]}{Spells - [[ spl.name ]]}
-  [%- if use_dnd_decorations %]
+  [%- if spell_order %]
+    [%- if spl.level > headercounter_ns.counter %]
+       \pdfbookmark[1]{[%- if spl.level > 0 -%]
+                       [[ ordinals[spl.level] ]]-Level Spells
+                       [%- else %]Cantrips[% endif %]}{Spells - [%- if spl.level > 0 -%]
+                                                                [[ ' ' + ordinals[spl.level] ]]-Level Spells
+                                                                [%- else %] Cantrips[%- endif %]}
+       \subsection*{[% if spl.level > 0 %][[ ordinals[spl.level] ]]-Level Spells[% else %]Cantrips[% endif %]}
+       [%- set headercounter_ns.counter = spl.level -%]
+    [%- endif %]
+    \pdfbookmark[2]{[[ spl.name ]]}{Spells - [% if spl.level > 0 %][[ ordinals[spl.level] ]]-Level Spells[% else %]Cantrips[% endif %] - [[ spl.name ]]}
+  [% else %]
+    \pdfbookmark[1]{[[ spl.name ]]}{[% if spl.level > 0 %][[ ordinals[spl.level] ]]-Level Spells[% else %]Cantrips[% endif %] - [[ spl.name ]]}
+  [% endif %]
+
+  [%- if use_dnd_decorations -%]
   \DndSpellHeader
     {[[ spl.name ]]}
     {[% if spl.level > 0 %][[ ordinals[spl.level] ]]-level [[ spl.magic_school ]][% else %][[ spl.magic_school ]] Cantrip[% endif %] [% if spl.ritual %](\textit{ritual})[% endif %]}
@@ -33,8 +48,12 @@
     {[[ spl.casting_range ]]}
     {[[ spl.component_string ]]}
     {[[ spl.duration ]]}
-  [%- else %]
-  \section*{[[ spl.name ]]}
+  [%- else -%]
+    [%- if spell_order -%]
+      \subsubsection*{[[ spl.name ]]}
+    [%- else -%]
+      \section*{[[ spl.name ]]}
+    [%- endif -%]
     [%- if spl.level > 0 %]
       \textit{[[ spl.magic_school ]] Level [[ spl.level ]]}
     [%- else %]
