@@ -1,15 +1,22 @@
-name: Docker
+name: Deploy Docker image
 
 on:
-  push:
-    branches: [ "master" ]
+  workflow_run:
+    workflows: ["Python package"]
+    branches: ["master"]
+    types:
+      - completed
+
+  workflow_dispatch:
 
 env:
   REGISTRY: ghcr.io
   IMAGE_NAME: ${{ github.repository }}
+  VERSION: latest
 
 jobs:
-  build_publish:
+  build:
+    name: Build Docker image
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -29,7 +36,7 @@ jobs:
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
 
-      - name: Login against Container registry
+      - name: Login to container registry
         uses: docker/login-action@v3
         with:
           registry: ${{ env.REGISTRY }}
@@ -42,7 +49,7 @@ jobs:
         with:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
 
-      - name: Build and push Docker image
+      - name: Build Docker image
         uses: docker/build-push-action@v5
         with:
           context: .
@@ -50,3 +57,70 @@ jobs:
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
           platforms: linux/amd64, linux/arm64
+
+  test:
+    name: Test Docker image
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: read
+    strategy:
+      matrix:
+        build-command: ["", "--fancy --tex-template --feats-by-type --spells-by-level", "--output-format=epub"]
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Login to container registry
+      uses: docker/login-action@v3
+      with:
+        registry: ${{ env.REGISTRY }}
+        username: ${{ github.actor }}
+        password: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Extract metadata (tags, labels) for Docker
+      id: meta
+      uses: docker/metadata-action@v5
+      with:
+        images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+
+    - name: Run Tests
+      run: |
+        docker run -v ${{ github.workspace }}/examples:/build ${{ steps.meta.outputs.tags }} ${{ matrix.build-command }}
+
+  push:
+    name: Deploy Docker image
+    needs: [build, test]
+    if: ${{ github.ref  == 'refs/heads/master' }}
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+    steps:
+
+      - name: Login to container registry
+        uses: docker/login-action@v3
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Extract metadata (tags, labels) for Docker
+        id: meta
+        uses: docker/metadata-action@v5
+        with:
+          images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+
+      - name: Pull Docker image from GHCR
+        run: docker pull ${{ steps.meta.outputs.tags }}
+
+      - name: Lowercase reponame
+        run: echo "IMAGE_NAME_LC=${GITHUB_REPOSITORY@L}" >> "${GITHUB_ENV}"
+
+      - name: Tag and push Docker image to GHCR (final)
+        run: |
+          docker tag  ${{ steps.meta.outputs.tags }} ${{ env.REGISTRY }}/${{ env.IMAGE_NAME_LC }}:${{ env.VERSION }}
+          docker push  ${{ steps.meta.outputs.tags }}
+          docker push ${{ env.REGISTRY }}/${{ env.IMAGE_NAME_LC }}:${{ env.VERSION }}

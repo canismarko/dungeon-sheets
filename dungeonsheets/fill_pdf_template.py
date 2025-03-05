@@ -3,8 +3,8 @@ import os
 import subprocess
 import warnings
 
-import pdfrw
 from fdfgen import forge_fdf
+from pypdf import PdfWriter, PdfReader
 
 from dungeonsheets.forms import mod_str
 
@@ -405,7 +405,7 @@ def make_pdf(fields: dict, src_pdf: str, basename: str, flatten: bool = False):
     src_pdf :
       Path to the PDF that will serve as the template.
     basename :
-      The path of the destination PDF without the file extensions. The
+      The basename of the destination PDF without the file extensions. The
       resulting pdf will be {basename}.pdf
     flatten :
       If truthy, the PDF will be collapsed so it is no longer
@@ -415,71 +415,41 @@ def make_pdf(fields: dict, src_pdf: str, basename: str, flatten: bool = False):
     try:
         _make_pdf_pdftk(fields, src_pdf, basename, flatten)
     except FileNotFoundError:
-        # pdftk could not run, so alert the user and use pdfrw
+        # pdftk could not run, so alert the user and use pypdf
         warnings.warn(
             f"Could not run `{PDFTK_CMD}`, using fallback; forcing `--editable`.",
             RuntimeWarning,
         )
-        _make_pdf_pdfrw(fields, src_pdf, basename, flatten)
+        _make_pdf_pypdf(fields, src_pdf, basename, flatten=flatten)
 
 
-def _make_pdf_pdfrw(fields: dict, src_pdf: str, basename: str, flatten: bool = False):
-    """Backup make_pdf function in case pdftk is not available."""
-    template = pdfrw.PdfReader(src_pdf)
-    # Different types of PDF fields
-    BUTTON = "/Btn"
-    # Names for entries in PDF annotation list
-    # DEFAULT_VALUE = "/DV"
-    # APPEARANCE = "/MK"
-    FIELD = "/T"
-    # PROPS = "/P"
-    TYPE = "/FT"
-    # FLAGS = "/Ff"
-    # SUBTYPE = "/Subtype"
-    # ALL_KEYS = [
-    #     "/DV",
-    #     "/F",
-    #     "/FT",
-    #     "/Ff",
-    #     "/MK",
-    #     "/P",
-    #     "/Rect",
-    #     "/Subtype",
-    #     "/T",
-    #     "/Type",
-    # ]
-    annots = template.pages[0]["/Annots"]
-    # Update each annotation if it's in the requested dictionary
-    for annot in annots:
-        this_field = annot[FIELD][1:-1]
-        # Check if the field has a new value passed
-        if this_field in fields.keys():
-            val = fields[this_field]
-            # Convert integers to strings
-            if isinstance(val, int):
-                val = str(val)
-            log.debug(
-                f"Set field '{this_field}' "
-                f"({annot[TYPE]}) "
-                f"to `{val}` ({val.__class__}) "
-                f"in file '{basename}.pdf'"
+def _make_pdf_pypdf(fields: dict, src_pdf: str, basename: str, flatten: bool = False):
+    """
+    Writes the dictionary values to the pdf. Supports text and checkboxes.
+    Does so by updating each individual annotation with the contents of the fiels.
+
+    """
+
+    writer = PdfWriter()
+    reader = PdfReader(src_pdf)
+    form_fields = reader.get_fields()
+    writer.append(reader)
+
+    for key in fields.keys():
+        if key in form_fields:
+            if fields[key] == "Yes":
+                fields[key] = r"/Yes"
+            if fields[key] == "Off":
+                fields[key] = r"/Off"
+            writer.update_page_form_field_values(
+                # As of recently, update_page_form_field_values seems to expect
+                # strings as values.
+                writer.pages[0], {key: str(fields[key])},
+                auto_regenerate=False,
             )
-            # Prepare a PDF dictionary based on the fields properties
-            if annot[TYPE] == BUTTON:
-                # Radio buttons require special appearance streams
-                if val == CHECKBOX_ON:
-                    val = bytes(val, "utf-8")
-                    pdf_dict = pdfrw.PdfDict(V=val, AS=val)
-                else:
-                    continue
-            else:
-                # All other widget types
-                pdf_dict = pdfrw.PdfDict(V=val)
-            annot.update(pdf_dict)
-        else:
-            log.debug(f"Skipping unused field '{this_field}' in file '{basename}.pdf'")
-    # Now write the PDF to the new pdf file
-    pdfrw.PdfWriter().write(f"{basename}.pdf", template)
+
+    with open(f"{basename}.pdf", "wb") as output_stream:
+        writer.write(output_stream)
 
 
 def _make_pdf_pdftk(fields, src_pdf, basename, flatten=False):

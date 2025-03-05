@@ -12,6 +12,7 @@ import warnings
 from itertools import product
 from multiprocessing import Pool, cpu_count
 from pathlib import Path
+from pypdf import PdfReader, PdfWriter
 from typing import Union, Sequence, Optional, List
 
 from dungeonsheets import (
@@ -55,7 +56,7 @@ jinja_env.filters["rst_to_latex"] = latex.rst_to_latex
 jinja_env.filters["rst_to_html"] = epub.rst_to_html
 jinja_env.filters["to_heading_id"] = epub.to_heading_id
 jinja_env.filters["boxed"] = latex.rst_to_boxlatex
-jinja_env.filters["spellsheetparser"] = latex.msavage_spell_info
+jinja_env.filters["spellsheetparser"] = latex.latex_character_spell_info
 jinja_env.filters["monsterdoc"] = latex.RPGtex_monster_info
 
 # Custom types
@@ -71,6 +72,8 @@ class CharacterRenderer:
         character: Character,
         content_suffix: str = "tex",
         use_dnd_decorations: bool = False,
+        spell_order: bool = False,
+        feat_order: bool = False,
     ):
         template = jinja_env.get_template(
             self.template_name.format(suffix=content_suffix)
@@ -78,6 +81,8 @@ class CharacterRenderer:
         return template.render(
             character=character,
             use_dnd_decorations=use_dnd_decorations,
+            spell_order=spell_order,
+            feat_order=feat_order,
             ordinals=ORDINALS,
         )
 
@@ -160,6 +165,8 @@ def make_sheet(
     fancy_decorations: bool = False,
     debug: bool = False,
     use_tex_template: bool = False,
+    spell_order: bool = False,
+    feat_order: bool = False,
 ):
     """Make a character or GM sheet into a PDF.
     Parameters
@@ -199,6 +206,8 @@ def make_sheet(
             fancy_decorations=fancy_decorations,
             debug=debug,
             use_tex_template=use_tex_template,
+            spell_order=spell_order,
+            feat_order=feat_order,
         )
     return ret
 
@@ -388,6 +397,9 @@ def make_character_content(
     character: Character,
     content_format: str,
     fancy_decorations: bool = False,
+    spell_order: bool = False,
+    feat_order: bool = False,
+    first_page: int = 1,
 ) -> List[str]:
     """Prepare the inner content for a character sheet.
 
@@ -422,6 +434,7 @@ def make_character_content(
     content = [
         jinja_env.get_template(f"preamble.{content_format}").render(
             use_dnd_decorations=fancy_decorations,
+            first_page=first_page,
             title="Features, Magical Items and Spells",
         )
     ]
@@ -449,6 +462,7 @@ def make_character_content(
                 character,
                 content_suffix=content_format,
                 use_dnd_decorations=fancy_decorations,
+                feat_order=feat_order,
             )
         )
     if character.magic_items:
@@ -465,6 +479,7 @@ def make_character_content(
                 character,
                 content_suffix=content_format,
                 use_dnd_decorations=fancy_decorations,
+                spell_order=spell_order,
             )
         )
     if len(getattr(character, "infusions", [])) > 0:
@@ -505,7 +520,7 @@ def make_character_content(
     return content
 
 
-def msavage_sheet(character, basename, debug=False):
+def latex_character_sheet(character, basename, debug=False):
     """Another adaption. All changes can be easily included as options
     in the orignal functions, though."""
 
@@ -516,7 +531,7 @@ def msavage_sheet(character, basename, debug=False):
             if re.search(r"" + character.portrait, str(image[0])):
                 character.images.remove(image)
                 break
-        portrait_command = r"\includegraphics[width=5.75cm]{" + character.portrait + "}"
+        portrait_command = r"{\centering \includegraphics[width=5.75cm,height=7.85cm,keepaspectratio]{" + character.portrait + "} \\\\ \\noindent}"
 
     # Move symbol image a bit left, if applicable
     if character.symbol:
@@ -526,7 +541,7 @@ def msavage_sheet(character, basename, debug=False):
                 character.images = [(character.symbol, 1, 488, 564, 145, 112)] + character.images
                 break
 
-    tex = jinja_env.get_template("MSavage_template.tex").render(
+    tex = jinja_env.get_template("latex_character_sheet_template.tex").render(
         char=character, portrait=portrait_command
     )
     latex.create_latex_pdf(
@@ -534,7 +549,8 @@ def msavage_sheet(character, basename, debug=False):
         basename=basename,
         keep_temp_files=debug,
         use_dnd_decorations=True,
-        comm1="xelatex",
+        comm1="lualatex",
+        use_tex_template=True,
     )
 
 
@@ -546,6 +562,8 @@ def make_character_sheet(
     fancy_decorations: bool = False,
     debug: bool = False,
     use_tex_template: bool = False,
+    spell_order: bool = False,
+    feat_order: bool = False,
 ):
     """Prepare a PDF character sheet from the given character file.
 
@@ -578,18 +596,11 @@ def make_character_sheet(
     person_base = basename + "_person"
     sheets = [char_base + ".pdf"]
     pages = []
-    # Prepare the tex/html content
-    content_suffix = format_suffixes[output_format]
-    # Create a list of features and magic items
-    content = make_character_content(
-        character=character,
-        content_format=content_suffix,
-        fancy_decorations=fancy_decorations,
-    )
-    # Typeset combined LaTeX file
+    totalpages = 0
+    # Typeset LaTeX character, background and spell-sheet files
     if output_format == "pdf":
         if use_tex_template:
-            msavage_sheet(
+            latex_character_sheet(
                 character=character,
                 basename=char_base,
                 debug=debug,
@@ -615,7 +626,24 @@ def make_character_sheet(
             )
             for spell_base in created_basenames:
                 sheets.append(spell_base + ".pdf")
-        # Combined with additional LaTeX pages with detailed character info
+        # Check how many pages we've written
+        for file in sheets:
+            with open(file, 'rb') as handle:
+                readpdf = PdfReader(handle)
+                totalpages = totalpages + len(readpdf.pages)
+    # Prepare the tex/html content
+    content_suffix = format_suffixes[output_format]
+    # Create a list of features and magic items
+    content = make_character_content(
+        character=character,
+        content_format=content_suffix,
+        fancy_decorations=fancy_decorations,
+        spell_order=spell_order,
+        feat_order=feat_order,
+        first_page=totalpages + 1,
+    )
+    if output_format == "pdf":
+        # Create and combine additional LaTeX pages with detailed character info
         features_base = "{:s}_features".format(basename)
         try:
             if len(content) > 2:
@@ -666,9 +694,16 @@ def merge_pdfs(src_filenames, dest_filename, clean_up=False):
         subprocess.call(popenargs)
     except FileNotFoundError:
         warnings.warn(
-            f"Could not run `{PDFTK_CMD}`; skipping file concatenation.", RuntimeWarning
+            f"Could not run `{PDFTK_CMD}`, using fallback.", RuntimeWarning
         )
-    else:
+
+        merger = PdfWriter()
+        for pdf in src_filenames:
+            merger.append(pdf)
+        merger.set_need_appearances_writer(True)
+        merger.write(dest_filename)
+        merger.close()
+    finally:
         # Remove temporary files
         if clean_up:
             for sheet in src_filenames:
@@ -686,6 +721,8 @@ def _build(filename, args) -> int:
             debug=args.debug,
             fancy_decorations=args.fancy_decorations,
             use_tex_template=args.use_tex_template,
+            spell_order=args.spell_order,
+            feat_order=args.feat_order,
         )
     except exceptions.CharacterFileFormatError:
         # Only raise the failed exception if this file is explicitly given
@@ -722,6 +759,22 @@ def main(args=None):
         "-r",
         action="store_true",
         help="Descend into subfolders looking for character files",
+    )
+    parser.add_argument(
+        "--spells-by-level",
+        "-S",
+        default=False,
+        action="store_true",
+        help="Order spells by level in the feature pages.",
+        dest="spell_order",
+    )
+    parser.add_argument(
+        "--feats-by-type",
+        "-N",
+        default=False,
+        action="store_true",
+        help="Order feats by type in the feature pages.",
+        dest="feat_order",
     )
     parser.add_argument(
         "--fancy-decorations",

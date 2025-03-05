@@ -6,7 +6,14 @@ from dungeonsheets.classes.classes import CharClass, SubClass
 
 #Blood Hunter
 class OrderOfTheGhostslayer(SubClass):
-    """The Order of the Ghostslayer is the oldest of the orders, having originally rediscovered the secrets of blood magic and refined them for combat against the scourge of undeath. Ghostslayers seek out and study the moment of death, obsessing over the mysteries of the transition and how it can become corrupted by unholy powers to rise once more. Tuning their abilities to annihilate such abominations, these zealous blood hunters seek out the sources of such necromantic energies, intent to destroy them wherever they arise.
+    """The Order of the Ghostslayer is the oldest of the orders, having
+    originally rediscovered the secrets of blood magic and refined them for
+    combat against the scourge of undeath. Ghostslayers seek out and study the
+    moment of death, obsessing over the mysteries of the transition and how it
+    can become corrupted by unholy powers to rise once more. Tuning their
+    abilities to annihilate such abominations, these zealous blood hunters seek
+    out the sources of such necromantic energies, intent to destroy them
+    wher ever they arise.
 
     """
 
@@ -17,10 +24,22 @@ class OrderOfTheGhostslayer(SubClass):
     features_by_level[11] = [features.BrandOfSundering]
     features_by_level[15] = [features.BloodCurseOfTheExorcist]
     features_by_level[18] = [features.RiteRevival]
-    
-    
+
+
 class OrderOfTheLycan(SubClass):
-    """Of the many terrible curses that plague the realm, few are as ancient or as feared as Lycanthropy. Passed through blood, this affliction seeds a host with the savage strength and hunger for violence of a wicked beast. The Order of the Lycan is a proud order of blood hunters who undergo “The Taming,” a ceremonial inflicting of lycanthropy from a senior member. These hunters then use their abilities to harness the power of the monster they harbor without losing themselves to it. Through intense honing of one’s own willpower, combined with the secrets of the order’s blood magic rituals, members learn to control and unleash their hybrid form for short periods of time. Enhanced physical prowess, unnatural resilience, and razor sharp claws make these warriors a terrible foe to any evil that crosses their path. Yet, no training is perfect, and without care and complete focus, even the greatest of blood hunters can temporarily lose themselves to the bloodlust.
+    """Of the many terrible curses that plague the realm, few are as ancient
+    or as feared as Lycanthropy. Passed through blood, this affliction seeds a
+    host with the savage strength and hunger for violence of a wicked beast. The
+    Order of the Lycan is a proud order of blood hunters who undergo “The
+    Taming,” a ceremonial inflicting of lycanthropy from a senior member. These
+    hunters then use their abilities to harness the power of the monster they
+    harbor without losing themselves to it. Through intense honing of one’s own
+    willpower, combined with the secrets of the order’s blood magic rituals,
+    members learn to control and unleash their hybrid form for short periods of
+    time. Enhanced physical prowess, unnatural resilience, and razor sharp claws
+    make these warriors a terrible foe to any evil that crosses their path. Yet,
+    no training is perfect, and without care and complete focus, even the
+    greatest of blood hunters can temporarily lose themselves to the bloodlust.
 
     """
 
@@ -30,11 +49,21 @@ class OrderOfTheLycan(SubClass):
     features_by_level[7] = [features.StalkerProwess]
     features_by_level[11] = [features.AdvancedTrasformation]
     features_by_level[15] = [features.BrandOfTheVoracious]
-    features_by_level[18] = [features.HybridTrasformationMastery] 
+    features_by_level[18] = [features.HybridTrasformationMastery]
 
 
 class OrderOfTheMutant(SubClass):
-    """The process of the Hunter’s Bane is a painful, scarring, and sometimes fatal experience. Those that survive find themselves irrevocably changed, enhanced. Some found this experience exalting, embracing the ability to alter one’s own physiology through a combination of hemocraft and corrupted alchemy. Over generations of experimentation, a splinter order of blood hunters began to emerge, one that focused on brewing toxic elixirs to modify their capabilities in battle, altering their blood and, over time, become something beyond what they once were. They called themselves the Order of the Mutant. Researching their targets to know their strengths and weaknesses, these blood hunters can alter their biology to be best prepared for the coming conflict.
+    """The process of the Hunter’s Bane is a painful, scarring, and
+    sometimes fatal experience. Those that survive find themselves irrevocably
+    changed, enhanced. Some found this experience exalting, embracing the
+    ability to alter one’s own physiology through a combination of hemocraft and
+    corrupted alchemy. Over generations of experimentation, a splinter order of
+    blood hunters began to emerge, one that focused on brewing toxic elixirs to
+    modify their capabilities in battle, altering their blood and, over time,
+    become something beyond what they once were. They called themselves the
+    Order of the Mutant. Researching their targets to know their strengths and
+    weaknesses, these blood hunters can alter their biology to be best prepared
+    for the coming conflict.
 
     """
 
@@ -48,15 +77,23 @@ class OrderOfTheMutant(SubClass):
 
 
 class OrderOfTheProfaneSoul(SubClass):
-    """Those who have taken to the Order of the Profane Soul have seen the limits of hemocraft against some of the most ancient and cruel fiends and terrors of the world. Unable to pursue beings of such power, creatures able to vanish amongst the nobles without a trace, or bend the mind of the most stalwart warrior with but a glance, this order trusted in their resilience and delved into this same well of corrupting arcane knowledge, making pacts with lesser evils to better combat the greater. While they may have traded a part of themselves, members of this order believe the power gained far outweighs the price, for even devils now quake when they know they’ve drawn the attention of the Order of the Profane Soul.
+    """Those who have taken to the Order of the Profane Soul have seen the
+    limits of hemocraft against some of the most ancient and cruel fiends and
+    terrors of the world. Unable to pursue beings of such power, creatures able
+    to vanish amongst the nobles without a trace, or bend the mind of the most
+    stalwart warrior with but a glance, this order trusted in their resilience
+    and delved into this same well of corrupting arcane knowledge, making pacts
+    with lesser evils to better combat the greater. While they may have traded a
+    part of themselves, members of this order believe the power gained far
+    outweighs the price, for even devils now quake when they know they’ve drawn
+    the attention of the Order of the Profane Soul.
 
     """
 
     name = "Order of the Profane Soul"
     features_by_level = defaultdict(list)
     features_by_level[3] = [features.OtherworldlyPatron, features.PactMagic, features.RiteFocus]
-    features_by_level[7] = [features.MysticFrenzy,
-features.RevealedArcana]
+    features_by_level[7] = [features.MysticFrenzy, features.RevealedArcana]
     features_by_level[11] = [features.BrandOfTheSappingScar]
     features_by_level[15] = [features.UnsealedArcana]
     features_by_level[18] = [features.BloodCurseOfTheSouleater]
@@ -83,7 +120,7 @@ features.RevealedArcana]
         18: (3, 0, 0, 2, 0, 0, 0, 0, 0, 0),
         19: (3, 0, 0, 0, 2, 0, 0, 0, 0, 0),
         20: (3, 0, 0, 0, 2, 0, 0, 0, 0, 0),
-    }    
+    }
 
 
 class BloodHunter(CharClass):
@@ -118,7 +155,7 @@ class BloodHunter(CharClass):
     	features.HunterBane,
     	features.BloodMaledict,
     	]
-    
+
     features_by_level[2] = [
     	features.CrimsonRites,
     	features.BloodHunterFightingStyle,

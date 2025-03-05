@@ -36,7 +36,7 @@ Run the following in a directory with valid character files (such as the example
 
 .. code:: bash
 
-    $ docker run -it -v $(pwd):/build ghcr.io/canismarko/dungeon-sheets:master
+    $ docker run -it -v $(pwd):/build ghcr.io/canismarko/dungeon-sheets:latest
 
 
 Installation
@@ -48,7 +48,7 @@ Installation
 
 .. note::
 
-   Dungeon sheets requires **at least python 3.6**. This is mostly due
+   dungeon-sheets requires **at least python 3.6**. This is mostly due
    to the liberal use of f-strings_. If you want to use it with
    previous versions of python 3, you'll probably have to replace all
    the f-strings with the older ``.format()`` method or string
@@ -64,20 +64,17 @@ Optional External dependencies
   generate the PDF spell pages (optional).
 
 If **pdftk** is available, it will be used for pdf generation. If not,
-a fallback python library (pdfrw) will be used. This has some
-limitations:
-
-- Produces v1.3 PDF files
-- Not able to flatten PDF forms
-- Will produce separate character-sheets, spell-lists and spell-books.
+a fallback python library (pypdf) will be used. This has the
+limitation that it is not able to flatten PDF forms.
   
 Different linux distributions have different names for packages. While
 pdftk is available in Debian and derivatives as **pdftk**, the package
 is not available in some RPM distributions, such as Fedora and CentOS.
 One alternative would be to build your PC sheets using docker.
 
-If the ``pdflatex`` command is available on your system, spellcasters
-will include a spellbook with descriptions of each spell known. If
+If the ``pdflatex`` command is available on your system, dungeon-sheets
+will include a description of a character's features. For spellcasters,
+it will include a spellbook with descriptions of each spell known. If
 not, then this feature will be skipped.
 
 In order to properly format descriptions for spells/features/etc.,
@@ -113,7 +110,28 @@ so attack bonuses and damage can be calculated automatically.
 
 Consider using the ``-F`` option to include the excellent D&D 5e
 template for rendering spellbooks, druid wild forms and features
-pages (https://github.com/rpgtex/DND-5e-LaTeX-Template).
+pages (https://github.com/rpgtex/DND-5e-LaTeX-Template). dungeon-
+sheets includes its own version of the template, but will use a
+local one if it is installed.
+
+Consider using the ``-T`` option to use the beautiful latex character
+sheet
+(https://github.com/matsavage/DND-5e-LaTeX-Character-Sheet-Template).
+This does require lualatex as well as a fairly recent version of
+texlive. dungeon-sheets includes its own version of the latex character
+template, but will use a local one if it is installed.
+
+By default, your character's spells are ordered alphabetically. If you
+would like your spellbook to be ordered by level, you can use the ``-S``
+option to do so.
+
+Furthermore, your character's features are ordered alphabetically by
+default as well. Pass the ``-N`` option to order feats by type
+(character feats, class feats, racial feats and background feat) and,
+if applicable, by sub-type (e.g., for Sorcerers, metamagic feature
+choices are collected under the Metamagic feature; for the Battle
+Master subclass, Maneuver feature choices are collected under
+the Combat Superiority feature.)
 
 If you'd like a **step-by-step walkthrough** for creating a new
 character, just run ``create-character`` from a command line and a

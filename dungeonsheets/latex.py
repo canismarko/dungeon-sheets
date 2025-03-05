@@ -4,6 +4,7 @@ import os
 import re
 import subprocess
 import logging
+import warnings
 
 from docutils import core
 from docutils.writers.latex2e import Writer, Table, LaTeXTranslator
@@ -50,7 +51,8 @@ def create_latex_pdf(
     basename: str,
     keep_temp_files: bool = False,
     use_dnd_decorations: bool = False,
-    comm1: str = "pdflatex"
+    use_tex_template: bool = False,
+    comm1: str = "pdflatex",
 ):
     # Create tex document
     tex_file = f"{basename}.tex"
@@ -69,14 +71,39 @@ def create_latex_pdf(
         str(tex_file),
     ]
 
+    # Deal with TEXINPUTS and add paths to latex modules
     environment = os.environ
     tex_env = environment.get('TEXINPUTS', '')
     module_root = Path(__file__).parent / "modules/"
-    module_dirs = [module_root / mdir for mdir in ["DND-5e-LaTeX-Template"]]
+    module_dirs = []
+
+    # Load locally installed latex packages if they exist, to allow for
+    # local latex customisation
+    for module in ["dnd.sty", "dndtemplate.sty"]:
+        kpsewhich_command = [
+            "kpsewhich",
+            module,
+        ]
+        try:
+            module_check = subprocess.run(kpsewhich_command, capture_output=True, env=environment)
+            if isinstance(module_check.stdout, bytes):
+                 module_check.stdout = module_check.stdout.decode()
+            if module in module_check.stdout:
+                module_dirs.append(Path(module_check.stdout).parent)
+        except:
+            msg = ('Could not run kpsewhich. Something seems strange with your latex installation.')
+            warnings.warn(msg)
+
+    module_dirs = module_dirs + [module_root / mdir for mdir in ["DND-5e-LaTeX-Template", "DND-5e-LaTeX-Character-Sheet-Template"]]
     log.debug(f"Loading additional modules from {module_dirs}.")
     texinputs = ['.', *module_dirs, module_root, tex_env]
-    separator = ';' if isinstance(module_root, pathlib.WindowsPath) else ':'
+    # Two (back-)slashes at the end of each path to recursively add all subdirectories
+    separator = '\\\\;' if isinstance(module_root, pathlib.WindowsPath) else '//:'
     environment['TEXINPUTS'] = separator.join(str(path) for path in texinputs)
+    if use_tex_template:
+        environment['TTFONTS'] = environment['TEXINPUTS']
+
+    # Prepare the latex subprocess
     passes = 2 if use_dnd_decorations else 1
     log.debug(tex_command_line)
     log.debug("LaTeX command: %s" % " ".join(tex_command_line))
@@ -251,6 +278,7 @@ def rst_to_latex(rst, top_heading_level: int=0, format_dice: bool = True, use_dn
 
     return tex
 
+
 def rst_to_boxlatex(rst):
     """Adapted rst translation from dungeonsheets latex module, removing
     dice parsing and indentation."""
@@ -262,8 +290,9 @@ def rst_to_boxlatex(rst):
     tex = tex.replace('\n\n', ' \\\\\n')
     return tex
 
-def msavage_spell_info(char):
-    """Generates the spellsheet for msavage template."""
+
+def latex_character_spell_info(char):
+    """Generates the spellsheet for the latex character template."""
     headinfo = char.spell_casting_info["head"]
     font_options = {1:"", 2:r"\Large ", 3:r"\large "}
     selector = min(len(char.spellcasting_classes), 3)
@@ -310,33 +339,60 @@ def msavage_spell_info(char):
                   "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", 
                   "W", "X", "Y", "Z"]
 
+    # spellList is a dict.
+    # The keys in spellList are the level names, the values are lists of tuples:
+    # Each tuple consists of two elements: a spell name and a boolean for prepared.
+    # So: spellList = {levelname : [(spellname, preparedbool), ]}
     spellList = char.spell_casting_info["list"]
-    # As default, assume fullcaster character and set spellsheet accordingly
-    tex4="\\newcommand{\spellsheetchoice}{\\renderspellsheet}"
-    for k, v in spellList.items():
-        slots_max = fullcaster_sheet_spaces[k]
-        halfcaster_slots_max = halfcaster_sheet_spaces[k]
-        only_low_level = all((char.spell_slots(level) == 0 for level in range(6, 10)))
-        # Determine which sheet to use (caster or half-caster).
-        # Prefer caster, unless we have no spells > 5th level and
-        # would overflow the caster sheet, then use half-caster.
-        if len(v) > slots_max and only_low_level:
-            slots_max=halfcaster_slots_max
-            tex4="\\newcommand{\spellsheetchoice}{\\renderhalfspellsheet}"
-        if len(v) > slots_max:
-            vsel = sorted(v, key=lambda x: x[1], reverse=True)
-        else:
-            vsel = v[:]
-        for spinfo, slot in zip(vsel[:slots_max], comp_letters):
-            slot_command = "\\"+k+'Slot'+slot
-            slot_command_name = slot_command+"{"+spinfo[0]+"}"
-            if k == "Cantrip":
-                texT = texT + [slot_command_name]
-                continue
-            slot_command_prep = slot_command+"Prepared"+"{"+str(spinfo[1])+"}"
-            texT = texT + [slot_command_name, slot_command_prep]
-    tex3 = "\n".join(texT) + '\n'
-    return "\n".join([tex1, tex2, tex3, tex4])
+    # Default, assume fullcaster character and associated spellsheet.
+    fullcaster = True
+    # Determine which sheet to use (fullcaster or halfcaster).
+    # Only use halfcaster when we have no spells > 5th level and
+    # would overflow the fullcaster sheet.
+    # Keep the same sheet for overflow pages, if any.
+    only_low_level = all((char.spell_slots(level) == 0 for level in range(6, 10)))
+    if (any(len(spellList[key]) > fullcaster_sheet_spaces[key] for key in spellList.keys())
+            and only_low_level):
+        fullcaster = False
+
+    def AddSpellPage(fullcaster = True):
+        texT = []
+        for k, v in spellList.items():
+            spells_this_level_and_page = len(v)
+            if fullcaster:
+                spellsheet_command = "\\renderspellsheet"
+                slots_max = fullcaster_sheet_spaces[k]
+            else:
+                spellsheet_command = "\\renderhalfspellsheet"
+                slots_max = halfcaster_sheet_spaces[k]
+            for spinfo, slot in zip(v[:slots_max], comp_letters):
+                spellList[k].remove(spinfo)
+                slot_command = "\\" + k + 'Slot' + slot
+                slot_command_name = slot_command + "{" + spinfo[0] + "}"
+                if k == "Cantrip":
+                    texT = texT + [slot_command_name]
+                    continue
+                slot_command_prep = slot_command + "Prepared" + "{" + str(spinfo[1]) + "}"
+                texT = texT + [slot_command_name, slot_command_prep]
+            # Set remaining slots empty
+            for empty_slot in comp_letters[spells_this_level_and_page:slots_max]:
+                slot_command = "\\" + k + 'Slot' + empty_slot
+                slot_command_name = slot_command + "{}"
+                if k == "Cantrip":
+                    texT = texT + [slot_command_name]
+                    continue
+                slot_command_prep = slot_command + "Prepared{False}"
+                texT = texT + [slot_command_name, slot_command_prep]
+            if (not len(spellList[k]) == 0
+                    and not spellList[k][0][0] == "--- Overflow ---"):
+                spellList[k].insert(0, ("--- Overflow ---", False))
+        return "\n".join(texT) + '\n\n' + spellsheet_command + '\n\n'
+
+    tex3 = ""
+    while any(spellList.values()):
+        tex3 = tex3 + AddSpellPage(fullcaster)
+    return "\n".join([tex1, tex2, tex3])
+
 
 def RPGtex_monster_info(char):
     """Generates the headings for the monster block info in the DND latex style"""

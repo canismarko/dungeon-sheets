@@ -490,6 +490,55 @@ class Character(Creature):
         return sorted(tuple(fts), key=(lambda x: x.name))
 
     @property
+    def features_by_type(self):
+        if not self.has_class:
+            return set(self.custom_features)
+        fts = list()
+        character_feat_choices = list()
+        other_feat_choices = list()
+        # Add player choices; distinguish between general feats and
+        # feat choices such as fighting styles and metamagic options.
+        for item in self.custom_features:
+            if item.source == "Feats":
+                character_feat_choices.append(item)
+            else:
+                other_feat_choices.append(item)
+        for c in self.class_list:
+            for item in list(c.features):
+                # Treat features that are instances of other features the
+                # same as feature choices, so that we can sort them later.
+                # Example: Blood Curse of Corrosion.
+                # Parent class:             cls.__class__.__bases__[0]
+                if (not (item.__class__.__bases__[0] == features.Feature
+                        or type(item) == features.Feature)
+                        and item.__class__.__bases__[0] in c.features):
+                    other_feat_choices.append(item)
+            for item in list(c.features):
+                if not item in other_feat_choices:
+                    fts.append(item)
+                # Now check whether any items in class_feat_choices
+                # is a subclass of current item.
+                for choice in other_feat_choices:
+                    if choice.__class__.__bases__[0] == item.__class__:
+                        fts.append(choice)
+            # Make sure we didn't miss any feat choices:
+            for choice in other_feat_choices:
+                if not choice in fts:
+                    fts.insert(0, choice)
+        if self.race is not None:
+            for item in getattr(self.race, "features", ()):
+                fts.append(item)
+            # some races have level-based features (Ex: Aasimar)
+            if hasattr(self.race, "features_by_level"):
+                for lvl in range(1, self.level + 1):
+                    for item in list(self.race.features_by_level[lvl]):
+                        fts.append(item)
+        if self.background is not None:
+            for item in getattr(self.background, "features", ()):
+                fts.append(item)
+        return tuple(character_feat_choices + fts)
+
+    @property
     def custom_features_text(self):
         return tuple([f.name for f in self.custom_features])
 
@@ -823,7 +872,7 @@ class Character(Creature):
         if self.shield:
             weight += 6
         weight += sum([self.cp, self.sp, self.ep, self.gp, self.pp]) / 50
-        return round(weight, 2)
+        return round(weight)
 
     @property
     def equipment_text(self):
@@ -839,10 +888,12 @@ class Character(Creature):
             for item in self.magic_items:
                 sub_list += item.name + ", "
             eq_list += [sub_list[:-2]]
-        cw, cc = self.carrying_weight, self.carrying_capacity
-        eq_list += [f"**Weight:** {cw} lb\n\n**Capacity:** {cc} lb"]
-
         return "\n\n".join(eq_list)
+
+    @property
+    def weight_and_capacity_text(self):
+        cw, cc = self.carrying_weight, self.carrying_capacity
+        return f"**Weight:** {cw} lb **Capacity:** {cc} lb"
 
     @property
     def proficiencies_by_type(self):
@@ -927,7 +978,7 @@ class Character(Creature):
             prepared = s in self.spells_prepared
             level_info = level_names[s.level]
             info_there = spell_list.get(level_info, [])
-            spell_list[level_info] = info_there + [(s.name, prepared)]
+            spell_list[level_info] = info_there + [(re.sub(r"\$", r"\$", str(s)), prepared)]
         spell_info["list"] = spell_list
         return spell_info
 
