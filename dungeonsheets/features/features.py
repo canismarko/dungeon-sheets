@@ -89,10 +89,12 @@ class FeatureSelector(Feature):
         new_feat.source = t.source
         new_feat.needs_implementation = True
         for selection in feature_choices:
-            if selection.lower() in t.options:
-                feat_class = t.options[selection.lower()]
-                if owner.has_feature(feat_class):
-                    continue
-                new_feat = feat_class(owner=owner)
-                new_feat.source = t.source
+            for k in t.options.keys():
+                if selection.lower() == k.lower():
+                    feat_class = t.options[k]
+                    if owner.has_feature(feat_class):
+                        continue
+                    new_feat = feat_class(owner=owner)
+                    new_feat.source = t.source
+                    break
         return new_feat
