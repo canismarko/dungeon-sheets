@@ -64,12 +64,8 @@ Optional External dependencies
   generate the PDF spell pages (optional).
 
 If **pdftk** is available, it will be used for pdf generation. If not,
-a fallback python library (pdfrw) will be used. This has some
-limitations:
-
-- Produces v1.3 PDF files
-- Not able to flatten PDF forms
-- Will produce separate character-sheets, spell-lists and spell-books.
+a fallback python library (pypdf) will be used. This has the
+limitation that it is not able to flatten PDF forms.
   
 Different linux distributions have different names for packages. While
 pdftk is available in Debian and derivatives as **pdftk**, the package
