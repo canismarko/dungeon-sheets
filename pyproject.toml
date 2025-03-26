@@ -24,7 +24,7 @@ classifiers = [
   "Topic :: Games/Entertainment :: Role-Playing",
 ]
 keywords = ["D&D", "character", "sheets"]
-dependencies = ["certifi", "fdfgen", "npyscreen", "jinja2", "sphinx", "EbookLib", "reportlab", "docutils", "pypdf"]
+dependencies = ["certifi", "fdfgen", "npyscreen", "jinja2", "sphinx", "EbookLib", "reportlab", "docutils", "pypdf>=5.2.0"]
 
 [project.optional-dependencies]
 dev = ["pytest", "pytest-cov", "coverall", "flake8", "black"]
