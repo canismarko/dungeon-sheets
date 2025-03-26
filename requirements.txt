@@ -7,4 +7,4 @@ EbookLib~=0.18
 reportlab~=4.0.8
 setuptools~=69.0.3
 docutils~=0.20.1
-pypdf~=3.17.4
+pypdf~=5.2.0
