@@ -52,7 +52,7 @@ feature_choices = {{ char.feature_choices }}
 
 # Weapons/other proficiencies not given by class/race/background
 weapon_proficiencies = {{ char.other_weapon_proficiencies_text }}
-proficiencies_text = {{ char._proficiencies_text }}
+proficiencies_text = {{ char.proficiencies_text }}
 
 # Proficiencies and languages
 languages = """{{ char.languages }}"""

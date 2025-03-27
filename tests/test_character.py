@@ -59,9 +59,10 @@ class TestCharacter(TestCase):
         self.assertTrue(char.inspiration)
         char.set_attrs(inspiration=False)
         self.assertFalse(char.inspiration)
-        # Check that proficiencies text gets included
+        # Check that proficiencies_text gets included
         char.set_attrs(proficiencies_text=("dull sword",))
-        self.assertIn("dull sword", char.proficiencies_text.lower())
+        self.assertIn("dull sword",
+                      char.proficiencies_by_type["Other"].lower())
 
     def test_homebrew_spells(self):
         char = Character()
@@ -151,36 +152,42 @@ class TestCharacter(TestCase):
         char.weapon_proficiencies = tuple()
         char.race = race.HighElf()
         self.assertTrue(char.is_proficient(sword))
-    
+
     def test_racial_is_proficient(self):
         char = Character(classes=["Wizard"], race="Mountain Dwarf")
         battleaxe = Battleaxe()
         self.assertTrue(char.is_proficient(battleaxe))
 
-    def test_proficiencies_text(self):
-        char = Character()
-        char._proficiencies_text = ("hello", "world")
-        self.assertIn("hello", char.proficiencies_text.lower())
-        self.assertIn("world", char.proficiencies_text.lower())
+    def test_proficiencies_by_type(self):
+        char = Wizard()
+        char.proficiencies_text = ("hello", "world")
+        self.assertIn("hello",
+                      char.proficiencies_by_type["Other"].lower())
+        self.assertIn("world",
+                      char.proficiencies_by_type["Other"].lower())
         # Check for extra proficiencies
-        char._proficiencies_text += ("it's", "me")
-        self.assertIn("it's", char.proficiencies_text.lower())
-        self.assertIn("me", char.proficiencies_text.lower())
-        # Check that race proficienceis are included
+        char.proficiencies_text += ("it's", "me")
+        self.assertIn("it's",
+                      char.proficiencies_by_type["Other"].lower())
+        self.assertIn("me",
+                      char.proficiencies_by_type["Other"].lower())
+        # Check that race proficiencies are included
         elf = race.HighElf()
         char.race = elf
         expected = (
             "hello",
             "world",
-            "longswords",
-            "shortswords",
-            "shortbows",
-            "longbows",
+            "longsword",
+            "shortsword",
+            "shortbow",
+            "longbow",
             "it's",
             "me",
         )
         for e in expected:
-            self.assertIn(e, char.proficiencies_text.lower())
+            self.assertIn(e,
+                          char.proficiencies_by_type["Weapons"].lower() +
+                          char.proficiencies_by_type["Other"].lower())
 
     def test_proficiency_bonus(self):
         char = Character()

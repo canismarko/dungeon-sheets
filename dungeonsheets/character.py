@@ -107,7 +107,7 @@ class Character(Creature):
     features_and_traits = "Describe any other features and abilities."
     chosen_tools = ""
 
-    _proficiencies_text = list()
+    proficiencies_text = list()
 
     # Appearance
     portrait: Path | None = None  # Path to image file
@@ -231,7 +231,6 @@ class Character(Creature):
         self.other_weapon_proficiencies = tuple()
         self.skill_proficiencies = list()
         self.skill_expertise = list()
-        self._proficiencies_text = list()
         self._spells = list()
         self._spells_prepared = list()
         self.infusions = list()
@@ -718,43 +717,6 @@ class Character(Creature):
         return is_proficient
 
     @property
-    def proficiencies_text(self):
-        final_text = ""
-        all_proficiencies = tuple(self._proficiencies_text)
-        if self.has_class:
-            all_proficiencies += tuple(self.primary_class._proficiencies_text)
-        if self.num_classes > 1:
-            for c in self.class_list[1:]:
-                all_proficiencies += tuple(c._multiclass_proficiencies_text)
-        if self.race is not None:
-            all_proficiencies += tuple(self.race.proficiencies_text)
-        if self.background is not None:
-            all_proficiencies += tuple(self.background.proficiencies_text)
-        # Create a single string out of all the proficiencies
-        for txt in all_proficiencies:
-            if not final_text:
-                # Capitalize the first entry
-                txt = txt.capitalize()
-            else:
-                # Put a comma first
-                txt = ", " + txt
-                # Add this item to the list text
-            final_text += txt
-        # Add a period at the end
-        final_text += "."
-        return final_text
-
-    @proficiencies_text.setter
-    def proficiencies_text(self, val):
-        try:
-            profs = val.split(",")
-        except AttributeError:
-            profs = val
-        self._proficiencies_text = profs
-        if self.chosen_tools == "":
-            self.chosen_tools = ", ".join(item for item in profs)
-
-    @property
     def features_text(self):
         s = "\n\n--".join(
             [f.name + ("**" if f.needs_implementation else "") for f in self.features]
@@ -849,6 +811,19 @@ class Character(Creature):
     @property
     def proficiencies_by_type(self):
         prof_dict = {}
+        # First collect all proficiencies
+        prof_set = set(self.proficiencies_text)
+        if self.has_class:
+            prof_set.update(self.primary_class._proficiencies_text)
+        if self.num_classes > 1:
+            for c in self.class_list[1:]:
+                prof_set.update(c._multiclass_proficiencies_text)
+        if self.race is not None:
+            prof_set.update(self.race.proficiencies_text)
+        if self.background is not None:
+            prof_set.update(self.background.proficiencies_text)
+        prof_set = set(prof.lower() for prof in prof_set)
+        # Weapon proficiencies
         w_pro = set(self.weapon_proficiencies)
         w_pro.remove(weapons.Unarmed)
         if weapons.MartialWeapon in w_pro:
@@ -862,23 +837,35 @@ class Character(Creature):
             prof_dict["Weapons"] = [w.name for w in w_pro]
         if "Weapons" in prof_dict.keys():
             prof_dict["Weapons"] = ", ".join(prof_dict["Weapons"])
+        # Add armor proficiencies and shields
         armor_types = ["all armor", "light armor", "medium armor", "heavy armor"]
-        prof_set = set(
-            [
-                prof.lower().strip().strip(".")
-                for prof in self.proficiencies_text.split(",")
-            ]
-        )
         prof_dict["Armor"] = [ar.title() for ar in armor_types if ar in prof_set]
         if len(prof_dict["Armor"]) > 2 or 'all armor' in prof_set:
             prof_dict["Armor"] = ["All Armor"]
-        if 'shields' in prof_set:
+        if 'shields (druids will not wear armor or use shields made of metal)' in prof_set:
+            prof_dict["Armor"] += [
+                    "Shields (druids will not wear armor or use shields made of metal)"]
+        elif 'shields' in prof_set:
             prof_dict["Armor"] += ["Shields"]
         prof_dict["Armor"] = ", ".join(prof_dict["Armor"])
-        if hasattr(self, 'chosen_tools'):
-            prof_dict["Other"] = re.sub(r"[A-Za-z]+('[A-Za-z]+)?",
-                                       lambda word: word.group(0).capitalize(),
-                                       self.chosen_tools)
+        # Backward compatibility with chosen_tools
+        if not self.chosen_tools == "" :
+            prof_set.update(self.chosen_tools.split(","))
+        # Extract "Other" proficiencies (artisan's tools, musical instruments, ... )
+        prof_dict["Other"] = []
+        for prof in prof_set:
+            if not (
+                # Anything other than weapons, armor, shields or options
+                any (re.search(w.name.lower(), prof) for w in w_pro)
+                or any (ar in prof for ar in armor_types)
+                or "shields" in prof
+            ):
+                prof_dict["Other"].append(prof)
+        prof_dict["Other"] = ", ".join(prof_dict["Other"])
+        # Nice capitalization
+        prof_dict["Other"] = re.sub(r"[A-Za-z]+('[A-Za-z]+)?",
+                                   lambda word: word.group(0).capitalize(),
+                                   prof_dict["Other"])
         return prof_dict
 
     @property

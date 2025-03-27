@@ -169,8 +169,11 @@ def create_character_pdf_template(character, basename, flatten=False):
     attack_str = "\n\n".join(attack)
     fields["AttacksSpellcasting"] = text_box(attack_str)
     # Other proficiencies and languages
-    prof_text = "Proficiencies:\n" + text_box(character.proficiencies_text)
-    prof_text += "\n\nLanguages:\n" + text_box(character.languages)
+    prof_text = ""
+    for prof_type, values in character.proficiencies_by_type.items():
+        if not values == "":
+            prof_text += prof_type + ": " + values + ".\n\n"
+    prof_text += "Languages: " + text_box(character.languages)
     fields["ProficienciesLang"] = prof_text
     # Prepare the actual PDF
     dirname = os.path.join(os.path.dirname(os.path.abspath(__file__)), "forms/")

@@ -741,7 +741,7 @@ class ArmorForm(LinkedListForm):
 
     def update_options(self):
         available_armors = [armor.NoArmor]
-        proficiencies = self.parentApp.character.proficiencies_text.lower()
+        proficiencies = self.parentApp.character.proficiencies_by_type["Armor"].lower()
         if ("light armor" in proficiencies) or ("all armor" in proficiencies):
             available_armors.extend(armor.light_armors)
         if ("medium armor" in proficiencies) or ("all armor" in proficiencies):
