@@ -249,12 +249,19 @@ class TestCharacter(TestCase):
         self.assertEqual(char.armor_class, 15)
         
     def test_carrying_weight(self):
+        class HeavyRing(MagicItem):
+            weight = 20
+
+        class DullSword(Weapon, MagicItem):
+            weight = 10
+
         char = Character(race="lightfoot halfling", strength=12)
         # Check carrying capacity
         self.assertEqual(char.carrying_capacity, 180)
         # Check the armor weight is included
         char.wear_armor(LeatherArmor())
         self.assertEqual(char.carrying_weight, 10)
+        self.assertEqual(char.weight_and_capacity_text, "**Weight:** 10 lb **Capacity:** 180 lb")
         # Check the shield weight is included
         char = Character()
         char.wield_shield("shield")
@@ -267,7 +274,9 @@ class TestCharacter(TestCase):
         # Check the listed equipment is included
         char = Character()
         char.equipment = "blanket, crowbar"
-        self.assertEqual(char.carrying_weight, 8)
+        char.magic_items = [HeavyRing, DullSword]
+        char.wield_weapon(DullSword)
+        self.assertEqual(char.carrying_weight, 38)
 
     def test_speed(self):
         # Check that the speed pulls from the character's race

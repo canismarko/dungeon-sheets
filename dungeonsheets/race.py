@@ -403,6 +403,7 @@ class Triton(Race):
     features = (
         feats.Amphibious,
         feats.ControlAirAndWater,
+        feats.Darkvision,
         feats.EmissaryOfTheSea,
         feats.GuardiansOfTheDepths,
     )

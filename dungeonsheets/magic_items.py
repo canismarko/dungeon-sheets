@@ -27,6 +27,8 @@ class MagicItem:
       The rarity of this magic item, as a human-readable string.
     item_type
       The type of item: "armor", "weapon", etc.
+    weight
+      The item's weight.
     ac_bonus
       Provides an armor class bonus to any creature equipping this item.
     st_bonus_all
@@ -51,6 +53,7 @@ class MagicItem:
     # needs_implementation: bool = False
     rarity: str = ""
     item_type: str = ""
+    weight: int = 0
     # Bonuses
     ac_bonus: int = 0
     st_bonus_all: int = 0

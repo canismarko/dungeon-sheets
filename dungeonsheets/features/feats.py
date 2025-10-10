@@ -1,4 +1,4 @@
-from dungeonsheets.features.features import Feature
+from dungeonsheets.features.features import Feature, FeatureSelector
 
 
 # PHB
@@ -513,17 +513,128 @@ class PolearmMaster(Feature):
     source = "Feats"
 
 
-class Resilient(Feature):
-    """Choose one ability score. You gain the following benefits:
+class ResilientStrength(Feature):
+    """You gain the following benefits:
+
+    - Increase your strength by 1, to a maximum of 20.
+    - You gain proficiency in strength saving throws.
+
+    """
+    name = "Resilient (Strength)"
+    source = "Feats"
+    def __init__(self, owner=None):
+        super().__init__(owner=owner)
+        self.owner.saving_throw_proficiencies += ("strength",)
+
+
+class ResilientDexterity(Feature):
+    """You gain the following benefits:
+
+    - Increase your dexterity by 1, to a maximum of 20.
+    - You gain proficiency in dexterity saving throws.
+
+    """
+    name = "Resilient (Dexterity)"
+    source = "Feats"
+    def __init__(self, owner=None):
+        super().__init__(owner=owner)
+        self.owner.saving_throw_proficiencies += ("dexterity",)
+
+
+class ResilientConstitution(Feature):
+    """You gain the following benefits:
+
+    - Increase your constitution by 1, to a maximum of 20.
+    - You gain proficiency in constitution saving throws.
+
+    """
+    name = "Resilient (Constitution)"
+    source = "Feats"
+    def __init__(self, owner=None):
+        super().__init__(owner=owner)
+        self.owner.saving_throw_proficiencies += ("constitution",)
+
+
+class ResilientWisdom(Feature):
+    """You gain the following benefits:
+
+    - Increase your wisdom by 1, to a maximum of 20.
+    - You gain proficiency in wisdom saving throws.
+
+    """
+    name = "Resilient (Wisdom)"
+    source = "Feats"
+    def __init__(self, owner=None):
+        super().__init__(owner=owner)
+        self.owner.saving_throw_proficiencies += ("wisdom",)
+
+
+class ResilientIntelligence(Feature):
+    """You gain the following benefits:
+
+    - Increase your intelligence by 1, to a maximum of 20.
+    - You gain proficiency in intelligence saving throws.
+
+    """
+    name = "Resilient (Intelligence)"
+    source = "Feats"
+    def __init__(self, owner=None):
+        super().__init__(owner=owner)
+        self.owner.saving_throw_proficiencies += ("intelligence",)
+
+
+class ResilientCharisma(Feature):
+    """You gain the following benefits:
+
+    - Increase your charisma by 1, to a maximum of 20.
+    - You gain proficiency in charisma saving throws.
+
+    """
+    name = "Resilient (Charisma)"
+    source = "Feats"
+    def __init__(self, owner=None):
+        super().__init__(owner=owner)
+        self.owner.saving_throw_proficiencies += ("Charisma",)
+
+
+class Resilient(FeatureSelector):
+    """
+    Choose one ability score. You gain the following benefits:
 
     - Increase the chosen ability score by 1, to a maximum of 20.
     - You gain proficiency in saving throws using the chosen ability.
 
+    Select one of the following resilient options under feature_choices in
+    your .py file:
+
+    resilientstrength
+
+    resilientdexterity
+
+    resilientconstitution
+
+    resilientwisdom
+
+    resilientintelligence
+
+    resilientcharisma
+
+
+    Don't forget to increase your chosen Ability score!
+
     """
 
+    options = {
+        "resilientstrength": ResilientStrength,
+        "resilientdexterity": ResilientDexterity,
+        "resilientconstitution": ResilientConstitution,
+        "resilientwisdom": ResilientWisdom,
+        "resilientintelligence": ResilientIntelligence,
+        "resilientcharisma": ResilientCharisma,
+    }
     name = "Resilient"
     source = "Feats"
-    needs_implementation = True
+    needs_implementation = False
 
 
 class RitualCaster(Feature):
