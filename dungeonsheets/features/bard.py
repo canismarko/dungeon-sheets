@@ -194,7 +194,7 @@ class PeerlessSkill(Feature):
     use of Bardic Inspiration. Roll a Bardic Inspiration die and add the number
     rolled to your ability check. You can choose to do so after you roil the
     die for the ability check, but before the DM tells you whether you succeed
-    or fail
+    or fail.
 
     """
 
@@ -209,7 +209,7 @@ class CombatInspiration(Feature):
     rolled to a weapon damage roll it just made. Alternatively, when an attack
     roll is made against the creature, it can use its reaction to roll the
     Bardic Inspiration die and add the number rolled to its AC against that
-    attack, after seeing the roll but before knowing whether it hits or misses
+    attack, after seeing the roll but before knowing whether it hits or misses.
 
     """
 
@@ -219,7 +219,7 @@ class CombatInspiration(Feature):
 
 class BardExtraAttack(Feature):
     """Starting at 6th level, you can attack twice, instead of once, whenever you
-    take the Attack action on your turn
+    take the Attack action on your turn.
 
     """
 
@@ -230,7 +230,7 @@ class BardExtraAttack(Feature):
 class BardBattleMagic(Feature):
     """At 14th level, you have mastered the art of weaving spellcasting and weapon
     use into a single harmonious act. When you use your action to cast a bard
-    spell, you can make one weapon attack as a bonus action
+    spell, you can make one weapon attack as a bonus action.
 
     """
 
@@ -269,8 +269,8 @@ class EnthrallingPerformance(Feature):
     """Starting at 3rd level, you can charge your performance with seductive, fey
     magic. If you perform for at least 1 minute, you can attempt to inspire
     wonder in your audience by singing, reciting a poem, or dancing. At the end
-    of the performance, choose a number of humanoids within 60 feet ofyou who
-    watched and listened to all of it, up to a number equal tO your Charisma
+    of the performance, choose a number of humanoids within 60 feet of you who
+    watched and listened to all of it, up to a number equal to your Charisma
     modifier (minimum of one). Each target must succeed on a Wisdom saving
     throw against your spell save DC or be charmed by you. While charmed in
     this way, the target idolizes you, it speaks glowingly Of you to anyone who
@@ -281,7 +281,7 @@ class EnthrallingPerformance(Feature):
 
     If a target succeeds on its saving throw, the target has no hint that you
     tried to charm it. Once you use this feature, you can't use it again until
-    you finish a short or long rest
+    you finish a short or long rest.
 
     """
 
@@ -297,9 +297,9 @@ class MantleOfMajesty(Feature):
     concentrating on a spell). During this time, you can cast command as a
     bonus action on each of your turns, without expending a spell slot.
 
-    Any creature charmed by you automatically failfs its saving throw against
+    Any creature charmed by you automatically fails its saving throw against
     the command you cast with this feature. Once you use this feature, you
-    can't use it again until you finish a long rest
+    can't use it again until you finish a long rest.
 
     """
 
@@ -312,7 +312,7 @@ class UnbreakableMajesty(Feature):
     makes you look more lovely and fierce. In addition, as a bonus action, you
     can assume a magically majestic presence for 1 minute or until you are
     incapacitated. For the duration, whenever any creature tries to attack you
-    for the first time on a turn, the at- tacker must make a Charisma saving
+    for the first time on a turn, the attacker must make a Charisma saving
     throw against your spell save DC. On a failed save, it can't attack you on
     this turn, and it must choose a new target for its attack or the attack is
     wasted.
@@ -331,9 +331,9 @@ class UnbreakableMajesty(Feature):
 # College of Swords
 class SwordsProficiency(Feature):
     """When you join the College of Swords at 3rd level, you gain proficiency with
-    medium armor and the scimitar. If you‘re proficient with a simple or
+    medium armor and the scimitar. If you're proficient with a simple or
     martial melee weapon, you can use it as a spellcasting focus for your hard
-    spells
+    spells.
 
     """
 
@@ -368,23 +368,26 @@ class BladeFlourish(Feature):
     one of the following Blade Flourish options of your choice. You can use
     only one Blade Flourish option per turn.
 
-    **Defensive Flourish**: You can expend one use of your Bardic Inspiration
-    to cause the weapon to deal extra damage to the target you hit. The damage
-    equals the number you roll on the Bardic Inspiration die. You also add the
-    number rolled to your AC until the start of your next turn.
+    Defensive Flourish
+      You can expend one use of your Bardic Inspiration
+      to cause the weapon to deal extra damage to the target you hit. The damage
+      equals the number you roll on the Bardic Inspiration die. You also add the
+      number rolled to your AC until the start of your next turn.
 
-    **Slashing Flourish**: You can expend one use of your Bardic Inspiration to
-    cause the weapon to deal extra damage to the target you hit and to any
-    other creature of your choice that you can see within 5 feet ofyou. The
-    damage equalsthe number you roll on the Bardic Inspi- ration die.
+    Slashing Flourish
+      You can expend one use of your Bardic Inspiration to
+      cause the weapon to deal extra damage to the target you hit and to any
+      other creature of your choice that you can see within 5 feet of you. The
+      damage equals the number you roll on the Bardic Inspiration die.
 
-    **Mobile Flourish**: You can expend one use of your Bar- dic InSpiration to
-    cause the weapon to deal extra dam- age to the target you hit. The damage
-    equals the number you roll on the Bardic Inspiration die. You can also push
-    the target up to 5 feet away from you, plus a number of feet equal to the
-    number you roll on that die. You can then immediately use your reaction to
-    move up to your walking speed to an unoccupied space within 5 feet of the
-    target.
+    Mobile Flourish
+      You can expend one use of your Bardic InSpiration to
+      cause the weapon to deal extra damage to the target you hit. The damage
+      equals the number you roll on the Bardic Inspiration die. You can also push
+      the target up to 5 feet away from you, plus a number of feet equal to the
+      number you roll on that die. You can then immediately use your reaction to
+      move up to your walking speed to an unoccupied space within 5 feet of the
+      target.
 
     """
 
@@ -394,7 +397,8 @@ class BladeFlourish(Feature):
 
 class MastersFlourish(Feature):
     """Starting at 14th level, whenever you use a Blade Flourish option, you can
-    roll a d6 and use it instead of expend- ing a Bardic Inspiration die.
+    roll a d6 and use it instead of expending a Bardic Inspiration die.
+
     """
 
     name = "Master's Flourish"
@@ -453,10 +457,10 @@ class WordsOfTerror(Feature):
 class MantleOfWhispers(Feature):
     """At 6th level, you gain the ability to adopt a humanoid's persona. When a
     humanoid dies within 30 feet of you, you can magically capture its shadow
-    using your reac- tion. You retain this shadow until you use it or you
+    using your reaction. You retain this shadow until you use it or you
     finish a long rest. You can use the shadow as an action. When you do so, it
     vanishes, magically transforming into a disguise that appears on you. You
-    now look like the dead person, but healthy and alive.This disguise lasts
+    now look like the dead person, but healthy and alive. This disguise lasts
     for 1 hour or until you end it as a bonus action.
 
     While you're in the disguise, you gain access to all information that the

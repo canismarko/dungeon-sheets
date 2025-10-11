@@ -199,10 +199,10 @@ class PitFiend(Monster):
       The pit fiend's spellcasting ability is Charisma (spell save DC 21).
       The pit fiend can innately cast the following spells, requiring no
       material components:
-      
-      At will: detect magic, fireball
-      
-      3/day each: hold monster, wall of fire
+
+      - At will: detect magic, fireball
+
+      - 3/day each: hold monster, wall of fire
 
     # Actions
 
@@ -225,7 +225,8 @@ class PitFiend(Monster):
       + 8) bludgeoning damage plus 21 (6d6) fire damage.
     Tail.
       Melee Weapon Attack: +14 to hit, reach 10ft., one target. Hit: 24
-      (3d1O + 8) bludgeoning damage.
+      (3d10 + 8) bludgeoning damage.
+
     """
     name = 'Pit Fiend'
     description = 'Large fiend, lawful evil'

@@ -22,6 +22,7 @@ class RaiseDead(Spell):
     -4 penalty to all attack rolls, saving throws, and ability checks. Every time
     the target finishes a long rest, the penalty is reduced by 1 until it
     disappears.
+
     """
 
     name = "Raise Dead"
@@ -46,6 +47,7 @@ class RarysTelepathicBond(Spell):
     through the bond whether or not they have a common language. The communication
     is possible over any distance, though it can't extend to other planes of
     existence.
+
     """
 
     name = "Rarys Telepathic Bond"
@@ -69,6 +71,7 @@ class RayOfEnfeeblement(Spell):
 
     At the end of each of the target's turns, it can make a
     Constitution saving throw against the spell. On a success, the spell ends.
+
     """
 
     name = "Ray Of Enfeeblement"
@@ -88,9 +91,10 @@ class RayOfFrost(Spell):
     ranged spell attack against the target. On a hit, it takes 1d8 cold damage, and
     its speed is reduced by 10 feet until the start of your next turn.
 
-    At Higher
-    Levels: The spell's damage increases by 1d8 when you reach 5th level (2d8), 11th
+    **At Higher
+    Levels:** The spell's damage increases by 1d8 when you reach 5th level (2d8), 11th
     level (3d8), and 17th level (4d8).
+
     """
 
     name = "Ray Of Frost"
@@ -115,6 +119,7 @@ class RayOfSickness(Spell):
     **At Higher Levels:** When you cast
     this spell using a spell slot of 2nd level or higher, the damage increases by
     1d8 for each slot level above 1st.
+
     """
 
     name = "Ray Of Sickness"
@@ -139,6 +144,7 @@ class Regenerate(Spell):
     target's severed body members (fingers, legs, tails, and so on), if any, are
     restored after 2 minutes. If you have the severed part and hold it to the stump,
     the spell instantaneously causes the limb to knit to the stump.
+
     """
 
     name = "Regenerate"
@@ -164,29 +170,29 @@ class Reincarnate(Spell):
     DM rolls a d 100 and consults the following table to determine what form the
     creature takes when restored to life, or the DM chooses a form.
 
-    d100  Race
-
-    01-04 Dragonborn
-    05-13 Dwarf, hill
-    14-21 Dwarf, mountain
-    22-25 Elf, dark
-    26-34
-    Elf, high
-    35-42 Elf, wood
-    43-46 Gnome, forest
-    47-52 Gnome, rock
-    53-56  Half-elf
-
-    57-60 Half-orc
-    61-68 Halfling, lightfoot
-    69-76 Halfling, stout
-    77-96 Human
-    97-00
-    Tiefling
+    ========    ===========================
+    d100        Race
+    ========    ===========================
+    01-04       Dragonborn
+    05-13       Dwarf, hill
+    14-21       Dwarf, mountain
+    22-25       Elf, dark
+    26-34       Elf, high
+    35-42       Elf, wood
+    43-46       Gnome, forest
+    47-52       Gnome, rock
+    53-56       Half-elf
+    57-60       Half-orc
+    61-68       Halfling, lightfoot
+    69-76       Halfling, stout
+    77-96       Human
+    97-00       Tiefling
+    ========    ===========================
 
     The reincarnated creature recalls its former life and experiences. It
     retains the capabilities it had in its original form, except it exchanges its
     original race for the new one and changes its racial traits accordingly.
+
     """
 
     name = "Reincarnate"
@@ -207,6 +213,7 @@ class RemoveCurse(Spell):
     """At your touch, all curses affecting one creature or object end. If the object is
     a cursed magic item, its curse remains, but the spell breaks its owner's
     attunement to the object so it can be removed or discarded.
+
     """
 
     name = "Remove Curse"
@@ -225,6 +232,7 @@ class Resistance(Spell):
     """You touch one willing creature. Once before the spell ends, the target can roll
     a d4 and add the number rolled to one saving throw of its choice. It can roll
     the die before or after the saving throw. The spell then ends.
+
     """
 
     name = "Resistance"
@@ -257,11 +265,11 @@ class Resurrection(Spell):
     penalty to all attack rolls, saving throws, and ability checks. Every time the
     target finishes a long rest, the penalty is reduced by 1 until it disappears.
 
-
     Casting this spell to restore life to a creature that has been dead for one year
     or longer taxes you greatly. Until you finish a long rest, you can't cast
     spells again, and you have disadvantage on all attack rolls, ability checks, and
     saving throws.
+
     """
 
     name = "Resurrection"
@@ -292,6 +300,7 @@ class ReverseGravity(Spell):
 
     At the end of the duration, affected
     objects and creatures fall back down.
+
     """
 
     name = "Reverse Gravity"
@@ -310,6 +319,7 @@ class Revivify(Spell):
     """You touch a creature that has died within the last minute. That creature returns
     to life with 1 hit point. This spell can't return to life a creature that has
     died of old age, nor can it restore any missing body parts.
+
     """
 
     name = "Revivify"
@@ -339,8 +349,8 @@ class RopeTrick(Spell):
     through the entrance into or out of the extradimensional space, but those inside
     can see out of it as if through a 3-foot-by-5-foot window centered on the rope.
 
-
     Anything inside the extradimensional space drops out when the spell ends.
+
     """
 
     name = "Rope Trick"

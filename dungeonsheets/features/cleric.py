@@ -166,7 +166,7 @@ class ReadThoughts(DivineIntervention):
 
 
 class PotentSpellcasting(Feature):
-    """Starting at 8th level, you add your W isdom modifier to the damage you deal
+    """Starting at 8th level, you add your Wisdom modifier to the damage you deal
     with any cleric cantrip.
 
     """
@@ -212,7 +212,7 @@ class DiscipleOfLife(Feature):
     """Also starting at 1st level, your healing spells are more
     effective. Whenever you use a spell of 1st level or higher to restore hit
     points to a creature, the creature regains additional hit points equal to 2
-    + the spell's level
+    + the spell's level.
 
     """
 
@@ -279,7 +279,7 @@ class WardingFlare(Feature):
     attack roll, causing light to flare before the attacker before it hits or
     misses. An attacker that can't be blinded is immune to this feature. You
     can use this feature a number of times equal to your Wisdom modifier (a
-    minimum of once). You regain all expended uses when you finish a long rest
+    minimum of once). You regain all expended uses when you finish a long rest.
 
     """
 
@@ -325,7 +325,7 @@ class CoronaOfLight(Feature):
     sunlight that lasts for 1 minute or until you dismiss it using another
     action. You emit bright light in a 60-foot radius and dim light 30 feet
     beyond that. Your enemies in the bright light have disadvantage on saving
-    throws against any spell that deals fire or radiant damage
+    throws against any spell that deals fire or radiant damage.
 
     """
 
@@ -468,7 +468,7 @@ class BlessingOfTheTrickster(Feature):
     """Starting when you choose this domain at 1st level, you can use your action
     to touch a willing creature other than yourself to give it advantage on
     Dexterity (Stealth) checks. This blessing lasts for 1 hour or until you use
-    this feature again
+    this feature again.
 
     """
 
@@ -537,7 +537,7 @@ class WarPriest(Feature):
     engaged in battle. When you use the Attack action, you can make one weapon
     attack as a bonus action. You can use this feature a number of times equal
     to your Wisdom modifier (a minimum of once). You regain all expended uses
-    when you finish a long rest
+    when you finish a long rest.
 
     """
 
@@ -555,7 +555,7 @@ class GuidedStrike(ChannelDivinity):
     supernatural accuracy. When you make an attack roll, you can use your
     Channel Divinity to gain a +10 bonus to the roll. You make this choice
     after you see the roll, but before the DM says whether the attack hits or
-    misses
+    misses.
 
     """
 
@@ -600,7 +600,7 @@ class AvatarOfBattle(Feature):
 class ArcaneInitiate(Feature):
     """When you choose this domain at 1st level, you gain proficiency in the
     Arcana skill, and you gain two cantrips of your choice from the wizard
-    spell list. For you, these cantrips count as cleric cantrips
+    spell list. For you, these cantrips count as cleric cantrips.
 
     """
 
@@ -628,11 +628,17 @@ class ArcaneAbjuration(ChannelDivinity):
     plane of origin and its challenge rating is at or below a certain
     threshold, as shown on the Arcane Banishment table.
 
-    5th level : CR 1/2
-    8th level : CR 1
-    11th level : CR 2
-    14th level : CR 3
-    17th level : CR 4
+    ===============  ===================================
+             Arcane Banishment
+    ----------------------------------------------------
+    Cleric level     Banishes Creatures of CR...
+    ===============  ===================================
+    5th              CR 1/2 or lower
+    8th              CR 1 or lower
+    11th             CR 2 or lower
+    14th             CR 3 or lower
+    17th             CR 4 or lower
+    ===============  ===================================
 
     """
 
@@ -670,9 +676,9 @@ class BlessingOfTheForge(Feature):
     armor. At the end of a long rest, you can touch one nonmagical object that
     is a suit of armor or a simple or martial weapon. Until the end of your
     next long rest or until you die, the object becomes a magic item, granting
-    a +1 bonus to AC if it's armor or a +1 bo- nus to attack and damage rolls
+    a +1 bonus to AC if it's armor or a +1 bonus to attack and damage rolls
     if it's a weapon. Once you use this feature, you can't use it again until
-    you finish a long rest
+    you finish a long rest.
 
     """
 
@@ -682,7 +688,7 @@ class BlessingOfTheForge(Feature):
 
 class ArtisansBlessing(Feature):
     """Starting at 2nd level, you can use your Channel Divinity to create simple
-    items. You conduct an hour-long ritual that crafts a nonmagi- cal item that
+    items. You conduct an hour-long ritual that crafts a nonmagical item that
     must include some metal: a simple or martial weapon, a suit of armor, ten
     pieces of ammunition, a set of tools, or another metal Object (see chapter
     5, "Equipment," in the Player's Handbook for examples of these items). The
@@ -707,9 +713,9 @@ class SoulOfTheForge(Feature):
     """Starting at 6th level, your mastery of the forge grants you special
     abilities:
 
-    • You gain resistance to fire damage.
+    - You gain resistance to fire damage.
 
-    • While wearing heavy armor, you gain a +1 bonus to AC.
+    - While wearing heavy armor, you gain a +1 bonus to AC.
 
     """
 
@@ -722,7 +728,7 @@ class DivineStrikeForge(DivineStrike):
     with the fiery power of the forge. Once on each of your turns when
     you hit a creature with a weapon attack, you can cause the attack
     to deal an extra 1d8 fire damage to the target. When you reach
-    14th level, the extra damage increases to 2d8
+    14th level, the extra damage increases to 2d8.
 
     """
 
@@ -735,7 +741,7 @@ class SaintOfForgeAndFire(Feature):
 
     - You gain immunity to fire damage.
     - While wearing heavy armor, you have resistance to bludgeoning,
-      piercing, and slashing damage from non-magical attacks
+      piercing, and slashing damage from non-magical attacks.
 
     """
 
@@ -751,7 +757,7 @@ class CircleOfMortality(Feature):
     number possible for each die. In addition, you learn the spare the dying
     cantrip, which doesn't count against the number of cleric cantrips you
     know. For you, it has a range of 30 feet, and you can cast it as a bonus
-    action
+    action.
 
     """
 
@@ -772,7 +778,7 @@ class EyesOfTheGrave(Feature):
     This sense doesn't tell you anything about a creature's capabilities or
     identity. You can use this feature a number of times equal to your Wisdom
     modifier (minimum Of once). You regain all expended uses when you finish a
-    long rest
+    long rest.
 
     """
 
@@ -791,7 +797,7 @@ class PathToTheGrave(ChannelDivinity):
     creature you can see within 30 feet of you, cursing it until the end Of
     your next turn. The next time you or an ally Ofyours hits the cursed
     creature with an attack, the creature has vulnerability tO all of that
-    attack's damage, and then the curse ends
+    attack's damage, and then the curse ends.
 
     """
 
@@ -859,7 +865,7 @@ class TouchOfDeathCleric(Feature):
 class InescapableDestruction(Feature):
     """Starting at 6th level, your ability to channel negative energy becomes
     more potent. Necrotic damage dealt by your cleric spells and Channel
-    Divinity options ignores resistance to necrotic damage
+    Divinity options ignores resistance to necrotic damage.
 
     """
 

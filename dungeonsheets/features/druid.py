@@ -108,7 +108,7 @@ class Archdruid(Feature):
     Additionally, you can ignore the verbal and somatic components of your
     druid spells, as well as any material components that lack a cost and
     aren't consumed by a spell. You gain this benefit in both your normal shape
-    and your beast shape from Wild Shape
+    and your beast shape from Wild Shape.
 
     """
 
@@ -119,7 +119,7 @@ class Archdruid(Feature):
 # Circle of the Land
 class BonusCantrip(Feature):
     """When you choose this circle at 2nd level, you learn one additional druid
-    cantrip of your choice
+    cantrip of your choice.
 
     """
 
@@ -188,7 +188,7 @@ class ArcticSpells(_CircleSpells):
     """Your mystical connection to the land infuses you with the ability to cast
     certain spells.
 
-    These spells are included in your Spell Sheet
+    These spells are included in your Spell Sheet.
 
     """
 
@@ -205,7 +205,7 @@ class CoastSpells(_CircleSpells):
     """Your mystical connection to the land infuses you with the ability to cast
     certain spells.
 
-    These spells are included in your Spell Sheet
+    These spells are included in your Spell Sheet.
 
     """
 
@@ -222,7 +222,7 @@ class DesertSpells(_CircleSpells):
     """Your mystical connection to the land infuses you with the ability to cast
     certain spells.
 
-    These spells are included in your Spell Sheet
+    These spells are included in your Spell Sheet.
 
     """
 
@@ -239,7 +239,7 @@ class ForestSpells(_CircleSpells):
     """Your mystical connection to the land infuses you with the ability to cast
     certain spells.
 
-    These spells are included in your Spell Sheet
+    These spells are included in your Spell Sheet.
 
     """
 
@@ -256,7 +256,7 @@ class GrasslandSpells(_CircleSpells):
     """Your mystical connection to the land infuses you with the ability to cast
     certain spells.
 
-    These spells are included in your Spell Sheet
+    These spells are included in your Spell Sheet.
 
     """
 
@@ -273,7 +273,7 @@ class MountainSpells(_CircleSpells):
     """Your mystical connection to the land infuses you with the ability to cast
     certain spells.
 
-    These spells are included in your Spell Sheet
+    These spells are included in your Spell Sheet.
 
     """
 
@@ -290,7 +290,7 @@ class SwampSpells(_CircleSpells):
     """Your mystical connection to the land infuses you with the ability to cast
     certain spells.
 
-    These spells are included in your Spell Sheet
+    These spells are included in your Spell Sheet.
 
     """
 
@@ -307,7 +307,7 @@ class UnderdarkSpells(_CircleSpells):
     """Your mystical connection to the land infuses you with the ability to cast
     certain spells.
 
-    These spells are included in your Spell Sheet
+    These spells are included in your Spell Sheet.
 
     """
 
@@ -393,7 +393,7 @@ class LandsStride(Feature):
 
 class NaturesWard(Feature):
     """When you reach 10th level, you can't be charmed or frightened by elementals
-    or fey, and you are immune to poison and disease
+    or fey, and you are immune to poison and disease.
 
     """
 
@@ -408,7 +408,7 @@ class NaturesSanctuary(Feature):
     against your druid spell save DC. On a failed save, the creature must
     choose a different target, or the attack automatically misses. On a
     successful save, the creature is immune to this effect for 24 hours. The
-    creature is aware of this effect before it makes its attack against you
+    creature is aware of this effect before it makes its attack against you.
 
     """
 
@@ -437,7 +437,7 @@ class CircleForms(Feature):
     the Max. CR column of the Beast Shapes table, but must abide by the other
     limitations there). Starting at 6th level, you can transform into a beast
     with a challenge rating as high as your druid level divided by 3, rounded
-    down
+    down.
 
     """
 
@@ -490,7 +490,7 @@ class BalmOfTheSummerCourt(Feature):
     are a font of energy that offers respite from injuries. You have a pool of
     fey energy represented by a number of d6s equal to your druid level. As
     a bonus action, you can choose one creature you can see within 120 feet
-    ofyou and spend a number of those dice equal to halfyour druid level or
+    of you and spend a number of those dice equal to half your druid level or
     less. Roll the spent dice and add them together. The target regains a
     number of hit points equal to the total. The target also gains 1 temporary
     hit point per die spent. You regain all expended dice when you finish a
@@ -516,7 +516,7 @@ class HearthOfMoonlightAndShadow(Feature):
     While within the sphere, you and your allies gain a +5 bonus to Dexterity
     (Stealth) and Wisdom (Perception) checks, and any light from open flames in
     the sphere (a campfire, torches, or the like) isn't visible outside it. The
-    sphere vanishes at the end of the rest or when you leave the sphere
+    sphere vanishes at the end of the rest or when you leave the sphere.
 
     """
 
@@ -533,7 +533,7 @@ class HiddenPaths(Feature):
     Alternatively, you can use your action to teleport one willing creature you
     touch up to 30 feet to an unoccupied space you can see. You can use this
     feature a number of times equal to your Wisdom modifier (minimum of once),
-    and you regain all expended uses of it when you finish a long rest
+    and you regain all expended uses of it when you finish a long rest.
 
     """
 
@@ -655,7 +655,7 @@ class GuardianSpirit(Feature):
 
 class FaithfulSummons(Feature):
     """Starting at 14th level, the nature spirits you commune with protect
-    you when you are the most defenseless. Ifyou are reduced to 0 hit
+    you when you are the most defenseless. If you are reduced to 0 hit
     points or are incapacitated against your will, you can immediately
     gain the benefits of conjure animals as if it were cast using a
     9th-level spell slot. It summons four beasts of your choice that
@@ -664,7 +664,7 @@ class FaithfulSummons(Feature):
     you from harm and attack your foes. The spell lasts for 1 hour,
     requiring no concentration, or until you dismiss it (no action
     required). Once you use this feature, you can't use it again until
-    you finish a long rest
+    you finish a long rest.
 
     """
 
@@ -680,7 +680,7 @@ class HaloOfSpores(Feature):
     turn there, you can use your reaction to deal 1d4 necrotic damage to that
     creature unless it succeeds on a Constitution saving throw against your
     spell save DC. The necrotic damage increases to 1d6 at 6th level, 1d8 at
-    10th level, and 1d10 at 14th level
+    10th level, and 1d10 at 14th level.
 
     """
 
@@ -695,11 +695,11 @@ class SymbioticEntity(Feature):
     temporary hit points for each level you have in this class. While this
     feature is active, you gain the following benefits:
 
-    -- When you deal your Halo of Spores damage, roll the damage die a second
-    time and add it to the total.
+    - When you deal your Halo of Spores damage, roll the damage die a second
+      time and add it to the total.
 
-    -- Your melee weapon attacks deal an extra 1d6 poison damage to any target
-    they hit.
+    - Your melee weapon attacks deal an extra 1d6 poison damage to any target
+      they hit.
 
     These benefits last for 10 minutes, until you lose all these temporary hit
     points, or until you use your Wild Shape again.
@@ -743,7 +743,7 @@ class SpreadingSpores(Feature):
     Whenever a creature moves into the cube or starts its turn there, that
     creature takes your Halo of Spores damage, unless the creature succeeds on
     a Constitution saving throw against your spell save DC. A creature can take
-    this damage nbo mre than once per turn.
+    this damage no more than once per turn.
 
     While the cube of spores persists, you can't use your Halo of Spores
     reaction.

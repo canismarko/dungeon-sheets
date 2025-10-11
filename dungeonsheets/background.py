@@ -103,7 +103,7 @@ class Outlander(Background):
 class RivalIntern(Background):
     """You were an intern at a rival of Acquisitions Incorporated, and you
     gained a healthy respect for nocjusc the job and the franchising
-    opportunities. but for the ruth- less and efficient way
+    opportunities. but for the ruthless and efficient way
     Acquisitions Incorporated goes about its business. Why deal with
     the rest, when you can work for the best?
 
@@ -263,6 +263,7 @@ class Faceless(Background):
     about you prevents you from effectively pursuing the path you've chosen.
     Even so, that doesn't stop you. You've left your old face behind, taking on
     a new persona, becoming something more.
+
     Characters with the faceless background don a disguise (literally or
     otherwise) as they adventuree. This persona might be dramatic or subtle. In
     a way, though, many characters have such larger than life personalities.

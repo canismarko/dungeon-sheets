@@ -7,9 +7,11 @@ class IceKnife(Spell):
     the target takes 1d10 piercing damage. Hit or miss, the shard then explodes. The
     target and each creature within 5 feet of the point where the ice exploded must
     succeed on a Dexterity saving throw or take 2d6 cold damage.
-    At Higher Levels.
+
+    **At Higher Levels:**
     When you cast this spell using a spell slot of 2nd level or higher, the cold
     damage increases by 1d6 for each slot level above 1st.
+
     """
 
     name = "Ice Knife"
@@ -38,6 +40,7 @@ class IceStorm(Spell):
     **At Higher Levels:** When you cast this spell using a spell
     slot of 5th level or higher, the bludgeoning damage increases by 1d8 for each
     slot level above 4th.
+
     """
 
     name = "Ice Storm"
@@ -62,6 +65,7 @@ class Identify(Spell):
 
     If you instead touch a creature throughout the casting, you learn
     what spells, if any, are currently affecting it.
+
     """
 
     name = "Identify"
@@ -82,6 +86,7 @@ class IdInsinuation(Spell):
     on a Wisdom saving throw or be incapacitated. At the end of each of its turns, it
     takes 1d12 psychic damage, and it can then make another Wisdom saving throw. On a
     success, the spell ends on the target.
+
     """
 
     name = "Id Insinuation"
@@ -99,19 +104,24 @@ class IllusoryDragon(Spell):
     shadowy dragon in an unoccupied space that you can see within range. The
     illusion lasts for the spell's duration and occupies its space, as if it were a
     creature.
+
     When the illusion appears, any of your enemies that can see it must
     succeed on a Wisdom saving throw or become frightened of it for 1 minute. If a
     frightened creature ends its turn in a location where it doesn't have line of
     sight to the illusion, it can repeat the saving throw, ending the effect on
     itself on a success.
+
     As a bonus action on your turn, you can move the illusion
     up to 60 feet. At any point during its movement, you can cause it to exhale a
-    blast of energy in a 60-foot cone originating from its space. When you create
+    blast of energy in a 60-foot cone originating from its space.
+
+    When you create
     the dragon, choose a damage type: acid, cold, fire, lightning, necrotic, or
     poison. Each creature in the cone must make an Intelligence saving throw, taking
-    '7d6 damage of the
+    7d6 damage of the
     chosen damage type on a failed save, or half as much damage
     on a successful one.
+
     The illusion is tangible because of the shadow stuff used
     to create it, but attacks miss it automatically. it succeeds on all saving
     throws, and it is immune to all damage and conditions. A creature that uses an
@@ -119,6 +129,7 @@ class IllusoryDragon(Spell):
     on an Intelligence (Investigation) check against your spell save DC. If a
     creature discerns the illusion for what it is, the creature can see through it
     and has advantage on saving throws against its breath.
+
     """
 
     name = "Illusory Dragon"
@@ -149,6 +160,7 @@ class IllusoryScript(Spell):
     be dispelled, the original script and the illusion both disappear.
     A creature
     with truesight can read the hidden message.
+
     """
 
     name = "Illusory Script"
@@ -174,6 +186,7 @@ class Immolation(Spell):
     by nonmagical means.
     If damage from this spell kills a target, the target is
     turned to ash.
+
     """
 
     name = "Immolation"
@@ -199,56 +212,55 @@ class Imprisonment(Spell):
     When you cast the
     spell, you choose one of the following forms of imprisonment.
 
-    Burial
-    The
-    target is entombed far beneath the earth in a sphere of magical force that is
-    just large enough to contain the target. Nothing can pass through the
-    sphere, nor can any creature teleport or use planar travel to get into or out of
-    it.
-    The special component for this version of the spell is a small mithral orb.
+    Burial.
+      The
+      target is entombed far beneath the earth in a sphere of magical force that is
+      just large enough to contain the target. Nothing can pass through the
+      sphere, nor can any creature teleport or use planar travel to get into or out of
+      it.
+      The special component for this version of the spell is a small mithral orb.
 
 
-    Chaining
-    Heavy chains, firmly rooted in the ground, hold the target in place.
-    The target is restrained until the spell ends, and it can't move or be moved by
-    any means until then.
-    The special component for this version of the spell is
-    a fine chain of precious metal.
+    Chaining.
+      Heavy chains, firmly rooted in the ground, hold the target in place.
+      The target is restrained until the spell ends, and it can't move or be moved by
+      any means until then.
+      The special component for this version of the spell is
+      a fine chain of precious metal.
 
-    Hedged Prison
-    The spell transports the target
-    into a tiny demiplane that is warded against teleportation and planar travel.
-    The demiplane can be a labyrinth, a cage, a tower, or any similar confined
-    structure or area of your choice.
-    The special component for this version of the
-    spell is a miniature representation of the prison made from jade.
+    Hedged Prison.
+      The spell transports the target
+      into a tiny demiplane that is warded against teleportation and planar travel.
+      The demiplane can be a labyrinth, a cage, a tower, or any similar confined
+      structure or area of your choice.
+      The special component for this version of the
+      spell is a miniature representation of the prison made from jade.
 
-    Minimus
-    Containment
-    The target shrinks to a height of 1 inch and is imprisoned inside a
-    gemstone or similarobject. Light can pass through the gemstone
-    normally (allowing the target to see out and other creatures to see in), but
-    nothing else can pass through, even by means of teleportation or planar travel.
-    The gemstone can't be cut or broken while the spell remains in effect.
-    The
-    special component for this version of the spell is a large, transparent
-    gemstone, such as a corundum, diamond, or ruby.
+    Minimus Containment.
+      The target shrinks to a height of 1 inch and is imprisoned inside a
+      gemstone or similar object. Light can pass through the gemstone
+      normally (allowing the target to see out and other creatures to see in), but
+      nothing else can pass through, even by means of teleportation or planar travel.
+      The gemstone can't be cut or broken while the spell remains in effect.
+      The
+      special component for this version of the spell is a large, transparent
+      gemstone, such as a corundum, diamond, or ruby.
 
-    Slumber
-    The target falls asleep
-    and can't be awoken.
-    The special component for this version of the
-    spell consists of rare soporific herbs.
+    Slumber.
+      The target falls asleep
+      and can't be awoken.
+      The special component for this version of the
+      spell consists of rare soporific herbs.
 
-    Ending the Spell
-    During the casting of
-    the spell, in any of its versions, you can specify a condition that will cause
-    the spell to end and release the target. The condition can be as specific or as
-    elaborate as you choose, but the DM must agree that the condition is reasonable
-    and has a likelihood of coming to pass. The conditions can be based on a
-    creature's name, identity, or deity but otherwise must be based on
-    observable actions or qualities and not based on intangibles such as level,
-    class, or hit points.
+    Ending the Spell.
+      During the casting of
+      the spell, in any of its versions, you can specify a condition that will cause
+      the spell to end and release the target. The condition can be as specific or as
+      elaborate as you choose, but the DM must agree that the condition is reasonable
+      and has a likelihood of coming to pass. The conditions can be based on a
+      creature's name, identity, or deity but otherwise must be based on
+      observable actions or qualities and not based on intangibles such as level,
+      class, or hit points.
 
     A dispel magic spell can end the spell only if it is
     cast as a 9th-level spell, targeting either the prison or the special component
@@ -293,6 +305,7 @@ class IncendiaryCloud(Spell):
     The cloud
     moves 10 feet directly away from you in a direction that you choose at the start
     of each of your turns.
+
     """
 
     name = "Incendiary Cloud"
@@ -313,27 +326,31 @@ class InfernalCalling(Spell):
     barbed devil or a bearded devil. The devil appears in an unoccupied space that
     you can see within range. The devil disappears when it drops to 0 hit points or
     when the spell ends.
+
     The devil is unfriendly toward you and your companions.
     Roll initiative for the devil, which has its own turns. It is under the Dungeon
     Master's control and acts according to its nature on each of its turns, which
     might result in its attacking you if it thinks it can prevail, or trying to
     tempt you to undertake an evil act in exchange for limited service. The DM has
     the creature's statistics.
+
     On each of your turns, you can try to issue a verbal
     command to the devil (no action required by you). It obeys the command if the
     likely outcome is in accordance with its desires, especially if the result would
     draw you toward evil. Otherwise, you must make a Charisma (Deception,
     Intimidation, or Persuasion) check contested by its Wisdom (Insight) check. You
-    make the check with advantage if you say the devil's true name. Ifyour check
+    make the check with advantage if you say the devil's true name. If your check
     fails, the devil becomes immune to your verbal commands for the duration of the
     spell, though it can still carry out your commands if it chooses. If your check
-    succeeds, the devil carries out your command- such as "attack my enemies,"
+    succeeds, the devil carries out your command - such as "attack my enemies,"
     "explore the room ahead," or "bear this message to the queen"-until it completes
     the activity, at which point it returns to you to report having done so.
+
     If
     your concentration ends before the spell reaches its full duration, the devil
     doesn‘t disappear if it has become immune to your verbal commands. Instead, it
     acts in whatever manner it chooses for 3d6 minutes, and then it disappears.
+
     If
     you possess an individual devil's talisman, you can summon that devil if it is
     of the appropriate challenge
@@ -343,6 +360,7 @@ class InfernalCalling(Spell):
     **At Higher Levels:** When you cast this spell using
     a spell slot of 6th level or higher, the challenge rating increases by 1 for
     each slot level above 5th.
+
     """
 
     name = "Infernal Calling"
@@ -365,8 +383,10 @@ class Infestation(Spell):
     direction: 1., north; 2, south; 3, east; or 4, west. This movement doesn't
     provoke opportunity attacks, and if the direction rolled is blocked, the target
     doesn't move.
+
     The spell's damage increases by 1d6 when you reach 5th level
     (2d6), 11th level (3d6), and 17th level (4d6).
+
     """
 
     name = "Infestation"
@@ -388,6 +408,7 @@ class InflictWounds(Spell):
     **At Higher Levels:** When you cast this spell using a
     spell slot of 2nd level or higher, the damage increases by 1d10 for each slot
     level above 1st.
+
     """
 
     name = "Inflict Wounds"
@@ -416,6 +437,7 @@ class InsectPlague(Spell):
 
     **At Higher Levels:** When you cast this spell using a spell slot of 6th
     level or higher, the damage increases by 1d10 for each slot level above 5th.
+
     """
 
     name = "Insect Plague"
@@ -434,15 +456,17 @@ class InvestitureOfFlame(Spell):
     """Flames race across your body, shedding bright light in a 30-foot radius and dim
     light for an additional 30 feet for the spell's duration. The flames don't harm
     you. Until the spell ends, you gain the following benefits:
+
     - You are immune to
-    fire damage and have resistance to cold damage.
+      fire damage and have resistance to cold damage.
     - Any creature that moves within
-    5 feet of you for the first time on a turn or ends its turn there takes 1d10
-    fire damage.
+      5 feet of you for the first time on a turn or ends its turn there takes 1d10
+      fire damage.
     - You can use your action to create a line of fire 15 feet long and
-    5 feet wide extending from you in a direc- tion you choose. Each creature in
-    the line must make a Dexterity saving throw. A creature takes 4d8 fire damage on
-    a failed save, or half as much damage on a successful one.
+      5 feet wide extending from you in a direction you choose. Each creature in
+      the line must make a Dexterity saving throw. A creature takes 4d8 fire damage on
+      a failed save, or half as much damage on a successful one.
+
     """
 
     name = "Investiture Of Flame"
@@ -524,17 +548,19 @@ class InvestitureOfStone(Spell):
 class InvestitureOfWind(Spell):
     """Until the spell ends, wind whirls around you, and you gain the following
     benefits:
-    - Ranged weapon attacks made against you have disad- vantage on the
-    attack roll.
+
+    - Ranged weapon attacks made against you have disadvantage on the
+      attack roll.
     - You gain a flying speed of 60 feet. If you are still flying when
-    the spell ends, you fall, unless you can some- how prevent it.
+      the spell ends, you fall, unless you can somehow prevent it.
     - You can use
-    your action to create a 15-foot cube of swirling wind centered on a point you
-    can see within 60 feet of you. Each creature in that area must make a
-    Constitution saving throw. A creature takes 2d10 bludgeoning damage on a failed
-    save, or half as much damage on a successful one. If a Large or smaller creature
-    fails the save, that creature is also pushed up to 10 feet away from the center
-    of the cube.
+      your action to create a 15-foot cube of swirling wind centered on a point you
+      can see within 60 feet of you. Each creature in that area must make a
+      Constitution saving throw. A creature takes 2d10 bludgeoning damage on a failed
+      save, or half as much damage on a successful one. If a Large or smaller creature
+      fails the save, that creature is also pushed up to 10 feet away from the center
+      of the cube.
+
     """
 
     name = "Investiture Of Wind"
@@ -554,9 +580,10 @@ class Invisibility(Spell):
     is wearing or carrying is invisible as long as it is on the target's person.
     The spell ends for a target that attacks or casts a spell.
 
-    At Higher Levels:
+    **At Higher Levels:**
     When you cast this spell using a spell slot of 3rd level or higher, you can
     target one additional creature for each slot level above 2nd.
+
     """
 
     name = "Invisibility"

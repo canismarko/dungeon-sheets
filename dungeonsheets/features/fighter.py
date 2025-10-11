@@ -154,7 +154,7 @@ class SecondWind(Feature):
     """You have a limited well of stamina that you can draw on to protect yourself
     from harm. On your turn, you can use a bonus action to regain hit points
     equal to 1d10 + your fighter level. Once you use this feature, you must
-    finish a short or long rest before you can use it again
+    finish a short or long rest before you can use it again.
 
     """
 
@@ -282,7 +282,7 @@ class AdditionalFightingStyle(FeatureSelector):
 
 class SuperiorCritical(Feature):
     """Starting at 15th level, your weapon attacks score a critical hit on a roll
-    of 18-20 .
+    of 18-20.
     """
 
     name = "Superior Critical"
@@ -393,9 +393,14 @@ class Maneuver(Feature):
 
 
 class BaitAndSwitch(Maneuver):
-    """When you're within 5 feet of a creature on your turn, you can expend one superiority die and switch places with that creature, provided you spend at least 5 feet of movement and the creature is willing and isn't incapacitated. This movement doesn't provoke opportunity attacks.
+    """When you're within 5 feet of a creature on your turn, you can expend
+    one superiority die and switch places with that creature, provided you
+    spend at least 5 feet of movement and the creature is willing and isn't
+    incapacitated. This movement doesn't provoke opportunity attacks.
 
-    Roll the superiority die. Until the start of your next turn, you or the other creature (your choice) gains a bonus to AC equal to the number rolled.
+    Roll the superiority die. Until the start of your next turn, you or the
+    other creature (your choice) gains a bonus to AC equal to the number
+    rolled.
 
     """
 
@@ -522,7 +527,7 @@ class PrecisionAttack(Maneuver):
     """When you make a weapon attack roll against a creature, you can expend one
     superiority die to add it to the roll. You can use this maneuver before or
     after making the attack roll, but before any effects of the attack are
-    applied
+    applied.
 
     """
 
@@ -686,7 +691,7 @@ class RallyingCry(Feature):
     allies to fight on past their injuries. When you use your Second Wind
     feature, you can choose up to three creatures within 60 feet of you that
     are allied with you. Each one regains hit points equal to your fighter
-    level, provided that the creature can see or hear you
+    level, provided that the creature can see or hear you.
 
     """
 
@@ -705,7 +710,7 @@ class RoyalEnvoy(Feature):
 
     Your proficiency bonus is doubled for any ability check you make that uses
     Persuasion. You receive this benefit regardless of the skill proficiency
-    you gain from this feature
+    you gain from this feature.
 
     """
 
@@ -739,7 +744,7 @@ class Bulwark(Feature):
     Intelligence, a Wisdom, or a Charisma saving throw and you aren't
     incapacitated, you can choose one ally within 60 feet of you that also
     failed its saving throw against the same effect. If that creature can see
-    or hear you, it can reroll its saving throw and must use the new roll
+    or hear you, it can reroll its saving throw and must use the new roll.
 
     """
 
@@ -779,7 +784,7 @@ class ArcaneShot(Feature):
     also improves when you become an 18th-level fighter
 
     If an option requires a saving throw, your Arcane Shot save DC equals 8 +
-    your proficiency bonus + your Intelligence modifier
+    your proficiency bonus + your Intelligence modifier.
 
     """
 
@@ -804,7 +809,7 @@ class CurvingShot(Feature):
     """At 7th level, you learn how to direct an errant arrow toward a new
     target. When you make an attack roll with a magic arrow and miss, you can
     use a bonus action to reroll the attack roll against a different target
-    within 60 feet of the original target
+    within 60 feet of the original target.
 
     """
 
@@ -861,7 +866,7 @@ class BurstingArrow(Feature):
     evocation. The energy detonates after your attack. Immediately after the
     arrow hits the creature, the target and all other creatures within 10
     feet of it take 2d6 force damage each. The force damage increases to 4d6
-    when you reach 18th level in this class
+    when you reach 18th level in this class.
 
     """
 
@@ -884,15 +889,15 @@ class EnfeeblingArrow(Feature):
 
 class GraspingArrow(Feature):
     """When this arrow strikes its target, conjuration magic creates grasping,
-    poisonous brams bles, which wrap around the target. The creature hit by the
+    poisonous brambles, which wrap around the target. The creature hit by the
     arrow takes an extra 2(16 poison damage, its speed is reduced by 10 feet,
-    and it takes 2d6 slashing dam- age the first time on each turn it moves 1
+    and it takes 2d6 slashing damage the first time on each turn it moves 1
     foot or more without teleporting. The target or any creature that can reach
     it can use its action to remove the brambles with a successful Strength
     (Athletics) check against your Arcane Shot save DC. Otherwise, the
     brambles last for 1 minute or until you use this option again. The poison
     damage and slashing damage both increase to 4d6 when you reach 18th level
-    in this class
+    in this class.
 
     """
 
@@ -943,7 +948,7 @@ class ShadowArrow(Feature):
     psychic damage, and it must succeed on a Wisdom saving throw or be unable
     to see anything farther than 5 feet away until the start of your next
     turn. The psychic damage increases to 4d6 when you reach 18th level in this
-    class
+    class.
 
     """
 
@@ -994,7 +999,7 @@ class UnwaveringMark(Feature):
 
     Regardless of the number of creatures you mark, you can make this special
     attack a number of times equal to your Strength modifier (minimum of once),
-    and you regain all expended uses of it when you finish a long rest
+    and you regain all expended uses of it when you finish a long rest.
 
     """
 
@@ -1017,7 +1022,7 @@ class WardingManeuver(Feature):
 
     You can use this feature a number of times equal to your Constitution
     modifier (minimum of once), and you regain all expended uses of it when you
-    finish a long rest
+    finish a long rest.
 
     """
 
@@ -1048,7 +1053,7 @@ class FerociousCharger(Feature):
     attacking a creature and you hit it with the attack, that target must
     succeed on a Strength saving throw (DC 8 + your proficiency bonus + your
     Strength modifier) or be knocked prone. You can use this feature only once
-    on each of your turns
+    on each of your turns.
 
     """
 
@@ -1061,7 +1066,7 @@ class VigilantDefender(Feature):
     vigilance. In combat, you get a special reaction that you can take once on
     every creature's turn, except your turn. You can use this special reaction
     only to make an opportunity attack, and you can't use it on the same turn
-    that you take your normal reaction
+    that you take your normal reaction.
 
     """
 
@@ -1098,7 +1103,7 @@ class FightingSpirit(Feature):
 
 
 class ElegantCourtier(Feature):
-    """Starting at 7th level, your discipline and attention to de- tail allow you
+    """Starting at 7th level, your discipline and attention to detail allow you
     to excel in social situations. Whenever you make a Charisma (Persuasion)
     check, you gain a bonus to the check equal to your Wisdom modifier. Your
     self-control also causes you to gain proficiency in Wisdom saving
@@ -1127,7 +1132,7 @@ class RapidStrike(Feature):
     you take the Attack action on your turn and have advantage on an attack
     roll against one of the targets, you can forgo the advantage for that roll
     to make an additional weapon attack against that target, as part of the
-    same action. You can do so no more than once per turn
+    same action. You can do so no more than once per turn.
 
     """
 

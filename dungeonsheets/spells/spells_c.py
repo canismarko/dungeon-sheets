@@ -137,6 +137,7 @@ class CauseFear(Spell):
     spell using a spell slot of 2nd level or higher, you can target one additional
     creature for each slot level above 1st. The creatures must be within 30 feet of
     each other when you target them.
+
     """
 
     name = "Cause Fear"
@@ -183,6 +184,7 @@ class Ceremony(Spell):
       For the next 7 days, each target gains a +2 bonus to AC while they are within 30
       feet of each other. A creature can benefit from this rite again only if
       widowed.
+
     """
 
     name = "Ceremony"
@@ -190,7 +192,7 @@ class Ceremony(Spell):
     casting_time = "1 hour"
     casting_range = "Touch"
     components = ("V", "S", "M")
-    materials = "25 gp worth of powdered silver,which the spell consumes"
+    materials = "25 gp worth of powdered silver, which the spell consumes"
     duration = "Instantaneous"
     ritual = True
     magic_school = "Abjuration"
@@ -207,10 +209,11 @@ class ChainLightning(Spell):
     A target must make a Dexterity saving throw. The target takes 10d8
     lightning damage on a failed save, or half as much on a successful one.
 
-    At
-    Higher Levels: When you cast this spell using a spell slot of 7th level or
+    **At
+    Higher Levels:** When you cast this spell using a spell slot of 7th level or
     higher, one additional bolt leaps from the first target to another target for
     each slot level above 6th.
+
     """
 
     name = "Chain Lightning"
@@ -230,22 +233,22 @@ class ChainLightning(Spell):
 class ChaosBolt(Spell):
     """You hurl an undulating, warbling mass of chaotic energy at one
     creature in range. Make a ranged spell attack against the
-    target. On a hit, the target takes ``2d8+1d6`` damage. Choose one
+    target. On a hit, the target takes 2d8 \+ 1d6 damage. Choose one
     of the d8s. The number rolled on that die determines the attacks
     damage type, as shown below.
 
-    == ===========
-    d8 Damage Type
-    == ===========
-    1  Acid
-    2  Cold
-    3  Fire
-    4  Force
-    5  Lightning
-    6  Poison
-    7  Psychic
-    8  Thunder
-    == ===========
+    ====   =============
+    d8     Damage Type
+    ====   =============
+    1      Acid
+    2      Cold
+    3      Fire
+    4      Force
+    5      Lightning
+    6      Poison
+    7      Psychic
+    8      Thunder
+    ====   =============
 
     If you roll the same number on both d8s, the chaotic energy leaps
     from the target to a different creature of your choice within 30
@@ -305,7 +308,7 @@ class CharmPerson(Spell):
     make a Wisdom saving throw, and does so with advantage if you or
     your companions are fighting it. If it fails the saving throw, it
     is charmed by you until the spell ends or until you or your
-    companions do anything harmful to it.The charmed creature regards
+    companions do anything harmful to it. The charmed creature regards
     you as a friendly acquaintance. When the spell ends, the creature
     knows it was charmed by you.
 
@@ -340,6 +343,7 @@ class ChillTouch(Spell):
     **At Higher Levels:** This spell's
     damage increases by 1d8 when you reach 5th level (2d8), 11th level (3d8), and
     17th level (4d8).
+
     """
 
     name = "Chill Touch"
@@ -360,8 +364,8 @@ class ChromaticOrb(Spell):
     type of orb you create, and then make a ranged spell attack against the target.
     If the attack hits, the creature takes 3d8 damage of the type you chose.
 
-    At
-    Higher Levels: When you cast this spell using a spell slot of 2nd level or
+    **At
+    Higher Levels:** When you cast this spell using a spell slot of 2nd level or
     higher, the damage increases by 1d8 for each slot level above 1st.
     """
 
@@ -383,9 +387,10 @@ class CircleOfDeath(Spell):
     A target takes 8d6 necrotic damage on a failed save, or half as much damage on a
     successful one.
 
-    **At Higher Levels:** W hen you cast this spell using a spell slot
+    **At Higher Levels:** When you cast this spell using a spell slot
     of 7th level or higher, the damage increases by 2d6 for each slot level above
     6th.
+
     """
 
     name = "Circle Of Death"
@@ -407,10 +412,10 @@ class CircleOfPower(Spell):
     you. For the duration, each friendly creature in the area (including you) has
     advantage on saving throws against spells and other magical effects.
 
-
     Additionally, when an affected creature succeeds on a saving throw made against
     a spell or magical effect that allows it to make a saving throw to take only
     half damage, it instead takes no damage if it succeeds on the saving throws.
+
     """
 
     name = "Circle Of Power"
@@ -435,8 +440,9 @@ class Clairvoyance(Spell):
     When you cast the spell, you choose seeing or
     hearing. You can use the chosen sense through the sensor as if you were in its
     space. As your action, you can switch between seeing and hearing. A creature
-    that can see the sensor (such as a creature benefitting from see invisibility or
+    that can see the sensor (such as a creature benefiting from see invisibility or
     truesight) sees a luminous, intangible orb about the size of your fist.
+
     """
 
     name = "Clairvoyance"
@@ -462,14 +468,14 @@ class Clone(Spell):
     version of the same creature. It remains inert and endures indefinitely, as long
     as its vessel remains undisturbed.
 
-
-     At any time after the clone matures, if
+    At any time after the clone matures, if
     the original creature dies, its soul transfers to the clone, provided that the
     soul is free and willing to return. The clone is physically identical to the
     original and has the same personality, memories, and abilities, but none of the
     original's equipment. The original creature's physical remains, if they still
-    exist, becom e inert and can't thereafter be restored to life, since the
+    exist, become inert and can't thereafter be restored to life, since the
     creature's soul is elsewhere.
+
     """
 
     name = "Clone"
@@ -494,9 +500,9 @@ class CloudOfDaggers(Spell):
     on a point you choose within range. A creature takes 4d4 slashing damage when it
     enters the spell's area for the first time on a turn or starts its turn there.
 
-
     **At Higher Levels:** When you cast this spell using a spell slot of 3rd level or
     higher, the damage increases by 2d4 for each slot level above 2nd.
+
     """
 
     name = "Cloud Of Daggers"
@@ -514,12 +520,12 @@ class CloudOfDaggers(Spell):
 class Cloudkill(Spell):
     """You create a 20-foot-radius sphere of poisonous, yellow-green fog centered on a
     point you choose within range. The fog spreads around corners. It lasts for the
-    duration or until strong wind dispereses the fog, ending the spell. Its area is
+    duration or until strong wind disperses the fog, ending the spell. Its area is
     heavily obscured.
 
     When a creature enters the spell's area for the first time
     on a turn or starts its turn there, that creature must make a Constitution
-    saving throw. The creature takes 5d8 poison damageon a failed save, or half as
+    saving throw. The creature takes 5d8 poison damage on a failed save, or half as
     much damage on a successful one. Creatures are affected even if they hold their
     breath or don't need to breathe.
 
@@ -531,6 +537,7 @@ class Cloudkill(Spell):
     **At Higher Levels:** When you cast this spell using a spell
     slot of 6th level or higher, the damage increases by 1d8 for each slot level
     above 5th.
+
     """
 
     name = "Cloudkill"
@@ -562,6 +569,7 @@ class ColorSpray(Spell):
     **At Higher Levels:** When you
     cast this spell using a spell slot of 2nd level or higher, roll an additional
     2d10 for each slot level above 1st.
+
     """
 
     name = "Color Spray"
@@ -638,6 +646,7 @@ class Commune(Spell):
     the spell two or more times before finishing your next long rest, there is a
     cumulative 25 percent chance for each casting after the first that you get no
     answer. The DM makes this roll in secret.
+
     """
 
     name = "Commune"
@@ -701,6 +710,7 @@ class CompelledDuel(Spell):
     other creature, if you cast a spell that targets a hostile creature other than
     the target, if a creature friendly to you damages the target or casts a harmful
     spell on it, or if you end your turn more than 30 feet away from the target.
+
     """
 
     name = "Compelled Duel"
@@ -725,6 +735,7 @@ class ComprehendLanguages(Spell):
 
     This spell doesn't decode secret messages in a text or glyph, such
     as an arcane sigil, that isn't part of a written language.
+
     """
 
     name = "Comprehend Languages"
@@ -753,6 +764,7 @@ class Compulsion(Spell):
     A target isn't compelled
     to move into an obviously deadly hazard, such as a fire pit, but it will
     provoke opportunity attacks to move in the designated direction.
+
     """
 
     name = "Compulsion"
@@ -779,6 +791,7 @@ class ConeOfCold(Spell):
     **At Higher Levels:** When you
     cast this spell using a spell slot of 6th level or higher, the damage increases
     by 1d8 for each slot level above 5th.
+
     """
 
     name = "Cone Of Cold"
@@ -804,28 +817,31 @@ class Confusion(Spell):
     start of each of its turns to determine its behavior for that
     turn.
 
-    d10 behavior:
+    ========   ==================================================
+    d10        Behavior
+    ========   ==================================================
+    1          The creature uses all its movement to move in a
+               random direction. To determine the direction, roll
+               a d8 and assign a direction to each die face. The
+               creature doesn't take an action this turn.
 
-    **1.** The creature uses all its movement to move in a random
-    direction. To determine the direction, roll a d8 and assign a
-    direction to each die face. The creature doesn't take an action
-    this turn.
+    2-6        The creature doesn't move or take actions this
+               turn.
 
-    **2-6.** The creature doesn't move or take actions this turn.
+    7-8        The creature uses its action to make a melee
+               attack against a randomly determined creature
+               within its reach. If there is no creature within
+               its reach, the creature does nothing this turn.
 
-    **7-8.** The creature uses its action to make a melee attack
-    against a randomly determined creature within its reach. If there
-    is no creature within its reach, the creature does nothing this
-    turn.
-
-    **9-10.** The creature can act and move normally.
+    9-10       The creature can act and move normally.
+    ========   ==================================================
 
     At the end of its turns, an affected target can make a Wisdom
     saving throw. It it succeeds, this effect ends for that target.
 
     **At Higher Levels:** When you cast this spell using a spell slot
     of 5th level or higher, the radius of the sphere increases by 5
-    feet for each slot level above 4th
+    feet for each slot level above 4th.
 
     """
 
@@ -854,7 +870,6 @@ class ConjureAnimals(Spell):
 
     Each beast is also considered fey, and it disappears when it drops
     to 0 hit points or when the spell ends.
-
 
     The summoned creatures are friendly to you and your
     companions. Roll initiative for the summoned creatures as a group,
@@ -893,6 +908,7 @@ class ConjureBarrage(Spell):
     creature takes 3d8 damage on a failed save, or half as much damage on a
     successful one. The damage type is the same as that of the weapon or ammunition
     used as a component.
+
     """
 
     name = "Conjure Barrage"
@@ -920,9 +936,9 @@ class ConjureCelestial(Spell):
     creatures but otherwise takes no actions
     The DM has the celestial's statistics.
 
-
     **At Higher Levels:** When you cast this spell using a 9th-level spell slot, you
     summon a celestial of challenge rating 5 or lower.
+
     """
 
     name = "Conjure Celestial"
@@ -954,13 +970,13 @@ class ConjureElemental(Spell):
 
     If your
     concentration is broken, the elemental doesn't disappear. Instead, you lose
-    control of the elemental, it becom es hostile toward you and your companions,
+    control of the elemental, it becomes hostile toward you and your companions,
     and it might attack. An uncontrolled elemental can't be dismissed by you, and it
     disappears 1 hour after you summoned it. The DM has the elemental's statistics.
 
-
     **At Higher Levels:** When you cast this spell using a spell slot of 6th level or
     higher, the challenge rating increases by 1 for each slot level above 5th.
+
     """
 
     name = "Conjure Elemental"
@@ -999,9 +1015,10 @@ class ConjureFey(Spell):
     after you summoned it.
     The DM has the fey creature's statistics.
 
-    At Higher
-    Levels: When you cast this spell using a spell slot of 7th level or higher, the
-    challenge rating increases by 1 for each slot level above 6th
+    **At Higher
+    Levels:** When you cast this spell using a spell slot of 7th level or higher, the
+    challenge rating increases by 1 for each slot level above 6th.
+
     """
 
     name = "Conjure Fey"
@@ -1019,14 +1036,12 @@ class ConjureFey(Spell):
 class ConjureMinorElementals(Spell):
     """You summon elementals that appear in unoccupied spaces that you can see within
     range.
-     You choose one the following options for what appears:
-    -One elemental
-    of challenge rating 2 or lower
-    -Two elementals of challenge rating 1 or lower
+    You choose one the following options for what appears:
 
-    -Four elementals of challenge rating 1/2 or lower
-    -Eight elementals of
-    challenge rating 1/4 or lower.
+    - One elemental of challenge rating 2 or lower
+    - Two elementals of challenge rating 1 or lower
+    - Four elementals of challenge rating 1/2 or lower
+    - Eight elementals of challenge rating 1/4 or lower.
 
     An elemental summoned by this spell disappears
     when it drops to 0 hit points or when the spell ends.
@@ -1043,6 +1058,7 @@ class ConjureMinorElementals(Spell):
     you cast this spell using certain higher-level spell slots, you choose one of
     the summoning options above, and more creatures appear: twice as many with a
     6th-level slot and three times as many with an 8th-level slot.
+
     """
 
     name = "Conjure Minor Elementals"
@@ -1066,6 +1082,7 @@ class ConjureVolley(Spell):
     that point must make a Dexterity saving throw. A creature takes 8d8 damage on a
     failed save, or half as much damage on a successful one. The damage type is the
     same as that of the ammunition or weapon.
+
     """
 
     name = "Conjure Volley"
@@ -1085,13 +1102,11 @@ class ConjureWoodlandBeings(Spell):
     within range.
 
     Choose one of the following options for what appears:
-     -  One
-    fey creature of challenge rating 2 or lower
-     -  Two fey creatures of challenge
-    rating 1 or lower
-     -  Four fey creatures of challenge rating 1/2 or lower
-     -
-    Eight fey creatures of challenge rating 1/4 or lower
+
+    - One fey creature of challenge rating 2 or lower
+    - Two fey creatures of challenge rating 1 or lower
+    - Four fey creatures of challenge rating 1/2 or lower
+    - Eight fey creatures of challenge rating 1/4 or lower
 
     A summoned creature
     disappears when it drops to 0 hit points or when the spell ends.
@@ -1104,12 +1119,13 @@ class ConjureWoodlandBeings(Spell):
     otherwise take no actions.
     The DM has the creatures' statistics.
 
-    At Higher
-    Levels: When you cast this spell using certain higher-level spell slots, you
+    **At Higher
+    Levels:** When you cast this spell using certain higher-level spell slots, you
     choose one of the summoning options above, and more creatures appear:
     twice as
     many with a 6th-level slot
     three times as many with an 8th-level slot.
+
     """
 
     name = "Conjure Woodland Beings"
@@ -1140,6 +1156,7 @@ class ContactOtherPlane(Spell):
     no, maybe, never, irrelevant, or unclear (if the entity doesn't know
     the answer to the question). If a one-word answer would be misleading, the DM
     might instead offer a short phrase as an answer.
+
     """
 
     name = "Contact Other Plane"
@@ -1171,27 +1188,27 @@ class Contagion(Spell):
     effect that removes a disease or otherwise ameliorates a disease's
     effects apply to it.
 
-    Blinding Sickness
+    Blinding Sickness.
       Pain grips the creature's mind, and its eyes turn milky
       white. The creature has disadvantage on Wisdom checks and Wisdom
       saving throws and is blinded.
-    Filth Fever
+    Filth Fever.
       A raging fever sweeps through the creature's body. The creature
       has disadvantage on Strength checks, Strength saving throws, and
       attack rolls that use Strength.
-    Flesh Rot
+    Flesh Rot.
       The creature's flesh decays. The creature has disadvantage on
       Charisma checks and vulnerability to all damage.
-    Mindfire
+    Mindfire.
       The creature's mind becomes feverish. The creature has
       disadvantage on Intelligence checks and Intelligence saving
       throws, and the creature behaves as if under the effects of the
       confusion spell during combat.
-    Seizure
+    Seizure.
       The creature is overcome with shaking. The creature has
       disadvantage on Dexterity checks, Dexterity saving throws, and
       attack rolls that use Dexterity.
-    Slimy Doom
+    Slimy Doom.
       The creature begins to bleed uncontrollably. The creature has
       disadvantage on Constitution checks and Constitution saving
       throws. In addition, whenever the creature takes damage, it is
@@ -1307,7 +1324,7 @@ class ControlWater(Spell):
     spell. As an action on your turn, you can repeat the same effect
     or choose a different one.
 
-    Flood
+    Flood.
       You cause the water level of all standing water in the area to
       rise by as much as 20 feet. If the area includes a shore, the
       flooding water spills over onto dry land. If you choose an area
@@ -1322,14 +1339,14 @@ class ControlWater(Spell):
       or you choose a different effect. If this effect produced a
       wave, the wave repeats on the start of your next turn while the
       flood effect lasts.
-    Part Water
+    Part Water.
       You cause water in the area to move apart and create a
       trench. The trench extends across the spell's area, and the
       separated water forms a wall to either side.  The trench remains
       until the spell ends or you choose a different effect. The water
       then slowly fills in the trench over the course of the next
       round until the normal water level is restored.
-    Redirect Flow
+    Redirect Flow.
       You cause flowing water in the area to move in a direction you
       choose, even if the water has to flow over obstacles, up walls,
       or in other unlikely directions. The water in the area moves as
@@ -1337,7 +1354,7 @@ class ControlWater(Spell):
       resumes its flow based on the terrain conditions. The water
       continues to move in the direction you chose until the spell
       ends or you choose a different effect.
-    Whirlpool
+    Whirlpool.
       This effect requires a body of water at least 50 feet square and
       25 feet deep. You cause a whirlpool to form in the center of the
       area. The whirlpool forms a vortex that is 5 feet wide at the
@@ -1393,27 +1410,38 @@ class ControlWeather(Spell):
     on the following tables and change its stage by one, up or
     down. When changing the wind, you can change its direction.
 
-    **Precipitation**
-    Stage 1 – Clear,
-    Stage 2 – Light clouds,
-    Stage 3 – Overcast or ground fog,
-    Stage 4 – Rain, hail or snow,
-    Stage 5 – Torrential rain, driving hail or blizzard
+    ===========    ===========================================
+            Precipitation
+    ==========================================================
+    Stage 1        Clear
+    Stage 2        Light clouds
+    Stage 3        Overcast or ground fog
+    Stage 4        Rain, hail or snow
+    Stage 5        Torrential rain, driving hail or blizzard
+    ===========    ===========================================
 
-    **Temperature**
-    Stage 1 – Unbearable heat,
-    Stage 2 – Hot,
-    Stage 3 – Warm,
-    Stage 4 – Cool,
-    Stage 5 – Cold,
-    Stage 6 – Arctic cold
 
-    **Wind**
-    Stage 1 – Calm,
-    Stage 2 – Moderate wind,
-    Stage 3 – Strong wind,
-    Stage 4 – Gale,
-    Stage 5 – Storm
+    ===========    ===========================================
+            Temperature
+    ==========================================================
+    Stage 1        Unbearable heat
+    Stage 2        Hot
+    Stage 3        Warm
+    Stage 4        Cool
+    Stage 5        Cold
+    Stage 6        Arctic cold
+    ===========    ===========================================
+
+
+    ===========    ===========================================
+              Wind
+    ==========================================================
+    Stage 1        Calm
+    Stage 2        Moderate wind
+    Stage 3        Strong wind
+    Stage 4        Gale
+    Stage 5        Storm
+    ===========    ===========================================
 
     """
 
@@ -1437,27 +1465,30 @@ class ControlWinds(Spell):
     effect. You can also use your action to temporarily halt the
     effect or to restart one you've halted.
 
-    Gusts. A wind picks up within the cube, continually blowing in a
-    horizontal direction that you choose. You choose the intensity of
-    the wind: calm, moderate, or strong. If the wind is moderate or
-    strong, ranged weapon attacks that pass through it or that are
-    made against targets within the cube have disadvantage on their
-    attack rolls. If the wind is strong, any creature moving against
-    the wind must spend 1 extra foot of movement for each foot moved.
+    Gusts.
+      A wind picks up within the cube, continually blowing in a
+      horizontal direction that you choose. You choose the intensity of
+      the wind: calm, moderate, or strong. If the wind is moderate or
+      strong, ranged weapon attacks that pass through it or that are
+      made against targets within the cube have disadvantage on their
+      attack rolls. If the wind is strong, any creature moving against
+      the wind must spend 1 extra foot of movement for each foot moved.
 
-    Downdraft. You cause a sustained blast of strong wind to blow
-    downward from the top of the cube. Ranged weapon attacks that pass
-    through the cube or that are made against targets within it have
-    disadvantage on their attack rolls. A creature must make a
-    Strength saving throw if it flies into the cube for the first time
-    on a turn or starts its turn there flying. On a failed save, the
-    creature is knocked prone.
+    Downdraft.
+      You cause a sustained blast of strong wind to blow
+      downward from the top of the cube. Ranged weapon attacks that pass
+      through the cube or that are made against targets within it have
+      disadvantage on their attack rolls. A creature must make a
+      Strength saving throw if it flies into the cube for the first time
+      on a turn or starts its turn there flying. On a failed save, the
+      creature is knocked prone.
 
-    Updraft. You cause a sustained updraft within the cube, rising
-    upward from the cube's bottom edge. Creatures that end a fall
-    within the cube take only half damage from the fall. When a
-    creature in the cube makes a vertical jump, the creature can jump
-    up to 10 feet higher than normal.
+    Updraft.
+      You cause a sustained updraft within the cube, rising
+      upward from the cube's bottom edge. Creatures that end a fall
+      within the cube take only half damage from the fall. When a
+      creature in the cube makes a vertical jump, the creature can jump
+      up to 10 feet higher than normal.
 
     """
 
@@ -1486,10 +1517,10 @@ class CordonOfArrows(Spell):
     When you cast this
     spell, you can designate any creatures you choose, and the spell ignores them.
 
-
     **At Higher Levels:** When you cast this spell using a spell slot of 3rd level or
     higher, the amount of ammunition that can be affected increases by two for each
     slot level above 2nd.
+
     """
 
     name = "Cordon Of Arrows"
@@ -1518,6 +1549,7 @@ class Counterspell(Spell):
     you cast this spell using a spell slot of 4th level or higher, the interrupted
     spell has no effect if its level is less than or equal to the level of the spell
     slot you used.
+
     """
 
     name = "Counterspell"
@@ -1563,6 +1595,7 @@ class CreateFoodAndWater(Spell):
     containers within range, enough to sustain up to fifteen humanoids or five
     steeds for 24 hours. The food is bland but nourishing, and spoils if uneaten
     after 24 hours. The water is clean and doesn't go bad.
+
     """
 
     name = "Create Food And Water"
@@ -1594,6 +1627,7 @@ class CreateHomunculus(Spell):
     removed by any means before then, except by the homunculus‘s death. You can have
     only one homunculus at a time. If you cast this spell while your homunculus
     lives, the spell fails.
+
     """
 
     name = "Create Homunculus"
@@ -1614,13 +1648,13 @@ class CreateHomunculus(Spell):
 class CreateOrDestroyWater(Spell):
     """You either create or destroy water.
 
-    Create Water
+    Create Water.
       You create up to 10 gallons of clean water within range in an
       open container. Alternatively, the water falls as rain in a
       30-foot cube within range, extinguishing exposed flames in the
       area.
 
-    Destroy Water
+    Destroy Water.
       You destroy up to 10 gallons of water in an open container
       within range. Alternatively, you destroy fog in a 30-foot cube
       within range.
@@ -1704,20 +1738,22 @@ class Creation(Spell):
     duration depends on the object's material. If the object is composed of multiple
     materials, use the shortest duration.
 
-    Material - Duration
-    Vegetable matter - 1 day
-    Stone/crystal - 12 hours
-    Precious metals - 1 hour
-    Gems - 10 minutes
-
-    Adamantine/Mithral - 1 minute
+    ======================    =============
+    Material                  Duration
+    ======================    =============
+    Vegetable matter          1 day
+    Stone/crystal             12 hours
+    Precious metals           1 hour
+    Gems                      10 minutes
+    Adamantine/Mithral        1 minute
+    ======================    =============
 
     Using any material created by this spell as another spell's
     material component causes that spell to fail.
 
     **At Higher Levels:** When you cast this spell using a spell slot of
-     6th level or higher, the cube increases by 5 feet for each slot
-     level above 5th.
+    6th level or higher, the cube increases by 5 feet for each slot
+    level above 5th.
 
     """
 
@@ -1749,6 +1785,7 @@ class CrownOfMadness(Spell):
     you must use your action to maintain control over the target, or the spell
     ends. Also, the target can make a Wisdom saving throw at the end of each of its
     turns. On a success, the spell ends.
+
     """
 
     name = "Crown Of Madness"
@@ -1818,9 +1855,9 @@ class CureWounds(Spell):
     """A creature you touch regains a number of hit points equal to 1d8 + your
     spellcasting ability modifier. This spell has no effect on undead or constructs.
 
-
     **At Higher Levels:** When you cast this spell using a spell slot of 2nd level or
     higher, the healing increases by 1d8 for each slot level above 1st.
+
     """
 
     name = "Cure Wounds"

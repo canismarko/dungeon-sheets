@@ -3,10 +3,11 @@ from dungeonsheets.features.features import Feature
 
 
 class _SpecialistSpells(Feature):
-    """Starting at 3rd level, you always have certain spells pre­pared after
+    """Starting at 3rd level, you always have certain spells prepared after
     you reach particular levels in this class, as shown in the Specialization
     Spells table. These spells count as artificer spells for you, but they
     don't count against the number of artificer spells you prepare.
+
     """
 
     _name = "Select One"
@@ -37,7 +38,9 @@ class ArtificerSpellcasting(Feature):
     look as if you're producing wonders using mundane items or out­landish
     inventions.
 
-    **Tools Required** You produce your artificer spell effects through your
+    **Tools Required**
+
+    You produce your artificer spell effects through your
     tools. You must have a spellcasting focus -- specifically thieves' tools or
     some kind of artisan's tool -- in hand when you cast any spell with this
     Spellcasting feature. You must be proficient with the tool to use it in
@@ -46,6 +49,7 @@ class ArtificerSpellcasting(Feature):
 
     After you gain the Infuse Item feature at 2nd level, you can also use any
     item bearing one of your infusions as a spellcasting focus.
+
     """
 
     name = "Spellcasting"
@@ -113,35 +117,38 @@ class InfuseItem(Feature):
     magical infusions. The magic items you create with this feature are
     effectively prototypes of permanent items.
 
-    Infusions known
-      When you gain this feature, pick four artificer infusions to
-      learn, choosing from the "Artificer Infusions" section at the
-      end of the class's description. You learn additional infusions
-      of your choice when you reach certain levels in this class, as
-      shown in the Infusions Known column of the Artificer
-      table. Whenever you gain a level in this class, you can re­place
-      one of the artificer infusions you learned with a new one.
-    Infusing an item
-      Whenever you finish a long rest, you can touch a non­magical
-      object and imbue it with one of your artificer in­fusions,
-      turning it into a magic item. An infusion works on only certain
-      kinds of objects, as specified in the infusion's description. If
-      the item requires attunement, you can attune yourself to it the
-      instant you infuse the item. If you decide to attune to the item
-      later, you must do so using the normal process for attunement
-      (see "Attunement" in chapter 7 of the Dungeon Master's Guide).
-      Your infusion remains in an item indefinitely, but when you die,
-      the infusion vanishes after a number of days have passed equal
-      to your Intelligence modifier (minimum of 1 day). The infusion
-      also vanishes if you give up your knowledge of the infusion for
-      another one. You can infuse more than one nonmagical object at
-      the end of a long rest; the maximum number of objects appears in
-      the Infused Items column of the Artificer table. You must touch
-      each of the objects, and each of your infusions can be in only
-      one object at a time. Moreover, no object can bear more than one
-      of your infusions at a time. If you try to exceed your maximum
-      number of in­fusions, the oldest infusion immediately ends, and
-      then the new infusion applies.
+    **Infusions known**
+
+    When you gain this feature, pick four artificer infusions to
+    learn, choosing from the "Artificer Infusions" section at the
+    end of the class's description. You learn additional infusions
+    of your choice when you reach certain levels in this class, as
+    shown in the Infusions Known column of the Artificer
+    table. Whenever you gain a level in this class, you can replace
+    one of the artificer infusions you learned with a new one.
+
+    **Infusing an item**
+
+    Whenever you finish a long rest, you can touch a non­magical
+    object and imbue it with one of your artificer in­fusions,
+    turning it into a magic item. An infusion works on only certain
+    kinds of objects, as specified in the infusion's description. If
+    the item requires attunement, you can attune yourself to it the
+    instant you infuse the item. If you decide to attune to the item
+    later, you must do so using the normal process for attunement
+    (see "Attunement" in chapter 7 of the Dungeon Master's Guide).
+    Your infusion remains in an item indefinitely, but when you die,
+    the infusion vanishes after a number of days have passed equal
+    to your Intelligence modifier (minimum of 1 day). The infusion
+    also vanishes if you give up your knowledge of the infusion for
+    another one. You can infuse more than one nonmagical object at
+    the end of a long rest; the maximum number of objects appears in
+    the Infused Items column of the Artificer table. You must touch
+    each of the objects, and each of your infusions can be in only
+    one object at a time. Moreover, no object can bear more than one
+    of your infusions at a time. If you try to exceed your maximum
+    number of in­fusions, the oldest infusion immediately ends, and
+    then the new infusion applies.
 
     """
 
@@ -256,7 +263,7 @@ class SpellStoringItem(Feature):
     modifier. If the spell requires concentration, the creature must
     concentrate. The spell stays in the object until it's been used a
     number of times equal to twice your Intelligence modifier (minimum
-    of twice) or until you use this fe ature again to store a spell in
+    of twice) or until you use this feature again to store a spell in
     an object.
     """
 
@@ -350,27 +357,32 @@ class ExperimentalElixir(Feature):
     create the elixir in an empty flask you touch, and you choose the elixir's
     effect from the Experimental Elixir table.
 
-    **Experimental Elixir**
+    ======= ==================================================================
+       Experimental Elixir
+    --------------------------------------------------------------------------
+    d6      Effect
+    ======= ==================================================================
+    1       **Healing.** The drinker regains a number of hit points equal to
+            2d4 + your Intelligence modifier.
 
-    roll d6
+    2       **Swiftness.** The drinker's walking speed increases by 10 feet
+            for 1 hour.
 
-    **1 -- Healing.** The drinker regains a number of hit points equal to 2d4 +
-    your Intelligence modifier.
+    3       **Resilience.** The drinker gains a +1 bonus to AC for 10
+            minutes.
 
-    **2 -- Swiftness.** The drinker's walking speed increases by 10 feet for 1
-    hour.
+    4       **Boldness.** The drinker can roll a d4 and add the num­ber
+            rolled to every attack roll and saving throw they make for the
+            next minute.
 
-    **3 -- Resilience.** The drinker gains a +1 bonus to AC for 10 minutes.
+    5       **Flight.** The drinker gains a flying speed of 10 feet for 10
+            minutes.
 
-    **4 -- Boldness.** The drinker can roll a d4 and add the num­ber rolled to
-    every attack roll and saving throw they make for the next minute.
+    6       **Transformation.** The drinker's body is transformed as if by
+            the alter self spell. The drinker determines the transformation
+            caused by the spell, the effects of which last for 10 minutes.
+    ======= ==================================================================
 
-    **5 -- Flight.** The drinker gains a flying speed of 10 feet for 10
-    minutes.
-
-    **6 -- Transformation.** The drinker's body is transformed as if by the
-    alter self spell. The drinker determines the transformation caused by the
-    spell, the effects of which last for 10 minutes.
     """
 
     name = "Experimental Elixir"
@@ -484,23 +496,31 @@ class EldritchCannon(Feature):
     part of the same bonus action, you can direct the cannon to walk or climb
     up to 15 feet to an unoccupied space, provided it has legs.
 
-    **Eldritch Cannons**
+    ================  ==========================================================
+          Eldritch Cannons
+    ----------------------------------------------------------------------------
+    Cannon             Activation
+    ================  ==========================================================
+    Flamethrower      The cannon exhales fire in an adjacent 15-foot cone that
+                      you designate. Each creature in that area must make a
+                      Dexterity saving throw against your spell save DC,
+                      taking 2d8 fire damage on a failed save or half as much
+                      damage on a successful one. The fire ignites any
+                      flammable objects in the area that aren't being worn or
+                      carried.
 
-    *Flamethrower*: The cannon exhales fire in an adjacent 15-foot cone that
-    you designate. Each creature in that area must make a Dexterity saving
-    throw against your spell save DC, taking 2d8 fire damage on a failed save
-    or half as much damage on a successful one. The fire ignites any flammable
-    objects in the area that aren't being worn or carried.
+    Force Ballista    Make a ranged spell attack, originating from the cannon,
+                      at one creature or object within 120 feet of it. On a
+                      hit, the target takes 2d8 force damage, and if the
+                      target is a creature, it is pushed up to 5 feet away
+                      from the cannon.
 
-    *Force Ballista*: Make a ranged spell attack, originating from the cannon,
-    at one creature or object within 120 feet of it. On a hit, the target takes
-    2d8 force damage, and if the target is a creature, it is pushed up to 5
-    feet away from the cannon.
+    Protector         The cannon emits a burst of positive energy that grants
+                      itself and each creature of your choice within 10 feet
+                      of it a number of temporary hit points equal to 1d8 +
+                      your Intelligence modifier (minimum of +1)
+    ================  ==========================================================
 
-    *Protector*: The cannon emits a burst of positive energy
-    that grants itself and each creature of your choice within 10 feet of it a
-    number of temporary hit points equal to 1d8 + your Intelligence modifier
-    (minimum of +1)
     """
 
     name = "Eldritch Cannon"

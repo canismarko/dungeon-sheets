@@ -8,6 +8,7 @@ class EarthTremor(Spell):
     that area is loose earth or stone, it becomes difficult terrain until cleared.
     At Higher Levels. When you cast this spell using a spell slot of 2nd level or
     higher, the damage increases by 1d6 for each slot level above 1st.
+
     """
 
     name = "Earth Tremor"
@@ -28,6 +29,7 @@ class Earthbind(Spell):
     its flying speed (if any) is reduced to 0 feet for the spell's duration. An
     airborne creature affected by this spell descends at 60 feet per round until it
     reaches the ground or the spell ends.
+
     """
 
     name = "Earthbind"
@@ -46,7 +48,7 @@ class Earthquake(Spell):
     """You create a seismic disturbance at a point on the ground that you can see
     within range.
     For the duration, an intense tremor rips through the ground in a
-    100-foot- radius circle centered on that point and shakes creatures and
+    100-foot-radius circle centered on that point and shakes creatures and
     structures in contact with the ground in that area.
 
     The ground in the area
@@ -57,7 +59,6 @@ class Earthquake(Spell):
     When you cast this spell and at the end of each turn
     you spend concentrating on it, each creature on the ground in the area must make
     a Dexterity saving throw. On a failed save, the creature is knocked prone.
-
 
     This spell can have additional effects depending on the terrain in the area, as
     determined by the DM.
@@ -85,6 +86,7 @@ class Earthquake(Spell):
       DC 20 Strength (Athletics) check as an action to escape. The DM can adjust the
       DC higher or lower, depending on the nature of the rubble. On a successful save,
       the creature takes half as much damage and doesn't fall prone or become buried.
+
     """
 
     name = "Earthquake"
@@ -103,7 +105,6 @@ class EldritchBlast(Spell):
     """A beam of crackling energy streaks toward a creature within range. Make a ranged
     spell attack against the target. On a hit, the target takes 1d10 force damage.
 
-
     **At Higher Levels:** The spell creates more than one beam when you reach higher
     levels:
     Two beams at 5th level
@@ -112,6 +113,7 @@ class EldritchBlast(Spell):
     level.
     You can direct the beams at the same target or at different ones. Make
     a separate attack roll for each beam.
+
     """
 
     name = "Eldritch Blast"
@@ -139,6 +141,7 @@ class ElementalBane(Spell):
     cast this spell using a spell slot of 5th level or higher, you can target one
     additional creature for each slot level above 4th. The creatures must be within
     30 feet of each other when you target them.
+
     """
 
     name = "Elemental Bane"
@@ -166,6 +169,7 @@ class ElementalWeapon(Spell):
     When you use a spell
     slot of 7th level or higher, the bonus increases to +3 and the extra damage
     increases to 3d4.
+
     """
 
     name = "Elemental Weapon"
@@ -191,6 +195,7 @@ class EnemiesAbound(Spell):
     creatures it can see within range of the attack, spell, or other ability it's
     using. If an enemy provokes an opportunity attack from the affected creature,
     the creature must make that attack if it is able to.
+
     """
 
     name = "Enemies Abound"
@@ -216,9 +221,9 @@ class Enervation(Spell):
     has total cover from you. Whenever the spell deals damage to a target, you
     regain hit points equal to half the amount of necrotic damage the target takes.
 
-
     **At Higher Levels:** When you cast this spell using a spell slot of 6th level or
     higher, the damage increases by 1d8 for each slot level above 5th.
+
     """
 
     name = "Enervation"
@@ -237,22 +242,26 @@ class EnhanceAbility(Spell):
     """You touch a creature and bestow upon it a magical enhancement. Choose one of the
     following effects: the target gains the effect until the spell ends.
 
-    - **Bear's Endurance.** The target has advantage on Constitution checks. It also gains 2d6
+    Bear's Endurance.
+      The target has advantage on Constitution checks. It also gains 2d6
       temporary hit points, which are lost when the spell ends.
-    - **Bull's Strength.** The
-      target has advantage on Strength checks, and his or her carrying capacity
+    Bull's Strength.
+      The target has advantage on Strength checks, and his or her carrying capacity
       doubles.
-    - **Cat's Grace.** The target has advantage on Dexterity checks. It also
+    Cat's Grace.
+      The target has advantage on Dexterity checks. It also
       doesn't take damage from falling 20 feet or less if it isn't incapacitated.
-    - **Eagle's Splendor.** The target has advantage on Charisma checks.
-    - **Fox's Cunning.**
-      The target thas advantage on Intelligence checks.
-    - **Owl's Wisdom.** The target has
-      advantage on Wisdom checks.
+    Eagle's Splendor.
+      The target has advantage on Charisma checks.
+    Fox's Cunning.
+      The target has advantage on Intelligence checks.
+    Owl's Wisdom.
+      The target has advantage on Wisdom checks.
 
     **At Higher Levels:** When you cast this spell using a
     spell slot of 3rd level or higher, you can target one additional creature for
     each slot level above 2nd.
+
     """
 
     name = "Enhance Ability"
@@ -277,25 +286,26 @@ class Enlargereduce(Spell):
     everything it is wearing and carrying changes size with it. Any item dropped by
     an affected creature returns to normal size at once.
 
-    Enlarge
-    The target's
-    size doubles in all dimensions, and its weight is multiplied by eight. This
-    growth increases its size by one category – from Medium to Large, for example.
-    If there isn't enough room for the target to double its size, the creature or
-    object attains the maximum possible size in the space available. Until the spell
-    ends, the target also has advantage on Strength checks and Strength saving
-    throws. The target's weapons also grow to match its new size. While these
-    weapons are enlarged, the target's attack with them deal 1d4 extra damage.
+    Enlarge.
+      The target's
+      size doubles in all dimensions, and its weight is multiplied by eight. This
+      growth increases its size by one category – from Medium to Large, for example.
+      If there isn't enough room for the target to double its size, the creature or
+      object attains the maximum possible size in the space available. Until the spell
+      ends, the target also has advantage on Strength checks and Strength saving
+      throws. The target's weapons also grow to match its new size. While these
+      weapons are enlarged, the target's attack with them deal 1d4 extra damage.
 
 
-    Reduce
-    The target's size is halved in all dimensions, and its weight is reduced
-    to one-eighth of normal. This reduction decreases its size by one category –
-    from Medium to Small, for example. Until the spell ends, the target also has
-    disadvantage on Strength checks and Strength saving throws. The target's weapons
-    also shrink to match its new size. While these weapons are reduced, the
-    target's attacks with them deal 1d4 less damage (this can't reduce the damage
-    below 1).
+    Reduce.
+      The target's size is halved in all dimensions, and its weight is reduced
+      to one-eighth of normal. This reduction decreases its size by one category –
+      from Medium to Small, for example. Until the spell ends, the target also has
+      disadvantage on Strength checks and Strength saving throws. The target's weapons
+      also shrink to match its new size. While these weapons are reduced, the
+      target's attacks with them deal 1d4 less damage (this can't reduce the damage
+      below 1).
+
     """
 
     name = "Enlarge/Reduce"
@@ -326,6 +336,7 @@ class EnsnaringStrike(Spell):
     **At Higher Levels:** If you cast this spell
     using a spell slot of 2nd level or higher, the damage increases by 1d6 for each
     slot level above 1st.
+
     """
 
     name = "Ensnaring Strike"
@@ -352,6 +363,7 @@ class Entangle(Spell):
     frees itself.
 
     When the spell ends, the conjured plants wilt away.
+
     """
 
     name = "Entangle"
@@ -375,6 +387,7 @@ class Enthrall(Spell):
     checks made to perceive any creature other than you until the spell ends or
     until the target can no longer hear you. The spell ends if you are incapacitated
     or can no longer speak.
+
     """
 
     name = "Enthrall"
@@ -400,6 +413,7 @@ class EruptingEarth(Spell):
 
     **At Higher Levels:** When you cast this spell using a spell slot of 4rd
     level or higher, the damage increases by 1d12 for each slot level above 3rd.
+
     """
 
     name = "Erupting Earth"
@@ -422,18 +436,17 @@ class Etherealness(Spell):
     costs an extra foot. You can see and hear the plan you originated from, but
     everything there looks gray, and you can't see anything more than 60 feet away.
 
-
     While on the Ethereal Plane, you can only affect and be affected by other
-    creatures on that plane. Creatures that aren't on the Ethereal Plance can't
+    creatures on that plane. Creatures that aren't on the Ethereal Plane can't
     perceive you and can't interact with you, unless a special ability or magic has
     given them the ability to do so.
 
     You ignore all objects and effects that
     aren't on the Ethereal Plane, allowing you to move through objects you perceive
     on the plan you originated from. When the spell ends, you immediately return to
-    the plane you originiated from in teh spot you currently occupy. If you occupy
+    the plane you originated from in the spot you currently occupy. If you occupy
     the same spot as a solid object or creature when this happens, you are
-    imediately shunted to the neares unoccupied space that you can occupy and take
+    immediately shunted to the nearest unoccupied space that you can occupy and take
     force damage equal to twice the number of feet you are moved.
 
     This spell has
@@ -474,6 +487,7 @@ class EvardsBlackTentacles(Spell):
     creature restrained by the tentacles can use its action to make a Strength or
     Dexterity check (its choice) against your spell save DC. On a success, it frees
     itself.
+
     """
 
     name = "Evards Black Tentacles"
@@ -492,6 +506,7 @@ class ExpeditiousRetreat(Spell):
     """This spell allows you to move at an incredible pace. When you cast this spell,
     and then as a bonus action on each of your turns until the spell ends, you can
     take the Dash action.
+
     """
 
     name = "Expeditious Retreat"
@@ -516,19 +531,19 @@ class Eyebite(Spell):
     again if it has succeeded on a saving throw against this casting
     of eyebite.
 
-    Asleep
+    Asleep.
       The target falls unconscious. It wakes up if it takes any damage
       or if another creature uses its action to shake the sleeper
       awake.
 
-    Panicked
+    Panicked.
       The target is frightened of you. On each of its turns, the
       frightened creature must take the Dash action and move away from
       you by the safest and shortest available route, unless there is
       nowhere to move. If the target moves to a place at least 60 feet
       away from you where it can no longer see you, this effect ends.
 
-    Sickened
+    Sickened.
       The target has disadvantage on attack rolls and ability
       checks. At the end of each of its turns, it can make another
       Wisdom saving throw. If it succeeds, the effect ends.

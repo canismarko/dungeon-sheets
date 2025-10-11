@@ -43,7 +43,7 @@ class LayOnHands(Feature):
     can cure multiple diseases and neutralize multiple poisons with a single
     use of Lay on Hands, expending hit points separately for each one.
 
-    This feature has no effect on undead and constructs
+    This feature has no effect on undead and constructs.
 
     """
 
@@ -103,7 +103,7 @@ class DivineHealth(Feature):
 
 class ExtraAttackPaladin(Feature):
     """Beginning at 5th level, you can attack twice, instead of once, whenever you
-    take the Attack action on your turn
+    take the Attack action on your turn.
 
     """
 
@@ -129,10 +129,9 @@ class AuraOfCourage(Feature):
     """Starting at 10th level, you and friendly creatures within 10 feet of you
     can't be frightened while you are conscious.
 
-    At 18th level, the range of this aura increases to 30 feet
+    At 18th level, the range of this aura increases to 30 feet.
 
     """
-
     name = "Aura of Courage"
     source = "Paladin"
 
@@ -285,6 +284,7 @@ class VowOfEnmity(Feature):
     see within 10 feet of you, using your Channel Divinity. You gain advantage on
     attack rolls against the creature for 1 minute or until it drops to 0 hit points
     or falls unconscious.
+
     """
 
     name = "Channel Divinity: Vow of Enmity"
@@ -316,12 +316,13 @@ class AvengingAngel(Feature):
     """ At 20th level, you can assume the form of an angelic avenger. Using your action,
     you undergo a transformation. For 1 hour, you gain the following benefits:
 
-        * Wings sprout from your back and grant you a flying speed of 60 feet.
-        * You emanate an aura of menace in a 30-foot radius. The first time any enemy
-          creature enters the aura or starts its turn there during a battle, the creature
-          must succeed on a Wisdom saving throw or become frightened of you for 1 minute
-          or until it takes any damage. Attack rolls against the frightened creature have advantage.
-        * Once you use this feature, you can't use it again until you finish a long rest.e
+    - Wings sprout from your back and grant you a flying speed of 60 feet.
+    - You emanate an aura of menace in a 30-foot radius. The first time any enemy
+      creature enters the aura or starts its turn there during a battle, the creature
+      must succeed on a Wisdom saving throw or become frightened of you for 1 minute
+      or until it takes any damage. Attack rolls against the frightened creature have advantage.
+    - Once you use this feature, you can't use it again until you finish a long rest.
+
     """
 
     name = "Avenging Angel"
@@ -383,15 +384,15 @@ class ProtectiveSpirit(Feature):
 class EmissaryOfRedemption(Feature):
     """At 20th level, you become an avatar of peace, which gives you two benefits:
 
-    --You have resistance to all damage dealt by other crea- tures (their
-    attacks, spells, and other effects).
+    - You have resistance to all damage dealt by other creatures (their
+      attacks, spells, and other effects).
 
-    --Whenever a creature hits you with an attack, it takes radiant damage
-    equal to half the damage you take from the attack.
+    - Whenever a creature hits you with an attack, it takes radiant damage
+      equal to half the damage you take from the attack.
 
     If you attack a creature, cast a spell on it, or deal damage to it by any
     means but this feature, neither benefit works against that creature until
-    you finish a long rest
+    you finish a long rest.
 
     """
 

@@ -58,7 +58,7 @@ class Gate(Spell):
     opens in the named creature's immediate vicinity and draws the
     creature through it to the nearest unoccupied space on your side
     of the portal. You gain no special power over the creature, and it
-    is free to act as the Dm deems appropriate. It might leave, attack
+    is free to act as the DM deems appropriate. It might leave, attack
     you, or help you.
 
     """
@@ -78,7 +78,7 @@ class Gate(Spell):
 class Geas(Spell):
     """You place a magical command on a creature that you can see within
     range, forcing it to carry out some service or refrain from some
-    action or course of actiity as you decide.
+    action or course of activity as you decide.
 
     If the creature can understand you, it must succeed on a Wisdom
     saving throw or become charmed by you for the duration. While the
@@ -93,7 +93,7 @@ class Geas(Spell):
     action to dismiss it. A remove curse, greater restoration, or wish
     spell also ends it.
 
-    **At Higher Levels:** When you cast this spell usinga spell slot of
+    **At Higher Levels:** When you cast this spell using a spell slot of
     7th or 8th level, the duration is 1 year.  When you cast this
     spell using a spell slot of 9th level, the spell lasts until it is
     ended by one of the spells mentioned above.
@@ -142,7 +142,7 @@ class GiantInsect(Spell):
     """You transform up to ten centipedes, three spiders, five wasps, or
     one scorpion within range into giant versions of their natural
     forms for the duration. A centipede becomes a giant centipede, a
-    spider becaomes a giant spider, a wasp becomes a giant wasp, and a
+    spider becomes a giant spider, a wasp becomes a giant wasp, and a
     scorpion becomes a giant scorpion.
 
     Each creature obeys your verbal commands, and in combat, they act
@@ -256,26 +256,26 @@ class GlyphOfWarding(Spell):
     When you inscribe the glyph, choose explosive runes or a spell
     glyph.
 
-    **Explosive Runes**
-    When triggered, the glyph erupts with magical energy in a
-    20-foot-radius sphere centered on the glyph. The sphere spreads
-    around corners. Each creature in the area must make a Dexterity
-    saving throw. A creature takes 5d8 acid, cold, fire, lightning, or
-    thunder damage on a failed saving throw (your choice when you
-    create the glyph), or half as much damage on a successful one.
+    Explosive Runes.
+      When triggered, the glyph erupts with magical energy in a
+      20-foot-radius sphere centered on the glyph. The sphere spreads
+      around corners. Each creature in the area must make a Dexterity
+      saving throw. A creature takes 5d8 acid, cold, fire, lightning, or
+      thunder damage on a failed saving throw (your choice when you
+      create the glyph), or half as much damage on a successful one.
 
-    **Spell Glyph**
-    You can store a prepared spell of 3rd level or lower in the glyph
-    by casting it as part of creating the glyph. The spell must target
-    a single creature or an area. The spell being stored has no
-    immediate effect when cast in this way. When the glyph is
-    triggered, the stored spell is cast. If the spell has a target, it
-    targets the creature that triggered the glyph. If the spell
-    affects an area, the area is centered on that creature. If the
-    spell summons hostile creatures or creates harmful objects or
-    traps, they appear as close as possible to the intruder and attack
-    it. If the spell requires concentration, it lasts until the end of
-    its full duration.
+    Spell Glyph
+      You can store a prepared spell of 3rd level or lower in the glyph
+      by casting it as part of creating the glyph. The spell must target
+      a single creature or an area. The spell being stored has no
+      immediate effect when cast in this way. When the glyph is
+      triggered, the stored spell is cast. If the spell has a target, it
+      targets the creature that triggered the glyph. If the spell
+      affects an area, the area is centered on that creature. If the
+      spell summons hostile creatures or creates harmful objects or
+      traps, they appear as close as possible to the intruder and attack
+      it. If the spell requires concentration, it lasts until the end of
+      its full duration.
 
     **At Higher Levels:** When you cast this spell using a spell slot
     of 4th Level or higher, the damage of an explosive runes glyph
@@ -296,63 +296,7 @@ class GlyphOfWarding(Spell):
     duration = "Until dispelled or triggered"
     ritual = False
     magic_school = "Abjuration"
-    classes = (
-        "you",
-        "cast",
-        "this",
-        "spell",
-        "using",
-        "a",
-        "spell",
-        "slot",
-        "of",
-        "4th",
-        "level",
-        "or",
-        "higher",
-        "the",
-        "damage",
-        "of",
-        "an",
-        "explosive",
-        "runes",
-        "glyph",
-        "increases",
-        "by",
-        "1d8",
-        "for",
-        "each",
-        "slot",
-        "level",
-        "above",
-        "3rd.",
-        "If",
-        "you",
-        "create",
-        "a",
-        "spell",
-        "glyph",
-        "you",
-        "can",
-        "store",
-        "any",
-        "spell",
-        "of",
-        "up",
-        "to",
-        "the",
-        "same",
-        "level",
-        "as",
-        "the",
-        "slot",
-        "you",
-        "use",
-        "for",
-        "the",
-        "glyph",
-        "of",
-    )
+    classes = ("Artificer", "Bard", "Cleric", "Wizard")
 
 
 class Goodberry(Spell):
@@ -362,6 +306,7 @@ class Goodberry(Spell):
     creature for one day.
     The berries lose their potency if they have not been
     consumed within 24 hours of the casting of this spell.
+
     """
 
     name = "Goodberry"
@@ -385,6 +330,7 @@ class GraspingVine(Spell):
 
     Until the spell ends, you can direct the vine to lash out at
     the same creature or another one as a bonus action on each of your turns.
+
     """
 
     name = "Grasping Vine"
@@ -407,6 +353,7 @@ class Grease(Spell):
     appears, each creature standing in its area must succeed on a Dexterity saving
     throw or fall prone. A creature that enters the area or ends its turn there must
     also succeed on a Dexterity saving throw or fall prone.
+
     """
 
     name = "Grease"
@@ -477,9 +424,10 @@ class GreenFlameBlade(Spell):
     1d8 fire damage to the target, and the fire damage to the second creature
     increases to 1d8 + your spellcasting ability modifier. Both damage rolls
     increase by 1d8 at 11th level and 17th level.
+
     """
 
-    name = "Green-Flame Blade"
+    name = "Green Flame Blade"
     level = 0
     casting_time = "1 action"
     casting_range = "5 feet"
@@ -502,6 +450,7 @@ class GuardianOfFaith(Spell):
     Dexterity saving throw. The creature takes 20 radiant damage on a failed save,
     or half as much damage on a successful one. The guardian vanishes when it has
     dealt a total of 60 damage.
+
     """
 
     name = "Guardian Of Faith"
@@ -522,24 +471,26 @@ class GuardianOfNature(Spell):
     ends. You choose one of the following forms to assume: Primal
     Beast or Great Tree.
 
-    **Primal Beast.** Bestial fur covers your body, your facial
-    features become feral, and you gain the following benefits:
+    Primal Beast.
+      Bestial fur covers your body, your facial
+      features become feral, and you gain the following benefits:
 
-    - Your walking speed increases by 10 feet.
-    - You gain darkvision with a range of 120 feet.
-    - You make Strength-based attack rolls with advantage.
-    - Your melee weapon attacks deal an extra 1d6 force damage on a
-      hit.
+      - Your walking speed increases by 10 feet.
+      - You gain darkvision with a range of 120 feet.
+      - You make Strength-based attack rolls with advantage.
+      - Your melee weapon attacks deal an extra 1d6 force damage on a
+        hit.
 
-    **Great Tree.** Your skin appears barky, leaves sprout from your
-    hair, and you gain the following benefits:
+    Great Tree.
+      Your skin appears barky, leaves sprout from your
+      hair, and you gain the following benefits:
 
-    - You gain 10 temporary hit points.
-    - You make Constitution saving throws with advantage.
-    - You make Dexterity- and Wisdom-based attack rolls with
-      advantage.
-    - While you are on the ground, the ground within 15 feet of you is
-      difficult terrain for your enemies.
+      - You gain 10 temporary hit points.
+      - You make Constitution saving throws with advantage.
+      - You make Dexterityand Wisdom-based attack rolls with
+        advantage.
+      - While you are on the ground, the ground within 15 feet of you is
+        difficult terrain for your enemies.
 
     """
 
@@ -571,20 +522,24 @@ class GuardsAndWards(Spell):
     Guards and wards creates the following effects within the warded
     area.
 
-    - **Corridors.** Fog fills all the warded corridors, making them
+    Corridors.
+      Fog fills all the warded corridors, making them
       heavily obscured. In addition, at each intersection or branching
       passage offering a choice of direction, there is a 50 percent
       chance that a creature other than you will believe it is going
       in the opposite direction from the one it chooses.
-    - **Doors.** All doors in the warded area are magically locked, as
+    Doors.
+      All doors in the warded area are magically locked, as
       if sealed by an arcane lock spell. In addition, you can cover up
       to ten doors with an illusion (equivalent to the illusory object
-      function of the m inor illusion spell) to make them appear as
+      function of the minor illusion spell) to make them appear as
       plain sections of wall.
-    - **Stairs.** Webs fill all stairs in the warded area from top to
+    Stairs.
+      Webs fill all stairs in the warded area from top to
       bottom, as the web spell. These strands regrow in 10 minutes if
       they are burned or torn away while guards and wards lasts.
-    - **Other Spell Effect.** You can place your choice of one of the
+    Other Spell Effect.
+      You can place your choice of one of the
       following magical effects within the warded area of the
       stronghold.
 
@@ -627,6 +582,7 @@ class Guidance(Spell):
     """You touch one willing creature. Once before the spell ends, the target can roll
     a d4 and add the number rolled to one ability check of its choice. It can roll
     the die before or after making the ability check. The spell then ends.
+
     """
 
     name = "Guidance"

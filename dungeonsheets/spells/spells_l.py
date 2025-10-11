@@ -16,6 +16,7 @@ class LegendLore(Spell):
     hand of the evil ones. Only a true Child of Stone, lover and beloved of Moradin,
     may awaken the true powers of the axe, and only with the sacred word Rudnogg on
     the lips.
+
     """
 
     name = "Legend Lore"
@@ -51,6 +52,7 @@ class LeomundsSecretChest(Spell):
     smaller replica chest is destroyed, or if you choose to end the spell as an
     action. If the spell ends and the larger chest is on the Ethereal Plane, it is
     irretrievably lost.
+
     """
 
     name = "Leomunds Secret Chest"
@@ -85,6 +87,7 @@ class LeomundsTinyHut(Spell):
     Until the spell ends, you can command the
     interior to become dimly lit or dark. The dome is opaque from the outside, of
     any color you choose, but it is transparent from the inside.
+
     """
 
     name = "Leomunds Tiny Hut"
@@ -102,6 +105,7 @@ class LeomundsTinyHut(Spell):
 class LesserRestoration(Spell):
     """You touch a creature and can end either one disease or one condition afflicting
     it. The condition can be blinded, deafened, paralyzed, or poisoned.
+
     """
 
     name = "Lesser Restoration"
@@ -132,6 +136,7 @@ class Levitate(Spell):
 
     When the spell ends, the target floats gently to the ground
     if it is still aloft.
+
     """
 
     name = "Levitate"
@@ -157,6 +162,7 @@ class LifeTransference(Spell):
 
     **At Higher Levels:** When you cast this spell using a spell slot of 4th
     level or higher, the damage increases by 1d8 for each slot level above 3rd.
+
     """
 
     name = "Life Transference"
@@ -181,6 +187,7 @@ class Light(Spell):
     If you target an object held or worn by a
     hostile creature, that creature must succeed on a Dexterity saving throw to
     avoid the spell.
+
     """
 
     name = "Light"
@@ -209,10 +216,11 @@ class LightningArrow(Spell):
 
     The piece of ammunition or weapon then returns to its normal form.
 
-    At
-    Higher Levels: When you cast this spell using a spell slot of 4th level or
+    **At
+    Higher Levels:** When you cast this spell using a spell slot of 4th level or
     higher, the damage for both effects of the spell increases by 1d8 for each slot
     level above 3rd.
+
     """
 
     name = "Lightning Arrow"
@@ -239,6 +247,7 @@ class LightningBolt(Spell):
     **At Higher Levels:** When
     you cast this spell using a spell slot of 4th level or higher, the damage
     increases by 1d6 for each slot level above 3rd.
+
     """
 
     name = "Lightning Bolt"
@@ -263,6 +272,7 @@ class LightningLure(Spell):
     **At Higher Levels:** This
     spell's damage increases by 1d8 when you reach 5th level (2d8), 11th level
     (3d8), and 17th level (4d8).
+
     """
 
     name = "Lightning Lure"
@@ -281,6 +291,7 @@ class LocateAnimalsOrPlants(Spell):
     """Describe or name a specific kind of beast or plant. Concentrating on the voice
     of nature in your surroundings, you learn the direction and distance to the
     closest creature or plant of that kind within 5 miles, if any are present.
+
     """
 
     name = "Locate Animals Or Plants"
@@ -310,6 +321,7 @@ class LocateCreature(Spell):
     This spell can't
     locate a creature if running water at least 10 feet wide blocks a direct path
     between you and the creature.
+
     """
 
     name = "Locate Creature"
@@ -337,6 +349,7 @@ class LocateObject(Spell):
 
     This spell can't locate an object if any thickness
     of lead, even a thin sheet, blocks a direct path between you and the object.
+
     """
 
     name = "Locate Object"
@@ -358,6 +371,7 @@ class Longstrider(Spell):
     **At Higher Levels:** When you cast this spell using a spell slot of 2nd
     level or higher, you can target one additional creature for each slot level
     above 1st.
+
     """
 
     name = "Longstrider"

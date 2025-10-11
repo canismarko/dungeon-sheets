@@ -22,7 +22,7 @@ class Rage(Feature):
     creature since your last turn or taken damage since then. You can also end
     your rage on your turn as a bonus action. Once you have raged the number of
     times shown for your barbarian level in the Rages column of the Barbarian
-    table, you must finish a long rest before you can rage again
+    table, you must finish a long rest before you can rage again.
 
     """
 
@@ -69,7 +69,7 @@ class RecklessAttack(Feature):
     attack with fierce desperation. When you make your first attack on your
     turn, you can decide to attack recklessly. Doing so gives you advantage on
     melee weapon attack rolls using Strength during this turn, but attack rolls
-    against you have advantage until your next turn
+    against you have advantage until your next turn.
 
     """
 
@@ -184,7 +184,7 @@ class Frenzy(Feature):
     when you rage. If you do so, for the duration of your rage you can make a
     single melee weapon attack as a bonus action on each of your turns after
     this one. When your rage ends, you suffer one level of exhaustion (as
-    described in appendix A)
+    described in appendix A).
 
     """
 
@@ -270,7 +270,7 @@ class EagleSpirit(Feature):
 class WolfSpirit(Feature):
     """While you're raging, your friends have advantage on melee attack rolls
     against any creature within 5 feet of you that is hostile to you. The
-    spirit of the wolf makes you a leader of hunters
+    spirit of the wolf makes you a leader of hunters.
 
     """
 
@@ -280,7 +280,7 @@ class WolfSpirit(Feature):
 
 class ElkSpirit(Feature):
     """While you're raging and aren't wearing heavy armor, your walking speed
-    increases by 15 feet. The spirit of the elk makes you extraordinarily swift
+    increases by 15 feet. The spirit of the elk makes you extraordinarily swift.
 
     """
 
@@ -290,7 +290,7 @@ class ElkSpirit(Feature):
 
 class TigerSpirit(Feature):
     """While raging, you can add 10 feet to your long jump distance and 3 feet to
-    your high jump distance. The spirit of the tiger empowers your leaps
+    your high jump distance. The spirit of the tiger empowers your leaps.
 
     """
 
@@ -364,7 +364,7 @@ class ElkAspect(FeatureSelector):
     """Whether mounted or on foot , your travel pace is doubled, as is the travel
     pace of up to ten companions while they're within 60 feet of you and you're
     not incapacitated (see chapter 8 in the Player's Handbook for more
-    information about travel pace). The elk spirit helps you roam far and fast
+    information about travel pace). The elk spirit helps you roam far and fast.
 
     """
 
@@ -375,7 +375,7 @@ class ElkAspect(FeatureSelector):
 class TigerAspect(FeatureSelector):
     """You gain proficiency in two skills from the following list: Athletics,
     Acrobatics, Stealth, and Survival. The cat spirit hones your survival
-    instincts
+    instincts.
 
     """
 
@@ -460,7 +460,7 @@ class ElkAttunement(Feature):
     the space of a Large or smaller creature. That creature must succeed on a
     Strength saving throw (DC 8 + your Strength bonus + your proficiency
     bonus) or be knocked prone and take bludgeoning damage equal to 1d12 + your
-    Strength modifier
+    Strength modifier.
 
     """
 
@@ -472,7 +472,7 @@ class TigerAttunement(Feature):
     """While you're raging, if you move at least 20 feet in a straight line toward
     a Large or smaller target right before making a melee weapon attack against
     it, you can use a bonus action to make an additional melee weapon attack
-    against it
+    against it.
 
     """
 
@@ -527,7 +527,7 @@ class BattleragerArmor(Feature):
 class RecklessAbandon(Feature):
     """Beginning at 6th level, when you use Reckless Attack while raging, you also
     gain temporary hit points equal to your Constitution modifier (minimum of
-    1). They vanish if any of them are left when your rage ends .
+    1). They vanish if any of them are left when your rage ends.
 
     """
 
@@ -565,7 +565,7 @@ class AncestralProtectors(Feature):
     disadvantage on any attack roll that isn't against you, and when the target
     hits a creature other than you with an attack, that creature has resistance
     to the damage dealt by the attack. The effect on the target ends early
-    ifyour rage ends
+    if your rage ends.
 
     """
 
@@ -605,7 +605,7 @@ class ConsultTheSpirits(Feature):
     sensor, this use of clairvoyance invisibly summons one Of your ancestral
     spirits to the chosen location. Wisdom is your spellcasting ability for
     these spells. After you cast either spell in this way, you can't use this
-    feature again until you finish a short or long rest
+    feature again until you finish a short or long rest.
 
     """
 
@@ -726,7 +726,7 @@ class DesertSoul(Feature):
     **Desert**: You gain resistance to fire damage, and you don't suffer the
     effects of extreme heat, as described in the Dungeon Master's
     Guide. Moreover, as an action, you can touch a flammable object that isn't
-    being worn or carried by anyone else and set it on fire
+    being worn or carried by anyone else and set it on fire.
 
     """
 
@@ -756,7 +756,7 @@ class TundraSoul(Feature):
     effects of extreme cold, as described in the Dungeon Master's
     Guide. Moreover, as an action, you can touch water and turn a 5-foot cube
     Of it into ice, which melts after 1 minute. This action fails if a creature
-    is in the cube
+    is in the cube.
     """
 
     name = "Storm Soul (Tundra)"
@@ -810,7 +810,7 @@ class RagingDesert(Feature):
 class RagingSea(Feature):
     """At 14th level, the power of the storm you channel grows mightier, lashing
     out at your foes. The effect is based on the environment you chose for your
-    Storm Aura
+    Storm Aura.
 
     **Sea**: When you hit a creature in your aura with an attack, you can use
     your reaction to force that creature to make a Strength saving throw. On a
@@ -825,12 +825,12 @@ class RagingSea(Feature):
 class RagingTundra(Feature):
     """At 14th level, the power of the storm you channel grows mightier, lashing
     out at your foes. The effect is based on the environment you chose for your
-    Storm Aura
+    Storm Aura.
 
     **Tundra**: Whenever the effect of your Storm Aura is activated, you can
     choose one creature you can see in the aura. That creature must succeed on
     a Strength saving throw, or its speed is reduced to 0 until the start of
-    your next turn, as magical frost covers it
+    your next turn, as magical frost covers it.
 
     """
 
@@ -879,7 +879,7 @@ class WarriorOfTheGods(Feature):
     """At 3rd level, your soul is marked for endless battle. If a spell, such as
     raise dead, has the sole effect of restoring you to life (but not
     undeath), the caster doesn't need material components to cast the spell
-    on you
+    on you.
 
     """
 
@@ -891,6 +891,7 @@ class FanaticalFocus(Feature):
     """Starting at 6th level, the divine power that fuels your rage can protect
     you. If you fail a saving throw while you're raging, you can reroll it, and
     you must use the new roll. You can use this ability only once per rage.
+
     """
 
     name = "Fanatical Focus"
@@ -900,10 +901,10 @@ class FanaticalFocus(Feature):
 class ZealousPresence(Feature):
     """At 10th level, you learn to channel divine power to inspire zealotry in
     others. As a bonus action, you unleash a battle cry infused with divine
-    energy. Up to ten other creatures of your choice within 60 feet ofyou that
+    energy. Up to ten other creatures of your choice within 60 feet of you that
     can hear you gain advantage on attack rolls and saving throws until the
     start of your next turn. Once you use this feature, you can't use it again
-    until you finish a long rest
+    until you finish a long rest.
 
     """
 

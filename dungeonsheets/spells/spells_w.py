@@ -42,7 +42,7 @@ class WallOfForce(Spell):
     be free floating or resting on a solid surface. You can form it
     into a hemispherical dome or a sphere with a radius of up to 10
     feet, or you can shape a flat surface made up of ten
-    10-foot-by-10-foot panels. Each panel must be continguous with
+    10-foot-by-10-foot panels. Each panel must be contiguous with
     another panel. In any form, the wall is 1/4 inch thick. It lasts
     for the duration. If the wall cuts through a creature's space when
     it appears, the creature is pushed to one side of the wall (your
@@ -71,7 +71,7 @@ class WallOfForce(Spell):
 class WallOfIce(Spell):
     """You create a wall of ice on a solid surface within range. You can
     form it into a hemispherical dome or a sphere with radius of up to
-    10 feet, or you can shape a flat surfcae made up of ten
+    10 feet, or you can shape a flat surface made up of ten
     10-foot-square panels. Each panel must be contiguous with another
     panel. In any form, the wall is 1 foot thick and lasts for the
     duration.
@@ -88,7 +88,7 @@ class WallOfIce(Spell):
     hit points destroys it and leaves behind a sheet of frigid air int
     he space the wall occupied. A creature moving through the sheet of
     frigid air for the first time on a turn must make a Constitution
-    saaving throw. The creature takes 5f6 cold damage on a failed
+    saving throw. The creature takes 5f6 cold damage on a failed
     save, or half as much damage on a successful one.
 
     **At Higher Levels:** When you cast this spell using a spell slot
@@ -159,6 +159,7 @@ class WallOfSand(Spell):
     feet thick, and it vanishes when the spell ends. It blocks line of sight but not
     movement. A creature is blinded while in the wall's space and must spend 3 feet
     of movement for every 1 foot it moves there.
+
     """
 
     name = "Wall Of Sand"
@@ -176,7 +177,7 @@ class WallOfSand(Spell):
 class WallOfStone(Spell):
     """A nonmagical wall of solid stone springs into existence at a point
     you choose within range.  The wall is 6 inches thick and is
-    composed of ten 10-foot- by-10-foot panels. Each panel must be
+    composed of ten 10-foot-by-10-foot panels. Each panel must be
     contiguous with at least on other panel.  Alternatively, you can
     create 10-foot-by-20-foot panels that are only 3 inches thick.
 
@@ -238,9 +239,10 @@ class WallOfThorns(Spell):
     ends its turn there, the creature must make a Dexterity saving throw. It takes
     7d8 slashing damage on a failed save, or half as much on a successful save.
 
-    At
-    Higher Levels: When you cast this spell using a spell slot of 7th level or
+    **At
+    Higher Levels:** When you cast this spell using a spell slot of 7th level or
     higher, both types of damage increase by 1d8 for each slot level above 6th.
+
     """
 
     name = "Wall Of Thorns"
@@ -256,8 +258,7 @@ class WallOfThorns(Spell):
 
 
 class WallOfWater(Spell):
-    """(a drop of water)
-
+    """
     You conjure up a wall of water on the ground at a point you can
     see within range. You can make the wall up to 30 feet long, 10
     feet high, and 1 foot thick, or you can make a ringed wall up to
@@ -282,7 +283,7 @@ class WallOfWater(Spell):
     casting_time = "1 action"
     casting_range = "60 feet"
     components = ("V", "S", "M")
-    materials = ""
+    materials = "A drop of water"
     duration = "Instantaneous"
     ritual = False
     magic_school = "Evocation"
@@ -302,6 +303,7 @@ class WardingBond(Spell):
     become separated by more than 60 feet. It also ends if the spell is cast again
     on either of the connected creatures. You can also dismiss the spell as an
     action.
+
     """
 
     name = "Warding Bond"
@@ -353,6 +355,7 @@ class WaterBreathing(Spell):
     """This spell grants up to ten willing creatures you can see within range the
     ability to breathe underwater until the spell ends. Affected creatures also
     retain their normal mode of respiration.
+
     """
 
     name = "Water Breathing"
@@ -374,9 +377,9 @@ class WaterWalk(Spell):
     Up to ten
     willing creatures you can see within range gain this ability for the duration.
 
-
     If you target a creature submerged in a liquid, the spell carries the target to
     the surface of the liquid at a rate of 60 feet per round.
+
     """
 
     name = "Water Walk"
@@ -547,26 +550,23 @@ class Whirlwind(Spell):
 class WildCunning(Spell):
     """You call out to the spirits of nature to aid you. When you cast this
     spell, choose one of the following effects:
-    -- If there are any tracks on the ground within range, you know where they
-    are, and you make Wisdom (Survival) checks to follow these tracks with
-    advantage for 1 hour or until you cast this spell again.
 
-    -- If there is edible forage within range, you know it and where to find
-    it.
+    - If there are any tracks on the ground within range, you know where they
+      are, and you make Wisdom (Survival) checks to follow these tracks with
+      advantage for 1 hour or until you cast this spell again.
+    - If there is edible forage within range, you know it and where to find
+      it.
+    - If there is clean drinking water within range, you know it and where to
+      find it.
+    - If there is suitable shelter for you and your companions with range, you
+      know it and where to find it.
+    - Send the spirits to bring back wood for a fire and to set up a campsite
+      in the area using your supplies. The spirits build the fire in a circle of
+      stones, put up tents, unroll bedrolls, and put out any rations and water
+      for consumption.
+    - Have the spirits instantly break down a campsite, which includes putting
+      out a fire, taking down tents, packing up bags, and burying any rubbish.
 
-    -- If there is clean drinking water within range, you know it and where to
-    find it.
-
-    -- If there is suitable shelter for you and your companions with range, you
-    know it and where to find it.
-
-    -- Send the spirits to bring back wood for a fire and to set up a campsite
-    in the area using your supplies. The spirits build the fire in a circle of
-    stones, put up tents, unroll bedrolls, and put out any rations and water
-    for consumption.
-
-    -- Have the spirits instantly break down a campsite, which includes putting
-    out a fire, taking down tents, packing up bags, and burying any rubbish.
     """
 
     name = "Wild Cunning"
@@ -799,22 +799,31 @@ class WrathOfNature(Spell):
     a point you can see within range. The spirits cause trees, rocks, and grasses
     in a 60-foot cube centered on that point to become animated until the spell
     ends.
-    Grasses and Undergrowth. Any area of ground in the cube that is covered by
-    grass or undergrowth is difficult terrain for your enemies.
-    Trees. At the start
-    of each of your turns, each of your enemies within 10 feet of any tree in the
-    cube must succeed on a Dexterity saving throw or take 4d6 slashing damage from
-    whipping branches.
-    Roots and Vines. At the end of each of your turns, one
-    creature of your choice that is on the ground in the cube must succeed on a
-    Strength saving throw or become restrained until the spell ends. A restrained
-    creature can use an action to make a Strength (Athletics) check against your
-    spell save DC, ending the effect on itself on a success.
-    Rocks. As a bonus
-    action on your turn, you can cause a loose rock in the cube to launch at a
-    creature you can see in the cube. Make a ranged spell attack against the target.
-    On a hit, the target takes 3d8 nonmagical bludgeoning damage, and it must
-    succeed on a Strength saving throw or fall prone.
+
+    Grasses and Undergrowth.
+      Any area of ground in the cube that is covered by
+      grass or undergrowth is difficult terrain for your enemies.
+
+    Trees.
+      At the start
+      of each of your turns, each of your enemies within 10 feet of any tree in the
+      cube must succeed on a Dexterity saving throw or take 4d6 slashing damage from
+      whipping branches.
+
+    Roots and Vines.
+      At the end of each of your turns, one
+      creature of your choice that is on the ground in the cube must succeed on a
+      Strength saving throw or become restrained until the spell ends. A restrained
+      creature can use an action to make a Strength (Athletics) check against your
+      spell save DC, ending the effect on itself on a success.
+
+    Rocks.
+      As a bonus
+      action on your turn, you can cause a loose rock in the cube to launch at a
+      creature you can see in the cube. Make a ranged spell attack against the target.
+      On a hit, the target takes 3d8 nonmagical bludgeoning damage, and it must
+      succeed on a Strength saving throw or fall prone.
+
     """
 
     name = "Wrath Of Nature"
@@ -836,6 +845,7 @@ class WrathfulSmite(Spell):
     saving throw or be frightened of you until the spell ends. As an
     action, the creature can make a Wisdom check against your spell
     save DC to steel its resolve and end this spell.
+
     """
 
     name = "Wrathful Smite"
@@ -855,10 +865,12 @@ class Wristpocket(Spell):
     The object, which only you can be holding and can weigh no more than
     5 pounds, is transported to an extradimensional space, where it remains for
     the duration.
+
     Until the spell ends, you can use your action to summon the object to your
     free hand, and you can use your action to return the object to
     the extradimensional space. An object still in the pocket plane when
     the spell ends appears in your space, at your feet.
+
     """
 
     name = "Wristpocket"

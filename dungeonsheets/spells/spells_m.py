@@ -10,6 +10,7 @@ class MaddeningDarkness(Spell):
     Whenever a creature starts its turn in the sphere, it must make a Wisdom saving
     throw, taking 8d8 psychic damage on a failed save, or half as much damage on a
     successful one.
+
     """
 
     name = "Maddening Darkness"
@@ -25,13 +26,14 @@ class MaddeningDarkness(Spell):
 
 
 class Maelstrom(Spell):
-    """(paper or leaf in the shape of a funnel)
+    """
     A mass of 5-foot-deep water appears and
     swirls in a 30-foot radius centered on a point you can see within range. The
     point must be on ground or in a body of water. Until the spell ends, that area
     is difficult terrain, and any creature that starts its turn there must succeed
     on a Strength saving throw or take 6d6 bludgeoning damage and be pulled 10 feet
     toward the center.
+
     """
 
     name = "Maelstrom"
@@ -39,7 +41,7 @@ class Maelstrom(Spell):
     casting_time = "1 action"
     casting_range = "120 feet"
     components = ("V", "S", "M")
-    materials = ""
+    materials = "Paper or leaf in the shape of a funnel"
     duration = "Concentration, up to 1 minute"
     ritual = False
     magic_school = "Evocation"
@@ -51,6 +53,7 @@ class MageArmor(Spell):
     force surrounds it until the spell ends. The target's base AC becomes 13 + its
     Dexterity modifier. The spell ends it if the target dons armor or if you dismiss
     the spell as an action.
+
     """
 
     name = "Mage Armor"
@@ -79,6 +82,7 @@ class MageHand(Spell):
 
     The hand can't attack, activate magical items, or
     carry more than 10 pounds.
+
     """
 
     name = "Mage Hand"
@@ -179,6 +183,7 @@ class MagicJar(Spell):
     that creature dies.
 
     When the spell ends, the container is destroyed.
+
     """
 
     name = "Magic Jar"
@@ -243,6 +248,7 @@ class MagicMouth(Spell):
     that occur within 30 feet of the object. For example, you could instruct the
     mouth to speak when any creature moves within 30 feet of the object or when a
     silver bell rings within 30 feet of it.
+
     """
 
     name = "Magic Mouth"
@@ -270,6 +276,7 @@ class MagicStone(Spell):
     hits or misses, the spell then ends on the stone.
     If you cast this spell again,
     the spell ends on any pebbles still affected by your previous casting.
+
     """
 
     name = "Magic Stone"
@@ -288,11 +295,12 @@ class MagicWeapon(Spell):
     """You touch a nonmagical weapon. Until the spell ends, that weapon becomes a magic
     weapon with a +1 bonus to attack rolls and damage rolls.
 
-    At Higher Levels:
+    **At Higher Levels:**
     When you cast this spell using a spell slot of 4th level or higher, the bonus
     increases to +2.
     When you use a spell slot of 6th level or higher, the bonus
     increases to +3.
+
     """
 
     name = "Magic Weapon"
@@ -336,6 +344,7 @@ class MajorImage(Spell):
     **At Higher Levels:** When you cast this spell using a spell
     slot of 6th level or higher, the spell lasts until dispelled, without requiring
     your concentration.
+
     """
 
     name = "Major Image"
@@ -357,9 +366,10 @@ class MassCureWounds(Spell):
     Each target regains hit points equal to 3d8 + your spellcasting ability
     modifier. This spell has no effect on undead or constructs.
 
-    At Higher Levels:
+    **At Higher Levels:**
     When you cast this spell using a spell slot of 6th level or higher, the healing
     increases by 1d8 for each slot level above 5th.
+
     """
 
     name = "Mass Cure Wounds"
@@ -380,6 +390,7 @@ class MassHeal(Spell):
     creatures that you can see within range. Creatures healed by this spell are also
     cured of all diseases and any effect making them blinded or deafened. This
     spell has no effect on undead or constructs.
+
     """
 
     name = "Mass Heal"
@@ -399,9 +410,10 @@ class MassHealingWord(Spell):
     you can see within range regain hit points equal to 1d4 + your spellcasting
     ability modifier. This spell has no effect on undead or constructs.
 
-    At Higher
-    Levels: When you cast this spell using a spell slot of 4th level or higher, the
+    **At Higher
+    Levels:** When you cast this spell using a spell slot of 4th level or higher, the
     healing increases by 1d4 for each slot level above 3rd.
+
     """
 
     name = "Mass Healing Word"
@@ -428,17 +440,20 @@ class MassPolymorph(Spell):
     game statistics, including mental ability scores, are replaced by the statistics
     of the chosen beast, but the target retains its hit points, alignment, and
     personality.
+
     Each target gains a number of temporary hit points equal to the hit
     points of its new form. These temporary hit points can't be replaced by
     temporary hit points from another source. A target reverts to its normal form
     when it has no more temporary hit points or it dies. If the spell ends before
     then, the creature loses all its temporary hit points and reverts to its normal
     form.
+
     The creature is limited in the actions it can perform by the nature of its
     new form. It can't speak, cast spells, or do anything else that requires hands
     or speech. The target's gear melds into the new form.
     The target can't activate,
     use, wield, or otherwise benefit from any of its equipment.
+
     """
 
     name = "Mass Polymorph"
@@ -478,12 +493,13 @@ class MassSuggestion(Spell):
     If you or any of your companions damage a creature
     affected by this spell, the spell ends for that creature.
 
-    At Higher Levels:
+    **At Higher Levels:**
     When you cast this spell using a 7th-level spell slot, the duration is 10 days.
 
     When you use an 8th-level spell slot, the duration is 30 days.
     When you use a
     9th-level spell slot, the duration is a year and a day.
+
     """
 
     name = "Mass Suggestion"
@@ -511,12 +527,15 @@ class MaximiliansEarthenGrasp(Spell):
     crush the restrained target, who must make a Strength saving throw. It takes 2d6
     bludgeoning damage on a failed save, or half as much damage on a successful
     one.
+
     To break out, the restrained target can make a Strength check against your
     spell save DC. On a success, the target escapes and is no longer restrained by
     the hand.
+
     As an action, you can cause the hand to reach for a different creature
     or to move to a different unoccupied space within range. The hand releases a
     restrained target if you do either.
+
     """
 
     name = "Maximilians Earthen Grasp"
@@ -543,6 +562,7 @@ class Maze(Spell):
     When the spell ends,
     the target reappears in the space it left or, if that space is occupied, in the
     nearest unoccupied space.
+
     """
 
     name = "Maze"
@@ -578,6 +598,7 @@ class MeldIntoStone(Spell):
     transmutation into a different substance) expels you and deals 50 bludgeoning
     damage to you. If expelled, you fall prone in an unoccupied space closest to
     where you first entered.
+
     """
 
     name = "Meld Into Stone"
@@ -600,9 +621,10 @@ class MelfsAcidArrow(Spell):
     next turn. On a miss, the arrow splashes the target with acid for half as much
     of the initial damage and no damage at the end of its next turn.
 
-    At Higher
-    Levels: When you cast this spell using a spell slot of 3rd level or higher, the
+    **At Higher
+    Levels:** When you cast this spell using a spell slot of 3rd level or higher, the
     damage (both initial and later) increases by 1d4 for each slot level above 2nd.
+
     """
 
     name = "Melfs Acid Arrow"
@@ -618,7 +640,7 @@ class MelfsAcidArrow(Spell):
 
 
 class MelfsMinuteMeteors(Spell):
-    """(niter, sulfur, and pine tar formed into a bead)
+    """
     You create six tiny meteors in
     your space. They float in the air and orbit you for the spell's duration. When
     you cast the spell-and as a bonus action on each of your turns thereafter-you
@@ -628,9 +650,11 @@ class MelfsMinuteMeteors(Spell):
     feet of the point where the meteor explodes must make a Dexterity saving throw.
     A creature takes 2d6 fire damage on a failed save, or half as much damage on a
     successful one.
-    At Higher Levels. When you cast this spell using a spell slot of
+
+    **At Higher Levels:** When you cast this spell using a spell slot of
     4th level or higher, the number of meteors created increases by two for each
     slot level above 3rd.
+
     """
 
     name = "Melfs Minute Meteors"
@@ -638,7 +662,7 @@ class MelfsMinuteMeteors(Spell):
     casting_time = "1 action"
     casting_range = "Self"
     components = ("V", "S", "M")
-    materials = ""
+    materials = "Niter, sulfur, and pine tar formed into a bead"
     duration = "Concentration, up to 10 minutes"
     ritual = False
     magic_school = "Evocation"
@@ -647,13 +671,14 @@ class MelfsMinuteMeteors(Spell):
 
 class Mending(Spell):
     """This spell repairs a single break or tear in an object you touch, such as broken
-    chain link, two halves of a broken key, a torn cloack, or a leaking wineskin.
+    chain link, two halves of a broken key, a torn cloak, or a leaking wineskin.
 
     As long as the break or tear is no larger than 1 foot in any dimension, you mend
     it, leaving no trace of the former damage.
 
     This spell can physically repair a
     magic item or construct, but the spell can't restore magic to such an object.
+
     """
 
     name = "Mending"
@@ -681,6 +706,7 @@ class MentalPrison(Spell):
     spell's duration. If the target is moved out of the illusion, makes a melee
     attack through it, or reaches any part of its body through it, the target takes
     10d10 psychic damage, and the spell ends.
+
     """
 
     name = "Mental Prison"
@@ -706,6 +732,7 @@ class Message(Spell):
     foot of stone, 1 inch of common metal, a thin sheet of lead, or 3 feet of wood
     blocks the spell. The spell doesn't have to follow a straight line and can
     travel freely around corners or through openings.
+
     """
 
     name = "Message"
@@ -726,11 +753,12 @@ class MeteorSwarm(Spell):
     Each creature in a 40-foot-radius sphere centered on each point
     you choose must make a Dexterity saving throw. The sphere spreads around
     corners. A creature takes 20d6 fire damage and 20d6 bludgeoning damage on a
-    failed save, or half as much damage on a sucessful one. A creature in the area
+    failed save, or half as much damage on a successful one. A creature in the area
     of more than one fiery burst is affected only once.
 
     The spell damages objects
     in the area and ignites flammable objects that aren't being worn or carried.
+
     """
 
     name = "Meteor Swarm"
@@ -750,6 +778,7 @@ class MightyFortress(Spell):
     can see within range. The area is 120 feet on each side, and it must not have
     any buildings or other structures on it. Any creatures in the area are
     harmlessly lifted up as the fortress rises.
+
     The fortress has four turrets with
     square bases, each one 20 feet on a side and 30 feet tall, with one turret on
     each corner. The turrets are connected to each other by stone walls that are
@@ -757,6 +786,7 @@ class MightyFortress(Spell):
     composed of panels that are 10 feet wide and 20 feet tall. Each panel is
     contiguous with two other panels or one other panel and a turret. You can place
     up to four stone doors in the fortress's outer wall.
+
     A small keep stands inside
     the enclosed area. The keep has a square base that is 50 feet on each side, and
     it has three floors with 10-foot-high ceilings. Each of the floors can be
@@ -767,21 +797,26 @@ class MightyFortress(Spell):
     contains sufficient food to serve a nine-course banquet for up to 100 people
     each day. Furnishings, food, and other objects created by this spell crumble to
     dust if removed from the fortress.
+
     A staff of one hundred invisible servants
-    obeys anycommand given to them by creatures you designate when you cast the
+    obeys any command given to them by creatures you designate when you cast the
     spell. Each servant functions as if created by the unseen servant spell.
+
     The
     walls, turrets, and keep are all made of stone that can be damaged. Each
-    10-foot-bya10-foot section of stone has AC 15 and 30 hit points per inch of
+    10-foot-by-10-foot section of stone has AC 15 and 30 hit points per inch of
     thickness. It is immune to poison and psychic damage. Reducing a section of
     stone to 0 hit points destroys it and might cause connected sections to buckle
     and collapse at the DM's discretion.
+
     After 7 days or when you cast this spell
     somewhere else, the fortress harmlessly crumbles and sinks back into the ground,
     leaving any creatures that were inside it safely on the ground.
+
     Casting this
     spell on the same spot once every 7 days for a year makes the fortress
     permanent.
+
     """
 
     name = "Mighty Fortress"
@@ -802,6 +837,7 @@ class MindBlank(Spell):
     divination spells, and the charmed condition. The spell even foils wish spells
     and spells or effects of similar power used to affect the target's mind or to
     gain information about the target.
+
     """
 
     name = "Mind Blank"
@@ -824,6 +860,7 @@ class MindSliver(Spell):
 
     **At Higher Levels:** This spell’s damage increases by 1d6 when you reach
     certain levels: 5th level (2d6), 11th level (3d6), and 17th level (4d6).
+
     """
 
     name = "Mind Sliver"
@@ -850,6 +887,7 @@ class MindSpike(Spell):
     **At Higher Levels:** When you cast this spell using a spell
     slot of 3rd level or higher, the damage increases by 1d8 for each slot level
     above 2nd.
+
     """
 
     name = "Mind Spike"
@@ -885,6 +923,7 @@ class MinorIllusion(Spell):
     creature can determine that it is an illusion with a successful Intelligence
     (Investigation) check against your spell save DC. If a creature discerns the
     illusion for what it is, the illusion becomes faint to the creature.
+
     """
 
     name = "Minor Illusion"
@@ -922,6 +961,7 @@ class MirageArcane(Spell):
     to the terrain's true form however, all other elements of the illusion remain,
     so while the creature is aware of the illusion's presence, the creature can
     still physically interact with the illusion.
+
     """
 
     name = "Mirage Arcane"
@@ -951,7 +991,6 @@ class MirrorImage(Spell):
     or higher to change the attack's target to a duplicate. With two duplicates,
     you must roll an 8 or higher. With one duplicate, you must roll an 11 or higher.
 
-
     A duplicate's AC equals 10 + your Dexterity modifier. If an attack hits a
     duplicate, the duplicate is destroyed. A duplicate can be destroyed only by an
     attack that hits it. It ignores all other damage and effects. The spell ends
@@ -960,6 +999,7 @@ class MirrorImage(Spell):
     A creature is unaffected by this spell
     if it can't see, if it relies on senses other than sight, such as blindsight,
     or if it can perceive illusions as false, as with truesight.
+
     """
 
     name = "Mirror Image"
@@ -988,6 +1028,7 @@ class Mislead(Spell):
     action, you can switch from using its senses to using your own, or back again.
     While you are using its senses, you are blinded and deafened in regard to your
     own surroundings.
+
     """
 
     name = "Mislead"
@@ -1005,6 +1046,7 @@ class Mislead(Spell):
 class MistyStep(Spell):
     """Briefly surrounded by silvery mist, you teleport up to 30 feet to an unoccupied
     space that you can see.
+
     """
 
     name = "Misty Step"
@@ -1042,7 +1084,6 @@ class ModifyMemory(Spell):
     before you have finished describing the modified memories, the creature's memory
     isn't altered. Otherwise, the modified memories take hold when the spell ends.
 
-
     A modified memory doesn't necessarily affect how a creature behaves,
     particularly if the memory contradicts the creature's natural inclinations,
     alignment, or beliefs. An illogical modified memory, such as implanting a memory
@@ -1058,6 +1099,7 @@ class ModifyMemory(Spell):
     target's memories of an event that took place up to 7 days ago (6th level), 30
     days ago (7th level), 1 year ago (8th level), or any time in the creature's past
     (9th level).
+
     """
 
     name = "Modify Memory"
@@ -1075,17 +1117,20 @@ class ModifyMemory(Spell):
 class MoldEarth(Spell):
     """You choose a portion of dirt or stone that you can see within range and that
     fits within a 5-foot cube. You manipulate it in one of the following ways:
+
     - If
-    you target an area of loose earth, you can instantaneously excavate it, move it
-    along the ground, and deposit it up to 5 feet away. This movement doesn't have
-    enough force to cause damage.
+      you target an area of loose earth, you can instantaneously excavate it, move it
+      along the ground, and deposit it up to 5 feet away. This movement doesn't have
+      enough force to cause damage.
     - You cause shapes, colors, or both to appear on
-    the dirt or stone, spelling out words, creating images, or shaping patterns. The
-    changes last for 1 hour.
+      the dirt or stone, spelling out words, creating images, or shaping patterns. The
+      changes last for 1 hour.
     - If the dirt or stone you target is on the ground,
-    you cause it to become difficult terrain. Alternatively, you can cause the
-    ground to become normal terrain if it is already difficult terrain. This change
-    lasts for 1 hour. If you cast this spell multiple times, you can have no more
+      you cause it to become difficult terrain. Alternatively, you can cause the
+      ground to become normal terrain if it is already difficult terrain. This change
+      lasts for 1 hour.
+
+    If you cast this spell multiple times, you can have no more
     than two of its non-instantaneous effects active at a time, and you can dismiss
     such an effect as an action.
     """
@@ -1120,7 +1165,7 @@ class Moonbeam(Spell):
     On each of your turns after you cast this spell, you can use an
     action to move the beam 60 feet in any direction.
 
-    **At Higher Levels:** When you cast this spell using aspell slot
+    **At Higher Levels:** When you cast this spell using a spell slot
     of 3rd level or higher, the damage increases by 1d10 for each slot
     level above 2nd.
 
@@ -1156,6 +1201,7 @@ class MordenkainensFaithfulHound(Spell):
     feet of it that is hostile to you. The hound's attack bonus is equal to your
     spellcasting ability modifier + your proficiency bonus. On a hit, it deals 4d8
     piercing damage.
+
     """
 
     name = "Mordenkainens Faithful Hound"
@@ -1174,7 +1220,7 @@ class MordenkainensMagnificentMansion(Spell):
     """You conjure an extradimensional dwelling in range that lasts for the duration.
 
     You choose where its one entrance is located. The entrance shimmers faintly and
-    is 5 feet w ide and 10 feet tall. You and any creature you designate when you
+    is 5 feet wide and 10 feet tall. You and any creature you designate when you
     cast the spell can enter the extradimensional dwelling as long as the portal
     remains open. You can open or close the portal if you are within 30 feet of it.
     While closed, the portal is invisible.
@@ -1185,7 +1231,7 @@ class MordenkainensMagnificentMansion(Spell):
     You
     can create any floor plan you like, but the space can't exceed 50 cubes, each
     cube being 10 feet on each side. The place is furnished and decorated as you
-    choose. It contains sufficient food to serve a ninecourse banquet for up to 100
+    choose. It contains sufficient food to serve a nine-course banquet for up to 100
     people. A staff of 100 near-transparent servants attends all who enter. You
     decide the visual appearance of these servants and their attire. They are
     completely obedient to your orders. Each servant can perform any task a normal
@@ -1196,6 +1242,7 @@ class MordenkainensMagnificentMansion(Spell):
     created by this spell dissipate into smoke if removed from the mansion. When
     the spell ends, any creatures inside the extradimensional space are expelled
     into the open spaces nearest to the entrance.
+
     """
 
     name = "Mordenkainens Magnificent Mansion"
@@ -1222,18 +1269,18 @@ class MordenkainensPrivateSanctum(Spell):
     When you cast the spell,
     you decide what sort of security the spell provides, choosing any or all of the
     following properties:
-    * Sound can't pass through the barrier at the edge of the
-    warded area.
-    * The barrier of the warded area appears dark and foggy, preventing
-    vision (including darkvision) through it.
-    * Sensors created by divination
-    spells can't appear inside the protected area or pass through the barrier at its
-    perimeter.
-    * Creatures in the area can't be targeted by divination spells.
-    *
-    Nothing can teleport into or out of the warded area.
-    * Planar travel is blocked
-    within the warded area.
+
+    - Sound can't pass through the barrier at the edge of the
+      warded area.
+    - The barrier of the warded area appears dark and foggy, preventing
+      vision (including darkvision) through it.
+    - Sensors created by divination
+      spells can't appear inside the protected area or pass through the barrier at its
+      perimeter.
+    - Creatures in the area can't be targeted by divination spells.
+    - Nothing can teleport into or out of the warded area.
+    - Planar travel is blocked
+      within the warded area.
 
     Casting this spell on the same spot every day for a
     year makes this effect permanent.
@@ -1242,6 +1289,7 @@ class MordenkainensPrivateSanctum(Spell):
     using a spell slot of 5th level or higher, you can increase the size of the cube
     by 100 feet for each slot level beyond 4th. Thus you could protect a cube that
     can be up to 200 feet on one side by using a spell slot of 5th level.
+
     """
 
     name = "Mordenkainens Private Sanctum"
@@ -1268,6 +1316,7 @@ class MordenkainensSword(Spell):
     3d10 force damage. Until the spell ends, you can use a bonus action on each of
     your turns to move the sword up to 20 feet to a spot you can see and repeat this
     attack against the same target or a different one.
+
     """
 
     name = "Mordenkainens Sword"
@@ -1310,6 +1359,7 @@ class MoveEarth(Spell):
     Similarly, this
     spell doesn't directly affect plant growth. The moved earth carries any plants
     along with it.
+
     """
 
     name = "Move Earth"

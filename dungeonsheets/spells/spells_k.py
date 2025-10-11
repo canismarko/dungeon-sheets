@@ -17,6 +17,7 @@ class Knock(Spell):
     When you
     cast the spell, a loud knock, audible from as far away as 300 feet, emanates
     from the target object.
+
     """
 
     name = "Knock"

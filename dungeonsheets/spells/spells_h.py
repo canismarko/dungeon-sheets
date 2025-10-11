@@ -12,6 +12,7 @@ class HailOfThorns(Spell):
     **At Higher Levels:** If you cast this spell using a
     spell slot of 2nd level or higher, the damage increases by 1d10 for each slot
     level above 1st (to a maximum of 6d10).
+
     """
 
     name = "Hail Of Thorns"
@@ -48,50 +49,50 @@ class Hallow(Spell):
     it can make a Charisma saving throw. On a success, the creature ignores the
     extra effect until it leaves the area.
 
-    Courage
-    Affected creatures can't be
-    frightened while in the area.
+    Courage.
+      Affected creatures can't be
+      frightened while in the area.
 
-    Darkness
-    Darkness fills the area. Normal light,
-    as well as magical light created by spells of a lower level than the slot you
-    used to cast this spell, can't illuminate the area.
+    Darkness.
+      Darkness fills the area. Normal light,
+      as well as magical light created by spells of a lower level than the slot you
+      used to cast this spell, can't illuminate the area.
 
-    Daylight
-    Bright light fills
-    the area. Magical darkness created by spells of a lower level than the slot you
-    used to cast this spell can't extinguish the light.
+    Daylight.
+      Bright light fills
+      the area. Magical darkness created by spells of a lower level than the slot you
+      used to cast this spell can't extinguish the light.
 
-    Energy Protection
-    Affected
-    creatures in the area have resistance to one damage type of your choice, except
-    for bludgeoning, piercing, or slashing.
+    Energy Protection.
+      Affected
+      creatures in the area have resistance to one damage type of your choice, except
+      for bludgeoning, piercing, or slashing.
 
-    Energy Vulnerability
-    Affected
-    creatures in the area have vulnerability to one damage type of your choice,
-    except for bludgeoning, piercing, or slashing.
+    Energy Vulnerability.
+      Affected
+      creatures in the area have vulnerability to one damage type of your choice,
+      except for bludgeoning, piercing, or slashing.
 
-    Everlasting Rest
-    Dead bodies
-    interred in the area can't be turned into undead.
+    Everlasting Rest.
+      Dead bodies
+      interred in the area can't be turned into undead.
 
-    Extradimensional Interference
+    Extradimensional Interference.
+      Affected creatures can't move or travel using teleportation or by
+      extradimensional or interplanar means.
 
-    Affected creatures can't move or travel using teleportation or by
-    extradimensional or interplanar means.
+    Fear.
+      Affected creatures are frightened
+      while in the area.
 
-    Fear
-    Affected creatures are frightened
-    while in the area.
+    Silence.
+      No sound can emanate from within the area, and no
+      sound can reach into it.
 
-    Silence
-    No sound can emanate from within the area, and no
-    sound can reach into it.
+    Tongues.
+      Affected creatures can communicate with any
+      other creature in the area, even if they don't share a common language.
 
-    Tongues
-    Affected creatures can communicate with any
-    other creature in the area, even if they don't share a common language.
     """
 
     name = "Hallow"
@@ -123,6 +124,7 @@ class HallucinatoryTerrain(Spell):
     can attempt an Intelligence (Investigation) check against your spell save DC to
     disbelieve it. A creature who discerns the illusion for what it is, sees it as a
     vague image superimposed on the terrain.
+
     """
 
     name = "Hallucinatory Terrain"
@@ -146,6 +148,7 @@ class Harm(Spell):
     its hit point maximum is reduced for 1 hour by an amount equal to the necrotic
     damage it took. Any effect that removes a disease allows a creature's hit point
     maximum to return to normal before that time passes.
+
     """
 
     name = "Harm"
@@ -169,6 +172,7 @@ class Haste(Spell):
 
     When the spell ends, the target
     can't move or take actions until after its next turn, as a wave of lethargy
+
     sweeps over it.
     """
 
@@ -191,8 +195,9 @@ class Heal(Spell):
     no effect on constructs or undead.
 
     **At Higher Levels:** When you cast this spell
-    using aspell slot of 7th level or higher, the amount of healing increases by 10
+    using a spell slot of 7th level or higher, the amount of healing increases by 10
     for each slot level above 6th.
+
     """
 
     name = "Heal"
@@ -220,6 +225,7 @@ class HealingSpirit(Spell):
     **At Higher Levels:** When you cast
     this spell using a spell slot of 3rd level or higher, the healing increases 1d6
     for each slot level above 2nd.
+
     """
 
     name = "Healing Spirit"
@@ -243,6 +249,7 @@ class HealingWord(Spell):
     **At Higher Levels:** When you cast this spell using a spell slot
     of 2nd level or higher, the healing increases by 1d4 for each slot level above
     1st.
+
     """
 
     name = "Healing Word"
@@ -273,6 +280,7 @@ class HeatMetal(Spell):
     **At Higher Levels:** When you cast this spell
     using a spell slot of 3rd level or higher, the damage increases by 1d8 for each
     slot level above 2nd.
+
     """
 
     name = "Heat Metal"
@@ -299,6 +307,7 @@ class HellishRebuke(Spell):
     **At Higher Levels:** When you cast this spell using a spell slot
     of 2nd level or higher, the damage increases by 1d10 for each slot level above
     1st.
+
     """
 
     name = "Hellish Rebuke"
@@ -324,6 +333,7 @@ class HeroesFeast(Spell):
     immune to poison and being frightened, and makes all Wisdom saving throws with
     advantage. Its hit point maximum also increases by 2d10, and it gains the same
     number of hit points. These benefits last for 24 hours.
+
     """
 
     name = "Heroes Feast"
@@ -350,6 +360,7 @@ class Heroism(Spell):
 
     **At Higher Levels:** When you cast this spell using a spell slot of 2nd level or
     higher, you can target one additional creature for each slot level above 1st.
+
     """
 
     name = "Heroism"
@@ -382,6 +393,7 @@ class Hex(Spell):
     spell for up to 8 hours.
     When you use a spell slot of 5th level or higher, you
     can maintain your concentration on the spell for up to 24 hours.
+
     """
 
     name = "Hex"
@@ -406,6 +418,7 @@ class HoldMonster(Spell):
     When you cast this spell using a spell slot of 6th level or higher, you can
     target one additional creature for each slot level above 5th. The creatures must
     be within 30 feet of each other when you target them.
+
     """
 
     name = "Hold Monster"
@@ -430,6 +443,7 @@ class HoldPerson(Spell):
     slot of 3rd level or higher, you can target one additional humanoid for each
     slot level above 2nd. The humanoids must be within 30 feet of each other when
     you target them.
+
     """
 
     name = "Hold Person"
@@ -453,6 +467,7 @@ class HolyAura(Spell):
     spell ends. In addition, when a fiend or an undead hits an affected creature
     with a melee attack, the aura flashes with brilliant light. The attacker must
     succeed on a Constitution saving throw or be blinded until the spell ends.
+
     """
 
     name = "Holy Aura"
@@ -478,11 +493,12 @@ class HolyWeapon(Spell):
     hit. If the weapon isn't already a magic weapon, it becomes one for the
     duration. As a bonus action on your turn, you can dismiss this spell and cause
     the weapon to emit a burst of radiance. Each creature of your choice that you
-    can see within 30 feet ofyou must make a Constitution saving throw. On a failed
+    can see within 30 feet of you must make a Constitution saving throw. On a failed
     save, a creature takes 4d8 radiant damage, and it is blinded for 1 minute. On a
     successful save, a creature takes half as much damage and isn't blinded. At the
-    end of each Ofits turns, a blinded creature can make a Constitution saving
-    throw, ending the effect on itselfon a success.
+    end of each of its turns, a blinded creature can make a Constitution saving
+    throw, ending the effect on itself on a success.
+
     """
 
     name = "Holy Weapon"
@@ -510,6 +526,7 @@ class HungerOfHadar(Spell):
     the area takes 2d6 cold damage. Any creature that ends its turn in the area must
     succeed on a Dexterity saving throw or take 2d6 acid damage as milky,
     otherwordly tentacles rub against it.
+
     """
 
     name = "Hunger Of Hadar"
@@ -539,6 +556,7 @@ class HuntersMark(Spell):
     When you use a spell slot of 5th
     level or higher, you can maintain your concentration on the spell for up to 24
     hours.
+
     """
 
     name = "Hunters Mark"
@@ -564,6 +582,7 @@ class HypnoticPattern(Spell):
     The spell ends
     for an affected creature if it takes any damage or if someone else uses an
     action to shake the creature out of its stupor.
+
     """
 
     name = "Hypnotic Pattern"

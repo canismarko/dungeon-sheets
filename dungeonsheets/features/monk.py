@@ -36,12 +36,12 @@ class MartialArts(Feature):
       bonus action, assuming you haven't already taken a bonus action
       this turn.
 
-    Certain monasteries use specializepd forms of the monk
+    Certain monasteries use specialized forms of the monk
     weapons. For example, you might use a club that is two lengths of
-    w ood connected by a short chain (called a nunchaku) or a sickle
+    wood connected by a short chain (called a nunchaku) or a sickle
     with a shorter, straighter blade (called a kama). Whatever name
     you use for a monk weapon, you can use the game statistics
-    provided for
+    provided for that weapon.
 
     """
 
@@ -86,7 +86,7 @@ class Ki(Feature):
     Some of your ki features require your target to make a saving
     throw to resist the feature's effects. The saving throw DC is
     calculated as follows: Ki save DC = 8 + your proficiency bonus +
-    your Wisdom modifier
+    your Wisdom modifier.
 
     """
 
@@ -102,7 +102,7 @@ class Ki(Feature):
 
 class FlurryOfBlows(Feature):
     """Immediately after you take the Attack action on your turn, you can spend 1
-    ki point to make two unarmed strikes as a bonus action
+    ki point to make two unarmed strikes as a bonus action.
 
     """
 
@@ -112,7 +112,7 @@ class FlurryOfBlows(Feature):
 
 class PatientDefense(Feature):
     """You can spend 1 ki point to take the Dodge action as a bonus action on your
-    turn
+    turn.
 
     """
 
@@ -122,7 +122,7 @@ class PatientDefense(Feature):
 
 class StepOfTheWind(Feature):
     """You can spend 1 ki point to take the Disengage or Dash action as a bonus
-    action on your turn, and your jump distance is doubled for the turn
+    action on your turn, and your jump distance is doubled for the turn.
 
     """
 
@@ -170,7 +170,7 @@ class DeflectMissiles(Feature):
     make a ranged attack with the weapon or piece of ammunition you
     just caught, as part of the same reaction. You make this attack
     with proficiency, regardless of your weapon proficiencies, and the
-    missile counts as a monk weapon for the attack
+    missile counts as a monk weapon for the attack.
 
     """
 
@@ -196,7 +196,7 @@ class SlowFall(Feature):
 
 class ExtraAttackMonk(Feature):
     """Beginning at 5th level, you can attack twice, instead of once,
-    whenever you take the Attack action on your turn
+    whenever you take the Attack action on your turn.
 
     """
 
@@ -209,7 +209,7 @@ class StunningStrike(Feature):
     opponent's body. When you hit another creature with a melee weapon
     attack, you can spend 1 ki point to attempt a stunning strike. The
     target must succeed on a Constitution saving throw or be stunned
-    until the end of your next turn
+    until the end of your next turn.
 
     """
 
@@ -220,7 +220,7 @@ class StunningStrike(Feature):
 class KiEmpoweredStrikes(Feature):
     """Starting at 6th level, your unarmed strikes count as magical for
     the purpose of overcoming resistance and immunity to nonmagical
-    attacks and damage
+    attacks and damage.
 
     """
 
@@ -230,7 +230,7 @@ class KiEmpoweredStrikes(Feature):
 
 class StillnessOfMind(Feature):
     """Starting at 7th level, you can use your action to end one effect on
-    yourself that is causing you to be charmed or frightened
+    yourself that is causing you to be charmed or frightened.
 
     """
 
@@ -318,7 +318,7 @@ class OpenHandTechnique(Feature):
     - It must succeed on a Dexterity saving throw or be knocked prone.
     - It must make a Strength saving throw. If it fails, you can push
       it up to 15 feet away from you.
-    - It can't take reactions until the end of your next turn
+    - It can't take reactions until the end of your next turn.
 
     """
 
@@ -330,7 +330,7 @@ class WholenessOfBody(Feature):
     """At 6th level, you gain the ability to heal yourself. As an action,
     you can regain hit points equal to three times your monk
     level. You must finish a long rest before you can use this feature
-    again
+    again.
 
     """
 
@@ -344,7 +344,7 @@ class Tranquility(Feature):
     you gain the effect of a sanctuary spell that lasts until the
     start of your next long rest (the spell can end early as
     normal). The saving throw DC for the spell equals 8 + your Wisdom
-    modifier + your proficiency bonus
+    modifier + your proficiency bonus.
 
     """
 
@@ -460,13 +460,19 @@ class DiscipleOfTheElements(Feature):
     points you spend to increase its level) is determined by your monk
     level, as shown in the Spells and Ki Points table.
 
-    Monk Levels 5-8 : 3 Ki points Max
+    ============ ===============================
+        Spells and ki points
+    --------------------------------------------
+    Monk Levels  Maximum Ki Points for a Spell
+    ============ ===============================
+    5th-8th      3
 
-    Monk Levels 9-12 : 4 Ki points Max
+    9th-12th     4
 
-    Monk Levels 13-16 : 5 Ki points Max
+    13th-16th    5
 
-    Monk Levels 17-20 : 6 Ki points Max
+    17th-20th    6
+    ============ ===============================
 
     """
 
@@ -486,7 +492,7 @@ class ElementalAttunement(Feature):
     - Chill or warm up to 1 pound of nonliving material for up to 1
       hour.
     - Cause earth, fire, water, or mist that can fit within a 1-foot
-      cube to shape itself into a crude form you desig nate for 1
+      cube to shape itself into a crude form you designate for 1
       minute.
 
     """
@@ -498,7 +504,7 @@ class ElementalAttunement(Feature):
 class BreathOfWinter(Feature):
     """You can spend 6 ki points to cast cone of cold.
 
-    **Prerequisite:** 17th Level
+    **Prerequisite:** 17th Level.
 
     """
 
@@ -510,7 +516,7 @@ class BreathOfWinter(Feature):
 class ClenchOfTheNorthWind(Feature):
     """You can spend 3 ki points to cast hold person.
 
-    **Prerequisite:** 6th Level
+    **Prerequisite:** 6th Level.
 
     """
 
@@ -522,7 +528,7 @@ class ClenchOfTheNorthWind(Feature):
 class EternalMountainDefense(Feature):
     """You can spend 5 ki points to cast stoneskin, targeting yourself.
 
-    **Prerequisite:** 11th Level
+    **Prerequisite:** 11th Level.
 
     """
 
@@ -538,7 +544,7 @@ class FangsOfTheFireSnake(Feature):
     feet for that action, as well as the rest of the turn. A hit with
     such an attack deals fire damage instead of bludgeoning damage,
     and if you spend 1 ki point when the attack hits, it also deals an
-    extra 1d10 fire damage
+    extra 1d10 fire damage.
 
     """
 
@@ -574,7 +580,7 @@ class FistOfUnbrokenAir(Feature):
 class FlamesOfThePhoenix(Feature):
     """You can spend 4 ki points to cast fireball.
 
-    **Prerequisite:** 11th Level
+    **Prerequisite:** 11th Level.
 
     """
 
@@ -586,7 +592,7 @@ class FlamesOfThePhoenix(Feature):
 class GongOfTheSummit(Feature):
     """You can spend 3 ki points to cast shatter.
 
-    **Prerequisite:** 6th Level
+    **Prerequisite:** 6th Level.
 
     """
 
@@ -598,7 +604,7 @@ class GongOfTheSummit(Feature):
 class MistStance(Feature):
     """You can spend 4 ki points to cast gaseous form, targeting yourself.
 
-    **Prerequisite:** 11th Level
+    **Prerequisite:** 11th Level.
 
     """
 
@@ -610,7 +616,7 @@ class MistStance(Feature):
 class RideTheWind(Feature):
     """You can spend 4 ki points to cast fly, targeting yourself
 
-    **Prerequisite:** 11th Level
+    **Prerequisite:** 11th Level.
 
     """
 
@@ -622,7 +628,7 @@ class RideTheWind(Feature):
 class RiverOfHungryFlame(Feature):
     """You can spend 5 ki points to cast wall of fire.
 
-    **Prerequisite:** 17th Level
+    **Prerequisite:** 17th Level.
 
     """
 
@@ -676,7 +682,7 @@ class WaterWhip(Feature):
     additional ki point you spend, and you can either knock it prone
     or pull it up to 25 feet closer to you. On a successful save, the
     creature takes half as much damage, and you don't pull it or knock
-    it prone
+    it prone.
 
     """
 
@@ -687,7 +693,7 @@ class WaterWhip(Feature):
 class WaveOfRollingEarth(Feature):
     """You can spend 6 ki points to cast wall of stone
 
-    **Prerequisite:** 17th Level
+    **Prerequisite:** 17th Level.
 
     """
 
@@ -699,10 +705,10 @@ class WaveOfRollingEarth(Feature):
 # Way of the Long Death
 class TouchOfDeath(Feature):
     """Starting when you choose this tradition at 3rd level, your study of death
-    allows you to extract vitality from an- other creature as it nears its
+    allows you to extract vitality from another creature as it nears its
     demise. When you reduce a creature within 5 feet of you to 0 hit points,
     you gain temporary hit points equal to your Wisdom modifier + your monk
-    level (minimum of 1 temporary hit point)
+    level (minimum of 1 temporary hit point).
 
     """
 
@@ -713,9 +719,9 @@ class TouchOfDeath(Feature):
 class HourOfReaping(Feature):
     """At 6th level, you gain the ability to unsettle or terrify those around you
     as an action, for your soul has been touched by the shadow of death. When
-    you take this ac- tion , each creature within 30 feet of you that can see
-    you must succeed on a Wisdom saving throw or be fright- ened of you until
-    the end of your next turn
+    you take this action , each creature within 30 feet of you that can see
+    you must succeed on a Wisdom saving throw or be frightened of you until
+    the end of your next turn.
 
     """
 
@@ -726,7 +732,7 @@ class HourOfReaping(Feature):
 class MasteryOfDeath(Feature):
     """Beginning at 11th level, you use your familiarity with death to escape its
     grasp. When you are reduced to 0 hit points, you can expend 1 ki point (no
-    action required) to have 1 hit point instead
+    action required) to have 1 hit point instead.
 
     """
 
@@ -739,7 +745,7 @@ class TouchOfTheLongDeath(Feature):
     creature. As an action, you touch one creature within 5 feet of you, and
     you expend 1 to 10 ki points. The target must make a Constitution saving
     throw, and it takes 2d10 necrotic damage per ki point spent on a failed
-    save, or half as much damage on a suc- cessful one
+    save, or half as much damage on a successful one.
 
     """
 
@@ -752,7 +758,7 @@ class RadiantSunBolt(Feature):
     """Starting when you choose this tradition at 3rd level, you can hurl searing
     bolts of magical radiance. You gain a ranged spell attack that you can use
     with the Attack action. The attack has a range of 30 feet. You are
-    proficient with it, and you add your Dexterity modi- fier to its attack and
+    proficient with it, and you add your Dexterity modifier to its attack and
     damage rolls. Its damage is radiant, and its damage die is a d4.
 
     This die changes as you gain monk levels, as shown in the Martial Arts
@@ -810,7 +816,7 @@ class SunShield(Feature):
     extinguish or restore the light as a bonus action. If a creature hits you
     with a melee attack while this light shines, you can use you r reaction to
     deal radiant damage to the creature. The radiant damage equals 5 + your
-    Wisdom modifier
+    Wisdom modifier.
 
     """
 
@@ -823,7 +829,7 @@ class DrunkenTechnique(Feature):
     """At 3rd level, you learn how to twist and turn quickly as part of your
     Flurry of Blows. Whenever you use Flurry of Blows, you gain the benefit of
     the Disengage action, and your walking speed increases by 10 feet until the
-    end of the current turn
+    end of the current turn.
 
     """
 
@@ -839,7 +845,7 @@ class TipsySway(Feature):
     by spending 5 feet of movement, rather than half your speed.
 
     **Redirect Attack:** When a creature misses you with a melee attack roll,
-    you can spend 1 ki point as a re- action to cause that attack to hit one
+    you can spend 1 ki point as a reaction to cause that attack to hit one
     creature of your choice, other than the attacker, that you can see within 5
     feet of you.
 
@@ -850,10 +856,10 @@ class TipsySway(Feature):
 
 
 class DrunkardsLuck(Feature):
-    """Starting at llth level, you always seem to get a lucky bounce at the right
+    """Starting at 11th level, you always seem to get a lucky bounce at the right
     moment. When you make an ability check, an attack roll, or a saving throw
-    and have disad- vantage on the roll, you can spend 2 ki points to cancel
-    the disadvantage for that roll
+    and have disadvantage on the roll, you can spend 2 ki points to cancel
+    the disadvantage for that roll.
 
     """
 
@@ -862,11 +868,11 @@ class DrunkardsLuck(Feature):
 
 
 class IntoxicatedFrenzy(Feature):
-    """At 17th level, you gain the ability to make an overwhelm- ing number of
+    """At 17th level, you gain the ability to make an overwhelming number of
     attacks against a group of enemies. When you use your Flurry of Blows, you
     can make up to three additional attacks with it (up to a total of five
-    Flurry of Blows attacks), provided that each Flurry of Blows at- tack
-    targets a different creature this turn
+    Flurry of Blows attacks), provided that each Flurry of Blows attack
+    targets a different creature this turn.
 
     """
 
@@ -876,14 +882,14 @@ class IntoxicatedFrenzy(Feature):
 
 # Way of the Kensei
 class PathOfTheKensei(Feature):
-    """When you choose this tradition at 3rd level, your spe- cial martial arts
+    """When you choose this tradition at 3rd level, your special martial arts
     training leads you to master the use of certain weapons. This path also
     includes instruction in the deft strokes of calligraphy or painting. You
     gain the following benefits.
 
     **Kensei Weapons:** Choose two types of weapons to be your kensei weapons:
     one melee weapon and one ranged weapon. Each of these weapons can be any
-    sim- ple or martial weapon that lacks the heavy and special properties. The
+    simple or martial weapon that lacks the heavy and special properties. The
     longbow is also a valid choice. You gain proficiency with these weapons if
     you don't already have it. Weapons of the chosen types are monk weapons for
     you. Many of this tradition's features work only with your kensei
@@ -900,11 +906,11 @@ class PathOfTheKensei(Feature):
     **Kensei's Shot:** You can use a bonus action on your turn to make your
     ranged attacks with a kensei weapon more deadly. When you do so, any target
     you hit with a ranged attack using a kensei weapon takes an extra 1d4
-    damage of the weapons type. You retain this benefit un- til the end of the
+    damage of the weapons type. You retain this benefit until the end of the
     current turn.
 
-    **Way ofthe Brush:** You gain proficiency with your choice of
-    calligrapher's supplies or painter's supplies
+    **Way of the Brush:** You gain proficiency with your choice of
+    calligrapher's supplies or painter's supplies.
 
     """
 
@@ -913,11 +919,11 @@ class PathOfTheKensei(Feature):
 
 
 class OneWithTheBlade(Feature):
-    """At 6th level, you extend your ki into your kensei weap- ons, granting you
+    """At 6th level, you extend your ki into your kensei weapons, granting you
     the following benefits.
 
     **Magic Kensei Weapons:** Your attacks with your kensei weapons count as
-    magical for the purpose of over- coming resistance and immunity to
+    magical for the purpose of overcoming resistance and immunity to
     nonmagical attacks and damage
 
     **Deft Strike:** When you hit a target with a kensei weapon, you can spend
@@ -932,13 +938,13 @@ class OneWithTheBlade(Feature):
 
 
 class SharpenTheBlade(Feature):
-    """At 11th level, you gain the ability to augment your weap- ons further with
+    """At 11th level, you gain the ability to augment your weapons further with
     your ki. As a bonus action, you can expend up to 3 ki points to grant one
     kensei weapon you touch a bonus to attack and damage rolls when you attack
     with it. The bonus equals the number of ki points you spent. This bonus
     lasts for 1 minute or until you use this feature again. This feature has no
     effect on a magic weapon that already has a bonus to attack and damage
-    rolls
+    rolls.
 
     """
 
@@ -947,8 +953,8 @@ class SharpenTheBlade(Feature):
 
 
 class UnerringAccuracy(Feature):
-    """At 17th level, your mastery of weapons grants you ex- traordinary
-    accuracy. Ifyou miss with an attack roll using a monk weapon on your turn,
+    """At 17th level, your mastery of weapons grants you extraordinary
+    accuracy. If you miss with an attack roll using a monk weapon on your turn,
     you can reroll it. You can use this feature only once on each of your
     turns.
 

@@ -12,6 +12,7 @@ class TashasHideousLaughter(Spell):
     turns, and each time it takes damage, the target can make another Wisdom saving
     throw. The target has advantage on the saving throw if it's triggered by damage.
     On a success, the spell ends.
+
     """
 
     name = "Tashas Hideous Laughter"
@@ -35,31 +36,35 @@ class Telekinesis(Spell):
     or choose a new one at any time. If you switch targets, the prior target is no
     longer affected by the spell.
 
-    Creature
-    You can try to move a Huge or smaller
-    creature. Make an ability check with your spellcasting ability contested by the
-    creature's Strength check. If you win the contest, you move the creature up to
-    30 feet in any direction, including upward but not beyond the range of this
-    spell. Until the end of your next turn, the creature is restrained in your
-    telekinetic grip. A creature lifted upward is suspended in mid-air.
-    On
-    subsequent rounds, you can use your action to attempt to maintain your
-    telekinetic grip on the creature by repeating the contest.
+    Creature.
+      You can try to move a Huge or smaller
+      creature. Make an ability check with your spellcasting ability contested by the
+      creature's Strength check. If you win the contest, you move the creature up to
+      30 feet in any direction, including upward but not beyond the range of this
+      spell. Until the end of your next turn, the creature is restrained in your
+      telekinetic grip. A creature lifted upward is suspended in mid-air.
 
-    Object
-    You can try
-    to move an object that weighs up to 1,000 pounds. If the object isn't being worn
-    or carried, you automatically move it up to 30 feet in any direction, but not
-    beyond the range of this spell.
-    If the object is worn or carried by a creature,
-    you must make an ability check with your spellcasting ability contested by that
-    creature's Strength check. If you succeed, you pull the object away from that
-    creature and can move it up to 30 feet in any direction but not beyond the range
-    of this spell.
-    You can exert fine control on objects with your telekinetic
-    grip, such as manipulating a simple tool, opening a door or a container, stowing
-    or retrieving an item from an open container, or pouring the contents from a
-    vial.
+      On
+      subsequent rounds, you can use your action to attempt to maintain your
+      telekinetic grip on the creature by repeating the contest.
+
+    Object.
+      You can try
+      to move an object that weighs up to 1,000 pounds. If the object isn't being worn
+      or carried, you automatically move it up to 30 feet in any direction, but not
+      beyond the range of this spell.
+
+      If the object is worn or carried by a creature,
+      you must make an ability check with your spellcasting ability contested by that
+      creature's Strength check. If you succeed, you pull the object away from that
+      creature and can move it up to 30 feet in any direction but not beyond the range
+      of this spell.
+
+      You can exert fine control on objects with your telekinetic
+      grip, such as manipulating a simple tool, opening a door or a container, stowing
+      or retrieving an item from an open container, or pouring the contents from a
+      vial.
+
     """
 
     name = "Telekinesis"
@@ -80,13 +85,13 @@ class Telepathy(Spell):
     The creature can be anywhere on the same plane of existence as
     you. The spell ends if you or the target are no longer on the same plane.
 
-
     Until the spell ends, you and the target can instantaneously share words,
     images, sounds, and other sensory messages with one another through the link,
     and the target recognizes you as the creature it is communicating with. The
     spell enables a creature with an Intelligence score of at least 1 to understand
     the meaning of your words and take in the scope of any sensory messages you send
     to it.
+
     """
 
     name = "Telepathy"
@@ -119,11 +124,11 @@ class Teleport(Spell):
     ================== ========== ============ ========== ==========
     Permanent circle   --         --           --         01-100
     Associated object  --         --           --         01-100
-    Very familiar      01–05      06–13        14–24      25–100
-    Seen casually      01–33      34–43        44–53      54–100
-    Viewed once        01–43      44–53        54–73      74–100
-    Description        01–43      44–53        54–73      74–100
-    False destination  01–50      51–100       --         --
+    Very familiar      01-05      06-13        14-24      25-100
+    Seen casually      01-33      34-43        44-53      54-100
+    Viewed once        01-43      44-53        54-73      74-100
+    Description        01-43      44-53        54-73      74-100
+    False destination  01-50      51-100       --         --
     ================== ========== ============ ========== ==========
 
     Familiarity.
@@ -146,10 +151,10 @@ class Teleport(Spell):
       tried to scry an enemy's sanctum but instead viewed an illusion,
       or you are attempting to teleport to a familiar location that no
       longer exists.
-    On Target
+    On Target.
       You and your group (or the target object) appear where you want
       to.
-    Off Target
+    Off Target.
       You and your group (or the target object) appear a random
       distance away from the destination in a random
       direction. Distance off target is 1d10 x 1d10 percent of the
@@ -161,7 +166,7 @@ class Teleport(Spell):
       east, and so on around the points of the compass. If you were
       teleporting to a coastal city and wound up 18 miles out at sea,
       you could be in trouble.
-    Similar Area
+    Similar Area.
       You and your group (or the target object) wind up in a different
       area that's visually or thematically similar to the target
       area. If you are heading for your home laboratory, for example,
@@ -170,7 +175,7 @@ class Teleport(Spell):
       implements as your laboratory. Generally, you appear in the
       closest similar place, but since the spell has no range limit,
       you could conceivably wind up anywhere on the plane.
-    Mishap
+    Mishap.
       The spell's unpredictable magic results in a difficult
       journey. Each teleporting creature (or the target object) takes
       3d10 force damage, and the DM rerolls on the table to see where
@@ -196,6 +201,7 @@ class TeleportationCircle(Spell):
     inscribed with sigils that link your location to a permanent teleportation
     circle of your choice whose sigil sequence you know and that is on the same
     plane of existence as you.
+
     A shimmering portal opens within the circle you drew
     and remains open until the end of your next turn. Any creature that enters the
     portal instantly appears within 5 feet of the destination circle or in the
@@ -214,6 +220,7 @@ class TeleportationCircle(Spell):
     teleportation circle by casting this spell in the same location every day for
     one year. You need not use the circle to teleport when you cast the spell in
     this way.
+
     """
 
     name = "Teleportation Circle"
@@ -241,10 +248,12 @@ class TempleOfTheGods(Spell):
     by a floor, walls, and a roof, with one door granting access to the interior and
     as many windows as you wish. Only you and any creatures you designate when you
     cast the spell can open or close the door.
+
     The temple's interior is an open
     space with an idol or altar at one end. You decide whether the temple is
     illuminated and whether that illumination is bright light or dim light. The
     smell of burning incense fills the air within, and the temperature is mild.
+
     The
     temple opposes types of creatures you choose when you cast this spell. Choose
     one or more of the following: celestials, elementals, fey, fiends, or undead. If
@@ -253,20 +262,25 @@ class TempleOfTheGods(Spell):
     hours. Even if the creature can enter the temple, the magic there hinders it;
     whenever it makes an attack roll, an ability check, or a saving throw inside the
     temple, it must roll a d4 and subtract the number rolled from the d20 roll.
+
     In
     addition, the sensors created by divination spells can't appear inside the
     temple, and creatures within can't be targeted by divination spells.
+
     Finally,
     whenever any creature in the temple regains hit points from a spell of 1st level
     or higher, the creature regains additional hit points equal to your Wisdom
     modifier (minimum 1 hit point).
+
     The temple is made from opaque magical force
     that extends into the Ethereal Plane, thus blocking ethereal travel into the
     temple's interior. Nothing can physically pass through the temple's exterior. It
     can't be dispelled by dispel magic, and antimagic field has no effect on it. A
     disintegrate spell destroys the temple instantly.
+
     Casting this spell on the same
     spot every day for a year makes this effect permanent.
+
     """
 
     name = "Temple Of The Gods"
@@ -298,6 +312,7 @@ class TensersFloatingDisk(Spell):
 
     If you move more than 100 feet from the disk (typically because it can't
     move around an obstacle to follow you), the spell ends.
+
     """
 
     name = "Tensers Floating Disk"
@@ -315,25 +330,27 @@ class TensersFloatingDisk(Spell):
 class TensersTransformation(Spell):
     """You endow yourself with endurance and martial prowess fueled by magic. Until the
     spell ends, you can't cast spells, and you gain the following benefits:
+
     - You
-    gain 50 temporary hit points. If any of these remain when the spell ends, they
-    are lost.
+      gain 50 temporary hit points. If any of these remain when the spell ends, they
+      are lost.
     - You have advantage on attack rolls that you make with simple and
-    martial weapons.
+      martial weapons.
     - When you hit a target with a weapon attack, that target takes
-    an extra 2d12 force
-    damage.
+      an extra 2d12 force
+      damage.
     - You have proficiency with all armor, shields,
-    simple weapons, and martial weapons.
+      simple weapons, and martial weapons.
     - You have proficiency in Strength and
-    Constitution saving throws.
+      Constitution saving throws.
     - You can attack twice, instead of once, when you
-    take the Attack action on your turn. You ignore this benefit if you already have
-    a feature, like Extra Attack, that gives you extra attacks.
+      take the Attack action on your turn. You ignore this benefit if you already have
+      a feature, like Extra Attack, that gives you extra attacks.
 
     Immediately after
     the spell ends, you must succeed on a DC 15 Constitution saving throw or suffer
     one level of exhaustion.
+
     """
 
     name = "Tensers Transformation"
@@ -389,9 +406,9 @@ class ThornWhip(Spell):
     target. If the attack hits, the creature takes 1d6 piercing damage, and if the
     creature is Large or smaller, you pull the creature up to 10 feet closer to you.
 
-
     **At Higher Levels:** This spell's damage increases by 1d6 when you reach 5th
     level (2d6), 11th level (3d6), and 17th level (4d6).
+
     """
 
     name = "Thorn Whip"
@@ -412,6 +429,7 @@ class ThunderStep(Spell):
     within 10 feet of the space you left must make a Constitution saving throw,
     taking 3d10 thunder damage on a failed save, or half as much damage on a
     successful one. The thunder can be heard from up to 300 feet away.
+
     You can bring
     along objects as long as their weight doesn't exceed what you can carry. You
     can also teleport one willing creature of your size or smaller who is carrying
@@ -422,6 +440,7 @@ class ThunderStep(Spell):
 
     **At Higher Levels:** When you cast this spell using a spell slot of
     4th level or higher, the damage increases by 1d10 for each slot level above 3rd.
+
     """
 
     name = "Thunder Step"
@@ -444,6 +463,7 @@ class Thunderclap(Spell):
     The spell's
     damage increases by 1d6 when you reach 5th level (2d6), 11th level (3d6), and
     17th level (4d6).
+
     """
 
     name = "Thunderclap"
@@ -464,6 +484,7 @@ class ThunderousSmite(Spell):
     attack deals an extra 2d6 thunder damage to the target. Additionally, if the
     target is a creature, it must succeed on a Strength saving throw or be pushed 10
     feet away from you and knocked prone.
+
     """
 
     name = "Thunderous Smite"
@@ -493,6 +514,7 @@ class Thunderwave(Spell):
     **At Higher Levels:** When you
     cast this spell using a spell slot of 2nd level or higher, the damage increases
     by 1d8 for each slot level above 1st.
+
     """
 
     name = "Thunderwave"
@@ -515,6 +537,7 @@ class TidalWave(Spell):
     save, a creature takes half as much damage and isn't knocked prone. The water
     then spreads out across the ground in all directions, extinguishing unprotected
     flames in its area and within 30 feet of it, and then it vanishes.
+
     """
 
     name = "Tidal Wave"
@@ -539,6 +562,7 @@ class TimeStop(Spell):
     creature other than you or an object being worn or carried by someone other
     than you. In addition, the spell ends if you move to a place more than 1,000
     feet from the location where you cast it.
+
     """
 
     name = "Time Stop"
@@ -559,6 +583,7 @@ class TinyServant(Spell):
     sprouts little arms and legs, becoming a creature under your control until the
     spell ends or the creature drops to 0 hit points. See the stat block for its
     statistics.
+
     As a bonus action, you can mentally command the creature if it is
     within 120 feet of you. (If you control multiple creatures with this spell, you
     can command any or all of them at the same time, issuing the same command to
@@ -568,10 +593,11 @@ class TinyServant(Spell):
     servant does nothing other than defend itself against hostile creatures. Once
     given an order, the servant continues to follow that order until its task is
     complete.
+
     When the creature drops to 0 hit points, it reverts to its original
     form, and any remaining damage carries over to that form.
 
-    At Higher Levels:
+    **At Higher Levels:**
     When you cast this spell using a spell slot of 4th level or higher, you can
     animate two additional objects for each slot level above 3rd.
     """
@@ -596,6 +622,7 @@ class TollTheDead(Spell):
     The spell's damage increases
     by one die when you reach 5th level (2d8 or 2d12), 11th level (3d8 or 3d12), and
     17th level (4d8 or 4d12).
+
     """
 
     name = "Toll The Dead"
@@ -614,6 +641,7 @@ class Tongues(Spell):
     """This spell grants the creature you touch the ability to understand any spoken
     language it hears. Moreover, when the target speaks, any creature that knows at
     least one language and can hear the target understands what it says.
+
     """
 
     name = "Tongues"
@@ -631,30 +659,35 @@ class Tongues(Spell):
 class TransmuteRock(Spell):
     """You choose an area of stone or mud that you can see that fits within a 40-foot
     cube and is within range, and choose one of the following effects.
-    Transmute
-    Rock to Mud. Nonmagical rock of any sort in the area becomes an equal volume of
-    thick, flowing mud that remains for the spell's duration.
-    The ground in the
-    spell's area becomes muddy enough that creatures can sink into it. Each foot
-    that a creature moves through the mud costs 4 feet of movement, and any creature
-    on the ground when you cast the spell must make a Strength saving throw. A
-    creature must also make the saving throw when it moves into the area for the
-    first time on a turn or ends its turn there. On a failed save, a creature sinks
-    into the mud and is restrained, though it can use an action to end the
-    restrained condition on itself by pulling itself free of the mud.
-    If you cast
-    the spell on a ceiling, the mud falls. Any creature under the mud when it falls
-    must make a Dexterity saving throw. A creature takes 4d8 bludgeoning damage on a
-    failed save, or half as much damage on a successful one.
+
+    Transmute Rock to Mud.
+      Nonmagical rock of any sort in the area becomes an equal volume of
+      thick, flowing mud that remains for the spell's duration.
+
+      The ground in the
+      spell's area becomes muddy enough that creatures can sink into it. Each foot
+      that a creature moves through the mud costs 4 feet of movement, and any creature
+      on the ground when you cast the spell must make a Strength saving throw. A
+      creature must also make the saving throw when it moves into the area for the
+      first time on a turn or ends its turn there. On a failed save, a creature sinks
+      into the mud and is restrained, though it can use an action to end the
+      restrained condition on itself by pulling itself free of the mud.
+
+      If you cast
+      the spell on a ceiling, the mud falls. Any creature under the mud when it falls
+      must make a Dexterity saving throw. A creature takes 4d8 bludgeoning damage on a
+      failed save, or half as much damage on a successful one.
+
     Transmute Mud to Rock.
-    Nonmagical mud or quicksand in the area no more than 10 feet deep transforms
-    into soft stone for the spell's duration. Any creature in the mud when it
-    transforms must make a Dexterity saving throw. On a successful save, a creature
-    is shunted safely to the surface in an unoccupied space. On a failed save, a
-    creature becomes restrained by the rock. A restrained creature, or another
-    creature within reach, can use an action to try to break the rock by succeeding
-    on a DC 20 Strength check or by dealing damage to it. The rock has AC 15 and 25
-    hit points, and it is immune to poison and psychic damage.
+      Nonmagical mud or quicksand in the area no more than 10 feet deep transforms
+      into soft stone for the spell's duration. Any creature in the mud when it
+      transforms must make a Dexterity saving throw. On a successful save, a creature
+      is shunted safely to the surface in an unoccupied space. On a failed save, a
+      creature becomes restrained by the rock. A restrained creature, or another
+      creature within reach, can use an action to try to break the rock by succeeding
+      on a DC 20 Strength check or by dealing damage to it. The rock has AC 15 and 25
+      hit points, and it is immune to poison and psychic damage.
+
     """
 
     name = "Transmute Rock"
@@ -675,6 +708,7 @@ class TransportViaPlants(Spell):
     You must have seen or touched the destination plant at least once before. For
     the duration, any creature can step into the target plant and exit from the
     destination plant by using 5 feet of movement.
+
     """
 
     name = "Transport Via Plants"
@@ -700,9 +734,9 @@ class TreeStride(Spell):
     choice within 5 feet of the destination tree, using another 5 feet of movement.
     If you have no movement left, you appear within 5 feet of the tree you entered.
 
-
     You can use this transportation ability once per round for the duration. You
     must end each turn outside a tree.
+
     """
 
     name = "Tree Stride"
@@ -729,46 +763,51 @@ class TruePolymorph(Spell):
     affected by this spell. An unwilling creature can make a Wisdom saving throw,
     and if it succeeds, it isn't affected by this spell.
 
-    Creature into Creature
-    If
-    you turn a creature into another kind of creature, the new form can be any kind
-    you choose whose challenge rating is equal to or less than the target's (or its
-    level, if the target doesn't have a challenge rating). The target's game
-    statistics, including mental ability scores, are replaced by the statistics of
-    the new form. It retains its alignment and personality.
-    The target assumes the
-    hit points of its new form, and when it reverts to its normal form, the creature
-    returns to the number of hit points it had before it transformed. If it reverts
-    as a result of dropping to 0 hit points, any excess damage carries over to its
-    normal form. As long as the excess damage doesn't reduce the creature's normal
-    form to 0 hit points, it isn't knocked unconscious.
-    The creature is limited in
-    the actions it can perform by the nature of its new form, and it can't speak,
-    cast spells, or take any other action that requires hands or speech unless its
-    new form is capable of such actions.
-    The target's gear melds into the new form.
-    The creature can't activate, use, wield, or otherwise benefit from any of its
-    equipment.
+    Creature into Creature.
+      If
+      you turn a creature into another kind of creature, the new form can be any kind
+      you choose whose challenge rating is equal to or less than the target's (or its
+      level, if the target doesn't have a challenge rating). The target's game
+      statistics, including mental ability scores, are replaced by the statistics of
+      the new form. It retains its alignment and personality.
 
-    Object into Creature
-    You can turn an object into any kind of
-    creature, as long as the creature's size is no larger than the object's size and
-    the creature's challenge rating is 9 or lower. The creature is friendly to you
-    and your companions. It acts on each of your turns. You decide what action it
-    takes and how it moves. The DM has the creature's statistics and resolves all of
-    its actions and movement.
-    If the spell becomes permanent, you no longer control
-    the creature. It might remain friendly to you, depending on how you have
-    treated it.
+      The target assumes the
+      hit points of its new form, and when it reverts to its normal form, the creature
+      returns to the number of hit points it had before it transformed. If it reverts
+      as a result of dropping to 0 hit points, any excess damage carries over to its
+      normal form. As long as the excess damage doesn't reduce the creature's normal
+      form to 0 hit points, it isn't knocked unconscious.
 
-    Creature into Object
-    If you turn a creature into an object, it
-    transforms along with whatever it is wearing and carrying into that form. The
-    creature's statistics become those of the object, and the creature has no memory
-    of time spent in this form, after the spell ends and it returns to its normal
-    form.
+      The creature is limited in
+      the actions it can perform by the nature of its new form, and it can't speak,
+      cast spells, or take any other action that requires hands or speech unless its
+      new form is capable of such actions.
+
+      The target's gear melds into the new form.
+      The creature can't activate, use, wield, or otherwise benefit from any of its
+      equipment.
+
+    Object into Creature.
+      You can turn an object into any kind of
+      creature, as long as the creature's size is no larger than the object's size and
+      the creature's challenge rating is 9 or lower. The creature is friendly to you
+      and your companions. It acts on each of your turns. You decide what action it
+      takes and how it moves. The DM has the creature's statistics and resolves all of
+      its actions and movement.
+
+      If the spell becomes permanent, you no longer control
+      the creature. It might remain friendly to you, depending on how you have
+      treated it.
+
+    Creature into Object.
+      If you turn a creature into an object, it
+      transforms along with whatever it is wearing and carrying into that form. The
+      creature's statistics become those of the object, and the creature has no memory
+      of time spent in this form, after the spell ends and it returns to its normal
+      form.
 
     This spell can't affect a target that has 0 hit points.
+
     """
 
     name = "True Polymorph"
@@ -796,6 +835,7 @@ class TrueResurrection(Spell):
     The spell can even provide a new body if the original no
     longer exists, in which case you must speak the creature's name. The creature
     then appears in an unoccupied space you choose within 10 feet of you.
+
     """
 
     name = "True Resurrection"
@@ -818,6 +858,7 @@ class TrueSeeing(Spell):
     they actually are. For the duration, the creature has truesight,  notices secret
     doors hidden by magic, and can see into the Ethereal Plane, all out to a range
     of 120 feet.
+
     """
 
     name = "True Seeing"
@@ -840,6 +881,7 @@ class TrueStrike(Spell):
     you a brief insight into the target's defenses. On your next turn, you gain
     advantage on your first attack roll against the target, provided that this spell
     hasn't ended.
+
     """
 
     name = "True Strike"
@@ -877,6 +919,7 @@ class Tsunami(Spell):
     wave, though, the creature must make a successful Strength (Athletics) check
     against your spell save DC in order to move at all. If it fails the check, it
     can't move. A creature that moves out of the area falls to the ground.
+
     """
 
     name = "Tsunami"

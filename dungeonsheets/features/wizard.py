@@ -11,7 +11,7 @@ class ArcaneRecovery(Feature):
     level (rounded up), and none of the slots can be 6th level or
     higher. For example, if you're a 4th-level wizard, you can recover
     up to two levels worth of spell slots. You can recover either a
-    2nd-level spell slot or two 1st-level spell slots
+    2nd-level spell slot or two 1st-level spell slots.
 
     """
 
@@ -85,7 +85,7 @@ class ProjectedWard(Feature):
     """Starting at 6th level, when a creature that you can see within 30 feet of
     you takes damage, you can use your reaction to cause your Arcane Ward to
     absorb that damage. If this damage reduces the ward to 0 hit points, the
-    warded creature takes any remaining damage
+    warded creature takes any remaining damage.
 
     """
 
@@ -107,7 +107,7 @@ class ImprovedAbjuration(Feature):
 
 class SpellResistance(Feature):
     """Starting at 14th level, you have advantage on saving throws against
-    spells. Furthermore, you have resistance against the damage of spells
+    spells. Furthermore, you have resistance against the damage of spells.
 
     """
 
@@ -157,7 +157,7 @@ class BenignTransposition(Feature):
 
 class FocusedConjuration(Feature):
     """Beginning at 10th level, while you are concentrating on a conjuration
-    spell, your concentration can't be broken as a result of taking damage
+    spell, your concentration can't be broken as a result of taking damage.
 
     """
 
@@ -167,7 +167,7 @@ class FocusedConjuration(Feature):
 
 class DurableSummons(Feature):
     """Starting at 14th level, any creature that you summon or create with a
-    conjuration spell has 30 temporary hit points
+    conjuration spell has 30 temporary hit points.
 
     """
 
@@ -194,7 +194,7 @@ class Portent(Feature):
     of these foretelling rolls. You must choose to do so before the roll, and
     you can replace a roll in this way only once per turn. Each foretelling
     roll can be used only once. When you finish a long rest, you lose any
-    unused foretelling rolls
+    unused foretelling rolls.
 
     """
 
@@ -221,16 +221,17 @@ class TheThirdEye(Feature):
     lasts until you are incapacitated or you take a short or long rest. You
     can't use the feature again until you finish a rest.
 
-    **Darkvision**: You gain darkvision out to a range of 60 feet, as described
-    in Chapter 8.
-
-    **Ethereal Sight**: You can see into the Ethereal Plane within 60
-    feet of you.
-
-    **Greater Comprehension**: You can read any language.
-
-    **See Invisibility**: You can see invisible creatures and objects within 10
-    feet of you that are within line of sight
+    Darkvision
+      You gain darkvision out to a range of 60 feet, as described
+      in Chapter 8.
+    Ethereal Sight
+      You can see into the Ethereal Plane within 60
+      feet of you.
+    Greater Comprehension
+      You can read any language.
+    See Invisibility
+      You can see invisible creatures and objects within 10
+      feet of you that are within line of sight.
 
     """
 
@@ -241,7 +242,7 @@ class TheThirdEye(Feature):
 class GreaterPortent(Feature):
     """Starting at 14th level, the visions in your dreams intensify and paint a
     more accurate picture in your mind of what is to come. You roll three d20s
-    for your Portent feature, rather than two
+    for your Portent feature, rather than two.
 
     """
 
@@ -252,7 +253,7 @@ class GreaterPortent(Feature):
 # Enchantment
 class EnchantmentSavant(Feature):
     """Beginning when you select this school at 2nd level, the gold and time you
-    must spend to copy an enchantment spell into your spellbook is halved
+    must spend to copy an enchantment spell into your spellbook is halved.
 
     """
 
@@ -275,7 +276,7 @@ class HypnoticGaze(Feature):
     can neither see nor hear you, or if the creature takes damage. Once the
     effect ends, or if the creature succeeds on its initial saving throw
     against this effect, you can't use this feature on that creature again
-    until you finish a long rest
+    until you finish a long rest.
 
     """
 
@@ -287,7 +288,7 @@ class InstinctiveGaze(Feature):
     """Beginning at 6th level, when a creature you can see within 30 feet of you
     makes an attack roll against you, you can use your reaction to divert the
     attack, provided that another creature is within the attack's range. The
-    attacker must make a W isdom saving throw against your wizard spell save
+    attacker must make a Wisdom saving throw against your wizard spell save
     DC. On a failed save, the attacker must target the creature that is closest
     to it, not including you or itself. If multiple creatures are closest, the
     attacker chooses which one to target. On a successful save, you can't use
@@ -352,7 +353,7 @@ class SculptSpells(Feature):
     affects other creatures that you can see, you can choose a number of them
     equal to 1 + the spell's level. The chosen creatures automatically succeed
     on their saving throws against the spell, and they take no damage if they
-    would normally take half damage on a successful save
+    would normally take half damage on a successful save.
 
     """
 
@@ -364,7 +365,7 @@ class PotentCantrip(Feature):
     """Starting at 6th level, your damaging cantrips affect even creatures that
     avoid the brunt of the effect. When a creature succeeds on a saving throw
     against your cantrip, the creature takes half the cantrip's damage (if any)
-    but suffers no additional effect from the cantrip
+    but suffers no additional effect from the cantrip.
 
     """
 
@@ -374,7 +375,7 @@ class PotentCantrip(Feature):
 
 class EmpoweredEvocation(Feature):
     """Beginning at 10th level, you can add your Intelligence modifier to the
-    damage roll of any wizard evocation spell you cast
+    damage roll of any wizard evocation spell you cast.
 
     """
 
@@ -426,7 +427,7 @@ class MalleableIllusions(Feature):
     """Starting at 6th level, when you cast an illusion spell that has a duration
     of 1 minute or longer, you can use your action to change the nature of that
     illusion (using the spell's normal parameters for the illusion), provided
-    that you can see the illusion
+    that you can see the illusion.
 
     """
 
@@ -439,7 +440,7 @@ class IllusorySelf(Feature):
     as an instant, almost instinctual reaction to danger. When a creature makes
     an attack roll against you, you can use your reaction to interpose the
     illusory duplicate between the attacker and yourself. The attack
-    automatically m isses you, then the illusion dissipates. Once you use this
+    automatically misses you, then the illusion dissipates. Once you use this
     feature, you can't use it again until you finish a short or long rest.
 
     """
@@ -450,13 +451,13 @@ class IllusorySelf(Feature):
 
 class IllusoryReality(Feature):
     """By 14th level, you have learned the secret of weaving shadow magic into
-    your illusions to give them a semi- reality. When you cast an illusion
+    your illusions to give them a semireality. When you cast an illusion
     spell of 1st level or higher, you can choose one inanimate, nonmagical
     object that is part of the illusion and make that object real. You can do
     this on your turn as a bonus action while the spell is ongoing. The object
     remains real for 1 minute. For example, you can create an illusion of a
     bridge over a chasm and then make it real long enough for your allies to
-    cross. The object can't deal damage or otherwise directly harm anyone
+    cross. The object can't deal damage or otherwise directly harm anyone.
 
     """
 
@@ -481,7 +482,9 @@ class GrimHarvest(Feature):
     with a spell of 1st level or higher, you regain hit points equal to twice
     the spell's level, or three times its level if the spell belongs to the
     School of Necromancy. You don't gain this benefit for killing constructs or
-    undead"""
+    undead.
+
+    """
 
     name = "Grim Harvest"
     source = "Wizard (School of Necromancy)"
@@ -497,7 +500,7 @@ class UndeadThralls(Feature):
     - The creature's hit point maximum is increased by an amount equal
       to your wizard level.
     - The creature adds your proficiency bonus to its weapon damage
-      rolls
+      rolls.
 
     """
 
@@ -510,7 +513,7 @@ class InuredToUndeath(Feature):
     """Beginning at 10th level, you have resistance to necrotic damage, and your
     hit point maximum can't be reduced. You have spent so much time dealing
     with undead and the forces that animate them that you have become inured to
-    some of their worst effects
+    some of their worst effects.
 
     """
 
@@ -529,7 +532,7 @@ class CommandUndead(Feature):
     Intelligence of 8 or higher, it has advantage on the saving throw. If it
     fails the saving throw and has an Intelligence of 12 or higher, it can
     repeat the saving throw at the end of every hour until it succeeds and
-    breaks free
+    breaks free.
 
     """
 
@@ -557,7 +560,7 @@ class MinorAlchemy(Feature):
     each 10 minutes you spend performing the procedure, you can transform up to
     1 cubic foot of material. After 1 hour, or until you lose your
     concentration (as if you were concentrating on a spell), the material
-    reverts to its original substance
+    reverts to its original substance.
 
     """
 
@@ -583,7 +586,7 @@ class TransmutersStone(Feature):
     Each time you cast a transmutation spell of 1st level or higher,
     you can change the effect of your stone if the stone is on your
     person. If you create a new transmuter's stone, the previous one
-    ceases to function
+    ceases to function.
 
     """
 
@@ -598,7 +601,7 @@ class Shapechanger(Feature):
     transform into a beast whose challenge rating is 1 or lower. Once
     you cast polymorph in this way, you can't do so again until you
     finish a short or long rest, though you can still cast it normally
-    using an available spell slot
+    using an available spell slot.
 
     """
 
@@ -614,22 +617,23 @@ class MasterTransmuter(Feature):
     transmuter's stone is destroyed and can't be remade until you finish a long
     rest.
 
-    **Major Transformation**: You can transmute one nonmagical object-no
-    larger than a 5-foot cube-into another nonmagical object of similar size
-    and mass and of equal or lesser value. You must spend 10 minutes handling
-    the object to transform it.
-
-    **Panacea**: You remove all curses, diseases, and poisons affecting a creature
-    that you touch with the transmuter's stone. The creature also regains all
-    its hit points.
-
-    **Restore Life**: You cast the raise dead spell on a creature you touch
-    with the transmuter's stone, without expending a spell slot or needing to
-    have the spell in your spellbook.
-
-    **Restore Youth**: You touch the transmuter's stone to a willing creature,
-    and that creature's apparent age is reduced by 3d10 years, to a minimum of
-    13 years. This effect doesn't extend the creature's lifespan
+    Major Transformation
+      You can transmute one nonmagical object-no
+      larger than a 5-foot cube-into another nonmagical object of similar size
+      and mass and of equal or lesser value. You must spend 10 minutes handling
+      the object to transform it.
+    Panacea
+      You remove all curses, diseases, and poisons affecting a creature
+      that you touch with the transmuter's stone. The creature also regains all
+      its hit points.
+    Restore Life
+      You cast the raise dead spell on a creature you touch
+      with the transmuter's stone, without expending a spell slot or needing to
+      have the spell in your spellbook.
+    Restore Youth
+      You touch the transmuter's stone to a willing creature,
+      and that creature's apparent age is reduced by 3d10 years, to a minimum of
+      13 years. This effect doesn't extend the creature's lifespan.
 
     """
 
@@ -644,7 +648,7 @@ class Bladesong(Feature):
     armor or using a shield. It graces you with supernatural speed,
     agility, and focus. You can use a bonus action to start the
     Bladesong, which lasts for 1 minute. It ends early if you are
-    incapac- itated, if you don medium or heavy armor or a shield, or
+    incapacitated, if you don medium or heavy armor or a shield, or
     if you use two hands to make an attack with a weapon. You can also
     dismiss the Bladesong at any time you choose (no action required).
 
@@ -678,7 +682,7 @@ class ExtraAttackBladesinging(Feature):
 
 
 class SongOfDefense(Feature):
-    """Beginning at 10th level, you can direct your magic to ab- sorb damage
+    """Beginning at 10th level, you can direct your magic to absorb damage
     while your Bladesong is active. When you take damage, you can use your
     reaction to expend one spell slot and reduce that damage to you by an
     amount equal to five times the spell slot's level.
@@ -691,7 +695,7 @@ class SongOfDefense(Feature):
 
 class SongOfVictory(Feature):
     """Starting at 14th level, you add your Intelligence modifier (minimum of +1)
-    to the damage of your melee weapon attacks while you r Bladesong is active
+    to the damage of your melee weapon attacks while your Bladesong is active.
 
     """
 
@@ -702,7 +706,7 @@ class SongOfVictory(Feature):
 # War Magic
 class ArcaneDeflection(Feature):
     """At 2nd level, you have learned to weave your magic to fortify yourself
-    against harm. When you are hit by an at- tack or you fail a saving throw,
+    against harm. When you are hit by an attack or you fail a saving throw,
     you can use your reaction to gain a +2 bonus to your AC against that attack
     or a +4 bonus to that saving throw. When you use this feature, you can't
     cast spells other than cantrips until the end of your next turn.
@@ -731,13 +735,13 @@ class PowerSurge(Feature):
     called a power surge. You can store a maximum number of power surges equal
     to your Intelligence modifier (minimum of one). Whenever you finish a long
     rest, your number of power surges reset-s to one. Whenever you successfully
-    end a spell with dispel magic or counterspel], you gain one power surge, as
+    end a spell with dispel magic or counterspell, you gain one power surge, as
     you steal magic from the spell you foiled. If you end a short rest with no
-    power surges, you gain one power surge
+    power surges, you gain one power surge.
 
     Once per turn when you deal damage to a creature or object with a wizard
     spell, you can spend one power surge to deal extra force damage to that
-    target. The ex- tra damage equals half your wizard level.
+    target. The extra damage equals half your wizard level.
 
     """
 
@@ -758,7 +762,7 @@ class DurableMagic(Feature):
 
 class DeflectingShroud(Feature):
     """At 14th level, your Arcane Deflection becomes infused with deadly
-    magic. When you use your Arcane Deflec- tion feature, you can cause magical
+    magic. When you use your Arcane Deflection feature, you can cause magical
     energy to are from you. Up to three creatures of your choice that you can
     see within 60 feet of you each take force damage equal to half your wizard
     level.

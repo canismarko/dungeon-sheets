@@ -11,6 +11,7 @@ class VampiricTouch(Spell):
     **At Higher Levels:** When you
     cast this spell using a spell slot of 4th level or higher, the damage increases
     by 1d6 for each slot level above 3rd.
+
     """
 
     name = "Vampiric Touch"
@@ -35,6 +36,7 @@ class ViciousMockery(Spell):
 
     **At Higher Levels:** This spell's damage increases by 1d4 when you
     reach 5th level (2d4), 11th level (3d4), and 17th level (4d4).
+
     """
 
     name = "Vicious Mockery"
@@ -60,6 +62,7 @@ class VitriolicSphere(Spell):
     **At Higher Levels:** When you cast this spell
     using a spell slot of 5th level or higher, the initial damage increases by 2d4
     for each slot level above 4th.
+
     """
 
     name = "Vitriolic Sphere"

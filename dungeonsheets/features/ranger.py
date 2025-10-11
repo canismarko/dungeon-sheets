@@ -177,7 +177,7 @@ class HideInPlainSight(Feature):
 
     You gain a +10 bonus to Dexterity (Stealth) checks as long as you remain
     there without moving or taking actions. Once you move or take an action or
-    a reaction, you must camouflage yourself again to gain this benefit
+    a reaction, you must camouflage yourself again to gain this benefit.
 
     """
 
@@ -202,7 +202,7 @@ class FeralSenses(Feature):
     see it doesn't impose disadvantage on your attack rolls against it. You are
     also aware of the location of any invisible creature within 30 feet of you,
     provided that the creature isn't hidden from you and you aren't blinded or
-    deafened
+    deafened.
 
     """
 
@@ -327,7 +327,7 @@ class Volley(Feature):
     """You can use your action to make a ranged attack against any number of
     creatures within 10 feet of a point you can see within your weapon's
     range. You must have ammunition for each target, as normal, and you make a
-    separate attack roll for each target
+    separate attack roll for each target.
 
     """
 
@@ -337,7 +337,7 @@ class Volley(Feature):
 
 class WhirlwindAttack(Feature):
     """You can use your action to make a melee attack against any number of
-    creatures within 5 feet of you, with a separate attack roll for each target
+    creatures within 5 feet of you, with a separate attack roll for each target.
 
     """
 
@@ -363,7 +363,7 @@ class MultiattackRanger(FeatureSelector):
 class StandAgainstTheTide(Feature):
     """When a hostile creature misses you with a melee attack, you can use your
     reaction to force that creature to repeat the same attack against another
-    creature (other than itself) of your choice
+    creature (other than itself) of your choice.
 
     """
 
@@ -425,7 +425,7 @@ class RangersCompanion(Feature):
 class ExceptionalTraining(Feature):
     """Beginning at 7th level, on any of your turns when your beast companion
     doesn't attack, you can use a bonus action to command the beast to take the
-    Dash, Disengage, Dodge, or Help action on its turn
+    Dash, Disengage, Dodge, or Help action on its turn.
 
     """
 
@@ -446,7 +446,7 @@ class BestialFury(Feature):
 class ShareSpells(Feature):
     """Beginning at 15th level, when you cast a spell targeting yourself, you can
     also affect your beast companion with the spell if the beast is within 30
-    feet of you
+    feet of you.
 
     """
 
@@ -515,7 +515,7 @@ class StalkersFlurry(Feature):
     """At 11th level, you learn to attack with such unexpected speed that you can
     turn a miss into another strike. Once on each of your turns when you miss
     with a weapon attack, you can make another weapon attack as part of the
-    same action
+    same action.
 
     """
 
@@ -572,10 +572,10 @@ class PlanarWarrior(Feature):
 
 class EtherealStep(Feature):
     """At 7th level, you learn to step through the Ethereal Plane. As a bonus
-    action, you can cast the etherealncss spell with this feature, without
+    action, you can cast the etherealness spell with this feature, without
     expending a spell slot, but the spell ends at the end of the current
     turn. Once you use this feature, you can't use it again until you finish a
-    short or long rest
+    short or long rest.
 
     """
 
@@ -586,7 +586,7 @@ class EtherealStep(Feature):
 class DistantStrike(Feature):
     """At 11th level, you gain the ability to pass between the planes in the blink
     of an eye. When you take the Attack action, you can teleport up to 10 feet
-    before each attack to an unoccupied space you can see. Ifyou attack at
+    before each attack to an unoccupied space you can see. If you attack at
     least two different creatures with the action, you can make one additional
     attack with it against a third creature.
 
@@ -600,7 +600,7 @@ class SpectralDefense(Feature):
     """At 15th level, your ability to move between planes enables you to slip
     through the planar boundaries to lessen the harm done to you during
     battle. When you take damage from an attack, you can use your reaction to
-    give yourself resistance to all of that attack's damage on this turn
+    give yourself resistance to all of that attack's damage on this turn.
 
     """
 
@@ -615,7 +615,7 @@ class HuntersSense(Feature):
     within 60 feet ofyou. You immediately learn whether the creature has any
     damage immunities, resistances, or vulnerabilities and What they are. If
     the creature is hidden from divination magic, you sense that it has no
-    damage immunities, re- sistances, or vulnerabilities. You can use this
+    damage immunities, resistances, or vulnerabilities. You can use this
     feature a number of times equal to your Wisdom modifier (minimum of
     once). You regain all expended uses of it when you finish a long rest.
 
@@ -636,7 +636,7 @@ class SlayersPrey(Feature):
     can see within 60 feet of you as the target of this feature. The first time
     each turn that you hit that target with a weapon attack, it takes an extra
     1d6 damage from the weapon. This benefit lasts until you finish a short or
-    long rest. It ends early if you designate a different creature
+    long rest. It ends early if you designate a different creature.
 
     """
 
@@ -648,7 +648,7 @@ class SupernaturalDefense(Feature):
     """At 7th level, you gain extra resilience against your prey's assaults on
     your mind and body. Whenever the target of your Slayer's Prey forces you to
     make a saving throw and whenever you make an ability check to escape that
-    targets grapple, add 1d6 to your roll
+    targets grapple, add 1d6 to your roll.
 
     """
 
@@ -675,8 +675,8 @@ class SlayersCounter(Feature):
     to sabotage you. If the target of your Slayer's Prey forces you to make a
     saving throw, you can use your reaction to make one weapon attack against
     the quarry. You make this attack immediately before making the saving
-    throw. If your attack hits, your save automatir cally succeeds, in addition
-    to the attack's normal effects
+    throw. If your attack hits, your save automatically succeeds, in addition
+    to the attack's normal effects.
 
     """
 
@@ -698,7 +698,7 @@ class FavoredEnemyRevised(Feature):
 
     When you gain this feature, you also learn one language of your choice,
     typically one spoken by your favored enemy or creatures associated with
-    it. However, you are free to pick any language you wish to learn
+    it. However, you are free to pick any language you wish to learn.
 
     """
 
@@ -807,7 +807,7 @@ class HideInPlainSightRevised(Feature):
     any effect or action causes you to no longer be hidden.
 
     If you are still hidden on your next turn, you can continue to remain
-    motionless and gain this benefit until you are detected
+    motionless and gain this benefit until you are detected.
 
     """
 
@@ -841,7 +841,7 @@ class AnimalCompanion(Feature):
 
     If you use this ability to return a former animal companion to life while
     you have a current animal companion, your current companion leaves you and
-    is replaced by the restored companion
+    is replaced by the restored companion.
 
     """
 
@@ -898,7 +898,7 @@ class CoordinatedAttack(Feature):
 
 class BeastsDefense(Feature):
     """At 7th level, while your companion can see you, it has advantage on all
-    saving throw
+    saving throw.
 
     """
 
@@ -909,7 +909,7 @@ class BeastsDefense(Feature):
 class StormOfClawsAndFangs(Feature):
     """At 11th level, your companion can use its action to make a melee attack
     against each creature of its choice within 5 feet of it, with a separate
-    attack roll for each target
+    attack roll for each target.
 
     """
 
@@ -936,7 +936,7 @@ class UnderdarkScout(Feature):
     creatures that rely on darkvision. Such creatures gain no benefit when
     attempting to detect you in dark and dim conditions. Additionally, when the
     DM determines if you can hide from a creature, that creature gains no
-    benefit from its darkvision
+    benefit from its darkvision.
 
     """
 
@@ -948,7 +948,7 @@ class StalkersDodge(Feature):
     """At 15th level, whenever a creature attacks you and does not have advantage,
     you can use your reaction to impose disadvantage on the creature's attack
     roll against you. You can use this feature before or after the attack roll
-    is made, but it must be used before the outcome of the roll is determined
+    is made, but it must be used before the outcome of the roll is determined.
 
     """
 

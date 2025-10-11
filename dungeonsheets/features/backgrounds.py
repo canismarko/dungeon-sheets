@@ -169,7 +169,7 @@ class ShipsPassage(Feature):
     can't be certain of a schedule or route that will meet your every
     need. Your Dungeon Master will determine how long it takes to get where you
     need to go. In return for your free passage, you and your companions are
-    expected to assist the crew during the voyage
+    expected to assist the crew during the voyage.
 
     """
 
@@ -240,7 +240,7 @@ class EarToTheGround(Feature):
 class WatchersEye(Feature):
     """Your experience in enforcing the law, and dealing with lawbreakers, gives
     you a feel for local laws and criminals. You can easily find the local
-    outpost of the watch or a simila r organization, and just as easily pick
+    outpost of the watch or a similar organization, and just as easily pick
     out the dens of criminal activity in a community, although you're more
     likely to be welcome in the former locations rather than the latter.
 
@@ -353,8 +353,8 @@ class KnightlyRegard(Feature):
     """You receive shelter and succor from members of your knightly order and those
     who are sympathetic to its aims. If your order is a religious one, you can
     gain aid from temples and other religious communities of your
-    deity. Knights of civic orders can get help from the community- whether a
-    lone settlement or a great nation- that they serve, and knights of
+    deity. Knights of civic orders can get help from the community whether a
+    lone settlement or a great nation that they serve, and knights of
     philosophical orders can find help from those they have aided in pursuit of
     their ideals , and those who share those ideals.
 
@@ -429,17 +429,31 @@ class FacelessPersona(Feature):
     your persona, or work with the DM to create a persona that's unique to your
     character and suits the tone of your game.
 
-    **d10|FacelessPersona:**\n
-    1|A flamboyant spy or brigand\n
-    2|The incarnation of a nation or people\n
-    3|A scoudnrell with a masked guise\n
-    4|A vengeful spirit\n
-    5|The manifestation of a deity or your faith\n
-    6|One whose beauty is gratly accented using makeup\n
-    7|An impersonation of another hero\n
-    8|The embodiment of a schoool of magic\n
-    9|A warrior with distinctive armor\n
-    10|A disguise with animalistic or monstrous characteristics, meant to inspire fear
+    ====== ====================================================
+    d10    Faceless Persona
+    ====== ====================================================
+    1      A flamboyant spy or brigand
+
+    2      The incarnation of a nation or people
+
+    3      A scoundrel with a masked guise
+
+    4      A vengeful spirit
+
+    5      The manifestation of a deity or your faith
+
+    6      One whose beauty is greatly accented using makeup
+
+    7      An impersonation of another hero
+
+    8      The embodiment of a school of magic
+
+    9      A warrior with distinctive armor
+
+    10     A disguise with animalistic or monstrous
+           characteristics, meant to inspire fear
+    ====== ====================================================
+
     """
 
     name = "Faceless Persona"
@@ -454,9 +468,10 @@ class DualPersonalities(Feature):
     removing your disguise and revealing your true face, you are no longer
     identifiable as your persona. This Allows you to change appearances between
     your two personalities as often as you wish, using one to hide the other or
-    seve as convenient camouflage. However, should someone realize the
+    serve as convenient camouflage. However, should someone realize the
     connection between your persona and your true self, your deception might
-    lose its effectiveness
+    lose its effectiveness.
+
     """
 
     name = "Dual Personalities"

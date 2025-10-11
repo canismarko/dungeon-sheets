@@ -20,6 +20,7 @@ class Fabricate(Spell):
     to create items that ordinarily require a high degree of craftsmanship, such as
     jewelry, weapons, glass, or armor, unless you have proficiency with the type of
     artisan's tools used to craft such objects.
+
     """
 
     name = "Fabricate"
@@ -44,6 +45,7 @@ class FaerieFire(Spell):
     Any attack
     roll against an affected creature or object has advantage if the attacker can
     see it, and the affected creature or object can't benefit from being invisible.
+
     """
 
     name = "Faerie Fire"
@@ -65,6 +67,7 @@ class FalseLife(Spell):
     **At Higher Levels:** When you cast this
     spell using a spell slot of 2nd level or higher, you gain 5 additional temporary
     hit points for each slot level above 1st.
+
     """
 
     name = "False Life"
@@ -83,6 +86,7 @@ class FarStep(Spell):
     """You teleport up to 60 feet to an unoccupied space you can see. On each of your
     turns before the spell ends, you can use a bonus action to teleport in this way
     again.
+
     """
 
     name = "Far Step"
@@ -108,6 +112,7 @@ class Fear(Spell):
     creature ends its turn in a location where it doesn't have line of sight to you,
     the creature can make a Wisdom saving throw. On a successful save, the spell
     ends for that creature.
+
     """
 
     name = "Fear"
@@ -130,6 +135,7 @@ class FeatherFall(Spell):
     60 feet per round until the spell ends. If the creature lands before the spell
     ends, it takes no falling damage and can land on its feet, and the spell ends
     for that creature.
+
     """
 
     name = "Feather Fall"
@@ -159,6 +165,7 @@ class Feeblemind(Spell):
     throw against this spell. If it succeeds on its saving throw, the spell ends.
 
     The spell can also be ended by greater restoration, heal or wish.
+
     """
 
     name = "Feeblemind"
@@ -185,6 +192,7 @@ class FeignDeath(Spell):
     resistance to all damage except psychic damage. If the target is diseased or
     poisoned when you cast the spell, or becomes diseased or poisoned while under
     the spell's effect, the disease and poison have no effect until the spell ends.
+
     """
 
     name = "Feign Death"
@@ -206,7 +214,6 @@ class FindFamiliar(Spell):
     unoccupied space within range, the familiar has the statistics of the chosen
     form, though it is a celestial, fey or fiend (your choice) instead of a beast.
 
-
     Your familiar acts independently of you, but it always obeys your commands.
     In combat, it rolls its own initiative and acts on its own turn. A familiar
     can't attack, but it can take other actions as normal.
@@ -220,7 +227,6 @@ class FindFamiliar(Spell):
     can see through your familiar's eyes and hear what it hears until the start of
     your next turn, gaining the benefits of any special senses that the familiar
     has. During this time, you are deaf and blind with regard to your own senses.
-
 
     As an action, you can temporarily dismiss your familiar. It disappears into a
     pocket dimension where it awaits you summons. Alternatively, you can dismiss it
@@ -237,6 +243,7 @@ class FindFamiliar(Spell):
     as if it had cast the spell. Your familiar must be within 100 feet of you, and
     it must use its reaction to deliver the spell when you cast it. If the spell
     requires an attack roll, you use your attack modifier for the roll.
+
     """
 
     name = "Find Familiar"
@@ -263,7 +270,7 @@ class FindGreaterSteed(Spell):
     of its normal creature type. Additionally, if it has an Intelligence score of 5
     or lower, its Intelligence becomes 6, and it gains the ability to understand one
     language of your choice that you speak. You control the mount in combat. While
-    the mount is within 1 mile of you, you can communicate with it te1epathically.
+    the mount is within 1 mile of you, you can communicate with it telepathically.
     While mounted on it, you can make any spell you cast that targets only you also
     target the mount. The mount disappears temporarily when it drops to 0 hit points
     or when you dismiss it as an action. Casting this spell again re-summons the
@@ -272,6 +279,7 @@ class FindGreaterSteed(Spell):
     time. As an action, you can release a mount from its bond, causing it to
     disappear permanently. Whenever the mount disappears, it leaves behind any
     objects it was wearing or carrying.
+
     """
 
     name = "Find Greater Steed"
@@ -311,6 +319,7 @@ class FindSteed(Spell):
     your steed is within 1 mile of you, you can communicate with it telepathically.
     You can't have more than one steed bonded by this spell at a time. As an action,
     you can release the steed from its bond at any time, causing it to disappear.
+
     """
 
     name = "Find Steed"
@@ -335,9 +344,10 @@ class FindThePath(Spell):
     For the duration, as long
     as you are on the same plane of existence as the destination, you know how far
     it is and in what direction it lies. While you are traveling there, whenever you
-    are presented with a choice of paths along the way, you atomatically determine
+    are presented with a choice of paths along the way, you automatically determine
     which path is the shortest and most direct route (but not necessarily the safest
     route) to the destination."
+
     """
 
     name = "Find The Path"
@@ -368,6 +378,7 @@ class FindTraps(Spell):
     This spell merely reveals that a trap is present. You don't
     learn the location of each trap, but you do learn the general nature of the
     danger posed by a trap you sense.
+
     """
 
     name = "Find Traps"
@@ -392,6 +403,7 @@ class FingerOfDeath(Spell):
     A humanoid killed by this spell rises at the start
     of your next turn as a zombie that is permanently under your command, following
     your verbal orders to the best of its ability.
+
     """
 
     name = "Finger Of Death"
@@ -411,9 +423,9 @@ class FireBolt(Spell):
     spell attack against the target. On a hit, the target takes 1d10 fire damage. A
     flammable object hit by this spell ignites if it isn't being worn or carried.
 
-
     **At Higher Levels:** This spell's damage increases by 1d10 when you reach 5th level
     (2d10), 11th level (3d10), and 17th level (4d10).
+
     """
 
     name = "Fire Bolt"
@@ -441,6 +453,7 @@ class FireShield(Spell):
     In addition, whenever a creature within 5 feet of you hits you with a
     melee attack, the shield erupts with flame. The attacker takes 2d8 fire damage
     from a warm shield, or 2d8 cold damage from a cold shield.
+
     """
 
     name = "Fire Shield"
@@ -467,6 +480,7 @@ class FireStorm(Spell):
     The fire damages objects in the area and ignites flammable
     objects that aren't being worn or carried. If you choose, plant life in the area
     is unaffected by this spell.
+
     """
 
     name = "Fire Storm"
@@ -518,6 +532,7 @@ class FlameArrows(Spell):
     this spell using a spell slot of 4th level or higher, the number of pieces of
     ammunition you can affect with this spell increases by two for each slot level
     above 3rd.
+
     """
 
     name = "Flame Arrows"
@@ -547,6 +562,7 @@ class FlameBlade(Spell):
     **At Higher Levels:** When you
     cast this spell using a spell slot of 4th level or higher, the damage increases
     by 1d6 for every two slot levels above 2nd.
+
     """
 
     name = "Flame Blade"
@@ -571,6 +587,7 @@ class FlameStrike(Spell):
     **At Higher Levels:** When you cast this spell using a spell slot
     of 6th level or higher, the fire damage or the radiant damage (your choice)
     increases by 1d6 for each slot level above 5th.
+
     """
 
     name = "Flame Strike"
@@ -605,6 +622,7 @@ class FlamingSphere(Spell):
 
     **At Higher Levels:** When you cast this spell using a spell slot of 3rd
     level or higher, the damage increases by 1d6 for each slot level above 2nd.
+
     """
 
     name = "Flaming Sphere"
@@ -629,17 +647,17 @@ class FleshToStone(Spell):
     successful save, the creature isn't affected.
 
     A creature restrained by this
-    spell must make another Consititution saving throw at the end of each of its
+    spell must make another Constitution saving throw at the end of each of its
     turns. If it successfully saves against this spell three times, the spell ends.
     If it fails saves three times, it is turned to stone and subjected to the
     petrified condition for the duration. The successes and failures don't need to
     be consecutive; keep track of both until the target collects three of a kind.
 
-
     If the creature is physically broken while petrified, it suffers from similar
     deformities if it reverts to its original state. If you maintain your
     concentration on this spell for the entire possible duration, the creature is
     turned to stone until the effect is removed.
+
     """
 
     name = "Flesh To Stone"
@@ -662,6 +680,7 @@ class Fly(Spell):
     **At Higher Levels:** When you cast this spell using a spell
     slot of 4th level or higher, you can target one additional creature for each
     slot level above 3rd.
+
     """
 
     name = "Fly"
@@ -685,6 +704,7 @@ class FogCloud(Spell):
     **At Higher Levels:** When you cast this spell using a spell
     slot of 2nd level or higher, the radius of the fog increases by 20 feet for each
     slot level above 1st.
+
     """
 
     name = "Fog Cloud"
@@ -722,6 +742,7 @@ class Forbiddance(Spell):
     area of another forbiddance spell. If you cast forbiddance every day for 30 days
     in the same location, the spell lasts until it is dispelled, and the material
     components are consumed on the last casting.
+
     """
 
     name = "Forbiddance"
@@ -765,6 +786,7 @@ class Forcecage(Spell):
     spell or effect. The cage also extends into the Ethereal Plane, blocking
     ethereal travel.
     This spell can't be dispelled by dispel magic.
+
     """
 
     name = "Forcecage"
@@ -787,6 +809,7 @@ class Foresight(Spell):
     duration.
     This spell immediately ends if you cast it again before its duration
     ends.
+
     """
 
     name = "Foresight"
@@ -811,6 +834,7 @@ class FreedomOfMovement(Spell):
     escape from nonmagical restraints, such as manacles or a creature that has it
     grappled. Finally, being underwater imposes no penalties on the target's
     movement or attacks.
+
     """
 
     name = "Freedom Of Movement"
@@ -832,6 +856,7 @@ class Friends(Spell):
     toward you. A creature prone to violence might attack you. Another creature
     might seek retribution in other ways (at the DM's discretion), depending on the
     nature of your interaction with it.
+
     """
 
     name = "Friends"
@@ -853,6 +878,7 @@ class Frostbite(Spell):
     makes before the end of its next turn.
     The spell's damage increases by 1d6 when
     you reach 5th level (2d6), 11th level (3d6), and 17th level (4d6).
+
     """
 
     name = "Frostbite"

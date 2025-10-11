@@ -82,7 +82,7 @@ class DistantSpell(Metamagic):
     """When you cast a spell that has a range of 5 feet or greater, you can spend
     1 sorcery point to double the range of the spell. When you cast a spell
     that has a range of touch, you can spend 1 sorcery point to make the range
-    of the spell 30 feet
+    of the spell 30 feet.
 
     """
 
@@ -114,7 +114,7 @@ class ExtendedSpell(Metamagic):
 class HeightenedSpell(Metamagic):
     """When you cast a spell that forces a creature to make a saving throw to
     resist its effects, you can spend 3 sorcery points to give one target of
-    the spell disadvantage on its first saving throw made against the spell
+    the spell disadvantage on its first saving throw made against the spell.
 
     """
 
@@ -300,7 +300,7 @@ class DragonWings(Feature):
     dismiss them as a bonus action on your turn. You can't manifest your wings
     while wearing armor unless the armor is made to accommodate them, and
     clothing not made to accommodate your wings might be destroyed when you
-    manifest them
+    manifest them.
 
     """
 
@@ -543,10 +543,10 @@ class HeartOfTheStorm(Feature):
 
 class StormGuide(Feature):
     """At 6th level, you gain the ability to subtly control the weather around
-    you. Ifit is raining, you can use an action to cause the rain to stop
+    you. If it is raining, you can use an action to cause the rain to stop
     falling in a 20-foot-radius sphere centered on you. You can end this effect
     as a bonus action. If it is windy, you can use a bonus action each round to
-    choose the direction that the wind blows in a IOO-foot-radius sphere
+    choose the direction that the wind blows in a 1OO-foot-radius sphere
     centered on you. The wind blows in that direction until the end of your next
     turn. This feature doesn't alter the speed of the wind.
 
@@ -573,7 +573,7 @@ class WindSoul(Feature):
     """At 18th level, you gain immunity to lightning and thunder damage. You also
     gain a magical flying speed of 60 feet. As an action. you can reduce your
     flying speed to 30 feet for 1 hour and choose a number of creatures within
-    30 feet ofyou equal to 3 + your Charisma modifier. The chosen creatures
+    30 feet of you equal to 3 + your Charisma modifier. The chosen creatures
     gain a magical flying speed of 30 feet for 1 hour. Once you reduce your
     flying speed in this way, you can't do so again until you finish a short or
     long rest.

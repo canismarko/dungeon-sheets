@@ -12,6 +12,7 @@ class DancingLights(Spell):
     As a bonus action on your turn, you can move the lights up to 60 feet
     to a new spot within range. A light must be within 20 feet of another light
     created by this spell, and a light winks out if it exceeds the spell's range.
+
     """
 
     name = "Dancing Lights"
@@ -46,6 +47,7 @@ class DanseMacabre(Spell):
     **At Higher Levels:** When you cast
     this spell using a spell slot‘ of 6th level or higher, you animate up to two
     additional corpses for each slot level above 5th.
+
     """
 
     name = "Danse Macabre"
@@ -75,6 +77,7 @@ class Darkness(Spell):
     If any of this spell's
     area overlaps with an area of light created by a spell of 2nd level or lower,
     the spell that created the light is dispelled.
+
     """
 
     name = "Darkness"
@@ -93,6 +96,7 @@ class Darkvision(Spell):
     """You touch a willing creature to grant it the ability to see in the dark.
     For the
     duration, that creature has darkvision out to a range of 60 feet.
+
     """
 
     name = "Darkvision"
@@ -116,6 +120,7 @@ class Dawn(Spell):
     saving throw whenever it ends its turn in the cylinder. If you're within 60
     feet of the cylinder, you can move it up to 60 feet as a bonus action on your
     turn.
+
     """
 
     name = "Dawn"
@@ -144,6 +149,7 @@ class Daylight(Spell):
     If any of this spell's area overlaps with an area
     of darkness created by a spell of 3rd level or lower, the spell that created the
     darkness is dispelled.
+
     """
 
     name = "Daylight"
@@ -166,6 +172,7 @@ class DeathWard(Spell):
     in effect when the target is subjected to an effect that would kill it
     instantaneously without dealing damage, that effect is instead negated against
     the target, and the spells ends.
+
     """
 
     name = "Death Ward"
@@ -203,9 +210,10 @@ class DelayedBlastFireball(Spell):
     The fire damages objects in the
     area and ignites flammable objects that aren't being worn or carried.
 
-    At
-    Higher Levels: When you cast this spell using a spell slot of 8th level or
+    **At
+    Higher Levels:** When you cast this spell using a spell slot of 8th level or
     higher, the base damage increases by 1d6 for each slot level above 7th.
+
     """
 
     name = "Delayed Blast Fireball"
@@ -235,7 +243,8 @@ class Demiplane(Spell):
     you know the nature and contents of a demiplane created by a casting of  this
     spell by another creature, you can have the shadowy door connect to its
     demiplane instead.
-    """
+
+"""
 
     name = "Demiplane"
     level = 8
@@ -255,6 +264,7 @@ class DestructiveWave(Spell):
     Constitution saving throw or take 5d6 thunder damage, as well as 5d6 radiant or
     necrotic damage (your choice), and be knocked prone. A creature that succeeds on
     its saving throw takes half as much damage and isn't knocked prone.
+
     """
 
     name = "Destructive Wave"
@@ -278,6 +288,7 @@ class DetectEvilAndGood(Spell):
     The spell can penetrate
     most barriers, but it is blocked by 1 foot of stone, 1 inch of common metal, a
     thin sheet of lead, or 3 feet of wood or dirt.
+
     """
 
     name = "Detect Evil And Good"
@@ -301,6 +312,7 @@ class DetectMagic(Spell):
     The spell can penetrate most barriers, but is blocked
     by 1 foot of stone, 1 inch of common metal, a thin sheet of lead, or 3 feet of
     wood or dirt.
+
     """
 
     name = "Detect Magic"
@@ -323,6 +335,7 @@ class DetectPoisonAndDisease(Spell):
     The spell can penetrate
     most barriers, but is blocked by 1 foot of stone, 1 inch of common metal, a thin
     sheet of lead, or 3 feet of wood or dirt.
+
     """
 
     name = "Detect Poison And Disease"
@@ -372,6 +385,7 @@ class DetectThoughts(Spell):
     Once you detect the presence of a creature in this way,
     you can read its thoughts for the rest of the duration as described above, even
     if you can't see it, but it must still be within range.
+
     """
 
     name = "Detect Thoughts"
@@ -402,6 +416,7 @@ class DimensionDoor(Spell):
     place already occupied by an object or a creature, you and any creature
     traveling with you each take 4d6 force damage, and the spell fails to teleport
     you.
+
     """
 
     name = "Dimension Door"
@@ -429,10 +444,11 @@ class DisguiseSelf(Spell):
     up to physical inspection. For example, if you use this spell to add a hat to
     your outfit, objects pass through the hat, and anyone who touches it would feel
     nothing or would feel your head and hair. If you use this spell to appear
-    thinner than you are, the hand of som eone who reaches out to touch you would
+    thinner than you are, the hand of someone who reaches out to touch you would
     bump into you while it was seemingly still in midair. To discern that you are
     disguised, a creature can use its action to inspect your appearance and must
     succeed on an Intelligence (Investigation) check against your spell save DC.
+
     """
 
     name = "Disguise Self"
@@ -471,6 +487,7 @@ class Disintegrate(Spell):
     **At Higher Levels:** When you cast this
     spell using a spell slot of 7th level or higher, the damage increases by 3d6 for
     each slot level above 6th.
+
     """
 
     name = "Disintegrate"
@@ -494,19 +511,20 @@ class DispelEvilAndGood(Spell):
     You can end the spell early by using either of the following special
     functions.
 
-    Break  Enchantment
-    As your action, you touch a creature you can
-    reach that is charmed, frightened, or possessed by a celestial, an elemental, a
-    fey, a fiend, or an undead. The creature you touch is no longer charmed,
-    frightened, or possessed by such creatures.
+    Break Enchantment.
+      As your action, you touch a creature you can
+      reach that is charmed, frightened, or possessed by a celestial, an elemental, a
+      fey, a fiend, or an undead. The creature you touch is no longer charmed,
+      frightened, or possessed by such creatures.
 
-    Dismissal
-    As your action, make a
-    melee spell attack against a celestial, an elemental, a fey, a fiend, or an
-    undead you can reach. On a hit, you attempt to drive the creature back to its
-    home plane. The creature must succeed on a Charisma saving throw or be sent back
-    to its home plane (if it isn't there already). If they aren't on their home
-    plane, undead are sent to the Shadowfell, and fey are sent to the Feywild.
+    Dismissal.
+      As your action, make a
+      melee spell attack against a celestial, an elemental, a fey, a fiend, or an
+      undead you can reach. On a hit, you attempt to drive the creature back to its
+      home plane. The creature must succeed on a Charisma saving throw or be sent back
+      to its home plane (if it isn't there already). If they aren't on their home
+      plane, undead are sent to the Shadowfell, and fey are sent to the Feywild.
+
     """
 
     name = "Dispel Evil And Good"
@@ -527,7 +545,7 @@ class DispelMagic(Spell):
     target, make an ability check using your spellcasting ability. The DC equals 10
     + the spell's level. On a successful check, the spell ends.
 
-    At Higher Levels:
+    **At Higher Levels:**
     When you cast this spell using a spell slot of 4th level or higher, you
     automatically end the effects of a spell on the target if the spell's level is
     equal to or less than the level of the spell slot you used.
@@ -555,9 +573,10 @@ class DissonantWhispers(Spell):
     or a pit. On a successful save, the target takes half as much damage and doesn't
     have to move away. A deafened creature automatically succeeds on the save.
 
-    At
-    Higher Levels: When you cast this spell using a spell slot of 2nd level or
+    **At
+    Higher Levels:** When you cast this spell using a spell slot of 2nd level or
     higher, the damage increases by 1d6 for each slot level above 1st
+
     """
 
     name = "Dissonant Whispers"
@@ -586,6 +605,7 @@ class Divination(Spell):
     two or more times before finishing your next long rest, there is a cumulative 25
     percent chance for each casting after the first that you get a random reading.
     The DM makes this roll in secret.
+
     """
 
     name = "Divination"
@@ -605,7 +625,8 @@ class Divination(Spell):
 
 class DivineFavor(Spell):
     """Your prayer empowers you with divine radiance. Until the spell ends, your weapon
-    attacks deal and extra 1d4 radiant damage on a hit.
+    attacks deal an extra 1d4 radiant damage on a hit.
+
     """
 
     name = "Divine Favor"
@@ -681,6 +702,7 @@ class DominateBeast(Spell):
     spell slot, the duration is concentration, up to 1 hour. When you use
     a spell slot of 7th level or higher, the duration is concentration, up to
     8 hours
+
     """
 
     name = "Dominate Beast"
@@ -723,6 +745,7 @@ class DominateMonster(Spell):
 
     **At Higher Levels:** When you cast this spell with
     a 9th-level spell slot, the duration is concentration, up to 8 hours.
+
     """
 
     name = "Dominate Monster"
@@ -766,6 +789,7 @@ class DominatePerson(Spell):
     spell slot, the duration is concentration, up to 1 hour. When you use
     a spell slot of 8th level or higher, the duration is concentration, up to
     8 hours.
+
     """
 
     name = "Dominate Person"
@@ -791,6 +815,7 @@ class DragonsBreath(Spell):
     **At Higher Levels:** When you cast
     this spell using a spell slot of 3rd level or higher, the damage increases by
     1d6 for each slot level above 2nd.
+
     """
 
     name = "Dragons Breath"
@@ -812,7 +837,6 @@ class DrawmijsInstantSummons(Spell):
     inscribes the name of the item on the sapphire you use as the material
     component. Each time you cast this spell, you must use a different sapphire.
 
-
     At any time thereafter, you can use your action to speak the item's name and
     crush the sapphire. The item instantly appears in your hand regardless of
     physical or planar distances, and the spell ends. If another creature is holding
@@ -822,6 +846,7 @@ class DrawmijsInstantSummons(Spell):
 
     Dispel magic or a similar
     effect successfully applied to the sapphire ends this spell's effect.
+
     """
 
     name = "Drawmijs Instant Summons"
@@ -868,6 +893,7 @@ class Dream(Spell):
     If you have a body part, lock of hair, clipping from a nail,
     or similar portion of the target's body, the target makes its saving
     throw with disadvantage.
+
     """
 
     name = "Dream"
@@ -876,7 +902,7 @@ class Dream(Spell):
     casting_range = "Special"
     components = ("V", "S", "M")
     materials = """A handful of sand, a dab of ink, and a writing quill plucked from a
-sleeping bird"""
+    sleeping bird"""
     duration = "8 hours"
     ritual = False
     magic_school = "Illusion"
@@ -895,37 +921,45 @@ class DruidGrove(Spell):
     the area, if successful, removes only one of the following effects, not the
     entire area. That spell's caster chooses which effect to end. Only when all its
     effects are gone is this spell dispelled.
-    Solid Fog. You can fill any number of
-    5-foot squares on the ground with thick fog, making them heavily obscured. The
-    fog reaches 10 feet high. In addition, every foot of movement through the fog
-    costs 2 extra feet. To a creature immune to this effect, the fog obscures
-    nothing and looks like soft mist, with motes of green light floating in the air.
 
-    Grasping Undergrowth. You can fill any number of 5-foot squares on the ground
-    that aren't filled with fog with grasping weeds and vines, as if they were
-    affected by an entangle spell. To a creature immune to this effect, the weeds
-    and vines feel soft and reshape themselves to serve as temporary seats or beds.
+    Solid Fog.
+      You can fill any number of
+      5-foot squares on the ground with thick fog, making them heavily obscured. The
+      fog reaches 10 feet high. In addition, every foot of movement through the fog
+      costs 2 extra feet. To a creature immune to this effect, the fog obscures
+      nothing and looks like soft mist, with motes of green light floating in the air.
 
-    Grove Guardians. You can animate up to four trees in the area, causing them to
-    uproot themselves from the ground. These trees have the same statistics as an
-    awakened tree, which appears in the Monster Manual, except they can't speak, and
-    their bark is covered with druidic symbols. If any creature not immune to this
-    effect enters the warded area, the grove guardians fight until they have driven
-    off or slain the intruders. The grove guardians also obey your spoken commands
-    (no action required by you) that you issue while in the area. Ifyou don't give
-    them commands and no intruders are present, the grove guardians do nothing. The
-    grove guardians can‘t leave the warded area. When the spell ends, the magic
-    animating them disappears, and the trees take root again if possible.
-    Additional
-    Spell Effect. You can place your choice of one of the following magical effects
-    within the warded area:
-    - A constant gust of Wind in two locations of your
-    choice
-    - Spike growth in one location of your choice
-    - Wind wall in two
-    locations of your choice
-    To a creature immune to this effect, the winds are a
-    fragrant, gentle breeze, and the area of spike growth is harmless.
+    Grasping Undergrowth.
+      You can fill any number of 5-foot squares on the ground
+      that aren't filled with fog with grasping weeds and vines, as if they were
+      affected by an entangle spell. To a creature immune to this effect, the weeds
+      and vines feel soft and reshape themselves to serve as temporary seats or beds.
+
+    Grove Guardians.
+      You can animate up to four trees in the area, causing them to
+      uproot themselves from the ground. These trees have the same statistics as an
+      awakened tree, which appears in the Monster Manual, except they can't speak, and
+      their bark is covered with druidic symbols. If any creature not immune to this
+      effect enters the warded area, the grove guardians fight until they have driven
+      off or slain the intruders. The grove guardians also obey your spoken commands
+      (no action required by you) that you issue while in the area. If you don't give
+      them commands and no intruders are present, the grove guardians do nothing. The
+      grove guardians can‘t leave the warded area. When the spell ends, the magic
+      animating them disappears, and the trees take root again if possible.
+
+    Additional Spell Effect.
+      You can place your choice of one of the following magical effects
+      within the warded area:
+
+      - A constant gust of Wind in two locations of your
+        choice
+      - Spike growth in one location of your choice
+      - Wind wall in two
+        locations of your choice
+
+      To a creature immune to this effect, the winds are a
+      fragrant, gentle breeze, and the area of spike growth is harmless.
+
     """
 
     name = "Druid Grove"
@@ -975,7 +1009,7 @@ class Druidcraft(Spell):
 
 
 class DustDevil(Spell):
-    """(a pinch of dust)
+    """
     Choose an unoccupied 5-foot cube of air that you can see
     within range. An elemental force that resembles a dust devil appears in the cube
     and lasts for the spell's duration.
@@ -983,14 +1017,17 @@ class DustDevil(Spell):
     feet of the dust devil must make a Strength saving throw. On a failed save, the
     creature takes 1d8 bludgeoning damage and is pushed 10 feet away. On a
     successful save, the creature takes half as much damage and isn't pushed.
+
     As a
     bonus action, you can move the dust devil up to 30 feet in any direction. If the
     dust devil moves over sand, dust, loose dirt, or small gravel, it sucks up the
     material and forms a 10-foot-radius cloud of debris around itself that lasts
     until the start of your next turn. The cloud heavily obscures its area.
-    At
-    Higher Levels. When you cast this spell using a spell slot of 3rd level or
+
+    **At
+    Higher Levels:** When you cast this spell using a spell slot of 3rd level or
     higher, the damage increases by 1d8 for each slot level above 2nd.
+
     """
 
     name = "Dust Devil"
@@ -998,7 +1035,7 @@ class DustDevil(Spell):
     casting_time = "1 action"
     casting_range = "60 feet"
     components = ("V", "S", "M")
-    materials = ""
+    materials = "A pinch of dust"
     duration = "Instantaneous"
     ritual = False
     magic_school = "Conjuration"

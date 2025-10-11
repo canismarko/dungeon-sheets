@@ -164,9 +164,12 @@ class EldritchVersatility(Feature):
     Improvement feature, you can do one of the following, representing a change
     of focus in your occult studies:
 
-    * Replace one cantrip you learned from this class's Pact Magic feature with another cantrip from the warlock spell list.
-    * Replace the option you chose for the Pact Boon feature with one of that feature's other options.
-    * If you're 12th level or higher, replace one spell from your Mystic Arcanum feature with another warlock spell of the same level.
+    - Replace one cantrip you learned from this class's Pact Magic feature with
+      another cantrip from the warlock spell list.
+    - Replace the option you chose for the Pact Boon feature with one of that
+      feature's other options.
+    - If you're 12th level or higher, replace one spell from your Mystic
+      Arcanum feature with another warlock spell of the same level.
 
     If this change makes you ineligible for any of your Eldritch Invocations,
     you must also replace them now, choosing invocations for which you qualify.
@@ -199,7 +202,7 @@ class MistyEscape(Feature):
     teleport up to 60 feet to an unoccupied space you can see. You remain
     invisible until the start of your next turn or until you attack or cast a
     spell. Once you use this feature, you can't use it again until you finish a
-    short or long rest
+    short or long rest.
 
     """
 
@@ -395,7 +398,7 @@ class DefyDeath(Feature):
 
 
 class UndyingNature(Feature):
-    """Beginning at 10th level , you can hold your breath indefinitely, and you
+    """Beginning at 10th level, you can hold your breath indefinitely, and you
     don't require food, water, or sleep, although you still require rest to
     reduce exhaustion and still benefit from finishing short and long rests. In
     addition, you age at a slower rate. For every 10 years that pass, your body
@@ -459,7 +462,7 @@ class WarlockRadiantSoul(Feature):
 
 class CelestialResilience(Feature):
     """Starting at 10th level, you gain temporary hit points whenever you finish a
-    short or long rest. These tempo- rary hit points equal your warlock level +
+    short or long rest. These temporary hit points equal your warlock level +
     your Charisma modifier. Additionally, choose up to five creatures you can
     see at the end of the rest. Those creatures each gain temporary hit points
     equal to half your warlock level + your Charisma modifier.
@@ -531,7 +534,7 @@ class HexWarrior(Feature):
     def weapon_func(self, weapon: weapons.Weapon, **kwargs):
         """
         Swap the weapon's attack bonus modifier for Charisma if
-        it is higher than STR/DEX bonus
+        it is higher than STR/DEX bonus.
         """
         if weapon.is_finesse:
             abils = {
@@ -552,7 +555,7 @@ class AccursedSpecter(Feature):
     temporarily binding it to your service. When you slay a humanoid, you can
     cause its Spirit to rise from its corpse as a specter, the statistics for
     which are in the Monster Manual. When the specter appears, it gains
-    temporary hit points equal to halfyour warlock level. Roll initiative for
+    temporary hit points equal to half your warlock level. Roll initiative for
     the specter, which has its own turns. It obeys your verbal commands, and it
     gains a special bonus to its attack rolls equal to your Charisma modifier
     (minimum of +0).
@@ -693,16 +696,16 @@ class GeniesVessel(Feature):
     The vessel is a Tiny object, and you can use it as a spellcasting focus for your warlock spells.
     You decide what the object is, or you can determine what it is randomly by rolling on the Genie's Vessel table.
 
-    ==  ========================
-    d6  Vessel
-    ==  ========================
-    1   Oil Lamp
-    2   Urn
-    3   Ring with a Compartment
-    4   Stoppered Bottle
-    5   Hollow Statuette
-    6   Ornate Lantern
-    ==  ========================
+    ====  ===========================
+    d6    Vessel
+    ====  ===========================
+    1     Oil Lamp
+    2     Urn
+    3     Ring with a Compartment
+    4     Stoppered Bottle
+    5     Hollow Statuette
+    6     Ornate Lantern
+    ====  ===========================
 
     While you are touching the vessel, you can use it in the following ways:
 
@@ -829,7 +832,7 @@ class AscendantStep(Invocation):
     """You can cast levitate on yourself at will, without expending a spell slot
     or material components.
 
-    **Prerequisite: 9th level**
+    **Prerequisite**: 9th level.
 
     """
 
@@ -855,7 +858,7 @@ class BewitchingWhispers(Invocation):
     """You can cast compulsion once using a warlock spell slot. You can't do so
     again until you finish a long rest.
 
-    **Prerequisite**: 7th Level
+    **Prerequisite**: 7th Level.
     """
 
     name = "Bewitching Whispers"
@@ -888,7 +891,7 @@ class ChainsOfCarceri(Invocation):
     finish a long rest before you can use this invocation on the same creature
     again.
 
-    **Prerequisites**: 15th level, Pact of the Chain Feature
+    **Prerequisites**: 15th level, Pact of the Chain Feature.
     """
 
     name = "Chains of Carceri"
@@ -962,7 +965,7 @@ class LifeDrinker(Invocation):
     """When you hit a creature with your pact weapon, the creature takes extra
     necrotic damage equal to your Charisma modifier (minimum 1).
 
-    **Prerequisite**: 12th Level, Pact of the Blade
+    **Prerequisite**: 12th Level, Pact of the Blade.
     """
 
     name = "Life Drinker"
@@ -980,7 +983,7 @@ class MasterOfMyriadForms(Invocation):
     """
     You can cast alter self at will, without expending a spell slot.
 
-    **Prerequisite**: 15th Level
+    **Prerequisite**: 15th Level.
     """
 
     name = "Master of Myriad Forms"
@@ -991,7 +994,7 @@ class MinionsOfChaos(Invocation):
     """You can cast conjure elemental once using a warlock spell slot. You can't
     do so again until you finish a long rest.
 
-    **Prerequisite**: 9th Level
+    **Prerequisite**: 9th Level.
     """
 
     name = "Minions of Chaos"
@@ -1020,7 +1023,7 @@ class OneWithShadows(Invocation):
     """When you are in an area of dim light or darkness, you can use your action
     to become invisible until you move or take an action or a reaction.
 
-    **Prerequisite**: 5th Level
+    **Prerequisite**: 5th Level.
     """
 
     name = "One with Shadows"
@@ -1030,7 +1033,7 @@ class OtherworldlyLeap(Invocation):
     """You can cast jump on yourself at will, without expending a spell slot or
     material components.
 
-    **Prerequisite**: 9th Level
+    **Prerequisite**: 9th Level.
 
     """
 
@@ -1051,7 +1054,7 @@ class SculptorOfFlesh(Invocation):
     """You can cast polymorph once using a warlock spell slot. You can't do so
     again until you finish a long rest.
 
-    **Prerequisite**: 7th Level
+    **Prerequisite**: 7th Level.
     """
 
     name = "Sculptor of Flesh"
@@ -1061,7 +1064,7 @@ class SignOfIllOmen(Invocation):
     """You can cast bestow curse once using a warlock spell slot. You can't do so
     again until you finish a long rest.
 
-    **Prerequisite**: 5th Level
+    **Prerequisite**: 5th Level.
 
     """
 
@@ -1081,7 +1084,7 @@ class ThirstingBlade(Invocation):
     """You can attack with your pact weapon twice, instead of once, whenever you
     take the Attack action on your turn.
 
-    **Prerequisite**: 5th Level, Pact of the Blade
+    **Prerequisite**: 5th Level, Pact of the Blade.
     """
 
     name = "Thirsting Blade"
@@ -1091,7 +1094,7 @@ class VisionsOfDistantRealms(Invocation):
     """
     You can cast arcane eye at will, without expending a spell slot.
 
-    **Prerequisite**: 15th level
+    **Prerequisite**: 15th level.
     """
 
     name = "Visions of Distant Realms"
@@ -1105,7 +1108,7 @@ class VoiceOfTheChainMaster(Invocation):
     you can also speak through your familiar in your own voice, even if your
     familiar is normally incapable of speech.
 
-    **Prerequisite**: Pact of the Chain
+    **Prerequisite**: Pact of the Chain.
 
     """
 
@@ -1115,7 +1118,7 @@ class VoiceOfTheChainMaster(Invocation):
 class WhispersOfTheGrave(Invocation):
     """You can cast speak with dead at will, without expending a spell slot.
 
-    **Prerequsite**: 9th Level
+    **Prerequsite**: 9th Level.
 
     """
 
@@ -1139,14 +1142,14 @@ class AspectOfTheMoon(Invocation):
     gain the benefits of a long rest, you can spend all 8 hours doing light
     activity, such as reading your Book of Shadows and keeping watch.
 
-    **Prerequisite**: Pact of the Tome
+    **Prerequisite**: Pact of the Tome.
     """
 
     name = "Aspect of the Moon"
 
 
 class CloakOfFlies(Invocation):
-    """As a bonus action, you can surround yourselfwith a magical aura that looks
+    """As a bonus action, you can surround yourself with a magical aura that looks
     like buzzing flies. The aura extends 5 feet from you in every direction,
     but not through total cover. It lasts until you're incapacitated or you
     dismiss it as a bonus action.
@@ -1159,7 +1162,7 @@ class CloakOfFlies(Invocation):
     Once you use this invocation, you can't use it again until you finish a
     short or long rest.
 
-    **Prerequisite**: 5th level
+    **Prerequisite**: 5th level.
     """
 
     name = "Cloak of Flies"
@@ -1171,7 +1174,7 @@ class EldritchSmite(Invocation):
     another 1d8 per level of the spell slot, and you can knock the target
     prone if it is Huge or smaller.
 
-    **Prerequisite**: 5th level, Pact of the Blade
+    **Prerequisite**: 5th level, Pact of the Blade.
 
     """
 
@@ -1188,7 +1191,7 @@ class GhostlyGaze(Invocation):
     Once you use this invocation, you can't use it again until you finish a
     short or long rest.
 
-    **Prerequisite**: 7th level
+    **Prerequisite**: 7th level.
     """
 
     name = "Ghostly Gaze"
@@ -1199,7 +1202,7 @@ class GiftOfTheDepths(Invocation):
     walking speed. You can also cast water breathing once without expending a
     spell slot. You regain the ability to do so when you finish a long rest.
 
-    **Prerequisite**: 5th level
+    **Prerequisite**: 5th level.
     """
 
     name = "Gift of the Depths"
@@ -1210,7 +1213,7 @@ class GiftOfTheEverLivingOnes(Invocation):
     ofyou, treat any dice rolled to determine the hit points you regain as
     having rolled their maximum value for you.
 
-    **Prerequisite**: Pact of the Chain
+    **Prerequisite**: Pact of the Chain.
     """
 
     name = "Gift of the Ever-Living Ones"
@@ -1227,7 +1230,7 @@ class GraspOfHadar(Invocation):
 
 class ImprovedPactWeapon(Invocation):
     """You can use any weapon you summon with your Pact of the Blade feature as a
-    spellcasting focus for your waru lock spells.
+    spellcasting focus for your warlock spells.
 
     In addition, the weapon gains a +1 bonus to its attack and damage rolls,
     unless it is a magic weapon that already has a bonus to those rolls.
@@ -1235,14 +1238,14 @@ class ImprovedPactWeapon(Invocation):
     Finally, the weapon you conjure can be a shortbow, longbow, light crossbow,
     or heavy crossbow.
 
-    **Prerequisite**: Pact of the Blade
+    **Prerequisite**: Pact of the Blade.
     """
 
     name = "Improved Pact Weapon"
 
     def weapon_func(self, weapon: weapons.Weapon, **kwargs):
         """
-        Add +1 to attack and damage if magic is not already magic
+        Add +1 to attack and damage if magic is not already magic.
         """
         if (weapon.attack_bonus == 0) or (weapon.damage_bonus == 0):
             weapon.attack_bonus += 1
@@ -1268,7 +1271,7 @@ class MaddeningHex(Invocation):
     damage). To use this invocation, you must be able to see the cursed
     target, and it must be within 30 feet of you.
 
-    **Prerequisite**: 5th level
+    **Prerequisite**: 5th level.
     """
 
     name = "Maddening Hex"
@@ -1289,7 +1292,7 @@ class RelentlessHex(Invocation):
 class ShroudOfShadow(Invocation):
     """You can cast invisibility at will, without expending a spell slot.
 
-    **Prerequisite**: 15th Level
+    **Prerequisite**: 15th Level.
 
     """
 
@@ -1309,7 +1312,7 @@ class TombOfLevistus(Invocation):
     Once you use this invocation, you can't use it again until you finish a
     short or long rest.
 
-    **Prerequisite**: 5th Level
+    **Prerequisite**: 5th Level.
 
     """
 
@@ -1333,7 +1336,7 @@ class BondOfTheTalisman(Invocation):
     to teleport to you. The teleportation can be used a number of times equal to
     your proficiency bonus, and all expended uses are restored when you finish a long rest.
 
-    **Prerequisite**: 12th Level, Pact of the Talisman
+    **Prerequisite**: 12th Level, Pact of the Talisman.
 
     """
 
@@ -1358,7 +1361,7 @@ class FarScribe(Invocation):
     page, rather than in your mind. The writing disappears after 1 minute.
     As an action, you can magically erase a name on the page by touching it.
 
-    **Prerequisite**: 5th Level, Pact of the Tome
+    **Prerequisite**: 5th Level, Pact of the Tome.
 
     """
 
@@ -1372,7 +1375,7 @@ class GiftOfTheProtectors(Invocation):
     the creature magically drops to 1 hit point instead. Once this magic is triggered, no creature can benefit
     from it until you finish a long rest. As an action, you can magically erase a name on the page by touching it.
 
-    **Prerequisite**: 9th Level, Pact ofthe Tome
+    **Prerequisite**: 9th Level, Pact of the Tome.
 
     """
 
@@ -1389,7 +1392,7 @@ class InvestmentOfTheChainMaster(Invocation):
     * If the familiar forces a creature to make a saving throw, it uses your spell save DC.
     * When the familiar takes damage, you can use your reaction to grant it resistance against that damage.
 
-    **Prerequisite**: Pact of the Chain
+    **Prerequisite**: Pact of the Chain.
     """
 
     name = "Investment of the Chain Master"
@@ -1400,7 +1403,7 @@ class ProtectionOfTheTalisman(Invocation):
     potentially turning the save into a success. This benefit can be used a number of times
     equal to your proficiency bonus, and all expended uses are restored when you finish a long rest.
 
-    **Prerequisite**: 7th Level, Pact of the Talisman
+    **Prerequisite**: 7th Level, Pact of the Talisman.
     """
 
     name = "Protection of the Talisman"
@@ -1411,7 +1414,7 @@ class RebukeOfTheTalisman(Invocation):
     your reaction to deal psychic damage to the attacker equal to your proficiency bonus and push it up to 10
     feet away from the talisman's wearer.
 
-    **Prerequisite**: Pact of the Talisman
+    **Prerequisite**: Pact of the Talisman.
     """
 
     name = "Rebuke of the Talisman"
@@ -1421,7 +1424,7 @@ class UndyingServitude(Invocation):
     """You can cast animate dead without using a spell slot. Once you do so, you can't cast it
     in this way again until you finish a long rest.
 
-    **Prerequisite**: 5th Level
+    **Prerequisite**: 5th Level.
     """
 
     name = "Undying Servitude"

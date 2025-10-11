@@ -10,6 +10,7 @@ class NegativeEnergyFlood(Spell):
     it. Statistics for the zombie are in the Monster Manual. If you target an undead
     with this spell, the target doesn't make a saving throw. Instead, roll 5d12.
     The target gains half the total as temporary hit points.
+
     """
 
     name = "Negative Energy Flood"
@@ -30,6 +31,7 @@ class Nondetection(Spell):
     target can be a willing creature or a place or an object no larger than 10 feet
     in any dimension. The target can't be targeted by any divination magic or
     perceived through magical scrying sensors.
+
     """
 
     name = "Nondetection"
@@ -59,20 +61,21 @@ class NystulsMagicAura(Spell):
     day for 30 days, placing the same effect on it each time, the illusion lasts
     until it is dispelled.
 
-    False Aura
-    You change the way the target appears to
-    spells and magical effects, such as detect magic, that detect magical auras. You
-    can make a nonmagical object appear magical, a magical object appear
-    nonmagical, or change the object's magical aura so that it appears to belong to
-    a specific school of magic that you choose. When you use this effect on an
-    object, you can make the false magic apparent to any creature that handles the
-    item.
+    False Aura.
+      You change the way the target appears to
+      spells and magical effects, such as detect magic, that detect magical auras. You
+      can make a nonmagical object appear magical, a magical object appear
+      nonmagical, or change the object's magical aura so that it appears to belong to
+      a specific school of magic that you choose. When you use this effect on an
+      object, you can make the false magic apparent to any creature that handles the
+      item.
 
-    Mask
-    You change the way the target appears to spells and magical effects
-    that detect creature types, such as a paladin's Divine Sense or the trigger of a
-    sym bol spell. You choose a creature type and other spells and magical effects
-    treat the target as if it were a creature of that type or of that alignment.
+    Mask.
+      You change the way the target appears to spells and magical effects
+      that detect creature types, such as a paladin's Divine Sense or the trigger of a
+      symbol spell. You choose a creature type and other spells and magical effects
+      treat the target as if it were a creature of that type or of that alignment.
+
     """
 
     name = "Nystuls Magic Aura"
