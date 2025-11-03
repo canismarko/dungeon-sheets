@@ -834,6 +834,20 @@ class SaveForm(LinkedListForm):
         self.make_pdf = self.add(npyscreen.Checkbox, name="Create PDF:", value=True)
 
     def on_ok(self):
+        # Finally, deal with some optional proficencies:
+        self.parentApp.character.proficiencies_text = ()
+        self.parentApp.character.optional_weapon_proficiencies = ()
+        optional_proficiencies = list(self.parentApp.character.proficiencies_by_type["Optional"].split(", "))
+        for prof in optional_proficiencies:
+            if "weapon" in prof:
+                self.parentApp.character.optional_weapon_proficiencies += (prof,)
+                log.debug(f"Optional weapon proficiencies: {self.parentApp.character.optional_weapon_proficiencies}")
+            elif "skill" in prof:
+                self.parentApp.character.skill_proficiencies += (prof,)
+                log.debug(f"Optional skill proficiencies: {self.parentApp.character.skill_proficiencies}")
+            else:
+                self.parentApp.character.proficiencies_text += (prof,)
+                log.debug(f"Other optional proficiencies: {self.parentApp.character.proficiencies_text}")
         super().to_next()
 
     def on_cancel(self):

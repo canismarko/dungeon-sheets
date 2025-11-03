@@ -156,7 +156,7 @@ class Monk(CharClass):
         "simple weapons",
         "shortswords",
         "unarmed",
-        "one type of artisan's tools or one musical instrument",
+        "[choose one type of artisan's tools or one musical instrument]",
     )
     weapon_proficiencies = (weapons.Shortsword, weapons.Unarmed, weapons.SimpleWeapon)
     multiclass_weapon_proficiencies = weapon_proficiencies

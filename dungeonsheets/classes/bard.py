@@ -158,7 +158,7 @@ class Bard(CharClass):
         "longswords",
         "rapiers",
         "shortswords",
-        "three musical instruments of your choice",
+        "[choose three musical instruments]",
     )
     weapon_proficiencies = (
         weapons.HandCrossbow,

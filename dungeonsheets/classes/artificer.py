@@ -89,7 +89,7 @@ class Artificer(CharClass):
         "Simple weapons",
         "Thieves' tools",
         "Tinker's tools",
-        "One type of artisan's tools of your choice",
+        "[Choose one type of artisan's tools]",
     )
     _multiclass_proficiencies_text = (
         "Light armor",

@@ -117,7 +117,7 @@ class RivalIntern(Background):
 
     name = "Rival Intern"
     skill_proficiencies = ("history", "investigation")
-    proficiencies_text = ("One type of artisan's tools",)
+    proficiencies_text = ("[choose one type of artisan's tools]",)
     languages = ("[choose one]",)
     features = (feats.InsideInformant,)
 

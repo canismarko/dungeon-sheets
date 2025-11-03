@@ -143,7 +143,11 @@ def create_character_pdf_template(character, basename, flatten=False):
         try:
             fields[skill_boxes[skill.replace(" ", "_").lower()]] = CHECKBOX_ON
         except KeyError:
-            raise KeyError(f"Unknown skill: '{skill}'")
+            if r"[" in skill:
+                msg = f"You still have skills to select: '{skill}'"
+                warnings.warn(msg)
+            else:
+                raise KeyError(f"Unknown skill: '{skill}'")
     # Add weapons
     weapon_fields = [
         ("Wpn Name", "Wpn1 AtkBonus", "Wpn1 Damage"),
@@ -171,7 +175,7 @@ def create_character_pdf_template(character, basename, flatten=False):
     # Other proficiencies and languages
     prof_text = ""
     for prof_type, values in character.proficiencies_by_type.items():
-        if not values == "":
+        if not (prof_type == "Optional" or values == ""):
             prof_text += prof_type + ": " + values + ".\n\n"
     prof_text += "Languages: " + text_box(character.languages)
     fields["ProficienciesLang"] = prof_text

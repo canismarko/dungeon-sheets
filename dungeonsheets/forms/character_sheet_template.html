@@ -112,8 +112,12 @@
 
 <h2 id="proficiencies">Proficiencies</h2>
 <dl class="proficiencies details">
-  <dt>Proficiencies</dt>
-  <dd>[[ character.proficiencies_text ]]</dd>
+  [% if character.proficiencies_by_type %][% for prof_type, values in character.proficiencies_by_type.items() %]
+  [%- if not (prof_type == "Optional" or values == ""): -%]
+  <dt>[[ prof_type ]]:<dt>
+  <dd>[[ values ]].</dd>
+  [% endif %]
+  [%- endfor -%][%- endif -%]
   <dt>Languages</dt>
   <dd>[[ character.languages ]]</dd>
 </dl>
