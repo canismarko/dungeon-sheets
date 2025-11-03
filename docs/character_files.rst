@@ -20,7 +20,7 @@ Each character file must contain a line like::
 
   dungeonsheets_version = "0.4.2"
 
-Without this line, the :ref:`makesheets` command-line utility will ignore
+Without this line, the :ref:`makesheets<Usage>` command-line utility will ignore
 the file. This is necessary to avoid importing non-D&D python files.
 
 .. note::

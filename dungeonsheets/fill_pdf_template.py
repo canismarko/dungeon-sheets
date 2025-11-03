@@ -306,7 +306,7 @@ def create_spells_pdf_template(character, basename, flatten=False):
     # Determine which sheet to use (caster or half-caster).
     # Prefer caster, unless we have no spells > 5th level and
     # would overflow the caster sheet, then use half-caster.
-    only_low_level = all((character.spell_slots(level) == 0 for level in range(6, 10)))
+    only_low_level = not any(spell.level > 5 for spell in character.spells)
     would_overflow_fullcaster = any(
         (
             len([spl for spl in character.spells if spl.level == level])

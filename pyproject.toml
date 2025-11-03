@@ -10,12 +10,12 @@ authors = [
 ]
 description = "Dungeons and Dragons 5e Character Tools"
 readme = "README.rst"
-license = {"file"= "LICENSE"}
+license = "GPL-3.0-or-later"
+license-files = ["LICENSE"]
 requires-python = ">=3.9"
 classifiers = [
   "Development Status :: 3 - Alpha",
   "Environment :: Console",
-  "License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)",
   "Natural Language :: English",
   "Programming Language :: Python :: 3.9",
   "Programming Language :: Python :: 3.10",
@@ -39,7 +39,8 @@ Homepage = "https://github.com/canismarko/dungeon-sheets"
 
 [tool.setuptools.package-data]
 dungeonsheets = [
-  "forms/*pdf",
+  "forms/*.html",
+  "forms/*.pdf",
   "forms/*.tex",
   "forms/*.txt",
   "modules/DND-5e-LaTeX-Template/*",

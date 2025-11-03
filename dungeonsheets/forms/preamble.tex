@@ -109,7 +109,9 @@
 [% raw %]
 \usepackage{longtable,ltcaption,array}
 \setlength{\extrarowheight}{2pt}
-\newlength{\DUtablewidth} % internal use in tables
+% internal use in tables
+\newlength{\DUtablewidth}
+\newcommand{\DUcolumnwidth}[1]{\dimexpr#1\DUtablewidth-2\tabcolsep\relax}
 % admonition (specially marked topic)
 \providecommand{\DUadmonition}[2][class-arg]{%
   % try \DUadmonition#1{#2}:

@@ -451,32 +451,10 @@ class Character(Creature):
     @property
     def features(self):
         fts = set(self.custom_features)
-        fighting_style_defined = False
-        set_of_fighting_styles = {
-            "Fighting Style (Archery)",
-            "Fighting Style (Defense)",
-            "Fighting Style (Dueling)",
-            "Fighting Style (Great Weapon Fighting)",
-            "Fighting Style (Protection)",
-            "Fighting Style (Two-Weapon Fighting)",
-        }
-        for temp_feature in fts:
-            fighting_style_defined = temp_feature.name in set_of_fighting_styles
-            if fighting_style_defined:
-                break
-
         if not self.has_class:
             return fts
         for c in self.class_list:
             fts |= set(c.features)
-            for feature in fts:
-                if (
-                    fighting_style_defined
-                    and feature.name == "Fighting Style (Select One)"
-                ):
-                    temp_feature = feature
-                    fts.remove(temp_feature)
-                    break
         if self.race is not None:
             fts |= set(getattr(self.race, "features", ()))
             # some races have level-based features (Ex: Aasimar)
@@ -578,7 +556,7 @@ class Character(Creature):
             spells |= set(f.spells_prepared)
         for c in self.spellcasting_classes:
             spells |= set(c.spells_prepared)
-        return sorted(tuple(spells), key=(lambda x: x.name))
+        return spells
 
     def set_attrs(self, **attrs):
         """
@@ -654,8 +632,6 @@ class Character(Creature):
                         warning_message=msg,
                     )
                     _spells.append(ThisSpell)
-                # Sort by name
-                _spells.sort(key=lambda spell: spell.name)
                 # Save list of spells to character atribute
                 if attr == "spells":
                     # Instantiate them all for the spells list

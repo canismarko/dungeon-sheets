@@ -585,7 +585,6 @@ def make_character_sheet(
     char_base = basename + "_char"
     person_base = basename + "_person"
     sheets = [char_base + ".pdf"]
-    pages = []
     # Prepare the tex/html content
     content_suffix = format_suffixes[output_format]
     # Create a list of features and magic items
@@ -609,13 +608,11 @@ def make_character_sheet(
             char_pdf = create_character_pdf_template(
                 character=character, basename=char_base, flatten=flatten
             )
-            pages.append(char_pdf)
             person_pdf = create_personality_pdf_template(
                 character=character,
                 basename=person_base,
                 flatten=flatten,
             )
-            pages.append(person_pdf)
         if character.is_spellcaster and not (use_tex_template):
             # Create spell sheet
             spell_base = "{:s}_spells".format(basename)

@@ -164,6 +164,8 @@ def latex_parts(
         "input_encoding": input_encoding,
         "doctitle_xform": doctitle,
         "initial_header_level": initial_header_level,
+        "use_latex_citations": True,
+        "legacy_column_widths": False,
     }
     writer = LatexWriter()
     parts = core.publish_parts(
@@ -232,11 +234,9 @@ def rst_to_latex(rst, top_heading_level: int=0, format_dice: bool = True, use_dn
             transformed_header = header
             for width in colwidths:
                 # Transform the column width by dividing it by the initial table width
-                transformed_width = round( float(width) / tablewidth, 3)
-                # Subtract the table column separation spaces from the transformed column width
-                transformed_width = r"\\dimexpr " + str(transformed_width) + r"\\DUtablewidth -2\\tabcolsep"
+                transformed_width = str(round( float(width) / tablewidth, 3))
                 # Replace the original width with the transformed width
-                transformed_header = re.sub(width + r"\\DUtablewidth",
+                transformed_header = re.sub(width,
                                             transformed_width,
                                             transformed_header)
             # Replace the original table header with the transformed one
@@ -248,7 +248,6 @@ def rst_to_latex(rst, top_heading_level: int=0, format_dice: bool = True, use_dn
         # Next, take the first table row and define it as the first page table header:
         tex = re.sub(r"(begin{DndLongTable}\[header=.*?)\](.*?)\n(.*?\\\\)\n\n",
                      r"\1,firsthead={\3 }]\2\n", tex, flags=re.M|re.DOTALL)
-
     return tex
 
 
@@ -323,9 +322,8 @@ def msavage_spell_info(char):
     # Only use halfcaster when we have no spells > 5th level and
     # would overflow the fullcaster sheet.
     # Keep the same sheet for overflow pages, if any.
-    only_low_level = all((char.spell_slots(level) == 0 for level in range(6, 10)))
     if (any(len(spellList[key]) > fullcaster_sheet_spaces[key] for key in spellList.keys())
-            and only_low_level):
+            and not any(name in spellList.keys() for name in level_names[6:10])):
         fullcaster = False
 
     def AddSpellPage(fullcaster = True):
