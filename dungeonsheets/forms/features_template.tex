@@ -1,19 +1,25 @@
-\pdfbookmark[0]{Features}{Features}
-\section*{Features}
-[% if use_dnd_decorations %]
-  [%- for feat in character.features %]
-    \pdfbookmark[1]{[[ feat.name ]]}{Features - [[ feat.name ]]}
-    \DndFeatHeader{[[ feat.name ]]}[Source: [[ feat.source ]]]
-    [[- feat.__doc__|rst_to_latex(use_dnd_decorations=use_dnd_decorations) -]]
-  [%- endfor -%]
-[% else %]
-  [%- for feat in character.features %]
-    \pdfbookmark[1]{[[ feat.name ]]}{Features - [[ feat.name ]]}
-    \subsection*{[[ feat.name ]]}
-    \textbf{Source:} [[ feat.source ]] \\
+[%- if feat_order -%]
+  [%- set feat_dict = character.features_by_type -%]
+[%- else -%]
+  [%- set feat_dict = {"Features": character.features} -%]
+[%- endif -%]
+[%- for feat_type, feat_list in feat_dict.items() -%]
+  [%- if feat_list|length -%]
+    \pdfbookmark[0]{[[ feat_type ]]}{[[ feat_type ]]}
+    \section*{[[ feat_type ]]}
+  [% endif %]
+  [%- for feat in feat_list -%]
+    [%- if use_dnd_decorations %]
+      \pdfbookmark[1]{[[ feat.name ]]}{[[ feat_type ]] - [[ feat.name ]]}
+      \DndFeatHeader{[[ feat.name ]]}[Source: [[ feat.source ]]]
+    [%- else %]
+      \pdfbookmark[1]{[[ feat.name ]]}{[[ feat_type ]] - [[ feat.name ]]}
+      \subsection*{[[ feat.name ]]}
+      \textbf{Source:} [[ feat.source ]]
+    [%- endif %]
     [%- if feat.needs_implementation %]
       \textbf{**Not included in stats on Character Sheet}
-    [%- endif -%]
-    [[- feat.__doc__|rst_to_latex -]]
-  [%- endfor -%]
-[% endif %]
+    [%- endif %]
+    [[ feat.__doc__|rst_to_latex(use_dnd_decorations=use_dnd_decorations) ]]
+  [% endfor %]
+[%- endfor %]

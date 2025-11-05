@@ -21,6 +21,22 @@ class EldritchInvocation(Feature):
 
     name = "Eldritch Invocations"
     source = "Warlock"
+    at_will_spells = ()
+
+    def cast_spell_at_will(self, spell):
+        s = spell()
+        s.level = 0
+        if "M" in s.components:
+            c = list(s.components)
+            c.remove("M")
+            s.components = tuple(c)
+        self.spells_known += (s,)
+        self.spells_prepared += (s,)
+
+    def __init__(self, owner):
+        super().__init__(owner)
+        for s in self.at_will_spells:
+            self.cast_spell_at_will(s)
 
 
 class PactOfTheChain(Feature):
@@ -780,29 +796,7 @@ class LimitedWish(Feature):
 
 
 # All Invocations
-class Invocation(Feature):
-    """
-    A generic Eldritch Invocation. Add details in features/warlock.py
-    """
-
-    name = "Unnamed Invocation"
-    source = "Warlock (Eldritch Invocations)"
-    at_will_spells = ()
-
-    def cast_spell_at_will(self, spell):
-        s = spell()
-        s.level = 0
-        if "M" in s.components:
-            c = list(s.components)
-            c.remove("M")
-            s.components = tuple(c)
-        self.spells_known += (s,)
-        self.spells_prepared += (s,)
-
-    def __init__(self, owner):
-        super().__init__(owner)
-        for s in self.at_will_spells:
-            self.cast_spell_at_will(s)
+Invocation = EldritchInvocation
 
 
 # PHB

@@ -189,6 +189,35 @@ class TestCharacter(TestCase):
                           char.proficiencies_by_type["Weapons"].lower() +
                           char.proficiencies_by_type["Other"].lower())
 
+    def test_features_by_type(self):
+        char = Character(
+            classes=["Fighter", "Sorcerer"],
+            subclasses=["Gunslinger", "Divine Soul"],
+            levels=[15, 5],
+            race="Protector Aasimar",
+            features = ("Bullying Shot", "Disarming Shot", "Forceful Shot", "Violent Shot",
+            "Winging Shot", "Twinned Spell", "Empowered Spell", "resilient", "turn undead"),
+            feature_choices = ("great-weapon fighting",),
+            background = "Pirate"
+        )
+        assert str(char.features_by_type["Feats"][0]) == "Resilient"
+        feats = "\n".join([str(feat) for feat in char.features_by_type["Class Features"]])
+        e = (
+            "Channel Divinity: Turn Undead\nFighting Style (Great Weapon Fighting)\nSecond Wind\n"
+            "Action Surge\nGunsmith\nAdept Marksman\nBullying Shot\n"
+            "Disarming Shot\nForceful Shot\nViolent Shot\nWinging Shot\n"
+            "Extra Attack (3x)\nQuick Draw\nIndomitable (2x/LR)\nRapid Repair\nLightning Repaid\n"
+            "Divine Magic\nFavored by the Gods\nFont of Magic\nMetamagic\nTwinned Spell\n"
+            "Empowered Spell"
+        )
+        assert(feats == e)
+        feats = "\n".join([str(feat) for feat in char.features_by_type["Racial Features"]])
+        e = (
+            "Darkvision (60')\nCelestial Resistance\nHealing Hands\n"
+            "Light Bearer\nAasimar Radiant Soul"
+        )
+        assert str(char.features_by_type["Background Features"][0]) == "Ship\'s Passage"
+
     def test_proficiency_bonus(self):
         char = Character()
         char.level = 1
@@ -247,7 +276,7 @@ class TestCharacter(TestCase):
         # Try passing an Armor object directly
         char.wield_shield(Shield)
         self.assertEqual(char.armor_class, 15)
-        
+
     def test_carrying_weight(self):
         char = Character(race="lightfoot halfling", strength=12)
         # Check carrying capacity
@@ -366,9 +395,9 @@ class DruidTestCase(TestCase):
         not_beast = monsters.Monster()
         not_beast.description = "monster"
         self.assertFalse(low_druid.can_assume_shape(not_beast))
-        
+
 class BeastMasterTestCase(TestCase):
-    
+
     def test_ranger_beast(self):
         char = Ranger(6, subclasses = ["Beast Master"])
         char.ranger_beast = "Panther"
@@ -386,6 +415,3 @@ class BeastMasterTestCase(TestCase):
         char = Ranger(3, subclasses = ["Beast Master"])
         char.ranger_beast = "Panther"
         self.assertEqual(char.ranger_beast.hp_max, 13)
-        
-        
-        
