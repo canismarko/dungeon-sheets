@@ -57,19 +57,20 @@ class CharClass:
         if isinstance(self.subclass, SubClass):
             self.apply_subclass(feature_choices=feature_choices)
 
-    def select_subclass(self, subclass_str):
+    def select_subclass(self, subclass):
         """
-        Return a SubClass object corresponding to given string.
-
-        Intended to be replaced by classes so they can
-        define their own methods of picking subclass by string.
+        Return an instance of the subclass given as an object or string.
         """
-        if subclass_str in ["", "None", "none", None]:
+        if subclass in ["", "None", "none", None]:
             return None
-        for sc in self.subclasses_available:
-            if subclass_str.lower() in sc.name.lower():
-                return sc(owner=self.owner)
-        warnings.warn(f"Could not find subclass {subclass_str}.")
+        if isinstance(subclass, str):
+            for sc in self.subclasses_available:
+                if subclass.lower() in sc.name.lower():
+                    return sc(owner=self.owner)
+        else:
+            if issubclass(subclass, SubClass):
+                return subclass(owner=self.owner)
+        warnings.warn(f"Could not find subclass {subclass}.")
         return None
 
     def apply_subclass(self, feature_choices=[]):
