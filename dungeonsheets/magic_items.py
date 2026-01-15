@@ -53,6 +53,13 @@ class MagicItem:
     item_type: str = ""
     # Bonuses
     ac_bonus: int = 0
+    ab_bonus_all: int = 0
+    ab_bonus_strength: Optional[int] = None
+    ab_bonus_dexterity: Optional[int] = None
+    ab_bonus_constitution: Optional[int] = None
+    ab_bonus_intelligence: Optional[int] = None
+    ab_bonus_wisdom: Optional[int] = None
+    ab_bonus_charisma: Optional[int] = None
     st_bonus_all: int = 0
     st_bonus_strength: Optional[int] = None
     st_bonus_dexterity: Optional[int] = None
@@ -75,6 +82,10 @@ class MagicItem:
         if bonus is None:
             bonus = self.st_bonus_all
         return bonus
+
+    def ab_bonus(self, ability: Optional[str] = "all"):
+        bonus = getattr(self, f"ab_bonus_{ability}")
+        return bonus if bonus is not None else self.ab_bonus_all
 
 
 class CloakOfProtection(MagicItem):
