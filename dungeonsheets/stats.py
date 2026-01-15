@@ -224,6 +224,8 @@ class Skill:
         # Check for expertise
         if self.is_expertise:
             modifier += self.actor.proficiency_bonus
+        for mitem in self.actor.magic_items:
+            modifier += mitem.ab_bonus(ability=self.ability_name)
         return modifier
 
     @property
@@ -327,6 +329,9 @@ class NumericalInitiative:
             ini += actor.proficiency_bonus // 2
         if actor.has_feature(RemarkableAthlete) and not added_proficiency:
             ini += ceil(actor.proficiency_bonus / 2.0)
+
+        for mitem in actor.magic_items:
+            ini += mitem.ab_bonus(ability="dexterity")
 
         has_advantage = (
             actor.has_feature(NaturalExplorerRevised)
