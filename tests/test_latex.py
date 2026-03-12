@@ -32,25 +32,31 @@ class MarkdownTestCase(unittest.TestCase):
     )
     def test_headings(self):
         # Simple heading by itself
-        text = latex.rst_to_latex("Hello, world\n------------\n\nGoodbye, world")
+        text = latex.rst_to_latex(
+            "Hello, world\n------------\n\nGoodbye, world")
         self.assertEqual("\\section*{Hello, world}\n", text)
         # Simple heading with leading whitespace
         text = latex.rst_to_latex("    Hello, world\n    ============\n")
         self.assertEqual("\\section*{Hello, world}\n", text)
         # Heading with text after it
-        text = latex.rst_to_latex("Hello, world\n============\n\nThis is some text")
+        text = latex.rst_to_latex(
+            "Hello, world\n============\n\nThis is some text")
         self.assertEqual("\\section*{Hello, world}\n\nThis is some text", text)
         # Heading with text before it
-        text = latex.rst_to_latex("This is a paragraph\n\nHello, world\n============\n")
-        self.assertEqual("This is a paragraph\n\n\\section*{Hello, world}\n", text)
+        text = latex.rst_to_latex(
+            "This is a paragraph\n\nHello, world\n============\n")
+        self.assertEqual(
+            "This is a paragraph\n\n\\section*{Hello, world}\n", text)
         # Check that levels of headings are parsed appropriately
         text = latex.rst_to_latex("Hello, world\n^^^^^^^^^^^^\n")
         self.assertEqual("\\subsubsection*{Hello, world}\n", text)
-        text = latex.rst_to_latex("Hello, world\n^^^^^^^^^^^^\n", top_heading_level=3)
+        text = latex.rst_to_latex(
+            "Hello, world\n^^^^^^^^^^^^\n", top_heading_level=3)
         self.assertEqual("\\subparagraph*{Hello, world}\n", text)
         # This is a bad heading missing with all the underline on one line
         text = latex.rst_to_latex("Hello, world^^^^^^^^^^^^\n")
-        self.assertEqual("Hello, world\\^\\^\\^\\^\\^\\^\\^\\^\\^\\^\\^\\^\n", text)
+        self.assertEqual(
+            "Hello, world\\^\\^\\^\\^\\^\\^\\^\\^\\^\\^\\^\\^\n", text)
 
     def test_bullet_list(self):
         tex = latex.rst_to_latex("\n- Hello\n- World\n\n")
@@ -66,7 +72,7 @@ class MarkdownTestCase(unittest.TestCase):
         - Secondhand (you have heard of the target) - +5
         - Firsthand (you have met the target) - +0
         - Familiar (you know the target well) - -5
-        
+
         """
         tex = latex.rst_to_latex(real_list)
         self.assertIn("\\begin{itemize}", tex)
@@ -79,7 +85,7 @@ class MarkdownTestCase(unittest.TestCase):
           the target) - +0
         - Familiar (you know the target
           well) - -5
-        
+
         """
         tex = latex.rst_to_latex(md_list)
         self.assertIn("\\begin{itemize}", tex)
@@ -96,16 +102,26 @@ class MarkdownTestCase(unittest.TestCase):
             =====  =====  =======
         """
         tex = latex.rst_to_latex(table_rst)
-        # Check begin/end environment is fixed
-        self.assertNotIn("longtable", tex)
-        self.assertIn("supertabular", tex)
-        # Check headers and footers are fixed
-        self.assertNotIn("endfoot", tex)
-        self.assertNotIn("endhead", tex)
-        self.assertNotIn("endfirsthead", tex)
-        # Check that fancy decorations uses the DndTable environment
-        tex = latex.rst_to_latex(table_rst, use_dnd_decorations=True)
-        self.assertIn(r"\begin{DndLongTable}[header=,firsthead={\textbf{%", tex)
+        # Small tables (<=20 rows) should use regular tabular
+        self.assertIn("tabular", tex)
+        # Should NOT switch to onecolumn for small tables
+        self.assertNotIn("\\onecolumn", tex)
+        self.assertNotIn("\\twocolumn", tex)
+
+    def test_large_table(self):
+        """Test that large tables (>20 rows) switch to longtable with onecolumn."""
+        # Create a table with 25 rows to trigger longtable
+        header = "=====  =====\nCol A  Col B\n=====  =====\n"
+        rows = "\n".join([f"Row{i:02d}  Val{i:02d}" for i in range(25)])
+        footer = "\n=====  ====="
+        table_rst = header + rows + footer
+
+        tex = latex.rst_to_latex(table_rst)
+        # Large tables should use longtable
+        self.assertIn("longtable", tex)
+        # Should switch to onecolumn for longtable compatibility
+        self.assertIn("\\onecolumn", tex)
+        self.assertIn("\\twocolumn", tex)
 
     def test_rst_all_spells(self):
         for spell in spells.all_spells():

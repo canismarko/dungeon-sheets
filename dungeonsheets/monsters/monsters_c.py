@@ -17,13 +17,14 @@ class Camel(Monster):
       Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 2 (1d4)
       bludgeoning damage.
     """
-    name = 'Camel'
-    description = 'Large beast, unaligned'
+
+    name = "Camel"
+    description = "Large beast, unaligned"
     challenge_rating = 0.125
     armor_class = 9
-    skills = ''
-    senses = 'Passive Perception 9'
-    languages = ''
+    skills = ""
+    senses = "Passive Perception 9"
+    languages = ""
     strength = Ability(16)
     dexterity = Ability(8)
     constitution = Ability(14)
@@ -36,11 +37,11 @@ class Camel(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 15
-    hit_dice = '2d10 + 4'
-    condition_immunities = ''
-    damage_immunities = ''
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "2d10 + 4"
+    condition_immunities = ""
+    damage_immunities = ""
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -57,13 +58,14 @@ class Cat(Monster):
       Melee Weapon Attack: +0 to hit, reach 5 ft., one target. Hit: 1
       slashing damage.
     """
-    name = 'Cat'
-    description = 'Tiny beast, unaligned'
+
+    name = "Cat"
+    description = "Tiny beast, unaligned"
     challenge_rating = 0
     armor_class = 12
-    skills = 'Perception +3, Stealth +4'
-    senses = 'Passive Perception 13'
-    languages = ''
+    skills = "Perception +3, Stealth +4"
+    senses = "Passive Perception 13"
+    languages = ""
     strength = Ability(3)
     dexterity = Ability(15)
     constitution = Ability(10)
@@ -76,11 +78,11 @@ class Cat(Monster):
     climb_speed = 30
     burrow_speed = 0
     hp_max = 2
-    hit_dice = '1d4 + 0'
-    condition_immunities = ''
-    damage_immunities = ''
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "1d4 + 0"
+    condition_immunities = ""
+    damage_immunities = ""
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -107,13 +109,14 @@ class Centaur(Monster):
       Ranged Weapon Attack: +4 to hit, range 150/600 ft., one target. Hit: 6
       (1d8 + 2) piercing damage.
     """
-    name = 'Centaur'
-    description = 'Large monstrosity, neutral good'
+
+    name = "Centaur"
+    description = "Large monstrosity, neutral good"
     challenge_rating = 2
     armor_class = 12
-    skills = 'Athletics +6, Perception +3, Survival +3'
-    senses = 'Passive Perception 13'
-    languages = 'Elvish, Sylvan'
+    skills = "Athletics +6, Perception +3, Survival +3"
+    senses = "Passive Perception 13"
+    languages = "Elvish, Sylvan"
     strength = Ability(18)
     dexterity = Ability(14)
     constitution = Ability(14)
@@ -126,11 +129,11 @@ class Centaur(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 45
-    hit_dice = '6d10 + 12'
-    condition_immunities = ''
-    damage_immunities = ''
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "6d10 + 12"
+    condition_immunities = ""
+    damage_immunities = ""
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -157,7 +160,7 @@ class ChainDevil(Monster):
       Up to four chains the devil can see within 60 feet of it magically
       sprout razor-edged barbs and animate under the devil's control,
       provided that the chains aren't being worn or carried.
-      
+
       Each animated chain is an object with AC 20, 20 hit points, resistance
       to piercing damage, and immunity to psychic and thunder damage. When
       the devil uses Multiattack on its turn, it can use each animated chain
@@ -175,13 +178,14 @@ class ChainDevil(Monster):
       can see the devil, it must succeed on a DC 14 Wisdom saving throw or
       be frightened until the end of its turn.
     """
-    name = 'Chain Devil'
-    description = 'Medium fiend, lawful evil'
+
+    name = "Chain Devil"
+    description = "Medium fiend, lawful evil"
     challenge_rating = 8
     armor_class = 16
-    skills = ''
-    senses = 'Darkvision 120 ft., Passive Perception 11'
-    languages = 'Infernal, telepathy 120 ft.'
+    skills = ""
+    senses = "Darkvision 120 ft., Passive Perception 11"
+    languages = "Infernal, telepathy 120 ft."
     strength = Ability(18)
     dexterity = Ability(15)
     constitution = Ability(18)
@@ -194,11 +198,11 @@ class ChainDevil(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 85
-    hit_dice = '10d8 + 40'
-    condition_immunities = 'poisoned'
-    damage_immunities = 'fire, poison'
-    damage_resistances = 'cold'
-    damage_vulnerabilities = ''
+    hit_dice = "10d8 + 40"
+    condition_immunities = "poisoned"
+    damage_immunities = "fire, poison"
+    damage_resistances = "cold"
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -225,12 +229,13 @@ class Chimera(Monster):
       area must make a DC 15 Dexterity saving throw, taking 31 (7d8) fire
       damage on a failed save, or half as much damage on a successful one.
     """
-    name = 'Chimera'
-    description = 'Large monstrosity, chaotic evil'
+
+    name = "Chimera"
+    description = "Large monstrosity, chaotic evil"
     challenge_rating = 6
     armor_class = 14
-    skills = 'Perception +8'
-    senses = 'Darkvision 60 ft., Passive Perception 18'
+    skills = "Perception +8"
+    senses = "Darkvision 60 ft., Passive Perception 18"
     languages = "understands Draconic but can't speak"
     strength = Ability(19)
     dexterity = Ability(11)
@@ -244,11 +249,11 @@ class Chimera(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 114
-    hit_dice = '12d10 + 48'
-    condition_immunities = ''
-    damage_immunities = ''
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "12d10 + 48"
+    condition_immunities = ""
+    damage_immunities = ""
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -278,12 +283,13 @@ class Chuul(Monster):
       throw at the end of each of its turns, ending the effect on itself on
       a success.
     """
-    name = 'Chuul'
-    description = 'Large aberration, chaotic evil'
+
+    name = "Chuul"
+    description = "Large aberration, chaotic evil"
     challenge_rating = 4
     armor_class = 16
-    skills = 'Perception +4'
-    senses = 'Darkvision 60 ft., Passive Perception 14'
+    skills = "Perception +4"
+    senses = "Darkvision 60 ft., Passive Perception 14"
     languages = "understands Deep Speech but can't speak"
     strength = Ability(19)
     dexterity = Ability(10)
@@ -297,11 +303,11 @@ class Chuul(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 93
-    hit_dice = '11d10 + 33'
-    condition_immunities = 'poisoned'
-    damage_immunities = 'poison'
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "11d10 + 33"
+    condition_immunities = "poisoned"
+    damage_immunities = "poison"
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -343,12 +349,13 @@ class ClayGolem(Monster):
       to its AC, has advantage on Dexterity saving throws, and can use its
       slam attack as a bonus action.
     """
-    name = 'Clay Golem'
-    description = 'Large construct, unaligned'
+
+    name = "Clay Golem"
+    description = "Large construct, unaligned"
     challenge_rating = 9
     armor_class = 14
-    skills = ''
-    senses = 'Darkvision 60 ft., Passive Perception 9'
+    skills = ""
+    senses = "Darkvision 60 ft., Passive Perception 9"
     languages = "understands the languages of its creator but can't speak"
     strength = Ability(20)
     dexterity = Ability(9)
@@ -362,11 +369,13 @@ class ClayGolem(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 133
-    hit_dice = '14d10 + 56'
-    condition_immunities = 'charmed, exhaustion, frightened, paralyzed, petrified, poisoned'
+    hit_dice = "14d10 + 56"
+    condition_immunities = (
+        "charmed, exhaustion, frightened, paralyzed, petrified, poisoned"
+    )
     damage_immunities = "acid, poison, psychic, bludgeoning, piercing, and slashing from nonmagical weapons that aren't adamantine"
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -414,24 +423,25 @@ class Cloaker(Monster):
       actions, shifting position so as to make it impossible to track which
       cloaker is the real one. If the cloaker is ever in an area of bright
       light, the duplicates disappear.
-      
+
       Whenever any creature targets the cloaker with an attack or a harmful
       spell while a duplicate remains, that creature rolls randomly to
       determine whether it targets the cloaker or one of the duplicates. A
       creature is unaffected by this magical effect if it can't see or if it
       relies on senses other than sight.
-      
+
       A duplicate has the cloaker's AC and uses its saving throws. If an
       attack hits a duplicate, or if a duplicate fails a saving throw
       against an effect that deals damage, the duplicate disappears.
     """
-    name = 'Cloaker'
-    description = 'Large aberration, chaotic neutral'
+
+    name = "Cloaker"
+    description = "Large aberration, chaotic neutral"
     challenge_rating = 8
     armor_class = 14
-    skills = 'Stealth +5'
-    senses = 'Darkvision 60 ft., Passive Perception 11'
-    languages = 'Deep Speech, Undercommon'
+    skills = "Stealth +5"
+    senses = "Darkvision 60 ft., Passive Perception 11"
+    languages = "Deep Speech, Undercommon"
     strength = Ability(17)
     dexterity = Ability(15)
     constitution = Ability(12)
@@ -444,11 +454,11 @@ class Cloaker(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 78
-    hit_dice = '12d10 + 12'
-    condition_immunities = ''
-    damage_immunities = ''
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "12d10 + 12"
+    condition_immunities = ""
+    damage_immunities = ""
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -461,11 +471,11 @@ class CloudGiant(Monster):
     Innate Spellcasting.
       The giant's innate spellcasting ability is Charisma. It can innately
       cast the following spells, requiring no material components:
-      
+
       At will: detect magic, fog cloud, light
-      
+
       3/day each: feather fall, fly, misty step, telekinesis
-      
+
       1/day each: control weather, gaseous form
 
     # Actions
@@ -479,13 +489,14 @@ class CloudGiant(Monster):
       Ranged Weapon Attack: +12 to hit, range 60/240 ft., one target. Hit:
       30 (4d10 + 8) bludgeoning damage.
     """
-    name = 'Cloud Giant'
-    description = 'Huge giant, neutral good (50\%) or neutral evil (50\%)'
+
+    name = "Cloud Giant"
+    description = r"Huge giant, neutral good (50%) or neutral evil (50%)"
     challenge_rating = 9
     armor_class = 14
-    skills = 'Insight +7, Perception +7'
-    senses = 'Passive Perception 17'
-    languages = 'Common, Giant'
+    skills = "Insight +7, Perception +7"
+    senses = "Passive Perception 17"
+    languages = "Common, Giant"
     strength = Ability(27)
     dexterity = Ability(10)
     constitution = Ability(22)
@@ -498,11 +509,11 @@ class CloudGiant(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 200
-    hit_dice = '16d12 + 96'
-    condition_immunities = ''
-    damage_immunities = ''
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "16d12 + 96"
+    condition_immunities = ""
+    damage_immunities = ""
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -520,13 +531,14 @@ class Cockatrice(Monster):
       success, the effect ends. On a failure, the creature is petrified for
       24 hours.
     """
-    name = 'Cockatrice'
-    description = 'Small monstrosity, unaligned'
+
+    name = "Cockatrice"
+    description = "Small monstrosity, unaligned"
     challenge_rating = 0.5
     armor_class = 11
-    skills = ''
-    senses = 'Darkvision 60 ft., Passive Perception 11'
-    languages = ''
+    skills = ""
+    senses = "Darkvision 60 ft., Passive Perception 11"
+    languages = ""
     strength = Ability(6)
     dexterity = Ability(12)
     constitution = Ability(12)
@@ -539,11 +551,11 @@ class Cockatrice(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 27
-    hit_dice = '6d6 + 6'
-    condition_immunities = ''
-    damage_immunities = ''
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "6d6 + 6"
+    condition_immunities = ""
+    damage_immunities = ""
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -556,13 +568,14 @@ class Commoner(Monster):
       Melee Weapon Attack: +2 to hit, reach 5 ft., one target. Hit: 2 (1d4)
       bludgeoning damage.
     """
-    name = 'Commoner'
-    description = 'Medium humanoid, any alignment'
+
+    name = "Commoner"
+    description = "Medium humanoid, any alignment"
     challenge_rating = 0
     armor_class = 10
-    skills = ''
-    senses = 'Passive Perception 10'
-    languages = 'any one language (usually Common)'
+    skills = ""
+    senses = "Passive Perception 10"
+    languages = "any one language (usually Common)"
     strength = Ability(10)
     dexterity = Ability(10)
     constitution = Ability(10)
@@ -575,11 +588,11 @@ class Commoner(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 4
-    hit_dice = '1d8 + 0'
-    condition_immunities = ''
-    damage_immunities = ''
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "1d8 + 0"
+    condition_immunities = ""
+    damage_immunities = ""
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -597,13 +610,14 @@ class ConstrictorSnake(Monster):
       Until this grapple ends, the creature is restrained, and the snake
       can't constrict another target.
     """
-    name = 'Constrictor Snake'
-    description = 'Large beast, unaligned'
+
+    name = "Constrictor Snake"
+    description = "Large beast, unaligned"
     challenge_rating = 0.25
     armor_class = 12
-    skills = ''
-    senses = 'Blindsight 10 ft., Passive Perception 10'
-    languages = ''
+    skills = ""
+    senses = "Blindsight 10 ft., Passive Perception 10"
+    languages = ""
     strength = Ability(15)
     dexterity = Ability(14)
     constitution = Ability(12)
@@ -616,11 +630,11 @@ class ConstrictorSnake(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 13
-    hit_dice = '2d10 + 2'
-    condition_immunities = ''
-    damage_immunities = ''
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "2d10 + 2"
+    condition_immunities = ""
+    damage_immunities = ""
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -634,12 +648,12 @@ class CopperDragonWyrmling(Monster):
       + 2) piercing damage.
     Breath Weapons.
       The dragon uses one of the following breath weapons.
-      
+
       Acid Breath. The dragon exhales acid in an 20-foot line that is 5 feet
       wide. Each creature in that line must make a DC 11 Dexterity saving
       throw, taking 18 (4d8) acid damage on a failed save, or half as much
       damage on a successful one.
-      
+
       Slowing Breath. The dragon exhales gas in a 1 5-foot cone. Each
       creature in that area must succeed on a DC 11 Constitution saving
       throw. On a failed save, the creature can't use reactions, its speed
@@ -649,13 +663,14 @@ class CopperDragonWyrmling(Monster):
       can repeat the saving throw at the end of each of its turns, ending
       the effect on itself with a successful save.
     """
-    name = 'Copper Dragon Wyrmling'
-    description = 'Medium dragon, chaotic good'
+
+    name = "Copper Dragon Wyrmling"
+    description = "Medium dragon, chaotic good"
     challenge_rating = 1
     armor_class = 16
-    skills = 'Perception +4, Stealth +3'
-    senses = 'Blindsight 10 ft., Darkvision 60 ft., Passive Perception 14'
-    languages = 'Draconic'
+    skills = "Perception +4, Stealth +3"
+    senses = "Blindsight 10 ft., Darkvision 60 ft., Passive Perception 14"
+    languages = "Draconic"
     strength = Ability(15)
     dexterity = Ability(12)
     constitution = Ability(13)
@@ -668,11 +683,11 @@ class CopperDragonWyrmling(Monster):
     climb_speed = 30
     burrow_speed = 0
     hp_max = 22
-    hit_dice = '4d8 + 4'
-    condition_immunities = ''
-    damage_immunities = 'acid'
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "4d8 + 4"
+    condition_immunities = ""
+    damage_immunities = "acid"
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -683,14 +698,14 @@ class Couatl(Monster):
       The couatl's spellcasting ability is Charisma (spell save DC 14). It
       can innately cast the following spells, requiring only verbal
       components:
-      
-  
-      
+
+
+
       At will: detect evil and good, detect magic, detect thoughts
-      
+
       3/day each: bless, create food and water, cure wounds, lesser
       restoration, protection from poison, sanctuary, shield
-      
+
       1/day each: dream, greater restoration, scrying
     Magic Weapons.
       The couatl's weapon attacks are magical.
@@ -717,7 +732,7 @@ class Couatl(Monster):
       form. It reverts to its true form if it dies. Any equipment it is
       wearing or carrying is absorbed or borne by the new form (the couatl's
       choice).
-      
+
       In a new form, the couatl retains its game statistics and ability to
       speak, but its AC, movement modes, Strength, Dexterity, and other
       actions are replaced by those of the new form, and it gains any
@@ -725,13 +740,14 @@ class Couatl(Monster):
       and lair actions) that the new form has but that it lacks. If the new
       form has a bite attack, the couatl can use its bite in that form.
     """
-    name = 'Couatl'
-    description = 'Medium celestial, lawful good'
+
+    name = "Couatl"
+    description = "Medium celestial, lawful good"
     challenge_rating = 4
     armor_class = 19
-    skills = ''
-    senses = 'Truesight 120 ft., Passive Perception 15'
-    languages = 'all, telepathy 120 ft.'
+    skills = ""
+    senses = "Truesight 120 ft., Passive Perception 15"
+    languages = "all, telepathy 120 ft."
     strength = Ability(16)
     dexterity = Ability(20)
     constitution = Ability(17)
@@ -744,11 +760,13 @@ class Couatl(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 97
-    hit_dice = '13d8 + 39'
-    condition_immunities = ''
-    damage_immunities = 'psychic, bludgeoning, piercing, and slashing from nonmagical weapons'
-    damage_resistances = 'radiant'
-    damage_vulnerabilities = ''
+    hit_dice = "13d8 + 39"
+    condition_immunities = ""
+    damage_immunities = (
+        "psychic, bludgeoning, piercing, and slashing from nonmagical weapons"
+    )
+    damage_resistances = "radiant"
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -764,13 +782,14 @@ class Crab(Monster):
       Melee Weapon Attack: +0 to hit, reach 5 ft., one target. Hit: 1
       bludgeoning damage.
     """
-    name = 'Crab'
-    description = 'Tiny beast, unaligned'
+
+    name = "Crab"
+    description = "Tiny beast, unaligned"
     challenge_rating = 0
     armor_class = 11
-    skills = 'Stealth +2'
-    senses = 'Blindsight 30 ft., Passive Perception 9'
-    languages = ''
+    skills = "Stealth +2"
+    senses = "Blindsight 30 ft., Passive Perception 9"
+    languages = ""
     strength = Ability(2)
     dexterity = Ability(11)
     constitution = Ability(10)
@@ -783,11 +802,11 @@ class Crab(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 2
-    hit_dice = '1d4 + 0'
-    condition_immunities = ''
-    damage_immunities = ''
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "1d4 + 0"
+    condition_immunities = ""
+    damage_immunities = ""
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -805,13 +824,14 @@ class Crocodile(Monster):
       Until this grapple ends, the target is restrained, and the crocodile
       can't bite another target
     """
-    name = 'Crocodile'
-    description = 'Large beast, unaligned'
+
+    name = "Crocodile"
+    description = "Large beast, unaligned"
     challenge_rating = 0.5
     armor_class = 12
-    skills = 'Stealth +2'
-    senses = 'Passive Perception 10'
-    languages = ''
+    skills = "Stealth +2"
+    senses = "Passive Perception 10"
+    languages = ""
     strength = Ability(15)
     dexterity = Ability(10)
     constitution = Ability(13)
@@ -824,11 +844,11 @@ class Crocodile(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 19
-    hit_dice = '3d10 + 3'
-    condition_immunities = ''
-    damage_immunities = ''
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "3d10 + 3"
+    condition_immunities = ""
+    damage_immunities = ""
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -853,13 +873,14 @@ class CultFanatic(Monster):
       Melee or Ranged Weapon Attack: +4 to hit, reach 5 ft. or range 20/60
       ft., one creature. Hit: 4 (1d4 + 2) piercing damage.
     """
-    name = 'Cult Fanatic'
-    description = 'Medium humanoid, any non-good alignment'
+
+    name = "Cult Fanatic"
+    description = "Medium humanoid, any non-good alignment"
     challenge_rating = 2
     armor_class = 13
-    skills = 'Deception +4, Persuasion +4, Religion +2'
-    senses = 'Passive Perception 11'
-    languages = 'any one language (usually Common)'
+    skills = "Deception +4, Persuasion +4, Religion +2"
+    senses = "Passive Perception 11"
+    languages = "any one language (usually Common)"
     strength = Ability(11)
     dexterity = Ability(14)
     constitution = Ability(12)
@@ -872,12 +893,21 @@ class CultFanatic(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 22
-    hit_dice = '6d8 + -5'
-    condition_immunities = ''
-    damage_immunities = ''
-    damage_resistances = ''
-    damage_vulnerabilities = ''
-    spells = ['light', 'sacred flame', 'thaumaturgy', 'command', 'inflict wounds', 'shield of faith', 'hold person', 'spiritual weapon']
+    hit_dice = "6d8 + -5"
+    condition_immunities = ""
+    damage_immunities = ""
+    damage_resistances = ""
+    damage_vulnerabilities = ""
+    spells = [
+        "light",
+        "sacred flame",
+        "thaumaturgy",
+        "command",
+        "inflict wounds",
+        "shield of faith",
+        "hold person",
+        "spiritual weapon",
+    ]
 
 
 class Cultist(Monster):
@@ -893,13 +923,14 @@ class Cultist(Monster):
       Melee Weapon Attack: +3 to hit, reach 5 ft., one creature. Hit: 4 (1d6
       + 1) slashing damage.
     """
-    name = 'Cultist'
-    description = 'Medium humanoid, any non-good alignment'
+
+    name = "Cultist"
+    description = "Medium humanoid, any non-good alignment"
     challenge_rating = 0.125
     armor_class = 12
-    skills = 'Deception +2, Religion +2'
-    senses = 'Passive Perception 10'
-    languages = 'any one language (usually Common)'
+    skills = "Deception +2, Religion +2"
+    senses = "Passive Perception 10"
+    languages = "any one language (usually Common)"
     strength = Ability(11)
     dexterity = Ability(12)
     constitution = Ability(10)
@@ -912,9 +943,9 @@ class Cultist(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 9
-    hit_dice = '2d8 + 0'
-    condition_immunities = ''
-    damage_immunities = ''
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "2d8 + 0"
+    condition_immunities = ""
+    damage_immunities = ""
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []

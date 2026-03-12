@@ -16,6 +16,7 @@ class WeaponTestCase(unittest.TestCase):
 
 class MagicWeaponTestCase(unittest.TestCase):
     """Check that a magic weapon works as intended."""
+
     def test_class_inheritance_weapon_first(self):
         """Test that the class inheritance works correctly for multiclassing."""
         MagicWeapon = type("MagicWeapon", (Weapon, MagicItem),
@@ -26,7 +27,7 @@ class MagicWeaponTestCase(unittest.TestCase):
         self.assertEqual(weapon.damage, "1d4+2")
         # Check some magic item traits
         self.assertEqual(weapon.st_bonus_all, 3)
-    
+
     def test_class_inheritance_magic_item_first(self):
         """Test that the class inheritance works correctly for multiclassing."""
         MagicWeapon = type("MagicWeapon", (MagicItem, Weapon),

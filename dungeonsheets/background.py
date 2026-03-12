@@ -58,6 +58,13 @@ class Gladiator(Entertainer):
     name = "Gladiator"
 
 
+class Farmer(Background):
+    name = "Farmer"
+    skill_proficiencies = ("animal handling", "nature")
+    proficiencies_text = ("Carpenter's Tools",)
+    features = (feats.Tough,)
+
+
 class FolkHero(Background):
     name = "Folk Hero"
     skill_proficiencies = ("animal handling", "survival")
@@ -257,6 +264,7 @@ class WaterdhavianNoble(Background):
     languages = ("[choose one]",)
     features = (feats.KeptInStyle,)
 
+
 class Faceless(Background):
     """Being who you are, you could never be a hero.
     Wether due to your class, your people, your family, or your sins, something
@@ -274,6 +282,7 @@ class Faceless(Background):
     skill_proficiencies = ("Deception", "Intimidation")
     features = (feats.FacelessPersona, feats.DualPersonalities)
 
+
 PHB_backgrounds = [
     Acolyte,
     Charlatan,
@@ -281,6 +290,7 @@ PHB_backgrounds = [
     Spy,
     Entertainer,
     Gladiator,
+    Farmer,
     FolkHero,
     GuildArtisan,
     GuildMerchant,

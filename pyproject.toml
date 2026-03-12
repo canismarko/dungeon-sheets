@@ -1,41 +1,62 @@
-[build-system]
-requires = ["setuptools>=61.0"]
-build-backend = "setuptools.build_meta"
-
 [project]
 name = "dungeonsheets"
 version = "0.19.0"
-authors = [
-  {name="Mark Wolfman", email="mark@magicacid.com"},
-]
 description = "Dungeons and Dragons 5e Character Tools"
-readme = "README.rst"
-license = {"file"= "LICENSE"}
+authors = [{ name = "Mark Wolfman", email = "mark@magicacid.com" }]
 requires-python = ">=3.9"
-classifiers = [
-  "Development Status :: 3 - Alpha",
-  "Environment :: Console",
-  "License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)",
-  "Natural Language :: English",
-  "Programming Language :: Python :: 3.9",
-  "Programming Language :: Python :: 3.10",
-  "Programming Language :: Python :: 3.11",
-  "Programming Language :: Python :: 3.12",
-  "Topic :: Games/Entertainment :: Role-Playing",
+readme = "README.rst"
+license = { file = "LICENSE" }
+keywords = [
+    "D&D",
+    "character",
+    "sheets",
 ]
-keywords = ["D&D", "character", "sheets"]
-dependencies = ["certifi", "fdfgen", "npyscreen", "jinja2", "sphinx", "EbookLib", "reportlab", "docutils", "pypdf>=5.2.0"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Environment :: Console",
+    "License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)",
+    "Natural Language :: English",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Games/Entertainment :: Role-Playing",
+]
+dependencies = [
+    "certifi",
+    "fdfgen",
+    "npyscreen",
+    "jinja2",
+    "sphinx",
+    "EbookLib",
+    "reportlab",
+    "docutils",
+    "pypdf>=5.2.0",
+]
 
 [project.optional-dependencies]
-dev = ["pytest", "pytest-cov", "coverall", "flake8", "black"]
+dev = [
+    "pytest",
+    "pytest-cov",
+    "coverall",
+    "flake8",
+    "black",
+]
 
 [project.urls]
 Homepage = "https://github.com/canismarko/dungeon-sheets"
 "Bug Tracker" = "https://github.com/canismarko/dungeon-sheets/issues"
 
 [project.scripts]
-"makesheets" = "dungeonsheets.make_sheets:main"
-"create-character" = "dungeonsheets.create_character:main"
+makesheets = "dungeonsheets.make_sheets:main"
+create-character = "dungeonsheets.create_character:main"
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.uv]
+package = true
 
 [tool.setuptools.package-data]
 dungeonsheets = [

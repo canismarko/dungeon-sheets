@@ -2,9 +2,9 @@ name: Python package
 
 on:
   push:
-    branches: [ master ]
+    branches: [ main ]
   pull_request:
-    branches: [ master ]
+    branches: [ main ]
 
 jobs:
   build:
@@ -21,23 +21,52 @@ jobs:
     - name: Set up required system dependencies
       run: |
         sudo apt-get update
-        sudo apt-get -y install pdftk texlive-latex-base texlive-latex-extra texlive-fonts-recommended texlive-fonts-extra
+        sudo apt-get -y install pdftk wget perl fontconfig libwww-perl
+    - name: Install minimal TeX Live
+      run: |
+        # Keep this installer source and flow aligned with the Dockerfile.
+        cd /tmp
+        wget -q https://tex.org.uk/systems/texlive/tlnet/install-tl-unx.tar.gz
+        zcat < install-tl-unx.tar.gz | tar xf -
+        cd install-tl-2*/
+        cat > texlive.profile << 'EOF'
+        selected_scheme scheme-basic
+        TEXDIR /usr/local/texlive
+        TEXMFLOCAL /usr/local/texlive/texmf-local
+        TEXMFSYSVAR /usr/local/texlive/texmf-var
+        TEXMFSYSCONFIG /usr/local/texlive/texmf-config
+        TEXMFVAR ~/.texlive/texmf-var
+        TEXMFCONFIG ~/.texlive/texmf-config
+        TEXMFHOME ~/texmf
+        option_doc 0
+        option_src 0
+        instopt_adjustpath 1
+        EOF
+        sudo perl ./install-tl --profile=texlive.profile --no-interaction --repository https://tex.org.uk/systems/texlive/tlnet/
+        export PATH="/usr/local/texlive/bin/x86_64-linux:$PATH"
+        echo "/usr/local/texlive/bin/x86_64-linux" | sudo tee -a $GITHUB_PATH
+        # Install required LaTeX packages
+        PACKAGES=$(bash $GITHUB_WORKSPACE/.devcontainer/install-texlive-packages.sh)
+        sudo /usr/local/texlive/bin/x86_64-linux/tlmgr install $PACKAGES
+        sudo fc-cache -fv
     - name: Set up Python ${{ matrix.python-version }}
       uses: actions/setup-python@v4
       with:
         python-version: ${{ matrix.python-version }}
-        cache: pip
-    - name: Install dependencies and do a local pip install
+    - name: Install uv
+      uses: astral-sh/setup-uv@v5
+      with:
+        enable-cache: true
+    - name: Install dependencies with uv
       run: |
-        python -m pip install --upgrade pip
-        pip install -e ".[dev]"
+        uv sync --extra dev
     - name: Run flake
-      run: flake8 dungeonsheets/ --exit-zero
+      run: uv run flake8 dungeonsheets/ --exit-zero
     - name: Run tests
       run: >
           cd examples/;
-          makesheets --debug;
-          makesheets --debug --fancy;
-          makesheets --debug --output-format=epub;
+          uv run makesheets --debug;
+          uv run makesheets --debug --fancy;
+          uv run makesheets --debug --output-format=epub;
           cd ../;
-          pytest --cov=dungeonsheets tests/
+          uv run pytest --cov=dungeonsheets tests/

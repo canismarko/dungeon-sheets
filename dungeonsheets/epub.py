@@ -51,7 +51,9 @@ def create_epub(
         "magic-item-details": 13.5,
         "monster-details": 15,
     }
-    style = css_template.render(use_dnd_decorations=use_dnd_decorations, dl_widths=dl_widths)
+    style = css_template.render(
+        use_dnd_decorations=use_dnd_decorations, dl_widths=dl_widths
+    )
     css = epub.EpubItem(
         uid="style_default",
         file_name="style/gm_sheet.css",
@@ -102,7 +104,7 @@ def create_epub(
 
 
 class HeadingParser(HTMLParser):
-    tag_re = re.compile("h(\d+)")
+    tag_re = re.compile(r"h(\d+)")
     _curr_level = None
     _curr_id = None
     _curr_title = None
@@ -128,7 +130,11 @@ class HeadingParser(HTMLParser):
 
     def handle_endtag(self, tag):
         this_level = self.heading_level(tag)
-        if this_level is not None and this_level == self._curr_level and self._curr_id is not None:
+        if (
+            this_level is not None
+            and this_level == self._curr_level
+            and self._curr_id is not None
+        ):
             heading = {
                 "level": this_level,
                 "id": self._curr_id,
@@ -187,7 +193,9 @@ def toc_from_headings(
             # Add a leaf or branch depending on the heading structure
             if is_leaf:
                 parent_section[1].append(
-                    epub.Link(href=href, title=heading["title"], uid=href.replace("#", ":"))
+                    epub.Link(
+                        href=href, title=heading["title"], uid=href.replace("#", ":")
+                    )
                 )
             else:
                 new_section = (epub.Section(href=href, title=heading["title"]), [])
@@ -292,11 +300,19 @@ def rst_to_html(rst, top_heading_level: int = 0, format_dice: bool = True):
 
 def to_heading_id(inpt: str) -> str:
     """Take a string and make it suitable for use as an HTML header id."""
-    bad_characters = ["'", "(", ")", "&", "/", "+", ",", "=", ]
+    bad_characters = [
+        "'",
+        "(",
+        ")",
+        "&",
+        "/",
+        "+",
+        ",",
+        "=",
+    ]
     for c in bad_characters:
         inpt = inpt.replace(c, "")
     return inpt.replace(" ", "-")
-
 
 
 # Prepare the jinja environment

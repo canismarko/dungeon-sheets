@@ -659,6 +659,29 @@ class ArcaneLock(Spell):
     classes = ("Wizard",)
 
 
+class ArcaneWeapon(Spell):
+    """You channel arcane energy into one simple or martial weapon you’re
+    holding, and choose one damage type: acid, cold, fire, lightning, poison,
+    or thunder. Until the spell ends, you deal an extra 1d6 damage of the
+    chosen type to any target you hit with the weapon. If the weapon isn’t
+    magical, it becomes a magic weapon for the spell’s duration.
+
+    As a bonus action, you can change the damage type, choosing from the
+    options above.
+    """
+
+    name = "Arcane Weapon"
+    level = 1
+    casting_time = "1 bonus action"
+    casting_range = "Self"
+    components = ("V", "S")
+    materials = ""
+    duration = "Concentration, up to 1 hour"
+    ritual = False
+    magic_school = "Transmutation"
+    classes = ("Artificer",)
+
+
 class ArmorOfAgathys(Spell):
     """A protective magical force surrounds you, manifesting as a spectral
     frost that covers you and your gear. You gain 5 temporary hit

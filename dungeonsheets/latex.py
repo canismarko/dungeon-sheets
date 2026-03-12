@@ -30,7 +30,38 @@ class DNDTranslator(LaTeXTranslator):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.settings.table_style = ["borderless"]
-        self.active_table = DNDTable(self, "supertabular")
+        # Use regular tabular by default - we'll switch to longtable for large tables
+        self.active_table = DNDTable(self, "tabular")
+        self._in_large_table = False
+
+    def visit_table(self, node):
+        """Check table size and decide whether to use onecolumn mode."""
+        # Estimate table height by counting rows
+        # Find tbody or rows within the table
+        rows = node.traverse(condition=lambda n: n.tagname == 'row')
+        num_rows = len(rows)
+
+        # Heuristic: if table has more than ~20 rows, it might be too tall for a column
+        # A typical column can fit about 50-60 lines of text, table rows are ~2 lines each
+        if num_rows > 20:
+            self._in_large_table = True
+            # Switch to longtable for multi-page support
+            self.active_table = DNDTable(self, "longtable")
+            # Switch to onecolumn to avoid longtable/twocolumn incompatibility
+            self.out.append("\n\\onecolumn\n")
+
+        super().visit_table(node)
+
+    def depart_table(self, node):
+        """Restore twocolumn mode if we switched for a large table."""
+        super().depart_table(node)
+
+        if self._in_large_table:
+            # Switch back to twocolumn
+            self.out.append("\\twocolumn\n")
+            # Reset for next table
+            self._in_large_table = False
+            self.active_table = DNDTable(self, "tabular")
 
 
 def _remove_temp_files(basename_):
@@ -50,8 +81,15 @@ def create_latex_pdf(
     basename: str,
     keep_temp_files: bool = False,
     use_dnd_decorations: bool = False,
-    comm1: str = "pdflatex"
+    comm1: str = "pdflatex",
 ):
+    # Fix LaTeX syntax issues with supertabular and textbf
+    # docutils generates \textbf{%\nText\n} which newer TeX Live doesn't like in tables
+    # Replace with \textbf{Text} on a single line
+    # TDO: The real fix would be to override the table generation methods in DNDTranslator.
+    tex = re.sub(
+        r"\\textbf\{%\s*\n\s*([^\}]+?)\s*\n\s*\}", r"\\textbf{\1}", tex)
+
     # Create tex document
     tex_file = f"{basename}.tex"
     with open(tex_file, mode="w", encoding="utf-8") as f:
@@ -70,13 +108,13 @@ def create_latex_pdf(
     ]
 
     environment = os.environ
-    tex_env = environment.get('TEXINPUTS', '')
+    tex_env = environment.get("TEXINPUTS", "")
     module_root = Path(__file__).parent / "modules/"
     module_dirs = [module_root / mdir for mdir in ["DND-5e-LaTeX-Template"]]
     log.debug(f"Loading additional modules from {module_dirs}.")
-    texinputs = ['.', *module_dirs, module_root, tex_env]
-    separator = ';' if isinstance(module_root, pathlib.WindowsPath) else ':'
-    environment['TEXINPUTS'] = separator.join(str(path) for path in texinputs)
+    texinputs = [".", *module_dirs, module_root, tex_env]
+    separator = ";" if isinstance(module_root, pathlib.WindowsPath) else ":"
+    environment["TEXINPUTS"] = separator.join(str(path) for path in texinputs)
     passes = 2 if use_dnd_decorations else 1
     log.debug(tex_command_line)
     log.debug("LaTeX command: %s" % " ".join(tex_command_line))
@@ -94,20 +132,37 @@ def create_latex_pdf(
         _remove_temp_files(basename)
         raise exceptions.LatexNotFoundError()
     else:
+        # Check if PDF was successfully created, regardless of return code
+        # (TeX Live 2025+ may return non-zero even on successful compilation with warnings)
+        pdf_created = pdf_file.exists() and pdf_file.stat().st_size > 0
+
         if result.returncode == 0 and not keep_temp_files:
             _remove_temp_files(basename)
         if result.returncode != 0:
-            # Prepare to raise an exception
-            logfile = Path(f"{basename}.log")
-            err_msg = f"Processing of {basename}.tex failed. See {logfile} for details."
-            # Load the log file for more details
-            tex_error_msg = tex_error(logfile)
-            if tex_error_msg:
-                for line in tex_error_msg.split("\n"):
-                    log.error(line)
-            raise exceptions.LatexError(err_msg)
+            # Only raise an error if the PDF wasn't actually created
+            if not pdf_created:
+                # Prepare to raise an exception
+                logfile = Path(f"{basename}.log")
+                err_msg = (
+                    f"Processing of {basename}.tex failed. See {logfile} for details."
+                )
+                # Load the log file for more details
+                tex_error_msg = tex_error(logfile)
+                if tex_error_msg:
+                    for line in tex_error_msg.split("\n"):
+                        log.error(line)
+                raise exceptions.LatexError(err_msg)
+            else:
+                # PDF was created successfully despite non-zero return code
+                # Log the warning but don't fail
+                logfile = Path(f"{basename}.log")
+                log.warning(
+                    f"pdflatex returned non-zero exit code but PDF was created successfully: {pdf_file}"
+                )
+                if not keep_temp_files:
+                    _remove_temp_files(basename)
     finally:
-        environment['TEXINPUTS'] = tex_env
+        environment["TEXINPUTS"] = tex_env
 
 
 def tex_error(logfile: Path) -> str:
@@ -164,6 +219,8 @@ def latex_parts(
         "input_encoding": input_encoding,
         "doctitle_xform": doctitle,
         "initial_header_level": initial_header_level,
+        "use_latex_citations": True,
+        "legacy_column_widths": False,
     }
     writer = LatexWriter()
     parts = core.publish_parts(
@@ -176,7 +233,9 @@ def latex_parts(
     return parts
 
 
-def rst_to_latex(rst, top_heading_level: int=0, format_dice: bool = True, use_dnd_decorations=False):
+def rst_to_latex(
+    rst, top_heading_level: int = 0, format_dice: bool = True, use_dnd_decorations=False
+):
     """Basic markup of reST to LaTeX code.
 
     The translation between reST headings and LaTeX headings is
@@ -214,8 +273,10 @@ def rst_to_latex(rst, top_heading_level: int=0, format_dice: bool = True, use_dn
         tex = tex_parts["body"]
     # Apply fancy D&D decorations
     if use_dnd_decorations:
-        tex = tex.replace(r"\begin{supertabular}[c]", r"\begin{DndLongTable}[header=]")
-        tex = tex.replace(r"\begin{supertabular}", r"\begin{DndLongTable}[header=]")
+        tex = tex.replace(
+            r"\begin{supertabular}[c]", r"\begin{DndLongTable}[header=]")
+        tex = tex.replace(r"\begin{supertabular}",
+                          r"\begin{DndLongTable}[header=]")
         tex = tex.replace(r"\end{supertabular}", r"\end{DndLongTable}")
 
         # Stretch table to the entire width of the text column.
@@ -224,7 +285,8 @@ def rst_to_latex(rst, top_heading_level: int=0, format_dice: bool = True, use_dn
         tableheader = re.findall(r"\\begin{DndLongTable}.*", tex)
         for header in tableheader:
             # Get all collumn widths, compute initial table width
-            colwidths = [width for width in re.findall(r"0\.[0-9]+", str(header))]
+            colwidths = [width for width in re.findall(
+                r"0\.[0-9]+", str(header))]
             tablewidth = 0
             for width in colwidths:
                 tablewidth += float(width)
@@ -232,23 +294,28 @@ def rst_to_latex(rst, top_heading_level: int=0, format_dice: bool = True, use_dn
             transformed_header = header
             for width in colwidths:
                 # Transform the column width by dividing it by the initial table width
-                transformed_width = round( float(width) / tablewidth, 3)
-                # Subtract the table column separation spaces from the transformed column width
-                transformed_width = r"\\dimexpr " + str(transformed_width) + r"\\DUtablewidth -2\\tabcolsep"
+                transformed_width = str(round(float(width) / tablewidth, 3))
                 # Replace the original width with the transformed width
-                transformed_header = re.sub(width + r"\\DUtablewidth",
-                                            transformed_width,
-                                            transformed_header)
+                transformed_header = re.sub(
+                    width, transformed_width, transformed_header
+                )
             # Replace the original table header with the transformed one
             tex = tex.replace(header, transformed_header)
         # Correct table header to the DndLongTable format.
         # First deal with the table caption, if present:
-        tex = re.sub(r"(begin{DndLongTable}\[header=)\](.*?\n)\\multicolumn.*?\n(.*?)\n.*?\\\\\n",
-                     r"\1\3]\2", tex, flags=re.M|re.DOTALL)
+        tex = re.sub(
+            r"(begin{DndLongTable}\[header=)\](.*?\n)\\multicolumn.*?\n(.*?)\n.*?\\\\\n",
+            r"\1\3]\2",
+            tex,
+            flags=re.M | re.DOTALL,
+        )
         # Next, take the first table row and define it as the first page table header:
-        tex = re.sub(r"(begin{DndLongTable}\[header=.*?)\](.*?)\n(.*?\\\\)\n\n",
-                     r"\1,firsthead={\3 }]\2\n", tex, flags=re.M|re.DOTALL)
-
+        tex = re.sub(
+            r"(begin{DndLongTable}\[header=.*?)\](.*?)\n(.*?\\\\)\n\n",
+            r"\1,firsthead={\3 }]\2\n",
+            tex,
+            flags=re.M | re.DOTALL,
+        )
     return tex
 
 
@@ -260,32 +327,34 @@ def rst_to_boxlatex(rst):
         return ""
     tex_parts = latex_parts(rst)
     tex = tex_parts["body"]
-    tex = tex.replace('\n\n', ' \\\\\n')
+    tex = tex.replace("\n\n", " \\\\\n")
     return tex
 
 
 def msavage_spell_info(char):
     """Generates the spellsheet for msavage template."""
     headinfo = char.spell_casting_info["head"]
-    font_options = {1:"", 2:r"\Large ", 3:r"\large "}
+    font_options = {1: "", 2: r"\Large ", 3: r"\large "}
     selector = min(len(char.spellcasting_classes), 3)
     fs_command = font_options[selector]
-    sc_classes = r"\SpellcastingClass{" \
-                + fs_command \
-                + headinfo["classes_and_levels"].replace(" / ", ", ") \
-                + "}"
-    sc_abilities = r"\SpellcastingAbility{" \
-                + fs_command \
-                + headinfo["abilities"].replace(" ", "") \
-                + "}"
-    sc_savedc = r"\SpellSaveDC{" \
-                + fs_command \
-                + headinfo["DCs"].replace(" ", "") \
-                + "}"
-    sc_atk = r"\SpellAttackBonus{" \
-                + fs_command \
-                + headinfo["bonuses"].replace(" ", "") \
-                + "}"
+    sc_classes = (
+        r"\SpellcastingClass{"
+        + fs_command
+        + headinfo["classes_and_levels"].replace(" / ", ", ")
+        + "}"
+    )
+    sc_abilities = (
+        r"\SpellcastingAbility{"
+        + fs_command
+        + headinfo["abilities"].replace(" ", "")
+        + "}"
+    )
+    sc_savedc = r"\SpellSaveDC{" + fs_command + \
+        headinfo["DCs"].replace(" ", "") + "}"
+    sc_atk = (
+        r"\SpellAttackBonus{" + fs_command +
+        headinfo["bonuses"].replace(" ", "") + "}"
+    )
     tex1 = "\n".join([sc_classes, sc_abilities, sc_savedc, sc_atk]) + "\n"
     spellslots = char.spell_casting_info["slots"]
     texT = []
@@ -293,24 +362,52 @@ def msavage_spell_info(char):
         texT.append("\\" + k + "SlotsTotal{" + str(v) + "}")
     tex2 = "\n".join(texT) + "\n"
     texT = []
-    level_names = level_names = ["Cantrip", 
-                       'FirstLevelSpell',
-                       'SecondLevelSpell',
-                       'ThirdLevelSpell',
-                       'FourthLevelSpell',
-                       'FifthLevelSpell',
-                       'SixthLevelSpell',
-                       'SeventhLevelSpell',
-                       'EighthLevelSpell',
-                       'NinthLevelSpell']
+    level_names = level_names = [
+        "Cantrip",
+        "FirstLevelSpell",
+        "SecondLevelSpell",
+        "ThirdLevelSpell",
+        "FourthLevelSpell",
+        "FifthLevelSpell",
+        "SixthLevelSpell",
+        "SeventhLevelSpell",
+        "EighthLevelSpell",
+        "NinthLevelSpell",
+    ]
 
-    fullcaster_sheet_spaces = dict(zip(level_names,
-                    [8, 13, 13, 13, 13, 9, 9, 9, 7, 7]))
-    halfcaster_sheet_spaces = dict(zip(level_names,
-                    [11, 26, 19, 19, 19, 0, 0, 0, 0, 0]))
-    comp_letters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", 
-                  "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", 
-                  "W", "X", "Y", "Z"]
+    fullcaster_sheet_spaces = dict(
+        zip(level_names, [8, 13, 13, 13, 13, 9, 9, 9, 7, 7]))
+    halfcaster_sheet_spaces = dict(
+        zip(level_names, [11, 26, 19, 19, 19, 0, 0, 0, 0, 0])
+    )
+    comp_letters = [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H",
+        "I",
+        "J",
+        "K",
+        "L",
+        "M",
+        "N",
+        "O",
+        "P",
+        "Q",
+        "R",
+        "S",
+        "T",
+        "U",
+        "V",
+        "W",
+        "X",
+        "Y",
+        "Z",
+    ]
 
     # spellList is a dict.
     # The keys in spellList are the level names, the values are lists of tuples:
@@ -323,12 +420,12 @@ def msavage_spell_info(char):
     # Only use halfcaster when we have no spells > 5th level and
     # would overflow the fullcaster sheet.
     # Keep the same sheet for overflow pages, if any.
-    only_low_level = all((char.spell_slots(level) == 0 for level in range(6, 10)))
-    if (any(len(spellList[key]) > fullcaster_sheet_spaces[key] for key in spellList.keys())
-            and only_low_level):
+    if any(
+        len(spellList[key]) > fullcaster_sheet_spaces[key] for key in spellList.keys()
+    ) and not any(name in spellList.keys() for name in level_names[6:10]):
         fullcaster = False
 
-    def AddSpellPage(fullcaster = True):
+    def AddSpellPage(fullcaster=True):
         texT = []
         for k, v in spellList.items():
             spells_this_level_and_page = len(v)
@@ -340,26 +437,30 @@ def msavage_spell_info(char):
                 slots_max = halfcaster_sheet_spaces[k]
             for spinfo, slot in zip(v[:slots_max], comp_letters):
                 spellList[k].remove(spinfo)
-                slot_command = "\\"+k+'Slot'+slot
-                slot_command_name = slot_command+"{"+spinfo[0]+"}"
+                slot_command = "\\" + k + "Slot" + slot
+                slot_command_name = slot_command + "{" + spinfo[0] + "}"
                 if k == "Cantrip":
                     texT = texT + [slot_command_name]
                     continue
-                slot_command_prep = slot_command+"Prepared"+"{"+str(spinfo[1])+"}"
+                slot_command_prep = (
+                    slot_command + "Prepared" + "{" + str(spinfo[1]) + "}"
+                )
                 texT = texT + [slot_command_name, slot_command_prep]
             # Set remaining slots empty
             for empty_slot in comp_letters[spells_this_level_and_page:slots_max]:
-                slot_command = "\\"+k+'Slot'+empty_slot
-                slot_command_name = slot_command+"{}"
+                slot_command = "\\" + k + "Slot" + empty_slot
+                slot_command_name = slot_command + "{}"
                 if k == "Cantrip":
                     texT = texT + [slot_command_name]
                     continue
-                slot_command_prep = slot_command+"Prepared{False}"
+                slot_command_prep = slot_command + "Prepared{False}"
                 texT = texT + [slot_command_name, slot_command_prep]
-            if (not len(spellList[k]) == 0
-                    and not spellList[k][0][0] == "--- Overflow ---"):
+            if (
+                not len(spellList[k]) == 0
+                and not spellList[k][0][0] == "--- Overflow ---"
+            ):
                 spellList[k].insert(0, ("--- Overflow ---", False))
-        return "\n".join(texT) + '\n\n' + spellsheet_command + '\n\n'
+        return "\n".join(texT) + "\n\n" + spellsheet_command + "\n\n"
 
     tex3 = ""
     while any(spellList.values()):
@@ -369,7 +470,7 @@ def msavage_spell_info(char):
 
 def RPGtex_monster_info(char):
     """Generates the headings for the monster block info in the DND latex style"""
-    tex = """\n""" # Clean start with a newline
+    tex = """\n"""  # Clean start with a newline
     # Counting sections here:
     # 0: Feats
     # 1: Actions and reactions
@@ -377,19 +478,20 @@ def RPGtex_monster_info(char):
     # 3: Other types of actions.
     # Challenges: Some monsters only have feats, some only have actions.
     sectiontype = 0
-    sectionlist = char.split("    # ") # Four spaces, a hash, and another space
+    # Four spaces, a hash, and another space
+    sectionlist = char.split("    # ")
     for section in sectionlist:
         # First find out what type of section we're dealing with, and
         # set sectiontype accordingly;
         # The first section is either feats or actions. Set sectiontype to
         # actions (and format accordingly) if the first line matches
         # actions or reactions
-        if re.match (r"^[re]*actions\n", section, re.IGNORECASE):
+        if re.match(r"^[re]*actions\n", section, re.IGNORECASE):
             sectiontype = 1
-        elif re.match (r"^legendary actions\n", section, re.IGNORECASE):
+        elif re.match(r"^legendary actions\n", section, re.IGNORECASE):
             sectiontype = 2
-        elif sectionlist.index(section) > 0: # Not the first section, nor does
-            sectiontype = 3                  # it have any header we recognize
+        elif sectionlist.index(section) > 0:  # Not the first section, nor does
+            sectiontype = 3  # it have any header we recognize
 
         # Now we latex format each section according to type, applying
         # rst_to_latex where it's convenient, and resorting to our own
@@ -397,17 +499,21 @@ def RPGtex_monster_info(char):
         # style as much as possible.
         if sectiontype == 0 or sectiontype == 3:
             # Use rst_to_latex first, because of easy itemization
-            section = rst_to_latex(section) # This somehow adds a newline at the start of the section
+            section = rst_to_latex(
+                section
+            )  # This somehow adds a newline at the start of the section
             # Snip away begin and end description:
-            section = re.sub (r"\\[a-z]+{description}\n", "", section)
+            section = re.sub(r"\\[a-z]+{description}\n", "", section)
             # Sub \item[{}] with \DndMonsterAction{} headers:
-            section = re.sub (r"\\item\[{(.+)\.}\]", r"\\DndMonsterAction{\1}", section)
-            if sectiontype == 3: # Add section header
-                section = re.sub(r"^\n(.*)\n", r"\\DndMonsterSection{\1}", section)
+            section = re.sub(r"\\item\[{(.+)\.}\]",
+                             r"\\DndMonsterAction{\1}", section)
+            if sectiontype == 3:  # Add section header
+                section = re.sub(
+                    r"^\n(.*)\n", r"\\DndMonsterSection{\1}", section)
             # Remove spurious newlines from the start of the section:
-            section = re.sub (r"^\n", r"", section)
+            section = re.sub(r"^\n", r"", section)
             # Remove spurious newlines from the end of the section:
-            section = re.sub (r"\n\n$", r"\n", section)
+            section = re.sub(r"\n\n$", r"\n", section)
             tex += section
 
         if sectiontype == 1:
@@ -415,20 +521,30 @@ def RPGtex_monster_info(char):
             subsection = ""
             lines = section.splitlines()
             for line in lines:
-                if re.match (r"^\S", line):
-                    line = re.sub(r"(.+)$", r"\n\\DndMonsterSection{\1}\n", line)
+                if re.match(r"^\S", line):
+                    line = re.sub(
+                        r"(.+)$", r"\n\\DndMonsterSection{\1}\n", line)
                     subsection += line
                 else:
                     # Italicize weapon type and hit, and remove six leading spaces
-                    line = re.sub(r"^ {6}(.+)\:(.+)(Hit)\: (.+)", r"\\textit{\1:} \2\\textit{\3:} \4 ", line)
+                    line = re.sub(
+                        r"^ {6}(.+)\:(.+)(Hit)\: (.+)",
+                        r"\\textit{\1:} \2\\textit{\3:} \4 ",
+                        line,
+                    )
                     # Remove leading spaces from other lines
                     line = re.sub(r"^ {6}(.+)", r"\1\n", line)
                     # Add DndMonsterAction header for each action, and remove four leading spaces
-                    line = re.sub(r"^ {4}(\S.+)\.$", r"\\DndMonsterAction{\1}\n", line)
+                    line = re.sub(r"^ {4}(\S.+)\.$",
+                                  r"\\DndMonsterAction{\1}\n", line)
                     subsection += line
                     subsection = re.sub(r" {6}", "\n", subsection)
             # Dice
-            subsection = re.sub(r"\((\d+)d(\d+)\s*([+-]*)\s*(\d*)\)", r" (\\texttt{\1d\2\3\4}) ", subsection)
+            subsection = re.sub(
+                r"\((\d+)d(\d+)\s*([+-]*)\s*(\d*)\)",
+                r" (\\texttt{\1d\2\3\4}) ",
+                subsection,
+            )
             tex += subsection
 
         if sectiontype == 2:
@@ -439,17 +555,29 @@ def RPGtex_monster_info(char):
             for line in lines:
                 if re.match(r"^ {4}\S", line):
                     # New legendary action, remove leading spaces
-                    line = re.sub(r"^ {4}(.+)\.$", r"\\DndMonsterLegendaryAction{\1}{}", line)
+                    line = re.sub(
+                        r"^ {4}(.+)\.$", r"\\DndMonsterLegendaryAction{\1}{}", line
+                    )
                     subsection += line + "\n"
                 elif re.match(r"^ {6}\S", line):
                     # Remove leading spaces from other lines
                     line = re.sub(r"^ {6}(.+)", r"\1", line)
                     subsection += line + "\n"
             # Add section header and DndMonsterLegendaryActions environment
-            subsection = ("\n\\DndMonsterSection{Legendary Actions}\n\\begin{DndMonsterLegendaryActions}\n" + subsection + "\\end{DndMonsterLegendaryActions}\n")
+            subsection = (
+                "\n\\DndMonsterSection{Legendary Actions}\n\\begin{DndMonsterLegendaryActions}\n"
+                + subsection
+                + "\\end{DndMonsterLegendaryActions}\n"
+            )
             # Put the curly braces in place
-            subsection = re.sub(r"}{}\n(.+?)\n\\", r"}\n{\1}\n\\", subsection, re.MULTILINE, re.DOTALL)
+            subsection = re.sub(
+                r"}{}\n(.+?)\n\\", r"}\n{\1}\n\\", subsection, re.MULTILINE, re.DOTALL
+            )
             # Dice
-            subsection = re.sub(r"\((\d+)d(\d+)\s*([+-]*)\s*(\d*)\)", r" (\\texttt{\1d\2\3\4})", subsection)
+            subsection = re.sub(
+                r"\((\d+)d(\d+)\s*([+-]*)\s*(\d*)\)",
+                r" (\\texttt{\1d\2\3\4})",
+                subsection,
+            )
             tex += subsection
     return tex

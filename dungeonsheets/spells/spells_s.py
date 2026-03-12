@@ -625,6 +625,32 @@ class SilentImage(Spell):
     classes = ("Bard", "Sorcerer", "Wizard")
 
 
+class SilveryBarbs(Spell):
+    """You magically distract the triggering creature and turn its momentary uncertainty
+    into encouragement for another creature. The triggering creature must reroll the
+    d20 and use the lower roll.
+
+    You can then choose a different creature you can see
+    within range (you can choose yourself). The chosen creature has advantage on the
+    next attack roll, ability check, or saving throw it makes within 1 minute. A
+    creature can be empowered by only one use of this spell at a time.
+
+    **Reaction Trigger:** You take this reaction when a creature you can see within 60
+    feet of yourself succeeds on an attack roll, an ability check, or a saving throw.
+    """
+
+    name = "Silvery Barbs"
+    level = 1
+    casting_time = "1 reaction"
+    casting_range = "60 feet"
+    components = ("V",)
+    materials = ""
+    duration = "Instantaneous"
+    ritual = False
+    magic_school = "Enchantment"
+    classes = ("Bard", "Sorcerer", "Wizard")
+
+
 class Simulacrum(Spell):
     """You shape an illusory duplicate of one beast or humanoid that is within range
     for the entire casting time of the spell.
@@ -806,10 +832,10 @@ class Snare(Spell):
     """As you cast this spell, you use the rope to create a circle with a
     5-foot radius on the ground or the floor. When you finish casting,
     the rope disappears and the circle becomes a magic trap.
-    
+
     This trap is nearly invisible, requiring a successful Intelligence
     (Investigation) check against your spell save DC to be discerned.
-    
+
     The trap triggers when a Small, Medium, or Large creature moves
     onto the ground or the floor in the spell's radius. That creature
     must succeed on a Dexterity saving throw or be magically hoisted

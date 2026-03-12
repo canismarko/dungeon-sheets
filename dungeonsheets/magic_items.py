@@ -45,6 +45,7 @@ class MagicItem:
       A bonus to charisma saving throws to any creature equipping this item.
 
     """
+
     # Magic-item specific attributes
     name: str = "Generic Magic Item"
     requires_attunement: bool = False
@@ -82,6 +83,7 @@ class CloakOfProtection(MagicItem):
     cloak.
 
     """
+
     name = "Cloak of Protection"
     ac_bonus = 1
     st_bonus_all = 1
@@ -114,7 +116,7 @@ class DeckOfIllusions(MagicItem):
     The Illusion lasts until its card is moved or the Illusion is
     dispelled. When the Illusion ends, the image on its card
     disappears, and that card can't be used again.
-    
+
     +-------------------+----------------------------------+
     | Playing Card      | Illusion                         |
     +===================+==================================+
@@ -184,8 +186,9 @@ class DeckOfIllusions(MagicItem):
     +-------------------+----------------------------------+
     | Jokers (2)        | You (the deck's owner)           |
     +-------------------+----------------------------------+
-    
+
     """
+
     name = "Deck of Illusions"
     requires_attunement = False
     rarity = "Uncommon"
@@ -193,11 +196,11 @@ class DeckOfIllusions(MagicItem):
 
 
 class RingOfProtection(MagicItem):
-
     """You gain a +1 bonus to AC and Saving Throws while wearing this
     ring.
-    
+
     """
+
     name = "Ring of Protection"
     ac_bonus = 1
     st_bonus_all = 1
@@ -213,14 +216,15 @@ class CloakOfTheBat(MagicItem):
     40 feet. If you ever fail to grip the cloak's edges while flying
     in this way, or if you are no longer in dim light or darkness, you
     lose this flying speed.
-    
+
     While wearing the cloak in an area of dim light or darkness, you
     can use your action to cast polymorph on yourself, transforming
     into a bat. While you are in the form of the bat, you retain your
     Intelligence, Wisdom, and Charisma scores. The cloak can't be used
     this way again until the next dawn.
-    
+
     """
+
     requires_attunement = True
     name = "Cloak of the Bat"
     item_type = "Cloak"
@@ -241,6 +245,7 @@ class DustOfSneezingAndChoking(MagicItem):
     lesser restoration spell can also end the effect on a creature.
 
     """
+
     requires_attunement = False
     name = "Dust of Sneezing and Choking"
     item_type = "Consumable"
@@ -253,9 +258,21 @@ class BracersOfArchery(MagicItem):
     ranged attacks made with such weapons.
 
     """
+
     name = "Bracers of Archery"
     rarity = "uncommon"
     requires_attunement = True
+
+
+class GauntletsOfOgrePower(MagicItem):
+    """Your Strength score is 19 while you wear these gauntlets. They
+    have no effect on you if your Strength is already 19 or higher.
+
+    """
+    name = "Gauntlets of Ogre Power"
+    rarity = "uncommon"
+    requires_attunement = True
+    item_type = "Wondrous item"
 
 
 class NaturesMantle(MagicItem):
@@ -267,6 +284,7 @@ class NaturesMantle(MagicItem):
     a bonus action even if you are being directly observed.
 
     """
+
     requires_attunement = True
     name = "Nature's Mantle"
     rarity = "uncommon"
@@ -281,13 +299,13 @@ class EagleWhistle(MagicItem):
     if you land. If you are aloft when you stop blowing the whistle,
     you fall. The whistle has three uses. It regains expended uses
     daily at dawn."""
+
     name = "Eagle Whistle"
     requires_attunement = False
     rarity = "rare"
-    
+
 
 class DecanterOfEndlessWater(MagicItem):
-
     """This stoppered flask sloshes when shaken, as if it contains water. The
     decanter weighs 2 pounds.
 
@@ -335,6 +353,7 @@ class CloakOfBillowing(MagicItem):
 
     name = "Cloak of Billowing"
     rarity = "Common"
+    item_type = "Cloak"
 
 
 class CloakOfDisplacement(MagicItem):
@@ -348,6 +367,7 @@ class CloakOfDisplacement(MagicItem):
 
     name = "Cloak of Displacement"
     rarity = "Rare"
+    item_type = "Cloak"
 
 
 class CapeOfTheMountebank(MagicItem):
@@ -392,8 +412,8 @@ class CharlatansDie(MagicItem):
 
 
 class PipeOfSmokeMonsters(MagicItem):
-    """While smoking this pipe, you can use an action to ex- hale a puff of smoke
-    that takes the form of a single crea- ture, such as a dragon, a flumph, or
+    """While smoking this pipe, you can use an action to exhale a puff of smoke
+    that takes the form of a single creature, such as a dragon, a flumph, or
     a froghemoth. The form must be small enough to fit in a 1-foot cube and
     loses its shape after a few seconds, becoming an ordi- nary puff of smoke.
 
@@ -449,6 +469,7 @@ class SpearOfLightning(MagicItem):
 
     requires_attunement = True
     name = "Lightning Spear"
+    item_type = "weapon"
 
 
 class AmuletOfTheEel(MagicItem):
@@ -487,19 +508,20 @@ class ShieldOfFaces(MagicItem):
 
     requires_attunement = True
     name = "Shield of Faces"
+    item_type = "shield"
 
 
 class GlovesOfThievery(MagicItem):
     """These gloves are invisible while worn. While wearing them, you gain
     a +5 bonus to Dexterity (Sleight of Hand) checks and Dexterity
     checks made to pick locks."""
+
     name = "Gloves of Thievery"
     rarity = "Uncommon"
     item_type = "Wondrous item"
 
 
 class GlowingSword(MagicItem):
-
     """
     This strange longsword glows at odd times.
     """
@@ -540,6 +562,7 @@ class PotionOfHealing(MagicItem):
     +-----------------------------+-------------------+------------------------+
 
     """
+
     rarity = "common"
     name = "Potion of Healing"
     item_type = "Potion"
@@ -566,8 +589,10 @@ class PotionOfGreaterHealing(PotionOfHealing):
     +-----------------------------+-------------------+------------------------+
 
     """
+
     name = "Potion of Greater Healing"
     rarity = "uncommon"
+    item_type = "Potion"
 
 
 class PotionOfSuperiorHealing(PotionOfHealing):
@@ -591,8 +616,10 @@ class PotionOfSuperiorHealing(PotionOfHealing):
     +-----------------------------+-------------------+------------------------+
 
     """
+
     name = "Potion of Superior Healing"
     rarity = "rare"
+    item_type = "Potion"
 
 
 class PotionOfSupremeHealing(PotionOfHealing):
@@ -616,15 +643,17 @@ class PotionOfSupremeHealing(PotionOfHealing):
     +-----------------------------+-------------------+------------------------+
 
     """
+
     name = "Potion of Supreme Healing"
     rarity = "very rare"
+    item_type = "Potion"
 
 
 class PotionOfResistance(MagicItem):
     """When you drink this potion, you gain resistance to one type of
     damage for 1 hour. The DM chooses the type or determines it
     randomly from the options below.
-    
+
     +-----+-------------+
     | d10 | Damage Type |
     +=====+=============+
@@ -648,8 +677,20 @@ class PotionOfResistance(MagicItem):
     +-----+-------------+
     | 10  | Thunder     |
     +-----+-------------+
-    
+
     """
+
     name = "Potion of Resistance"
     rarity = "uncommon"
+    item_type = "Potion"
+
+
+class PotionOfInvisibility(MagicItem):
+    """This potion's container looks empty but feels as though it holds liquid.
+    When you drink it, you become invisible for 1 hour. Anything you wear or
+    carry is invisible with you. The effect ends early if you attack or cast a spell.
+    """
+
+    name = "Potion of Invisibility"
+    rarity = "very rare"
     item_type = "Potion"

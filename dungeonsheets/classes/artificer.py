@@ -75,11 +75,32 @@ class BattleSmith(SubClass):
     features_by_level[15] = [features.ImprovedDefender]
 
 
+class Armorer(SubClass):
+    """An artificer who specializes as an Armorer modifies armor to function
+    almost like a second skin. The armor is enhanced to hone the artificer's
+    magic, unleash potent attacks, and generate a formidable defense. The
+    artificer bonds with this armor, becoming one with it even as they
+    experiment with it and refine its magical capabilities.
+    """
+
+    name = "Armorer"
+    features_by_level = defaultdict(list)
+    features_by_level[3] = [
+        features.ArmorerSpells,
+        features.ArmorerToolsOfTheTrade,
+        features.ArcaneArmor,
+        features.ArmorModel,
+    ]
+    features_by_level[5] = [features.ExtraAttackArmorer]
+    features_by_level[9] = [features.ArmorModifications]
+    features_by_level[15] = [features.PerfectedArmor]
+
+
 class Artificer(CharClass):
     name = "Artificer"
     hit_dice_faces = 8
     subclass_select_level = 3
-    subclasses_available = (Alchemist, Artillerist, BattleSmith)
+    subclasses_available = (Alchemist, Artillerist, BattleSmith, Armorer)
     saving_throw_proficiencies = ("intelligence", "constitution")
     primary_abilities = ("intelligence",)
     _proficiencies_text = (
