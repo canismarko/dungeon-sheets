@@ -9,6 +9,91 @@
    verify that there are no unexpected consequences, especially a file
    from someone you do not trust.
 
+Fancy Decorations (D&D 5e LaTeX Style)
+======================================
+
+Dungeonsheets can generate beautifully styled character sheets using the
+official D&D 5e LaTeX template from `rpgtex/DND-5e-LaTeX-Template`_. This
+makes your character sheets look like official Wizards of the Coast content
+with proper formatting, colors, and decorations.
+
+.. _rpgtex/DND-5e-LaTeX-Template: https://github.com/rpgtex/DND-5e-LaTeX-Template
+
+Enabling Fancy Decorations
+---------------------------
+
+Use the ``--fancy`` (or ``-F``) flag when generating sheets:
+
+.. code-block:: bash
+
+   makesheets --fancy examples/wizard1.py
+   # or short form
+   makesheets -F examples/wizard1.py
+
+What Gets Styled
+----------------
+
+When fancy decorations are enabled, the following pages receive D&D styling:
+
+- **Spellbook pages**: Professional spell cards with proper formatting
+- **Feature pages**: Class and racial features with D&D styling
+- **Monster stat blocks**: Official-looking monster descriptions
+- **Magic items**: Styled item descriptions
+- **Druid wild shapes**: Creature stat blocks for wild form
+- **Subclass features**: Beautifully formatted subclass abilities
+- **Animal companions**: Companion creature stat blocks
+- **Party summaries**: Styled party overview pages
+
+Technical Details
+-----------------
+
+The D&D LaTeX template is included as a git submodule. When you clone the
+repository, initialize it with:
+
+.. code-block:: bash
+
+   git clone https://github.com/canismarko/dungeon-sheets.git
+   cd dungeon-sheets
+   git submodule update --init --recursive
+
+The template files are located in ``dungeonsheets/modules/DND-5e-LaTeX-Template/``.
+
+.. note::
+
+   Fancy decorations require LaTeX to be installed. The standard character
+   sheet PDFs (without fancy decorations) use fillable PDF forms and don't
+   require LaTeX.
+
+How It Works
+------------
+
+When ``--fancy`` is used:
+
+1. The LaTeX ``TEXINPUTS`` environment variable includes the DND template path
+2. LaTeX runs **two passes** instead of one (for proper cross-references)
+3. Jinja2 templates conditionally include ``\usepackage[layout=true]{dnd}``
+4. Template files use conditional blocks based on ``use_dnd_decorations`` flag
+
+The result is professional-looking output that matches the style of official
+D&D 5e publications.
+
+Comparison
+----------
+
+**Standard Mode** (``makesheets examples/wizard1.py``):
+
+- Clean, functional fillable PDF forms
+- Fast generation (no LaTeX required)
+- Works without additional dependencies
+- Best for quick reference and digital use
+
+**Fancy Mode** (``makesheets --fancy examples/wizard1.py``):
+
+- Beautiful D&D 5e styled output
+- Looks like official WotC publications
+- Requires LaTeX installation
+- Best for printing and sharing
+
 Homebrew
 ========
 

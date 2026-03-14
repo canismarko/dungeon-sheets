@@ -85,13 +85,15 @@ class CharacterRenderer:
         )
 
 
-create_character_sheet_content = CharacterRenderer("character_sheet_template.{suffix}")
+create_character_sheet_content = CharacterRenderer(
+    "character_sheet_template.{suffix}")
 create_subclasses_content = CharacterRenderer("subclasses_template.{suffix}")
 create_features_content = CharacterRenderer("features_template.{suffix}")
 create_magic_items_content = CharacterRenderer("magic_items_template.{suffix}")
 create_spellbook_content = CharacterRenderer("spellbook_template.{suffix}")
 create_infusions_content = CharacterRenderer("infusions_template.{suffix}")
-create_druid_shapes_content = CharacterRenderer("druid_shapes_template.{suffix}")
+create_druid_shapes_content = CharacterRenderer(
+    "druid_shapes_template.{suffix}")
 
 
 def create_monsters_content(
@@ -164,6 +166,7 @@ def make_sheet(
     debug: bool = False,
     use_tex_template: bool = False,
     spell_order: bool = False,
+    paper_size: str = "letter",
 ):
     """Make a character or GM sheet into a PDF.
     Parameters
@@ -182,6 +185,8 @@ def make_sheet(
       Provide extra info and preserve temporary files.
     use_tex_template : bool, optional
       (experimental) Use the DnD LaTeX character sheet instead of the fillable PDF.
+    paper_size : str, optional
+      Paper size for output ("letter" or "a4"). Default is "letter".
 
     """
     # Parse the file
@@ -194,6 +199,7 @@ def make_sheet(
             output_format=output_format,
             fancy_decorations=fancy_decorations,
             debug=debug,
+            paper_size=paper_size,
         )
     else:
         ret = make_character_sheet(
@@ -204,6 +210,7 @@ def make_sheet(
             debug=debug,
             use_tex_template=use_tex_template,
             spell_order=spell_order,
+            paper_size=paper_size,
         )
     return ret
 
@@ -219,6 +226,7 @@ def make_gm_sheet(
     output_format: str = "pdf",
     fancy_decorations: bool = False,
     debug: bool = False,
+    paper_size: str = "letter",
 ):
     """Prepare a PDF character sheet from the given character file.
 
@@ -233,6 +241,8 @@ def make_gm_sheet(
       the dnd style file: https://github.com/rpgtex/DND-5e-LaTeX-Template.
     debug
       Provide extra info and preserve temporary files.
+    paper_size
+      Paper size for output ("letter" or "a4"). Default is "letter".
 
     """
     # Parse the GM file and filename
@@ -246,6 +256,7 @@ def make_gm_sheet(
         jinja_env.get_template(f"preamble.{content_suffix}").render(
             use_dnd_decorations=fancy_decorations,
             title=session_title,
+            paper_size=paper_size,
         )
     ]
     # Add the party stats table and session summary
@@ -297,7 +308,8 @@ def make_gm_sheet(
             new_monster = monster()
         else:
             try:
-                MyMonster = find_content(monster, valid_classes=[monsters.Monster])
+                MyMonster = find_content(
+                    monster, valid_classes=[monsters.Monster])
             except exceptions.ContentNotFound:
                 msg = f"Monster '{monster}' not found. Please add it to ``monsters.py``"
                 warnings.warn(msg)
@@ -394,6 +406,7 @@ def make_character_content(
     content_format: str,
     fancy_decorations: bool = False,
     spell_order: bool = False,
+    paper_size: str = "letter",
 ) -> List[str]:
     """Prepare the inner content for a character sheet.
 
@@ -416,6 +429,8 @@ def make_character_content(
     fancy_decorations
       Use fancy page layout and decorations for extra sheets, namely
       the dnd style file for *tex*, or extended CSS for *html*.
+    paper_size
+      Paper size for output ("letter" or "a4"). Default is "letter".
 
     Returns
     -------
@@ -429,6 +444,7 @@ def make_character_content(
         jinja_env.get_template(f"preamble.{content_format}").render(
             use_dnd_decorations=fancy_decorations,
             title="Features, Magical Items and Spells",
+            paper_size=paper_size,
         )
     ]
     # Make the character sheet, and background pages if producing HTML
@@ -512,7 +528,7 @@ def make_character_content(
     return content
 
 
-def msavage_sheet(character, basename, debug=False):
+def msavage_sheet(character, basename, debug=False, paper_size="letter"):
     """Another adaption. All changes can be easily included as options
     in the orignal functions, though."""
 
@@ -523,18 +539,20 @@ def msavage_sheet(character, basename, debug=False):
             if re.search(r"" + character.portrait, str(image[0])):
                 character.images.remove(image)
                 break
-        portrait_command = r"{\centering \includegraphics[width=5.75cm,height=7.85cm,keepaspectratio]{" + character.portrait + "} \\\\ \\noindent}"
+        portrait_command = r"{\centering \includegraphics[width=5.75cm,height=7.85cm,keepaspectratio]{" + \
+            character.portrait + "} \\\\ \\noindent}"
 
     # Move symbol image a bit left, if applicable
     if character.symbol:
         for image in character.images:
             if re.search(r"" + character.symbol, str(image[0])):
                 character.images.remove(image)
-                character.images = [(character.symbol, 1, 488, 564, 145, 112)] + character.images
+                character.images = [
+                    (character.symbol, 1, 488, 564, 145, 112)] + character.images
                 break
 
     tex = jinja_env.get_template("MSavage_template.tex").render(
-        char=character, portrait=portrait_command
+        char=character, portrait=portrait_command, paper_size=paper_size
     )
     latex.create_latex_pdf(
         tex,
@@ -554,6 +572,7 @@ def make_character_sheet(
     debug: bool = False,
     use_tex_template: bool = False,
     spell_order: bool = False,
+    paper_size: str = "letter",
 ):
     """Prepare a PDF character sheet from the given character file.
 
@@ -574,6 +593,8 @@ def make_character_sheet(
       the dnd style file: https://github.com/rpgtex/DND-5e-LaTeX-Template.
     debug
       Provide extra info and preserve temporary files.
+    paper_size
+      Paper size for output ("letter" or "a4"). Default is "letter".
 
     """
     # Load properties from file
@@ -585,7 +606,6 @@ def make_character_sheet(
     char_base = basename + "_char"
     person_base = basename + "_person"
     sheets = [char_base + ".pdf"]
-    pages = []
     # Prepare the tex/html content
     content_suffix = format_suffixes[output_format]
     # Create a list of features and magic items
@@ -594,6 +614,7 @@ def make_character_sheet(
         content_format=content_suffix,
         fancy_decorations=fancy_decorations,
         spell_order=spell_order,
+        paper_size=paper_size,
     )
     # Typeset combined LaTeX file
     if output_format == "pdf":
@@ -602,6 +623,7 @@ def make_character_sheet(
                 character=character,
                 basename=char_base,
                 debug=debug,
+                paper_size=paper_size,
             )
         # Fillable PDF forms
         else:
@@ -609,13 +631,11 @@ def make_character_sheet(
             char_pdf = create_character_pdf_template(
                 character=character, basename=char_base, flatten=flatten
             )
-            pages.append(char_pdf)
             person_pdf = create_personality_pdf_template(
                 character=character,
                 basename=person_base,
                 flatten=flatten,
             )
-            pages.append(person_pdf)
         if character.is_spellcaster and not (use_tex_template):
             # Create spell sheet
             spell_base = "{:s}_spells".format(basename)
@@ -703,6 +723,7 @@ def _build(filename, args) -> int:
             fancy_decorations=args.fancy_decorations,
             use_tex_template=args.use_tex_template,
             spell_order=args.spell_order,
+            paper_size=args.paper_size,
         )
     except exceptions.CharacterFileFormatError:
         # Only raise the failed exception if this file is explicitly given
@@ -773,6 +794,13 @@ def main(args=None):
         default="pdf",
     )
     parser.add_argument(
+        "--paper-size",
+        "-p",
+        help="Specify the paper size for the sheets.",
+        choices=["letter", "a4"],
+        default="letter",
+    )
+    parser.add_argument(
         "--debug",
         "-d",
         action="store_true",
@@ -794,7 +822,8 @@ def main(args=None):
         valid_files = []
         if fpath.is_dir() and parse_dirs:
             for f in fpath.iterdir():
-                valid_files.extend(get_char_files(f, parse_dirs=args.recursive))
+                valid_files.extend(get_char_files(
+                    f, parse_dirs=args.recursive))
         elif fpath.suffix in known_extensions:
             valid_files.append(fpath)
         else:

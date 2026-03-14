@@ -20,7 +20,7 @@ Each character file must contain a line like::
 
   dungeonsheets_version = "0.4.2"
 
-Without this line, the :ref:`makesheets` command-line utility will ignore
+Without this line, the :ref:`makesheets<Usage>` command-line utility will ignore
 the file. This is necessary to avoid importing non-D&D python files.
 
 .. note::
@@ -29,7 +29,7 @@ the file. This is necessary to avoid importing non-D&D python files.
    result of the character's race and/or background. These **must
    still be included** in the character file and will not be
    automatically added if omitted.
-   
+
 Basic Info
 ==========
 
@@ -40,7 +40,7 @@ standard 5e rules, and are case-insensitive. Refer to the D&D
 `player's handbook`_ for more information.
 
 .. code:: python
-  
+
   name = 'Inara Serradon'
   character_class = 'wizard'
   player_name = 'Mark'
@@ -76,7 +76,7 @@ sheet file).
    images = [("bard1.jpeg", 0, 320, 110, 100, 100)]
    portrait = "shifter_2.png"
    symbol = "bard1.jpeg"
-   
+
 
 Ability Scores
 ==============
@@ -104,7 +104,7 @@ handbook`_. Languages is a standard string, since language proficiency
 does not affect other areas of the character.
 
 .. code:: python
-   
+
    # Proficiencies and languages
    skill_proficiencies = [
        'arcana',
@@ -133,7 +133,7 @@ as-is on the character sheet.
    the `player's handbook`_, please submit an `issue`_.
 
 .. code:: python
-   
+
    cp = 950
    sp = 75
    ep = 50
@@ -177,7 +177,7 @@ correspond to spells described in the `player's handbook`_.
 .. note::
 
    Some character classes have modified spellcasting mechanics that
-   affects how these entries are intepreted.
+   affects how these entries are interpreted.
 
    - `Druid`_
 
@@ -192,7 +192,7 @@ sheet. Triple-quoted string and parenthesis may make the character's
 source file more readable, but are not required.
 
 .. code:: python
-   
+
    # Backstory
    personality_traits = """I use polysyllabic words that convey the impression of
 	                erudition. Also, I’ve spent so long in the temple that I have little
@@ -212,24 +212,24 @@ source file more readable, but are not required.
        your spells. The saving throw DC to resist a spell you cast is
        13. Your attack bonus when you make an attack with a spell is
        +5. See the rulebook for rules on casting your spells.
-    
+
        Arcane Recovery: You can regain some of your magical energy by
        studying your spellbook. Once per day during a short rest, you can
        choose to recover expended spell slots with a combined level equal
        to or less than half your wizard level (rounded up).
-    
+
        Darkvision: You see in dim light within a 60-foot radius of you as
        if it were bright light, and in darkness in that radius as if it
        were dim light. You can’t discern color in darkness, only shades
        of gray.
-    
+
        Fey Ancestry: You have advantage on saving throws against being
        charmed, and magic can’t put you to sleep.
-    
+
        Trance: Elves don’t need to sleep. They meditate deeply, remaining
        semiconscious, for 4 hours a day and gain the same benefit a human
        does from 8 hours of sleep.
-    
+
        Shelter of the Faithful: As a servant of Oghma, you command the
        respect of those who share your faith, and you can perform the
        rites of Oghma. You and your companions can expect to receive free
@@ -268,10 +268,10 @@ spells and known cantrips** should be listed in the
 ``spells_prepared`` entry.
 
 .. code:: python
-   
+
    # We're a moon druid, why not
    circle = 'Moon'
-	 
+
    # Spells are empty because we don't learn any spells
    spells = []
    # This one has all prepared spells and cantrips

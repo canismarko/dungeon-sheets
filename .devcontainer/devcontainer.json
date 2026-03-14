@@ -1,0 +1,49 @@
+{
+  "name": "dungeon-sheets",
+  "build": {
+    "dockerfile": "../Dockerfile",
+    "context": "..",
+    "target": "dungeon-sheets-dev"
+  },
+
+  "features": {
+    "ghcr.io/devcontainers/features/github-cli:1": {
+      "installDirectlyFromGitHubRelease": true,
+      "version": "latest"
+    }
+  },
+
+  "postCreateCommand": "bash ${containerWorkspaceFolder}/.devcontainer/post-create.sh",
+
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "ms-python.debugpy",
+        "ms-python.black-formatter",
+        "ms-azuretools.vscode-containers",
+        "ms-python.vscode-python-envs",
+        "ms-vscode-remote.remote-containers"
+      ],
+      "settings": {
+        "python.defaultInterpreterPath": "/usr/local/bin/python",
+        "python.testing.pytestEnabled": true,
+        "python.testing.unittestEnabled": false
+      }
+    },
+    "codespaces": {
+      "repositories": {
+        "rpgtex/DND-5e-LaTeX-Template": {
+          "permissions": "write-all"
+        }
+      }
+    }
+  },
+
+  "mounts": [
+    "source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind"
+  ],
+
+  "remoteUser": "vscode"
+}

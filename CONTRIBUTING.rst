@@ -87,15 +87,47 @@ using *pytest*, run the following from a console:
 
 .. code:: bash
 
-	  pip install -r requirements.txt -r requirements-tests.txt
-	  pytest
+    uv sync --extra dev
+    uv run pytest
 
 You can also run a sub-set of the tests, which can be convenient for
 development. For example, to run just the tests related to dice
-mechanics, use ``pytest tests/test_dice.py``. Dungeonsheets defines
+mechanics, use ``uv run pytest tests/test_dice.py``. Dungeonsheets defines
 tests using the *unittest* package in the standard library. **For
 example**, to test a new function in the ``dungeonsheets/dice.py``
 module, modify ``tests/test_dice.py``:
+
+Running Tests with Docker
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+To run the complete test suite in a Docker container (matching the CI
+environment), use the ``dungeon-sheets-test`` target:
+
+.. code:: bash
+
+    # Build the test image
+    docker build --target dungeon-sheets-test -t dungeon-sheets-test .
+
+    # Run all tests
+    docker run dungeon-sheets-test
+
+The Docker test container will:
+
+- Run flake8 linting checks
+- Test makesheets with different output formats (standard, fancy, epub)
+- Run the full pytest suite with coverage reporting
+- Display clear section headers for each test phase
+- Exit with code 0 on success, non-zero on failure
+
+You can verify success with:
+
+.. code:: bash
+
+    docker run dungeon-sheets-test && echo "✓ All tests passed!" || echo "✗ Tests failed!"
+
+This approach ensures a consistent test environment with all system
+dependencies (pdftk, texlive) properly installed, which is particularly
+useful for testing on systems where these dependencies are difficult to install.
 
 .. code-block:: python
    :caption: dice.py
@@ -139,9 +171,9 @@ HTML files, run:
 
 .. code:: bash
 
-	  pip install -r requirements.txt -r requirements-tests.txt
+    uv sync --extra dev
 	  cd docs/
-	  make html
+    uv run make html
 
 The results can be found in the ``_build/html/`` foler.
 

@@ -35,7 +35,7 @@ charisma = 15
 
 # Select what skills you're proficient with
 # ex: skill_proficiencies = ('athletics', 'acrobatics', 'arcana')
-skill_proficiencies = ('arcana', 'deception', 'history', 'intimidation')
+skill_proficiencies = ("arcana", "deception", "history", "intimidation")
 
 # Any skills you have "expertise" (Bard/Rogue) in
 skill_expertise = ()
@@ -46,14 +46,21 @@ skill_expertise = ()
 # Gunslinger, etc.)
 # Example:
 # features = ('Tavern Brawler',) # take the optional Feat from PHB
-features = ('ascendant step', 'beast speech', 'devils sight', 'eyes of the rune keeper',
-            'sign of ill omen', 'thirsting blade', 'whispers of the grave',
-            'sculptor of flesh')
+features = (
+    "ascendant step",
+    "beast speech",
+    "devils sight",
+    "eyes of the rune keeper",
+    "sign of ill omen",
+    "thirsting blade",
+    "whispers of the grave",
+    "sculptor of flesh",
+)
 
 # If selecting among multiple feature options: ex Fighting Style
 # Example (Fighting Style):
 # feature_choices = ('Archery',)
-feature_choices = ('pact of the blade',)
+feature_choices = ("pact of the blade",)
 
 # Weapons/other proficiencies not given by class/race/background
 weapon_proficiencies = ()  # ex: ('shortsword', 'quarterstaff')
@@ -71,8 +78,8 @@ gp = 0
 pp = 0
 
 # TODO: Put your equipped weapons and armor here
-weapons = ('dagger',)  # Example: ('shortsword', 'longsword')
-magic_items = ()  # Example: ('ring of protection',)
+weapons = ("dagger",)  # Example: ('shortsword', 'longsword')
+magic_items = ("staff of the adder",)  # Example: ('ring of protection',)
 armor = "leather armor"  # Eg "leather armor"
 shield = ""  # Eg "shield"
 
@@ -83,11 +90,15 @@ or uses spells."""
 
 # List of known spells
 # Example: spells_prepared = ('magic missile', 'mage armor')
-spells_prepared = ('blade ward', 'minor illusion',
-                   'hex', 'witch bolt',
-                   'darkness',
-                   'fly',
-                   'scrying')  # Todo: Learn some spells
+spells_prepared = (
+    "blade ward",
+    "minor illusion",
+    "hex",
+    "witch bolt",
+    "darkness",
+    "fly",
+    "scrying",
+)  # Todo: Learn some spells
 
 # Which spells have not been prepared
 __spells_unprepared = ()

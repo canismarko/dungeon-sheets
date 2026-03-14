@@ -32,13 +32,14 @@ from dungeonsheets.features import (
 
 log = logging.getLogger(__name__)
 skill_text_locator = re.compile(r"\S+ [+-]\d+")
-attack_text_locator = re.compile(r"attack:.*?damage", re.IGNORECASE|re.DOTALL)
-attack = re.compile(r"attack:.*?to hit", re.IGNORECASE|re.DOTALL)
-damage = re.compile(r"hit:.*?(\d+)d(\d+).*?damage", re.IGNORECASE|re.DOTALL)
-damage_avg = re.compile(r"hit:.*?(\d+)", re.IGNORECASE|re.DOTALL)
-damage_nodice = re.compile(r"hit:.*?damage", re.IGNORECASE|re.DOTALL)
-modifier = re.compile(r"[+-].*?(\d+)", re.IGNORECASE|re.DOTALL)
+attack_text_locator = re.compile(r"attack:.*?damage", re.IGNORECASE | re.DOTALL)
+attack = re.compile(r"attack:.*?to hit", re.IGNORECASE | re.DOTALL)
+damage = re.compile(r"hit:.*?(\d+)d(\d+).*?damage", re.IGNORECASE | re.DOTALL)
+damage_avg = re.compile(r"hit:.*?(\d+)", re.IGNORECASE | re.DOTALL)
+damage_nodice = re.compile(r"hit:.*?damage", re.IGNORECASE | re.DOTALL)
+modifier = re.compile(r"[+-].*?(\d+)", re.IGNORECASE | re.DOTALL)
 single_damage = re.compile(r"(\d+)")
+
 
 def mod_str(modifier):
     """Converts a modifier to a string, eg 2 -> '+2'."""
@@ -61,7 +62,7 @@ def str_to_list(obj, attr: str, sep: str = ","):
       The name of the attribute to look up.
     sep
       The separator to use for splitting the string.
-    
+
     Returns
     =======
     items
@@ -127,7 +128,12 @@ class Ability:
             saving_throw += mitem.st_bonus(ability=self.ability_name)
             # saving_throw += getattr(mitem, "st_bonus", 0)
         # Create the named tuple
-        value = AbilityScore(modifier=modifier, value=score, saving_throw=saving_throw, name=self.ability_name)
+        value = AbilityScore(
+            modifier=modifier,
+            value=score,
+            saving_throw=saving_throw,
+            name=self.ability_name,
+        )
         return value
 
     def __set__(self, actor, val):
@@ -165,11 +171,11 @@ class Skill:
       but can be different based on class features.,
 
     """
-    
+
     ability_name = ""
     skill_name = ""
     actor = None
-    
+
     def __init__(self, ability):
         self.ability_name = ability
 
@@ -185,7 +191,7 @@ class Skill:
 
     @property
     def is_remarkable_athlete(self):
-        already_proficient = (self.is_proficient or self.is_expertise)
+        already_proficient = self.is_proficient or self.is_expertise
         if self.actor.has_feature(RemarkableAthlete) and not already_proficient:
             return True
         else:
@@ -193,7 +199,9 @@ class Skill:
 
     @property
     def is_jack_of_all_trades(self):
-        already_proficient = (self.is_proficient or self.is_expertise or self.is_remarkable_athlete)
+        already_proficient = (
+            self.is_proficient or self.is_expertise or self.is_remarkable_athlete
+        )
         if self.actor.has_feature(JackOfAllTrades) and not already_proficient:
             return True
         else:
@@ -202,7 +210,9 @@ class Skill:
     @property
     def is_proficient(self):
         # Check for proficiency
-        proficiencies = [p.replace("_", " ").lower() for p in self.actor.skill_proficiencies]
+        proficiencies = [
+            p.replace("_", " ").lower() for p in self.actor.skill_proficiencies
+        ]
         is_proficient = self.skill_name.lower() in proficiencies
         return is_proficient
 
@@ -322,7 +332,7 @@ class NumericalInitiative:
             ini += actor.charisma.modifier
         if actor.has_feature(Alert):
             ini += 5
-        
+
         if actor.has_feature(JackOfAllTrades) and not added_proficiency:
             ini += actor.proficiency_bonus // 2
         if actor.has_feature(RemarkableAthlete) and not added_proficiency:
@@ -345,14 +355,16 @@ class Initiative(NumericalInitiative):
         if has_advantage:
             ini += "(A)"
         return ini
-    
+
+
 def _add_modifier(att_text, prof):
     """Auxiliary function to add proficiency bonus prof
     to att_text."""
     _att_bonus_re = modifier.search(att_text)
     att_bonus_text = _att_bonus_re.group()
-    att_bonus =  int(att_bonus_text.replace(" ", "").replace("\n", "")) + prof
+    att_bonus = int(att_bonus_text.replace(" ", "").replace("\n", "")) + prof
     return re.sub(modifier, "{:+d}".format(att_bonus), att_text)
+
 
 def skill_modifier(skills_text, prof):
     """Modifies the skill text string adding the proficiency
@@ -365,6 +377,7 @@ def skill_modifier(skills_text, prof):
         increased_skill = _add_modifier(sk, prof)
         skills_updated.append(increased_skill)
     return ", ".join(skills_updated)
+
 
 def att_dmg_modifier(text, prof):
     """Modify the attack and damage rolls for a strip
@@ -382,8 +395,9 @@ def att_dmg_modifier(text, prof):
         dmg_avg_value = dice_roll_mean(new_dmg_text)
         _dmg_avg_re = damage_avg.search(new_dmg_text)
         dmg_avg_text = _dmg_avg_re.group()
-        new_dmg_avg_text = re.sub("(\d+)", "{:d}".format(dmg_avg_value),
-                                  dmg_avg_text, 1)
+        new_dmg_avg_text = re.sub(
+            r"(\d+)", "{:d}".format(dmg_avg_value), dmg_avg_text, 1
+        )
         new_dmg_text = re.sub(damage_avg, new_dmg_avg_text, new_dmg_text)
         text = re.sub(damage, new_dmg_text, text)
     else:

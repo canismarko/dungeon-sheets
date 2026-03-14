@@ -18,12 +18,10 @@ log = logging.getLogger(__name__)
 def text_box(string):
     """Format a string for displaying in a text box."""
     # remove multiple whitespace without removing linebreaks
-    new_string = " ".join(string.replace("\n", "\m").split())  # noqa: W605
+    new_string = " ".join(string.replace("\n", r"\m").split())
     # Remove *single* line breaks, swap *multi* line breaks to single (fdf: \r)
     new_string = (
-        new_string.replace("\m \m", "\r")  # noqa: W605
-        .replace("\m\m", "\r")  # noqa: W605
-        .replace("\m", " ")  # noqa: W605
+        new_string.replace(r"\m \m", "\r").replace(r"\m\m", "\r").replace(r"\m", " ")
     )
     return new_string
 
@@ -87,9 +85,9 @@ def create_character_pdf_template(character, basename, flatten=False):
         # Hit points
         "HDTotal": character.hit_dice,
         "HPMax": str(character.hp_max),
-        "HPCurrent": str(character.hp_current)
-        if character.hp_current is not None
-        else "",
+        "HPCurrent": (
+            str(character.hp_current) if character.hp_current is not None else ""
+        ),
         "HPTemp": str(character.hp_temp) if character.hp_temp > 0 else "",
         # Personality traits and other features
         "PersonalityTraits ": text_box(character.personality_traits),
@@ -306,7 +304,7 @@ def create_spells_pdf_template(character, basename, flatten=False):
     # Determine which sheet to use (caster or half-caster).
     # Prefer caster, unless we have no spells > 5th level and
     # would overflow the caster sheet, then use half-caster.
-    only_low_level = all((character.spell_slots(level) == 0 for level in range(6, 10)))
+    only_low_level = not any(spell.level > 5 for spell in character.spells)
     would_overflow_fullcaster = any(
         (
             len([spl for spl in character.spells if spl.level == level])
@@ -445,7 +443,8 @@ def _make_pdf_pypdf(fields: dict, src_pdf: str, basename: str, flatten: bool = F
             if fields[key] == "Off":
                 fields[key] = r"/Off"
             writer.update_page_form_field_values(
-                writer.pages[0], {key: fields[key]},
+                writer.pages[0],
+                {key: fields[key]},
                 auto_regenerate=False,
             )
 

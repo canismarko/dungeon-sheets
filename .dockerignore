@@ -119,8 +119,5 @@ ENV/
 
 add_spell.sh
 
-# Not needed for building sheets
+# Not needed for building sheets (but needed for testing)
 characters/
-examples/
-tests/
-docs/

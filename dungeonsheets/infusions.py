@@ -101,7 +101,18 @@ class HomunculusServant(Infusion):
 
     name = "Homunculus Servant"
     item = "A gem worth at least 100gp or a dragonshard"
-    prerequisite = "6th-level artificer"
+
+
+class MindSharpener(Infusion):
+    """The infused item can send a jolt to the wearer to refocus their mind. The
+    item has 4 charges. When the wearer fails a Constitution saving throw to
+    maintain concentration on a spell, the wearer can use its reaction to expend
+    1 of the item's charges to succeed instead. The item regains ld4 expended
+    charges daily at dawn.
+    """
+
+    name = "Mind Sharpener"
+    item = "A suit of armor or robes"
 
 
 class RadiantWeapon(Infusion):

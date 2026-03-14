@@ -4,12 +4,7 @@ from unittest import TestCase, expectedFailure
 import warnings
 
 from dungeonsheets import race, monsters, exceptions, spells, infusions
-from dungeonsheets.character import (
-    Character,
-    Wizard,
-    Druid,
-    Ranger
-)
+from dungeonsheets.character import Character, Wizard, Druid, Ranger
 from dungeonsheets.monsters import Panther
 from dungeonsheets.weapons import Weapon, Shortsword, Battleaxe
 from dungeonsheets.magic_items import MagicItem
@@ -47,9 +42,11 @@ class TestCharacter(TestCase):
         self.assertFalse(isinstance(char.armor, str))
         self.assertFalse(isinstance(char.shield, str))
         # Check that magic item gets set_attrs
-        MagicWeapon = type("MagicWeapon", (Weapon, MagicItem),
-                           dict(damage_bonus=2, attack_bonus=2,
-                                st_bonus_all=3))
+        MagicWeapon = type(
+            "MagicWeapon",
+            (Weapon, MagicItem),
+            dict(damage_bonus=2, attack_bonus=2, st_bonus_all=3),
+        )
         char.set_attrs(magic_items=[MagicWeapon])
         # Check that race gets set to an object
         char.set_attrs(race="high elf")
@@ -61,8 +58,7 @@ class TestCharacter(TestCase):
         self.assertFalse(char.inspiration)
         # Check that proficiencies_text gets included
         char.set_attrs(proficiencies_text=("dull sword",))
-        self.assertIn("dull sword",
-                      char.proficiencies_by_type["Other"].lower())
+        self.assertIn("dull sword", char.proficiencies_by_type["Other"].lower())
 
     def test_homebrew_spells(self):
         char = Character()
@@ -86,7 +82,9 @@ class TestCharacter(TestCase):
         self.assertEqual(char.infusions[0].name, "my infusion!")
         # Pass a previously undefined infusion
         char = Character(classes="artificer")
-        char.set_attrs(infusions=("spam_infusion",))
+        with warnings.catch_warnings():
+            warnings.simplefilter("ignore", UserWarning)
+            char.set_attrs(infusions=("spam_infusion",))
         self.assertIsInstance(char.infusions[0], infusions.Infusion)
         self.assertEqual(char.infusions[0].name, "Spam Infusion")
 
@@ -161,16 +159,12 @@ class TestCharacter(TestCase):
     def test_proficiencies_by_type(self):
         char = Wizard()
         char.proficiencies_text = ("hello", "world")
-        self.assertIn("hello",
-                      char.proficiencies_by_type["Other"].lower())
-        self.assertIn("world",
-                      char.proficiencies_by_type["Other"].lower())
+        self.assertIn("hello", char.proficiencies_by_type["Other"].lower())
+        self.assertIn("world", char.proficiencies_by_type["Other"].lower())
         # Check for extra proficiencies
         char.proficiencies_text += ("it's", "me")
-        self.assertIn("it's",
-                      char.proficiencies_by_type["Other"].lower())
-        self.assertIn("me",
-                      char.proficiencies_by_type["Other"].lower())
+        self.assertIn("it's", char.proficiencies_by_type["Other"].lower())
+        self.assertIn("me", char.proficiencies_by_type["Other"].lower())
         # Check that race proficiencies are included
         elf = race.HighElf()
         char.race = elf
@@ -185,9 +179,11 @@ class TestCharacter(TestCase):
             "me",
         )
         for e in expected:
-            self.assertIn(e,
-                          char.proficiencies_by_type["Weapons"].lower() +
-                          char.proficiencies_by_type["Other"].lower())
+            self.assertIn(
+                e,
+                char.proficiencies_by_type["Weapons"].lower()
+                + char.proficiencies_by_type["Other"].lower(),
+            )
 
     def test_proficiency_bonus(self):
         char = Character()
@@ -247,7 +243,7 @@ class TestCharacter(TestCase):
         # Try passing an Armor object directly
         char.wield_shield(Shield)
         self.assertEqual(char.armor_class, 15)
-        
+
     def test_carrying_weight(self):
         char = Character(race="lightfoot halfling", strength=12)
         # Check carrying capacity
@@ -280,8 +276,9 @@ class TestCharacter(TestCase):
 
     def test_load_char(self):
         char = Character.load({"name": "Dave", "sheet_type": "character"})
-        self.assertFalse(hasattr(char, "sheet_type"),
-                         "'sheet_type' not stripped from char props")
+        self.assertFalse(
+            hasattr(char, "sheet_type"), "'sheet_type' not stripped from char props"
+        )
 
 
 class DruidTestCase(TestCase):
@@ -366,26 +363,24 @@ class DruidTestCase(TestCase):
         not_beast = monsters.Monster()
         not_beast.description = "monster"
         self.assertFalse(low_druid.can_assume_shape(not_beast))
-        
+
+
 class BeastMasterTestCase(TestCase):
-    
+
     def test_ranger_beast(self):
-        char = Ranger(6, subclasses = ["Beast Master"])
+        char = Ranger(6, subclasses=["Beast Master"])
         char.ranger_beast = "Panther"
         # Test added proficiency to AC and skills
         self.assertEqual(char.ranger_beast.armor_class, 15)
         _text = char.ranger_beast.skills.lower().replace(" ", "")
-        self.assertTrue(_text == 'perception+7,stealth+9')
+        self.assertTrue(_text == "perception+7,stealth+9")
         # Check attack and attack damage changed
         _text = char.ranger_beast.__doc__
         _text = _text.lower().replace("\n", "").replace(" ", "")
-        self.assertTrue('hit:8(1d6+5)' in _text)
+        self.assertTrue("hit:8(1d6+5)" in _text)
         # Test HP changed
         self.assertTrue(char.ranger_beast.hp_max == 24)
         # Check HP gets the best option
-        char = Ranger(3, subclasses = ["Beast Master"])
+        char = Ranger(3, subclasses=["Beast Master"])
         char.ranger_beast = "Panther"
         self.assertEqual(char.ranger_beast.hp_max, 13)
-        
-        
-        
